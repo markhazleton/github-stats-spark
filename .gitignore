@@ -1,0 +1,357 @@
+# Stats Spark .gitignore
+# Python-based GitHub statistics generator with GitHub Actions
+
+# ============================================================================
+# Python
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ============================================================================
+# Stats Spark Specific
+# ============================================================================
+
+# API Response Cache (6-hour TTL, should not be committed)
+.cache/
+*.cache
+
+# Generated SVG outputs (regenerated automatically, don't commit unless examples)
+output/*.svg
+!output/.gitkeep
+!assets/examples/**/*.svg
+
+# Local test outputs
+test-output/
+temp-output/
+
+# Local configuration overrides (don't commit tokens or personal settings)
+config/local.yml
+config/*.local.yml
+.spark.yml
+
+# GitHub Personal Access Tokens (NEVER COMMIT)
+.token
+*.token
+secrets/
+.secrets/
+
+# Local development databases or data files
+*.db
+*.sqlite
+data/
+
+# ============================================================================
+# IDE / Editor
+# ============================================================================
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+*.vsix
+
+# IntelliJ / PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ============================================================================
+# Operating System
+# ============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# Git / Version Control
+# ============================================================================
+
+# Git merge/conflict files
+*.orig
+*.rej
+
+# ============================================================================
+# Logs and Temporary Files
+# ============================================================================
+
+# General logs
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# ============================================================================
+# Security / Sensitive Data
+# ============================================================================
+
+# Environment variables with secrets
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Credential files
+credentials.json
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# ============================================================================
+# Build / Deployment
+# ============================================================================
+
+# Docker
+*.dockerfile.bak
+docker-compose.override.yml
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraformrc
+terraform.rc
+
+# ============================================================================
+# Documentation Build Artifacts
+# ============================================================================
+
+# Sphinx
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# ============================================================================
+# Profiling / Performance
+# ============================================================================
+
+# Python profiling
+*.prof
+*.lprof
+*.pstats
+
+# ============================================================================
+# Miscellaneous
+# ============================================================================
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Temporary working directories
+scratch/
+tmp/
+temp/
+
+# Node modules (if any frontend tooling is added later)
+node_modules/
+package-lock.json
+
+# Speckit working files (keep specs tracked, but ignore temp analysis files)
+.specify/temp/
