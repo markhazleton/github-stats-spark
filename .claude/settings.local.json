@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git fetch:*)",
+      "Bash(if [ -d \".specify/specs\" ])",
+      "Bash(then ls -1d .specify/specs/*-stats-spark)",
+      "Bash(fi)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File .specify/scripts/powershell/create-new-feature.ps1 -Json -Number 1 -ShortName \"stats-spark\" \"GitHub profile statistics generator with automated SVG visualizations, comprehensive coding analytics, and customizable themes - Stats Spark illuminates your GitHub activity with beautiful, automated statistics\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -Json -PathsOnly)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File .specify/scripts/powershell/setup-plan.ps1 -Json)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File .specify/scripts/powershell/check-prerequisites.ps1 -Json)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
