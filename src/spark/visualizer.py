@@ -456,7 +456,7 @@ class StatisticsVisualizer:
         Returns:
             SVG content as string
         """
-        width = 700
+        width = 900
         height = 450
 
         dwg = svgwrite.Drawing(size=(width, height))
@@ -488,45 +488,45 @@ class StatisticsVisualizer:
 
         # Time-based facts with personality
         if most_active_hour >= 22 or most_active_hour <= 4:
-            facts.append(f"🦉 Night Owl Alert! Peaks at {most_active_hour}:00 (coffee budget: infinite)")
+            facts.append(f"🦉 Night Owl: Peaks at {most_active_hour}:00")
         elif most_active_hour >= 5 and most_active_hour <= 9:
-            facts.append(f"🌅 Early Bird! Most active at {most_active_hour}:00 (the worm is caught!)")
+            facts.append(f"🌅 Early Bird: Active at {most_active_hour}:00")
         else:
-            facts.append(f"☀️ Daytime Coder! Peaks at {most_active_hour}:00 (normal sleep schedule)")
+            facts.append(f"☀️ Daytime Coder: Peaks at {most_active_hour}:00")
 
         # Commit velocity with flair
         if avg_commits_per_day > 10:
-            facts.append(f"🚀 Commit Machine! Averaging {avg_commits_per_day:.1f} commits/day")
+            facts.append(f"🚀 Commit Machine: {avg_commits_per_day:.1f}/day")
         elif avg_commits_per_day > 5:
-            facts.append(f"💪 Consistent Contributor: {avg_commits_per_day:.1f} commits/day")
+            facts.append(f"💪 Consistent: {avg_commits_per_day:.1f} commits/day")
         elif avg_commits_per_day > 1:
-            facts.append(f"📝 Steady Progress: {avg_commits_per_day:.1f} commits/day")
+            facts.append(f"📝 Steady Progress: {avg_commits_per_day:.1f}/day")
         else:
-            facts.append(f"🌱 Quality over Quantity: {avg_commits_per_day:.1f} commits/day")
+            facts.append(f"🌱 Quality over Quantity: {avg_commits_per_day:.1f}/day")
 
         # Repository count with achievements
         if total_repos > 100:
-            facts.append(f"🏆 Repository Collector: {total_repos} repos (impressive!)")
+            facts.append(f"🏆 Repository Collector: {total_repos} repos")
         elif total_repos > 50:
-            facts.append(f"📚 Project Enthusiast: {total_repos} repositories")
+            facts.append(f"📚 Project Enthusiast: {total_repos} repos")
         elif total_repos > 20:
-            facts.append(f"🔧 Builder Mode: {total_repos} active projects")
+            facts.append(f"🔧 Builder Mode: {total_repos} projects")
         else:
-            facts.append(f"🎯 Focused Developer: {total_repos} repositories")
+            facts.append(f"🎯 Focused Developer: {total_repos} repos")
 
         # Language diversity
         if languages_count > 10:
-            facts.append(f"🌐 Polyglot Programmer: {languages_count} languages mastered!")
+            facts.append(f"🌐 Polyglot: {languages_count} languages")
         elif languages_count > 5:
-            facts.append(f"🛠️ Multi-Language Dev: {languages_count} languages in toolkit")
+            facts.append(f"🛠️ Multi-Language: {languages_count} languages")
         elif languages_count > 2:
-            facts.append(f"💻 Versatile Coder: {languages_count} languages")
+            facts.append(f"💻 Versatile: {languages_count} languages")
         else:
             facts.append(f"🎨 Specialist: {languages_count} language{'s' if languages_count != 1 else ''}")
 
         # Stars and popularity
         if total_stars > 1000:
-            facts.append(f"⭐ GitHub Celebrity: {total_stars} stars earned!")
+            facts.append(f"⭐ GitHub Celebrity: {total_stars} stars")
         elif total_stars > 100:
             facts.append(f"✨ Community Favorite: {total_stars} stars")
         elif total_stars > 10:
@@ -537,33 +537,33 @@ class StatisticsVisualizer:
         # Account longevity
         account_years = account_age_days / 365.25
         if account_years > 10:
-            facts.append(f"🏛️ GitHub Veteran: {account_age_days} days ({int(account_years)} years!)")
+            facts.append(f"🏛️ GitHub Veteran: {int(account_years)} years!")
         elif account_years > 5:
-            facts.append(f"🎖️ Experienced Dev: {account_age_days} days on GitHub")
+            facts.append(f"🎖️ Experienced: {int(account_years)} years")
         elif account_years > 2:
-            facts.append(f"📅 Established Member: {int(account_years)} years on GitHub")
+            facts.append(f"📅 Established: {int(account_years)} years")
         else:
-            facts.append(f"🌱 Growing Journey: {account_age_days} days on GitHub")
+            facts.append(f"🌱 Growing: {account_age_days} days")
 
         # Total commits milestone
         if total_commits > 10000:
-            facts.append(f"🔥 Commit Legend: {total_commits:,} total commits!")
+            facts.append(f"🔥 Commit Legend: {total_commits:,} commits")
         elif total_commits > 5000:
-            facts.append(f"💥 Commit Master: {total_commits:,} total commits")
+            facts.append(f"💥 Commit Master: {total_commits:,} commits")
         elif total_commits > 1000:
             facts.append(f"⚡ Active Developer: {total_commits:,} commits")
         elif total_commits > 100:
             facts.append(f"📈 Building Momentum: {total_commits} commits")
         else:
-            facts.append(f"🚀 Just Getting Started: {total_commits} commits")
+            facts.append(f"🚀 Getting Started: {total_commits} commits")
 
         # Coding pattern personality
         pattern_descriptions = {
-            "night_owl": "🌙 Debugs best after midnight",
-            "early_bird": "🌄 Codes before the world wakes",
-            "balanced": "⚖️ Perfectly balanced workflow",
-            "weekend_warrior": "🎮 Weekend coding sessions",
-            "weekday_grinder": "💼 Monday-Friday hustle",
+            "night_owl": "🌙 Debugs after midnight",
+            "early_bird": "🌄 Codes at dawn",
+            "balanced": "⚖️ Balanced workflow",
+            "weekend_warrior": "🎮 Weekend coder",
+            "weekday_grinder": "💼 Weekday hustle",
         }
         if pattern in pattern_descriptions:
             facts.append(pattern_descriptions[pattern])
@@ -571,9 +571,9 @@ class StatisticsVisualizer:
         # Limit to 8 facts to fit nicely
         facts = facts[:8]
 
-        # Render facts in two columns
+        # Render facts in two columns with more spacing
         left_col_x = 40
-        right_col_x = 370
+        right_col_x = 480
         start_y = 70
         spacing = 45
 
