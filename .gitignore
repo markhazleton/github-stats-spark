@@ -150,12 +150,7 @@ cython_debug/
 .cache/
 *.cache
 
-# Generated SVG outputs (regenerated automatically, don't commit unless examples)
-output/*.svg
-!output/.gitkeep
-!assets/examples/**/*.svg
-
-# Local test outputs
+# Local test outputs (don't commit test outputs, but DO commit main output/ SVGs)
 test-output/
 temp-output/
 
