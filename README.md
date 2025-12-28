@@ -58,8 +58,21 @@ Stats Spark generates 5 SVG categories:
 | **Overview** | Spark Score, commits, languages, time pattern | `overview.svg` |
 | **Heatmap** | Commit frequency calendar | `heatmap.svg` |
 | **Languages** | Programming language breakdown | `languages.svg` |
-| **Fun Stats** | Lightning round facts and one-liners | `fun.svg` |
+| **Fun Stats** ⚡ **ENHANCED** | 8 personality-driven achievements with emoji flair | `fun.svg` |
 | **Streaks** | Current and longest coding streaks | `streaks.svg` |
+
+### ⚡ Enhanced Fun Stats (New!)
+
+The Fun Stats visualization now showcases **8 creative measurements** with personality:
+
+- 🦉 **Coding Time Personality** - Night Owl, Early Bird, or Daytime Coder
+- 🚀 **Commit Velocity** - From "Quality over Quantity" to "Commit Machine"
+- 📚 **Repository Collection** - Achievement tiers from Focused to Collector
+- 🌐 **Language Diversity** - Specialist to Polyglot Programmer
+- ⭐ **Community Recognition** - Stars earned across all repositories
+- 🏛️ **Account Longevity** - Experience badges from newcomer to veteran
+- 💥 **Commit Milestones** - Total commits with achievement levels
+- 🌙 **Pattern Personality** - Custom messages based on your coding style
 
 ## ⚡ Spark Score
 
@@ -101,6 +114,7 @@ spark config --validate
 - [Getting Started Guide](docs/getting-started.md) - Complete setup instructions
 - [Configuration Guide](docs/configuration.md) - All configuration options
 - [Embedding Guide](docs/embedding-guide.md) - How to embed SVGs in README
+- [API Reference](docs/api-reference.md) - Developer documentation for core modules
 
 ## 🔧 Troubleshooting
 
@@ -111,6 +125,33 @@ spark config --validate
 **Rate limiting?** Workflow automatically handles with caching and retries.
 
 See [Getting Started Guide](docs/getting-started.md) for more help.
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Report Bugs**: Open an issue with details and reproduction steps
+2. **Suggest Features**: Share ideas for new visualizations or improvements
+3. **Submit Pull Requests**: Fix bugs or add features
+4. **Improve Documentation**: Help make guides clearer
+5. **Share Examples**: Show how you're using Stats Spark!
+
+Please see [API Reference](docs/api-reference.md) for developer documentation.
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=spark --cov-report=html
+
+# View coverage report
+start htmlcov/index.html
+```
+
+Current test coverage: **52%** (core modules: 80%+)
 
 ## 📄 License
 

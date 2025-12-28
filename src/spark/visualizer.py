@@ -366,7 +366,7 @@ class StatisticsVisualizer:
         stats: Dict[str, Any],
         username: str,
     ) -> str:
-        """Generate fun stats and one-liners.
+        """Generate fun stats and one-liners with personality.
 
         Args:
             stats: Dictionary of fun statistics
@@ -375,41 +375,168 @@ class StatisticsVisualizer:
         Returns:
             SVG content as string
         """
-        width = 600
-        height = 300
+        width = 700
+        height = 450
 
         dwg = svgwrite.Drawing(size=(width, height))
         dwg.add(dwg.rect((0, 0), (width, height), fill=self.theme.background_color))
 
-        # Title
+        # Title with flair
         dwg.add(dwg.text(
             f"⚡ Lightning Round Stats - {username}",
             insert=(width // 2, 30),
             text_anchor="middle",
-            font_size="20px",
+            font_size="22px",
             font_family="Arial, sans-serif",
             fill=self.theme.accent_color,
             font_weight="bold",
         ))
 
-        # Fun facts
-        facts = [
-            f"Most active hour: {stats.get('most_active_hour', 'Unknown')}:00",
-            f"Coding pattern: {stats.get('pattern', 'Unknown')}",
-            f"Total repositories: {stats.get('total_repos', 0)}",
-            f"Account age: {stats.get('account_age_days', 0)} days",
-        ]
+        # Extract stats
+        most_active_hour = stats.get('most_active_hour', 0)
+        pattern = stats.get('pattern', 'Unknown')
+        total_repos = stats.get('total_repos', 0)
+        account_age_days = stats.get('account_age_days', 0)
+        total_commits = stats.get('total_commits', 0)
+        languages_count = stats.get('languages_count', 0)
+        total_stars = stats.get('total_stars', 0)
+        avg_commits_per_day = stats.get('avg_commits_per_day', 0)
 
-        start_y = 80
+        # Generate creative fun facts with personality
+        facts = []
+
+        # Time-based facts with personality
+        if most_active_hour >= 22 or most_active_hour <= 4:
+            facts.append(f"🦉 Night Owl Alert! Peaks at {most_active_hour}:00 (coffee budget: infinite)")
+        elif most_active_hour >= 5 and most_active_hour <= 9:
+            facts.append(f"🌅 Early Bird! Most active at {most_active_hour}:00 (the worm is caught!)")
+        else:
+            facts.append(f"☀️ Daytime Coder! Peaks at {most_active_hour}:00 (normal sleep schedule)")
+
+        # Commit velocity with flair
+        if avg_commits_per_day > 10:
+            facts.append(f"🚀 Commit Machine! Averaging {avg_commits_per_day:.1f} commits/day")
+        elif avg_commits_per_day > 5:
+            facts.append(f"💪 Consistent Contributor: {avg_commits_per_day:.1f} commits/day")
+        elif avg_commits_per_day > 1:
+            facts.append(f"📝 Steady Progress: {avg_commits_per_day:.1f} commits/day")
+        else:
+            facts.append(f"🌱 Quality over Quantity: {avg_commits_per_day:.1f} commits/day")
+
+        # Repository count with achievements
+        if total_repos > 100:
+            facts.append(f"🏆 Repository Collector: {total_repos} repos (impressive!)")
+        elif total_repos > 50:
+            facts.append(f"📚 Project Enthusiast: {total_repos} repositories")
+        elif total_repos > 20:
+            facts.append(f"🔧 Builder Mode: {total_repos} active projects")
+        else:
+            facts.append(f"🎯 Focused Developer: {total_repos} repositories")
+
+        # Language diversity
+        if languages_count > 10:
+            facts.append(f"🌐 Polyglot Programmer: {languages_count} languages mastered!")
+        elif languages_count > 5:
+            facts.append(f"🛠️ Multi-Language Dev: {languages_count} languages in toolkit")
+        elif languages_count > 2:
+            facts.append(f"💻 Versatile Coder: {languages_count} languages")
+        else:
+            facts.append(f"🎨 Specialist: {languages_count} language{'s' if languages_count != 1 else ''}")
+
+        # Stars and popularity
+        if total_stars > 1000:
+            facts.append(f"⭐ GitHub Celebrity: {total_stars} stars earned!")
+        elif total_stars > 100:
+            facts.append(f"✨ Community Favorite: {total_stars} stars")
+        elif total_stars > 10:
+            facts.append(f"🌟 Growing Recognition: {total_stars} stars")
+        else:
+            facts.append(f"💫 Building Reputation: {total_stars} stars")
+
+        # Account longevity
+        account_years = account_age_days / 365.25
+        if account_years > 10:
+            facts.append(f"🏛️ GitHub Veteran: {account_age_days} days ({int(account_years)} years!)")
+        elif account_years > 5:
+            facts.append(f"🎖️ Experienced Dev: {account_age_days} days on GitHub")
+        elif account_years > 2:
+            facts.append(f"📅 Established Member: {int(account_years)} years on GitHub")
+        else:
+            facts.append(f"🌱 Growing Journey: {account_age_days} days on GitHub")
+
+        # Total commits milestone
+        if total_commits > 10000:
+            facts.append(f"🔥 Commit Legend: {total_commits:,} total commits!")
+        elif total_commits > 5000:
+            facts.append(f"💥 Commit Master: {total_commits:,} total commits")
+        elif total_commits > 1000:
+            facts.append(f"⚡ Active Developer: {total_commits:,} commits")
+        elif total_commits > 100:
+            facts.append(f"📈 Building Momentum: {total_commits} commits")
+        else:
+            facts.append(f"🚀 Just Getting Started: {total_commits} commits")
+
+        # Coding pattern personality
+        pattern_descriptions = {
+            "night_owl": "🌙 Debugs best after midnight",
+            "early_bird": "🌄 Codes before the world wakes",
+            "balanced": "⚖️ Perfectly balanced workflow",
+            "weekend_warrior": "🎮 Weekend coding sessions",
+            "weekday_grinder": "💼 Monday-Friday hustle",
+        }
+        if pattern in pattern_descriptions:
+            facts.append(pattern_descriptions[pattern])
+
+        # Limit to 8 facts to fit nicely
+        facts = facts[:8]
+
+        # Render facts in two columns
+        left_col_x = 40
+        right_col_x = 370
+        start_y = 70
+        spacing = 45
+
         for i, fact in enumerate(facts):
-            y = start_y + (i * 50)
+            if i < 4:
+                # Left column
+                x = left_col_x
+                y = start_y + (i * spacing)
+            else:
+                # Right column
+                x = right_col_x
+                y = start_y + ((i - 4) * spacing)
+
+            # Add fact with icon and text
             dwg.add(dwg.text(
-                f"• {fact}",
-                insert=(50, y),
-                font_size="18px",
+                fact,
+                insert=(x, y),
+                font_size="16px",
                 font_family="Arial, sans-serif",
                 fill=self.theme.text_color,
             ))
+
+        # Add a fun footer message
+        footer_messages = [
+            "Keep coding, keep sparking! ⚡",
+            "You're doing amazing! 🌟",
+            "The code is strong with this one 💪",
+            "Commits speak louder than words 📝",
+            "Building the future, one commit at a time 🚀",
+        ]
+        import random
+        random.seed(hash(username))  # Consistent message per user
+        footer_msg = random.choice(footer_messages)
+
+        dwg.add(dwg.text(
+            footer_msg,
+            insert=(width // 2, height - 40),
+            text_anchor="middle",
+            font_size="14px",
+            font_family="Arial, sans-serif",
+            fill=self.theme.primary_color,
+            opacity=0.8,
+            font_style="italic",
+        ))
 
         # Powered by footer
         dwg.add(dwg.text(

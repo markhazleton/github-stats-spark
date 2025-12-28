@@ -223,7 +223,12 @@ class GitHubFetcher:
             max_retries: Maximum number of retry attempts
         """
         rate_limit = self.github.get_rate_limit()
-        core_rate = rate_limit.core
+
+        # Handle different PyGithub API versions
+        if hasattr(rate_limit, 'core'):
+            core_rate = rate_limit.core
+        else:
+            core_rate = rate_limit.resources.core
 
         if core_rate.remaining == 0:
             reset_time = core_rate.reset
@@ -241,7 +246,13 @@ class GitHubFetcher:
             Dictionary with rate limit information
         """
         rate_limit = self.github.get_rate_limit()
-        core_rate = rate_limit.core
+
+        # Handle different PyGithub API versions
+        if hasattr(rate_limit, 'core'):
+            core_rate = rate_limit.core
+        else:
+            # Newer PyGithub version uses dict-like access
+            core_rate = rate_limit.resources.core
 
         return {
             "limit": core_rate.limit,

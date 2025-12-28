@@ -1,0 +1,76 @@
+{
+  "profile": {
+    "username": "testuser",
+    "name": "Test User",
+    "public_repos": 50,
+    "followers": 150,
+    "following": 100,
+    "created_at": "2020-01-01T00:00:00Z",
+    "bio": "Test user for Stats Spark"
+  },
+  "repositories": [
+    {
+      "name": "awesome-project",
+      "stars": 250,
+      "forks": 45,
+      "watchers": 30,
+      "language": "Python",
+      "created_at": "2023-01-15T00:00:00Z"
+    },
+    {
+      "name": "web-app",
+      "stars": 150,
+      "forks": 25,
+      "watchers": 20,
+      "language": "JavaScript",
+      "created_at": "2023-06-20T00:00:00Z"
+    },
+    {
+      "name": "data-analysis",
+      "stars": 80,
+      "forks": 10,
+      "watchers": 15,
+      "language": "Python",
+      "created_at": "2024-02-10T00:00:00Z"
+    }
+  ],
+  "commits": [
+    {
+      "sha": "abc123def456",
+      "date": "2025-12-28T10:30:00Z",
+      "message": "Add new feature",
+      "repo": "awesome-project"
+    },
+    {
+      "sha": "def456ghi789",
+      "date": "2025-12-27T14:15:00Z",
+      "message": "Fix bug in API",
+      "repo": "web-app"
+    },
+    {
+      "sha": "ghi789jkl012",
+      "date": "2025-12-27T09:00:00Z",
+      "message": "Update documentation",
+      "repo": "awesome-project"
+    },
+    {
+      "sha": "jkl012mno345",
+      "date": "2025-12-26T23:45:00Z",
+      "message": "Refactor data processing",
+      "repo": "data-analysis"
+    },
+    {
+      "sha": "mno345pqr678",
+      "date": "2025-12-26T01:20:00Z",
+      "message": "Add unit tests",
+      "repo": "web-app"
+    }
+  ],
+  "languages": {
+    "Python": 15000,
+    "JavaScript": 10000,
+    "HTML": 3500,
+    "CSS": 2000,
+    "Shell": 500
+  }
+}

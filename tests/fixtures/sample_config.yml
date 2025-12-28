@@ -1,0 +1,37 @@
+# Sample configuration for testing
+
+user: "testuser"
+
+stats:
+  enabled:
+    - overview
+    - heatmap
+    - languages
+    - fun
+    - streaks
+  thresholds:
+    high_volume_commits: 1000
+    active_contributor_stars: 100
+    night_owl_hour_start: 22
+    night_owl_hour_end: 4
+    early_bird_hour_start: 5
+    early_bird_hour_end: 9
+
+visualization:
+  theme: "spark-dark"
+  effects:
+    glow: true
+    gradient: false
+    animations: false
+  branding:
+    show_powered_by: true
+
+cache:
+  enabled: true
+  ttl_hours: 6
+  directory: ".cache"
+
+repositories:
+  max_count: 500
+  exclude_private: true
+  exclude_forks: false

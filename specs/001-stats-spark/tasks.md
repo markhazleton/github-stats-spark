@@ -24,15 +24,15 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project directory structure per plan.md (src/, tests/, config/, output/, docs/, assets/, .github/workflows/)
-- [ ] T002 Initialize Python project with requirements.txt (PyGithub, PyYAML, svgwrite, requests, python-dateutil)
-- [ ] T003 [P] Create requirements-dev.txt (pytest, pytest-mock, black, flake8, mypy)
-- [ ] T004 [P] Create setup.py with package metadata and entry points
-- [ ] T005 [P] Create .gitignore (exclude .cache/, __pycache__/, *.pyc, .venv/, .env)
-- [ ] T006 [P] Create LICENSE file (MIT License)
-- [ ] T007 [P] Create initial README.md with project description and placeholder instructions
-- [ ] T008 [P] Create output/.gitkeep to ensure directory exists in git
-- [ ] T009 [P] Create output/README.md with SVG usage instructions
+- [x] T001 Create project directory structure per plan.md (src/, tests/, config/, output/, docs/, assets/, .github/workflows/)
+- [x] T002 Initialize Python project with requirements.txt (PyGithub, PyYAML, svgwrite, requests, python-dateutil)
+- [x] T003 [P] Create requirements-dev.txt (pytest, pytest-mock, black, flake8, mypy)
+- [x] T004 [P] Create setup.py with package metadata and entry points
+- [x] T005 [P] Create .gitignore (exclude .cache/, __pycache__/, *.pyc, .venv/, .env)
+- [x] T006 [P] Create LICENSE file (MIT License)
+- [x] T007 [P] Create initial README.md with project description and placeholder instructions
+- [x] T008 [P] Create output/.gitkeep to ensure directory exists in git
+- [x] T009 [P] Create output/README.md with SVG usage instructions
 
 ---
 
@@ -42,17 +42,17 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T010 Create src/__init__.py (package initialization)
-- [ ] T011 Create src/spark/__init__.py with version constant
-- [ ] T012 [P] Implement APICache class in src/spark/cache.py (get, set, is_expired, clear methods with 6-hour TTL)
-- [ ] T013 [P] Implement SparkConfig class in src/spark/config.py (load, validate, get_theme methods for YAML parsing)
-- [ ] T014 Create config/spark.yml with default configuration (user: auto, enabled stats, thresholds, theme: spark-dark, effects)
-- [ ] T015 [P] Create config/themes.yml with theme definitions (spark-dark, spark-light color schemes)
-- [ ] T016 [P] Create src/spark/themes/__init__.py with Theme base class
-- [ ] T017 [P] Implement SparkDarkTheme in src/spark/themes/spark_dark.py (primary: #0EA5E9, accent: #FCD34D, dark background)
-- [ ] T018 [P] Implement SparkLightTheme in src/spark/themes/spark_light.py (bright backgrounds, accessible contrast)
-- [ ] T019 [P] Implement CustomTheme in src/spark/themes/custom.py (loads from themes.yml)
-- [ ] T020 Create logging utility in src/spark/logger.py (stdout/stderr logging with timestamps and error details)
+- [x] T010 Create src/__init__.py (package initialization)
+- [x] T011 Create src/spark/__init__.py with version constant
+- [x] T012 [P] Implement APICache class in src/spark/cache.py (get, set, is_expired, clear methods with 6-hour TTL)
+- [x] T013 [P] Implement SparkConfig class in src/spark/config.py (load, validate, get_theme methods for YAML parsing)
+- [x] T014 Create config/spark.yml with default configuration (user: auto, enabled stats, thresholds, theme: spark-dark, effects)
+- [x] T015 [P] Create config/themes.yml with theme definitions (spark-dark, spark-light color schemes)
+- [x] T016 [P] Create src/spark/themes/__init__.py with Theme base class
+- [x] T017 [P] Implement SparkDarkTheme in src/spark/themes/spark_dark.py (primary: #0EA5E9, accent: #FCD34D, dark background)
+- [x] T018 [P] Implement SparkLightTheme in src/spark/themes/spark_light.py (bright backgrounds, accessible contrast)
+- [x] T019 [P] Implement CustomTheme in src/spark/themes/custom.py (loads from themes.yml)
+- [x] T020 Create logging utility in src/spark/logger.py (stdout/stderr logging with timestamps and error details)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -66,18 +66,18 @@
 
 ### Implementation for User Story 1
 
-- [ ] T021 [P] [US1] Create .github/workflows/generate-stats.yml with cron schedule (0 0 * * *) and workflow_dispatch trigger
-- [ ] T022 [P] [US1] Implement GitHubFetcher class in src/spark/fetcher.py (authentication, fetch_user_profile, fetch_repositories methods)
-- [ ] T023 [US1] Add pagination support to GitHubFetcher.fetch_repositories (handle max 500 repos with configurable limit)
-- [ ] T024 [US1] Add rate limiting handling to GitHubFetcher (detect rate limits, exponential backoff retry)
-- [ ] T025 [US1] Integrate APICache with GitHubFetcher (cache responses for 6 hours, respect force-refresh flag)
-- [ ] T026 [US1] Implement main.py entry point (load config, initialize fetcher, coordinate generation flow)
-- [ ] T027 [US1] Add GitHub token authentication from environment variable (GITHUB_TOKEN from secrets)
-- [ ] T028 [US1] Add username auto-detection in main.py (from GITHUB_REPOSITORY environment variable)
-- [ ] T029 [US1] Implement error logging to workflow output in main.py (capture API errors, config errors, generation failures)
-- [ ] T030 [US1] Configure GitHub Actions workflow to install dependencies and run main.py
-- [ ] T031 [US1] Add workflow output artifact upload (persist generated SVGs)
-- [ ] T032 [US1] Create workflow documentation comment in generate-stats.yml explaining setup steps
+- [x] T021 [P] [US1] Create .github/workflows/generate-stats.yml with cron schedule (0 0 * * *) and workflow_dispatch trigger
+- [x] T022 [P] [US1] Implement GitHubFetcher class in src/spark/fetcher.py (authentication, fetch_user_profile, fetch_repositories methods)
+- [x] T023 [US1] Add pagination support to GitHubFetcher.fetch_repositories (handle max 500 repos with configurable limit)
+- [x] T024 [US1] Add rate limiting handling to GitHubFetcher (detect rate limits, exponential backoff retry)
+- [x] T025 [US1] Integrate APICache with GitHubFetcher (cache responses for 6 hours, respect force-refresh flag)
+- [x] T026 [US1] Implement main.py entry point (load config, initialize fetcher, coordinate generation flow)
+- [x] T027 [US1] Add GitHub token authentication from environment variable (GITHUB_TOKEN from secrets)
+- [x] T028 [US1] Add username auto-detection in main.py (from GITHUB_REPOSITORY environment variable)
+- [x] T029 [US1] Implement error logging to workflow output in main.py (capture API errors, config errors, generation failures)
+- [x] T030 [US1] Configure GitHub Actions workflow to install dependencies and run main.py
+- [x] T031 [US1] Add workflow output artifact upload (persist generated SVGs)
+- [x] T032 [US1] Create workflow documentation comment in generate-stats.yml explaining setup steps
 
 **Checkpoint**: At this point, GitHub Actions workflow can run daily and generate statistics automatically
 
@@ -91,37 +91,37 @@
 
 ### Implementation for User Story 2
 
-- [ ] T033 [P] [US2] Implement StatsCalculator class in src/spark/calculator.py (initialize with user data)
-- [ ] T034 [P] [US2] Add calculate_spark_score method to StatsCalculator (40% consistency, 35% volume, 25% collaboration, 0-100 scale)
-- [ ] T035 [P] [US2] Implement consistency score calculation (regularity of commits over time, gaps penalize score)
-- [ ] T036 [P] [US2] Implement commit volume score calculation (normalized commit count with diminishing returns for very high counts)
-- [ ] T037 [P] [US2] Implement collaboration score calculation (forks, stars, contributors, PR activity)
-- [ ] T038 [US2] Add calculate_lightning_rating method (map 0-100 score to 1-5 lightning bolts)
-- [ ] T039 [P] [US2] Implement analyze_time_patterns method in StatsCalculator (hourly distribution, categorization)
-- [ ] T040 [P] [US2] Add night owl detection (majority commits 22:00-4:00)
-- [ ] T041 [P] [US2] Add early bird detection (majority commits 5:00-9:00)
-- [ ] T042 [P] [US2] Implement aggregate_languages method (percentage breakdown, commit count per language)
-- [ ] T043 [P] [US2] Implement calculate_streaks method (coding streaks, learning streaks for new languages)
-- [ ] T044 [US2] Add fetch_commits method to GitHubFetcher (paginate commits, max 100 per repo, extract timestamps and languages)
-- [ ] T045 [US2] Add fetch_languages method to GitHubFetcher (get language stats for each repository)
-- [ ] T046 [P] [US2] Create StatisticsVisualizer class in src/spark/visualizer.py (coordinate SVG generation, apply themes)
-- [ ] T047 [P] [US2] Implement generate_overview method in StatisticsVisualizer (layout: Spark Score, commits, languages, time pattern)
-- [ ] T048 [P] [US2] Add SVG text rendering with WCAG AA contrast compliance for all themes
-- [ ] T049 [P] [US2] Implement generate_heatmap method (commit frequency calendar visualization)
-- [ ] T050 [P] [US2] Implement generate_languages method (bar chart with percentage labels)
-- [ ] T051 [P] [US2] Implement generate_fun_stats method (Lightning Round Stats one-liners)
-- [ ] T052 [P] [US2] Implement generate_streaks method (current/longest streak visualization)
-- [ ] T053 [US2] Add theme application to all SVG generators (colors, effects from theme config)
-- [ ] T054 [US2] Add gradient and glow effects when enabled in config (SVG filters)
-- [ ] T055 [US2] Implement "Powered by Stats Spark" branding footer (conditional on config.branding.show_powered_by)
-- [ ] T056 [US2] Wire up visualization pipeline in main.py (fetch → calculate → visualize → save SVGs to output/)
-- [ ] T057 [US2] Add graceful handling for users with no commits (display "Start your coding journey!" message)
-- [ ] T058 [US2] Add graceful handling for minimal activity users (show "starter" indicator)
-- [ ] T058a [US2] Add handling for deleted/private repositories (mark as "unavailable" in historical stats per FR-028)
-- [ ] T058b [P] [US2] Write unit tests for StatsCalculator.calculate_spark_score (verify weighted formula, normalization, test fixtures)
-- [ ] T058c [P] [US2] Write unit tests for StatsCalculator.analyze_time_patterns (night owl, early bird, balanced categorization)
-- [ ] T058d [P] [US2] Write unit tests for StatsCalculator.calculate_streaks (coding streaks, learning streaks edge cases)
-- [ ] T058e [P] [US2] Write unit tests for StatisticsVisualizer SVG generation (validate output structure, theme application)
+- [x] T033 [P] [US2] Implement StatsCalculator class in src/spark/calculator.py (initialize with user data)
+- [x] T034 [P] [US2] Add calculate_spark_score method to StatsCalculator (40% consistency, 35% volume, 25% collaboration, 0-100 scale)
+- [x] T035 [P] [US2] Implement consistency score calculation (regularity of commits over time, gaps penalize score)
+- [x] T036 [P] [US2] Implement commit volume score calculation (normalized commit count with diminishing returns for very high counts)
+- [x] T037 [P] [US2] Implement collaboration score calculation (forks, stars, contributors, PR activity)
+- [x] T038 [US2] Add calculate_lightning_rating method (map 0-100 score to 1-5 lightning bolts)
+- [x] T039 [P] [US2] Implement analyze_time_patterns method in StatsCalculator (hourly distribution, categorization)
+- [x] T040 [P] [US2] Add night owl detection (majority commits 22:00-4:00)
+- [x] T041 [P] [US2] Add early bird detection (majority commits 5:00-9:00)
+- [x] T042 [P] [US2] Implement aggregate_languages method (percentage breakdown, commit count per language)
+- [x] T043 [P] [US2] Implement calculate_streaks method (coding streaks, learning streaks for new languages)
+- [x] T044 [US2] Add fetch_commits method to GitHubFetcher (paginate commits, max 100 per repo, extract timestamps and languages)
+- [x] T045 [US2] Add fetch_languages method to GitHubFetcher (get language stats for each repository)
+- [x] T046 [P] [US2] Create StatisticsVisualizer class in src/spark/visualizer.py (coordinate SVG generation, apply themes)
+- [x] T047 [P] [US2] Implement generate_overview method in StatisticsVisualizer (layout: Spark Score, commits, languages, time pattern)
+- [x] T048 [P] [US2] Add SVG text rendering with WCAG AA contrast compliance for all themes
+- [x] T049 [P] [US2] Implement generate_heatmap method (commit frequency calendar visualization)
+- [x] T050 [P] [US2] Implement generate_languages method (bar chart with percentage labels)
+- [x] T051 [P] [US2] Implement generate_fun_stats method (Lightning Round Stats one-liners)
+- [x] T052 [P] [US2] Implement generate_streaks method (current/longest streak visualization)
+- [x] T053 [US2] Add theme application to all SVG generators (colors, effects from theme config)
+- [x] T054 [US2] Add gradient and glow effects when enabled in config (SVG filters)
+- [x] T055 [US2] Implement "Powered by Stats Spark" branding footer (conditional on config.branding.show_powered_by)
+- [x] T056 [US2] Wire up visualization pipeline in main.py (fetch → calculate → visualize → save SVGs to output/)
+- [x] T057 [US2] Add graceful handling for users with no commits (display "Start your coding journey!" message)
+- [x] T058 [US2] Add graceful handling for minimal activity users (show "starter" indicator)
+- [x] T058a [US2] Add handling for deleted/private repositories (mark as "unavailable" in historical stats per FR-028)
+- [x] T058b [P] [US2] Write unit tests for StatsCalculator.calculate_spark_score (verify weighted formula, normalization, test fixtures)
+- [x] T058c [P] [US2] Write unit tests for StatsCalculator.analyze_time_patterns (night owl, early bird, balanced categorization)
+- [x] T058d [P] [US2] Write unit tests for StatsCalculator.calculate_streaks (coding streaks, learning streaks edge cases)
+- [x] T058e [P] [US2] Write unit tests for StatisticsVisualizer SVG generation (validate output structure, theme application)
 
 **Checkpoint**: At this point, comprehensive statistics are generated and saved as SVG files
 
@@ -135,15 +135,15 @@
 
 ### Implementation for User Story 3
 
-- [ ] T059 [US3] Add theme validation to SparkConfig.validate (verify theme exists in themes.yml or is built-in)
-- [ ] T060 [P] [US3] Extend SparkDarkTheme with all color properties (primary, accent, background, text, borders)
-- [ ] T061 [P] [US3] Extend SparkLightTheme with all color properties (ensure WCAG AA contrast for light backgrounds)
-- [ ] T062 [US3] Implement CustomTheme.load_from_yaml (read user-defined colors from themes.yml)
-- [ ] T063 [US3] Add theme preview support in SparkConfig (validate custom themes before generation)
-- [ ] T064 [US3] Update StatisticsVisualizer to apply theme.effects (glow, gradient, animations flags)
-- [ ] T065 [US3] Add WCAG AA compliance validation for custom themes (warn if contrast ratio insufficient, minimum 4.5:1 per SC-005)
-- [ ] T065a [P] [US3] Write unit tests for WCAG contrast validation (test various color combinations, verify warnings)
-- [ ] T066 [US3] Update README.md with theme customization instructions and examples
+- [x] T059 [US3] Add theme validation to SparkConfig.validate (verify theme exists in themes.yml or is built-in)
+- [x] T060 [P] [US3] Extend SparkDarkTheme with all color properties (primary, accent, background, text, borders)
+- [x] T061 [P] [US3] Extend SparkLightTheme with all color properties (ensure WCAG AA contrast for light backgrounds)
+- [x] T062 [US3] Implement CustomTheme.load_from_yaml (read user-defined colors from themes.yml)
+- [x] T063 [US3] Add theme preview support in SparkConfig (validate custom themes before generation)
+- [x] T064 [US3] Update StatisticsVisualizer to apply theme.effects (glow, gradient, animations flags)
+- [x] T065 [US3] Add WCAG AA compliance validation for custom themes (warn if contrast ratio insufficient, minimum 4.5:1 per SC-005)
+- [x] T065a [P] [US3] Write unit tests for WCAG contrast validation (test various color combinations, verify warnings)
+- [x] T066 [US3] Update README.md with theme customization instructions and examples
 
 **Checkpoint**: At this point, users can customize themes and see visual changes in generated SVGs
 
@@ -157,16 +157,16 @@
 
 ### Implementation for User Story 4
 
-- [ ] T067 [US4] Add stats.enabled parsing to SparkConfig (validate category names against allowed list)
-- [ ] T068 [US4] Implement selective generation logic in main.py (check config before generating each SVG)
-- [ ] T069 [US4] Skip overview generation when not in enabled list
-- [ ] T070 [US4] Skip heatmap generation when not in enabled list
-- [ ] T071 [US4] Skip languages generation when not in enabled list
-- [ ] T072 [US4] Skip fun stats generation when not in enabled list
-- [ ] T073 [US4] Skip streaks generation when not in enabled list
-- [ ] T074 [US4] Add performance optimization (skip data fetching for disabled categories)
-- [ ] T075 [US4] Update spark.yml comments explaining each statistics category purpose
-- [ ] T076 [US4] Add configuration validation error messages for invalid category names
+- [x] T067 [US4] Add stats.enabled parsing to SparkConfig (validate category names against allowed list)
+- [x] T068 [US4] Implement selective generation logic in main.py (check config before generating each SVG)
+- [x] T069 [US4] Skip overview generation when not in enabled list
+- [x] T070 [US4] Skip heatmap generation when not in enabled list
+- [x] T071 [US4] Skip languages generation when not in enabled list
+- [x] T072 [US4] Skip fun stats generation when not in enabled list
+- [x] T073 [US4] Skip streaks generation when not in enabled list
+- [x] T074 [US4] Add performance optimization (skip data fetching for disabled categories)
+- [x] T075 [US4] Update spark.yml comments explaining each statistics category purpose
+- [x] T076 [US4] Add configuration validation error messages for invalid category names
 
 **Checkpoint**: At this point, users have granular control over which statistics are generated
 
@@ -180,16 +180,16 @@
 
 ### Implementation for User Story 5
 
-- [ ] T077 [P] [US5] Create src/cli.py with click or argparse CLI framework
-- [ ] T078 [P] [US5] Implement `generate` command in cli.py (--user, --output-dir, --config flags)
-- [ ] T079 [P] [US5] Implement `preview` command in cli.py (--theme flag, generates sample data)
-- [ ] T080 [P] [US5] Implement `config` command in cli.py (--validate, --set subcommands)
-- [ ] T081 [US5] Add sample data generator for preview mode (mock GitHub API responses)
-- [ ] T082 [US5] Wire up local generation flow (load config, fetch or use samples, generate to specified directory)
-- [ ] T083 [US5] Add --force-refresh flag to bypass cache in CLI
-- [ ] T084 [US5] Add verbose logging flag (--verbose) for debugging
-- [ ] T085 [US5] Add CLI help text and usage examples
-- [ ] T086 [US5] Update setup.py with console_scripts entry point for `spark` command
+- [x] T077 [P] [US5] Create src/cli.py with click or argparse CLI framework
+- [x] T078 [P] [US5] Implement `generate` command in cli.py (--user, --output-dir, --config flags)
+- [x] T079 [P] [US5] Implement `preview` command in cli.py (--theme flag, generates sample data)
+- [x] T080 [P] [US5] Implement `config` command in cli.py (--validate, --set subcommands)
+- [x] T081 [US5] Add sample data generator for preview mode (mock GitHub API responses)
+- [x] T082 [US5] Wire up local generation flow (load config, fetch or use samples, generate to specified directory)
+- [x] T083 [US5] Add --force-refresh flag to bypass cache in CLI
+- [x] T084 [US5] Add verbose logging flag (--verbose) for debugging
+- [x] T085 [US5] Add CLI help text and usage examples
+- [x] T086 [US5] Update setup.py with console_scripts entry point for `spark` command
 
 **Checkpoint**: At this point, developers can test and preview locally before deploying to GitHub Actions
 
@@ -203,18 +203,18 @@
 
 ### Implementation for User Story 6
 
-- [ ] T087 [P] [US6] Create docs/getting-started.md with prerequisites and setup steps
-- [ ] T088 [P] [US6] Create docs/embedding-guide.md with markdown examples for each SVG category
-- [ ] T089 [P] [US6] Add markhazleton demo examples to docs/embedding-guide.md (actual working URLs)
-- [ ] T090 [P] [US6] Create docs/configuration.md explaining all spark.yml options
-- [ ] T091 [P] [US6] Create docs/api-reference.md documenting SparkConfig, StatsCalculator, Visualizer classes
-- [ ] T092 [US6] Update README.md with Quick Start section (fork, configure token, enable workflow, embed)
-- [ ] T093 [US6] Add troubleshooting section to README.md (common issues: token expiration, rate limits, workflow failures)
-- [ ] T094 [US6] Create assets/examples/markhazleton/ directory with generated example SVGs
-- [ ] T095 [US6] Generate demo statistics for markhazleton account and commit to assets/examples/
-- [ ] T096 [US6] Add screenshot examples to README.md showing each statistics category
-- [ ] T097 [US6] Create embedding template in README.md with copy-paste markdown snippets
-- [ ] T098 [US6] Add FAQ section addressing common setup questions
+- [x] T087 [P] [US6] Create docs/getting-started.md with prerequisites and setup steps
+- [x] T088 [P] [US6] Create docs/embedding-guide.md with markdown examples for each SVG category
+- [x] T089 [P] [US6] Add markhazleton demo examples to docs/embedding-guide.md (actual working URLs)
+- [x] T090 [P] [US6] Create docs/configuration.md explaining all spark.yml options
+- [x] T091 [P] [US6] Create docs/api-reference.md documenting SparkConfig, StatsCalculator, Visualizer classes
+- [x] T092 [US6] Update README.md with Quick Start section (fork, configure token, enable workflow, embed)
+- [x] T093 [US6] Add troubleshooting section to README.md (common issues: token expiration, rate limits, workflow failures)
+- [x] T094 [US6] Create assets/examples/markhazleton/ directory with generated example SVGs
+- [x] T095 [US6] Generate demo statistics for markhazleton account and commit to assets/examples/
+- [x] T096 [US6] Add screenshot examples to README.md showing each statistics category
+- [x] T097 [US6] Create embedding template in README.md with copy-paste markdown snippets
+- [x] T098 [US6] Add FAQ section addressing common setup questions
 
 **Checkpoint**: At this point, new users can follow clear documentation to set up and embed statistics successfully
 
@@ -224,27 +224,27 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T099 [P] Add special character sanitization for commit messages (prevent SVG injection)
-- [ ] T100 [P] Add text truncation for extremely long commit messages in SVGs
-- [ ] T101 [P] Implement repository limit enforcement (default 500, configurable via spark.yml)
-- [ ] T102 [P] Add "Other" language grouping for unrecognized languages
-- [ ] T103 [P] Add detailed error logging for API failures (include endpoint, status code, retry count)
-- [ ] T104 [P] Optimize SVG file size (minimize whitespace, optimize path data)
-- [ ] T105 [P] Add mobile rendering optimization (responsive SVG dimensions)
-- [ ] T106 [P] Create assets/logo.svg for Stats Spark branding
-- [ ] T107 [P] Add repository privacy check (exclude private repos from statistics)
-- [ ] T108 [P] Implement force-refresh mechanism (bypass cache when explicitly requested)
-- [ ] T109 [P] Add end-to-end integration test in tests/integration/test_end_to_end.py (full workflow with mock GitHub API, verify all SVGs generated, validate SC-007 99% success rate)
-- [ ] T110 [P] Add unit tests for cache TTL logic in tests/unit/test_cache.py (verify 6-hour expiration, force-refresh)
-- [ ] T111 [P] Add unit tests for config parsing in tests/unit/test_config.py (validate FR-015 error messages)
-- [ ] T112 [P] Create test fixtures in tests/fixtures/ (sample_user_data.json, sample_config.yml)
-- [ ] T113 [P] Add unit tests for commit message sanitization in tests/unit/test_visualizer.py (special characters, truncation per edge case #7)
-- [ ] T114 [P] Add accuracy validation test comparing generated stats to known GitHub insights data (verify SC-006 <1% discrepancy)
-- [ ] T115 Run all documentation validation (spelling, broken links, code examples)
-- [ ] T116 Performance profiling and optimization (ensure <5 minute completion for 500 repos per SC-002)
-- [ ] T117 Security audit (token handling, input sanitization, dependency vulnerabilities)
-- [ ] T118 Verify >80% test coverage for core modules (calculator, visualizer, cache per constitution Principle IV)
-- [ ] T119 Final README polish (add badges, improve formatting, add contributing guidelines)
+- [x] T099 [P] Add special character sanitization for commit messages (prevent SVG injection)
+- [x] T100 [P] Add text truncation for extremely long commit messages in SVGs
+- [x] T101 [P] Implement repository limit enforcement (default 500, configurable via spark.yml)
+- [x] T102 [P] Add "Other" language grouping for unrecognized languages
+- [x] T103 [P] Add detailed error logging for API failures (include endpoint, status code, retry count)
+- [x] T104 [P] Optimize SVG file size (minimize whitespace, optimize path data)
+- [x] T105 [P] Add mobile rendering optimization (responsive SVG dimensions)
+- [x] T106 [P] Create assets/logo.svg for Stats Spark branding
+- [x] T107 [P] Add repository privacy check (exclude private repos from statistics)
+- [x] T108 [P] Implement force-refresh mechanism (bypass cache when explicitly requested)
+- [x] T109 [P] Add end-to-end integration test in tests/integration/test_end_to_end.py (full workflow with mock GitHub API, verify all SVGs generated, validate SC-007 99% success rate)
+- [x] T110 [P] Add unit tests for cache TTL logic in tests/unit/test_cache.py (verify 6-hour expiration, force-refresh)
+- [x] T111 [P] Add unit tests for config parsing in tests/unit/test_config.py (validate FR-015 error messages)
+- [x] T112 [P] Create test fixtures in tests/fixtures/ (sample_user_data.json, sample_config.yml)
+- [x] T113 [P] Add unit tests for commit message sanitization in tests/unit/test_visualizer.py (special characters, truncation per edge case #7)
+- [x] T114 [P] Add accuracy validation test comparing generated stats to known GitHub insights data (verify SC-006 <1% discrepancy)
+- [x] T115 Run all documentation validation (spelling, broken links, code examples)
+- [x] T116 Performance profiling and optimization (ensure <5 minute completion for 500 repos per SC-002)
+- [x] T117 Security audit (token handling, input sanitization, dependency vulnerabilities)
+- [x] T118 Verify >80% test coverage for core modules (calculator, visualizer, cache per constitution Principle IV)
+- [x] T119 Final README polish (add badges, improve formatting, add contributing guidelines)
 
 ---
 

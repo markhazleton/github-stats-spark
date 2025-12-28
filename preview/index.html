@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats Spark - Preview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .preview-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .preview-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .preview-box h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .preview-box img {
+            width: 100%;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #1976D2;
+            font-size: 16px;
+        }
+        .info-box ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+        .info-box li {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .single-view {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .single-view img {
+            max-width: 100%;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        @media (max-width: 900px) {
+            .preview-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>⚡ Stats Spark - Theme Preview</h1>
+    <p class="subtitle">Sample visualization with test data</p>
+
+    <div class="info-box">
+        <h3>📊 Preview Data</h3>
+        <ul>
+            <li><strong>Spark Score:</strong> 75.5/100 (⚡⚡⚡⚡ - Strong)</li>
+            <li><strong>Total Commits:</strong> 1,234</li>
+            <li><strong>Top Language:</strong> Python (45.2%)</li>
+            <li><strong>Time Pattern:</strong> Night Owl 🦉</li>
+            <li><strong>Component Scores:</strong> Consistency 80%, Volume 70%, Collaboration 76%</li>
+        </ul>
+    </div>
+
+    <div class="preview-container">
+        <div class="preview-box">
+            <h2>🌙 Spark Dark Theme (Default)</h2>
+            <img src="preview_spark-dark.svg" alt="Spark Dark Theme Preview">
+            <p style="color: #666; font-size: 14px; margin-top: 10px;">
+                <strong>Colors:</strong> Electric blue (#0EA5E9) + Gold (#FCD34D) on dark background
+            </p>
+        </div>
+
+        <div class="preview-box">
+            <h2>☀️ Spark Light Theme</h2>
+            <img src="preview_spark-light.svg" alt="Spark Light Theme Preview">
+            <p style="color: #666; font-size: 14px; margin-top: 10px;">
+                <strong>Colors:</strong> Deep blue (#0369A1) + Deep gold (#CA8A04) - WCAG AA compliant
+            </p>
+        </div>
+    </div>
+
+    <div class="info-box" style="background: #fff3e0; border-left-color: #ff9800;">
+        <h3>🎨 How to Use Themes</h3>
+        <ul>
+            <li>Edit <code>config/spark.yml</code> and set <code>visualization.theme</code></li>
+            <li>Choose: <code>spark-dark</code>, <code>spark-light</code>, or a custom theme from <code>config/themes.yml</code></li>
+            <li>Run <code>python -m spark.cli preview --theme THEME_NAME</code> to preview</li>
+            <li>Custom themes available: ocean, forest, sunset, minimal</li>
+        </ul>
+    </div>
+
+    <div style="text-align: center; color: #666; padding: 20px; border-top: 1px solid #e0e0e0; margin-top: 40px;">
+        <p><strong>⚡ Powered by Stats Spark</strong></p>
+        <p style="font-size: 14px;">
+            <a href="../README.md" style="color: #2196F3;">Documentation</a> •
+            <a href="../docs/getting-started.md" style="color: #2196F3;">Getting Started</a> •
+            <a href="../docs/configuration.md" style="color: #2196F3;">Configuration Guide</a>
+        </p>
+    </div>
+</body>
+</html>

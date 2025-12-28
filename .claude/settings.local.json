@@ -13,7 +13,23 @@
       "Bash(git add:*)",
       "Bash(powershell.exe -Command:*)",
       "Bash(git rev-parse:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(pip install:*)",
+      "Bash(python -m spark.cli:*)",
+      "Bash(start:*)",
+      "Bash(python src/main.py:*)",
+      "Bash(if [ -d \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\specs\\\\001-stats-spark\\\\checklists\" ])",
+      "Bash(then ls -1 \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\specs\\\\001-stats-spark\\\\checklists\")",
+      "Bash(if [ -d \".github/workflows\" ])",
+      "Bash(then ls -la .github/workflows/)",
+      "Bash(if [ -d \"docs\" ])",
+      "Bash(then ls -la docs/)",
+      "Bash(if [ -f \"setup.py\" ])",
+      "Bash(then head -20 setup.py)",
+      "Bash(python update_tasks.py:*)",
+      "Bash(git checkout:*)",
+      "Bash(python:*)"
     ]
   }
 }

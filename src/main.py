@@ -230,11 +230,23 @@ def main():
                 created_at = datetime.fromisoformat(profile["created_at"].replace("Z", "+00:00"))
                 account_age_days = (datetime.now(created_at.tzinfo) - created_at).days
 
+            # Calculate total stars across all repositories
+            total_stars = sum(repo.get("stars", 0) for repo in repositories)
+
+            # Calculate average commits per day
+            avg_commits_per_day = 0
+            if account_age_days > 0:
+                avg_commits_per_day = len(all_commits) / account_age_days
+
             fun_stats = {
                 "most_active_hour": time_patterns.get("most_active_hour", "Unknown"),
                 "pattern": time_patterns.get("category", "Unknown"),
                 "total_repos": len(repositories),
                 "account_age_days": account_age_days,
+                "total_commits": len(all_commits),
+                "languages_count": len(languages),
+                "total_stars": total_stars,
+                "avg_commits_per_day": avg_commits_per_day,
             }
 
             fun_svg = visualizer.generate_fun_stats(

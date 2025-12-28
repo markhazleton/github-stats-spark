@@ -3,7 +3,7 @@
 
 # GitHub username to analyze
 # Use "auto" to detect from GITHUB_REPOSITORY environment variable
-user: auto
+user: markhazleton
 
 # Statistics Configuration
 stats:
