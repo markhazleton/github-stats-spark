@@ -159,6 +159,12 @@ def main():
         streaks = calculator.calculate_streaks()
         logger.info(f"Current Streak: {streaks['current_streak']} days, Longest: {streaks['longest_streak']} days")
 
+        release_cadence = calculator.calculate_release_cadence()
+        logger.info(
+            "Weekly repo diversity peak: %s repos"
+            % release_cadence.get("max_weekly", 0)
+        )
+
         # Get enabled statistics categories
         enabled_stats = config.get_enabled_stats()
         logger.info(f"Enabled statistics: {', '.join(enabled_stats)}")
@@ -271,6 +277,19 @@ def main():
             with open(streaks_path, "w", encoding="utf-8") as f:
                 f.write(streaks_svg)
             logger.info(f"Created: {streaks_path}")
+
+        # Release cadence sparklines
+        if "release" in enabled_stats:
+            logger.info("Generating release.svg...")
+            release_svg = visualizer.generate_release_cadence(
+                cadence=release_cadence,
+                username=username,
+            )
+
+            release_path = output_dir / "release.svg"
+            with open(release_path, "w", encoding="utf-8") as f:
+                f.write(release_svg)
+            logger.info(f"Created: {release_path}")
 
         # Final rate limit check
         final_rate_limit = fetcher.get_rate_limit_status()

@@ -53,6 +53,7 @@ The system will auto-detect your username from the repository, but you can custo
    - `overview.svg` - Comprehensive dashboard
    - `heatmap.svg` - Commit activity calendar
    - `languages.svg` - Programming language breakdown
+   - `release.svg` - Release cadence sparklines (weekly/monthly repo diversity)
    - `fun.svg` - Fun facts and stats
    - `streaks.svg` - Coding streaks
 

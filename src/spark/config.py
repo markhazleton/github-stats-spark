@@ -10,7 +10,7 @@ import yaml
 class SparkConfig:
     """Manages Stats Spark configuration from YAML files."""
 
-    VALID_STATS_CATEGORIES = ["overview", "heatmap", "languages", "fun", "streaks"]
+    VALID_STATS_CATEGORIES = ["overview", "heatmap", "languages", "fun", "streaks", "release"]
     BUILT_IN_THEMES = ["spark-dark", "spark-light"]
 
     def __init__(self, config_path: str = "config/spark.yml"):

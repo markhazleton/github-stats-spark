@@ -42,6 +42,14 @@ Programming languages used:
 ![Top Languages](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/languages.svg)
 ```
 
+### Release Cadence
+
+Weekly and monthly repo diversity sparklines:
+
+```markdown
+![Release Cadence](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/release.svg)
+```
+
 ### Fun Stats
 
 Lightning round facts and one-liners:

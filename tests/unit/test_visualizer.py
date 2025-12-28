@@ -130,6 +130,33 @@ class TestSVGGeneration:
         assert "23" in svg or "11 PM" in svg
         assert "Night Owl" in svg or "night" in svg.lower()
 
+    def test_generate_release_cadence_structure(self):
+        """Test release cadence SVG structure."""
+        theme = SparkDarkTheme()
+        visualizer = StatisticsVisualizer(theme)
+
+        cadence = {
+            "weekly": [
+                {"label": "W01", "repos": 1, "start": "2025-01-01", "range_label": "Jan 01 - Jan 07"},
+                {"label": "W02", "repos": 3, "start": "2025-01-08", "range_label": "Jan 08 - Jan 14"},
+            ],
+            "monthly": [
+                {"label": "Jan", "repos": 2, "start": "2025-01-01", "range_label": "Jan 2025"},
+                {"label": "Feb", "repos": 4, "start": "2025-02-01", "range_label": "Feb 2025"},
+            ],
+            "max_weekly": 3,
+            "max_monthly": 4,
+            "unique_repos": 5,
+        }
+
+        svg = visualizer.generate_release_cadence(cadence, "testuser")
+
+        assert svg.startswith("<?xml")
+        assert "Release Cadence" in svg
+        assert "Weekly Repo Diversity" in svg
+        assert "Monthly Repo Diversity" in svg
+        assert "Peak" in svg
+
     def test_generate_streaks_structure(self):
         """Test streaks SVG structure."""
         theme = SparkLightTheme()

@@ -32,6 +32,7 @@ stats:
     - languages   # Programming language breakdown
     - fun         # Lightning Round Stats
     - streaks     # Coding and learning streaks
+    - release     # Weekly/monthly release cadence sparklines
 
   # Thresholds for categorization
   thresholds:
@@ -46,6 +47,7 @@ stats:
 - `overview`: Main dashboard with Spark Score, commits, languages, time pattern
 - `heatmap`: GitHub-style contribution heatmap
 - `languages`: Bar chart of programming languages
+- `release`: Sparklines showing how many repos you touch weekly/monthly
 - `fun`: Fun facts and one-liners
 - `streaks`: Current and longest coding streaks
 

@@ -11,6 +11,7 @@ Stats Spark automatically analyzes your GitHub activity and generates stunning S
 
 - **⚡ Spark Score**: Unique 0-100 metric combining consistency, volume, and collaboration
 - **📊 Comprehensive Statistics**: Commits, languages, time patterns, and more
+- **📈 Release Cadence**: Weekly/monthly repo diversity sparklines to highlight breadth of work
 - **🎨 Beautiful Themes**: Dark, light, and custom themes with WCAG AA compliance
 - **🤖 Fully Automated**: Runs daily via GitHub Actions at midnight UTC
 - **🎯 Selective Output**: Choose which statistics to generate
@@ -58,6 +59,7 @@ Stats Spark generates 5 SVG categories:
 | **Overview** | Spark Score, commits, languages, time pattern | `overview.svg` |
 | **Heatmap** | Commit frequency calendar | `heatmap.svg` |
 | **Languages** | Programming language breakdown | `languages.svg` |
+| **Release Cadence** | Weekly + monthly repo diversity sparklines | `release.svg` |
 | **Fun Stats** ⚡ **ENHANCED** | 8 personality-driven achievements with emoji flair | `fun.svg` |
 | **Streaks** | Current and longest coding streaks | `streaks.svg` |
 

@@ -1,6 +1,6 @@
 """SVG visualization generation for GitHub statistics."""
 
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any, Optional, Tuple
 import svgwrite
 from svgwrite import Drawing
 from datetime import datetime
@@ -430,6 +430,170 @@ class StatisticsVisualizer:
             ))
 
         # Powered by footer
+        dwg.add(dwg.text(
+            "⚡ Generated with Stats Spark",
+            insert=(width - 10, height - 10),
+            text_anchor="end",
+            font_size="10px",
+            font_family="Arial, sans-serif",
+            fill=self.theme.border_color,
+            opacity=0.7,
+        ))
+
+        return dwg.tostring()
+
+    def generate_release_cadence(
+        self,
+        cadence: Dict[str, Any],
+        username: str,
+    ) -> str:
+        """Generate release cadence sparklines for weekly/monthly repo touchpoints."""
+        width = 900
+        height = 420
+
+        dwg = svgwrite.Drawing(size=(width, height))
+        dwg.add(dwg.rect((0, 0), (width, height), fill=self.theme.background_color))
+
+        # Title
+        dwg.add(dwg.text(
+            f"Release Cadence - {username}",
+            insert=(width // 2, 40),
+            text_anchor="middle",
+            font_size="26px",
+            font_family="Arial, sans-serif",
+            fill=self.theme.text_color,
+            font_weight="bold",
+        ))
+
+        unique_repos = cadence.get("unique_repos", 0)
+        dwg.add(dwg.text(
+            f"Unique repositories touched in period: {unique_repos}",
+            insert=(width // 2, 70),
+            text_anchor="middle",
+            font_size="14px",
+            font_family="Arial, sans-serif",
+            fill=self.theme.border_color,
+        ))
+
+        panel_width = 360
+        panel_height = 220
+        start_x = 40
+        start_y = 100
+        gutter = 80
+
+        sections = [
+            ("Weekly Repo Diversity", cadence.get("weekly", []), cadence.get("max_weekly", 0)),
+            ("Monthly Repo Diversity", cadence.get("monthly", []), cadence.get("max_monthly", 0)),
+        ]
+
+        for index, (title, series, max_value) in enumerate(sections):
+            panel_x = start_x + index * (panel_width + gutter)
+            panel_y = start_y
+
+            dwg.add(dwg.rect(
+                (panel_x, panel_y),
+                (panel_width, panel_height),
+                fill=self.theme.border_color,
+                opacity=0.15,
+                rx=16,
+            ))
+
+            dwg.add(dwg.text(
+                title,
+                insert=(panel_x + 20, panel_y + 30),
+                font_size="18px",
+                font_family="Arial, sans-serif",
+                fill=self.theme.text_color,
+                font_weight="bold",
+            ))
+
+            if not series:
+                dwg.add(dwg.text(
+                    "No activity yet",
+                    insert=(panel_x + panel_width / 2, panel_y + panel_height / 2),
+                    text_anchor="middle",
+                    font_size="14px",
+                    font_family="Arial, sans-serif",
+                    fill=self.theme.border_color,
+                ))
+                continue
+
+            max_value = max(1, max_value)
+            chart_top = panel_y + 50
+            chart_height = panel_height - 100
+            chart_bottom = chart_top + chart_height
+            chart_left = panel_x + 20
+            chart_right = panel_x + panel_width - 20
+
+            dwg.add(dwg.line(
+                start=(chart_left, chart_bottom),
+                end=(chart_right, chart_bottom),
+                stroke=self.theme.border_color,
+                stroke_width=1,
+                opacity=0.4,
+            ))
+
+            point_count = len(series)
+            step = 0 if point_count <= 1 else (chart_right - chart_left) / (point_count - 1)
+
+            points: List[Tuple[float, float]] = []
+            for idx, point in enumerate(series):
+                value = point.get("repos", 0)
+                ratio = value / max_value if max_value else 0
+                x_pos = chart_left + (idx * step if step else 0)
+                y_pos = chart_bottom - (ratio * chart_height)
+                points.append((x_pos, y_pos))
+
+            dwg.add(dwg.polyline(
+                points=points,
+                fill="none",
+                stroke=self.theme.primary_color,
+                stroke_width=3,
+                stroke_linejoin="round",
+                stroke_linecap="round",
+            ))
+
+            for (x_pos, y_pos), point in zip(points, series):
+                marker = dwg.circle(center=(x_pos, y_pos), r=4, fill=self.theme.accent_color)
+                marker.set_desc(title=f"{point.get('label')}: {point.get('repos', 0)} repos")
+                dwg.add(marker)
+
+            baseline_points = points + [(chart_right, chart_bottom), (chart_left, chart_bottom)]
+            dwg.add(dwg.polygon(
+                points=baseline_points,
+                fill=self.theme.primary_color,
+                opacity=0.1,
+            ))
+
+            first_label = series[0].get("label", "")
+            last_label = series[-1].get("label", "")
+
+            dwg.add(dwg.text(
+                first_label,
+                insert=(chart_left, chart_bottom + 20),
+                font_size="12px",
+                font_family="Arial, sans-serif",
+                fill=self.theme.text_color,
+            ))
+
+            dwg.add(dwg.text(
+                last_label,
+                insert=(chart_right, chart_bottom + 20),
+                font_size="12px",
+                font_family="Arial, sans-serif",
+                fill=self.theme.text_color,
+                text_anchor="end",
+            ))
+
+            peak_point = max(series, key=lambda item: item.get("repos", 0))
+            dwg.add(dwg.text(
+                f"Peak: {peak_point.get('repos', 0)} repos ({peak_point.get('label', '')})",
+                insert=(panel_x + 20, panel_y + panel_height - 20),
+                font_size="12px",
+                font_family="Arial, sans-serif",
+                fill=self.theme.border_color,
+            ))
+
         dwg.add(dwg.text(
             "⚡ Generated with Stats Spark",
             insert=(width - 10, height - 10),

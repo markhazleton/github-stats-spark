@@ -7,6 +7,7 @@ This directory contains the automatically generated SVG statistics visualization
 - **overview.svg**: Comprehensive dashboard with Spark Score, commits, languages, and time patterns
 - **heatmap.svg**: Commit frequency calendar visualization
 - **languages.svg**: Programming language usage breakdown
+- **release.svg**: Weekly/monthly release cadence sparklines
 - **fun.svg**: Lightning Round Stats - fun facts and one-liners
 - **streaks.svg**: Current and longest coding streaks
 

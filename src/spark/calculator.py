@@ -1,7 +1,7 @@
 """Statistics calculation for GitHub activity data."""
 
 from typing import Dict, List, Any, Tuple
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from collections import defaultdict, Counter
 import math
 
@@ -344,4 +344,111 @@ class StatsCalculator:
             "longest_streak": longest_streak,
             "current_learning_streak": current_learning_streak,
             "longest_learning_streak": longest_learning_streak,
+        }
+
+    def calculate_release_cadence(self, weeks: int = 12, months: int = 12) -> Dict[str, Any]:
+        """Calculate unique repository cadence for weekly and monthly periods.
+
+        Args:
+            weeks: Number of trailing weeks to include
+            months: Number of trailing months to include
+
+        Returns:
+            Dictionary containing weekly and monthly repo diversity data
+        """
+        weeks = max(1, weeks)
+        months = max(1, months)
+
+        commit_records: List[Tuple[date, str]] = []
+        unique_repos = set()
+
+        for commit in self.commits:
+            repo_name = commit.get("repo")
+            date_str = commit.get("date")
+            if not repo_name or not date_str:
+                continue
+
+            try:
+                commit_dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+            except ValueError:
+                continue
+
+            commit_records.append((commit_dt.date(), repo_name))
+            unique_repos.add(repo_name)
+
+        if not commit_records:
+            return {
+                "weekly": [{"label": f"W{str(i + 1).zfill(2)}", "repos": 0, "start": None, "range_label": ""}
+                            for i in range(weeks)],
+                "monthly": [{"label": "", "repos": 0, "start": None, "range_label": ""}
+                             for _ in range(months)],
+                "max_weekly": 0,
+                "max_monthly": 0,
+                "unique_repos": 0,
+            }
+
+        latest_date = max(record[0] for record in commit_records)
+
+        week_sets: Dict[date, set] = defaultdict(set)
+        month_sets: Dict[date, set] = defaultdict(set)
+
+        for commit_date, repo_name in commit_records:
+            week_start = commit_date - timedelta(days=commit_date.weekday())
+            week_sets[week_start].add(repo_name)
+
+            month_start = commit_date.replace(day=1)
+            month_sets[month_start].add(repo_name)
+
+        week_anchor = latest_date - timedelta(days=latest_date.weekday())
+        weekly_series: List[Dict[str, Any]] = []
+
+        for offset in range(weeks - 1, -1, -1):
+            week_start = week_anchor - timedelta(weeks=offset)
+            repo_count = len(week_sets.get(week_start, set()))
+            week_end = week_start + timedelta(days=6)
+            week_label = f"W{week_start.isocalendar()[1]:02d}"
+            weekly_series.append({
+                "label": week_label,
+                "repos": repo_count,
+                "start": week_start.isoformat(),
+                "range_label": f"{week_start.strftime('%b %d')} - {week_end.strftime('%b %d')}",
+            })
+
+        def previous_month_start(date_val: date) -> date:
+            year = date_val.year
+            month = date_val.month - 1
+            if month == 0:
+                month = 12
+                year -= 1
+            return date_val.replace(year=year, month=month, day=1)
+
+        month_anchor = latest_date.replace(day=1)
+        month_starts = []
+        current = month_anchor
+        for _ in range(months):
+            month_starts.append(current)
+            current = previous_month_start(current)
+        month_starts.reverse()
+
+        monthly_series: List[Dict[str, Any]] = []
+        for month_start in month_starts:
+            repo_count = len(month_sets.get(month_start, set()))
+            month_label = month_start.strftime("%b")
+            long_label = month_start.strftime("%b %Y")
+            monthly_series.append({
+                "label": month_label,
+                "repos": repo_count,
+                "start": month_start.isoformat(),
+                "range_label": long_label,
+            })
+
+        max_weekly = max((point["repos"] for point in weekly_series), default=0)
+        max_monthly = max((point["repos"] for point in monthly_series), default=0)
+
+        return {
+            "weekly": weekly_series,
+            "monthly": monthly_series,
+            "max_weekly": max_weekly,
+            "max_monthly": max_monthly,
+            "unique_repos": len(unique_repos),
         }

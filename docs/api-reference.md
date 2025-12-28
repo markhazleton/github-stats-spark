@@ -269,6 +269,27 @@ print(f"Current streak: {streaks['current_streak']} days")
 print(f"Longest streak: {streaks['longest_streak']} days")
 ```
 
+##### `calculate_release_cadence(weeks: int = 12, months: int = 12) -> Dict[str, Any]`
+
+Compute weekly and monthly unique repository touchpoints for cadence sparklines.
+
+**Parameters:**
+- `weeks` (int): Number of trailing weeks to summarize
+- `months` (int): Number of trailing months to summarize
+
+**Returns:**
+- `Dict[str, Any]` with fields:
+  - `weekly` (List[Dict]): Ordered list of week labels and repo counts
+  - `monthly` (List[Dict]): Ordered list of month labels and repo counts
+  - `max_weekly` / `max_monthly` (int): Peak repo counts for scaling
+  - `unique_repos` (int): Unique repositories touched in the sampled periods
+
+**Example:**
+```python
+cadence = calculator.calculate_release_cadence()
+print(cadence["weekly"][-1])  # {'label': 'W08', 'repos': 5, ...}
+```
+
 ---
 
 ### `spark.visualizer.StatisticsVisualizer`
@@ -382,6 +403,28 @@ Generate language breakdown bar chart.
 **Example:**
 ```python
 svg = visualizer.generate_languages("markhazleton", languages)
+```
+
+##### `generate_release_cadence(...) -> str`
+
+Generate paired weekly/monthly repo diversity sparklines.
+
+**Parameters:**
+- `username` (str): GitHub username label
+- `cadence` (Dict[str, Any]): Output from `calculate_release_cadence`
+
+**Returns:**
+- `str`: SVG content (900×420 pixels)
+
+**Features:**
+- Two side-by-side panels (weekly + monthly)
+- Sparkline with area fill and peak indicators
+- Tooltips describing repo count per period
+
+**Example:**
+```python
+cadence = calculator.calculate_release_cadence()
+svg = visualizer.generate_release_cadence(cadence, "markhazleton")
 ```
 
 ##### `generate_fun_stats(...) -> str`

@@ -211,3 +211,41 @@ class TestLanguages:
         assert len(languages) <= 10
         if len(languages) == 10:
             assert languages[-1]["name"] == "Other"
+
+
+class TestReleaseCadence:
+    """Test release cadence calculations."""
+
+    def test_release_cadence_counts_unique_repos(self):
+        """Ensure weekly/monthly cadence counts unique repositories."""
+        profile = {"username": "testuser"}
+        calculator = StatsCalculator(profile, [])
+
+        base_week_start = datetime(2025, 2, 3)  # Monday anchor
+        schedule = [
+            (3, ["repo-z"]),
+            (2, ["repo-z", "repo-y"]),
+            (1, ["repo-y"]),
+            (0, ["repo-x", "repo-y"]),
+        ]
+
+        commits = []
+        for weeks_ago, repos in schedule:
+            commit_day = base_week_start - timedelta(weeks=weeks_ago)
+            for idx, repo in enumerate(repos):
+                commits.append({
+                    "sha": f"{repo}-{weeks_ago}-{idx}",
+                    "date": commit_day.isoformat(),
+                    "repo": repo,
+                    "message": "test",
+                })
+
+        calculator.add_commits(commits)
+        cadence = calculator.calculate_release_cadence(weeks=4, months=3)
+
+        assert len(cadence["weekly"]) == 4
+        assert cadence["weekly"][0]["repos"] == 1  # oldest week touches one repo
+        assert cadence["weekly"][-1]["repos"] == 2  # current week touches two repos
+        assert cadence["monthly"][-1]["repos"] == 2
+        assert cadence["unique_repos"] == 3
+        assert cadence["max_weekly"] >= cadence["weekly"][-1]["repos"]

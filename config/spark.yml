@@ -15,6 +15,7 @@ stats:
     - languages   # Programming language breakdown
     - fun         # Lightning Round Stats - fun facts
     - streaks     # Coding and learning streaks
+    - release     # Release cadence sparklines (weekly/monthly repo diversity)
 
   # Thresholds for categorization
   thresholds:
@@ -39,6 +40,7 @@ visualization:
     - languages
     - fun
     - streaks
+    - release
 
   # Visual effects
   effects:
