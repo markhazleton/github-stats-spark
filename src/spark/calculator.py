@@ -71,6 +71,9 @@ class StatsCalculator:
     def _calculate_consistency_score(self) -> float:
         """Calculate consistency score based on commit regularity.
 
+        Measures how consistently you commit across weeks.
+        Combines both regularity (lower variance) and activity rate.
+
         Returns:
             Score from 0-100
         """
@@ -88,17 +91,41 @@ class StatsCalculator:
         if not week_commits:
             return 0.0
 
-        # Calculate standard deviation of weekly commits
+        # Calculate weekly activity metrics
         weekly_counts = list(week_commits.values())
+        total_weeks_with_commits = len(weekly_counts)
         mean = sum(weekly_counts) / len(weekly_counts)
+        
+        # Calculate coefficient of variation (normalized std dev)
+        if mean == 0:
+            return 0.0
+            
         variance = sum((x - mean) ** 2 for x in weekly_counts) / len(weekly_counts)
         std_dev = math.sqrt(variance)
-
-        # Lower std_dev = more consistent = higher score
-        # Normalize: perfect consistency (std_dev=0) = 100, high variance = 0
-        max_std_dev = mean + 1  # Avoid division by zero
-        consistency = max(0, 100 * (1 - (std_dev / max_std_dev)))
-
+        cv = std_dev / mean  # Coefficient of variation
+        
+        # Calculate activity rate (weeks with commits / total weeks in period)
+        if self.commits:
+            dates = [datetime.fromisoformat(c["date"].replace("Z", "+00:00")) 
+                    for c in self.commits if c.get("date")]
+            if dates:
+                oldest = min(dates)
+                newest = max(dates)
+                total_weeks = max(1, ((newest - oldest).days + 1) / 7)
+                activity_rate = min(1.0, total_weeks_with_commits / total_weeks)
+            else:
+                activity_rate = 0.0
+        else:
+            activity_rate = 0.0
+        
+        # Score based on both regularity (lower CV = better) and activity rate
+        # CV of 0 = perfect consistency, CV > 2 = very inconsistent
+        regularity_score = max(0, min(100, 100 * (1 - min(cv / 2, 1))))
+        activity_score = activity_rate * 100
+        
+        # Combine: 60% regularity, 40% activity rate
+        consistency = (regularity_score * 0.6) + (activity_score * 0.4)
+        
         return min(100, consistency)
 
     def _calculate_volume_score(self) -> float:
