@@ -224,8 +224,17 @@ class StatisticsVisualizer:
         Returns:
             SVG content as string
         """
-        width = 900
-        height = 200
+        from datetime import datetime, timedelta
+        
+        # Calculate dimensions
+        cell_size = 12
+        cell_gap = 2
+        weeks_to_show = 53  # Show full year
+        start_x = 80
+        start_y = 80
+        
+        width = start_x + (weeks_to_show * (cell_size + cell_gap)) + 40
+        height = start_y + (7 * (cell_size + cell_gap)) + 60
 
         dwg = svgwrite.Drawing(size=(width, height))
         dwg.add(dwg.rect((0, 0), (width, height), fill=self.theme.background_color))
@@ -233,38 +242,110 @@ class StatisticsVisualizer:
         # Title
         dwg.add(dwg.text(
             f"Commit Activity Heatmap - {username}",
-            insert=(width // 2, 30),
+            insert=(width // 2, 35),
             text_anchor="middle",
-            font_size="20px",
+            font_size="22px",
             font_family="Arial, sans-serif",
             fill=self.theme.text_color,
             font_weight="bold",
         ))
 
-        # Heatmap grid
-        cell_size = 12
-        cell_gap = 2
-        start_x = 50
-        start_y = 60
-
-        # Create sample heatmap (would be based on actual commit data)
-        max_commits = max(commits_by_date.values()) if commits_by_date else 1
-
-        for week in range(52):
-            for day in range(7):
-                x = start_x + (week * (cell_size + cell_gap))
-                y = start_y + (day * (cell_size + cell_gap))
-
-                # Sample intensity (would be based on actual data)
-                intensity = 0.2 + (0.8 * ((week + day) % 5) / 5)
-
-                dwg.add(dwg.rect(
-                    (x, y),
-                    (cell_size, cell_size),
-                    fill=self.theme.primary_color,
-                    opacity=intensity,
-                    rx=2,
+        # Day labels (Sun-Sat)
+        day_labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+        for i, label in enumerate(day_labels):
+            if i % 2 == 1:  # Show every other day to avoid clutter
+                y = start_y + (i * (cell_size + cell_gap)) + cell_size // 2 + 4
+                dwg.add(dwg.text(
+                    label,
+                    insert=(start_x - 35, y),
+                    font_size="10px",
+                    font_family="Arial, sans-serif",
+                    fill=self.theme.border_color,
+                    text_anchor="end",
                 ))
+
+        # Calculate max commits for intensity scaling
+        max_commits = max(commits_by_date.values()) if commits_by_date else 1
+        
+        # Get date range (last 365 days)
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=364)
+        
+        # Create date grid
+        current_date = start_date
+        week_index = 0
+        date_to_position = {}
+        
+        # Build grid positions
+        while current_date <= end_date:
+            day_of_week = current_date.weekday()
+            # Convert to Sunday-based week (0=Sunday)
+            day_index = (day_of_week + 1) % 7
+            date_str = current_date.strftime("%Y-%m-%d")
+            
+            date_to_position[date_str] = (week_index, day_index)
+            
+            # Move to next week on Saturday
+            if day_index == 6:
+                week_index += 1
+            
+            current_date += timedelta(days=1)
+
+        # Draw cells
+        for date_str, (week, day) in date_to_position.items():
+            x = start_x + (week * (cell_size + cell_gap))
+            y = start_y + (day * (cell_size + cell_gap))
+            
+            # Get commit count for this date
+            commit_count = commits_by_date.get(date_str, 0)
+            
+            # Calculate intensity based on commits
+            if commit_count == 0:
+                opacity = 0.1
+                fill_color = self.theme.border_color
+            else:
+                # Scale intensity from 0.3 to 1.0 based on commit count
+                intensity = min(commit_count / max_commits, 1.0)
+                opacity = 0.3 + (0.7 * intensity)
+                fill_color = self.theme.primary_color
+            
+            dwg.add(dwg.rect(
+                (x, y),
+                (cell_size, cell_size),
+                fill=fill_color,
+                opacity=opacity,
+                rx=2,
+            ))
+
+        # Legend
+        legend_y = height - 35
+        legend_x = start_x
+        dwg.add(dwg.text(
+            "Less",
+            insert=(legend_x, legend_y + 12),
+            font_size="10px",
+            font_family="Arial, sans-serif",
+            fill=self.theme.border_color,
+        ))
+        
+        for i in range(5):
+            x = legend_x + 35 + (i * (cell_size + cell_gap + 2))
+            opacity = 0.2 + (i * 0.2)
+            dwg.add(dwg.rect(
+                (x, legend_y),
+                (cell_size, cell_size),
+                fill=self.theme.primary_color,
+                opacity=opacity,
+                rx=2,
+            ))
+        
+        dwg.add(dwg.text(
+            "More",
+            insert=(legend_x + 35 + (5 * (cell_size + cell_gap + 2)) + 5, legend_y + 12),
+            font_size="10px",
+            font_family="Arial, sans-serif",
+            fill=self.theme.border_color,
+        ))
 
         # Powered by footer
         dwg.add(dwg.text(
