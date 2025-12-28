@@ -1,0 +1,65 @@
+# Stats Spark Configuration
+# GitHub Profile Statistics Generator
+
+# GitHub username to analyze
+# Use "auto" to detect from GITHUB_REPOSITORY environment variable
+user: auto
+
+# Statistics Configuration
+stats:
+  # Enabled statistics categories (choose which SVGs to generate)
+  # Available: overview, heatmap, languages, fun, streaks
+  enabled:
+    - overview    # Comprehensive dashboard with Spark Score
+    - heatmap     # Commit frequency calendar
+    - languages   # Programming language breakdown
+    - fun         # Lightning Round Stats - fun facts
+    - streaks     # Coding and learning streaks
+
+  # Thresholds for categorization
+  thresholds:
+    graveyard_months: 6        # Months of inactivity to mark as inactive
+    starter_commits: 50        # Commits threshold for "starter" designation
+    power_user_commits: 1000   # Commits threshold for "power user" designation
+    night_owl_hours: [22, 23, 0, 1, 2, 3, 4]    # Hours for night owl detection
+    early_bird_hours: [5, 6, 7, 8, 9]           # Hours for early bird detection
+
+# Visualization Configuration
+visualization:
+  # Theme: spark-dark, spark-light, or custom theme name from themes.yml
+  theme: spark-dark
+
+  # Visual style: electric (default), minimal, detailed
+  style: electric
+
+  # SVG output categories (same as stats.enabled, kept for compatibility)
+  outputs:
+    - overview
+    - heatmap
+    - languages
+    - fun
+    - streaks
+
+  # Visual effects
+  effects:
+    glow: true        # Enable glow effects
+    animations: false # Enable animations (not supported in GitHub READMEs)
+    gradient: true    # Enable gradient fills
+
+# Branding Configuration
+branding:
+  show_logo: true             # Show Stats Spark logo
+  show_powered_by: true       # Show "Powered by Stats Spark" footer
+  custom_footer: ""           # Custom footer text (optional)
+
+# Cache Configuration
+cache:
+  enabled: true               # Enable API response caching
+  ttl_hours: 6                # Cache time-to-live in hours
+  directory: .cache           # Cache directory
+
+# Repository Limits
+repositories:
+  max_count: 500              # Maximum repositories to process
+  exclude_private: true       # Exclude private repositories (per constitution)
+  exclude_forks: false        # Exclude forked repositories

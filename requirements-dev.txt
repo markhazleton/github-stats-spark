@@ -1,0 +1,19 @@
+# Stats Spark - Development Dependencies
+
+# Testing framework
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
+
+# Code formatting
+black>=23.7.0
+
+# Linting
+flake8>=6.1.0
+flake8-docstrings>=1.7.0
+
+# Type checking
+mypy>=1.5.0
+
+# Include production dependencies
+-r requirements.txt

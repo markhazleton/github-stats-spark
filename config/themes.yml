@@ -1,0 +1,78 @@
+# Stats Spark Themes Configuration
+# Define custom color schemes for SVG visualizations
+
+# Built-in themes: spark-dark, spark-light
+# To use a built-in theme, set visualization.theme in spark.yml
+
+# Custom Themes
+# Define your own themes here with custom colors and effects
+custom_themes:
+  # Example: Ocean theme
+  ocean:
+    colors:
+      primary: "#06B6D4"      # Cyan
+      accent: "#8B5CF6"       # Purple
+      background: "#0C4A6E"   # Deep blue
+      text: "#E0F2FE"         # Light cyan
+      border: "#075985"       # Medium blue
+
+    effects:
+      glow: true
+      gradient: true
+      animations: false
+
+  # Example: Forest theme
+  forest:
+    colors:
+      primary: "#10B981"      # Green
+      accent: "#F59E0B"       # Amber
+      background: "#064E3B"   # Dark green
+      text: "#D1FAE5"         # Light green
+      border: "#047857"       # Medium green
+
+    effects:
+      glow: true
+      gradient: true
+      animations: false
+
+  # Example: Sunset theme
+  sunset:
+    colors:
+      primary: "#F97316"      # Orange
+      accent: "#EC4899"       # Pink
+      background: "#7C2D12"   # Dark orange
+      text: "#FED7AA"         # Light orange
+      border: "#C2410C"       # Medium orange
+
+    effects:
+      glow: true
+      gradient: true
+      animations: false
+
+  # Example: Minimal theme (high contrast, no effects)
+  minimal:
+    colors:
+      primary: "#000000"      # Black
+      accent: "#6B7280"       # Gray
+      background: "#FFFFFF"   # White
+      text: "#111827"         # Dark gray
+      border: "#D1D5DB"       # Light gray
+
+    effects:
+      glow: false
+      gradient: false
+      animations: false
+
+# Theme Guidelines:
+# - Ensure WCAG AA contrast ratio (4.5:1 minimum) between text and background
+# - Primary color: Main elements (bars, graphs, headers)
+# - Accent color: Highlights, special elements, Spark Score
+# - Background: SVG background color
+# - Text: All text elements
+# - Border: Borders, dividers, grid lines
+# - Effects: Visual enhancements (glow, gradient, animations)
+
+# To use a custom theme:
+# 1. Define it above with colors and effects
+# 2. Set visualization.theme in spark.yml to the theme name (e.g., "ocean")
+# 3. Run generation to see your custom theme applied
