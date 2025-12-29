@@ -211,7 +211,7 @@ def handle_analyze(args, logger):
         cache = APICache()
         fetcher = GitHubFetcher(cache=cache)
         ranker = RepositoryRanker(config=config.config.get("analyzer", {}).get("ranking_weights"))
-        summarizer = RepositorySummarizer()
+        summarizer = RepositorySummarizer(cache=cache)  # Pass cache to save tokens!
         profile_generator = UserProfileGenerator(summarizer)
         report_generator = ReportGenerator()
 
@@ -335,8 +335,15 @@ def handle_analyze(args, logger):
         logger.info(f"   Repositories: {len(repository_analyses)}")
         logger.info(f"   AI Summaries: {report.ai_summary_rate:.1f}%")
         logger.info(f"   Generation Time: {report.generation_time_seconds:.1f}s")
+
+        # AI usage and cache statistics
         if summarizer.total_cost > 0:
-            logger.info(f"   AI Cost: ${summarizer.total_cost:.4f}")
+            stats = summarizer.get_usage_stats()
+            logger.info(f"   AI Cost: ${stats['total_cost_usd']:.4f}")
+            logger.info(f"   Cache Hit Rate: {stats['cache_hit_rate']} ({stats['cache_hits']} hits / {stats['cache_misses']} misses)")
+            if stats['cache_hits'] > 0:
+                logger.info(f"   Tokens Saved: ~{stats['tokens_saved_estimate']:,} (from cache)")
+
         logger.info("="*60)
 
     except Exception as e:

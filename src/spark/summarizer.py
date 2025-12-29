@@ -8,6 +8,7 @@ This module implements three-tier fallback strategy:
 
 import os
 import re
+import hashlib
 from datetime import datetime
 from typing import Optional, Dict, List
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
@@ -18,6 +19,7 @@ from spark.models.summary import RepositorySummary
 from spark.models.profile import UserProfile, ActivityPattern
 from spark.models.tech_stack import TechnologyStack
 from spark.logger import get_logger
+from spark.cache import APICache
 
 
 class RepositorySummarizer:
@@ -29,18 +31,24 @@ class RepositorySummarizer:
     # Anthropic API model (Claude 3.5 Haiku - latest as of Dec 2024)
     DEFAULT_MODEL = "claude-3-5-haiku-20241022"
 
-    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None, cache: Optional[APICache] = None):
         """Initialize repository summarizer.
 
         Args:
             api_key: Anthropic API key (uses ANTHROPIC_API_KEY env var if not provided)
             model: Claude model to use (defaults to Haiku)
+            cache: APICache instance for caching AI responses (creates new if not provided)
         """
         self.logger = get_logger()
         self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
         self.model = model or self.DEFAULT_MODEL
         self.total_tokens_used = 0
         self.total_cost = 0.0
+
+        # Initialize cache for AI responses (saves tokens!)
+        self.cache = cache or APICache()
+        self.cache_hits = 0
+        self.cache_misses = 0
 
         # Initialize Anthropic client if API key available
         self.anthropic = None
@@ -102,7 +110,7 @@ class RepositorySummarizer:
         readme_content: str,
         commit_history: Optional[CommitHistory],
     ) -> RepositorySummary:
-        """Generate AI-powered summary using Claude API.
+        """Generate AI-powered summary using Claude API with caching.
 
         Args:
             repo: Repository object
@@ -118,7 +126,27 @@ class RepositorySummarizer:
         # Build prompt
         prompt = self._build_repository_prompt(repo, truncated_readme, commit_history)
 
-        # Call Claude API
+        # Create cache key from repository content
+        cache_key = self._create_cache_key(repo.name, truncated_readme, repo.updated_at)
+
+        # Check cache first (SAVES TOKENS!)
+        cached_summary = self.cache.get(cache_key)
+        if cached_summary:
+            self.cache_hits += 1
+            self.logger.debug(f"Cache HIT for {repo.name} (saved ~{cached_summary.get('tokens_used', 0)} tokens)")
+
+            return RepositorySummary(
+                repo_id=repo.name,
+                ai_summary=cached_summary['ai_summary'],
+                generation_method=cached_summary['generation_method'],
+                generation_timestamp=datetime.fromisoformat(cached_summary['generation_timestamp']),
+                model_used=cached_summary['model_used'],
+                tokens_used=cached_summary['tokens_used'],
+                confidence_score=cached_summary['confidence_score'],
+            )
+
+        # Cache miss - call Claude API
+        self.cache_misses += 1
         response = self.anthropic.messages.create(
             model=self.model,
             max_tokens=500,  # Concise summary
@@ -136,15 +164,27 @@ class RepositorySummarizer:
             f"AI summary generated for {repo.name} ({tokens_used} tokens, ${self.total_cost:.4f} total)"
         )
 
-        return RepositorySummary(
+        summary = RepositorySummary(
             repo_id=repo.name,
             ai_summary=summary_text,
-            generation_method=f"claude-{self.model}",
+            generation_method=self.model,
             generation_timestamp=datetime.now(),
             model_used=self.model,
             tokens_used=tokens_used,
             confidence_score=90,
         )
+
+        # Cache the response for future use
+        self.cache.set(cache_key, {
+            'ai_summary': summary_text,
+            'generation_method': self.model,
+            'generation_timestamp': summary.generation_timestamp.isoformat(),
+            'model_used': self.model,
+            'tokens_used': tokens_used,
+            'confidence_score': 90,
+        })
+
+        return summary
 
     def _generate_enhanced_fallback(
         self,
@@ -392,16 +432,46 @@ Keep it concise and technical. Focus on WHAT it does, not HOW to use it."""
         cost = (input_tokens * 0.25 / 1_000_000) + (output_tokens * 1.25 / 1_000_000)
         self.total_cost += cost
 
+    def _create_cache_key(self, repo_name: str, readme_content: str, updated_at: datetime) -> str:
+        """Create a unique cache key for AI summaries.
+
+        The cache key is based on:
+        - Repository name
+        - README content hash (to detect changes)
+        - Last updated timestamp (to invalidate stale caches)
+
+        Args:
+            repo_name: Repository name
+            readme_content: README content
+            updated_at: Last updated datetime
+
+        Returns:
+            Cache key string
+        """
+        # Create hash of README content (first 1000 chars for efficiency)
+        readme_hash = hashlib.md5(readme_content[:1000].encode()).hexdigest()[:12]
+
+        # Format: ai_summary_{repo}_{readme_hash}_{date}
+        date_str = updated_at.strftime("%Y%m%d") if updated_at else "unknown"
+        return f"ai_summary_{repo_name}_{readme_hash}_{date_str}"
+
     def get_usage_stats(self) -> Dict[str, any]:
-        """Get API usage statistics.
+        """Get API usage statistics including cache performance.
 
         Returns:
             Dictionary with usage stats
         """
+        total_requests = self.cache_hits + self.cache_misses
+        hit_rate = (self.cache_hits / total_requests * 100) if total_requests > 0 else 0
+
         return {
             "total_tokens": self.total_tokens_used,
             "total_cost_usd": round(self.total_cost, 4),
             "model": self.model,
+            "cache_hits": self.cache_hits,
+            "cache_misses": self.cache_misses,
+            "cache_hit_rate": f"{hit_rate:.1f}%",
+            "tokens_saved_estimate": self.cache_hits * 450,  # ~450 tokens avg per summary
         }
 
 
