@@ -1,0 +1,168 @@
+"""Repository entity model for GitHub repository analysis."""
+
+from dataclasses import dataclass, field
+from datetime import datetime
+from typing import Dict, Optional
+
+
+@dataclass
+class Repository:
+    """Represents a GitHub repository with metadata and statistics.
+
+    This model contains all essential information about a repository needed
+    for ranking, analysis, and report generation.
+
+    Attributes:
+        name: Repository name (without owner prefix)
+        description: Repository description from GitHub
+        url: Full HTTPS URL to the repository
+        created_at: Repository creation timestamp
+        updated_at: Last update timestamp (any change)
+        pushed_at: Last push timestamp (code changes)
+        primary_language: Primary programming language
+        language_stats: Dictionary of languages to bytes of code
+        stars: Star count
+        forks: Fork count
+        watchers: Watcher count
+        open_issues: Count of open issues
+        is_archived: Whether repository is archived
+        is_fork: Whether repository is a fork
+        fork_info: For forks, commits ahead/behind parent (optional)
+        has_readme: Whether a README file exists
+        size_kb: Repository size in kilobytes
+        is_private: Whether repository is private (should always be False per constitution)
+    """
+
+    name: str
+    description: Optional[str]
+    url: str
+    created_at: datetime
+    updated_at: datetime
+    pushed_at: Optional[datetime]
+    primary_language: Optional[str]
+    language_stats: Dict[str, int] = field(default_factory=dict)
+    stars: int = 0
+    forks: int = 0
+    watchers: int = 0
+    open_issues: int = 0
+    is_archived: bool = False
+    is_fork: bool = False
+    fork_info: Optional[Dict[str, int]] = None  # {"commits_ahead": X, "commits_behind": Y}
+    has_readme: bool = False
+    size_kb: int = 0
+    is_private: bool = False
+
+    def __post_init__(self):
+        """Validate that private repositories are never processed."""
+        if self.is_private:
+            raise ValueError(
+                f"Privacy violation: Attempted to process private repository '{self.name}'. "
+                "Only public repositories are allowed per constitution III."
+            )
+
+    @property
+    def age_days(self) -> int:
+        """Calculate repository age in days from creation."""
+        if not self.created_at:
+            return 0
+        from datetime import timezone
+        now = datetime.now(timezone.utc)
+        # Ensure both datetimes are timezone-aware
+        created = self.created_at if self.created_at.tzinfo else self.created_at.replace(tzinfo=timezone.utc)
+        delta = now - created
+        return max(0, delta.days)
+
+    @property
+    def days_since_last_push(self) -> Optional[int]:
+        """Calculate days since last push."""
+        if not self.pushed_at:
+            return None
+        from datetime import timezone
+        now = datetime.now(timezone.utc)
+        # Ensure both datetimes are timezone-aware
+        pushed = self.pushed_at if self.pushed_at.tzinfo else self.pushed_at.replace(tzinfo=timezone.utc)
+        delta = now - pushed
+        return max(0, delta.days)
+
+    @property
+    def is_empty(self) -> bool:
+        """Check if repository appears empty (no commits, minimal size)."""
+        return self.pushed_at is None and self.size_kb < 10
+
+    def to_dict(self) -> dict:
+        """Serialize repository to dictionary format.
+
+        Returns:
+            Dictionary with all repository fields, with datetimes as ISO strings
+        """
+        return {
+            "name": self.name,
+            "description": self.description,
+            "url": self.url,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+            "pushed_at": self.pushed_at.isoformat() if self.pushed_at else None,
+            "primary_language": self.primary_language,
+            "language_stats": self.language_stats,
+            "stars": self.stars,
+            "forks": self.forks,
+            "watchers": self.watchers,
+            "open_issues": self.open_issues,
+            "is_archived": self.is_archived,
+            "is_fork": self.is_fork,
+            "fork_info": self.fork_info,
+            "has_readme": self.has_readme,
+            "size_kb": self.size_kb,
+            "is_private": self.is_private,
+            "age_days": self.age_days,
+            "days_since_last_push": self.days_since_last_push,
+        }
+
+    @classmethod
+    def from_github_repo(cls, github_repo) -> "Repository":
+        """Create Repository from PyGithub Repository object.
+
+        Args:
+            github_repo: PyGithub Repository instance
+
+        Returns:
+            Repository instance with data extracted from GitHub API
+
+        Raises:
+            ValueError: If repository is private (constitution violation)
+        """
+        # Check README existence (basic check)
+        has_readme = False
+        try:
+            github_repo.get_readme()
+            has_readme = True
+        except:
+            pass
+
+        # Extract fork info if applicable
+        fork_info = None
+        if github_repo.fork and github_repo.parent:
+            # Note: commits_ahead/behind requires comparison API call
+            # This will be populated by fetcher.py if needed
+            fork_info = {"commits_ahead": 0, "commits_behind": 0}
+
+        return cls(
+            name=github_repo.name,
+            description=github_repo.description,
+            url=github_repo.html_url,
+            created_at=github_repo.created_at,
+            updated_at=github_repo.updated_at,
+            pushed_at=github_repo.pushed_at,
+            primary_language=github_repo.language,
+            language_stats={},  # Will be populated by fetcher.get_languages()
+            stars=github_repo.stargazers_count,
+            forks=github_repo.forks_count,
+            watchers=github_repo.watchers_count,
+            open_issues=github_repo.open_issues_count,
+            is_archived=github_repo.archived,
+            is_fork=github_repo.fork,
+            fork_info=fork_info,
+            has_readme=has_readme,
+            size_kb=github_repo.size,
+            is_private=github_repo.private,
+        )

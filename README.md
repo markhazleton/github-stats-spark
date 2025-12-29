@@ -1,6 +1,6 @@
 # Stats Spark ⚡
 
-> Automated GitHub profile statistics generator with beautiful SVG visualizations
+> Automated GitHub profile statistics generator with beautiful SVG visualizations and AI-powered repository analysis
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
@@ -9,15 +9,26 @@ Stats Spark automatically analyzes your GitHub activity and generates stunning S
 
 ## ✨ Features
 
+### SVG Visualizations
 - **⚡ Spark Score**: Unique 0-100 metric combining consistency, volume, and collaboration
 - **📊 Comprehensive Statistics**: Commits, languages, time patterns, and more
 - **📈 Release Cadence**: Weekly/monthly repo diversity sparklines to highlight breadth of work
 - **🎨 Beautiful Themes**: Dark, light, and custom themes with WCAG AA compliance
 - **🤖 Fully Automated**: Runs daily via GitHub Actions at midnight UTC
+- **♿ Accessible**: WCAG AA contrast compliance for all themes
+
+### 🆕 AI-Powered Repository Analysis
+- **📋 Intelligent Ranking**: Composite algorithm (30% popularity, 45% activity, 25% health)
+- **🤖 AI Summaries**: Claude Haiku-powered technical summaries with three-tier fallback
+- **👤 Developer Profiles**: Technology diversity, activity patterns, contribution classification
+- **📊 Activity Analysis**: Multi-window time decay (90d/180d/365d)
+- **📝 Markdown Reports**: GitHub-flavored markdown with embedded statistics
+- **⚡ Performance**: <3 minutes for 50 repositories
+
+### General
 - **🎯 Selective Output**: Choose which statistics to generate
 - **🖥️ Local CLI**: Preview and test locally before deploying
-- **♿ Accessible**: WCAG AA contrast compliance for all themes
-- **🚀 Fast**: <5 minutes for 500 repositories with intelligent caching
+- **🚀 Fast**: Intelligent caching and API rate limit handling
 
 ## 🚀 Quick Start
 
@@ -99,6 +110,8 @@ See [Configuration Guide](docs/configuration.md) for theme customization.
 
 ## 💻 Local CLI
 
+### Generate Statistics (SVG Visualizations)
+
 ```bash
 # Generate statistics
 export GITHUB_TOKEN=your_token
@@ -110,6 +123,31 @@ spark preview --theme spark-dark
 # Validate config
 spark config --validate
 ```
+
+### 🆕 Repository Analysis (AI-Powered Reports)
+
+Generate comprehensive markdown reports with AI-powered repository summaries:
+
+```bash
+# Analyze top 50 repositories and generate report
+export GITHUB_TOKEN=your_token
+export ANTHROPIC_API_KEY=your_api_key  # Optional for AI summaries
+spark analyze --user YOUR_USERNAME
+
+# List top repositories without generating report (dry-run)
+spark analyze --user YOUR_USERNAME --list-only
+
+# Customize output
+spark analyze --user YOUR_USERNAME --output output/reports --top-n 25
+```
+
+**Features**:
+- 📊 Composite ranking algorithm (30% popularity, 45% activity, 25% health)
+- 🤖 AI-powered repository summaries using Claude Haiku (with fallbacks)
+- 📈 Multi-window activity analysis (90d/180d/365d)
+- 👤 Overall developer profile with observable patterns
+- 📝 GitHub-flavored markdown reports
+- ⚡ <3 minute generation for 50 repositories
 
 ## 📚 Documentation
 

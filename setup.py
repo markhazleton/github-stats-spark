@@ -13,7 +13,7 @@ setup(
     version="1.0.0",
     author="Mark Hazleton",
     author_email="mark@markhazleton.com",
-    description="GitHub profile statistics generator with automated SVG visualizations",
+    description="GitHub profile statistics generator with automated SVG visualizations and AI-powered repository analysis",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/markhazleton/github-stats-spark",
