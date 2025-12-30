@@ -216,6 +216,105 @@ class GitHubFetcher:
             self.logger.debug(f"Could not fetch languages for {repo_name}: {e}")
             return {}
 
+    def fetch_readme(self, username: str, repo_name: str) -> Optional[str]:
+        """Fetch README content for a repository.
+
+        Args:
+            username: Repository owner username
+            repo_name: Repository name
+
+        Returns:
+            README content as string, or None if not found
+        """
+        cache_key = f"readme_{username}_{repo_name}"
+        cached = self.cache.get(cache_key)
+        if cached:
+            return cached
+
+        try:
+            repo = self.github.get_repo(f"{username}/{repo_name}")
+            readme = repo.get_readme()
+            
+            # Decode content from base64
+            content = readme.decoded_content.decode('utf-8')
+            
+            self.cache.set(cache_key, content)
+            return content
+
+        except GithubException as e:
+            self.logger.debug(f"Could not fetch README for {repo_name}: {e}")
+            return None
+        except Exception as e:
+            self.logger.debug(f"Error decoding README for {repo_name}: {e}")
+            return None
+
+    def fetch_dependency_files(self, username: str, repo_name: str) -> Dict[str, str]:
+        """Fetch dependency files from a repository.
+
+        Looks for common dependency files like package.json, requirements.txt, etc.
+
+        Args:
+            username: Repository owner username
+            repo_name: Repository name
+
+        Returns:
+            Dictionary mapping filename to file content
+        """
+        cache_key = f"dependency_files_{username}_{repo_name}"
+        cached = self.cache.get(cache_key)
+        if cached:
+            return cached
+
+        dependency_files = {}
+        
+        # Common dependency file names to look for
+        target_files = [
+            "package.json",           # npm/JavaScript
+            "requirements.txt",       # pip/Python
+            "pyproject.toml",         # Python poetry/modern
+            "Gemfile",                # Ruby
+            "go.mod",                 # Go
+            "pom.xml",                # Maven/Java
+            "*.csproj",               # .NET C#
+            "Cargo.toml",             # Rust
+            "composer.json",          # PHP
+        ]
+
+        try:
+            repo = self.github.get_repo(f"{username}/{repo_name}")
+            
+            # Try to get each file
+            for filename in target_files:
+                try:
+                    if "*" in filename:
+                        # Handle wildcard patterns like *.csproj
+                        contents = repo.get_contents("")
+                        pattern = filename.replace("*", "")
+                        for item in contents:
+                            if item.name.endswith(pattern):
+                                content = item.decoded_content.decode('utf-8')
+                                dependency_files[item.name] = content
+                    else:
+                        file_content = repo.get_contents(filename)
+                        content = file_content.decoded_content.decode('utf-8')
+                        dependency_files[filename] = content
+                except GithubException:
+                    # File doesn't exist, continue
+                    continue
+                except Exception as e:
+                    self.logger.debug(f"Error fetching {filename} from {repo_name}: {e}")
+                    continue
+
+            self.cache.set(cache_key, dependency_files)
+            return dependency_files
+
+        except GithubException as e:
+            self.logger.debug(f"Could not access repository {repo_name}: {e}")
+            return {}
+        except Exception as e:
+            self.logger.debug(f"Error fetching dependency files for {repo_name}: {e}")
+            return {}
+
     def fetch_commit_counts(
         self, username: str, repo_name: str
     ) -> Dict[str, int]:

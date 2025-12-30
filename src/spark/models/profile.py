@@ -138,6 +138,30 @@ class UserProfile:
         """
         self.activity_patterns.append(pattern)
 
+    @classmethod
+    def from_dict(cls, data: dict) -> "UserProfile":
+        """Create UserProfile from dictionary (e.g., from GitHub API data).
+
+        Args:
+            data: Dictionary with user profile data
+
+        Returns:
+            UserProfile instance
+        """
+        return cls(
+            username=data.get("username", ""),
+            total_repos=data.get("public_repos", 0),
+            active_repos=0,  # Will be calculated later
+            tech_diversity=0,  # Will be calculated in __post_init__
+            primary_languages={},
+            framework_usage={},
+            activity_patterns=[],
+            overall_impression=None,
+            contribution_classification="unknown",
+            commit_frequency=0.0,
+            repository_health_avg=0.0,
+        )
+
     @property
     def top_languages(self) -> List[str]:
         """Get top 3 languages by bytes.

@@ -11,6 +11,16 @@ on:
 
   # Manual trigger from Actions tab
   workflow_dispatch:
+    inputs:
+      report_mode:
+        description: 'Report generation mode'
+        required: false
+        default: 'unified'
+        type: choice
+        options:
+          - unified
+          - dated
+          - both
 
   # Trigger on push to main branch (for testing)
   push:
@@ -41,19 +51,38 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate statistics
+      - name: Generate statistics (unified mode)
+        if: ${{ github.event.inputs.report_mode == 'unified' || github.event.inputs.report_mode == '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          python src/main.py
+          python -m spark.cli analyze --user ${{ github.repository_owner }} --unified --verbose
 
-      - name: Commit generated SVGs
+      - name: Generate statistics (dated mode)
+        if: ${{ github.event.inputs.report_mode == 'dated' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python -m spark.cli analyze --user ${{ github.repository_owner }} --verbose
+
+      - name: Generate statistics (both modes)
+        if: ${{ github.event.inputs.report_mode == 'both' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python -m spark.cli analyze --user ${{ github.repository_owner }} --unified --keep-dated --verbose
+
+      - name: Commit generated files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add output/*.svg
+          git add output/*.svg output/reports/*.md
           git diff --staged --quiet || git commit -m "Update GitHub statistics [skip ci]"
 
       - name: Push changes

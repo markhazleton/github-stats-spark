@@ -125,6 +125,32 @@ class CommitHistory:
         delta = now - last_commit
         return max(0, delta.days)
 
+    @classmethod
+    def from_dict(cls, data: dict) -> "CommitHistory":
+        """Create CommitHistory from dictionary (e.g., from API cache).
+
+        Args:
+            data: Dictionary with commit history data
+
+        Returns:
+            CommitHistory instance
+        """
+        last_commit_date = None
+        if data.get("last_commit_date"):
+            last_commit_date = datetime.fromisoformat(data["last_commit_date"])
+        
+        return cls(
+            repository_name=data.get("repository_name", ""),
+            total_commits=data.get("total", 0),
+            recent_90d=data.get("recent_90d", 0),
+            recent_180d=data.get("recent_180d", 0),
+            recent_365d=data.get("recent_365d", 0),
+            last_commit_date=last_commit_date,
+            patterns=data.get("patterns", []),
+            commit_frequency=data.get("commit_frequency", 0.0),
+            consistency_score=data.get("consistency_score", 0),
+        )
+
     def to_dict(self) -> dict:
         """Serialize commit history to dictionary format.
 

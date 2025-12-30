@@ -152,6 +152,56 @@ class Repository:
         }
 
     @classmethod
+    def from_dict(cls, data: dict) -> "Repository":
+        """Create Repository from dictionary (e.g., from API cache).
+
+        Args:
+            data: Dictionary with repository data
+
+        Returns:
+            Repository instance
+
+        Raises:
+            ValueError: If repository is private (constitution violation)
+        """
+        from datetime import datetime
+        
+        # Parse datetime strings
+        created_at = datetime.fromisoformat(data["created_at"]) if data.get("created_at") else datetime.now()
+        updated_at = datetime.fromisoformat(data["updated_at"]) if data.get("updated_at") else datetime.now()
+        pushed_at = datetime.fromisoformat(data["pushed_at"]) if data.get("pushed_at") else None
+        
+        return cls(
+            name=data.get("name", ""),
+            description=data.get("description"),
+            url=data.get("url", f"https://github.com/{data.get('full_name', '')}"),
+            created_at=created_at,
+            updated_at=updated_at,
+            pushed_at=pushed_at,
+            primary_language=data.get("language"),
+            language_stats={},  # Will be populated separately
+            stars=data.get("stars", 0),
+            forks=data.get("forks", 0),
+            watchers=data.get("watchers", 0),
+            open_issues=data.get("open_issues", 0),
+            is_archived=data.get("is_archived", False),
+            is_fork=data.get("is_fork", False),
+            fork_info=data.get("fork_info"),
+            has_readme=data.get("has_readme", False),
+            size_kb=data.get("size", 0),
+            is_private=data.get("is_private", False),
+            contributors_count=data.get("contributors_count", 0),
+            language_count=data.get("language_count", 0),
+            has_ci_cd=data.get("has_ci_cd", False),
+            has_tests=data.get("has_tests", False),
+            has_license=data.get("has_license", False),
+            has_docs=data.get("has_docs", False),
+            release_count=data.get("release_count", 0),
+            latest_release_date=None,
+            commit_velocity=data.get("commit_velocity"),
+        )
+
+    @classmethod
     def from_github_repo(cls, github_repo) -> "Repository":
         """Create Repository from PyGithub Repository object.
 
