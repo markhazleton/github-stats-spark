@@ -179,7 +179,7 @@ For detailed usage, see [Repository Analysis Documentation](analyze-command.md).
 ## Support
 
 - **Issues**: Report bugs at [GitHub Issues](https://github.com/markhazleton/github-stats-spark/issues)
-- **Documentation**: Full docs at [docs/](.)
+- **Documentation**: Full docs at [Documentation Index](../README.md)
 - **Examples**: See [assets/examples/markhazleton/](../assets/examples/markhazleton/)
 
 ---

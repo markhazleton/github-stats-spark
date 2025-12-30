@@ -423,7 +423,7 @@ The analyze command adheres to the project constitution:
 
 - [Getting Started Guide](getting-started.md) - Setup and initial configuration
 - [Configuration Guide](configuration.md) - All configuration options
-- [API Reference](api-reference.md) - Developer documentation
+- [API Reference](../api/api-reference.md) - Developer documentation
 - [Embedding Guide](embedding-guide.md) - How to embed generated reports
 
 ## API Reference
@@ -448,7 +448,7 @@ generator = ReportGenerator(config)
 report_path = generator.generate(user_profile, ranked_repos, summaries)
 ```
 
-See [API Reference](api-reference.md) for complete module documentation.
+See [API Reference](../api/api-reference.md) for complete module documentation.
 
 ---
 

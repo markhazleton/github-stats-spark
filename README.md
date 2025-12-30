@@ -59,7 +59,7 @@ Add to your profile README (`username/username/README.md`):
 
 **Replace `YOUR_USERNAME`** with your GitHub username!
 
-Full instructions: [Getting Started Guide](docs/getting-started.md)
+Full instructions: [Getting Started Guide](docs/guides/getting-started.md)
 
 ## 📊 Statistics Categories
 
@@ -106,7 +106,7 @@ The Spark Score is a 0-100 metric reflecting your GitHub activity:
 - **spark-light**: Light theme with WCAG AA colors
 - **custom**: Define your own in `config/themes.yml`
 
-See [Configuration Guide](docs/configuration.md) for theme customization.
+See [Configuration Guide](docs/guides/configuration.md) for theme customization.
 
 ## 💻 Local CLI
 
@@ -151,10 +151,12 @@ spark analyze --user YOUR_USERNAME --output output/reports --top-n 25
 
 ## 📚 Documentation
 
-- [Getting Started Guide](docs/getting-started.md) - Complete setup instructions
-- [Configuration Guide](docs/configuration.md) - All configuration options
-- [Embedding Guide](docs/embedding-guide.md) - How to embed SVGs in README
-- [API Reference](docs/api-reference.md) - Developer documentation for core modules
+- [Getting Started Guide](docs/guides/getting-started.md) - Complete setup instructions
+- [Analyze Command Guide](docs/guides/analyze-command.md) - AI-powered repository analysis
+- [Configuration Guide](docs/guides/configuration.md) - All configuration options
+- [Embedding Guide](docs/guides/embedding-guide.md) - How to embed SVGs in README
+- [API Reference](docs/api/api-reference.md) - Developer documentation for core modules
+- [Changelog](docs/CHANGELOG.md) - Version history and release notes
 
 ## 🔧 Troubleshooting
 
@@ -164,7 +166,7 @@ spark analyze --user YOUR_USERNAME --output output/reports --top-n 25
 
 **Rate limiting?** Workflow automatically handles with caching and retries.
 
-See [Getting Started Guide](docs/getting-started.md) for more help.
+See [Getting Started Guide](docs/guides/getting-started.md) for more help.
 
 ## 🤝 Contributing
 
@@ -176,7 +178,7 @@ Contributions are welcome! Here's how you can help:
 4. **Improve Documentation**: Help make guides clearer
 5. **Share Examples**: Show how you're using Stats Spark!
 
-Please see [API Reference](docs/api-reference.md) for developer documentation.
+Please see [API Reference](docs/api/api-reference.md) for developer documentation.
 
 ## 🧪 Testing
 
@@ -210,6 +212,6 @@ MIT License - See [LICENSE](LICENSE) for details
 
 Illuminate your GitHub activity with beautiful statistics
 
-[Get Started](docs/getting-started.md) • [Documentation](docs/) • [Report Issue](https://github.com/markhazleton/github-stats-spark/issues)
+[Get Started](docs/guides/getting-started.md) • [Documentation](docs/README.md) • [Report Issue](https://github.com/markhazleton/github-stats-spark/issues)
 
 </div>
