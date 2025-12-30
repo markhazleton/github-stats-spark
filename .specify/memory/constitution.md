@@ -108,8 +108,8 @@ All operations MUST log to stdout/stderr for GitHub Actions workflow debugging. 
 
 **Development Guidance**:
 
-- Use `.specify/specs/001-stats-spark/plan.md` as the technical reference
-- Use `.specify/specs/001-stats-spark/spec.md` for user-facing requirements
-- Use `.specify/specs/001-stats-spark/tasks.md` for implementation order
+- Use `docs/spec/001-stats-spark/plan.md` as the technical reference
+- Use `docs/spec/001-stats-spark/spec.md` for user-facing requirements
+- Use `docs/spec/001-stats-spark/tasks.md` for implementation order
 
 **Version**: 1.0.0 | **Ratified**: 2025-12-28 | **Last Amended**: 2025-12-28
