@@ -163,26 +163,147 @@ class ReportGenerator:
         lines.append(" | ".join(stats))
         lines.append("")
 
+        # Additional stats line (Tier 1 & Activity Focus)
+        additional_stats = []
+        if repo.contributors_count > 0:
+            additional_stats.append(f"👥 {repo.contributors_count} contributors")
+        if repo.language_count > 1:
+            additional_stats.append(f"🌐 {repo.language_count} languages")
+        if repo.size_kb > 0:
+            size_mb = repo.size_kb / 1024.0
+            if size_mb >= 1:
+                additional_stats.append(f"💾 {size_mb:.1f} MB")
+            else:
+                additional_stats.append(f"💾 {repo.size_kb} KB")
+        if repo.commit_velocity is not None:
+            additional_stats.append(f"🚀 {repo.commit_velocity:.1f} commits/month")
+        if additional_stats:
+            lines.append(" | ".join(additional_stats))
+            lines.append("")
+
+        # Quality indicators
+        quality_indicators = []
+        if repo.has_ci_cd:
+            quality_indicators.append("✅ CI/CD")
+        if repo.has_tests:
+            quality_indicators.append("✅ Tests")
+        if repo.has_license:
+            quality_indicators.append("✅ License")
+        if repo.has_docs:
+            quality_indicators.append("✅ Docs")
+        if quality_indicators:
+            lines.append("**Quality**: " + " | ".join(quality_indicators))
+            lines.append("")
+
+        # Release information
+        if repo.release_count > 0:
+            release_info = f"**Releases**: {repo.release_count}"
+            if repo.latest_release_date:
+                from datetime import datetime, timezone
+                now = datetime.now(timezone.utc)
+                latest_release = repo.latest_release_date if repo.latest_release_date.tzinfo else repo.latest_release_date.replace(tzinfo=timezone.utc)
+                days_since_release = (now - latest_release).days
+                release_date_str = latest_release.strftime('%Y-%m-%d')
+                if days_since_release == 0:
+                    release_info += f" | Latest: {release_date_str} (today)"
+                elif days_since_release == 1:
+                    release_info += f" | Latest: {release_date_str} (yesterday)"
+                else:
+                    release_info += f" | Latest: {release_date_str} ({days_since_release:,} days ago)"
+            lines.append(release_info)
+            lines.append("")
+
         # Summary
         if analysis.summary:
             lines.append(analysis.summary.summary)
             lines.append("")
 
         # Tech stack (if available)
-        if analysis.tech_stack and analysis.tech_stack.dependencies:
-            lines.append(f"**Dependencies**: {analysis.tech_stack.total_dependencies} packages")
-            if analysis.tech_stack.outdated_count > 0:
-                lines.append(f"⚠️ {analysis.tech_stack.outdated_count} outdated")
+        if analysis.tech_stack and analysis.tech_stack.total_dependencies > 0:
+            lines.append(self._format_tech_stack(analysis.tech_stack))
             lines.append("")
 
-        # Metadata
-        lines.append(f"**Created**: {repo.created_at.strftime('%Y-%m-%d')}")
+        # Metadata with dates and "days ago"
+        from datetime import datetime, timezone
+
+        # Created date with days ago
+        created_str = repo.created_at.strftime('%Y-%m-%d')
+        created_days_ago = repo.age_days
+        lines.append(f"**Created**: {created_str} ({created_days_ago:,} days ago)")
+
+        # Last modified (pushed) date with days ago
+        if repo.pushed_at:
+            pushed_str = repo.pushed_at.strftime('%Y-%m-%d')
+            pushed_days_ago = repo.days_since_last_push
+            if pushed_days_ago is not None:
+                if pushed_days_ago == 0:
+                    lines.append(f"**Last Modified**: {pushed_str} (today)")
+                elif pushed_days_ago == 1:
+                    lines.append(f"**Last Modified**: {pushed_str} (yesterday)")
+                else:
+                    lines.append(f"**Last Modified**: {pushed_str} ({pushed_days_ago:,} days ago)")
+
         if repo.is_archived:
             lines.append("⚠️ **Archived**")
         if repo.is_fork:
             lines.append("🔀 **Fork**")
 
         return "\n".join(lines)
+
+    def _format_tech_stack(self, tech_stack) -> str:
+        """Format technology stack with currency indicators.
+
+        Args:
+            tech_stack: TechnologyStack object
+
+        Returns:
+            Formatted markdown string
+        """
+        lines = []
+
+        # Currency indicator
+        currency_emoji = self._get_currency_emoji(tech_stack.currency_score)
+        lines.append(f"**Technology Stack Currency**: {currency_emoji} {tech_stack.currency_score}/100")
+
+        # Dependency summary
+        current_count = tech_stack.total_dependencies - tech_stack.outdated_count
+        lines.append(
+            f"**Dependencies**: {tech_stack.total_dependencies} total "
+            f"({current_count} current, {tech_stack.outdated_count} outdated)"
+        )
+
+        # Show most outdated dependencies (if any)
+        if tech_stack.outdated_count > 0:
+            outdated_deps = [d for d in tech_stack.dependencies if d.is_outdated]
+            outdated_deps.sort(key=lambda x: x.versions_behind, reverse=True)
+
+            top_outdated = outdated_deps[:3]  # Show top 3 most outdated
+            lines.append("**Most Outdated**:")
+            for dep in top_outdated:
+                lines.append(
+                    f"  - `{dep.name}`: {dep.current_version} → {dep.latest_version} "
+                    f"({dep.versions_behind} major versions behind)"
+                )
+
+        return "\n".join(lines)
+
+    def _get_currency_emoji(self, score: int) -> str:
+        """Get emoji indicator for currency score.
+
+        Args:
+            score: Currency score (0-100)
+
+        Returns:
+            Emoji indicator
+        """
+        if score >= 90:
+            return "✅"
+        elif score >= 75:
+            return "🟢"
+        elif score >= 50:
+            return "🟡"
+        else:
+            return "🔴"
 
     def _generate_metadata_section(self, report: Report) -> str:
         """Generate metadata section.

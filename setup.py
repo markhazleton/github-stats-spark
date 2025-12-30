@@ -10,7 +10,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="stats-spark",
-    version="1.0.0",
+    version="2.0.0",
     author="Mark Hazleton",
     author_email="mark@markhazleton.com",
     description="GitHub profile statistics generator with automated SVG visualizations and AI-powered repository analysis",

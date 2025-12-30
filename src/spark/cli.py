@@ -202,6 +202,7 @@ def handle_analyze(args, logger):
         from spark.models.repository import Repository
         from spark.models.commit import CommitHistory
         from spark.models.report import Report, RepositoryAnalysis
+        from spark.dependencies import RepositoryDependencyAnalyzer
 
         # Load config
         config = SparkConfig(args.config)
@@ -214,6 +215,7 @@ def handle_analyze(args, logger):
         summarizer = RepositorySummarizer(cache=cache)  # Pass cache to save tokens!
         profile_generator = UserProfileGenerator(summarizer)
         report_generator = ReportGenerator()
+        dependency_analyzer = RepositoryDependencyAnalyzer(cache=cache, config=config.config.get("analyzer", {}))
 
         start_time = datetime.now()
 
@@ -225,11 +227,14 @@ def handle_analyze(args, logger):
         # Step 2: Convert to Repository objects and fetch commit data
         repositories = []
         commit_histories = {}
+        errors = []
 
         logger.info("Analyzing repository activity...")
         for i, raw_repo in enumerate(raw_repos, 1):
-            if args.verbose:
-                logger.info(f"  [{i}/{len(raw_repos)}] {raw_repo['name']}")
+            # T093: Progress indicator (current repo + percentage)
+            progress_pct = (i / len(raw_repos)) * 100
+            repo_name = raw_repo['name']
+            logger.info(f"  [{i}/{len(raw_repos)}] ({progress_pct:.0f}%) {repo_name}")
 
             # Fetch GitHub repo object for full data
             try:
@@ -238,6 +243,8 @@ def handle_analyze(args, logger):
 
                 # Fetch language stats
                 repo.language_stats = fetcher.fetch_languages(args.user, repo.name)
+                # Update language count (Tier 1)
+                repo.language_count = len(repo.language_stats)
 
                 # Fetch commit counts
                 commit_data = fetcher.fetch_commit_counts(args.user, repo.name)
@@ -252,12 +259,31 @@ def handle_analyze(args, logger):
                     else None,
                 )
 
+                # Calculate commit velocity (Activity Focus) - commits per month
+                if repo.age_days > 0:
+                    months = repo.age_days / 30.0
+                    repo.commit_velocity = commit_data["total"] / months if months > 0 else 0
+
                 repositories.append(repo)
                 commit_histories[repo.name] = commit_history
 
             except Exception as e:
-                logger.warn(f"Failed to fetch {raw_repo['name']}: {e}")
-                continue
+                # T096: Rate limit handling
+                error_msg = str(e)
+                if "rate limit" in error_msg.lower() or "403" in error_msg:
+                    logger.error(f"⚠️  GitHub API rate limit reached!")
+                    logger.info("💡 Actionable steps:")
+                    logger.info("   1. Wait for rate limit to reset (check: https://api.github.com/rate_limit)")
+                    logger.info("   2. Use a GitHub Personal Access Token for higher limits (5000/hour)")
+                    logger.info("   3. Cached data will be used where available")
+                    errors.append(f"Rate limit reached at repo {i}/{len(raw_repos)}: {repo_name}")
+                    # T094: Continue with partial results
+                    break
+                else:
+                    # T095: Error logging with actionable guidance
+                    logger.warn(f"❌ Failed to fetch {repo_name}: {error_msg}")
+                    errors.append(f"Failed to fetch {repo_name}: {error_msg}")
+                    continue
 
         # Step 3: Rank repositories
         logger.info(f"Ranking repositories (top {args.top_n})...")
@@ -276,33 +302,66 @@ def handle_analyze(args, logger):
         repository_analyses = []
 
         for rank, (repo, score) in enumerate(ranked_repos, 1):
-            if args.verbose:
-                logger.info(f"  [{rank}/{len(ranked_repos)}] Summarizing {repo.name}...")
+            # T093: Progress indicator for summary generation
+            progress_pct = (rank / len(ranked_repos)) * 100
+            logger.info(f"  [{rank}/{len(ranked_repos)}] ({progress_pct:.0f}%) Summarizing {repo.name}...")
 
-            # Fetch README if available
-            readme_content = None
-            if repo.has_readme:
+            try:
+                # Fetch README if available
+                readme_content = None
+                if repo.has_readme:
+                    try:
+                        github_repo = fetcher.github.get_repo(f"{args.user}/{repo.name}")
+                        readme = github_repo.get_readme()
+                        readme_content = readme.decoded_content.decode('utf-8')
+                    except Exception as e:
+                        logger.debug(f"Could not fetch README for {repo.name}: {e}")
+
+                # Generate summary
+                summary = summarizer.summarize_repository(
+                    repo, readme_content, commit_histories.get(repo.name)
+                )
+
+                # Analyze dependencies (T085: Technology stack section with currency indicators)
+                tech_stack = None
                 try:
                     github_repo = fetcher.github.get_repo(f"{args.user}/{repo.name}")
-                    readme = github_repo.get_readme()
-                    readme_content = readme.decoded_content.decode('utf-8')
-                except:
-                    pass
+                    tech_stack = dependency_analyzer.analyze_github_repository(github_repo)
+                    if tech_stack and tech_stack.total_dependencies > 0:
+                        logger.debug(f"    Found {tech_stack.total_dependencies} dependencies, {tech_stack.outdated_count} outdated")
+                except Exception as e:
+                    logger.debug(f"    Dependency analysis skipped for {repo.name}: {e}")
 
-            # Generate summary
-            summary = summarizer.summarize_repository(
-                repo, readme_content, commit_histories.get(repo.name)
-            )
+                # Create analysis
+                analysis = RepositoryAnalysis(
+                    repository=repo,
+                    commit_history=commit_histories.get(repo.name),
+                    summary=summary,
+                    tech_stack=tech_stack,
+                    rank=rank,
+                    composite_score=score,
+                )
+                repository_analyses.append(analysis)
 
-            # Create analysis
-            analysis = RepositoryAnalysis(
-                repository=repo,
-                commit_history=commit_histories.get(repo.name),
-                summary=summary,
-                rank=rank,
-                composite_score=score,
-            )
-            repository_analyses.append(analysis)
+            except Exception as e:
+                # T094 & T095: Handle errors gracefully with actionable messages
+                error_msg = str(e)
+                if "rate limit" in error_msg.lower():
+                    logger.error(f"⚠️  Rate limit during summary generation for {repo.name}")
+                    errors.append(f"Rate limit during summary for {repo.name}")
+                    # Create analysis without summary for partial results
+                    analysis = RepositoryAnalysis(
+                        repository=repo,
+                        commit_history=commit_histories.get(repo.name),
+                        summary=None,
+                        tech_stack=None,
+                        rank=rank,
+                        composite_score=score,
+                    )
+                    repository_analyses.append(analysis)
+                else:
+                    logger.warn(f"❌ Failed to summarize {repo.name}: {error_msg}")
+                    errors.append(f"Failed to summarize {repo.name}: {error_msg}")
 
         # Step 5: Generate user profile
         logger.info("Generating user profile...")
@@ -318,6 +377,8 @@ def handle_analyze(args, logger):
             repositories=repository_analyses,
             generation_time_seconds=(end_time - start_time).total_seconds(),
             total_ai_tokens=summarizer.total_tokens_used,
+            errors=errors,  # T094: Include errors in report for partial results
+            partial_results=len(errors) > 0,
         )
 
         # Step 7: Generate markdown report
@@ -330,7 +391,11 @@ def handle_analyze(args, logger):
 
         # Summary
         logger.info("\n" + "="*60)
-        logger.info("✅ Analysis Complete!")
+        if len(errors) > 0:
+            logger.info("⚠️  Analysis Complete (with errors)")
+            logger.info(f"   Errors Encountered: {len(errors)}")
+        else:
+            logger.info("✅ Analysis Complete!")
         logger.info(f"   Report: {output_file}")
         logger.info(f"   Repositories: {len(repository_analyses)}")
         logger.info(f"   AI Summaries: {report.ai_summary_rate:.1f}%")
@@ -343,6 +408,14 @@ def handle_analyze(args, logger):
             logger.info(f"   Cache Hit Rate: {stats['cache_hit_rate']} ({stats['cache_hits']} hits / {stats['cache_misses']} misses)")
             if stats['cache_hits'] > 0:
                 logger.info(f"   Tokens Saved: ~{stats['tokens_saved_estimate']:,} (from cache)")
+
+        # T095: Show errors with actionable guidance
+        if len(errors) > 0:
+            logger.info("\n⚠️  Errors Summary:")
+            for error in errors[:5]:  # Show first 5 errors
+                logger.info(f"   • {error}")
+            if len(errors) > 5:
+                logger.info(f"   ... and {len(errors) - 5} more (see report for details)")
 
         logger.info("="*60)
 

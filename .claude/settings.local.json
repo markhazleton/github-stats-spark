@@ -67,7 +67,16 @@
       "Bash(if [ -d \"tests/unit\" ])",
       "Bash(then ls -la tests/unit/)",
       "Bash(if [ -d \"tests/integration\" ])",
-      "Bash(then ls -la tests/integration/)"
+      "Bash(then ls -la tests/integration/)",
+      "Bash(if [ -f \"src/spark/dependencies/__init__.py\" ])",
+      "Bash(if [ -f \"src/main.py\" ])",
+      "Bash(else echo \"NO_CHECKLISTS\")",
+      "Bash(if [ -f \"CHANGELOG.md\" ])",
+      "Bash(then head -20 CHANGELOG.md)",
+      "Bash(then grep -n \"import logging\" src/spark/ranker.py)",
+      "Bash(else echo \"FILE_NOT_FOUND\")",
+      "Bash(then grep -n \"import logging\" src/spark/summarizer.py)",
+      "Bash(then grep -n \"import logging\" src/spark/report_generator.py)"
     ]
   }
 }

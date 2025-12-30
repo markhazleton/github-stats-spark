@@ -31,6 +31,15 @@ class Repository:
         has_readme: Whether a README file exists
         size_kb: Repository size in kilobytes
         is_private: Whether repository is private (should always be False per constitution)
+        contributors_count: Number of contributors (Tier 1)
+        language_count: Number of distinct programming languages (Tier 1)
+        has_ci_cd: Whether repository has CI/CD workflows (Quality Focus)
+        has_tests: Whether repository has tests directory (Quality Focus)
+        has_license: Whether repository has LICENSE file (Quality Focus)
+        has_docs: Whether repository has documentation (Quality Focus)
+        release_count: Total number of releases (Activity Focus)
+        latest_release_date: Date of most recent release (Activity Focus)
+        commit_velocity: Commits per month trend (Activity Focus)
     """
 
     name: str
@@ -51,6 +60,18 @@ class Repository:
     has_readme: bool = False
     size_kb: int = 0
     is_private: bool = False
+    # Tier 1 - Quick Enhancement
+    contributors_count: int = 0
+    language_count: int = 0
+    # Quality Focus
+    has_ci_cd: bool = False
+    has_tests: bool = False
+    has_license: bool = False
+    has_docs: bool = False
+    # Activity Focus
+    release_count: int = 0
+    latest_release_date: Optional[datetime] = None
+    commit_velocity: Optional[float] = None  # commits per month
 
     def __post_init__(self):
         """Validate that private repositories are never processed."""
@@ -116,6 +137,18 @@ class Repository:
             "is_private": self.is_private,
             "age_days": self.age_days,
             "days_since_last_push": self.days_since_last_push,
+            # Tier 1
+            "contributors_count": self.contributors_count,
+            "language_count": self.language_count,
+            # Quality Focus
+            "has_ci_cd": self.has_ci_cd,
+            "has_tests": self.has_tests,
+            "has_license": self.has_license,
+            "has_docs": self.has_docs,
+            # Activity Focus
+            "release_count": self.release_count,
+            "latest_release_date": self.latest_release_date.isoformat() if self.latest_release_date else None,
+            "commit_velocity": self.commit_velocity,
         }
 
     @classmethod
@@ -146,6 +179,66 @@ class Repository:
             # This will be populated by fetcher.py if needed
             fork_info = {"commits_ahead": 0, "commits_behind": 0}
 
+        # Tier 1 - Get contributors count
+        contributors_count = 0
+        try:
+            contributors_count = github_repo.get_contributors().totalCount
+        except:
+            pass
+
+        # Quality Focus - Check for CI/CD workflows
+        has_ci_cd = False
+        try:
+            workflows = github_repo.get_workflows()
+            has_ci_cd = workflows.totalCount > 0
+        except:
+            pass
+
+        # Quality Focus - Check for tests directory
+        has_tests = False
+        try:
+            contents = github_repo.get_contents("")
+            for item in contents:
+                if item.type == "dir" and item.name.lower() in ["test", "tests", "spec", "specs", "__tests__"]:
+                    has_tests = True
+                    break
+        except:
+            pass
+
+        # Quality Focus - Check for LICENSE file
+        has_license = False
+        try:
+            github_repo.get_license()
+            has_license = True
+        except:
+            pass
+
+        # Quality Focus - Check for documentation
+        has_docs = False
+        try:
+            contents = github_repo.get_contents("")
+            for item in contents:
+                if item.type == "dir" and item.name.lower() in ["docs", "doc", "documentation"]:
+                    has_docs = True
+                    break
+                if item.type == "file" and item.name.upper() in ["CONTRIBUTING.md", "CHANGELOG.md"]:
+                    has_docs = True
+                    break
+        except:
+            pass
+
+        # Activity Focus - Get release information
+        release_count = 0
+        latest_release_date = None
+        try:
+            releases = github_repo.get_releases()
+            release_count = releases.totalCount
+            if release_count > 0:
+                latest_release = releases[0]
+                latest_release_date = latest_release.created_at
+        except:
+            pass
+
         return cls(
             name=github_repo.name,
             description=github_repo.description,
@@ -165,4 +258,16 @@ class Repository:
             has_readme=has_readme,
             size_kb=github_repo.size,
             is_private=github_repo.private,
+            # Tier 1
+            contributors_count=contributors_count,
+            language_count=0,  # Will be set after language_stats populated
+            # Quality Focus
+            has_ci_cd=has_ci_cd,
+            has_tests=has_tests,
+            has_license=has_license,
+            has_docs=has_docs,
+            # Activity Focus
+            release_count=release_count,
+            latest_release_date=latest_release_date,
+            commit_velocity=None,  # Will be calculated from commit history
         )
