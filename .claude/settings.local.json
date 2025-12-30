@@ -76,7 +76,8 @@
       "Bash(then grep -n \"import logging\" src/spark/ranker.py)",
       "Bash(else echo \"FILE_NOT_FOUND\")",
       "Bash(then grep -n \"import logging\" src/spark/summarizer.py)",
-      "Bash(then grep -n \"import logging\" src/spark/report_generator.py)"
+      "Bash(then grep -n \"import logging\" src/spark/report_generator.py)",
+      "Bash(ls:*)"
     ]
   }
 }
