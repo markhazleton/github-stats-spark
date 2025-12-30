@@ -162,3 +162,177 @@ class Report:
             "ai_summary_rate": self.ai_summary_rate,
             "total_repositories_analyzed": self.total_repositories_analyzed,
         }
+
+
+@dataclass
+class UnifiedReport:
+    """Unified markdown report combining SVG visualizations and repository analysis.
+
+    This entity represents the complete unified profile report that consolidates
+    SVG visualizations with detailed repository analysis into a single markdown file.
+
+    Attributes:
+        username: GitHub username being analyzed
+        timestamp: Report generation timestamp (UTC)
+        version: Report format version (semver)
+        total_repos: Total number of repositories analyzed
+        available_svgs: List of successfully generated SVG types
+        repositories: Top 50 repository analyses (or fewer if <50 repos)
+        generation_time: Total generation time in seconds
+        success_rate: Percentage of successful operations (0-100)
+        total_api_calls: Number of GitHub API calls made
+        total_ai_tokens: Total AI tokens used for summarization
+        ai_summary_rate: Percentage of repos with AI summaries (0-100)
+        ai_model: AI model used for summarization (e.g., "claude-3-5-haiku-20241022")
+        errors: List of error messages encountered
+        warnings: List of warning messages
+        partial_results: True if any errors/warnings occurred
+    """
+
+    username: str
+    timestamp: datetime
+    repositories: List[RepositoryAnalysis]
+    available_svgs: List[str]
+    version: str = "1.0.0"
+    total_repos: int = 0
+    generation_time: float = 0.0
+    total_api_calls: int = 0
+    total_ai_tokens: int = 0
+    ai_model: Optional[str] = None
+    errors: List[str] = field(default_factory=list)
+    warnings: List[str] = field(default_factory=list)
+
+    def __post_init__(self):
+        """Initialize derived fields after creation."""
+        # Enforce top 50 limit
+        self.repositories = self.repositories[:50]
+        self.total_repos = len(self.repositories)
+
+        # Calculate derived metrics
+        self.success_rate = self._calculate_success_rate()
+        self.ai_summary_rate = self._calculate_ai_summary_rate()
+        self.partial_results = len(self.errors) > 0 or len(self.warnings) > 0
+
+    def _calculate_success_rate(self) -> float:
+        """Calculate success rate based on errors/warnings.
+
+        Returns:
+            Float between 0.0 and 100.0 representing percentage of successful operations.
+        """
+        total_operations = (
+            1  # GitHub API fetch
+            + len(self.repositories)  # Repository analyses
+            + 6  # SVG generations (attempts)
+        )
+        failed_operations = len(self.errors)
+        return round(((total_operations - failed_operations) / total_operations) * 100.0, 1)
+
+    def _calculate_ai_summary_rate(self) -> float:
+        """Calculate percentage of repositories with AI-generated summaries.
+
+        Returns:
+            Float between 0.0 and 100.0 representing AI summary rate.
+        """
+        if not self.repositories:
+            return 0.0
+
+        ai_summaries = sum(
+            1
+            for analysis in self.repositories
+            if analysis.summary and analysis.summary.is_ai_generated
+        )
+        return round((ai_summaries / len(self.repositories)) * 100.0, 1)
+
+    def validate(self) -> List[str]:
+        """Validate report data integrity.
+
+        Returns:
+            List of validation error messages (empty if valid).
+        """
+        errors = []
+
+        # FR-001: Username required
+        if not self.username or not self.username.strip():
+            errors.append("Username must be non-empty")
+
+        # FR-004: Repository limit validation
+        if len(self.repositories) > 50:
+            errors.append(f"Repository count exceeds limit of 50 (got {len(self.repositories)})")
+
+        # FR-003: SVG validation
+        valid_svg_types = {"overview", "heatmap", "languages", "fun", "streaks", "release"}
+        invalid_svgs = set(self.available_svgs) - valid_svg_types
+        if invalid_svgs:
+            errors.append(f"Invalid SVG types: {invalid_svgs}")
+
+        # FR-017: SVG ordering validation
+        expected_order = ["overview", "heatmap", "streaks", "release", "languages", "fun"]
+        if self.available_svgs:
+            filtered_expected = [s for s in expected_order if s in self.available_svgs]
+            if self.available_svgs != filtered_expected:
+                errors.append("SVG ordering does not match FR-017 specification")
+
+        # Success rate bounds
+        if not (0.0 <= self.success_rate <= 100.0):
+            errors.append(f"Success rate out of bounds: {self.success_rate}")
+
+        return errors
+
+    def to_dict(self) -> dict:
+        """Convert to dictionary for serialization.
+
+        Returns:
+            Dictionary representation with all fields.
+        """
+        return {
+            "username": self.username,
+            "timestamp": self.timestamp.isoformat(),
+            "version": self.version,
+            "total_repos": self.total_repos,
+            "available_svgs": self.available_svgs,
+            "repositories": [r.to_dict() for r in self.repositories],
+            "generation_time": self.generation_time,
+            "success_rate": self.success_rate,
+            "total_api_calls": self.total_api_calls,
+            "total_ai_tokens": self.total_ai_tokens,
+            "ai_summary_rate": self.ai_summary_rate,
+            "ai_model": self.ai_model,
+            "errors": self.errors,
+            "warnings": self.warnings,
+            "partial_results": self.partial_results,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "UnifiedReport":
+        """Create from dictionary (deserialization).
+
+        Args:
+            data: Dictionary with report data
+
+        Returns:
+            UnifiedReport instance
+        """
+        return cls(
+            username=data["username"],
+            timestamp=datetime.fromisoformat(data["timestamp"]),
+            repositories=[
+                RepositoryAnalysis(
+                    repository=Repository.from_dict(r["repository"]),
+                    commit_history=CommitHistory.from_dict(r["commit_history"]) if r.get("commit_history") else None,
+                    tech_stack=TechnologyStack.from_dict(r["tech_stack"]) if r.get("tech_stack") else None,
+                    summary=RepositorySummary.from_dict(r["summary"]) if r.get("summary") else None,
+                    rank=r.get("rank", 0),
+                    composite_score=r.get("composite_score", 0.0),
+                )
+                for r in data["repositories"]
+            ],
+            available_svgs=data["available_svgs"],
+            version=data.get("version", "1.0.0"),
+            total_repos=data.get("total_repos", 0),
+            generation_time=data.get("generation_time", 0.0),
+            total_api_calls=data.get("total_api_calls", 0),
+            total_ai_tokens=data.get("total_ai_tokens", 0),
+            ai_model=data.get("ai_model"),
+            errors=data.get("errors", []),
+            warnings=data.get("warnings", []),
+        )

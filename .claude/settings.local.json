@@ -81,7 +81,15 @@
       "Bash(then ls -1d docs/spec/*-unified-profile-report)",
       "Bash(else echo \"NO_SPECS_DIR\")",
       "Bash(if [ -d \"docs/spec\" ])",
-      "Bash(then ls -1d docs/spec/*-unified-profile-report)"
+      "Bash(then ls -1d docs/spec/*-unified-profile-report)",
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "Bash(wc:*)",
+      "Bash(if [ -d \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-unified-profile-report\\\\checklists\" ])",
+      "Bash(then ls -1 \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-unified-profile-report\\\\checklists\")",
+      "Bash(if [ -d \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-unified-profile-report\\\\contracts\" ])",
+      "Bash(then ls -la \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-unified-profile-report\\\\contracts\")",
+      "Bash(else echo \"NO_CONTRACTS\")"
     ]
   }
 }

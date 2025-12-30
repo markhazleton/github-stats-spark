@@ -72,11 +72,13 @@ class RepositorySummarizer:
         repo: Repository,
         readme_content: Optional[str] = None,
         commit_history: Optional[CommitHistory] = None,
+        language_stats: Optional[Dict[str, int]] = None,
+        tech_stack: Optional["TechnologyStack"] = None,
     ) -> RepositorySummary:
         """Generate summary for a repository.
 
         Uses three-tier fallback:
-        1. Claude API with README + commit patterns
+        1. Claude API with README + commit patterns + language stats + dependencies
         2. Enhanced template from README extraction
         3. Basic template from metadata
 
@@ -84,6 +86,8 @@ class RepositorySummarizer:
             repo: Repository object
             readme_content: README file content (optional)
             commit_history: CommitHistory object (optional)
+            language_stats: Language statistics dict (optional)
+            tech_stack: TechnologyStack with dependency info (optional)
 
         Returns:
             RepositorySummary object
@@ -93,7 +97,9 @@ class RepositorySummarizer:
         # Try AI summary first
         if self.anthropic and readme_content:
             try:
-                return self._generate_ai_summary(repo, readme_content, commit_history)
+                return self._generate_ai_summary(
+                    repo, readme_content, commit_history, language_stats, tech_stack
+                )
             except Exception as e:
                 self.logger.warn(f"AI summary failed for {repo.name}: {e}, using fallback")
 
@@ -109,6 +115,8 @@ class RepositorySummarizer:
         repo: Repository,
         readme_content: str,
         commit_history: Optional[CommitHistory],
+        language_stats: Optional[Dict[str, int]] = None,
+        tech_stack: Optional["TechnologyStack"] = None,
     ) -> RepositorySummary:
         """Generate AI-powered summary using Claude API with caching.
 
@@ -116,6 +124,8 @@ class RepositorySummarizer:
             repo: Repository object
             readme_content: README file content
             commit_history: CommitHistory object
+            language_stats: Language statistics dict
+            tech_stack: TechnologyStack with dependency info
 
         Returns:
             RepositorySummary with AI-generated content
@@ -123,8 +133,10 @@ class RepositorySummarizer:
         # Truncate README if too long
         truncated_readme = self._truncate_readme(readme_content)
 
-        # Build prompt
-        prompt = self._build_repository_prompt(repo, truncated_readme, commit_history)
+        # Build prompt with all available stats
+        prompt = self._build_repository_prompt(
+            repo, truncated_readme, commit_history, language_stats, tech_stack
+        )
 
         # Create cache key from repository content
         cache_key = self._create_cache_key(repo.name, truncated_readme, repo.updated_at)
@@ -149,7 +161,7 @@ class RepositorySummarizer:
         self.cache_misses += 1
         response = self.anthropic.messages.create(
             model=self.model,
-            max_tokens=500,  # Concise summary
+            max_tokens=1500,  # Detailed summary
             messages=[{"role": "user", "content": prompt}],
         )
 
@@ -288,34 +300,74 @@ class RepositorySummarizer:
         repo: Repository,
         readme: str,
         commit_history: Optional[CommitHistory],
+        language_stats: Optional[Dict[str, int]] = None,
+        tech_stack: Optional["TechnologyStack"] = None,
     ) -> str:
-        """Build prompt for Claude API.
+        """Build prompt for Claude API with comprehensive repository statistics.
 
         Args:
             repo: Repository object
             readme: README content
             commit_history: CommitHistory object
+            language_stats: Language statistics dict
+            tech_stack: TechnologyStack with dependency info
 
         Returns:
             Prompt string
         """
-        prompt = f"""Analyze this GitHub repository and provide a concise 2-3 sentence technical summary.
+        prompt = f"""Analyze this GitHub repository and provide a detailed technical summary.
 
 Repository: {repo.name}
-Language: {repo.primary_language or 'Unknown'}
-Stars: {repo.stars} | Forks: {repo.forks}
+Primary Language: {repo.primary_language or 'Unknown'}
+Stars: {repo.stars} | Forks: {repo.forks} | Contributors: {repo.contributors_count}
+Size: {repo.size_kb} KB | Created: {repo.created_at.strftime('%Y-%m-%d') if repo.created_at else 'Unknown'}
 """
 
+        # Add language breakdown
+        if language_stats:
+            total_bytes = sum(language_stats.values())
+            top_langs = sorted(language_stats.items(), key=lambda x: x[1], reverse=True)[:5]
+            lang_breakdown = ", ".join([f"{lang} ({bytes/total_bytes*100:.1f}%)" for lang, bytes in top_langs])
+            prompt += f"Languages: {lang_breakdown}\n"
+
+        # Add commit activity patterns
         if commit_history:
-            prompt += f"Recent Activity: {commit_history.recent_90d} commits in last 90 days\n"
+            prompt += f"Recent Activity: {commit_history.recent_90d} commits (90d), {commit_history.recent_365d} commits (365d)\n"
+            if commit_history.patterns:
+                prompt += f"Activity Patterns: {', '.join(commit_history.patterns)}\n"
+
+        # Add quality indicators
+        quality_indicators = []
+        if repo.has_tests:
+            quality_indicators.append("tests")
+        if repo.has_ci_cd:
+            quality_indicators.append("CI/CD")
+        if repo.has_license:
+            quality_indicators.append("license")
+        if repo.has_docs:
+            quality_indicators.append("documentation")
+        if quality_indicators:
+            prompt += f"Quality Indicators: {', '.join(quality_indicators)}\n"
+
+        # Add dependency/tech stack info
+        if tech_stack and tech_stack.dependencies:
+            dep_count = len(tech_stack.dependencies)
+            frameworks = [dep.name for dep in tech_stack.dependencies if dep.category in ['framework', 'library']][:5]
+            if frameworks:
+                prompt += f"Key Dependencies ({dep_count} total): {', '.join(frameworks)}\n"
+            if tech_stack.currency_score is not None:
+                prompt += f"Tech Stack Currency: {tech_stack.currency_score}/100\n"
 
         prompt += f"\nREADME:\n{readme}\n\n"
-        prompt += """Provide a technical summary that:
-1. Explains what the repository does (purpose/functionality)
-2. Mentions key technologies or frameworks used
-3. Notes any standout features or characteristics
+        prompt += """Provide a comprehensive technical summary (4-6 sentences) that:
+1. Explains what the repository does and its main purpose
+2. Describes key features, capabilities, or functionality
+3. Mentions technologies, frameworks, languages, or tools used
+4. Notes architectural patterns or design approaches if evident
+5. Highlights what makes it unique or noteworthy
+6. Mentions target users or use cases if applicable
 
-Keep it concise and technical. Focus on WHAT it does, not HOW to use it."""
+Be informative and technical. Focus on giving readers a clear understanding of the project's scope and value."""
 
         return prompt
 

@@ -70,6 +70,16 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         action="store_true",
         help="Enable verbose logging",
     )
+    analyze_parser.add_argument(
+        "--unified",
+        action="store_true",
+        help="Generate unified report (SVGs + analysis) instead of dated report",
+    )
+    analyze_parser.add_argument(
+        "--keep-dated",
+        action="store_true",
+        help="Also generate dated report when using --unified mode",
+    )
 
     # Generate command
     generate_parser = subparsers.add_parser("generate", help="Generate statistics")
@@ -183,6 +193,88 @@ def handle_analyze(args, logger):
     logger.info(f"User: {args.user}")
     logger.info(f"Top N: {args.top_n}")
 
+    # Route to unified or dated mode
+    if args.unified:
+        logger.info("Mode: Unified Report (SVGs + Analysis)")
+        return handle_unified_analyze(args, logger)
+    else:
+        logger.info("Mode: Dated Report (Analysis Only)")
+        return handle_dated_analyze(args, logger)
+
+
+def handle_unified_analyze(args, logger):
+    """Generate unified report with SVGs and analysis."""
+    from datetime import datetime
+    from pathlib import Path
+    from spark.config import SparkConfig
+    from spark.cache import APICache
+    from spark.unified_report_workflow import UnifiedReportWorkflow
+    from spark.unified_report_generator import UnifiedReportGenerator
+    from spark.exceptions import WorkflowError
+
+    # Check for GitHub token
+    if not os.getenv("GITHUB_TOKEN"):
+        logger.error("GITHUB_TOKEN environment variable not set")
+        logger.info("Please set your GitHub Personal Access Token:")
+        logger.info("  export GITHUB_TOKEN=your_token_here")
+        sys.exit(1)
+
+    try:
+        # Load config
+        config = SparkConfig(args.config)
+        config.load()
+
+        # Initialize workflow
+        cache = APICache()
+        workflow = UnifiedReportWorkflow(config, cache, output_dir="output")
+
+        # Execute unified workflow
+        logger.info("=" * 70)
+        logger.info("Executing Unified Report Workflow")
+        logger.info("=" * 70)
+
+        unified_report = workflow.execute(args.user)
+
+        # Generate unified markdown (non-dated)
+        output_dir = Path(args.output)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        unified_path = output_dir / f"{args.user}-analysis.md"
+
+        generator = UnifiedReportGenerator(config)
+        generator.generate_report(unified_report, str(unified_path))
+
+        logger.info("")
+        logger.info("=" * 70)
+        logger.info("✅ Unified Report Generated Successfully")
+        logger.info("=" * 70)
+        logger.info(f"Report: {unified_path}")
+        logger.info(f"SVGs: {len(unified_report.available_svgs)}/6")
+        logger.info(f"Repos: {len(unified_report.repositories)}")
+        logger.info(f"Success Rate: {unified_report.success_rate}%")
+        logger.info(f"Generation Time: {unified_report.generation_time:.1f}s")
+
+        # Optionally generate dated report for comparison
+        if args.keep_dated:
+            logger.info("")
+            logger.info("Generating dated report for comparison...")
+            dated_args = argparse.Namespace(**vars(args))
+            dated_args.unified = False
+            handle_dated_analyze(dated_args, logger)
+
+        return 0
+
+    except WorkflowError as e:
+        logger.error(f"Workflow failed: {e}")
+        return 1
+    except Exception as e:
+        import traceback
+        logger.error(f"Unexpected error: {e}")
+        logger.error(traceback.format_exc())
+        return 1
+
+
+def handle_dated_analyze(args, logger):
+    """Handle dated report generation (existing behavior)."""
     # Check for GitHub token
     if not os.getenv("GITHUB_TOKEN"):
         logger.error("GITHUB_TOKEN environment variable not set")

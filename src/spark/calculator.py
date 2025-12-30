@@ -38,6 +38,38 @@ class StatsCalculator:
         for lang, bytes_count in languages.items():
             self.languages[lang] = self.languages.get(lang, 0) + bytes_count
 
+    def calculate_statistics(self) -> Dict[str, Any]:
+        """Calculate all statistics and return comprehensive results.
+
+        Returns:
+            Dictionary with all calculated statistics
+        """
+        # Calculate all component statistics
+        spark_score_data = self.calculate_spark_score()
+        time_pattern_data = self.analyze_time_patterns()
+        languages_data = self.aggregate_languages()
+        streaks_data = self.calculate_streaks()
+        release_cadence_data = self.calculate_release_cadence()
+
+        # Group commits by day for heatmap
+        commits_by_day = {}
+        for commit in self.commits:
+            if commit.get("date"):
+                date = datetime.fromisoformat(commit["date"].replace("Z", "+00:00"))
+                date_key = date.strftime("%Y-%m-%d")
+                commits_by_day[date_key] = commits_by_day.get(date_key, 0) + 1
+
+        return {
+            "spark_score": spark_score_data,
+            "time_pattern": time_pattern_data,
+            "languages": languages_data,
+            "streaks": streaks_data,
+            "release_cadence": release_cadence_data,
+            "total_commits": len(self.commits),
+            "total_repositories": len(self.repositories),
+            "commits_by_day": commits_by_day,
+        }
+
     def calculate_spark_score(self) -> Dict[str, Any]:
         """Calculate overall Spark Score (0-100).
 
