@@ -1,0 +1,339 @@
+{
+  "description": "Test scenarios for repository ranking algorithm validation",
+  "scenarios": [
+    {
+      "name": "ideal_active_repo",
+      "description": "Ideal repository: moderate stars, high recent activity, excellent health",
+      "repository": {
+        "name": "active-project",
+        "stars": 1200,
+        "forks": 250,
+        "watchers": 450,
+        "is_archived": false,
+        "is_fork": false,
+        "has_readme": true,
+        "open_issues": 15,
+        "size_kb": 5000,
+        "created_days_ago": 730,
+        "updated_days_ago": 3
+      },
+      "commits": {
+        "total": 850,
+        "recent_90d": 45,
+        "recent_180d": 75,
+        "recent_365d": 120,
+        "last_commit_days_ago": 3
+      },
+      "expected_scores": {
+        "popularity": 76,
+        "activity": 95,
+        "health": 81,
+        "composite": 84
+      },
+      "expected_rank_range": [1, 3]
+    },
+    {
+      "name": "legacy_popular_repo",
+      "description": "Legacy repository: very high stars, minimal recent activity",
+      "repository": {
+        "name": "legacy-framework",
+        "stars": 5000,
+        "forks": 800,
+        "watchers": 1200,
+        "is_archived": false,
+        "is_fork": false,
+        "has_readme": true,
+        "open_issues": 50,
+        "size_kb": 15000,
+        "created_days_ago": 1825,
+        "updated_days_ago": 45
+      },
+      "commits": {
+        "total": 2500,
+        "recent_90d": 2,
+        "recent_180d": 8,
+        "recent_365d": 25,
+        "last_commit_days_ago": 45
+      },
+      "expected_scores": {
+        "popularity": 94,
+        "activity": 40,
+        "health": 65,
+        "composite": 62
+      },
+      "expected_rank_range": [2, 5]
+    },
+    {
+      "name": "new_active_repo",
+      "description": "New repository: few stars, very high recent activity",
+      "repository": {
+        "name": "new-startup",
+        "stars": 15,
+        "forks": 3,
+        "watchers": 8,
+        "is_archived": false,
+        "is_fork": false,
+        "has_readme": true,
+        "open_issues": 5,
+        "size_kb": 800,
+        "created_days_ago": 120,
+        "updated_days_ago": 2
+      },
+      "commits": {
+        "total": 180,
+        "recent_90d": 80,
+        "recent_180d": 180,
+        "recent_365d": 180,
+        "last_commit_days_ago": 2
+      },
+      "expected_scores": {
+        "popularity": 27,
+        "activity": 84,
+        "health": 59,
+        "composite": 55
+      },
+      "expected_rank_range": [3, 6]
+    },
+    {
+      "name": "archived_repo",
+      "description": "Archived repository: high stars, no recent activity",
+      "repository": {
+        "name": "archived-tool",
+        "stars": 10000,
+        "forks": 1500,
+        "watchers": 2000,
+        "is_archived": true,
+        "is_fork": false,
+        "has_readme": true,
+        "open_issues": 200,
+        "size_kb": 20000,
+        "created_days_ago": 2190,
+        "updated_days_ago": 400
+      },
+      "commits": {
+        "total": 5000,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 0,
+        "last_commit_days_ago": 400
+      },
+      "expected_scores": {
+        "popularity": 50,
+        "activity": 2,
+        "health": 13,
+        "composite": 24
+      },
+      "expected_rank_range": [7, 10]
+    },
+    {
+      "name": "fork_behind",
+      "description": "Fork repository: behind upstream, minimal unique commits",
+      "repository": {
+        "name": "forked-lib",
+        "stars": 5,
+        "forks": 0,
+        "watchers": 2,
+        "is_archived": false,
+        "is_fork": true,
+        "has_readme": true,
+        "open_issues": 1,
+        "size_kb": 3000,
+        "created_days_ago": 365,
+        "updated_days_ago": 30,
+        "fork_ahead": 3,
+        "fork_behind": 500
+      },
+      "commits": {
+        "total": 503,
+        "recent_90d": 3,
+        "recent_180d": 3,
+        "recent_365d": 3,
+        "last_commit_days_ago": 30
+      },
+      "expected_scores": {
+        "popularity": 4,
+        "activity": 8,
+        "health": 40,
+        "composite": 14
+      },
+      "expected_rank_range": [9, 12]
+    },
+    {
+      "name": "zero_star_active",
+      "description": "Zero-star but highly active repository",
+      "repository": {
+        "name": "personal-project",
+        "stars": 0,
+        "forks": 0,
+        "watchers": 1,
+        "is_archived": false,
+        "is_fork": false,
+        "has_readme": true,
+        "open_issues": 3,
+        "size_kb": 1200,
+        "created_days_ago": 180,
+        "updated_days_ago": 1
+      },
+      "commits": {
+        "total": 250,
+        "recent_90d": 90,
+        "recent_180d": 250,
+        "recent_365d": 250,
+        "last_commit_days_ago": 1
+      },
+      "expected_scores": {
+        "popularity": 5,
+        "activity": 88,
+        "health": 55,
+        "composite": 48
+      },
+      "expected_rank_range": [4, 8]
+    },
+    {
+      "name": "empty_repo",
+      "description": "Empty repository: no commits, minimal size",
+      "repository": {
+        "name": "placeholder",
+        "stars": 0,
+        "forks": 0,
+        "watchers": 1,
+        "is_archived": false,
+        "is_fork": false,
+        "has_readme": false,
+        "open_issues": 0,
+        "size_kb": 5,
+        "created_days_ago": 10,
+        "updated_days_ago": 10
+      },
+      "commits": {
+        "total": 0,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 0,
+        "last_commit_days_ago": 9999
+      },
+      "expected_scores": {
+        "popularity": 0,
+        "activity": 0,
+        "health": 0,
+        "composite": 0
+      },
+      "should_exclude": true,
+      "exclusion_reason": "Empty repository (0 commits, <10KB)"
+    },
+    {
+      "name": "private_repo",
+      "description": "Private repository - should be excluded by privacy filter",
+      "repository": {
+        "name": "private-work",
+        "stars": 0,
+        "forks": 0,
+        "watchers": 1,
+        "is_archived": false,
+        "is_fork": false,
+        "has_readme": true,
+        "open_issues": 5,
+        "size_kb": 2000,
+        "created_days_ago": 200,
+        "updated_days_ago": 5,
+        "is_private": true
+      },
+      "commits": {
+        "total": 150,
+        "recent_90d": 30,
+        "recent_180d": 80,
+        "recent_365d": 150,
+        "last_commit_days_ago": 5
+      },
+      "should_exclude": true,
+      "exclusion_reason": "Private repository (constitution requirement)"
+    },
+    {
+      "name": "stale_repo",
+      "description": "Stale repository: not updated in over a year",
+      "repository": {
+        "name": "abandoned-tool",
+        "stars": 100,
+        "forks": 20,
+        "watchers": 30,
+        "is_archived": false,
+        "is_fork": false,
+        "has_readme": true,
+        "open_issues": 25,
+        "size_kb": 5000,
+        "created_days_ago": 1095,
+        "updated_days_ago": 400
+      },
+      "commits": {
+        "total": 500,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 0,
+        "last_commit_days_ago": 400
+      },
+      "expected_scores": {
+        "popularity": 45,
+        "activity": 5,
+        "health": 35,
+        "composite": 22
+      },
+      "expected_rank_range": [8, 12]
+    },
+    {
+      "name": "fork_ahead",
+      "description": "Fork repository: ahead of upstream with significant unique work",
+      "repository": {
+        "name": "improved-fork",
+        "stars": 50,
+        "forks": 10,
+        "watchers": 15,
+        "is_archived": false,
+        "is_fork": true,
+        "has_readme": true,
+        "open_issues": 8,
+        "size_kb": 4000,
+        "created_days_ago": 500,
+        "updated_days_ago": 10,
+        "fork_ahead": 150,
+        "fork_behind": 50
+      },
+      "commits": {
+        "total": 650,
+        "recent_90d": 25,
+        "recent_180d": 60,
+        "recent_365d": 150,
+        "last_commit_days_ago": 10
+      },
+      "expected_scores": {
+        "popularity": 38,
+        "activity": 65,
+        "health": 58,
+        "composite": 54
+      },
+      "expected_rank_range": [3, 7],
+      "notes": "Fork ahead by more than behind, so treated more favorably"
+    }
+  ],
+  "test_assertions": {
+    "privacy_filter": {
+      "description": "All private repositories must be excluded",
+      "excluded_repos": ["private-work"]
+    },
+    "empty_filter": {
+      "description": "Empty repositories must be excluded",
+      "excluded_repos": ["placeholder"]
+    },
+    "activity_weight": {
+      "description": "Active repos should rank higher than legacy repos with similar stars",
+      "assertion": "rank(new_active_repo) < rank(legacy_popular_repo) OR difference <= 2"
+    },
+    "archived_penalty": {
+      "description": "Archived repos should receive significant penalty",
+      "assertion": "score(archived_repo) < 30"
+    },
+    "composite_calculation": {
+      "description": "Composite score must equal weighted sum",
+      "formula": "composite = (popularity * 0.30) + (activity * 0.45) + (health * 0.25)"
+    }
+  }
+}

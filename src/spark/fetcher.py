@@ -216,6 +216,101 @@ class GitHubFetcher:
             self.logger.debug(f"Could not fetch languages for {repo_name}: {e}")
             return {}
 
+    def fetch_commit_counts(
+        self, username: str, repo_name: str
+    ) -> Dict[str, int]:
+        """Fetch time-windowed commit counts for ranking algorithm.
+
+        Returns commits in multiple time windows:
+        - total: All-time commits
+        - recent_90d: Last 90 days
+        - recent_180d: Last 180 days
+        - recent_365d: Last 365 days
+
+        Args:
+            username: Repository owner username
+            repo_name: Repository name
+
+        Returns:
+            Dictionary with commit counts by time window
+        """
+        cache_key = f"commit_counts_{username}_{repo_name}"
+        cached = self.cache.get(cache_key)
+        if cached:
+            return cached
+
+        try:
+            repo = self.github.get_repo(f"{username}/{repo_name}")
+
+            # Use timezone-aware datetime to match GitHub API
+            from datetime import timedelta, timezone
+            now = datetime.now(timezone.utc)
+
+            # Calculate time window boundaries
+            day_90_ago = now - timedelta(days=90)
+            day_180_ago = now - timedelta(days=180)
+            day_365_ago = now - timedelta(days=365)
+
+            # Fetch commits and count by time window
+            total_commits = 0
+            commits_90d = 0
+            commits_180d = 0
+            commits_365d = 0
+            last_commit_date = None
+
+            # Note: We limit to 1000 commits to stay within API limits
+            # For repos with >1000 commits, this gives us a representative sample
+            commits = repo.get_commits()
+
+            for commit in commits:
+                # Stop after 1000 commits to avoid rate limits
+                if total_commits >= 1000:
+                    break
+
+                total_commits += 1
+
+                # Safely access commit author date
+                try:
+                    commit_date = commit.commit.author.date if commit.commit and commit.commit.author else None
+                except (AttributeError, IndexError):
+                    continue
+
+                if not commit_date:
+                    continue
+
+                # Track most recent commit
+                if not last_commit_date or commit_date > last_commit_date:
+                    last_commit_date = commit_date
+
+                # Count in time windows
+                if commit_date >= day_90_ago:
+                    commits_90d += 1
+                if commit_date >= day_180_ago:
+                    commits_180d += 1
+                if commit_date >= day_365_ago:
+                    commits_365d += 1
+
+            result = {
+                "total": total_commits,
+                "recent_90d": commits_90d,
+                "recent_180d": commits_180d,
+                "recent_365d": commits_365d,
+                "last_commit_date": last_commit_date.isoformat() if last_commit_date else None,
+            }
+
+            self.cache.set(cache_key, result)
+            return result
+
+        except (GithubException, IndexError, AttributeError) as e:
+            self.logger.debug(f"Could not fetch commit counts for {repo_name}: {e}")
+            return {
+                "total": 0,
+                "recent_90d": 0,
+                "recent_180d": 0,
+                "recent_365d": 0,
+                "last_commit_date": None,
+            }
+
     def handle_rate_limit(self, max_retries: int = 3) -> None:
         """Handle rate limiting with exponential backoff.
 

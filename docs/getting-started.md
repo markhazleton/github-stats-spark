@@ -101,6 +101,75 @@ If you have many repositories (>100):
 - You may need to wait a few minutes between runs
 - Check the workflow logs for "Rate limit exceeded" messages
 
+## Advanced Setup: AI-Powered Repository Analysis
+
+Stats Spark includes an optional AI-powered repository analysis feature that generates comprehensive markdown reports.
+
+### Setup for Local Use
+
+To use the `spark analyze` command locally:
+
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   pip install -e .
+   ```
+
+2. **Set up GitHub token**:
+   ```bash
+   export GITHUB_TOKEN=ghp_your_token_here
+   ```
+
+3. **(Optional) Set up Anthropic API key** for AI summaries:
+   ```bash
+   export ANTHROPIC_API_KEY=sk-ant-your_key_here
+   ```
+
+   **Getting an Anthropic API key**:
+   - Sign up at [console.anthropic.com](https://console.anthropic.com)
+   - Navigate to API Keys section
+   - Create new API key
+   - Copy and save securely
+   - **Cost**: ~$0.10-0.30 per 50-repository report
+
+   **Without API key**: The command automatically uses template-based summaries.
+
+4. **Run the analyze command**:
+   ```bash
+   spark analyze --user YOUR_USERNAME
+   ```
+
+### Setup for GitHub Actions
+
+To enable AI summaries in your automated workflow:
+
+1. **Add Anthropic API key to repository secrets**:
+   - Go to your repository Settings
+   - Navigate to Secrets → Actions
+   - Click "New repository secret"
+   - Name: `ANTHROPIC_API_KEY`
+   - Value: Your Anthropic API key
+   - Click "Add secret"
+
+2. **Update workflow file** (`.github/workflows/generate-stats.yml`):
+   ```yaml
+   env:
+     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+     ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}  # Add this line
+   ```
+
+3. **Add analyze step to workflow**:
+   ```yaml
+   - name: Generate repository analysis
+     env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+     run: |
+       python -m spark.cli analyze --user ${{ github.repository_owner }}
+   ```
+
+For detailed usage, see [Repository Analysis Documentation](analyze-command.md).
+
 ## Next Steps
 
 - **Customize Themes**: See [Configuration Guide](configuration.md)

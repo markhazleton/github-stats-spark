@@ -15,8 +15,45 @@ from spark.visualizer import StatisticsVisualizer, get_theme
 
 
 def main():
-    """Main execution function for automated statistics generation."""
+    """Main execution function for automated statistics generation.
+
+    Supports two modes:
+    - Default: Generate SVG statistics (original workflow)
+    - SPARK_COMMAND=analyze: Generate repository analysis report (new workflow)
+    """
     logger = get_logger("spark-main", verbose=True)
+
+    # T097: Support analyze command for GitHub Actions
+    command = os.getenv("SPARK_COMMAND", "generate").lower()
+
+    if command == "analyze":
+        # Delegate to analyze workflow
+        from spark.cli import handle_analyze
+        from argparse import Namespace
+
+        # Create args namespace from environment variables
+        args = Namespace(
+            user=os.getenv("SPARK_USER") or None,
+            output=os.getenv("SPARK_OUTPUT", "output/reports"),
+            top_n=int(os.getenv("SPARK_TOP_N", "50")),
+            list_only=os.getenv("SPARK_LIST_ONLY", "").lower() == "true",
+            config=os.getenv("SPARK_CONFIG", "config/spark.yml"),
+            verbose=os.getenv("SPARK_VERBOSE", "").lower() == "true",
+        )
+
+        # Auto-detect user from GITHUB_REPOSITORY if not provided
+        if not args.user:
+            repo = os.getenv("GITHUB_REPOSITORY", "")
+            if "/" in repo:
+                args.user = repo.split("/")[0]
+
+        if not args.user:
+            logger.error("Could not determine username. Set SPARK_USER environment variable")
+            sys.exit(1)
+
+        logger.info(f"Running analyze command for user: {args.user}")
+        handle_analyze(args, logger)
+        return
 
     try:
         logger.info("Stats Spark - GitHub Statistics Generator")

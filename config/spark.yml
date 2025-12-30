@@ -65,3 +65,32 @@ repositories:
   max_count: 500              # Maximum repositories to process
   exclude_private: true       # Exclude private repositories (per constitution)
   exclude_forks: false        # Exclude forked repositories
+
+# Repository Analysis Configuration
+analyzer:
+  # Top N repositories to include in analysis report
+  top_n: 50
+
+  # AI Provider for repository summarization
+  ai_provider: anthropic      # Options: anthropic, openai, disabled
+
+  # Model selection (if ai_provider enabled)
+  ai_model: claude-haiku-3.5  # Claude Haiku for cost-effective summaries
+
+  # Cache TTL for dependency version checks (days)
+  dependency_cache_ttl: 7     # 7 days for package registry responses
+
+  # Supported dependency ecosystems
+  dependency_ecosystems:
+    - npm                     # JavaScript/TypeScript (package.json)
+    - pypi                    # Python (requirements.txt, pyproject.toml)
+    - rubygems                # Ruby (Gemfile)
+    - go                      # Go (go.mod)
+    - maven                   # Java (pom.xml)
+    - nuget                   # .NET (*.csproj)
+
+  # Ranking algorithm weights (must sum to 1.0)
+  ranking_weights:
+    popularity: 0.30          # Stars, forks, watchers
+    activity: 0.45            # Recent commits, recency
+    health: 0.25              # Documentation, maturity, issues
