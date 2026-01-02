@@ -139,7 +139,9 @@ class RepositorySummarizer:
         )
 
         # Create cache key from repository content
-        cache_key = self._create_cache_key(repo.name, truncated_readme, repo.updated_at)
+        # Use last commit date if available (more stable than updated_at)
+        cache_date = commit_history.last_commit_date if commit_history and commit_history.last_commit_date else repo.updated_at
+        cache_key = self._create_cache_key(repo.name, truncated_readme, cache_date)
 
         # Check cache first (SAVES TOKENS!)
         cached_summary = self.cache.get(cache_key)
@@ -490,12 +492,16 @@ Be informative and technical. Focus on giving readers a clear understanding of t
         The cache key is based on:
         - Repository name
         - README content hash (to detect changes)
-        - Last updated timestamp (to invalidate stale caches)
+        - Last commit date (NOT updated_at, to avoid regenerating when no new commits)
+
+        This ensures AI summaries are only regenerated when:
+        1. A new commit is made (last_commit_date changes)
+        2. README content changes (hash changes)
 
         Args:
             repo_name: Repository name
             readme_content: README content
-            updated_at: Last updated datetime
+            updated_at: Last commit datetime (or repo updated_at as fallback)
 
         Returns:
             Cache key string
@@ -504,6 +510,7 @@ Be informative and technical. Focus on giving readers a clear understanding of t
         readme_hash = hashlib.md5(readme_content[:1000].encode()).hexdigest()[:12]
 
         # Format: ai_summary_{repo}_{readme_hash}_{date}
+        # Using date instead of full timestamp to reduce cache churn
         date_str = updated_at.strftime("%Y%m%d") if updated_at else "unknown"
         return f"ai_summary_{repo_name}_{readme_hash}_{date_str}"
 

@@ -26,8 +26,8 @@ const serveDataPlugin = () => ({
 export default defineConfig({
   plugins: [react(), serveDataPlugin()],
 
-  // Base URL for GitHub Pages deployment
-  base: '/github-stats-spark/',
+  // Base URL - use relative paths for flexibility
+  base: './',
 
   // Exclude symlink from public directory
   publicDir: false,

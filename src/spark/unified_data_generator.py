@@ -129,12 +129,22 @@ class UnifiedDataGenerator:
         logger.info(f"Fetching repositories for {self.username}...")
         repos_config = self.config.config.get("repositories", {})
         exclude_forks = repos_config.get("exclude_forks", False)
+        exclude_archived = repos_config.get("exclude_archived", True)  # Default: skip archived repos
         
         raw_repos = self.fetcher.fetch_repositories(
             username=self.username,
             exclude_private=True,
             exclude_forks=exclude_forks
         )
+        
+        # Filter out archived repositories if configured
+        if exclude_archived:
+            before_count = len(raw_repos)
+            raw_repos = [r for r in raw_repos if not r.get('archived', False)]
+            archived_count = before_count - len(raw_repos)
+            if archived_count > 0:
+                logger.info(f"Filtered out {archived_count} archived repositories")
+        
         logger.info(f"Found {len(raw_repos)} repositories")
 
         # Apply max_repositories limit
@@ -193,10 +203,17 @@ class UnifiedDataGenerator:
                 commit_histories[repo_name] = commit_history
 
                 # Fetch detailed commit metrics (for largest/smallest commits)
+                # Optimize: Reduce max commits for repos with no recent activity
+                max_commits_to_fetch = self.max_commits_per_repo
+                if commit_history.recent_90d == 0:
+                    # No recent activity - fetch fewer commits
+                    max_commits_to_fetch = min(50, self.max_commits_per_repo)
+                    logger.debug(f"  No recent activity, reducing to {max_commits_to_fetch} commits")
+                
                 commits_with_stats = self.fetcher.fetch_commits_with_stats(
                     username=self.username,
                     repo_name=repo_name,
-                    max_commits=self.max_commits_per_repo
+                    max_commits=max_commits_to_fetch
                 )
                 
                 # Calculate commit metrics from fetched commits

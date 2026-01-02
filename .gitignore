@@ -146,10 +146,6 @@ cython_debug/
 # Stats Spark Specific
 # ============================================================================
 
-# API Response Cache (6-hour TTL, should not be committed)
-.cache/
-*.cache
-
 # Local test outputs (don't commit test outputs, but DO commit main output/ SVGs)
 test-output/
 temp-output/

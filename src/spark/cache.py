@@ -1,4 +1,4 @@
-"""API response caching with 6-hour TTL."""
+"""API response caching with 30-day TTL."""
 
 import json
 import os
@@ -8,14 +8,14 @@ from typing import Any, Optional
 
 
 class APICache:
-    """Manages cached API responses with 6-hour TTL."""
+    """Manages cached API responses with 30-day TTL."""
 
-    def __init__(self, cache_dir: str = ".cache", ttl_hours: int = 6):
+    def __init__(self, cache_dir: str = ".cache", ttl_hours: int = 720):
         """Initialize the cache.
 
         Args:
             cache_dir: Directory to store cache files
-            ttl_hours: Time-to-live in hours (default: 6)
+            ttl_hours: Time-to-live in hours (default: 720 = 30 days)
         """
         self.cache_dir = Path(cache_dir)
         self.ttl = timedelta(hours=ttl_hours)

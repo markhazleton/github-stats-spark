@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-01-02 18:11:36 UTC
+**Generated**: 2026-01-02 22:03:26 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 48
 **AI Summary Rate**: 97.9%
@@ -740,9 +740,9 @@ Sandbox for trying out new stuff Written in C#.
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary:
+Here's a comprehensive technical summary for the Azure.Data.Tables-Extensions repository:
 
-The Azure.Data.Tables-Extensions is a C# library that provides enhanced functionality and convenience methods for working with Azure Table Storage, offering developers extended querying, manipulation, and data transfer capabilities beyond the standard Azure.Data.Tables library. The project introduces specialized extension methods for TableClient that simplify common operations like retrieving entities with various filtering options, batch processing, table management, and comprehensive CSV import/export functionality with compatibility to Azure Storage Explorer. Built using .NET and targeting Azure's cloud storage ecosystem, the library implements helpful abstractions like safe table creation, entity counting, and flexible data retrieval methods that reduce boilerplate code and improve developer productivity when working with table-based data storage. Its standout features include auto-batching for entity operations, nuanced querying methods (such as retrieving entities starting with specific values), and robust CSV interoperability that maintains strict format consistency with existing Azure tools. The library is particularly valuable for developers working with Azure Table Storage who need more flexible and intuitive data access patterns, with a focus on simplifying data migration, backup, and retrieval scenarios in cloud-native .NET applications.
+This open-source C# library provides extension methods and utilities for Azure Table Storage, specifically enhancing the standard Azure.Data.Tables library with simplified data manipulation, querying, and CSV import/export capabilities. The project offers developers a more convenient and feature-rich approach to working with Azure Table Storage, including methods for bulk entity retrieval, filtering, batch operations, and seamless CSV data transfer with full compatibility with Azure Storage Explorer. Built using .NET and leveraging async programming patterns, the library implements intelligent extensions like auto-batching, safe table creation, entity counting, and flexible querying mechanisms that reduce boilerplate code and simplify common table storage interactions. The library is particularly valuable for developers working with Azure cloud storage who need more ergonomic data access patterns, with a strong emphasis on operational safety and ease of use, as evidenced by its explicit warnings about data backup verification. Unique features include methods like GetAllEntitiesStartingWithAsync, CreateTableIfNotExistsSafeAsync, and comprehensive CSV import/export functionality that maintains strict compatibility with existing Azure tooling.
 
 **Created**: 2025-02-25
 **Last Modified**: 2025-05-20
@@ -793,7 +793,7 @@ This repository demonstrates an advanced implementation of the Decorator Design 
 
 Here's a comprehensive technical summary of the openai-dotnet repository:
 
-The openai-dotnet repository is an official .NET library that provides a comprehensive, strongly-typed client interface for interacting with OpenAI's REST API, enabling developers to seamlessly integrate advanced AI capabilities into .NET applications across various domains. The library supports a wide range of OpenAI services including chat completions, image generation, audio transcription, embeddings, assistants, and more, with robust support for both synchronous and asynchronous programming models and featuring namespace-organized client classes that align closely with OpenAI's API structure. Developed collaboratively with Microsoft and generated from OpenAI's OpenAPI specification, the library is designed to be compatible with .NET Standard 2.0 and offers advanced features like streaming responses, function calling, structured outputs, and specialized support for Azure OpenAI deployments. The library implements best practices for API interaction, including secure API key management, comprehensive error handling, and extensible configuration options, making it an enterprise-ready solution for developers looking to leverage OpenAI's machine learning capabilities within .NET ecosystems. Its modular architecture, with dedicated clients for different API domains (ChatClient, AudioClient, ImageClient, etc.), allows for granular and type-safe interactions with OpenAI's services, providing developers with a clean, intuitive interface for building intelligent applications ranging from conversational AI to generative content systems.
+The openai-dotnet repository is an official .NET library providing comprehensive programmatic access to OpenAI's REST API, enabling developers to interact with various OpenAI services like chat completions, embeddings, image generation, audio transcription, and assistants through a strongly-typed, namespace-organized client architecture. The library supports both synchronous and asynchronous API interactions, offers extensive configurability through environment-based authentication, and is designed to be compatible with .NET Standard 2.0, allowing broad usage across different .NET platforms and versions. Generated collaboratively with Microsoft from OpenAI's OpenAPI specification, the library features a modular design with dedicated client classes for each API feature area (e.g., ChatClient, AudioClient), supporting advanced capabilities like streaming responses, function calling, and structured outputs. Notably, the library provides first-class support for emerging AI technologies such as retrieval-augmented generation (RAG), vision-enabled assistants, and cross-platform integration, making it a robust solution for .NET developers looking to incorporate advanced AI capabilities into their applications. The project is particularly valuable for enterprise and independent developers seeking a type-safe, well-documented, and officially maintained interface for integrating OpenAI's machine learning services into .NET ecosystem applications.
 
 **Created**: 2025-03-16
 **Last Modified**: 2025-03-16
@@ -842,7 +842,7 @@ The SolidSample repository is an educational C# project designed to demonstrate 
 
 **Quality**: ❌ License | ✅ Docs
 
-SpotifyAPI-NET is a comprehensive, open-source .NET library designed to provide seamless interaction with the Spotify Web API, enabling developers to programmatically access and manipulate Spotify music data and user-related content across multiple platforms. The library supports a wide range of functionalities, including querying Spotify catalog information (tracks, albums, playlists), managing user libraries, controlling music playback, and offering robust authentication mechanisms through OAuth2 for both web and CLI applications. Architecturally, it leverages a modular design with strong typing, supports .NET Standard 2.x, and provides extensive features like custom HTTP client integration, logging, retry handlers, proxy support, and pagination across more than 74 API endpoints. Its versatility is enhanced by compatibility with multiple .NET platforms including .NET Framework, UWP, .NET Core, and Xamarin.Forms, making it a flexible solution for developers looking to build music-related applications or integrate Spotify functionality into their .NET projects. The library distinguishes itself through its comprehensive type-safe implementation, ease of use, and extensive documentation, catering to developers seeking a robust, well-maintained Spotify API wrapper. Ideal for music application developers, data analysts, and software engineers wanting to build interactive music experiences or extract insights from Spotify's extensive music ecosystem.
+SpotifyAPI-NET is a comprehensive .NET library that provides a robust, type-safe interface for interacting with the Spotify Web API, enabling developers to build applications that can query Spotify's music catalog, manage user libraries, control playback, and handle authentication across multiple .NET platforms. The library supports .NET Standard 2.X, which ensures broad compatibility with frameworks like .NET Framework, UWP, .NET Core, and Xamarin.Forms, and offers advanced features such as typed responses for over 74 endpoints, built-in HTTP client support, logging, retry handlers, proxy configuration, and pagination. Its modular architecture allows for easy integration and unit testing, with full OAuth2 authentication support for both web (ASP.NET) and command-line applications. The library stands out for its comprehensive type-safety, extensive endpoint coverage, and flexible design that abstracts away the complexities of direct API interactions, making it an ideal solution for .NET developers looking to build music-related applications, integrate Spotify functionality, or create custom music management tools. Developers can leverage this library to perform tasks ranging from retrieving track information and managing playlists to implementing advanced music player controls with minimal boilerplate code.
 
 **Created**: 2022-10-25
 **Last Modified**: 2024-12-03
@@ -874,9 +874,9 @@ The startbootstrap-modern-business repository is a sophisticated, production-rea
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary:
+Here's a comprehensive technical summary of the supermarket-api repository:
 
-The Supermarket-API is a RESTful ASP.NET Core web service demonstrating best practices for building maintainable and scalable backend APIs using modern .NET technologies. The project provides a comprehensive example of a supermarket inventory management system, showcasing advanced architectural patterns like repository, dependency injection, and service-oriented design with clean, decoupled code structures. Built with .NET 8, Entity Framework Core, and leveraging tools like AutoMapper and Swashbuckle, the API supports operations for managing product categories, implementing features such as pagination, filtering, and comprehensive Swagger documentation. The repository serves as an educational reference for developers learning API development, featuring evolving implementations across different .NET versions and emphasizing clean coding practices, immutable record types, and standardized API routing. Its primary value lies in providing a real-world, production-ready template for building enterprise-grade RESTful services with a focus on modularity, testability, and following contemporary .NET development conventions.
+The supermarket-api is a RESTful ASP.NET Core web API demonstrating best practices for building scalable, maintainable microservices for supermarket inventory management. Leveraging .NET 8, Entity Framework Core, and AutoMapper, the project provides a clean, decoupled architecture for managing product categories and inventory with features like pagination, filtering, and Swagger-based API documentation. The API follows domain-driven design principles, utilizing repository and service patterns to abstract data access and business logic, and supports in-memory and potentially external database providers for flexible data persistence. Key technical highlights include robust error handling, standardized API responses, immutable record types for resources, and comprehensive configuration for routing and validation. This project serves as an educational reference and starter template for developers looking to implement modern, production-ready .NET web APIs with clean code practices and contemporary architectural patterns.
 
 **Created**: 2020-03-30
 **Last Modified**: 2024-08-05
@@ -937,10 +937,10 @@ The Yelp.Api is a lightweight C# class library that provides a clean, intuitive 
 
 ## Report Metadata
 
-- **Generation Time**: 152.0 seconds
+- **Generation Time**: 150.6 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 101,878
+- **Total AI Tokens**: 101,830
 - **Success Rate**: 100.0%
 
 ### Data Sources

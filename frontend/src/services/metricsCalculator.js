@@ -331,12 +331,12 @@ export function transformForScatterPlot(repositories, xMetric = 'totalCommits', 
  */
 function getMetricValue(repo, metricId) {
   const metricMap = {
-    totalCommits: repo.totalCommits || repo.commit_count || 0,
-    avgCommitSize: repo.avgCommitSize || repo.avg_commit_size || 0,
-    largestCommit: repo.largestCommit || repo.largest_commit || 0,
-    smallestCommit: repo.smallestCommit || repo.smallest_commit || 0,
-    firstCommitDate: repo.firstCommitDate || repo.first_commit_date,
-    lastCommitDate: repo.lastCommitDate || repo.last_commit_date,
+    totalCommits: repo.commit_history?.total_commits || repo.totalCommits || repo.commit_count || 0,
+    avgCommitSize: repo.commit_metrics?.avg_size || repo.avgCommitSize || repo.avg_commit_size || 0,
+    largestCommit: repo.commit_metrics?.largest_commit?.size || repo.largestCommit || repo.largest_commit || 0,
+    smallestCommit: repo.commit_metrics?.smallest_commit?.size || repo.smallestCommit || repo.smallest_commit || 0,
+    firstCommitDate: repo.commit_history?.first_commit_date || repo.firstCommitDate || repo.first_commit_date,
+    lastCommitDate: repo.commit_history?.last_commit_date || repo.lastCommitDate || repo.last_commit_date,
   }
 
   const value = metricMap[metricId]
