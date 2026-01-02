@@ -348,7 +348,7 @@ class UnifiedDataGenerator:
 
         # Step 5: Generate user profile
         logger.info("Generating user profile...")
-        user_data = self.fetcher.get_user()
+        user_data = self.fetcher.get_user(self.username)
         
         # Calculate aggregate statistics
         total_stars = sum(repo.stars for repo in repositories)
