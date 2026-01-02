@@ -263,6 +263,16 @@ class GitHubFetcher:
 
                 try:
                     # Fetch detailed commit data with stats
+                    # Note: commit.files is a PaginatedList, need to count it properly
+                    files_count = 0
+                    if hasattr(commit, 'files') and commit.files:
+                        try:
+                            # Convert PaginatedList to list to get count
+                            files_count = len(list(commit.files))
+                        except Exception:
+                            # If that fails, use totalCount if available
+                            files_count = commit.files.totalCount if hasattr(commit.files, 'totalCount') else 0
+
                     commit_data = {
                         "sha": commit.sha,
                         "commit": {
@@ -273,9 +283,9 @@ class GitHubFetcher:
                             "message": commit.commit.message,
                         },
                         "stats": {
-                            "total": commit.files.__len__() if hasattr(commit, 'files') and commit.files else 0,
-                            "additions": commit.stats.additions if commit.stats else 0,
-                            "deletions": commit.stats.deletions if commit.stats else 0,
+                            "total": files_count,
+                            "additions": commit.stats.additions if hasattr(commit, 'stats') and commit.stats else 0,
+                            "deletions": commit.stats.deletions if hasattr(commit, 'stats') and commit.stats else 0,
                         },
                         "repo": repo_name,
                     }

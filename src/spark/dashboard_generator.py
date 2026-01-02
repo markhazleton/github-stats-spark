@@ -21,7 +21,7 @@ from spark.models.dashboard_data import (
     UserProfile,
     CommitMetric,
 )
-from spark.config import Config
+from spark.config import SparkConfig
 
 logger = logging.getLogger(__name__)
 
@@ -58,8 +58,8 @@ class DashboardGenerator:
 
         # Get dashboard configuration
         dashboard_config = config.get("dashboard", {})
-        self.output_dir = Path(dashboard_config.get("output_dir", "docs"))
-        self.data_dir = self.output_dir / "data"
+        self.output_dir = Path(dashboard_config.get("output_dir", "data"))
+        self.data_dir = self.output_dir
 
         # Dashboard feature flags
         self.enabled = dashboard_config.get("enabled", True)

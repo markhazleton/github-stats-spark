@@ -100,8 +100,8 @@ dashboard:
   # Enable dashboard generation
   enabled: true
 
-  # Output directory for dashboard data and build artifacts
-  output_dir: docs
+  # Output directory for dashboard data (source data, not build output)
+  output_dir: data
 
   # Dashboard features to enable
   visualizations:

@@ -1,18 +1,41 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import fs from 'fs'
+
+// Plugin to serve /data directory in dev mode
+const serveDataPlugin = () => ({
+  name: 'serve-data',
+  configureServer(server) {
+    server.middlewares.use((req, res, next) => {
+      if (req.url.startsWith('/data/')) {
+        const filePath = path.resolve(__dirname, '..', req.url.slice(1))
+        if (fs.existsSync(filePath)) {
+          const content = fs.readFileSync(filePath)
+          res.setHeader('Content-Type', 'application/json')
+          res.end(content)
+          return
+        }
+      }
+      next()
+    })
+  }
+})
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), serveDataPlugin()],
 
   // Base URL for GitHub Pages deployment
   base: '/github-stats-spark/',
 
+  // Exclude symlink from public directory
+  publicDir: false,
+
   // Build configuration
   build: {
     outDir: '../docs',
-    emptyOutDir: true,
+    emptyOutDir: true, // Clean build - data will be copied after
 
     // Single bundle output optimization
     rollupOptions: {
@@ -57,12 +80,9 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
-    proxy: {
-      // Proxy API requests to avoid CORS during development
-      '/data': {
-        target: 'http://localhost:5173',
-        changeOrigin: true
-      }
+    fs: {
+      // Allow serving files from parent directory (/data)
+      allow: ['..']
     }
   },
 

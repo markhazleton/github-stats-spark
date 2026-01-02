@@ -80,18 +80,18 @@
 
 ### Implementation for User Story 1
 
-- [ ] T027 [P] [US1] Create frontend/src/components/RepositoryTable/RepositoryTable.jsx main component
-- [ ] T028 [P] [US1] Create frontend/src/components/RepositoryTable/RepositoryTable.module.css with table styling
-- [ ] T029 [P] [US1] Create frontend/src/components/RepositoryTable/TableHeader.jsx component for column headers
-- [ ] T030 [P] [US1] Create frontend/src/components/RepositoryTable/TableRow.jsx component for repository rows
-- [ ] T031 [US1] Integrate RepositoryTable component into frontend/src/App.jsx with data from useRepositoryData hook
-- [ ] T032 [US1] Implement column rendering for all required fields (name, language, dates, commits, sizes) in TableRow.jsx
-- [ ] T033 [US1] Add formatting utilities for dates (ISO to readable) in frontend/src/services/metricsCalculator.js
-- [ ] T034 [US1] Add formatting utilities for commit sizes (numeric display) in frontend/src/services/metricsCalculator.js
-- [ ] T035 [US1] Handle edge cases in TableRow.jsx (missing language → "Unknown", no commits → "N/A")
-- [ ] T036 [US1] Add CSS grid/flexbox layout to RepositoryTable.module.css for responsive table design
-- [ ] T037 [US1] Add loading state integration in RepositoryTable.jsx using LoadingState component
-- [ ] T038 [US1] Add error state handling in RepositoryTable.jsx when data fetch fails
+- [X] T027 [P] [US1] Create frontend/src/components/RepositoryTable/RepositoryTable.jsx main component
+- [X] T028 [P] [US1] Create frontend/src/components/RepositoryTable/RepositoryTable.module.css with table styling
+- [X] T029 [P] [US1] Create frontend/src/components/RepositoryTable/TableHeader.jsx component for column headers
+- [X] T030 [P] [US1] Create frontend/src/components/RepositoryTable/TableRow.jsx component for repository rows
+- [X] T031 [US1] Integrate RepositoryTable component into frontend/src/App.jsx with data from useRepositoryData hook
+- [X] T032 [US1] Implement column rendering for all required fields (name, language, dates, commits, sizes) in TableRow.jsx
+- [X] T033 [US1] Add formatting utilities for dates (ISO to readable) in frontend/src/services/metricsCalculator.js
+- [X] T034 [US1] Add formatting utilities for commit sizes (numeric display) in frontend/src/services/metricsCalculator.js
+- [X] T035 [US1] Handle edge cases in TableRow.jsx (missing language → "Unknown", no commits → "N/A")
+- [X] T036 [US1] Add CSS grid/flexbox layout to RepositoryTable.module.css for responsive table design
+- [X] T037 [US1] Add loading state integration in RepositoryTable.jsx using LoadingState component
+- [X] T038 [US1] Add error state handling in RepositoryTable.jsx when data fetch fails
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - table displays all repositories with metrics
 

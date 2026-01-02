@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild": "node -e \"const fs=require('fs'); const path=require('path'); const src='../data'; const dest='../docs/data'; if(fs.existsSync(src)){fs.mkdirSync(dest,{recursive:true}); fs.cpSync(src,dest,{recursive:true}); console.log('✓ Copied data to docs/data');}\"",
     "preview": "vite preview",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -14,20 +15,23 @@
     "format": "prettier --write \"src/**/*.{js,jsx,css}\""
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "recharts": "^2.10.0"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "recharts": "^3.6.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.1",
-    "vite": "^5.0.8",
-    "vitest": "^1.0.4",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1"
+    "@eslint/js": "^9.39.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^17.0.0",
+    "prettier": "^3.7.4",
+    "terser": "^5.44.1",
+    "vite": "^7.3.0",
+    "vitest": "^4.0.16"
   },
   "engines": {
     "node": ">=18.0.0",

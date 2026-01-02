@@ -110,7 +110,9 @@
       "Bash(find:*)",
       "Bash(if [ -d \"documentation/spec/001-repo-comparison-dashboard/checklists\" ])",
       "Bash(then ls -1 \"documentation/spec/001-repo-comparison-dashboard/checklists\")",
-      "Bash(if [ -d \"docs/data\" ])"
+      "Bash(if [ -d \"docs/data\" ])",
+      "Bash(chmod:*)",
+      "Bash(if [ -d \"documentation/spec/001-repo-comparison-dashboard\" ])"
     ]
   }
 }
