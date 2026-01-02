@@ -39,7 +39,7 @@ Stats Spark is now **fully implemented and production-ready**. All 127 tasks acr
 - [requirements-dev.txt](requirements-dev.txt) - Development dependencies
 - [.gitignore](.gitignore) - Git exclusions for Python, cache, outputs
 - [LICENSE](LICENSE) - MIT License
-- [README.md](README.md) - Project overview and quick start
+- [README.md](../../README.md) - Project overview and quick start
 
 ---
 
@@ -243,7 +243,7 @@ Stats Spark is now **fully implemented and production-ready**. All 127 tasks acr
 
 **Comprehensive documentation created:**
 
-1. **[README.md](README.md)** - Project overview with quick start
+1. **[README.md](../../README.md)** - Project overview with quick start
    - Feature highlights
    - Quick start guide
    - Statistics categories table
@@ -253,7 +253,7 @@ Stats Spark is now **fully implemented and production-ready**. All 127 tasks acr
    - Contributing guidelines
    - Testing instructions
 
-2. **[docs/getting-started.md](docs/getting-started.md)** - Complete setup guide
+2. **[documentation/guides/getting-started.md](../guides/getting-started.md)** - Complete setup guide
    - Prerequisites and requirements
    - Step-by-step fork and setup
    - Configuration instructions
@@ -261,20 +261,20 @@ Stats Spark is now **fully implemented and production-ready**. All 127 tasks acr
    - Troubleshooting common issues
    - FAQ section
 
-3. **[docs/configuration.md](docs/configuration.md)** - All configuration options
+3. **[documentation/guides/configuration.md](../guides/configuration.md)** - All configuration options
    - Complete spark.yml reference
    - Theme customization guide
    - Example configurations (minimal, maximum, performance-optimized)
    - Statistics categories explained
    - Cache and repository settings
 
-4. **[docs/embedding-guide.md](docs/embedding-guide.md)** - How to embed SVGs in profile README
+4. **[documentation/guides/embedding-guide.md](../guides/embedding-guide.md)** - How to embed SVGs in profile README
    - Markdown embedding templates
    - Layout options (single, side-by-side, grid)
    - Responsive design examples
    - Real-world examples (markhazleton)
 
-5. **[docs/api-reference.md](docs/api-reference.md)** ⭐ **NEW** - Developer documentation
+5. **[documentation/api/api-reference.md](../api/api-reference.md)** ⭐ **NEW** - Developer documentation
    - Complete API documentation for all core modules
    - SparkConfig, StatsCalculator, StatisticsVisualizer classes
    - GitHubFetcher, APICache, Theme classes
@@ -543,7 +543,7 @@ pytest --cov=spark --cov-report=html
 
 ### New Files Created (10 files)
 
-1. **[docs/api-reference.md](docs/api-reference.md)** - Complete API documentation (18KB)
+1. **[documentation/api/api-reference.md](../api/api-reference.md)** - Complete API documentation (18KB)
 2. **[assets/logo.svg](assets/logo.svg)** - Project logo with lightning bolt design
 3. **[tests/unit/test_visualizer.py](tests/unit/test_visualizer.py)** - SVG generation tests (17 tests)
 4. **[tests/unit/test_wcag.py](tests/unit/test_wcag.py)** - WCAG contrast validation (23 tests)
@@ -561,7 +561,7 @@ pytest --cov=spark --cov-report=html
    - Contributing section
    - Testing section with coverage info
 
-2. **[specs/001-stats-spark/tasks.md](specs/001-stats-spark/tasks.md)** - Marked **ALL 127 tasks as completed** ✅
+2. **[documentation/spec/001-stats-spark/tasks.md](../spec/001-stats-spark/tasks.md)** - Marked **ALL 127 tasks as completed** ✅
 
 ### Test Coverage Added
 

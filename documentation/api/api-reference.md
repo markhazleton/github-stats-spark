@@ -885,7 +885,7 @@ MIT License - see [LICENSE](../LICENSE) file for details.
 
 ## Additional Resources
 
-- [Getting Started Guide](getting-started.md)
-- [Configuration Reference](configuration.md)
-- [Embedding Guide](embedding-guide.md)
-- [Project README](../README.md)
+- [Getting Started Guide](../guides/getting-started.md)
+- [Configuration Reference](../guides/configuration.md)
+- [Embedding Guide](../guides/embedding-guide.md)
+- [Project README](../../README.md)

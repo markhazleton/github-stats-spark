@@ -395,7 +395,7 @@ pytest --cov=spark --cov-report=html
 
 ### For Users
 1. Fork the repository
-2. Follow [Getting Started Guide](docs/getting-started.md)
+2. Follow [Getting Started Guide](../guides/getting-started.md)
 3. Customize theme and configuration
 4. Embed SVGs in profile README
 

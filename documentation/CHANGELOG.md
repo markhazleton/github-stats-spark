@@ -186,9 +186,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accuracy metrics validation (90% AI summary accuracy, 95% tech identification)
 
 #### Documentation
-- Comprehensive [analyze command guide](docs/analyze-command.md)
-- Updated [README.md](README.md) with feature overview
-- [Getting started guide](docs/getting-started.md) with API key setup instructions
+- Comprehensive [analyze command guide](guides/analyze-command.md)
+- Updated [README.md](../README.md) with feature overview
+- [Getting started guide](guides/getting-started.md) with API key setup instructions
 - Sample report in `output/reports/markhazleton-analysis-20251229.md`
 
 #### Configuration
