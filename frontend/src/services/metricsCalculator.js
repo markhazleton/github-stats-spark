@@ -368,6 +368,86 @@ export function getMetricLabel(metricId) {
   return labels[metricId] || metricId
 }
 
+/**
+ * Calculate percentage difference between two values
+ *
+ * @param {number} value - Current value
+ * @param {number} reference - Reference value (baseline)
+ * @returns {number} Percentage difference (positive or negative)
+ *
+ * @example
+ * calculatePercentageDifference(150, 100) // 50
+ * calculatePercentageDifference(75, 100) // -25
+ */
+export function calculatePercentageDifference(value, reference) {
+  if (reference === 0 || reference == null || value == null) return 0
+
+  const diff = ((value - reference) / Math.abs(reference)) * 100
+  return Math.round(diff)
+}
+
+/**
+ * Compare two repository objects and calculate metric differences
+ *
+ * @param {Object} repo1 - First repository
+ * @param {Object} repo2 - Second repository
+ * @param {Array} metrics - Array of metric keys to compare
+ * @returns {Object} Comparison result with differences
+ *
+ * @example
+ * compareRepositories(repoA, repoB, ['stars', 'forks'])
+ * // Returns: { stars: { diff: 50, percent: 25 }, ... }
+ */
+export function compareRepositories(repo1, repo2, metrics) {
+  const comparison = {}
+
+  metrics.forEach(metric => {
+    const value1 = repo1[metric]
+    const value2 = repo2[metric]
+
+    if (typeof value1 === 'number' && typeof value2 === 'number') {
+      comparison[metric] = {
+        value1,
+        value2,
+        diff: value1 - value2,
+        percent: calculatePercentageDifference(value1, value2),
+      }
+    } else {
+      comparison[metric] = {
+        value1,
+        value2,
+        diff: null,
+        percent: null,
+      }
+    }
+  })
+
+  return comparison
+}
+
+/**
+ * Rank repositories by a specific metric
+ *
+ * @param {Array} repositories - Array of repository objects
+ * @param {string} metric - Metric to rank by
+ * @param {string} [order='desc'] - Sort order ('asc' or 'desc')
+ * @returns {Array} Ranked repositories with rank property
+ */
+export function rankRepositories(repositories, metric, order = 'desc') {
+  if (!Array.isArray(repositories)) return []
+
+  const sorted = [...repositories].sort((a, b) => {
+    const aVal = a[metric] ?? 0
+    const bVal = b[metric] ?? 0
+    return order === 'desc' ? bVal - aVal : aVal - bVal
+  })
+
+  return sorted.map((repo, index) => ({
+    ...repo,
+    rank: index + 1,
+  }))
+}
+
 export default {
   formatDate,
   formatCommitSize,
@@ -381,4 +461,7 @@ export default {
   transformForLineGraph,
   transformForScatterPlot,
   getMetricLabel,
+  calculatePercentageDifference,
+  compareRepositories,
+  rankRepositories,
 }

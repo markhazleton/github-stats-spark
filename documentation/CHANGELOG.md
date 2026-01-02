@@ -7,6 +7,123 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-01-02
+
+### Added - Interactive Dashboard
+
+#### Frontend Features
+- **Repository Comparison View**: Side-by-side comparison of up to 5 repositories with color-coded metric highlighting
+  - Green highlighting for highest values
+  - Red highlighting for lowest values
+  - Percentage difference calculations from maximum
+  - Remove individual repositories from comparison
+  - Clear all selections
+- **Interactive Visualizations**: Three chart types using Recharts
+  - Bar charts for metric comparison (top 50 repositories)
+  - Line graphs for temporal trend analysis
+  - Scatter plots for correlation visualization (commits vs. commit size)
+  - Metric selection controls (commits, stars, forks, sizes, dates)
+  - Click-to-drill-down on all chart elements
+- **Repository Table**: Sortable, filterable table with all metrics
+  - Click column headers to sort (ascending/descending)
+  - Language filter dropdown
+  - Checkbox multi-select for comparison
+  - Row click for drill-down details
+- **Drill-Down Details**: Comprehensive repository analysis modal
+  - Commit history timeline (90d, 180d, 365d activity)
+  - Language breakdown with percentages
+  - Technology stack and dependency analysis
+  - AI-generated summaries (when enabled)
+  - Next/Previous navigation through repositories
+- **Export Functionality**: Download data as CSV or JSON
+  - Client-side generation (no server required)
+  - Timestamped filenames
+  - Works with filtered/sorted data
+  - Integrated into table and comparison views
+- **Responsive Design**: Mobile-friendly interface
+  - CSS Modules for scoped styling
+  - CSS custom properties for theming
+  - Smooth animations and transitions
+  - Breakpoints for mobile, tablet, desktop
+
+#### Backend Features
+- **Unified Data Generator** (`src/spark/unified_data_generator.py`):
+  - Combines generate, analyze, and dashboard commands into single workflow
+  - Generates comprehensive `repositories.json` (schema 2.0.0)
+  - Includes commit metrics (avg, largest, smallest commits)
+  - Tech stack analysis with dependency tracking
+  - AI summaries (optional, when ANTHROPIC_API_KEY provided)
+  - Repository ranking with composite scores
+- **Enhanced Data Models**:
+  - `DashboardData`, `DashboardRepository`, `DashboardMetadata` models
+  - Nested structures: `commit_history`, `commit_metrics`, `tech_stack`, `summary`
+  - First commit date tracking
+  - Enhanced commit statistics
+- **CLI Enhancements**:
+  - `--dashboard` flag for unified data generation
+  - `--force-refresh` to bypass cache
+  - Progress logging with percentage completion
+  - Error recovery with partial results
+
+#### Build & Deployment
+- **GitHub Actions Workflow**: Automated build and deployment
+  - Python data generation step
+  - Node.js setup and npm install
+  - Frontend build (Vite)
+  - Deployment to GitHub Pages (`/docs` directory)
+  - Build verification checks
+- **Vite Configuration**:
+  - Base path: `/github-stats-spark/` for GitHub Pages
+  - Output to `../docs` for deployment
+  - Path aliases (`@/` → `src/`)
+  - Custom middleware for `/data` serving in development
+  - Postbuild script to copy data files
+
+#### Developer Experience
+- **Component Architecture**: 11 React components organized by feature
+  - Common: LoadingState, Tooltip, FilterControls, ExportButton, ErrorBoundary
+  - RepositoryTable: Table, Header, Row
+  - Visualizations: Bar, Line, Scatter, Controls
+  - Comparison: Selector, View
+  - DrillDown: RepositoryDetail
+- **Custom Hooks**: Reusable logic for data and UI state
+  - `useRepositoryData`: Data fetching with loading/error states
+  - `useTableSort`: Sorting and filtering logic
+- **Services**: Utility modules for data operations
+  - `dataService.js`: Data fetching and parsing
+  - `metricsCalculator.js`: Chart transformations, formatting, comparisons
+- **Error Handling**: ErrorBoundary component for graceful error recovery
+- **Accessibility**: WCAG AA compliance
+  - ARIA labels on interactive elements
+  - Keyboard navigation (Tab, Enter, ESC)
+  - Screen reader compatible
+  - Focus management in modals
+
+### Changed
+- Updated GitHub Actions workflow to include frontend build steps
+- Enhanced caching strategy for faster CI/CD
+- Improved error messages with context for debugging
+
+### Fixed
+- Duplicate imports in ComparisonView component
+- CSS nesting issues in component modules
+- ESLint configuration for React 19 compatibility
+
+### Performance
+- React.memo optimization for table rows (100+ rows)
+- useMemo for expensive chart transformations
+- useCallback for event handlers
+- Code splitting ready (React.lazy support)
+- Optimized bundle sizes (tree-shaking, minification)
+
+### Documentation
+- Added `frontend/README.md` with setup instructions
+- Updated main README.md with dashboard feature overview
+- Added JSDoc comments to all React components
+- Created implementation review document
+
+## [1.0.0] - Previous Release
+
 ### Added
 - **.NET/NuGet Support**: Added dependency analysis for .NET projects
   - Parses `.csproj` files (SDK-style projects for .NET Core/.NET 5+)

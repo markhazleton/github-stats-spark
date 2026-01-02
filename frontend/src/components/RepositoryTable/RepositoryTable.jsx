@@ -1,6 +1,7 @@
 import React from 'react'
 import TableHeader from './TableHeader'
 import TableRow from './TableRow'
+import ExportButton from '@/components/Common/ExportButton'
 import styles from './RepositoryTable.module.css'
 
 /**
@@ -86,7 +87,7 @@ export default function RepositoryTable({
         </table>
       </div>
 
-      {/* Table Footer with Summary */}
+      {/* Table Footer with Summary and Export */}
       <div className={styles.tableFooter}>
         <p className="text-sm text-muted">
           Showing {repositories.length} {repositories.length === 1 ? 'repository' : 'repositories'}
@@ -94,6 +95,11 @@ export default function RepositoryTable({
             <> • {selectedRepos.length} selected for comparison</>
           )}
         </p>
+        <ExportButton
+          data={repositories}
+          filename="repositories"
+          label="Export"
+        />
       </div>
     </div>
   )

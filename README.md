@@ -6,6 +6,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 **📊 [View Sample Analysis Report](output/reports/markhazleton-analysis.md)** - See real-world output with AI-powered insights
+**🎨 [View Interactive Dashboard](https://markhazleton.github.io/github-stats-spark/)** - Explore repositories with live visualizations
 
 ---
 
@@ -37,6 +38,15 @@ Stats Spark is a comprehensive GitHub analytics suite that transforms your GitHu
 - **Developer Profiling**: Technology diversity, activity patterns, contribution classification
 - **Comprehensive Reports**: GitHub-flavored markdown with embedded visualizations
 - **Performance Optimized**: Analyze 50+ repositories in under 3 minutes
+
+### Interactive Dashboard (NEW!)
+
+- **Repository Comparison**: Side-by-side comparison of up to 5 repositories with color-coded metrics
+- **Visual Analytics**: Interactive bar charts, line graphs, and scatter plots using Recharts
+- **Drill-Down Details**: Comprehensive repository analysis with commit history and tech stack
+- **Export Functionality**: Download filtered data as CSV or JSON
+- **Responsive Design**: Mobile-friendly React interface with smooth animations
+- **GitHub Pages Deployment**: Automatically updates with your latest statistics
 
 ### Enterprise-Ready
 

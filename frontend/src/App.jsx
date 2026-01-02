@@ -10,11 +10,13 @@ import BarChart from '@/components/Visualizations/BarChart'
 import LineGraph from '@/components/Visualizations/LineGraph'
 import ScatterPlot from '@/components/Visualizations/ScatterPlot'
 import RepositoryDetail from '@/components/DrillDown/RepositoryDetail'
-import { 
-  transformForBarChart, 
-  transformForLineGraph, 
+import ComparisonSelector from '@/components/Comparison/ComparisonSelector'
+import ComparisonView from '@/components/Comparison/ComparisonView'
+import {
+  transformForBarChart,
+  transformForLineGraph,
   transformForScatterPlot,
-  getMetricLabel 
+  getMetricLabel
 } from '@/services/metricsCalculator'
 
 /**
@@ -69,10 +71,34 @@ function App() {
       } else {
         // Show warning if trying to select more than 5
         console.warn('Maximum 5 repositories can be compared')
+        alert('Maximum 5 repositories can be compared. Please deselect one first.')
         return prev
       }
     })
   }
+
+  /**
+   * Clear all repository selections
+   */
+  const handleClearSelection = () => {
+    setSelectedRepos([])
+  }
+
+  /**
+   * Remove a specific repository from comparison
+   * @param {string} repoName - Repository name to remove
+   */
+  const handleRemoveRepo = (repoName) => {
+    setSelectedRepos((prev) => prev.filter((name) => name !== repoName))
+  }
+
+  /**
+   * Get full repository objects for selected repositories
+   */
+  const selectedRepositoryObjects = useMemo(() => {
+    if (!processedRepositories || selectedRepos.length === 0) return []
+    return processedRepositories.filter(repo => selectedRepos.includes(repo.name))
+  }, [processedRepositories, selectedRepos])
 
   /**
    * Handle repository drill-down
@@ -309,15 +335,28 @@ function App() {
 
                 {currentView === 'comparison' && (
                   <div>
-                    <h2>Repository Comparison</h2>
-                    <p className="text-muted">
-                      Comparing {selectedRepos.length} repositories
-                    </p>
-                    {/* ComparisonView component will be rendered here in US4 */}
-                    <div className="card mt-lg">
-                      <p className="text-center text-muted">
-                        Comparison view will be implemented in User Story 4
+                    <div className="mb-lg">
+                      <h2>Repository Comparison</h2>
+                      <p className="text-muted">
+                        {selectedRepos.length > 0
+                          ? `Comparing ${selectedRepos.length} ${selectedRepos.length === 1 ? 'repository' : 'repositories'}`
+                          : 'Select repositories to compare'}
                       </p>
+                    </div>
+
+                    {/* Comparison Selector */}
+                    <ComparisonSelector
+                      selectedRepos={selectedRepos}
+                      onClearSelection={handleClearSelection}
+                      maxSelections={5}
+                    />
+
+                    {/* Comparison View */}
+                    <div className="mt-lg">
+                      <ComparisonView
+                        repositories={selectedRepositoryObjects}
+                        onRemoveRepo={handleRemoveRepo}
+                      />
                     </div>
                   </div>
                 )}

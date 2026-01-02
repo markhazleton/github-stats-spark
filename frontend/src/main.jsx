@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import ErrorBoundary from '@/components/Common/ErrorBoundary'
 import '@/styles/global.css'
 
 /**
@@ -11,12 +12,15 @@ import '@/styles/global.css'
  *
  * Features:
  * - React 18+ with StrictMode for development checks
+ * - ErrorBoundary for graceful error handling
  * - Global CSS styles loaded
  * - App component as the root of the component tree
  */
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </React.StrictMode>,
 )

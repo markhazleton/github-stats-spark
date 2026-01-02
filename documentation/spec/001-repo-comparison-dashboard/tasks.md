@@ -227,21 +227,21 @@
 
 ### Implementation for User Story 4
 
-- [ ] T071 [P] [US4] Create frontend/src/components/Comparison/ComparisonSelector.jsx with checkbox selection UI
-- [ ] T072 [P] [US4] Create frontend/src/components/Comparison/ComparisonView.jsx for side-by-side display
-- [ ] T073 [P] [US4] Create ComparisonView.module.css with grid layout for comparison columns
-- [ ] T074 [US4] Add checkbox column to TableRow.jsx for repository selection
-- [ ] T075 [US4] Implement selection state management in App.jsx (selected repositories array)
-- [ ] T076 [US4] Add selection limit validation in App.jsx (max 5 repositories, show warning)
-- [ ] T077 [US4] Implement comparison data transformation in metricsCalculator.js (calculate differences, percentages)
-- [ ] T078 [US4] Render selected repositories in ComparisonView.jsx with metric columns
-- [ ] T079 [US4] Add color-coded highlighting in ComparisonView.jsx for metric differences (green/red/yellow)
-- [ ] T080 [US4] Add percentage difference calculations in ComparisonView.jsx for numeric metrics
-- [ ] T081 [US4] Implement deselect functionality in ComparisonView.jsx (remove repository from comparison)
-- [ ] T082 [US4] Add comparison mode toggle button in App.jsx to activate/deactivate comparison view
-- [ ] T083 [US4] Add comparison timeline visualization in ComparisonView.jsx showing commit activity overlay
-- [ ] T084 [US4] Integrate comparison view with existing chart components for visual comparison
-- [ ] T085 [US4] Add CSS animations in ComparisonView.module.css for smooth transitions when adding/removing repos
+- [X] T071 [P] [US4] Create frontend/src/components/Comparison/ComparisonSelector.jsx with checkbox selection UI
+- [X] T072 [P] [US4] Create frontend/src/components/Comparison/ComparisonView.jsx for side-by-side display
+- [X] T073 [P] [US4] Create ComparisonView.module.css with grid layout for comparison columns
+- [X] T074 [US4] Add checkbox column to TableRow.jsx for repository selection
+- [X] T075 [US4] Implement selection state management in App.jsx (selected repositories array)
+- [X] T076 [US4] Add selection limit validation in App.jsx (max 5 repositories, show warning)
+- [X] T077 [US4] Implement comparison data transformation in metricsCalculator.js (calculate differences, percentages)
+- [X] T078 [US4] Render selected repositories in ComparisonView.jsx with metric columns
+- [X] T079 [US4] Add color-coded highlighting in ComparisonView.jsx for metric differences (green/red/yellow)
+- [X] T080 [US4] Add percentage difference calculations in ComparisonView.jsx for numeric metrics
+- [X] T081 [US4] Implement deselect functionality in ComparisonView.jsx (remove repository from comparison)
+- [X] T082 [US4] Add comparison mode toggle button in App.jsx to activate/deactivate comparison view
+- [X] T083 [US4] Add comparison timeline visualization in ComparisonView.jsx showing commit activity overlay
+- [X] T084 [US4] Integrate comparison view with existing chart components for visual comparison
+- [X] T085 [US4] Add CSS animations in ComparisonView.module.css for smooth transitions when adding/removing repos
 
 **Checkpoint**: Comparison view works independently - users can select, compare, and deselect repositories
 
@@ -281,10 +281,10 @@
 
 ### Build & Deployment
 
-- [ ] T101 [P] Update .github/workflows/generate-stats.yml to add Node.js setup and npm install steps
-- [ ] T102 [P] Add Vite build step to .github/workflows/generate-stats.yml (npm run build → docs/)
-- [ ] T103 [P] Configure GitHub Pages in repository settings to deploy from docs/ folder on main branch
-- [ ] T104 [P] Test full GitHub Actions workflow: Python data generation → JSON output → Vite build → deployment
+- [X] T101 [P] Update .github/workflows/generate-stats.yml to add Node.js setup and npm install steps
+- [X] T102 [P] Add Vite build step to .github/workflows/generate-stats.yml (npm run build → docs/)
+- [X] T103 [P] Configure GitHub Pages in repository settings to deploy from docs/ folder on main branch
+- [X] T104 [P] Test full GitHub Actions workflow: Python data generation → JSON output → Vite build → deployment
 - [ ] T105 Verify GitHub Pages deployment at markhazleton.github.io/github-stats-spark
 - [ ] T106 [P] Add build optimization checks to vite.config.js (verify site.js <500KB, site.css <100KB gzipped)
 
@@ -296,24 +296,24 @@
 - [ ] T110 [P] Add ARIA labels and roles to interactive elements (buttons, tables, charts)
 - [ ] T111 [P] Add keyboard navigation support (Tab, Enter, ESC) for all interactive components
 - [ ] T112 Run Lighthouse performance audit and verify score >90 for deployed dashboard
-- [ ] T113 [P] Add error boundary component in App.jsx to catch and display React errors gracefully
+- [X] T113 [P] Add error boundary component in App.jsx to catch and display React errors gracefully
 
 ### Documentation & Testing
 
-- [ ] T114 [P] Create frontend/README.md with development setup instructions and component documentation
-- [ ] T115 [P] Update root README.md to include dashboard feature overview and GitHub Pages link
+- [X] T114 [P] Create frontend/README.md with development setup instructions and component documentation
+- [X] T115 [P] Update root README.md to include dashboard feature overview and GitHub Pages link
 - [ ] T116 [P] Add JSDoc comments to all React components documenting props and usage
 - [ ] T117 [P] Add Python docstrings to src/spark/dashboard_generator.py and calculator.py methods
 - [ ] T118 Validate dashboard with edge cases (empty repositories, missing languages, 200 repos)
 - [ ] T119 [P] Create example screenshots in documentation/ showing table, charts, comparison, drill-down views
-- [ ] T120 Update CHANGELOG.md with Repository Comparison Dashboard feature release notes
+- [X] T120 Update CHANGELOG.md with Repository Comparison Dashboard feature release notes
 
 ### Export Functionality (FR-020)
 
-- [ ] T121 [P] Add export button component in frontend/src/components/Common/ExportButton.jsx
-- [ ] T122 [P] Implement CSV export logic in frontend/src/services/dataService.js using client-side generation
-- [ ] T123 [P] Implement JSON export logic in frontend/src/services/dataService.js (download filtered data)
-- [ ] T124 Integrate ExportButton into RepositoryTable and ComparisonView components
+- [X] T121 [P] Add export button component in frontend/src/components/Common/ExportButton.jsx
+- [X] T122 [P] Implement CSV export logic in frontend/src/services/dataService.js using client-side generation
+- [X] T123 [P] Implement JSON export logic in frontend/src/services/dataService.js (download filtered data)
+- [X] T124 Integrate ExportButton into RepositoryTable and ComparisonView components
 
 **Checkpoint**: Dashboard is production-ready - all features integrated, optimized, and deployed
 
