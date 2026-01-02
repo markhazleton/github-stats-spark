@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-01-02T11:10:09.749339",
+  "value": [
+    {
+      "sha": "a7881f714da1e42c82257e8401d8a82b7e627c89",
+      "message": "Update Orders database state (SHM and WAL files)\n\nModified Orders.db-shm and Orders.db-wal, reflecting changes to the database state. These updates are likely due to recent inserts, updates, or deletions in the Orders database.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T06:38:50+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "568afd7e7cb8787db78da974c28a6f1ea2b04f3c",
+      "message": "Consolidate to single API; unify data access & docs\n\n- Removed separate MinApi project; all data now served by WiredBrainCoffee.API\n- Refactored Razor Pages to fetch menu data via HttpClient from API (async)\n- Updated IMenuService to async; removed hardcoded menu data\n- Added shared model/constants references to frontends\n- Updated Blazor UI for .NET 9 dynamic component API changes\n- Standardized ports and API base URL config across all projects\n- Added detailed architecture, quick start, and troubleshooting docs\n- Included start-all.ps1 script for easy multi-project startup\n- Added Orders.db SQLite files for API data persistence\n- Both frontends now demonstrate hybrid architecture using the same API",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T06:33:17+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "93a11b1ecf152665508ec119725a49b1d24f8a3c",
+      "message": "Consolidate API, models, and config; remove MinApi project\n\n- Removed WiredBrainCoffee.MinApi project; migrated all order endpoints, models, and services into WiredBrainCoffee.API\n- Added WiredBrainCoffee.Shared for centralized constants and configuration keys; referenced by all projects\n- Unified MenuItem and Order models in WiredBrainCoffee.Models; introduced OrderDto for API/database transport\n- Centralized menu data in API MenuService; refactored MenuController and added endpoints for ID, slug, and category\n- Merged all minimal API endpoints (orders, status, health) into API Program.cs; unified SignalR and middleware\n- Standardized configuration via appsettings.json in all projects; API URLs and connection strings now config-driven\n- Updated project references and solution structure; removed all MinApi references\n- Added CONSOLIDATION_SUMMARY.md and MINAPI_REMOVAL_NOTICE.md for documentation\n- Cleaned up duplicate/outdated files and standardized logging across the solution\n\nAll projects now use a single API, shared models, and configuration, eliminating duplication and improving maintainability.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-30T16:19:36+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "3e52bfd5e8b45190f9fd58ced9a0b18a78deb2ac",
+      "message": "Update README.md to reflect full-stack demo and project details",
+      "author": "Mark Hazleton",
+      "date": "2025-05-20T12:48:15+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "1c9be760428209b3182501793b67aac993fadacd",
+      "message": "updates and fix min api db configuration and startup",
+      "author": "Mark Hazleton",
+      "date": "2025-05-20T12:00:52+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "744bc8d709c6aa7452e41b7eafca884cd8a16f4a",
+      "message": "update to net 8",
+      "author": "Mark Hazleton",
+      "date": "2024-08-05T12:23:51+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "6f94661ae078ab63e5e742d8a3ec6759f3e74497",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2023-03-29T00:35:22+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "b9fcb04131d8b4d887c5736056fbe2ae6232833b",
+      "message": "Update to 7, Update NuGet packages",
+      "author": "Mark Hazleton",
+      "date": "2023-03-08T17:40:40+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "39b2139519749d920bc1105c298a9b33408aeffc",
+      "message": "Add distributed example",
+      "author": "Mark Hazleton",
+      "date": "2022-06-21T17:58:57+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "b08188fa0c9e38e9f874b1a3c2830773bf848c4b",
+      "message": "Create README.md",
+      "author": "Mark Hazleton",
+      "date": "2022-06-21T14:35:12+00:00",
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "31d10345d7dbdc3a88419e41b40ee9afddfdbbbf",
+      "message": "Convert to Net 6",
+      "author": "Mark Hazleton",
+      "date": "2022-06-21T14:33:26+00:00",
+      "repo": "RazorPages"
+    }
+  ]
+}

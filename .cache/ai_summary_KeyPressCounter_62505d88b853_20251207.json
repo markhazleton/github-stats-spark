@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-02T10:41:44.765701",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the KeyPressCounter repository:\n\nKeyPressCounter is a sophisticated Windows utility designed for comprehensive system and user activity monitoring, providing granular insights into keyboard/mouse interactions and real-time system performance metrics through a lightweight, privacy-focused .NET application. The project leverages native Windows APIs, system performance counters, and low-level input hooking to capture detailed telemetry, tracking metrics such as keystroke frequency, idle periods, CPU/memory utilization, and process resource consumption with minimal system overhead. Built using C# and .NET 10.0, the application implements a modular architecture with system tray integration, background monitoring, and a rich graphical dashboard that enables users to visualize complex performance data through real-time graphs and exportable logs. Key technical differentiators include its single-instance protection, configurable idle detection, automated logging mechanisms, and a privacy-conscious design that counts interactions without storing sensitive input content. The tool is particularly valuable for professionals seeking detailed productivity analysis, system administrators monitoring workstation performance, and individuals interested in understanding their computational usage patterns with minimal intrusion. By combining low-level system access, comprehensive data collection, and user-friendly visualization, KeyPressCounter offers a powerful yet unobtrusive solution for system and user activity tracking on Windows platforms.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-02T10:41:44.765685",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2180,
+    "confidence_score": 90
+  }
+}

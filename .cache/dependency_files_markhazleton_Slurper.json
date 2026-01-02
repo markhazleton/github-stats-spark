@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-01-02T11:12:18.157274",
+  "value": {
+    "package.json": "{\n  \"devDependencies\": {\n    \"copy-webpack-plugin\": \"^13.0.1\"\n  }\n}\n"
+  }
+}

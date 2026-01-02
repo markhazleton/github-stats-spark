@@ -1,0 +1,485 @@
+{
+  "timestamp": "2026-01-02T15:53:30.253950",
+  "value": [
+    {
+      "sha": "91b863c2f5f9922be0baf6c369502c591d8c0239",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T02:20:01+00:00"
+        },
+        "message": "Update to Net 8 and refresh packages"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 87,
+        "deletions": 105
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "312a9b321b6dff3e33a163ada10802977eb0f7c2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-06T02:03:56+00:00"
+        },
+        "message": "Update main_mapsintegration-fe.yml"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 13,
+        "deletions": 15
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "172e4d712a1fd7817712936c5b0239551cd43975",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-05T15:42:20+00:00"
+        },
+        "message": "Update NuGet packages"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 234,
+        "deletions": 230
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "ef02f7d0001a477d3ab582ce0e5b863ed682b4d9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-08T18:47:49+00:00"
+        },
+        "message": "remove open api stuff"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 161
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "eedc074317b05d298cdf360c0f2172be715e6925",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T22:04:53+00:00"
+        },
+        "message": "Updates"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 26,
+        "deletions": 6
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "d467684f3bd4c63e42493c56e7af8ad2347d881e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T22:01:32+00:00"
+        },
+        "message": "Add HttpClientUtility"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 1985,
+        "deletions": 15
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "46c735bf71ac6fe5f85f1393c01be86a5f52c785",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T21:30:05+00:00"
+        },
+        "message": "Clean-up, update to match changes to HttpClientUtility projects"
+      },
+      "stats": {
+        "total": 23,
+        "additions": 74,
+        "deletions": 76
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "23d8a78bae4ac3960d03c3682c318d40c1a7d829",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-11T19:01:50+00:00"
+        },
+        "message": "remove unused files"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 0,
+        "deletions": 825
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "9db988760ef180392a871a5ba4e6090fd28c8af0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-11T19:00:35+00:00"
+        },
+        "message": "Update to use common HttpClientUtility project"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 222,
+        "deletions": 55
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "08eddd464fb6fa02f98e6d9cda6cee902b17f7c1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:52:01+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 15,
+        "deletions": 7
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "7403b6f8364ce125192b32251467c6d1ccfae600",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:44:46+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 9,
+        "deletions": 2
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "9c2d4d97da735d71448d76b00b93b4fcfd32d8cf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:42:21+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 10,
+        "deletions": 63
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "581eb470bf60ce853ee867d39af5dbaa2253848b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:37:20+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/markhazleton/google-maps"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 66,
+        "deletions": 0
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "f8ecab48e5ebf70930d6a91289823d5106b528fe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:37:14+00:00"
+        },
+        "message": "Create manual publish flow"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 196,
+        "deletions": 0
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "88112c92e3c4fe66025fb1ce870cd99e66acd50a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:31:12+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 66,
+        "deletions": 0
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "d0bf472ae01cb2875078530aaa0a90d6a2965e31",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:30:01+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/markhazleton/google-maps"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 5
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "9dbcb94c65fa1d3acbb12f157c4b8abfa94f2774",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-10T00:29:54+00:00"
+        },
+        "message": "Standardize on FastEndpoints API"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 0,
+        "deletions": 344
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "3f64d1e6f919d7626949d09130e69ef73244237b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-09T23:04:32+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 5
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "fd7e9aab7c2a93fb6293282bbfe3f03d5a3e368b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-09T22:55:38+00:00"
+        },
+        "message": "Create Fast Endpoints version of GoogleMaps API wrapper"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 402,
+        "deletions": 27
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "c7201051b3961f6073ce16db95dff03c401b8ccb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-01T13:52:48+00:00"
+        },
+        "message": "update tests"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 85,
+        "deletions": 3
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "75f2e313e31aa833945eaee5f34c03a0624fd650",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-01T13:05:50+00:00"
+        },
+        "message": "Refactor HttpClientUtility\nMove Query String Parameter List to HttpClientUtility"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 333,
+        "deletions": 41
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "65c3906fa8a03ecf4e25616f0c5e07629b18cfc2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-31T13:30:13+00:00"
+        },
+        "message": "refactor HttpClientUtility"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 230,
+        "deletions": 286
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "a10768c9dbca53ebd33c0874ef236b80860cd698",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-29T19:34:02+00:00"
+        },
+        "message": "Swagger Always On"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 2,
+        "deletions": 7
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "b87015c1193f6ae839fd620e8116713cdb490ad2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-29T19:26:37+00:00"
+        },
+        "message": "Replace GitHub Actions"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 48,
+        "deletions": 69
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "5c576d3b41c1cf2bd2fe3e27b06ec0ca5cf60e91",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-29T18:38:02+00:00"
+        },
+        "message": "code clean-up remove warnings"
+      },
+      "stats": {
+        "total": 29,
+        "additions": 736,
+        "deletions": 418
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "8ede00993ee7bd6dccc83e67a61943e496b2940f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-29T17:57:22+00:00"
+        },
+        "message": "minor updates"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 6,
+        "deletions": 3
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "23f6bdf26775ab81517f90bca5392dc6512728ee",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-29T17:50:18+00:00"
+        },
+        "message": "Refactor to separate HttpClient and String Deserialization"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 428,
+        "deletions": 254
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "2642cc1d754360f60369a4d5c4ff587b28f29da4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-29T14:06:57+00:00"
+        },
+        "message": "Refactor Library to pass in HttpClient to allow for use of HttpClientFactory"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 201,
+        "deletions": 202
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "5104a5c263c702ad4f300f50cb0df20a8d40437b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-29T03:28:09+00:00"
+        },
+        "message": "create minimal api"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 260,
+        "deletions": 0
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "51b74a5ab156198ee1592bb2ab02e24f114228c9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-28T18:32:45+00:00"
+        },
+        "message": "Update to Net 8\nMove API key to User Secrets to protect"
+      },
+      "stats": {
+        "total": 123,
+        "additions": 2774,
+        "deletions": 2796
+      },
+      "repo": "google-maps"
+    }
+  ]
+}

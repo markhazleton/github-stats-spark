@@ -1,0 +1,645 @@
+{
+  "timestamp": "2026-01-02T10:59:57.898618",
+  "value": [
+    {
+      "sha": "96c61c9ec3bb7a624f8a87b812e52e8e8f8c78b0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T01:33:06+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 406,
+        "deletions": 334
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "c2dbdd718cc3c9ed3fd62144eeabfc31349e5086",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T01:07:26+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 622,
+        "deletions": 448
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "d33a2f3bd5dcde9663edc138d042ef58fcf7fe64",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T01:02:12+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 401,
+        "deletions": 395
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "f13f40fcec6b0b99d5c3108c07186322faa9d2f0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:57:16+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 297,
+        "deletions": 303
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "4c783204eda5a23c56912a35fe4d923804276c85",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:50:20+00:00"
+        },
+        "message": "Refactor code structure and remove redundant sections for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 23,
+        "additions": 431,
+        "deletions": 354
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "bc781e205dbe07e44ca2ba3f99b692dacc0e1c20",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:41:58+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 32,
+        "additions": 437,
+        "deletions": 416
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "4f54cce3ed9d241b8b4a6b23b3269cde129c27fc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:35:40+00:00"
+        },
+        "message": "Add TypeScript configuration for testing with Vitest and Jest DOM\n\n- Created a new tsconfig.test.json file for TypeScript testing setup.\n- Configured compiler options for strict type checking and module resolution.\n- Included paths for module aliases and specified included test files.\n- Excluded unnecessary directories from the compilation process."
+      },
+      "stats": {
+        "total": 36,
+        "additions": 486,
+        "deletions": 343
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "23d5f1688d47544fed0f410189ccd08f4e35bead",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:23:01+00:00"
+        },
+        "message": "feat: Add Dependabot PR resolution summary with updates and actions taken"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 91,
+        "deletions": 0
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "907692bf8fad826598efe21aca64b3d3b4cfd344",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:20:42+00:00"
+        },
+        "message": "ci: update GitHub Actions to latest versions\n\n- Update actions/checkout from v4 to v5\n- Update actions/setup-node from v4 to v6\n- Update actions/configure-pages from v4 to v5\n- Update actions/upload-pages-artifact from v3 to v4\n- Update actions/download-artifact from v4 to v5\n\nThis resolves the Dependabot PRs and ensures compatibility with Node 24."
+      },
+      "stats": {
+        "total": 1,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "048dd98d211ebf91f5771d8bce77cd6b74f9d806",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:17:12+00:00"
+        },
+        "message": "Refactor code for consistency and readability across multiple files\n\n- Standardized quotation marks from single to double in various files for consistency.\n- Simplified error messages and validation logic in content validation and monitoring hooks.\n- Improved formatting and readability in hooks, components, and utility functions.\n- Updated ESLint configuration to include TypeScript and React best practices.\n- Added new dev dependency for ESLint."
+      },
+      "stats": {
+        "total": 54,
+        "additions": 1234,
+        "deletions": 1315
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "8bb8b0ae2656ccbddb51f3656106442a5d2d3403",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-23T00:17:02+00:00"
+        },
+        "message": "feat: Implement comprehensive best practices and improvements\n\n- Added FINAL_CHECKLIST.md for tracking all improvements and verification status.\n- Created IMPROVEMENTS_IMPLEMENTED.md summarizing all changes made.\n- Developed QUICK_START.md to guide new developers through setup and usage.\n- Documented OG image creation process in create-og-image.md.\n- Configured Vitest for testing with coverage thresholds and setup files.\n- Enhanced project structure and added essential commands for development.\n- Implemented pre-commit hooks with Husky and lint-staged for code quality.\n- Integrated ESLint and Prettier for consistent code formatting and linting.\n- Established CI/CD pipeline with GitHub Actions for automated testing and deployment.\n- Improved accessibility testing with axe-core and jsx-a11y rules.\n- Configured PWA support with service worker and caching strategies.\n- Added bundle analysis with Rollup visualizer for performance monitoring.\n- Set up security scanning with Dependabot and npm audit."
+      },
+      "stats": {
+        "total": 59,
+        "additions": 24623,
+        "deletions": 2587
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "ebef74e52e1f3045606041f17edec142d5c7c2b5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-22T23:03:55+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 817,
+        "deletions": 946
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "a6fd890809ddd7ea413f8afeb8201bfae0aac6bc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T04:41:30+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 394,
+        "deletions": 394
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "7470f7e2712e149e3c807de5e1c79587c874d2fc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T04:40:17+00:00"
+        },
+        "message": "Update documentation to reflect current build process and technology stack, including detailed pipeline steps, environment variables, and new features for improved SEO and performance."
+      },
+      "stats": {
+        "total": 3,
+        "additions": 367,
+        "deletions": 45
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "b1321d9c87bf26e317ea8fa21c8c4d2a4079c571",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T04:35:09+00:00"
+        },
+        "message": "Fix crawler discovery issues by converting navigation buttons to crawlable links and implementing a tree view for improved site hierarchy visualization"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 153,
+        "deletions": 4
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "dbda0e7040b850fb2b445b4843a0a3941622022a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T04:34:28+00:00"
+        },
+        "message": "Refactor code structure and remove redundant sections for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 900,
+        "deletions": 433
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "0b2f6c9ae79847bae974b4498cb00f61bad7bf12",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T04:20:31+00:00"
+        },
+        "message": "Add HTML pages for Jared and Mark Hazleton with SEO optimizations and structured data"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 539,
+        "deletions": 701
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "c4334f149fda407e04ea44f1255999d032374205",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T02:51:58+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 355,
+        "deletions": 355
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "d6603ba07f2126ac6750336e1c58e058ee4f4a73",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T02:50:15+00:00"
+        },
+        "message": "Add economic analysis pages for Texas, Keller, and Roanoke with SEO optimizations and structured data"
+      },
+      "stats": {
+        "total": 35,
+        "additions": 3448,
+        "deletions": 698
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "2be1761f3f51e9615d11ac7385f3666fd37072e1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T21:02:07+00:00"
+        },
+        "message": "Add new HTML pages for Texas, Keller, Roanoke, and team members Dr. Jared Hazleton and Mark Hazleton with SEO optimizations and structured data"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 3497,
+        "deletions": 282
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "3adfbf0401d7ee5e692a3170cd79d8f6349508c5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T20:34:53+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 655,
+        "deletions": 175
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "bd8f74da9dc7e841ac0c0bd6b0dc5d2c70109c39",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T20:22:05+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 227,
+        "deletions": 242
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "c2d5439a792dbbfc87f65e21aed2858e1e962dfb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T20:21:16+00:00"
+        },
+        "message": "feat: add profile links for team members and update team data"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 16,
+        "deletions": 20
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "203f49612136da62b4309e1a26e3897b8af1b66b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T20:06:50+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 570,
+        "deletions": 250
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "0d24be052d16c47dc3dd532e8a4ceea05f039c35",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T19:47:27+00:00"
+        },
+        "message": "feat: configure custom domain for GitHub Pages deployment and update workflow"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 78,
+        "deletions": 4
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "861cb867d59e2a42da3f3e00ac264b088d678e1d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T18:56:36+00:00"
+        },
+        "message": "Add version.json file with build metadata"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 245,
+        "deletions": 159
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "bef8f1e111852f3e5c49dd06602bfc88a8f42a32",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T18:40:48+00:00"
+        },
+        "message": "feat: enhance SEO and dynamic URL handling across multiple components"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 52,
+        "deletions": 23
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "e453a444db0f19b086d0e64e4df54cae5783a05f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T18:27:41+00:00"
+        },
+        "message": "fix: update artifact path in GitHub Pages workflow from './dist' to './target'"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "ec02caf69c0eb5ce4d7f07c5a782deae5f9a5097",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T18:23:34+00:00"
+        },
+        "message": "update from api"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 749,
+        "deletions": 122
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "4f5430e281d12740e753d49eaf481ab2ba63c1f1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:48:31+00:00"
+        },
+        "message": "fix: update logo URL in structured data to use BASE_URL for better environment compatibility"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 26,
+        "deletions": 24
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "8df589004ff67900b9a7b666b15700f1ce678dae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:41:57+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 28,
+        "deletions": 23
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "255098f4c21569643f2c2d073c41b949bc0fa6c5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:37:22+00:00"
+        },
+        "message": "Refactor code structure and improve readability in multiple modules"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 50,
+        "deletions": 72
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "81dfc17ae6167763de3e24a2382fa41db0bac970",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:33:20+00:00"
+        },
+        "message": "Add GitHub Pages Workflow Best Practices documentation\n\n- Document best practices for CI and deployment of the TexEcon site using Vite, React, and TypeScript.\n- Outline implemented features such as multi-job workflows, least-privilege permissions, concurrency guards, and reproducible Node setups.\n- Provide customization options for Node version, linting, content steps, and custom domains.\n- Include troubleshooting tips for common issues and security notes regarding deployment.\n- Suggest next steps for enhancing the workflow with ESLint, bundle-size checks, and matrix testing."
+      },
+      "stats": {
+        "total": 5,
+        "additions": 74,
+        "deletions": 33
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "c5a013ff5b896a855e809616c9f24c9e0bccc8d7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:26:25+00:00"
+        },
+        "message": "refactor: enhance GitHub Actions workflow for GitHub Pages deployment with improved permissions, concurrency, and Vite base path handling"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 80,
+        "deletions": 8
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "76d24677cd5772c16a58edd690e6365af3d5628c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:12:32+00:00"
+        },
+        "message": "chore: update tailwindcss and related dependencies to latest versions"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 25,
+        "deletions": 54
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "54014cb30fb9677b35fde15dbfb5def473c00755",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:03:39+00:00"
+        },
+        "message": "Merge tailwind-v4-migration: Tailwind CSS v4 migration and cleanup"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 2941,
+        "deletions": 1070
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "7bdceffd39896cb1d905ae812e3496d2a3cf123b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T17:03:20+00:00"
+        },
+        "message": "Tailwind v4 migration: switch to @tailwindcss/vite, CSS-first config, remove PostCSS deps; contrast fixes; build verified"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 915,
+        "deletions": 1067
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "afadc669b44b104b9ff96c720b19ae858e3176a7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T15:54:15+00:00"
+        },
+        "message": "docs: Add comprehensive Tailwind CSS v4 migration research and attempt\n\n- Completed extensive research on Tailwind v4 breaking changes and benefits\n- Created detailed migration plan with step-by-step implementation guide\n- Attempted migration to v4 alpha but encountered stability issues\n- Successfully rolled back to stable v3.4.17 configuration\n- Documented lessons learned and future migration strategy\n\nResearch findings:\n- v4 offers 10x build performance improvements\n- CSS-first configuration approach\n- Native cascade layers and modern CSS features\n- Alpha version not production-ready (plugin errors, theme issues)\n\nDocumentation added:\n- tailwind-v4-migration-plan.md (comprehensive strategy)\n- tailwind-v4-research-summary.md (technical analysis)\n- tailwind-v4-action-plan.md (step-by-step guide)\n- tailwind-v4-migration-attempt-summary.md (attempt results)\n\nCurrent state: Stable v3.4.17 configuration restored and verified working"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 2084,
+        "deletions": 61
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "1c47fbe649bcc2f0106b32c90c45fc5a891447f7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T15:34:30+00:00"
+        },
+        "message": "feat: Add performance analysis and repository review documentation for TexEcon project\n\n- Created performance-analysis.md detailing bundle metrics, dependency optimization, and performance recommendations.\n- Added repository-review-improvements.md with executive summary, stability improvements, performance enhancements, and GitHub Pages hosting recommendations.\n- Documented session-summary.md capturing dependency analysis, build pipeline troubleshooting, and GitHub Copilot documentation setup.\n- Established GitHub Pages deployment guide with SPA routing configuration, production optimizations, and SEO performance metrics."
+      },
+      "stats": {
+        "total": 38,
+        "additions": 2892,
+        "deletions": 1636
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "ee18c5b8af63ed3f6d60203a2a07529456e4fcfe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-03T14:55:27+00:00"
+        },
+        "message": "feat: Implement dynamic routing for SEO-friendly URLs and sitemap generation\n\n- Added route debugger component for development\n- Created site.webmanifest for PWA support with favicon configurations\n- Developed SEO utilities for generating canonical URLs, meta descriptions, and structured data\n- Implemented dynamic sitemap generation and robots.txt for better SEO\n- Enhanced performance by optimizing URL management and memoizing expensive operations\n- Updated favicon implementation across components and ensured cross-platform support\n- Documented dynamic routing and favicon implementation details for future reference\n- Added content refresh script to fetch and analyze content from the WebSpark API"
+      },
+      "stats": {
+        "total": 88,
+        "additions": 4791,
+        "deletions": 10585
+      },
+      "repo": "Texecon"
+    }
+  ]
+}

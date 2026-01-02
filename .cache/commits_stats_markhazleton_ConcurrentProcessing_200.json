@@ -1,0 +1,389 @@
+{
+  "timestamp": "2026-01-02T10:33:05.211649",
+  "value": [
+    {
+      "sha": "962555954756e4196d54e7f84a5d911c17ff339f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T05:31:49+00:00"
+        },
+        "message": "feat: Enhance concurrent processing models and metrics with .NET 10 features"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 142,
+        "deletions": 31
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "0c38ad776a8e008a6d3976807c86e89ef85b2dae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T05:14:50+00:00"
+        },
+        "message": "Revamp README with expanded docs, usage, and examples\n\nCompletely rewrote and reorganized README.md for clarity and usability. Added detailed project overview, key features, installation and usage instructions, code examples, architecture breakdown, performance benchmarks, and educational value. Improved documentation and contribution guidelines, and introduced new sections for security, acknowledgments, and support. Removed redundant and outdated content for a more streamlined and informative experience."
+      },
+      "stats": {
+        "total": 1,
+        "additions": 256,
+        "deletions": 24
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "1e2b64430a14e111844fb05e3e71cd75d0ab0c46",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T05:10:54+00:00"
+        },
+        "message": "Merge pull request #1 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 4971,
+        "deletions": 51
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "6d640b22272af96b3f45a4ef24a1b2a5f9adcd69",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T05:09:40+00:00"
+        },
+        "message": "Add detailed PR creation guide and update project metadata\n\nAdded .github/CREATE_PR.md with step-by-step instructions for submitting the .NET 10 upgrade pull request, including templates, checklists, and troubleshooting. Updated ConcurrentProcessing.csproj to reference the new PR guide and template files, replacing the previous upgrade plan reference."
+      },
+      "stats": {
+        "total": 2,
+        "additions": 308,
+        "deletions": 2
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "93c1d0801c1e879a482e7894fbd94137072c53f8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T05:04:19+00:00"
+        },
+        "message": "docs: Add comprehensive pull request description"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 439,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "4d8adc74a21b1fecf93e261f5e819353659a1d9e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T04:50:56+00:00"
+        },
+        "message": "docs: Add comprehensive upgrade summary document"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 370,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "df4c61bffee4d3d87010f585264b3ad39b88df93",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T04:49:43+00:00"
+        },
+        "message": "docs: Comprehensive documentation update for .NET 10"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 1033,
+        "deletions": 45
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "682c73246c92892895cb1136834d71b295355f48",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T04:43:26+00:00"
+        },
+        "message": "docs: Add CI/CD quick reference guide"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 275,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "751a1d1744ecaacd925d96e21e4e5e2ad01d23e0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T04:42:43+00:00"
+        },
+        "message": "docs: Add comprehensive CI/CD pipeline documentation"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 369,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "228082df1f873ee6e33715c39f1cad93bba4aa2e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T04:41:35+00:00"
+        },
+        "message": "feat: Add comprehensive CI/CD pipelines for .NET 10"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 401,
+        "deletions": 3
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "40c954918ee70419514850a66e521290081b2b4a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T04:36:38+00:00"
+        },
+        "message": "TASK-003: Complete .NET 10.0 upgrade validation"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 35,
+        "deletions": 11
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "a6095feb65866305cf64273bbee3dee3990541a4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T04:35:16+00:00"
+        },
+        "message": "TASK-002: Complete atomic upgrade to .NET 10.0"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 1757,
+        "deletions": 6
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "a35785a3e1cac85a07419f527782c76071aa56c9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T19:38:11+00:00"
+        },
+        "message": "Add .editorconfig for consistent code style and formatting rules"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 68,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "0fc50dad9acf4817483a1d4a1507cf2bb618dc0c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T00:53:07+00:00"
+        },
+        "message": "Remove implicit usings and nullable settings from ConcurrentProcessing.csproj; add Directory.Build.props for centralized project settings and create global.json for SDK version management."
+      },
+      "stats": {
+        "total": 3,
+        "additions": 30,
+        "deletions": 2
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "a61594a374a082bd4261ccbc1889ca29324e1912",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-08T17:06:50+00:00"
+        },
+        "message": "Remove CONTRIBUTING.md and update documentation structure in README.md, adding detailed sections for usage, metrics, and references."
+      },
+      "stats": {
+        "total": 7,
+        "additions": 210,
+        "deletions": 253
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "e0ed664a9bb9921e227c2170b92d580afe1dd35f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T03:28:52+00:00"
+        },
+        "message": "update to net 9"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "47a52a0c633a1ca7d8c5bbd1fb8ef7be0d2b0a83",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-20T22:09:14+00:00"
+        },
+        "message": "clean up and comments"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 122,
+        "deletions": 29
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "e18786304e91656d3e29c38b0377d62c1fd37a2b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-19T05:18:47+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "f81652521d1f56d0d0359a27f76fd4d6d108c6cb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-19T05:14:56+00:00"
+        },
+        "message": "Create CONTRIBUTING.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 45,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "4f5671aaec4194c7a1a2b2b976b416ef899f3b99",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-18T03:12:47+00:00"
+        },
+        "message": "update readme"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 30,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "c15077fdcb8ed00f66100b2ddab700a21047e4f1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-18T03:06:48+00:00"
+        },
+        "message": "udpate readme, clean up program.cs"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 3,
+        "deletions": 7
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "5304f75ffc16e409713bebaf90685983f707fec1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-18T02:43:54+00:00"
+        },
+        "message": "Work on ReadMe\nCode Clean Up"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 113,
+        "deletions": 306
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "ccc38081e8e57d2b59edeca0a6564e1110698f00",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-18T01:30:38+00:00"
+        },
+        "message": "Move from Sandbox"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 662,
+        "deletions": 2
+      },
+      "repo": "ConcurrentProcessing"
+    },
+    {
+      "sha": "c0552a9f6dd35dbb64700bc4d5f3ccb46e4535d0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-18T01:28:29+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 421,
+        "deletions": 0
+      },
+      "repo": "ConcurrentProcessing"
+    }
+  ]
+}

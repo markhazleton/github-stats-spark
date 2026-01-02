@@ -1,0 +1,341 @@
+{
+  "timestamp": "2026-01-02T10:32:40.168395",
+  "value": [
+    {
+      "sha": "b36b912e540a023383d1e129612f80cf0c50475c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-09T02:42:56+00:00"
+        },
+        "message": "Update NuGet package versions in project files\n\nUpgraded System.Drawing.Common and System.Text.Json to 9.0.7 in BarcodeStandard and BarcodeStandardExample projects. Updated test dependencies in BarcodeStandardTests: Microsoft.NET.Test.Sdk to 17.14.1, MSTest.TestAdapter and MSTest.TestFramework to 3.9.3. These changes improve compatibility and stability."
+      },
+      "stats": {
+        "total": 3,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "943d6ec78eff29b4485d86a6caf32f3d1374f728",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T03:27:28+00:00"
+        },
+        "message": "update version and nuget packages"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 10,
+        "deletions": 14
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "95f8b39350649f1d5c95a9fc75e6d8022672c823",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T01:33:31+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 202,
+        "deletions": 205
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d55bd93ce35681373782935fef9afcfe7a3be572",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-12T01:52:28+00:00"
+        },
+        "message": "update packages, update to net 8"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 25,
+        "deletions": 143
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "78274d74557d84f5c4b5a4d42d485b644e0148d2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-30T22:48:28+00:00"
+        },
+        "message": "Update Packages"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c3515922e2e0e51a134165e50c73202b1b118be0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-13T22:40:25+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "25ce253782d6ae2655617a1626918ab36f7b2b8e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-22T22:39:56+00:00"
+        },
+        "message": "NuGet Update"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6e18978dab01e257c4d63de9bdb789018290bb62",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T19:39:24+00:00"
+        },
+        "message": "Merge pull request #3 from barnhill/master\n\nRemove unnecessary PenAlignment usage."
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f03e5eede9146a82351a2f1c498e1108cbeb53c4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T19:37:20+00:00"
+        },
+        "message": "Update to Net 7 / Net 4.8"
+      },
+      "stats": {
+        "total": 85,
+        "additions": 74426,
+        "deletions": 8
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7f046de34ceeb9044cff0351f5973129f5a721a5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-06-13T12:43:35+00:00"
+        },
+        "message": "Update NuGet Packages"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 11,
+        "deletions": 17
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c3dbaf0042bed6b260a5d101a8b26c8e02d1a8d1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-06-13T05:28:14+00:00"
+        },
+        "message": "merge from upstream/master"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 716,
+        "deletions": 546
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1e02aeb3b4a3a2a09eddb4d075277675c9990b18",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-11-16T13:35:45+00:00"
+        },
+        "message": "start migration/upgrade to Net 6.0"
+      },
+      "stats": {
+        "total": 54,
+        "additions": 2303,
+        "deletions": 863
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7ae41cbb236b8e6e7e581efa9312442a90a79818",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-09T23:36:39+00:00"
+        },
+        "message": "NuGet Update\nUpdate Footer"
+      },
+      "stats": {
+        "total": 53,
+        "additions": 4723,
+        "deletions": 92
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "5766fd18e29267c78515e462277d635f1dba62a9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-03-30T00:41:51+00:00"
+        },
+        "message": "clean-up"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 5,
+        "deletions": 92
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "aa11222d90069c4e6aeb774468a5b6f12df7d694",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-03-29T20:22:21+00:00"
+        },
+        "message": "update NuGet"
+      },
+      "stats": {
+        "total": 448,
+        "additions": 13769,
+        "deletions": 421302
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "acf88f07260bfff7c264a2416277296d60e19969",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-03-29T20:14:53+00:00"
+        },
+        "message": "Update Fork, Update NuGet Packages, Update to 4.8"
+      },
+      "stats": {
+        "total": 56,
+        "additions": 1316,
+        "deletions": 1503
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1ceba1a4e14064b9efe1639c5ba1b36387220b9c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-11-20T19:20:28+00:00"
+        },
+        "message": "Merge pull request #1 from barnhill/master\n\nUpdate Fork from Source Repository"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 265,
+        "deletions": 39
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f627ae259b4680bf808352224d4fb4d4f89e3f77",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-24T05:37:15+00:00"
+        },
+        "message": "start separate barcode class"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 3070,
+        "deletions": 130
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2fc4e611350e9c39e12559d5baf7942e4abae58c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-21T13:25:33+00:00"
+        },
+        "message": "Added Font Awesome to web demo proejct"
+      },
+      "stats": {
+        "total": 89,
+        "additions": 58051,
+        "deletions": 116
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6575e0741e33b97254d615071067a497d2f1129b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-20T14:01:31+00:00"
+        },
+        "message": "wip image helpers"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 91,
+        "deletions": 11
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "3764e9686d8ba2e32a148ee5ea92a12d644d10bb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-20T13:22:44+00:00"
+        },
+        "message": "Add Web Demo\nUpdate NuGet Packages\nUpdate Version of .Net Framework"
+      },
+      "stats": {
+        "total": 462,
+        "additions": 493407,
+        "deletions": 17
+      },
+      "repo": "barcodelib"
+    }
+  ]
+}

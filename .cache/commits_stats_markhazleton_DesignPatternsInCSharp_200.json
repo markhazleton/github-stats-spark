@@ -1,0 +1,357 @@
+{
+  "timestamp": "2026-01-02T10:34:59.457445",
+  "value": [
+    {
+      "sha": "3781c2927dbffc5ad8c9ef5f0db35424ac1886b9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-24T21:39:39+00:00"
+        },
+        "message": "Update dependencies: FluentAssertions 8.7.1 -> 8.8.0 and Google.Protobuf 3.33.0-rc2 -> 3.33.0"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b28d0986abe43332d697aa7f913cab4ada48675e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T19:36:20+00:00"
+        },
+        "message": "Update Google.Protobuf to version 3.33.0-rc2\n\nUpgraded the `Google.Protobuf` package reference in the\n`DesignPatternsInCSharp.csproj` file from version 3.32.1 to\n3.33.0-rc2. This moves the project to a newer release candidate\nversion of the package."
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "209bca661b07c0464c8abd8b616eda293f80ba72",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T00:39:56+00:00"
+        },
+        "message": "Implement feature X to enhance user experience and fix bug Y in module Z"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 4522,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "64ba64c4811b0cb7b7a59b146586f5a71cfe2c08",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T00:37:06+00:00"
+        },
+        "message": "Update package references and logging in GreeterService; add global.json for SDK configuration"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 18,
+        "deletions": 6
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "06a528d439bee537fe63749bc334d39954c124fb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-08T03:18:43+00:00"
+        },
+        "message": "Update package references across multiple projects\n\nUpdated `BenchmarkDotNet` in `DesignPatternsInCSharp.Benchmarks.csproj` to version `0.15.2`.\n\nIn `DesignPatternsInCSharp.csproj`, several packages were upgraded:\n- `FluentAssertions` to `8.6.0`\n- `Google.Protobuf` to `3.32.0`\n- `Grpc.Net.ClientFactory` to `2.71.0`\n- `Grpc.Tools` to `2.72.0`\n- `Microsoft.NET.Test.Sdk` to `17.14.1`\n- `xunit` to `2.9.3`\n- `xunit.runner.visualstudio` to `3.1.4`\n\nUpdated `Grpc.AspNetCore` in `GreeterService.csproj` to version `2.71.0`."
+      },
+      "stats": {
+        "total": 3,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5c275fd666652c4c79e2b7700232cf64959ebb82",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T03:20:17+00:00"
+        },
+        "message": "upgrade to net 9"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4893a3f1eff0e7cf7005391f7d26c33ab4a89ced",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T02:34:03+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 8,
+        "deletions": 7
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "bc6c8983cbac50a026e3cb5df775e1bb1ddab8bd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-12T01:45:27+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "a7f7020072262c3722bcb8ba55724b51aba0741f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-05T12:13:10+00:00"
+        },
+        "message": "update to net 8"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 102,
+        "deletions": 110
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2dafceaf26007060611e03a5997788494a3c35d5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-30T22:46:09+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 51,
+        "deletions": 54
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5dccc7da8b5007f0d7449ea60e1c4aecfa38da51",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T12:35:06+00:00"
+        },
+        "message": "NuGet Updates, bump up to Net 7"
+      },
+      "stats": {
+        "total": 35,
+        "additions": 60,
+        "deletions": 74
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4f8d8cd3de443109b44bd32cc62721e2b24e3313",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-14T13:42:58+00:00"
+        },
+        "message": "merge from master"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "dbcb7d6cadd742fddff02e53796cfade68204f7e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-14T13:41:45+00:00"
+        },
+        "message": "update NuGet packages"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "781a17bb4ce3d03fee64e6b47e2937169c8f2cea",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:40+00:00"
+        },
+        "message": "Merge pull request #14 from markhazleton/dependabot/nuget/xunit.runner.visualstudio-2.4.5\n\nBump xunit.runner.visualstudio from 2.4.3 to 2.4.5"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8c973a4bdb4fd752251ef15515f32b2547e085c5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:30+00:00"
+        },
+        "message": "Merge pull request #12 from markhazleton/dependabot/nuget/Google.Protobuf-3.20.1\n\nBump Google.Protobuf from 3.19.4 to 3.20.1"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "af359b002c071ebfd222880233e5df58a2fa97f1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:14+00:00"
+        },
+        "message": "Merge pull request #15 from markhazleton/dependabot/nuget/Microsoft.NET.Test.Sdk-17.2.0\n\nBump Microsoft.NET.Test.Sdk from 17.1.0 to 17.2.0"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b0a45e70ab3db115bd5327033e41923dc3189477",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:04+00:00"
+        },
+        "message": "Merge branch 'main' into dependabot/nuget/Microsoft.NET.Test.Sdk-17.2.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "25162d8d77d1fc0a4314548dfa5a618e7951ee47",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:42:48+00:00"
+        },
+        "message": "Merge pull request #11 from markhazleton/dependabot/nuget/Grpc.Net.ClientFactory-2.45.0\n\nBump Grpc.Net.ClientFactory from 2.44.0 to 2.45.0"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2637d0b4958c4b5de38203491752e995e3903e7e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:42:20+00:00"
+        },
+        "message": "Merge pull request #10 from markhazleton/dependabot/nuget/Grpc.AspNetCore-2.45.0\n\nBump Grpc.AspNetCore from 2.44.0 to 2.45.0"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "224c8f37b4138c2c7b782bc99df25f8b821e65a3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:42:05+00:00"
+        },
+        "message": "Merge pull request #9 from markhazleton/dependabot/nuget/Microsoft.AspNet.WebApi.Client-5.2.8\n\nBump Microsoft.AspNet.WebApi.Client from 5.2.7 to 5.2.8"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9b1300f27a7012ae6de50d0e813ed0a96b84b2d9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:41:51+00:00"
+        },
+        "message": "Merge pull request #8 from markhazleton/dependabot/nuget/FluentAssertions-6.6.0\n\nBump FluentAssertions from 6.5.1 to 6.6.0"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0de90a5b376d15fd9c1b139d5836a53ff3ed09a4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-03-23T12:53:47+00:00"
+        },
+        "message": "Update NuGet\nUpdate Target to 6.0"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 11,
+        "deletions": 11
+      },
+      "repo": "DesignPatternsInCSharp"
+    }
+  ]
+}

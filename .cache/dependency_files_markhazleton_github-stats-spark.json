@@ -1,0 +1,6 @@
+{
+  "timestamp": "2026-01-02T11:11:59.250183",
+  "value": {
+    "requirements.txt": "# Stats Spark - Production Dependencies\n# GitHub Profile Statistics Generator\n\n# GitHub API client\nPyGithub>=2.1.1\n\n# Configuration parsing\nPyYAML>=6.0.1\n\n# SVG generation\nsvgwrite>=1.4.3\n\n# HTTP requests with retry logic\nrequests>=2.31.0\n\n# Date and time utilities\npython-dateutil>=2.8.2\n\n# AI Integration for repository summarization\nanthropic>=0.40.0\n\n# Retry logic with exponential backoff\ntenacity>=9.0.0\n\n# Semantic version parsing for dependency analysis\npackaging>=23.0\n\n# TOML parsing for pyproject.toml (Python <3.11)\ntomli>=2.0.0; python_version < '3.11'\n"
+  }
+}

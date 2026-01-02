@@ -1,0 +1,341 @@
+{
+  "timestamp": "2026-01-02T10:37:26.638076",
+  "value": [
+    {
+      "sha": "9cb10ab71e40ff16bf252dfb3b2251de50d28e1a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2026-01-01T00:45:58+00:00"
+        },
+        "message": "feat: Enhance README with detailed features and AI-powered analysis sections"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 576,
+        "deletions": 73
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "4d7e370c286eb867ca407994288ebcc0cba904f6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T21:16:43+00:00"
+        },
+        "message": "Merge branch '001-unified-profile-report' into main"
+      },
+      "stats": {
+        "total": 42,
+        "additions": 6302,
+        "deletions": 1277
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "ee17b829f3dd340b89d01346dbff0078a0c97ce7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T21:14:40+00:00"
+        },
+        "message": "feat: Add custom exceptions for workflow errors\n\n- Introduced `WorkflowError` class to handle critical workflow failures with detailed context.\n- Added attributes for error message, stage, and underlying cause.\n\nfeat: Implement GitHubData entity for workflow data sharing\n\n- Created `GitHubData` dataclass to encapsulate all data fetched from the GitHub API.\n- Included attributes for username, profile, repositories, commit histories, and API call metrics.\n- Added methods for cache efficiency calculation and serialization to dictionary.\n\nfeat: Develop UnifiedReportGenerator for markdown report generation\n\n- Implemented `UnifiedReportGenerator` class to create comprehensive markdown reports.\n- Structured reports into sections: Header, Profile Overview, Repository Analysis, and Footer.\n- Added methods for generating each section and handling report validation.\n\nfeat: Orchestrate unified report workflow with error handling\n\n- Created `UnifiedReportWorkflow` class to manage the report generation process.\n- Implemented stages for fetching GitHub data, generating SVGs, analyzing repositories, and generating reports.\n- Added retry logic for GitHub data fetching and error tracking for partial failures.\n\nchore: Add detailed logging throughout the workflow process\n\n- Enhanced logging for each stage of the workflow to track progress and issues.\n- Included warnings for optional failures and errors for critical failures."
+      },
+      "stats": {
+        "total": 44,
+        "additions": 6304,
+        "deletions": 1279
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "e9cf2fb95bc2362b5e7c42482ec9db64dc2356e9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T16:37:12+00:00"
+        },
+        "message": "update to use /docs/specs instead of /specs"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 29,
+        "deletions": 25
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "bf266987f58f082ad88328466e1c55410822cb39",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T16:06:04+00:00"
+        },
+        "message": "change to weekly from daily for stats report"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "7b6153d1126e60fc14a1d7c755f7e10027b7b465",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T15:29:03+00:00"
+        },
+        "message": "update .claude settings"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "9a5f39f391cd4d35bc94547cc34e1c1feaebbbe8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T15:08:40+00:00"
+        },
+        "message": "Reorganize documentation into domain-specific folders\n\nImproved documentation organization for better discoverability and maintenance.\n\n## Changes\n\n### New Documentation Structure\n- `/docs/guides/` - User guides and tutorials\n  - getting-started.md\n  - analyze-command.md\n  - configuration.md\n  - embedding-guide.md\n- `/docs/api/` - API reference documentation\n  - api-reference.md\n- `/docs/research/` - Research documents\n  - RESEARCH_RECOMMENDATIONS.md\n  - TECH_STACK_CURRENCY_RESEARCH.md\n- `/docs/development/` - Development documentation\n  - ENHANCEMENT_FUN_STATS.md\n  - IMPLEMENTATION_COMPLETE.md\n  - IMPLEMENTATION_SUMMARY.md\n- `/docs/specs/` - Feature specifications (moved from /specs)\n  - 001-ai-repo-summary/\n  - 001-stats-spark/\n- `/docs/CHANGELOG.md` - Version history (moved from root)\n- `/docs/README.md` - Documentation index and navigation\n\n### Files Moved\n- Moved all markdown files from root to `/docs` (except README.md)\n- Moved `/specs` folder to `/docs/specs`\n- Organized existing docs into domain-specific subfolders\n\n### Updated References\n- Updated all documentation links in README.md\n- Updated cross-references in guide documents\n- Added comprehensive documentation index at `/docs/README.md`\n\n### Result\n- \u2705 Only README.md remains at repository root\n- \u2705 All documentation centralized under `/docs`\n- \u2705 Clear domain separation for easier navigation\n- \u2705 Maintained all existing documentation content\n- \u2705 Updated all internal links to reflect new structure\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 87,
+        "deletions": 12
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "04f7aa2be144ea3f4e4c578bb09d1032d9fb0beb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T15:02:38+00:00"
+        },
+        "message": "Merge feature: AI-Powered Repository Analysis (v2.0.0)\n\nMerges feature branch 001-ai-repo-summary into main.\n\nThis major release adds comprehensive AI-powered repository analysis\ncapabilities with intelligent ranking, dependency currency assessment,\nand rich statistics.\n\nKey Features:\n- AI-powered repository summaries with Claude Haiku\n- Multi-ecosystem dependency analysis (NPM, PyPI, RubyGems, Go, Maven, NuGet)\n- Intelligent composite ranking algorithm\n- Enhanced statistics: contributors, quality indicators, releases\n- .NET/NuGet support with .csproj parsing\n- Comprehensive CLI (spark analyze command)\n- Full documentation and test coverage\n\nSee CHANGELOG.md for complete feature list.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+      },
+      "stats": {
+        "total": 59,
+        "additions": 21978,
+        "deletions": 8
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "e9f2be7d9935f86f262a59620dec07e0c9894156",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-30T15:01:45+00:00"
+        },
+        "message": "Complete AI-Powered Repository Analysis feature (v2.0.0)\n\nThis commit completes the implementation of the AI-Powered GitHub Repository\nSummary Report feature, adding comprehensive repository analysis capabilities.\n\n## Core Features Implemented\n\n### Repository Analysis Command (spark analyze)\n- Intelligent ranking algorithm (30% popularity, 45% activity, 25% health)\n- AI-powered summaries via Anthropic Claude Haiku\n- Three-tier fallback strategy (AI \u2192 Enhanced template \u2192 Basic template)\n- Multi-window activity analysis (90d/180d/365d)\n- Composite scoring for repository ranking\n\n### Data Models\n- Repository, CommitHistory, TechnologyStack models\n- RepositorySummary with AI and fallback support\n- UserProfile for developer analysis\n- Report model for complete analysis output\n\n### Dependency Analysis\n- Multi-ecosystem support: NPM, PyPI, RubyGems, Go, Maven, NuGet\n- .NET/NuGet support with .csproj parsing\n- Version currency assessment with semantic versioning\n- 7-day cache TTL with hybrid caching strategy\n\n### Enhanced Statistics\n- .NET SDK version detection from TargetFramework\n- \"Days ago\" formatting for dates (created, pushed, releases)\n- **Tier 1**: Contributors count, repository size, language count\n- **Quality Focus**: CI/CD detection, tests, LICENSE, documentation\n- **Activity Focus**: Release count, latest release date, commit velocity\n\n### CLI Enhancements\n- spark analyze --user <username>\n- --list-only for dry-run preview\n- --top-n for custom repository count\n- --output for custom directory\n- Progress indicators and graceful error handling\n\n### Documentation\n- Comprehensive docs/analyze-command.md (450+ lines)\n- Updated getting-started.md with API key setup\n- CHANGELOG.md with version 2.0.0 announcement\n- Sample report in output/reports/\n\n### Testing\n- 17+ integration tests covering all user stories\n- Unit tests for ranking, parsing, version checking\n- Edge case validation and performance testing\n\n## Files Changed\n- Created: CHANGELOG.md, docs/analyze-command.md\n- Created: src/spark/dependencies/ (analyzer, parser, version_checker)\n- Created: 7 test files (integration + unit)\n- Modified: Repository model with 9 new fields\n- Modified: CLI with dependency analysis integration\n- Modified: ReportGenerator with enhanced output\n- Modified: setup.py (version 2.0.0)\n- Modified: config/spark.yml (analyzer section, nuget support)\n\n## Constitution Compliance\n\u2705 Python-First: All modules independently importable\n\u2705 CLI Interface: Full CLI access for local testing\n\u2705 Data Privacy: Explicit public-only repository filter\n\u2705 Testability: Comprehensive test coverage\n\u2705 Observable: Progress tracking and detailed logging\n\u2705 Performance: <3-minute target for 50 repositories\n\u2705 Configuration: YAML-based with env overrides\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 5397,
+        "deletions": 180
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "63add5ad12968ff366f2afd2795be7331d5b0746",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-29T20:48:53+00:00"
+        },
+        "message": "Enhance RepositorySummarizer with caching for AI responses to save tokens and improve performance"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 85,
+        "deletions": 8
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "292d40656b23cde897eaf6644b2442b6ce8e3dea",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-29T20:36:52+00:00"
+        },
+        "message": "Add unit tests for repository ranking and summarization features\n\n- Implement comprehensive unit tests for the RepositoryRanker class, covering privacy filtering, composite scoring, ranking integration, edge cases, and performance.\n- Create unit tests for the RepositorySummarizer class, including AI integration, README handling, commit pattern analysis, prompt engineering, fallback strategies, cost tracking, error handling, and summary quality checks.\n- Ensure tests validate expected behaviors and edge cases for both ranking and summarization functionalities."
+      },
+      "stats": {
+        "total": 44,
+        "additions": 16682,
+        "deletions": 6
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "2e28b21be2f02a82d6099c4027c9cd4e8b3a8928",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T21:45:02+00:00"
+        },
+        "message": "Add release cadence feature with SVG visualization\n\n- Implemented `calculate_release_cadence` method in StatsCalculator to track unique repository activity over weekly and monthly periods.\n- Enhanced main.py to log release cadence statistics and generate corresponding SVG output.\n- Updated visualizer.py to create SVGs for release cadence, including weekly and monthly repo diversity.\n- Modified config.py to include \"release\" in valid statistics categories.\n- Added unit tests for release cadence calculations and SVG structure.\n- Created initial release.svg file for visual representation of release cadence data.\n- Updated languages and overview SVGs to reflect recent data changes."
+      },
+      "stats": {
+        "total": 18,
+        "additions": 422,
+        "deletions": 7
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "ddf2df937e20ea56a1ee5ac12ebc1625bfce0133",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T21:14:16+00:00"
+        },
+        "message": "Improve consistency score: use coefficient of variation + activity rate (0\u219231.5/100)"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 38,
+        "deletions": 11
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "132888898efd35a1cc65c9855bb118c8e65793db",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T21:04:29+00:00"
+        },
+        "message": "Fix fun.svg column overlap: increase width to 900px, adjust spacing, shorten text"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 31,
+        "deletions": 31
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "e3e14ca89d63ea47aaadbfefd2134e94bb0e9fd0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T20:53:33+00:00"
+        },
+        "message": "Update fun.svg and add preview helper"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 41,
+        "deletions": 1
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "e9e55ae68af547b3ad40bfedf40c71264e1c308f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T20:53:14+00:00"
+        },
+        "message": "Fix heatmap visualization: proper dimensions, actual commit data, and day labels"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 107,
+        "deletions": 26
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "107985e7e34ae2a42ddef17378119d041530cdc7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T20:39:35+00:00"
+        },
+        "message": "Fix: Allow output SVGs to be committed for GitHub Actions workflow"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "282b3783d1c8633a4a99ad5be49ac6bbb474a3f7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T19:55:43+00:00"
+        },
+        "message": "updates for svg"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 3436,
+        "deletions": 147
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "ceb52c5eb9687c326b6f001f3b76237970a98a3f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T18:13:38+00:00"
+        },
+        "message": "Add logging utility, theme system, and SVG visualizer for GitHub statistics\n\n- Implemented a Logger class for standardized logging with timestamps.\n- Created a theme system with base Theme class and custom themes (SparkDarkTheme, SparkLightTheme, CustomTheme).\n- Developed StatisticsVisualizer class for generating SVG visualizations of GitHub statistics, including overview, heatmap, language breakdown, fun stats, and coding streaks.\n- Added unit tests for APICache, StatsCalculator, and SparkConfig to ensure functionality and correctness.\n- Established a test suite for comprehensive testing of Stats Spark components."
+      },
+      "stats": {
+        "total": 34,
+        "additions": 4240,
+        "deletions": 1
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "76d2ead57061f4e66027cc17dc05c5585bed39fa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T17:50:10+00:00"
+        },
+        "message": "feat: implement speckit command suite for project constitution, implementation, planning, specification, task generation, and issue conversion\n\n- Added speckit.constitution.md for creating/updating project constitution with interactive inputs and template synchronization.\n- Introduced speckit.implement.md to execute implementation plans by processing tasks defined in tasks.md.\n- Created speckit.plan.md for executing implementation planning workflows and generating design artifacts.\n- Developed speckit.specify.md to create/update feature specifications from natural language descriptions.\n- Implemented speckit.tasks.md for generating actionable, dependency-ordered tasks based on design artifacts.\n- Added speckit.taskstoissues.md to convert tasks into actionable GitHub issues.\n- Updated settings.local.json to include necessary permissions for executing scripts and commands."
+      },
+      "stats": {
+        "total": 10,
+        "additions": 1406,
+        "deletions": 0
+      },
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "73e83d2c1819cdfd3eae337654afa44a882f4cc2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T17:48:33+00:00"
+        },
+        "message": "feat: Complete specification analysis and remediation for Stats Spark\n\nComplete cross-artifact analysis and resolution of all 16 identified issues across spec.md, plan.md, and tasks.md. Project now fully aligned with constitution and ready for implementation.\n\n## Analysis Summary\n- Analyzed 3 core artifacts (spec.md, plan.md, tasks.md) against constitution\n- Identified and resolved 16 findings across all severity levels\n- 1 CRITICAL, 4 HIGH, 8 MEDIUM, 3 LOW severity issues fixed\n- Added 10 new tasks for test coverage and validation (117 \u2192 127 tasks)\n\n## Critical Fixes (Constitution Alignment)\n- Updated plan.md constitution check to acknowledge existing constitution.md\n- Added full alignment verification against all 5 constitution principles\n- Restructured test tasks to pair with implementation (T058b-e, T065a, T109-T114, T118)\n- Meets constitution Principle IV >80% test coverage requirement\n\n## Specification Improvements (spec.md)\n- FR-007: Added detailed Spark Score normalization methodology\n- FR-013: Specified exponential backoff retry logic (1s, 2s, 4s, 8s)\n- FR-015: Added concrete error message examples\n- FR-017: Defined Lightning Round Stats format (max 80 chars, pattern)\n- FR-028: New requirement for deleted/private repository handling\n- SC-001: Clarified target audience (developers familiar with GitHub Actions)\n- SC-005: Added programmatic WCAG validation requirement (4.5:1 contrast)\n- Edge cases: Removed duplication, now reference functional requirements\n\n## Plan Improvements (plan.md)\n- Updated summary to use consistent \"markhazleton account\" terminology\n- Fixed constitution check status from \"not defined\" to \"exists and verified\"\n- Corrected config schema to match spec's 5 output categories\n- Added constitution compliance verification for all 5 principles\n\n## Task Improvements (tasks.md)\n- Added T058a: Deleted/private repository handling (FR-028)\n- Added T058b-e: Unit tests for StatsCalculator and StatisticsVisualizer\n- Added T065a: WCAG contrast validation unit tests\n- Enhanced T109-T114: Improved test specifications with acceptance criteria\n- Added T118: Explicit >80% coverage verification task\n- Updated task counts and parallel opportunities\n- Added constitution compliance note\n\n## Infrastructure\n- Created comprehensive .gitignore for Python project\n- Blocks API cache (.cache/), tokens (secrets/), credentials\n- Keeps example SVGs in assets/examples/ for documentation\n- Security-focused: prevents accidental token/credential commits\n- Cross-platform support (macOS, Windows, Linux)\n\n## Coverage Metrics\n- Requirements with tasks: 28/28 (100%)\n- Success criteria with validation: 9/11 (81.8%)\n- Constitution alignment: 5/5 principles (100%)\n- Total tasks: 127 (includes test coverage)\n\nReady for /speckit.implement\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 3163,
+        "deletions": 0
+      },
+      "repo": "github-stats-spark"
+    }
+  ]
+}

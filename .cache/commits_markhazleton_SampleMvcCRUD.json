@@ -1,0 +1,705 @@
+{
+  "timestamp": "2026-01-02T11:10:17.414908",
+  "value": [
+    {
+      "sha": "4fb6c6986498cb164ee6fb117e617369d53640ee",
+      "message": "Upgrade Dockerfile and global.json to .NET 10 for improved compatibility",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T21:56:09+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "803e14583939340d1748087c2b1c2ff13a131b3d",
+      "message": "Refactor code structure for improved readability and maintainability",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T21:48:06+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "bca3563163336dc0a0d4492805fa863faed4ba00",
+      "message": "Document history and add changelog",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T21:47:23+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2edd129b8bf2211825dfde97675020c1bb9f4b10",
+      "message": "Enhance CI/CD workflow and documentation\n\nUpdated `docker-image.yml` to rename the workflow, add debugging steps, and verify `HttpClientFactory` presence. Upgraded Docker actions and added metadata extraction, local testing, and Trivy security scanning. Improved cache management and output details.\n\nRefined `Dockerfile` to use wildcard patterns for project files and optimized the publish command for smaller image size.\n\nCreated comprehensive documentation: `GITHUB_ACTIONS_FIX_SUMMARY.md` for action resolutions, `ACTIONS_FAILURES_ANALYSIS.md` for in-depth failure analysis, `ACTIONS_FIX_CHECKLIST.md` for tracking fixes, `GITHUB_ACTIONS_TROUBLESHOOTING.md` for troubleshooting guidance, and `GITHUB_CLI_REFERENCE.md` for CLI usage.\n\nAdded `check-dependabot.ps1` script to verify and guide `dependabot.yml` configuration updates.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T21:17:09+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0995388b849bc62fc982f00efad7cba2645c3cc7",
+      "message": "Migrate from System.Drawing to SkiaSharp for cross-platform image processing\n\n- Replace System.Drawing.Common with SkiaSharp (v3.116.0) for MIT-licensed, cross-platform image support\n- Update ImageExtensions to use SKBitmap and SKSamplingOptions APIs\n- Update BaseController image upload to use SkiaSharp encoding\n- Update ImageExtensionsTests to use SkiaSharp types\n- Remove libgdiplus dependency from Azure workflow (no longer needed)\n- All 192 tests now pass on both Windows and Linux without native library dependencies\n\nBenefits:\n- No more libgdiplus dependency issues on Linux\n- Pure cross-platform solution with native library bundles\n- MIT license (no commercial restrictions)\n- Modern API using SKSamplingOptions instead of deprecated SKFilterQuality\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T21:14:04+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4826d7623ea46016f77df1e8e5a3f7c10b378375",
+      "message": "Add permissions configuration for GitHub Actions workflows",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T20:59:18+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4337390a1277fc7cb222ee7fba95f4cb2dde7f71",
+      "message": "Fix failing GitHub Actions workflows\n\n- Remove check for non-existent Mwh.Sample.HttpClientFactory directory in Docker workflow\n- Add libgdiplus installation step for System.Drawing GDI+ tests in Azure workflow\n- Fix Trivy SARIF upload to only run when scan succeeds\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T20:57:27+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "28191e3b66b1f75c8fdeff3ec96102ec494da9cd",
+      "message": "Update Dockerfile and add GitHub Actions documentation",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T20:54:02+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "576fe8d3c7a37b5b1070377f31f6a7c75b3d3146",
+      "message": "Merge pull request #37 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T20:39:57+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4ad93c1f1c2c1193bb3218057e4dfe5bd8f97440",
+      "message": "Update workflows and add migration documentation\n\nEnhanced the `docker-image.yml` workflow by making Docker image tests conditional on non-pull request events and extending the sleep duration before log checks. Updated Trivy scanner options and switched to `upload-sarif@v4` for GitHub Security uploads, adding a new Trivy report step.\n\nAdded `CODEQL_MIGRATION.md` to document the migration from CodeQL Action v3 to v4, detailing deprecation timelines, required changes, and testing recommendations. Confirmed repository compliance with upcoming deprecation.\n\nIntroduced `dependabot.yml` for automated dependency updates, covering GitHub Actions, NuGet, npm, and Docker dependencies with a weekly schedule and specific configurations for each ecosystem.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T20:35:49+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "dfc26b6a72a74df81fc138812e99eb510e0822ae",
+      "message": "Enhance CI/CD workflows for Docker and Azure\n\nUpdated `docker-image.yml` to rename the workflow, add environment variables, and improve Docker build and push processes with metadata extraction, multi-platform support, and security scanning. Enhanced `main_samplecrud.yml` with caching, dynamic .NET versioning, and improved Azure deployment steps, including health checks and test result publishing.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T20:18:19+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "727a1a2e0cf3b98c576f10ed2813d98d1388918e",
+      "message": "Upgrade to .NET 10.0 and refactor solution\n\nUpgraded the entire SampleMvcCRUD solution from .NET 9.0 to .NET 10.0 using a Big Bang strategy, updating all 7 projects simultaneously. Modified project files to reflect the new framework version and updated package references to .NET 10 compatible versions. Removed the `Mwh.Sample.HttpClientFactory` project and its files, indicating a refactor or consolidation of functionality.\n\nRefactored test methods in `StringExtensionsTests.cs` and `DepartmentDtoTests.cs` to manually check for exceptions, improving test clarity. Updated `README.md` with new framework details, project goals, and instructions. Created `UPGRADE-SUMMARY.md` to document the upgrade process.\n\nEnhanced the user interface in `Index.cshtml` with new table actions and a DataTable script. Updated `Program.cs` for Swagger configuration changes and added HttpClient factory registration. Deleted unused binary files for cleanup.\n\nUpdated the solution file to remove references to the deleted project and reflect the new Visual Studio version. Created documentation files to track the upgrade process and ensure a detailed audit trail. All 192 unit tests passed, confirming compatibility with .NET 10.0 and no breaking changes.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T20:12:48+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5e476ac98dc91e7939ece2e5ef532577416966af",
+      "message": "feat: upgrade solution to .NET 10.0\n\n- Update all projects from net9.0 to net10.0\n- Update Entity Framework Core packages to 10.0.0\n- Update System.Text.Json to 10.0.0\n- Update System.Drawing.Common to 10.0.0\n- Update Microsoft.Extensions.Http to 10.0.0\n- Update System.Formats.Asn1 to 10.0.0\n- Update Microsoft.VisualStudio.Web.CodeGeneration.Design to 10.0.0-rc.1\n\nAll projects build successfully with 0 errors.\nAll 192 unit tests pass (137 Domain tests + 55 Repository tests).\nNo breaking changes identified.\n\nProjects upgraded:\n- Mwh.Sample.Domain\n- Mwh.Sample.Repository\n- Mwh.Sample.HttpClientFactory\n- Mwh.Sample.Web (Blazor)\n- Mwh.Sample.Console\n- Mwh.Sample.Domain.Tests\n- Mwh.Sample.Repository.Tests",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T18:59:56+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9ecc85c75eefe1a887e08172ea93c66e3d7ddb6d",
+      "message": "Update NuGet package versions across projects\n\nUpdated several NuGet packages to their latest versions, including MSTest (3.9.3 to 3.10.4), System.Drawing.Common (9.0.7 to 9.0.8), Microsoft.Extensions.Http (9.0.7 to 9.0.8), and various Entity Framework Core packages (9.0.7 to 9.0.8). Also updated Azure.Identity (1.14.2 to 1.15.0) and downgraded Swashbuckle.AspNetCore (9.0.3 to 9.0.4), while updating System.Formats.Asn1 and System.Text.Json to 9.0.8.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-08T03:11:05+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "77fd8d20105b57ee0014807bac45d5fe515d4f99",
+      "message": "Fix lint command syntax in Docker image workflow",
+      "author": "Mark Hazleton",
+      "date": "2025-07-28T23:01:41+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8da2913173d98009bbf64170a477382f823e0c5c",
+      "message": "Add .hadolint.yaml configuration and update Dockerfile linting to ignore DL3008",
+      "author": "Mark Hazleton",
+      "date": "2025-07-28T23:00:14+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4e4a89eac1f0fdb1ce40023dc72e6d39891504b8",
+      "message": "Update Dockerfile to improve error handling and optimize package installation",
+      "author": "Mark Hazleton",
+      "date": "2025-07-28T22:53:28+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e486b3814d84b7fb0322c98045c3e9300833cd99",
+      "message": "Enhance breadcrumb handling and layout updates\n\n- Improved `GenerateBreadcrumbs` method in `BreadcrumbHelper.cs` to better manage Razor Pages and streamline breadcrumb generation.\n- Updated HTML structure and styling in `_Breadcrumb.cshtml` for improved visual integration with the dark theme.\n- Adjusted breadcrumb placement and added CSS styles in `_Layout.cshtml` for better mobile and desktop responsiveness.\n- Applied similar changes to `_LayoutPivot.cshtml` for consistency.\n- Modified `robots.txt` to disallow access to `/MvcEmployee/` while allowing `/api/` endpoints for better search engine indexing.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-28T22:27:42+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "66b4ecb535a32a21e1d6a1843cd7f268db1445e1",
+      "message": "Update NuGet packages, enhance SEO, and add icons\n\nUpdated several NuGet packages to their latest versions, including `System.Drawing.Common`, `Microsoft.Extensions.Http`, and `Microsoft.EntityFrameworkCore` packages, ensuring the application benefits from the latest features and security fixes.\n\nModified the `Details.cshtml` file to improve department name display and added structured data generation for employee details. Introduced a new `BreadcrumbHelper` class for enhanced navigation and updated the `_metatags.cshtml` file for better SEO.\n\nIncluded new favicon images and updated the `site.webmanifest` to support additional app icons, improving the visual branding across platforms.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-28T21:50:02+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "cec204b272a68d26da3cb24d50f56a2817cff9e8",
+      "message": "Add SitemapController, update metatags, and enhance favicon setup",
+      "author": "Mark Hazleton",
+      "date": "2025-07-28T20:05:16+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2d490701f2616c5420de93ce8245670d1fa9fd57",
+      "message": "Update package references across multiple projects\n\nUpdated various package references to their latest versions, including:\n- `Microsoft.NET.Test.Sdk` to `17.14.1`\n- `MSTest.TestAdapter` and `MSTest.TestFramework` to `3.9.3`\n- `System.Drawing.Common` to `9.0.6`\n- `Microsoft.Extensions.Http` and `System.Text.Json` to `9.0.6`\n- `Microsoft.EntityFrameworkCore` and related packages to `9.0.6`\n- `Azure.Identity` to `1.14.1`\n- Other packages in `Mwh.Sample.Web.csproj` were also updated and outdated references were removed.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-03T02:24:27+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "09e3ecee6ad090475cfa5e9e5ec73126bc534645",
+      "message": "updates for bootswatch theme switcher",
+      "author": "Mark Hazleton",
+      "date": "2025-05-25T12:00:13+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c8e19ca656abf1e114ac11803083eb28df28ce01",
+      "message": "Update README.md to enhance project description, add theme switcher details, and improve deployment instructions",
+      "author": "Mark Hazleton",
+      "date": "2025-05-24T22:00:35+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c61f49d21cd5785af086ef64a1aa1244c8146438",
+      "message": "Add Bootswatch theming and HTTP client utilities\n\nUpdated project to include WebSpark.Bootswatch and WebSpark.HttpClientUtility packages. Removed Microsoft.VisualStudio.Web.CodeGeneration.Design reference.\n\nEnhanced Program.cs with new services and middleware for Bootswatch. Modified _Layout.cshtml to support dynamic theming and added a theme switcher.\n\nUpdated _ViewImports.cshtml for Bootswatch integration and added new settings in appsettings.json for CSV output and HTTP request handling options.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-24T21:09:47+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b7a5db418ccd81cdfceddfd3e08bdb46867546ce",
+      "message": "Update NuGet packages and refine project configurations\n\nUpdated various NuGet packages to their latest versions, including test SDKs, MSTest components, Entity Framework Core, and others. Adjusted NPM installation targets in `Mwh.Sample.Web.csproj` for better error handling and formatting. Modified the `PublishClientAssets` target to ensure correct inclusion and exclusion of resolved files during the publish process.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-24T20:05:08+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6b1bdf79e5d495e505210c7aef6781ad036c8499",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2025-04-22T12:27:58+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7a48e4ed5070f5bb6cc124ecad7f1819e7f2e3e3",
+      "message": "add npm to docker image",
+      "author": "Mark Hazleton",
+      "date": "2025-04-18T12:56:32+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6780a3bb2172ed6f27400dadf6f02c8a3e2f820b",
+      "message": "update project UI",
+      "author": "Mark Hazleton",
+      "date": "2025-04-17T13:43:06+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fbd7cd87b6881ee8b7fc713103f83c372b92fac6",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2025-01-20T14:49:19+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "bc4774f58bf6574e02ba163b6163fba68182bc7e",
+      "message": "update nuget packages",
+      "author": "Mark Hazleton",
+      "date": "2024-12-24T13:53:07+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "363302aab9c809632cc159b96ec23f3100195ec9",
+      "message": "update nuget packages",
+      "author": "Mark Hazleton",
+      "date": "2024-12-03T03:48:56+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fa9563c01d623eac3e2a95a12c076dc73b7997ba",
+      "message": "NuGet Upgrade",
+      "author": "Mark Hazleton",
+      "date": "2024-11-13T15:26:44+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d6ebc416f24237745e9f3278e1367ece3ca5886b",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T13:12:03+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ce273e18a2019ae6b26593fd47d832c019cca85c",
+      "message": "update dockerfile",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T02:43:46+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d46a3a35ca6f9f0e65d954c9fd831ecb924b1b14",
+      "message": "yml changes",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T02:40:55+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d446b35354fc31c224f9f9f09902ebc40f8905fd",
+      "message": "update razor pages",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T02:37:53+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "577f98fc9ee433227696ce054c1ff9d4deefdce5",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T21:32:42+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "41c46c68bb7bce2a5d584bd5cec1ea8e57196ad4",
+      "message": "remove old pipeline",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T21:29:20+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d0329a5e48d5dc8301f0c0dcdf8eacc2edbea27e",
+      "message": "update version number",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T21:08:15+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "1eefd1003cb82efa47d60b6c9e2eef773d485977",
+      "message": "Update main_samplecrud.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T20:40:08+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9ac7c66d2a439844f0662c57f7ca6cb5ce14e0cb",
+      "message": "Merge pull request #36 from markhazleton/dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7\n\nBump actions/download-artifact from 3 to 4.1.7 in /.github/workflows",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T20:24:39+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "37fe0aac67869ec6ae34ab99272ece1cf1e646df",
+      "message": "Update main_samplecrud.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T20:22:28+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a0ddb6375e02a37e85f99fa7ce5e84278bed560f",
+      "message": "Update docker-image.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T20:20:54+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fedc7c30946a43494ad8b7d9d0a18ed407c6d903",
+      "message": "Merge branch 'main' into dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T20:15:53+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "359c55380de3615bb03c97552807b1383f9cde2f",
+      "message": "Update to net 9\nCreate unique title/description/keywords",
+      "author": "Mark Hazleton",
+      "date": "2024-09-23T20:14:43+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "565fde328b75aa7f4b8deb7c25ffe898bc45b8bf",
+      "message": "update to net 9",
+      "author": "Mark Hazleton",
+      "date": "2024-09-21T03:36:28+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "530836f57cf45d52933b07009095309ee24ac60c",
+      "message": "update to net 9",
+      "author": "Mark Hazleton",
+      "date": "2024-09-21T03:35:33+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0f692ed9c301219e79cae0bc9fa42d466f8b914e",
+      "message": "NuGet updates",
+      "author": "Mark Hazleton",
+      "date": "2024-09-21T01:53:11+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f0d698603fa8e437a7bb3c03322e02dc3095a5b9",
+      "message": "Nuget Updates",
+      "author": "Mark Hazleton",
+      "date": "2024-08-27T23:11:41+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c33e646dcb1445a8d66c6d164a186ac4f4a146c2",
+      "message": "commit readme",
+      "author": "Mark Hazleton",
+      "date": "2024-08-21T18:17:33+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5c6ee7d29c0f7e402a053db1215dd71c476d6805",
+      "message": "Update main_samplecrud.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-08-21T18:16:53+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ca3c73ad60c0bc24eaf18f627a0eeae2ff27eb58",
+      "message": "Update main_samplecrud.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-08-21T18:15:06+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "1b1cc3ba13bdfae41b5f8e8f33939c27899d4bee",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-08-21T16:07:10+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c1de279b319ffde2197b4b63d8fcd995bf65ab68",
+      "message": "package update",
+      "author": "Mark Hazleton",
+      "date": "2024-08-03T14:23:51+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3339a3eda0700aa9827a2c5578345f02ed994081",
+      "message": "Update packages, work on pure JS stand alone page",
+      "author": "Mark Hazleton",
+      "date": "2024-07-23T13:43:53+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e50dc9e5f04ca1974237e79935601ab422731462",
+      "message": "package updates",
+      "author": "Mark Hazleton",
+      "date": "2024-06-26T21:41:04+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ebd4b1bcd797774dde1a3e3143113059d2f1d3a3",
+      "message": "Merge pull request #31 from markhazleton/dependabot/nuget/Mwh.Sample.Web/Azure.Identity-1.11.0\n\nBump Azure.Identity from 1.10.4 to 1.11.0 in /Mwh.Sample.Web",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T13:01:44+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5764b5ac755a48cba55fb5df81524da667d73233",
+      "message": "Merge pull request #32 from markhazleton/dependabot/nuget/AspireAppHost.ServiceDefaults/OpenTelemetry.Instrumentation.AspNetCore-1.8.1\n\nBump OpenTelemetry.Instrumentation.AspNetCore from 1.7.1 to 1.8.1 in /AspireAppHost.ServiceDefaults",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T13:01:19+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c9ddc4d17264ae92ba047a10e84928a729614b7b",
+      "message": "Merge pull request #33 from markhazleton/dependabot/nuget/AspireAppHost.ServiceDefaults/OpenTelemetry.Instrumentation.Http-1.8.1\n\nBump OpenTelemetry.Instrumentation.Http from 1.7.1 to 1.8.1 in /AspireAppHost.ServiceDefaults",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T13:00:55+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "18215052b57c4a6cf4a3cb28c6d95b07d586749c",
+      "message": "merge from main",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T12:59:24+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3ece14061863207703868f02728dec6496efeee8",
+      "message": "merge from main",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T12:58:49+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "21fae9f0255095fb49223ac950946618e904567d",
+      "message": "update from main",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T12:57:45+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "de96a8f3a3ab676109943e9f025169c31a0e283d",
+      "message": "move aspire out",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T12:54:40+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "57fa6c90181fe7b4325f32495f7e2100df63ab00",
+      "message": "Upgrade packages...",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T12:48:29+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2b375fd7ad0fab97e8617ad8ce74b1ded1798d70",
+      "message": "clean up deploy stuff",
+      "author": "Mark Hazleton",
+      "date": "2024-05-02T16:09:57+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2e9aa7dff3effec1142764cf85ec63fce84cff64",
+      "message": "remove aspire",
+      "author": "Mark Hazleton",
+      "date": "2024-05-02T13:38:55+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b43ddef046e3c3f3694a48bea8db2d73599d0359",
+      "message": "remove old workflow",
+      "author": "Mark Hazleton",
+      "date": "2024-05-02T13:48:26+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9efe4e03551da707af8fea7e80d3e132057aeff3",
+      "message": "Update main_samplecrud.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-05-02T13:42:45+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9931c9efbb5ec8983ee9e9ac6b0a5488f140e98f",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2024-05-02T13:33:13+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "15a392a0bb5cddaba2b3d81157a8dfdd02d4bee1",
+      "message": "Update Readme to point to moved resources",
+      "author": "Mark Hazleton",
+      "date": "2024-03-28T17:19:50+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2e3e78441c8d7ed932f539613c842cf687f5ba97",
+      "message": "Update for MarkHazleton.com",
+      "author": "Mark Hazleton",
+      "date": "2024-03-20T22:44:50+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d95667accb077d12d3189681835650a0af63e542",
+      "message": "Updated packages, added new endpoints, and modified requests\n\nUpdated the `coverlet.collector` package version from `6.0.1` to `6.0.2` in `Mwh.Sample.Domain.Tests.csproj` and `Mwh.Sample.Repository.Tests.csproj` files. Added a new POST endpoint `/employees` in `Program.cs` that accepts an `EmployeeDto` object and uses the `IEmployeeService` to save the employee. Also added a new static class `EmployeeGroupEndpoints` in `Program.cs` that maps GET and DELETE operations for the `IEmployeeService`. Replaced the `GET` request for `/weatherforecast` with a `GET` request for `/employees/` in the `SampleMinimalApi.http` file.",
+      "author": "Mark Hazleton",
+      "date": "2024-03-13T03:05:53+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "531f8a2b0cfc879eef3ea49a9c336bcd17ee21e8",
+      "message": "Add Minimal API",
+      "author": "Mark Hazleton",
+      "date": "2024-03-12T20:49:40+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "37028149bec7cb080870c09c1cd170899f515c6b",
+      "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD",
+      "author": "Mark Hazleton",
+      "date": "2024-03-12T13:51:12+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ace5292f3145a79a119707e83f0926e672cb391a",
+      "message": "Add Aspire Host\nUpdate NuGet Packages",
+      "author": "Mark Hazleton",
+      "date": "2024-03-12T13:50:55+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "cc29c3a71fd3346762217cd5d0d30ed8906d78f0",
+      "message": "package updates\nremove Aspire",
+      "author": "Mark Hazleton",
+      "date": "2024-03-12T13:12:47+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "954bb2469ad64e0da87802a143ffb93019dd0b80",
+      "message": "Delete .github/workflows/main_mwhsamplecrud.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-03-06T13:49:13+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "31aa3dce5f9b21b9aa70926fce26f8a5da412a4f",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2024-03-06T13:32:32+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "746316dce4f7387ba1389558ecebf86a43f39cfd",
+      "message": "update libman",
+      "author": "Mark Hazleton",
+      "date": "2024-02-13T07:10:58+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "554d7000054dc1323e3adfbdf03dede6c311975e",
+      "message": "update NuGet packages",
+      "author": "Mark Hazleton",
+      "date": "2024-02-12T17:37:49+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0972d2df04ca97d580ccc76e88e91f057dcf760d",
+      "message": "Package Updates",
+      "author": "Mark Hazleton",
+      "date": "2024-01-24T18:29:51+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f8a8ee8fb7d829a864d42dba86e64c21f282a96c",
+      "message": "Add AspireHost project",
+      "author": "Mark Hazleton",
+      "date": "2024-01-02T14:47:28+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fdb4cf3de570547ce165ac1fc48b413df56f186a",
+      "message": "Update NuGet/Client Libs.",
+      "author": "Mark Hazleton",
+      "date": "2023-12-11T01:36:11+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4ee5714c79d7cc77c80b47b624837f4213123335",
+      "message": "package updates",
+      "author": "Mark Hazleton",
+      "date": "2023-11-12T21:13:35+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "00315dc6e8b587066a2eaeac4129375395ceabe0",
+      "message": "update docker file, remove unused project reference",
+      "author": "Mark Hazleton",
+      "date": "2023-10-22T23:07:41+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3eab93b9a8e674b4abbab7746378e8e7df4021fe",
+      "message": "Update docker-image.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-10-22T23:05:28+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b04eb0b91d78efe9f8a344d31f944a58cc6c32e4",
+      "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD",
+      "author": "Mark Hazleton",
+      "date": "2023-10-22T22:35:22+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "316d0e2933f654cd782c0ba17bf7250b0a120279",
+      "message": "Update to Net 8, refactor Swagger implementation",
+      "author": "Mark Hazleton",
+      "date": "2023-10-22T22:34:34+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f3daa977c7f2d55e855b306d2ad9889917002ed7",
+      "message": "Set up CI with Azure Pipelines\n\n[skip ci]",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:55:41+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8599b8c94f2bcf37914be0ef3d6b7ca882072998",
+      "message": "Update azure-pipelines.yml for Azure Pipelines",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:40:15+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b8d136dab9fa48965a4bedb89d350597a40a93f7",
+      "message": "Update azure-pipelines.yml for Azure Pipelines",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:38:20+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4f8935d4da96531eb66bc43f9bf3e21595795308",
+      "message": "Update azure-pipelines.yml for Azure Pipelines",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:36:40+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ade10eb88fa4cea430f7daa78dbb50f5abf15666",
+      "message": "Update azure-pipelines.yml for Azure Pipelines",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:33:35+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ae1917ab359da3f4b1fae0cf8380923e0ad55bc2",
+      "message": "add global.json for solution",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:32:42+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "636f85945071f561a0cdf1fbce0583d81037287f",
+      "message": "update to use wildcard version",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:19:22+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3910e527281d08d94c62ddea2e4640b7a4489956",
+      "message": "add global.json",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:17:20+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e15e9d077cc5f741bd27004ffd49961ef1b5efa5",
+      "message": "Fix Issues with EF Core on unit tests",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T02:03:02+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "20c06a1b8acc43887c400775cda6198cc7b805dc",
+      "message": "merge from remote",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T01:28:28+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "37c063fad4e52774870e1e621034e563050d5415",
+      "message": "Update Docker File",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T01:27:14+00:00",
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7f0144fb0e7a2c6e3cab01ac63713b05eda157b5",
+      "message": "Update main_mwhsampleweb.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-10-10T00:19:56+00:00",
+      "repo": "SampleMvcCRUD"
+    }
+  ]
+}
