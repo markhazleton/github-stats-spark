@@ -168,7 +168,6 @@ secrets/
 # Local development databases or data files
 *.db
 *.sqlite
-data/
 
 # ============================================================================
 # IDE / Editor
