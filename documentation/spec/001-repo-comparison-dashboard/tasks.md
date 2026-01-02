@@ -141,25 +141,25 @@
 
 ### Implementation for User Story 3
 
-- [ ] T052 [P] [US3] Create frontend/src/components/Visualizations/VisualizationControls.jsx for chart type and metric selection
-- [ ] T053 [P] [US3] Create frontend/src/components/Visualizations/BarChart.jsx using Recharts library
-- [ ] T054 [P] [US3] Create frontend/src/components/Visualizations/LineGraph.jsx using Recharts library
-- [ ] T055 [P] [US3] Create frontend/src/components/Visualizations/ScatterPlot.jsx using Recharts library
-- [ ] T056 [P] [US3] Create VisualizationControls.module.css for controls styling
-- [ ] T057 [US3] Implement chart data transformation in frontend/src/services/metricsCalculator.js (table data → chart format)
-- [ ] T058 [US3] Add responsive chart sizing and container in BarChart.jsx with Recharts ResponsiveContainer
-- [ ] T059 [US3] Add responsive chart sizing and container in LineGraph.jsx with Recharts ResponsiveContainer
-- [ ] T060 [US3] Add responsive chart sizing and container in ScatterPlot.jsx with Recharts ResponsiveContainer
-- [ ] T061 [US3] Configure Recharts tooltips in BarChart.jsx with custom formatting for metric values
-- [ ] T062 [US3] Configure Recharts tooltips in LineGraph.jsx with custom formatting for dates and values
-- [ ] T063 [US3] Configure Recharts tooltips in ScatterPlot.jsx with custom formatting for coordinate values
-- [ ] T064 [US3] Integrate VisualizationControls and chart components into App.jsx with conditional rendering
-- [ ] T065 [US3] Implement chart type switching logic in App.jsx (bar/line/scatter selection)
-- [ ] T066 [US3] Implement metric selection logic in VisualizationControls.jsx (commit count, sizes, dates)
-- [ ] T067 [US3] Add view toggle buttons in App.jsx to switch between table view and visualization view
-- [ ] T068 [US3] Synchronize filter/sort state between table and visualizations in App.jsx
-- [ ] T069 [US3] Add CSS transitions in global.css for smooth view switching (<1 second requirement)
-- [ ] T070 [US3] Add global CSS variables for chart colors and theme in global.css
+- [X] T052 [P] [US3] Create frontend/src/components/Visualizations/VisualizationControls.jsx for chart type and metric selection
+- [X] T053 [P] [US3] Create frontend/src/components/Visualizations/BarChart.jsx using Recharts library
+- [X] T054 [P] [US3] Create frontend/src/components/Visualizations/LineGraph.jsx using Recharts library
+- [X] T055 [P] [US3] Create frontend/src/components/Visualizations/ScatterPlot.jsx using Recharts library
+- [X] T056 [P] [US3] Create VisualizationControls.module.css for controls styling
+- [X] T057 [US3] Implement chart data transformation in frontend/src/services/metricsCalculator.js (table data → chart format)
+- [X] T058 [US3] Add responsive chart sizing and container in BarChart.jsx with Recharts ResponsiveContainer
+- [X] T059 [US3] Add responsive chart sizing and container in LineGraph.jsx with Recharts ResponsiveContainer
+- [X] T060 [US3] Add responsive chart sizing and container in ScatterPlot.jsx with Recharts ResponsiveContainer
+- [X] T061 [US3] Configure Recharts tooltips in BarChart.jsx with custom formatting for metric values
+- [X] T062 [US3] Configure Recharts tooltips in LineGraph.jsx with custom formatting for dates and values
+- [X] T063 [US3] Configure Recharts tooltips in ScatterPlot.jsx with custom formatting for coordinate values
+- [X] T064 [US3] Integrate VisualizationControls and chart components into App.jsx with conditional rendering
+- [X] T065 [US3] Implement chart type switching logic in App.jsx (bar/line/scatter selection)
+- [X] T066 [US3] Implement metric selection logic in VisualizationControls.jsx (commit count, sizes, dates)
+- [X] T067 [US3] Add view toggle buttons in App.jsx to switch between table view and visualization view
+- [X] T068 [US3] Synchronize filter/sort state between table and visualizations in App.jsx
+- [X] T069 [US3] Add CSS transitions in global.css for smooth view switching (<1 second requirement)
+- [X] T070 [US3] Add global CSS variables for chart colors and theme in global.css
 
 **Checkpoint**: All visualization types render correctly and respond to filter/sort changes from User Story 2
 

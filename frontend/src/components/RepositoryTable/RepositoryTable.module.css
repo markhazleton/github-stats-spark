@@ -147,6 +147,32 @@
   border-radius: var(--radius-sm);
 }
 
+/* Repository Name Button (for drill-down) */
+.repoNameButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.repoNameButton:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.repoNameButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
 /* Checkbox */
 .checkbox {
   width: 16px;

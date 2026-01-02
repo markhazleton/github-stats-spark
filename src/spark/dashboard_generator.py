@@ -211,7 +211,7 @@ class DashboardGenerator:
         logger.debug(f"Calculating commit metrics for {repo_name}...")
 
         # Fetch commits with detailed stats
-        max_commits = self.config.get("dashboard", {}).get("data_generation", {}).get("max_commits_per_repo", 100)
+        max_commits = self.config.get("dashboard", {}).get("data_generation", {}).get("max_commits_per_repo", 200)
         commits_with_stats = self.fetcher.fetch_commits_with_stats(
             username=self.username,
             repo_name=repo_name,

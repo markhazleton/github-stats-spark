@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2025-12-30 20:00:54 UTC
+**Generated**: 2026-01-02 17:15:03 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 48
 **AI Summary Rate**: 97.9%
@@ -37,28 +37,29 @@
 
 ### #1. [git-spark](https://github.com/markhazleton/git-spark)
 
-⭐ 0 | 🔱 0 | 📝 TypeScript | 📊 81 commits (90d)
+⭐ 0 | 🔱 0 | 📝 TypeScript | 📊 68 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 1282 KB | 🚀 27.0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 1282 KB | 🚀 22.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-Based on the repository details and README, here's a comprehensive technical summary of Git Spark:
+Here's a comprehensive technical summary of the Git Spark repository:
 
-Git Spark is a sophisticated Git repository analytics and reporting tool built with TypeScript, designed to provide deep insights into software development workflows through comprehensive commit history analysis. The project offers an advanced CLI and Node.js library that generates interactive HTML reports with rich visualizations, enabling development teams to understand repository activity, contributor patterns, and code evolution metrics.
+Git Spark is a sophisticated Git repository analytics and reporting tool built with TypeScript, designed to provide deep insights into software development workflows through comprehensive commit history analysis. The tool generates interactive HTML reports with advanced visualizations, offering developers and engineering managers a powerful way to understand repository health, contributor activity, and development patterns.
 
 Key technical highlights include:
-- Advanced analytics engine leveraging Git commit metadata
-- Interactive HTML reporting with enterprise-grade security features
-- Flexible analysis modes supporting multiple output formats
-- Comprehensive visualization of contributor activity, file changes, and development trends
-- Configurable analysis with support for complex filtering and date range selections
+- Advanced CLI and Node.js API for flexible repository analysis
+- Interactive HTML reporting with enterprise-grade visualization components
+- Multi-format output support (HTML, JSON, CSV, Markdown)
+- Highly configurable analysis with extensive filtering and reporting options
+- Security-focused design with strict Content Security Policy (CSP)
+- Performance-optimized analytics with progressive rendering and dataset toggles
 
-The tool is architected as a Node.js library with TypeScript, supporting Node 20.6+ and providing both programmatic and command-line interfaces. It implements sophisticated reporting capabilities including multi-series timelines, activity heatmaps, governance metrics, and dark mode support. Unique features like email redaction, strict Content Security Policy (CSP) compliance, and self-contained reports make it particularly suited for security-conscious enterprise environments.
+The project leverages modern TypeScript features and focuses on providing granular, actionable insights into repository dynamics, supporting analysis of commit frequency, contributor engagement, file change patterns, and development risk factors. Its standout features include a GitHub-style contributions calendar, multi-series timeline charts, and governance metrics visualization.
 
-Primary use cases include software development analytics, team productivity assessment, code review processes, and generating comprehensive repository health reports. The project demonstrates a strong focus on data visualization, performance, and providing actionable insights from version control metadata.
+Target users include software engineering managers, DevOps teams, and technical leaders seeking data-driven insights into their development processes, with particular utility for large, complex repositories requiring comprehensive activity tracking and performance analysis.
 
-Overall, Git Spark represents an advanced tool for transforming raw Git data into meaningful, visually compelling development insights, with a design philosophy emphasizing transparency, security, and comprehensive analytics.
+The tool's architecture emphasizes modularity, extensibility, and performance, making it a robust solution for repository analytics across various development environments and project scales.
 
 **Created**: 2025-09-29
 **Last Modified**: 2025-12-29
@@ -73,9 +74,9 @@ Overall, Git Spark represents an advanced tool for transforming raw Git data int
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary:
+Here's a comprehensive technical summary for the WebSpark.HttpClientUtility repository:
 
-WebSpark.HttpClientUtility is a comprehensive .NET library designed to simplify and enhance HTTP client interactions by providing a drop-in, enterprise-grade solution for HTTP communication in .NET 8-10+ applications. The library offers a robust, one-line configuration approach that integrates multiple advanced features including Polly-based resilience patterns (retry, circuit breaker), intelligent response caching, structured logging with correlation IDs, and OpenTelemetry tracing. Leveraging modern .NET dependency injection and service configuration patterns, it abstracts away complex HttpClient setup while providing production-ready features typically requiring extensive custom implementation, such as automatic error handling, request/response telemetry, and configurable caching strategies. The library is uniquely positioned to streamline microservices, background worker, and web scraping scenarios by offering a unified, opinionated approach to HTTP communication that reduces boilerplate code and provides enterprise-grade observability and reliability out of the box. With strong test coverage (252+ unit tests), semantic versioning, and support for .NET 8 LTS through .NET 10, WebSpark.HttpClientUtility targets developers seeking a powerful, low-configuration HTTP client utility that balances simplicity with advanced enterprise requirements.
+WebSpark.HttpClientUtility is a sophisticated .NET HTTP client utility library designed to simplify and enhance HTTP communication in microservices and distributed systems. The library provides a drop-in replacement for standard HttpClient, offering enterprise-grade features like Polly-based resilience patterns (retries, circuit breakers), intelligent response caching, structured logging with correlation IDs, and built-in OpenTelemetry tracing—all configurable with a single method call. Leveraging modern .NET 8-10 capabilities, the library abstracts complex HTTP interaction patterns into a streamlined, developer-friendly interface, supporting scenarios ranging from simple API calls to complex web crawling and distributed system communication. Its architecture emphasizes convention over configuration, enabling developers to implement robust HTTP clients with minimal boilerplate code, while providing extensive customization options through fluent configuration and dependency injection. Uniquely positioned in the .NET ecosystem, WebSpark.HttpClientUtility differentiates itself by offering comprehensive observability, resilience, and caching capabilities out-of-the-box, targeting developers building microservices, background workers, and distributed applications who require sophisticated HTTP communication utilities without complex manual setup.
 
 **Created**: 2025-05-03
 **Last Modified**: 2025-12-29
@@ -84,15 +85,23 @@ WebSpark.HttpClientUtility is a comprehensive .NET library designed to simplify 
 
 ### #3. [markhazleton-blog](https://github.com/markhazleton/markhazleton-blog)
 
-⭐ 1 | 🔱 1 | 📝 Pug | 📊 88 commits (90d)
+⭐ 1 | 🔱 1 | 📝 Pug | 📊 87 commits (90d)
 
-👥 0 contributors | 🌐 9 languages | 💾 120713 KB | 🚀 29.3 commits/month
+👥 0 contributors | 🌐 9 languages | 💾 120713 KB | 🚀 29.0 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
 Here's a comprehensive technical summary of the markhazleton-blog repository:
 
-The markhazleton-blog is a sophisticated, statically generated personal blog and portfolio website that leverages a modern, modular web development ecosystem with a focus on performance, SEO, and content management. Built using PUG templating, Bootstrap 5, and a custom Node.js build system, the project implements a comprehensive static site generation pipeline that automatically processes content, generates RSS feeds and sitemaps, and supports advanced styling with SCSS compilation. The architecture is designed for flexibility and maintainability, featuring a unified build script with specialized renderers for PUG templates, SCSS, JavaScript, and asset management, while integrating robust CI/CD workflows through GitHub Actions and Azure Static Web Apps. Key innovations include a JSON-driven content management approach, automated SEO optimization utilities, dual stylesheet compilation (legacy and modern CSS), and a modular build system that allows selective component rendering and detailed build reporting. This project serves as both a personal technical showcase and a reusable static site generation framework for developers seeking a modern, performance-oriented web publishing solution.
+The markhazleton-blog is a sophisticated static site generation system for a professional portfolio and technical blog, designed to provide a modular, performant, and SEO-optimized web publishing platform. Built with a modern web development stack including PUG templating, Bootstrap 5, and a custom Node.js build system, the project implements a comprehensive static site generation workflow with advanced features like automated RSS feed and sitemap generation, CI/CD integration via GitHub Actions, and Azure Static Web Apps deployment. The architecture emphasizes separation of concerns through specialized rendering modules, JSON-driven content management, and a flexible build process that supports selective compilation, error handling, and progressive enhancement of styles and scripts. Unique aspects include its dual SCSS compilation approach, granular SEO tooling, and an integrated WebAdmin component for potential AI-powered content management, making it an exemplar of a modern, developer-centric static site generator that balances technical sophistication with content authoring efficiency.
+
+Key technical highlights include:
+- Modular build system with specialized renderers
+- PUG template-driven static site generation
+- Bootstrap 5 with custom SCSS compilation
+- Automated RSS and sitemap generation
+- Azure Static Web Apps CI/CD integration
+- Comprehensive SEO and content management utilities
 
 **Created**: 2023-07-28
 **Last Modified**: 2025-12-29
@@ -107,31 +116,16 @@ The markhazleton-blog is a sophisticated, statically generated personal blog and
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary for the SampleMvcCRUD repository:
+Technical Summary:
 
-The SampleMvcCRUD is an advanced .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as both a reference architecture and educational resource for modern ASP.NET Core development. The project showcases versatile UI patterns including traditional MVC, Razor Pages, and single-page application (SPA) approaches, with robust features like Bootswatch theme switching, REST API endpoints, and comprehensive observability through Application Insights and health checks. Leveraging a clean architecture with dependency injection, repository patterns, and Entity Framework Core, the application supports multiple deployment strategies including Windows IIS, Azure App Service, and Docker containerization, while emphasizing best practices in web development such as validation, modal-based interactions, and OpenAPI/Swagger documentation. The repository is particularly noteworthy for its evolutionary approach, progressively adopting newer .NET technologies, demonstrating continuous modernization techniques, and providing a comprehensive example of full-stack web application development with a focus on maintainability, testability, and extensibility. Targeted primarily at .NET developers, software architects, and technology educators, this project serves as a living tutorial and reference implementation for building scalable, modern web applications with a strong emphasis on architectural patterns and developer experience.
+SampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern ASP.NET Core development practices. The project showcases diverse architectural patterns including traditional MVC, Razor Pages, and Single Page Application (SPA) approaches, with a robust implementation of repository patterns, dependency injection, and layered architecture across multiple project modules. Leveraging technologies like Entity Framework Core, Swagger/OpenAPI, Bootswatch theming, and extensive CI/CD pipelines (GitHub Actions, Azure Pipelines), the repository provides a sophisticated template for building scalable, maintainable web applications with rich user interfaces and comprehensive DevOps integration. Key differentiators include its theme-switching capabilities, multiple deployment strategies (IIS, Azure App Service, Docker), and a focus on demonstrating progressive .NET development techniques through incremental version migrations and architectural refinements. The project is particularly valuable for developers seeking a detailed, production-ready reference implementation of enterprise web application patterns, with strong emphasis on testability, modularity, and modern web development best practices.
 
 **Created**: 2019-04-25
 **Last Modified**: 2025-11-16
 
 ---
 
-### #5. [RESTRunner](https://github.com/markhazleton/RESTRunner)
-
-⭐ 2 | 🔱 1 | 📝 C# | 📊 15 commits (90d)
-
-👥 0 contributors | 🌐 3 languages | 💾 411 KB | 🚀 5.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-RESTRunner is a comprehensive .NET 10 solution designed for automated REST API testing, performance benchmarking, and regression testing, with a primary focus on integrating Postman collections for comprehensive API validation. The project offers a multi-faceted approach to API testing, featuring a console application and web interface (Razor Pages) that enable users to import Postman collections, execute automated test suites, perform load testing, and generate detailed performance reports with metrics like response times, success rates, and comprehensive statistics. Built using C# and leveraging modern .NET technologies, RESTRunner implements a performance-optimized architecture that supports cross-platform execution, provides built-in sample CRUD APIs for testing, and emphasizes high-performance testing with recent improvements delivering 19% faster builds and 25% faster test execution. The project is particularly valuable for software developers, QA engineers, and API developers seeking a robust, automated testing framework that offers deep insights into API performance and reliability, with strong emphasis on comprehensive testing, security, and continuous improvement through features like package optimization and code quality analyzers. Notably, the project stands out for its long-term support commitment (using .NET 10 LTS), extensive documentation, and a forward-looking approach to API testing infrastructure.
-
-**Created**: 2021-09-30
-**Last Modified**: 2025-12-23
-
----
-
-### #6. [WebSpark](https://github.com/markhazleton/WebSpark)
+### #5. [WebSpark](https://github.com/markhazleton/WebSpark)
 
 ⭐ 1 | 🔱 0 | 📝 C# | 📊 19 commits (90d)
 
@@ -141,24 +135,39 @@ RESTRunner is a comprehensive .NET 10 solution designed for automated REST API t
 
 Here's a comprehensive technical summary of the WebSpark repository:
 
-WebSpark is a sophisticated web application suite built on .NET 9 and Bootstrap 5, designed to provide modular web solutions across multiple domains including prompt management, recipe tracking, and quiz creation. The project stands out for its robust spec-driven development workflow, leveraging a unique SpecKit command-line approach that enforces rigorous specification, planning, risk assessment, and implementation validation before any code is committed. The architecture spans eight distinct modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, GitHubSpark, AsyncSpark, Admin, and Identity), with a particular emphasis on advanced SEO optimization featuring comprehensive metadata management, structured data generation, and multi-engine webmaster tool integration.
+WebSpark is an ambitious, modular web application suite built with .NET 9 and Bootstrap 5, designed to provide integrated solutions for prompt optimization, recipe management, and quiz creation. The project stands out for its sophisticated spec-driven development workflow, featuring a unique SpecKit command-line toolchain that enforces rigorous specification, planning, risk assessment, and implementation validation processes. The architecture spans eight distinct modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, GitHubSpark, AsyncSpark, Admin, and Identity), demonstrating a highly scalable and versatile approach to web application development.
 
-Key Technical Highlights:
-- Modern web stack: .NET 9, ASP.NET Core MVC, Bootstrap 5
-- Advanced SEO capabilities with 47 passing tests
-- Spec-driven development workflow with automated risk assessment
-- Comprehensive metadata and structured data management
-- Multi-dimensional analytics with custom tracking
-- Modular, scalable application architecture
+Key technical highlights include:
+- Advanced SEO optimization with comprehensive metadata management
+- Structured data implementation using JSON-LD schemas
+- Multi-engine webmaster tools integration
+- Performance monitoring with Web Vitals tracking
+- Automated risk assessment through the innovative `/speckit.critic` command
+- Strict branch protection and specification-driven development workflow
 
-The project's most innovative aspect is its SpecKit workflow, which introduces an automated, systematic approach to feature development. Through commands like `/speckit.specify`, `/speckit.plan`, and `/speckit.critic`, the workflow ensures thorough specification, technical planning, and comprehensive risk assessment before implementation. This approach dramatically reduces potential production risks by catching architectural, security, and performance issues early in the development process.
+The project's most notable innovation is its SpecKit workflow, which introduces an adversarial risk assessment process that proactively identifies potential technical, security, and performance issues before implementation. This approach ensures high-quality, well-documented, and thoroughly vetted feature development across the entire application ecosystem.
 
-Technologies: C# (.NET 9), HTML5, SCSS, Bootstrap 5
-Primary Use Cases: LLM prompt optimization, recipe management, quiz creation
-Target Users: Developers, content creators, knowledge workers seeking structured web tools
+The repository represents a sophisticated example of modern web application architecture, combining cutting-edge .NET technologies, comprehensive DevOps practices, and a meticulously structured development methodology that prioritizes quality, security, and maintainability.
 
 **Created**: 2024-01-11
 **Last Modified**: 2025-12-27
+
+---
+
+### #6. [tailwind-demo](https://github.com/markhazleton/tailwind-demo)
+
+⭐ 0 | 🔱 0 | 📝 HTML | 📊 24 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 1726 KB | 🚀 8.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Technical Summary:
+
+TailwindSpark is a sophisticated React TypeScript monorepo showcasing a comprehensive design system and component library built with Tailwind CSS, targeting developers and designers seeking a modern, production-ready web application framework. The project leverages cutting-edge web technologies including React 19, Vite, TypeScript, and Tailwind CSS 4.1, with a strong emphasis on developer experience, type safety, and performance optimization through advanced architectural patterns like code splitting, lazy loading, and a modular monorepo structure. Its key differentiators include a fully type-safe implementation, comprehensive CI/CD workflows, automated testing, security scanning, and a mobile-first responsive design with dark mode support, making it an exemplary reference implementation for building scalable, maintainable web applications. The project goes beyond a simple demonstration by providing a robust, production-ready framework with shared design tokens, reusable UI components, and extensive documentation that covers everything from getting started to deployment strategies. By prioritizing development quality, accessibility, and modern web standards, TailwindSpark serves as both a learning resource and a practical starting point for developers looking to implement design systems and create high-performance, well-structured web applications using contemporary front-end technologies.
+
+**Created**: 2025-07-29
+**Last Modified**: 2025-11-03
 
 ---
 
@@ -170,79 +179,107 @@ Target Users: Developers, content creators, knowledge workers seeking structured
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary for WebSpark.ArtSpark:
+Technical Summary:
 
-WebSpark.ArtSpark is a comprehensive .NET solution designed to provide a robust, feature-rich client library and interactive application for exploring the Art Institute of Chicago's public API, with a groundbreaking emphasis on AI-powered art interaction. The project delivers a complete API client covering 33 endpoints across multiple resource categories, featuring strongly-typed models, asynchronous programming support, and advanced querying capabilities, while simultaneously introducing a revolutionary AI chat system that enables users to engage with artworks through multiple contextual personas like Artwork, Artist, Curator, and Historian. Built using .NET 9.0 and leveraging modern technologies such as ASP.NET Core, OpenAI Vision, and Elasticsearch, the solution demonstrates advanced architectural patterns including modular design, async programming, and intelligent content discovery with features like IIIF image support, visual analysis, and dynamic persona-based conversational interfaces. What distinguishes this project is its seamless integration of technical sophistication with cultural exploration, providing developers, art enthusiasts, and researchers with an innovative platform that transforms traditional API consumption into an interactive, AI-enhanced art discovery experience through a combination of comprehensive data access, intelligent conversational agents, and user-friendly design.
+WebSpark.ArtSpark is a comprehensive .NET solution designed to provide a robust and feature-rich client library for interacting with the Art Institute of Chicago's public REST API, featuring complete endpoint coverage and an innovative AI-powered conversational interface. The project stands out through its advanced implementation of a multi-persona AI chat system that can engage users about artworks, leveraging OpenAI's GPT models to create contextually intelligent interactions across different perspectives (Artwork, Artist, Curator, Historian). Built using .NET 9.0 and following modern software engineering practices, the solution encompasses four primary projects: a fully typed API client, an AI agent system, a demo web application, and a console utility, demonstrating a modular and extensible architectural approach that supports async programming, comprehensive error handling, and flexible querying capabilities.
+
+The project's unique value proposition lies in its combination of complete API coverage (33 endpoints across 6 categories), strong typing, IIIF image support, and an groundbreaking AI interaction layer that transforms static museum data into dynamic, conversational experiences. By integrating advanced features like visual analysis, conversation memory, and externalized AI persona prompts, WebSpark.ArtSpark goes beyond traditional API clients to create an intelligent, educational platform for art exploration and discovery. The solution is particularly noteworthy for cultural institutions, developers interested in AI-enhanced data interfaces, and educational technology professionals seeking innovative ways to make digital collections more engaging and accessible.
 
 **Created**: 2023-01-30
 **Last Modified**: 2025-12-28
 
 ---
 
-### #8. [tailwind-demo](https://github.com/markhazleton/tailwind-demo)
+### #8. [RESTRunner](https://github.com/markhazleton/RESTRunner)
 
-⭐ 0 | 🔱 0 | 📝 HTML | 📊 24 commits (90d)
+⭐ 2 | 🔱 1 | 📝 C# | 📊 15 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 1715 KB | 🚀 8.0 commits/month
+👥 0 contributors | 🌐 3 languages | 💾 411 KB | 🚀 5.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-TailwindSpark is a comprehensive modern web development showcase and design system built as a React TypeScript monorepo, leveraging Tailwind CSS 4.1 to demonstrate cutting-edge front-end architecture and component design. The project provides a robust, production-ready framework featuring a modular structure with shared design tokens, reusable UI components, and a focus on developer experience through advanced tooling like Vite, Vitest, and strict TypeScript configurations. It implements a mobile-first, responsive design approach with dark mode support, and includes a complete set of interactive component demos, dashboard examples, and marketing page templates that highlight best practices in contemporary web development. The repository is engineered with extensive automation, including CI/CD workflows, automated testing, security scanning, and performance optimization, making it an excellent reference implementation for developers seeking a scalable and maintainable design system. Unique strengths include its comprehensive documentation, adherence to accessibility standards, and the integration of modern React 19 concurrent features with a meticulously structured monorepo approach. The project is primarily targeted at front-end developers, design system architects, and teams looking to implement a professional-grade, highly modular web application framework with Tailwind CSS.
+RESTRunner is a comprehensive .NET 10 solution designed for automated REST API testing, performance benchmarking, and regression testing, with a primary focus on integrating Postman collections for comprehensive API validation. The project offers a multi-faceted approach to API testing, featuring automated test execution, performance analysis, load testing capabilities, and detailed reporting through CSV exports, complemented by a Razor Pages web interface for interactive testing. Leveraging modern .NET technologies, the solution emphasizes high performance, with recent optimizations delivering 19% faster builds and 25% faster test execution, and supports cross-platform development across Windows, macOS, and Linux. The architecture appears modular, with distinct components for console and web applications, and includes a sample CRUD API for demonstration and testing purposes, making it particularly valuable for developers, QA engineers, and DevOps professionals seeking a robust, flexible API testing framework. What sets RESTRunner apart is its comprehensive performance metrics, security focus (with 93% packages at latest versions and zero vulnerabilities), and seamless Postman collection integration, positioning it as a versatile tool for ensuring API reliability and performance across different environments.
 
-**Created**: 2025-07-29
-**Last Modified**: 2025-11-03
+**Created**: 2021-09-30
+**Last Modified**: 2025-12-23
 
 ---
 
-### #9. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
+### #9. [js-dev-env](https://github.com/markhazleton/js-dev-env)
 
-⭐ 0 | 🔱 0 | 📝 Python | 📊 30 commits (90d)
+⭐ 0 | 🔱 0 | 📝 JavaScript | 📊 24 commits (90d)
 
-👥 0 contributors | 🌐 3 languages | 💾 478 KB | 🚀 10.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Technical Summary:
-
-Stats Spark is an advanced GitHub profile statistics generator that automatically analyzes a developer's GitHub activity and creates sophisticated SVG visualizations and AI-powered repository insights. The project leverages Python and integrates with GitHub Actions to generate comprehensive statistical reports, including a unique "Spark Score" metric that assesses coding activity across consistency, volume, and collaboration dimensions. It employs multiple technologies including PyGithub for GitHub data retrieval, svgwrite for SVG generation, and potentially Claude Haiku AI for intelligent repository analysis, with a focus on providing detailed, visually appealing insights into a developer's coding patterns and achievements. The tool offers highly customizable output, supporting multiple themes, accessibility standards, and granular statistic generation, making it a powerful solution for developers seeking to showcase and understand their GitHub activity through data-driven, visually compelling representations. Targeted primarily at developers, open-source contributors, and tech professionals seeking to quantify and visualize their coding metrics, Stats Spark distinguishes itself through its comprehensive approach to GitHub activity analysis, combining statistical rigor with creative visualization and AI-enhanced insights.
-
-**Created**: 2025-12-28
-**Last Modified**: 2025-12-30
-
----
-
-### #10. [js-dev-env](https://github.com/markhazleton/js-dev-env)
-
-⭐ 0 | 🔱 0 | 📝 JavaScript | 📊 25 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 2856 KB | 🚀 8.3 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 2953 KB | 🚀 8.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary of the js-dev-env repository:
+Based on the comprehensive README and repository details, here's a technical summary of the js-dev-env project:
 
-This is a sophisticated JavaScript-based web application development starter kit designed to provide a robust, modern, and fully-featured development environment for building responsive web applications. The project leverages a comprehensive technology stack including Express.js as the backend framework, Bootstrap 5 for frontend styling, EJS for templating, and Node.js 18+ as the runtime environment, creating a full-stack JavaScript ecosystem optimized for rapid development and deployment.
+This is a robust, production-ready JavaScript development environment and starter kit designed to streamline web application development by providing a modern, feature-rich boilerplate with best-in-class technologies. The project integrates Express.js as the backend framework, Bootstrap 5 for responsive UI, and includes a comprehensive set of developer tools and infrastructure for building scalable, performant web applications. Key technical highlights include a fully configurable build process, integrated testing and linting, Docker containerization, progressive web app capabilities, and a modular architecture that supports rapid development across different project types.
 
-The starter kit goes beyond a basic boilerplate by incorporating advanced developer experience features like hot reloading, SASS compilation, ESLint and Prettier for code quality, Jest for testing, and Docker containerization. It provides a complete development workflow with built-in security measures (Helmet.js, rate limiting), performance optimizations (compression middleware), and progressive web app capabilities including service worker support and web app manifest.
+Key Technical Characteristics:
+- Backend: Express.js 5.1.0 with advanced middleware (Helmet, rate limiting)
+- Frontend: Bootstrap 5.3.7 with responsive design and dark/light mode
+- Development Toolchain: ESLint, Prettier, SASS, Hot Reload
+- Testing: Jest integrated with coverage reporting
+- Deployment: GitHub Actions CI/CD, Docker support, GitHub Pages hosting
+- Security: Content Security Policy, input validation, security headers
 
-Key architectural highlights include:
-- Modular project structure supporting scalable application development
-- Comprehensive CI/CD pipeline with GitHub Actions
-- Responsive design with dark/light mode toggle
-- Extensive component library with interactive examples
-- Containerized deployment options
-- Built-in SEO and performance optimization strategies
+The project stands out by offering a comprehensive, opinionated starter kit that goes beyond basic boilerplates, providing developers with a complete ecosystem for building modern web applications with best practices built-in. Its target audience includes JavaScript developers seeking a quick-start solution with enterprise-grade configurations and a focus on developer experience and application performance.
 
-The project is particularly noteworthy for its holistic approach to modern web development, providing developers with a batteries-included starter kit that addresses common challenges in setting up a new web application project. It's ideally suited for developers seeking a production-ready, feature-rich foundation for building responsive, secure, and performant web applications with a focus on developer experience and best practices.
-
-Target users include full-stack JavaScript developers, startup teams, and individual developers looking for a robust, opinionated starting point for web application development that reduces initial setup complexity while providing a comprehensive development environment.
+Unique Value Propositions:
+- Comprehensive development environment
+- Modern technology stack
+- Built-in security and performance optimizations
+- Flexible and extensible architecture
+- Emphasis on developer productivity
 
 **Created**: 2022-06-06
 **Last Modified**: 2025-12-03
 
 ---
 
-### #11. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
+### #10. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
+
+⭐ 0 | 🔱 0 | 📝 Python | 📊 33 commits (90d)
+
+👥 0 contributors | 🌐 3 languages | 💾 960 KB | 🚀 11.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Here's a comprehensive technical summary of the github-stats-spark repository:
+
+Stats Spark is an advanced GitHub analytics and visualization platform that automatically generates comprehensive insights and visual representations of a developer's GitHub activity and repository performance. The project leverages Python and AI technologies to create detailed SVG visualizations and markdown reports, offering developers and teams a sophisticated tool for tracking coding patterns, repository health, and professional achievements. Key technical features include an intelligent repository ranking algorithm, AI-powered repository analysis using Claude Haiku, automated daily statistics generation via GitHub Actions, and a modular architecture supporting extensive customization through YAML configuration.
+
+The system employs a multi-dimensional approach to GitHub profile analysis, generating five primary visualization categories: Overview Dashboard, Commit Heatmap, Language Statistics, Streaks & Consistency, and Fun Stats. It implements advanced techniques like smart caching, rate limit handling, and a three-tier fallback mechanism for generating repository summaries, ensuring high-performance and reliable data retrieval across multiple repositories. The project is designed with enterprise-grade considerations, featuring WCAG AA accessible visualizations, comprehensive test coverage, and a flexible, extensible design that supports local CLI testing and seamless GitHub Actions integration.
+
+Technologically, the project is built on Python 3.11+, with a clear emphasis on modular design, automated workflows, and intelligent data processing. Its unique value proposition lies in transforming raw GitHub activity data into actionable insights, providing developers with a professional, data-driven representation of their coding journey and technical capabilities.
+
+**Created**: 2025-12-28
+**Last Modified**: 2026-01-01
+
+---
+
+### #11. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
+
+⭐ 0 | 🔱 0 | 📝 TypeScript | 📊 20 commits (90d)
+
+👥 0 contributors | 🌐 5 languages | 💾 2813 KB | 🚀 6.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Here's a comprehensive technical summary of the react-native-web-start repository:
+
+The react-native-web-start is an advanced cross-platform application development starter template designed to enable developers to build high-performance, type-safe applications that seamlessly run on web, iOS, and Android platforms using a unified codebase. Leveraging modern web technologies like React Native Web, Vite, and TypeScript, the project provides a robust, enterprise-grade architecture that emphasizes code reusability, developer experience, and performance optimization through features such as tree-shaking, code splitting, and strict type checking. The monorepo structure strategically separates shared components, web, and mobile-specific configurations, allowing for modular development while maintaining a single source of truth, and incorporates cutting-edge tooling like Tailwind CSS, comprehensive testing configurations, and automated CI/CD pipelines for GitHub Pages deployment. What sets this starter template apart is its holistic approach to cross-platform development, offering not just a boilerplate but a complete ecosystem with built-in documentation browser, performance monitoring, security integrations, and PWA capabilities, making it an ideal solution for developers seeking to build scalable, maintainable applications across multiple platforms with minimal platform-specific code duplication.
+
+The summary captures the essence of the repository by highlighting its core purpose, technological approach, architectural design, unique features, and target use cases.
+
+**Created**: 2025-07-26
+**Last Modified**: 2025-10-21
+
+---
+
+### #12. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
 
 ⭐ 1 | 🔱 1 | 📝 C# | 📊 13 commits (90d)
 
@@ -252,46 +289,71 @@ Target users include full-stack JavaScript developers, startup teams, and indivi
 
 Here's a comprehensive technical summary of the KeyPressCounter repository:
 
-KeyPressCounter is a sophisticated Windows system tray utility designed for comprehensive user input and system performance monitoring, leveraging .NET 10.0 and native Windows APIs to provide real-time tracking of keyboard and mouse interactions, system metrics, and resource utilization. The application employs advanced event hooking techniques with SharpHook to capture global input events, integrates Windows Management Instrumentation (WMI) for hardware information retrieval, and uses performance counters to collect granular system performance data, all while maintaining a minimal, non-intrusive user experience through a system tray interface. Its architecture is built on a modular design that separates concerns between input tracking, system monitoring, logging, and visualization, with robust error handling and privacy-focused data collection that counts interactions without storing sensitive input content. Key differentiators include its detailed graphical dashboard, configurable logging mechanisms, automatic idle time detection, and seamless Windows integration, making it an ideal tool for productivity analysts, system administrators, and users interested in understanding their computing habits and system performance characteristics. The project demonstrates advanced .NET programming techniques, including global event handling, system-level monitoring, JSON configuration management, and rich graphical visualization of complex system metrics. Targeted primarily at Windows power users, developers, and professionals seeking insights into their computer usage patterns and system performance, KeyPressCounter offers a comprehensive, privacy-conscious solution for understanding digital workflow and system resource utilization.
+KeyPressCounter is a sophisticated Windows utility designed for comprehensive system and user activity monitoring, providing granular insights into keyboard/mouse interactions and real-time system performance metrics through a lightweight, privacy-focused .NET application. The project leverages native Windows APIs, system performance counters, and low-level input hooking to capture detailed telemetry, tracking metrics such as keystroke frequency, idle periods, CPU/memory utilization, and process resource consumption with minimal system overhead. Built using C# and .NET 10.0, the application implements a modular architecture with system tray integration, background monitoring, and a rich graphical dashboard that enables users to visualize complex performance data through real-time graphs and exportable logs. Key technical differentiators include its single-instance protection, configurable idle detection, automated logging mechanisms, and a privacy-conscious design that counts interactions without storing sensitive input content. The tool is particularly valuable for professionals seeking detailed productivity analysis, system administrators monitoring workstation performance, and individuals interested in understanding their computational usage patterns with minimal intrusion. By combining low-level system access, comprehensive data collection, and user-friendly visualization, KeyPressCounter offers a powerful yet unobtrusive solution for system and user activity tracking on Windows platforms.
 
 **Created**: 2024-03-07
 **Last Modified**: 2025-12-07
 
 ---
 
-### #12. [InquirySpark](https://github.com/markhazleton/InquirySpark)
+### #13. [Slurper](https://github.com/markhazleton/Slurper)
 
-⭐ 0 | 🔱 0 | 📝 C# | 📊 18 commits (90d)
+⭐ 0 | 🔱 0 | 📝 C# | 📊 13 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 9371 KB | 🚀 6.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-InquirySpark is a comprehensive .NET 10-based survey and inquiry management system designed to provide a robust, read-only administrative interface for managing survey data using SQLite databases. The solution is architecturally structured across multiple projects (Admin, Repository, Common) and leverages modern .NET technologies including Entity Framework Core 10, ASP.NET Core MVC, and Bootstrap 5 for a responsive user interface. Its unique approach centers on immutable data persistence, with strict read-only database configurations that prevent schema or data mutations, ensuring data integrity and simplifying deployment. The system emphasizes clean architecture principles, utilizing dependency injection, nullable reference types, and comprehensive test coverage via MSTest, making it suitable for organizations requiring a lightweight, secure survey management platform with minimal infrastructure requirements. Key differentiators include its CDN-free implementation, automatic npm build integration, and a focus on warning-free, well-documented code that supports scalable survey data management with minimal operational complexity.
-
-**Created**: 2023-10-24
-**Last Modified**: 2025-12-07
-
----
-
-### #13. [markhazleton](https://github.com/markhazleton/markhazleton)
-
-⭐ 0 | 🔱 0 | 📝 Unknown | 📊 6 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 6583 KB | 🚀 2.0 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 4134 KB | 🚀 4.3 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
-Based on the README and repository details, here's a comprehensive technical summary:
+Technical Summary of Slurper:
 
-Mark Hazleton's GitHub repository serves as a personal learning and development portfolio, showcasing a diverse collection of web and software development projects centered around continuous technological exploration and skill enhancement. The repository features multiple web applications like WebSpark (a comprehensive demo application platform) and ReactSpark (built with Vite and hosted on Azure Static Web Apps), demonstrating proficiency across modern web technologies including React, .NET, and cloud deployment strategies. The project emphasizes lifelong learning and experimental development, with a focus on emerging technologies, AI integration, and software engineering methodologies, as evidenced by technical articles exploring topics like AI code contribution measurement, library modernization, and development workflow optimization. The repository incorporates multiple technical ecosystems, including web frameworks, cloud services (Azure), static site generation, and DevOps tools, presenting a holistic approach to software engineering that goes beyond traditional project repositories. Notably, the collection includes custom npm packages, technical articles, and GitHub stats visualizations, reflecting a comprehensive approach to professional technical documentation and skill demonstration. This repository appears targeted at software engineers, developers, and technology professionals interested in seeing a practical, hands-on approach to continuous learning and technology exploration.
+Slurper is a dynamic data extraction library for .NET that provides a unified, zero-configuration approach to parsing and transforming structured data formats (XML, JSON, CSV, and HTML) into easily consumable C# objects without requiring explicit type declarations. The library leverages dynamic object capabilities and a flexible extraction mechanism that allows developers to access complex nested data structures using intuitive property navigation, effectively eliminating the traditional overhead of manual model mapping and parsing. Built with modern .NET frameworks (targeting .NET 8.0, 9.0, and 10.0), Slurper implements an extensible architecture that supports async operations, dependency injection, and a plugin system for custom data extractors, making it particularly useful for scenarios involving data integration, web scraping, and rapid prototype development. Its key differentiator is the ability to work with heterogeneous data sources through a consistent API, enabling developers to extract and manipulate data with minimal boilerplate code and without predefining complex object models. The library follows best practices in software design, including semantic versioning, comprehensive error handling, built-in logging support, and a factory-based approach for creating extractors, which provides a clean and intuitive developer experience for working with structured data across multiple formats.
+
+Target Users:
+- .NET developers working with diverse data sources
+- Data integration specialists
+- Web scraping and data extraction professionals
+- Developers seeking rapid prototyping solutions
+
+**Created**: 2023-03-24
+**Last Modified**: 2025-11-16
+
+---
+
+### #14. [markhazleton](https://github.com/markhazleton/markhazleton)
+
+⭐ 0 | 🔱 0 | 📝 Unknown | 📊 5 commits (90d)
+
+👥 0 contributors | 🌐 1 languages | 💾 6583 KB | 🚀 1.7 commits/month
+
+**Quality**: ❌ License | ❌ Docs
+
+Technical Repository Summary:
+
+Mark Hazleton's GitHub repository appears to be a personal portfolio and learning showcase that demonstrates his software engineering expertise and continuous learning journey across multiple web technologies. The repository features several strategic projects like WebSpark (a comprehensive web application) and ReactSpark (a React-based site hosted on Azure Static Web Apps), which serve as practical demonstrations of his technical skills and development approaches. The collection includes a diverse range of technologies including .NET, React, Vite, Azure, and potentially PHP, with a strong emphasis on modern web development practices and exploration of emerging tools and frameworks. The repository is not just a code collection, but a dynamic platform for documenting technical learning, sharing insights through technical articles, and showcasing personal engineering projects and experiments. A notable aspect is the integration of GitHub Stats visualizations and a commitment to transparency in showcasing development metrics and progress. The repository seems targeted at fellow developers, tech professionals, and those interested in observing a pragmatic, hands-on approach to continuous technological learning and skill development.
 
 **Created**: 2021-04-17
 **Last Modified**: 2025-12-28
 
 ---
 
-### #14. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
+### #15. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
+
+⭐ 0 | 🔱 0 | 📝 CSS | 📊 11 commits (90d)
+
+👥 0 contributors | 🌐 5 languages | 💾 43848 KB | 🚀 3.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Here's a technical summary of the ReactSparkPortfolio repository:
+
+ReactSparkPortfolio is a sophisticated, production-ready developer portfolio application built with React 19, TypeScript, and Vite, designed to showcase modern web development practices and enterprise-grade frontend architecture. The project demonstrates a comprehensive, modular approach to building a responsive, high-performance single-page application with advanced features like real-time chat via SignalR, dynamic weather widgets, RSS feed integration, and adaptive dark/light theming. Leveraging a serverless architecture with Azure Static Web Apps and GitHub Actions, the application implements cutting-edge web technologies including TypeScript's strict type safety, Vite's performant build system, and Bootstrap 5 for responsive design, creating a scalable and maintainable frontend solution that serves both as a personal portfolio and a reference implementation for complex web applications. Key architectural innovations include lazy-loading components, comprehensive accessibility compliance, multi-platform deployment strategies, and a robust CI/CD pipeline that enables seamless development and continuous integration. The project is particularly noteworthy for developers and engineering teams seeking a modern, feature-rich template for showcasing technical skills, demonstrating advanced frontend engineering techniques, and implementing best practices in contemporary web development.
+
+**Created**: 2024-10-11
+**Last Modified**: 2025-12-15
+
+---
+
+### #16. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
 
 ⭐ 0 | 🔱 0 | 📝 C# | 📊 18 commits (90d)
 
@@ -301,39 +363,22 @@ Mark Hazleton's GitHub repository serves as a personal learning and development 
 
 Here's a comprehensive technical summary of the DecisionSpark repository:
 
-DecisionSpark is an innovative .NET 10 web application that implements a dynamic, conversation-driven decision routing engine designed to guide users through intelligent decision-making processes with minimal interaction. The system leverages a configurable, JSON-based rule engine that can generate contextual questions, evaluate user responses, and recommend optimal outcomes across various domains, utilizing a modular architecture that includes RESTful API endpoints, Razor Pages web interface, and OpenAI integration for natural language processing.
+DecisionSpark is an innovative .NET 10-based decision routing engine that provides an intelligent, conversation-driven approach to guided decision-making through configurable rule-based interactions. The framework enables users to navigate complex decision trees by asking minimal, strategically designed questions while leveraging advanced technologies like OpenAI for natural language processing and dynamic question generation. Its key architectural strengths include a flexible, config-driven design that allows creating decision workflows through JSON specifications without code modifications, supporting multiple question types and intelligent routing mechanisms.
 
-The project's core architecture is built around a flexible service-oriented design, featuring components like SessionStore, RoutingEvaluator, TraitParser, and OpenAIService that work together to create an adaptive decision-making platform. Key technical innovations include dynamic question generation, trait extraction, rule-based routing, and the ability to define complex decision logic through external JSON configuration files without requiring code modifications. The system supports multiple question types (text input, single-select, multi-select) and provides robust session management with file-based conversation persistence.
+The project implements a sophisticated microservice-like architecture with modular components such as a Session Store, Routing Evaluator, Trait Parser, and OpenAI integration, enabling dynamic conversational experiences across various domains like family planning, technology stack selection, and recommendation systems. By combining RESTful API endpoints, interactive Razor Pages web interface, and extensible configuration management, DecisionSpark offers a powerful platform for creating intelligent, context-aware decision support systems that can adapt to complex scenarios with minimal manual intervention.
 
-Technologies and frameworks prominently used include .NET 10, C#, Razor Pages, Swagger/OpenAPI for documentation, Serilog for structured logging, and optional OpenAI integration for advanced natural language capabilities. The architecture is designed with extensibility in mind, supporting various deployment scenarios and enabling easy customization of decision specifications through a clean, configuration-driven approach.
+Technically, the application leverages cutting-edge .NET technologies, including Razor Pages for web interfaces, OpenAPI/Swagger for documentation, Serilog for structured logging, and potentially Azure or OpenAI services for natural language capabilities. The design emphasizes modularity, configurability, and separation of concerns, with a pluggable architecture that supports easy extension and customization of decision logic through JSON-based specifications.
 
-The repository demonstrates a sophisticated approach to solving complex decision-making scenarios by creating a generalized, adaptable engine that can be applied to diverse use cases ranging from family activity planning to technology stack selection. Its unique value proposition lies in its ability to create intelligent, conversational decision support systems with minimal development overhead and maximum flexibility.
+Key differentiators include its ability to generate contextually relevant questions, parse and derive traits from user responses, and provide intelligent routing with tie-breaking mechanisms, all while maintaining a clean, configuration-driven approach that minimizes hard-coded logic. The framework is particularly suited for developers and organizations seeking a flexible, AI-enhanced decision support tool that can be rapidly adapted to various decision-making scenarios.
 
-Potential users include product managers, solution architects, business analysts, and developers seeking a configurable framework for creating interactive decision support tools that can dynamically adapt to different domains and requirements.
+The project's comprehensive documentation, clear architectural diagrams, and well-structured README demonstrate a professional approach to software design, making it an attractive solution for teams looking to implement intelligent, conversational decision support systems with minimal complexity and maximum adaptability.
 
 **Created**: 2025-10-29
 **Last Modified**: 2025-12-27
 
 ---
 
-### #15. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
-
-⭐ 0 | 🔱 0 | 📝 TypeScript | 📊 20 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 2643 KB | 🚀 6.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Based on the comprehensive README and repository analysis, here's a detailed technical summary:
-
-This repository is a production-ready, enterprise-grade cross-platform application starter template that enables developers to build web, iOS, and Android applications using a unified React Native Web, Vite, and TypeScript ecosystem. The project provides a sophisticated monorepo architecture that supports true cross-platform development with a single codebase, leveraging modern web technologies like React Native 0.74.0, Vite 7.0.6, and TypeScript 5.2.2 to create responsive, type-safe applications with optimized performance. Key architectural features include a modular package structure (shared, web, mobile), comprehensive build automation, integrated testing frameworks, and advanced developer tooling like hot module replacement, code splitting, and strict type checking. The starter template is designed for enterprise and professional developers seeking a robust, scalable solution for multi-platform application development, offering out-of-the-box support for responsive design, API integration, documentation browsing, and production deployment workflows with GitHub Pages and CI/CD pipelines. What distinguishes this project is its holistic approach to cross-platform development, providing a batteries-included template that addresses performance, type safety, developer experience, and deployment challenges typically encountered in multi-platform software projects.
-
-**Created**: 2025-07-26
-**Last Modified**: 2025-10-21
-
----
-
-### #16. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
+### #17. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
 
 ⭐ 2 | 🔱 1 | 📝 HTML | 📊 6 commits (90d)
 
@@ -341,30 +386,27 @@ This repository is a production-ready, enterprise-grade cross-platform applicati
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary for FastEndpointApi Repository:
+Here's a comprehensive technical summary of the FastEndpointApi repository:
 
-FastEndpointApi is a comprehensive demonstration and implementation of the FastEndpoints framework, designed to showcase a lightweight, high-performance REST API development approach for ASP.NET Core using the REPR (Request-Endpoint-Response) architectural pattern. The project provides a fully functional Person Management API with complete CRUD operations, leveraging FastEndpoints to minimize boilerplate code while maintaining clean, modular architecture through dedicated endpoint folders, service layers, and robust mapping configurations. Built with .NET 9.0 and utilizing modern web API development practices, the repository includes interactive Swagger documentation, HATEOAS link generation, dependency injection, and static HTML sample pages that illustrate API interaction and documentation. 
+FastEndpointApi is a demonstration project showcasing the FastEndpoints framework for building high-performance, minimal-boilerplate REST APIs in ASP.NET Core, focusing on a Person Management application that implements full CRUD operations with clean architectural principles. The project leverages the REPR (Request-Endpoint-Response) pattern to create a lightweight, modular API structure that emphasizes separation of concerns and reduces complexity compared to traditional MVC controller approaches. Utilizing .NET 9.0 and modern web development practices, the repository implements key features like dependency injection, in-memory data storage, HATEOAS (Hypermedia as the Engine of Application State) link generation, and integrated Swagger documentation.
 
 Key technical highlights include:
-- Implements complete RESTful endpoint management with minimal configuration
-- Uses in-memory data storage for simplified demonstration
-- Provides comprehensive mapping between request/response models
-- Includes static web assets for interactive API exploration
-- Demonstrates advanced API design patterns like HATEOAS
+- Comprehensive endpoint implementation for person management
+- Service layer with interface-based design
+- Explicit mapping between request/response models and domain entities
+- Interactive Swagger UI for API exploration
+- Static HTML sample pages for demonstration
 
-The project serves as an educational resource and reference implementation for developers looking to streamline ASP.NET Core API development using the FastEndpoints framework, offering a clean, maintainable approach to building web APIs with reduced complexity and improved developer productivity.
+The project is particularly noteworthy for its clean, structured approach to API development, demonstrating how FastEndpoints can simplify API construction while maintaining flexibility and performance. It serves as an educational resource for developers looking to modernize their ASP.NET API development approach, with a focus on minimizing boilerplate code and creating more maintainable, readable API implementations.
 
-Target users include:
-- ASP.NET Core developers
-- API architects
-- Backend web developers seeking efficient API development patterns
+Target users include .NET developers seeking to streamline their API development process, learn modern API design patterns, and reduce complexity in their backend services.
 
 **Created**: 2024-04-06
 **Last Modified**: 2025-11-16
 
 ---
 
-### #17. [csharp-blazor-bug-tracking](https://github.com/markhazleton/csharp-blazor-bug-tracking)
+### #18. [csharp-blazor-bug-tracking](https://github.com/markhazleton/csharp-blazor-bug-tracking)
 
 ⭐ 0 | 🔱 0 | 📝 C# | 📊 4 commits (90d)
 
@@ -372,16 +414,16 @@ Target users include:
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary for the csharp-blazor-bug-tracking repository:
+Technical Summary:
 
-This is an ASP.NET Core 6 MVC administrative web application designed for product management in a fictional company called Carved Rock, demonstrating enterprise-level software development practices. The application implements comprehensive CRUD operations for products and categories, utilizing Entity Framework Core with SQLite as the database backend and featuring robust authentication through ASP.NET Identity. Key technical capabilities include dependency injection, domain logic separation, complex validation using FluentValidation, and a responsive user interface styled with Bootstrap and the Litera Bootwatch theme. The project serves as an educational reference for ASP.NET Core development, showcasing modern web application architectural patterns including repository design, model-view-controller separation, and integrated user authentication. While primarily serving as a learning example, the application provides a solid template for building data-driven, secure administrative web interfaces with comprehensive validation and user management features, targeting developers and students learning enterprise-level .NET web development.
+This is an ASP.NET Core 6 MVC web application designed as an admin management system for a fictional company called Carved Rock, focusing on product and category management with robust authentication and data handling capabilities. The application demonstrates enterprise-level software development practices by implementing comprehensive CRUD operations, integrating Entity Framework Core with SQLite, and leveraging ASP.NET Identity for secure user authentication and registration. Key technical features include dependency injection for improved testability, FluentValidation for advanced model validation, and a layered architecture that separates domain logic, repository patterns, and user interface concerns. The project serves as an educational reference and practical example of modern .NET web development, showcasing best practices in building scalable, maintainable web applications with built-in user management and data persistence. Primarily targeted at .NET developers, students, and professionals seeking a practical reference implementation of an ASP.NET Core MVC application with comprehensive feature set and clean architectural design.
 
 **Created**: 2022-06-08
 **Last Modified**: 2025-12-29
 
 ---
 
-### #18. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
+### #19. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
 
 ⭐ 0 | 🔱 0 | 📝 HTML | 📊 14 commits (90d)
 
@@ -389,16 +431,16 @@ This is an ASP.NET Core 6 MVC administrative web application designed for produc
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary of the WebSpark.Bootswatch repository:
+Technical Summary:
 
-WebSpark.Bootswatch is a sophisticated .NET Razor Class Library designed to provide seamless integration of Bootswatch themes into ASP.NET Core applications, offering a robust theming solution built on Bootstrap 5. The library delivers advanced theme management capabilities, including dynamic theme switching, light/dark mode support, and comprehensive caching mechanisms, with multi-framework compatibility targeting .NET 8.0, 9.0, and 10.0. Architecturally, it leverages dependency injection, tag helpers, and a service-based approach to enable easy theme configuration and runtime manipulation, with built-in performance optimizations like style caching and configurable HTTP request handling via Polly resilience strategies. The project distinguishes itself through its comprehensive approach to theme integration, providing developers with a turnkey solution for responsive, modern web application styling that supports automatic theme detection, extensive customization, and a developer-friendly setup process. Ideal for .NET developers seeking a robust, production-ready theming framework, WebSpark.Bootswatch simplifies the complex task of implementing dynamic, responsive design across multiple .NET project types while maintaining high performance and flexibility.
+WebSpark.Bootswatch is a sophisticated .NET Razor Class Library designed to simplify and enhance theme management for ASP.NET Core applications by providing seamless integration of Bootswatch themes with advanced dynamic styling capabilities. The library leverages Bootstrap 5 to deliver a comprehensive theming solution that supports multi-framework compatibility (targeting .NET 8.0, 9.0, and 10.0), includes built-in caching mechanisms, and offers dynamic theme switching with light/dark mode support. Architecturally, it implements a robust service-based approach with dependency injection, utilizing tag helpers, extension methods, and a dedicated `StyleCache` service to manage theme resources efficiently, while providing high-performance theme loading and rendering. The project stands out by offering a developer-friendly, production-ready solution for responsive web design with minimal configuration, making it particularly valuable for .NET developers seeking flexible, modern UI theming with minimal overhead. Key technical innovations include automatic theme detection, comprehensive error handling, and a carefully designed dependency management strategy that requires explicit registration of supporting utilities like `HttpClientUtility`.
 
 **Created**: 2022-08-24
 **Last Modified**: 2025-12-04
 
 ---
 
-### #19. [ConcurrentProcessing](https://github.com/markhazleton/ConcurrentProcessing)
+### #20. [ConcurrentProcessing](https://github.com/markhazleton/ConcurrentProcessing)
 
 ⭐ 0 | 🔱 0 | 📝 C# | 📊 19 commits (90d)
 
@@ -408,14 +450,16 @@ WebSpark.Bootswatch is a sophisticated .NET Razor Class Library designed to prov
 
 Here's a comprehensive technical summary of the ConcurrentProcessing repository:
 
-ConcurrentProcessing is a sophisticated .NET 10 framework designed to provide fine-grained, high-performance parallel task processing with robust concurrency management and comprehensive performance metrics. The project offers a generic, extensible `ConcurrentProcessor<T>` abstract base class that enables developers to implement concurrent task processing with precise control over execution limits using semaphore-based throttling, allowing for dynamic management of task concurrency across various workloads. Leveraging advanced C# and .NET features, the framework implements multiple design patterns including Template Method, Factory, and Strategy patterns to create a flexible, type-safe concurrent processing engine that automatically tracks and calculates detailed performance metrics such as task duration, wait times, and throughput. The architecture is optimized for minimal overhead, supporting scalable parallel execution with configurable concurrency limits and providing built-in statistical analysis capabilities that make it particularly valuable for scenarios requiring controlled, efficient parallel processing like data transformation, batch processing, and computational workloads. What makes this project unique is its combination of educational value, production-ready design, and comprehensive performance tracking, serving both as a practical framework and a learning resource for advanced concurrent programming techniques in .NET. The framework is particularly suited for developers and system architects seeking a robust, metrics-driven approach to managing parallel task execution with granular control and performance insights.
+ConcurrentProcessing is a sophisticated .NET 10 framework designed to provide high-performance, fine-grained concurrent task processing with built-in performance metrics and advanced throttling capabilities. The library introduces a generic, extensible `ConcurrentProcessor<T>` abstract base class that enables developers to implement parallel task execution with precise control over concurrency limits using semaphore-based resource management. Leveraging modern C# features and the Task Parallel Library (TPL), the framework offers a type-safe, performance-optimized solution for managing complex parallel workloads, with automatic tracking of execution metrics such as wait times, task durations, and throughput. Its architecture implements multiple design patterns including Template Method, Factory, and Strategy patterns, making it both flexible and highly adaptable to various concurrent processing scenarios.
+
+The project stands out by providing a robust, production-ready approach to concurrent processing that goes beyond basic parallelization, offering developers a comprehensive toolkit for managing and analyzing parallel task execution with minimal overhead. It is particularly valuable for scenarios requiring controlled concurrency, such as batch processing, distributed computing, and high-performance computing applications where precise resource management and performance tracking are critical.
 
 **Created**: 2023-09-18
 **Last Modified**: 2025-12-18
 
 ---
 
-### #20. [AsyncDemo](https://github.com/markhazleton/AsyncDemo)
+### #21. [AsyncDemo](https://github.com/markhazleton/AsyncDemo)
 
 ⭐ 0 | 🔱 0 | 📝 C# | 📊 15 commits (90d)
 
@@ -423,16 +467,14 @@ ConcurrentProcessing is a sophisticated .NET 10 framework designed to provide fi
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary of the AsyncDemo repository:
-
-AsyncDemo is an advanced C# educational project focused on demonstrating modern asynchronous programming techniques and best practices in .NET, featuring comprehensive code examples and interactive API documentation. The repository provides in-depth exploration of async/await patterns, including critical concepts like avoiding deadlocks, implementing cancellation tokens, managing concurrency with Task.WhenAll, applying resilience strategies using Polly, and utilizing semaphores for throttling. Built on .NET 10 and leveraging technologies like Scalar for API documentation, OpenWeather integration, and sophisticated error handling patterns, the project serves as a living tutorial for developers seeking to master asynchronous programming paradigms. The repository's unique approach combines practical code demonstrations, structured learning modules, and interactive documentation, making complex async concepts accessible through real-world, production-ready examples that address common pitfalls in concurrent programming. Targeted primarily at intermediate to advanced .NET developers, AsyncDemo offers a deep dive into writing robust, performant, and maintainable asynchronous code with a strong emphasis on architectural best practices and cross-cutting concerns.
+AsyncDemo is a comprehensive C# educational repository demonstrating advanced asynchronous programming techniques and best practices in .NET, focusing on teaching developers critical async/await patterns through practical, real-world examples. The project provides an interactive ASP.NET Core web application with Scalar-powered API documentation that explores complex async scenarios such as avoiding deadlocks, implementing cancellation tokens, managing concurrency with Task.WhenAll, applying resilience patterns using Polly, and utilizing semaphore-based throttling. Architecturally, the project employs modern .NET practices, including dependency injection, decorator pattern for cross-cutting concerns, OpenAPI specification, and integration with external services like OpenWeather API, while offering structured learning modules that cover various async programming challenges and solutions. What makes this repository uniquely valuable is its systematic approach to async learning, with each code example meticulously annotated to explain potential pitfalls, best practices, and practical implementation strategies, making it an excellent resource for intermediate to advanced C# developers seeking to master asynchronous programming patterns. The project is particularly suited for developers looking to enhance their understanding of async/await, improve application resilience, and implement sophisticated concurrency management techniques in .NET applications.
 
 **Created**: 2022-08-07
 **Last Modified**: 2025-12-04
 
 ---
 
-### #21. [Texecon](https://github.com/markhazleton/Texecon)
+### #22. [Texecon](https://github.com/markhazleton/Texecon)
 
 ⭐ 0 | 🔱 0 | 📝 HTML | 📊 12 commits (90d)
 
@@ -440,48 +482,46 @@ AsyncDemo is an advanced C# educational project focused on demonstrating modern 
 
 **Quality**: ❌ License | ❌ Docs
 
-TexEcon is a sophisticated static React application designed for comprehensive economic analysis of Texas, leveraging modern web development technologies to deliver high-performance, SEO-optimized content. The project implements a robust build pipeline with static site generation, utilizing React 19, TypeScript, and Vite to create a performant web application that fetches and processes economic data from a headless CMS (WebSpark) during build time. Its architecture emphasizes progressive enhancement, with features like client-side routing, automatic sitemap generation, and advanced content management that enables dynamic yet statically generated web pages with built-in fallback mechanisms. The application is meticulously structured with a focus on developer experience, utilizing cutting-edge tools like Tailwind CSS, Radix UI, and automated build scripts that handle content retrieval, type generation, and optimized deployment to GitHub Pages. What distinguishes TexEcon is its comprehensive approach to static site generation, combining API-driven content management, type-safe development, and performance optimization into a seamless economic analysis platform. The project is particularly suited for economists, policy researchers, and stakeholders interested in detailed, up-to-date economic insights about Texas, delivered through a modern, technically sophisticated web application.
+TexEcon is a sophisticated static React application designed for comprehensive economic analysis focused on Texas, leveraging modern web development technologies to deliver high-performance, SEO-optimized content. The project implements an advanced build pipeline that fetches content from a headless CMS (WebSpark), generates static pages, and deploys automatically to GitHub Pages, with a strong emphasis on performance optimization, type safety, and progressive enhancement. Built using React 19, TypeScript, Vite, and Tailwind CSS, the application features build-time content management, client-side routing with static HTML fallbacks, and sophisticated SEO techniques including dynamic sitemaps and structured data generation. The architecture demonstrates a robust approach to static site generation, with intelligent content processing, automatic type generation from API responses, and a modular project structure that supports scalability and maintainability. What distinguishes TexEcon is its comprehensive approach to content delivery, combining cutting-edge web technologies with a specialized focus on economic insights, making it an innovative platform for economic research and analysis targeted at professionals, researchers, and policymakers interested in the Texas economic landscape.
 
 **Created**: 2025-09-03
 **Last Modified**: 2025-10-23
 
 ---
 
-### #22. [RazorPages](https://github.com/markhazleton/RazorPages)
+### #23. [RazorPages](https://github.com/markhazleton/RazorPages)
 
-⭐ 0 | 🔱 0 | 📝 JavaScript | 📊 1 commits (90d)
+⭐ 0 | 🔱 0 | 📝 JavaScript | 📊 3 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 19335 KB | 🚀 0.3 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 19351 KB | 🚀 1.0 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
-Technical Summary:
+Here's a comprehensive technical summary:
 
-The RazorPages repository is a comprehensive, multi-project .NET demonstration of a coffee shop web application that showcases modern full-stack web development practices using ASP.NET Core technologies. The solution includes a Razor Pages web app, a Blazor WebAssembly single-page application, two API implementations (Web API and Minimal API), and a shared models library, effectively demonstrating different .NET architectural approaches for building interactive, responsive web applications. Key technologies include ASP.NET Core, Blazor, SignalR, Entity Framework Core, Bootstrap, and Swagger, with the project emphasizing clean architecture, separation of concerns, and utilizing cutting-edge .NET development patterns. The application provides a complete reference implementation for developers, featuring functionality like menu browsing, order management, real-time chat, responsive design, and robust API endpoints, making it an excellent learning resource for understanding modern .NET web development ecosystem. What makes this repository particularly noteworthy is its comprehensive nature, showcasing multiple implementation strategies within a single, cohesive coffee shop web application context, targeting developers seeking practical, modern .NET architectural guidance and best practices. The project is ideal for .NET developers, web development learners, and architects looking to understand contemporary web application design and implementation strategies.
+The RazorPages repository is a comprehensive, multi-project .NET demonstration of a coffee shop web application showcasing modern full-stack development techniques across different architectural approaches. It features a complete solution with a Razor Pages web app, Blazor WebAssembly single-page application, RESTful Web API, Minimal API, and a shared models library, providing developers with a reference implementation of contemporary .NET web development patterns. The project leverages ASP.NET Core, Entity Framework Core, SignalR for real-time communication, and integrates technologies like Bootstrap and Blazorise to create a responsive, interactive coffee shop platform with features including menu browsing, order management, contact forms, and a real-time chat system. Its architecture emphasizes clean separation of concerns, code reusability, and demonstrates best practices in API design, client-side rendering, and backend service implementation across multiple .NET paradigms. What makes this repository particularly noteworthy is its comprehensive approach to showcasing different .NET web technologies within a single, cohesive solution, serving as an educational resource for developers looking to understand modern full-stack .NET development techniques. The project is primarily targeted at .NET developers, software architects, and technical learners seeking a practical, production-like example of building scalable web applications with contemporary Microsoft development technologies.
 
 **Created**: 2020-03-29
-**Last Modified**: 2025-12-30
+**Last Modified**: 2026-01-02
 
 ---
 
-### #23. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
+### #24. [InquirySpark](https://github.com/markhazleton/InquirySpark)
 
-⭐ 0 | 🔱 0 | 📝 CSS | 📊 11 commits (90d)
+⭐ 0 | 🔱 0 | 📝 C# | 📊 18 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 43835 KB | 🚀 3.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 9371 KB | 🚀 6.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary of the ReactSparkPortfolio repository:
+InquirySpark is a .NET 10-based survey and inquiry management system designed with a focus on read-only data persistence using SQLite databases, providing an MVC admin interface for managing survey-related content. The solution is structured across multiple projects (Admin, Repository, Common) and leverages modern .NET technologies like Entity Framework Core 10, ASP.NET Core Identity, and Bootstrap 5 for a comprehensive, lightweight survey management experience. Its architecture emphasizes immutability, strict data access controls, and a modular design, with key features including a DataTables-powered admin interface, centralized configuration through dependency injection, and a warning-free, strongly-typed codebase using nullable reference types and XML documentation. The project stands out for its intentional use of read-only SQLite databases, eliminating the need for traditional SQL Server infrastructure and providing a simple, portable data management approach. Targeted at developers and administrators who need a lightweight, configuration-driven survey management system with robust data protection and minimal deployment complexity, InquirySpark offers a modern, streamlined solution for collecting and managing inquiry data with an emphasis on data integrity and clean architectural patterns.
 
-ReactSparkPortfolio is an advanced, enterprise-grade personal portfolio web application built with React 19, TypeScript, and Vite, designed to showcase modern web development practices and full-stack engineering capabilities. The project demonstrates a comprehensive, production-ready solution featuring a modular architecture with serverless deployment, real-time interactive components like SignalR chat and weather widgets, and a sophisticated, responsive UI built using Bootstrap 5 and custom SCSS with dark/light theme switching. By leveraging cutting-edge technologies such as Azure Static Web Apps, GitHub Actions for CI/CD, and implementing strict type safety with TypeScript, the portfolio serves not just as a personal showcase but as a reference implementation for scalable, performant web applications with a strong emphasis on developer experience, accessibility, and cross-platform compatibility. The repository stands out through its holistic approach to frontend engineering, incorporating features like lazy loading, code splitting, semantic HTML, WCAG compliance, and integration with external APIs, making it an exemplary template for developers seeking a modern, professional portfolio solution. Targeted primarily at software engineers, web developers, and technical professionals, the project offers a comprehensive demonstration of contemporary web development techniques, tooling, and architectural patterns that go beyond a traditional personal portfolio.
-
-**Created**: 2024-10-11
-**Last Modified**: 2025-12-15
+**Created**: 2023-10-24
+**Last Modified**: 2025-12-07
 
 ---
 
-### #24. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
+### #25. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
 
 ⭐ 0 | 🔱 0 | 📝 C# | 📊 11 commits (90d)
 
@@ -489,16 +529,16 @@ ReactSparkPortfolio is an advanced, enterprise-grade personal portfolio web appl
 
 **Quality**: ❌ License | ✅ Docs
 
-Based on the detailed README and repository information, here's a comprehensive technical summary:
+Based on the comprehensive README and repository details, here's a technical summary:
 
-TaskListProcessor is an advanced .NET 10.0 library designed to solve complex asynchronous task orchestration challenges in enterprise software environments, providing a robust framework for managing concurrent, dependent, and potentially distributed computational workloads. The library implements sophisticated enterprise-grade patterns including circuit breakers, dependency injection, advanced scheduling, and comprehensive telemetry, enabling developers to build highly resilient and performant asynchronous processing systems with built-in fault tolerance and observability. Key technical capabilities include parallel task execution with configurable concurrency limits, type-safe result handling, OpenTelemetry integration, priority-based scheduling, and native support for dependency resolution through topological sorting of task graphs. Architecturally, the project follows SOLID principles, leveraging .NET's native dependency injection, implementing decorator patterns for cross-cutting concerns, and providing a clean, strongly-typed interface for defining and managing complex task processing workflows. What distinguishes TaskListProcessor is its comprehensive approach to async processing, offering not just execution mechanics but a full ecosystem of enterprise-ready features like graceful error handling, rich logging, health monitoring, and performance optimization strategies. The library is particularly suited for microservice architectures, distributed systems, data processing pipelines, and complex workflow management scenarios where predictable, observable, and resilient task coordination is critical.
+TaskListProcessor is an advanced .NET 10.0 library designed to solve complex asynchronous task orchestration challenges in enterprise-grade applications, providing a robust framework for managing concurrent, distributed, and resilient task processing. The library implements sophisticated enterprise patterns including circuit breakers, dependency injection, and advanced scheduling, with first-class support for OpenTelemetry integration, type-safe results, and configurable concurrency management. Its architecture emphasizes SOLID principles, offering developers a powerful toolkit for building high-performance, fault-tolerant systems that can efficiently coordinate multiple asynchronous operations across microservices, API interactions, and distributed computing environments. Key differentiators include its native .NET dependency injection support, rich telemetry capabilities, strongly-typed result handling, and intelligent task dependency resolution with topological sorting and execution ordering. The project targets enterprise developers and system architects working on complex distributed systems requiring sophisticated async coordination, providing a comprehensive solution that goes beyond basic task management by incorporating advanced resilience, observability, and performance optimization strategies. TaskListProcessor represents a mature approach to async programming, bridging the gap between theoretical concurrency patterns and practical, production-ready implementation in modern .NET applications.
 
 **Created**: 2023-11-09
 **Last Modified**: 2025-12-08
 
 ---
 
-### #25. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
+### #26. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
 
 ⭐ 3 | 🔱 0 | 📝 Visual Basic .NET | 📊 0 commits (90d)
 
@@ -508,14 +548,14 @@ TaskListProcessor is an advanced .NET 10.0 library designed to solve complex asy
 
 Technical Summary:
 
-Web Project Mechanics is a comprehensive, custom-built content management system (CMS) designed to manage multiple websites through a single MS-Access database, demonstrating a lightweight and self-contained approach to web content management. Developed over two decades by Mark Hazleton, the system leverages the .NET Framework 4.8 and supports multiple languages including Visual Basic .NET, JavaScript, and C#, with a focus on performance through integrated caching mechanisms and minimal external dependencies. The architecture appears to be a proprietary web application framework that has evolved from ASP and JSP to a .NET-based solution, suggesting a flexible and adaptable design that prioritizes ease of maintenance and cross-site management. Its unique value proposition lies in its ability to centralize website content management in a single database, eliminating the need for separate content repositories and providing a streamlined approach for managing multiple web properties. The system seems particularly suited for small to medium-sized organizations or individual developers who require a customizable, standalone CMS without complex infrastructure requirements. While the project has limited recent activity, its long-standing development history and MIT licensing suggest it could be valuable for developers seeking a lightweight, self-hosted web content management solution with minimal external dependencies.
+Web Project Mechanics is a comprehensive, long-running web content management system (CMS) designed to manage multiple websites through a single Microsoft Access database, demonstrating a unique, lightweight approach to web content management. Developed in Visual Basic .NET using the .NET Framework 4.8, the system provides a standalone solution with built-in caching mechanisms, eliminating external dependencies and offering flexibility across different web platforms. The project's architecture allows for seamless website management, having evolved from ASP to JSP and finally to .NET, reflecting the author's commitment to technology adaptation and continuous learning. Its primary value lies in its simplicity, portability, and ability to centralize website content management through a single database, making it particularly suitable for small to medium-sized web projects or individual developers seeking a minimalistic, self-contained CMS solution. The system has a proven track record, having been used to manage multiple real-world websites over two decades, and is open-sourced under the MIT license, encouraging community collaboration and further development. Developers and web administrators looking for a straightforward, database-driven content management system with minimal infrastructure requirements would find this project especially interesting.
 
 **Created**: 2017-09-19
 **Last Modified**: 2025-02-26
 
 ---
 
-### #26. [DesignPatternsInCSharp](https://github.com/markhazleton/DesignPatternsInCSharp)
+### #27. [DesignPatternsInCSharp](https://github.com/markhazleton/DesignPatternsInCSharp)
 
 ⭐ 0 | 🔱 0 | 📝 HTML | 📊 4 commits (90d)
 
@@ -523,29 +563,12 @@ Web Project Mechanics is a comprehensive, custom-built content management system
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary:
+Technical Repository Summary:
 
-The DesignPatternsInCSharp repository is a comprehensive educational resource showcasing implementation examples of various design patterns in C#, primarily oriented towards software developers and architects seeking to understand and apply classic object-oriented design principles. The project provides code samples and references for multiple design patterns including Adapter, Memento, Proxy, Rules Engine, Singleton, Specification, State, and Template Method, with direct links to corresponding Pluralsight learning resources for deeper instruction. Leveraging C# and HTML, the repository serves as a practical reference guide demonstrating how different design patterns can be implemented to solve common software engineering challenges, with an emphasis on modular, flexible, and maintainable code architecture. The project appears to be curated with a strong educational focus, offering developers a structured approach to learning and applying design patterns through concrete code examples and supplementary learning materials. While currently modest in size and activity, the repository represents a valuable learning tool for intermediate to advanced C# developers looking to enhance their understanding of software design principles and pattern-based development strategies.
+The DesignPatternsInCSharp repository is a comprehensive educational resource demonstrating implementation of various design patterns in C#, primarily focused on providing practical code examples and learning references for software developers and architects. The project covers multiple design patterns including Adapter, Memento, Proxy, Rules Engine, Singleton, Specification, State, and Template Method, with strong emphasis on Pluralsight course-aligned learning materials and code demonstrations. Implemented using C# and featuring HTML documentation, the repository serves as a structured learning platform for understanding object-oriented design principles and architectural patterns in .NET ecosystem. Each design pattern section includes references to related educational resources, suggesting this is a curated learning collection intended to help developers understand and apply complex software design techniques. The repository's approach of linking theoretical learning (Pluralsight courses) with practical code implementations makes it a valuable resource for intermediate to advanced C# developers seeking to enhance their software design skills and architectural understanding. While currently small in scale, the project demonstrates a methodical approach to documenting and exemplifying software design pattern implementations, potentially serving as a reference guide for professional software development practices.
 
 **Created**: 2021-02-03
 **Last Modified**: 2025-10-24
-
----
-
-### #27. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
-
-⭐ 0 | 🔱 0 | 📝 C# | 📊 4 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 27238 KB | 🚀 1.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Technical Summary:
-
-TriviaSpark is an experimental multiplayer web and mobile trivia game application developed with AI assistance, designed to create an engaging, interactive trivia experience for tech-savvy users aged 18-95. The project leverages a public Trivia API to dynamically generate questions and answers, with planned features including user registration, leaderboard tracking, customizable UI, and an admin question database review system. Built primarily in C# with web technologies (HTML, CSS, JavaScript), the application appears to be structured as a cross-platform solution targeting both web and mobile platforms, suggesting potential use of frameworks like Xamarin or .NET MAUI for cross-device compatibility. The project is notable for its AI-assisted development approach, explicitly highlighting collaboration with ChatGPT in its conception and design, which represents an emerging trend of AI-augmented software development. The core objective is to create a competitive, knowledge-testing platform that provides an interactive and modern gaming experience, with a focus on user engagement through dynamic content and social ranking mechanisms.
-
-**Created**: 2023-02-22
-**Last Modified**: 2025-12-02
 
 ---
 
@@ -557,31 +580,16 @@ TriviaSpark is an experimental multiplayer web and mobile trivia game applicatio
 
 **Quality**: ❌ License | ✅ Docs
 
-BarcodeLib is a comprehensive barcode generation library primarily implemented in JavaScript and C#, designed to provide developers with an easy-to-use solution for creating various barcode images from string data. The library supports an extensive range of barcode symbologies, including Code 128, UPC, EAN, ISBN, PostNet, and over 15 different encoding types, offering robust functionality for generating high-quality barcode images with customizable parameters like color, dimensions, and encoding type. Architecturally, the library follows a flexible object-oriented design with multiple constructor options, allowing developers to create barcode instances with or without pre-defined parameters, and provides straightforward encoding methods that generate barcode images across different platforms. Its cross-language implementation (JavaScript and C#) and support for multiple platforms make it particularly versatile, enabling developers to integrate barcode generation capabilities into various software projects, from desktop applications to web services. The library stands out for its comprehensive symbology support, simple API, and the ability to generate barcode images with minimal configuration, making it an efficient tool for industries requiring barcode generation such as logistics, inventory management, and retail. Licensed under Apache 2.0 and maintained since 2007, BarcodeLib offers a mature, well-documented solution for developers needing reliable barcode image generation capabilities.
+Technical Summary:
+
+barcodelib is a comprehensive barcode generation library primarily designed for .NET environments, providing developers with a robust solution for creating diverse barcode images programmatically across multiple symbology standards. The library supports over 15 different barcode types including Code 128, UPC, EAN, ISBN, and PostNet, offering flexible encoding capabilities through a straightforward, intuitive API that allows developers to generate barcode images with customizable parameters like dimensions, colors, and encoding types. Implemented in C#/.NET, the library demonstrates a clean object-oriented design with multiple constructor approaches and provides seamless image generation that can be easily integrated into various enterprise and commercial applications requiring barcode creation. Its standout features include extensive symbology support, simple usage patterns, cross-platform compatibility, and a permissive Apache 2.0 license that enables both commercial and open-source usage. The project targets software developers in industries such as logistics, inventory management, retail, and document processing who need reliable, adaptable barcode generation functionality without complex implementation overhead.
 
 **Created**: 2019-06-20
 **Last Modified**: 2025-12-09
 
 ---
 
-### #29. [Slurper](https://github.com/markhazleton/Slurper)
-
-⭐ 0 | 🔱 0 | 📝 C# | 📊 13 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 4058 KB | 🚀 4.3 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-Technical Summary:
-
-Slurper is a .NET library designed to simplify data extraction and transformation across multiple structured data formats (XML, JSON, CSV, HTML) by providing a dynamic, zero-configuration approach to parsing and accessing complex data structures. The library leverages C# dynamic object capabilities to allow developers to extract and navigate data without explicitly defining complex model classes, using an intuitive property access mechanism that works consistently across different data sources. Key architectural features include a factory-based API, async support, dependency injection compatibility, and a plugin system for extensibility, all implemented with a focus on performance and developer ergonomics. Technically sophisticated, Slurper uses techniques like dynamic object creation (similar to ExpandoObject) and provides comprehensive error handling and logging to make working with structured data more straightforward and less error-prone. The library is particularly valuable for scenarios involving data integration, API consumption, file parsing, and rapid prototyping where traditional rigid data modeling would be cumbersome, targeting .NET developers who need flexible, performant data extraction across various formats. What makes Slurper unique is its ability to provide a unified, schema-less approach to data extraction that reduces boilerplate code and enables more dynamic data manipulation without sacrificing type safety or performance.
-
-**Created**: 2023-03-24
-**Last Modified**: 2025-11-16
-
----
-
-### #30. [DataAnalysisDemo](https://github.com/markhazleton/DataAnalysisDemo)
+### #29. [DataAnalysisDemo](https://github.com/markhazleton/DataAnalysisDemo)
 
 ⭐ 0 | 🔱 0 | 📝 Visual Basic .NET | 📊 1 commits (90d)
 
@@ -589,16 +597,16 @@ Slurper is a .NET library designed to simplify data extraction and transformatio
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary:
+Here's a comprehensive technical summary of the DataAnalysisDemo repository:
 
-DataAnalysisDemo is a sophisticated web-based data analytics platform built with ASP.NET WebForms and modern client-side technologies, designed to transform raw CSV data into interactive visualizations, pivot tables, and comprehensive analytical insights. The application leverages a robust technology stack including .NET Framework 4.8, Bootstrap 5, jQuery, and advanced JavaScript libraries like DataTables and PivotTable.js, enabling sophisticated data processing and visualization capabilities with support for dynamic charting, real-time statistical analysis, and responsive design across multiple device types. Its architecture emphasizes modular design, featuring a Webpack-based build system, custom data parsing libraries, and a comprehensive client-side asset management approach that allows seamless integration of multiple data visualization and exploration techniques. The project stands out through its extensive feature set, including 15+ chart types, advanced pivot table functionality with drag-and-drop interfaces, memory-efficient data processing, and a flexible theme system that enables dynamic UI customization. Targeting data analysts, researchers, and business intelligence professionals, the application provides a user-friendly yet powerful platform for exploring and understanding complex datasets through interactive, visually engaging interfaces. By combining enterprise-grade .NET backend technologies with modern front-end frameworks and libraries, DataAnalysisDemo represents a comprehensive solution for transforming raw data into actionable insights with minimal manual configuration.
+The DataAnalysisDemo (DAWPM) is a sophisticated web-based data analytics platform built using ASP.NET WebForms 4.8 with Visual Basic .NET, designed to transform raw CSV data into interactive, visually rich analytical experiences through advanced data processing, dynamic charting, and comprehensive pivot table functionality. The application leverages a modern client-side architecture with Webpack, Bootstrap 5, and multiple JavaScript libraries (jQuery, DataTables, D3.js, C3.js) to provide a responsive, feature-rich data exploration environment that supports complex data transformations, real-time statistical analysis, and multiple visualization paradigms. Its key technical innovations include a custom GenericParser for efficient CSV processing, a modular client-side build system, advanced pivot table interactions with drag-and-drop functionality, and a comprehensive suite of data visualization tools that enable users to dynamically analyze, filter, and export data across multiple formats. The project demonstrates a sophisticated approach to web-based data analytics by integrating server-side .NET processing with modern front-end technologies, offering a flexible framework for exploring and understanding complex datasets through intuitive, performance-optimized interfaces. Notably unique is its comprehensive approach to data presentation, supporting over 15 chart types, multiple rendering engines, and an extensible architecture that allows for easy customization and expansion of analytical capabilities. The target users are likely data analysts, researchers, and business intelligence professionals seeking a flexible, web-based platform for exploratory data analysis with rich interactive capabilities.
 
 **Created**: 2023-04-20
 **Last Modified**: 2025-12-03
 
 ---
 
-### #31. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
+### #30. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
 
 ⭐ 0 | 🔱 0 | 📝 TypeScript | 📊 1 commits (90d)
 
@@ -606,22 +614,27 @@ DataAnalysisDemo is a sophisticated web-based data analytics platform built with
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary:
+Here's a comprehensive technical summary of the MechanicsOfMotherhood repository:
 
-The Mechanics of Motherhood is a sophisticated recipe management platform designed specifically for busy working mothers, built using modern web technologies like React 19, TypeScript, and Tailwind CSS. The application offers a comprehensive recipe management system with over 108 curated recipes across 14 categories, featuring smart search capabilities, nutritional information, and a mobile-first responsive design with Progressive Web App (PWA) capabilities. Architecturally, the project leverages a robust tech stack including Vite for build optimization, TanStack Query for state management, and integrates with external APIs (RecipeSpark and WebCMS) to provide real-time, high-quality recipe data with automated data validation and quality assurance.
-
-Key technical highlights include:
-- Advanced frontend architecture with React 19 and TypeScript
-- Mobile-first, responsive design with WCAG accessibility
-- Automated CI/CD through GitHub Actions
-- Performance-optimized with Lighthouse scores consistently above 95
-- Offline support and PWA capabilities
-- Comprehensive development workflow with multiple build and deployment scripts
-
-The project stands out for its industrial-themed design, emphasis on data quality, and tailored user experience for working mothers, transforming recipe management into an efficient, user-friendly digital solution.
+MechanicsOfMotherhood is a sophisticated, mobile-first recipe management platform designed specifically for busy working mothers, leveraging modern web technologies to provide an intuitive and comprehensive culinary resource. Built with React 19 and TypeScript, the application offers a robust solution for recipe discovery, management, and meal planning, featuring over 108 curated recipes across 14 categories with advanced search, filtering, and nutritional tracking capabilities. The project demonstrates a sophisticated architectural approach, utilizing Vite for build optimization, TanStack Query for efficient data management, and Tailwind CSS for responsive, industrial-themed design, while implementing progressive web app (PWA) features like offline support and fast loading performance. The application integrates with multiple APIs (RecipeSpark and WebCMS) to provide dynamic, real-time recipe data, and implements comprehensive CI/CD workflows through GitHub Actions, ensuring consistent deployment and high code quality. Unique features include automated data validation, SEO optimization, accessibility support, and a performance-focused design that delivers a Lighthouse score of 95+ across all categories, making it a technically advanced and user-centric recipe management solution tailored for modern, time-constrained families.
 
 **Created**: 2025-09-01
 **Last Modified**: 2025-11-16
+
+---
+
+### #31. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+
+⭐ 0 | 🔱 0 | 📝 C# | 📊 0 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 30260 KB | 🚀 0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+TeachSpark is an innovative, LLM-powered educational platform built using .NET 9 MVC and modern web technologies, designed to create personalized and adaptive learning experiences through intelligent content delivery. The platform leverages advanced Large Language Models to dynamically generate and customize educational content, providing interactive curricula, personalized learning pathways, and comprehensive progress analytics for individual students. Architecturally, it follows clean architecture principles with a decoupled frontend using Webpack 5, Bootstrap 5, and ES6+ JavaScript, and a backend powered by Entity Framework Core, emphasizing modularity, performance, and extensibility. The project distinguishes itself through its AI-driven approach to education, implementing sophisticated personalization algorithms that can adapt learning materials in real-time based on individual student interactions, learning patterns, and comprehension levels. Utilizing a modern development stack with robust tooling like Husky, ESLint, and comprehensive build systems, TeachSpark represents a cutting-edge approach to digital education platforms targeting students, educators, and adaptive learning environments. Its target users include educational institutions, online learning platforms, and individual learners seeking a more intelligent, responsive, and personalized educational experience.
+
+**Created**: 2025-06-19
+**Last Modified**: 2025-07-03
 
 ---
 
@@ -633,9 +646,9 @@ The project stands out for its industrial-themed design, emphasis on data qualit
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary of the markhazleton.github.io repository:
+Based on the repository analysis, here's a comprehensive technical summary:
 
-This is a personal Jekyll-powered static website repository designed to showcase Mark Hazleton's professional portfolio, blog, and technical content, hosted on GitHub Pages. The site leverages a customized version of the Minima Jekyll theme with advanced features like dark/light mode toggling, responsive design, and SEO-optimized content publishing workflows. Technically, it's built using Ruby 3.2, Jekyll 4.3, and SCSS for styling, with a sophisticated GitHub Actions deployment pipeline that automatically builds and publishes the site when changes are pushed to the sources branch. The repository demonstrates modern web development practices through its structured content management, comprehensive documentation for post creation, and flexible local development setup that supports incremental builds, live reloading, and environment-specific configurations. What makes this project particularly noteworthy is its detailed README, which serves not just as documentation but as a comprehensive guide for Jekyll site development, content creation, and deployment strategies, making it an excellent reference for developers looking to create similar static sites.
+This is a personal Jekyll-powered static website hosted on GitHub Pages, designed as a modern, developer-friendly blog and portfolio platform. The site leverages Ruby-based Jekyll with a customized Minima theme, featuring responsive design, dark/light mode toggle, and automated deployment via GitHub Actions. It provides a sophisticated content management workflow with support for Markdown-based post creation, comprehensive SEO optimization, and flexible front matter configuration for blog posts. The project demonstrates best practices in static site generation, including modular SCSS styling, comprehensive documentation, and a well-structured development environment that supports local testing and incremental builds. Targeted primarily at developers, technical professionals, and personal brand builders, the repository serves as both a functional website and a reusable template for others looking to create similar Jekyll-based personal sites with robust, modern web development practices.
 
 **Created**: 2021-04-18
 **Last Modified**: 2025-11-03
@@ -650,14 +663,31 @@ This is a personal Jekyll-powered static website repository designed to showcase
 
 **Quality**: ❌ License | ✅ Docs
 
-SQL2CSV is a comprehensive .NET 9 toolkit designed to simplify SQLite database exploration and data extraction, providing developers and data analysts with powerful CLI and early-stage web interface capabilities for database discovery, table export, schema inspection, and C# code generation. The project implements a clean, modular architecture leveraging dependency injection, structured logging, and cross-platform functionality, with core features including recursive SQLite database scanning, parallel processing for CSV exports, multi-format schema reporting, and automated DTO generation. Utilizing modern .NET technologies, the toolkit supports advanced operations like table filtering, dynamic data analysis, and persistent file management, with a focus on developer productivity and extensibility across Windows, macOS, and Linux environments. The project distinguishes itself through its comprehensive approach to database utility operations, offering both console and web-based interfaces, comprehensive test coverage (115 tests), and a flexible, service-oriented design that allows for easy integration and future enhancements. Targeted primarily at developers, data engineers, and technical professionals who need efficient tools for working with SQLite databases, SQL2CSV provides a robust solution for database exploration, data extraction, and code generation with minimal configuration overhead.
+SQL2CSV is a comprehensive .NET 9 toolkit designed to simplify SQLite database exploration, transformation, and code generation, offering developers a powerful cross-platform utility for database metadata analysis and CSV export. The project provides a robust CLI and early-stage web interface that enables users to discover SQLite databases, export tables to CSV with advanced filtering, generate schema reports in multiple formats (text/JSON/Markdown), and automatically create C# Data Transfer Object (DTO) classes from database schemas. Leveraging modern .NET technologies like dependency injection, structured logging, and a clean architecture pattern, the toolkit supports parallel processing, cross-platform execution, and includes extensive testing with 115 MSTest unit tests and continuous integration. The solution stands out through its modular design, supporting reusable core services across console and web interfaces, with planned expansions for additional export formats and advanced visualization capabilities. Targeted primarily at developers, data engineers, and database administrators who need efficient tools for database introspection, schema documentation, and rapid model generation, SQL2CSV offers a flexible, performance-oriented approach to database metadata management and transformation.
 
 **Created**: 2017-11-06
 **Last Modified**: 2025-09-15
 
 ---
 
-### #34. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
+### #34. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
+
+⭐ 0 | 🔱 0 | 📝 C# | 📊 4 commits (90d)
+
+👥 0 contributors | 🌐 4 languages | 💾 27238 KB | 🚀 1.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Technical Summary:
+
+TriviaSpark is an experimental multiplayer trivia game application developed with AI assistance, targeting tech-savvy users aged 18-95 who enjoy competitive knowledge challenges. The project appears to be a C# web and mobile application designed to integrate with public Trivia APIs, providing a dynamic, interactive gaming experience with features like user registration, leaderboards, and customizable UI. While still in early development stages, the application aims to leverage modern web and mobile technologies to create an engaging, cross-platform trivia game that emphasizes user interaction and competitive gameplay. The project's unique aspect is its collaborative development process, explicitly mentioning the use of ChatGPT in its creation, which suggests an innovative approach to software development that integrates AI-powered assistance. The README indicates a structured development roadmap covering API integration, user management, multi-platform deployment, and interactive game mechanics, positioning TriviaSpark as a potentially scalable and adaptable trivia gaming platform. Although the repository currently shows limited commit activity, the detailed development outline and clear vision suggest a promising project with potential for expansion and refinement.
+
+**Created**: 2023-02-22
+**Last Modified**: 2025-12-02
+
+---
+
+### #35. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
 
 ⭐ 0 | 🔱 0 | 📝 PHP | 📊 0 commits (90d)
 
@@ -667,36 +697,23 @@ SQL2CSV is a comprehensive .NET 9 toolkit designed to simplify SQLite database e
 
 Here's a comprehensive technical summary of the PHPDocSpark repository:
 
-PHPDocSpark is an advanced, educational PHP documentation and data exploration platform that demonstrates modern web development practices through a sophisticated hybrid architecture integrating server-side PHP with a contemporary client-side build pipeline. The project serves as a comprehensive reference implementation showcasing cutting-edge techniques in PHP 8.2+, featuring a modular design that supports markdown-based documentation, interactive data visualization, API integrations, and a responsive user interface powered by Vite, Bootstrap, and custom build systems.
+PHPDocSpark is a sophisticated PHP-based documentation and data exploration platform that demonstrates modern web development practices through a hybrid server-side and client-side architecture. The project serves as an educational reference implementation showcasing advanced PHP 8.2+ development techniques, integrating a contemporary build system (Vite) with traditional server-side rendering, and providing a comprehensive suite of features for content management, data visualization, and API integration. Key technical innovations include a modular architecture that leverages Markdown-based documentation, full-text search capabilities, interactive data analysis tools, and seamless integration with external APIs like GitHub, all built on a responsive Bootstrap 5 frontend and powered by a lightweight SQLite database.
 
-Key technical highlights include:
-- A hybrid architecture combining traditional PHP server-side rendering with modern JavaScript build toolchains
-- Full-featured documentation management with recursive markdown parsing and dynamic navigation
-- Advanced data analysis capabilities including CSV processing, interactive charting, and multiple export formats
-- Robust API integration with GitHub and external services, featuring intelligent caching and rate limiting
-- Comprehensive development workflow with Vite-powered asset compilation, SCSS preprocessing, and automated deployment via Azure Pipelines
+The project distinguishes itself through its thoughtful hybrid approach, bridging traditional PHP development with modern JavaScript build toolchains, creating a flexible platform that serves multiple purposes: as a learning resource for developers, a documentation management system, and a showcase of contemporary web development best practices. Its architecture emphasizes modularity, performance optimization, and developer experience, with features like hot module replacement, automated asset optimization, and a clean, extensible codebase that demonstrates sophisticated routing, templating, and data handling techniques.
 
-The project distinguishes itself through its educational focus, serving as a living tutorial for developers seeking to understand contemporary PHP development patterns, demonstrating clean architectural principles, and providing a flexible template for building documentation-centric web applications. By integrating multiple technologies and showcasing best practices across frontend and backend domains, PHPDocSpark offers a practical, extensible framework for building modern, performant web platforms.
+Technically noteworthy aspects include:
+- Advanced PHP 8.2+ language features
+- Vite-powered asset pipeline with server-side integration
+- Markdown parsing and dynamic content generation
+- Interactive data visualization and analysis tools
+- Comprehensive API integration with intelligent caching
+- Responsive, mobile-first design using Bootstrap
+- DevOps-friendly deployment with Azure Pipelines
 
-Target audiences include PHP developers, full-stack engineers, technical writers, and students looking to learn advanced web development techniques and architectural patterns in a real-world, comprehensive example.
+Target users include PHP developers, full-stack engineers, technical writers, and students seeking a modern, comprehensive web development reference implementation.
 
 **Created**: 2023-09-08
 **Last Modified**: 2025-08-18
-
----
-
-### #35. [TeachSpark](https://github.com/markhazleton/TeachSpark)
-
-⭐ 0 | 🔱 0 | 📝 C# | 📊 0 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 30142 KB | 🚀 0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-TeachSpark is an advanced, AI-powered educational platform built using .NET 9 MVC, designed to create personalized learning experiences through Large Language Model (LLM) technology. The platform offers an intelligent, adaptive learning environment that dynamically generates and customizes educational content based on individual student learning patterns, providing interactive curricula, real-time feedback, and comprehensive progress analytics. Architecturally, it leverages a modern full-stack approach with a clean, modular design, utilizing webpack for frontend build optimization, Entity Framework Core for data management, and incorporating advanced frontend technologies like Bootstrap 5, ES6+ JavaScript, and comprehensive build/quality tooling (ESLint, Prettier, Husky). The project stands out for its emphasis on AI-driven personalization, high-performance web architecture, and a developer-friendly ecosystem with robust code quality standards and automated development workflows. Targeted at educational institutions, online learning platforms, and individual learners seeking a more intelligent and adaptive learning experience, TeachSpark represents an innovative intersection of educational technology and artificial intelligence.
-
-**Created**: 2025-06-19
-**Last Modified**: 2025-07-03
 
 ---
 
@@ -725,7 +742,7 @@ Sandbox for trying out new stuff Written in C#.
 
 Technical Summary:
 
-Azure.Data.Tables-Extensions is a C# library that provides enhanced functionality and extension methods for working with Azure Table Storage, specifically designed to simplify data retrieval, manipulation, and CSV import/export operations. The library offers a comprehensive set of extension methods for TableClient, enabling developers to perform advanced querying operations like retrieving all entities, filtering by partition or row keys, batch processing, and efficient entity management with features such as auto-batching and safe table creation. Its standout feature is the CSV package, which enables seamless import and export of table data with compatibility to Azure Storage Explorer and legacy Azure CLI, supporting direct CSV interactions with Azure Table Storage through stream-based methods. Architecturally, the library follows a fluent and extension-based design pattern, providing intuitive and concise methods that abstract complex Azure Table Storage interactions, making it particularly valuable for developers working with cloud-based tabular data who need simplified data access and migration capabilities. The project targets .NET developers working with Azure Table Storage who require more streamlined data manipulation methods beyond the standard Azure SDK, with a strong emphasis on practical utility and ease of use in data management scenarios.
+The Azure.Data.Tables-Extensions is a C# library that provides enhanced functionality and convenience methods for working with Azure Table Storage, offering developers extended querying, manipulation, and data transfer capabilities beyond the standard Azure.Data.Tables library. The project introduces specialized extension methods for TableClient that simplify common operations like retrieving entities with various filtering options, batch processing, table management, and comprehensive CSV import/export functionality with compatibility to Azure Storage Explorer. Built using .NET and targeting Azure's cloud storage ecosystem, the library implements helpful abstractions like safe table creation, entity counting, and flexible data retrieval methods that reduce boilerplate code and improve developer productivity when working with table-based data storage. Its standout features include auto-batching for entity operations, nuanced querying methods (such as retrieving entities starting with specific values), and robust CSV interoperability that maintains strict format consistency with existing Azure tools. The library is particularly valuable for developers working with Azure Table Storage who need more flexible and intuitive data access patterns, with a focus on simplifying data migration, backup, and retrieval scenarios in cloud-native .NET applications.
 
 **Created**: 2025-02-25
 **Last Modified**: 2025-05-20
@@ -742,7 +759,7 @@ Azure.Data.Tables-Extensions is a C# library that provides enhanced functionalit
 
 Technical Summary:
 
-This repository is a .NET-based Google Maps Web Services API wrapper that provides a modular and extensible solution for interacting with Google Maps APIs through a custom HTTP client utility and minimal API architecture. The project introduces a generic `HttpClientUtility` that abstracts and simplifies HTTP request management, enabling more robust and flexible interactions with Google Maps services using generics, dependency injection, and advanced error handling mechanisms. Built using C# and leveraging modern .NET technologies like Fast Endpoints, the library offers a sophisticated approach to API communication by decoupling HTTP client management from specific API mapping, which enhances code maintainability and reusability. The implementation includes a generic `HttpResponseContent<T>` class for standardized response handling, supports various HTTP methods, and integrates with `IHttpClientFactory` for efficient resource management. Targeted at .NET developers requiring seamless, performant integration with Google Maps Web Services, this library stands out through its architectural design that prioritizes modularity, type safety, and clean separation of concerns in API interaction patterns.
+This repository is a sophisticated .NET library that provides a robust wrapper for the Google Maps Web Services API, focusing on enhanced modularity and efficient HTTP client management through a custom HttpClientUtility. The project introduces a minimal API implementation using Fast Endpoints, demonstrating a modern approach to API interaction by decoupling HTTP client management from API mapping through generic abstractions and a well-structured HttpResponseContent<T> class. Leveraging C# and designed with advanced architectural patterns, the library offers developers a flexible and maintainable solution for integrating Google Maps web services, with particular emphasis on clean separation of concerns, efficient resource management, and extensible HTTP request handling. The implementation showcases sophisticated techniques like generics, dependency injection, and interface-based design, making it particularly valuable for .NET developers seeking a robust, scalable approach to consuming Google Maps web services. By introducing a standalone HttpClientUtility project and utilizing techniques like IHttpClientFactory, the library provides a template for building resilient, performant API client libraries with clean, modular architecture.
 
 **Created**: 2024-03-28
 **Last Modified**: 2025-05-04
@@ -759,7 +776,7 @@ This repository is a .NET-based Google Maps Web Services API wrapper that provid
 
 Here's a comprehensive technical summary of the HttpClientDecoratorPattern repository:
 
-This GitHub repository demonstrates an advanced implementation of the Decorator Design Pattern for enhancing HttpClient functionality in .NET, providing a robust framework for adding cross-cutting concerns like telemetry, caching, and circuit breaking to HTTP service interactions. The project showcases a sophisticated approach to extending HttpClient capabilities through a layered, composable architecture using the WebSpark.HttpClientUtility NuGet package, which allows developers to dynamically add performance monitoring, resilience policies, and caching mechanisms without modifying the core HttpClient implementation. Built with ASP.NET Core (.NET 9.0) and leveraging technologies like Polly for resilience, the repository offers a practical, production-ready example of how to implement clean, maintainable HTTP service clients that adhere to SOLID design principles, particularly the Open/Closed Principle. The solution provides a flexible pattern for managing HTTP requests across various scenarios, including concurrent API calls, telemetry tracking, and handling potential service failures, making it particularly valuable for enterprise developers seeking to implement robust, observable HTTP communication strategies. By exposing a comprehensive implementation with multiple decorator layers (telemetry, caching, circuit breaking), the project serves as both a reference implementation and a learning resource for advanced .NET developers looking to improve their HTTP client architecture and service resilience.
+This repository demonstrates an advanced implementation of the Decorator Design Pattern for enhancing HttpClient functionality in .NET, providing a robust framework for adding cross-cutting concerns like telemetry, caching, and circuit breaking to HTTP service interactions. The project showcases a flexible, extensible approach to HTTP client management through the WebSpark.HttpClientUtility NuGet package, which allows developers to incrementally add sophisticated features to HTTP request handling without modifying the core HttpClient implementation. Leveraging modern .NET technologies including ASP.NET Core, C# 12, Razor Pages, and Polly for resilience policies, the repository implements a multi-layered decorator strategy that enables granular control over API interactions, with each decorator (Telemetry, Caching, Circuit Breaking) adding specific capabilities to the base HTTP request service. The architectural design follows SOLID principles, particularly the Open/Closed Principle, by allowing behavior extension through composable decorator classes that wrap the core HttpClient functionality. Targeted at .NET developers working with complex microservice architectures or requiring advanced HTTP client management, this project provides a practical reference implementation for building more resilient, observable, and maintainable HTTP service communication layers.
 
 **Created**: 2023-02-09
 **Last Modified**: 2025-05-08
@@ -774,7 +791,9 @@ This GitHub repository demonstrates an advanced implementation of the Decorator 
 
 **Quality**: ❌ License | ✅ Docs
 
-The openai-dotnet repository is an official .NET library for interacting with OpenAI's REST API, providing comprehensive programmatic access to various OpenAI services such as chat completions, embeddings, image generation, audio transcription, and assistants. Developed collaboratively with Microsoft and generated from OpenAI's OpenAPI specification, the library offers a strongly-typed, namespace-organized client architecture that supports both synchronous and asynchronous API interactions across multiple feature areas like chat, embeddings, images, and moderations. Written entirely in C# and compatible with .NET Standard 2.0, the library enables developers to easily integrate advanced AI capabilities into .NET applications, with robust support for streaming responses, function calling, structured outputs, and advanced scenarios like Azure OpenAI integration. The library follows modern .NET development practices, emphasizing type safety, configuration flexibility, and ease of use through intuitive client classes that abstract complex API interactions. Designed for .NET developers working on AI-powered applications, the library serves as an official, well-documented SDK for consuming OpenAI's cutting-edge machine learning services with minimal configuration overhead.
+Here's a comprehensive technical summary of the openai-dotnet repository:
+
+The openai-dotnet repository is an official .NET library that provides a comprehensive, strongly-typed client interface for interacting with OpenAI's REST API, enabling developers to seamlessly integrate advanced AI capabilities into .NET applications across various domains. The library supports a wide range of OpenAI services including chat completions, image generation, audio transcription, embeddings, assistants, and more, with robust support for both synchronous and asynchronous programming models and featuring namespace-organized client classes that align closely with OpenAI's API structure. Developed collaboratively with Microsoft and generated from OpenAI's OpenAPI specification, the library is designed to be compatible with .NET Standard 2.0 and offers advanced features like streaming responses, function calling, structured outputs, and specialized support for Azure OpenAI deployments. The library implements best practices for API interaction, including secure API key management, comprehensive error handling, and extensible configuration options, making it an enterprise-ready solution for developers looking to leverage OpenAI's machine learning capabilities within .NET ecosystems. Its modular architecture, with dedicated clients for different API domains (ChatClient, AudioClient, ImageClient, etc.), allows for granular and type-safe interactions with OpenAI's services, providing developers with a clean, intuitive interface for building intelligent applications ranging from conversational AI to generative content systems.
 
 **Created**: 2025-03-16
 **Last Modified**: 2025-03-16
@@ -789,9 +808,9 @@ The openai-dotnet repository is an official .NET library for interacting with Op
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary for the PromptSpark.Chat repository:
+Technical Summary:
 
-PromptSpark.Chat is an interactive, server-driven workflow application designed to facilitate guided, multi-step conversational experiences using adaptive, real-time communication technologies. The platform leverages ASP.NET Core and SignalR to create dynamic chat interfaces where users progressively navigate through predefined workflows, with each interaction potentially triggering different response paths through branching logic and interactive Adaptive Cards. The application implements a robust conversation state management system using thread-safe concurrent dictionaries, allowing seamless user experience preservation across page refreshes, and provides optional AI integration for handling complex or off-script user queries. Architecturally, the project demonstrates a clean separation of concerns with distinct layers for controllers, services, and models, enabling extensible workflow definition through JSON configuration and supporting potential enterprise-grade conversational interface scenarios such as customer support, onboarding processes, or interactive questionnaires. What distinguishes PromptSpark.Chat is its flexible, lightweight approach to creating structured conversational experiences that can dynamically adapt to user inputs while maintaining server-side continuity and supporting potential machine learning or AI-enhanced interaction models.
+PromptSpark.Chat is an interactive, real-time workflow management application built using ASP.NET Core and SignalR that enables users to navigate multi-step conversational processes through an adaptive, dynamic chat interface. The application leverages Adaptive Cards and a flexible workflow engine to guide users through configurable, branching conversation paths, with built-in state management using thread-safe concurrent data structures and optional AI integration for handling complex or unanticipated user interactions. The system's architecture emphasizes server-side conversation persistence, real-time communication, and extensible workflow design, allowing developers to create complex interactive scenarios with minimal overhead by defining workflow nodes as JSON configurations. Key technologies include .NET 7+, SignalR for WebSocket communication, and a modular service-based approach that supports potential AI-driven response generation, making it particularly useful for creating guided user experiences like interactive tutorials, customer support flows, or structured information gathering processes. What distinguishes PromptSpark.Chat is its combination of real-time interactivity, flexible workflow definition, and the ability to seamlessly integrate structured user guidance with potential intelligent response mechanisms, targeting developers and organizations seeking to build sophisticated, interactive conversational experiences.
 
 **Created**: 2024-12-31
 **Last Modified**: 2025-04-27
@@ -806,7 +825,9 @@ PromptSpark.Chat is an interactive, server-driven workflow application designed 
 
 **Quality**: ❌ License | ❌ Docs
 
-The SolidSample repository is an educational demonstration project designed to showcase the implementation of SOLID principles in C# software design, specifically created as a companion resource for a Pluralsight course. The repository provides code examples and progressive refactoring techniques that illustrate each of the five SOLID principles: Single Responsibility (SRP), Open-Closed (OCP), Liskov Substitution (LSP), Interface Segregation (ISP), and Dependency Inversion (DIP). Developed using Visual Studio 2019 and primarily written in C#, the project serves as a practical learning tool for developers seeking to understand and apply object-oriented design best practices, with tagged branches representing different stages of principle implementation. The repository is structured to allow developers to follow along with the course, examine incremental improvements in code structure, and learn how to write more maintainable, scalable, and loosely coupled software architectures. By providing concrete code examples and progressive refactoring stages, the project offers a hands-on approach to understanding SOLID principles, making it particularly valuable for intermediate C# developers looking to enhance their software design skills and architectural understanding.
+Technical Summary:
+
+The SolidSample repository is an educational C# project designed to demonstrate and illustrate the SOLID principles of object-oriented design, specifically tailored for developers learning software design best practices. Created by Steve "ardalis" Smith as a companion to a Pluralsight course, the repository provides a progressive code example that showcases how to refactor and improve software architecture by applying Single Responsibility (SRP), Open-Closed (OCP), Liskov Substitution (LSP), Interface Segregation (ISP), and Dependency Inversion (DIP) principles. The project is structured with multiple tagged branches corresponding to different stages of SOLID principle implementation, allowing developers to follow along and understand incremental improvements in code design. Implemented using .NET and Visual Studio, the repository serves as both a learning resource and a reference implementation for writing more maintainable, extensible, and modular C# applications. Its primary value lies in providing a practical, step-by-step exploration of SOLID principles, making complex software design concepts more accessible to developers seeking to enhance their object-oriented programming skills.
 
 **Created**: 2020-07-02
 **Last Modified**: 2024-12-24
@@ -821,9 +842,7 @@ The SolidSample repository is an educational demonstration project designed to s
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary of SpotifyAPI-NET:
-
-SpotifyAPI-NET is a robust, open-source .NET library that provides a comprehensive, type-safe interface for interacting with the Spotify Web API, enabling developers to programmatically access and manipulate Spotify music data and user features across multiple .NET platforms. The library supports extensive functionality including querying music catalog information, managing user playlists, controlling playback, and implementing OAuth2 authentication, with support for over 74 API endpoints and compatibility with .NET Standard 2.x (.NET Framework, UWP, .NET Core, Xamarin.Forms). Its modular architecture allows for flexible implementation, supporting custom HTTP clients, logging, retry handling, and proxy configurations, making it a versatile solution for developers building music-related applications or integrating Spotify functionality into .NET projects. The library distinguishes itself through its strongly-typed response models, comprehensive OAuth support, and cross-platform compatibility, providing developers with a clean, abstracted approach to interacting with the Spotify Web API. Primarily targeted at .NET developers, software engineers, and music application builders, SpotifyAPI-NET simplifies complex API interactions and reduces boilerplate code required for Spotify integration, enabling rapid development of music-related software solutions.
+SpotifyAPI-NET is a comprehensive, open-source .NET library designed to provide seamless interaction with the Spotify Web API, enabling developers to programmatically access and manipulate Spotify music data and user-related content across multiple platforms. The library supports a wide range of functionalities, including querying Spotify catalog information (tracks, albums, playlists), managing user libraries, controlling music playback, and offering robust authentication mechanisms through OAuth2 for both web and CLI applications. Architecturally, it leverages a modular design with strong typing, supports .NET Standard 2.x, and provides extensive features like custom HTTP client integration, logging, retry handlers, proxy support, and pagination across more than 74 API endpoints. Its versatility is enhanced by compatibility with multiple .NET platforms including .NET Framework, UWP, .NET Core, and Xamarin.Forms, making it a flexible solution for developers looking to build music-related applications or integrate Spotify functionality into their .NET projects. The library distinguishes itself through its comprehensive type-safe implementation, ease of use, and extensive documentation, catering to developers seeking a robust, well-maintained Spotify API wrapper. Ideal for music application developers, data analysts, and software engineers wanting to build interactive music experiences or extract insights from Spotify's extensive music ecosystem.
 
 **Created**: 2022-10-25
 **Last Modified**: 2024-12-03
@@ -838,9 +857,9 @@ SpotifyAPI-NET is a robust, open-source .NET library that provides a comprehensi
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a comprehensive technical summary for the startbootstrap-modern-business repository:
+Technical Summary:
 
-This is a sophisticated, production-ready Bootstrap 5 website template designed for small businesses, featuring a comprehensive, modern web application architecture built with Pug, JavaScript, and SCSS. The project demonstrates advanced web development practices by offering a fully responsive, accessible, and performance-optimized single-page application with progressive web app (PWA) capabilities, including features like light/dark mode, an interactive theme customizer, dynamic content sections, and built-in SEO optimization. The repository leverages modern build automation techniques with npm scripts, implementing robust linting, minification, and testing workflows that support continuous integration and deployment, while providing a modular, component-based design using Pug mixins for reusable UI elements. Key technological strengths include Bootstrap 5 integration, automated asset management, accessibility enhancements, and a developer-friendly configuration that supports easy customization and extension for small business web presence needs. What makes this project particularly noteworthy is its holistic approach to web development, combining design best practices, performance optimization, and comprehensive developer tooling into a single, well-structured template that serves as both a practical website solution and a learning resource for modern web development techniques.
+The startbootstrap-modern-business repository is a sophisticated, production-ready Bootstrap 5 website template designed for small businesses, featuring a comprehensive, accessibility-focused, and performance-optimized web application built with Pug, Node.js, and modern front-end technologies. The project demonstrates advanced web development practices by incorporating responsive design, progressive web app (PWA) capabilities, dynamic theming, and built-in automation for build processes, linting, and testing. Leveraging Bootstrap 5's component system and design tokens, the template provides a flexible, customizable framework with features like light/dark mode, interactive theme customization, accessibility widgets, and SEO-friendly meta configurations. The architecture emphasizes modular development through reusable Pug mixins, automated build scripts, and a robust CI/CD-ready structure that generates minified production assets, service workers, and comprehensive metadata. What distinguishes this template is its holistic approach to web development, combining aesthetic design, performance optimization, accessibility considerations, and developer-friendly tooling into a single, cohesive solution targeted at small businesses and independent developers seeking a modern, professional web presence. The project serves as both a practical website template and an educational reference for implementing contemporary web development best practices.
 
 **Created**: 2020-07-08
 **Last Modified**: 2025-05-13
@@ -857,7 +876,7 @@ This is a sophisticated, production-ready Bootstrap 5 website template designed 
 
 Technical Summary:
 
-The Supermarket API is a sophisticated RESTful web service built with ASP.NET Core and .NET 8, demonstrating a clean, decoupled architecture for creating maintainable API endpoints for a supermarket management system. The project leverages modern .NET technologies including Entity Framework Core for data access, AutoMapper for object mapping, and Swashbuckle for API documentation, implementing a repository pattern with dependency injection and supporting features like pagination, filtering, and in-memory database testing. Key architectural strengths include modular design, explicit use of record types for immutable data transfer objects, standardized routing, and built-in validation through data annotations and the ApiController attribute. The API serves as an educational reference for developers looking to implement best practices in API development, with a focus on clean code, separation of concerns, and leveraging the latest .NET framework capabilities. While primarily a learning resource, the project provides a robust template for building scalable, maintainable web APIs with comprehensive documentation and Docker support, making it valuable for developers seeking a modern, well-structured ASP.NET Core API example.
+The Supermarket-API is a RESTful ASP.NET Core web service demonstrating best practices for building maintainable and scalable backend APIs using modern .NET technologies. The project provides a comprehensive example of a supermarket inventory management system, showcasing advanced architectural patterns like repository, dependency injection, and service-oriented design with clean, decoupled code structures. Built with .NET 8, Entity Framework Core, and leveraging tools like AutoMapper and Swashbuckle, the API supports operations for managing product categories, implementing features such as pagination, filtering, and comprehensive Swagger documentation. The repository serves as an educational reference for developers learning API development, featuring evolving implementations across different .NET versions and emphasizing clean coding practices, immutable record types, and standardized API routing. Its primary value lies in providing a real-world, production-ready template for building enterprise-grade RESTful services with a focus on modularity, testability, and following contemporary .NET development conventions.
 
 **Created**: 2020-03-30
 **Last Modified**: 2024-08-05
@@ -874,7 +893,7 @@ The Supermarket API is a sophisticated RESTful web service built with ASP.NET Co
 
 Technical Summary:
 
-WebSpark.PrismSpark is a high-performance C# library for syntax highlighting, providing a .NET-native implementation inspired by the popular PrismJS JavaScript library, with comprehensive support for tokenizing and styling code across multiple programming languages. The library offers an extensive feature set including a plugin system, advanced theming capabilities, and robust language grammar support, enabling developers to easily integrate syntax highlighting into .NET web applications using dependency injection and flexible configuration options. Architecturally, the project employs a modular design with interfaces like `IHighlighter`, `IPlugin`, and `ITheme`, supporting extensibility through hooks, custom theme generation, and context-aware processing, which allows for sophisticated code rendering with performance optimizations like async processing and caching. Unique aspects include its domain-specific language (DSL) for theme definition, comprehensive language support (20+ languages), and seamless integration with ASP.NET Core MVC, making it a powerful alternative to existing syntax highlighting solutions in the .NET ecosystem. The library targets web developers, documentation generators, code editors, and technical content platforms seeking a robust, customizable syntax highlighting solution with strong typing and native .NET performance. By providing a clean, extensible API and supporting advanced use cases like line number rendering, custom class prefixing, and theme management, WebSpark.PrismSpark offers a comprehensive solution for code presentation and analysis in .NET applications.
+WebSpark.PrismSpark is a comprehensive C# and .NET library for advanced code syntax highlighting, offering a robust port of the popular PrismJS JavaScript library with enhanced performance and extensibility. The project provides a sophisticated tokenization and highlighting system supporting over 20 programming languages, featuring a flexible plugin architecture, dynamic theming capabilities, and seamless integration with ASP.NET web frameworks. Architecturally, the library embraces dependency injection, supports async processing, and implements an event-driven hook system that allows for extensive customization through interfaces like `IHighlighter`, `IPlugin`, and `ITheme`. Unique strengths include its modular design, performance optimizations like caching, and a rich theming system that enables developers to generate custom syntax highlighting styles with fine-grained control over token appearances. Primarily targeting .NET developers, web applications, documentation platforms, and code presentation tools, PrismSpark provides a powerful, extensible solution for rendering beautifully highlighted source code across multiple programming languages with minimal configuration overhead.
 
 **Created**: 2025-05-27
 **Last Modified**: 2025-06-02
@@ -889,7 +908,7 @@ WebSpark.PrismSpark is a high-performance C# library for syntax highlighting, pr
 
 **Quality**: ❌ License | ✅ Docs
 
-WebSpark.SharedKernel is a comprehensive .NET library designed to simplify Domain-Driven Design (DDD) implementation by providing robust, type-safe abstractions for building clean, maintainable enterprise applications. The library offers a rich set of base classes and utilities for creating entities, value objects, domain events, and repository patterns, with strong support for CQRS and MediatR integration. Implemented entirely in C#, it provides generic base classes for entities with flexible ID support, a sophisticated value object implementation with structural equality, and a complete domain event infrastructure that enables precise domain modeling and event-driven architectures. The library stands out by offering a holistic approach to DDD, providing not just abstract interfaces but concrete, production-ready implementations that address common challenges in complex enterprise software development, making it particularly valuable for developers building sophisticated, domain-centric .NET applications with clean architectural principles. Key technologies include .NET, MediatR, and WebSpark.Specification, with a focus on type safety, extensibility, and adherence to DDD best practices.
+WebSpark.SharedKernel is a comprehensive .NET library designed to implement Domain-Driven Design (DDD) patterns, providing a robust set of abstractions and base classes for building clean, maintainable enterprise applications. The library offers type-safe entity base classes, value object implementations, domain event infrastructure, and repository pattern abstractions, with first-class support for CQRS and MediatR integration. Built primarily in C#, it leverages modern .NET features to simplify complex architectural patterns, including generic entity base classes, sophisticated event dispatching, and strongly-typed repository interfaces that support multiple ID types and specification-based querying. The library is particularly notable for its flexible design, which allows developers to easily create aggregate roots, value objects, and domain events while providing comprehensive logging, guard clauses, and integration with popular .NET patterns and frameworks. Targeted at enterprise developers and architects building complex domain-driven applications, WebSpark.SharedKernel aims to reduce boilerplate code and enforce best practices in software design by providing a standardized, extensible foundation for building robust .NET applications.
 
 **Created**: 2024-07-25
 **Last Modified**: 2025-05-26
@@ -904,9 +923,9 @@ WebSpark.SharedKernel is a comprehensive .NET library designed to simplify Domai
 
 **Quality**: ❌ License | ❌ Docs
 
-Here's a comprehensive technical summary for the Yelp.Api repository:
+Here's a comprehensive technical summary of the Yelp.Api repository:
 
-The Yelp.Api is a .NET 6 compatible C# class library that provides a streamlined, developer-friendly wrapper for Yelp's Fusion API (v3), enabling programmatic access to comprehensive local business information and user reviews across 32 countries. The library simplifies API interactions by abstracting complex HTTP requests and offering intuitive methods like `SearchBusinessesAllAsync()`, which allows developers to perform geospatial business searches with minimal configuration using either simple string parameters or a more robust `SearchRequest` object with advanced filtering options like latitude, longitude, maximum results, and business availability. Architecturally, the library follows a clean, object-oriented design with explicit separation of concerns, utilizing async/await patterns for non-blocking API calls and providing strongly-typed models that map directly to Yelp's API response structures. Its primary value proposition lies in dramatically reducing boilerplate code and cognitive overhead for .NET developers seeking to integrate local business data, with built-in support for precise location-based queries, flexible search parameters, and seamless authentication via API keys. Target users include software developers building location-based applications, recommendation systems, travel platforms, or any .NET project requiring rich, real-time local business intelligence with minimal implementation complexity.
+The Yelp.Api is a lightweight C# class library that provides a clean, intuitive wrapper for Yelp's Fusion API (v3), enabling .NET developers to easily integrate local business search and review functionality into their applications. The library supports robust geolocation-based business searches with flexible parameters like latitude/longitude, search term, maximum results, and filtering options such as open now status, demonstrating a developer-friendly approach to consuming the Yelp API. Built for .NET 6, the library abstracts the complexity of direct API interactions, offering a simple client-based interface that allows developers to quickly retrieve business information and reviews across 32 countries with minimal configuration. The implementation follows a straightforward async programming model, supporting modern .NET development patterns and providing type-safe models for search requests and responses. What makes this library particularly valuable is its streamlined authentication process, which requires only an API key, and its ability to handle complex search scenarios through a flexible `SearchParameters` object. The primary target users are .NET developers building location-based applications, such as restaurant finders, travel guides, or local service recommendation platforms that require comprehensive business data.
 
 **Created**: 2022-08-10
 **Last Modified**: 2025-05-04
@@ -918,10 +937,10 @@ The Yelp.Api is a .NET 6 compatible C# class library that provides a streamlined
 
 ## Report Metadata
 
-- **Generation Time**: 810.3 seconds
+- **Generation Time**: 327.3 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 103,037
+- **Total AI Tokens**: 101,878
 - **Success Rate**: 100.0%
 
 ### Data Sources
@@ -939,4 +958,4 @@ The Yelp.Api is a .NET 6 compatible C# class library that provides a streamlined
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2025-12-30*
+*Last updated: 2026-01-02*

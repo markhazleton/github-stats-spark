@@ -5,6 +5,17 @@ import LoadingState from '@/components/Common/LoadingState'
 import FilterControls from '@/components/Common/FilterControls'
 import { useTableSort } from '@/hooks/useTableSort'
 import { extractLanguages } from '@/services/dataService'
+import VisualizationControls from '@/components/Visualizations/VisualizationControls'
+import BarChart from '@/components/Visualizations/BarChart'
+import LineGraph from '@/components/Visualizations/LineGraph'
+import ScatterPlot from '@/components/Visualizations/ScatterPlot'
+import RepositoryDetail from '@/components/DrillDown/RepositoryDetail'
+import { 
+  transformForBarChart, 
+  transformForLineGraph, 
+  transformForScatterPlot,
+  getMetricLabel 
+} from '@/services/metricsCalculator'
 
 /**
  * GitHub Stats Spark Dashboard - Root App Component
@@ -28,6 +39,10 @@ function App() {
   const [currentView, setCurrentView] = useState('table') // 'table', 'visualizations', 'comparison'
   const [selectedRepos, setSelectedRepos] = useState([]) // For comparison view
   const [detailModalRepo, setDetailModalRepo] = useState(null) // For drill-down
+
+  // Visualization state
+  const [chartType, setChartType] = useState('bar') // 'bar', 'line', 'scatter'
+  const [selectedMetric, setSelectedMetric] = useState('totalCommits')
 
   // Table sorting and filtering using useTableSort hook
   const {
@@ -75,12 +90,69 @@ function App() {
   }
 
   /**
+   * Handle chart data point click for drill-down
+   * @param {Object} data - Chart data point
+   */
+  const handleChartClick = (data) => {
+    if (data?.fullData) {
+      setDetailModalRepo(data.fullData)
+    }
+  }
+
+  /**
    * Get available languages for filter dropdown
    */
   const availableLanguages = useMemo(() => {
     if (!data?.repositories) return []
     return extractLanguages(data.repositories)
   }, [data?.repositories])
+
+  /**
+   * Prepare chart data based on selected chart type and metric
+   */
+  const chartData = useMemo(() => {
+    if (!processedRepositories || processedRepositories.length === 0) return []
+
+    switch (chartType) {
+      case 'bar':
+        return transformForBarChart(processedRepositories, selectedMetric)
+      case 'line':
+        return transformForLineGraph(processedRepositories, selectedMetric)
+      case 'scatter':
+        return transformForScatterPlot(processedRepositories)
+      default:
+        return []
+    }
+  }, [processedRepositories, chartType, selectedMetric])
+
+  /**
+   * Get human-readable metric label
+   */
+  const metricLabel = useMemo(() => {
+    return getMetricLabel(selectedMetric)
+  }, [selectedMetric])
+
+  /**
+   * Navigate to next repository in detail view
+   */
+  const handleNextRepo = () => {
+    if (!detailModalRepo || !processedRepositories) return
+    const currentIndex = processedRepositories.findIndex(r => r.name === detailModalRepo.name)
+    if (currentIndex < processedRepositories.length - 1) {
+      setDetailModalRepo(processedRepositories[currentIndex + 1])
+    }
+  }
+
+  /**
+   * Navigate to previous repository in detail view
+   */
+  const handlePreviousRepo = () => {
+    if (!detailModalRepo || !processedRepositories) return
+    const currentIndex = processedRepositories.findIndex(r => r.name === detailModalRepo.name)
+    if (currentIndex > 0) {
+      setDetailModalRepo(processedRepositories[currentIndex - 1])
+    }
+  }
 
   return (
     <div className="app">
@@ -178,14 +250,59 @@ function App() {
                 )}
 
                 {currentView === 'visualizations' && (
-                  <div>
-                    <h2>Data Visualizations</h2>
-                    <p className="text-muted">Interactive charts and graphs</p>
-                    {/* Visualization components will be rendered here in US3 */}
-                    <div className="card mt-lg">
-                      <p className="text-center text-muted">
-                        Visualization components will be implemented in User Story 3
+                  <div className="view-transition">
+                    <div className="mb-lg">
+                      <h2>Data Visualizations</h2>
+                      <p className="text-muted">
+                        Showing {processedRepositories.length} repositories
+                        {filterLanguage && ` filtered by ${filterLanguage}`}
                       </p>
+                    </div>
+
+                    {/* Filter Controls - synchronize with table view */}
+                    {availableLanguages.length > 0 && (
+                      <FilterControls
+                        languages={availableLanguages}
+                        selectedLanguage={filterLanguage}
+                        onFilterChange={handleFilterChange}
+                        onClearFilter={clearFilter}
+                      />
+                    )}
+
+                    {/* Visualization Controls */}
+                    <VisualizationControls
+                      chartType={chartType}
+                      onChartTypeChange={setChartType}
+                      selectedMetric={selectedMetric}
+                      onMetricChange={setSelectedMetric}
+                    />
+
+                    {/* Chart Rendering */}
+                    <div className="chart-wrapper">
+                      {chartType === 'bar' && (
+                        <BarChart
+                          data={chartData}
+                          metricLabel={metricLabel}
+                          onBarClick={handleChartClick}
+                        />
+                      )}
+
+                      {chartType === 'line' && (
+                        <LineGraph
+                          data={chartData}
+                          metricLabel={metricLabel}
+                          onPointClick={handleChartClick}
+                        />
+                      )}
+
+                      {chartType === 'scatter' && (
+                        <ScatterPlot
+                          data={chartData}
+                          xAxisLabel="Total Commits"
+                          yAxisLabel="Average Commit Size"
+                          onPointClick={handleChartClick}
+                        />
+                      )}
                     </div>
                   </div>
                 )}
@@ -231,19 +348,14 @@ function App() {
         </div>
       </footer>
 
-      {/* Detail Modal (for drill-down - will be implemented in US5) */}
+      {/* Detail Modal (for drill-down) */}
       {detailModalRepo && (
-        <div className="modal-backdrop" onClick={closeDetailModal}>
-          <div className="modal" onClick={(e) => e.stopPropagation()}>
-            <div className="card">
-              <h3>Repository Details</h3>
-              <p>Detail modal for {detailModalRepo.name} will be implemented in User Story 5</p>
-              <button className="btn mt-md" onClick={closeDetailModal}>
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
+        <RepositoryDetail
+          repository={detailModalRepo}
+          onClose={closeDetailModal}
+          onNext={handleNextRepo}
+          onPrevious={handlePreviousRepo}
+        />
       )}
     </div>
   )

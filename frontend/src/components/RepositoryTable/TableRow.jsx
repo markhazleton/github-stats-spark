@@ -95,8 +95,17 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
   }
 
   const language = repository.language || 'Unknown'
-  const largestCommit = formatCommitMetric(repository.largest_commit)
-  const smallestCommit = formatCommitMetric(repository.smallest_commit)
+  
+  // Extract commit data from nested structure (unified data format)
+  const commitHistory = repository.commit_history || {}
+  const commitMetrics = repository.commit_metrics || {}
+  const totalCommits = commitHistory.total_commits || repository.commit_count || 0
+  const firstCommitDate = commitHistory.first_commit_date || repository.first_commit_date
+  const lastCommitDate = commitHistory.last_commit_date || repository.last_commit_date
+  const avgCommitSize = commitMetrics.avg_size || repository.avg_commit_size
+  
+  const largestCommit = formatCommitMetric(commitMetrics.largest_commit || repository.largest_commit)
+  const smallestCommit = formatCommitMetric(commitMetrics.smallest_commit || repository.smallest_commit)
 
   return (
     <tr
@@ -116,15 +125,13 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
               className={styles.checkbox}
             />
           )}
-          <a
-            href={repository.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.repoLink}
-            onClick={(e) => e.stopPropagation()}
+          <button
+            className={styles.repoNameButton}
+            onClick={() => onClick && onClick(repository)}
+            title={`View details for ${repository.name}`}
           >
             {repository.name}
-          </a>
+          </button>
         </div>
       </td>
 
@@ -142,23 +149,23 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
 
       {/* First Commit Date */}
       <td className={styles.tableCell}>
-        {formatDate(repository.first_commit_date)}
+        {formatDate(firstCommitDate)}
       </td>
 
       {/* Last Commit Date */}
       <td className={styles.tableCell}>
-        {formatDate(repository.last_commit_date)}
+        {formatDate(lastCommitDate)}
       </td>
 
       {/* Total Commits */}
       <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
-        {repository.commit_count?.toLocaleString() || 0}
+        {totalCommits.toLocaleString()}
       </td>
 
       {/* Average Commit Size */}
       <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
         <Tooltip content="Average size = files changed + lines added + lines deleted">
-          {formatSize(repository.avg_commit_size)}
+          {formatSize(avgCommitSize)}
         </Tooltip>
       </td>
 

@@ -40,6 +40,11 @@
   --chart-color-3: #6f42c1;
   --chart-color-4: #fd8c73;
   --chart-color-5: #ffd33d;
+  --chart-color-6: #ea4a5a;
+  --chart-color-7: #1b7cd3;
+  --chart-color-8: #79589f;
+  --chart-color-9: #f97583;
+  --chart-color-10: #ffdf5d;
 
   /* Typography */
   --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -485,4 +490,146 @@ code, pre {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* =========================================
+   View Transitions
+   ========================================= */
+
+/* Smooth view switching for dashboard views */
+.view-transition {
+  animation: fadeInSlide var(--transition-base) ease-out;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Chart wrapper transitions */
+.chart-wrapper {
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.chart-wrapper.loading {
+  opacity: 0.5;
+  transform: scale(0.98);
+}
+
+/* Smooth transitions for table/visualization switching */
+.main > .container > div {
+  transition: opacity var(--transition-base) ease-in-out;
+}
+
+/* Filter and control transitions */
+.filter-controls,
+.visualization-controls {
+  transition: all var(--transition-base) ease-in-out;
+}
+
+/* Chart element transitions */
+.recharts-wrapper {
+  transition: opacity var(--transition-base) ease-in-out;
+}
+
+/* Hover effects for interactive elements */
+.recharts-bar-rectangle,
+.recharts-line-dot,
+.recharts-scatter-symbol {
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+/* =========================================
+   Modal & Overlay Styles
+   ========================================= */
+
+/* Modal backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-index-modal-backdrop);
+  animation: fadeIn var(--transition-base) ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal container */
+.modal {
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp var(--transition-base) ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   Chart-Specific Enhancements
+   ========================================= */
+
+/* Ensure charts are readable with proper spacing */
+.recharts-surface {
+  font-family: var(--font-family-base);
+}
+
+/* Tooltip enhancements */
+.recharts-default-tooltip {
+  background-color: var(--color-surface) !important;
+  border: 2px solid var(--color-primary) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Legend styling */
+.recharts-legend-wrapper {
+  padding-top: var(--spacing-md) !important;
+}
+
+/* =========================================
+   Performance Optimizations
+   ========================================= */
+
+/* Hardware acceleration for animations */
+.view-transition,
+.chart-wrapper,
+.modal-backdrop,
+.modal {
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .view-transition,
+  .chart-wrapper,
+  .modal-backdrop,
+  .modal {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

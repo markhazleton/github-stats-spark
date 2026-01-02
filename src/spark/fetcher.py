@@ -179,7 +179,7 @@ class GitHubFetcher:
         self,
         username: str,
         repo_name: str,
-        max_commits: int = 100,
+        max_commits: int = 200,
     ) -> List[Dict[str, Any]]:
         """Fetch commits for a repository.
 
@@ -226,7 +226,7 @@ class GitHubFetcher:
         self,
         username: str,
         repo_name: str,
-        max_commits: int = 100,
+        max_commits: int = 200,
     ) -> List[Dict[str, Any]]:
         """Fetch commits with detailed statistics for dashboard metrics.
 

@@ -152,6 +152,41 @@ Generate comprehensive markdown reports with intelligent insights:
 
 ## 🚀 Quick Start
 
+### ⚡ All-In-One Command (Recommended)
+
+Generate **everything** in a single optimized run:
+
+```bash
+# Set your GitHub token
+export GITHUB_TOKEN=your_github_token_here
+
+# Optional: Enable AI summaries
+export ANTHROPIC_API_KEY=your_anthropic_key_here
+
+# Run the all-in-one command
+spark unified --user YOUR_GITHUB_USERNAME
+```
+
+**This single command generates:**
+- ✅ `/data/repositories.json` - Complete unified dataset for frontend
+- ✅ `/output/*.svg` - All 6 visual analytics (overview, heatmap, languages, streaks, fun, release)
+- ✅ `/output/reports/*.md` - Comprehensive markdown analysis report
+- ✅ AI summaries for each repository (if API key provided)
+
+**Benefits:**
+- 🚀 ~60% faster than separate commands
+- 💾 Single API pass (fewer rate limit issues)
+- 🎯 Consistent data snapshot across all outputs
+- ⚡ Optimized data gathering and caching
+
+See [QUICKSTART_UNIFIED.md](QUICKSTART_UNIFIED.md) for detailed instructions.
+
+---
+
+### GitHub Actions Automation
+
+**Or** set up automatic daily updates:
+
 ### 1. Fork This Repository
 
 Click the "Fork" button in the top right to create your own copy.

@@ -233,6 +233,141 @@ export function findExtreme(repositories, field, type = 'max') {
   }, null)
 }
 
+/**
+ * Transform repository data for bar chart visualization
+ *
+ * @param {Array} repositories - Array of repository objects
+ * @param {string} metricId - Metric to display (e.g., 'totalCommits', 'avgCommitSize')
+ * @returns {Array} Chart data array with {name, value, language} objects
+ *
+ * @example
+ * transformForBarChart(repos, 'totalCommits')
+ * // Returns: [{ name: 'repo1', value: 123, language: 'JavaScript' }, ...]
+ */
+export function transformForBarChart(repositories, metricId) {
+  if (!Array.isArray(repositories)) return []
+
+  return repositories
+    .map((repo) => ({
+      name: repo.name || 'Unknown',
+      value: getMetricValue(repo, metricId),
+      language: repo.language || 'Unknown',
+      fullData: repo,
+    }))
+    .filter((item) => item.value != null)
+    .sort((a, b) => b.value - a.value) // Sort descending by value
+    .slice(0, 50) // Limit to top 50 for horizontal bar chart
+}
+
+/**
+ * Transform repository data for line graph visualization
+ *
+ * @param {Array} repositories - Array of repository objects
+ * @param {string} metricId - Metric to display
+ * @returns {Array} Chart data array with {name, value, date} objects
+ *
+ * @example
+ * transformForLineGraph(repos, 'lastCommitDate')
+ * // Returns: [{ name: 'repo1', value: timestamp, date: '2024-01-15' }, ...]
+ */
+export function transformForLineGraph(repositories, metricId) {
+  if (!Array.isArray(repositories)) return []
+
+  const data = repositories
+    .map((repo) => {
+      const value = getMetricValue(repo, metricId)
+      const date = metricId.includes('Date') ? value : repo.lastCommitDate || repo.firstCommitDate
+
+      return {
+        name: repo.name || 'Unknown',
+        value: value,
+        date: date,
+        language: repo.language || 'Unknown',
+        fullData: repo,
+      }
+    })
+    .filter((item) => item.value != null && item.date != null)
+
+  // Sort by date
+  return data.sort((a, b) => {
+    const dateA = new Date(a.date)
+    const dateB = new Date(b.date)
+    return dateA - dateB
+  })
+}
+
+/**
+ * Transform repository data for scatter plot visualization
+ *
+ * @param {Array} repositories - Array of repository objects
+ * @param {string} xMetric - Metric for x-axis (default: 'totalCommits')
+ * @param {string} yMetric - Metric for y-axis (default: 'avgCommitSize')
+ * @returns {Array} Chart data array with {name, x, y, language} objects
+ *
+ * @example
+ * transformForScatterPlot(repos, 'totalCommits', 'avgCommitSize')
+ * // Returns: [{ name: 'repo1', x: 123, y: 45.6, language: 'JS' }, ...]
+ */
+export function transformForScatterPlot(repositories, xMetric = 'totalCommits', yMetric = 'avgCommitSize') {
+  if (!Array.isArray(repositories)) return []
+
+  return repositories
+    .map((repo) => ({
+      name: repo.name || 'Unknown',
+      x: getMetricValue(repo, xMetric),
+      y: getMetricValue(repo, yMetric),
+      language: repo.language || 'Unknown',
+      fullData: repo,
+    }))
+    .filter((item) => item.x != null && item.y != null && !isNaN(item.x) && !isNaN(item.y))
+}
+
+/**
+ * Get metric value from repository object by metric ID
+ *
+ * @param {Object} repo - Repository object
+ * @param {string} metricId - Metric identifier
+ * @returns {number|string|null} Metric value
+ */
+function getMetricValue(repo, metricId) {
+  const metricMap = {
+    totalCommits: repo.totalCommits || repo.commit_count || 0,
+    avgCommitSize: repo.avgCommitSize || repo.avg_commit_size || 0,
+    largestCommit: repo.largestCommit || repo.largest_commit || 0,
+    smallestCommit: repo.smallestCommit || repo.smallest_commit || 0,
+    firstCommitDate: repo.firstCommitDate || repo.first_commit_date,
+    lastCommitDate: repo.lastCommitDate || repo.last_commit_date,
+  }
+
+  const value = metricMap[metricId]
+  
+  // For date metrics, return timestamp for chart calculations
+  if (metricId.includes('Date') && value) {
+    return new Date(value).getTime()
+  }
+  
+  return value
+}
+
+/**
+ * Get human-readable label for metric ID
+ *
+ * @param {string} metricId - Metric identifier
+ * @returns {string} Human-readable label
+ */
+export function getMetricLabel(metricId) {
+  const labels = {
+    totalCommits: 'Total Commits',
+    avgCommitSize: 'Average Commit Size',
+    largestCommit: 'Largest Commit',
+    smallestCommit: 'Smallest Commit',
+    firstCommitDate: 'First Commit Date',
+    lastCommitDate: 'Last Commit Date',
+  }
+
+  return labels[metricId] || metricId
+}
+
 export default {
   formatDate,
   formatCommitSize,
@@ -242,4 +377,8 @@ export default {
   groupByLanguage,
   calculateAverage,
   findExtreme,
+  transformForBarChart,
+  transformForLineGraph,
+  transformForScatterPlot,
+  getMetricLabel,
 }
