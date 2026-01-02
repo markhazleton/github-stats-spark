@@ -1,0 +1,549 @@
+================================================================================
+                    STATS SPARK - DASHBOARD DATA FLOW
+================================================================================
+
+PHASE 1: GITHUB ACTIONS WORKFLOW EXECUTION
+================================================================================
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│                         GitHub Actions Runner                             │
+│                        (ubuntu-latest, Python 3.11)                        │
+└────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│                                                                            │
+│  1. SETUP                                                                 │
+│  ├─ Checkout repository (actions/checkout@v4)                            │
+│  ├─ Install Python 3.11 (actions/setup-python@v5)                        │
+│  └─ Install dependencies (pip install -r requirements.txt)              │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│                                                                            │
+│  2. EXISTING STATS GENERATION (unified_report_workflow.py)               │
+│                                                                            │
+│  ┌────────────────────────────────────────────────────────────────────┐  │
+│  │ Step 2a: Data Fetching & Processing                               │  │
+│  │                                                                    │  │
+│  │  Input from APIs:                                                │  │
+│  │  ├─ GitHub API (PyGithub)                                       │  │
+│  │  │  ├─ User repos, commits, stars, etc.                        │  │
+│  │  │  └─ Contributor info                                        │  │
+│  │  │                                                              │  │
+│  │  └─ Anthropic Claude API (anthropic)                          │  │
+│  │     ├─ Repository summaries                                   │  │
+│  │     └─ Developer profile insights                            │  │
+│  │                                                                │  │
+│  │  Output: Internal Python Models                               │  │
+│  │  ├─ UserProfile                                               │  │
+│  │  ├─ Repository[]                                              │  │
+│  │  ├─ CommitHistory[]                                           │  │
+│  │  ├─ TechnologyStack[]                                         │  │
+│  │  └─ RepositorySummary[]                                       │  │
+│  └────────────────────────────────────────────────────────────────────┘  │
+│                                    ↓                                      │
+│  ┌────────────────────────────────────────────────────────────────────┐  │
+│  │ Step 2b: Analysis & Scoring (ranker.py)                           │  │
+│  │                                                                    │  │
+│  │  Composite Scoring:                                              │  │
+│  │  ├─ Popularity: 30% (stars, forks)                              │  │
+│  │  ├─ Activity: 45% (recent commits)                              │  │
+│  │  └─ Health: 25% (documentation, license)                       │  │
+│  │                                                                    │  │
+│  │  Output: Ranked RepositoryAnalysis[] (1-50)                      │  │
+│  └────────────────────────────────────────────────────────────────────┘  │
+│                                    ↓                                      │
+│  ┌────────────────────────────────────────────────────────────────────┐  │
+│  │ Step 2c: SVG Visualization Generation (visualizer.py)            │  │
+│  │                                                                    │  │
+│  │  Outputs:                                                         │  │
+│  │  ├─ /output/overview.svg       (Spark Score + Key metrics)       │  │
+│  │  ├─ /output/heatmap.svg        (Contribution calendar)          │  │
+│  │  ├─ /output/languages.svg      (Language breakdown)             │  │
+│  │  ├─ /output/streaks.svg        (Coding streaks)                 │  │
+│  │  ├─ /output/fun.svg            (Fun statistics & badges)        │  │
+│  │  └─ /output/release.svg        (Release cadence)                │  │
+│  └────────────────────────────────────────────────────────────────────┘  │
+│                                    ↓                                      │
+│  ┌────────────────────────────────────────────────────────────────────┐  │
+│  │ Step 2d: Markdown Report Generation (unified_report_generator.py)│  │
+│  │                                                                    │  │
+│  │  Outputs:                                                         │  │
+│  │  └─ /output/reports/{username}-analysis.md                       │  │
+│  │     ├─ Contains all SVG image references (relative paths)         │  │
+│  │     ├─ Top 50 repository analysis (markdown format)              │  │
+│  │     ├─ Metrics and metadata                                      │  │
+│  │     └─ Footer with data sources                                  │  │
+│  └────────────────────────────────────────────────────────────────────┘  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│                                                                            │
+│  3. [NEW] DASHBOARD GENERATION                                           │
+│                                                                            │
+│  ┌────────────────────────────────────────────────────────────────────┐  │
+│  │ Step 3a: JSON Serialization (serializers/json_exporter.py)       │  │
+│  │                                                                    │  │
+│  │  Input:                                                           │  │
+│  │  └─ UnifiedReport (from step 2b)                                 │  │
+│  │     ├─ username, timestamp, spark_score                         │  │
+│  │     ├─ repositories[] with rankings and scores                  │  │
+│  │     └─ profile data                                             │  │
+│  │                                                                    │  │
+│  │  Transformation:                                                  │  │
+│  │  ├─ Python datetime → ISO 8601 string                           │  │
+│  │  ├─ Complex objects → Flat dictionaries                         │  │
+│  │  └─ Numbers → Formatted strings (optional)                      │  │
+│  │                                                                    │  │
+│  │  Outputs:                                                         │  │
+│  │  ├─ /docs/api/profile.json                                       │  │
+│  │  │  {                                                            │  │
+│  │  │    "username": "markhazleton",                               │  │
+│  │  │    "spark_score": 72,                                        │  │
+│  │  │    "total_repos": 50,                                        │  │
+│  │  │    "generated_at": "2025-01-01T12:00:00Z"                   │  │
+│  │  │  }                                                            │  │
+│  │  │                                                               │  │
+│  │  ├─ /docs/api/repositories.json                                 │  │
+│  │  │  [                                                            │  │
+│  │  │    {                                                          │  │
+│  │  │      "rank": 1,                                              │  │
+│  │  │      "name": "github-stats-spark",                           │  │
+│  │  │      "url": "https://github.com/...",                        │  │
+│  │  │      "score": 95.5,                                          │  │
+│  │  │      "stars": 150,                                           │  │
+│  │  │      "language": "Python",                                   │  │
+│  │  │      "summary": "..."                                        │  │
+│  │  │    }                                                          │  │
+│  │  │  ]                                                            │  │
+│  │  │                                                               │  │
+│  │  └─ /docs/api/stats.json                                        │  │
+│  │     {                                                            │  │
+│  │       "total_commits": 15234,                                  │  │
+│  │       "languages": {...},                                       │  │
+│  │       "activity": {...}                                         │  │
+│  │     }                                                            │  │
+│  │                                                                    │  │
+│  └────────────────────────────────────────────────────────────────────┘  │
+│                                    ↓                                      │
+│  ┌────────────────────────────────────────────────────────────────────┐  │
+│  │ Step 3b: Jinja2 Template Rendering (renderers/dashboard_        │  │
+│  │           renderer.py)                                           │  │
+│  │                                                                    │  │
+│  │  Template Hierarchy:                                             │  │
+│  │  ├─ base.html (master layout)                                   │  │
+│  │  │  ├─ HTML structure, CSS links, JS includes                   │  │
+│  │  │  └─ {% block content %} inheritance point                    │  │
+│  │  │                                                               │  │
+│  │  ├─ dashboard.html                                              │  │
+│  │  │  ├─ {% extends "base.html" %}                               │  │
+│  │  │  ├─ {% include 'components/profile_header.html' %}          │  │
+│  │  │  ├─ {% include 'components/metrics_grid.html' %}            │  │
+│  │  │  ├─ {% include 'components/repositories.html' %}            │  │
+│  │  │  └─ Loops: {% for repo in repositories %} ... {% endfor %} │  │
+│  │  │                                                               │  │
+│  │  ├─ components/header.html (navigation, logo)                  │  │
+│  │  ├─ components/footer.html (copyright, attribution)            │  │
+│  │  ├─ components/profile_header.html (user card)                 │  │
+│  │  ├─ components/spark_score.html (score display)                │  │
+│  │  ├─ components/metrics_grid.html (stat cards)                  │  │
+│  │  └─ components/repositories.html (repo table)                  │  │
+│  │                                                                    │  │
+│  │  Jinja2 Processing:                                              │  │
+│  │  1. Load templates from /src/spark/templates/                   │  │
+│  │  2. Parse JSON data into template context                       │  │
+│  │  3. Execute template logic (loops, conditionals)                │  │
+│  │  4. Apply filters: {{ value|format_number }}, etc.             │  │
+│  │  5. Auto-escape HTML (XSS protection)                           │  │
+│  │  6. Render final HTML string                                    │  │
+│  │                                                                    │  │
+│  │  Outputs:                                                         │  │
+│  │  ├─ /docs/index.html (rendered from dashboard.html)            │  │
+│  │  ├─ /docs/repos.html (detailed repo listing)                   │  │
+│  │  └─ /docs/404.html (error page)                                │  │
+│  │                                                                    │  │
+│  └────────────────────────────────────────────────────────────────────┘  │
+│                                    ↓                                      │
+│  ┌────────────────────────────────────────────────────────────────────┐  │
+│  │ Step 3c: Asset Management & Optimization                         │  │
+│  │                                                                    │  │
+│  │  CSS Processing:                                                  │  │
+│  │  ├─ Copy: /src/spark/static/css/*.css → /docs/assets/css/      │  │
+│  │  ├─ Minify: dashboard.css → dashboard.min.css                  │  │
+│  │  └─ Concatenate theme variables                                 │  │
+│  │                                                                    │  │
+│  │  JavaScript Processing:                                          │  │
+│  │  ├─ Copy: /src/spark/static/js/*.js → /docs/assets/js/         │  │
+│  │  ├─ Minify: main.js → main.min.js                              │  │
+│  │  └─ Include charting library (chart.min.js)                     │  │
+│  │                                                                    │  │
+│  │  SVG Processing:                                                 │  │
+│  │  ├─ Read: /output/*.svg                                         │  │
+│  │  ├─ Optimize: Remove metadata, unused attributes               │  │
+│  │  ├─ Compress: SVGZ if applicable                               │  │
+│  │  └─ Write: /docs/assets/images/svg/*.svg                       │  │
+│  │                                                                    │  │
+│  │  Outputs:                                                         │  │
+│  │  ├─ /docs/assets/css/                                          │  │
+│  │  │  ├─ dashboard.css                                           │  │
+│  │  │  ├─ dashboard.min.css                                       │  │
+│  │  │  ├─ theme.css                                               │  │
+│  │  │  └─ responsive.css                                          │  │
+│  │  ├─ /docs/assets/js/                                           │  │
+│  │  │  ├─ main.js                                                 │  │
+│  │  │  ├─ main.min.js                                             │  │
+│  │  │  └─ chart.min.js                                            │  │
+│  │  └─ /docs/assets/images/svg/                                   │  │
+│  │     ├─ overview.svg                                            │  │
+│  │     ├─ heatmap.svg                                             │  │
+│  │     ├─ languages.svg                                           │  │
+│  │     ├─ streaks.svg                                             │  │
+│  │     ├─ fun.svg                                                 │  │
+│  │     └─ release.svg                                             │  │
+│  │                                                                    │  │
+│  └────────────────────────────────────────────────────────────────────┘  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+┌────────────────────────────────────────────────────────────────────────────┐
+│                                                                            │
+│  4. GIT COMMIT & PUSH                                                    │
+│                                                                            │
+│  $ git config user.email "github-actions[bot]@users.noreply..."           │
+│  $ git add output/ docs/                                                  │
+│  $ git commit -m "Update GitHub stats & dashboard [skip ci]"              │
+│  $ git push origin main                                                    │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+PHASE 2: GITHUB PAGES DEPLOYMENT
+================================================================================
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  GitHub Pages Automatic Deployment                                        │
+│                                                                            │
+│  1. GitHub detects push to main branch                                    │
+│  2. Reads settings: Deploy from branch → main / folder → /docs/           │
+│  3. Builds static site (no Jekyll processing needed)                      │
+│  4. Publishes to GitHub Pages URL                                        │
+│                                                                            │
+│  URL: https://markhazleton.github.io/github-stats-spark/                 │
+│                                                                            │
+│  Routes:                                                                   │
+│  ├─ / (root)                  → /docs/index.html (dashboard)             │
+│  ├─ /repos                    → /docs/repos.html                         │
+│  ├─ /api/profile.json         → /docs/api/profile.json                   │
+│  ├─ /api/repositories.json    → /docs/api/repositories.json              │
+│  ├─ /assets/css/dashboard.css → /docs/assets/css/dashboard.css          │
+│  ├─ /assets/js/main.js        → /docs/assets/js/main.js                 │
+│  └─ /assets/images/svg/*.svg  → /docs/assets/images/svg/                │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+                                    ↓
+PHASE 3: USER BROWSER RENDERING
+================================================================================
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│  Client-Side Rendering (Browser)                                         │
+│                                                                            │
+│  Request Flow:                                                             │
+│  1. User navigates to: https://markhazleton.github.io/...                │
+│  2. Browser downloads: /index.html                                        │
+│  3. HTML parser processes:                                                │
+│     ├─ <link href="/assets/css/dashboard.css"> → CSS loaded             │
+│     ├─ <img src="/assets/images/svg/overview.svg"> → SVG inline         │
+│     ├─ <script src="/assets/js/main.js"> → JS loaded                    │
+│     └─ <img src="/api/repositories.json"> (or via fetch)                │
+│  4. JavaScript (main.js) executes:                                        │
+│     ├─ Fetch /api/profile.json                                          │
+│     ├─ Fetch /api/repositories.json                                     │
+│     ├─ Parse JSON data                                                  │
+│     ├─ Render interactive elements (sorting, filtering)                 │
+│     ├─ Initialize charts (chart.min.js)                                 │
+│     └─ Bind event listeners                                             │
+│  5. CSS (dashboard.css) applies:                                          │
+│     ├─ Layout (grid, flexbox)                                           │
+│     ├─ Typography (fonts, colors)                                       │
+│     ├─ Theme (dark/light mode)                                          │
+│     ├─ Responsive design (media queries)                                │
+│     └─ Animations & transitions                                         │
+│  6. Browser renders complete dashboard                                   │
+│                                                                            │
+│  Final DOM Structure:                                                      │
+│  <html>                                                                    │
+│  ├─ <head>                                                               │
+│  │  ├─ <meta charset, viewport>                                         │
+│  │  ├─ <link rel="stylesheet" href="/assets/css/dashboard.css">        │
+│  │  └─ <title>GitHub Stats Dashboard</title>                           │
+│  ├─ <body>                                                               │
+│  │  ├─ <header> (navigation)                                            │
+│  │  ├─ <main>                                                           │
+│  │  │  ├─ <section class="profile">                                    │
+│  │  │  │  ├─ <h1>markhazleton's Dashboard</h1>                        │
+│  │  │  │  ├─ <img src="/assets/images/svg/overview.svg">              │
+│  │  │  │  └─ <div class="spark-score">72/100</div>                    │
+│  │  │  ├─ <section class="metrics">                                    │
+│  │  │  │  ├─ <div class="stat-card">Total Commits: 15234</div>       │
+│  │  │  │  └─ <div class="stat-card">Repositories: 50</div>           │
+│  │  │  └─ <section class="repositories">                               │
+│  │  │     ├─ <table>                                                   │
+│  │  │     │  ├─ <thead> (headers)                                      │
+│  │  │     │  └─ <tbody> (rows from repositories.json)                 │
+│  │  │     └─ <img src="/assets/images/svg/*.svg"> (other visualizations) │
+│  │  └─ <footer> (copyright, links)                                     │
+│  └─ </html>                                                               │
+│                                                                            │
+│  Final Output:                                                             │
+│  ✅ Fully rendered, interactive dashboard                               │
+│  ✅ All SVGs displayed inline                                           │
+│  ✅ Repository data shown in tables/cards                               │
+│  ✅ Theme applied (dark/light)                                          │
+│  ✅ Responsive on all devices                                           │
+│  ✅ Accessible with WCAG AA compliance                                  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+                           DATA FORMAT SUMMARY
+================================================================================
+
+FORMAT 1: PYTHON MODELS (Internal)
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Source: src/spark/models/                                                 │
+│ Used: unified_report_workflow.py → ranker.py → visualizer.py             │
+│                                                                            │
+│ UnifiedReport                                                             │
+│ ├─ username: str                                                         │
+│ ├─ timestamp: datetime                                                   │
+│ ├─ repositories: List[RepositoryAnalysis]                               │
+│ │  ├─ repository: Repository                                            │
+│ │  │  ├─ name: str                                                      │
+│ │  │  ├─ url: str                                                       │
+│ │  │  ├─ stars: int                                                     │
+│ │  │  └─ primary_language: str                                          │
+│ │  ├─ composite_score: float                                            │
+│ │  └─ summary: RepositorySummary                                        │
+│ │     └─ summary: str                                                   │
+│ └─ user_profile: UserProfile                                            │
+│    ├─ spark_score: int                                                  │
+│    └─ languages: Dict[str, float]                                       │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+FORMAT 2: JSON (API)
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Location: docs/api/                                                       │
+│ Used: JavaScript fetch() in main.js                                       │
+│                                                                            │
+│ {                                                                         │
+│   "username": "markhazleton",                                            │
+│   "spark_score": 72,                                                     │
+│   "total_repos": 50,                                                     │
+│   "generated_at": "2025-01-01T12:00:00Z",                               │
+│   "repositories": [                                                      │
+│     {                                                                     │
+│       "rank": 1,                                                        │
+│       "name": "github-stats-spark",                                     │
+│       "url": "https://github.com/markhazleton/github-stats-spark",     │
+│       "score": 95.5,                                                    │
+│       "stars": 150,                                                     │
+│       "language": "Python",                                             │
+│       "summary": "Automated GitHub statistics generator..."             │
+│     }                                                                     │
+│   ]                                                                      │
+│ }                                                                         │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+FORMAT 3: JINJA2 CONTEXT (Template Engine)
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Usage: dashboard.html context dict                                        │
+│ Processing: Jinja2 renders {{ variable }} syntax to HTML                 │
+│                                                                            │
+│ context = {                                                              │
+│     'profile': {                                                         │
+│         'username': 'markhazleton',                                      │
+│         'spark_score': 72,                                               │
+│         'total_repos': 50,                                               │
+│         'generated_at': '2025-01-01T12:00:00Z'                          │
+│     },                                                                    │
+│     'repositories': [                                                    │
+│         {                                                                │
+│             'rank': 1,                                                   │
+│             'name': 'github-stats-spark',                               │
+│             ...                                                          │
+│         }                                                                │
+│     ],                                                                    │
+│     'site': {                                                            │
+│         'title': 'GitHub Stats Dashboard',                              │
+│         'version': '1.0.0'                                              │
+│     }                                                                     │
+│ }                                                                         │
+│                                                                            │
+│ Template Usage:                                                           │
+│ <h1>{{ profile.username }}'s Dashboard</h1>                             │
+│ {% for repo in repositories %}                                          │
+│   <tr>{{ repo.name }}</tr>                                              │
+│ {% endfor %}                                                             │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+FORMAT 4: HTML (Final Output)
+┌────────────────────────────────────────────────────────────────────────────┐
+│ Location: docs/index.html                                                │
+│ Output: Static HTML served by GitHub Pages                               │
+│                                                                            │
+│ <!DOCTYPE html>                                                          │
+│ <html lang="en">                                                         │
+│ <head>                                                                   │
+│   <meta charset="UTF-8">                                                │
+│   <link rel="stylesheet" href="/assets/css/dashboard.css">              │
+│ </head>                                                                  │
+│ <body>                                                                   │
+│   <h1>markhazleton's GitHub Dashboard</h1>                             │
+│   <div class="spark-score">72/100</div>                                 │
+│   <img src="/assets/images/svg/overview.svg" alt="Overview">            │
+│   <table>                                                               │
+│     <tr><td>#1</td><td>github-stats-spark</td><td>95.5</td></tr>       │
+│     ...                                                                  │
+│   </table>                                                               │
+│ </body>                                                                  │
+│ </html>                                                                  │
+│                                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+                         DIRECTORY TREE SUMMARY
+================================================================================
+
+github-stats-spark/
+│
+├── .github/workflows/
+│   └── generate-stats.yml ..................... [MODIFIED] Add dashboard steps
+│
+├── src/spark/
+│   ├── serializers/  .......................... [NEW]
+│   │   ├── __init__.py
+│   │   ├── json_exporter.py .................. Dashboard data → JSON
+│   │   └── encoder.py ........................ Custom JSON encoder
+│   │
+│   ├── renderers/  ........................... [NEW]
+│   │   ├── __init__.py
+│   │   └── dashboard_renderer.py ............. JSON → HTML (Jinja2)
+│   │
+│   ├── orchestrators/  ....................... [NEW]
+│   │   ├── __init__.py
+│   │   └── dashboard_builder.py .............. Orchestrate build pipeline
+│   │
+│   ├── templates/  ........................... [NEW]
+│   │   ├── base.html ......................... Master template
+│   │   ├── dashboard.html .................... Main page
+│   │   ├── repository.html ................... Repo detail page
+│   │   ├── components/
+│   │   │   ├── header.html
+│   │   │   ├── footer.html
+│   │   │   ├── profile_header.html
+│   │   │   ├── metrics_grid.html
+│   │   │   ├── repositories.html
+│   │   │   └── repo_card.html
+│   │   └── macros/
+│   │       ├── cards.j2
+│   │       └── badges.j2
+│   │
+│   ├── static/  ............................. [NEW]
+│   │   ├── css/
+│   │   │   ├── dashboard.css ................ Main styles
+│   │   │   ├── theme.css ................... Theme variables
+│   │   │   └── responsive.css .............. Mobile optimizations
+│   │   └── js/
+│   │       ├── main.js ..................... Dashboard logic
+│   │       └── chart.min.js ................ Charting library
+│   │
+│   ├── cli.py ............................... [MODIFIED] Add dashboard command
+│   ├── unified_report_workflow.py ........... [UNCHANGED]
+│   ├── visualizer.py ........................ [UNCHANGED]
+│   └── ... (other existing modules)
+│
+├── output/
+│   ├── overview.svg ......................... Generated by visualizer
+│   ├── heatmap.svg
+│   ├── languages.svg
+│   ├── streaks.svg
+│   ├── fun.svg
+│   ├── release.svg
+│   └── reports/
+│       └── {username}-analysis.md .......... Generated markdown report
+│
+├── docs/  ................................. [NEW] GitHub Pages root
+│   ├── index.html ........................... Rendered dashboard
+│   ├── repos.html ........................... Repository detail page
+│   ├── 404.html ............................ Custom error page
+│   ├── README.md ........................... Pages documentation
+│   ├── _config.yml ......................... Jekyll config (optional)
+│   │
+│   ├── api/  ............................... [NEW] JSON data endpoints
+│   │   ├── profile.json .................... User profile data
+│   │   ├── repositories.json ............... Repository list
+│   │   └── stats.json ...................... Aggregate stats
+│   │
+│   └── assets/  ............................ [NEW] Static resources
+│       ├── css/
+│       │   ├── dashboard.css .............. Main styles
+│       │   ├── dashboard.min.css ......... Minified
+│       │   ├── theme.css ................. Themes
+│       │   └── responsive.css ............ Mobile
+│       ├── js/
+│       │   ├── main.js ................... Dashboard logic
+│       │   ├── main.min.js .............. Minified
+│       │   └── chart.min.js ............. Charts
+│       └── images/
+│           └── svg/
+│               ├── overview.svg ......... Copied from output/
+│               ├── heatmap.svg
+│               ├── languages.svg
+│               ├── streaks.svg
+│               ├── fun.svg
+│               └── release.svg
+│
+├── docs/architecture/  ..................... [NEW]
+│   ├── DASHBOARD_BUILD_PIPELINE.md ........ This design document
+│   └── DATA_FLOW_DIAGRAM.txt .............. This file
+│
+├── requirements.txt ........................ [MODIFIED] Add jinja2
+└── ... (other project files)
+
+================================================================================
+                         KEY DECISION POINTS
+================================================================================
+
+1. TEMPLATE ENGINE: Jinja2 ✓
+   ├─ Rationale: Best Python integration, clean syntax, large ecosystem
+   ├─ Alternative: Mako (too complex), Chameleon (smaller ecosystem)
+   └─ Dependency: jinja2>=3.0.0 in requirements.txt
+
+2. DEPLOYMENT STRATEGY: /docs folder ✓
+   ├─ Rationale: Simpler, version-controlled, no branch management
+   ├─ Alternative: gh-pages branch (complex, harder to maintain)
+   └─ GitHub Pages Setting: Settings > Pages > Deploy from /docs
+
+3. DATA FLOW: Models → JSON → HTML ✓
+   ├─ Separation of concerns: Serialization, rendering, orchestration
+   ├─ Serializer: DashboardDataExporter (models → JSON)
+   ├─ Renderer: DashboardRenderer (JSON → HTML via Jinja2)
+   └─ Orchestrator: DashboardBuilder (coordinates entire pipeline)
+
+4. WORKFLOW INTEGRATION: Minimal changes ✓
+   ├─ New step: DashboardBuilder.build() after stats generation
+   ├─ New CLI command: spark dashboard
+   ├─ No breaking changes to existing workflow
+   └─ Optional dashboard generation via report_mode input
+
+5. ASSET MANAGEMENT: Copy & optimize ✓
+   ├─ CSS: Copy from src/spark/static/ → docs/assets/css/
+   ├─ JS: Copy from src/spark/static/ → docs/assets/js/
+   ├─ SVG: Copy from output/ → docs/assets/images/svg/ + optimize
+   └─ Minification: Reduce payload size
+
+================================================================================
