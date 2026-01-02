@@ -78,12 +78,21 @@ jobs:
         run: |
           python -m spark.cli analyze --user ${{ github.repository_owner }} --unified --keep-dated --verbose
 
+      - name: Generate dashboard data (JSON)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          echo "Generating dashboard JSON data..."
+          python -m spark.cli generate --user ${{ github.repository_owner }} --dashboard --verbose
+          echo "Dashboard data generated successfully"
+
       - name: Commit generated files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add output/*.svg output/reports/*.md
-          git diff --staged --quiet || git commit -m "Update GitHub statistics [skip ci]"
+          git add output/*.svg output/reports/*.md docs/data/*.json
+          git diff --staged --quiet || git commit -m "Update GitHub statistics and dashboard data [skip ci]"
 
       - name: Push changes
         uses: ad-m/github-push-action@master

@@ -38,6 +38,35 @@ class GitHubFetcher:
         self.cache = cache or APICache()
         self.max_repos = max_repos
 
+    def get_user(self, username: Optional[str] = None) -> Dict[str, Any]:
+        """Get GitHub user information (alias for fetch_user_profile for backwards compatibility).
+
+        Args:
+            username: GitHub username (optional, uses authenticated user if not provided)
+
+        Returns:
+            User profile data dictionary
+        """
+        # If no username provided, get authenticated user
+        if not username:
+            try:
+                user = self.github.get_user()
+                return {
+                    "login": user.login,
+                    "name": user.name or user.login,
+                    "bio": user.bio,
+                    "avatar_url": user.avatar_url,
+                    "html_url": user.html_url,
+                    "public_repos": user.public_repos,
+                    "followers": user.followers,
+                    "following": user.following,
+                }
+            except GithubException as e:
+                self.logger.error(f"Failed to fetch authenticated user", e)
+                raise
+
+        return self.fetch_user_profile(username)
+
     def fetch_user_profile(self, username: str) -> Dict[str, Any]:
         """Fetch GitHub user profile information.
 
@@ -59,12 +88,15 @@ class GitHubFetcher:
             user = self.github.get_user(username)
 
             profile_data = {
+                "login": user.login,
                 "username": user.login,
                 "name": user.name or user.login,
                 "bio": user.bio,
                 "company": user.company,
                 "location": user.location,
                 "email": user.email,
+                "avatar_url": user.avatar_url,
+                "html_url": user.html_url,
                 "public_repos": user.public_repos,
                 "followers": user.followers,
                 "following": user.following,
@@ -188,6 +220,81 @@ class GitHubFetcher:
 
         except GithubException as e:
             self.logger.debug(f"Could not fetch commits for {repo_name}: {e}")
+            return []
+
+    def fetch_commits_with_stats(
+        self,
+        username: str,
+        repo_name: str,
+        max_commits: int = 100,
+    ) -> List[Dict[str, Any]]:
+        """Fetch commits with detailed statistics for dashboard metrics.
+
+        This method fetches commit data including files changed, lines added,
+        and lines deleted for each commit. This is more expensive than fetch_commits()
+        as it requires individual API calls for each commit's stats.
+
+        Args:
+            username: Repository owner username
+            repo_name: Repository name
+            max_commits: Maximum commits to fetch per repository
+
+        Returns:
+            List of commit dictionaries with 'stats' field containing:
+            - total: Number of files changed
+            - additions: Lines added
+            - deletions: Lines deleted
+        """
+        cache_key = f"commits_stats_{username}_{repo_name}_{max_commits}"
+        cached = self.cache.get(cache_key)
+        if cached:
+            self.logger.debug(f"Using cached commit stats for {username}/{repo_name}")
+            return cached
+
+        self.logger.info(f"Fetching commit statistics for {username}/{repo_name} (max: {max_commits})")
+
+        try:
+            repo = self.github.get_repo(f"{username}/{repo_name}")
+            commits_with_stats = []
+
+            for i, commit in enumerate(repo.get_commits(author=username)):
+                if len(commits_with_stats) >= max_commits:
+                    break
+
+                try:
+                    # Fetch detailed commit data with stats
+                    commit_data = {
+                        "sha": commit.sha,
+                        "commit": {
+                            "author": {
+                                "name": commit.commit.author.name if commit.commit.author else username,
+                                "date": commit.commit.author.date.isoformat() if commit.commit.author else None,
+                            },
+                            "message": commit.commit.message,
+                        },
+                        "stats": {
+                            "total": commit.files.__len__() if hasattr(commit, 'files') and commit.files else 0,
+                            "additions": commit.stats.additions if commit.stats else 0,
+                            "deletions": commit.stats.deletions if commit.stats else 0,
+                        },
+                        "repo": repo_name,
+                    }
+                    commits_with_stats.append(commit_data)
+
+                    # Log progress every 10 commits
+                    if (i + 1) % 10 == 0:
+                        self.logger.debug(f"  Processed {i + 1}/{max_commits} commits for {repo_name}")
+
+                except GithubException as e:
+                    self.logger.warning(f"Failed to fetch stats for commit {commit.sha}: {e}")
+                    continue
+
+            self.logger.info(f"Fetched {len(commits_with_stats)} commits with stats for {repo_name}")
+            self.cache.set(cache_key, commits_with_stats)
+            return commits_with_stats
+
+        except GithubException as e:
+            self.logger.error(f"Could not fetch commit stats for {repo_name}: {e}")
             return []
 
     def fetch_languages(self, username: str, repo_name: str) -> Dict[str, int]:

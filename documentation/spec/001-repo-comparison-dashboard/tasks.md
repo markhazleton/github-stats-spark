@@ -52,21 +52,21 @@
 - [X] T012 [P] Implement commit size calculation methods in src/spark/calculator.py (files_changed + lines_added + lines_deleted)
 - [X] T013 [P] Implement repository metrics aggregation in src/spark/calculator.py (avg_commit_size, largest_commit, smallest_commit)
 - [X] T014 [P] Add JSON serialization methods to src/spark/models/repository.py for dashboard output
-- [ ] T015 Implement generate_dashboard_data() method in src/spark/dashboard_generator.py to fetch all public repositories
-- [ ] T016 Implement calculate_commit_metrics() method in src/spark/dashboard_generator.py for each repository
-- [ ] T017 Implement write_json_output() method in src/spark/dashboard_generator.py to write docs/data/repositories.json
-- [ ] T018 [P] Create docs/data/ directory structure for JSON output files
-- [ ] T019 [P] Add dashboard generation commands to src/spark/cli.py (generate --dashboard, preview --dashboard)
-- [ ] T020 Update .github/workflows/generate-stats.yml to include dashboard JSON generation step
+- [X] T015 Implement generate_dashboard_data() method in src/spark/dashboard_generator.py to fetch all public repositories
+- [X] T016 Implement calculate_commit_metrics() method in src/spark/dashboard_generator.py for each repository
+- [X] T017 Implement write_json_output() method in src/spark/dashboard_generator.py to write docs/data/repositories.json
+- [X] T018 [P] Create docs/data/ directory structure for JSON output files
+- [X] T019 [P] Add dashboard generation commands to src/spark/cli.py (generate --dashboard, preview --dashboard)
+- [X] T020 Update .github/workflows/generate-stats.yml to include dashboard JSON generation step
 
 ### Frontend Foundation
 
-- [ ] T021 Create frontend/src/App.jsx root component with routing and layout structure
-- [ ] T022 [P] Create frontend/src/services/dataService.js to fetch dashboard JSON from docs/data/
-- [ ] T023 [P] Create frontend/src/hooks/useRepositoryData.js custom hook for data fetching with loading/error states
-- [ ] T024 [P] Create frontend/src/components/Common/LoadingState.jsx component
-- [ ] T025 [P] Create frontend/src/components/Common/Tooltip.jsx reusable component with hover interactions
-- [ ] T026 Update vite.config.js with base URL path for GitHub Pages (/github-stats-spark/)
+- [X] T021 Create frontend/src/App.jsx root component with routing and layout structure
+- [X] T022 [P] Create frontend/src/services/dataService.js to fetch dashboard JSON from docs/data/
+- [X] T023 [P] Create frontend/src/hooks/useRepositoryData.js custom hook for data fetching with loading/error states
+- [X] T024 [P] Create frontend/src/components/Common/LoadingState.jsx component
+- [X] T025 [P] Create frontend/src/components/Common/Tooltip.jsx reusable component with hover interactions
+- [X] T026 Update vite.config.js with base URL path for GitHub Pages (/github-stats-spark/)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 

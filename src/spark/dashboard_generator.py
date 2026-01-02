@@ -8,8 +8,9 @@ structured JSON for frontend consumption.
 import logging
 from pathlib import Path
 from datetime import datetime
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, Any
 import os
+import json
 
 from spark.fetcher import GitHubFetcher
 from spark.calculator import StatsCalculator
@@ -190,31 +191,89 @@ class DashboardGenerator:
 
         return dashboard_repos
 
-    def calculate_commit_metrics(
-        self, repo_name: str, commits: List
-    ) -> Dict:
+    def calculate_commit_metrics(self, repo_name: str) -> Dict:
         """Calculate commit size metrics for a repository.
+
+        Fetches commits with detailed statistics and calculates aggregate metrics
+        including average commit size, largest commit, and smallest commit.
 
         Args:
             repo_name: Repository name
-            commits: List of commit objects from GitHub API
 
         Returns:
-            Dictionary containing avg_commit_size, largest_commit, smallest_commit
-
-        Note:
-            This method will be implemented in T016
+            Dictionary containing:
+            - first_commit_date: Date of first commit (datetime or None)
+            - total_commits: Total number of commits analyzed
+            - avg_commit_size: Average commit size (files + lines changed)
+            - largest_commit: CommitMetric for largest commit
+            - smallest_commit: CommitMetric for smallest commit
         """
         logger.debug(f"Calculating commit metrics for {repo_name}...")
-        # TODO: Implement in T016
-        # - Calculate commit size for each commit (files + lines added + lines deleted)
-        # - Calculate average commit size
-        # - Find largest and smallest commits
-        # - Return CommitMetric objects
+
+        # Fetch commits with detailed stats
+        max_commits = self.config.get("dashboard", {}).get("data_generation", {}).get("max_commits_per_repo", 100)
+        commits_with_stats = self.fetcher.fetch_commits_with_stats(
+            username=self.username,
+            repo_name=repo_name,
+            max_commits=max_commits
+        )
+
+        if not commits_with_stats:
+            logger.warning(f"No commits found for {repo_name}")
+            return {
+                "first_commit_date": None,
+                "total_commits": 0,
+                "avg_commit_size": 0.0,
+                "largest_commit": None,
+                "smallest_commit": None,
+            }
+
+        # Use StatsCalculator to calculate repository metrics
+        metrics = StatsCalculator.calculate_repository_commit_metrics(commits_with_stats)
+
+        # Extract first commit date
+        first_commit_date = None
+        if commits_with_stats:
+            # Commits are in reverse chronological order, so last commit is first
+            first_commit = commits_with_stats[-1]
+            date_str = first_commit.get("commit", {}).get("author", {}).get("date")
+            if date_str:
+                try:
+                    first_commit_date = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+                except (ValueError, AttributeError) as e:
+                    logger.warning(f"Failed to parse first commit date for {repo_name}: {e}")
+
+        # Convert largest/smallest to CommitMetric objects
+        largest_commit = None
+        if metrics.get("largest_commit"):
+            largest = metrics["largest_commit"]
+            largest_commit = CommitMetric(
+                sha=largest["sha"],
+                date=datetime.fromisoformat(largest["date"].replace("Z", "+00:00")) if largest.get("date") else None,
+                size=largest["size"],
+                files_changed=largest.get("files_changed", 0),
+                lines_added=largest.get("lines_added", 0),
+                lines_deleted=largest.get("lines_deleted", 0),
+            )
+
+        smallest_commit = None
+        if metrics.get("smallest_commit"):
+            smallest = metrics["smallest_commit"]
+            smallest_commit = CommitMetric(
+                sha=smallest["sha"],
+                date=datetime.fromisoformat(smallest["date"].replace("Z", "+00:00")) if smallest.get("date") else None,
+                size=smallest["size"],
+                files_changed=smallest.get("files_changed", 0),
+                lines_added=smallest.get("lines_added", 0),
+                lines_deleted=smallest.get("lines_deleted", 0),
+            )
+
         return {
-            "avg_commit_size": 0.0,
-            "largest_commit": None,
-            "smallest_commit": None,
+            "first_commit_date": first_commit_date,
+            "total_commits": metrics["total_commits"],
+            "avg_commit_size": metrics["avg_commit_size"],
+            "largest_commit": largest_commit,
+            "smallest_commit": smallest_commit,
         }
 
     def generate_user_profile(self) -> UserProfile:
@@ -246,26 +305,38 @@ class DashboardGenerator:
     def write_json_output(self, dashboard_data: DashboardData, filename: str = "repositories.json") -> Path:
         """Write dashboard data to JSON file.
 
+        This method ensures the output directory exists and writes the dashboard
+        data to a JSON file with proper formatting.
+
         Args:
             dashboard_data: DashboardData object to serialize
             filename: Output filename (default: repositories.json)
 
         Returns:
             Path to written JSON file
-
-        Note:
-            This method will be implemented in T017
         """
+        # Ensure data directory exists
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+        logger.debug(f"Output directory ensured: {self.data_dir}")
+
+        # Build output file path
         output_path = self.data_dir / filename
         logger.info(f"Writing dashboard data to {output_path}...")
 
-        # TODO: Implement in T017
-        # - Ensure data directory exists
-        # - Serialize dashboard_data to JSON
-        # - Write to file with proper formatting
-        # - Return path to written file
+        try:
+            # Use the model's built-in save_to_file method
+            dashboard_data.save_to_file(str(output_path), indent=2)
 
-        return output_path
+            # Log file size
+            file_size = output_path.stat().st_size
+            file_size_kb = file_size / 1024
+            logger.info(f"Dashboard data written successfully ({file_size_kb:.2f} KB)")
+
+            return output_path
+
+        except Exception as e:
+            logger.error(f"Failed to write dashboard data to {output_path}: {e}")
+            raise
 
     def save(self, dashboard_data: Optional[DashboardData] = None) -> Path:
         """Generate and save dashboard data to JSON file.

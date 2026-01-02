@@ -107,7 +107,10 @@
       "Bash(then echo \"SUCCESS: documentation/ created\")",
       "Bash(else echo \"FAILED\")",
       "Bash(grep:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(if [ -d \"documentation/spec/001-repo-comparison-dashboard/checklists\" ])",
+      "Bash(then ls -1 \"documentation/spec/001-repo-comparison-dashboard/checklists\")",
+      "Bash(if [ -d \"docs/data\" ])"
     ]
   }
 }

@@ -107,6 +107,11 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         help="Bypass cache and fetch fresh data",
     )
     generate_parser.add_argument(
+        "--dashboard",
+        action="store_true",
+        help="Generate dashboard JSON data for repository comparison dashboard",
+    )
+    generate_parser.add_argument(
         "--verbose",
         action="store_true",
         help="Enable verbose logging",
@@ -537,11 +542,7 @@ def handle_generate(args, logger):
     # Run main generation logic
     try:
         from spark.config import SparkConfig
-        from spark.fetcher import GitHubFetcher
         from spark.cache import APICache
-        from spark.calculator import StatsCalculator
-        from spark.visualizer import StatisticsVisualizer, get_theme
-        from collections import defaultdict
         from datetime import datetime
 
         # Load config
@@ -557,16 +558,69 @@ def handle_generate(args, logger):
             cache.clear()
             logger.info("Cache cleared for fresh data")
 
-        # Run generation (reuse logic from main.py)
-        logger.info("Starting generation...")
-
-        # Import and run main logic
-        # (In a real implementation, we'd refactor main.py to be importable)
-        logger.info("Generation complete! Check the output directory for SVGs.")
+        # Route to dashboard or SVG generation
+        if args.dashboard:
+            logger.info("Mode: Dashboard Data Generation")
+            handle_dashboard_generation(args, logger, config)
+        else:
+            # Run standard SVG generation (reuse logic from main.py)
+            logger.info("Starting generation...")
+            # Import and run main logic
+            # (In a real implementation, we'd refactor main.py to be importable)
+            logger.info("Generation complete! Check the output directory for SVGs.")
 
     except Exception as e:
         logger.error("Generation failed", e)
         sys.exit(1)
+
+
+def handle_dashboard_generation(args, logger, config):
+    """Handle dashboard data generation."""
+    from spark.dashboard_generator import DashboardGenerator
+    from datetime import datetime
+
+    try:
+        logger.info("=" * 70)
+        logger.info("Dashboard Data Generation")
+        logger.info("=" * 70)
+        logger.info(f"Username: {args.user}")
+        logger.info(f"Config: {args.config}")
+
+        # Initialize dashboard generator
+        generator = DashboardGenerator(config=config.config, username=args.user)
+
+        # Generate dashboard data
+        logger.info("")
+        logger.info("Generating dashboard data...")
+        start_time = datetime.now()
+
+        dashboard_data = generator.generate()
+
+        # Save to JSON file
+        output_path = generator.write_json_output(dashboard_data)
+
+        end_time = datetime.now()
+        generation_time = (end_time - start_time).total_seconds()
+
+        # Summary
+        logger.info("")
+        logger.info("=" * 70)
+        logger.info("✅ Dashboard Generation Complete!")
+        logger.info("=" * 70)
+        logger.info(f"Output: {output_path}")
+        logger.info(f"Repositories: {len(dashboard_data.repositories)}")
+        logger.info(f"Username: {dashboard_data.profile.username if dashboard_data.profile else 'N/A'}")
+        logger.info(f"Schema Version: {dashboard_data.metadata.schema_version if dashboard_data.metadata else 'N/A'}")
+        logger.info(f"Generation Time: {generation_time:.1f}s")
+        logger.info("=" * 70)
+
+        return 0
+
+    except Exception as e:
+        logger.error(f"Dashboard generation failed: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
 
 
 def handle_preview(args, logger):
