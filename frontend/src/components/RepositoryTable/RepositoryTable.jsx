@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import TableHeader from './TableHeader'
 import TableRow from './TableRow'
 import styles from './RepositoryTable.module.css'
@@ -34,29 +34,16 @@ export default function RepositoryTable({
   onSelectRepo,
   onRowClick,
   selectedRepos = [],
-  sortField = null,
+  sortField = 'stars',
   sortDirection = 'desc',
 }) {
-  const [localSortField, setLocalSortField] = useState(sortField || 'stars')
-  const [localSortDirection, setLocalSortDirection] = useState(sortDirection)
-
   /**
    * Handle column header click for sorting
    */
   const handleSort = (field) => {
-    let newDirection = 'desc'
-
-    // If clicking the same field, toggle direction
-    if (field === localSortField) {
-      newDirection = localSortDirection === 'desc' ? 'asc' : 'desc'
-    }
-
-    setLocalSortField(field)
-    setLocalSortDirection(newDirection)
-
     // Call parent callback if provided
     if (onSort) {
-      onSort(field, newDirection)
+      onSort(field)
     }
   }
 
@@ -82,8 +69,8 @@ export default function RepositoryTable({
         <table className={styles.table} role="table" aria-label="Repository comparison table">
           <TableHeader
             onSort={handleSort}
-            sortField={localSortField}
-            sortDirection={localSortDirection}
+            sortField={sortField}
+            sortDirection={sortDirection}
           />
           <tbody>
             {repositories.map((repo) => (

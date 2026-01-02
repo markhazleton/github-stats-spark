@@ -2,7 +2,9 @@ import React, { useState, useMemo } from 'react'
 import useRepositoryData from '@/hooks/useRepositoryData'
 import RepositoryTable from '@/components/RepositoryTable/RepositoryTable'
 import LoadingState from '@/components/Common/LoadingState'
-import { sortRepositories, filterByLanguage, extractLanguages } from '@/services/dataService'
+import FilterControls from '@/components/Common/FilterControls'
+import { useTableSort } from '@/hooks/useTableSort'
+import { extractLanguages } from '@/services/dataService'
 
 /**
  * GitHub Stats Spark Dashboard - Root App Component
@@ -27,10 +29,16 @@ function App() {
   const [selectedRepos, setSelectedRepos] = useState([]) // For comparison view
   const [detailModalRepo, setDetailModalRepo] = useState(null) // For drill-down
 
-  // Table state management
-  const [sortField, setSortField] = useState('stars')
-  const [sortDirection, setSortDirection] = useState('desc')
-  const [languageFilter, setLanguageFilter] = useState('all')
+  // Table sorting and filtering using useTableSort hook
+  const {
+    sortedData: processedRepositories,
+    sortKey,
+    sortOrder,
+    filterLanguage,
+    handleSort,
+    handleFilterChange,
+    clearFilter,
+  } = useTableSort(data?.repositories || [], 'stars', 'desc')
 
   /**
    * Handle repository selection for comparison
@@ -65,40 +73,6 @@ function App() {
   const closeDetailModal = () => {
     setDetailModalRepo(null)
   }
-
-  /**
-   * Handle table sorting
-   * @param {string} field - Field name to sort by
-   * @param {string} direction - Sort direction ('asc' or 'desc')
-   */
-  const handleSort = (field, direction) => {
-    setSortField(field)
-    setSortDirection(direction)
-  }
-
-  /**
-   * Handle language filter change
-   * @param {string} language - Language to filter by (or 'all')
-   */
-  const handleLanguageFilter = (language) => {
-    setLanguageFilter(language)
-  }
-
-  /**
-   * Get filtered and sorted repositories
-   * Uses useMemo for performance optimization
-   */
-  const processedRepositories = useMemo(() => {
-    if (!data?.repositories) return []
-
-    // Apply language filter
-    let filtered = filterByLanguage(data.repositories, languageFilter)
-
-    // Apply sorting
-    filtered = sortRepositories(filtered, sortField, sortDirection)
-
-    return filtered
-  }, [data?.repositories, languageFilter, sortField, sortDirection])
 
   /**
    * Get available languages for filter dropdown
@@ -173,37 +147,22 @@ function App() {
               <>
                 {currentView === 'table' && (
                   <div>
-                    <div className="flex justify-between items-center mb-lg">
-                      <div>
-                        <h2>Repository Overview</h2>
-                        <p className="text-muted">
-                          Showing {processedRepositories.length} of {data.repositories?.length || 0} repositories
-                        </p>
-                      </div>
-
-                      {/* Language Filter */}
-                      {availableLanguages.length > 0 && (
-                        <div>
-                          <label htmlFor="language-filter" className="text-sm text-muted" style={{ marginRight: 'var(--spacing-sm)' }}>
-                            Filter by language:
-                          </label>
-                          <select
-                            id="language-filter"
-                            className="btn"
-                            value={languageFilter}
-                            onChange={(e) => handleLanguageFilter(e.target.value)}
-                            aria-label="Filter repositories by programming language"
-                          >
-                            <option value="all">All Languages</option>
-                            {availableLanguages.map((lang) => (
-                              <option key={lang} value={lang}>
-                                {lang}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      )}
+                    <div className="mb-lg">
+                      <h2>Repository Overview</h2>
+                      <p className="text-muted">
+                        Showing {processedRepositories.length} of {data.repositories?.length || 0} repositories
+                      </p>
                     </div>
+
+                    {/* Filter Controls */}
+                    {availableLanguages.length > 0 && (
+                      <FilterControls
+                        languages={availableLanguages}
+                        selectedLanguage={filterLanguage}
+                        onFilterChange={handleFilterChange}
+                        onClearFilter={clearFilter}
+                      />
+                    )}
 
                     {/* Repository Table */}
                     <RepositoryTable
@@ -212,8 +171,8 @@ function App() {
                       onSelectRepo={handleRepoSelect}
                       onRowClick={handleRepoClick}
                       selectedRepos={selectedRepos}
-                      sortField={sortField}
-                      sortDirection={sortDirection}
+                      sortField={sortKey}
+                      sortDirection={sortOrder}
                     />
                   </div>
                 )}

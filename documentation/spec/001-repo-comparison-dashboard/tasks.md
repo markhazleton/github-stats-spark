@@ -115,19 +115,19 @@
 
 ### Implementation for User Story 2
 
-- [ ] T039 [P] [US2] Create frontend/src/hooks/useTableSort.js custom hook with sort state and logic
-- [ ] T040 [P] [US2] Create frontend/src/components/Common/FilterControls.jsx component with language filter dropdown
-- [ ] T041 [P] [US2] Create FilterControls.module.css for filter controls styling
-- [ ] T042 [US2] Add click handlers to TableHeader.jsx for column sorting with visual indicators (arrows)
-- [ ] T043 [US2] Implement sort logic in useTableSort.js for all numeric columns (commits, sizes, dates)
-- [ ] T044 [US2] Implement sort logic in useTableSort.js for string columns (name, language)
-- [ ] T045 [US2] Integrate useTableSort hook into RepositoryTable.jsx component
-- [ ] T046 [US2] Add language extraction from repository data in dataService.js (unique languages list)
-- [ ] T047 [US2] Implement filter logic in useTableSort.js to filter by selected language
-- [ ] T048 [US2] Integrate FilterControls component into App.jsx above RepositoryTable
-- [ ] T049 [US2] Add clear filter button to FilterControls.jsx to reset language filter
-- [ ] T050 [US2] Add CSS transitions to RepositoryTable.module.css for smooth table updates during sort/filter
-- [ ] T051 [US2] Optimize rendering with React.memo in TableRow.jsx for performance with 100+ rows
+- [X] T039 [P] [US2] Create frontend/src/hooks/useTableSort.js custom hook with sort state and logic
+- [X] T040 [P] [US2] Create frontend/src/components/Common/FilterControls.jsx component with language filter dropdown
+- [X] T041 [P] [US2] Create FilterControls.module.css for filter controls styling
+- [X] T042 [US2] Add click handlers to TableHeader.jsx for column sorting with visual indicators (arrows)
+- [X] T043 [US2] Implement sort logic in useTableSort.js for all numeric columns (commits, sizes, dates)
+- [X] T044 [US2] Implement sort logic in useTableSort.js for string columns (name, language)
+- [X] T045 [US2] Integrate useTableSort hook into RepositoryTable.jsx component
+- [X] T046 [US2] Add language extraction from repository data in dataService.js (unique languages list)
+- [X] T047 [US2] Implement filter logic in useTableSort.js to filter by selected language
+- [X] T048 [US2] Integrate FilterControls component into App.jsx above RepositoryTable
+- [X] T049 [US2] Add clear filter button to FilterControls.jsx to reset language filter
+- [X] T050 [US2] Add CSS transitions to RepositoryTable.module.css for smooth table updates during sort/filter
+- [X] T051 [US2] Optimize rendering with React.memo in TableRow.jsx for performance with 100+ rows
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently - table displays, sorts, and filters correctly
 

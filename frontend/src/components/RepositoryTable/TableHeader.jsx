@@ -32,8 +32,8 @@ export default function TableHeader({ onSort, sortField, sortDirection }) {
     { key: 'last_commit_date', label: 'Last Commit', sortable: true },
     { key: 'commit_count', label: 'Total Commits', sortable: true },
     { key: 'avg_commit_size', label: 'Avg Size', sortable: true },
-    { key: 'largest_commit', label: 'Largest', sortable: false },
-    { key: 'smallest_commit', label: 'Smallest', sortable: false },
+    { key: 'largest_commit', label: 'Largest', sortable: true },
+    { key: 'smallest_commit', label: 'Smallest', sortable: true },
     { key: 'stars', label: 'Stars', sortable: true },
   ]
 

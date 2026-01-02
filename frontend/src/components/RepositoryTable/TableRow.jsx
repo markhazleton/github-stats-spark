@@ -7,6 +7,7 @@ import styles from './RepositoryTable.module.css'
  *
  * Renders a single repository row with all metrics.
  * Handles formatting, edge cases (missing data), and user interactions.
+ * Optimized with React.memo for performance with 100+ rows.
  *
  * @component
  * @param {Object} props - Component props
@@ -23,7 +24,7 @@ import styles from './RepositoryTable.module.css'
  *   onClick={(repo) => showDetails(repo)}
  * />
  */
-export default function TableRow({ repository, isSelected = false, onSelect, onClick }) {
+const TableRow = React.memo(function TableRow({ repository, isSelected = false, onSelect, onClick }) {
   /**
    * Format date to readable string (MM/DD/YYYY)
    */
@@ -191,4 +192,6 @@ export default function TableRow({ repository, isSelected = false, onSelect, onC
       </td>
     </tr>
   )
-}
+})
+
+export default TableRow
