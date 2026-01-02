@@ -175,33 +175,38 @@ A user wants to click on a repository in the table or visualization to see detai
 - Python 3.11+ with PyGithub for GitHub API interaction
 - Executes during GitHub Actions workflow on repository push
 - Generates structured JSON data files containing repository metrics, analysis, and visualizations
-- Outputs to `/docs` directory for GitHub Pages deployment
+- Outputs to `/data` directory (source data, separate from build output)
 
 #### Frontend (Interactive Dashboard)
 
-- React 18+ as the component-based UI framework
-- Vite 5+ for development server and production build optimization
-- Recharts for declarative, interactive data visualizations (bar charts, line graphs, scatter plots)
+- React 19 as the component-based UI framework
+- Vite 7 for development server and production build optimization
+- Recharts 3 for declarative, interactive data visualizations (bar charts, line graphs, scatter plots)
 - CSS Modules for component-scoped styling with automatic class name hashing
+- ESLint 9 with flat config for code quality
 - Single-page application (SPA) that fetches JSON data at runtime
 
 #### Build & Deployment Pipeline
 
 1. GitHub Actions workflow triggered on push to main/feature branch
-2. Python scripts collect GitHub data via API and generate JSON files
+2. Python scripts collect GitHub data via API and generate JSON files to `/data` directory
 3. Node.js/npm install frontend dependencies
 4. Vite builds React application with optimizations:
    - Code splitting and tree-shaking to eliminate unused code
    - Minification and compression of JavaScript and CSS
    - Single optimized `site.js` bundle (all React components + libraries)
    - Single optimized `site.css` bundle (all CSS Modules combined)
-5. Build artifacts (HTML, JS, CSS, JSON) deployed to `/docs` directory
-6. GitHub Pages serves static content from `/docs` at username.github.io/github-stats-spark
+   - Clears `/docs` directory (`emptyOutDir: true`)
+5. Postbuild script copies `/data` to `/docs/data`
+6. Build artifacts (HTML, JS, CSS) and data (JSON) deployed to `/docs` directory
+7. GitHub Pages serves static content from `/docs` at username.github.io/github-stats-spark
 
 #### Data Flow
 
-- Python → JSON files (repository metrics, analysis, SVG visualizations)
-- JSON files → React components (fetch at runtime)
+- Python → `/data/repositories.json` (repository metrics, analysis, SVG visualizations)
+- Development: Custom Vite middleware serves `/data` directory
+- Production: Postbuild copies `/data` to `/docs/data`
+- JSON files → React components (fetch at runtime from `/data/repositories.json`)
 - User interactions → React state updates → Recharts re-renders → Smooth animations
 
 ### Key Entities

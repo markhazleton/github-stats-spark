@@ -27,8 +27,8 @@
 
 - [X] T001 Rename current docs/ directory to documentation/ to free up docs/ for GitHub Pages deployment
 - [X] T002 Create frontend/ directory structure per plan.md with src/, public/, tests/ subdirectories
-- [X] T003 [P] Initialize frontend package.json with React 18+, Vite 5+, Recharts 2.x, and CSS Modules dependencies
-- [X] T004 [P] Create vite.config.js with build configuration for single-bundle output (site.js, site.css) to docs/ directory
+- [X] T003 [P] Initialize frontend package.json with React 19, Vite 7, Recharts 3, ESLint 9, and CSS Modules dependencies ✅ Updated to latest versions
+- [X] T004 [P] Create vite.config.js with build configuration for single-bundle output (site.js, site.css) to docs/ directory, custom middleware for /data serving in dev ✅ Configured with emptyOutDir: true and postbuild data copy
 - [X] T005 [P] Create frontend/src/main.jsx as React app entry point
 - [X] T006 [P] Create frontend/public/index.html template with base URL configuration for GitHub Pages
 - [X] T007 [P] Create frontend/src/styles/global.css with CSS variables and theme definitions
@@ -54,21 +54,31 @@
 - [X] T014 [P] Add JSON serialization methods to src/spark/models/repository.py for dashboard output
 - [X] T015 Implement generate_dashboard_data() method in src/spark/dashboard_generator.py to fetch all public repositories
 - [X] T016 Implement calculate_commit_metrics() method in src/spark/dashboard_generator.py for each repository
-- [X] T017 Implement write_json_output() method in src/spark/dashboard_generator.py to write docs/data/repositories.json
-- [X] T018 [P] Create docs/data/ directory structure for JSON output files
+- [X] T017 Implement write_json_output() method in src/spark/dashboard_generator.py to write data/repositories.json ✅ Updated to output to /data directory
+- [X] T018 [P] Create /data/ directory structure for JSON output files ✅ Source data directory at project root
 - [X] T019 [P] Add dashboard generation commands to src/spark/cli.py (generate --dashboard, preview --dashboard)
 - [X] T020 Update .github/workflows/generate-stats.yml to include dashboard JSON generation step
 
 ### Frontend Foundation
 
 - [X] T021 Create frontend/src/App.jsx root component with routing and layout structure
-- [X] T022 [P] Create frontend/src/services/dataService.js to fetch dashboard JSON from docs/data/
+- [X] T022 [P] Create frontend/src/services/dataService.js to fetch dashboard JSON from /data/ ✅ Fetches from /data/repositories.json with dev middleware support
 - [X] T023 [P] Create frontend/src/hooks/useRepositoryData.js custom hook for data fetching with loading/error states
 - [X] T024 [P] Create frontend/src/components/Common/LoadingState.jsx component
 - [X] T025 [P] Create frontend/src/components/Common/Tooltip.jsx reusable component with hover interactions
 - [X] T026 Update vite.config.js with base URL path for GitHub Pages (/github-stats-spark/)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
+
+### ✅ Baseline Status (2026-01-02)
+- All npm packages updated to latest versions (React 19, Vite 7, ESLint 9, Recharts 3)
+- Architecture implemented: Python generates to `/data`, build copies to `/docs/data`
+- Dev server running with custom middleware for `/data` serving
+- Build process working: `npm run build` clears `/docs`, copies data via postbuild script
+- ESLint 9 flat config created, CSS syntax errors fixed
+- **Tested**: Data generation (`python -m spark.cli generate --user markhazleton --dashboard`) produces 48 repositories
+- **Tested**: Dev server accessible at http://localhost:5173/github-stats-spark/
+- **Tested**: Build produces optimized bundles (site.js, site.css) and copies data successfully
 
 ---
 
