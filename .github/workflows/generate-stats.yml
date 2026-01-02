@@ -52,12 +52,22 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
-      - name: Generate unified data and statistics
+      - name: Verify API Keys
+        run: |
+          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "⚠️  WARNING: ANTHROPIC_API_KEY not set - AI summaries will be skipped"
+            echo "To enable AI summaries, add ANTHROPIC_API_KEY to repository secrets"
+          else
+            echo "✅ ANTHROPIC_API_KEY is configured"
+          fi
+
+      - name: Generate unified data and statistics with AI
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
+          echo "Starting unified generation with AI-powered repository summaries..."
           spark unified --user ${{ github.repository_owner }} --include-ai-summaries --verbose
 
       - name: Set up Node.js
