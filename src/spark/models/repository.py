@@ -321,3 +321,42 @@ class Repository:
             latest_release_date=latest_release_date,
             commit_velocity=None,  # Will be calculated from commit history
         )
+
+    def to_dashboard_dict(self) -> Dict:
+        """Convert Repository to dictionary for dashboard JSON serialization.
+
+        Returns a subset of repository data optimized for the dashboard frontend.
+        This method is used by DashboardGenerator to create the dashboard JSON.
+
+        Returns:
+            Dictionary with dashboard-relevant repository fields
+
+        Note:
+            This is a lightweight representation focused on display metrics,
+            not the full repository analysis data.
+        """
+        return {
+            "name": self.name,
+            "description": self.description,
+            "url": self.url,
+            "language": self.primary_language or "Unknown",
+            "created_at": self.created_at.isoformat() if isinstance(self.created_at, datetime) else self.created_at,
+            "updated_at": self.updated_at.isoformat() if isinstance(self.updated_at, datetime) else self.updated_at,
+            "pushed_at": self.pushed_at.isoformat() if self.pushed_at and isinstance(self.pushed_at, datetime) else self.pushed_at,
+            "stars": self.stars,
+            "forks": self.forks,
+            "watchers": self.watchers,
+            "open_issues": self.open_issues,
+            "is_archived": self.is_archived,
+            "is_fork": self.is_fork,
+            "has_readme": self.has_readme,
+            "has_license": self.has_license,
+            "has_ci_cd": self.has_ci_cd,
+            "has_tests": self.has_tests,
+            "release_count": self.release_count,
+            "latest_release_date": (
+                self.latest_release_date.isoformat()
+                if self.latest_release_date and isinstance(self.latest_release_date, datetime)
+                else self.latest_release_date
+            ),
+        }

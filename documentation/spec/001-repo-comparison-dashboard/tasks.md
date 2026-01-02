@@ -25,16 +25,16 @@
 
 **Purpose**: Project initialization and basic structure for frontend and backend integration
 
-- [ ] T001 Rename current docs/ directory to documentation/ to free up docs/ for GitHub Pages deployment
-- [ ] T002 Create frontend/ directory structure per plan.md with src/, public/, tests/ subdirectories
-- [ ] T003 [P] Initialize frontend package.json with React 18+, Vite 5+, Recharts 2.x, and CSS Modules dependencies
-- [ ] T004 [P] Create vite.config.js with build configuration for single-bundle output (site.js, site.css) to docs/ directory
-- [ ] T005 [P] Create frontend/src/main.jsx as React app entry point
-- [ ] T006 [P] Create frontend/public/index.html template with base URL configuration for GitHub Pages
-- [ ] T007 [P] Create frontend/src/styles/global.css with CSS variables and theme definitions
-- [ ] T008 Update config/spark.yml to add dashboard configuration section (enabled, output_dir, visualizations)
-- [ ] T009 Create src/spark/models/dashboard_data.py for dashboard JSON structure model
-- [ ] T010 [P] Update .gitignore to exclude frontend/node_modules and frontend/dist
+- [X] T001 Rename current docs/ directory to documentation/ to free up docs/ for GitHub Pages deployment
+- [X] T002 Create frontend/ directory structure per plan.md with src/, public/, tests/ subdirectories
+- [X] T003 [P] Initialize frontend package.json with React 18+, Vite 5+, Recharts 2.x, and CSS Modules dependencies
+- [X] T004 [P] Create vite.config.js with build configuration for single-bundle output (site.js, site.css) to docs/ directory
+- [X] T005 [P] Create frontend/src/main.jsx as React app entry point
+- [X] T006 [P] Create frontend/public/index.html template with base URL configuration for GitHub Pages
+- [X] T007 [P] Create frontend/src/styles/global.css with CSS variables and theme definitions
+- [X] T008 Update config/spark.yml to add dashboard configuration section (enabled, output_dir, visualizations)
+- [X] T009 Create src/spark/models/dashboard_data.py for dashboard JSON structure model
+- [X] T010 [P] Update .gitignore to exclude frontend/node_modules and frontend/dist
 
 **Checkpoint**: Project structure ready - frontend and backend directories configured
 
@@ -48,10 +48,10 @@
 
 ### Backend Foundation
 
-- [ ] T011 Create src/spark/dashboard_generator.py with DashboardGenerator class skeleton
-- [ ] T012 [P] Implement commit size calculation methods in src/spark/calculator.py (files_changed + lines_added + lines_deleted)
-- [ ] T013 [P] Implement repository metrics aggregation in src/spark/calculator.py (avg_commit_size, largest_commit, smallest_commit)
-- [ ] T014 [P] Add JSON serialization methods to src/spark/models/repository.py for dashboard output
+- [X] T011 Create src/spark/dashboard_generator.py with DashboardGenerator class skeleton
+- [X] T012 [P] Implement commit size calculation methods in src/spark/calculator.py (files_changed + lines_added + lines_deleted)
+- [X] T013 [P] Implement repository metrics aggregation in src/spark/calculator.py (avg_commit_size, largest_commit, smallest_commit)
+- [X] T014 [P] Add JSON serialization methods to src/spark/models/repository.py for dashboard output
 - [ ] T015 Implement generate_dashboard_data() method in src/spark/dashboard_generator.py to fetch all public repositories
 - [ ] T016 Implement calculate_commit_metrics() method in src/spark/dashboard_generator.py for each repository
 - [ ] T017 Implement write_json_output() method in src/spark/dashboard_generator.py to write docs/data/repositories.json

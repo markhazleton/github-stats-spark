@@ -348,5 +348,36 @@ temp/
 node_modules/
 package-lock.json
 
+# ============================================================================
+# Frontend / React / Vite
+# ============================================================================
+
+# Frontend dependencies and lock files
+frontend/node_modules/
+frontend/package-lock.json
+frontend/yarn.lock
+frontend/pnpm-lock.yaml
+
+# Frontend build outputs (docs/ is the deployment target, should be committed)
+frontend/dist/
+frontend/.vite/
+
+# Vite cache
+frontend/.vite-cache/
+
+# Frontend test coverage
+frontend/coverage/
+
+# Frontend environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# ESLint cache
+frontend/.eslintcache
+
+# Prettier cache
+frontend/.prettiercache
+
 # Speckit working files (keep specs tracked, but ignore temp analysis files)
 .specify/temp/

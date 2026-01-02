@@ -94,3 +94,44 @@ analyzer:
     popularity: 0.30          # Stars, forks, watchers
     activity: 0.45            # Recent commits, recency
     health: 0.25              # Documentation, maturity, issues
+
+# Repository Comparison Dashboard Configuration
+dashboard:
+  # Enable dashboard generation
+  enabled: true
+
+  # Output directory for dashboard data and build artifacts
+  output_dir: docs
+
+  # Dashboard features to enable
+  visualizations:
+    - table               # Repository overview table
+    - bar_chart           # Bar charts for metric comparison
+    - line_graph          # Line graphs for trend analysis
+    - scatter_plot        # Scatter plots for pattern detection
+    - comparison          # Side-by-side repository comparison
+
+  # Dashboard data generation settings
+  data_generation:
+    # Include commit metrics (avg, min, max commit sizes)
+    include_commit_metrics: true
+
+    # Include language statistics
+    include_language_stats: true
+
+    # Include AI-generated summaries (from unified report)
+    include_ai_summaries: true
+
+    # Max repositories to include in dashboard
+    max_repositories: 200
+
+  # Performance optimization settings
+  performance:
+    # Enable client-side data compression
+    compress_json: false
+
+    # Cache dashboard data (hours)
+    cache_ttl_hours: 6
+
+    # Lazy load visualization components
+    lazy_load_charts: true

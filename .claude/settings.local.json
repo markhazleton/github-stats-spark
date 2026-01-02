@@ -94,7 +94,20 @@
       "Bash(if [ -d \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-repo-comparison-dashboard\\\\contracts\" ])",
       "Bash(then ls -la \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-repo-comparison-dashboard\\\\contracts\")",
       "Bash(if [ -f \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-repo-comparison-dashboard\\\\data-model.md\" ])",
-      "Bash(if [ -f \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-repo-comparison-dashboard\\\\research.md\" ])"
+      "Bash(if [ -f \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-repo-comparison-dashboard\\\\research.md\" ])",
+      "Bash(if [ -d \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-repo-comparison-dashboard\\\\checklists\" ])",
+      "Bash(then ls -1 \"C:\\\\GitHub\\\\MarkHazleton\\\\github-stats-spark\\\\docs\\\\spec\\\\001-repo-comparison-dashboard\\\\checklists\")",
+      "Bash(else echo \"NO_DOCS_DIR\")",
+      "Bash(else echo \"NO_SPARK_DIR\")",
+      "Bash(if [ -d \"frontend\" ])",
+      "Bash(then ls -la frontend/)",
+      "Bash(else echo \"NO_FRONTEND_DIR\")",
+      "Bash(git mv:*)",
+      "Bash(if [ -d \"documentation\" ])",
+      "Bash(then echo \"SUCCESS: documentation/ created\")",
+      "Bash(else echo \"FAILED\")",
+      "Bash(grep:*)",
+      "Bash(find:*)"
     ]
   }
 }
