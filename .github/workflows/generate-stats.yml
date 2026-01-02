@@ -52,41 +52,13 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
-      - name: Generate statistics (unified mode)
-        if: ${{ github.event.inputs.report_mode == 'unified' || github.event.inputs.report_mode == '' }}
+      - name: Generate unified data and statistics
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          python -m spark.cli analyze --user ${{ github.repository_owner }} --unified --verbose
-
-      - name: Generate statistics (dated mode)
-        if: ${{ github.event.inputs.report_mode == 'dated' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          python -m spark.cli analyze --user ${{ github.repository_owner }} --verbose
-
-      - name: Generate statistics (both modes)
-        if: ${{ github.event.inputs.report_mode == 'both' }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          python -m spark.cli analyze --user ${{ github.repository_owner }} --unified --keep-dated --verbose
-
-      - name: Generate dashboard data (JSON)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: |
-          echo "Generating dashboard JSON data..."
-          python -m spark.cli generate --user ${{ github.repository_owner }} --dashboard --verbose
-          echo "Dashboard data generated successfully"
+          spark unified --user ${{ github.repository_owner }} --include-ai-summaries --verbose
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
