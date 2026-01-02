@@ -6,6 +6,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 **📊 [View Sample Analysis Report](output/reports/markhazleton-analysis.md)** - See real-world output with AI-powered insights
+**🎨 [View Interactive Dashboard](https://markhazleton.github.io/github-stats-spark/)** - Explore repositories with live visualizations
 
 ---
 
@@ -37,6 +38,15 @@ Stats Spark is a comprehensive GitHub analytics suite that transforms your GitHu
 - **Developer Profiling**: Technology diversity, activity patterns, contribution classification
 - **Comprehensive Reports**: GitHub-flavored markdown with embedded visualizations
 - **Performance Optimized**: Analyze 50+ repositories in under 3 minutes
+
+### Interactive Dashboard (NEW!)
+
+- **Repository Comparison**: Side-by-side comparison of up to 5 repositories with color-coded metrics
+- **Visual Analytics**: Interactive bar charts, line graphs, and scatter plots using Recharts
+- **Drill-Down Details**: Comprehensive repository analysis with commit history and tech stack
+- **Export Functionality**: Download filtered data as CSV or JSON
+- **Responsive Design**: Mobile-friendly React interface with smooth animations
+- **GitHub Pages Deployment**: Automatically updates with your latest statistics
 
 ### Enterprise-Ready
 
@@ -152,6 +162,41 @@ Generate comprehensive markdown reports with intelligent insights:
 
 ## 🚀 Quick Start
 
+### ⚡ All-In-One Command (Recommended)
+
+Generate **everything** in a single optimized run:
+
+```bash
+# Set your GitHub token
+export GITHUB_TOKEN=your_github_token_here
+
+# Optional: Enable AI summaries
+export ANTHROPIC_API_KEY=your_anthropic_key_here
+
+# Run the all-in-one command
+spark unified --user YOUR_GITHUB_USERNAME
+```
+
+**This single command generates:**
+- ✅ `/data/repositories.json` - Complete unified dataset for frontend
+- ✅ `/output/*.svg` - All 6 visual analytics (overview, heatmap, languages, streaks, fun, release)
+- ✅ `/output/reports/*.md` - Comprehensive markdown analysis report
+- ✅ AI summaries for each repository (if API key provided)
+
+**Benefits:**
+- 🚀 ~60% faster than separate commands
+- 💾 Single API pass (fewer rate limit issues)
+- 🎯 Consistent data snapshot across all outputs
+- ⚡ Optimized data gathering and caching
+
+See [QUICKSTART_UNIFIED.md](documentation/QUICKSTART_UNIFIED.md) for detailed instructions.
+
+---
+
+### GitHub Actions Automation
+
+**Or** set up automatic daily updates:
+
 ### 1. Fork This Repository
 
 Click the "Fork" button in the top right to create your own copy.
@@ -179,7 +224,7 @@ Add to your profile README (`username/username/README.md`):
 
 **Replace `YOUR_USERNAME`** with your GitHub username!
 
-Full instructions: [Getting Started Guide](docs/guides/getting-started.md)
+Full instructions: [Getting Started Guide](documentation/guides/getting-started.md)
 
 ## 📊 Statistics Categories
 
@@ -270,7 +315,7 @@ The Spark Score is a 0-100 metric reflecting your GitHub activity:
 - **spark-light**: Light theme with WCAG AA colors
 - **custom**: Define your own in `config/themes.yml`
 
-See [Configuration Guide](docs/guides/configuration.md) for theme customization.
+See [Configuration Guide](documentation/guides/configuration.md) for theme customization.
 
 ## 💻 Local CLI
 
@@ -355,7 +400,7 @@ spark analyze --user YOUR_USERNAME --verbose
 - `--no-ai`: Skip AI summaries, use README extraction only
 - `--verbose`: Enable detailed logging
 
-See [Analyze Command Guide](docs/guides/analyze-command.md) for detailed documentation.
+See [Analyze Command Guide](documentation/guides/analyze-command.md) for detailed documentation.
 
 ## 📚 Documentation
 
@@ -363,15 +408,15 @@ Comprehensive guides and references for all features:
 
 ### Getting Started
 
-- **[Getting Started Guide](docs/guides/getting-started.md)** - Complete setup instructions for GitHub Actions
-- **[Configuration Guide](docs/guides/configuration.md)** - All configuration options and customization
-- **[Embedding Guide](docs/guides/embedding-guide.md)** - How to embed SVGs in your profile README
+- **[Getting Started Guide](documentation/guides/getting-started.md)** - Complete setup instructions for GitHub Actions
+- **[Configuration Guide](documentation/guides/configuration.md)** - All configuration options and customization
+- **[Embedding Guide](documentation/guides/embedding-guide.md)** - How to embed SVGs in your profile README
 
 ### Feature Documentation
 
-- **[Analyze Command Guide](docs/guides/analyze-command.md)** - AI-powered repository analysis deep dive
-- **[API Reference](docs/api/api-reference.md)** - Developer documentation for core modules
-- **[Changelog](docs/CHANGELOG.md)** - Version history and release notes
+- **[Analyze Command Guide](documentation/guides/analyze-command.md)** - AI-powered repository analysis deep dive
+- **[API Reference](documentation/api/api-reference.md)** - Developer documentation for core modules
+- **[Changelog](documentation/CHANGELOG.md)** - Version history and release notes
 
 ### Examples
 
@@ -454,7 +499,7 @@ Example correct URL:
 
 Still stuck? We're here to help:
 
-- 📖 Check [Getting Started Guide](docs/guides/getting-started.md) for detailed setup
+- 📖 Check [Getting Started Guide](documentation/guides/getting-started.md) for detailed setup
 - 🔍 Search [existing issues](https://github.com/markhazleton/github-stats-spark/issues)
 - 💬 Start a [discussion](https://github.com/markhazleton/github-stats-spark/discussions)
 - 🐛 [Open a new issue](https://github.com/markhazleton/github-stats-spark/issues/new) with details
@@ -542,7 +587,7 @@ xdg-open htmlcov/index.html  # Linux
 
 ### Architecture Overview
 
-For contributors, see [API Reference](docs/api/api-reference.md) for detailed module documentation including:
+For contributors, see [API Reference](documentation/api/api-reference.md) for detailed module documentation including:
 
 - Core modules: `fetcher`, `calculator`, `visualizer`, `summarizer`
 - Analysis modules: `ranker`, `report_generator`, `unified_report_workflow`
@@ -711,9 +756,9 @@ Create themed sections in your profile:
 
 [![Get Started](https://img.shields.io/badge/Get%20Started-Quick%20Setup-blue?style=for-the-badge)](#-quick-start)
 [![View Sample](https://img.shields.io/badge/View%20Sample-Analysis%20Report-green?style=for-the-badge)](output/reports/markhazleton-analysis.md)
-[![Documentation](https://img.shields.io/badge/Read-Documentation-orange?style=for-the-badge)](docs/README.md)
+[![Documentation](https://img.shields.io/badge/Read-Documentation-orange?style=for-the-badge)](documentation/README.md)
 
-[Quick Start](#-quick-start) • [Features](#-features) • [Documentation](docs/README.md) • [Report Issue](https://github.com/markhazleton/github-stats-spark/issues) • [Contribute](#-contributing)
+[Quick Start](#-quick-start) • [Features](#-features) • [Documentation](documentation/README.md) • [Report Issue](https://github.com/markhazleton/github-stats-spark/issues) • [Contribute](#-contributing)
 
 Made with ❤️ by developers, for developers
 

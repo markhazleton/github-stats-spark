@@ -1,0 +1,318 @@
+/**
+ * RepositoryTable Component Styles
+ *
+ * Comprehensive styling for the repository comparison table including:
+ * - Responsive grid layout
+ * - Sorting indicators
+ * - Row hover effects
+ * - Mobile-friendly design
+ */
+
+/* Table Wrapper */
+.tableWrapper {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tableContainer {
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+/* Table Header */
+.tableHead {
+  background-color: var(--color-surface-alt);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tableHeader {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.tableHeaderSortable {
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.tableHeaderSortable:hover {
+  background-color: var(--color-surface);
+}
+
+.tableHeaderSortable:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.tableHeaderActive {
+  color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.tableHeaderContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Sort Indicators */
+.sortIndicator {
+  opacity: 0.4;
+  font-size: var(--font-size-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.tableHeaderSortable:hover .sortIndicator {
+  opacity: 0.7;
+}
+
+.sortIndicatorActive {
+  opacity: 1;
+  color: var(--color-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Table Body */
+.tableRow {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast), opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.tableRow:hover {
+  background-color: var(--color-surface-alt);
+}
+
+.tableRow:focus-within {
+  background-color: var(--color-surface-alt);
+}
+
+.tableRowSelected {
+  background-color: rgba(3, 102, 214, 0.1);
+}
+
+.tableRowSelected:hover {
+  background-color: rgba(3, 102, 214, 0.15);
+}
+
+.tableCell {
+  padding: var(--spacing-md);
+  vertical-align: middle;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+}
+
+.tableCellNumeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.tableCellContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Repository Link */
+.repoLink {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.repoLink:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.repoLink:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Repository Name Button (for drill-down) */
+.repoNameButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.repoNameButton:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.repoNameButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Checkbox */
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* Language Badge */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-secondary);
+}
+
+/* Language-specific badge colors */
+.badge--javascript {
+  background-color: #f7df1e;
+  color: #000;
+}
+
+.badge--python {
+  background-color: #3776ab;
+  color: #fff;
+}
+
+.badge--typescript {
+  background-color: #3178c6;
+  color: #fff;
+}
+
+.badge--java {
+  background-color: #b07219;
+  color: #fff;
+}
+
+.badge--csharp {
+  background-color: #178600;
+  color: #fff;
+}
+
+.badge--ruby {
+  background-color: #701516;
+  color: #fff;
+}
+
+.badge--go {
+  background-color: #00add8;
+  color: #fff;
+}
+
+.badge--rust {
+  background-color: #dea584;
+  color: #000;
+}
+
+.badge--php {
+  background-color: #4f5d95;
+  color: #fff;
+}
+
+.badge--html {
+  background-color: #e34c26;
+  color: #fff;
+}
+
+.badge--css {
+  background-color: #563d7c;
+  color: #fff;
+}
+
+/* Table Footer */
+.tableFooter {
+  padding: var(--spacing-md);
+  background-color: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Empty State */
+.emptyState {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .table {
+    font-size: var(--font-size-xs);
+  }
+
+  .tableHeader,
+  .tableCell {
+    padding: var(--spacing-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack table cells vertically on mobile */
+  .tableContainer {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    min-width: 900px; /* Force horizontal scroll */
+  }
+
+  .tableWrapper {
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Loading State within Table */
+.tableLoading {
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+/* Accessibility: Focus Styles */
+.tableRow:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+/* Print Styles */
+@media print {
+  .checkbox {
+    display: none;
+  }
+
+  .tableRow {
+    break-inside: avoid;
+  }
+
+  .repoLink {
+    text-decoration: underline;
+  }
+}

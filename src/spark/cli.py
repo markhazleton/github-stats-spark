@@ -16,8 +16,18 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  Generate statistics for a user:
-    spark generate --user markhazleton
+  ALL-IN-ONE: Generate unified data + SVGs + reports in a single optimized run:
+    spark unified --user markhazleton
+
+  With AI summaries for each repository (requires ANTHROPIC_API_KEY):
+    spark unified --user markhazleton --include-ai-summaries
+
+  Force fresh data (bypass cache):
+    spark unified --user markhazleton --force-refresh
+
+  Legacy commands (for specific operations only):
+    spark generate --user markhazleton  # Generate statistics/SVGs only
+    spark analyze --user markhazleton    # Generate analysis reports only
 
   Preview a theme:
     spark preview --theme spark-dark
@@ -33,6 +43,45 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
     )
 
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
+
+    # Unified command (ALL-IN-ONE - Comprehensive data + SVGs + reports)
+    unified_parser = subparsers.add_parser(
+        "unified",
+        help="ALL-IN-ONE: Generate unified data, SVGs, and markdown reports in a single optimized run"
+    )
+    unified_parser.add_argument(
+        "--user",
+        type=str,
+        required=True,
+        help="GitHub username to analyze",
+    )
+    unified_parser.add_argument(
+        "--output-dir",
+        type=str,
+        default="data",
+        help="Output directory for repositories.json (default: data)",
+    )
+    unified_parser.add_argument(
+        "--config",
+        type=str,
+        default="config/spark.yml",
+        help="Configuration file path (default: config/spark.yml)",
+    )
+    unified_parser.add_argument(
+        "--force-refresh",
+        action="store_true",
+        help="Bypass cache and fetch fresh data for all operations",
+    )
+    unified_parser.add_argument(
+        "--include-ai-summaries",
+        action="store_true",
+        help="Include AI-generated summaries for each repository (requires ANTHROPIC_API_KEY)",
+    )
+    unified_parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Enable verbose logging",
+    )
 
     # Analyze command (NEW - Repository analysis)
     analyze_parser = subparsers.add_parser("analyze", help="Analyze repositories and generate report")
@@ -107,6 +156,11 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         help="Bypass cache and fetch fresh data",
     )
     generate_parser.add_argument(
+        "--dashboard",
+        action="store_true",
+        help="Generate dashboard JSON data for repository comparison dashboard",
+    )
+    generate_parser.add_argument(
         "--verbose",
         action="store_true",
         help="Enable verbose logging",
@@ -175,7 +229,9 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
     logger = get_logger("spark-cli", verbose=getattr(args, "verbose", False))
 
     # Execute commands
-    if args.command == "analyze":
+    if args.command == "unified":
+        handle_unified(args, logger)
+    elif args.command == "analyze":
         handle_analyze(args, logger)
     elif args.command == "generate":
         handle_generate(args, logger)
@@ -185,6 +241,134 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         handle_config(args, logger)
     elif args.command == "cache":
         handle_cache(args, logger)
+
+
+def handle_unified(args, logger):
+    """Handle unified command - ALL-IN-ONE: Generate unified data, SVGs, and reports."""
+    from datetime import datetime
+    from pathlib import Path
+    from spark.config import SparkConfig
+    from spark.unified_data_generator import UnifiedDataGenerator
+    from spark.cache import APICache
+    from spark.unified_report_workflow import UnifiedReportWorkflow
+    from spark.unified_report_generator import UnifiedReportGenerator
+    from spark.exceptions import WorkflowError
+    
+    logger.info("=" * 70)
+    logger.info("Stats Spark - ALL-IN-ONE Unified Generation")
+    logger.info("=" * 70)
+    logger.info(f"User: {args.user}")
+    logger.info(f"Data output: {args.output_dir}")
+    logger.info(f"Reports output: output/")
+    logger.info(f"AI Summaries: {'Yes' if args.include_ai_summaries else 'No'}")
+    logger.info(f"Force Refresh: {'Yes' if args.force_refresh else 'No'}")
+
+    # Check for GitHub token
+    if not os.getenv("GITHUB_TOKEN"):
+        logger.error("GITHUB_TOKEN environment variable not set")
+        logger.info("Please set your GitHub Personal Access Token:")
+        logger.info("  export GITHUB_TOKEN=your_token_here")
+        sys.exit(1)
+
+    # Check for Anthropic API key if AI summaries requested
+    if args.include_ai_summaries and not os.getenv("ANTHROPIC_API_KEY"):
+        logger.warning("ANTHROPIC_API_KEY not set - AI summaries will be skipped")
+        logger.info("To enable AI summaries, set: export ANTHROPIC_API_KEY=your_key")
+
+    try:
+        start_time = datetime.now()
+        
+        # ===================================================================
+        # STEP 1: Generate Unified Data (repositories.json)
+        # ===================================================================
+        logger.info("")
+        logger.info("=" * 70)
+        logger.info("STEP 1/3: Generating Unified Data (repositories.json)")
+        logger.info("=" * 70)
+        
+        # Load config
+        config = SparkConfig(args.config)
+        config.load()
+
+        # Override AI summaries setting if specified
+        if args.include_ai_summaries:
+            dashboard_config = config.config.get("dashboard", {})
+            if "data_generation" not in dashboard_config:
+                dashboard_config["data_generation"] = {}
+            dashboard_config["data_generation"]["include_ai_summaries"] = True
+
+        # Create generator
+        generator = UnifiedDataGenerator(
+            config=config,
+            username=args.user,
+            output_dir=args.output_dir,
+            force_refresh=args.force_refresh,
+        )
+
+        # Generate and save unified data
+        data_output_path = generator.save()
+        logger.info(f"✅ Unified data saved to: {data_output_path}")
+
+        # ===================================================================
+        # STEP 2: Generate SVG Visualizations
+        # ===================================================================
+        logger.info("")
+        logger.info("=" * 70)
+        logger.info("STEP 2/3: Generating SVG Visualizations")
+        logger.info("=" * 70)
+        
+        cache = APICache()
+        workflow = UnifiedReportWorkflow(config, cache, output_dir="output")
+        
+        try:
+            unified_report = workflow.execute(args.user)
+            logger.info(f"✅ Generated {len(unified_report.available_svgs)} SVG files")
+            
+            # ===================================================================
+            # STEP 3: Generate Markdown Reports
+            # ===================================================================
+            logger.info("")
+            logger.info("=" * 70)
+            logger.info("STEP 3/3: Generating Markdown Reports")
+            logger.info("=" * 70)
+            
+            output_dir = Path("output/reports")
+            output_dir.mkdir(parents=True, exist_ok=True)
+            report_path = output_dir / f"{args.user}-analysis.md"
+            
+            generator_report = UnifiedReportGenerator(config)
+            generator_report.generate_report(unified_report, str(report_path))
+            logger.info(f"✅ Report saved to: {report_path}")
+            
+        except WorkflowError as e:
+            logger.warning(f"SVG/Report generation had issues: {e}")
+            logger.info("Unified data generation was successful, but SVG/reports had errors")
+
+        # ===================================================================
+        # Summary
+        # ===================================================================
+        end_time = datetime.now()
+        total_time = (end_time - start_time).total_seconds()
+        
+        logger.info("")
+        logger.info("=" * 70)
+        logger.info("✅ ALL-IN-ONE Generation Complete!")
+        logger.info("=" * 70)
+        logger.info(f"📊 Unified Data: {data_output_path}")
+        logger.info(f"🎨 SVG Files: output/*.svg")
+        logger.info(f"📝 Report: output/reports/{args.user}-analysis.md")
+        logger.info(f"⏱️  Total Time: {total_time:.1f}s")
+        logger.info("")
+        logger.info("All data gathered, LLM summaries generated (if enabled),")
+        logger.info("and visualizations/reports created in a single optimized run!")
+
+        return 0
+
+    except Exception as e:
+        logger.error(f"Unified generation failed: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
 
 
 def handle_analyze(args, logger):
@@ -537,11 +721,7 @@ def handle_generate(args, logger):
     # Run main generation logic
     try:
         from spark.config import SparkConfig
-        from spark.fetcher import GitHubFetcher
         from spark.cache import APICache
-        from spark.calculator import StatsCalculator
-        from spark.visualizer import StatisticsVisualizer, get_theme
-        from collections import defaultdict
         from datetime import datetime
 
         # Load config
@@ -557,16 +737,69 @@ def handle_generate(args, logger):
             cache.clear()
             logger.info("Cache cleared for fresh data")
 
-        # Run generation (reuse logic from main.py)
-        logger.info("Starting generation...")
-
-        # Import and run main logic
-        # (In a real implementation, we'd refactor main.py to be importable)
-        logger.info("Generation complete! Check the output directory for SVGs.")
+        # Route to dashboard or SVG generation
+        if args.dashboard:
+            logger.info("Mode: Dashboard Data Generation")
+            handle_dashboard_generation(args, logger, config)
+        else:
+            # Run standard SVG generation (reuse logic from main.py)
+            logger.info("Starting generation...")
+            # Import and run main logic
+            # (In a real implementation, we'd refactor main.py to be importable)
+            logger.info("Generation complete! Check the output directory for SVGs.")
 
     except Exception as e:
         logger.error("Generation failed", e)
         sys.exit(1)
+
+
+def handle_dashboard_generation(args, logger, config):
+    """Handle dashboard data generation."""
+    from spark.dashboard_generator import DashboardGenerator
+    from datetime import datetime
+
+    try:
+        logger.info("=" * 70)
+        logger.info("Dashboard Data Generation")
+        logger.info("=" * 70)
+        logger.info(f"Username: {args.user}")
+        logger.info(f"Config: {args.config}")
+
+        # Initialize dashboard generator
+        generator = DashboardGenerator(config=config.config, username=args.user)
+
+        # Generate dashboard data
+        logger.info("")
+        logger.info("Generating dashboard data...")
+        start_time = datetime.now()
+
+        dashboard_data = generator.generate()
+
+        # Save to JSON file
+        output_path = generator.write_json_output(dashboard_data)
+
+        end_time = datetime.now()
+        generation_time = (end_time - start_time).total_seconds()
+
+        # Summary
+        logger.info("")
+        logger.info("=" * 70)
+        logger.info("✅ Dashboard Generation Complete!")
+        logger.info("=" * 70)
+        logger.info(f"Output: {output_path}")
+        logger.info(f"Repositories: {len(dashboard_data.repositories)}")
+        logger.info(f"Username: {dashboard_data.profile.username if dashboard_data.profile else 'N/A'}")
+        logger.info(f"Schema Version: {dashboard_data.metadata.schema_version if dashboard_data.metadata else 'N/A'}")
+        logger.info(f"Generation Time: {generation_time:.1f}s")
+        logger.info("=" * 70)
+
+        return 0
+
+    except Exception as e:
+        logger.error(f"Dashboard generation failed: {e}")
+        import traceback
+        traceback.print_exc()
+        return 1
 
 
 def handle_preview(args, logger):

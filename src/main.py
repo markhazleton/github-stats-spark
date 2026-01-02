@@ -152,7 +152,7 @@ def main():
 
             try:
                 # Fetch commits for this repository
-                commits = fetcher.fetch_commits(username, repo_name, max_commits=100)
+                commits = fetcher.fetch_commits(username, repo_name, max_commits=200)
                 all_commits.extend(commits)
 
                 # Count commits by date for heatmap

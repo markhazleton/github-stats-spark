@@ -484,3 +484,134 @@ class StatsCalculator:
             "max_monthly": max_monthly,
             "unique_repos": len(unique_repos),
         }
+
+    # Dashboard-specific commit metrics calculation methods
+    @staticmethod
+    def calculate_commit_size(commit_stats: Dict[str, Any]) -> int:
+        """Calculate commit size as files_changed + lines_added + lines_deleted.
+
+        Args:
+            commit_stats: Commit statistics dictionary with 'stats' field containing:
+                - total: Total changes (files changed)
+                - additions: Lines added
+                - deletions: Lines deleted
+
+        Returns:
+            Integer representing total commit size
+
+        Note:
+            Commit size is defined as the sum of:
+            - Number of files changed
+            - Number of lines added
+            - Number of lines deleted
+            This provides a holistic measure of commit impact.
+        """
+        if not commit_stats or "stats" not in commit_stats:
+            return 0
+
+        stats = commit_stats["stats"]
+        files_changed = stats.get("total", 0)  # Total files changed
+        lines_added = stats.get("additions", 0)
+        lines_deleted = stats.get("deletions", 0)
+
+        return files_changed + lines_added + lines_deleted
+
+    @staticmethod
+    def calculate_repository_commit_metrics(commits: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Calculate aggregate commit metrics for a repository.
+
+        Args:
+            commits: List of commit dictionaries with stats
+
+        Returns:
+            Dictionary containing:
+            - avg_commit_size: Average commit size across all commits
+            - largest_commit: Largest commit (sha, date, size, stats)
+            - smallest_commit: Smallest commit (sha, date, size, stats)
+            - total_commits: Total number of commits analyzed
+            - commit_size_distribution: Quartile distribution of commit sizes
+
+        Note:
+            This is used by T013 to aggregate repository-level metrics.
+        """
+        if not commits:
+            return {
+                "avg_commit_size": 0.0,
+                "largest_commit": None,
+                "smallest_commit": None,
+                "total_commits": 0,
+                "commit_size_distribution": {
+                    "min": 0,
+                    "q1": 0,
+                    "median": 0,
+                    "q3": 0,
+                    "max": 0,
+                },
+            }
+
+        commit_sizes = []
+        largest = None
+        smallest = None
+
+        for commit in commits:
+            # Calculate size for this commit
+            size = StatsCalculator.calculate_commit_size(commit)
+            commit_sizes.append(size)
+
+            # Track largest commit
+            if largest is None or size > largest["size"]:
+                largest = {
+                    "sha": commit.get("sha", ""),
+                    "date": commit.get("commit", {}).get("author", {}).get("date", ""),
+                    "size": size,
+                    "files_changed": commit.get("stats", {}).get("total", 0),
+                    "lines_added": commit.get("stats", {}).get("additions", 0),
+                    "lines_deleted": commit.get("stats", {}).get("deletions", 0),
+                }
+
+            # Track smallest commit (non-zero)
+            if size > 0 and (smallest is None or size < smallest["size"]):
+                smallest = {
+                    "sha": commit.get("sha", ""),
+                    "date": commit.get("commit", {}).get("author", {}).get("date", ""),
+                    "size": size,
+                    "files_changed": commit.get("stats", {}).get("total", 0),
+                    "lines_added": commit.get("stats", {}).get("additions", 0),
+                    "lines_deleted": commit.get("stats", {}).get("deletions", 0),
+                }
+
+        # Calculate average
+        avg_size = sum(commit_sizes) / len(commit_sizes) if commit_sizes else 0.0
+
+        # Calculate distribution quartiles
+        sorted_sizes = sorted(commit_sizes)
+        n = len(sorted_sizes)
+
+        def percentile(data: List[int], p: float) -> int:
+            """Calculate percentile value from sorted data."""
+            if not data:
+                return 0
+            k = (len(data) - 1) * p
+            f = math.floor(k)
+            c = math.ceil(k)
+            if f == c:
+                return data[int(k)]
+            d0 = data[int(f)] * (c - k)
+            d1 = data[int(c)] * (k - f)
+            return int(d0 + d1)
+
+        distribution = {
+            "min": sorted_sizes[0] if sorted_sizes else 0,
+            "q1": percentile(sorted_sizes, 0.25),
+            "median": percentile(sorted_sizes, 0.50),
+            "q3": percentile(sorted_sizes, 0.75),
+            "max": sorted_sizes[-1] if sorted_sizes else 0,
+        }
+
+        return {
+            "avg_commit_size": round(avg_size, 2),
+            "largest_commit": largest,
+            "smallest_commit": smallest,
+            "total_commits": len(commits),
+            "commit_size_distribution": distribution,
+        }
