@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, Suspense, lazy } from 'react'
 import useRepositoryData from '@/hooks/useRepositoryData'
 import RepositoryTable from '@/components/RepositoryTable/RepositoryTable'
 import LoadingState from '@/components/Common/LoadingState'
@@ -6,12 +6,14 @@ import FilterControls from '@/components/Common/FilterControls'
 import { useTableSort } from '@/hooks/useTableSort'
 import { extractLanguages } from '@/services/dataService'
 import VisualizationControls from '@/components/Visualizations/VisualizationControls'
-import BarChart from '@/components/Visualizations/BarChart'
-import LineGraph from '@/components/Visualizations/LineGraph'
-import ScatterPlot from '@/components/Visualizations/ScatterPlot'
-import RepositoryDetail from '@/components/DrillDown/RepositoryDetail'
-import ComparisonSelector from '@/components/Comparison/ComparisonSelector'
-import ComparisonView from '@/components/Comparison/ComparisonView'
+
+// Lazy load chart components for better performance
+const BarChart = lazy(() => import('@/components/Visualizations/BarChart'))
+const LineGraph = lazy(() => import('@/components/Visualizations/LineGraph'))
+const ScatterPlot = lazy(() => import('@/components/Visualizations/ScatterPlot'))
+const RepositoryDetail = lazy(() => import('@/components/DrillDown/RepositoryDetail'))
+const ComparisonSelector = lazy(() => import('@/components/Comparison/ComparisonSelector'))
+const ComparisonView = lazy(() => import('@/components/Comparison/ComparisonView'))
 import {
   transformForBarChart,
   transformForLineGraph,
@@ -305,30 +307,32 @@ function App() {
 
                     {/* Chart Rendering */}
                     <div className="chart-wrapper">
-                      {chartType === 'bar' && (
-                        <BarChart
-                          data={chartData}
-                          metricLabel={metricLabel}
-                          onBarClick={handleChartClick}
-                        />
-                      )}
+                      <Suspense fallback={<LoadingState message="Loading chart..." />}>
+                        {chartType === 'bar' && (
+                          <BarChart
+                            data={chartData}
+                            metricLabel={metricLabel}
+                            onBarClick={handleChartClick}
+                          />
+                        )}
 
-                      {chartType === 'line' && (
-                        <LineGraph
-                          data={chartData}
-                          metricLabel={metricLabel}
-                          onPointClick={handleChartClick}
-                        />
-                      )}
+                        {chartType === 'line' && (
+                          <LineGraph
+                            data={chartData}
+                            metricLabel={metricLabel}
+                            onPointClick={handleChartClick}
+                          />
+                        )}
 
-                      {chartType === 'scatter' && (
-                        <ScatterPlot
-                          data={chartData}
-                          xAxisLabel="Total Commits"
-                          yAxisLabel="Average Commit Size"
-                          onPointClick={handleChartClick}
-                        />
-                      )}
+                        {chartType === 'scatter' && (
+                          <ScatterPlot
+                            data={chartData}
+                            xAxisLabel="Total Commits"
+                            yAxisLabel="Average Commit Size"
+                            onPointClick={handleChartClick}
+                          />
+                        )}
+                      </Suspense>
                     </div>
                   </div>
                 )}
@@ -345,19 +349,21 @@ function App() {
                     </div>
 
                     {/* Comparison Selector */}
-                    <ComparisonSelector
-                      selectedRepos={selectedRepos}
-                      onClearSelection={handleClearSelection}
-                      maxSelections={5}
-                    />
-
-                    {/* Comparison View */}
-                    <div className="mt-lg">
-                      <ComparisonView
-                        repositories={selectedRepositoryObjects}
-                        onRemoveRepo={handleRemoveRepo}
+                    <Suspense fallback={<LoadingState message="Loading comparison..." />}>
+                      <ComparisonSelector
+                        selectedRepos={selectedRepos}
+                        onClearSelection={handleClearSelection}
+                        maxSelections={5}
                       />
-                    </div>
+
+                      {/* Comparison View */}
+                      <div className="mt-lg">
+                        <ComparisonView
+                          repositories={selectedRepositoryObjects}
+                          onRemoveRepo={handleRemoveRepo}
+                        />
+                      </div>
+                    </Suspense>
                   </div>
                 )}
               </>
@@ -389,12 +395,14 @@ function App() {
 
       {/* Detail Modal (for drill-down) */}
       {detailModalRepo && (
-        <RepositoryDetail
-          repository={detailModalRepo}
-          onClose={closeDetailModal}
-          onNext={handleNextRepo}
-          onPrevious={handlePreviousRepo}
-        />
+        <Suspense fallback={<LoadingState message="Loading details..." />}>
+          <RepositoryDetail
+            repository={detailModalRepo}
+            onClose={closeDetailModal}
+            onNext={handleNextRepo}
+            onPrevious={handlePreviousRepo}
+          />
+        </Suspense>
       )}
     </div>
   )

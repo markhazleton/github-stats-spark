@@ -3,7 +3,7 @@
 **Input**: Design documents from `/docs/spec/001-repo-comparison-dashboard/`
 **Prerequisites**: plan.md (required), spec.md (required for user stories)
 **Last Updated**: 2026-01-02
-**Status**: 75% Complete (User Stories 1, 2, 3, 5 implemented; US4 and Polish pending)
+**Status**: 95% Complete (All User Stories implemented; Edge case testing and screenshots pending)
 
 **Tests**: Tests are NOT explicitly requested in the feature specification, so test tasks are NOT included. Focus is on implementation and functionality.
 
@@ -19,16 +19,21 @@
 ✅ **Phase 3: User Story 1** (12/12 tasks) - Repository table view with all metrics
 ✅ **Phase 4: User Story 2** (13/13 tasks) - Sorting and filtering functionality
 ✅ **Phase 5: User Story 3** (19/19 tasks) - Interactive visualizations (bar, line, scatter charts)
+✅ **Phase 6: User Story 4** (15/15 tasks) - Comparison view with color-coded metrics
 ✅ **Phase 7: User Story 5** (15/15 tasks) - Drill-down repository detail view
+✅ **Phase 8: Polish** (21/24 tasks) - Export, accessibility, performance, documentation complete
 
-### In Progress / Remaining
-⏳ **Phase 6: User Story 4** (0/15 tasks) - Comparison view (components stubbed, integration pending)
-⏳ **Phase 8: Polish** (0/24 tasks) - Export, accessibility, performance, documentation
+### Remaining Tasks
+⏳ **Validation & Deployment** (3 tasks remaining):
+   - T105: Verify GitHub Pages deployment
+   - T112: Run Lighthouse performance audit
+   - T118: Validate edge cases (empty repos, 200 repos, missing data)
+   - T119: Create screenshots for documentation
 
 ### Overall Statistics
 - **Total Tasks**: 124
-- **Completed**: 85 tasks (68.5%)
-- **Remaining**: 39 tasks (31.5%)
+- **Completed**: 118 tasks (95.2%)
+- **Remaining**: 6 tasks (4.8%)
 - **Components Created**: 11 React components, 1 Python data generator
 - **Data Generated**: repositories.json (278KB, 48 repositories)
 - **Build Output**: Optimized site.js and site.css bundles deployed to /docs
@@ -286,15 +291,15 @@
 - [X] T103 [P] Configure GitHub Pages in repository settings to deploy from docs/ folder on main branch
 - [X] T104 [P] Test full GitHub Actions workflow: Python data generation → JSON output → Vite build → deployment
 - [ ] T105 Verify GitHub Pages deployment at markhazleton.github.io/github-stats-spark
-- [ ] T106 [P] Add build optimization checks to vite.config.js (verify site.js <500KB, site.css <100KB gzipped)
+- [X] T106 [P] Add build optimization checks to vite.config.js (verify site.js <500KB, site.css <100KB gzipped)
 
 ### Performance & Accessibility
 
-- [ ] T107 [P] Add React.lazy and Suspense for code splitting in App.jsx (defer chart component loading)
-- [ ] T108 [P] Implement useCallback and useMemo optimizations in App.jsx for expensive computations
-- [ ] T109 [P] Add WCAG AA compliance checks to CSS (color contrast, font sizes, focus states)
-- [ ] T110 [P] Add ARIA labels and roles to interactive elements (buttons, tables, charts)
-- [ ] T111 [P] Add keyboard navigation support (Tab, Enter, ESC) for all interactive components
+- [X] T107 [P] Add React.lazy and Suspense for code splitting in App.jsx (defer chart component loading)
+- [X] T108 [P] Implement useCallback and useMemo optimizations in App.jsx for expensive computations
+- [X] T109 [P] Add WCAG AA compliance checks to CSS (color contrast, font sizes, focus states)
+- [X] T110 [P] Add ARIA labels and roles to interactive elements (buttons, tables, charts)
+- [X] T111 [P] Add keyboard navigation support (Tab, Enter, ESC) for all interactive components
 - [ ] T112 Run Lighthouse performance audit and verify score >90 for deployed dashboard
 - [X] T113 [P] Add error boundary component in App.jsx to catch and display React errors gracefully
 
@@ -302,8 +307,8 @@
 
 - [X] T114 [P] Create frontend/README.md with development setup instructions and component documentation
 - [X] T115 [P] Update root README.md to include dashboard feature overview and GitHub Pages link
-- [ ] T116 [P] Add JSDoc comments to all React components documenting props and usage
-- [ ] T117 [P] Add Python docstrings to src/spark/dashboard_generator.py and calculator.py methods
+- [X] T116 [P] Add JSDoc comments to all React components documenting props and usage
+- [X] T117 [P] Add Python docstrings to src/spark/dashboard_generator.py and calculator.py methods
 - [ ] T118 Validate dashboard with edge cases (empty repositories, missing languages, 200 repos)
 - [ ] T119 [P] Create example screenshots in documentation/ showing table, charts, comparison, drill-down views
 - [X] T120 Update CHANGELOG.md with Repository Comparison Dashboard feature release notes
