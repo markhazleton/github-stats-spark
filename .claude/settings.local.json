@@ -112,7 +112,10 @@
       "Bash(then ls -1 \"documentation/spec/001-repo-comparison-dashboard/checklists\")",
       "Bash(if [ -d \"docs/data\" ])",
       "Bash(chmod:*)",
-      "Bash(if [ -d \"documentation/spec/001-repo-comparison-dashboard\" ])"
+      "Bash(if [ -d \"documentation/spec/001-repo-comparison-dashboard\" ])",
+      "Bash(then ls -1d docs/spec/*-mobile-first-redesign)",
+      "Bash(if [ -d \"documentation/spec\" ])",
+      "Bash(then ls -1d documentation/spec/*-mobile-first-redesign)"
     ]
   }
 }
