@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { fetchDashboardData } from '@/services/dataService'
+import { useState, useEffect } from "react";
+import { fetchDashboardData } from "@/services/dataService";
 
 /**
  * Custom hook for fetching and managing repository dashboard data
@@ -24,47 +24,47 @@ import { fetchDashboardData } from '@/services/dataService'
  * }
  */
 export default function useRepositoryData() {
-  const [data, setData] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   /**
    * Fetch dashboard data and update state
    */
   const fetchData = async () => {
     try {
-      setLoading(true)
-      setError(null)
+      setLoading(true);
+      setError(null);
 
-      const dashboardData = await fetchDashboardData()
+      const dashboardData = await fetchDashboardData();
 
-      setData(dashboardData)
+      setData(dashboardData);
     } catch (err) {
-      console.error('Error in useRepositoryData:', err)
-      setError(err)
+      console.error("Error in useRepositoryData:", err);
+      setError(err);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   /**
    * Effect to fetch data on component mount
    */
   useEffect(() => {
-    fetchData()
-  }, []) // Empty dependency array = run once on mount
+    fetchData();
+  }, []); // Empty dependency array = run once on mount
 
   /**
    * Manual refetch function
    */
   const refetch = () => {
-    fetchData()
-  }
+    fetchData();
+  };
 
   return {
     data,
     loading,
     error,
     refetch,
-  }
+  };
 }

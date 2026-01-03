@@ -101,11 +101,11 @@ body.react-modal-sheet-open {
 }
 
 /* Animation states */
-.react-modal-sheet-container[data-rsbs-is-dismissable='true'] {
+.react-modal-sheet-container[data-rsbs-is-dismissable="true"] {
   cursor: grab;
 }
 
-.react-modal-sheet-container[data-rsbs-is-dismissable='true']:active {
+.react-modal-sheet-container[data-rsbs-is-dismissable="true"]:active {
   cursor: grabbing;
 }
 

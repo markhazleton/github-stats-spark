@@ -1,28 +1,28 @@
 /**
  * LineGraph Component
- * 
+ *
  * Renders a line graph visualization using Chart.js with touch-optimized tooltips.
- * 
+ *
  * @component
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import ChartWrapper from './ChartWrapper';
+import React from "react";
+import PropTypes from "prop-types";
+import ChartWrapper from "./ChartWrapper";
 
 /**
  * Format values based on metric type
  */
 function formatValue(value, metricLabel) {
-  if (!value && value !== 0) return 'N/A';
-  
-  if (metricLabel?.includes('Date')) {
+  if (!value && value !== 0) return "N/A";
+
+  if (metricLabel?.includes("Date")) {
     return new Date(value).toLocaleDateString();
   }
-  if (metricLabel?.includes('Size')) {
+  if (metricLabel?.includes("Size")) {
     return `${value.toLocaleString()} changes`;
   }
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     if (value >= 1000000) {
       return `${(value / 1000000).toFixed(1)}M`;
     } else if (value >= 1000) {
@@ -35,7 +35,7 @@ function formatValue(value, metricLabel) {
 
 /**
  * LineGraph Component
- * 
+ *
  * @param {Object} props
  * @param {Array} props.data - Chart data array with {name, value, date} objects
  * @param {string} props.metricLabel - Label for the metric being displayed
@@ -43,12 +43,12 @@ function formatValue(value, metricLabel) {
  * @param {string} props.lineColor - Line color (default: primary blue)
  * @param {boolean} props.fill - Fill area under line (default: true)
  */
-export default function LineGraph({ 
-  data, 
-  metricLabel = 'Value',
+export default function LineGraph({
+  data,
+  metricLabel = "Value",
   onPointClick,
-  lineColor = '#0366d6',
-  fill = true
+  lineColor = "#0366d6",
+  fill = true,
 }) {
   if (!data || data.length === 0) {
     return (
@@ -65,28 +65,28 @@ export default function LineGraph({
     if (a.date && b.date) {
       return new Date(a.date) - new Date(b.date);
     }
-    return (a.name || '').localeCompare(b.name || '');
+    return (a.name || "").localeCompare(b.name || "");
   });
 
   // Prepare Chart.js data
   const chartData = {
-    labels: sortedData.map(item => item.name || item.label || ''),
+    labels: sortedData.map((item) => item.name || item.label || ""),
     datasets: [
       {
         label: metricLabel,
-        data: sortedData.map(item => item.value),
+        data: sortedData.map((item) => item.value),
         borderColor: lineColor,
-        backgroundColor: fill ? `${lineColor}33` : 'transparent', // 20% opacity for fill
+        backgroundColor: fill ? `${lineColor}33` : "transparent", // 20% opacity for fill
         borderWidth: 3,
         fill: fill,
         tension: 0.4, // Curved lines
         pointRadius: 4,
         pointHoverRadius: 6,
         pointBackgroundColor: lineColor,
-        pointBorderColor: '#ffffff',
+        pointBorderColor: "#ffffff",
         pointBorderWidth: 2,
         pointHoverBackgroundColor: lineColor,
-        pointHoverBorderColor: '#ffffff',
+        pointHoverBorderColor: "#ffffff",
         pointHoverBorderWidth: 2,
       },
     ],
@@ -118,7 +118,7 @@ export default function LineGraph({
             if (item.date) {
               return `Date: ${new Date(item.date).toLocaleDateString()}`;
             }
-            return '';
+            return "";
           },
         },
       },
@@ -142,7 +142,7 @@ export default function LineGraph({
         beginAtZero: true,
         grid: {
           display: true,
-          color: 'rgba(0, 0, 0, 0.05)',
+          color: "rgba(0, 0, 0, 0.05)",
         },
         ticks: {
           callback: (value) => formatValue(value, metricLabel),
@@ -150,8 +150,8 @@ export default function LineGraph({
       },
     },
     interaction: {
-      mode: 'nearest',
-      axis: 'x',
+      mode: "nearest",
+      axis: "x",
       intersect: false,
     },
   };
@@ -169,12 +169,14 @@ export default function LineGraph({
 }
 
 LineGraph.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    label: PropTypes.string,
-    value: PropTypes.number,
-    date: PropTypes.string,
-  })).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      label: PropTypes.string,
+      value: PropTypes.number,
+      date: PropTypes.string,
+    }),
+  ).isRequired,
   metricLabel: PropTypes.string,
   onPointClick: PropTypes.func,
   lineColor: PropTypes.string,

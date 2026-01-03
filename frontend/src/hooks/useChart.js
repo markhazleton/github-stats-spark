@@ -1,15 +1,15 @@
 /**
  * useChart Hook - Chart.js Initialization and Configuration
- * 
+ *
  * Custom hook for Chart.js initialization with mobile-optimized settings,
  * touch interactions, responsive behavior, and performance optimizations.
- * 
+ *
  * @module hooks/useChart
  */
 
-import { useEffect, useRef, useState, useCallback } from 'react';
-import { Chart, registerables } from 'chart.js';
-import { debounce } from '@/utils/performance';
+import { useEffect, useRef, useState, useCallback } from "react";
+import { Chart, registerables } from "chart.js";
+import { debounce } from "@/utils/performance";
 
 // Register Chart.js components
 Chart.register(...registerables);
@@ -22,13 +22,13 @@ const DEFAULT_CONFIG = {
   maintainAspectRatio: false,
   devicePixelRatio: window.devicePixelRatio || 1,
   interaction: {
-    mode: 'index',
+    mode: "index",
     intersect: false,
   },
   plugins: {
     legend: {
       display: true,
-      position: 'bottom',
+      position: "bottom",
       labels: {
         padding: 16,
         font: {
@@ -41,30 +41,31 @@ const DEFAULT_CONFIG = {
     },
     tooltip: {
       enabled: true,
-      mode: 'index',
+      mode: "index",
       intersect: false,
-      backgroundColor: 'rgba(0, 0, 0, 0.9)',
-      titleColor: '#ffffff',
-      bodyColor: '#ffffff',
-      borderColor: 'rgba(255, 255, 255, 0.2)',
+      backgroundColor: "rgba(0, 0, 0, 0.9)",
+      titleColor: "#ffffff",
+      bodyColor: "#ffffff",
+      borderColor: "rgba(255, 255, 255, 0.2)",
       borderWidth: 1,
       cornerRadius: 8,
       padding: 12,
       displayColors: true,
       callbacks: {
         title: (context) => {
-          return context[0]?.label || '';
+          return context[0]?.label || "";
         },
         label: (context) => {
-          const label = context.dataset.label || '';
-          const value = context.parsed.y !== null ? context.parsed.y : context.parsed;
-          return `${label}: ${typeof value === 'number' ? value.toLocaleString() : value}`;
+          const label = context.dataset.label || "";
+          const value =
+            context.parsed.y !== null ? context.parsed.y : context.parsed;
+          return `${label}: ${typeof value === "number" ? value.toLocaleString() : value}`;
         },
       },
       // Touch-optimized tooltip positioning
-      position: 'average',
-      yAlign: 'bottom', // Position above finger to avoid occlusion
-      xAlign: 'center',
+      position: "average",
+      yAlign: "bottom", // Position above finger to avoid occlusion
+      xAlign: "center",
     },
   },
   scales: {
@@ -85,7 +86,7 @@ const DEFAULT_CONFIG = {
     y: {
       beginAtZero: true,
       grid: {
-        color: 'rgba(0, 0, 0, 0.05)',
+        color: "rgba(0, 0, 0, 0.05)",
         drawBorder: false,
       },
       ticks: {
@@ -94,9 +95,9 @@ const DEFAULT_CONFIG = {
         },
         callback: (value) => {
           if (value >= 1000000) {
-            return (value / 1000000).toFixed(1) + 'M';
+            return (value / 1000000).toFixed(1) + "M";
           } else if (value >= 1000) {
-            return (value / 1000).toFixed(1) + 'K';
+            return (value / 1000).toFixed(1) + "K";
           }
           return value;
         },
@@ -105,7 +106,7 @@ const DEFAULT_CONFIG = {
   },
   animation: {
     duration: 750,
-    easing: 'easeInOutQuart',
+    easing: "easeInOutQuart",
   },
 };
 
@@ -123,10 +124,10 @@ class TouchAndHoldPlugin {
   beforeEvent(chart, args) {
     const event = args.event;
 
-    if (event.type === 'touchstart') {
+    if (event.type === "touchstart") {
       this.touchStartTime = Date.now();
       this.touchPosition = { x: event.x, y: event.y };
-      
+
       // Clear existing timeout
       if (this.touchTimeout) {
         clearTimeout(this.touchTimeout);
@@ -137,29 +138,29 @@ class TouchAndHoldPlugin {
         if (chart.tooltip) {
           const activeElements = chart.getElementsAtEventForMode(
             event,
-            'nearest',
+            "nearest",
             { intersect: false },
-            false
+            false,
           );
-          
+
           if (activeElements.length > 0) {
             chart.tooltip.setActiveElements(activeElements);
-            chart.update('none');
+            chart.update("none");
           }
         }
       }, 300);
-    } else if (event.type === 'touchmove') {
+    } else if (event.type === "touchmove") {
       // Cancel if finger moves too much
       if (this.touchPosition) {
         const distance = Math.sqrt(
           Math.pow(event.x - this.touchPosition.x, 2) +
-          Math.pow(event.y - this.touchPosition.y, 2)
+            Math.pow(event.y - this.touchPosition.y, 2),
         );
         if (distance > 10) {
           clearTimeout(this.touchTimeout);
         }
       }
-    } else if (event.type === 'touchend' || event.type === 'touchcancel') {
+    } else if (event.type === "touchend" || event.type === "touchcancel") {
       clearTimeout(this.touchTimeout);
       this.touchPosition = null;
     }
@@ -170,27 +171,27 @@ const touchAndHoldPlugin = new TouchAndHoldPlugin();
 
 /**
  * Custom hook for Chart.js initialization
- * 
+ *
  * @param {Object} chartConfig - Chart configuration object
  * @param {string} chartConfig.type - Chart type: 'bar' | 'line' | 'pie' | 'doughnut'
  * @param {Object} chartConfig.data - Chart data (labels, datasets)
  * @param {Object} [chartConfig.options] - Additional Chart.js options
  * @param {boolean} [chartConfig.enableTouchAndHold=true] - Enable touch-and-hold tooltips
  * @param {number} [chartConfig.debounceDelay=150] - Debounce delay for resize (ms)
- * 
+ *
  * @returns {Object} - Chart instance and utility functions
  * @returns {React.RefObject} returns.canvasRef - Canvas ref to attach
  * @returns {Chart|null} returns.chartInstance - Chart.js instance
  * @returns {Function} returns.updateChart - Function to update chart data
  * @returns {Function} returns.destroyChart - Function to destroy chart
- * 
+ *
  * @example
  * const { canvasRef, updateChart } = useChart({
  *   type: 'bar',
  *   data: { labels: [...], datasets: [...] },
  *   options: { scales: { y: { beginAtZero: true } } }
  * });
- * 
+ *
  * return <canvas ref={canvasRef} />;
  */
 export const useChart = (chartConfig) => {
@@ -232,7 +233,7 @@ export const useChart = (chartConfig) => {
     };
 
     // Remove scales for pie/doughnut charts
-    if (type === 'pie' || type === 'doughnut') {
+    if (type === "pie" || type === "doughnut") {
       delete merged.scales;
     }
 
@@ -251,8 +252,8 @@ export const useChart = (chartConfig) => {
     }
 
     try {
-      const ctx = canvasRef.current.getContext('2d');
-      
+      const ctx = canvasRef.current.getContext("2d");
+
       const config = {
         type,
         data,
@@ -263,7 +264,7 @@ export const useChart = (chartConfig) => {
       chartInstanceRef.current = new Chart(ctx, config);
       setIsReady(true);
     } catch (error) {
-      console.error('Error initializing chart:', error);
+      console.error("Error initializing chart:", error);
     }
   }, [type, data, mergedOptions, enableTouchAndHold]);
 
@@ -275,9 +276,9 @@ export const useChart = (chartConfig) => {
 
     try {
       chartInstanceRef.current.data = newData;
-      chartInstanceRef.current.update('active');
+      chartInstanceRef.current.update("active");
     } catch (error) {
-      console.error('Error updating chart:', error);
+      console.error("Error updating chart:", error);
     }
   }, []);
 
@@ -302,9 +303,9 @@ export const useChart = (chartConfig) => {
       }
     }, debounceDelay);
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [debounceDelay]);
 
@@ -312,9 +313,13 @@ export const useChart = (chartConfig) => {
    * Initialize chart on mount or when config changes
    */
   useEffect(() => {
-    initChart();
+    // Defer chart initialization until next tick
+    const timer = setTimeout(() => {
+      initChart();
+    }, 0);
 
     return () => {
+      clearTimeout(timer);
       destroyChart();
     };
   }, [initChart, destroyChart]);
@@ -330,7 +335,6 @@ export const useChart = (chartConfig) => {
 
   return {
     canvasRef,
-    chartInstance: chartInstanceRef.current,
     updateChart,
     destroyChart,
     isReady,
@@ -339,18 +343,18 @@ export const useChart = (chartConfig) => {
 
 /**
  * Hook for responsive chart sizing based on viewport
- * 
+ *
  * @param {Object} options - Sizing options
  * @param {number} [options.minHeight=300] - Minimum chart height (px)
  * @param {number} [options.maxHeight=600] - Maximum chart height (px)
  * @param {number} [options.mobileAspectRatio=1.5] - Aspect ratio for mobile (width/height)
  * @param {number} [options.desktopAspectRatio=2] - Aspect ratio for desktop
  * @param {number} [options.breakpoint=768] - Mobile breakpoint (px)
- * 
+ *
  * @returns {Object} - Chart dimensions
  * @returns {number} returns.width - Chart width
  * @returns {number} returns.height - Chart height
- * 
+ *
  * @example
  * const { width, height } = useResponsiveChartSize();
  * return <canvas width={width} height={height} />;
@@ -374,7 +378,7 @@ export const useResponsiveChartSize = (options = {}) => {
       const isMobile = window.innerWidth < breakpoint;
       const containerWidth = Math.min(window.innerWidth - 32, 1200); // 16px padding each side
       const aspectRatio = isMobile ? mobileAspectRatio : desktopAspectRatio;
-      
+
       let height = containerWidth / aspectRatio;
       height = Math.max(minHeight, Math.min(maxHeight, height));
 
@@ -385,12 +389,12 @@ export const useResponsiveChartSize = (options = {}) => {
     };
 
     const debouncedCalculate = debounce(calculateDimensions, 150);
-    
+
     calculateDimensions();
-    window.addEventListener('resize', debouncedCalculate);
-    
+    window.addEventListener("resize", debouncedCalculate);
+
     return () => {
-      window.removeEventListener('resize', debouncedCalculate);
+      window.removeEventListener("resize", debouncedCalculate);
     };
   }, [minHeight, maxHeight, mobileAspectRatio, desktopAspectRatio, breakpoint]);
 

@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react'
-import styles from './Tooltip.module.css'
+import React, { useState, useRef, useEffect } from "react";
+import styles from "./Tooltip.module.css";
 
 /**
  * Tooltip Component
@@ -22,34 +22,34 @@ import styles from './Tooltip.module.css'
 export default function Tooltip({
   children,
   content,
-  position = 'top',
+  position = "top",
   delay = 300,
 }) {
-  const [isVisible, setIsVisible] = useState(false)
-  const [showTimeout, setShowTimeout] = useState(null)
-  const tooltipRef = useRef(null)
-  const triggerRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [showTimeout, setShowTimeout] = useState(null);
+  const tooltipRef = useRef(null);
+  const triggerRef = useRef(null);
 
   /**
    * Show tooltip after delay
    */
   const handleMouseEnter = () => {
     const timeout = setTimeout(() => {
-      setIsVisible(true)
-    }, delay)
-    setShowTimeout(timeout)
-  }
+      setIsVisible(true);
+    }, delay);
+    setShowTimeout(timeout);
+  };
 
   /**
    * Hide tooltip and clear delay timeout
    */
   const handleMouseLeave = () => {
     if (showTimeout) {
-      clearTimeout(showTimeout)
-      setShowTimeout(null)
+      clearTimeout(showTimeout);
+      setShowTimeout(null);
     }
-    setIsVisible(false)
-  }
+    setIsVisible(false);
+  };
 
   /**
    * Cleanup timeout on unmount
@@ -57,14 +57,14 @@ export default function Tooltip({
   useEffect(() => {
     return () => {
       if (showTimeout) {
-        clearTimeout(showTimeout)
+        clearTimeout(showTimeout);
       }
-    }
-  }, [showTimeout])
+    };
+  }, [showTimeout]);
 
   // Don't render if no content
   if (!content) {
-    return <>{children}</>
+    return <>{children}</>;
   }
 
   return (
@@ -89,5 +89,5 @@ export default function Tooltip({
         </div>
       )}
     </div>
-  )
+  );
 }

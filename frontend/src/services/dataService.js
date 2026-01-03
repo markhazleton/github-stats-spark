@@ -5,8 +5,16 @@
  * In production (GitHub Pages), it fetches from the /docs/data/ directory.
  * In development, it uses the configured base path.
  *
+ * Implements offline-first strategy with IndexedDB caching for improved performance
+ * and offline functionality.
+ *
  * @module dataService
  */
+
+import { offlineStorage } from "./offlineStorage";
+
+// Cache keys
+const CACHE_KEY_REPOSITORIES = "repositories-data";
 
 /**
  * Get the base URL for data fetching based on environment
@@ -15,75 +23,146 @@
 const getDataBaseUrl = () => {
   // In development, use relative path
   if (import.meta.env.DEV) {
-    return '/data'
+    return "/data";
   }
 
   // In production (GitHub Pages), use the configured base path
-  return `${import.meta.env.BASE_URL}data`
-}
+  return `${import.meta.env.BASE_URL}data`;
+};
 
 /**
- * Fetch dashboard data from repositories.json with automatic retry
+ * Fetch dashboard data from repositories.json with offline cache support
  *
- * @param {number} maxRetries - Maximum number of retry attempts (default: 3)
- * @param {number} retryDelay - Delay between retries in ms (default: 2000)
+ * Strategy: Cache-first with network fallback
+ * - Checks offline cache first
+ * - If online and cache is stale/missing, fetches from network
+ * - Caches fresh data for offline use
+ * - Falls back to cached data if network fails
+ *
+ * @param {object} options
+ * @param {boolean} [options.useCache=true] - Whether to use offline cache
+ * @param {boolean} [options.forceRefresh=false] - Force network fetch ignoring cache
+ * @param {number} [options.maxRetries=3] - Maximum number of retry attempts
+ * @param {number} [options.retryDelay=2000] - Delay between retries in ms
  * @returns {Promise<Object>} Dashboard data object containing:
  *   - repositories: Array of repository objects with metrics
  *   - profile: User profile information
  *   - metadata: Generation metadata and schema version
+ *   - _fromCache: Boolean indicating if data came from cache
  *
- * @throws {Error} If fetch fails after all retries or data is invalid
+ * @throws {Error} If fetch fails after all retries and no cache available
  *
  * @example
- * const data = await fetchDashboardData()
+ * const data = await fetchDashboardData({ useCache: true })
  * console.log(`Loaded ${data.repositories.length} repositories`)
+ * if (data._fromCache) console.log('Using cached data')
  */
-export async function fetchDashboardData(maxRetries = 3, retryDelay = 2000) {
-  const baseUrl = getDataBaseUrl()
-  const url = `${baseUrl}/repositories.json`
+export async function fetchDashboardData({
+  useCache = true,
+  forceRefresh = false,
+  maxRetries = 3,
+  retryDelay = 2000,
+} = {}) {
+  const baseUrl = getDataBaseUrl();
+  const url = `${baseUrl}/repositories.json`;
+  const isOnline = navigator.onLine;
 
+  // Try cache first if enabled and not forcing refresh
+  if (useCache && !forceRefresh) {
+    try {
+      const cachedData = await offlineStorage.get(CACHE_KEY_REPOSITORIES);
+      if (cachedData) {
+        console.log("[DataService] Using cached dashboard data");
+        return { ...cachedData, _fromCache: true };
+      }
+    } catch (error) {
+      console.warn("[DataService] Failed to read cache:", error);
+    }
+  }
+
+  // If offline and no cache, throw error
+  if (!isOnline) {
+    throw new Error("No internet connection and no cached data available");
+  }
+
+  // Fetch from network
   let lastError = null;
-  
+
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
-      const response = await fetch(url)
+      const response = await fetch(url);
 
       if (!response.ok) {
-        throw new Error(`Failed to fetch dashboard data: ${response.status} ${response.statusText}`)
+        throw new Error(
+          `Failed to fetch dashboard data: ${response.status} ${response.statusText}`,
+        );
       }
 
-      const data = await response.json()
+      const data = await response.json();
 
       // Validate data structure
-      if (!data || typeof data !== 'object') {
-        throw new Error('Invalid dashboard data: expected object')
+      if (!data || typeof data !== "object") {
+        throw new Error("Invalid dashboard data: expected object");
       }
 
       if (!Array.isArray(data.repositories)) {
-        throw new Error('Invalid dashboard data: repositories must be an array')
+        throw new Error(
+          "Invalid dashboard data: repositories must be an array",
+        );
+      }
+
+      // Cache the fresh data
+      if (useCache) {
+        try {
+          await offlineStorage.set(CACHE_KEY_REPOSITORIES, data, "2.0.0");
+          console.log("[DataService] Cached fresh dashboard data");
+        } catch (error) {
+          console.warn("[DataService] Failed to cache data:", error);
+        }
       }
 
       // Success - log if retried
       if (attempt > 0) {
-        console.log(`Successfully fetched data after ${attempt} ${attempt === 1 ? 'retry' : 'retries'}`)
+        console.log(
+          `Successfully fetched data after ${attempt} ${attempt === 1 ? "retry" : "retries"}`,
+        );
       }
 
-      return data
+      return { ...data, _fromCache: false };
     } catch (error) {
-      lastError = error
-      console.error(`Error fetching dashboard data (attempt ${attempt + 1}/${maxRetries + 1}):`, error)
-      
+      lastError = error;
+      console.error(
+        `Error fetching dashboard data (attempt ${attempt + 1}/${maxRetries + 1}):`,
+        error,
+      );
+
       // Don't retry on the last attempt
       if (attempt < maxRetries) {
-        console.log(`Retrying in ${retryDelay / 1000} seconds...`)
-        await new Promise(resolve => setTimeout(resolve, retryDelay))
+        console.log(`Retrying in ${retryDelay / 1000} seconds...`);
+        await new Promise((resolve) => setTimeout(resolve, retryDelay));
       }
     }
   }
-  
-  // All retries exhausted
-  console.error('Failed to fetch dashboard data after all retry attempts')
-  throw lastError
+
+  // All retries exhausted - try cache as last resort
+  if (useCache) {
+    try {
+      const cachedData = await offlineStorage.get(CACHE_KEY_REPOSITORIES);
+      if (cachedData) {
+        console.warn("[DataService] Network failed, using stale cached data");
+        return { ...cachedData, _fromCache: true, _stale: true };
+      }
+    } catch (error) {
+      console.error(
+        "[DataService] Failed to read cache after network error:",
+        error,
+      );
+    }
+  }
+
+  // No cache and network failed
+  console.error("Failed to fetch dashboard data after all retry attempts");
+  throw lastError;
 }
 
 /**
@@ -93,22 +172,22 @@ export async function fetchDashboardData(maxRetries = 3, retryDelay = 2000) {
  * @throws {Error} If fetch fails
  */
 export async function fetchUserProfile() {
-  const baseUrl = getDataBaseUrl()
-  const url = `${baseUrl}/profile.json`
+  const baseUrl = getDataBaseUrl();
+  const url = `${baseUrl}/profile.json`;
 
   try {
-    const response = await fetch(url)
+    const response = await fetch(url);
 
     if (!response.ok) {
       // Profile data might not exist as separate file
-      console.warn('Profile data not found, using data from repositories.json')
-      return null
+      console.warn("Profile data not found, using data from repositories.json");
+      return null;
     }
 
-    return await response.json()
+    return await response.json();
   } catch (error) {
-    console.warn('Error fetching profile data:', error)
-    return null
+    console.warn("Error fetching profile data:", error);
+    return null;
   }
 }
 
@@ -124,18 +203,18 @@ export async function fetchUserProfile() {
  */
 export function extractLanguages(repositories) {
   if (!Array.isArray(repositories)) {
-    return []
+    return [];
   }
 
-  const languageSet = new Set()
+  const languageSet = new Set();
 
   repositories.forEach((repo) => {
-    if (repo.language && repo.language !== 'Unknown') {
-      languageSet.add(repo.language)
+    if (repo.language && repo.language !== "Unknown") {
+      languageSet.add(repo.language);
     }
-  })
+  });
 
-  return Array.from(languageSet).sort()
+  return Array.from(languageSet).sort();
 }
 
 /**
@@ -149,11 +228,11 @@ export function extractLanguages(repositories) {
  * const pythonRepos = filterByLanguage(data.repositories, 'Python')
  */
 export function filterByLanguage(repositories, language) {
-  if (!language || language === 'all') {
-    return repositories
+  if (!language || language === "all") {
+    return repositories;
   }
 
-  return repositories.filter((repo) => repo.language === language)
+  return repositories.filter((repo) => repo.language === language);
 }
 
 /**
@@ -167,37 +246,37 @@ export function filterByLanguage(repositories, language) {
  * @example
  * const sorted = sortRepositories(data.repositories, 'stars', 'desc')
  */
-export function sortRepositories(repositories, field, direction = 'desc') {
+export function sortRepositories(repositories, field, direction = "desc") {
   if (!Array.isArray(repositories)) {
-    return []
+    return [];
   }
 
   // Create a copy to avoid mutating original array
-  const sorted = [...repositories]
+  const sorted = [...repositories];
 
   sorted.sort((a, b) => {
-    let aValue = a[field]
-    let bValue = b[field]
+    let aValue = a[field];
+    let bValue = b[field];
 
     // Handle date fields
-    if (field.includes('date') || field.includes('Date')) {
-      aValue = new Date(aValue).getTime()
-      bValue = new Date(bValue).getTime()
+    if (field.includes("date") || field.includes("Date")) {
+      aValue = new Date(aValue).getTime();
+      bValue = new Date(bValue).getTime();
     }
 
     // Handle null/undefined values
-    if (aValue == null) return 1
-    if (bValue == null) return -1
+    if (aValue == null) return 1;
+    if (bValue == null) return -1;
 
     // Numeric or string comparison
-    if (direction === 'asc') {
-      return aValue < bValue ? -1 : aValue > bValue ? 1 : 0
+    if (direction === "asc") {
+      return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
     } else {
-      return aValue > bValue ? -1 : aValue < bValue ? 1 : 0
+      return aValue > bValue ? -1 : aValue < bValue ? 1 : 0;
     }
-  })
+  });
 
-  return sorted
+  return sorted;
 }
 
 /**
@@ -211,19 +290,19 @@ export function sortRepositories(repositories, field, direction = 'desc') {
  * const results = searchRepositories(data.repositories, 'react')
  */
 export function searchRepositories(repositories, query) {
-  if (!query || query.trim() === '') {
-    return repositories
+  if (!query || query.trim() === "") {
+    return repositories;
   }
 
-  const lowerQuery = query.toLowerCase().trim()
+  const lowerQuery = query.toLowerCase().trim();
 
   return repositories.filter((repo) => {
-    const nameMatch = repo.name?.toLowerCase().includes(lowerQuery)
-    const descMatch = repo.description?.toLowerCase().includes(lowerQuery)
-    const langMatch = repo.language?.toLowerCase().includes(lowerQuery)
+    const nameMatch = repo.name?.toLowerCase().includes(lowerQuery);
+    const descMatch = repo.description?.toLowerCase().includes(lowerQuery);
+    const langMatch = repo.language?.toLowerCase().includes(lowerQuery);
 
-    return nameMatch || descMatch || langMatch
-  })
+    return nameMatch || descMatch || langMatch;
+  });
 }
 
 /**
@@ -244,16 +323,27 @@ export function calculateStats(repositories) {
       totalForks: 0,
       avgCommitSize: 0,
       languageCount: 0,
-    }
+    };
   }
 
-  const totalCommits = repositories.reduce((sum, repo) => sum + (repo.commit_count || 0), 0)
-  const totalStars = repositories.reduce((sum, repo) => sum + (repo.stars || 0), 0)
-  const totalForks = repositories.reduce((sum, repo) => sum + (repo.forks || 0), 0)
+  const totalCommits = repositories.reduce(
+    (sum, repo) => sum + (repo.commit_count || 0),
+    0,
+  );
+  const totalStars = repositories.reduce(
+    (sum, repo) => sum + (repo.stars || 0),
+    0,
+  );
+  const totalForks = repositories.reduce(
+    (sum, repo) => sum + (repo.forks || 0),
+    0,
+  );
 
-  const avgCommitSize = repositories.reduce((sum, repo) => sum + (repo.avg_commit_size || 0), 0) / repositories.length
+  const avgCommitSize =
+    repositories.reduce((sum, repo) => sum + (repo.avg_commit_size || 0), 0) /
+    repositories.length;
 
-  const languages = extractLanguages(repositories)
+  const languages = extractLanguages(repositories);
 
   return {
     totalCommits,
@@ -261,6 +351,57 @@ export function calculateStats(repositories) {
     totalForks,
     avgCommitSize: Math.round(avgCommitSize * 100) / 100, // Round to 2 decimals
     languageCount: languages.length,
+  };
+}
+
+/**
+ * Setup background sync when connectivity returns
+ * Automatically refreshes data when coming online
+ *
+ * @param {Function} onSyncComplete - Callback when sync completes
+ * @returns {Function} Cleanup function to remove listener
+ *
+ * @example
+ * const cleanup = setupBackgroundSync(() => {
+ *   console.log('Data refreshed after coming online')
+ * })
+ * // Later: cleanup()
+ */
+export function setupBackgroundSync(onSyncComplete) {
+  const handleOnline = async () => {
+    console.log("[DataService] Network restored, refreshing data...");
+    try {
+      const data = await fetchDashboardData({
+        useCache: true,
+        forceRefresh: true,
+      });
+      if (onSyncComplete) {
+        onSyncComplete(data);
+      }
+    } catch (error) {
+      console.error("[DataService] Background sync failed:", error);
+    }
+  };
+
+  window.addEventListener("online", handleOnline);
+
+  // Return cleanup function
+  return () => {
+    window.removeEventListener("online", handleOnline);
+  };
+}
+
+/**
+ * Clear all cached data
+ * @returns {Promise<void>}
+ */
+export async function clearCache() {
+  try {
+    await offlineStorage.clear();
+    console.log("[DataService] Cache cleared");
+  } catch (error) {
+    console.error("[DataService] Failed to clear cache:", error);
+    throw error;
   }
 }
 
@@ -272,4 +413,6 @@ export default {
   sortRepositories,
   searchRepositories,
   calculateStats,
-}
+  setupBackgroundSync,
+  clearCache,
+};

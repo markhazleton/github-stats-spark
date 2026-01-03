@@ -37,12 +37,20 @@
 
 .swipe-indicator-left {
   left: 0;
-  background: linear-gradient(to right, var(--gesture-swipe-indicator), transparent);
+  background: linear-gradient(
+    to right,
+    var(--gesture-swipe-indicator),
+    transparent
+  );
 }
 
 .swipe-indicator-right {
   right: 0;
-  background: linear-gradient(to left, var(--gesture-swipe-indicator), transparent);
+  background: linear-gradient(
+    to left,
+    var(--gesture-swipe-indicator),
+    transparent
+  );
 }
 
 .swipeable.swiping-left .swipe-indicator-left,
@@ -53,7 +61,8 @@
 /* Swipe content transform */
 .swipe-content {
   transform: translateX(0);
-  transition: transform var(--swipe-animation-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--swipe-animation-duration)
+    cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
@@ -68,7 +77,7 @@
 }
 
 .long-pressable::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -91,7 +100,7 @@
 }
 
 .tap-highlight::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;

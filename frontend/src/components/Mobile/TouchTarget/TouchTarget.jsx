@@ -1,11 +1,11 @@
-import { useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import './TouchTarget.css';
+import { useRef } from "react";
+import PropTypes from "prop-types";
+import "./TouchTarget.css";
 
 /**
  * TouchTarget Component
  * Ensures 44x44px minimum size with touch feedback
- * 
+ *
  * @param {Object} props
  * @param {React.ReactNode} props.children - Content to wrap
  * @param {Function} props.onClick - Click handler
@@ -14,29 +14,31 @@ import './TouchTarget.css';
  * @param {boolean} props.ripple - Enable ripple effect
  * @param {string} props.className - Additional CSS classes
  */
-export function TouchTarget({ 
-  children, 
+export function TouchTarget({
+  children,
   onClick,
   config = {},
   ariaLabel,
   ripple = false,
   disabled = false,
-  className = ''
+  className = "",
 }) {
   const ref = useRef(null);
   const { minWidth = 44, minHeight = 44 } = config;
 
   const style = {
-    '--touch-min-width': `${minWidth}px`,
-    '--touch-min-height': `${minHeight}px`
+    "--touch-min-width": `${minWidth}px`,
+    "--touch-min-height": `${minHeight}px`,
   };
 
   const classes = [
-    'touch-target',
-    ripple && 'ripple',
-    disabled && 'disabled',
-    className
-  ].filter(Boolean).join(' ');
+    "touch-target",
+    ripple && "ripple",
+    disabled && "disabled",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   const handleClick = (e) => {
     if (disabled) return;
@@ -63,12 +65,12 @@ TouchTarget.propTypes = {
   onClick: PropTypes.func,
   config: PropTypes.shape({
     minWidth: PropTypes.number,
-    minHeight: PropTypes.number
+    minHeight: PropTypes.number,
   }),
   ariaLabel: PropTypes.string.isRequired,
   ripple: PropTypes.bool,
   disabled: PropTypes.bool,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default TouchTarget;

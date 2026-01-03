@@ -18,33 +18,33 @@
  * formatDate('2024-01-15T10:30:00Z') // "Jan 15, 2024"
  * formatDate('2024-01-15T10:30:00Z', 'long') // "January 15, 2024"
  */
-export function formatDate(isoDateString, format = 'short') {
-  if (!isoDateString) return 'N/A'
+export function formatDate(isoDateString, format = "short") {
+  if (!isoDateString) return "N/A";
 
   try {
-    const date = new Date(isoDateString)
-    if (isNaN(date.getTime())) return 'N/A'
+    const date = new Date(isoDateString);
+    if (isNaN(date.getTime())) return "N/A";
 
-    if (format === 'short') {
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      })
-    } else if (format === 'long') {
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      })
-    } else if (format === 'relative') {
-      return formatRelativeDate(date)
+    if (format === "short") {
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } else if (format === "long") {
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    } else if (format === "relative") {
+      return formatRelativeDate(date);
     }
 
-    return date.toLocaleDateString()
+    return date.toLocaleDateString();
   } catch (error) {
-    console.error('Error formatting date:', error)
-    return 'N/A'
+    console.error("Error formatting date:", error);
+    return "N/A";
   }
 }
 
@@ -55,17 +55,17 @@ export function formatDate(isoDateString, format = 'short') {
  * @returns {string} Relative time string
  */
 function formatRelativeDate(date) {
-  const now = new Date()
-  const diffMs = now - date
-  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+  const now = new Date();
+  const diffMs = now - date;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-  if (diffDays === 0) return 'Today'
-  if (diffDays === 1) return 'Yesterday'
-  if (diffDays < 7) return `${diffDays} days ago`
-  if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`
-  if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`
+  if (diffDays === 0) return "Today";
+  if (diffDays === 1) return "Yesterday";
+  if (diffDays < 7) return `${diffDays} days ago`;
+  if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+  if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
 
-  return `${Math.floor(diffDays / 365)} years ago`
+  return `${Math.floor(diffDays / 365)} years ago`;
 }
 
 /**
@@ -80,19 +80,19 @@ function formatRelativeDate(date) {
  * formatCommitSize(1234.5, 0) // "1,235"
  */
 export function formatCommitSize(size, decimals = 1) {
-  if (size == null || isNaN(size)) return 'N/A'
+  if (size == null || isNaN(size)) return "N/A";
 
-  const formatted = parseFloat(size).toFixed(decimals)
+  const formatted = parseFloat(size).toFixed(decimals);
 
   // Add thousands separator if needed
   if (size >= 1000) {
-    return parseFloat(formatted).toLocaleString('en-US', {
+    return parseFloat(formatted).toLocaleString("en-US", {
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
-    })
+    });
   }
 
-  return formatted
+  return formatted;
 }
 
 /**
@@ -108,15 +108,15 @@ export function formatCommitSize(size, decimals = 1) {
  * formatNumber(500) // "500"
  */
 export function formatNumber(num, decimals = 1) {
-  if (num == null || isNaN(num)) return '0'
+  if (num == null || isNaN(num)) return "0";
 
   if (num >= 1000000) {
-    return (num / 1000000).toFixed(decimals) + 'M'
+    return (num / 1000000).toFixed(decimals) + "M";
   } else if (num >= 1000) {
-    return (num / 1000).toFixed(decimals) + 'K'
+    return (num / 1000).toFixed(decimals) + "K";
   }
 
-  return num.toString()
+  return num.toString();
 }
 
 /**
@@ -132,14 +132,14 @@ export function formatNumber(num, decimals = 1) {
  * // Returns: [{ x: 'repo1', y: 123 }, { x: 'repo2', y: 456 }]
  */
 export function transformForChart(repositories, xField, yField) {
-  if (!Array.isArray(repositories)) return []
+  if (!Array.isArray(repositories)) return [];
 
   return repositories.map((repo) => ({
     x: repo[xField],
     y: repo[yField] || 0,
     label: repo.name,
     ...repo, // Include full repo data for tooltips
-  }))
+  }));
 }
 
 /**
@@ -153,19 +153,19 @@ export function transformForChart(repositories, xField, yField) {
  * calculatePercentile([1, 2, 3, 4, 5], 50) // 3 (median)
  */
 export function calculatePercentile(values, percentile) {
-  if (!Array.isArray(values) || values.length === 0) return 0
+  if (!Array.isArray(values) || values.length === 0) return 0;
 
-  const sorted = [...values].sort((a, b) => a - b)
-  const index = (percentile / 100) * (sorted.length - 1)
-  const lower = Math.floor(index)
-  const upper = Math.ceil(index)
-  const weight = index % 1
+  const sorted = [...values].sort((a, b) => a - b);
+  const index = (percentile / 100) * (sorted.length - 1);
+  const lower = Math.floor(index);
+  const upper = Math.ceil(index);
+  const weight = index % 1;
 
   if (lower === upper) {
-    return sorted[lower]
+    return sorted[lower];
   }
 
-  return sorted[lower] * (1 - weight) + sorted[upper] * weight
+  return sorted[lower] * (1 - weight) + sorted[upper] * weight;
 }
 
 /**
@@ -179,13 +179,13 @@ export function calculatePercentile(values, percentile) {
  * // Returns: { 'JavaScript': 15, 'Python': 10, 'TypeScript': 8 }
  */
 export function groupByLanguage(repositories) {
-  if (!Array.isArray(repositories)) return {}
+  if (!Array.isArray(repositories)) return {};
 
   return repositories.reduce((acc, repo) => {
-    const lang = repo.language || 'Unknown'
-    acc[lang] = (acc[lang] || 0) + 1
-    return acc
-  }, {})
+    const lang = repo.language || "Unknown";
+    acc[lang] = (acc[lang] || 0) + 1;
+    return acc;
+  }, {});
 }
 
 /**
@@ -199,10 +199,10 @@ export function groupByLanguage(repositories) {
  * calculateAverage(repos, 'commit_count') // 42.5
  */
 export function calculateAverage(repositories, field) {
-  if (!Array.isArray(repositories) || repositories.length === 0) return 0
+  if (!Array.isArray(repositories) || repositories.length === 0) return 0;
 
-  const sum = repositories.reduce((acc, repo) => acc + (repo[field] || 0), 0)
-  return sum / repositories.length
+  const sum = repositories.reduce((acc, repo) => acc + (repo[field] || 0), 0);
+  return sum / repositories.length;
 }
 
 /**
@@ -216,21 +216,21 @@ export function calculateAverage(repositories, field) {
  * @example
  * findExtreme(repos, 'stars', 'max') // Repository with most stars
  */
-export function findExtreme(repositories, field, type = 'max') {
-  if (!Array.isArray(repositories) || repositories.length === 0) return null
+export function findExtreme(repositories, field, type = "max") {
+  if (!Array.isArray(repositories) || repositories.length === 0) return null;
 
   return repositories.reduce((extreme, repo) => {
-    if (!extreme) return repo
+    if (!extreme) return repo;
 
-    const currentValue = repo[field] || 0
-    const extremeValue = extreme[field] || 0
+    const currentValue = repo[field] || 0;
+    const extremeValue = extreme[field] || 0;
 
-    if (type === 'max') {
-      return currentValue > extremeValue ? repo : extreme
+    if (type === "max") {
+      return currentValue > extremeValue ? repo : extreme;
     } else {
-      return currentValue < extremeValue ? repo : extreme
+      return currentValue < extremeValue ? repo : extreme;
     }
-  }, null)
+  }, null);
 }
 
 /**
@@ -245,18 +245,18 @@ export function findExtreme(repositories, field, type = 'max') {
  * // Returns: [{ name: 'repo1', value: 123, language: 'JavaScript' }, ...]
  */
 export function transformForBarChart(repositories, metricId) {
-  if (!Array.isArray(repositories)) return []
+  if (!Array.isArray(repositories)) return [];
 
   return repositories
     .map((repo) => ({
-      name: repo.name || 'Unknown',
+      name: repo.name || "Unknown",
       value: getMetricValue(repo, metricId),
-      language: repo.language || 'Unknown',
+      language: repo.language || "Unknown",
       fullData: repo,
     }))
     .filter((item) => item.value != null)
     .sort((a, b) => b.value - a.value) // Sort descending by value
-    .slice(0, 50) // Limit to top 50 for horizontal bar chart
+    .slice(0, 50); // Limit to top 50 for horizontal bar chart
 }
 
 /**
@@ -271,29 +271,31 @@ export function transformForBarChart(repositories, metricId) {
  * // Returns: [{ name: 'repo1', value: timestamp, date: '2024-01-15' }, ...]
  */
 export function transformForLineGraph(repositories, metricId) {
-  if (!Array.isArray(repositories)) return []
+  if (!Array.isArray(repositories)) return [];
 
   const data = repositories
     .map((repo) => {
-      const value = getMetricValue(repo, metricId)
-      const date = metricId.includes('Date') ? value : repo.lastCommitDate || repo.firstCommitDate
+      const value = getMetricValue(repo, metricId);
+      const date = metricId.includes("Date")
+        ? value
+        : repo.lastCommitDate || repo.firstCommitDate;
 
       return {
-        name: repo.name || 'Unknown',
+        name: repo.name || "Unknown",
         value: value,
         date: date,
-        language: repo.language || 'Unknown',
+        language: repo.language || "Unknown",
         fullData: repo,
-      }
+      };
     })
-    .filter((item) => item.value != null && item.date != null)
+    .filter((item) => item.value != null && item.date != null);
 
   // Sort by date
   return data.sort((a, b) => {
-    const dateA = new Date(a.date)
-    const dateB = new Date(b.date)
-    return dateA - dateB
-  })
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateA - dateB;
+  });
 }
 
 /**
@@ -308,18 +310,25 @@ export function transformForLineGraph(repositories, metricId) {
  * transformForScatterPlot(repos, 'totalCommits', 'avgCommitSize')
  * // Returns: [{ name: 'repo1', x: 123, y: 45.6, language: 'JS' }, ...]
  */
-export function transformForScatterPlot(repositories, xMetric = 'totalCommits', yMetric = 'avgCommitSize') {
-  if (!Array.isArray(repositories)) return []
+export function transformForScatterPlot(
+  repositories,
+  xMetric = "totalCommits",
+  yMetric = "avgCommitSize",
+) {
+  if (!Array.isArray(repositories)) return [];
 
   return repositories
     .map((repo) => ({
-      name: repo.name || 'Unknown',
+      name: repo.name || "Unknown",
       x: getMetricValue(repo, xMetric),
       y: getMetricValue(repo, yMetric),
-      language: repo.language || 'Unknown',
+      language: repo.language || "Unknown",
       fullData: repo,
     }))
-    .filter((item) => item.x != null && item.y != null && !isNaN(item.x) && !isNaN(item.y))
+    .filter(
+      (item) =>
+        item.x != null && item.y != null && !isNaN(item.x) && !isNaN(item.y),
+    );
 }
 
 /**
@@ -331,22 +340,44 @@ export function transformForScatterPlot(repositories, xMetric = 'totalCommits', 
  */
 function getMetricValue(repo, metricId) {
   const metricMap = {
-    totalCommits: repo.commit_history?.total_commits || repo.totalCommits || repo.commit_count || 0,
-    avgCommitSize: repo.commit_metrics?.avg_size || repo.avgCommitSize || repo.avg_commit_size || 0,
-    largestCommit: repo.commit_metrics?.largest_commit?.size || repo.largestCommit || repo.largest_commit || 0,
-    smallestCommit: repo.commit_metrics?.smallest_commit?.size || repo.smallestCommit || repo.smallest_commit || 0,
-    firstCommitDate: repo.commit_history?.first_commit_date || repo.firstCommitDate || repo.first_commit_date,
-    lastCommitDate: repo.commit_history?.last_commit_date || repo.lastCommitDate || repo.last_commit_date,
+    totalCommits:
+      repo.commit_history?.total_commits ||
+      repo.totalCommits ||
+      repo.commit_count ||
+      0,
+    avgCommitSize:
+      repo.commit_metrics?.avg_size ||
+      repo.avgCommitSize ||
+      repo.avg_commit_size ||
+      0,
+    largestCommit:
+      repo.commit_metrics?.largest_commit?.size ||
+      repo.largestCommit ||
+      repo.largest_commit ||
+      0,
+    smallestCommit:
+      repo.commit_metrics?.smallest_commit?.size ||
+      repo.smallestCommit ||
+      repo.smallest_commit ||
+      0,
+    firstCommitDate:
+      repo.commit_history?.first_commit_date ||
+      repo.firstCommitDate ||
+      repo.first_commit_date,
+    lastCommitDate:
+      repo.commit_history?.last_commit_date ||
+      repo.lastCommitDate ||
+      repo.last_commit_date,
+  };
+
+  const value = metricMap[metricId];
+
+  // For date metrics, return timestamp for chart calculations
+  if (metricId.includes("Date") && value) {
+    return new Date(value).getTime();
   }
 
-  const value = metricMap[metricId]
-  
-  // For date metrics, return timestamp for chart calculations
-  if (metricId.includes('Date') && value) {
-    return new Date(value).getTime()
-  }
-  
-  return value
+  return value;
 }
 
 /**
@@ -357,15 +388,15 @@ function getMetricValue(repo, metricId) {
  */
 export function getMetricLabel(metricId) {
   const labels = {
-    totalCommits: 'Total Commits',
-    avgCommitSize: 'Average Commit Size',
-    largestCommit: 'Largest Commit',
-    smallestCommit: 'Smallest Commit',
-    firstCommitDate: 'First Commit Date',
-    lastCommitDate: 'Last Commit Date',
-  }
+    totalCommits: "Total Commits",
+    avgCommitSize: "Average Commit Size",
+    largestCommit: "Largest Commit",
+    smallestCommit: "Smallest Commit",
+    firstCommitDate: "First Commit Date",
+    lastCommitDate: "Last Commit Date",
+  };
 
-  return labels[metricId] || metricId
+  return labels[metricId] || metricId;
 }
 
 /**
@@ -380,10 +411,10 @@ export function getMetricLabel(metricId) {
  * calculatePercentageDifference(75, 100) // -25
  */
 export function calculatePercentageDifference(value, reference) {
-  if (reference === 0 || reference == null || value == null) return 0
+  if (reference === 0 || reference == null || value == null) return 0;
 
-  const diff = ((value - reference) / Math.abs(reference)) * 100
-  return Math.round(diff)
+  const diff = ((value - reference) / Math.abs(reference)) * 100;
+  return Math.round(diff);
 }
 
 /**
@@ -399,30 +430,30 @@ export function calculatePercentageDifference(value, reference) {
  * // Returns: { stars: { diff: 50, percent: 25 }, ... }
  */
 export function compareRepositories(repo1, repo2, metrics) {
-  const comparison = {}
+  const comparison = {};
 
-  metrics.forEach(metric => {
-    const value1 = repo1[metric]
-    const value2 = repo2[metric]
+  metrics.forEach((metric) => {
+    const value1 = repo1[metric];
+    const value2 = repo2[metric];
 
-    if (typeof value1 === 'number' && typeof value2 === 'number') {
+    if (typeof value1 === "number" && typeof value2 === "number") {
       comparison[metric] = {
         value1,
         value2,
         diff: value1 - value2,
         percent: calculatePercentageDifference(value1, value2),
-      }
+      };
     } else {
       comparison[metric] = {
         value1,
         value2,
         diff: null,
         percent: null,
-      }
+      };
     }
-  })
+  });
 
-  return comparison
+  return comparison;
 }
 
 /**
@@ -433,19 +464,19 @@ export function compareRepositories(repo1, repo2, metrics) {
  * @param {string} [order='desc'] - Sort order ('asc' or 'desc')
  * @returns {Array} Ranked repositories with rank property
  */
-export function rankRepositories(repositories, metric, order = 'desc') {
-  if (!Array.isArray(repositories)) return []
+export function rankRepositories(repositories, metric, order = "desc") {
+  if (!Array.isArray(repositories)) return [];
 
   const sorted = [...repositories].sort((a, b) => {
-    const aVal = a[metric] ?? 0
-    const bVal = b[metric] ?? 0
-    return order === 'desc' ? bVal - aVal : aVal - bVal
-  })
+    const aVal = a[metric] ?? 0;
+    const bVal = b[metric] ?? 0;
+    return order === "desc" ? bVal - aVal : aVal - bVal;
+  });
 
   return sorted.map((repo, index) => ({
     ...repo,
     rank: index + 1,
-  }))
+  }));
 }
 
 export default {
@@ -464,4 +495,4 @@ export default {
   calculatePercentageDifference,
   compareRepositories,
   rankRepositories,
-}
+};

@@ -6,14 +6,20 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "clean": "node -e \"const fs=require('fs'); ['../docs','dist','.vite'].forEach(d=>{if(fs.existsSync(d)){fs.rmSync(d,{recursive:true,force:true}); console.log('✓ Cleaned',d)}})\"",
+    "lint": "eslint src --ext js,jsx --max-warnings 0",
+    "lint:fix": "eslint src --ext js,jsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css}\"",
+    "prebuild": "npm run clean && npm run lint && npm run format:check",
     "build": "vite build",
     "postbuild": "node -e \"const fs=require('fs'); const path=require('path'); const src='../data'; const dest='../docs/data'; if(fs.existsSync(src)){fs.mkdirSync(dest,{recursive:true}); fs.cpSync(src,dest,{recursive:true}); console.log('✓ Copied data to docs/data');}\"",
+    "build:analyze": "npm run build && vite-bundle-visualizer",
     "preview": "vite preview --port 4173 --host",
     "lighthouse": "lhci autorun",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "lint": "eslint src --ext js,jsx",
-    "format": "prettier --write \"src/**/*.{js,jsx,css}\""
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@use-gesture/react": "^10.3.1",

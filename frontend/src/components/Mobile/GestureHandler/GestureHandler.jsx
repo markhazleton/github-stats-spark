@@ -1,9 +1,9 @@
 /**
  * GestureHandler Component
- * 
+ *
  * Wraps child elements with swipe gesture detection and visual feedback.
  * Provides haptic feedback and animation for touch interactions.
- * 
+ *
  * @component
  * @example
  * <GestureHandler
@@ -14,9 +14,9 @@
  * </GestureHandler>
  */
 
-import React, { useState } from 'react';
-import { useGesture } from '@/hooks/useGesture';
-import './GestureHandler.css';
+import React, { useState } from "react";
+import { useGesture } from "@/hooks/useGesture";
+import "./GestureHandler.css";
 
 export const GestureHandler = ({
   children,
@@ -30,7 +30,7 @@ export const GestureHandler = ({
   velocityThreshold = 0.5,
   enableHaptics = true,
   showFeedback = true,
-  className = '',
+  className = "",
   ...props
 }) => {
   const [gestureState, setGestureState] = useState({
@@ -43,29 +43,77 @@ export const GestureHandler = ({
     {
       onSwipeLeft: (data) => {
         if (showFeedback) {
-          setGestureState({ isDragging: false, direction: 'left', distance: data.distance });
-          setTimeout(() => setGestureState({ isDragging: false, direction: null, distance: 0 }), 300);
+          setGestureState({
+            isDragging: false,
+            direction: "left",
+            distance: data.distance,
+          });
+          setTimeout(
+            () =>
+              setGestureState({
+                isDragging: false,
+                direction: null,
+                distance: 0,
+              }),
+            300,
+          );
         }
         onSwipeLeft?.(data);
       },
       onSwipeRight: (data) => {
         if (showFeedback) {
-          setGestureState({ isDragging: false, direction: 'right', distance: data.distance });
-          setTimeout(() => setGestureState({ isDragging: false, direction: null, distance: 0 }), 300);
+          setGestureState({
+            isDragging: false,
+            direction: "right",
+            distance: data.distance,
+          });
+          setTimeout(
+            () =>
+              setGestureState({
+                isDragging: false,
+                direction: null,
+                distance: 0,
+              }),
+            300,
+          );
         }
         onSwipeRight?.(data);
       },
       onSwipeUp: (data) => {
         if (showFeedback) {
-          setGestureState({ isDragging: false, direction: 'up', distance: data.distance });
-          setTimeout(() => setGestureState({ isDragging: false, direction: null, distance: 0 }), 300);
+          setGestureState({
+            isDragging: false,
+            direction: "up",
+            distance: data.distance,
+          });
+          setTimeout(
+            () =>
+              setGestureState({
+                isDragging: false,
+                direction: null,
+                distance: 0,
+              }),
+            300,
+          );
         }
         onSwipeUp?.(data);
       },
       onSwipeDown: (data) => {
         if (showFeedback) {
-          setGestureState({ isDragging: false, direction: 'down', distance: data.distance });
-          setTimeout(() => setGestureState({ isDragging: false, direction: null, distance: 0 }), 300);
+          setGestureState({
+            isDragging: false,
+            direction: "down",
+            distance: data.distance,
+          });
+          setTimeout(
+            () =>
+              setGestureState({
+                isDragging: false,
+                direction: null,
+                distance: 0,
+              }),
+            300,
+          );
         }
         onSwipeDown?.(data);
       },
@@ -80,25 +128,27 @@ export const GestureHandler = ({
       swipeThreshold,
       velocityThreshold,
       enableHaptics,
-    }
+    },
   );
 
   return (
     <div
       {...bind()}
-      className={`gesture-handler ${className} ${gestureState.direction ? `gesture-feedback-${gestureState.direction}` : ''}`}
+      className={`gesture-handler ${className} ${gestureState.direction ? `gesture-feedback-${gestureState.direction}` : ""}`}
       data-gesture-active={gestureState.direction !== null}
       {...props}
     >
       {children}
-      
+
       {/* Visual feedback indicator */}
       {showFeedback && gestureState.direction && (
-        <div className={`gesture-indicator gesture-indicator-${gestureState.direction}`}>
-          {gestureState.direction === 'left' && <span>←</span>}
-          {gestureState.direction === 'right' && <span>→</span>}
-          {gestureState.direction === 'up' && <span>↑</span>}
-          {gestureState.direction === 'down' && <span>↓</span>}
+        <div
+          className={`gesture-indicator gesture-indicator-${gestureState.direction}`}
+        >
+          {gestureState.direction === "left" && <span>←</span>}
+          {gestureState.direction === "right" && <span>→</span>}
+          {gestureState.direction === "up" && <span>↑</span>}
+          {gestureState.direction === "down" && <span>↓</span>}
         </div>
       )}
     </div>

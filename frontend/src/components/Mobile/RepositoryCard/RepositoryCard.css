@@ -3,7 +3,7 @@
  * Mobile-first card layout with vertical stacking and swipe-to-delete
  */
 
-@import '../../../styles/mobile/touch.css';
+@import "../../../styles/mobile/touch.css";
 
 /* Card Wrapper for swipe-to-delete */
 .repository-card-wrapper {
@@ -18,7 +18,9 @@
   border-radius: 8px;
   padding: 1rem;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   position: relative;
   /* Prevent horizontal scroll */
   max-width: 100%;

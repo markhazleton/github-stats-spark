@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 /**
  * useMediaQuery Hook
  * Detects if a media query matches
- * 
+ *
  * @param {string} query - CSS media query string
  * @returns {boolean} Whether the query matches
- * 
+ *
  * @example
  * const isMobile = useMediaQuery('(max-width: 767px)');
  * const isDesktop = useMediaQuery('(min-width: 1024px)');
  */
 export function useMediaQuery(query) {
   const [matches, setMatches] = useState(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       return window.matchMedia(query).matches;
     }
     return false;
@@ -21,19 +21,16 @@ export function useMediaQuery(query) {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(query);
-    
+
     const handleChange = (e) => {
       setMatches(e.matches);
     };
 
-    // Set initial value
-    setMatches(mediaQuery.matches);
-
     // Listen for changes
-    mediaQuery.addEventListener('change', handleChange);
-    
+    mediaQuery.addEventListener("change", handleChange);
+
     return () => {
-      mediaQuery.removeEventListener('change', handleChange);
+      mediaQuery.removeEventListener("change", handleChange);
     };
   }, [query]);
 
@@ -44,21 +41,21 @@ export function useMediaQuery(query) {
  * Predefined breakpoint hooks
  */
 export function useBreakpoint() {
-  const isXs = useMediaQuery('(max-width: 319px)');
-  const isSm = useMediaQuery('(min-width: 320px) and (max-width: 767px)');
-  const isMd = useMediaQuery('(min-width: 768px) and (max-width: 1023px)');
-  const isLg = useMediaQuery('(min-width: 1024px) and (max-width: 1279px)');
-  const isXl = useMediaQuery('(min-width: 1280px)');
-  
-  const isMobile = useMediaQuery('(max-width: 767px)');
-  const isTablet = useMediaQuery('(min-width: 768px) and (max-width: 1023px)');
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isXs = useMediaQuery("(max-width: 319px)");
+  const isSm = useMediaQuery("(min-width: 320px) and (max-width: 767px)");
+  const isMd = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
+  const isLg = useMediaQuery("(min-width: 1024px) and (max-width: 1279px)");
+  const isXl = useMediaQuery("(min-width: 1280px)");
 
-  let current = 'xl';
-  if (isXs) current = 'xs';
-  else if (isSm) current = 'sm';
-  else if (isMd) current = 'md';
-  else if (isLg) current = 'lg';
+  const isMobile = useMediaQuery("(max-width: 767px)");
+  const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
+
+  let current = "xl";
+  if (isXs) current = "xs";
+  else if (isSm) current = "sm";
+  else if (isMd) current = "md";
+  else if (isLg) current = "lg";
 
   return {
     isXs,
@@ -69,7 +66,7 @@ export function useBreakpoint() {
     isMobile,
     isTablet,
     isDesktop,
-    current
+    current,
   };
 }
 

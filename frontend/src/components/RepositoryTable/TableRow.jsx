@@ -1,6 +1,6 @@
-import React from 'react'
-import Tooltip from '@/components/Common/Tooltip'
-import styles from './RepositoryTable.module.css'
+import React from "react";
+import Tooltip from "@/components/Common/Tooltip";
+import styles from "./RepositoryTable.module.css";
 
 /**
  * TableRow Component
@@ -24,39 +24,44 @@ import styles from './RepositoryTable.module.css'
  *   onClick={(repo) => showDetails(repo)}
  * />
  */
-const TableRow = React.memo(function TableRow({ repository, isSelected = false, onSelect, onClick }) {
+const TableRow = React.memo(function TableRow({
+  repository,
+  isSelected = false,
+  onSelect,
+  onClick,
+}) {
   /**
    * Format date to readable string (MM/DD/YYYY)
    */
   const formatDate = (dateString) => {
-    if (!dateString) return 'N/A'
+    if (!dateString) return "N/A";
 
     try {
-      const date = new Date(dateString)
-      if (isNaN(date.getTime())) return 'N/A'
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return "N/A";
 
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-      })
-    } catch (error) {
-      return 'N/A'
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    } catch {
+      return "N/A";
     }
-  }
+  };
 
   /**
    * Format commit size with proper number formatting
    */
   const formatSize = (size) => {
-    if (size == null || isNaN(size)) return 'N/A'
-    
+    if (size == null || isNaN(size)) return "N/A";
+
     // Show 0 if it's actually 0 (valid data)
-    if (size === 0) return '0.0'
+    if (size === 0) return "0.0";
 
     // Round to 1 decimal place
-    return parseFloat(size).toFixed(1)
-  }
+    return parseFloat(size).toFixed(1);
+  };
 
   /**
    * Format commit metric object (for largest/smallest commits)
@@ -64,63 +69,70 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
   const formatCommitMetric = (commitMetric) => {
     // Check if the object exists first
     if (!commitMetric) {
-      return { display: 'N/A', tooltip: null }
+      return { display: "N/A", tooltip: null };
     }
 
     // If size is explicitly 0, show it (rather than N/A)
-    const size = commitMetric.size
-    const display = size != null ? formatSize(size) : 'N/A'
-    
-    // Only create tooltip if we have meaningful data
-    const hasData = commitMetric.sha || commitMetric.date
-    const tooltip = hasData 
-      ? `${commitMetric.sha?.substring(0, 7) || 'Unknown'} • ${formatDate(commitMetric.date)}`
-      : null
+    const size = commitMetric.size;
+    const display = size != null ? formatSize(size) : "N/A";
 
-    return { display, tooltip }
-  }
+    // Only create tooltip if we have meaningful data
+    const hasData = commitMetric.sha || commitMetric.date;
+    const tooltip = hasData
+      ? `${commitMetric.sha?.substring(0, 7) || "Unknown"} • ${formatDate(commitMetric.date)}`
+      : null;
+
+    return { display, tooltip };
+  };
 
   /**
    * Handle row click (for drill-down)
    */
   const handleRowClick = (e) => {
     // Don't trigger if clicking checkbox or link
-    if (e.target.type === 'checkbox' || e.target.tagName === 'A') {
-      return
+    if (e.target.type === "checkbox" || e.target.tagName === "A") {
+      return;
     }
 
     if (onClick) {
-      onClick(repository)
+      onClick(repository);
     }
-  }
+  };
 
   /**
    * Handle checkbox change
    */
   const handleCheckboxChange = (e) => {
-    e.stopPropagation() // Prevent row click
+    e.stopPropagation(); // Prevent row click
 
     if (onSelect) {
-      onSelect(repository.name)
+      onSelect(repository.name);
     }
-  }
+  };
 
-  const language = repository.language || 'Unknown'
-  
+  const language = repository.language || "Unknown";
+
   // Extract commit data from nested structure (unified data format)
-  const commitHistory = repository.commit_history || {}
-  const commitMetrics = repository.commit_metrics || {}
-  const totalCommits = commitHistory.total_commits || repository.commit_count || 0
-  const firstCommitDate = commitHistory.first_commit_date || repository.first_commit_date
-  const lastCommitDate = commitHistory.last_commit_date || repository.last_commit_date
-  const avgCommitSize = commitMetrics.avg_size || repository.avg_commit_size
-  
-  const largestCommit = formatCommitMetric(commitMetrics.largest_commit || repository.largest_commit)
-  const smallestCommit = formatCommitMetric(commitMetrics.smallest_commit || repository.smallest_commit)
+  const commitHistory = repository.commit_history || {};
+  const commitMetrics = repository.commit_metrics || {};
+  const totalCommits =
+    commitHistory.total_commits || repository.commit_count || 0;
+  const firstCommitDate =
+    commitHistory.first_commit_date || repository.first_commit_date;
+  const lastCommitDate =
+    commitHistory.last_commit_date || repository.last_commit_date;
+  const avgCommitSize = commitMetrics.avg_size || repository.avg_commit_size;
+
+  const largestCommit = formatCommitMetric(
+    commitMetrics.largest_commit || repository.largest_commit,
+  );
+  const smallestCommit = formatCommitMetric(
+    commitMetrics.smallest_commit || repository.smallest_commit,
+  );
 
   return (
     <tr
-      className={`${styles.tableRow} ${isSelected ? styles.tableRowSelected : ''}`}
+      className={`${styles.tableRow} ${isSelected ? styles.tableRowSelected : ""}`}
       onClick={handleRowClick}
       role="row"
     >
@@ -148,25 +160,21 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
 
       {/* Language */}
       <td className={styles.tableCell}>
-        <span className={`${styles.badge} ${styles[`badge--${language.toLowerCase()}`]}`}>
+        <span
+          className={`${styles.badge} ${styles[`badge--${language.toLowerCase()}`]}`}
+        >
           {language}
         </span>
       </td>
 
       {/* Created Date */}
-      <td className={styles.tableCell}>
-        {formatDate(repository.created_at)}
-      </td>
+      <td className={styles.tableCell}>{formatDate(repository.created_at)}</td>
 
       {/* First Commit Date */}
-      <td className={styles.tableCell}>
-        {formatDate(firstCommitDate)}
-      </td>
+      <td className={styles.tableCell}>{formatDate(firstCommitDate)}</td>
 
       {/* Last Commit Date */}
-      <td className={styles.tableCell}>
-        {formatDate(lastCommitDate)}
-      </td>
+      <td className={styles.tableCell}>{formatDate(lastCommitDate)}</td>
 
       {/* Total Commits */}
       <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
@@ -209,7 +217,7 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
         </Tooltip>
       </td>
     </tr>
-  )
-})
+  );
+});
 
-export default TableRow
+export default TableRow;

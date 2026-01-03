@@ -155,7 +155,7 @@ body {
 
 /* Debug mode (show safe area boundaries) */
 .debug-safe-area .safe-all::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;

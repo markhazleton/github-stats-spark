@@ -1,18 +1,18 @@
 /**
  * SortSheet Component
- * 
+ *
  * Bottom sheet for sorting repository list with:
  * - Multiple sort fields (name, stars, commits, last updated, language)
  * - Ascending/descending direction toggle
  * - Visual indicators for current sort
  * - Touch-friendly radio buttons
- * 
+ *
  * Features:
  * - Touch-optimized controls (44x44px minimum)
  * - Clear visual feedback for selected option
  * - Apply/Cancel actions
  * - Persistent sort state
- * 
+ *
  * @example
  * <SortSheet
  *   isOpen={isOpen}
@@ -23,34 +23,28 @@
  * />
  */
 
-import React, { useState, useEffect } from 'react';
-import BottomSheet from '../Mobile/BottomSheet/BottomSheet';
-import './SortSheet.css';
+import React, { useState } from "react";
+import BottomSheet from "../Mobile/BottomSheet/BottomSheet";
+import "./SortSheet.css";
 
 const SORT_OPTIONS = [
-  { value: 'name', label: 'Name', icon: '🔤' },
-  { value: 'stars', label: 'Stars', icon: '⭐' },
-  { value: 'commits', label: 'Commits', icon: '📝' },
-  { value: 'updated', label: 'Last Updated', icon: '📅' },
-  { value: 'language', label: 'Language', icon: '💻' },
+  { value: "name", label: "Name", icon: "🔤" },
+  { value: "stars", label: "Stars", icon: "⭐" },
+  { value: "commits", label: "Commits", icon: "📝" },
+  { value: "updated", label: "Last Updated", icon: "📅" },
+  { value: "language", label: "Language", icon: "💻" },
 ];
 
 export function SortSheet({
   isOpen,
   onClose,
-  sortField = 'stars',
-  sortDirection = 'desc',
+  sortField = "stars",
+  sortDirection = "desc",
   onApplySort,
 }) {
   // Local state for sort values (committed on Apply)
   const [field, setField] = useState(sortField);
   const [direction, setDirection] = useState(sortDirection);
-
-  // Sync with external sort when it changes
-  useEffect(() => {
-    setField(sortField);
-    setDirection(sortDirection);
-  }, [sortField, sortDirection]);
 
   const handleApply = () => {
     onApplySort({
@@ -68,7 +62,7 @@ export function SortSheet({
   };
 
   const toggleDirection = () => {
-    setDirection(direction === 'asc' ? 'desc' : 'asc');
+    setDirection(direction === "asc" ? "desc" : "asc");
   };
 
   return (
@@ -88,7 +82,7 @@ export function SortSheet({
               <button
                 key={option.value}
                 onClick={() => setField(option.value)}
-                className={`sort-option ${field === option.value ? 'sort-option-active' : ''}`}
+                className={`sort-option ${field === option.value ? "sort-option-active" : ""}`}
                 role="radio"
                 aria-checked={field === option.value}
               >
@@ -112,16 +106,18 @@ export function SortSheet({
           <button
             onClick={toggleDirection}
             className="sort-direction-toggle"
-            aria-label={`Sort direction: ${direction === 'asc' ? 'Ascending' : 'Descending'}`}
+            aria-label={`Sort direction: ${direction === "asc" ? "Ascending" : "Descending"}`}
           >
             <span className="sort-direction-icon" aria-hidden="true">
-              {direction === 'asc' ? '↑' : '↓'}
+              {direction === "asc" ? "↑" : "↓"}
             </span>
             <span className="sort-direction-label">
-              {direction === 'asc' ? 'Ascending' : 'Descending'}
+              {direction === "asc" ? "Ascending" : "Descending"}
             </span>
             <span className="sort-direction-subtext">
-              {direction === 'asc' ? '(A → Z, Low → High)' : '(Z → A, High → Low)'}
+              {direction === "asc"
+                ? "(A → Z, Low → High)"
+                : "(Z → A, High → Low)"}
             </span>
           </button>
         </div>

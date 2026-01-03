@@ -1,18 +1,18 @@
 /**
  * FilterSheet Component
- * 
+ *
  * Bottom sheet containing filter options for repositories:
  * - Language filter (all languages from dataset)
  * - Stars filter (minimum star count slider)
  * - Date range filter (last updated range)
- * 
+ *
  * Features:
  * - Touch-friendly controls (44x44px minimum)
  * - Clear all filters button
  * - Apply/Cancel actions
  * - Filter count badge
  * - Persistent filter state
- * 
+ *
  * @example
  * <FilterSheet
  *   isOpen={isOpen}
@@ -23,9 +23,9 @@
  * />
  */
 
-import React, { useState, useEffect } from 'react';
-import BottomSheet from '../Mobile/BottomSheet/BottomSheet';
-import './FilterSheet.css';
+import React, { useState } from "react";
+import BottomSheet from "../Mobile/BottomSheet/BottomSheet";
+import "./FilterSheet.css";
 
 export function FilterSheet({
   isOpen,
@@ -35,30 +35,23 @@ export function FilterSheet({
   availableLanguages = [],
 }) {
   // Local state for filter values (committed on Apply)
-  const [language, setLanguage] = useState(filters.language || 'all');
+  const [language, setLanguage] = useState(filters.language || "all");
   const [minStars, setMinStars] = useState(filters.minStars || 0);
-  const [dateRange, setDateRange] = useState(filters.dateRange || 'all');
-
-  // Sync with external filters when they change
-  useEffect(() => {
-    setLanguage(filters.language || 'all');
-    setMinStars(filters.minStars || 0);
-    setDateRange(filters.dateRange || 'all');
-  }, [filters]);
+  const [dateRange, setDateRange] = useState(filters.dateRange || "all");
 
   const handleApply = () => {
     onApplyFilters({
-      language: language === 'all' ? null : language,
+      language: language === "all" ? null : language,
       minStars: minStars > 0 ? minStars : null,
-      dateRange: dateRange === 'all' ? null : dateRange,
+      dateRange: dateRange === "all" ? null : dateRange,
     });
     onClose();
   };
 
   const handleClear = () => {
-    setLanguage('all');
+    setLanguage("all");
     setMinStars(0);
-    setDateRange('all');
+    setDateRange("all");
     onApplyFilters({
       language: null,
       minStars: null,
@@ -68,17 +61,17 @@ export function FilterSheet({
 
   const handleCancel = () => {
     // Reset to original filters
-    setLanguage(filters.language || 'all');
+    setLanguage(filters.language || "all");
     setMinStars(filters.minStars || 0);
-    setDateRange(filters.dateRange || 'all');
+    setDateRange(filters.dateRange || "all");
     onClose();
   };
 
   // Count active filters
   const activeFilterCount = [
-    language !== 'all',
+    language !== "all",
     minStars > 0,
-    dateRange !== 'all',
+    dateRange !== "all",
   ].filter(Boolean).length;
 
   return (

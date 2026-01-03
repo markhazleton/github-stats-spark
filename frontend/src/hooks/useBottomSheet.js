@@ -1,16 +1,16 @@
 /**
  * useBottomSheet Hook
- * 
+ *
  * Manages bottom sheet state including open/close status, snap points, and current snap position.
  * Provides a unified interface for controlling bottom sheet behavior across the application.
- * 
+ *
  * Features:
  * - Open/close state management
  * - Multiple snap points support (e.g., [0.4, 0.9] for partial and full height)
  * - Current snap index tracking
  * - Programmatic snap control
  * - Close callbacks for cleanup
- * 
+ *
  * @example
  * const { isOpen, open, close, snapTo, currentSnap } = useBottomSheet({
  *   defaultSnap: 0,
@@ -18,11 +18,11 @@
  * });
  */
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef } from "react";
 
 /**
  * Hook for managing bottom sheet state
- * 
+ *
  * @param {Object} options - Configuration options
  * @param {number} [options.defaultSnap=0] - Default snap point index (0-based)
  * @param {Function} [options.onClose] - Callback fired when sheet closes
@@ -44,15 +44,18 @@ export function useBottomSheet({
    * Open the bottom sheet
    * @param {number} [snapIndex] - Optional snap point to open at (defaults to defaultSnap)
    */
-  const open = useCallback((snapIndex) => {
-    setIsOpen(true);
-    if (typeof snapIndex === 'number') {
-      setCurrentSnap(snapIndex);
-    } else {
-      setCurrentSnap(defaultSnap);
-    }
-    onOpen?.();
-  }, [defaultSnap, onOpen]);
+  const open = useCallback(
+    (snapIndex) => {
+      setIsOpen(true);
+      if (typeof snapIndex === "number") {
+        setCurrentSnap(snapIndex);
+      } else {
+        setCurrentSnap(defaultSnap);
+      }
+      onOpen?.();
+    },
+    [defaultSnap, onOpen],
+  );
 
   /**
    * Close the bottom sheet
@@ -78,10 +81,13 @@ export function useBottomSheet({
    * Snap to a specific snap point
    * @param {number} snapIndex - The index of the snap point to snap to
    */
-  const snapTo = useCallback((snapIndex) => {
-    setCurrentSnap(snapIndex);
-    onSnapChange?.(snapIndex);
-  }, [onSnapChange]);
+  const snapTo = useCallback(
+    (snapIndex) => {
+      setCurrentSnap(snapIndex);
+      onSnapChange?.(snapIndex);
+    },
+    [onSnapChange],
+  );
 
   /**
    * Get the content element ref for height calculations
@@ -105,10 +111,10 @@ export function useBottomSheet({
 /**
  * Hook for managing multiple bottom sheets in the same component
  * Useful when you need filter, sort, and detail sheets in the same view
- * 
+ *
  * @param {Array<string>} sheetIds - Array of sheet identifiers
  * @returns {Object} Map of sheet IDs to their control interfaces
- * 
+ *
  * @example
  * const sheets = useBottomSheets(['filter', 'sort', 'detail']);
  * sheets.filter.open(); // Open the filter sheet
@@ -116,12 +122,12 @@ export function useBottomSheet({
  */
 export function useBottomSheets(sheetIds) {
   const sheets = {};
-  
-  sheetIds.forEach(id => {
+
+  sheetIds.forEach((id) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     sheets[id] = useBottomSheet();
   });
-  
+
   return sheets;
 }
 

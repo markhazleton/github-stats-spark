@@ -1,17 +1,17 @@
 /**
  * ChartWrapper Component
- * 
+ *
  * Responsive wrapper for Chart.js canvas with horizontal scroll support,
  * loading states, error boundaries, and mobile optimizations.
- * 
+ *
  * @component
  */
 
-import React, { useState, useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
-import { useChart, useResponsiveChartSize } from '@/hooks/useChart';
-import LoadingState from '@/components/Common/LoadingState';
-import './ChartWrapper.css';
+import React, { useRef, useMemo } from "react";
+import PropTypes from "prop-types";
+import { useChart, useResponsiveChartSize } from "@/hooks/useChart";
+import LoadingState from "@/components/Common/LoadingState";
+import "./ChartWrapper.css";
 
 export const ChartWrapper = ({
   type,
@@ -22,8 +22,8 @@ export const ChartWrapper = ({
   maxDataPoints = 10,
   loading = false,
   error = null,
-  emptyMessage = 'No data to display',
-  className = '',
+  emptyMessage = "No data to display",
+  className = "",
 }) => {
   const { width, height } = useResponsiveChartSize({
     minHeight: 300,
@@ -32,37 +32,38 @@ export const ChartWrapper = ({
     desktopAspectRatio: 2.5,
   });
 
-  const [scrollableWidth, setScrollableWidth] = useState(width);
   const containerRef = useRef(null);
 
   // Determine if horizontal scroll is needed
-  const needsHorizontalScroll = enableHorizontalScroll && 
-    data?.labels?.length > maxDataPoints;
+  const needsHorizontalScroll =
+    enableHorizontalScroll && data?.labels?.length > maxDataPoints;
 
   // Calculate scrollable width for horizontal scroll
-  useEffect(() => {
+  const scrollableWidth = useMemo(() => {
     if (needsHorizontalScroll && data?.labels?.length) {
       // Each data point gets minimum 60px width on mobile, 80px on desktop
       const isMobile = window.innerWidth < 768;
       const minPointWidth = isMobile ? 60 : 80;
       const calculatedWidth = data.labels.length * minPointWidth;
-      setScrollableWidth(Math.max(width, calculatedWidth));
-    } else {
-      setScrollableWidth(width);
+      return Math.max(width, calculatedWidth);
     }
-  }, [needsHorizontalScroll, data?.labels?.length, width, maxDataPoints]);
+    return width;
+  }, [needsHorizontalScroll, data?.labels?.length, width]);
 
   // Prepare chart data - limit to maxDataPoints if not scrollable
-  const chartData = needsHorizontalScroll ? data : {
-    ...data,
-    labels: data?.labels?.slice(0, maxDataPoints) || [],
-    datasets: data?.datasets?.map(dataset => ({
-      ...dataset,
-      data: dataset.data?.slice(0, maxDataPoints) || [],
-    })) || [],
-  };
+  const chartData = needsHorizontalScroll
+    ? data
+    : {
+        ...data,
+        labels: data?.labels?.slice(0, maxDataPoints) || [],
+        datasets:
+          data?.datasets?.map((dataset) => ({
+            ...dataset,
+            data: dataset.data?.slice(0, maxDataPoints) || [],
+          })) || [],
+      };
 
-  const { canvasRef, isReady } = useChart({
+  const { canvasRef } = useChart({
     type,
     data: chartData,
     options: {
@@ -113,29 +114,27 @@ export const ChartWrapper = ({
   return (
     <div className={`chart-wrapper ${className}`}>
       {title && <h3 className="chart-title">{title}</h3>}
-      
+
       {needsHorizontalScroll && (
-        <div className="chart-scroll-hint">
-          ← Scroll to see more data →
-        </div>
+        <div className="chart-scroll-hint">← Scroll to see more data →</div>
       )}
 
       <div
         ref={containerRef}
-        className={`chart-container ${needsHorizontalScroll ? 'chart-scrollable' : ''}`}
+        className={`chart-container ${needsHorizontalScroll ? "chart-scrollable" : ""}`}
         style={{ height: `${height}px` }}
       >
         <div
           className="chart-canvas-wrapper"
           style={{
-            width: needsHorizontalScroll ? `${scrollableWidth}px` : '100%',
-            height: '100%',
+            width: needsHorizontalScroll ? `${scrollableWidth}px` : "100%",
+            height: "100%",
           }}
         >
           <canvas
             ref={canvasRef}
             role="img"
-            aria-label={title || 'Chart visualization'}
+            aria-label={title || "Chart visualization"}
           />
         </div>
       </div>
@@ -150,21 +149,24 @@ export const ChartWrapper = ({
 };
 
 ChartWrapper.propTypes = {
-  type: PropTypes.oneOf(['bar', 'line', 'pie', 'doughnut', 'scatter']).isRequired,
+  type: PropTypes.oneOf(["bar", "line", "pie", "doughnut", "scatter"])
+    .isRequired,
   data: PropTypes.shape({
     labels: PropTypes.arrayOf(PropTypes.string),
-    datasets: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string,
-      data: PropTypes.arrayOf(PropTypes.number),
-      backgroundColor: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]),
-      borderColor: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]),
-    })),
+    datasets: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        data: PropTypes.arrayOf(PropTypes.number),
+        backgroundColor: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.arrayOf(PropTypes.string),
+        ]),
+        borderColor: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.arrayOf(PropTypes.string),
+        ]),
+      }),
+    ),
   }).isRequired,
   options: PropTypes.object,
   title: PropTypes.string,

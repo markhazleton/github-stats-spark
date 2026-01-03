@@ -1,9 +1,9 @@
 /**
  * DetailSheet Component
- * 
+ *
  * Full-screen bottom sheet for displaying comprehensive repository details.
  * Accessed from expanded repository cards on mobile devices.
- * 
+ *
  * Features:
  * - Full repository metadata (description, homepage, topics)
  * - Commit metrics and activity timeline
@@ -12,7 +12,7 @@
  * - Link to GitHub repository
  * - Share functionality
  * - Swipe-down to dismiss
- * 
+ *
  * @example
  * <DetailSheet
  *   isOpen={isOpen}
@@ -21,15 +21,11 @@
  * />
  */
 
-import React from 'react';
-import BottomSheet from '../BottomSheet/BottomSheet';
-import './DetailSheet.css';
+import React from "react";
+import BottomSheet from "../BottomSheet/BottomSheet";
+import "./DetailSheet.css";
 
-export function DetailSheet({
-  isOpen,
-  onClose,
-  repository,
-}) {
+export function DetailSheet({ isOpen, onClose, repository }) {
   if (!repository) return null;
 
   const {
@@ -64,13 +60,13 @@ export function DetailSheet({
    * Format date to relative time
    */
   const formatDate = (dateString) => {
-    if (!dateString) return 'Unknown';
+    if (!dateString) return "Unknown";
     const date = new Date(dateString);
     const now = new Date();
     const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
-    
-    if (diffDays === 0) return 'Today';
-    if (diffDays === 1) return 'Yesterday';
+
+    if (diffDays === 0) return "Today";
+    if (diffDays === 1) return "Yesterday";
     if (diffDays < 7) return `${diffDays} days ago`;
     if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
     if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
@@ -90,7 +86,7 @@ export function DetailSheet({
    */
   const handleShare = async () => {
     const url = `https://github.com/${name}`;
-    
+
     if (navigator.share) {
       try {
         await navigator.share({
@@ -100,15 +96,15 @@ export function DetailSheet({
         });
       } catch (err) {
         // User cancelled or error occurred
-        console.log('Share cancelled or failed:', err);
+        console.log("Share cancelled or failed:", err);
       }
     } else {
       // Fallback: copy to clipboard
       try {
         await navigator.clipboard.writeText(url);
-        alert('Repository URL copied to clipboard!');
+        alert("Repository URL copied to clipboard!");
       } catch (err) {
-        console.error('Failed to copy:', err);
+        console.error("Failed to copy:", err);
       }
     }
   };
@@ -146,7 +142,7 @@ export function DetailSheet({
                 <div className="detail-stat-label">Stars</div>
               </div>
             </div>
-            
+
             <div className="detail-stat">
               <span className="detail-stat-icon">🔀</span>
               <div className="detail-stat-content">
@@ -154,19 +150,23 @@ export function DetailSheet({
                 <div className="detail-stat-label">Forks</div>
               </div>
             </div>
-            
+
             <div className="detail-stat">
               <span className="detail-stat-icon">👁️</span>
               <div className="detail-stat-content">
-                <div className="detail-stat-value">{formatNumber(watchers)}</div>
+                <div className="detail-stat-value">
+                  {formatNumber(watchers)}
+                </div>
                 <div className="detail-stat-label">Watchers</div>
               </div>
             </div>
-            
+
             <div className="detail-stat">
               <span className="detail-stat-icon">🐛</span>
               <div className="detail-stat-content">
-                <div className="detail-stat-value">{formatNumber(open_issues)}</div>
+                <div className="detail-stat-value">
+                  {formatNumber(open_issues)}
+                </div>
                 <div className="detail-stat-label">Issues</div>
               </div>
             </div>
@@ -180,12 +180,16 @@ export function DetailSheet({
             <div className="detail-metrics">
               <div className="detail-metric">
                 <span className="detail-metric-label">Total Commits:</span>
-                <span className="detail-metric-value">{formatNumber(commit_metrics.total_commits)}</span>
+                <span className="detail-metric-value">
+                  {formatNumber(commit_metrics.total_commits)}
+                </span>
               </div>
               {commit_metrics.commit_streak && (
                 <div className="detail-metric">
                   <span className="detail-metric-label">Current Streak:</span>
-                  <span className="detail-metric-value">{commit_metrics.commit_streak} days</span>
+                  <span className="detail-metric-value">
+                    {commit_metrics.commit_streak} days
+                  </span>
                 </div>
               )}
             </div>
@@ -234,11 +238,15 @@ export function DetailSheet({
           <div className="detail-metadata-grid">
             <div className="detail-metadata-item">
               <span className="detail-metadata-label">Last Updated:</span>
-              <span className="detail-metadata-value">{formatDate(updated_at)}</span>
+              <span className="detail-metadata-value">
+                {formatDate(updated_at)}
+              </span>
             </div>
             <div className="detail-metadata-item">
               <span className="detail-metadata-label">Created:</span>
-              <span className="detail-metadata-value">{formatDate(created_at)}</span>
+              <span className="detail-metadata-value">
+                {formatDate(created_at)}
+              </span>
             </div>
             {license && (
               <div className="detail-metadata-item">
@@ -249,7 +257,9 @@ export function DetailSheet({
             {size > 0 && (
               <div className="detail-metadata-item">
                 <span className="detail-metadata-label">Size:</span>
-                <span className="detail-metadata-value">{formatSize(size)}</span>
+                <span className="detail-metadata-value">
+                  {formatSize(size)}
+                </span>
               </div>
             )}
           </div>
@@ -266,7 +276,7 @@ export function DetailSheet({
             <span>View on GitHub</span>
             <span aria-hidden="true">→</span>
           </a>
-          
+
           {homepage && (
             <a
               href={homepage}
@@ -278,7 +288,7 @@ export function DetailSheet({
               <span aria-hidden="true">🔗</span>
             </a>
           )}
-          
+
           <button
             onClick={handleShare}
             className="detail-button detail-button-secondary"

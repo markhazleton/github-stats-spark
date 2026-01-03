@@ -28,7 +28,7 @@
   font-size: 64px;
   margin-bottom: var(--spacing-lg, 24px);
   opacity: 0.6;
-  
+
   /* If SVG icon instead of emoji */
   width: 80px;
   height: 80px;
@@ -67,28 +67,30 @@
   margin: 0;
   font: inherit;
   cursor: pointer;
-  
+
   /* Button styling */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  
+
   /* Touch target - minimum 44x44px */
   min-width: 44px;
   min-height: 44px;
   padding: 12px 24px;
-  
+
   /* Visual */
   background-color: var(--color-primary, #0366d6);
   color: var(--text-on-primary, #ffffff);
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
-  
+
   border-radius: 6px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-  
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+
   /* Touch feedback */
   -webkit-tap-highlight-color: transparent;
 }
@@ -125,18 +127,18 @@
     padding: var(--spacing-lg, 24px) var(--spacing-md, 16px);
     min-height: 240px;
   }
-  
+
   .empty-state__icon {
     font-size: 48px;
     width: 60px;
     height: 60px;
     margin-bottom: var(--spacing-md, 16px);
   }
-  
+
   .empty-state__title {
     font-size: 18px;
   }
-  
+
   .empty-state__description {
     font-size: 13px;
   }
@@ -147,7 +149,7 @@
   .empty-state__action {
     transition: none;
   }
-  
+
   .empty-state__action:active {
     transform: none;
   }
@@ -158,24 +160,24 @@
   .empty-state {
     color: var(--text-secondary, #8b949e);
   }
-  
+
   .empty-state__icon svg {
     stroke: var(--text-secondary, #8b949e);
   }
-  
+
   .empty-state__title {
     color: var(--text-primary, #c9d1d9);
   }
-  
+
   .empty-state__description {
     color: var(--text-secondary, #8b949e);
   }
-  
+
   .empty-state__action {
     background-color: var(--color-primary, #58a6ff);
     color: var(--text-on-primary, #0d1117);
   }
-  
+
   .empty-state__action:active,
   .empty-state__action:hover {
     background-color: var(--color-primary-light, #79c0ff);

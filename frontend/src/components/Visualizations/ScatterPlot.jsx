@@ -1,35 +1,43 @@
 /**
  * ScatterPlot Component
- * 
+ *
  * Renders a scatter plot visualization using Chart.js with touch interactions.
  * Shows relationship between two metrics (default: commits vs commit size).
- * 
+ *
  * @component
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import ChartWrapper from './ChartWrapper';
+import React from "react";
+import PropTypes from "prop-types";
+import ChartWrapper from "./ChartWrapper";
 
 const COLORS = [
-  '#0366d6', '#28a745', '#6f42c1', '#fd8c73', '#ffd33d',
-  '#ea4a5a', '#1b7cd3', '#79589f', '#f97583', '#ffdf5d',
+  "#0366d6",
+  "#28a745",
+  "#6f42c1",
+  "#fd8c73",
+  "#ffd33d",
+  "#ea4a5a",
+  "#1b7cd3",
+  "#79589f",
+  "#f97583",
+  "#ffdf5d",
 ];
 
 /**
  * ScatterPlot Component
- * 
+ *
  * @param {Object} props
  * @param {Array} props.data - Chart data array with {name, x, y} objects
  * @param {string} props.xAxisLabel - Label for X axis
  * @param {string} props.yAxisLabel - Label for Y axis
  * @param {Function} props.onPointClick - Handler for point click events
  */
-export default function ScatterPlot({ 
-  data, 
-  xAxisLabel = 'Total Commits', 
-  yAxisLabel = 'Average Commit Size',
-  onPointClick 
+export default function ScatterPlot({
+  data,
+  xAxisLabel = "Total Commits",
+  yAxisLabel = "Average Commit Size",
+  onPointClick,
 }) {
   if (!data || data.length === 0) {
     return (
@@ -45,8 +53,8 @@ export default function ScatterPlot({
   const chartData = {
     datasets: [
       {
-        label: 'Repositories',
-        data: data.map(item => ({
+        label: "Repositories",
+        data: data.map((item) => ({
           x: item.x,
           y: item.y,
           name: item.name,
@@ -80,7 +88,7 @@ export default function ScatterPlot({
       tooltip: {
         callbacks: {
           title: (context) => {
-            return context[0]?.raw?.name || '';
+            return context[0]?.raw?.name || "";
           },
           label: (context) => {
             return [
@@ -90,27 +98,27 @@ export default function ScatterPlot({
           },
           afterLabel: (context) => {
             const language = context.raw?.language;
-            return language ? `Language: ${language}` : '';
+            return language ? `Language: ${language}` : "";
           },
         },
       },
     },
     scales: {
       x: {
-        type: 'linear',
-        position: 'bottom',
+        type: "linear",
+        position: "bottom",
         title: {
           display: true,
           text: xAxisLabel,
           font: {
             size: 14,
-            weight: 'bold',
+            weight: "bold",
           },
           padding: { top: 10 },
         },
         grid: {
           display: true,
-          color: 'rgba(0, 0, 0, 0.05)',
+          color: "rgba(0, 0, 0, 0.05)",
         },
         ticks: {
           callback: (value) => {
@@ -122,20 +130,20 @@ export default function ScatterPlot({
         },
       },
       y: {
-        type: 'linear',
-        position: 'left',
+        type: "linear",
+        position: "left",
         title: {
           display: true,
           text: yAxisLabel,
           font: {
             size: 14,
-            weight: 'bold',
+            weight: "bold",
           },
           padding: { bottom: 10 },
         },
         grid: {
           display: true,
-          color: 'rgba(0, 0, 0, 0.05)',
+          color: "rgba(0, 0, 0, 0.05)",
         },
         ticks: {
           callback: (value) => {
@@ -148,7 +156,7 @@ export default function ScatterPlot({
       },
     },
     interaction: {
-      mode: 'nearest',
+      mode: "nearest",
       intersect: true,
     },
   };
@@ -165,12 +173,14 @@ export default function ScatterPlot({
 }
 
 ScatterPlot.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    x: PropTypes.number,
-    y: PropTypes.number,
-    language: PropTypes.string,
-  })).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      x: PropTypes.number,
+      y: PropTypes.number,
+      language: PropTypes.string,
+    }),
+  ).isRequired,
   xAxisLabel: PropTypes.string,
   yAxisLabel: PropTypes.string,
   onPointClick: PropTypes.func,

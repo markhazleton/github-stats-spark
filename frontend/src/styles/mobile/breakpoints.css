@@ -39,21 +39,21 @@
 /* Tablet and above (md: 768px+) */
 @media (min-width: 768px) {
   :root {
-    --current-breakpoint: 'md';
+    --current-breakpoint: "md";
   }
 }
 
 /* Desktop (lg: 1024px+) */
 @media (min-width: 1024px) {
   :root {
-    --current-breakpoint: 'lg';
+    --current-breakpoint: "lg";
   }
 }
 
 /* Large desktop (xl: 1280px+) */
 @media (min-width: 1280px) {
   :root {
-    --current-breakpoint: 'xl';
+    --current-breakpoint: "xl";
   }
 }
 

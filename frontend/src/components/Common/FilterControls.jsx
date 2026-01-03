@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './FilterControls.module.css';
+import React from "react";
+import styles from "./FilterControls.module.css";
 
 /**
  * FilterControls component for filtering repository data
@@ -8,7 +8,12 @@ import styles from './FilterControls.module.css';
  * @param {Function} onFilterChange - Handler for filter change
  * @param {Function} onClearFilter - Handler to clear filter
  */
-function FilterControls({ languages, selectedLanguage, onFilterChange, onClearFilter }) {
+function FilterControls({
+  languages,
+  selectedLanguage,
+  onFilterChange,
+  onClearFilter,
+}) {
   const handleChange = (e) => {
     onFilterChange(e.target.value);
   };
@@ -37,7 +42,7 @@ function FilterControls({ languages, selectedLanguage, onFilterChange, onClearFi
           ))}
         </select>
       </div>
-      
+
       {selectedLanguage && (
         <button
           type="button"

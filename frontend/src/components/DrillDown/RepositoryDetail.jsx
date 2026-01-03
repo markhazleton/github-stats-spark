@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'
-import styles from './RepositoryDetail.module.css'
+import React, { useEffect } from "react";
+import styles from "./RepositoryDetail.module.css";
 
 /**
  * RepositoryDetail Component
@@ -27,71 +27,74 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
    */
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        onClose()
+      if (e.key === "Escape") {
+        onClose();
       }
-    }
+    };
 
-    document.addEventListener('keydown', handleEscape)
-    return () => document.removeEventListener('keydown', handleEscape)
-  }, [onClose])
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [onClose]);
 
   /**
    * Format date to readable string
    */
   const formatDate = (dateString) => {
-    if (!dateString) return 'N/A'
+    if (!dateString) return "N/A";
     try {
-      const date = new Date(dateString)
-      if (isNaN(date.getTime())) return 'N/A'
-      return date.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      })
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return "N/A";
+      return date.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
     } catch {
-      return 'N/A'
+      return "N/A";
     }
-  }
+  };
 
   /**
    * Format relative date (e.g., "3 days ago")
    */
   const formatRelativeDate = (days) => {
-    if (days == null) return 'N/A'
-    if (days === 0) return 'Today'
-    if (days === 1) return 'Yesterday'
-    if (days < 30) return `${days} days ago`
-    if (days < 365) return `${Math.floor(days / 30)} months ago`
-    return `${Math.floor(days / 365)} years ago`
-  }
+    if (days == null) return "N/A";
+    if (days === 0) return "Today";
+    if (days === 1) return "Yesterday";
+    if (days < 30) return `${days} days ago`;
+    if (days < 365) return `${Math.floor(days / 30)} months ago`;
+    return `${Math.floor(days / 365)} years ago`;
+  };
 
   /**
    * Format number with commas
    */
   const formatNumber = (num) => {
-    if (num == null || isNaN(num)) return 'N/A'
-    return num.toLocaleString()
-  }
+    if (num == null || isNaN(num)) return "N/A";
+    return num.toLocaleString();
+  };
 
   /**
    * Format size with proper decimals
    */
   const formatSize = (size) => {
-    if (size == null || isNaN(size)) return 'N/A'
-    return parseFloat(size).toFixed(1)
-  }
+    if (size == null || isNaN(size)) return "N/A";
+    return parseFloat(size).toFixed(1);
+  };
 
   /**
    * Calculate percentage from language stats
    */
   const calculateLanguagePercentage = (bytes) => {
-    if (!repository.language_stats) return 0
-    const total = Object.values(repository.language_stats).reduce((sum, val) => sum + val, 0)
-    return total > 0 ? ((bytes / total) * 100).toFixed(1) : 0
-  }
+    if (!repository.language_stats) return 0;
+    const total = Object.values(repository.language_stats).reduce(
+      (sum, val) => sum + val,
+      0,
+    );
+    return total > 0 ? ((bytes / total) * 100).toFixed(1) : 0;
+  };
 
   return (
     <div className={styles.backdrop} onClick={onClose}>
@@ -102,7 +105,9 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
             <div>
               <h2 className={styles.modalTitle}>{repository.name}</h2>
               {repository.description && (
-                <p className={styles.modalDescription}>{repository.description}</p>
+                <p className={styles.modalDescription}>
+                  {repository.description}
+                </p>
               )}
             </div>
             <button
@@ -119,24 +124,34 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
             {/* Quick Stats Bar */}
             <div className={styles.statsBar}>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>⭐ {formatNumber(repository.stars)}</span>
+                <span className={styles.statValue}>
+                  ⭐ {formatNumber(repository.stars)}
+                </span>
                 <span className={styles.statLabel}>Stars</span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>🔀 {formatNumber(repository.forks)}</span>
+                <span className={styles.statValue}>
+                  🔀 {formatNumber(repository.forks)}
+                </span>
                 <span className={styles.statLabel}>Forks</span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>👁️ {formatNumber(repository.watchers)}</span>
+                <span className={styles.statValue}>
+                  👁️ {formatNumber(repository.watchers)}
+                </span>
                 <span className={styles.statLabel}>Watchers</span>
               </div>
               <div className={styles.statItem}>
-                <span className={styles.statValue}>🐛 {formatNumber(repository.open_issues)}</span>
+                <span className={styles.statValue}>
+                  🐛 {formatNumber(repository.open_issues)}
+                </span>
                 <span className={styles.statLabel}>Issues</span>
               </div>
               {repository.rank && (
                 <div className={styles.statItem}>
-                  <span className={styles.statValue}>🏆 #{repository.rank}</span>
+                  <span className={styles.statValue}>
+                    🏆 #{repository.rank}
+                  </span>
                   <span className={styles.statLabel}>Rank</span>
                 </div>
               )}
@@ -154,7 +169,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                 <p className={styles.summaryText}>{repository.summary.text}</p>
                 {repository.summary.model_used && (
                   <div className={styles.textMuted}>
-                    Generated by {repository.summary.model_used} 
+                    Generated by {repository.summary.model_used}
                     {repository.summary.confidence_score && (
                       <> • Confidence: {repository.summary.confidence_score}%</>
                     )}
@@ -175,7 +190,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                       <dt>Language</dt>
                       <dd>
                         <span className={styles.badge}>
-                          {repository.language || 'Unknown'}
+                          {repository.language || "Unknown"}
                         </span>
                       </dd>
                     </div>
@@ -193,18 +208,31 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                         {formatDate(repository.pushed_at)}
                         {repository.days_since_last_push != null && (
                           <span className={styles.textMuted}>
-                            {' '}({formatRelativeDate(repository.days_since_last_push)})
+                            {" "}
+                            (
+                            {formatRelativeDate(
+                              repository.days_since_last_push,
+                            )}
+                            )
                           </span>
                         )}
                       </dd>
                     </div>
                     <div className={styles.detailItem}>
                       <dt>Age</dt>
-                      <dd>{repository.age_days ? `${repository.age_days} days` : 'N/A'}</dd>
+                      <dd>
+                        {repository.age_days
+                          ? `${repository.age_days} days`
+                          : "N/A"}
+                      </dd>
                     </div>
                     <div className={styles.detailItem}>
                       <dt>Size</dt>
-                      <dd>{repository.size_kb ? `${formatNumber(repository.size_kb)} KB` : 'N/A'}</dd>
+                      <dd>
+                        {repository.size_kb
+                          ? `${formatNumber(repository.size_kb)} KB`
+                          : "N/A"}
+                      </dd>
                     </div>
                     <div className={styles.detailItem}>
                       <dt>Repository URL</dt>
@@ -226,20 +254,50 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                 <section className={styles.section}>
                   <h3 className={styles.sectionTitle}>Quality Indicators</h3>
                   <div className={styles.badgeGrid}>
-                    <span className={repository.has_readme ? styles.badgeSuccess : styles.badgeError}>
-                      {repository.has_readme ? '✓' : '✗'} README
+                    <span
+                      className={
+                        repository.has_readme
+                          ? styles.badgeSuccess
+                          : styles.badgeError
+                      }
+                    >
+                      {repository.has_readme ? "✓" : "✗"} README
                     </span>
-                    <span className={repository.has_license ? styles.badgeSuccess : styles.badgeError}>
-                      {repository.has_license ? '✓' : '✗'} License
+                    <span
+                      className={
+                        repository.has_license
+                          ? styles.badgeSuccess
+                          : styles.badgeError
+                      }
+                    >
+                      {repository.has_license ? "✓" : "✗"} License
                     </span>
-                    <span className={repository.has_ci_cd ? styles.badgeSuccess : styles.badgeError}>
-                      {repository.has_ci_cd ? '✓' : '✗'} CI/CD
+                    <span
+                      className={
+                        repository.has_ci_cd
+                          ? styles.badgeSuccess
+                          : styles.badgeError
+                      }
+                    >
+                      {repository.has_ci_cd ? "✓" : "✗"} CI/CD
                     </span>
-                    <span className={repository.has_tests ? styles.badgeSuccess : styles.badgeError}>
-                      {repository.has_tests ? '✓' : '✗'} Tests
+                    <span
+                      className={
+                        repository.has_tests
+                          ? styles.badgeSuccess
+                          : styles.badgeError
+                      }
+                    >
+                      {repository.has_tests ? "✓" : "✗"} Tests
                     </span>
-                    <span className={repository.has_docs ? styles.badgeSuccess : styles.badgeError}>
-                      {repository.has_docs ? '✓' : '✗'} Docs
+                    <span
+                      className={
+                        repository.has_docs
+                          ? styles.badgeSuccess
+                          : styles.badgeError
+                      }
+                    >
+                      {repository.has_docs ? "✓" : "✗"} Docs
                     </span>
                     {repository.is_archived && (
                       <span className={styles.badgeWarning}>📦 Archived</span>
@@ -251,32 +309,39 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                 </section>
 
                 {/* Language Statistics */}
-                {repository.language_stats && Object.keys(repository.language_stats).length > 0 && (
-                  <section className={styles.section}>
-                    <h3 className={styles.sectionTitle}>Languages ({repository.language_count})</h3>
-                    <div className={styles.languageList}>
-                      {Object.entries(repository.language_stats)
-                        .sort(([, a], [, b]) => b - a)
-                        .slice(0, 10)
-                        .map(([lang, bytes]) => (
-                          <div key={lang} className={styles.languageItem}>
-                            <div className={styles.languageHeader}>
-                              <span className={styles.languageName}>{lang}</span>
-                              <span className={styles.languagePercent}>
-                                {calculateLanguagePercentage(bytes)}%
-                              </span>
+                {repository.language_stats &&
+                  Object.keys(repository.language_stats).length > 0 && (
+                    <section className={styles.section}>
+                      <h3 className={styles.sectionTitle}>
+                        Languages ({repository.language_count})
+                      </h3>
+                      <div className={styles.languageList}>
+                        {Object.entries(repository.language_stats)
+                          .sort(([, a], [, b]) => b - a)
+                          .slice(0, 10)
+                          .map(([lang, bytes]) => (
+                            <div key={lang} className={styles.languageItem}>
+                              <div className={styles.languageHeader}>
+                                <span className={styles.languageName}>
+                                  {lang}
+                                </span>
+                                <span className={styles.languagePercent}>
+                                  {calculateLanguagePercentage(bytes)}%
+                                </span>
+                              </div>
+                              <div className={styles.languageBar}>
+                                <div
+                                  className={styles.languageBarFill}
+                                  style={{
+                                    width: `${calculateLanguagePercentage(bytes)}%`,
+                                  }}
+                                />
+                              </div>
                             </div>
-                            <div className={styles.languageBar}>
-                              <div
-                                className={styles.languageBarFill}
-                                style={{ width: `${calculateLanguagePercentage(bytes)}%` }}
-                              />
-                            </div>
-                          </div>
-                        ))}
-                    </div>
-                  </section>
-                )}
+                          ))}
+                      </div>
+                    </section>
+                  )}
               </div>
 
               {/* Right Column */}
@@ -289,33 +354,52 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                       <div className={styles.detailItem}>
                         <dt>Total Commits</dt>
                         <dd className={styles.highlight}>
-                          {formatNumber(repository.commit_history.total_commits)}
+                          {formatNumber(
+                            repository.commit_history.total_commits,
+                          )}
                         </dd>
                       </div>
                       <div className={styles.detailItem}>
                         <dt>Last 90 Days</dt>
-                        <dd>{formatNumber(repository.commit_history.recent_90d)}</dd>
+                        <dd>
+                          {formatNumber(repository.commit_history.recent_90d)}
+                        </dd>
                       </div>
                       <div className={styles.detailItem}>
                         <dt>Last 180 Days</dt>
-                        <dd>{formatNumber(repository.commit_history.recent_180d)}</dd>
+                        <dd>
+                          {formatNumber(repository.commit_history.recent_180d)}
+                        </dd>
                       </div>
                       <div className={styles.detailItem}>
                         <dt>Last 365 Days</dt>
-                        <dd>{formatNumber(repository.commit_history.recent_365d)}</dd>
+                        <dd>
+                          {formatNumber(repository.commit_history.recent_365d)}
+                        </dd>
                       </div>
                       <div className={styles.detailItem}>
                         <dt>First Commit</dt>
-                        <dd>{formatDate(repository.commit_history.first_commit_date)}</dd>
+                        <dd>
+                          {formatDate(
+                            repository.commit_history.first_commit_date,
+                          )}
+                        </dd>
                       </div>
                       <div className={styles.detailItem}>
                         <dt>Last Commit</dt>
-                        <dd>{formatDate(repository.commit_history.last_commit_date)}</dd>
+                        <dd>
+                          {formatDate(
+                            repository.commit_history.last_commit_date,
+                          )}
+                        </dd>
                       </div>
                       {repository.commit_velocity != null && (
                         <div className={styles.detailItem}>
                           <dt>Commit Velocity</dt>
-                          <dd>{formatSize(repository.commit_velocity)} commits/month</dd>
+                          <dd>
+                            {formatSize(repository.commit_velocity)}{" "}
+                            commits/month
+                          </dd>
                         </div>
                       )}
                     </dl>
@@ -328,33 +412,85 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                   <dl className={styles.detailList}>
                     <div className={styles.detailItem}>
                       <dt>Average Commit Size</dt>
-                      <dd>{formatSize(repository.commit_metrics?.avg_size || repository.avg_commit_size)}</dd>
+                      <dd>
+                        {formatSize(
+                          repository.commit_metrics?.avg_size ||
+                            repository.avg_commit_size,
+                        )}
+                      </dd>
                     </div>
-                    {(repository.commit_metrics?.largest_commit || repository.largest_commit) && (
+                    {(repository.commit_metrics?.largest_commit ||
+                      repository.largest_commit) && (
                       <div className={styles.detailItem}>
                         <dt>Largest Commit</dt>
                         <dd>
-                          {formatSize((repository.commit_metrics?.largest_commit || repository.largest_commit).size)}
+                          {formatSize(
+                            (
+                              repository.commit_metrics?.largest_commit ||
+                              repository.largest_commit
+                            ).size,
+                          )}
                           <div className={styles.textMuted}>
-                            {(repository.commit_metrics?.largest_commit || repository.largest_commit).sha?.substring(0, 7)} •{' '}
-                            {formatDate((repository.commit_metrics?.largest_commit || repository.largest_commit).date)}
+                            {(
+                              repository.commit_metrics?.largest_commit ||
+                              repository.largest_commit
+                            ).sha?.substring(0, 7)}{" "}
+                            •{" "}
+                            {formatDate(
+                              (
+                                repository.commit_metrics?.largest_commit ||
+                                repository.largest_commit
+                              ).date,
+                            )}
                           </div>
                           <div className={styles.textMuted}>
-                            {formatNumber((repository.commit_metrics?.largest_commit || repository.largest_commit).files_changed)} files •{' '}
-                            +{formatNumber((repository.commit_metrics?.largest_commit || repository.largest_commit).lines_added)} /{' '}
-                            -{formatNumber((repository.commit_metrics?.largest_commit || repository.largest_commit).lines_deleted)}
+                            {formatNumber(
+                              (
+                                repository.commit_metrics?.largest_commit ||
+                                repository.largest_commit
+                              ).files_changed,
+                            )}{" "}
+                            files • +
+                            {formatNumber(
+                              (
+                                repository.commit_metrics?.largest_commit ||
+                                repository.largest_commit
+                              ).lines_added,
+                            )}{" "}
+                            / -
+                            {formatNumber(
+                              (
+                                repository.commit_metrics?.largest_commit ||
+                                repository.largest_commit
+                              ).lines_deleted,
+                            )}
                           </div>
                         </dd>
                       </div>
                     )}
-                    {(repository.commit_metrics?.smallest_commit || repository.smallest_commit) && (
+                    {(repository.commit_metrics?.smallest_commit ||
+                      repository.smallest_commit) && (
                       <div className={styles.detailItem}>
                         <dt>Smallest Commit</dt>
                         <dd>
-                          {formatSize((repository.commit_metrics?.smallest_commit || repository.smallest_commit).size)}
+                          {formatSize(
+                            (
+                              repository.commit_metrics?.smallest_commit ||
+                              repository.smallest_commit
+                            ).size,
+                          )}
                           <div className={styles.textMuted}>
-                            {(repository.commit_metrics?.smallest_commit || repository.smallest_commit).sha?.substring(0, 7)} •{' '}
-                            {formatDate((repository.commit_metrics?.smallest_commit || repository.smallest_commit).date)}
+                            {(
+                              repository.commit_metrics?.smallest_commit ||
+                              repository.smallest_commit
+                            ).sha?.substring(0, 7)}{" "}
+                            •{" "}
+                            {formatDate(
+                              (
+                                repository.commit_metrics?.smallest_commit ||
+                                repository.smallest_commit
+                              ).date,
+                            )}
                           </div>
                         </dd>
                       </div>
@@ -395,7 +531,9 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                       {repository.rank && (
                         <div className={styles.detailItem}>
                           <dt>Rank</dt>
-                          <dd className={styles.highlight}>#{repository.rank}</dd>
+                          <dd className={styles.highlight}>
+                            #{repository.rank}
+                          </dd>
                         </div>
                       )}
                       <div className={styles.detailItem}>
@@ -409,37 +547,48 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
             </div>
 
             {/* Full Width Sections */}
-            
+
             {/* Tech Stack */}
             {repository.tech_stack && (
               <section className={styles.section}>
                 <h3 className={styles.sectionTitle}>Technology Stack</h3>
                 <div className={styles.techStackGrid}>
-                  {repository.tech_stack.frameworks && repository.tech_stack.frameworks.length > 0 && (
-                    <div>
-                      <h4 className={styles.subsectionTitle}>Frameworks</h4>
-                      <div className={styles.badgeList}>
-                        {repository.tech_stack.frameworks.map((framework) => (
-                          <span key={framework} className={styles.badge}>
-                            {framework}
-                          </span>
-                        ))}
+                  {repository.tech_stack.frameworks &&
+                    repository.tech_stack.frameworks.length > 0 && (
+                      <div>
+                        <h4 className={styles.subsectionTitle}>Frameworks</h4>
+                        <div className={styles.badgeList}>
+                          {repository.tech_stack.frameworks.map((framework) => (
+                            <span key={framework} className={styles.badge}>
+                              {framework}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  
+                    )}
+
                   {repository.tech_stack.total_dependencies > 0 && (
                     <div>
                       <h4 className={styles.subsectionTitle}>Dependencies</h4>
                       <dl className={styles.detailList}>
                         <div className={styles.detailItem}>
                           <dt>Total</dt>
-                          <dd>{formatNumber(repository.tech_stack.total_dependencies)}</dd>
+                          <dd>
+                            {formatNumber(
+                              repository.tech_stack.total_dependencies,
+                            )}
+                          </dd>
                         </div>
                         <div className={styles.detailItem}>
                           <dt>Outdated</dt>
-                          <dd className={repository.tech_stack.outdated_count > 0 ? styles.textWarning : ''}>
-                            {formatNumber(repository.tech_stack.outdated_count)} 
+                          <dd
+                            className={
+                              repository.tech_stack.outdated_count > 0
+                                ? styles.textWarning
+                                : ""
+                            }
+                          >
+                            {formatNumber(repository.tech_stack.outdated_count)}
                             ({repository.tech_stack.outdated_percentage}%)
                           </dd>
                         </div>
@@ -452,13 +601,17 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                                   repository.tech_stack.currency_score >= 80
                                     ? styles.scoreBarSuccess
                                     : repository.tech_stack.currency_score >= 60
-                                    ? styles.scoreBarWarning
-                                    : styles.scoreBarError
+                                      ? styles.scoreBarWarning
+                                      : styles.scoreBarError
                                 }`}
-                                style={{ width: `${repository.tech_stack.currency_score}%` }}
+                                style={{
+                                  width: `${repository.tech_stack.currency_score}%`,
+                                }}
                               />
                             </div>
-                            <span>{repository.tech_stack.currency_score}/100</span>
+                            <span>
+                              {repository.tech_stack.currency_score}/100
+                            </span>
                           </dd>
                         </div>
                       </dl>
@@ -490,7 +643,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default RepositoryDetail
+export default RepositoryDetail;

@@ -1,8 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary'
-import '@/styles/global.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import ErrorBoundary from "@/components/ErrorBoundary/ErrorBoundary";
+import "@/styles/global.css";
 
 /**
  * GitHub Stats Spark Dashboard - Main Entry Point
@@ -14,13 +14,72 @@ import '@/styles/global.css'
  * - React 18+ with StrictMode for development checks
  * - ErrorBoundary for graceful error handling
  * - Global CSS styles loaded
+ * - Service Worker registration for offline support
  * - App component as the root of the component tree
  */
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+/**
+ * Register Service Worker for offline functionality
+ */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js", { scope: "/" })
+      .then((registration) => {
+        console.log(
+          "[Service Worker] Registered successfully:",
+          registration.scope,
+        );
+
+        // Check for updates every hour
+        setInterval(
+          () => {
+            registration.update();
+          },
+          60 * 60 * 1000,
+        );
+
+        // Listen for updates
+        registration.addEventListener("updatefound", () => {
+          const newWorker = registration.installing;
+
+          if (newWorker) {
+            newWorker.addEventListener("statechange", () => {
+              if (
+                newWorker.state === "installed" &&
+                navigator.serviceWorker.controller
+              ) {
+                // New version available
+                console.log("[Service Worker] New version available");
+
+                // Show update notification
+                if (
+                  window.confirm("New version available! Reload to update?")
+                ) {
+                  newWorker.postMessage({ type: "SKIP_WAITING" });
+                  window.location.reload();
+                }
+              }
+            });
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("[Service Worker] Registration failed:", error);
+      });
+
+    // Listen for controller change (SW activated)
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      console.log("[Service Worker] Controller changed, reloading page");
+      window.location.reload();
+    });
+  });
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ErrorBoundary>
       <App />
     </ErrorBoundary>
   </React.StrictMode>,
-)
+);

@@ -90,7 +90,10 @@
 /* Table Body */
 .tableRow {
   border-bottom: 1px solid var(--color-border);
-  transition: background-color var(--transition-fast), opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color var(--transition-fast),
+    opacity 0.2s ease,
+    transform 0.2s ease;
   cursor: pointer;
 }
 
@@ -332,7 +335,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -344,12 +348,12 @@
   .mobileHeader {
     background-color: var(--color-background);
   }
-  
+
   .mobileHeaderButton {
     background-color: var(--color-surface);
     border-color: var(--color-border);
   }
-  
+
   .mobileHeaderButton:hover {
     background-color: var(--color-surface-alt);
   }

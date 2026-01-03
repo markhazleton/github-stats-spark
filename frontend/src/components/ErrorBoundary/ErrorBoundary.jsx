@@ -1,19 +1,19 @@
-import React from 'react';
-import './ErrorBoundary.css';
+import React from "react";
+import "./ErrorBoundary.css";
 
 /**
  * ErrorBoundary - React error boundary for catastrophic errors
- * 
+ *
  * Catches JavaScript errors anywhere in the child component tree,
  * logs those errors, and displays a fallback UI instead of crashing.
- * 
+ *
  * Features:
  * - Graceful error handling
  * - User-friendly error message
  * - Retry mechanism
  * - Error details for development
  * - Automatic retry after 30 seconds
- * 
+ *
  * Usage:
  * <ErrorBoundary>
  *   <App />
@@ -33,27 +33,26 @@ class ErrorBoundary extends React.Component {
 
   static getDerivedStateFromError(error) {
     // Update state so the next render will show the fallback UI
-    return { hasError: true };
+    return { hasError: true, error };
   }
 
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(caughtError, errorInfo) {
     // Log error details for debugging
-    console.error('ErrorBoundary caught an error:', error);
-    console.error('Error details:', errorInfo);
-    
+    console.error("ErrorBoundary caught an error:", errorInfo);
+
     // Log to analytics or error tracking service
     if (window.gtag) {
-      window.gtag('event', 'exception', {
-        description: error.toString(),
+      window.gtag("event", "exception", {
+        description: caughtError.toString(),
         fatal: true,
       });
     }
-    
+
     this.setState({
-      error,
+      error: caughtError,
       errorInfo,
     });
-    
+
     // Automatically retry after 30 seconds
     this.scheduleAutoRetry();
   }
@@ -70,10 +69,10 @@ class ErrorBoundary extends React.Component {
     if (this.retryTimer) {
       clearTimeout(this.retryTimer);
     }
-    
+
     // Schedule automatic retry after 30 seconds
     this.retryTimer = setTimeout(() => {
-      console.log('ErrorBoundary: Automatic retry after 30 seconds');
+      console.log("ErrorBoundary: Automatic retry after 30 seconds");
       this.handleRetry();
     }, 30000);
   };
@@ -84,7 +83,7 @@ class ErrorBoundary extends React.Component {
       clearTimeout(this.retryTimer);
       this.retryTimer = null;
     }
-    
+
     // Reset error state and increment retry count
     this.setState((prevState) => ({
       hasError: false,
@@ -92,7 +91,7 @@ class ErrorBoundary extends React.Component {
       errorInfo: null,
       retryCount: prevState.retryCount + 1,
     }));
-    
+
     console.log(`ErrorBoundary: Retry attempt ${this.state.retryCount + 1}`);
   };
 
@@ -104,15 +103,16 @@ class ErrorBoundary extends React.Component {
             <div className="error-boundary__icon" role="img" aria-label="Error">
               ⚠️
             </div>
-            
+
             <h1 className="error-boundary__title">
               Oops! Something went wrong
             </h1>
-            
+
             <p className="error-boundary__message">
-              We&apos;re sorry for the inconvenience. The application encountered an unexpected error.
+              We&apos;re sorry for the inconvenience. The application
+              encountered an unexpected error.
             </p>
-            
+
             <div className="error-boundary__actions">
               <button
                 className="error-boundary__retry"
@@ -121,7 +121,7 @@ class ErrorBoundary extends React.Component {
               >
                 Try Again
               </button>
-              
+
               <button
                 className="error-boundary__reload"
                 onClick={() => window.location.reload()}
@@ -130,28 +130,31 @@ class ErrorBoundary extends React.Component {
                 Reload Page
               </button>
             </div>
-            
+
             {this.state.retryCount > 0 && (
               <p className="error-boundary__retry-count">
                 Retry attempts: {this.state.retryCount}
               </p>
             )}
-            
+
             {/* Show error details in development mode */}
             {import.meta.env.DEV && this.state.error && (
               <details className="error-boundary__details">
                 <summary>Error Details (Development Only)</summary>
                 <div className="error-boundary__stack">
-                  <p><strong>Error:</strong> {this.state.error.toString()}</p>
+                  <p>
+                    <strong>Error:</strong> {this.state.error.toString()}
+                  </p>
                   {this.state.errorInfo && (
                     <pre>{this.state.errorInfo.componentStack}</pre>
                   )}
                 </div>
               </details>
             )}
-            
+
             <p className="error-boundary__help">
-              If the problem persists, please try clearing your browser cache or contact support.
+              If the problem persists, please try clearing your browser cache or
+              contact support.
             </p>
           </div>
         </div>

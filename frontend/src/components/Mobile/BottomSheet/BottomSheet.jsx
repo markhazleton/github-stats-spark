@@ -1,9 +1,9 @@
 /**
  * BottomSheet Component
- * 
+ *
  * A mobile-native bottom sheet component using react-modal-sheet for iOS/Android-like behavior.
  * Supports multiple snap points, swipe-to-dismiss, backdrop interaction, and accessibility features.
- * 
+ *
  * Features:
  * - Configurable snap points (default: [0.4, 0.9] for partial/full height)
  * - Swipe-down gesture to dismiss
@@ -12,7 +12,7 @@
  * - Focus trap for keyboard accessibility
  * - Prevents browser pull-to-refresh when active
  * - Header with visual drag indicator
- * 
+ *
  * @example
  * <BottomSheet
  *   isOpen={isOpen}
@@ -24,9 +24,9 @@
  * </BottomSheet>
  */
 
-import React, { useEffect, useRef } from 'react';
-import { Sheet } from 'react-modal-sheet';
-import './BottomSheet.css';
+import React, { useEffect, useRef } from "react";
+import { Sheet } from "react-modal-sheet";
+import "./BottomSheet.css";
 
 export function BottomSheet({
   isOpen,
@@ -38,7 +38,7 @@ export function BottomSheet({
   disableDrag = false,
   closeOnBackdrop = true,
   showHeader = true,
-  className = '',
+  className = "",
 }) {
   const sheetRef = useRef(null);
   const contentRef = useRef(null);
@@ -60,12 +60,14 @@ export function BottomSheet({
 
     const sheetElement = sheetRef.current;
     if (sheetElement) {
-      sheetElement.addEventListener('touchmove', preventRefresh, { passive: false });
+      sheetElement.addEventListener("touchmove", preventRefresh, {
+        passive: false,
+      });
     }
 
     return () => {
       if (sheetElement) {
-        sheetElement.removeEventListener('touchmove', preventRefresh);
+        sheetElement.removeEventListener("touchmove", preventRefresh);
       }
     };
   }, [isOpen]);
@@ -76,9 +78,9 @@ export function BottomSheet({
   useEffect(() => {
     if (isOpen && sheetRef.current) {
       const focusableElements = sheetRef.current.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
       );
-      
+
       if (focusableElements.length > 0) {
         // Focus the first focusable element
         focusableElements[0]?.focus();
@@ -93,13 +95,13 @@ export function BottomSheet({
     if (!isOpen) return;
 
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onClose();
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
   return (
@@ -123,9 +125,7 @@ export function BottomSheet({
         </Sheet.Header>
 
         <Sheet.Content ref={contentRef}>
-          <div className="bottom-sheet-body">
-            {children}
-          </div>
+          <div className="bottom-sheet-body">{children}</div>
         </Sheet.Content>
       </Sheet.Container>
 

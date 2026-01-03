@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { createContext, useContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 const ViewportContext = createContext(null);
 
@@ -15,14 +15,15 @@ export function ViewportProvider({ children }) {
     isMobile: window.innerWidth < 768,
     isTablet: window.innerWidth >= 768 && window.innerWidth < 1024,
     isDesktop: window.innerWidth >= 1024,
-    orientation: window.innerWidth > window.innerHeight ? 'landscape' : 'portrait'
+    orientation:
+      window.innerWidth > window.innerHeight ? "landscape" : "portrait",
   });
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-      
+
       setViewport({
         width,
         height,
@@ -30,12 +31,12 @@ export function ViewportProvider({ children }) {
         isMobile: width < 768,
         isTablet: width >= 768 && width < 1024,
         isDesktop: width >= 1024,
-        orientation: width > height ? 'landscape' : 'portrait'
+        orientation: width > height ? "landscape" : "portrait",
       });
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -46,7 +47,7 @@ export function ViewportProvider({ children }) {
 }
 
 ViewportProvider.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 /**
@@ -55,7 +56,7 @@ ViewportProvider.propTypes = {
 export function useViewport() {
   const context = useContext(ViewportContext);
   if (!context) {
-    throw new Error('useViewport must be used within ViewportProvider');
+    throw new Error("useViewport must be used within ViewportProvider");
   }
   return context;
 }
@@ -64,11 +65,11 @@ export function useViewport() {
  * Get breakpoint name from width
  */
 function getBreakpoint(width) {
-  if (width < 320) return 'xs';
-  if (width < 768) return 'sm';
-  if (width < 1024) return 'md';
-  if (width < 1280) return 'lg';
-  return 'xl';
+  if (width < 320) return "xs";
+  if (width < 768) return "sm";
+  if (width < 1024) return "md";
+  if (width < 1280) return "lg";
+  return "xl";
 }
 
 export default ViewportContext;

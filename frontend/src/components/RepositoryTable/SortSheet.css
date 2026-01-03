@@ -68,7 +68,7 @@
     background: var(--color-background, #1f2937);
     border-color: var(--color-border, #374151);
   }
-  
+
   .sort-option:hover {
     background: var(--color-background-hover, #374151);
     border-color: var(--color-border-hover, #4b5563);
@@ -91,7 +91,7 @@
     background: rgba(59, 130, 246, 0.15);
     border-color: var(--color-primary, #3b82f6);
   }
-  
+
   .sort-option-active:hover {
     background: rgba(59, 130, 246, 0.25);
   }
@@ -155,7 +155,7 @@
     background: var(--color-background-secondary, #374151);
     border-color: var(--color-border, #4b5563);
   }
-  
+
   .sort-direction-toggle:hover {
     background: var(--color-background-hover, #4b5563);
     border-color: var(--color-border-hover, #6b7280);
@@ -262,7 +262,7 @@
     color: var(--color-text, #d1d5db);
     border-color: var(--color-border, #4b5563);
   }
-  
+
   .sort-button-text:hover {
     background: var(--color-background-hover, #374151);
   }

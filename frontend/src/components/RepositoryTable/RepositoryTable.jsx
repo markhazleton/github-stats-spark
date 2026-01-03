@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { useBreakpoint } from '@/hooks/useMediaQuery'
-import { RepositoryCard } from '@/components/Mobile/RepositoryCard/RepositoryCard'
-import { LoadingState } from '@/components/Mobile/LoadingState/LoadingState'
-import FilterSheet from './FilterSheet'
-import SortSheet from './SortSheet'
-import TableHeader from './TableHeader'
-import TableRow from './TableRow'
-import ExportButton from '@/components/Common/ExportButton'
-import styles from './RepositoryTable.module.css'
+import React, { useState } from "react";
+import { useBreakpoint } from "@/hooks/useMediaQuery";
+import { RepositoryCard } from "@/components/Mobile/RepositoryCard/RepositoryCard";
+import { LoadingState } from "@/components/Mobile/LoadingState/LoadingState";
+import FilterSheet from "./FilterSheet";
+import SortSheet from "./SortSheet";
+import TableHeader from "./TableHeader";
+import TableRow from "./TableRow";
+import ExportButton from "@/components/Common/ExportButton";
+import styles from "./RepositoryTable.module.css";
 
 /**
  * RepositoryTable Component
@@ -40,12 +40,12 @@ export default function RepositoryTable({
   onSelectRepo,
   onRowClick,
   selectedRepos = [],
-  sortField = 'stars',
-  sortDirection = 'desc',
+  sortField = "stars",
+  sortDirection = "desc",
   loading = false,
 }) {
   const { isMobile } = useBreakpoint();
-  
+
   // Bottom sheet state for mobile
   const [filterSheetOpen, setFilterSheetOpen] = useState(false);
   const [sortSheetOpen, setSortSheetOpen] = useState(false);
@@ -59,9 +59,7 @@ export default function RepositoryTable({
    * Get unique languages from repositories for filter options
    */
   const availableLanguages = React.useMemo(() => {
-    const languages = repositories
-      .map(repo => repo.language)
-      .filter(Boolean);
+    const languages = repositories.map((repo) => repo.language).filter(Boolean);
     return [...new Set(languages)].sort();
   }, [repositories]);
 
@@ -90,22 +88,22 @@ export default function RepositoryTable({
   const handleSort = (field) => {
     // Call parent callback if provided
     if (onSort) {
-      onSort(field)
+      onSort(field);
     }
-  }
+  };
 
   /**
    * Check if repository is selected
    */
   const isRepoSelected = (repoName) => {
-    return selectedRepos.includes(repoName)
-  }
+    return selectedRepos.includes(repoName);
+  };
 
   // Show loading state
   if (loading) {
     return (
       <div className={styles.loadingWrapper}>
-        <LoadingState type={isMobile ? 'card' : 'list'} count={5} />
+        <LoadingState type={isMobile ? "card" : "list"} count={5} />
       </div>
     );
   }
@@ -116,7 +114,7 @@ export default function RepositoryTable({
       <div className={styles.emptyState}>
         <p className="text-muted">No repositories to display</p>
       </div>
-    )
+    );
   }
 
   // Mobile view: Card layout
@@ -134,10 +132,15 @@ export default function RepositoryTable({
               <span className={styles.mobileHeaderIcon}>🔍</span>
               <span>Filter</span>
               {(filters.language || filters.minStars || filters.dateRange) && (
-                <span className={styles.filterBadge} aria-label="Active filters">●</span>
+                <span
+                  className={styles.filterBadge}
+                  aria-label="Active filters"
+                >
+                  ●
+                </span>
               )}
             </button>
-            
+
             <button
               onClick={() => setSortSheetOpen(true)}
               className={styles.mobileHeaderButton}
@@ -164,7 +167,8 @@ export default function RepositoryTable({
           {/* Mobile Footer */}
           <div className={styles.mobileFooter}>
             <p className="text-sm text-muted">
-              {repositories.length} {repositories.length === 1 ? 'repository' : 'repositories'}
+              {repositories.length}{" "}
+              {repositories.length === 1 ? "repository" : "repositories"}
               {selectedRepos.length > 0 && (
                 <> • {selectedRepos.length} selected</>
               )}
@@ -185,7 +189,7 @@ export default function RepositoryTable({
           onApplyFilters={handleApplyFilters}
           availableLanguages={availableLanguages}
         />
-        
+
         <SortSheet
           isOpen={sortSheetOpen}
           onClose={() => setSortSheetOpen(false)}
@@ -201,7 +205,11 @@ export default function RepositoryTable({
   return (
     <div className={styles.tableWrapper}>
       <div className={styles.tableContainer}>
-        <table className={styles.table} role="table" aria-label="Repository comparison table">
+        <table
+          className={styles.table}
+          role="table"
+          aria-label="Repository comparison table"
+        >
           <TableHeader
             onSort={handleSort}
             sortField={sortField}
@@ -224,7 +232,8 @@ export default function RepositoryTable({
       {/* Table Footer with Summary and Export */}
       <div className={styles.tableFooter}>
         <p className="text-sm text-muted">
-          Showing {repositories.length} {repositories.length === 1 ? 'repository' : 'repositories'}
+          Showing {repositories.length}{" "}
+          {repositories.length === 1 ? "repository" : "repositories"}
           {selectedRepos.length > 0 && (
             <> • {selectedRepos.length} selected for comparison</>
           )}
@@ -236,5 +245,5 @@ export default function RepositoryTable({
         />
       </div>
     </div>
-  )
+  );
 }

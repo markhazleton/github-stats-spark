@@ -1,9 +1,9 @@
 /**
  * CompareButton Component
- * 
+ *
  * Floating action button that appears when 2-5 repositories are selected.
  * Shows selection count badge and triggers comparison view.
- * 
+ *
  * @component
  * @example
  * <CompareButton
@@ -13,19 +13,19 @@
  * />
  */
 
-import React from 'react';
-import PropTypes from 'prop-types';
-import { triggerHapticFeedback } from '@/hooks/useGesture';
-import './CompareButton.css';
+import React from "react";
+import PropTypes from "prop-types";
+import { triggerHapticFeedback } from "@/hooks/useGesture";
+import "./CompareButton.css";
 
-export const CompareButton = ({ 
-  count = 0, 
+export const CompareButton = ({
+  count = 0,
   onClick,
   disabled = false,
-  maxSelections = 5
+  maxSelections = 5,
 }) => {
   const handleClick = () => {
-    triggerHapticFeedback('medium');
+    triggerHapticFeedback("medium");
     if (onClick && !disabled) {
       onClick();
     }
@@ -39,22 +39,24 @@ export const CompareButton = ({
 
   return (
     <button
-      className={`compare-button touch-target ${isDisabled ? 'compare-button-disabled' : ''} ${isMaxReached ? 'compare-button-max' : ''}`}
+      className={`compare-button touch-target ${isDisabled ? "compare-button-disabled" : ""} ${isMaxReached ? "compare-button-max" : ""}`}
       onClick={handleClick}
       disabled={isDisabled}
-      aria-label={`Compare ${count} selected ${count === 1 ? 'repository' : 'repositories'}`}
+      aria-label={`Compare ${count} selected ${count === 1 ? "repository" : "repositories"}`}
       aria-disabled={isDisabled}
     >
       <div className="compare-button-content">
-        <span className="compare-button-icon" aria-hidden="true">📊</span>
+        <span className="compare-button-icon" aria-hidden="true">
+          📊
+        </span>
         <span className="compare-button-text">
-          {isDisabled ? 'Select 2+' : 'Compare'}
+          {isDisabled ? "Select 2+" : "Compare"}
         </span>
         <span className="compare-button-badge" aria-label={`${count} selected`}>
           {count}
         </span>
       </div>
-      
+
       {isMaxReached && (
         <span className="compare-button-hint">Max {maxSelections} repos</span>
       )}

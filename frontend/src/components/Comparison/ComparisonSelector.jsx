@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
 
 /**
  * ComparisonSelector Component
@@ -13,9 +13,13 @@ import PropTypes from 'prop-types'
  * @param {Function} props.onClearSelection - Callback to clear all selections
  * @param {number} props.maxSelections - Maximum number of repositories that can be selected
  */
-function ComparisonSelector({ selectedRepos, onClearSelection, maxSelections = 5 }) {
-  const selectionCount = selectedRepos.length
-  const isAtLimit = selectionCount >= maxSelections
+function ComparisonSelector({
+  selectedRepos,
+  onClearSelection,
+  maxSelections = 5,
+}) {
+  const selectionCount = selectedRepos.length;
+  const isAtLimit = selectionCount >= maxSelections;
 
   return (
     <div className="comparison-selector">
@@ -44,18 +48,18 @@ function ComparisonSelector({ selectedRepos, onClearSelection, maxSelections = 5
       {selectionCount > 0 && (
         <div className="mt-sm">
           <p className="text-muted text-sm">
-            Selected: {selectedRepos.join(', ')}
+            Selected: {selectedRepos.join(", ")}
           </p>
         </div>
       )}
     </div>
-  )
+  );
 }
 
 ComparisonSelector.propTypes = {
   selectedRepos: PropTypes.arrayOf(PropTypes.string).isRequired,
   onClearSelection: PropTypes.func.isRequired,
   maxSelections: PropTypes.number,
-}
+};
 
-export default ComparisonSelector
+export default ComparisonSelector;

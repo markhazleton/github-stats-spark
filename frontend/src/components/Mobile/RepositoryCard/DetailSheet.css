@@ -341,7 +341,7 @@
     color: var(--color-text, #f9fafb);
     border-color: var(--color-border, #4b5563);
   }
-  
+
   .detail-button-secondary:hover {
     background: var(--color-background-hover, #4b5563);
   }

@@ -46,7 +46,7 @@
 
   /* Show static loading indicator instead */
   .loading-spinner::before {
-    content: '⋯';
+    content: "⋯";
     position: absolute;
     font-size: 24px;
     color: #0066cc;
