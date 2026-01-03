@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:59:43.214589",
+  "timestamp": "2026-01-02T20:36:49.114964",
   "value": [
     {
       "sha": "8aff02798c51203363f5eb335203f55ff435b4e5",
@@ -11,7 +11,7 @@
         "message": "upgrade packages"
       },
       "stats": {
-        "total": 7,
+        "total": 218,
         "additions": 183,
         "deletions": 35
       },
@@ -27,7 +27,7 @@
         "message": "wip"
       },
       "stats": {
-        "total": 15,
+        "total": 1028,
         "additions": 91,
         "deletions": 937
       },
@@ -43,7 +43,7 @@
         "message": "update NuGet"
       },
       "stats": {
-        "total": 46,
+        "total": 1598,
         "additions": 807,
         "deletions": 791
       },
@@ -59,7 +59,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 33,
         "additions": 22,
         "deletions": 11
       },
@@ -75,7 +75,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/WebProjectMechanics"
       },
       "stats": {
-        "total": 1,
+        "total": 20,
         "additions": 9,
         "deletions": 11
       },
@@ -91,7 +91,7 @@
         "message": "db updates"
       },
       "stats": {
-        "total": 3,
+        "total": 0,
         "additions": 0,
         "deletions": 0
       },
@@ -107,7 +107,7 @@
         "message": "Update main_webprojectmechanics.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 20,
         "additions": 9,
         "deletions": 11
       },
@@ -123,7 +123,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/WebProjectMechanics"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 57,
         "deletions": 0
       },
@@ -139,7 +139,7 @@
         "message": "Update for Default experience"
       },
       "stats": {
-        "total": 48,
+        "total": 9291,
         "additions": 505,
         "deletions": 8786
       },
@@ -155,7 +155,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 57,
         "deletions": 0
       },
@@ -171,7 +171,7 @@
         "message": "update"
       },
       "stats": {
-        "total": 2,
+        "total": 181144,
         "additions": 7648,
         "deletions": 173496
       },
@@ -187,7 +187,7 @@
         "message": "minor updates"
       },
       "stats": {
-        "total": 7,
+        "total": 175231,
         "additions": 174624,
         "deletions": 607
       },
@@ -203,7 +203,7 @@
         "message": "minor updates"
       },
       "stats": {
-        "total": 36,
+        "total": 13303,
         "additions": 650,
         "deletions": 12653
       },
@@ -219,7 +219,7 @@
         "message": "minor clean-up, add sort to Page Alais"
       },
       "stats": {
-        "total": 5,
+        "total": 46,
         "additions": 14,
         "deletions": 32
       },
@@ -235,7 +235,7 @@
         "message": "Update to 4.8.1, code clean-up, update packages"
       },
       "stats": {
-        "total": 91,
+        "total": 8294,
         "additions": 4262,
         "deletions": 4032
       },
@@ -251,7 +251,7 @@
         "message": "version updates"
       },
       "stats": {
-        "total": 7,
+        "total": 12691,
         "additions": 12227,
         "deletions": 464
       },
@@ -267,7 +267,7 @@
         "message": "Update Readme, Update Runtime to 4.8 everywhere"
       },
       "stats": {
-        "total": 6,
+        "total": 50,
         "additions": 29,
         "deletions": 21
       },
@@ -283,7 +283,7 @@
         "message": "clsean up"
       },
       "stats": {
-        "total": 58,
+        "total": 6618,
         "additions": 128,
         "deletions": 6490
       },
@@ -299,7 +299,7 @@
         "message": "remove app insights"
       },
       "stats": {
-        "total": 4,
+        "total": 163,
         "additions": 0,
         "deletions": 163
       },
@@ -315,7 +315,7 @@
         "message": "remove unused projects"
       },
       "stats": {
-        "total": 115,
+        "total": 6964,
         "additions": 0,
         "deletions": 6964
       },
@@ -331,7 +331,7 @@
         "message": "remove unused code"
       },
       "stats": {
-        "total": 19,
+        "total": 1864,
         "additions": 161,
         "deletions": 1703
       },
@@ -347,7 +347,7 @@
         "message": "merge with Azure DevOps repo"
       },
       "stats": {
-        "total": 222,
+        "total": 19212,
         "additions": 18704,
         "deletions": 508
       },
@@ -363,7 +363,7 @@
         "message": "Testing Updates of db"
       },
       "stats": {
-        "total": 3,
+        "total": 18,
         "additions": 9,
         "deletions": 9
       },
@@ -379,7 +379,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 20,
+        "total": 13372,
         "additions": 1567,
         "deletions": 11805
       },
@@ -395,7 +395,7 @@
         "message": "update location alias"
       },
       "stats": {
-        "total": 10,
+        "total": 326,
         "additions": 212,
         "deletions": 114
       },
@@ -411,7 +411,7 @@
         "message": "Add supporting projects"
       },
       "stats": {
-        "total": 99,
+        "total": 19635,
         "additions": 18574,
         "deletions": 1061
       },
@@ -427,7 +427,7 @@
         "message": "remove application insights\nupdate NuGet packages"
       },
       "stats": {
-        "total": 3,
+        "total": 150,
         "additions": 3,
         "deletions": 147
       },
@@ -443,7 +443,7 @@
         "message": "update NuGet Package"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -459,7 +459,7 @@
         "message": "update NuGet Pacakges (System.Memory/System.Text.Json)"
       },
       "stats": {
-        "total": 2,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -475,7 +475,7 @@
         "message": "NuGet Update"
       },
       "stats": {
-        "total": 2,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -491,7 +491,7 @@
         "message": "clean up readme"
       },
       "stats": {
-        "total": 2,
+        "total": 11,
         "additions": 6,
         "deletions": 5
       },
@@ -507,9 +507,57 @@
         "message": "Update to latest version"
       },
       "stats": {
-        "total": 1599,
+        "total": 290119,
         "additions": 92784,
         "deletions": 197335
+      },
+      "repo": "WebProjectMechanics"
+    },
+    {
+      "sha": "a605ad0302bf9e223fd6df5d3929c023b6e98ac1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-04-23T15:59:20+00:00"
+        },
+        "message": "Update Git Ignore for Visual Studio Projects"
+      },
+      "stats": {
+        "total": 120,
+        "additions": 119,
+        "deletions": 1
+      },
+      "repo": "WebProjectMechanics"
+    },
+    {
+      "sha": "021f400a9e24c05ad12b7784c3d61d921af98dc2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-03-20T17:15:00+00:00"
+        },
+        "message": "Merge branch 'master' of https://github.com/markhazleton/WebProjectMechanics"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "WebProjectMechanics"
+    },
+    {
+      "sha": "adc66b9b4db78034b471589cfa8d40c0fdd6f214",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-03-20T17:14:07+00:00"
+        },
+        "message": "clean up old files"
+      },
+      "stats": {
+        "total": 51398,
+        "additions": 0,
+        "deletions": 51398
       },
       "repo": "WebProjectMechanics"
     },
@@ -523,7 +571,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -539,7 +587,39 @@
         "message": "Create README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "WebProjectMechanics"
+    },
+    {
+      "sha": "a3825f9efabf069f59f3c7f87ea570ffe49cc16d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-03-20T17:08:54+00:00"
+        },
+        "message": "Update NuGet"
+      },
+      "stats": {
+        "total": 817445,
+        "additions": 126092,
+        "deletions": 691353
+      },
+      "repo": "WebProjectMechanics"
+    },
+    {
+      "sha": "9f2833960793659de805465f06fc7391a8d0d8b2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-03-20T17:05:55+00:00"
+        },
+        "message": "Clean Up Solution and Upgrade NuGet Packages"
+      },
+      "stats": {
+        "total": 5,
         "additions": 5,
         "deletions": 0
       },
@@ -555,7 +635,7 @@
         "message": ""
       },
       "stats": {
-        "total": 7,
+        "total": 16,
         "additions": 13,
         "deletions": 3
       },
@@ -571,7 +651,7 @@
         "message": ""
       },
       "stats": {
-        "total": 105,
+        "total": 284178,
         "additions": 284178,
         "deletions": 0
       },
@@ -587,7 +667,7 @@
         "message": ""
       },
       "stats": {
-        "total": 4,
+        "total": 0,
         "additions": 0,
         "deletions": 0
       },
@@ -603,7 +683,7 @@
         "message": ""
       },
       "stats": {
-        "total": 2,
+        "total": 38,
         "additions": 34,
         "deletions": 4
       },
@@ -619,7 +699,7 @@
         "message": ""
       },
       "stats": {
-        "total": 12,
+        "total": 149,
         "additions": 147,
         "deletions": 2
       },
@@ -635,7 +715,7 @@
         "message": ""
       },
       "stats": {
-        "total": 14,
+        "total": 496,
         "additions": 296,
         "deletions": 200
       },
@@ -651,7 +731,7 @@
         "message": ""
       },
       "stats": {
-        "total": 17,
+        "total": 963,
         "additions": 470,
         "deletions": 493
       },
@@ -667,7 +747,7 @@
         "message": ""
       },
       "stats": {
-        "total": 4,
+        "total": 53940,
         "additions": 44634,
         "deletions": 9306
       },
@@ -683,7 +763,7 @@
         "message": ""
       },
       "stats": {
-        "total": 17,
+        "total": 402,
         "additions": 277,
         "deletions": 125
       },
@@ -699,7 +779,7 @@
         "message": ""
       },
       "stats": {
-        "total": 7,
+        "total": 16,
         "additions": 8,
         "deletions": 8
       },
@@ -715,87 +795,7 @@
         "message": ""
       },
       "stats": {
-        "total": 6,
-        "additions": 0,
-        "deletions": 0
-      },
-      "repo": "WebProjectMechanics"
-    },
-    {
-      "sha": "f8071a338ebc5cfb4ecec09e26c7daa027557ee5",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2015-04-24T07:21:22+00:00"
-        },
-        "message": ""
-      },
-      "stats": {
-        "total": 36,
-        "additions": 17553,
-        "deletions": 2380
-      },
-      "repo": "WebProjectMechanics"
-    },
-    {
-      "sha": "7db37efee1c47d35da19c7d96a1b8c329deed73d",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2015-04-17T16:58:43+00:00"
-        },
-        "message": ""
-      },
-      "stats": {
-        "total": 30,
-        "additions": 832,
-        "deletions": 171
-      },
-      "repo": "WebProjectMechanics"
-    },
-    {
-      "sha": "1f7faaac00206a0fbd81182f609211e1ec838859",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2015-04-16T20:00:47+00:00"
-        },
-        "message": ""
-      },
-      "stats": {
-        "total": 2,
-        "additions": 0,
-        "deletions": 60
-      },
-      "repo": "WebProjectMechanics"
-    },
-    {
-      "sha": "bae6abbcdd55bd20a47ae8aab9108761aa281bb1",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2015-04-16T20:00:39+00:00"
-        },
-        "message": ""
-      },
-      "stats": {
-        "total": 15,
-        "additions": 126,
-        "deletions": 323
-      },
-      "repo": "WebProjectMechanics"
-    },
-    {
-      "sha": "6f46cb4f4ef4e76e9ab1da352d36c366b7cbde6d",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2015-04-16T04:27:56+00:00"
-        },
-        "message": ""
-      },
-      "stats": {
-        "total": 2,
+        "total": 0,
         "additions": 0,
         "deletions": 0
       },

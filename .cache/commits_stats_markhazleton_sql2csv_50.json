@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:57:50.380786",
+  "timestamp": "2026-01-02T20:30:27.894438",
   "value": [
     {
       "sha": "57c69ade8ec0e216c4d934f02353f9e39d1a8f75",
@@ -11,7 +11,7 @@
         "message": "Enhance file path handling in HomeController\n\nUpdated file path and name management to prioritize newer TempData keys while ensuring backward compatibility with legacy keys. Improved data retrieval from multiple sources, including session storage. Added comments for clarity and updated logging statements for consistency."
       },
       "stats": {
-        "total": 1,
+        "total": 50,
         "additions": 42,
         "deletions": 8
       },
@@ -27,7 +27,7 @@
         "message": "Refactor views to focus on database file analysis\n\n- Updated AnalyzeTable.cshtml to handle null statistics gracefully.\n- Changed AnalyzeUnified.cshtml to redirect to database analysis for database files.\n- Modified Index.cshtml to clarify support for database files only.\n- Adjusted ManageFiles.cshtml to reflect the focus on database files.\n- Revised UnifiedData views to emphasize database table analysis and removed CSV references."
       },
       "stats": {
-        "total": 21,
+        "total": 1958,
         "additions": 94,
         "deletions": 1864
       },
@@ -43,7 +43,7 @@
         "message": "Refactor: Move PersistedFileService and related models to Sql2Csv.Core\n\n- Moved PersistedFileService.cs to Sql2Csv.Core/Services for better separation of concerns.\n- Created FormFileWrapper to wrap IFormFile for web-specific file handling.\n- Updated WebViewModels to utilize core models and maintain web-specific logic.\n- Established interfaces for file operations to decouple web dependencies from core logic.\n- Implemented a refactoring plan to streamline the web project and enhance reusability of core services."
       },
       "stats": {
-        "total": 22,
+        "total": 2738,
         "additions": 1780,
         "deletions": 958
       },
@@ -59,7 +59,7 @@
         "message": "Add LoggingSchemaReportSink to service registration and update ApplicationServiceTests for null checks"
       },
       "stats": {
-        "total": 2,
+        "total": 19,
         "additions": 18,
         "deletions": 1
       },
@@ -75,7 +75,7 @@
         "message": "Refactor services and models for improved clarity\n\nSignificant refactoring of the codebase to enhance organization and clarity. Key changes include:\n\n- Moved classes to `Sql2Csv.Core.Models` namespace for better structure.\n- Replaced `CsvFileService` with `DataSpark.Web.Services.CsvFileService` in controllers.\n- Introduced `IDataExportService` and `DataExportService` for clearer data export functionalities.\n- Updated chart services to use core models, removing duplicates.\n- Modified controllers to align with the new service structure.\n- Adjusted ViewModels to utilize new core models.\n- Removed legacy code to streamline the codebase.\n- Improved error handling in `OpenAIFileAnalysisService`.\n- Updated UI components and Razor views to reflect new data models.\n- Enhanced JavaScript functions for better error handling and user experience."
       },
       "stats": {
-        "total": 46,
+        "total": 1099,
         "additions": 651,
         "deletions": 448
       },
@@ -91,7 +91,7 @@
         "message": "Refactor CSV processing and export services; integrate new core services and update controllers"
       },
       "stats": {
-        "total": 14,
+        "total": 476,
         "additions": 347,
         "deletions": 129
       },
@@ -107,7 +107,7 @@
         "message": "Implement chart configuration services and validation logic\n\n- Added ChartService for managing chart configurations with CRUD operations.\n- Introduced ChartValidationService for reusable validation logic on chart configurations.\n- Created FileSystemChartConfigurationRepository for file-based storage of chart configurations.\n- Defined IChartConfigurationRepository interface for chart configuration data access.\n- Established IChartDataService and IChartValidationService interfaces for data processing and validation.\n- Developed CsvFileService for handling CSV file operations and reading data.\n- Implemented CsvProcessingUtils for utility functions related to CSV data processing.\n- Added necessary models and data structures for chart configurations and validation results."
       },
       "stats": {
-        "total": 57,
+        "total": 5751,
         "additions": 2087,
         "deletions": 3664
       },
@@ -123,7 +123,7 @@
         "message": "Implement schema report sinks and fix CSV file management\n\n- Added ISchemaReportSink interface for schema report handling.\n- Implemented LoggingSchemaReportSink for logging schema reports.\n- Created FileSchemaReportSink to persist schema reports to disk.\n- Developed CompositeSchemaReportSink to aggregate multiple sinks.\n- Updated ServiceCollectionExtensions to register new schema report sinks.\n- Fixed table count logic in HomeController to properly handle CSV files.\n- Enhanced UI to be file-type agnostic, updating terminology and display.\n- Added test CSV file for persistence testing."
       },
       "stats": {
-        "total": 170,
+        "total": 99494,
         "additions": 99429,
         "deletions": 65
       },
@@ -139,9 +139,25 @@
         "message": "Add Unified Analysis and Data View pages with enhanced functionality\n\n- Created UnifiedAnalysis.cshtml for detailed analysis of data sources, including summary statistics, column analysis, and export options.\n- Implemented UnifiedDataView.cshtml for real-time data viewing with search, filtering, and pagination capabilities.\n- Added JavaScript functions for exporting analysis and data, toggling column visibility, and refreshing data.\n- Introduced modal for column visibility settings in the data view.\n- Included sample CSV files (test.csv and test_data.csv) for testing purposes."
       },
       "stats": {
-        "total": 21,
+        "total": 4370,
         "additions": 3390,
         "deletions": 980
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "325d439748cfaaf69e0632143f3b0401969ac9b6",
+      "commit": {
+        "author": {
+          "name": "github-actions",
+          "date": "2025-08-29T22:14:47+00:00"
+        },
+        "message": "chore: update coverage badge & benchmark baseline"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "sql2csv"
     },
@@ -155,7 +171,7 @@
         "message": "Implement unified data handling for database and CSV files\n\n- Added UnifiedAnalysisViewModel and related view models for unified analysis results.\n- Created IUnifiedWebDataService interface and UnifiedWebDataService implementation for handling file uploads, analysis, and data retrieval.\n- Developed AnalyzeUnified.cshtml view for displaying analysis results with support for both CSV and database files.\n- Created ViewUnifiedData.cshtml view for displaying data in a table format with AJAX support.\n- Implemented methods for file type determination, data source retrieval, and CSV export functionality.\n- Enhanced error handling and logging throughout the service."
       },
       "stats": {
-        "total": 19,
+        "total": 3584,
         "additions": 3521,
         "deletions": 63
       },
@@ -171,7 +187,7 @@
         "message": "fix: remove Azure App Service Linux port configuration"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 0,
         "deletions": 4
       },
@@ -187,7 +203,7 @@
         "message": "remove publish action yml"
       },
       "stats": {
-        "total": 2,
+        "total": 161,
         "additions": 0,
         "deletions": 161
       },
@@ -203,7 +219,7 @@
         "message": "fix: configure app to listen on correct port for Azure App Service Linux"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 4,
         "deletions": 0
       },
@@ -219,7 +235,7 @@
         "message": "fix: improve Azure deployment workflow\n\n- Add Node.js setup and npm build steps for frontend assets\n- Remove conflicting deployment from CI workflow\n- Add manual test deployment workflow\n- Fix build order with proper restore and no-build flags\n- Ensure Tailwind CSS and Webpack assets are built during deployment"
       },
       "stats": {
-        "total": 3,
+        "total": 148,
         "additions": 96,
         "deletions": 52
       },
@@ -235,7 +251,7 @@
         "message": "feat(css): add new utility classes for width, alignment, and background opacity"
       },
       "stats": {
-        "total": 1,
+        "total": 15,
         "additions": 14,
         "deletions": 1
       },
@@ -251,7 +267,7 @@
         "message": "fix(web): register DistributedMemoryCache for Session to prevent 500 on App Service"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 3,
         "deletions": 0
       },
@@ -267,7 +283,7 @@
         "message": "refactor: update build and publish steps in CI workflows for Azure deployment"
       },
       "stats": {
-        "total": 2,
+        "total": 68,
         "additions": 39,
         "deletions": 29
       },
@@ -283,7 +299,7 @@
         "message": "chore: update deployment paths in CI workflow for consistency"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -299,7 +315,7 @@
         "message": "chore: update CI/CD pipeline configuration and add coverage XML handling"
       },
       "stats": {
-        "total": 1,
+        "total": 67,
         "additions": 61,
         "deletions": 6
       },
@@ -315,9 +331,25 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 65,
         "additions": 65,
         "deletions": 0
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "f8fd713046d731d0f8c82e3204ae2bf7cb300bbf",
+      "commit": {
+        "author": {
+          "name": "github-actions",
+          "date": "2025-08-11T18:50:10+00:00"
+        },
+        "message": "chore: update coverage badge & benchmark baseline"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "sql2csv"
     },
@@ -331,7 +363,7 @@
         "message": "Add update-metrics.ps1 script for automated testing and coverage reporting\n\n- Implemented a PowerShell script to streamline the process of running tests with coverage, generating coverage badges, running benchmarks, and updating baseline reports.\n- Added parameters for launching the web app and skipping the build process.\n- Included detailed logging for each step of the process to enhance visibility and error handling.\n- Integrated coverage badge generation based on test results and coverage metrics.\n- Ensured benchmark results are copied to the appropriate baseline directory for future reference."
       },
       "stats": {
-        "total": 26,
+        "total": 3928,
         "additions": 3885,
         "deletions": 43
       },
@@ -347,9 +379,25 @@
         "message": "chore(web): use PartialAsync instead of Partial to avoid deadlock warning"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "42b6d415b1e6faac409141e01a84a9bf5c2f6c2d",
+      "commit": {
+        "author": {
+          "name": "github-actions",
+          "date": "2025-08-11T17:03:39+00:00"
+        },
+        "message": "chore: update coverage badge"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 1,
+        "deletions": 6
       },
       "repo": "sql2csv"
     },
@@ -379,7 +427,7 @@
         "message": "fix: improve path normalization for SQLite file handling on Unix"
       },
       "stats": {
-        "total": 1,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -395,7 +443,7 @@
         "message": "fix: normalize path separators for FromSqliteFile on Unix"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 7,
         "deletions": 1
       },
@@ -411,7 +459,7 @@
         "message": "fix: correct console project path casing in solution for Linux CI"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -427,7 +475,7 @@
         "message": "Add dynamic database table component with sorting, filtering, and pagination\n\n- Implemented a new DatabaseTableComponent using AlpineJS and TailwindCSS for enhanced table functionality.\n- Added features for searching, sorting, and pagination of table data.\n- Integrated row details modal for viewing individual record information.\n- Created utility functions for exporting table data to CSV format.\n- Established a new solution file and JavaScript file for table components."
       },
       "stats": {
-        "total": 16,
+        "total": 4546,
         "additions": 3045,
         "deletions": 1501
       },
@@ -443,7 +491,7 @@
         "message": "Implement table filtering for CSV export and enhance upload functionality; update README and add tests for new features"
       },
       "stats": {
-        "total": 12,
+        "total": 631,
         "additions": 585,
         "deletions": 46
       },
@@ -459,7 +507,7 @@
         "message": "Enhance CI workflow: enforce coverage regression policy, commit coverage badge, and update README for coverage badge integration; add optional parameters for CSV export and schema report formats; implement JSON and Markdown output for schema reports; add issue list for project tracking."
       },
       "stats": {
-        "total": 12,
+        "total": 468,
         "additions": 407,
         "deletions": 61
       },
@@ -475,7 +523,7 @@
         "message": "Update README.md for clarity and feature overview; add discover command to CLI; update test project dependencies; implement CI workflow for build and coverage reporting"
       },
       "stats": {
-        "total": 5,
+        "total": 385,
         "additions": 178,
         "deletions": 207
       },
@@ -491,7 +539,7 @@
         "message": "Enhance README.md: Revamp features section, add live demo details, and improve console application showcase"
       },
       "stats": {
-        "total": 1,
+        "total": 603,
         "additions": 509,
         "deletions": 94
       },
@@ -507,7 +555,7 @@
         "message": "Add table analysis view models and corresponding Razor view for table analysis results\n\n- Implemented TableAnalysisViewModel, TableStatisticsViewModel, and ColumnAnalysisViewModel to encapsulate analysis data.\n- Created a new Razor view (AnalyzeTable.cshtml) to display table analysis results, including summary statistics and detailed column analysis.\n- Integrated DataTables for server-side processing of table data with search and pagination features.\n- Added export functionality to download analysis results as a CSV file.\n- Included error handling for analysis failures with user-friendly messages."
       },
       "stats": {
-        "total": 6,
+        "total": 3093,
         "additions": 2496,
         "deletions": 597
       },
@@ -523,7 +571,7 @@
         "message": "Implement file management features: add file upload, selection, and management UI; create PersistedFileService for handling database files; add models for persisted files and file management; update layout to include Manage Files link."
       },
       "stats": {
-        "total": 10,
+        "total": 1281,
         "additions": 1180,
         "deletions": 101
       },
@@ -539,7 +587,7 @@
         "message": "Add initial styles.bundle.js file to the project"
       },
       "stats": {
-        "total": 28,
+        "total": 8001,
         "additions": 8001,
         "deletions": 0
       },
@@ -555,7 +603,7 @@
         "message": "Add unit tests for services: CodeGenerationService, DatabaseDiscoveryService, ExportService, and SchemaService\n\n- Implement tests for CodeGenerationService to validate constructor behavior, DTO class generation, and error handling.\n- Create tests for DatabaseDiscoveryService to ensure proper database discovery functionality and logging.\n- Develop tests for ExportService to verify CSV export functionality, including handling of various configurations and edge cases.\n- Add tests for SchemaService to check table retrieval, schema reporting, and cancellation token handling."
       },
       "stats": {
-        "total": 16,
+        "total": 2591,
         "additions": 2530,
         "deletions": 61
       },
@@ -571,7 +619,7 @@
         "message": "chore: Remove outdated README and LICENSE files; add new CONTRIBUTING guidelines"
       },
       "stats": {
-        "total": 5,
+        "total": 369,
         "additions": 99,
         "deletions": 270
       },
@@ -587,7 +635,7 @@
         "message": "Refactor and enhance SQL to CSV application structure\n\n- Updated `.gitignore` to include additional patterns for IDE and temporary files.\n- Refactored `ApplicationService.cs` to orchestrate export operations.\n- Introduced `Sql2CsvOptions.cs` for application configuration options.\n- Updated `IServices.cs` to define interfaces for core services.\n- Created `DatabaseConfiguration.cs` for database connection settings.\n- Added `DatabaseModels.cs` to define data models used in the application.\n- Implemented `CodeGenerationService.cs` for generating DTO classes.\n- Created `DatabaseDiscoveryService.cs` to discover database files.\n- Implemented `ExportService.cs` for exporting data to CSV files.\n- Created `SchemaService.cs` for managing database schema operations.\n- Updated `Sql2Csv.Tests.csproj` to include references to the new core project.\n- Added `UnitTest1.cs` as a placeholder for unit tests.\n- Modified `Sql2Csv.csproj` to reference the new core library.\n- Updated solution file to include `Sql2Csv.Core` and `Sql2Csv.Tests` projects."
       },
       "stats": {
-        "total": 19,
+        "total": 641,
         "additions": 610,
         "deletions": 31
       },
@@ -603,7 +651,7 @@
         "message": "feat: Implement SQL to CSV Exporter with database discovery, CSV export, schema reporting, and code generation features\n\n- Added configuration options for the application in Sql2CsvOptions.cs\n- Created interfaces for database discovery, export, schema operations, and code generation\n- Developed models for database configuration, export results, column info, and table info\n- Implemented services for database discovery, exporting data to CSV, and generating code from database schemas\n- Established a command factory for CLI commands including export, schema reporting, and code generation\n- Integrated structured logging and JSON-based configuration\n- Added README documentation detailing features, usage, and architecture\n- Created unit test project with necessary dependencies\n- Configured appsettings.json for application settings and logging"
       },
       "stats": {
-        "total": 25,
+        "total": 2753,
         "additions": 1725,
         "deletions": 1028
       },
@@ -619,7 +667,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 2,
         "deletions": 4
       },
@@ -635,7 +683,7 @@
         "message": "code clean up"
       },
       "stats": {
-        "total": 9,
+        "total": 120,
         "additions": 49,
         "deletions": 71
       },
@@ -651,7 +699,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -667,7 +715,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -683,7 +731,7 @@
         "message": "update solutions"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -715,7 +763,7 @@
         "message": "merge from main"
       },
       "stats": {
-        "total": 26,
+        "total": 1696,
         "additions": 1054,
         "deletions": 642
       },
@@ -731,7 +779,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -747,57 +795,9 @@
         "message": "Update read me"
       },
       "stats": {
-        "total": 2,
+        "total": 20,
         "additions": 18,
         "deletions": 2
-      },
-      "repo": "sql2csv"
-    },
-    {
-      "sha": "639987d5a6f57bfcadbf4839b5b8339a75cb0b83",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2024-04-05T19:16:59+00:00"
-        },
-        "message": "Add more tools for Sqlite databases"
-      },
-      "stats": {
-        "total": 16,
-        "additions": 486,
-        "deletions": 348
-      },
-      "repo": "sql2csv"
-    },
-    {
-      "sha": "45bca7d782fc9087424c51e910141ae61b8ffc8b",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2024-04-04T23:38:52+00:00"
-        },
-        "message": "clean up add default xml docs"
-      },
-      "stats": {
-        "total": 7,
-        "additions": 341,
-        "deletions": 169
-      },
-      "repo": "sql2csv"
-    },
-    {
-      "sha": "327ace3689b94587d238890a8ddad0e4c0786e15",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2024-04-04T23:30:22+00:00"
-        },
-        "message": "Update for Sqlite instead of SQL Server\nSetup defaults so it runs without any configuration"
-      },
-      "stats": {
-        "total": 7,
-        "additions": 220,
-        "deletions": 121
       },
       "repo": "sql2csv"
     }

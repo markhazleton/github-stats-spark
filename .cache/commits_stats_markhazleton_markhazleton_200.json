@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:42:30.029540",
+  "timestamp": "2026-01-02T20:15:50.870499",
   "value": [
     {
       "sha": "33ba46549dff97bfd7598ab385d4d6e6a0f742bc",
@@ -11,9 +11,121 @@
         "message": "Revise README content and add GitHub stats\n\nUpdated README to enhance personal branding and showcase GitHub stats."
       },
       "stats": {
-        "total": 1,
+        "total": 30,
         "additions": 5,
         "deletions": 25
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "4e8c295f4684ba27a9849a0e05a9b2c931caf3e7",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-11-04T00:30:55+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "c9c6848b796571eec8059d82908cd69ff6db205c",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-11-03T00:31:34+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "a94442f10d9e0c568f3ff113aa8bf6f32e5729f0",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-11-02T00:33:01+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "ccbf58531920b5d0761052c585ef5da8e8207896",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-10-09T01:45:38+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "5f89233a356ba1f6e01cd19ff0f0ed2536ba467f",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-10-04T01:40:05+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "55fe7ec00a7c6c8f0066d3be8235e3067bac71db",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-09-14T01:50:22+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "ee828ef11668dac33cd81be42c56b3956564b373",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-09-10T01:42:28+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "markhazleton"
     },
@@ -27,9 +139,25 @@
         "message": "chore: remove hero image optimization workflow"
       },
       "stats": {
-        "total": 1,
+        "total": 45,
         "additions": 0,
         "deletions": 45
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "1f8cdcbb0354fca7c42bb00e4eeab974f2e2b98f",
+      "commit": {
+        "author": {
+          "name": "github-actions",
+          "date": "2025-08-12T01:46:05+00:00"
+        },
+        "message": "chore: optimize hero image (webp + jpg)"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
       },
       "repo": "markhazleton"
     },
@@ -43,7 +171,7 @@
         "message": "fix: replace 'magick' with 'convert' for image processing commands"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -59,7 +187,7 @@
         "message": "Refactor image optimization workflow and update README to support WebP format"
       },
       "stats": {
-        "total": 2,
+        "total": 75,
         "additions": 41,
         "deletions": 34
       },
@@ -75,7 +203,7 @@
         "message": "image optimize acation"
       },
       "stats": {
-        "total": 1,
+        "total": 45,
         "additions": 45,
         "deletions": 0
       },
@@ -91,7 +219,7 @@
         "message": "Update README to enhance project visibility and add GitHub stats section"
       },
       "stats": {
-        "total": 1,
+        "total": 41,
         "additions": 28,
         "deletions": 13
       },
@@ -107,9 +235,105 @@
         "message": "Refactor README layout and update project descriptions"
       },
       "stats": {
-        "total": 1,
+        "total": 24,
         "additions": 16,
         "deletions": 8
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "e70b85760af13104a9e31951d79134353434d19c",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-08-12T00:08:47+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "670bf888c8a346327f15b5e664bdcc3bcfca3c12",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-07-31T02:07:34+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "b3058585ec302da8c47f35f5303bfdcfcbaefbe7",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-07-30T02:07:59+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "361c9d5c0df0345b4ec9637111abede5403f1725",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-07-28T02:11:51+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "41aa7253d34aa4c83f7d29bbc7d0c2183fe39774",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-07-17T02:04:36+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "e5642c4f8b1bcb31ce03c2939905bb6880864e93",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-07-16T02:03:31+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "markhazleton"
     },
@@ -123,7 +347,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 55,
         "additions": 51,
         "deletions": 4
       },
@@ -139,7 +363,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 120,
         "additions": 36,
         "deletions": 84
       },
@@ -155,7 +379,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 97,
         "additions": 74,
         "deletions": 23
       },
@@ -171,9 +395,169 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 38,
         "additions": 33,
         "deletions": 5
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "93760b55eaac1f34dd866103c868e33444d5c6bc",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-07-06T02:06:17+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "3fc897363fb616266498b043fee179b79e4e60c5",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-07-04T01:57:06+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "e3a69f8cba46d4ec43af9f43c9ff55c8f682affb",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-06-17T01:56:46+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "8a424c90e113a60e7944b15b3741e75098fd7f6b",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-06-11T01:57:14+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "7ea1ea91baad9991a5c1d679f3c37437b53845c0",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-06-08T02:04:05+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "74c3f1360e06cd28e82380c72217093abcaa6ef5",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-06-03T01:55:45+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "5913e3113314c41018a0c4e6e2ea92792fce2c4a",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-05-30T01:51:33+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "0630caab3735416081a4c6bdf2f9f26b2cef966e",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-05-21T01:53:26+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "9abbdf1c52cfc6851e7ba5af340f2710f31dc4eb",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-05-05T01:54:37+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "db46d975e3931784bb100d09f16014565a4dd7d1",
+      "commit": {
+        "author": {
+          "name": "GitHub README Updater",
+          "date": "2025-04-17T01:48:31+00:00"
+        },
+        "message": "Updated README with latest blog posts from markhazleton.com"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "markhazleton"
     },
@@ -187,7 +571,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -203,7 +587,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -219,7 +603,7 @@
         "message": "update script"
       },
       "stats": {
-        "total": 1,
+        "total": 104,
         "additions": 59,
         "deletions": 45
       },
@@ -235,9 +619,313 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 3,
+        "total": 118,
         "additions": 108,
         "deletions": 10
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "fb74fb8aacf4077a6a5848202d23360e6dd5b281",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-03-28T01:44:41+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "f1e7af04431df3796a2c89cf4794300d86580113",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-03-20T01:42:42+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "7ab00765ffcadf13c62b48989fffb24952913cda",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-03-14T01:41:28+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "15715946f7b43b23a2b7ba77a30dd8e27293e633",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-03-07T01:42:39+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "d85cfadd3b5651f0ef997e5d36a279c9d5056b13",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-02-28T01:40:40+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "eb113c5327200efc73ce79922017e87c87d5a2f2",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-02-15T01:36:08+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "16f2d6f4d1cd4f7599e75b856af7c5646447ffd0",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-02-06T01:37:09+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "054a255a09eb5518771fa26f7324942d1215ed30",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-01-27T01:37:08+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "92777d73346b41dbe0cfb299ab04ed14242566f2",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-01-22T01:37:21+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "d4ea8f6034a223380e84b42b0b02dcf7ea846fa3",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-01-15T01:35:40+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "979f65ad8873b48ea8c5f448e45d615160dd9848",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-01-06T01:41:54+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "6ea1c71caf318ecd715873e512b1714fdab3a6fd",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-01-03T01:37:58+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "3aeadb62e7d34823ce4659676de650e6a9779198",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-12-25T01:36:34+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "b6e5556887e4f9bfc23a768de8669e422802b094",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-12-23T01:39:30+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "5a8f40f7089f338ededd9d845e7b7b02b7fb7cfb",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-12-17T01:45:56+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "a45cc5d09bae904601be88be740eec22eb180d3d",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-12-13T01:47:31+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "17fa3637090c72ac6bbf632870fbb28426f8a0e0",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-11-19T01:42:42+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "d342dd15763d0651587c94a1757872b8b76d72f9",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-28T01:41:53+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "2e09bcf40b6747c56005ca565ebf1208a43b848b",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-24T01:37:24+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "markhazleton"
     },
@@ -251,7 +939,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -267,8 +955,120 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "a1dc7f627bde53fbd1003dd7292049f88104f346",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-16T01:38:53+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "319297f5314b78744e664462ecbef10987f4b80b",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-13T01:42:44+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "905cf57f00042056b3bb3b9c59dff697a185c831",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-11T01:36:45+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "2b03973a6945d6effb2b61d8e0e7ad1407237d23",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-09T01:36:40+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "7a3552225fbec03c317c0b6866a9507b753bd8e9",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-07T01:40:06+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "b7356c5e32f1c520b198b092d48fcf5ec5272498",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-06T01:43:03+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "5a0bfff9331bbf97537b420eff59184c7564d75a",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-03T21:40:14+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 4,
         "deletions": 1
       },
       "repo": "markhazleton"
@@ -283,7 +1083,55 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "43313ec83cfbca83d9eccba78eb0d6a0641da216",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-10-03T01:37:18+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "5eeddd517f899ad29838b13901c45f66409d01db",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-09-29T20:34:52+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "f4b9fc0578e5124e2a9def06f8e4710deff623f7",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-09-29T20:25:12+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -299,7 +1147,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -315,7 +1163,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 9,
         "additions": 7,
         "deletions": 2
       },
@@ -331,9 +1179,41 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 3,
         "deletions": 1
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "5ba631b20e5b4be3a4778ad4a8ec82cd7d309076",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-09-26T02:36:08+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "01d394ff7287d7a5e8fb0ab73f3007de0c404ed4",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-09-25T20:43:42+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
       },
       "repo": "markhazleton"
     },
@@ -347,7 +1227,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 13,
         "additions": 6,
         "deletions": 7
       },
@@ -363,7 +1243,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 7,
         "deletions": 1
       },
@@ -379,7 +1259,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 12,
         "additions": 2,
         "deletions": 10
       },
@@ -395,9 +1275,25 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 15,
         "additions": 12,
         "deletions": 3
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "f95798cd1d4723274fd099a590e211807bc449c7",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-09-25T01:38:18+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
       },
       "repo": "markhazleton"
     },
@@ -411,9 +1307,25 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "ec15f55bd8ce60579af84b51e84cf805ee68850f",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-09-24T20:38:59+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 5,
+        "deletions": 9
       },
       "repo": "markhazleton"
     },
@@ -427,7 +1339,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 18,
         "additions": 10,
         "deletions": 8
       },
@@ -443,7 +1355,7 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -459,9 +1371,25 @@
         "message": "Update update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 3,
         "deletions": 0
+      },
+      "repo": "markhazleton"
+    },
+    {
+      "sha": "31edad9899a85e7c29eb47f85248317c624b61cf",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2024-09-24T20:31:48+00:00"
+        },
+        "message": "Updated README with latest blog posts"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
       },
       "repo": "markhazleton"
     },
@@ -475,7 +1403,7 @@
         "message": "Create update-readme.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 44,
         "additions": 44,
         "deletions": 0
       },
@@ -491,7 +1419,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 27,
         "additions": 21,
         "deletions": 6
       },
@@ -507,7 +1435,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 7,
         "deletions": 1
       },
@@ -523,7 +1451,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -539,7 +1467,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 15,
         "additions": 1,
         "deletions": 14
       },
@@ -555,7 +1483,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 4,
         "deletions": 1
       },
@@ -571,7 +1499,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 11,
         "additions": 2,
         "deletions": 9
       },
@@ -587,7 +1515,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 6,
         "deletions": 1
       },
@@ -603,7 +1531,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 3,
         "deletions": 1
       },
@@ -619,7 +1547,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 13,
         "additions": 4,
         "deletions": 9
       },
@@ -635,7 +1563,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 1,
         "deletions": 2
       },
@@ -651,7 +1579,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -683,7 +1611,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -699,7 +1627,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -715,7 +1643,7 @@
         "message": "Add files via upload"
       },
       "stats": {
-        "total": 2,
+        "total": 0,
         "additions": 0,
         "deletions": 0
       },
@@ -731,7 +1659,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -747,7 +1675,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -763,7 +1691,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -779,7 +1707,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -795,7 +1723,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 1,
         "deletions": 6
       },
@@ -811,7 +1739,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -827,7 +1755,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -843,7 +1771,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 6,
         "deletions": 1
       },
@@ -859,7 +1787,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -875,7 +1803,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 1,
+        "total": 11,
         "additions": 6,
         "deletions": 5
       },
@@ -891,7 +1819,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -923,7 +1851,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -955,7 +1883,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -971,7 +1899,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -987,7 +1915,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 5,
         "deletions": 1
       },
@@ -1003,7 +1931,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1019,7 +1947,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1035,7 +1963,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1051,7 +1979,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 5,
         "deletions": 3
       },
@@ -1067,7 +1995,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 4,
         "deletions": 1
       },
@@ -1083,7 +2011,7 @@
         "message": "clean up main"
       },
       "stats": {
-        "total": 13,
+        "total": 263,
         "additions": 0,
         "deletions": 263
       },
@@ -1099,7 +2027,7 @@
         "message": "reorg files"
       },
       "stats": {
-        "total": 9,
+        "total": 3,
         "additions": 3,
         "deletions": 0
       },
@@ -1115,7 +2043,7 @@
         "message": "Initial Site Setup"
       },
       "stats": {
-        "total": 13,
+        "total": 261,
         "additions": 260,
         "deletions": 1
       },
@@ -1179,7 +2107,7 @@
         "message": "Update README.md\n\nFormatting and new links"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 1,
         "deletions": 6
       },
@@ -1195,7 +2123,7 @@
         "message": "Update README.md \n\nAdd icons for profile links"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 5,
         "deletions": 1
       },
@@ -1211,7 +2139,7 @@
         "message": "Update SVG for README.md\n\nUpdate SVG for README.md"
       },
       "stats": {
-        "total": 2,
+        "total": 26,
         "additions": 24,
         "deletions": 2
       },
@@ -1259,7 +2187,7 @@
         "message": "Update README.md\n\nfix twitter link"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1275,7 +2203,7 @@
         "message": "Update README.md\n\nUpdate the Profile README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 23,
         "additions": 11,
         "deletions": 12
       },
@@ -1291,7 +2219,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 1,
+        "total": 16,
         "additions": 16,
         "deletions": 0
       },

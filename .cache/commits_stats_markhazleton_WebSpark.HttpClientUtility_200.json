@@ -1,6 +1,22 @@
 {
-  "timestamp": "2026-01-02T11:08:15.531096",
+  "timestamp": "2026-01-02T20:41:30.119996",
   "value": [
+    {
+      "sha": "9d26acb05df39fa880233f05e12434f375b8c451",
+      "commit": {
+        "author": {
+          "name": "GitHub Actions",
+          "date": "2025-12-29T01:47:06+00:00"
+        },
+        "message": "docs: update documentation site [skip ci]"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 18,
+        "deletions": 16
+      },
+      "repo": "WebSpark.HttpClientUtility"
+    },
     {
       "sha": "a1bbf547f475bac21941be0234aba914d0b7baa0",
       "commit": {
@@ -11,7 +27,7 @@
         "message": "Update Microsoft.Extensions.* packages to 10.0.1\n\nUpgraded Microsoft.Extensions.Caching.Memory to 10.0.1 in all projects. Also updated Microsoft.Extensions.Caching.Abstractions and Microsoft.Extensions.Http to 10.0.1 in WebSpark.HttpClientUtility.csproj. No other changes made."
       },
       "stats": {
-        "total": 3,
+        "total": 10,
         "additions": 5,
         "deletions": 5
       },
@@ -27,7 +43,7 @@
         "message": "chore: bump version to 2.1.2 for security patch release\n\nSecurity fixes:\n\n- Fixed js-yaml prototype pollution (GHSA-mh29-5h37-fv8m - MODERATE)\n\n- Fixed glob command injection (GHSA-5j98-mcp5-4vw2 - HIGH)\n\n- Updated CHANGELOG with security patch details\n\n- Lockstep version bump for both base and crawler packages\n\nAll Dependabot alerts resolved. Zero breaking changes."
       },
       "stats": {
-        "total": 5,
+        "total": 176,
         "additions": 132,
         "deletions": 44
       },
@@ -43,9 +59,41 @@
         "message": "fix(deps): update glob and js-yaml to fix security vulnerabilities\n\n- Update glob from 11.0.3 to 11.1.0 (fixes GHSA-5j98-mcp5-4vw2 - HIGH)\n\n- Update js-yaml to 3.14.2 and 4.1.1 (fixes GHSA-mh29-5h37-fv8m - MODERATE)\n\n- Add comprehensive security review report\n\nResolves all open Dependabot security alerts"
       },
       "stats": {
-        "total": 2,
+        "total": 281,
         "additions": 276,
         "deletions": 5
+      },
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "a2413e2105ff1bc229b4e1a008f8479ee0b9697f",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-12-04T04:01:35+00:00"
+        },
+        "message": "fix(deps): bump js-yaml to fix prototype pollution vulnerability\n\nBumps  and [js-yaml](https://github.com/nodeca/js-yaml). These dependencies needed to be updated together.\n\nUpdates `js-yaml` from 3.14.1 to 3.14.2\n- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/nodeca/js-yaml/compare/3.14.1...3.14.2)\n\nUpdates `js-yaml` from 4.1.0 to 4.1.1\n- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/nodeca/js-yaml/compare/3.14.1...3.14.2)\n\n---\nupdated-dependencies:\n- dependency-name: js-yaml\n  dependency-version: 3.14.2\n  dependency-type: indirect\n- dependency-name: js-yaml\n  dependency-version: 4.1.1\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "362473b917f52a18584bb79e99106e7149d4dbc1",
+      "commit": {
+        "author": {
+          "name": "GitHub Actions",
+          "date": "2025-12-04T04:00:38+00:00"
+        },
+        "message": "docs: update documentation site [skip ci]"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
       },
       "repo": "WebSpark.HttpClientUtility"
     },
@@ -59,9 +107,25 @@
         "message": "feat: Refactor HttpClientServiceTelemetry to use consistent private field naming\n\nfix: Update ConcurrentProcessorT to use consistent private field naming for task list\n\nrefactor: Change service field to _service in HttpClientConcurrentProcessor for clarity\n\nrefactor: Update HttpRequestResultService to use _curlCommandSaver for consistency\n\nstyle: Rename BufferSize constant to _bufferSize in StreamingHelper for consistency\n\nchore: Enhance NuGet package metadata and SEO for better discoverability\n\nchore: Add local settings for Claude configuration\n\ndocs: Add detailed implementation summary for strategic improvements\n\ntest: Add AssemblyInfo for parallel test execution in Crawler tests\n\ntest: Implement FakeHttpResponseHandler for simplified HTTP testing\n\ndocs: Create README for Testing package with usage examples\n\nchore: Initialize Testing project with multi-targeting and dependencies"
       },
       "stats": {
-        "total": 21,
+        "total": 1357,
         "additions": 1171,
         "deletions": 186
+      },
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "73f65d7eed894cab5d4cdb688c1520d85ccd07cb",
+      "commit": {
+        "author": {
+          "name": "GitHub Actions",
+          "date": "2025-11-12T23:26:24+00:00"
+        },
+        "message": "docs: update documentation site [skip ci]"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 16,
+        "deletions": 15
       },
       "repo": "WebSpark.HttpClientUtility"
     },
@@ -75,7 +139,7 @@
         "message": "feat: auto-trigger docs rebuild when NuGet packages are published\n\nAdd workflow_run trigger to publish-docs.yml\n\nEnsures documentation site stays in sync with NuGet package versions\n\nOnly runs if the NuGet publish workflow succeeds"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 6,
         "deletions": 0
       },
@@ -91,7 +155,7 @@
         "message": "chore: bump version to 2.1.1\n\nUpdate version in Directory.Build.props from 2.1.0 to 2.1.1\n\nUpdate CHANGELOG.md with GitHub Actions workflow fix details"
       },
       "stats": {
-        "total": 2,
+        "total": 18,
         "additions": 15,
         "deletions": 3
       },
@@ -107,7 +171,7 @@
         "message": "fix: Handle grep exit codes in package verification step\n\nAdd fallback to prevent grep from failing the workflow\n\nUse [0-9]* pattern to avoid matching .snupkg files\n\nAdd directory listing to help debug package issues"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 5,
         "deletions": 2
       },
@@ -123,7 +187,7 @@
         "message": "fix: revert SDK version and rollForward settings in global.json"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -139,7 +203,7 @@
         "message": "Improve GitHub Actions test reporting\n\nEnhanced the `publish-nuget.yml` workflow by using auto-generated TRX file names to prevent overwriting and organizing test results into separate directories for each .NET framework version. Added detailed debugging output and a verification step to ensure TRX files exist before reporting. Configured the test reporter to not block the workflow if issues arise.\n\nUpdated `github-actions-fix.md` to document these changes, explaining the root causes and solutions, and providing a troubleshooting guide.\n\nAdded `quick-fix-summary.md` to offer a concise overview of the fixes, highlighting key changes and expected outcomes in GitHub Actions logs."
       },
       "stats": {
-        "total": 3,
+        "total": 388,
         "additions": 349,
         "deletions": 39
       },
@@ -155,7 +219,7 @@
         "message": "Fix GitHub Actions SDK and test reporting issues\n\nUpdated `publish-nuget.yml` to improve the GitHub Actions workflow by addressing SDK version mismatches and test result reporting issues. Changed `global.json` rollForward policy to `latestFeature` to allow preview/RC .NET 10 versions. Consolidated test results into a single directory with explicit TRX file names, and ensured test reporting runs regardless of build success. Added `github-actions-fix.md` for detailed documentation. Updated Visual Studio solution file version."
       },
       "stats": {
-        "total": 4,
+        "total": 185,
         "additions": 173,
         "deletions": 12
       },
@@ -171,7 +235,7 @@
         "message": "docs: update test reporter fix documentation with root cause analysis"
       },
       "stats": {
-        "total": 1,
+        "total": 172,
         "additions": 122,
         "deletions": 50
       },
@@ -187,7 +251,7 @@
         "message": "fix: allow auto-generated test result filenames to prevent file collision"
       },
       "stats": {
-        "total": 1,
+        "total": 9,
         "additions": 5,
         "deletions": 4
       },
@@ -203,7 +267,7 @@
         "message": "docs: add branch merge summary for upgrade-to-NET10 to main"
       },
       "stats": {
-        "total": 1,
+        "total": 161,
         "additions": 161,
         "deletions": 0
       },
@@ -219,7 +283,7 @@
         "message": "fix: resolve test reporter file discovery issue and consolidate test results"
       },
       "stats": {
-        "total": 2,
+        "total": 136,
         "additions": 132,
         "deletions": 4
       },
@@ -235,7 +299,7 @@
         "message": "Fix GitHub Actions test reporting issue\n\nUpdated `publish-nuget.yml` by removing steps for .NET SDK setup, dependency restoration, solution building, and test execution across multiple .NET versions. Added `github-actions-test-reporter-fix.md` to document the resolution of test result discovery issues caused by directory structure mismatches and path pattern problems. Consolidated test results into a single directory, simplified path patterns, and added a debug step to ensure correct test result reporting. Maintained compatibility with existing artifact uploads and code coverage generation."
       },
       "stats": {
-        "total": 2,
+        "total": 215,
         "additions": 123,
         "deletions": 92
       },
@@ -251,7 +315,7 @@
         "message": "Upgrade to net10 (#3)\n\n* feat: Add .NET 10 multi-targeting to base library\n\n* feat: Add .NET 10 multi-targeting to crawler library\n\n* feat: Add .NET 10 multi-targeting to base library tests\n\n* feat: Add .NET 10 multi-targeting to crawler tests\n\n* feat: Add .NET 10 multi-targeting to demo application\n\n* docs: Update documentation for .NET 10 multi-targeting support\n\n* docs: Update for .NET 10 multi-targeting support\n\nUpdated README.md to include .NET 8-10 support, highlighting .NET 10's preview status. Added a detailed entry in CHANGELOG.md for v2.1 release, documenting .NET 10 multi-targeting. Documented .NET 10 SDK requirements. Verified all related commits for clarity and adherence to conventional commit format. Updated tasks.md to mark TASK-018 as complete, ensuring all documentation is current and ready for merge.\n\n* chore: Bump version to 2.1.0 for .NET 10 multi-targeting release\n\n* ci: Update workflow to support .NET 10 multi-targeting. Add .NET 8, 9, and 10 SDK setup. Run tests on all three frameworks. Add package verification."
       },
       "stats": {
-        "total": 14,
+        "total": 1845,
         "additions": 1807,
         "deletions": 38
       },
@@ -267,7 +331,7 @@
         "message": "ci: Update workflow to support .NET 10 multi-targeting. Add .NET 8, 9, and 10 SDK setup. Run tests on all three frameworks. Add package verification."
       },
       "stats": {
-        "total": 1,
+        "total": 36,
         "additions": 32,
         "deletions": 4
       },
@@ -283,7 +347,7 @@
         "message": "chore: Bump version to 2.1.0 for .NET 10 multi-targeting release"
       },
       "stats": {
-        "total": 4,
+        "total": 36,
         "additions": 20,
         "deletions": 16
       },
@@ -299,7 +363,7 @@
         "message": "docs: Update for .NET 10 multi-targeting support\n\nUpdated README.md to include .NET 8-10 support, highlighting .NET 10's preview status. Added a detailed entry in CHANGELOG.md for v2.1 release, documenting .NET 10 multi-targeting. Documented .NET 10 SDK requirements. Verified all related commits for clarity and adherence to conventional commit format. Updated tasks.md to mark TASK-018 as complete, ensuring all documentation is current and ready for merge."
       },
       "stats": {
-        "total": 2,
+        "total": 40,
         "additions": 34,
         "deletions": 6
       },
@@ -315,7 +379,7 @@
         "message": "docs: Update documentation for .NET 10 multi-targeting support"
       },
       "stats": {
-        "total": 4,
+        "total": 141,
         "additions": 114,
         "deletions": 27
       },
@@ -331,7 +395,7 @@
         "message": "feat: Add .NET 10 multi-targeting to demo application"
       },
       "stats": {
-        "total": 3,
+        "total": 101,
         "additions": 77,
         "deletions": 24
       },
@@ -347,7 +411,7 @@
         "message": "feat: Add .NET 10 multi-targeting to crawler tests"
       },
       "stats": {
-        "total": 3,
+        "total": 69,
         "additions": 53,
         "deletions": 16
       },
@@ -363,7 +427,7 @@
         "message": "feat: Add .NET 10 multi-targeting to base library tests"
       },
       "stats": {
-        "total": 3,
+        "total": 145,
         "additions": 111,
         "deletions": 34
       },
@@ -379,7 +443,7 @@
         "message": "feat: Add .NET 10 multi-targeting to crawler library"
       },
       "stats": {
-        "total": 3,
+        "total": 80,
         "additions": 62,
         "deletions": 18
       },
@@ -395,7 +459,7 @@
         "message": "feat: Add .NET 10 multi-targeting to base library"
       },
       "stats": {
-        "total": 6,
+        "total": 1433,
         "additions": 1422,
         "deletions": 11
       },
@@ -411,7 +475,7 @@
         "message": "docs(release): add complete v2.0.0 release notes\n\nAdd a comprehensive release document (copilot/session-2025-11-05/release-v2.0.0-complete.md) summarizing the v2.0.0 release:\n- Documents merge of 003-split-nuget-packages and creation of v2.0.0 tag\n- Notes atomic CI/CD publish of two packages (base + crawler) to NuGet with package hashes\n- Includes build/test results (build success, 474 tests passing), code quality and signing details\n- Describes package-split migration steps, sitemap/RSS discovery feature, demo app, and key bug fixes\n- Lists release metrics, lessons learned, next steps and repository/remote state"
       },
       "stats": {
-        "total": 1,
+        "total": 250,
         "additions": 250,
         "deletions": 0
       },
@@ -427,7 +491,7 @@
         "message": "Merge feature: Split NuGet packages into base and crawler extension (v2.0.0)\n\nCompleted implementation of 003-split-nuget-packages feature:\n- Split monolithic package into WebSpark.HttpClientUtility (base) and WebSpark.HttpClientUtility.Crawler (extension)\n- Base package size reduced by 63% (164.52 KB vs ~450 KB in v1.5.1)\n- Dependencies reduced from 13 to 10 in base package\n- All 474 tests passing (420 base + 54 crawler)\n- Added interactive demo UI with real-time SignalR progress updates\n- Implemented sitemap/RSS discovery feature for JavaScript SPA sites\n- Fixed StreamingHelper JSON deserialization for string responses\n- Improved crawler defaults (MaxDepth: 3, MaxPages: 100)\n\nBreaking Changes:\n- Users of crawler features must now install WebSpark.HttpClientUtility.Crawler package\n- Users must call both AddHttpClientUtility() and AddHttpClientCrawler() in DI\n- Non-crawler users experience zero breaking changes\n\nSee CHANGELOG.md for full details."
       },
       "stats": {
-        "total": 57,
+        "total": 8007,
         "additions": 7228,
         "deletions": 779
       },
@@ -443,7 +507,7 @@
         "message": "feat(crawler,web): add sitemap/RSS discovery, demo MVC UI, and streaming string handling\n\n- Add CrawlerOptions.DiscoverFromSitemapAndRss (default: true)\n- Implement SiteCrawler.DiscoverUrlsFromSitemapAndRssAsync() and ExtractUrlsFromXml() to fetch sitemap.xml, rss.xml, feed.xml and atom.xml and enqueue discovered same-domain URLs\n- Update crawl notifications to send per-page progress (Crawled/Queue/Found)\n- Switch CrawlerController from API (ControllerBase) to MVC (Controller); add Index view action, change Crawl endpoint to return a serializable DTO and improved error handling; add helper to extract page titles\n- Add interactive Razor UI at Views/Crawler/Index.cshtml with SignalR client for real-time progress, crawler options (including sitemap/RSS toggle), and results table\n- Fix StreamingHelper to return raw string content when T == string (avoid JSON deserialization for HTML)\n- UI/layout fixes: update _Layout.cshtml menu/version badges, remove absolute footer positioning and convert layout to flexbox (.container flex:1) to prevent overlap\n- Add development logging settings for crawler/streaming in appsettings.Development.json\n- Update specs/plan/tasks documentation to reflect sitemap/RSS discovery and demo enhancements"
       },
       "stats": {
-        "total": 15,
+        "total": 1425,
         "additions": 1377,
         "deletions": 48
       },
@@ -459,7 +523,7 @@
         "message": "chore(crawler): add README-Crawler to package and finalize package-split docs\n\n- WebSpark.HttpClientUtility.Crawler.csproj: enable PackageReadmeFile, include README-Crawler.md in package, clarify PackageIcon comment\n- Add comprehensive WebSpark.HttpClientUtility.Crawler/README-Crawler.md (quickstart, examples, options, requirements, migration)\n- Mark split implementation complete across specs: update spec.md, plan.md, tasks.md (status summaries, task completion)\n- Add implementation artifacts and reports: copilot session README, implementation-status-report.md, and IMPLEMENTATION-COMPLETE.md\n\nPrimarily documentation and package metadata updates to finalize the NuGet package split and prepare for release."
       },
       "stats": {
-        "total": 8,
+        "total": 1204,
         "additions": 1074,
         "deletions": 130
       },
@@ -475,7 +539,7 @@
         "message": "feat(crawler): extract crawler into separate NuGet package and update packaging, CI, docs, and tests\n\n- Add new WebSpark.HttpClientUtility.Crawler project with crawler surface:\n  SiteCrawler, SimpleSiteCrawler, ISiteCrawler, CrawlResult, CrawlException,\n  RobotsTxtParser, CrawlHub, SiteCrawlerHelpers, Lock, CrawlerOptions,\n  CrawlerPerformanceTracker and related types.\n- Implement AddHttpClientCrawler DI extension and ServiceCollection wiring\n  (SignalR, HttpClientFactory, default IConfiguration/IStringConverter, IHttpRequestResultService factory).\n- Move crawler demo controller and web app integrations:\n  register crawler package (AddHttpClientCrawler), map CrawlHub, update Program.cs.\n- Change CurlCommandSaver to use JSON Lines (.jsonl) instead of CSV:\n  remove CsvHelper usage, update options and file rotation/logging paths.\n- Update packaging and project metadata:\n  - WebSpark.HttpClientUtility (base) trimmed description, removed crawler deps (CsvHelper, HtmlAgilityPack, Markdig),\n    disabled package validation for v2.0.0, note versioning now lockstep.\n  - WebSpark.HttpClientUtility.Crawler csproj contains crawler-specific metadata and release notes.\n- Update CI workflow (.github/workflows/publish-nuget.yml) to pack both packages,\n  upload combined artifact and publish both packages atomically on version tags.\n- Documentation and release notes:\n  - README and CHANGELOG updated with v2.0.0 two-package split, migration steps and features.\n- Tests and test projects:\n  - Adjust test project NoWarn settings, add OpenTelemetry in test csproj,\n  - Move and rework crawler tests into crawler test project, add global using for MSTest,\n  - Remove outdated/duplicated test files and update assertions to JSONL expectations.\n- Misc: various cleanup, small API/option renames (CsvFileName -> FileName) and improved defaults.\n\nThis implements the v2.0 package split: lightweight base package (core HTTP features) + dedicated crawler extension (web crawling features) with coordinated build/publish and migration guidance."
       },
       "stats": {
-        "total": 29,
+        "total": 3616,
         "additions": 2994,
         "deletions": 622
       },
@@ -491,7 +555,7 @@
         "message": "feat: split Crawler into its own NuGet package and update build/solution\n\n- Extract crawler functionality into a new WebSpark.HttpClientUtility.Crawler package\n  (add Crawler csproj, CrawlerOptions, ServiceCollectionExtensions and a Crawler.Test project).\n- Remove crawler implementation files from the main library (moved to the new package).\n- Update solution to include WebSpark.HttpClientUtility.Crawler and its test project.\n- Centralize and enrich build/package metadata in Directory.Build.props:\n  versioning, multi-targeting, license, project URL, strong-name signing, SourceLink,\n  and NuGet package generation settings (symbols/docs).\n- Adjust WebSpark.HttpClientUtility.csproj for the split:\n  remove ASP.NET Core framework reference and crawler-specific deps, swap caching package,\n  remove SourceLink/in-memory OTEL exporter from the published package.\n- Remove in-memory OpenTelemetry exporter from library OpenTelemetry setup (kept for test projects)."
       },
       "stats": {
-        "total": 22,
+        "total": 2871,
         "additions": 202,
         "deletions": 2669
       },
@@ -507,9 +571,25 @@
         "message": "docs(specs/003-split-nuget-packages): add full package-split specification, plans, contracts and docs; update copilot instructions\n\n- Add comprehensive feature spec, implementation plan, research, data model, tasks, quickstart, and requirements/checklists for v2.0.0 split (base + crawler)\n- Add API contracts for base and crawler packages (contracts/*.md)\n- Add detailed plan, migration guide, test/task breakdown, and package metadata recommendations\n- Update .github/copilot-instructions.md with Planned Feature summary for 003-split-nuget-packages"
       },
       "stats": {
-        "total": 10,
+        "total": 4271,
         "additions": 4271,
         "deletions": 0
+      },
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "d0e4d946ee25aebeb3be4275e230f2739aa761f9",
+      "commit": {
+        "author": {
+          "name": "GitHub Actions",
+          "date": "2025-11-03T13:37:26+00:00"
+        },
+        "message": "docs: update documentation site [skip ci]"
+      },
+      "stats": {
+        "total": 48,
+        "additions": 24,
+        "deletions": 24
       },
       "repo": "WebSpark.HttpClientUtility"
     },
@@ -523,7 +603,7 @@
         "message": "ci(publish-docs): add contents: write permission to build-and-deploy job so workflow can push docs"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 2,
         "deletions": 0
       },
@@ -539,7 +619,7 @@
         "message": "docs(specify): strengthen NuGet CI/CD policy in constitution and add daily session summary\n\nClarify that ALL NuGet publications must go through GitHub Actions (explicitly forbid manual uploads, `dotnet nuget push`, bypassing CI/CD, and combining version bumps with feature work) and expand rationale that the workflow is the single source of truth. Also add copilot session daily-summary (2025-11-02) documenting the static docs site, zero-warning effort, tests, and repository cleanup."
       },
       "stats": {
-        "total": 2,
+        "total": 508,
         "additions": 506,
         "deletions": 2
       },
@@ -555,7 +635,7 @@
         "message": "docs: enforce GitHub Actions CI/CD requirement for NuGet publishing\n\n- Clarify that ALL NuGet package publications MUST go through GitHub Actions\n- Prohibit manual publishing via NuGet.org upload or dotnet nuget push\n- Emphasize CI/CD pipeline as single source of truth for releases\n- Ensures consistent builds, proper testing, and audit trails"
       },
       "stats": {
-        "total": 1,
+        "total": 16,
         "additions": 13,
         "deletions": 3
       },
@@ -571,7 +651,7 @@
         "message": "chore: bump version to 1.5.1\n\nQuality improvements release:\n- Enabled TreatWarningsAsErrors solution-wide\n- Zero-warning baseline established\n- All 520 tests passing (net8.0 + net9.0)\n- Fixed npm security vulnerabilities"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 2,
         "deletions": 1
       },
@@ -587,7 +667,7 @@
         "message": "fix: Remove hyperlink and update npm packages to resolve security vulnerabilities\n\nSecurity fixes:\n- Removed hyperlink package (had 10 transitive vulnerabilities)\n- All 4 GitHub Dependabot alerts resolved (1 critical, 1 high, 2 medium)\n\nPackage updates:\n- @11ty/eleventy: 3.0.0 \u2192 3.1.2\n- htmlhint: 1.1.4 \u2192 1.7.1\n- rimraf: 5.0.5 \u2192 6.1.0\n\nVerification: npm audit shows 0 vulnerabilities"
       },
       "stats": {
-        "total": 2,
+        "total": 8182,
         "additions": 1309,
         "deletions": 6873
       },
@@ -603,7 +683,7 @@
         "message": "Enable TreatWarningsAsErrors with Zero Warnings Policy\n\nEnables TreatWarningsAsErrors across the entire solution with zero warnings and all 520 tests passing.\n\nKey changes:\n- Enabled TreatWarningsAsErrors in Directory.Build.props\n- Adjusted analyzer severities in .editorconfig (CA2007, CA1062, IDE0055)\n- Added test-specific suppressions in test/web projects\n- Updated StreamingHelperTests for null/empty parameter validation\n- Maintained only 2 justified suppressions in library code\n\nValidation: 0 errors, 0 warnings, 520/520 tests passing\nImpact: Establishes zero-warning baseline enforced by CI/CD"
       },
       "stats": {
-        "total": 34,
+        "total": 3118,
         "additions": 3033,
         "deletions": 85
       },
@@ -619,7 +699,7 @@
         "message": "docs: add favicon/icon assets, use local icons and enforce relative internal links\n\n- Add favicon.ico and icon.png to web and docs assets and include in wwwroot\n- Update Shared/_Layout.cshtml and base.njk to reference local favicon and apple-touch-icon\n- Replace external GitHub-hosted logo in Home/Index.cshtml with local ~/icon.png\n- Update generated docs pages to include explicit favicon tags and convert CTA/internal hrefs to relative paths (compatible with GitHub Pages subdirectory)\n- Expand specs to mandate relative internal links, add link-validation guidance and troubleshooting notes"
       },
       "stats": {
-        "total": 16,
+        "total": 134,
         "additions": 105,
         "deletions": 29
       },
@@ -635,7 +715,7 @@
         "message": "Release v1.5.0 - documentation website release"
       },
       "stats": {
-        "total": 2,
+        "total": 66,
         "additions": 63,
         "deletions": 3
       },
@@ -651,7 +731,7 @@
         "message": "docs(specs): replace pathPrefix/env approach with relativePath filter and update Eleventy docs\n\n- Adopt a custom `relativePath` filter as the canonical solution for asset/nav paths (replaces environment-aware `pathPrefix` usage)\n- Add filter and template usage examples; require all templates to use `| relativePath`\n- Update plan/spec/tasks content to describe simplified workflow, testing, and troubleshooting for relative paths\n- Remove references to `cross-env`/ELEVENTY_ENV in build examples and note no environment variables required\n- Update npm script guidance, passthrough copy, output structure, and local/prod testing steps to reflect root-level `docs/` output and relative asset paths\n- Fix troubleshooting table entries and remove complexity around pathPrefix-based deployments"
       },
       "stats": {
-        "total": 3,
+        "total": 386,
         "additions": 220,
         "deletions": 166
       },
@@ -667,7 +747,7 @@
         "message": "refactor: use relative paths for assets instead of pathPrefix"
       },
       "stats": {
-        "total": 11,
+        "total": 197,
         "additions": 102,
         "deletions": 95
       },
@@ -683,7 +763,7 @@
         "message": "fix: add pathPrefix back for GitHub Pages subdirectory serving"
       },
       "stats": {
-        "total": 8,
+        "total": 172,
         "additions": 89,
         "deletions": 83
       },
@@ -699,7 +779,7 @@
         "message": "fix: correct asset paths for GitHub Pages root serving"
       },
       "stats": {
-        "total": 4,
+        "total": 474,
         "additions": 9,
         "deletions": 465
       },
@@ -715,7 +795,7 @@
         "message": "feat: Add static documentation site with Eleventy (#1)\n\n* initial spec/plan/task\n\n* chore(docs): add initial Eleventy docs site, homepage, assets, and npm lock\n\n- Add package.json to define the docs site project:\n  - project name: webspark-httpclientutility-docs v1.4.0\n  - Node engines: >=20, npm >=10\n  - scripts: clean, dev, build, build:prod, test:links, test:html, validate\n  - dependencies: node-fetch\n  - devDependencies: @11ty/eleventy, htmlhint, hyperlink, markdown-it, markdown-it-anchor, rimraf\n\n- Add package-lock.json (full lockfile) to lock all dependencies for reproducible builds.\n\n- Add documentation homepage (src/pages/index.md):\n  - Eleventy markdown template using layouts/base.njk with frontmatter (title, description, permalink)\n  - Hero, features, quick C# example, architecture, telemetry, targets, license and CTAs\n  - Designed as the landing page for WebSpark.HttpClientUtility docs\n\n- Add Prism syntax-highlighting placeholders:\n  - src/assets/css/prism-tomorrow.css \u2014 Tomorrow Night theme fallback styles\n  - src/assets/js/prism.min.js \u2014 placeholder script with instructions to replace with a custom Prism build\n  - Note: these are placeholders; replace with the downloaded/custom Prism build when ready\n\n- Add other site assets:\n  - src/assets/images/favicon.ico \u2014 placeholder favicon file\n  - src/robots.txt \u2014 robots policy allowing all and pointing to sitemap\n\nNotes:\n- This commit bootstraps the static documentation site and locks dependencies. Further work:\n  - Add real Prism build, site styles, and templates\n  - Integrate CI publishing (if desired) and update sitemap URL as needed\n\n* Implement full static docs site (Eleventy) with environment-aware build, Prism.js, NuGet integration, and generated /docs output\n\nSummary:\n- Finish implementation and deployment of the static documentation site for WebSpark.HttpClientUtility.\n- Add environment-aware Eleventy configuration (dev vs production) including dynamic pathPrefix, conditional passthrough copy, watch ignores to avoid infinite rebuilds, and helpful template filters.\n- Integrate real Prism.js syntax highlighting (C#, JS, JSON, PowerShell, Bash, markup) with a bundler script and theme.\n- Add NuGet data fetch + cache fallback and update navigation/templates to use Eleventy url filter so production subdirectory works.\n- Produce final generated site in /docs with all pages (home, features, getting-started, examples, api-reference, about).\n- Update specs and tasks docs with Implementation Summary and detailed Eleventy configuration learnings / troubleshooting guidance.\n\nKey changes (files & highlights):\n- src/.eleventy.js\n  - Make pathPrefix environment-aware (ELEVENTY_ENV=production \u2192 \"/WebSpark.HttpClientUtility/\"; otherwise \"/\")\n  - Add eleventyConfig.watchIgnores.add(\"./_data/nuget-cache.json\") to prevent infinite rebuild loop\n  - Conditional addPassthroughCopy for assets and favicon depending on environment\n  - Add helpful template filters (formatNumber, formatDate, dateISO) and dev server options\n\n- src/package.json & src/package-lock.json\n  - Add prismjs and cross-env dependency entries\n  - Update scripts:\n    - \"dev\": eleventy --serve\n    - \"build\": clean + copy:prism + cross-env ELEVENTY_ENV=production eleventy\n    - \"copy:prism\": node scripts/copy-prism.js\n  - Add validation/test scripts (htmlhint, hyperlink) and engine hints\n\n- src/scripts/copy-prism.js\n  - New script that bundles prism core + selected language components into assets/js/prism.min.js and copies prism-tomorrow.css into assets/css/\n\n- src/assets/js/prism.min.js & src/assets/css/prism-tomorrow.css\n  - Add real Prism.js bundle (core + language components) and Tomorrow theme (replaced placeholders)\n\n- src/_data/navigation.json\n  - Replace hardcoded /WebSpark.HttpClientUtility/... URLs with relative paths (\"/\", \"/features/\", etc.)\n\n- src/_data/nuget-cache.json\n  - Update cachedAt timestamp (cache file present in repo; now ignored by watcher)\n\n- src/_includes/layouts/base.njk, header.njk, footer.njk, pages (index.md, features.md, getting-started.md, api-reference.md, examples.md, about.md)\n  - Replace hardcoded paths with url filter usages ({{ '/assets/... ' | url }}), update front-matter permalinks to relative\n  - Footer: make author name a clickable link to https://markhazleton.com\n  - Header: use url filter for home link and navigation items; nav items use item.url | url\n\n- src/assets/css/main.css\n  - Add footer link styles and small polish\n\n- src/pages/* (Markdown) and src/_includes/*\n  - Add content pages (about, api-reference, features, getting-started, examples, home) with proper front matter and content; ensure permalinks are relative\n\n- src/_data and data fetcher (nuget.js referenced in spec; cache handling described)\n  - NuGet API integration implemented with cache fallback pattern (documented in spec and tasks)\n\n- specs/*\n  - specs/001-static-docs-site/plan.md: extensive \"Implementation Completed\" summary, Implementation Learnings, env patterns, configuration, testing & troubleshooting, and success metrics\n  - specs/001-static-docs-site/spec.md: mark feature as complete + add \"Implementation Guide: Eleventy Configuration\"\n  - specs/001-static-docs-site/tasks.md: mark IMPLEMENTATION COMPLETE and include full Eleventy Configuration Guide, scripts, troubleshooting, and verification steps\n\n- docs/ (generated output)\n  - Add generated site files under /docs and subfolders:\n    - docs/index.html\n    - docs/features/index.html\n    - docs/getting-started/index.html\n    - docs/examples/index.html\n    - docs/api-reference/index.html\n    - docs/about/index.html\n  - These files reference /assets/... (runtime url filter will rewrite during production), include prism.min.js and theme references, and contain the final site content ready for GitHub Pages.\n\nNotes / rationale:\n- pathPrefix in Eleventy affects both URL generation and output layout. The commit adopts an environment-aware pathPrefix and ensures all templates use the `url` filter so assets and links work identically in dev (root) and production (GitHub Pages subdirectory).\n- Data cache files written during build must be excluded from Eleventy watch to avoid infinite rebuild loops - added watchIgnores for nuget-cache.json.\n- Replaced placeholder Prism assets with a real npm-based bundling approach (scripts/copy-prism.js) to supply full syntax highlighting for C# and other languages.\n- Updated package scripts to run copy-prism before production builds and to set ELEVENTY_ENV via cross-env for cross-platform compatibility.\n- Specs and tasks were updated with an Implementation Summary and detailed \"Implementation Learnings\" to aid future maintenance.\n\nTesting / verification:\n- Local dev: run `cd src && npm install && npm run copy:prism && npm run dev` ; verify http://localhost:8080 loads site with CSS and Prism highlighting.\n- Production build: `npm run build` will output `../docs/WebSpark.HttpClientUtility/` containing the production-ready site; serve it locally to verify behavior before pushing to GitHub Pages.\n- GitHub Pages: target /docs folder; pathPrefix ensures subdirectory URLs are correct.\n\nThis commit completes the static documentation site end-to-end: configuration, content, build tooling, syntax highlighting, NuGet integration, tests/validation scripts, and generated /docs output ready for publishing."
       },
       "stats": {
-        "total": 57,
+        "total": 28032,
         "additions": 28031,
         "deletions": 1
       },
@@ -731,7 +811,7 @@
         "message": "chore(docs,specify): move docs to documentation and add .specify scaffolding\n\n- Move top-level docs from /docs to /documentation and update README links\n- Update WebSpark.HttpClientUtility.csproj to pack documentation files under PackagePath \"documentation\\\"\n- Remove legacy docs/* files and add corresponding files under documentation/ (CONTRIBUTING, GettingStarted, SECURITY, archive/QUICK_PUBLISH_CHECKLIST, etc.)\n- Add .specify feature tooling and templates:\n  - .specify/templates: spec/plan/tasks/checklist/agent-file templates\n  - .specify/memory/constitution.md (initial constitution v1.0.0)\n  - .specify/scripts/powershell: check-prerequisites.ps1, common.ps1, create-new-feature.ps1, setup-plan.ps1, update-agent-context.ps1\n  - .github/prompts: speckit.* prompts for specify/plan/tasks/implement/checklist/clarify/constitution/etc.\n- Add agent-file-template and copilot session artifacts for documentation of template changes\n- Add .vscode/settings.json to recommend speckit prompts and auto-approve specify scripts\n- Housekeeping: update packaging and README references; no changes to library runtime code\n\nThis change reorganizes docs and adds the Spec-Driven Development scaffolding for feature/spec/plan/task workflows."
       },
       "stats": {
-        "total": 28,
+        "total": 3373,
         "additions": 3348,
         "deletions": 25
       },
@@ -747,7 +827,7 @@
         "message": "chore: clean up repository root directory\n\n- Move CONTRIBUTING.md and SECURITY.md to docs/\n- Archive QUICK_PUBLISH_CHECKLIST.md to docs/archive/\n- Remove 12 outdated process/release documents:\n  * CHECKLIST_v1.3.2.md\n  * COVERAGE_FILES_RESOLUTION.md\n  * GITIGNORE_UPDATE_COMPLETE.md\n  * IMPROVEMENTS-v1.4.0.md\n  * PACKAGE_REVIEW_SUMMARY.md\n  * PHASE1_COMPLETION_REPORT.md\n  * PHASE1_SUMMARY.md\n  * POST_REVIEW_ACTION_PLAN.md\n  * PUBLISH_v1.3.2.md\n  * PUBLISHING_GUIDE_v1.1.0.md\n  * PUBLISHING_GUIDE_v1.3.1.md\n  * RELEASE_SUMMARY_v1.3.1.md\n- Remove orphaned Program.cs from root (exists in Web project)\n- Update README.md links to moved documentation\n- Add .github/copilot-instructions.md for AI coding agents\n- Add copilot/session-2025-11-02/ for AI-generated documentation\n\nReduces root directory clutter by 62% (40+ items \u2192 15 items)"
       },
       "stats": {
-        "total": 19,
+        "total": 3617,
         "additions": 548,
         "deletions": 3069
       },
@@ -763,7 +843,7 @@
         "message": "Release v1.4.0 - Add .NET 8 support, simplified DI, improved docs"
       },
       "stats": {
-        "total": 10,
+        "total": 2034,
         "additions": 1216,
         "deletions": 818
       },
@@ -779,7 +859,7 @@
         "message": "Release v1.3.2: Fix CurlCommandSaver tests and improve test reliability"
       },
       "stats": {
-        "total": 5,
+        "total": 333,
         "additions": 319,
         "deletions": 14
       },
@@ -795,7 +875,7 @@
         "message": "Refactor tests and add logging improvements\n\nRefactored `CurlCommandSaverTests` for better readability and maintainability. Added `Microsoft.Extensions.Logging` for enhanced logging. Improved configuration handling and added new test cases to verify behavior when `CsvOutputFolder` is missing. Replaced outdated test with `SaveCurlCommandAsync_WithoutConfiguration_DoesNotCreateFile`.\n\nUpdated solution file to include `Solution Items` folder with `.gitignore` and GitHub Actions workflow for CI/CD support."
       },
       "stats": {
-        "total": 2,
+        "total": 341,
         "additions": 147,
         "deletions": 194
       },
@@ -811,7 +891,7 @@
         "message": "Fix NuGet Packages signature validation in GitHub Actions"
       },
       "stats": {
-        "total": 3,
+        "total": 14,
         "additions": 9,
         "deletions": 5
       },
@@ -827,7 +907,7 @@
         "message": "Patch release enhancing CurlCommandSaver with:\n\u2022 \u2728 Batch processing (100 commands/batch)\n\u2022 \ud83d\udcc1 File rotation (10MB default)\n\u2022 \ud83d\udd12 Sensitive data sanitization (headers & JSON)\n\u2022 \ud83d\udd04 Retry logic with exponential backoff\n\u2022 \u2699\ufe0f Comprehensive configuration options\nThe test web (WebSpark.HttpClientUtility.Web) already exists and can be used to demonstrate these new CurlCommandSaver features."
       },
       "stats": {
-        "total": 109,
+        "total": 88649,
         "additions": 88367,
         "deletions": 282
       },
@@ -843,7 +923,7 @@
         "message": "feat: improve packaging, docs, and code quality\n\n- Switched project SDK to `Microsoft.NET.Sdk` for proper library packaging.\n- Added `.editorconfig` for consistent code style enforcement.\n- Enhanced documentation with `CONTRIBUTING.md`, `SECURITY.md`, and more.\n- Updated `.gitignore` to exclude coverage, build artifacts, and test results.\n- Added new tests for `HttpClientConcurrentProcessor` and OpenTelemetry.\n- Improved NuGet configuration with `nuget.config` and metadata updates.\n- Reduced build warnings by 35% and applied automated code formatting.\n- Enhanced OpenTelemetry integration with configurable exporters.\n- Enabled deterministic builds and Source Link for better debugging.\n- Documented future roadmap for multi-targeting and versioning automation."
       },
       "stats": {
-        "total": 14,
+        "total": 2840,
         "additions": 2828,
         "deletions": 12
       },
@@ -859,7 +939,7 @@
         "message": "chore: expand gitignore for test artifacts\n\nAdded patterns for: auto-generated Properties folders, TestResults directory, .trx test results, and .runsettings.user files\n\nThese are test framework artifacts that should not be committed."
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 8,
         "deletions": 0
       },
@@ -875,7 +955,7 @@
         "message": "chore: ignore coverage reports and build artifacts\n\nAdded patterns to .gitignore for: CoverageReport/, coverage-*/, build_output.txt, artifacts/\n\nThese are generated artifacts that should not be committed to the repository."
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 6,
         "deletions": 0
       },
@@ -891,7 +971,7 @@
         "message": "fix: apply code formatting and suppress test-specific warnings\n\nReduces build warnings from 582 to 377 (35% reduction)\n\nChanges: Add CA2007 suppression to test project, Apply automated formatting to 111 files, Ensure EditorConfig compliance\n\nAll 251 tests passing, no functional changes. Phase 1 complete."
       },
       "stats": {
-        "total": 79,
+        "total": 764,
         "additions": 573,
         "deletions": 191
       },
@@ -907,7 +987,7 @@
         "message": "Release v1.3.0: .NET 9 only, comprehensive test coverage, zero warnings"
       },
       "stats": {
-        "total": 16,
+        "total": 2558,
         "additions": 2511,
         "deletions": 47
       },
@@ -923,7 +1003,7 @@
         "message": "Fix GitHub Actions permissions for release creation - add contents: write permission"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -939,7 +1019,7 @@
         "message": "Release v1.2.0 - Updated all NuGet package dependencies to latest stable versions"
       },
       "stats": {
-        "total": 1,
+        "total": 24,
         "additions": 24,
         "deletions": 0
       },
@@ -955,7 +1035,7 @@
         "message": "Release v1.2.0: Updates, improvements, and cleanup\n\nUpdated README.md for v1.2.0 release, highlighting new features, dependency updates, and stability improvements. Removed deprecated web crawler functionality from the library and documentation. Upgraded multiple NuGet package dependencies to their latest stable versions for enhanced compatibility and security. Bumped library version to 1.2.0 in the project file."
       },
       "stats": {
-        "total": 3,
+        "total": 124,
         "additions": 16,
         "deletions": 108
       },
@@ -971,7 +1051,7 @@
         "message": "update comments"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 4,
         "deletions": 1
       },
@@ -987,7 +1067,7 @@
         "message": "Remove manual publishing script - using GitHub Actions workflow instead"
       },
       "stats": {
-        "total": 1,
+        "total": 53,
         "additions": 0,
         "deletions": 53
       },
@@ -1003,7 +1083,7 @@
         "message": "Release v1.1.0: Remove deprecated Jaeger exporter, modernize to OTLP-only approach\n\n- BREAKING: Removed OpenTelemetry.Exporter.Jaeger package dependency\n- BREAKING: Updated AddWebSparkOpenTelemetryWithExporters API to use OTLP-only\n- Updated to modern OTLP exporter (supports Jaeger, Zipkin, and other OTLP-compatible systems)\n- Enhanced documentation with migration guide\n- Build stability improvements and code cleanup\n- All 79 tests passing"
       },
       "stats": {
-        "total": 17,
+        "total": 288,
         "additions": 232,
         "deletions": 56
       },
@@ -1019,7 +1099,7 @@
         "message": "Release v1.0.10: Major feature updates\n\nAdded Features:\n- OpenTelemetry integration with comprehensive tracing support\n- Streaming support for large HTTP responses (configurable threshold)\n- Authentication providers (API Key, Basic Auth, Bearer Token)\n- Object pooling for HttpRequestMessage and StringBuilder\n- Enhanced telemetry and observability\n\nImprovements:\n- Enhanced error handling and resource management\n- Better async/await patterns with ConfigureAwait(false)\n- Improved memory efficiency for large responses\n- Comprehensive test coverage for new features\n\nBug Fixes:\n- Fixed HttpVersion compatibility issues\n- Resolved resource disposal patterns\n- Fixed nullable reference warnings\n\nDocumentation:\n- Updated README.md with new features and examples\n- Enhanced CHANGELOG.md with detailed v1.0.10 changes\n- Added comprehensive code examples for new functionality"
       },
       "stats": {
-        "total": 22,
+        "total": 2219,
         "additions": 2146,
         "deletions": 73
       },
@@ -1035,7 +1115,7 @@
         "message": "set to v1.0.9"
       },
       "stats": {
-        "total": 3,
+        "total": 21,
         "additions": 14,
         "deletions": 7
       },
@@ -1067,7 +1147,7 @@
         "message": "Fix path for snk"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1083,7 +1163,7 @@
         "message": "Fix issue build pipeline yml"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1099,7 +1179,7 @@
         "message": "Update for NuGet package build v1.0.8"
       },
       "stats": {
-        "total": 7,
+        "total": 185,
         "additions": 174,
         "deletions": 11
       },
@@ -1115,7 +1195,7 @@
         "message": "commit"
       },
       "stats": {
-        "total": 5,
+        "total": 270,
         "additions": 236,
         "deletions": 34
       },
@@ -1131,7 +1211,7 @@
         "message": "Enhance JSON converters and cURL command handling\n\n- Updated `NewtonsoftJsonStringConverterTests.cs` and `SystemJsonStringConverterTests.cs` to include necessary using directives and a `TestModel` class for JSON conversion tests.\n- Introduced `CurlCommandSaverOptions` in `CurlCommandSaver.cs` for configuration management, enhancing cURL command saving with batch processing, error handling, and file rotation.\n- Added `CurlCommandSaverTests.cs` to cover unit tests for the `CurlCommandSaver` class, validating various request scenarios.\n- Introduced `HttpRequestResultTests.cs` to test the `HttpRequestResult<T>` class, ensuring proper handling of status codes, request duration, and error logging.\n- Updated project version from `1.0.5` to `1.0.6` in `WebSpark.HttpClientUtility.csproj`."
       },
       "stats": {
-        "total": 6,
+        "total": 1355,
         "additions": 1309,
         "deletions": 46
       },
@@ -1147,7 +1227,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 15,
         "additions": 4,
         "deletions": 11
       },
@@ -1163,7 +1243,7 @@
         "message": "fix image in readme"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1179,7 +1259,7 @@
         "message": "merge in crawler"
       },
       "stats": {
-        "total": 14,
+        "total": 2743,
         "additions": 2684,
         "deletions": 59
       },
@@ -1195,7 +1275,7 @@
         "message": "Simplify versioning approach with hardcoded version"
       },
       "stats": {
-        "total": 2,
+        "total": 49,
         "additions": 4,
         "deletions": 45
       },
@@ -1211,7 +1291,7 @@
         "message": "Fix GitVersion configuration for clean NuGet package versioning"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1227,7 +1307,7 @@
         "message": "Bump version to 1.0.3"
       },
       "stats": {
-        "total": 9,
+        "total": 730,
         "additions": 662,
         "deletions": 68
       },
@@ -1243,7 +1323,7 @@
         "message": "fix versiioning template in GitVersion"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1259,7 +1339,7 @@
         "message": "add test project"
       },
       "stats": {
-        "total": 8,
+        "total": 206,
         "additions": 205,
         "deletions": 1
       },
@@ -1275,7 +1355,7 @@
         "message": "Release v1.0.2"
       },
       "stats": {
-        "total": 4,
+        "total": 27,
         "additions": 14,
         "deletions": 13
       },
@@ -1291,7 +1371,7 @@
         "message": "update sdk version"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -1307,7 +1387,7 @@
         "message": "update for package build"
       },
       "stats": {
-        "total": 5,
+        "total": 174,
         "additions": 165,
         "deletions": 9
       },
@@ -1323,7 +1403,7 @@
         "message": "initial port to WebSpark.HttpClientUtility"
       },
       "stats": {
-        "total": 42,
+        "total": 4576,
         "additions": 4574,
         "deletions": 2
       },
@@ -1339,7 +1419,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 423,
         "additions": 423,
         "deletions": 0
       },

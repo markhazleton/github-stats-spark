@@ -257,35 +257,37 @@ class GitHubFetcher:
             repo = self.github.get_repo(f"{username}/{repo_name}")
             commits_with_stats = []
 
-            for i, commit in enumerate(repo.get_commits(author=username)):
+            # Get commits - do not filter by author here as GitHub API's author parameter is flaky
+            for i, commit in enumerate(repo.get_commits()):
                 if len(commits_with_stats) >= max_commits:
                     break
 
                 try:
                     # Fetch detailed commit data with stats
-                    # Note: commit.files is a PaginatedList, need to count it properly
+                    # Note: commit.stats may be None for some commits
                     files_count = 0
-                    if hasattr(commit, 'files') and commit.files:
-                        try:
-                            # Convert PaginatedList to list to get count
-                            files_count = len(list(commit.files))
-                        except Exception:
-                            # If that fails, use totalCount if available
-                            files_count = commit.files.totalCount if hasattr(commit.files, 'totalCount') else 0
+                    additions = 0
+                    deletions = 0
+                    
+                    if hasattr(commit, 'stats') and commit.stats:
+                        additions = commit.stats.additions
+                        deletions = commit.stats.deletions
+                        # Files count is the sum of changed files
+                        files_count = commit.stats.total if hasattr(commit.stats, 'total') else 0
 
                     commit_data = {
                         "sha": commit.sha,
                         "commit": {
                             "author": {
                                 "name": commit.commit.author.name if commit.commit.author else username,
-                                "date": commit.commit.author.date.isoformat() if commit.commit.author else None,
+                                "date": commit.commit.author.date.isoformat() if commit.commit.author and commit.commit.author.date else None,
                             },
-                            "message": commit.commit.message,
+                            "message": commit.commit.message if commit.commit else "",
                         },
                         "stats": {
                             "total": files_count,
-                            "additions": commit.stats.additions if hasattr(commit, 'stats') and commit.stats else 0,
-                            "deletions": commit.stats.deletions if hasattr(commit, 'stats') and commit.stats else 0,
+                            "additions": additions,
+                            "deletions": deletions,
                         },
                         "repo": repo_name,
                     }

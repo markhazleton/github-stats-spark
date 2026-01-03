@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:55:44.044337",
+  "timestamp": "2026-01-02T20:21:43.512984",
   "value": [
     {
       "sha": "23e2454d998cbe33d39f9cebf54e277d68f7f797",
@@ -11,7 +11,7 @@
         "message": "add light/dark theme"
       },
       "stats": {
-        "total": 36,
+        "total": 5088,
         "additions": 4437,
         "deletions": 651
       },
@@ -27,7 +27,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 10,
+        "total": 1289,
         "additions": 218,
         "deletions": 1071
       },
@@ -43,7 +43,7 @@
         "message": "update workflow ui"
       },
       "stats": {
-        "total": 3,
+        "total": 90,
         "additions": 78,
         "deletions": 12
       },
@@ -59,7 +59,7 @@
         "message": "add scss build and remove libman.json"
       },
       "stats": {
-        "total": 1300,
+        "total": 414077,
         "additions": 41682,
         "deletions": 372395
       },
@@ -75,7 +75,7 @@
         "message": "refactor for DDD"
       },
       "stats": {
-        "total": 44,
+        "total": 1782,
         "additions": 991,
         "deletions": 791
       },
@@ -91,7 +91,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 1,
+        "total": 35,
         "additions": 19,
         "deletions": 16
       },
@@ -107,7 +107,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 1,
+        "total": 137,
         "additions": 133,
         "deletions": 4
       },
@@ -123,7 +123,7 @@
         "message": "add license file"
       },
       "stats": {
-        "total": 1,
+        "total": 21,
         "additions": 21,
         "deletions": 0
       },
@@ -139,7 +139,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -155,7 +155,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -171,7 +171,7 @@
         "message": "Delete PromptSpark.Chat/obj/Debug/net9.0 directory"
       },
       "stats": {
-        "total": 6,
+        "total": 129,
         "additions": 0,
         "deletions": 129
       },
@@ -187,7 +187,7 @@
         "message": "update"
       },
       "stats": {
-        "total": 3,
+        "total": 27,
         "additions": 2,
         "deletions": 25
       },
@@ -203,7 +203,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 2,
+        "total": 121,
         "additions": 60,
         "deletions": 61
       },
@@ -219,7 +219,7 @@
         "message": "Delete .vs/PromptSpark.Chat/CopilotIndices/17.13.196.30798 directory"
       },
       "stats": {
-        "total": 6,
+        "total": 0,
         "additions": 0,
         "deletions": 0
       },
@@ -235,7 +235,7 @@
         "message": "Delete .cr/personal/FavoritesList directory"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 0,
         "deletions": 6
       },
@@ -251,7 +251,7 @@
         "message": "fix gitignore, add readme"
       },
       "stats": {
-        "total": 5,
+        "total": 483,
         "additions": 479,
         "deletions": 4
       },
@@ -267,7 +267,7 @@
         "message": "initial migration, develoopment as stand alone app"
       },
       "stats": {
-        "total": 780,
+        "total": 376828,
         "additions": 376428,
         "deletions": 400
       },
@@ -283,7 +283,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 2,
+        "total": 401,
         "additions": 401,
         "deletions": 0
       },

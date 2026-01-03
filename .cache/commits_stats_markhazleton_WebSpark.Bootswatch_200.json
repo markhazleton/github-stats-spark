@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T11:07:18.269422",
+  "timestamp": "2026-01-02T20:40:30.444682",
   "value": [
     {
       "sha": "7f736cc0b24828c7e3d824b16f47403369f30e67",
@@ -11,7 +11,7 @@
         "message": "chore: release v1.34.0 - Developer experience improvements and demo UI enhancements\n\n- Enhanced dependency validation with comprehensive error messages\n- Added configuration validation service (BootswatchStartupValidation)\n- Improved XML documentation with code examples and remarks\n- Rewrote README with step-by-step setup guide and troubleshooting\n- Enhanced hero section visibility in demo site across all themes\n- Reorganized documentation files to copilot/ folder structure\n- Updated package metadata and release notes\n\nNo breaking changes - fully backward compatible"
       },
       "stats": {
-        "total": 17,
+        "total": 2075,
         "additions": 2043,
         "deletions": 32
       },
@@ -27,7 +27,7 @@
         "message": "Add theme switcher to Razor views\n\nModified `WebSparkBootswatch.cshtml` and `_Layout.cshtml` to integrate a theme switcher. Updated namespace usage for `WebSpark.Bootswatch.Services` and `WebSpark.Bootswatch.Helpers` with an additional `@` symbol. Dynamically set `data-bs-theme` attribute using `BootswatchThemeHelper.GetCurrentColorMode(HttpContext)` to adjust themes based on context."
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -43,7 +43,7 @@
         "message": "Fix CI/CD issues: multi-targeting and SDK setup\n\nDocumented resolution of CI/CD issues in `CI_FIXES_APPLIED.md`.\nUpdated the demo project to multi-target .NET 8.0, 9.0, and 10.0,\nresolving build failures. Enhanced test workflows to set up all\nrequired SDKs, ensuring successful builds for multi-targeted\nprojects. Verified fixes with successful local tests and outlined\nexpected CI/CD outcomes. Provided next steps for monitoring,\nreviewing, and merging the PR, along with a summary of commits\nand success criteria."
       },
       "stats": {
-        "total": 1,
+        "total": 169,
         "additions": 169,
         "deletions": 0
       },
@@ -59,7 +59,7 @@
         "message": "Merge pull request #1 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10"
       },
       "stats": {
-        "total": 26,
+        "total": 4070,
         "additions": 3934,
         "deletions": 136
       },
@@ -75,7 +75,7 @@
         "message": "fix: setup all .NET SDKs in multi-framework test workflow\n\n- Add .NET 8.0, 9.0, and 10.0 SDK setup to each test job\n\n- Required because projects now multi-target and need all SDKs during restore\n\n- Resolves NETSDK1045 errors in test-net8 and test-net9 jobs"
       },
       "stats": {
-        "total": 1,
+        "total": 31,
         "additions": 30,
         "deletions": 1
       },
@@ -91,7 +91,7 @@
         "message": "fix: multi-target demo project for CI/CD compatibility\n\n- Change Demo project from single target (net10.0) to multi-target (net8.0;net9.0;net10.0)\n\n- Fixes CI/CD failures in .NET 8.0 and 9.0 test jobs\n\n- Resolves NETSDK1045 and NETSDK1005 errors\n\n- All 33 tests now pass across all frameworks"
       },
       "stats": {
-        "total": 4,
+        "total": 386,
         "additions": 385,
         "deletions": 1
       },
@@ -107,7 +107,7 @@
         "message": "docs: add ready to publish guide for v1.32.0"
       },
       "stats": {
-        "total": 1,
+        "total": 370,
         "additions": 370,
         "deletions": 0
       },
@@ -123,7 +123,7 @@
         "message": "chore: prepare v1.32.0 with GitHub Actions automation\n\n- Bump version to 1.32.0\n\n- Update GitHub Actions workflow for multi-framework support\n\n- Add comprehensive package validation\n\n- Setup .NET 8.0, 9.0, and 10.0 in CI/CD\n\n- Update to latest GitHub Actions versions (v4)\n\n- Add automated GitHub release creation\n\n- Update CHANGELOG.md with v1.32.0 features\n\n- Add GITHUB_ACTIONS_PUBLISHING.md guide"
       },
       "stats": {
-        "total": 4,
+        "total": 756,
         "additions": 640,
         "deletions": 116
       },
@@ -139,7 +139,7 @@
         "message": "chore: add NuGet publishing automation and guide\n\n- Add publish-nuget-package.ps1 script with safety checks\n\n- Add comprehensive PUBLISHING_GUIDE.md\n\n- Include pre/post-publication checklists\n\n- Document troubleshooting and verification steps"
       },
       "stats": {
-        "total": 2,
+        "total": 487,
         "additions": 487,
         "deletions": 0
       },
@@ -155,7 +155,7 @@
         "message": "docs: add upgrade completion summary"
       },
       "stats": {
-        "total": 1,
+        "total": 226,
         "additions": 226,
         "deletions": 0
       },
@@ -171,7 +171,7 @@
         "message": "docs: comprehensive multi-targeting documentation\n\n- Update README.md with multi-framework support details\n\n- Add CHANGELOG.md with version history and migration guides\n\n- Enhance MULTI_FRAMEWORK_TESTING_SUMMARY.md with implementation details\n\n- Document .NET 8.0, 9.0, and 10.0 support\n\n- Add testing instructions for all frameworks\n\n- Include CI/CD integration documentation\n\n- Add framework-specific package version information"
       },
       "stats": {
-        "total": 3,
+        "total": 721,
         "additions": 712,
         "deletions": 9
       },
@@ -187,7 +187,7 @@
         "message": "test: add multi-framework test project\n\n- Add WebSpark.Bootswatch.Tests project targeting net8.0, net9.0, and net10.0\n\n- Create framework compatibility, StyleModel, and StyleCache tests\n\n- Add GitHub Actions workflow for separate framework testing\n\n- Add PowerShell script for local multi-framework test execution\n\n- All tests pass on .NET 8.0, 9.0, and 10.0"
       },
       "stats": {
-        "total": 8,
+        "total": 567,
         "additions": 566,
         "deletions": 1
       },
@@ -203,7 +203,7 @@
         "message": "feat: add multi-targeting support for .NET 8.0, 9.0, and 10.0\n\n- Update TargetFrameworks to net8.0;net9.0;net10.0\n\n- Add framework-specific package references for Microsoft.Extensions.FileProviders.Embedded\n\n- Bump version to 1.31.0\n\n- Update release notes with multi-targeting details"
       },
       "stats": {
-        "total": 6,
+        "total": 528,
         "additions": 520,
         "deletions": 8
       },
@@ -219,7 +219,7 @@
         "message": "chore: upgrade solution to .NET 10.0 (Big Bang)\n\nUpdate TargetFramework to net10.0 for all projects\n\nUpdate Microsoft.Extensions.FileProviders.Embedded to 10.0.0\n\nRemove System.Text.RegularExpressions package references"
       },
       "stats": {
-        "total": 2,
+        "total": 14,
         "additions": 6,
         "deletions": 8
       },
@@ -235,7 +235,7 @@
         "message": "Standardize Git tags and fix GitHub sync issues\n\n- Removed duplicate and inconsistent tags (e.g., `1.0.7` without `v` prefix) to ensure all tags follow the `vMAJOR.MINOR.PATCH` format.\n- Resolved GitHub tag visibility issue by synchronizing local and remote tags, ensuring compatibility with workflows.\n- Verified and documented the current state of tags, aligning with semantic versioning and project versioning.\n- Added detailed instructions for tag creation, pushing, and verification, including troubleshooting steps.\n- Established future tagging best practices with clear guidelines for version bumping and tag message formatting."
       },
       "stats": {
-        "total": 3,
+        "total": 183,
         "additions": 183,
         "deletions": 0
       },
@@ -251,7 +251,7 @@
         "message": "Release version 1.30.0 - Repository enhancements\n\nUpdated WebSpark.Bootswatch to version 1.30.0 with significant improvements in repository structure, documentation, and community engagement.\n\nKey changes:\n- Updated version to 1.30.0 (assembly, file, and package).\n- Enhanced README.md with GitHub NuGet best practices.\n- Added community health files: CONTRIBUTING.md, SECURITY.md, CODE_OF_CONDUCT.md.\n- Introduced structured CHANGELOG.md and `/copilot/` directory.\n- Added professional GitHub issue templates and badges.\n- Improved documentation with architecture guides, troubleshooting, and browser compatibility.\n\nNo breaking changes; backward compatibility maintained. Repository now adheres to professional open-source standards."
       },
       "stats": {
-        "total": 1,
+        "total": 156,
         "additions": 156,
         "deletions": 0
       },
@@ -267,7 +267,7 @@
         "message": "Release version 1.30.0 - Enhanced repository with GitHub NuGet best practices"
       },
       "stats": {
-        "total": 31,
+        "total": 2608,
         "additions": 2117,
         "deletions": 491
       },
@@ -283,7 +283,7 @@
         "message": "Enhance performance, security, and accessibility\n\n- Added meta tags for SEO and social media sharing.\n- Improved accessibility with ARIA roles and skip links.\n- Enabled Brotli/Gzip compression and caching strategies.\n- Added security headers and HSTS for HTTPS enforcement.\n- Redesigned footer with version info and NuGet link.\n- Introduced VersionService for dynamic version tracking.\n- Added `/debug-version` and `/version-test` pages.\n- Configured health checks and static file caching.\n- Updated dependencies and improved CSP policies.\n- Enhanced responsive design and footer styling.\n- Added best practices documentation and testing guides."
       },
       "stats": {
-        "total": 16,
+        "total": 1344,
         "additions": 1318,
         "deletions": 26
       },
@@ -299,7 +299,7 @@
         "message": "update build new nuget package check"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 2,
         "deletions": 1
       },
@@ -315,7 +315,7 @@
         "message": "upate version"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -331,7 +331,7 @@
         "message": "Release v1.20.0: Updated NuGet package dependencies and documentation"
       },
       "stats": {
-        "total": 9,
+        "total": 1467,
         "additions": 1450,
         "deletions": 17
       },
@@ -347,7 +347,7 @@
         "message": "Release v1.10.3"
       },
       "stats": {
-        "total": 8,
+        "total": 196,
         "additions": 184,
         "deletions": 12
       },
@@ -363,7 +363,7 @@
         "message": "Bump version to 1.10.2 (patch release) and update documentation"
       },
       "stats": {
-        "total": 4,
+        "total": 21,
         "additions": 10,
         "deletions": 11
       },
@@ -379,7 +379,7 @@
         "message": "Bump version to 1.10.1 and update documentation for new release"
       },
       "stats": {
-        "total": 15,
+        "total": 299,
         "additions": 109,
         "deletions": 190
       },
@@ -395,7 +395,7 @@
         "message": "Files Update for v1.10.1"
       },
       "stats": {
-        "total": 20,
+        "total": 167,
         "additions": 111,
         "deletions": 56
       },
@@ -411,7 +411,7 @@
         "message": "Release version 1.10.0"
       },
       "stats": {
-        "total": 12,
+        "total": 499,
         "additions": 442,
         "deletions": 57
       },
@@ -427,7 +427,7 @@
         "message": "Release version 1.0.7"
       },
       "stats": {
-        "total": 1,
+        "total": 12,
         "additions": 4,
         "deletions": 8
       },
@@ -443,7 +443,7 @@
         "message": "Update package version and enhance Bootstrap styles\n\n- Updated version number from 1.0.6 to 1.0.7 in WebSpark.Bootswatch.csproj.\n- Added numerous CSS rules in bootstrap.min.css to improve styling and functionality of buttons, dropdowns, alerts, and modals, enhancing overall user experience.\n- Removed comment regarding bundling and minification in site.css.\n- Deleted unused binary file bg-kitchen-jars.jpg."
       },
       "stats": {
-        "total": 6,
+        "total": 21467,
         "additions": 21456,
         "deletions": 11
       },
@@ -459,7 +459,7 @@
         "message": "Update documentation and project metadata with important links and release notes for version 1.0.6"
       },
       "stats": {
-        "total": 5,
+        "total": 49,
         "additions": 43,
         "deletions": 6
       },
@@ -475,7 +475,7 @@
         "message": "Refactor Bootswatch theme switcher implementation\n\n- Updated namespace for services in _ViewImports.cshtml\n- Refactored Program.cs to use new Bootswatch theme switcher registration methods\n- Removed StyleCache service from the demo project as it is now integrated into Bootswatch\n- Simplified JavaScript for theme switching by moving functionality to bootswatch-theme-switcher.js\n- Enhanced BootswatchExtensions to include theme switcher and style cache registration\n- Bumped version to 1.0.5 in the project file\n- Added ThemeSwitcherGuide.md for documentation on theme switcher implementation\n- Created ThemeSwitcherExample.cshtml and corresponding PageModel for demo purposes\n- Introduced new components for layout and theme switcher to streamline usage\n- Added helper methods for theme management in BootswatchThemeHelper\n- Implemented StyleCache service for caching Bootswatch styles\n- Added JavaScript functionality for theme switching and color mode toggling"
       },
       "stats": {
-        "total": 21,
+        "total": 1446,
         "additions": 847,
         "deletions": 599
       },
@@ -491,7 +491,7 @@
         "message": "Release version 1.0.4"
       },
       "stats": {
-        "total": 17,
+        "total": 1993,
         "additions": 1959,
         "deletions": 34
       },
@@ -507,7 +507,7 @@
         "message": "Release version 1.0.3 with signed assemblies"
       },
       "stats": {
-        "total": 3,
+        "total": 48,
         "additions": 33,
         "deletions": 15
       },
@@ -523,7 +523,7 @@
         "message": "v1.0.2"
       },
       "stats": {
-        "total": 2,
+        "total": 30,
         "additions": 16,
         "deletions": 14
       },
@@ -539,7 +539,7 @@
         "message": "Update for v1.0.1"
       },
       "stats": {
-        "total": 4,
+        "total": 123,
         "additions": 72,
         "deletions": 51
       },
@@ -555,7 +555,7 @@
         "message": "update"
       },
       "stats": {
-        "total": 18,
+        "total": 2391,
         "additions": 2369,
         "deletions": 22
       },
@@ -571,7 +571,7 @@
         "message": "Bump version to 1.0.0"
       },
       "stats": {
-        "total": 4,
+        "total": 114,
         "additions": 101,
         "deletions": 13
       },
@@ -587,7 +587,7 @@
         "message": "update for WebSpark.Bootswatch"
       },
       "stats": {
-        "total": 98,
+        "total": 75175,
         "additions": 75144,
         "deletions": 31
       },
@@ -603,7 +603,7 @@
         "message": "remove ControlSpark items"
       },
       "stats": {
-        "total": 93,
+        "total": 74716,
         "additions": 0,
         "deletions": 74716
       },
@@ -619,7 +619,7 @@
         "message": "Update dotnet.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -635,7 +635,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 2,
+        "total": 188,
         "additions": 90,
         "deletions": 98
       },
@@ -651,7 +651,7 @@
         "message": "Merge branch 'main' of https://github.com/controlorigins/ControlSpark.Bootswatch"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -667,7 +667,7 @@
         "message": "Update and validate demo"
       },
       "stats": {
-        "total": 4,
+        "total": 20,
         "additions": 3,
         "deletions": 17
       },
@@ -683,7 +683,7 @@
         "message": "Update dotnet.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -699,7 +699,7 @@
         "message": "Standardize logging for web and admin"
       },
       "stats": {
-        "total": 1,
+        "total": 40,
         "additions": 25,
         "deletions": 15
       },
@@ -715,7 +715,7 @@
         "message": "Update Version to 8\nMinor tweaks on UI of Admin"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -731,7 +731,7 @@
         "message": "Upgrade to Net 8\nRemove Swagger"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -747,7 +747,7 @@
         "message": "Update dotnet.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -763,7 +763,7 @@
         "message": "minor clean-up"
       },
       "stats": {
-        "total": 2,
+        "total": 11,
         "additions": 0,
         "deletions": 11
       },
@@ -779,7 +779,7 @@
         "message": "fix sitemaps for non-recipe sites"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -795,7 +795,7 @@
         "message": "Update to Net 7"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -811,7 +811,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 89,
+        "total": 74491,
         "additions": 74488,
         "deletions": 3
       },
@@ -827,7 +827,7 @@
         "message": "Create dotnet.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 25,
         "additions": 25,
         "deletions": 0
       },
@@ -843,7 +843,7 @@
         "message": "Initial Load"
       },
       "stats": {
-        "total": 10,
+        "total": 285,
         "additions": 285,
         "deletions": 0
       },
@@ -859,7 +859,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 373,
         "additions": 373,
         "deletions": 0
       },

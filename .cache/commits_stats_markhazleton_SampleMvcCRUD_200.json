@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:53:31.375529",
+  "timestamp": "2026-01-02T20:26:53.490302",
   "value": [
     {
       "sha": "4fb6c6986498cb164ee6fb117e617369d53640ee",
@@ -11,7 +11,7 @@
         "message": "Upgrade Dockerfile and global.json to .NET 10 for improved compatibility"
       },
       "stats": {
-        "total": 3,
+        "total": 17,
         "additions": 11,
         "deletions": 6
       },
@@ -27,7 +27,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 3,
+        "total": 5025,
         "additions": 5023,
         "deletions": 2
       },
@@ -43,7 +43,7 @@
         "message": "Document history and add changelog"
       },
       "stats": {
-        "total": 2,
+        "total": 65,
         "additions": 65,
         "deletions": 0
       },
@@ -59,7 +59,7 @@
         "message": "Enhance CI/CD workflow and documentation\n\nUpdated `docker-image.yml` to rename the workflow, add debugging steps, and verify `HttpClientFactory` presence. Upgraded Docker actions and added metadata extraction, local testing, and Trivy security scanning. Improved cache management and output details.\n\nRefined `Dockerfile` to use wildcard patterns for project files and optimized the publish command for smaller image size.\n\nCreated comprehensive documentation: `GITHUB_ACTIONS_FIX_SUMMARY.md` for action resolutions, `ACTIONS_FAILURES_ANALYSIS.md` for in-depth failure analysis, `ACTIONS_FIX_CHECKLIST.md` for tracking fixes, `GITHUB_ACTIONS_TROUBLESHOOTING.md` for troubleshooting guidance, and `GITHUB_CLI_REFERENCE.md` for CLI usage.\n\nAdded `check-dependabot.ps1` script to verify and guide `dependabot.yml` configuration updates."
       },
       "stats": {
-        "total": 3,
+        "total": 7,
         "additions": 6,
         "deletions": 1
       },
@@ -75,7 +75,7 @@
         "message": "Migrate from System.Drawing to SkiaSharp for cross-platform image processing\n\n- Replace System.Drawing.Common with SkiaSharp (v3.116.0) for MIT-licensed, cross-platform image support\n- Update ImageExtensions to use SKBitmap and SKSamplingOptions APIs\n- Update BaseController image upload to use SkiaSharp encoding\n- Update ImageExtensionsTests to use SkiaSharp types\n- Remove libgdiplus dependency from Azure workflow (no longer needed)\n- All 192 tests now pass on both Windows and Linux without native library dependencies\n\nBenefits:\n- No more libgdiplus dependency issues on Linux\n- Pure cross-platform solution with native library bundles\n- MIT license (no commercial restrictions)\n- Modern API using SKSamplingOptions instead of deprecated SKFilterQuality\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
       },
       "stats": {
-        "total": 5,
+        "total": 60,
         "additions": 28,
         "deletions": 32
       },
@@ -91,7 +91,7 @@
         "message": "Add permissions configuration for GitHub Actions workflows"
       },
       "stats": {
-        "total": 1,
+        "total": 13,
         "additions": 13,
         "deletions": 0
       },
@@ -107,7 +107,7 @@
         "message": "Fix failing GitHub Actions workflows\n\n- Remove check for non-existent Mwh.Sample.HttpClientFactory directory in Docker workflow\n- Add libgdiplus installation step for System.Drawing GDI+ tests in Azure workflow\n- Fix Trivy SARIF upload to only run when scan succeeds\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
       },
       "stats": {
-        "total": 2,
+        "total": 12,
         "additions": 8,
         "deletions": 4
       },
@@ -123,7 +123,7 @@
         "message": "Update Dockerfile and add GitHub Actions documentation"
       },
       "stats": {
-        "total": 8,
+        "total": 1254,
         "additions": 1192,
         "deletions": 62
       },
@@ -139,7 +139,7 @@
         "message": "Merge pull request #37 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10"
       },
       "stats": {
-        "total": 32,
+        "total": 3553,
         "additions": 2921,
         "deletions": 632
       },
@@ -155,7 +155,7 @@
         "message": "Update workflows and add migration documentation\n\nEnhanced the `docker-image.yml` workflow by making Docker image tests conditional on non-pull request events and extending the sleep duration before log checks. Updated Trivy scanner options and switched to `upload-sarif@v4` for GitHub Security uploads, adding a new Trivy report step.\n\nAdded `CODEQL_MIGRATION.md` to document the migration from CodeQL Action v3 to v4, detailing deprecation timelines, required changes, and testing recommendations. Confirmed repository compliance with upcoming deprecation.\n\nIntroduced `dependabot.yml` for automated dependency updates, covering GitHub Actions, NuGet, npm, and Docker dependencies with a weekly schedule and specific configurations for each ecosystem."
       },
       "stats": {
-        "total": 3,
+        "total": 300,
         "additions": 291,
         "deletions": 9
       },
@@ -171,7 +171,7 @@
         "message": "Enhance CI/CD workflows for Docker and Azure\n\nUpdated `docker-image.yml` to rename the workflow, add environment variables, and improve Docker build and push processes with metadata extraction, multi-platform support, and security scanning. Enhanced `main_samplecrud.yml` with caching, dynamic .NET versioning, and improved Azure deployment steps, including health checks and test result publishing."
       },
       "stats": {
-        "total": 2,
+        "total": 186,
         "additions": 154,
         "deletions": 32
       },
@@ -187,7 +187,7 @@
         "message": "Upgrade to .NET 10.0 and refactor solution\n\nUpgraded the entire SampleMvcCRUD solution from .NET 9.0 to .NET 10.0 using a Big Bang strategy, updating all 7 projects simultaneously. Modified project files to reflect the new framework version and updated package references to .NET 10 compatible versions. Removed the `Mwh.Sample.HttpClientFactory` project and its files, indicating a refactor or consolidation of functionality.\n\nRefactored test methods in `StringExtensionsTests.cs` and `DepartmentDtoTests.cs` to manually check for exceptions, improving test clarity. Updated `README.md` with new framework details, project goals, and instructions. Created `UPGRADE-SUMMARY.md` to document the upgrade process.\n\nEnhanced the user interface in `Index.cshtml` with new table actions and a DataTable script. Updated `Program.cs` for Swagger configuration changes and added HttpClient factory registration. Deleted unused binary files for cleanup.\n\nUpdated the solution file to remove references to the deleted project and reflect the new Visual Studio version. Created documentation files to track the upgrade process and ensure a detailed audit trail. All 192 unit tests passed, confirming compatibility with .NET 10.0 and no breaking changes."
       },
       "stats": {
-        "total": 25,
+        "total": 1323,
         "additions": 733,
         "deletions": 590
       },
@@ -203,7 +203,7 @@
         "message": "feat: upgrade solution to .NET 10.0\n\n- Update all projects from net9.0 to net10.0\n- Update Entity Framework Core packages to 10.0.0\n- Update System.Text.Json to 10.0.0\n- Update System.Drawing.Common to 10.0.0\n- Update Microsoft.Extensions.Http to 10.0.0\n- Update System.Formats.Asn1 to 10.0.0\n- Update Microsoft.VisualStudio.Web.CodeGeneration.Design to 10.0.0-rc.1\n\nAll projects build successfully with 0 errors.\nAll 192 unit tests pass (137 Domain tests + 55 Repository tests).\nNo breaking changes identified.\n\nProjects upgraded:\n- Mwh.Sample.Domain\n- Mwh.Sample.Repository\n- Mwh.Sample.HttpClientFactory\n- Mwh.Sample.Web (Blazor)\n- Mwh.Sample.Console\n- Mwh.Sample.Domain.Tests\n- Mwh.Sample.Repository.Tests"
       },
       "stats": {
-        "total": 12,
+        "total": 1784,
         "additions": 1763,
         "deletions": 21
       },
@@ -219,7 +219,7 @@
         "message": "Update NuGet package versions across projects\n\nUpdated several NuGet packages to their latest versions, including MSTest (3.9.3 to 3.10.4), System.Drawing.Common (9.0.7 to 9.0.8), Microsoft.Extensions.Http (9.0.7 to 9.0.8), and various Entity Framework Core packages (9.0.7 to 9.0.8). Also updated Azure.Identity (1.14.2 to 1.15.0) and downgraded Swashbuckle.AspNetCore (9.0.3 to 9.0.4), while updating System.Formats.Asn1 and System.Text.Json to 9.0.8."
       },
       "stats": {
-        "total": 6,
+        "total": 36,
         "additions": 18,
         "deletions": 18
       },
@@ -235,7 +235,7 @@
         "message": "Fix lint command syntax in Docker image workflow"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -251,7 +251,7 @@
         "message": "Add .hadolint.yaml configuration and update Dockerfile linting to ignore DL3008"
       },
       "stats": {
-        "total": 2,
+        "total": 4,
         "additions": 3,
         "deletions": 1
       },
@@ -267,7 +267,7 @@
         "message": "Update Dockerfile to improve error handling and optimize package installation"
       },
       "stats": {
-        "total": 2,
+        "total": 113,
         "additions": 56,
         "deletions": 57
       },
@@ -283,7 +283,7 @@
         "message": "Enhance breadcrumb handling and layout updates\n\n- Improved `GenerateBreadcrumbs` method in `BreadcrumbHelper.cs` to better manage Razor Pages and streamline breadcrumb generation.\n- Updated HTML structure and styling in `_Breadcrumb.cshtml` for improved visual integration with the dark theme.\n- Adjusted breadcrumb placement and added CSS styles in `_Layout.cshtml` for better mobile and desktop responsiveness.\n- Applied similar changes to `_LayoutPivot.cshtml` for consistency.\n- Modified `robots.txt` to disallow access to `/MvcEmployee/` while allowing `/api/` endpoints for better search engine indexing."
       },
       "stats": {
-        "total": 6,
+        "total": 223,
         "additions": 157,
         "deletions": 66
       },
@@ -299,7 +299,7 @@
         "message": "Update NuGet packages, enhance SEO, and add icons\n\nUpdated several NuGet packages to their latest versions, including `System.Drawing.Common`, `Microsoft.Extensions.Http`, and `Microsoft.EntityFrameworkCore` packages, ensuring the application benefits from the latest features and security fixes.\n\nModified the `Details.cshtml` file to improve department name display and added structured data generation for employee details. Introduced a new `BreadcrumbHelper` class for enhanced navigation and updated the `_metatags.cshtml` file for better SEO.\n\nIncluded new favicon images and updated the `site.webmanifest` to support additional app icons, improving the visual branding across platforms."
       },
       "stats": {
-        "total": 22,
+        "total": 636,
         "additions": 580,
         "deletions": 56
       },
@@ -315,7 +315,7 @@
         "message": "Add SitemapController, update metatags, and enhance favicon setup"
       },
       "stats": {
-        "total": 7,
+        "total": 303,
         "additions": 301,
         "deletions": 2
       },
@@ -331,7 +331,7 @@
         "message": "Update package references across multiple projects\n\nUpdated various package references to their latest versions, including:\n- `Microsoft.NET.Test.Sdk` to `17.14.1`\n- `MSTest.TestAdapter` and `MSTest.TestFramework` to `3.9.3`\n- `System.Drawing.Common` to `9.0.6`\n- `Microsoft.Extensions.Http` and `System.Text.Json` to `9.0.6`\n- `Microsoft.EntityFrameworkCore` and related packages to `9.0.6`\n- `Azure.Identity` to `1.14.1`\n- Other packages in `Mwh.Sample.Web.csproj` were also updated and outdated references were removed."
       },
       "stats": {
-        "total": 6,
+        "total": 46,
         "additions": 23,
         "deletions": 23
       },
@@ -363,7 +363,7 @@
         "message": "Update README.md to enhance project description, add theme switcher details, and improve deployment instructions"
       },
       "stats": {
-        "total": 1,
+        "total": 171,
         "additions": 142,
         "deletions": 29
       },
@@ -379,7 +379,7 @@
         "message": "Add Bootswatch theming and HTTP client utilities\n\nUpdated project to include WebSpark.Bootswatch and WebSpark.HttpClientUtility packages. Removed Microsoft.VisualStudio.Web.CodeGeneration.Design reference.\n\nEnhanced Program.cs with new services and middleware for Bootswatch. Modified _Layout.cshtml to support dynamic theming and added a theme switcher.\n\nUpdated _ViewImports.cshtml for Bootswatch integration and added new settings in appsettings.json for CSV output and HTTP request handling options."
       },
       "stats": {
-        "total": 5,
+        "total": 50,
         "additions": 37,
         "deletions": 13
       },
@@ -395,7 +395,7 @@
         "message": "Update NuGet packages and refine project configurations\n\nUpdated various NuGet packages to their latest versions, including test SDKs, MSTest components, Entity Framework Core, and others. Adjusted NPM installation targets in `Mwh.Sample.Web.csproj` for better error handling and formatting. Modified the `PublishClientAssets` target to ensure correct inclusion and exclusion of resolved files during the publish process."
       },
       "stats": {
-        "total": 6,
+        "total": 49,
         "additions": 23,
         "deletions": 26
       },
@@ -411,7 +411,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 15,
         "additions": 9,
         "deletions": 6
       },
@@ -427,7 +427,7 @@
         "message": "add npm to docker image"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 7,
         "deletions": 0
       },
@@ -443,7 +443,7 @@
         "message": "update project UI"
       },
       "stats": {
-        "total": 96,
+        "total": 22970,
         "additions": 20027,
         "deletions": 2943
       },
@@ -459,7 +459,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -475,7 +475,7 @@
         "message": "update nuget packages"
       },
       "stats": {
-        "total": 3,
+        "total": 10,
         "additions": 5,
         "deletions": 5
       },
@@ -491,7 +491,7 @@
         "message": "update nuget packages"
       },
       "stats": {
-        "total": 3,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -507,7 +507,7 @@
         "message": "NuGet Upgrade"
       },
       "stats": {
-        "total": 6,
+        "total": 38,
         "additions": 19,
         "deletions": 19
       },
@@ -523,7 +523,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -539,7 +539,7 @@
         "message": "update dockerfile"
       },
       "stats": {
-        "total": 1,
+        "total": 18,
         "additions": 14,
         "deletions": 4
       },
@@ -555,7 +555,7 @@
         "message": "yml changes"
       },
       "stats": {
-        "total": 1,
+        "total": 25,
         "additions": 23,
         "deletions": 2
       },
@@ -571,7 +571,7 @@
         "message": "update razor pages"
       },
       "stats": {
-        "total": 6,
+        "total": 646,
         "additions": 338,
         "deletions": 308
       },
@@ -587,7 +587,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 65,
         "additions": 65,
         "deletions": 0
       },
@@ -603,7 +603,7 @@
         "message": "remove old pipeline"
       },
       "stats": {
-        "total": 3,
+        "total": 125,
         "additions": 0,
         "deletions": 125
       },
@@ -619,7 +619,7 @@
         "message": "update version number"
       },
       "stats": {
-        "total": 7,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -635,7 +635,7 @@
         "message": "Update main_samplecrud.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 16,
         "additions": 11,
         "deletions": 5
       },
@@ -651,7 +651,7 @@
         "message": "Merge pull request #36 from markhazleton/dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7\n\nBump actions/download-artifact from 3 to 4.1.7 in /.github/workflows"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -667,7 +667,7 @@
         "message": "Update main_samplecrud.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 38,
         "additions": 21,
         "deletions": 17
       },
@@ -683,7 +683,7 @@
         "message": "Update docker-image.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 63,
         "additions": 38,
         "deletions": 25
       },
@@ -699,7 +699,7 @@
         "message": "Merge branch 'main' into dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7"
       },
       "stats": {
-        "total": 21,
+        "total": 1537,
         "additions": 942,
         "deletions": 595
       },
@@ -715,7 +715,7 @@
         "message": "Update to net 9\nCreate unique title/description/keywords"
       },
       "stats": {
-        "total": 13,
+        "total": 1012,
         "additions": 683,
         "deletions": 329
       },
@@ -731,7 +731,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -747,7 +747,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 7,
+        "total": 523,
         "additions": 258,
         "deletions": 265
       },
@@ -763,9 +763,25 @@
         "message": "NuGet updates"
       },
       "stats": {
-        "total": 5,
+        "total": 20,
         "additions": 10,
         "deletions": 10
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0246424dd9886dc8ebb48619664b355d5b13389c",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-09-03T22:47:44+00:00"
+        },
+        "message": "Bump actions/download-artifact from 3 to 4.1.7 in /.github/workflows\n\nBumps [actions/download-artifact](https://github.com/actions/download-artifact) from 3 to 4.1.7.\n- [Release notes](https://github.com/actions/download-artifact/releases)\n- [Commits](https://github.com/actions/download-artifact/compare/v3...v4.1.7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/download-artifact\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "SampleMvcCRUD"
     },
@@ -779,7 +795,7 @@
         "message": "Nuget Updates"
       },
       "stats": {
-        "total": 2,
+        "total": 8,
         "additions": 3,
         "deletions": 5
       },
@@ -795,7 +811,7 @@
         "message": "commit readme"
       },
       "stats": {
-        "total": 1,
+        "total": 61,
         "additions": 35,
         "deletions": 26
       },
@@ -811,7 +827,7 @@
         "message": "Update main_samplecrud.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 19,
         "additions": 12,
         "deletions": 7
       },
@@ -827,7 +843,7 @@
         "message": "Update main_samplecrud.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -843,7 +859,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 5,
+        "total": 36,
         "additions": 18,
         "deletions": 18
       },
@@ -859,7 +875,7 @@
         "message": "package update"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -875,7 +891,7 @@
         "message": "Update packages, work on pure JS stand alone page"
       },
       "stats": {
-        "total": 10,
+        "total": 109,
         "additions": 62,
         "deletions": 47
       },
@@ -891,7 +907,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 3,
+        "total": 10,
         "additions": 5,
         "deletions": 5
       },
@@ -955,7 +971,7 @@
         "message": "merge from main"
       },
       "stats": {
-        "total": 20,
+        "total": 587,
         "additions": 281,
         "deletions": 306
       },
@@ -971,7 +987,7 @@
         "message": "merge from main"
       },
       "stats": {
-        "total": 20,
+        "total": 587,
         "additions": 281,
         "deletions": 306
       },
@@ -987,7 +1003,7 @@
         "message": "update from main"
       },
       "stats": {
-        "total": 20,
+        "total": 587,
         "additions": 281,
         "deletions": 306
       },
@@ -1003,7 +1019,7 @@
         "message": "move aspire out"
       },
       "stats": {
-        "total": 7,
+        "total": 204,
         "additions": 0,
         "deletions": 204
       },
@@ -1019,7 +1035,7 @@
         "message": "Upgrade packages..."
       },
       "stats": {
-        "total": 5,
+        "total": 32,
         "additions": 16,
         "deletions": 16
       },
@@ -1035,7 +1051,7 @@
         "message": "clean up deploy stuff"
       },
       "stats": {
-        "total": 2,
+        "total": 193,
         "additions": 193,
         "deletions": 0
       },
@@ -1051,7 +1067,7 @@
         "message": "remove aspire"
       },
       "stats": {
-        "total": 10,
+        "total": 71,
         "additions": 25,
         "deletions": 46
       },
@@ -1067,7 +1083,7 @@
         "message": "remove old workflow"
       },
       "stats": {
-        "total": 1,
+        "total": 59,
         "additions": 0,
         "deletions": 59
       },
@@ -1083,7 +1099,7 @@
         "message": "Update main_samplecrud.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 22,
         "additions": 11,
         "deletions": 11
       },
@@ -1099,9 +1115,57 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "73fc71dff20763656e3729bd5b90a97bb86835e1",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-04-12T22:59:35+00:00"
+        },
+        "message": "Bump OpenTelemetry.Instrumentation.Http\n\nBumps [OpenTelemetry.Instrumentation.Http](https://github.com/open-telemetry/opentelemetry-dotnet) from 1.7.1 to 1.8.1.\n- [Release notes](https://github.com/open-telemetry/opentelemetry-dotnet/releases)\n- [Commits](https://github.com/open-telemetry/opentelemetry-dotnet/compare/Instrumentation.Http-1.7.1...Instrumentation.Http-1.8.1)\n\n---\nupdated-dependencies:\n- dependency-name: OpenTelemetry.Instrumentation.Http\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3115cd8dc57e677c17dc11d3371f1b9534492ae0",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-04-12T22:59:16+00:00"
+        },
+        "message": "Bump OpenTelemetry.Instrumentation.AspNetCore\n\nBumps [OpenTelemetry.Instrumentation.AspNetCore](https://github.com/open-telemetry/opentelemetry-dotnet) from 1.7.1 to 1.8.1.\n- [Release notes](https://github.com/open-telemetry/opentelemetry-dotnet/releases)\n- [Commits](https://github.com/open-telemetry/opentelemetry-dotnet/compare/Instrumentation.Http-1.7.1...Instrumentation.Http-1.8.1)\n\n---\nupdated-dependencies:\n- dependency-name: OpenTelemetry.Instrumentation.AspNetCore\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8dc9d9e6a2d4ff5a93a69cb490910794e2a41fbe",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-04-11T20:29:43+00:00"
+        },
+        "message": "Bump Azure.Identity from 1.10.4 to 1.11.0 in /Mwh.Sample.Web\n\nBumps [Azure.Identity](https://github.com/Azure/azure-sdk-for-net) from 1.10.4 to 1.11.0.\n- [Release notes](https://github.com/Azure/azure-sdk-for-net/releases)\n- [Commits](https://github.com/Azure/azure-sdk-for-net/compare/Azure.Identity_1.10.4...Azure.Identity_1.11.0)\n\n---\nupdated-dependencies:\n- dependency-name: Azure.Identity\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "SampleMvcCRUD"
     },
@@ -1115,7 +1179,7 @@
         "message": "Update Readme to point to moved resources"
       },
       "stats": {
-        "total": 9,
+        "total": 60,
         "additions": 33,
         "deletions": 27
       },
@@ -1131,7 +1195,7 @@
         "message": "Update for MarkHazleton.com"
       },
       "stats": {
-        "total": 6,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -1147,7 +1211,7 @@
         "message": "Updated packages, added new endpoints, and modified requests\n\nUpdated the `coverlet.collector` package version from `6.0.1` to `6.0.2` in `Mwh.Sample.Domain.Tests.csproj` and `Mwh.Sample.Repository.Tests.csproj` files. Added a new POST endpoint `/employees` in `Program.cs` that accepts an `EmployeeDto` object and uses the `IEmployeeService` to save the employee. Also added a new static class `EmployeeGroupEndpoints` in `Program.cs` that maps GET and DELETE operations for the `IEmployeeService`. Replaced the `GET` request for `/weatherforecast` with a `GET` request for `/employees/` in the `SampleMinimalApi.http` file."
       },
       "stats": {
-        "total": 4,
+        "total": 34,
         "additions": 31,
         "deletions": 3
       },
@@ -1163,7 +1227,7 @@
         "message": "Add Minimal API"
       },
       "stats": {
-        "total": 18,
+        "total": 275,
         "additions": 259,
         "deletions": 16
       },
@@ -1195,7 +1259,7 @@
         "message": "Add Aspire Host\nUpdate NuGet Packages"
       },
       "stats": {
-        "total": 10,
+        "total": 215,
         "additions": 215,
         "deletions": 0
       },
@@ -1211,7 +1275,7 @@
         "message": "package updates\nremove Aspire"
       },
       "stats": {
-        "total": 15,
+        "total": 252,
         "additions": 20,
         "deletions": 232
       },
@@ -1227,7 +1291,7 @@
         "message": "Delete .github/workflows/main_mwhsamplecrud.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 0,
         "deletions": 66
       },
@@ -1243,7 +1307,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
       },
@@ -1259,7 +1323,7 @@
         "message": "update libman"
       },
       "stats": {
-        "total": 2,
+        "total": 20,
         "additions": 10,
         "deletions": 10
       },
@@ -1275,7 +1339,7 @@
         "message": "update NuGet packages"
       },
       "stats": {
-        "total": 3,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -1291,7 +1355,7 @@
         "message": "Package Updates"
       },
       "stats": {
-        "total": 10,
+        "total": 40,
         "additions": 20,
         "deletions": 20
       },
@@ -1307,7 +1371,7 @@
         "message": "Add AspireHost project"
       },
       "stats": {
-        "total": 10,
+        "total": 216,
         "additions": 214,
         "deletions": 2
       },
@@ -1323,7 +1387,7 @@
         "message": "Update NuGet/Client Libs."
       },
       "stats": {
-        "total": 11,
+        "total": 54,
         "additions": 27,
         "deletions": 27
       },
@@ -1339,7 +1403,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 4,
+        "total": 22,
         "additions": 11,
         "deletions": 11
       },
@@ -1355,7 +1419,7 @@
         "message": "update docker file, remove unused project reference"
       },
       "stats": {
-        "total": 2,
+        "total": 3,
         "additions": 0,
         "deletions": 3
       },
@@ -1371,7 +1435,7 @@
         "message": "Update docker-image.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1387,7 +1451,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD"
       },
       "stats": {
-        "total": 1,
+        "total": 13,
         "additions": 9,
         "deletions": 4
       },
@@ -1403,7 +1467,7 @@
         "message": "Update to Net 8, refactor Swagger implementation"
       },
       "stats": {
-        "total": 16,
+        "total": 339,
         "additions": 77,
         "deletions": 262
       },
@@ -1419,7 +1483,7 @@
         "message": "Set up CI with Azure Pipelines\n\n[skip ci]"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -1451,7 +1515,7 @@
         "message": "Update azure-pipelines.yml for Azure Pipelines"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1467,7 +1531,7 @@
         "message": "Update azure-pipelines.yml for Azure Pipelines"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1483,7 +1547,7 @@
         "message": "Update azure-pipelines.yml for Azure Pipelines"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 4,
         "deletions": 0
       },
@@ -1499,7 +1563,7 @@
         "message": "add global.json for solution"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 5,
         "deletions": 0
       },
@@ -1515,7 +1579,7 @@
         "message": "update to use wildcard version"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1531,7 +1595,7 @@
         "message": "add global.json"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 5,
         "deletions": 0
       },
@@ -1547,7 +1611,7 @@
         "message": "Fix Issues with EF Core on unit tests"
       },
       "stats": {
-        "total": 2,
+        "total": 24,
         "additions": 16,
         "deletions": 8
       },
@@ -1563,7 +1627,7 @@
         "message": "merge from remote"
       },
       "stats": {
-        "total": 35,
+        "total": 376,
         "additions": 197,
         "deletions": 179
       },
@@ -1579,7 +1643,7 @@
         "message": "Update Docker File"
       },
       "stats": {
-        "total": 3,
+        "total": 25,
         "additions": 13,
         "deletions": 12
       },
@@ -1595,7 +1659,7 @@
         "message": "Update main_mwhsampleweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 56,
         "additions": 31,
         "deletions": 25
       },
@@ -1611,7 +1675,7 @@
         "message": "Update main_mwhsampleweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1627,7 +1691,7 @@
         "message": "Merge pull request #30 from markhazleton/feature/Net8\n\nUpdate To Net 8"
       },
       "stats": {
-        "total": 35,
+        "total": 340,
         "additions": 176,
         "deletions": 164
       },
@@ -1643,7 +1707,7 @@
         "message": "Update main_mwhsampleweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1659,7 +1723,7 @@
         "message": "NuGet packages updates"
       },
       "stats": {
-        "total": 2,
+        "total": 18,
         "additions": 9,
         "deletions": 9
       },
@@ -1675,7 +1739,7 @@
         "message": "Fix Gender in mock data"
       },
       "stats": {
-        "total": 3,
+        "total": 17,
         "additions": 10,
         "deletions": 7
       },
@@ -1691,7 +1755,7 @@
         "message": "Clean some issues with adding employees w/out adding new depatment."
       },
       "stats": {
-        "total": 13,
+        "total": 154,
         "additions": 72,
         "deletions": 82
       },
@@ -1707,7 +1771,7 @@
         "message": "Update packages"
       },
       "stats": {
-        "total": 15,
+        "total": 108,
         "additions": 59,
         "deletions": 49
       },
@@ -1723,7 +1787,7 @@
         "message": "client script updates"
       },
       "stats": {
-        "total": 6,
+        "total": 29,
         "additions": 14,
         "deletions": 15
       },
@@ -1739,7 +1803,7 @@
         "message": "Update to Net 8"
       },
       "stats": {
-        "total": 7,
+        "total": 36,
         "additions": 23,
         "deletions": 13
       },
@@ -1755,7 +1819,7 @@
         "message": "Add Gender to Employee database/models"
       },
       "stats": {
-        "total": 25,
+        "total": 217,
         "additions": 175,
         "deletions": 42
       },
@@ -1771,7 +1835,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 8,
+        "total": 77,
         "additions": 42,
         "deletions": 35
       },
@@ -1787,7 +1851,7 @@
         "message": "NuGet Updates"
       },
       "stats": {
-        "total": 5,
+        "total": 22,
         "additions": 11,
         "deletions": 11
       },
@@ -1803,7 +1867,7 @@
         "message": "remove deprecated NuGet Packages"
       },
       "stats": {
-        "total": 12,
+        "total": 109,
         "additions": 56,
         "deletions": 53
       },
@@ -1819,7 +1883,7 @@
         "message": "Refactor Department DTO to use Enum values where possible"
       },
       "stats": {
-        "total": 17,
+        "total": 515,
         "additions": 309,
         "deletions": 206
       },
@@ -1835,7 +1899,7 @@
         "message": "Add Unit Test coverage"
       },
       "stats": {
-        "total": 17,
+        "total": 1099,
         "additions": 899,
         "deletions": 200
       },
@@ -1851,7 +1915,7 @@
         "message": "Update Test Coverage\nRefactor some Domain Models"
       },
       "stats": {
-        "total": 20,
+        "total": 2695,
         "additions": 1453,
         "deletions": 1242
       },
@@ -1867,7 +1931,7 @@
         "message": "Merge pull request #29 from markhazleton/feature/UpdateNuGetPackages\n\nFeature/update NuGet packages"
       },
       "stats": {
-        "total": 11,
+        "total": 202,
         "additions": 109,
         "deletions": 93
       },
@@ -1899,7 +1963,7 @@
         "message": "Merge branch 'feature/UpdateNuGetPackages' of https://github.com/markhazleton/SampleMvcCRUD into feature/UpdateNuGetPackages"
       },
       "stats": {
-        "total": 1,
+        "total": 9,
         "additions": 9,
         "deletions": 0
       },
@@ -1915,7 +1979,7 @@
         "message": "update client libraries, create interface for domain entities"
       },
       "stats": {
-        "total": 11,
+        "total": 202,
         "additions": 109,
         "deletions": 93
       },
@@ -1931,7 +1995,7 @@
         "message": "Merge pull request #28 from markhazleton/feature/UpdateNuGetPackages\n\nUpdate NuGet, add test .http file"
       },
       "stats": {
-        "total": 4,
+        "total": 38,
         "additions": 24,
         "deletions": 14
       },
@@ -1947,7 +2011,7 @@
         "message": "Merge branch 'main' into feature/UpdateNuGetPackages"
       },
       "stats": {
-        "total": 1,
+        "total": 9,
         "additions": 9,
         "deletions": 0
       },
@@ -1963,7 +2027,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 9,
         "additions": 9,
         "deletions": 0
       },
@@ -1979,7 +2043,7 @@
         "message": "Update NuGet, add test .http file"
       },
       "stats": {
-        "total": 4,
+        "total": 38,
         "additions": 24,
         "deletions": 14
       },
@@ -1995,7 +2059,7 @@
         "message": "Updates for Employee Headshot"
       },
       "stats": {
-        "total": 29,
+        "total": 286,
         "additions": 102,
         "deletions": 184
       },
@@ -2011,7 +2075,7 @@
         "message": "Merge pull request #27 from markhazleton/feature/UpdateNuGetPackages\n\nupdate NuGEt packages"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -2027,7 +2091,7 @@
         "message": "update NuGEt packages"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -2043,7 +2107,7 @@
         "message": "Merge pull request #26 from markhazleton/feature/UpdateNuGetPackages\n\nFeature/update nu get packages."
       },
       "stats": {
-        "total": 7,
+        "total": 172,
         "additions": 100,
         "deletions": 72
       },
@@ -2059,7 +2123,7 @@
         "message": "Upadte for consistancy"
       },
       "stats": {
-        "total": 6,
+        "total": 158,
         "additions": 93,
         "deletions": 65
       },
@@ -2075,7 +2139,7 @@
         "message": "Update NuGet Packages"
       },
       "stats": {
-        "total": 2,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -2091,7 +2155,7 @@
         "message": "Add Razor Page to Navigation"
       },
       "stats": {
-        "total": 10,
+        "total": 218,
         "additions": 79,
         "deletions": 139
       },
@@ -2107,7 +2171,7 @@
         "message": "Create Employee Razor Using Scaffolding and Entity Framework CRUD"
       },
       "stats": {
-        "total": 17,
+        "total": 778,
         "additions": 778,
         "deletions": 0
       },
@@ -2123,7 +2187,7 @@
         "message": "Fix boken test"
       },
       "stats": {
-        "total": 4,
+        "total": 6,
         "additions": 2,
         "deletions": 4
       },
@@ -2139,7 +2203,7 @@
         "message": "Add Image Extensitions, move file upload into base controller"
       },
       "stats": {
-        "total": 10,
+        "total": 120,
         "additions": 83,
         "deletions": 37
       },
@@ -2155,7 +2219,7 @@
         "message": "Update NuGet Pacakges"
       },
       "stats": {
-        "total": 4,
+        "total": 16,
         "additions": 8,
         "deletions": 8
       },
@@ -2171,7 +2235,7 @@
         "message": "Update azure-pipelines.yml for Azure Pipelines"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 6,
         "deletions": 2
       },
@@ -2187,7 +2251,7 @@
         "message": "Set up CI with Azure Pipelines\n\n[skip ci]"
       },
       "stats": {
-        "total": 1,
+        "total": 34,
         "additions": 34,
         "deletions": 0
       },
@@ -2203,7 +2267,7 @@
         "message": "Update Home page to use README.md\nupdate NuGet Packages"
       },
       "stats": {
-        "total": 10,
+        "total": 159,
         "additions": 89,
         "deletions": 70
       },
@@ -2219,7 +2283,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -2235,7 +2299,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 3,
         "deletions": 2
       },
@@ -2251,7 +2315,7 @@
         "message": "Update CSS for mobile device usability"
       },
       "stats": {
-        "total": 3,
+        "total": 82,
         "additions": 58,
         "deletions": 24
       },
@@ -2267,7 +2331,7 @@
         "message": "Add Profile Picture with ablity to update picture and save in images folder"
       },
       "stats": {
-        "total": 40,
+        "total": 669,
         "additions": 270,
         "deletions": 399
       },
@@ -2283,7 +2347,7 @@
         "message": "Update main_mwhsampleweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 0,
         "deletions": 4
       },
@@ -2299,7 +2363,7 @@
         "message": "update yml for GitHub Action CI/CD"
       },
       "stats": {
-        "total": 1,
+        "total": 88,
         "additions": 44,
         "deletions": 44
       },
@@ -2315,7 +2379,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD"
       },
       "stats": {
-        "total": 1,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -2331,7 +2395,7 @@
         "message": "Update Footer"
       },
       "stats": {
-        "total": 9,
+        "total": 375,
         "additions": 359,
         "deletions": 16
       },
@@ -2347,7 +2411,7 @@
         "message": "Update main_mwhsampleweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -2363,7 +2427,7 @@
         "message": "Delete master_markhazletonsampleweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 0,
         "deletions": 57
       },
@@ -2379,7 +2443,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 57,
         "deletions": 0
       },
@@ -2395,7 +2459,7 @@
         "message": "Merge pull request #25 from markhazleton/feature/UpdateDictionaryExtensions\n\nFeature/update dictionary extensions"
       },
       "stats": {
-        "total": 12,
+        "total": 309,
         "additions": 249,
         "deletions": 60
       },
@@ -2411,7 +2475,7 @@
         "message": "Merge branch 'main' into feature/UpdateDictionaryExtensions"
       },
       "stats": {
-        "total": 1,
+        "total": 35,
         "additions": 14,
         "deletions": 21
       },
@@ -2427,7 +2491,7 @@
         "message": "Update Solution"
       },
       "stats": {
-        "total": 1,
+        "total": 35,
         "additions": 14,
         "deletions": 21
       },
@@ -2443,7 +2507,7 @@
         "message": "work in process"
       },
       "stats": {
-        "total": 12,
+        "total": 309,
         "additions": 249,
         "deletions": 60
       },
@@ -2459,7 +2523,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 2,
         "deletions": 3
       },
@@ -2475,7 +2539,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 3,
         "deletions": 1
       },
@@ -2491,7 +2555,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -2507,7 +2571,39 @@
         "message": "Merge pull request #24 from markhazleton/feature/AddContextToHomePage\n\nFeature/add context to home page"
       },
       "stats": {
-        "total": 6,
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "840e9f570faf2094694ea97cfe8454b3d0c7ea06",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-03T00:37:22+00:00"
+        },
+        "message": "Merge branch 'main' into feature/AddContextToHomePage"
+      },
+      "stats": {
+        "total": 472,
+        "additions": 253,
+        "deletions": 219
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "54713322021886f11909d3ced050a14f496fa23c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-03T00:36:46+00:00"
+        },
+        "message": "Update Site Version Number to 7 to match .Net runtime"
+      },
+      "stats": {
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -2523,7 +2619,7 @@
         "message": "A lock mechanism to increase thread safety of client"
       },
       "stats": {
-        "total": 1,
+        "total": 10,
         "additions": 7,
         "deletions": 3
       },
@@ -2539,7 +2635,7 @@
         "message": "Remove unecessary code"
       },
       "stats": {
-        "total": 10,
+        "total": 87,
         "additions": 40,
         "deletions": 47
       },
@@ -2555,7 +2651,7 @@
         "message": "footer updates"
       },
       "stats": {
-        "total": 2,
+        "total": 175,
         "additions": 1,
         "deletions": 174
       },
@@ -2571,7 +2667,7 @@
         "message": "merge from origin"
       },
       "stats": {
-        "total": 19,
+        "total": 242,
         "additions": 213,
         "deletions": 29
       },
@@ -2587,7 +2683,7 @@
         "message": "update client libraries"
       },
       "stats": {
-        "total": 6,
+        "total": 34,
         "additions": 17,
         "deletions": 17
       },
@@ -2603,7 +2699,7 @@
         "message": "Merge pull request #23 from markhazleton/feature/UpgradeToNet7\n\nUpdate to Net 7"
       },
       "stats": {
-        "total": 19,
+        "total": 266,
         "additions": 225,
         "deletions": 41
       },
@@ -2619,7 +2715,7 @@
         "message": "Update Dockerfile"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -2635,7 +2731,7 @@
         "message": "Create linux v7 publish profile"
       },
       "stats": {
-        "total": 4,
+        "total": 191,
         "additions": 186,
         "deletions": 5
       },
@@ -2651,7 +2747,7 @@
         "message": "update solution"
       },
       "stats": {
-        "total": 2,
+        "total": 5,
         "additions": 4,
         "deletions": 1
       },
@@ -2667,7 +2763,7 @@
         "message": "Update master_markhazletonsampleweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -2683,7 +2779,7 @@
         "message": "Update MwhSampleWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -2699,7 +2795,7 @@
         "message": "updae build pipelines"
       },
       "stats": {
-        "total": 2,
+        "total": 18,
         "additions": 9,
         "deletions": 9
       },
@@ -2715,7 +2811,7 @@
         "message": "Merge branch 'main' into feature/UpgradeToNet7"
       },
       "stats": {
-        "total": 9,
+        "total": 272,
         "additions": 149,
         "deletions": 123
       },
@@ -2731,7 +2827,7 @@
         "message": "Update to Net 7"
       },
       "stats": {
-        "total": 9,
+        "total": 44,
         "additions": 22,
         "deletions": 22
       },
@@ -2747,7 +2843,7 @@
         "message": "Merge pull request #22 from markhazleton/feature/UpdatePackages\n\nupdate packages"
       },
       "stats": {
-        "total": 9,
+        "total": 272,
         "additions": 149,
         "deletions": 123
       },
@@ -2763,7 +2859,7 @@
         "message": "update packages\nupddate footer"
       },
       "stats": {
-        "total": 9,
+        "total": 272,
         "additions": 149,
         "deletions": 123
       },
@@ -2779,9 +2875,41 @@
         "message": "Merge pull request #21 from markhazleton/feature/AddContextToHomePage\n\nAdd some text to Home page for more context on how CI/CD works"
       },
       "stats": {
-        "total": 1,
+        "total": 17,
         "additions": 12,
         "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "82edf2609f2154cee9cd3d62b27e0b6699b0c877",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-20T21:08:55+00:00"
+        },
+        "message": "Add some text to Home page for more context on how CI/CD works"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 12,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7f8bbdc240b587fe01ee572ac23125f4c9ca39cc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-12T05:52:11+00:00"
+        },
+        "message": "update nuGet packages"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
       },
       "repo": "SampleMvcCRUD"
     },
@@ -2795,7 +2923,7 @@
         "message": "Add default web.confg to disable WebDAV module/handler for IIS deploylment. (Fix issue with PUT/DELETE http verbs)."
       },
       "stats": {
-        "total": 7,
+        "total": 53,
         "additions": 35,
         "deletions": 18
       },
@@ -2811,7 +2939,7 @@
         "message": "Merge pull request #20 from markhazleton/feature/AddTreeView\n\nFeature/add tree view"
       },
       "stats": {
-        "total": 19,
+        "total": 214,
         "additions": 158,
         "deletions": 56
       },
@@ -2827,7 +2955,7 @@
         "message": "Merge branch 'main' into feature/AddTreeView"
       },
       "stats": {
-        "total": 1,
+        "total": 26,
         "additions": 6,
         "deletions": 20
       },
@@ -2843,7 +2971,7 @@
         "message": "Change Dept to Record Class"
       },
       "stats": {
-        "total": 11,
+        "total": 76,
         "additions": 61,
         "deletions": 15
       },
@@ -2859,7 +2987,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 26,
         "additions": 6,
         "deletions": 20
       },
@@ -2875,7 +3003,7 @@
         "message": "Add TreeNode"
       },
       "stats": {
-        "total": 9,
+        "total": 140,
         "additions": 98,
         "deletions": 42
       },
@@ -2891,7 +3019,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD"
       },
       "stats": {
-        "total": 2,
+        "total": 25,
         "additions": 20,
         "deletions": 5
       },
@@ -2907,7 +3035,7 @@
         "message": "code clean-up"
       },
       "stats": {
-        "total": 3,
+        "total": 62,
         "additions": 35,
         "deletions": 27
       },
@@ -2923,7 +3051,7 @@
         "message": "add employee list with tests"
       },
       "stats": {
-        "total": 4,
+        "total": 81,
         "additions": 79,
         "deletions": 2
       },
@@ -2939,7 +3067,7 @@
         "message": "more error checking and testing of AjaxDictionary"
       },
       "stats": {
-        "total": 2,
+        "total": 52,
         "additions": 50,
         "deletions": 2
       },
@@ -2955,7 +3083,7 @@
         "message": "Resolve warnings with AjaxDictionary (Nullability)"
       },
       "stats": {
-        "total": 1,
+        "total": 10,
         "additions": 7,
         "deletions": 3
       },
@@ -2971,7 +3099,7 @@
         "message": "Update MwhSampleWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 14,
         "additions": 12,
         "deletions": 2
       },
@@ -2987,7 +3115,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 5,
         "deletions": 1
       },
@@ -3003,7 +3131,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 3,
         "deletions": 2
       },
@@ -3019,7 +3147,7 @@
         "message": "cleanup- testing"
       },
       "stats": {
-        "total": 2,
+        "total": 70,
         "additions": 37,
         "deletions": 33
       },
@@ -3035,7 +3163,7 @@
         "message": "Update NuGet Packages"
       },
       "stats": {
-        "total": 3,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -3051,7 +3179,7 @@
         "message": "Update EmployeeDto guard clauses\nReduce use of empty constructor"
       },
       "stats": {
-        "total": 17,
+        "total": 857,
         "additions": 414,
         "deletions": 443
       },
@@ -3067,137 +3195,9 @@
         "message": "Revise Department Dto guard clauses."
       },
       "stats": {
-        "total": 3,
+        "total": 79,
         "additions": 49,
         "deletions": 30
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "f03f869401a92b05ed31accc234e38498c19d5b9",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-09-15T14:56:26+00:00"
-        },
-        "message": "Add Guard Clase for DepoartmentDto\nRefined Test cases to pass and use localized datbaase"
-      },
-      "stats": {
-        "total": 9,
-        "additions": 137,
-        "deletions": 112
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "2fa90797ab5451c681f47db6c09cba2d0235f3d2",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-09-12T14:01:06+00:00"
-        },
-        "message": "Update Pacakges, fix null reference checks"
-      },
-      "stats": {
-        "total": 9,
-        "additions": 28,
-        "deletions": 24
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "2c9e0b3ce6e9ac6899f6ea6dbe023f116e233049",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-09-08T13:41:31+00:00"
-        },
-        "message": "Add styling to Swagger"
-      },
-      "stats": {
-        "total": 10,
-        "additions": 70,
-        "deletions": 18
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "26c35c34cec2a2aadf6ef7345a6441f9b6b2f891",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-23T19:16:00+00:00"
-        },
-        "message": "Update azure-pipelines-6.yml for Azure Pipelines"
-      },
-      "stats": {
-        "total": 1,
-        "additions": 2,
-        "deletions": 1
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "c9f3d96d90d15dccaec5a6ae8d9072b5bd6df28d",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-23T19:06:24+00:00"
-        },
-        "message": "Update azure-pipelines-6.yml for Azure Pipelines"
-      },
-      "stats": {
-        "total": 1,
-        "additions": 8,
-        "deletions": 0
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "fefc81554580cb3b86aa23b6cbac371d1b84307b",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-23T13:44:53+00:00"
-        },
-        "message": "upate azure secrets"
-      },
-      "stats": {
-        "total": 4,
-        "additions": 92,
-        "deletions": 5
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "7207224c21777446033e81572769721e373dc59a",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-23T13:29:50+00:00"
-        },
-        "message": "Add workflow to publish to Azure Linux App service"
-      },
-      "stats": {
-        "total": 10,
-        "additions": 60,
-        "deletions": 209
-      },
-      "repo": "SampleMvcCRUD"
-    },
-    {
-      "sha": "b59e1149f9d82afe46c9182d1124c839b853bcda",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-23T13:17:20+00:00"
-        },
-        "message": "swagger configuration updates"
-      },
-      "stats": {
-        "total": 10,
-        "additions": 50,
-        "deletions": 21
       },
       "repo": "SampleMvcCRUD"
     }

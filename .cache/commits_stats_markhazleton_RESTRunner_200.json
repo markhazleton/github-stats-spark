@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:51:30.716412",
+  "timestamp": "2026-01-02T20:24:54.707728",
   "value": [
     {
       "sha": "ae2f28b0a2dd543ebcf56e67e6c7f285b783d75d",
@@ -11,7 +11,7 @@
         "message": "Enhance Swagger, DI, and endpoints; refactor async methods\n\n- Expand Swagger config: add tags, descriptions, Newtonsoft.Json support, and improved schema handling\n- Register SampleCRUDService for DI and refactor endpoints to use DI\n- Add IHttpClientFactory constructor to SampleCRUDService\n- Update ExecutionController Results route for clarity\n- Fix dashboard AverageSuccessRate calculation\n- Refactor RealExecutionService methods to use Task.FromResult for async compatibility\n- Add Swashbuckle.AspNetCore.Newtonsoft package\n- Improve endpoint metadata for better documentation"
       },
       "stats": {
-        "total": 6,
+        "total": 189,
         "additions": 127,
         "deletions": 62
       },
@@ -27,7 +27,7 @@
         "message": "Add real-time execution, history, and SignalR progress UI\n\nImplemented full-featured test execution in the web app, including:\n- RealExecutionService for running, tracking, and exporting executions\n- SignalR hub for real-time progress updates and notifications\n- ExecutionController with API and MVC endpoints for execution management\n- New Razor views for execution history and results\n- Real-time progress modal and toasts in configuration details via SignalR\n- Test parallelization support and improved CsvOutputTests\n- Enhanced DI/service registration and file upload validation\n- Miscellaneous UI and code improvements\n\nUsers can now run tests from the UI, see live progress, and view/download results."
       },
       "stats": {
-        "total": 14,
+        "total": 2267,
         "additions": 2175,
         "deletions": 92
       },
@@ -43,7 +43,7 @@
         "message": "Upgrade Bootstrap, add security docs, and update reports\n\nUpgraded Bootstrap to v5.3.8 and replaced the minified bundle. Added comprehensive documentation files: DEPENDABOT-ANALYSIS.md (security analysis and remediation), VULNERABILITIES-RESOLVED.md (resolution report), DEPLOYMENT-COMPLETE.md (deployment summary), and README-UPDATE-COMPLETE.md (README update log). These changes improve project security, documentation, and transparency regarding recent upgrades and vulnerability management."
       },
       "stats": {
-        "total": 8,
+        "total": 1407,
         "additions": 1403,
         "deletions": 4
       },
@@ -59,7 +59,7 @@
         "message": "Fix npm security vulnerabilities\n\nResolved Dependabot alerts:\n\n- Alert #7: glob command injection (CVE-2025-64756) - Updated to 11.1.0+\n\n- Alert #5: js-yaml prototype pollution (CVE-2025-64718) - Updated to 4.1.1+\n\nChanges:\n\n- Ran npm update to update transitive dependencies\n\n- Added 2 packages, removed 15 packages, changed 17 packages\n\n- Verified: npm audit shows 0 vulnerabilities\n\n- Tested: npm run build completes successfully\n\nImpact:\n\n- Development dependencies only (no runtime impact)\n\n- Bootstrap and jQuery asset pipeline working correctly\n\n- All security alerts resolved"
       },
       "stats": {
-        "total": 1,
+        "total": 452,
         "additions": 164,
         "deletions": 288
       },
@@ -75,7 +75,7 @@
         "message": "Update README for .NET 10 release\n\nMajor updates:\n\n- Updated .NET badge to 10.0 (LTS)\n\n- Added release badge and v10.0.0 update notice\n\n- Updated prerequisites to .NET 10.0 SDK\n\n- Added 'Why .NET 10?' section with LTS benefits\n\n- Added Performance section showcasing improvements\n\n- Added detailed v10.0.0 changelog\n\n- Added Documentation section with upgrade guide links\n\n- Updated issue reporting to reference .NET 10\n\nPerformance highlights:\n\n- Build 19% faster (5.1s \u2192 4.1s)\n\n- Tests 25% faster (0.8s \u2192 0.6s)\n\n- 93% packages at latest versions"
       },
       "stats": {
-        "total": 1,
+        "total": 241,
         "additions": 70,
         "deletions": 171
       },
@@ -91,7 +91,7 @@
         "message": "Merge upgrade-to-NET10: Complete .NET 10 upgrade with comprehensive package optimization\n\nSummary of Changes:\n\n- Upgraded all 6 projects from .NET 9.0 to .NET 10.0 (LTS)\n\n- Updated 7 packages to version 10.0.1\n\n- Removed 2 framework-included packages\n\n- Updated 5 additional packages (including 4 major versions)\n\n- MSTest v4 with code quality analyzers\n\n- WebSpark packages updated to latest\n\nResults:\n\n- Build performance: 19% faster (5.1s \u2192 4.1s)\n\n- Test performance: 25% faster (0.8s \u2192 0.6s)\n\n- All 21 tests passing (100%)\n\n- 93% packages at latest versions\n\n- Zero build errors\n\n- NU1510 warnings eliminated\n\nQuality Score: A+ (98%)\n\nTotal Commits: 8"
       },
       "stats": {
-        "total": 20,
+        "total": 9166,
         "additions": 9144,
         "deletions": 22
       },
@@ -107,7 +107,7 @@
         "message": "Add comprehensive upgrade documentation and issue templates\n\n- Added complete upgrade summary with all metrics and results\n\n- Added package optimization complete summary\n\n- Added GitHub issue templates for MSTest v4 and Swashbuckle v10\n\nDocumentation includes detailed reports, acceptance criteria, and next steps"
       },
       "stats": {
-        "total": 3,
+        "total": 1527,
         "additions": 1527,
         "deletions": 0
       },
@@ -123,7 +123,7 @@
         "message": "Merge package-optimization: Complete package updates (7 improvements)\n\nPriority 1: Removed 2 framework-included packages (System.Text.Json, System.Security.Cryptography.Xml)\n\nPriority 2: Updated 2 WebSpark packages (Bootswatch 1.34.0, HttpClientUtility 2.1.2)\n\nPriority 3: Updated 3 MSTest packages to v4 (Test.Sdk 18.0.1, TestAdapter 4.0.2, TestFramework 4.0.2)\n\nResults: 0 errors, 21/21 tests passing, build 19% faster, 93% packages at latest versions"
       },
       "stats": {
-        "total": 9,
+        "total": 1186,
         "additions": 1176,
         "deletions": 10
       },
@@ -139,7 +139,7 @@
         "message": "Update MSTest packages to v4 (major version upgrade)\n\nUpdated Microsoft.NET.Test.Sdk: 17.14.1 -> 18.0.1\n\nUpdated MSTest.TestAdapter: 3.10.4 -> 4.0.2\n\nUpdated MSTest.TestFramework: 3.10.4 -> 4.0.2\n\nNote: MSTest v4 introduces new code analyzers (7 warnings for code quality improvements)\n\nValidation: All 21 tests passing, builds with 0 errors"
       },
       "stats": {
-        "total": 2,
+        "total": 429,
         "additions": 426,
         "deletions": 3
       },
@@ -155,7 +155,7 @@
         "message": "Update WebSpark packages to latest versions\n\nUpdated WebSpark.Bootswatch: 1.30.0 -> 1.34.0\n\nUpdated WebSpark.HttpClientUtility: 1.2.0 -> 2.1.2 (major version)\n\nNote: Swashbuckle.AspNetCore v10 upgrade deferred due to breaking changes in Microsoft.OpenApi v2.x\n\nValidation: All 21 tests passing, builds with 0 errors"
       },
       "stats": {
-        "total": 3,
+        "total": 391,
         "additions": 389,
         "deletions": 2
       },
@@ -171,7 +171,7 @@
         "message": "Remove framework-included packages (System.Text.Json, System.Security.Cryptography.Xml)\n\nResolves NU1510 warnings by removing redundant package references\n\n- Removed System.Text.Json from RESTRunner.csproj (framework-included in .NET 10)\n\n- Removed System.Security.Cryptography.Xml from RESTRunner.Web.csproj (NU1510 warning)\n\nValidation: All 21 tests passing, builds with 0 errors, warnings reduced from 7 to 3"
       },
       "stats": {
-        "total": 5,
+        "total": 366,
         "additions": 361,
         "deletions": 5
       },
@@ -187,7 +187,7 @@
         "message": "TASK-003: Complete .NET 10.0 upgrade testing and validation\n\nAll 21 unit tests passed with 0 failures\n\nWeb application builds successfully\n\nManual smoke testing recommended for console and web apps"
       },
       "stats": {
-        "total": 2,
+        "total": 59,
         "additions": 45,
         "deletions": 14
       },
@@ -203,7 +203,7 @@
         "message": "TASK-002: Complete .NET 10.0 atomic framework and package upgrade\n\nUpdated all 6 projects from net9.0 to net10.0\n\nUpdated 7 packages to version 10.0.1\n\nRemoved 3 packages from RESTRunner.Web\n\nSolution builds with 0 errors"
       },
       "stats": {
-        "total": 9,
+        "total": 83,
         "additions": 48,
         "deletions": 35
       },
@@ -219,7 +219,7 @@
         "message": "Commit changes before fixing global.json file(s)."
       },
       "stats": {
-        "total": 5,
+        "total": 6385,
         "additions": 6385,
         "deletions": 0
       },
@@ -235,7 +235,7 @@
         "message": "Pre-upgrade commit: Save current state before .NET 10 upgrade"
       },
       "stats": {
-        "total": 1,
+        "total": 220,
         "additions": 220,
         "deletions": 0
       },
@@ -251,7 +251,7 @@
         "message": "Add RESTRunner views, controllers, and services\n\nIntroduced comprehensive views for managing configurations, collections, and executions, including `Create.cshtml`, `Edit.cshtml`, `Details.cshtml`, and dashboards. Added controllers for configurations, collections, and the runner dashboard. Implemented services for file storage, configuration, and execution management.\n\nEnhanced documentation in `README.md` with badges, features, and detailed instructions. Added sample data files like `sample-collection.json` and `9e068100-eb4f-46e3-a415-fc7c2bef7b48.json`.\n\nUpdated `Program.cs` to support Swagger, IIS/Kestrel configurations, and service registration. Added new models and view models for configurations, collections, and executions. Introduced debugging tools like `debug-config.html` for inspecting configurations."
       },
       "stats": {
-        "total": 40,
+        "total": 8490,
         "additions": 8472,
         "deletions": 18
       },
@@ -267,7 +267,7 @@
         "message": "Refactor REST Runner with enhanced logging & statistics\n\n- Updated `IExecuteRunner` to return execution statistics.\n- Added `ExecutionStatistics` class for tracking metrics.\n- Improved HTTP request handling with support for more methods.\n- Introduced structured logging using `ILogger`.\n- Enhanced error handling and output reporting.\n- Added detailed execution statistics display in `Program.cs`.\n- Updated `RESTRunner.Services.HttpClientRunner.csproj` with new dependencies.\n- Refactored `GetResultAsync` for better null handling and clarity.\n- Removed legacy console logging and improved semaphore usage.\n- Performed general code cleanup for readability and maintainability."
       },
       "stats": {
-        "total": 5,
+        "total": 712,
         "additions": 628,
         "deletions": 84
       },
@@ -283,7 +283,7 @@
         "message": "Refactor and enhance RESTRunner domain models\n\n- Updated namespaces and added missing `using` directives.\n- Enhanced `StrongDictionary` with `IDisposable`, new methods, and safer operations.\n- Introduced `DomainConstants` for centralized constants.\n- Added custom exceptions in `RESTRunnerExceptions` for better error handling.\n- Improved models (`CompareBody`, `CompareInstance`, etc.) with validation, immutability, and encapsulation.\n- Modernized code with C# features like `init` properties and `ThrowIfNull`.\n- Optimized dictionary operations and replaced `MemoryStream` with `System.Text.Json`.\n- Added helper methods (`IsValid`, `ToString`) and metadata support in `CompareResult`.\n- Improved documentation and standardized naming conventions.\n- Fixed null reference issues and improved performance."
       },
       "stats": {
-        "total": 15,
+        "total": 810,
         "additions": 628,
         "deletions": 182
       },
@@ -299,7 +299,7 @@
         "message": "Enhance functionality and add tests for CsvOutput\n\n- Added unit tests for the CsvOutput class, including resource disposal validation.\n- Upgraded MSTest and Microsoft.NET.Test.Sdk package versions.\n- Improved StrongDictionary with better documentation, a notnull constraint for TKey, and simplified serialization logic.\n- Enhanced CsvOutput with XML documentation, a constructor, and proper Dispose pattern implementation.\n- Refactored ExecuteRunnerService for cleaner null checks and consistent logging.\n- Updated RESTRunner.sln to include RESTRunner.Domain.Tests and upgraded to Visual Studio 18.\n- Added global.json to specify .NET SDK version 9.0.305.\n- Improved dependency injection setup in Program.cs.\n- Made miscellaneous improvements to comments, namespaces, and formatting."
       },
       "stats": {
-        "total": 8,
+        "total": 133,
         "additions": 90,
         "deletions": 43
       },
@@ -315,7 +315,7 @@
         "message": "Update NuGet package versions across projects\n\nUpdated various NuGet package dependencies to their latest versions:\n- `Newtonsoft.Json` updated to `13.0.4` in `RESTRunner.PostmanImport.csproj` and `RESTRunner.Web.csproj`.\n- `Microsoft.Extensions.Http` updated to `9.0.9` in `RESTRunner.Services.HttpClientRunner.csproj` and `RESTRunner.csproj`.\n- `Microsoft.VisualStudio.Azure.Containers.Tools.Targets` updated to `1.22.1` in `RESTRunner.Web.csproj`.\n- `Swashbuckle.AspNetCore` updated to `9.0.4` in `RESTRunner.Web.csproj`.\n- `System.Security.Cryptography.Xml` updated to `9.0.9` in `RESTRunner.Web.csproj`.\n- `WebSpark.Bootswatch` updated to `1.30.0` in `RESTRunner.Web.csproj`.\n- `WebSpark.HttpClientUtility` updated to `1.2.0` in `RESTRunner.Web.csproj`.\n- `CsvHelper` updated to `33.1.0` in `RESTRunner.csproj`.\n- `Microsoft.Extensions.Hosting` updated to `9.0.9` in `RESTRunner.csproj`.\n- `System.Configuration.ConfigurationManager` updated to `9.0.9` in `RESTRunner.csproj`.\n- `System.Text.Json` updated to `9.0.9` in `RESTRunner.csproj`.\n\nThese updates aim to incorporate bug fixes, performance improvements, and new features, while ensuring consistency across the solution."
       },
       "stats": {
-        "total": 4,
+        "total": 26,
         "additions": 13,
         "deletions": 13
       },
@@ -331,7 +331,7 @@
         "message": "Enhance Program.cs and update project dependencies\n\nUpdated `Program.cs` to include new using directives for Swagger, Bootswatch, and HttpRequestResultService, while removing unused ones. Added builder configuration for Swagger services.\n\nAdded new package references in `RESTRunner.Web.csproj` for `System.Net.Http`, `System.Security.Cryptography.Xml`, and `System.Text.RegularExpressions` to improve functionality and security."
       },
       "stats": {
-        "total": 2,
+        "total": 8,
         "additions": 5,
         "deletions": 3
       },
@@ -347,7 +347,7 @@
         "message": "Add Swagger, Bootswatch, and HTTP client enhancements\n\nThis commit introduces Swagger support for API documentation and integrates Bootswatch for theming. The `Program.cs` file is updated to include necessary services for Swagger, Bootswatch, and HTTP client utilities. New API endpoints for managing employees and departments are added, along with a status endpoint.\n\nThe `SampleCRUDService.cs` file is refactored to utilize an `HttpClient` for making API calls, improving the structure and maintainability of the code. The project file (`RESTRunner.Web.csproj`) is updated to include new package references for Swagger and Bootswatch.\n\nAdditionally, front-end files (`Index.cshtml`, `_Layout.cshtml`, etc.) are modified to implement a responsive UI with Bootstrap 5 and provide a theme switcher feature. Configuration settings in `appsettings.json` are also added for HTTP request options.\n\nAlso, new comments and licensing information are added to the top of `bootstrap.bundle.min.js` and `jquery.min.js` files to enhance documentation and clarify usage rights."
       },
       "stats": {
-        "total": 15,
+        "total": 1258,
         "additions": 1239,
         "deletions": 19
       },
@@ -363,7 +363,7 @@
         "message": "Update projects to .NET 9.0 and modify service endpoint\n\n- Upgraded target framework from .NET 8.0 to .NET 9.0 in multiple project files.\n- Modified `GetEmployeeCount()` in `Program.cs` to use `ConfigureAwait(true)`.\n- Changed `HttpClient` base address in `SampleCRUDService.cs` to a new service endpoint."
       },
       "stats": {
-        "total": 8,
+        "total": 16,
         "additions": 8,
         "deletions": 8
       },
@@ -379,7 +379,7 @@
         "message": "Upgrade package versions across multiple projects\n\nUpdated testing packages in `RESTRunner.Domain.Tests.csproj`,\nincreased `Microsoft.Extensions.Http` version in\n`RESTRunner.Services.HttpClientRunner.csproj`, and\nrefreshed `Microsoft.VisualStudio.Azure.Containers.Tools.Targets`\nin `RESTRunner.Web.csproj`. Additionally, upgraded several\npackages in `RESTRunner.csproj` to version `9.0.5`."
       },
       "stats": {
-        "total": 4,
+        "total": 20,
         "additions": 10,
         "deletions": 10
       },
@@ -395,7 +395,7 @@
         "message": "update nuget package"
       },
       "stats": {
-        "total": 3,
+        "total": 9,
         "additions": 5,
         "deletions": 4
       },
@@ -411,7 +411,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 5,
+        "total": 70,
         "additions": 27,
         "deletions": 43
       },
@@ -427,7 +427,7 @@
         "message": "Update NuGet Packages"
       },
       "stats": {
-        "total": 3,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -443,7 +443,7 @@
         "message": "udate packages approaches"
       },
       "stats": {
-        "total": 4,
+        "total": 28,
         "additions": 14,
         "deletions": 14
       },
@@ -459,7 +459,7 @@
         "message": "Implement generated REST Client"
       },
       "stats": {
-        "total": 16,
+        "total": 1858,
         "additions": 1819,
         "deletions": 39
       },
@@ -475,7 +475,7 @@
         "message": "Update to Net 8"
       },
       "stats": {
-        "total": 8,
+        "total": 180,
         "additions": 108,
         "deletions": 72
       },
@@ -491,7 +491,7 @@
         "message": "Upgrade to Net8"
       },
       "stats": {
-        "total": 5,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -507,7 +507,7 @@
         "message": "Update Visual Studio version and remove test project\n\nUpdated the Visual Studio version in `RESTRunner.sln` to 17.0.31717.71. Removed the `RESTRunner.Domain.Tests` project and its associated build configurations, while retaining the remaining projects and their configurations."
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 0,
         "deletions": 6
       },
@@ -523,7 +523,7 @@
         "message": "Update NuGet Packages"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -539,7 +539,7 @@
         "message": "minor clean up remove unused files"
       },
       "stats": {
-        "total": 21,
+        "total": 515,
         "additions": 67,
         "deletions": 448
       },
@@ -555,7 +555,7 @@
         "message": "Update to use IHttpClientFactory to get HttpClient"
       },
       "stats": {
-        "total": 4,
+        "total": 63,
         "additions": 47,
         "deletions": 16
       },
@@ -587,7 +587,7 @@
         "message": "Add Unit Tests"
       },
       "stats": {
-        "total": 13,
+        "total": 204,
         "additions": 187,
         "deletions": 17
       },
@@ -603,7 +603,7 @@
         "message": "updates to run local and use HttpClientFactory"
       },
       "stats": {
-        "total": 3,
+        "total": 49,
         "additions": 37,
         "deletions": 12
       },
@@ -619,7 +619,7 @@
         "message": "Upgrade to Net 7, Update NuGet Packages"
       },
       "stats": {
-        "total": 5,
+        "total": 24,
         "additions": 12,
         "deletions": 12
       },
@@ -635,7 +635,7 @@
         "message": "update test SDK nuget package"
       },
       "stats": {
-        "total": 2,
+        "total": 3,
         "additions": 1,
         "deletions": 2
       },
@@ -651,7 +651,7 @@
         "message": "testing"
       },
       "stats": {
-        "total": 2,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -667,7 +667,7 @@
         "message": "Package Updates, Code Clean-up"
       },
       "stats": {
-        "total": 23,
+        "total": 72,
         "additions": 45,
         "deletions": 27
       },
@@ -683,7 +683,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 6,
+        "total": 498,
         "additions": 349,
         "deletions": 149
       },
@@ -699,7 +699,7 @@
         "message": "testing HttpClient .. remove RestSharp"
       },
       "stats": {
-        "total": 11,
+        "total": 418,
         "additions": 314,
         "deletions": 104
       },
@@ -715,7 +715,7 @@
         "message": "update date format"
       },
       "stats": {
-        "total": 4,
+        "total": 31,
         "additions": 12,
         "deletions": 19
       },
@@ -731,7 +731,7 @@
         "message": "formatting"
       },
       "stats": {
-        "total": 1,
+        "total": 158,
         "additions": 77,
         "deletions": 81
       },
@@ -747,7 +747,7 @@
         "message": "Modify CSV output to append if the file is already there"
       },
       "stats": {
-        "total": 1,
+        "total": 14,
         "additions": 10,
         "deletions": 4
       },
@@ -763,7 +763,7 @@
         "message": "merge from Last good refactor branch"
       },
       "stats": {
-        "total": 13,
+        "total": 515,
         "additions": 357,
         "deletions": 158
       },
@@ -779,7 +779,7 @@
         "message": "refactor Output"
       },
       "stats": {
-        "total": 12,
+        "total": 398,
         "additions": 309,
         "deletions": 89
       },
@@ -795,7 +795,7 @@
         "message": "rework Memory Store Results Service"
       },
       "stats": {
-        "total": 6,
+        "total": 71,
         "additions": 34,
         "deletions": 37
       },
@@ -811,7 +811,7 @@
         "message": "add comments, clean up errors"
       },
       "stats": {
-        "total": 9,
+        "total": 275,
         "additions": 166,
         "deletions": 109
       },
@@ -827,7 +827,7 @@
         "message": "Refactor use more C# stuff"
       },
       "stats": {
-        "total": 9,
+        "total": 678,
         "additions": 407,
         "deletions": 271
       },
@@ -843,7 +843,7 @@
         "message": "Code clean-up\nAdd Global Usings\nUse File Namespace"
       },
       "stats": {
-        "total": 35,
+        "total": 1496,
         "additions": 866,
         "deletions": 630
       },
@@ -859,7 +859,7 @@
         "message": "Update to .Net 6\nUpdate NuGet Packages"
       },
       "stats": {
-        "total": 13,
+        "total": 120,
         "additions": 66,
         "deletions": 54
       },
@@ -875,7 +875,7 @@
         "message": "refactor, clean-up"
       },
       "stats": {
-        "total": 23,
+        "total": 656,
         "additions": 320,
         "deletions": 336
       },
@@ -891,7 +891,7 @@
         "message": "add postman import"
       },
       "stats": {
-        "total": 5,
+        "total": 12,
         "additions": 5,
         "deletions": 7
       },
@@ -907,7 +907,7 @@
         "message": "Put Postman Import Into separate Project"
       },
       "stats": {
-        "total": 7,
+        "total": 300,
         "additions": 111,
         "deletions": 189
       },
@@ -923,7 +923,7 @@
         "message": "Add Postman Collection import"
       },
       "stats": {
-        "total": 7,
+        "total": 362,
         "additions": 203,
         "deletions": 159
       },
@@ -939,7 +939,7 @@
         "message": "updates add tests"
       },
       "stats": {
-        "total": 16,
+        "total": 5720,
         "additions": 553,
         "deletions": 5167
       },
@@ -955,7 +955,7 @@
         "message": "inital load"
       },
       "stats": {
-        "total": 22,
+        "total": 6120,
         "additions": 6120,
         "deletions": 0
       },
@@ -971,7 +971,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 373,
         "additions": 373,
         "deletions": 0
       },

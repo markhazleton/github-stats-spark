@@ -1,6 +1,167 @@
 {
-  "timestamp": "2026-01-02T11:09:50.206161",
+  "timestamp": "2026-01-02T20:43:25.218331",
   "value": [
+    {
+      "sha": "08a0b67fb7ad60230ac7e4cb8fdbfd48036cb601",
+      "message": "Fix: Use npm install instead of npm ci (no package-lock.json)",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T23:58:22+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "5cd7437cbe4bfd312c71430f25dcce0f07c48180",
+      "message": "Fix: Pass username to get_user() to avoid GITHUB_TOKEN permission issue in Actions",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T22:53:43+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "11075b1cb965390a5578f01d72e36f6f870146fa",
+      "message": "fix: Update .gitignore to include .pytest_cache directory",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T22:44:00+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "9cb32afbad568f638357e80021e85f7d62723baa",
+      "message": "Add API and AI summary cache (30-day TTL) for shared use between local and CI",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T22:43:37+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "36321693b05390158049e9a9487d686a73c56405",
+      "message": "Add new chart and table components with styling for repository comparison\n\n- Implemented a new chart component for visualizing commit data with tooltips.\n- Created a CSS file for styling the repository table, including responsive design and hover effects.\n- Added a comparison selector component to manage selected repositories with a clear selection option.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T22:32:14+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "13bf1a722927c6d11d2a17b9aefadbae12e7b7c8",
+      "message": "Refactor code structure for improved readability and maintainability",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T21:39:38+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "bfdeb62cf4803e55781081afbe6700ce30c0e4a7",
+      "message": "feat: Add API key verification step to enhance AI summary generation",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T21:17:34+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "68ff8aa4e063a74d96b7ee1f10bd755c3bcd4a4f",
+      "message": "feat: Simplify statistics generation by consolidating modes into unified command",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T21:14:58+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "1838276400532cd789796dc91947b03ad1376bdd",
+      "message": "feat: Add editable installation of local package in workflow dependencies",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T21:06:22+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "add554fbcc0b8be863c127f2ee3bd608c13ace91",
+      "message": "Merge branch '001-repo-comparison-dashboard': Complete Repository Comparison Dashboard implementation",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T21:03:53+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "68b509218aebc541eaee2468ddb33273d601eadd",
+      "message": "docs: Update implementation status and finalize repository comparison dashboard documentation",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T21:03:14+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "168b309e2cd016f2e63341313b08008a619d804b",
+      "message": "feat: Implement lazy loading for chart and comparison components to enhance performance",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T20:43:22+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "c47b2e929d5deb596e4b4329d802c509c62ff022",
+      "message": "feat: Enhance repository comparison feature with new components and metrics\n\n- Added ComparisonSelector for managing repository selections with a clear option.\n- Introduced ComparisonView to display side-by-side comparisons of selected repositories, including color-coded metrics and percentage differences.\n- Implemented new metrics calculation functions in metricsCalculator.js for comparing repositories.\n- Integrated ExportButton for exporting repository data in CSV and JSON formats.\n- Added ErrorBoundary component for graceful error handling across the application.\n- Updated App component to incorporate new comparison features and handle repository selections.\n- Enhanced RepositoryTable with export functionality and improved footer summary.\n- Created detailed README documentation for project setup, features, and component usage.\n- Added CSS styles for ComparisonView and its components to ensure responsive design and accessibility.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T20:38:41+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "61a86ca334cc25e28abe04ef7778508dd022c90d",
+      "message": "Update implementation review and documentation for Repository Comparison Dashboard\n\n- Added detailed implementation review for the Repository Comparison Dashboard, summarizing progress and key findings.\n- Updated spec.md with implementation status, completed features, and key decisions.\n- Revised plan.md to reflect current status and phase completion.\n- Enhanced tasks.md with progress tracking and overall statistics.\n- Documented architectural decisions and deviations from the original plan.\n- Updated SVG output with new motivational text.\n- Adjusted analysis report generation time and metadata.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T19:42:32+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "33f2fd83c0f3bad2918234bed9f48f5a0b6c4bb9",
+      "message": "feat: Add unified data generation and visualization components\n\n- Implemented UnifiedDataGenerator to merge CLI command outputs into a comprehensive repositories.json file.\n- Created LineGraph and ScatterPlot components for visualizing repository metrics.\n- Added VisualizationControls for selecting chart types and metrics.\n- Developed CSS styles for visualization controls.\n- Introduced test scripts (PowerShell and Bash) for validating unified data generation.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T18:04:55+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "8e518f2006f6320a81f592876524062027181980",
+      "message": "feat: Implement sorting and filtering functionality in RepositoryTable with new FilterControls component",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T15:07:07+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "700409aed135013fe9af205c7c78ad8d2b4adbb6",
+      "message": "feat: Update dependencies and adjust data output structure for repository comparison dashboard",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T14:58:28+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "e42b28c174545abf69312850bc36b679e1e973f8",
+      "message": "feat: Add RepositoryTable component with sorting and responsive design\n\n- Implemented RepositoryTable with TableHeader and TableRow components.\n- Added comprehensive CSS styles for table layout, sorting indicators, and responsive design.\n- Created utility functions for metrics calculation and formatting.\n- Developed sample data generation scripts for quick testing.\n- Added setup verification script to ensure environment readiness.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T14:51:34+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "020b8176a6744c81c763745107fdce649f45bd67",
+      "message": "feat: Implement dashboard JSON data generation and update related workflows",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T13:32:53+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "0e048b444e0c42ce3c89a8585db1408d25538531",
+      "message": "feat: Add dashboard data generation and repository model\n\n- Implemented `DashboardGenerator` class for generating JSON data for the GitHub Stats Spark dashboard.\n- Created data models for dashboard representation including `DashboardData`, `DashboardRepository`, `UserProfile`, and `CommitMetric`.\n- Added method to convert repository data to a lightweight dictionary format for frontend use.\n- Introduced a new React frontend with Vite for building and serving the dashboard.\n- Configured global styles and responsive design for the dashboard interface.\n- Established a structured approach for fetching and calculating repository metrics from the GitHub API.\n- Included package.json and vite.config.js for frontend dependencies and build configuration.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T13:18:11+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "bf23ed1f356fd41db3f5e8ad8707b7e3172a078e",
+      "message": "feat: Add Unified Profile Report specification and task breakdown\n\n- Introduced a comprehensive specification for the Unified Profile Report feature, detailing user stories, requirements, and success criteria.\n- Created a task list organized by user stories to facilitate implementation and testing, including phases for setup, foundational work, and user story execution.\n- Defined functional requirements, key entities, and edge cases to ensure clarity in development and testing processes.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T13:18:00+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "d74583da24f1afc66c198533c736084e29d93d7e",
+      "message": "Refactor repository comparison dashboard tasks and structure\n\n- Updated input and prerequisites paths for documentation.\n- Revised tests section to clarify test inclusion criteria.\n- Changed project type and directory structure for frontend and backend.\n- Enhanced task descriptions for setup and foundational phases.\n- Reorganized user stories with updated priorities and dependencies.\n- Added new tasks for frontend components, visualizations, and export functionality.\n- Improved documentation for clarity and completeness.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T12:47:43+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "a63e196e125c733b62e25cd78e9be4f54dba100a",
+      "message": "feat: Add performance-optimized data generation pipeline for GitHub Pages dashboard\n\n- Implemented PerformanceDataGenerator class to create optimized JSON files.\n- Added methods for generating index, repository bundles, aggregated metrics, and metadata.\n- Utilized multithreading for parallel generation of repository bundles.\n- Included gzip compression for all output files to reduce size.\n- Integrated logging for tracking the generation process and performance metrics.\n- Created a convenience function for easy data generation from a list of Repository objects.\n- Added example usage in the main block to fetch repositories and generate data.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-02T06:05:00+00:00",
+      "repo": "github-stats-spark"
+    },
     {
       "sha": "9cb10ab71e40ff16bf252dfb3b2251de50d28e1a",
       "message": "feat: Enhance README with detailed features and AI-powered analysis sections",

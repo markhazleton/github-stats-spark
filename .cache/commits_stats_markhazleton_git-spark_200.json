@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:36:57.168647",
+  "timestamp": "2026-01-02T20:10:24.980565",
   "value": [
     {
       "sha": "1acb24663f3b7d09690157fcbf81fc4268bd8780",
@@ -11,7 +11,7 @@
         "message": "fix: correct day count for same-day analysis and prevent daily trends before repo creation"
       },
       "stats": {
-        "total": 2,
+        "total": 16,
         "additions": 10,
         "deletions": 6
       },
@@ -27,7 +27,7 @@
         "message": "chore: add .gitattributes to normalize line endings"
       },
       "stats": {
-        "total": 1,
+        "total": 44,
         "additions": 44,
         "deletions": 0
       },
@@ -43,7 +43,7 @@
         "message": "chore: update dependencies - @types/node, @typescript-eslint packages"
       },
       "stats": {
-        "total": 2,
+        "total": 132,
         "additions": 66,
         "deletions": 66
       },
@@ -59,9 +59,25 @@
         "message": "fix: remove days filter from author and redact-emails tests to prevent date range issues"
       },
       "stats": {
-        "total": 2,
+        "total": 8,
         "additions": 4,
         "deletions": 4
+      },
+      "repo": "git-spark"
+    },
+    {
+      "sha": "be5e98dad8422ee159d8002ca03f1ae7128d07c7",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-12-15T04:22:55+00:00"
+        },
+        "message": "docs: update version badge to v1.0.268"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "git-spark"
     },
@@ -75,7 +91,7 @@
         "message": "chore: release v1.0.268"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -91,7 +107,7 @@
         "message": "feat: add teamwork option to HTML report, focusing on team success by excluding individual contributor sections"
       },
       "stats": {
-        "total": 6,
+        "total": 688,
         "additions": 356,
         "deletions": 332
       },
@@ -107,7 +123,7 @@
         "message": "chore: update dependencies and improve performance thresholds\n\n- Updated devDependencies in package.json:\n  - @eslint/js from ^9.39.1 to ^9.39.2\n  - @types/node from ^24.10.1 to ^25.0.2\n  - @typescript-eslint/eslint-plugin and parser from ^8.48.1 to ^8.49.0\n  - eslint from ^9.39.1 to ^9.39.2\n  - prettier from ^3.7.3 to ^3.7.4\n- Increased coverage thresholds in package.json for branches, functions, lines, and statements.\n- Enhanced date handling in GitAnalyzer to default to current date if no commits are found.\n- Updated HTMLExporter documentation to reflect the use of native SVG charts instead of Chart.js.\n- Added noFallthroughCasesInSwitch option in tsconfig.json for stricter type checking.\n- Introduced .claude/settings.local.json for CLI permissions.\n- Created performance-tuning.md to provide guidelines for optimizing Git Spark's performance.\n- Added CLI integration tests in cli-commands.test.ts to validate command parsing, option validation, and report generation.\n- Implemented helper functions in cli-test-helpers.ts for creating test repositories and managing test options."
       },
       "stats": {
-        "total": 10,
+        "total": 1265,
         "additions": 1162,
         "deletions": 103
       },
@@ -123,7 +139,7 @@
         "message": "feat: add file extension exclusion feature for analysis"
       },
       "stats": {
-        "total": 6,
+        "total": 342,
         "additions": 333,
         "deletions": 9
       },
@@ -139,7 +155,7 @@
         "message": "chore: update historical documents and implementation status for Azure DevOps integration\n\n- Added document status and implementation status notes to various historical documents related to Azure DevOps integration, indicating completion and retention for reference.\n- Updated package-lock.json and package.json to reflect dependency upgrades, including TypeScript ESLint packages, prettier, ts-jest, and typedoc.\n- Removed unused dependencies from package-lock.json to streamline the project."
       },
       "stats": {
-        "total": 10,
+        "total": 520,
         "additions": 265,
         "deletions": 255
       },
@@ -155,7 +171,7 @@
         "message": "fix(security): address regex injection and URL validation vulnerabilities"
       },
       "stats": {
-        "total": 5,
+        "total": 141,
         "additions": 129,
         "deletions": 12
       },
@@ -187,9 +203,25 @@
         "message": "fix: revert version number to 1.0.266 in package-lock.json"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
+      },
+      "repo": "git-spark"
+    },
+    {
+      "sha": "f8b4f1cc81a62edf2cf6197efda77f0960018f44",
+      "commit": {
+        "author": {
+          "name": "github-actions[bot]",
+          "date": "2025-11-21T23:08:40+00:00"
+        },
+        "message": "docs: update version badge to v1.0.266"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
       },
       "repo": "git-spark"
     },
@@ -203,7 +235,7 @@
         "message": "chore: set version to 1.0.266 for release"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -235,7 +267,7 @@
         "message": "fix(ci): update Node.js requirement to 20.6+ for ora dependency\n\nThe ora@9.0.0 dependency uses the regex /v flag (unicodeSets) which is only\navailable in Node.js 20.6+. This was causing CI failures on Node 18.x.\n\nChanges:\n- Updated engines.node from >=18.0.0 to >=20.6.0\n- Updated CI matrix to test Node 20.x and 22.x only\n- Node 18.x reaches EOL in April 2025, so this is good timing\n- Updated coverage upload to use Node 22.x\n\nResolves CI SyntaxError: Invalid regular expression flags in\nnode_modules/ora/node_modules/string-width/index.js"
       },
       "stats": {
-        "total": 3,
+        "total": 25,
         "additions": 15,
         "deletions": 10
       },
@@ -251,7 +283,7 @@
         "message": "fix: resolve CI test failures by using dynamic import for version module\n\nThe version.js file is only generated during build, but tests run before build.\nChanged to use dynamic import with a variable to avoid TypeScript compile-time\nchecking of the non-existent module."
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 6,
         "deletions": 2
       },
@@ -267,7 +299,7 @@
         "message": "chore: improve test coverage and exclude experimental Azure DevOps code\n\n- Exclude Azure DevOps integration from build and coverage calculations\n- Add 35 new tests across output exporters (HTML, JSON, CSV, Markdown, Console)\n- Improve overall coverage from 58% to 86.83%\n- Improve src/output coverage from 64.82% to 72.35%\n- Add comprehensive tests for daily trends (stability, ownership, coupling, hygiene)\n- Add edge case tests for error handling, empty data, and complex objects\n- Fix ESM import paths (.js extensions)\n- Fix console exporter test spy cleanup\n- Add --open flag support to main CLI for HTML reports\n- Bump version to 1.0.266"
       },
       "stats": {
-        "total": 10,
+        "total": 661,
         "additions": 652,
         "deletions": 9
       },
@@ -283,7 +315,7 @@
         "message": "feat: enhance Azure DevOps URL validation and improve regex option validation"
       },
       "stats": {
-        "total": 6,
+        "total": 68,
         "additions": 48,
         "deletions": 20
       },
@@ -299,7 +331,7 @@
         "message": "fix: update ESLint configuration to include ignore patterns for various directories and files"
       },
       "stats": {
-        "total": 2,
+        "total": 71,
         "additions": 26,
         "deletions": 45
       },
@@ -315,7 +347,7 @@
         "message": "security: add comprehensive security policy and automation"
       },
       "stats": {
-        "total": 8,
+        "total": 422,
         "additions": 398,
         "deletions": 24
       },
@@ -331,7 +363,7 @@
         "message": "feat: add automated workflow to update documentation version and analytics report"
       },
       "stats": {
-        "total": 4,
+        "total": 162,
         "additions": 161,
         "deletions": 1
       },
@@ -347,7 +379,7 @@
         "message": "fix: update TypeScript module resolution to bundler for proper ESM types\n\n- Change moduleResolution from 'node' to 'bundler' for better ESM support\n- Update CI workflow to handle pure ESM package validation\n- Allow @arethetypeswrong warning for ESM-only package (expected behavior)\n\nThis is a pure ESM package - CommonJS consumers must use dynamic import().\nThis is required for ESM-only dependencies (chalk 5.x, ora 9.x)."
       },
       "stats": {
-        "total": 2,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -363,7 +395,7 @@
         "message": "feat: convert package from CommonJS to ESM for Node.js 21+ compatibility\n\n- Change package type to 'module' and TypeScript module to ES2020\n- Add .js extensions to all relative imports (required for ESM)\n- Replace require() calls with dynamic import()\n- Update Jest configuration for ESM support\n- Convert CLI and bin scripts to ESM syntax\n- Make version functions async to support dynamic imports\n- Remove __dirname usage to avoid import.meta.url complexity\n- Fix ESLint no-async-promise-executor error\n\nThis enables compatibility with ESM-only dependencies like chalk 5.x and ora 9.x\nwhile maintaining backward compatibility with Node.js 18+.\n\nAll 241 tests passing."
       },
       "stats": {
-        "total": 42,
+        "total": 333,
         "additions": 174,
         "deletions": 159
       },
@@ -379,7 +411,7 @@
         "message": "fix: replace prepare with postinstall to avoid husky ESM issues in CI"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -395,7 +427,7 @@
         "message": "fix: make prepare script safe for global installation without husky"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -427,7 +459,7 @@
         "message": "chore: bump version for provenance URL fix"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -443,7 +475,7 @@
         "message": "fix: use lowercase username in repository URLs for provenance verification"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -459,7 +491,7 @@
         "message": "chore: bump version for trusted publishing test"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -475,7 +507,7 @@
         "message": "feat: implement npm trusted publishing with OIDC\n\n- Remove NODE_AUTH_TOKEN in favor of OIDC authentication\n- Remove registry-url from setup-node configuration\n- Add npm upgrade step to ensure version 11.5.1+ support\n- Add publishConfig with provenance in package.json\n- Trusted publisher configured on npmjs.com for enhanced security"
       },
       "stats": {
-        "total": 4,
+        "total": 262,
         "additions": 262,
         "deletions": 0
       },
@@ -507,7 +539,7 @@
         "message": "ci: switch to trusted publishing (oidc)"
       },
       "stats": {
-        "total": 1,
+        "total": 17,
         "additions": 4,
         "deletions": 13
       },
@@ -523,7 +555,7 @@
         "message": "ci: enable npm publish on tag push"
       },
       "stats": {
-        "total": 1,
+        "total": 23,
         "additions": 17,
         "deletions": 6
       },
@@ -539,7 +571,7 @@
         "message": "1.0.263"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -555,7 +587,7 @@
         "message": "docs: update changelog for v1.0.263"
       },
       "stats": {
-        "total": 1,
+        "total": 33,
         "additions": 32,
         "deletions": 1
       },
@@ -571,7 +603,7 @@
         "message": "test: Add comprehensive test coverage for daily-trends and CSV exporters\n\n- Create daily-trends.test.ts with 10 test cases covering:\n  - Constructor with various timezones and working hours\n  - Empty commit handling\n  - Single and multiple commit analysis\n  - Progress callbacks\n  - Analysis range support\n  - Limitations documentation\n  - Contributions graph generation\n  - Large dataset handling\n\n- Add CSV exporter tests for:\n  - Azure DevOps data handling (presence/absence)\n  - Error handling for invalid paths\n  - Write permission errors\n\nCoverage improvements:\n- Overall: 37% \u2192 58% statements (+21%)\n- Branches: 34% \u2192 49% (+15%)\n- Functions: 37% \u2192 60% (+23%)\n- Lines: 38% \u2192 58% (+20%)\n\nAll 15 test suites passing with 238 total tests."
       },
       "stats": {
-        "total": 2,
+        "total": 316,
         "additions": 315,
         "deletions": 1
       },
@@ -587,7 +619,7 @@
         "message": "fix: Lower coverage thresholds to match CI environment\n\n- CI environment shows lower coverage than local (37.16/34.02/38.18/37.85)\n- Adjusted thresholds to 34/37/38/37 to match actual CI coverage\n- Difference likely due to Azure DevOps integration and daily-trends code paths not executed in CI"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -603,7 +635,7 @@
         "message": "ci: Make macOS tests non-blocking and disable fail-fast\n\n- Add continue-on-error for macOS tests to prevent blocking workflow\n- Add fail-fast: false to run all test matrix combinations\n- Allows us to see full test results across all platforms\n- macOS intermittent failures won't block releases"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 2,
         "deletions": 0
       },
@@ -619,7 +651,7 @@
         "message": "fix: Resolve flaky timestamp test and update coverage thresholds\n\n- Fix race condition in version-fallback test that compared exact timestamps\n- Changed to check timestamp proximity (within 1 second) instead of exact match\n- Update coverage thresholds to reflect actual project coverage\n- Azure DevOps integration code will be tested in future work"
       },
       "stats": {
-        "total": 2,
+        "total": 18,
         "additions": 12,
         "deletions": 6
       },
@@ -635,7 +667,7 @@
         "message": "feat: Update ignore files to exclude test, config, and IDE artifacts"
       },
       "stats": {
-        "total": 6,
+        "total": 274,
         "additions": 102,
         "deletions": 172
       },
@@ -651,7 +683,7 @@
         "message": "feat: Enhance security in regex validation and improve HTML report opening mechanism"
       },
       "stats": {
-        "total": 4,
+        "total": 99,
         "additions": 79,
         "deletions": 20
       },
@@ -667,7 +699,7 @@
         "message": "feat: Implement Azure DevOps Git Integration and Memory Cache\n\n- Added GitCommitAssociator class for associating Azure DevOps pull requests with Git commits using multiple strategies (merge, squash, branch analysis, temporal matching).\n- Introduced MemoryCache class for high-performance in-memory caching of Azure DevOps data with support for TTL, eviction policies, and cache statistics.\n- Created PaginationManager for managing optimal page sizes for API requests based on network latency and estimated total.\n- Implemented RateLimiter to manage API request rates and prevent exceeding limits.\n- Developed a diagnostic tool for testing Azure DevOps connections, including configuration validation and response handling."
       },
       "stats": {
-        "total": 41,
+        "total": 10990,
         "additions": 10613,
         "deletions": 377
       },
@@ -683,7 +715,7 @@
         "message": "feat: Remove obsolete implementation summaries and enhance repository structure\n\n- Deleted outdated implementation summaries for file type breakdown, layout enhancements, build/test/lint verification, gitignore implementation, package updates, and repository cleanup.\n- Updated package versions to 1.0.227, ensuring all dependencies are current and removing deprecated packages.\n- Improved risk and ownership metrics in the GitAnalyzer class, calculating ownership dominance based on author contributions.\n- Refined automated insights calculations for work-life balance, collaboration, code quality, consistency, and expertise.\n- Adjusted test cases to reflect updated date values for consistency across various exporters and validation tests.\n- Cleaned up the repository by removing unnecessary test output folders, enhancing project clarity and organization."
       },
       "stats": {
-        "total": 96,
+        "total": 18132,
         "additions": 57,
         "deletions": 18075
       },
@@ -699,7 +731,7 @@
         "message": "optimize: Clean up unused dependencies and modernize package management\n\n\u2705 **Package Cleanup:**\n- Remove unused dependencies: date-fns, glob, minimatch\n- Remove unused dev dependencies: eslint-config-prettier, eslint-plugin-prettier, rimraf\n- Replace rimraf with native Node.js fs.rmSync for cross-platform file cleanup\n- Fix version-fallback.ts circular dependency issue\n\n\u2705 **Security & Quality:**\n- \u2713 0 vulnerabilities (npm audit clean)\n- \u2713 No unused dependencies (depcheck clean)\n- \u2713 All packages at latest versions\n- \u2713 All tests passing (227/227 \u2713)\n\n\u2705 **Husky Hook Fixes:**\n- Fix pre-commit hook shebang formatting\n- Ensure proper shell script structure\n\n**Impact:** Reduced dependency count, improved build reliability, maintained full functionality"
       },
       "stats": {
-        "total": 4,
+        "total": 428,
         "additions": 120,
         "deletions": 308
       },
@@ -715,7 +747,7 @@
         "message": "modernize: Update Husky to latest best practices\n\n- Remove deprecated husky.sh structure\n- Add modern pre-commit hook with lint + test\n- Add pre-push hook with build verification\n- Exclude .husky files from ESLint checking"
       },
       "stats": {
-        "total": 3,
+        "total": 12,
         "additions": 12,
         "deletions": 0
       },
@@ -731,7 +763,7 @@
         "message": "Bump version to 1.0.223 and update documentation for clarity"
       },
       "stats": {
-        "total": 3,
+        "total": 11,
         "additions": 6,
         "deletions": 5
       },
@@ -747,7 +779,7 @@
         "message": "Update public docs with latest report and version info\n\n- Updated git-spark-report.html with fresh 30-day analysis (v1.0.223)\n- Updated index.html version badge to reflect v1.0.221 release\n- Enhanced description to mention recent GitIgnore improvements\n- Report includes latest repository cleanup and organizational changes\n- Generated with 70 commits, 187 files analyzed from recent development"
       },
       "stats": {
-        "total": 2,
+        "total": 861,
         "additions": 431,
         "deletions": 430
       },
@@ -763,7 +795,7 @@
         "message": "Release v1.0.221: Repository cleanup and GitIgnore enhancements\n\n- Updated CHANGELOG.md with v1.0.221 release notes\n- Repository cleanup: removed 18 temporary test output folders\n- Added comprehensive GitIgnore utility testing\n- Improved project organization and structure\n- Version bump to 1.0.221"
       },
       "stats": {
-        "total": 3,
+        "total": 16,
         "additions": 13,
         "deletions": 3
       },
@@ -779,7 +811,7 @@
         "message": "Update repository cleanup documentation with final summary"
       },
       "stats": {
-        "total": 1,
+        "total": 42,
         "additions": 41,
         "deletions": 1
       },
@@ -795,7 +827,7 @@
         "message": "Clean up repository: Remove 18 temporary test output folders\n\n- Removed all test-* folders containing only generated output files\n- Removed demo-proportional-bars folder with temporary demo content\n- Preserved critical test/ folder with actual Jest test files\n- Added cleanup documentation to copilot session\n- Repository structure now cleaner and more professional\n\nFolders removed:\n- test-calendar-fix/, test-charts/, test-churn-metrics/\n- test-current-state/, test-current-state-final/, test-current-state-html/\n- test-debug/, test-directory-fix/, test-file-type-breakdown/\n- test-file-type-final/, test-final/, test-final-json/\n- test-gitignore-integration/, test-output/, test-output-html/\n- test-version/, test-version-final/, demo-proportional-bars/"
       },
       "stats": {
-        "total": 22,
+        "total": 67843,
         "additions": 101,
         "deletions": 67742
       },
@@ -811,7 +843,7 @@
         "message": "Add comprehensive tests for GitIgnore utility\n\n- Implement tests for pattern matching including .git directory, simple file patterns, directory patterns, absolute patterns, negation patterns, and complex patterns with wildcards.\n- Add tests to ensure comments and empty lines are ignored in .gitignore files.\n- Include tests for file operations such as loading from a .gitignore file and handling missing files.\n- Test common patterns for typical JavaScript and Git Spark projects to validate expected behavior."
       },
       "stats": {
-        "total": 10,
+        "total": 6100,
         "additions": 6056,
         "deletions": 44
       },
@@ -827,7 +859,7 @@
         "message": "1.0.213"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -843,7 +875,7 @@
         "message": "package.json"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -859,7 +891,7 @@
         "message": "docs: update documentation to be more modest and concise\n\n- Remove hyperbolic language and enterprise claims\n- Simplify descriptions to focus on actual capabilities\n- Add directory counting fix to changelog\n- Update package description and keywords\n- Reduce content length while maintaining accuracy"
       },
       "stats": {
-        "total": 33,
+        "total": 55870,
         "additions": 54788,
         "deletions": 1082
       },
@@ -875,7 +907,7 @@
         "message": "chore: update version to 1.0.185 in package.json and package-lock.json"
       },
       "stats": {
-        "total": 3,
+        "total": 286,
         "additions": 283,
         "deletions": 3
       },
@@ -891,7 +923,7 @@
         "message": "docs: update CHANGELOG for v1.0.183 release"
       },
       "stats": {
-        "total": 1,
+        "total": 37,
         "additions": 36,
         "deletions": 1
       },
@@ -907,7 +939,7 @@
         "message": "feat: implement SVG sparklines with full-width layout and fix HTML meta tag\n\n- Replace flexbox sparklines with SVG rect elements for precise height control\n- Fix extra '>' character in og:description meta tag (line 498)\n- Change Volume Trends layout to 2-column grid with full-width section\n- Update tests to check for SVG elements instead of .spark-bar divs\n- Version bump to 1.0.183 with all changes built and tested\n- All 217 tests passing successfully"
       },
       "stats": {
-        "total": 5,
+        "total": 313,
         "additions": 175,
         "deletions": 138
       },
@@ -923,7 +955,7 @@
         "message": "package.json"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -939,7 +971,7 @@
         "message": "1.0.173"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -955,7 +987,7 @@
         "message": "updated version with docs and chanelog"
       },
       "stats": {
-        "total": 4,
+        "total": 2115,
         "additions": 2104,
         "deletions": 11
       },
@@ -971,7 +1003,7 @@
         "message": "updated version to fix date range logic"
       },
       "stats": {
-        "total": 8,
+        "total": 425,
         "additions": 414,
         "deletions": 11
       },
@@ -987,7 +1019,7 @@
         "message": "1.0.156"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1003,7 +1035,7 @@
         "message": "feat: Implement repository lifetime capping for analysis date ranges\n\n- Added `getFirstCommitDate()` method in `GitExecutor` to retrieve the first commit date.\n- Adjusted `collectCommits()` in `DataCollector` to cap analysis start date to the repository's first commit.\n- Enhanced HTML report generation to reflect accurate analysis periods based on repository lifetime.\n- Updated navigation in HTML reports to match the order of sections for improved user experience.\n- Refactored \"Daily Activity Trends\" section into \"Team Patterns\" and \"Detailed Daily Tables\" for better information hierarchy.\n- Comprehensive tests added for new functionality and existing tests updated to reflect changes."
       },
       "stats": {
-        "total": 13,
+        "total": 4455,
         "additions": 1209,
         "deletions": 3246
       },
@@ -1019,7 +1051,7 @@
         "message": "package.json"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1035,7 +1067,7 @@
         "message": "chore: update enhancement roadmap for clarity and organization"
       },
       "stats": {
-        "total": 4,
+        "total": 116,
         "additions": 110,
         "deletions": 6
       },
@@ -1051,7 +1083,7 @@
         "message": "Add comprehensive review and session summary for Git Spark\n\n- Created a detailed comprehensive review document outlining strengths, weaknesses, and enhancement recommendations for Git Spark.\n- Developed a session summary document encapsulating key findings, recommendations, and growth strategies.\n- Included competitive analysis, risk assessment, and success metrics for future development.\n- Established a roadmap for enhancements and quick wins to improve the tool's functionality and market position."
       },
       "stats": {
-        "total": 6,
+        "total": 2643,
         "additions": 2568,
         "deletions": 75
       },
@@ -1067,7 +1099,7 @@
         "message": "chore: update version to 1.0.141 in package.json and package-lock.json"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1083,7 +1115,7 @@
         "message": "feat: Enhance Git Spark landing page and README for improved user engagement\n\n- Updated /docs/index.html with comprehensive meta tags and SEO enhancements\n- Improved visual hierarchy and added new sections including \"Why Git Spark?\" and author profile\n- Enhanced footer and responsive design for better mobile experience\n- Updated README.md with accurate versioning and badge improvements\n- Created GitHub Pages activation guide for seamless deployment\n- Incremented package version to 1.0.138 and updated dependencies"
       },
       "stats": {
-        "total": 9,
+        "total": 540,
         "additions": 471,
         "deletions": 69
       },
@@ -1099,7 +1131,7 @@
         "message": "Update homepage URL to GitHub Pages site\n\n- Changed homepage from GitHub README to https://markhazleton.github.io/git-spark/\n- Points npm package page to world-class landing page\n- Provides better first impression with interactive demos and author info"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1115,7 +1147,7 @@
         "message": "Transform GitHub Pages landing page into world-class homepage\n\n- Enhanced meta tags with author, keywords, and comprehensive SEO\n- Added compelling 'Why Git Spark?' value proposition section\n- Created comprehensive 'About the Author' section with avatar and connection links\n  - Professional biography highlighting Mark Hazleton's expertise\n  - 4 connection points: markhazleton.com, GitHub, LinkedIn, Email\n- Built immersive 'WebSpark Family' ecosystem showcase\n  - 4 project cards with glass-morphism design\n  - 5 core philosophy principles with interactive hover effects\n  - Call-to-action to explore full WebSpark ecosystem\n- Enhanced visual design with glass-morphism aesthetic\n  - Backdrop blur effects with cross-browser compatibility\n  - Section dividers for improved visual rhythm\n  - Interactive animations throughout\n- Upgraded footer with expanded messaging and copyright\n- Fully responsive design optimized for mobile devices\n- Consistent branding with README matching structure and messaging\n\nNow provides triple value: package marketing + personal branding + ecosystem gateway"
       },
       "stats": {
-        "total": 2,
+        "total": 1477,
         "additions": 1159,
         "deletions": 318
       },
@@ -1131,7 +1163,7 @@
         "message": "Transform README into world-class homepage promoting package, author, and WebSpark family\n\n- Enhanced header with centered design and compelling tagline\n- Added 'Why Git Spark?' section with emoji-enhanced benefits\n- Created comprehensive 'About the Author' section for Mark Hazleton\n- Added 'WebSpark Family' section showcasing ecosystem\n- Included multiple connection points (website, GitHub, LinkedIn, email)\n- Implemented professional navigation menu\n- Added strategic CTAs throughout\n- Applied marketing best practices for npm package homepage"
       },
       "stats": {
-        "total": 2,
+        "total": 313,
         "additions": 310,
         "deletions": 3
       },
@@ -1147,7 +1179,7 @@
         "message": "docs: add GitHub Pages demo site with interactive report"
       },
       "stats": {
-        "total": 5,
+        "total": 4381,
         "additions": 4379,
         "deletions": 2
       },
@@ -1163,7 +1195,7 @@
         "message": "update readme and add npmignore"
       },
       "stats": {
-        "total": 5,
+        "total": 525,
         "additions": 519,
         "deletions": 6
       },
@@ -1179,7 +1211,7 @@
         "message": "docs: update README.md to reflect v1.0.125 features and CLI command enhancements"
       },
       "stats": {
-        "total": 2,
+        "total": 388,
         "additions": 325,
         "deletions": 63
       },
@@ -1195,7 +1227,7 @@
         "message": "chore: update version numbers in package files to 1.0.125 and enhance HTML report limitations section"
       },
       "stats": {
-        "total": 3,
+        "total": 154,
         "additions": 77,
         "deletions": 77
       },
@@ -1211,7 +1243,7 @@
         "message": "fix: update version numbers in package files and improve test error handling"
       },
       "stats": {
-        "total": 4,
+        "total": 128,
         "additions": 117,
         "deletions": 11
       },
@@ -1227,7 +1259,7 @@
         "message": "feat: Update Bus Factor display to percentage in HTML reports\n\n- Changed Bus Factor representation from raw number to percentage in HTML output.\n- Updated relevant documentation to reflect the new calculation and context.\n- Enhanced test coverage with additional validation scenarios and fixed existing tests.\n\nfix: Resolve build errors in version-fallback tests\n\n- Rewrote the `test/version-fallback.test.ts` file to eliminate syntax errors and improve test structure.\n- Added comprehensive tests for version and build time retrieval functions.\n\ntest: Improve validation tests with edge cases\n\n- Added multiple test cases for repository path validation, date range checks, and commit message patterns.\n- Ensured robust coverage for input sanitization and email redaction functionalities.\n\nchore: Document build errors and fixes\n\n- Created a summary of build errors encountered and the steps taken to resolve them.\n- Highlighted improvements in test coverage and reliability following the fixes."
       },
       "stats": {
-        "total": 14,
+        "total": 2674,
         "additions": 2394,
         "deletions": 280
       },
@@ -1243,7 +1275,7 @@
         "message": "chore: update package versions and improve HTML report layout for better readability"
       },
       "stats": {
-        "total": 5,
+        "total": 254,
         "additions": 230,
         "deletions": 24
       },
@@ -1259,7 +1291,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 10,
+        "total": 5104,
         "additions": 5100,
         "deletions": 4
       },
@@ -1275,7 +1307,7 @@
         "message": "feat: implement robust version fallback mechanism to enhance CI reliability"
       },
       "stats": {
-        "total": 5,
+        "total": 193,
         "additions": 146,
         "deletions": 47
       },
@@ -1291,7 +1323,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 14,
+        "total": 9335,
         "additions": 9041,
         "deletions": 294
       },
@@ -1307,7 +1339,7 @@
         "message": "Refactor GitSpark to Eliminate Subjective Metrics and Enhance Objectivity\n\n- Resolved blue-on-blue text visibility issue in metric boxes by updating CSS styles for better contrast.\n- Removed \"Team Dynamics\" and \"Governance & Code Quality\" sections from HTML reports to ensure objectivity.\n- Aligned repository health score calculation with objective metrics, introducing the Repository Activity Index.\n- Eliminated subjective insights related to co-authorship rates, focusing on measurable collaboration patterns.\n- Completed comprehensive refactoring of Team Effectiveness Scoring to remove speculative metrics and enhance accuracy.\n- Redesigned Team Organization Score to focus on file ownership and specialization, addressing user feedback.\n- Fixed failing tests due to removal of subjective recommendations, ensuring all tests validate objective behavior."
       },
       "stats": {
-        "total": 31,
+        "total": 4339,
         "additions": 3404,
         "deletions": 935
       },
@@ -1323,7 +1355,7 @@
         "message": "fix: address command injection vulnerability with comprehensive input validation and secure argument construction"
       },
       "stats": {
-        "total": 7,
+        "total": 127,
         "additions": 70,
         "deletions": 57
       },
@@ -1339,7 +1371,7 @@
         "message": "Security fix: Prevent command injection vulnerabilities in Git operations\n\n- Add comprehensive input validation for all Git command parameters\n- Replace string interpolation with secure argument arrays\n- Implement protection against shell metacharacters and control characters\n- Add path traversal protection and branch name validation\n- Create extensive security test suite with 21 test cases\n- Update Git utilities to use validated, sanitized inputs\n- Fix CodeQL security alert for command injection vulnerability\n\nThis fix eliminates the potential for command injection through user-controlled\ninputs in Git operations while maintaining full application functionality."
       },
       "stats": {
-        "total": 8,
+        "total": 917,
         "additions": 895,
         "deletions": 22
       },
@@ -1355,7 +1387,7 @@
         "message": "Implement comprehensive updates for team metrics transparency and accuracy\n\n- Added detailed README to reflect Git Spark's commitment to analytical honesty and transparency in reporting.\n- Overhauled team metrics to ensure accurate representation of capabilities derived from Git data.\n- Introduced new analytical integrity section outlining what Git data can and cannot provide.\n- Updated team collaboration, quality, and work-life balance metrics with honest terminology and comprehensive limitations documentation.\n- Enhanced HTML reports and user education features to improve transparency and prevent misinterpretation of metrics.\n- Implemented a new Team Score section to evaluate team effectiveness based on collaboration patterns and commit data.\n- Developed actionable recommendations engine based on team score components for continuous improvement.\n- Ensured all changes maintain backward compatibility and enhance user trust through clear communication of limitations."
       },
       "stats": {
-        "total": 26,
+        "total": 6791,
         "additions": 3784,
         "deletions": 3007
       },
@@ -1371,7 +1403,7 @@
         "message": "feat: add initial HTML report for Git activity analysis\n\n- Created a comprehensive HTML report for git-spark that includes sections for executive summary, top contributors, source code hotspots, risk overview, governance, detailed author profiles, and report metadata.\n- Implemented responsive design and accessibility features, including a theme toggle for dark mode and skip link for navigation.\n- Added styling for various report elements using CSS variables for theming and improved readability.\n- Included JavaScript functionality for sorting tables and pagination for better data presentation."
       },
       "stats": {
-        "total": 13,
+        "total": 3229,
         "additions": 3179,
         "deletions": 50
       },
@@ -1387,7 +1419,7 @@
         "message": "feat: update version to 1.0.9 and replace static import with dynamic import for version handling in GitAnalyzer"
       },
       "stats": {
-        "total": 4,
+        "total": 100,
         "additions": 95,
         "deletions": 5
       },
@@ -1403,7 +1435,7 @@
         "message": "feat: add comprehensive coverage tests for GitAnalyzer and Logger, enhancing test reliability"
       },
       "stats": {
-        "total": 2,
+        "total": 298,
         "additions": 298,
         "deletions": 0
       },
@@ -1419,7 +1451,7 @@
         "message": "feat: implement comprehensive test coverage for console exporter, improving coverage from 0% to 97.8%"
       },
       "stats": {
-        "total": 2,
+        "total": 560,
         "additions": 560,
         "deletions": 0
       },
@@ -1435,7 +1467,7 @@
         "message": "feat: add pretest script to generate version and update test for directory creation"
       },
       "stats": {
-        "total": 2,
+        "total": 4,
         "additions": 3,
         "deletions": 1
       },
@@ -1451,7 +1483,7 @@
         "message": "feat: update version to 1.0.8 and enhance error logging across multiple exporters"
       },
       "stats": {
-        "total": 10,
+        "total": 104,
         "additions": 87,
         "deletions": 17
       },
@@ -1467,7 +1499,7 @@
         "message": "feat: update version to 1.0.5 and enhance .gitignore for .NET binaries"
       },
       "stats": {
-        "total": 4,
+        "total": 48,
         "additions": 40,
         "deletions": 8
       },
@@ -1483,7 +1515,7 @@
         "message": "feat: update package version to 1.0.4 and adjust main entry points in package.json"
       },
       "stats": {
-        "total": 2,
+        "total": 11,
         "additions": 6,
         "deletions": 5
       },
@@ -1499,7 +1531,7 @@
         "message": "feat: implement automatic semantic versioning and enhance version detection in reports"
       },
       "stats": {
-        "total": 9,
+        "total": 313,
         "additions": 215,
         "deletions": 98
       },
@@ -1515,7 +1547,7 @@
         "message": "feat: implement configurable file filtering for source code hotspots in HTML reports"
       },
       "stats": {
-        "total": 7,
+        "total": 716,
         "additions": 697,
         "deletions": 19
       },
@@ -1531,7 +1563,7 @@
         "message": "chore: cleanup repository by removing demo/test files and scripts\n\n- Deleted test HTML report script and associated output files.\n- Removed redundant demo/test output directories and scripts.\n- Cleaned up package.json by removing obsolete scripts.\n- Enhanced .gitignore to prevent recreation of demo/test artifacts.\n- Retained only essential CLI utilities in the scripts directory.\n- Conducted impact analysis showing a 46% reduction in total files and 30% reduction in package size.\n- Ensured all tests pass and build remains functional post-cleanup."
       },
       "stats": {
-        "total": 19,
+        "total": 3588,
         "additions": 140,
         "deletions": 3448
       },
@@ -1547,7 +1579,7 @@
         "message": "fix: update report generation timestamps in HTML output"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1563,7 +1595,7 @@
         "message": "feat: implement CI/CD workflows, enhance package configuration, and prepare for NPM publishing"
       },
       "stats": {
-        "total": 8,
+        "total": 976,
         "additions": 970,
         "deletions": 6
       },
@@ -1579,7 +1611,7 @@
         "message": "feat: add demo report generation with detailed author profiles and commit size distribution"
       },
       "stats": {
-        "total": 6,
+        "total": 1362,
         "additions": 1208,
         "deletions": 154
       },
@@ -1595,7 +1627,7 @@
         "message": "feat: Update report generation timestamps and enhance validation tests"
       },
       "stats": {
-        "total": 7,
+        "total": 939,
         "additions": 915,
         "deletions": 24
       },
@@ -1611,7 +1643,7 @@
         "message": "test outputand custom output updated"
       },
       "stats": {
-        "total": 3,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -1627,7 +1659,7 @@
         "message": "fix: Update report generation timestamps in JSON and HTML outputs"
       },
       "stats": {
-        "total": 3,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -1643,7 +1675,7 @@
         "message": "feat: Add exporters for CSV, JSON, and Markdown formats\n\n- Implemented CSVExporter with tests for exporting analysis reports to CSV files.\n- Implemented JSONExporter with tests for exporting analysis reports to a JSON file.\n- Implemented MarkdownExporter with tests for exporting analysis reports to a Markdown file.\n- Added comprehensive test cases for each exporter, ensuring correct data formatting and file creation.\n- Included handling for special characters and empty arrays in the export processes.\n- Enhanced report generation with metadata and structured sections for better readability."
       },
       "stats": {
-        "total": 9,
+        "total": 2085,
         "additions": 1719,
         "deletions": 366
       },
@@ -1659,7 +1691,7 @@
         "message": "feat: Add dataset toggle functionality and chart placeholders to HTML reports"
       },
       "stats": {
-        "total": 2,
+        "total": 35,
         "additions": 32,
         "deletions": 3
       },
@@ -1675,7 +1707,7 @@
         "message": "feat: Implement detailed author metrics for Git Spark\n\n- Enhanced Type Definitions: Extended AuthorStats interface with new detailed metrics.\n- Improved Analysis Engine: Added core and helper methods for comprehensive metric calculations.\n- Enhanced HTML Output: Introduced new methods for generating detailed author profiles and visual components.\n- Comprehensive CSS Styling: Implemented responsive design and professional styling for author profiles.\n- Added pre-commit hook for linting and testing.\n- Updated TypeScript configuration to include scripts directory.\n- Created smart runner script for HTML report generation that rebuilds only if necessary.\n- Established ESLint configuration for TypeScript with recommended rules."
       },
       "stats": {
-        "total": 15,
+        "total": 3395,
         "additions": 2837,
         "deletions": 558
       },
@@ -1691,7 +1723,7 @@
         "message": "feat: Enhance GitAnalyzer and DataCollector for improved error handling and commit parsing\n\n- Updated GitAnalyzer to gracefully handle missing package.json and git version retrieval errors.\n- Improved error handling in DataCollector's streaming parser to ensure robust commit header parsing.\n- Enhanced commit header validation by counting field separators and ensuring complete headers before processing.\n- Added regression tests for DataCollector to validate parsing of multi-line commit messages and file statistics.\n- Introduced temporary Git repository setup in tests to simulate real-world scenarios for commit parsing."
       },
       "stats": {
-        "total": 7,
+        "total": 680,
         "additions": 543,
         "deletions": 137
       },
@@ -1707,7 +1739,7 @@
         "message": "feat: Enhance HTML report with export options, charts, and accessibility improvements\n\n- Added export controls for JSON and CSV formats in the HTML report.\n- Implemented risk factors and governance metrics visualizations using charts.\n- Introduced dataset toggles for timeline data visualization.\n- Enhanced accessibility features including live regions and improved keyboard navigation.\n- Updated tests to cover new features and ensure proper rendering of export options and charts.\n- Improved overall UX with responsive design adjustments and dark mode support."
       },
       "stats": {
-        "total": 5,
+        "total": 697,
         "additions": 638,
         "deletions": 59
       },
@@ -1723,7 +1755,7 @@
         "message": "feat: enhance HTML report with analysis period display and improve content security policy"
       },
       "stats": {
-        "total": 4,
+        "total": 226,
         "additions": 130,
         "deletions": 96
       },
@@ -1739,7 +1771,7 @@
         "message": "feat: enhance HTML report with dark mode toggle and improved metrics display"
       },
       "stats": {
-        "total": 2,
+        "total": 259,
         "additions": 214,
         "deletions": 45
       },
@@ -1755,7 +1787,7 @@
         "message": "feat: update report generation logic and remove JSON report file"
       },
       "stats": {
-        "total": 3,
+        "total": 332,
         "additions": 92,
         "deletions": 240
       },
@@ -1771,7 +1803,7 @@
         "message": "feat: add redactEmails option and enhance report metadata\n\n- Introduced `redactEmails` option in `GitSparkOptions` to control email redaction in outputs.\n- Enhanced `ReportMetadata` to include `warnings` and `resolvedConfig` for better reporting.\n- Updated validation logic to accommodate the new redaction flag.\n- Refactored HTMLExporter tests to streamline mock report creation and improve test coverage.\n- Added ambient module declarations for dynamically imported exporters to satisfy TypeScript resolver.\n- Created a comprehensive analysis document outlining architecture, risks, and recommendations for future improvements."
       },
       "stats": {
-        "total": 9,
+        "total": 1855,
         "additions": 1200,
         "deletions": 655
       },
@@ -1787,7 +1819,7 @@
         "message": "Refactor Git Spark documentation and reports\n\n- Updated git-spark-report.html with new commit and file statistics.\n- Deleted obsolete CLI-README.md file and organized CLI documentation into dedicated session folders.\n- Added comprehensive Copilot instructions for documentation organization.\n- Created session summary for Copilot activities on September 29, 2025, detailing repository cleanup and organization benefits."
       },
       "stats": {
-        "total": 5,
+        "total": 334,
         "additions": 313,
         "deletions": 21
       },
@@ -1803,7 +1835,7 @@
         "message": "feat: Add Git Spark HTML Report Generator and associated scripts\n\n- Implemented `git-spark-html.ps1` for generating HTML reports from Git repositories.\n- Created `serve-report.ts` to serve the generated HTML report via a simple HTTP server.\n- Developed `test-html-comprehensive.ts` for comprehensive testing of HTML report generation.\n- Added `test-html-report.ts` to validate the generation of HTML reports from the current repository.\n- Introduced `git-spark-report.html` as a sample output for testing and demonstration purposes.\n- Implemented unit tests for `HTMLExporter` to ensure correct HTML structure and content.\n- Enhanced HTML report with Bootstrap for improved styling and responsiveness.\n- Included error handling and graceful shutdown for the HTTP server."
       },
       "stats": {
-        "total": 15,
+        "total": 3423,
         "additions": 2923,
         "deletions": 500
       },
@@ -1819,7 +1851,7 @@
         "message": "refactor: clean up comments and formatting in CLI, analyzer, collector, and JSON exporter files"
       },
       "stats": {
-        "total": 5,
+        "total": 90,
         "additions": 45,
         "deletions": 45
       },
@@ -1835,7 +1867,7 @@
         "message": "feat: implement HTML, JSON, and Markdown exporters for analysis reports\n\n- Added HTMLExporter class to generate interactive HTML reports with charts and visualizations.\n- Introduced JSONExporter class for exporting analysis reports as formatted JSON files.\n- Created MarkdownExporter class to generate Markdown reports with structured data.\n- Defined core types and interfaces in index.ts for better type safety and structure.\n- Implemented GitExecutor class for executing Git commands and handling output.\n- Developed a Logger utility for consistent logging across the application.\n- Added validation utilities to ensure correct options and configurations.\n- Created comprehensive tests for GitSpark functionality and validation utilities.\n- Configured TypeScript with strict settings for improved code quality and maintainability."
       },
       "stats": {
-        "total": 25,
+        "total": 12596,
         "additions": 12594,
         "deletions": 2
       },
@@ -1851,7 +1883,7 @@
         "message": "Update .gitignore to include Visual Studio and ReSharper files"
       },
       "stats": {
-        "total": 1,
+        "total": 142,
         "additions": 142,
         "deletions": 0
       },
@@ -1867,7 +1899,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 162,
         "additions": 162,
         "deletions": 0
       },

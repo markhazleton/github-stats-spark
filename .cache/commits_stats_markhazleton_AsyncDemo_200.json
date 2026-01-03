@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:31:48.244616",
+  "timestamp": "2026-01-02T20:02:19.165190",
   "value": [
     {
       "sha": "ee6028d82240587e6be7e674f4797ecfd53a120f",
@@ -11,7 +11,7 @@
         "message": "Integrate Bootswatch and improve API handling\n\n- Added `WebSpark.Bootswatch` and `WebSpark.HttpClientUtility` packages for dynamic theme switching and enhanced HTTP client utilities.\n- Updated `RemoteController` with `[Consumes(\"application/json\")]` and `[FromBody]` for better API content type handling.\n- Refactored `PollyController` to use `HttpClient.PostAsync` with JSON serialization and added detailed logging.\n- Integrated Bootswatch services and middleware in `Program.cs` and updated `_Layout.cshtml` to dynamically load themes.\n- Removed redundant custom styles, scripts, and dependencies related to theming, simplifying the project.\n- Updated `appsettings.json` with Bootswatch and Polly configuration options.\n- Simplified `build.js` by removing Bootstrap Icons font copying, as they are now loaded via CDN.\n- Updated `package.json` to remove unused dependencies and ensure compatibility with the new theming system.\n- Added detailed documentation and scripts for testing and troubleshooting API and build issues."
       },
       "stats": {
-        "total": 28,
+        "total": 10636,
         "additions": 3017,
         "deletions": 7619
       },
@@ -27,7 +27,7 @@
         "message": "Refactor OpenWeatherMap models to use required properties for better null safety; update Bootstrap license in site.min.js.LICENSE.txt; add AssemblyInfo.cs for test parallelization configuration."
       },
       "stats": {
-        "total": 13,
+        "total": 155,
         "additions": 104,
         "deletions": 51
       },
@@ -43,7 +43,7 @@
         "message": "feat: Implement comprehensive educational platform for async/await patterns\n\n- Added new learning page at `/home/learn` with structured modules for Beginner, Intermediate, and Advanced paths.\n- Created detailed interactive modules covering key async concepts such as cancellation tokens, parallel execution, and resilience patterns.\n- Developed new API controllers to demonstrate focused async patterns with real-world scenarios.\n- Enhanced documentation with clear learning objectives, code references, and common pitfalls.\n- Updated existing controllers and views to emphasize learning outcomes and improve navigation.\n- Introduced extensive test suites to validate async patterns and ensure robust implementation."
       },
       "stats": {
-        "total": 19,
+        "total": 3531,
         "additions": 3477,
         "deletions": 54
       },
@@ -59,7 +59,7 @@
         "message": "Enhance encoding, UI, and middleware functionality\n\n- Added `EncodingMiddleware` to enforce UTF-8 encoding for all responses.\n- Updated `Program.cs` to include `UseEncodingMiddleware` and simplified memory cache health checks.\n- Redesigned `Error.cshtml` with Bootstrap cards and alerts for improved UX.\n- Upgraded Bootstrap and Bootstrap Icons to latest versions (5.3.3, 1.11.3).\n- Replaced Unicode emojis in `README.md` with ASCII-safe markers to fix encoding issues.\n- Updated `web.config` to ensure UTF-8 encoding for IIS responses.\n- Changed header handling in `RequestLoggingMiddleware` for safer operations.\n- Made `BuildVersion` nullable in `ApplicationStatus.cs` to handle unset scenarios.\n- Removed unused `System.Text.Json` package from `OpenWeatherMapClient.csproj`.\n- Added performance optimizations in `webpack.config.js` for asset size limits.\n- Improved documentation with guides for Bootstrap updates and encoding fixes."
       },
       "stats": {
-        "total": 16,
+        "total": 799,
         "additions": 717,
         "deletions": 82
       },
@@ -75,7 +75,7 @@
         "message": "update AsyncDemo.Web/AsyncDemo.Web.csproj and AsyncDemo.Web/wwwroot/AsyncDemo.Web.xml"
       },
       "stats": {
-        "total": 2,
+        "total": 83,
         "additions": 56,
         "deletions": 27
       },
@@ -91,7 +91,7 @@
         "message": "Upgrade to .NET 10 and migrate from Swagger to Scalar\n\nUpgraded all projects to target .NET 10, updating `TargetFramework` to `net10.0` and incrementing assembly versions. Updated NuGet dependencies to their latest versions compatible with .NET 10.\n\nReplaced Swagger/Swashbuckle with Scalar for API documentation. Introduced `Scalar.AspNetCore` and replaced `CustomSwaggerExtensions.cs` with `CustomScalarExtensions.cs`. Updated `Program.cs` to use Scalar methods and removed the `swagger-ui` folder.\n\nCustomized Scalar UI with a \"Back to Home\" button and enhanced API descriptions. Updated `launchSettings.json` to set `/scalar/v1` as the default launch URL. Updated UI references in `Index.cshtml` and `_Layout.cshtml` to point to Scalar endpoints.\n\nOverhauled documentation, including `README.md`, and added detailed migration guides (`MIGRATION_TO_SCALAR.md`, etc.). Improved XML documentation in `AsyncDemo.Web.xml` for comprehensive API coverage.\n\nPerformed thorough testing to validate Scalar endpoints and removed all Swagger references. Cleaned up outdated code and ensured the project is maintainable and future-ready."
       },
       "stats": {
-        "total": 24,
+        "total": 2852,
         "additions": 2674,
         "deletions": 178
       },
@@ -107,7 +107,7 @@
         "message": "Update main_azyncdemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 2,
         "deletions": 1
       },
@@ -123,7 +123,7 @@
         "message": "Merge pull request #4 from markhazleton/upgrade-to-NET10\n\nUpgrade to Net 10"
       },
       "stats": {
-        "total": 28,
+        "total": 1047,
         "additions": 884,
         "deletions": 163
       },
@@ -139,7 +139,7 @@
         "message": "Update NuGet packages and adjust OpenAPI usage\n\nUpdated several NuGet package versions in `AsyncDemo.Tests.csproj`:\n- `Microsoft.NET.Test.Sdk` to 18.0.1\n- `MSTest.TestAdapter` and `MSTest.TestFramework` to 4.0.2\n\nIn `AsyncDemo.Web.csproj`, updated:\n- `Microsoft.Extensions.Http.Resilience` to 10.0.0\n- `Swashbuckle.AspNetCore` to 10.0.0\n- Added `Microsoft.OpenApi` version 2.3.0\n\nModified `CustomSwaggerExtensions.cs` to use `Microsoft.OpenApi`\ninstead of `Microsoft.OpenApi.Models`, aligning with the new\npackage addition and potentially reorganizing OpenAPI usage."
       },
       "stats": {
-        "total": 3,
+        "total": 15,
         "additions": 8,
         "deletions": 7
       },
@@ -155,7 +155,7 @@
         "message": "Fix nullable reference warnings CS8600-CS8604"
       },
       "stats": {
-        "total": 13,
+        "total": 156,
         "additions": 84,
         "deletions": 72
       },
@@ -171,7 +171,7 @@
         "message": "Add XML documentation comments to resolve CS1591 warnings"
       },
       "stats": {
-        "total": 7,
+        "total": 329,
         "additions": 256,
         "deletions": 73
       },
@@ -187,7 +187,7 @@
         "message": "Complete .NET 10 upgrade - Updated all projects and packages to .NET 10"
       },
       "stats": {
-        "total": 9,
+        "total": 155,
         "additions": 119,
         "deletions": 36
       },
@@ -203,7 +203,7 @@
         "message": "Commit changes before fixing global.json file(s)."
       },
       "stats": {
-        "total": 3,
+        "total": 442,
         "additions": 442,
         "deletions": 0
       },
@@ -219,7 +219,7 @@
         "message": "Refactor for DI, logging, and security improvements\n\nRefactored BaseController to follow DI best practices using ILogger and IHttpClientFactory. Updated BulkCallsController and OpenWeatherController to align with the new BaseController pattern. Enhanced HomeController with improved error handling and logging.\n\nIntroduced RequestLoggingMiddleware for structured request/response logging. Added ConfigurationValidationService and StartupService for configuration validation and initialization tasks. Enhanced health checks with configuration validation and memory cache checks.\n\nImproved HTTP client configuration with default timeouts and removed anti-patterns. Added security headers, HSTS, and forwarded headers support. Enhanced session management with secure cookie settings.\n\nUpdated Program.cs to register new services and middleware. Improved logging configuration with structured logging and graceful shutdown handling. Added XML documentation for new features and created IMPROVEMENTS_SUMMARY.md.\n\nImproved maintainability, reliability, and observability by following modern .NET best practices."
       },
       "stats": {
-        "total": 12,
+        "total": 853,
         "additions": 744,
         "deletions": 109
       },
@@ -235,7 +235,7 @@
         "message": "Upgrade package dependencies across all projects\n\nUpdated package references in `AsyncDemo.Tests.csproj`, `AsyncDemo.Web.csproj`, `AsyncDemo.csproj`, and `OpenWeatherMapClient.csproj` to newer versions for improved compatibility, bug fixes, and security enhancements. Key updates include:\n\n- Upgraded `Microsoft.Extensions.*` packages to version `9.0.10`.\n- Upgraded `Azure.Identity` to version `1.17.0`.\n- Upgraded `Microsoft.NET.Test.Sdk` to version `18.0.0`.\n- Upgraded MSTest packages to version `4.0.1`.\n- Upgraded `Polly` to version `8.6.4` and `Swashbuckle.AspNetCore` to version `9.0.6`.\n\nThese changes ensure consistency and alignment across all projects."
       },
       "stats": {
-        "total": 4,
+        "total": 40,
         "additions": 20,
         "deletions": 20
       },
@@ -251,7 +251,7 @@
         "message": "Update NuGet packages and clean up code\n\nUpdated project files for `AsyncDemo.Tests`, `AsyncDemo.Web`, `AsyncDemo`, and `OpenWeatherMapClient` to reference the latest versions of various NuGet packages. Removed an unused `using` directive in `BulkCallsController.cs` for improved code cleanliness. These changes ensure the project benefits from the latest features and fixes."
       },
       "stats": {
-        "total": 5,
+        "total": 43,
         "additions": 21,
         "deletions": 22
       },
@@ -267,7 +267,7 @@
         "message": "Update NuGet packages and refactor tests\n\nUpdated several NuGet package versions across the `AsyncDemo` project and its components, including key libraries such as `Microsoft.Extensions` and `Azure.Identity`. Removed the `PerformActionWithLock_ShouldPerformAction` test method from `MemoryCacheManagerTests.cs`. Additionally, created or updated the solution file `AsyncDemo.sln` to enhance project configuration and management in Visual Studio."
       },
       "stats": {
-        "total": 6,
+        "total": 67,
         "additions": 39,
         "deletions": 28
       },
@@ -283,7 +283,7 @@
         "message": "clean up warnings"
       },
       "stats": {
-        "total": 3,
+        "total": 52,
         "additions": 34,
         "deletions": 18
       },
@@ -299,7 +299,7 @@
         "message": "update the theme switching"
       },
       "stats": {
-        "total": 20,
+        "total": 3108,
         "additions": 1726,
         "deletions": 1382
       },
@@ -315,7 +315,7 @@
         "message": "update startup / ui changes"
       },
       "stats": {
-        "total": 4,
+        "total": 585,
         "additions": 401,
         "deletions": 184
       },
@@ -331,7 +331,7 @@
         "message": "fix build"
       },
       "stats": {
-        "total": 1,
+        "total": 41,
         "additions": 25,
         "deletions": 16
       },
@@ -347,7 +347,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 68,
         "additions": 68,
         "deletions": 0
       },
@@ -363,7 +363,7 @@
         "message": "Delete .github/workflows/main_asyncdemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 74,
         "additions": 0,
         "deletions": 74
       },
@@ -379,7 +379,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 38,
         "additions": 24,
         "deletions": 14
       },
@@ -395,7 +395,7 @@
         "message": "update workflow"
       },
       "stats": {
-        "total": 1,
+        "total": 65,
         "additions": 65,
         "deletions": 0
       },
@@ -411,7 +411,7 @@
         "message": "vibing a new ui"
       },
       "stats": {
-        "total": 10,
+        "total": 3737,
         "additions": 1724,
         "deletions": 2013
       },
@@ -427,7 +427,7 @@
         "message": "vibing with vs code"
       },
       "stats": {
-        "total": 55,
+        "total": 34908,
         "additions": 10004,
         "deletions": 24904
       },
@@ -459,7 +459,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 4,
+        "total": 34,
         "additions": 17,
         "deletions": 17
       },
@@ -475,7 +475,7 @@
         "message": "package Updates"
       },
       "stats": {
-        "total": 4,
+        "total": 36,
         "additions": 18,
         "deletions": 18
       },
@@ -491,7 +491,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 59,
         "additions": 22,
         "deletions": 37
       },
@@ -507,7 +507,7 @@
         "message": "Update main_asyncdemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -523,7 +523,7 @@
         "message": "Update main_asyncdemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 22,
         "additions": 13,
         "deletions": 9
       },
@@ -539,7 +539,7 @@
         "message": "Update main_asyncdemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 17,
         "additions": 10,
         "deletions": 7
       },
@@ -555,7 +555,7 @@
         "message": "Update main_asyncdemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 15,
         "additions": 11,
         "deletions": 4
       },
@@ -571,7 +571,7 @@
         "message": "Update main_asyncdemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 22,
         "additions": 11,
         "deletions": 11
       },
@@ -587,7 +587,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 6,
+        "total": 247,
         "additions": 117,
         "deletions": 130
       },
@@ -603,7 +603,23 @@
         "message": "Merge pull request #2 from markhazleton/dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7\n\nBump actions/download-artifact from 3 to 4.1.7 in /.github/workflows"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "756fbc9949a406646ae070c54720f36ea8b8501d",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-09-03T22:45:32+00:00"
+        },
+        "message": "Bump actions/download-artifact from 3 to 4.1.7 in /.github/workflows\n\nBumps [actions/download-artifact](https://github.com/actions/download-artifact) from 3 to 4.1.7.\n- [Release notes](https://github.com/actions/download-artifact/releases)\n- [Commits](https://github.com/actions/download-artifact/compare/v3...v4.1.7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/download-artifact\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -619,7 +635,7 @@
         "message": "update nuget packages"
       },
       "stats": {
-        "total": 3,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -635,7 +651,7 @@
         "message": "Refactore use of Polly for remote calls"
       },
       "stats": {
-        "total": 7,
+        "total": 367,
         "additions": 214,
         "deletions": 153
       },
@@ -651,7 +667,7 @@
         "message": "package update\nrefactoring stuff"
       },
       "stats": {
-        "total": 9,
+        "total": 101,
         "additions": 62,
         "deletions": 39
       },
@@ -667,7 +683,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 4,
+        "total": 39,
         "additions": 24,
         "deletions": 15
       },
@@ -683,7 +699,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 6,
+        "total": 15,
         "additions": 6,
         "deletions": 9
       },
@@ -699,7 +715,7 @@
         "message": "fix fil location for upload"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -715,7 +731,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 3,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -731,7 +747,7 @@
         "message": "nuGet updates"
       },
       "stats": {
-        "total": 4,
+        "total": 24,
         "additions": 10,
         "deletions": 14
       },
@@ -747,7 +763,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -763,7 +779,7 @@
         "message": "fix urls"
       },
       "stats": {
-        "total": 6,
+        "total": 208,
         "additions": 202,
         "deletions": 6
       },
@@ -779,7 +795,7 @@
         "message": "remove keyvault logic"
       },
       "stats": {
-        "total": 6,
+        "total": 224,
         "additions": 3,
         "deletions": 221
       },
@@ -795,7 +811,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 4,
         "deletions": 2
       },
@@ -811,7 +827,7 @@
         "message": "Delete .github/workflows/main_asyncdemoweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 0,
         "deletions": 57
       },
@@ -827,7 +843,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
       },
@@ -843,7 +859,7 @@
         "message": "update packages, code cleanup"
       },
       "stats": {
-        "total": 10,
+        "total": 135,
         "additions": 70,
         "deletions": 65
       },
@@ -859,7 +875,7 @@
         "message": "improve formatting of Polly test"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -875,7 +891,7 @@
         "message": "improve polly test page layout"
       },
       "stats": {
-        "total": 7,
+        "total": 106,
         "additions": 58,
         "deletions": 48
       },
@@ -891,7 +907,7 @@
         "message": "Add Cancellation Token to Get Call Service"
       },
       "stats": {
-        "total": 11,
+        "total": 360,
         "additions": 258,
         "deletions": 102
       },
@@ -907,7 +923,7 @@
         "message": "Add Fire And Forget Demos"
       },
       "stats": {
-        "total": 8,
+        "total": 235,
         "additions": 217,
         "deletions": 18
       },
@@ -923,7 +939,7 @@
         "message": "NuGet Updates"
       },
       "stats": {
-        "total": 3,
+        "total": 10,
         "additions": 5,
         "deletions": 5
       },
@@ -939,7 +955,7 @@
         "message": "Package Updates, minor tweaks, add unit tests"
       },
       "stats": {
-        "total": 7,
+        "total": 182,
         "additions": 135,
         "deletions": 47
       },
@@ -955,7 +971,7 @@
         "message": "NuGet Updates"
       },
       "stats": {
-        "total": 3,
+        "total": 16,
         "additions": 8,
         "deletions": 8
       },
@@ -971,7 +987,7 @@
         "message": "minor ui changes"
       },
       "stats": {
-        "total": 7,
+        "total": 89,
         "additions": 21,
         "deletions": 68
       },
@@ -987,7 +1003,7 @@
         "message": "Merge pull request #1 from markhazleton/feature/net8\n\nImplement Net 8"
       },
       "stats": {
-        "total": 17,
+        "total": 128,
         "additions": 73,
         "deletions": 55
       },
@@ -1003,7 +1019,7 @@
         "message": "Update NuGet\nTarget Net 8"
       },
       "stats": {
-        "total": 5,
+        "total": 23,
         "additions": 15,
         "deletions": 8
       },
@@ -1019,7 +1035,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 9,
+        "total": 81,
         "additions": 46,
         "deletions": 35
       },
@@ -1035,7 +1051,7 @@
         "message": "Update to Net8"
       },
       "stats": {
-        "total": 6,
+        "total": 36,
         "additions": 18,
         "deletions": 18
       },
@@ -1051,7 +1067,7 @@
         "message": "Cache the Status to improve performance and reduce impact of multiple calls."
       },
       "stats": {
-        "total": 4,
+        "total": 36,
         "additions": 29,
         "deletions": 7
       },
@@ -1067,7 +1083,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 57,
         "deletions": 0
       },
@@ -1083,7 +1099,7 @@
         "message": "Update NuGet Packages. . ."
       },
       "stats": {
-        "total": 9,
+        "total": 148,
         "additions": 108,
         "deletions": 40
       },
@@ -1099,9 +1115,25 @@
         "message": "nuget version updates"
       },
       "stats": {
-        "total": 3,
+        "total": 17,
         "additions": 9,
         "deletions": 8
+      },
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "339b76a7b9d72683826f9e8dd9e69ee3bef3daba",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-06-08T16:59:27+00:00"
+        },
+        "message": "create new publish profile"
+      },
+      "stats": {
+        "total": 396,
+        "additions": 179,
+        "deletions": 217
       },
       "repo": "AsyncDemo"
     },
@@ -1115,7 +1147,7 @@
         "message": "Delete azure-webapps-dotnet-core.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 89,
         "additions": 0,
         "deletions": 89
       },
@@ -1131,7 +1163,7 @@
         "message": "Delete main_asyncdemoweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 0,
         "deletions": 57
       },
@@ -1147,7 +1179,7 @@
         "message": "Update main_asyncdemoweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1163,7 +1195,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 57,
         "deletions": 0
       },
@@ -1179,7 +1211,7 @@
         "message": "Update azure-webapps-dotnet-core.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 2,
         "deletions": 1
       },
@@ -1195,7 +1227,7 @@
         "message": "Update azure-webapps-dotnet-core.yml\n\nfix .net version"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1211,7 +1243,7 @@
         "message": "Create azure-webapps-dotnet-core.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 88,
         "additions": 88,
         "deletions": 0
       },
@@ -1227,7 +1259,7 @@
         "message": "Delete main_asyncdemoweb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 0,
         "deletions": 57
       },
@@ -1243,7 +1275,7 @@
         "message": "work on publish profile"
       },
       "stats": {
-        "total": 2,
+        "total": 3,
         "additions": 2,
         "deletions": 1
       },
@@ -1259,7 +1291,7 @@
         "message": "Bump Versions\nUI Tweaks on home page"
       },
       "stats": {
-        "total": 9,
+        "total": 2035,
         "additions": 925,
         "deletions": 1110
       },
@@ -1275,7 +1307,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 57,
         "additions": 57,
         "deletions": 0
       },
@@ -1291,7 +1323,7 @@
         "message": "Delete AsyncDemoWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 48,
         "additions": 0,
         "deletions": 48
       },
@@ -1307,7 +1339,7 @@
         "message": "minor tweaks"
       },
       "stats": {
-        "total": 2,
+        "total": 5,
         "additions": 1,
         "deletions": 4
       },
@@ -1323,7 +1355,7 @@
         "message": "nuget updates"
       },
       "stats": {
-        "total": 3,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -1339,7 +1371,7 @@
         "message": "merge readme.md versions"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 4,
         "deletions": 1
       },
@@ -1355,7 +1387,7 @@
         "message": "update footer"
       },
       "stats": {
-        "total": 4,
+        "total": 150,
         "additions": 148,
         "deletions": 2
       },
@@ -1371,7 +1403,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 6,
         "deletions": 0
       },
@@ -1387,7 +1419,7 @@
         "message": "update publishing profiles"
       },
       "stats": {
-        "total": 9,
+        "total": 496,
         "additions": 18,
         "deletions": 478
       },
@@ -1403,7 +1435,7 @@
         "message": "update NuGet, remove deprecated package"
       },
       "stats": {
-        "total": 4,
+        "total": 146,
         "additions": 144,
         "deletions": 2
       },
@@ -1419,7 +1451,7 @@
         "message": "add link to https://markhazleton.controlorigins.com/cancellation-token.html"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 3,
         "deletions": 0
       },
@@ -1435,7 +1467,7 @@
         "message": "pass token to async methods"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1451,7 +1483,7 @@
         "message": "Add Tests for Cancellation Token"
       },
       "stats": {
-        "total": 3,
+        "total": 36,
         "additions": 28,
         "deletions": 8
       },
@@ -1467,7 +1499,7 @@
         "message": "Update Packages"
       },
       "stats": {
-        "total": 9,
+        "total": 43,
         "additions": 21,
         "deletions": 22
       },
@@ -1483,7 +1515,7 @@
         "message": "Update AsyncDemoWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1499,7 +1531,7 @@
         "message": "Add HttpGetService with Telemetry decorator"
       },
       "stats": {
-        "total": 20,
+        "total": 476,
         "additions": 330,
         "deletions": 146
       },
@@ -1515,7 +1547,7 @@
         "message": "Update Home page frrom README.md\nFix issue with footer on mobile\nFis URL for Mark Hazleton profile link"
       },
       "stats": {
-        "total": 16,
+        "total": 456,
         "additions": 309,
         "deletions": 147
       },
@@ -1531,7 +1563,7 @@
         "message": "Update to Net 7"
       },
       "stats": {
-        "total": 7,
+        "total": 20,
         "additions": 10,
         "deletions": 10
       },
@@ -1547,7 +1579,7 @@
         "message": "Update XML docs, clean-up"
       },
       "stats": {
-        "total": 13,
+        "total": 254,
         "additions": 141,
         "deletions": 113
       },
@@ -1563,7 +1595,7 @@
         "message": "Refactor List of Current Weather"
       },
       "stats": {
-        "total": 6,
+        "total": 367,
         "additions": 331,
         "deletions": 36
       },
@@ -1579,9 +1611,25 @@
         "message": "updates packages / footer update"
       },
       "stats": {
-        "total": 4,
+        "total": 22,
         "additions": 11,
         "deletions": 11
+      },
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "94696df6d4c21e5e83ff0912c63a594487df8946",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-13T06:17:30+00:00"
+        },
+        "message": "update nuget"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
       },
       "repo": "AsyncDemo"
     },
@@ -1595,7 +1643,7 @@
         "message": "Updates, check for bad connection to User Secrets"
       },
       "stats": {
-        "total": 3,
+        "total": 15,
         "additions": 11,
         "deletions": 4
       },
@@ -1611,7 +1659,7 @@
         "message": "NuGet Updates"
       },
       "stats": {
-        "total": 3,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -1627,7 +1675,7 @@
         "message": "add workflow for github action"
       },
       "stats": {
-        "total": 3,
+        "total": 129,
         "additions": 129,
         "deletions": 0
       },
@@ -1643,7 +1691,7 @@
         "message": "fix routing for status api controller"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -1659,7 +1707,7 @@
         "message": "add config int support"
       },
       "stats": {
-        "total": 2,
+        "total": 192,
         "additions": 113,
         "deletions": 79
       },
@@ -1675,7 +1723,7 @@
         "message": "rename AsyncMock to AsyncMockService"
       },
       "stats": {
-        "total": 9,
+        "total": 90,
         "additions": 73,
         "deletions": 17
       },
@@ -1691,7 +1739,7 @@
         "message": "Add test for app settings"
       },
       "stats": {
-        "total": 1,
+        "total": 32,
         "additions": 32,
         "deletions": 0
       },
@@ -1707,7 +1755,7 @@
         "message": "Add extension for Get Configuration values to check for type and missing values"
       },
       "stats": {
-        "total": 1,
+        "total": 97,
         "additions": 97,
         "deletions": 0
       },
@@ -1723,7 +1771,7 @@
         "message": "update icon"
       },
       "stats": {
-        "total": 5,
+        "total": 14,
         "additions": 14,
         "deletions": 0
       },
@@ -1739,7 +1787,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1755,7 +1803,7 @@
         "message": "Add project files."
       },
       "stats": {
-        "total": 116,
+        "total": 31047,
         "additions": 31047,
         "deletions": 0
       },
@@ -1771,7 +1819,7 @@
         "message": "Add .gitattributes and LICENSE.txt."
       },
       "stats": {
-        "total": 2,
+        "total": 84,
         "additions": 84,
         "deletions": 0
       },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:50:44.393529",
+  "timestamp": "2026-01-02T20:24:08.369320",
   "value": [
     {
       "sha": "60baee6aa9c206a0e9463c4c8816207009503213",
@@ -11,7 +11,7 @@
         "message": "Add new SVG icon components: info-circle, profile, and search\n\n- Created `info-circle-IPnV1waG.js` for the info-circle icon with customizable properties.\n- Created `profile-BXyl_00R.js` for the profile icon, supporting color, size, title, and className props.\n- Created `search-CsUTBgux.js` for the search icon, also allowing customization of color, size, title, and className."
       },
       "stats": {
-        "total": 34,
+        "total": 314,
         "additions": 153,
         "deletions": 161
       },
@@ -27,7 +27,7 @@
         "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon with customizable properties.\n- Added `profile` icon with various attributes for color, size, and title.\n- Created `search` icon component, also supporting customization.\n- All components utilize React and PropTypes for type checking."
       },
       "stats": {
-        "total": 66,
+        "total": 1183,
         "additions": 705,
         "deletions": 478
       },
@@ -43,7 +43,7 @@
         "message": "chore: add package overrides for cookie and tmp dependencies"
       },
       "stats": {
-        "total": 2,
+        "total": 1668,
         "additions": 894,
         "deletions": 774
       },
@@ -59,9 +59,25 @@
         "message": "Add new SVG components and update existing assets\n\n- Introduced new SVG components for info-circle, profile, and search functionalities.\n- Enhanced the profile component with additional props for better customization.\n- Implemented forwardRef for SVG components to allow ref forwarding.\n- Updated asset files to include necessary imports and prop types for better type checking."
       },
       "stats": {
-        "total": 25,
+        "total": 54,
         "additions": 54,
         "deletions": 0
+      },
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "5bbc77e946a7b4a92fb213502da77749dd1e96c8",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-11-16T13:44:15+00:00"
+        },
+        "message": "Bump js-yaml from 4.1.0 to 4.1.1 (#16)\n\nBumps [js-yaml](https://github.com/nodeca/js-yaml) from 4.1.0 to 4.1.1.\n- [Changelog](https://github.com/nodeca/js-yaml/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/nodeca/js-yaml/compare/4.1.0...4.1.1)\n\n---\nupdated-dependencies:\n- dependency-name: js-yaml\n  dependency-version: 4.1.1\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
       },
       "repo": "ReactSparkPortfolio"
     },
@@ -75,7 +91,7 @@
         "message": "Add new SVG components and assets for ReactSpark application\n\n- Introduced `index-DetDEU9z.js` for main application logic.\n- Added `info-circle-DO9tuuYf.js` component for info circle icon.\n- Implemented `profile-D7LpDnzG.js` component for profile icon with extensive features.\n- Created `search-DuY7ttz6.js` component for search icon functionality.\n- Enhanced the overall structure and organization of SVG assets."
       },
       "stats": {
-        "total": 38,
+        "total": 1126,
         "additions": 860,
         "deletions": 266
       },
@@ -91,9 +107,25 @@
         "message": "Refactor code structure for improved readability and maintainability; removed redundant code blocks and optimized function calls."
       },
       "stats": {
-        "total": 188,
+        "total": 26937,
         "additions": 26937,
         "deletions": 0
+      },
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "352ef0a0f0c329c370067a5dc146877df239fe17",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-20T22:58:59+00:00"
+        },
+        "message": "Bump vite from 7.1.9 to 7.1.11\n\nBumps [vite](https://github.com/vitejs/vite/tree/HEAD/packages/vite) from 7.1.9 to 7.1.11.\n- [Release notes](https://github.com/vitejs/vite/releases)\n- [Changelog](https://github.com/vitejs/vite/blob/main/packages/vite/CHANGELOG.md)\n- [Commits](https://github.com/vitejs/vite/commits/v7.1.11/packages/vite)\n\n---\nupdated-dependencies:\n- dependency-name: vite\n  dependency-version: 7.1.11\n  dependency-type: direct:development\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
       },
       "repo": "ReactSparkPortfolio"
     },
@@ -107,7 +139,7 @@
         "message": "feat: Implement cache busting and version management system\n\n- Enhanced Vite build configuration to include file hashing for cache busting.\n- Added a new documentation file detailing the cache busting and version management features.\n- Created `UpdateNotification` component for user notifications about available updates.\n- Developed `useVersionCheck` hook to manage version checking and updates.\n- Introduced image utility functions for cache busting and optimization.\n- Implemented a version management utility to handle versioning and update checks."
       },
       "stats": {
-        "total": 12,
+        "total": 772,
         "additions": 633,
         "deletions": 139
       },
@@ -123,7 +155,7 @@
         "message": "feat: Transform project image URLs to absolute paths and enhance validation in ProjectService"
       },
       "stats": {
-        "total": 4,
+        "total": 54,
         "additions": 36,
         "deletions": 18
       },
@@ -139,7 +171,7 @@
         "message": "feat: Add proxy services for jokes and projects, including error handling and caching\n\n- Implemented Azure Functions to proxy requests for jokes and projects.\n- Added CORS support and error handling in proxy functions.\n- Integrated Axios for API requests with timeouts and fallback data.\n- Enhanced Vite configuration to include SCSS preprocessor options and asset handling for font files.\n- Created a custom FontAwesome CSS file to resolve build-time warnings.\n- Developed JokeService and ProjectService for fetching data with caching mechanisms.\n- Included detailed logging for request and response handling in proxies."
       },
       "stats": {
-        "total": 199,
+        "total": 28994,
         "additions": 5034,
         "deletions": 23960
       },
@@ -155,7 +187,7 @@
         "message": "Add new SVG components for info-circle, profile, and search icons\n\n- Implemented `info-circle` icon component with customizable properties.\n- Created `profile` icon component featuring multiple paths and props.\n- Developed `search` icon component with adjustable size and color.\n- All components utilize React's forwardRef and prop-types for better integration and type checking."
       },
       "stats": {
-        "total": 41,
+        "total": 15351,
         "additions": 249,
         "deletions": 15102
       },
@@ -171,7 +203,7 @@
         "message": "feat: Implement connection retry logic in Chat component; enhance error handling and UI feedback"
       },
       "stats": {
-        "total": 3,
+        "total": 150,
         "additions": 124,
         "deletions": 26
       },
@@ -187,7 +219,7 @@
         "message": "feat: Enhance Chat component with input sanitization and message handling; add CSS for layout"
       },
       "stats": {
-        "total": 3,
+        "total": 308,
         "additions": 131,
         "deletions": 177
       },
@@ -203,7 +235,7 @@
         "message": "chore: update build artifacts and dependency lockfile"
       },
       "stats": {
-        "total": 27,
+        "total": 288,
         "additions": 144,
         "deletions": 144
       },
@@ -219,7 +251,7 @@
         "message": "Add new SVG icon components and update existing assets\n\n- Introduced new icon components: info-circle, profile, and search.\n- Implemented forwardRef for better ref handling in icon components.\n- Added prop types for color, size, title, and className for better type checking.\n- Updated the index file to export new components for usage in the application."
       },
       "stats": {
-        "total": 25,
+        "total": 72,
         "additions": 36,
         "deletions": 36
       },
@@ -235,7 +267,7 @@
         "message": "feat: Enhance Chat component with connection error handling and retry functionality"
       },
       "stats": {
-        "total": 2,
+        "total": 89,
         "additions": 62,
         "deletions": 27
       },
@@ -251,7 +283,7 @@
         "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon component with customizable properties.\n- Added `profile` icon component featuring multiple paths and props.\n- Created `search` icon component with adjustable size and color.\n- All components utilize React's forwardRef and prop-types for better integration and validation."
       },
       "stats": {
-        "total": 28,
+        "total": 146,
         "additions": 84,
         "deletions": 62
       },
@@ -267,7 +299,7 @@
         "message": "feat: Add comprehensive API dependencies documentation for ReactSparkPortfolio"
       },
       "stats": {
-        "total": 1,
+        "total": 318,
         "additions": 318,
         "deletions": 0
       },
@@ -283,7 +315,7 @@
         "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon component with customizable properties.\n- Created `profile` icon component featuring multiple paths and props.\n- Added `search` icon component with adjustable size and color.\n- All components utilize React's forwardRef for better ref handling.\n- Included prop types for validation and improved documentation."
       },
       "stats": {
-        "total": 30,
+        "total": 809,
         "additions": 412,
         "deletions": 397
       },
@@ -299,9 +331,57 @@
         "message": "feat: Add search icon component and SVG implementation\n\ndocs: Introduce comprehensive architecture documentation\n\ndocs: Create a detailed changelog for project updates\n\ndocs: Establish contributing guidelines for project collaboration\n\ndocs: Develop a deployment guide for various hosting options\n\ndocs: Summarize SASS and CSS implementation improvements\n\ndocs: Outline a migration plan for transitioning to modern SASS syntax"
       },
       "stats": {
-        "total": 51,
+        "total": 5066,
         "additions": 3604,
         "deletions": 1462
+      },
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "677efe5c05eb3f761e107e8ca4503edde35ef3b2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-24T22:29:08+00:00"
+        },
+        "message": "feat: add admin CRUD application with Express for managing projects.json"
+      },
+      "stats": {
+        "total": 8510,
+        "additions": 6342,
+        "deletions": 2168
+      },
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "1c57523cf2a275bb43d78647f1a6804f14f894b6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-20T19:28:19+00:00"
+        },
+        "message": "Update README.md with detailed CI/CD workflow and configuration steps"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 29,
+        "deletions": 2
+      },
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "56a9ea583c7715e927ab50e3948900aa9447906a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-20T19:19:28+00:00"
+        },
+        "message": "Add new SVG icon components for info circle, profile, and search\n\n- Implemented `info-circle` icon with customizable properties.\n- Created `profile` icon with various attributes for color, size, and title.\n- Added `search` icon component, enhancing the icon library.\n- Each component supports forward refs and prop types for better integration."
+      },
+      "stats": {
+        "total": 1996,
+        "additions": 678,
+        "deletions": 1318
       },
       "repo": "ReactSparkPortfolio"
     },
@@ -315,7 +395,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -331,7 +411,7 @@
         "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon component with customizable properties.\n- Added `profile` icon component featuring multiple paths and props.\n- Created `search` icon component with adjustable size and color.\n- All components utilize forwardRef for better integration with React."
       },
       "stats": {
-        "total": 54,
+        "total": 792,
         "additions": 383,
         "deletions": 409
       },
@@ -347,7 +427,7 @@
         "message": "update some UI"
       },
       "stats": {
-        "total": 35,
+        "total": 1371,
         "additions": 1020,
         "deletions": 351
       },
@@ -363,7 +443,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 25,
+        "total": 172,
         "additions": 86,
         "deletions": 86
       },
@@ -379,7 +459,7 @@
         "message": "remove old url references"
       },
       "stats": {
-        "total": 3,
+        "total": 153,
         "additions": 73,
         "deletions": 80
       },
@@ -395,7 +475,7 @@
         "message": "let's try this?"
       },
       "stats": {
-        "total": 1,
+        "total": 32,
         "additions": 22,
         "deletions": 10
       },
@@ -411,7 +491,7 @@
         "message": "try agoin, fix this build"
       },
       "stats": {
-        "total": 3,
+        "total": 193,
         "additions": 177,
         "deletions": 16
       },
@@ -427,7 +507,7 @@
         "message": "try to fix build errors"
       },
       "stats": {
-        "total": 26,
+        "total": 56,
         "additions": 28,
         "deletions": 28
       },
@@ -443,7 +523,7 @@
         "message": "more updates"
       },
       "stats": {
-        "total": 24,
+        "total": 50,
         "additions": 25,
         "deletions": 25
       },
@@ -459,7 +539,7 @@
         "message": "update to fix build"
       },
       "stats": {
-        "total": 27,
+        "total": 62,
         "additions": 36,
         "deletions": 26
       },
@@ -475,7 +555,7 @@
         "message": "fix build errors"
       },
       "stats": {
-        "total": 44,
+        "total": 321,
         "additions": 179,
         "deletions": 142
       },
@@ -491,7 +571,7 @@
         "message": "nav updates"
       },
       "stats": {
-        "total": 11,
+        "total": 500,
         "additions": 450,
         "deletions": 50
       },
@@ -507,7 +587,7 @@
         "message": "Update issue templates"
       },
       "stats": {
-        "total": 2,
+        "total": 58,
         "additions": 58,
         "deletions": 0
       },
@@ -523,7 +603,7 @@
         "message": "upate readme.md"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 2,
         "deletions": 4
       },
@@ -539,7 +619,7 @@
         "message": "update readme.md"
       },
       "stats": {
-        "total": 1,
+        "total": 12,
         "additions": 11,
         "deletions": 1
       },
@@ -555,7 +635,7 @@
         "message": "Update .gitignore to exclude sensitive files"
       },
       "stats": {
-        "total": 1,
+        "total": 55,
         "additions": 54,
         "deletions": 1
       },
@@ -571,7 +651,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 341,
         "additions": 223,
         "deletions": 118
       },
@@ -587,7 +667,7 @@
         "message": "try again"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -603,7 +683,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 4,
         "deletions": 3
       },
@@ -619,7 +699,7 @@
         "message": "fix build issues"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 1,
         "deletions": 2
       },
@@ -635,7 +715,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 5,
+        "total": 568,
         "additions": 511,
         "deletions": 57
       },
@@ -651,7 +731,7 @@
         "message": "fix logo"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 2,
         "deletions": 4
       },
@@ -667,7 +747,7 @@
         "message": "fix deployment issues"
       },
       "stats": {
-        "total": 3,
+        "total": 23,
         "additions": 21,
         "deletions": 2
       },
@@ -683,7 +763,7 @@
         "message": "standardize on /docs for deployment"
       },
       "stats": {
-        "total": 3,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -699,7 +779,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 28,
+        "total": 169,
         "additions": 126,
         "deletions": 43
       },
@@ -715,7 +795,7 @@
         "message": "remove old method"
       },
       "stats": {
-        "total": 1,
+        "total": 56,
         "additions": 0,
         "deletions": 56
       },
@@ -731,7 +811,7 @@
         "message": "ci: add Azure Static Web Apps workflow file\r\non-behalf-of: @Azure opensource@microsoft.com"
       },
       "stats": {
-        "total": 1,
+        "total": 58,
         "additions": 58,
         "deletions": 0
       },
@@ -747,7 +827,7 @@
         "message": "remove old action"
       },
       "stats": {
-        "total": 1,
+        "total": 56,
         "additions": 0,
         "deletions": 56
       },
@@ -763,7 +843,7 @@
         "message": "update"
       },
       "stats": {
-        "total": 1,
+        "total": 18,
         "additions": 17,
         "deletions": 1
       },
@@ -779,7 +859,7 @@
         "message": "Create main.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 56,
         "additions": 56,
         "deletions": 0
       },
@@ -795,7 +875,7 @@
         "message": "clean up"
       },
       "stats": {
-        "total": 30,
+        "total": 250,
         "additions": 112,
         "deletions": 138
       },
@@ -811,7 +891,7 @@
         "message": "fix build"
       },
       "stats": {
-        "total": 2,
+        "total": 12,
         "additions": 8,
         "deletions": 4
       },
@@ -827,7 +907,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 6,
+        "total": 505,
         "additions": 240,
         "deletions": 265
       },
@@ -843,7 +923,7 @@
         "message": "update styles"
       },
       "stats": {
-        "total": 39,
+        "total": 1367,
         "additions": 531,
         "deletions": 836
       },
@@ -875,7 +955,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -891,7 +971,7 @@
         "message": "updates, add page.yml"
       },
       "stats": {
-        "total": 172,
+        "total": 19234,
         "additions": 18438,
         "deletions": 796
       },
@@ -907,7 +987,7 @@
         "message": "fix warnings and other issues with config"
       },
       "stats": {
-        "total": 171,
+        "total": 17415,
         "additions": 21,
         "deletions": 17394
       },
@@ -923,7 +1003,7 @@
         "message": "updaet themes for consitantcy"
       },
       "stats": {
-        "total": 9,
+        "total": 332,
         "additions": 199,
         "deletions": 133
       },
@@ -939,7 +1019,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 32,
+        "total": 236,
         "additions": 122,
         "deletions": 114
       },
@@ -955,7 +1035,7 @@
         "message": "updates for doc folder"
       },
       "stats": {
-        "total": 6,
+        "total": 12806,
         "additions": 4117,
         "deletions": 8689
       },
@@ -971,7 +1051,7 @@
         "message": "updtes"
       },
       "stats": {
-        "total": 3,
+        "total": 223,
         "additions": 196,
         "deletions": 27
       },
@@ -987,7 +1067,7 @@
         "message": "update articles"
       },
       "stats": {
-        "total": 4,
+        "total": 127,
         "additions": 85,
         "deletions": 42
       },
@@ -1003,7 +1083,7 @@
         "message": "update articles, add function"
       },
       "stats": {
-        "total": 5,
+        "total": 309,
         "additions": 239,
         "deletions": 70
       },
@@ -1019,7 +1099,7 @@
         "message": "fix article fll back logic"
       },
       "stats": {
-        "total": 1,
+        "total": 35,
         "additions": 35,
         "deletions": 0
       },
@@ -1035,7 +1115,7 @@
         "message": "fix about page issue with icons and content"
       },
       "stats": {
-        "total": 2,
+        "total": 61,
         "additions": 30,
         "deletions": 31
       },
@@ -1051,7 +1131,7 @@
         "message": "update colors of site"
       },
       "stats": {
-        "total": 26,
+        "total": 1290,
         "additions": 763,
         "deletions": 527
       },
@@ -1067,7 +1147,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 4,
+        "total": 16,
         "additions": 8,
         "deletions": 8
       },
@@ -1083,7 +1163,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 46,
+        "total": 1789,
         "additions": 1140,
         "deletions": 649
       },
@@ -1099,7 +1179,7 @@
         "message": "update to fix build"
       },
       "stats": {
-        "total": 38,
+        "total": 334,
         "additions": 208,
         "deletions": 126
       },
@@ -1115,7 +1195,7 @@
         "message": "Update node.js.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1131,7 +1211,7 @@
         "message": "agent updates via vs and github"
       },
       "stats": {
-        "total": 41,
+        "total": 2361,
         "additions": 1904,
         "deletions": 457
       },
@@ -1147,7 +1227,7 @@
         "message": "soem updates"
       },
       "stats": {
-        "total": 50,
+        "total": 2991,
         "additions": 2480,
         "deletions": 511
       },
@@ -1163,7 +1243,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 2,
+        "total": 2289,
         "additions": 1203,
         "deletions": 1086
       },
@@ -1179,7 +1259,7 @@
         "message": "refactor the variant chat"
       },
       "stats": {
-        "total": 25,
+        "total": 483,
         "additions": 330,
         "deletions": 153
       },
@@ -1195,7 +1275,7 @@
         "message": "update the logo"
       },
       "stats": {
-        "total": 20,
+        "total": 334,
         "additions": 313,
         "deletions": 21
       },
@@ -1211,7 +1291,7 @@
         "message": "fix package issues"
       },
       "stats": {
-        "total": 22,
+        "total": 1069,
         "additions": 518,
         "deletions": 551
       },
@@ -1227,7 +1307,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 19,
+        "total": 68,
         "additions": 34,
         "deletions": 34
       },
@@ -1243,7 +1323,7 @@
         "message": "updataes"
       },
       "stats": {
-        "total": 1,
+        "total": 61,
         "additions": 36,
         "deletions": 25
       },
@@ -1259,7 +1339,7 @@
         "message": "add some copy and youtube video"
       },
       "stats": {
-        "total": 29,
+        "total": 292,
         "additions": 178,
         "deletions": 114
       },
@@ -1275,7 +1355,7 @@
         "message": "minor updates, package updates"
       },
       "stats": {
-        "total": 26,
+        "total": 357,
         "additions": 184,
         "deletions": 173
       },
@@ -1291,7 +1371,7 @@
         "message": "Package Updates"
       },
       "stats": {
-        "total": 31,
+        "total": 1265,
         "additions": 617,
         "deletions": 648
       },
@@ -1307,7 +1387,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 20,
+        "total": 419,
         "additions": 219,
         "deletions": 200
       },
@@ -1323,7 +1403,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 20,
+        "total": 138,
         "additions": 69,
         "deletions": 69
       },
@@ -1339,7 +1419,7 @@
         "message": "update joke and chat"
       },
       "stats": {
-        "total": 27,
+        "total": 235,
         "additions": 143,
         "deletions": 92
       },
@@ -1355,7 +1435,7 @@
         "message": "Update for Chat"
       },
       "stats": {
-        "total": 31,
+        "total": 2448,
         "additions": 1689,
         "deletions": 759
       },
@@ -1371,7 +1451,7 @@
         "message": "upates"
       },
       "stats": {
-        "total": 16,
+        "total": 183,
         "additions": 165,
         "deletions": 18
       },
@@ -1387,7 +1467,7 @@
         "message": "Update UI and error handling"
       },
       "stats": {
-        "total": 29,
+        "total": 574,
         "additions": 263,
         "deletions": 311
       },
@@ -1403,7 +1483,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 8,
         "deletions": 0
       },
@@ -1419,7 +1499,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 16,
+        "total": 264,
         "additions": 132,
         "deletions": 132
       },
@@ -1435,7 +1515,7 @@
         "message": "add weather component"
       },
       "stats": {
-        "total": 30,
+        "total": 316,
         "additions": 277,
         "deletions": 39
       },
@@ -1451,7 +1531,7 @@
         "message": "restore env files"
       },
       "stats": {
-        "total": 21,
+        "total": 275,
         "additions": 16,
         "deletions": 259
       },
@@ -1467,7 +1547,7 @@
         "message": "update .gitignore"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 1,
         "deletions": 4
       },
@@ -1483,7 +1563,7 @@
         "message": "update footer"
       },
       "stats": {
-        "total": 12,
+        "total": 34,
         "additions": 17,
         "deletions": 17
       },
@@ -1499,7 +1579,7 @@
         "message": "Update Footer.tsx"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -1515,7 +1595,7 @@
         "message": "update gitignore"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 4,
         "deletions": 0
       },
@@ -1531,7 +1611,7 @@
         "message": "update bootstrap styles"
       },
       "stats": {
-        "total": 57,
+        "total": 39307,
         "additions": 39155,
         "deletions": 152
       },
@@ -1547,7 +1627,7 @@
         "message": "fix prod env on build"
       },
       "stats": {
-        "total": 11,
+        "total": 153,
         "additions": 86,
         "deletions": 67
       },
@@ -1563,7 +1643,7 @@
         "message": "update footer"
       },
       "stats": {
-        "total": 13,
+        "total": 199,
         "additions": 108,
         "deletions": 91
       },
@@ -1579,7 +1659,7 @@
         "message": "Update node.js.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 16,
         "additions": 10,
         "deletions": 6
       },
@@ -1595,7 +1675,7 @@
         "message": "set prod env for github pages"
       },
       "stats": {
-        "total": 9,
+        "total": 62,
         "additions": 31,
         "deletions": 31
       },
@@ -1611,7 +1691,7 @@
         "message": "update routting for rss.xml"
       },
       "stats": {
-        "total": 17,
+        "total": 322,
         "additions": 195,
         "deletions": 127
       },
@@ -1627,7 +1707,7 @@
         "message": "Update node.js.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 1,
         "deletions": 3
       },
@@ -1643,7 +1723,7 @@
         "message": "Update node.js.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 6,
         "deletions": 2
       },
@@ -1659,7 +1739,7 @@
         "message": "Create node.js.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 31,
         "additions": 31,
         "deletions": 0
       },
@@ -1675,7 +1755,7 @@
         "message": "remove .js files change config to not emit, add joke api call"
       },
       "stats": {
-        "total": 22,
+        "total": 13123,
         "additions": 10753,
         "deletions": 2370
       },
@@ -1691,7 +1771,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 10,
+        "total": 246,
         "additions": 181,
         "deletions": 65
       },
@@ -1707,7 +1787,7 @@
         "message": "add article xml"
       },
       "stats": {
-        "total": 16,
+        "total": 578,
         "additions": 546,
         "deletions": 32
       },
@@ -1723,7 +1803,7 @@
         "message": "change to relative links for github pages"
       },
       "stats": {
-        "total": 2,
+        "total": 7,
         "additions": 4,
         "deletions": 3
       },
@@ -1739,7 +1819,7 @@
         "message": "publish to docs folder"
       },
       "stats": {
-        "total": 124,
+        "total": 7416,
         "additions": 7416,
         "deletions": 0
       },
@@ -1755,7 +1835,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 12,
+        "total": 185,
         "additions": 177,
         "deletions": 8
       },
@@ -1771,7 +1851,7 @@
         "message": "initial development"
       },
       "stats": {
-        "total": 158,
+        "total": 12375,
         "additions": 11920,
         "deletions": 455
       },
@@ -1787,7 +1867,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 58,
         "additions": 58,
         "deletions": 0
       },
@@ -1803,7 +1883,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 421,
         "additions": 421,
         "deletions": 0
       },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T11:01:17.494051",
+  "timestamp": "2026-01-02T20:36:04.780908",
   "value": [
     {
       "sha": "21a4088741df75763c9bb1fc840eca35d3e9a8db",
@@ -11,7 +11,7 @@
         "message": "Document .NET 10 upgrade and PR process improvements\n\nAdded comprehensive documentation for the .NET 10 upgrade,\nhighlighting a 99.3% warning reduction (273 \u2192 2) and zero\nbreaking changes. Updated multiple files to streamline the\nPR creation, review, and merge process:\n\n- **PR_COMMANDS.md**: Detailed PR creation methods, reviewer\n  commands, and communication templates.\n- **PR_QUICK_REFERENCE.md**: Concise upgrade summary, review\n  checklist, and merge criteria.\n- **PR_VISUAL_SUMMARY.md**: Visual metrics, progress phases,\n  and impact assessment.\n- **PULL_REQUEST.md**: Comprehensive upgrade details,\n  technical improvements, and testing results.\n- **PULL_REQUEST_SHORT.md**: Concise PR summary for quick\n  reference.\n\nThese updates ensure clarity, efficiency, and alignment with\nmodern .NET 10 and C# 12 standards."
       },
       "stats": {
-        "total": 5,
+        "total": 763,
         "additions": 763,
         "deletions": 0
       },
@@ -27,7 +27,7 @@
         "message": "Merge pull request #19 from controlorigins/upgrade-to-NET10\n\n.NET 10 Upgrade: 99.3% Warning Reduction (273\u21922)"
       },
       "stats": {
-        "total": 39,
+        "total": 3576,
         "additions": 3328,
         "deletions": 248
       },
@@ -43,7 +43,7 @@
         "message": "feat: Achieve 99.3% warning reduction in .NET 10 upgrade (273\u21922 warnings)\n\nComprehensive code quality improvement eliminating 271 warnings across 3 phases:\n- Phase 1: Fixed logging, ASP.NET, and member hiding warnings (15 fixed)\n- Phase 2: Fixed CS8618 property initialization warnings (90 fixed)\n- Phase 2.5: Fixed remaining nullable reference warnings (9 fixed)\n\nKey improvements:\n- All entities/models use required modifier and proper initialization\n- Fixed CA2017 logging template issues across all services\n- Modernized ASP.NET Core routing (top-level, Headers.Append)\n- Added .editorconfig and Directory.Build.props for standards\n- Created comprehensive WARNINGS_REPORT.md documentation\n\nFiles modified: 21 core files across entities, models, and services\nTests: All 68 tests passing (100% maintained)\nBuild: Zero errors, only 2 acceptable false positive warnings remain\n\nTechnical details:\n- Used SetsRequiredMembers attribute on constructors\n- Applied required modifier to non-nullable properties\n- Initialized collections to empty collections\n- Fixed operator overloads for nullable parameters\n- Removed unreachable code and fixed member hiding\n\nSee WARNINGS_REPORT.md for complete details of all improvements.\n\nCo-authored-by: GitHub Copilot <noreply@github.com>"
       },
       "stats": {
-        "total": 29,
+        "total": 1431,
         "additions": 1299,
         "deletions": 132
       },
@@ -59,7 +59,7 @@
         "message": "Upgrade solution to .NET 10.0\n\n- Updated all 6 projects from net9.0 to net10.0\n\n- Updated 10 NuGet packages to version 10.0.0\n\n- All tests pass (68/68)\n\n- Build succeeds with 0 errors\n\n- Applications validated: Web, Console, JeopardyData.Console"
       },
       "stats": {
-        "total": 10,
+        "total": 2062,
         "additions": 1991,
         "deletions": 71
       },
@@ -75,7 +75,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 13,
+        "total": 241,
         "additions": 117,
         "deletions": 124
       },
@@ -91,7 +91,7 @@
         "message": "Package Updates"
       },
       "stats": {
-        "total": 13,
+        "total": 168,
         "additions": 34,
         "deletions": 134
       },
@@ -107,7 +107,7 @@
         "message": "small refactors"
       },
       "stats": {
-        "total": 6,
+        "total": 45,
         "additions": 16,
         "deletions": 29
       },
@@ -123,7 +123,7 @@
         "message": "minor clean up"
       },
       "stats": {
-        "total": 5,
+        "total": 238,
         "additions": 112,
         "deletions": 126
       },
@@ -139,7 +139,7 @@
         "message": "More clean-up and refactoring"
       },
       "stats": {
-        "total": 116,
+        "total": 3508,
         "additions": 1736,
         "deletions": 1772
       },
@@ -155,7 +155,7 @@
         "message": "fix spelling issues"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 1,
         "deletions": 3
       },
@@ -171,7 +171,7 @@
         "message": "Clean up namespace issues"
       },
       "stats": {
-        "total": 9,
+        "total": 80,
         "additions": 34,
         "deletions": 46
       },
@@ -187,7 +187,7 @@
         "message": "clean up"
       },
       "stats": {
-        "total": 8,
+        "total": 18,
         "additions": 6,
         "deletions": 12
       },
@@ -203,7 +203,7 @@
         "message": "Move entities to Core project out of Web App"
       },
       "stats": {
-        "total": 66,
+        "total": 5399,
         "additions": 2637,
         "deletions": 2762
       },
@@ -219,7 +219,7 @@
         "message": "Remove Migrations and old GitHub workflow"
       },
       "stats": {
-        "total": 26,
+        "total": 6859,
         "additions": 0,
         "deletions": 6859
       },
@@ -235,7 +235,7 @@
         "message": "Clean up and refactor"
       },
       "stats": {
-        "total": 51,
+        "total": 281,
         "additions": 125,
         "deletions": 156
       },
@@ -251,7 +251,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
       },
@@ -267,7 +267,7 @@
         "message": "Delete .github/workflows/dotnet.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 28,
         "additions": 0,
         "deletions": 28
       },
@@ -283,7 +283,7 @@
         "message": "remove workflow"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 0,
         "deletions": 66
       },
@@ -299,7 +299,7 @@
         "message": "update client libraries"
       },
       "stats": {
-        "total": 3,
+        "total": 184,
         "additions": 10,
         "deletions": 174
       },
@@ -315,7 +315,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
       },
@@ -331,7 +331,7 @@
         "message": "Merge pull request #18 from controlorigins/feature/updates\n\nFeature/updates"
       },
       "stats": {
-        "total": 21,
+        "total": 271,
         "additions": 175,
         "deletions": 96
       },
@@ -347,7 +347,7 @@
         "message": "Add Jeopardy Console Application"
       },
       "stats": {
-        "total": 6,
+        "total": 104,
         "additions": 104,
         "deletions": 0
       },
@@ -363,7 +363,7 @@
         "message": "Update NuGet Packages and Client Libraries"
       },
       "stats": {
-        "total": 13,
+        "total": 111,
         "additions": 37,
         "deletions": 74
       },
@@ -379,7 +379,7 @@
         "message": "Update Client Libs."
       },
       "stats": {
-        "total": 10,
+        "total": 74,
         "additions": 43,
         "deletions": 31
       },
@@ -395,7 +395,7 @@
         "message": "Merge pull request #17 from controlorigins/feature/updates\n\nUpgrade to Net 8"
       },
       "stats": {
-        "total": 16,
+        "total": 158,
         "additions": 78,
         "deletions": 80
       },
@@ -411,7 +411,7 @@
         "message": "Upgrade to Net 8\nUpdate NuGet Packages"
       },
       "stats": {
-        "total": 16,
+        "total": 158,
         "additions": 78,
         "deletions": 80
       },
@@ -427,7 +427,7 @@
         "message": "Merge pull request #16 from controlorigins/feature/updates\n\nUpdate Package Versions"
       },
       "stats": {
-        "total": 5,
+        "total": 26,
         "additions": 13,
         "deletions": 13
       },
@@ -443,7 +443,7 @@
         "message": "Update NuGet Packages"
       },
       "stats": {
-        "total": 4,
+        "total": 26,
         "additions": 13,
         "deletions": 13
       },
@@ -459,7 +459,7 @@
         "message": "update client libs. . ."
       },
       "stats": {
-        "total": 1,
+        "total": 0,
         "additions": 0,
         "deletions": 0
       },
@@ -475,7 +475,7 @@
         "message": "Merge pull request #15 from controlorigins/feature/Initial\n\nUpdate NuGet Packages"
       },
       "stats": {
-        "total": 10,
+        "total": 55,
         "additions": 27,
         "deletions": 28
       },
@@ -491,7 +491,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 5,
+        "total": 26,
         "additions": 13,
         "deletions": 13
       },
@@ -507,7 +507,7 @@
         "message": "Update NuGet Packages/client libraries"
       },
       "stats": {
-        "total": 8,
+        "total": 49,
         "additions": 24,
         "deletions": 25
       },
@@ -523,7 +523,7 @@
         "message": "Merge pull request #14 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 12,
+        "total": 1957,
         "additions": 873,
         "deletions": 1084
       },
@@ -539,7 +539,7 @@
         "message": "Update package versions"
       },
       "stats": {
-        "total": 12,
+        "total": 1957,
         "additions": 873,
         "deletions": 1084
       },
@@ -571,7 +571,7 @@
         "message": "Update NuGet Packages"
       },
       "stats": {
-        "total": 1,
+        "total": 20,
         "additions": 10,
         "deletions": 10
       },
@@ -587,7 +587,7 @@
         "message": "Merge pull request #13 from controlorigins/feature/Initial\n\nfix issues with get next question on some Match Modes"
       },
       "stats": {
-        "total": 3,
+        "total": 11,
         "additions": 9,
         "deletions": 2
       },
@@ -603,7 +603,7 @@
         "message": "fix issues with get next question on some Match Modes"
       },
       "stats": {
-        "total": 3,
+        "total": 11,
         "additions": 9,
         "deletions": 2
       },
@@ -619,7 +619,7 @@
         "message": "Merge pull request #12 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 62,
+        "total": 2029120,
         "additions": 952,
         "deletions": 2028168
       },
@@ -635,7 +635,7 @@
         "message": "Work on Match Display and ScoreCard"
       },
       "stats": {
-        "total": 22,
+        "total": 2669,
         "additions": 691,
         "deletions": 1978
       },
@@ -651,7 +651,7 @@
         "message": "Add User Roles and start Admin Controllers and Pages"
       },
       "stats": {
-        "total": 17,
+        "total": 275,
         "additions": 266,
         "deletions": 9
       },
@@ -667,7 +667,7 @@
         "message": "Questionable Source, removing from Project"
       },
       "stats": {
-        "total": 29,
+        "total": 2026186,
         "additions": 0,
         "deletions": 2026186
       },
@@ -683,7 +683,7 @@
         "message": "Merge pull request #11 from controlorigins/feature/Initial\n\nUpdate for OneAndDone Game Mode"
       },
       "stats": {
-        "total": 4,
+        "total": 25,
         "additions": 19,
         "deletions": 6
       },
@@ -699,7 +699,7 @@
         "message": "Update for OneAndDone Game Mode"
       },
       "stats": {
-        "total": 4,
+        "total": 25,
         "additions": 19,
         "deletions": 6
       },
@@ -715,7 +715,7 @@
         "message": "Merge pull request #10 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 43,
+        "total": 1344,
         "additions": 1150,
         "deletions": 194
       },
@@ -731,7 +731,7 @@
         "message": "CodeRush Clean-up"
       },
       "stats": {
-        "total": 11,
+        "total": 38,
         "additions": 16,
         "deletions": 22
       },
@@ -747,7 +747,7 @@
         "message": "Working on Mode scoring methods"
       },
       "stats": {
-        "total": 19,
+        "total": 442,
         "additions": 337,
         "deletions": 105
       },
@@ -763,7 +763,7 @@
         "message": "Add User Attributes (First/Last/Picture)\nMinor code clean-up"
       },
       "stats": {
-        "total": 21,
+        "total": 798,
         "additions": 739,
         "deletions": 59
       },
@@ -779,7 +779,7 @@
         "message": "Implement Delete Match"
       },
       "stats": {
-        "total": 4,
+        "total": 41,
         "additions": 35,
         "deletions": 6
       },
@@ -795,7 +795,7 @@
         "message": "Implement Application User Manager"
       },
       "stats": {
-        "total": 2,
+        "total": 46,
         "additions": 37,
         "deletions": 9
       },
@@ -811,7 +811,7 @@
         "message": "minor clean up"
       },
       "stats": {
-        "total": 6,
+        "total": 15,
         "additions": 4,
         "deletions": 11
       },
@@ -827,7 +827,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 3,
         "deletions": 0
       },
@@ -843,7 +843,7 @@
         "message": "Create dotnet.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 28,
         "additions": 28,
         "deletions": 0
       },
@@ -859,7 +859,7 @@
         "message": "Merge pull request #9 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 21,
+        "total": 476,
         "additions": 267,
         "deletions": 209
       },
@@ -875,7 +875,7 @@
         "message": "Remove DbContext from Admin/Matches, use Service instead"
       },
       "stats": {
-        "total": 17,
+        "total": 433,
         "additions": 255,
         "deletions": 178
       },
@@ -891,7 +891,7 @@
         "message": "Creaet Connection String in Program.cs to get application root\nMove SQLite db to App_Data folder"
       },
       "stats": {
-        "total": 6,
+        "total": 43,
         "additions": 12,
         "deletions": 31
       },
@@ -907,7 +907,7 @@
         "message": "Merge pull request #8 from controlorigins/feature/Initial\n\nUpdate to Match Model"
       },
       "stats": {
-        "total": 72,
+        "total": 1692,
         "additions": 1387,
         "deletions": 305
       },
@@ -923,7 +923,7 @@
         "message": "Update Home Page copy"
       },
       "stats": {
-        "total": 1,
+        "total": 22,
         "additions": 5,
         "deletions": 17
       },
@@ -939,7 +939,7 @@
         "message": "Add Difficulty and Question Types to Match databse."
       },
       "stats": {
-        "total": 34,
+        "total": 1022,
         "additions": 904,
         "deletions": 118
       },
@@ -955,7 +955,7 @@
         "message": "Fix naming issue with partial razor page"
       },
       "stats": {
-        "total": 5,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -971,7 +971,7 @@
         "message": "Create Area for Admin Pages"
       },
       "stats": {
-        "total": 40,
+        "total": 526,
         "additions": 382,
         "deletions": 144
       },
@@ -987,7 +987,7 @@
         "message": "nLog basic implementation"
       },
       "stats": {
-        "total": 6,
+        "total": 168,
         "additions": 119,
         "deletions": 49
       },
@@ -1003,7 +1003,7 @@
         "message": "Merge pull request #6 from controlorigins/feature/Initial\n\nUpdate the Read ME"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 7,
         "deletions": 0
       },
@@ -1035,7 +1035,7 @@
         "message": "Update Readme"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 7,
         "deletions": 0
       },
@@ -1051,7 +1051,7 @@
         "message": "Merge pull request #5 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 27,
+        "total": 234,
         "additions": 123,
         "deletions": 111
       },
@@ -1067,7 +1067,7 @@
         "message": "clean up db"
       },
       "stats": {
-        "total": 4,
+        "total": 3,
         "additions": 0,
         "deletions": 3
       },
@@ -1083,7 +1083,7 @@
         "message": "fix issues with adding questions to a match"
       },
       "stats": {
-        "total": 15,
+        "total": 68,
         "additions": 27,
         "deletions": 41
       },
@@ -1099,7 +1099,7 @@
         "message": "Fix Enum Issues"
       },
       "stats": {
-        "total": 10,
+        "total": 126,
         "additions": 79,
         "deletions": 47
       },
@@ -1131,7 +1131,7 @@
         "message": "clean-up"
       },
       "stats": {
-        "total": 6,
+        "total": 41,
         "additions": 19,
         "deletions": 22
       },
@@ -1147,7 +1147,7 @@
         "message": "Merge pull request #4 from controlorigins/feature/Initial\n\nAdd more Enums to Db Models, migrations.."
       },
       "stats": {
-        "total": 45,
+        "total": 1798,
         "additions": 1711,
         "deletions": 87
       },
@@ -1163,7 +1163,7 @@
         "message": "Add more Enums to Db Models, migrations"
       },
       "stats": {
-        "total": 45,
+        "total": 1798,
         "additions": 1711,
         "deletions": 87
       },
@@ -1179,7 +1179,7 @@
         "message": "Merge pull request #3 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 59,
+        "total": 1726350,
         "additions": 1366676,
         "deletions": 359674
       },
@@ -1195,7 +1195,7 @@
         "message": "Add timer for quersion answer\nAdd grahics for Match Scoreboard"
       },
       "stats": {
-        "total": 23,
+        "total": 1027,
         "additions": 926,
         "deletions": 101
       },
@@ -1211,7 +1211,7 @@
         "message": "Update Home Page\nRefactor Services and Interfaces"
       },
       "stats": {
-        "total": 23,
+        "total": 1259,
         "additions": 968,
         "deletions": 291
       },
@@ -1227,7 +1227,7 @@
         "message": "First take at ScoreCard\nImplement Adapter Pattern for Question Soruce"
       },
       "stats": {
-        "total": 20,
+        "total": 390,
         "additions": 335,
         "deletions": 55
       },
@@ -1243,7 +1243,7 @@
         "message": "Update Save Chages override to update the Modified and Created dates on save"
       },
       "stats": {
-        "total": 13,
+        "total": 1723551,
         "additions": 1364111,
         "deletions": 359440
       },
@@ -1259,7 +1259,7 @@
         "message": "Db updates"
       },
       "stats": {
-        "total": 15,
+        "total": 672,
         "additions": 609,
         "deletions": 63
       },
@@ -1275,7 +1275,7 @@
         "message": "Update NuGet packages"
       },
       "stats": {
-        "total": 1,
+        "total": 11,
         "additions": 7,
         "deletions": 4
       },
@@ -1291,7 +1291,7 @@
         "message": "Merge pull request #2 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 49,
+        "total": 2761,
         "additions": 1980,
         "deletions": 781
       },
@@ -1307,7 +1307,7 @@
         "message": "Code Clean-up"
       },
       "stats": {
-        "total": 5,
+        "total": 36,
         "additions": 9,
         "deletions": 27
       },
@@ -1323,7 +1323,7 @@
         "message": "Add More Unit Test and Equality overrides for Match and Question"
       },
       "stats": {
-        "total": 20,
+        "total": 738,
         "additions": 503,
         "deletions": 235
       },
@@ -1339,7 +1339,7 @@
         "message": "Add Tests\nRefactor Db Serivce\nIntroduce ListProvider"
       },
       "stats": {
-        "total": 39,
+        "total": 2193,
         "additions": 1571,
         "deletions": 622
       },
@@ -1355,7 +1355,7 @@
         "message": "Merge pull request #1 from controlorigins/feature/Initial\n\nFeature/initial"
       },
       "stats": {
-        "total": 349,
+        "total": 1206957,
         "additions": 1206948,
         "deletions": 9
       },
@@ -1371,7 +1371,7 @@
         "message": "Clean Up Db insert errors, cree logged in version and logged out version of match."
       },
       "stats": {
-        "total": 29,
+        "total": 1350,
         "additions": 949,
         "deletions": 401
       },
@@ -1387,7 +1387,7 @@
         "message": "Clean-up == Start services layer"
       },
       "stats": {
-        "total": 15,
+        "total": 210,
         "additions": 199,
         "deletions": 11
       },
@@ -1403,7 +1403,7 @@
         "message": "minor tweaks"
       },
       "stats": {
-        "total": 5,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -1419,7 +1419,7 @@
         "message": "CleanUp Organize files"
       },
       "stats": {
-        "total": 15,
+        "total": 481,
         "additions": 249,
         "deletions": 232
       },
@@ -1435,7 +1435,7 @@
         "message": "Clean up for first run through"
       },
       "stats": {
-        "total": 7,
+        "total": 198,
         "additions": 184,
         "deletions": 14
       },
@@ -1451,7 +1451,7 @@
         "message": "Remove use of Session on Index Page, use Db instead"
       },
       "stats": {
-        "total": 3,
+        "total": 39,
         "additions": 14,
         "deletions": 25
       },
@@ -1467,7 +1467,7 @@
         "message": "Update for game play that uses database, not session"
       },
       "stats": {
-        "total": 14,
+        "total": 2130,
         "additions": 2034,
         "deletions": 96
       },
@@ -1483,7 +1483,7 @@
         "message": "ready for ef migration. . .."
       },
       "stats": {
-        "total": 17,
+        "total": 469,
         "additions": 302,
         "deletions": 167
       },
@@ -1499,7 +1499,7 @@
         "message": "Revert Db Changes"
       },
       "stats": {
-        "total": 18,
+        "total": 480,
         "additions": 308,
         "deletions": 172
       },
@@ -1515,7 +1515,7 @@
         "message": "Add Identity Implementation"
       },
       "stats": {
-        "total": 87,
+        "total": 4861,
         "additions": 4858,
         "deletions": 3
       },
@@ -1531,7 +1531,7 @@
         "message": "update cache approach"
       },
       "stats": {
-        "total": 10,
+        "total": 171,
         "additions": 160,
         "deletions": 11
       },
@@ -1547,7 +1547,7 @@
         "message": "Initial Load of Triva sources and simple test of web q/a"
       },
       "stats": {
-        "total": 235,
+        "total": 1198814,
         "additions": 1198814,
         "deletions": 0
       },
@@ -1563,7 +1563,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 55,
         "additions": 53,
         "deletions": 2
       },
@@ -1579,7 +1579,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 373,
         "additions": 373,
         "deletions": 0
       },

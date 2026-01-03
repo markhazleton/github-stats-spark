@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:35:42.590383",
+  "timestamp": "2026-01-02T20:09:13.596264",
   "value": [
     {
       "sha": "124548d265703d7ae07ad18ec1af659556d9407f",
@@ -11,7 +11,7 @@
         "message": "Enhance CI/CD workflow and update solution file\n\nUpdated the GitHub Actions workflow to improve the build and deployment process for the ASP.NET Core app. Key changes include adding environment variables, caching dependencies, running tests with code coverage, and ensuring proper cleanup post-deployment. Updated the Visual Studio solution file to version 18 and included the workflow file in the solution items."
       },
       "stats": {
-        "total": 2,
+        "total": 54,
         "additions": 39,
         "deletions": 15
       },
@@ -27,7 +27,7 @@
         "message": "Merge pull request #1 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10"
       },
       "stats": {
-        "total": 12,
+        "total": 1161,
         "additions": 1130,
         "deletions": 31
       },
@@ -43,7 +43,7 @@
         "message": "Update README for .NET 10 and FastEndpoints 7.x\n\nAdded a \"Project Upgrade History\" section to document the migration to .NET 10 and package updates, including FastEndpoints and Bogus. Highlighted breaking changes in FastEndpoints 7.x, such as the removal of several helper methods. Provided a migration solution using `HttpContext.Response` for responses, with examples for common patterns. Updated code examples to reflect these changes.\n\nIntroduced a new \"Error Handling and Responses\" section, detailing handling of HTTP responses. Added a real-world example for error handling. Included a \"Troubleshooting\" section for common issues post-upgrade, and confirmed .NET 10 compatibility. Provided guidance for getting help with links to documentation and reference implementations."
       },
       "stats": {
-        "total": 1,
+        "total": 217,
         "additions": 206,
         "deletions": 11
       },
@@ -59,7 +59,7 @@
         "message": "Upgrade to .NET 10.0 and update async handling\n\nUpgraded FastEndpointApi to .NET 10.0, updating the TargetFramework in the project file. Updated package references in FastEndpointApi.csproj to ensure compatibility with the new framework version, including upgrading FastEndpoints to version 7.1.1.\n\nRefactored HandleAsync methods in endpoint files to use async/await patterns, replacing SendAsync and SendNotFoundAsync with direct HttpContext.Response manipulation and WriteAsJsonAsync for response handling.\n\nUpdated tasks.md to reflect completion of all upgrade tasks. Created execution-log.md to document the successful upgrade process, including build status and warnings."
       },
       "stats": {
-        "total": 8,
+        "total": 66,
         "additions": 44,
         "deletions": 22
       },
@@ -75,7 +75,7 @@
         "message": "chore: upgrade solution to .NET 10.0\n\n- Update FastEndpointApi.csproj target framework from net9.0 to net10.0\n\n- Verify all packages compatible with .NET 10.0\n\n- Validate application builds and runs successfully\n\n- Test all endpoints for functionality\n\nBREAKING CHANGE: This upgrades the solution to .NET 10.0 Preview.\n\nRequires .NET 10.0 SDK to build and run."
       },
       "stats": {
-        "total": 3,
+        "total": 58,
         "additions": 42,
         "deletions": 16
       },
@@ -91,7 +91,7 @@
         "message": "Commit changes before fixing global.json file(s)."
       },
       "stats": {
-        "total": 4,
+        "total": 858,
         "additions": 857,
         "deletions": 1
       },
@@ -107,7 +107,7 @@
         "message": "Upgrade FastEndpoints packages and validate GUID format\n\nUpdated `FastEndpointApi.csproj` to upgrade FastEndpoints packages from version `6.1.0` to `6.2.0`.\n\nModified the `ReadPerson` method in `PersonService.cs` to validate the `id` parameter using `Guid.TryParse`, throwing a `FormatException` for invalid formats."
       },
       "stats": {
-        "total": 2,
+        "total": 13,
         "additions": 8,
         "deletions": 5
       },
@@ -123,7 +123,7 @@
         "message": "Add static HTML sample pages for API demonstration and documentation"
       },
       "stats": {
-        "total": 1,
+        "total": 46,
         "additions": 41,
         "deletions": 5
       },
@@ -139,7 +139,7 @@
         "message": "update for demo, docs, on ui testing of api"
       },
       "stats": {
-        "total": 8,
+        "total": 524,
         "additions": 438,
         "deletions": 86
       },
@@ -155,7 +155,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 477,
         "additions": 343,
         "deletions": 134
       },
@@ -171,7 +171,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 68,
         "additions": 68,
         "deletions": 0
       },
@@ -187,7 +187,7 @@
         "message": "Add documentation page and link to index.html"
       },
       "stats": {
-        "total": 3,
+        "total": 250,
         "additions": 157,
         "deletions": 93
       },
@@ -203,7 +203,7 @@
         "message": "Update README.md with API enhancements and CI/CD details\n\n- Added sections for Data Seeding and new API endpoints for managing persons (create, read, update, delete).\n- Expanded implementation details for each endpoint, including request/response models and HATEOAS links.\n- Updated PersonService class to include methods for reading, updating, and deleting persons with in-memory data management.\n- Introduced a new section on Continuous Integration & Deployment (CI/CD) using GitHub Actions for Azure Web Apps.\n- Added a Visual Demo section for an interactive web UI to interact with the API.\n- Made minor formatting changes and code improvements for clarity and maintainability."
       },
       "stats": {
-        "total": 1,
+        "total": 288,
         "additions": 262,
         "deletions": 26
       },
@@ -219,7 +219,7 @@
         "message": "Add CRUD functionality and UI for Person resource\n\n- Updated `FastEndpointApi.csproj` to include `Bogus` for data generation.\n- Modified `Program.cs` to serve a static HTML file and clarified Swagger UI usage.\n- Enhanced `README.md` with CRUD endpoint details and data seeding information.\n- Simplified routes in `CreatePersonEndpoint`, `DeletePersonEndpoint`, and `ReadPersonEndpoint` to follow RESTful conventions.\n- Changed property names in `ReadPersonRequest` and updated related files for consistency.\n- Updated `UpdatePersonRequest` to use `string` for `Id` and made service return types nullable.\n- Improved `PersonService` initialization and data seeding.\n- Added `index.html` for a user-friendly API interface.\n- Introduced `swagger-inject.js` to link the demo UI in Swagger."
       },
       "stats": {
-        "total": 15,
+        "total": 427,
         "additions": 411,
         "deletions": 16
       },
@@ -235,7 +235,7 @@
         "message": "Refactor Azure Web App deployment workflow\n\nCompletely rewrite the workflow configuration for building and deploying the ASP.Net Core application. Update `actions/upload-artifact` and `actions/download-artifact` from version `@v3` to `@v4`, while maintaining the same functionality and structure. Ensure the application is built, tested, published, and deployed correctly, including a post-deployment health check."
       },
       "stats": {
-        "total": 1,
+        "total": 186,
         "additions": 93,
         "deletions": 93
       },
@@ -251,7 +251,7 @@
         "message": "Update workflow and README for .NET 9.x support\n\n- Upgraded to .NET Core version 9.x and setup action to v3 in `main_fastendpointsdemo.yml`.\n- Added caching for NuGet packages and separated restore from build commands.\n- Introduced a new test step with optional continuation on failures.\n- Reformatted Azure deployment job for consistency and added audience parameter for security.\n- Implemented a post-deployment health check to verify application status.\n- Revamped `README.md` with a new title, improved structure, expanded features, and additional sections for better guidance on FastEndpoints."
       },
       "stats": {
-        "total": 2,
+        "total": 455,
         "additions": 415,
         "deletions": 40
       },
@@ -267,7 +267,7 @@
         "message": "Fix issue with Swagger and JSON"
       },
       "stats": {
-        "total": 2,
+        "total": 30,
         "additions": 7,
         "deletions": 23
       },
@@ -283,7 +283,7 @@
         "message": "update packages..."
       },
       "stats": {
-        "total": 5,
+        "total": 390,
         "additions": 382,
         "deletions": 8
       },
@@ -299,7 +299,7 @@
         "message": "Upgrade to Net 9"
       },
       "stats": {
-        "total": 1,
+        "total": 36,
         "additions": 18,
         "deletions": 18
       },
@@ -315,7 +315,7 @@
         "message": "update nuget package"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -331,7 +331,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 4,
+        "total": 150,
         "additions": 75,
         "deletions": 75
       },
@@ -347,7 +347,7 @@
         "message": "nuget update"
       },
       "stats": {
-        "total": 5,
+        "total": 20,
         "additions": 10,
         "deletions": 10
       },
@@ -363,7 +363,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 4,
         "deletions": 4
       },
@@ -379,7 +379,7 @@
         "message": "Add route for cs-client generation"
       },
       "stats": {
-        "total": 8,
+        "total": 63,
         "additions": 48,
         "deletions": 15
       },
@@ -395,7 +395,7 @@
         "message": "Add some error handling"
       },
       "stats": {
-        "total": 4,
+        "total": 23,
         "additions": 18,
         "deletions": 5
       },
@@ -411,7 +411,7 @@
         "message": "Fix issue with read all, update, and delete\nMake entity a record"
       },
       "stats": {
-        "total": 11,
+        "total": 216,
         "additions": 148,
         "deletions": 68
       },
@@ -427,7 +427,7 @@
         "message": "Add XML docs, clean up warnings"
       },
       "stats": {
-        "total": 6,
+        "total": 104,
         "additions": 67,
         "deletions": 37
       },
@@ -443,7 +443,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/FastEndpointApi"
       },
       "stats": {
-        "total": 2,
+        "total": 114,
         "additions": 66,
         "deletions": 48
       },
@@ -459,7 +459,7 @@
         "message": "Simplify Layout\nImplement Mapper from Fast Endpoints"
       },
       "stats": {
-        "total": 26,
+        "total": 574,
         "additions": 317,
         "deletions": 257
       },
@@ -475,7 +475,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
       },
@@ -491,7 +491,7 @@
         "message": "Delete .github/workflows/FastEndpointsDemo.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 48,
         "additions": 0,
         "deletions": 48
       },
@@ -507,7 +507,7 @@
         "message": "Add GitHub Actions to Build It and Deploy to Azure"
       },
       "stats": {
-        "total": 1,
+        "total": 48,
         "additions": 48,
         "deletions": 0
       },
@@ -523,7 +523,7 @@
         "message": "change 'user' to 'person' in api routes to match entity name"
       },
       "stats": {
-        "total": 5,
+        "total": 10,
         "additions": 5,
         "deletions": 5
       },
@@ -539,7 +539,7 @@
         "message": "trying to fix swager for Create Person"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 3,
         "deletions": 0
       },
@@ -555,7 +555,7 @@
         "message": "update readme"
       },
       "stats": {
-        "total": 1,
+        "total": 21,
         "additions": 21,
         "deletions": 0
       },
@@ -571,7 +571,7 @@
         "message": "Add CRUD services and end points for person"
       },
       "stats": {
-        "total": 18,
+        "total": 403,
         "additions": 367,
         "deletions": 36
       },
@@ -587,7 +587,7 @@
         "message": "Add Swagger Support"
       },
       "stats": {
-        "total": 3,
+        "total": 19,
         "additions": 17,
         "deletions": 2
       },
@@ -603,7 +603,7 @@
         "message": "Add project files."
       },
       "stats": {
-        "total": 9,
+        "total": 178,
         "additions": 178,
         "deletions": 0
       },
@@ -619,7 +619,7 @@
         "message": "Add .gitattributes, .gitignore, README.md, and LICENSE.txt."
       },
       "stats": {
-        "total": 4,
+        "total": 448,
         "additions": 448,
         "deletions": 0
       },

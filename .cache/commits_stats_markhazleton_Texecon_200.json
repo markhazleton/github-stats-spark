@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:59:57.898618",
+  "timestamp": "2026-01-02T20:34:45.921450",
   "value": [
     {
       "sha": "96c61c9ec3bb7a624f8a87b812e52e8e8f8c78b0",
@@ -11,7 +11,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 22,
+        "total": 740,
         "additions": 406,
         "deletions": 334
       },
@@ -27,7 +27,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 26,
+        "total": 1070,
         "additions": 622,
         "deletions": 448
       },
@@ -43,7 +43,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 26,
+        "total": 796,
         "additions": 401,
         "deletions": 395
       },
@@ -59,7 +59,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 21,
+        "total": 600,
         "additions": 297,
         "deletions": 303
       },
@@ -75,7 +75,7 @@
         "message": "Refactor code structure and remove redundant sections for improved readability and maintainability"
       },
       "stats": {
-        "total": 23,
+        "total": 785,
         "additions": 431,
         "deletions": 354
       },
@@ -91,7 +91,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 32,
+        "total": 853,
         "additions": 437,
         "deletions": 416
       },
@@ -107,7 +107,7 @@
         "message": "Add TypeScript configuration for testing with Vitest and Jest DOM\n\n- Created a new tsconfig.test.json file for TypeScript testing setup.\n- Configured compiler options for strict type checking and module resolution.\n- Included paths for module aliases and specified included test files.\n- Excluded unnecessary directories from the compilation process."
       },
       "stats": {
-        "total": 36,
+        "total": 829,
         "additions": 486,
         "deletions": 343
       },
@@ -123,7 +123,7 @@
         "message": "feat: Add Dependabot PR resolution summary with updates and actions taken"
       },
       "stats": {
-        "total": 1,
+        "total": 91,
         "additions": 91,
         "deletions": 0
       },
@@ -139,7 +139,7 @@
         "message": "ci: update GitHub Actions to latest versions\n\n- Update actions/checkout from v4 to v5\n- Update actions/setup-node from v4 to v6\n- Update actions/configure-pages from v4 to v5\n- Update actions/upload-pages-artifact from v3 to v4\n- Update actions/download-artifact from v4 to v5\n\nThis resolves the Dependabot PRs and ensures compatibility with Node 24."
       },
       "stats": {
-        "total": 1,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -155,7 +155,7 @@
         "message": "Refactor code for consistency and readability across multiple files\n\n- Standardized quotation marks from single to double in various files for consistency.\n- Simplified error messages and validation logic in content validation and monitoring hooks.\n- Improved formatting and readability in hooks, components, and utility functions.\n- Updated ESLint configuration to include TypeScript and React best practices.\n- Added new dev dependency for ESLint."
       },
       "stats": {
-        "total": 54,
+        "total": 2549,
         "additions": 1234,
         "deletions": 1315
       },
@@ -171,7 +171,7 @@
         "message": "feat: Implement comprehensive best practices and improvements\n\n- Added FINAL_CHECKLIST.md for tracking all improvements and verification status.\n- Created IMPROVEMENTS_IMPLEMENTED.md summarizing all changes made.\n- Developed QUICK_START.md to guide new developers through setup and usage.\n- Documented OG image creation process in create-og-image.md.\n- Configured Vitest for testing with coverage thresholds and setup files.\n- Enhanced project structure and added essential commands for development.\n- Implemented pre-commit hooks with Husky and lint-staged for code quality.\n- Integrated ESLint and Prettier for consistent code formatting and linting.\n- Established CI/CD pipeline with GitHub Actions for automated testing and deployment.\n- Improved accessibility testing with axe-core and jsx-a11y rules.\n- Configured PWA support with service worker and caching strategies.\n- Added bundle analysis with Rollup visualizer for performance monitoring.\n- Set up security scanning with Dependabot and npm audit."
       },
       "stats": {
-        "total": 59,
+        "total": 27210,
         "additions": 24623,
         "deletions": 2587
       },
@@ -187,7 +187,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 26,
+        "total": 1763,
         "additions": 817,
         "deletions": 946
       },
@@ -203,7 +203,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 21,
+        "total": 788,
         "additions": 394,
         "deletions": 394
       },
@@ -219,7 +219,7 @@
         "message": "Update documentation to reflect current build process and technology stack, including detailed pipeline steps, environment variables, and new features for improved SEO and performance."
       },
       "stats": {
-        "total": 3,
+        "total": 412,
         "additions": 367,
         "deletions": 45
       },
@@ -235,7 +235,7 @@
         "message": "Fix crawler discovery issues by converting navigation buttons to crawlable links and implementing a tree view for improved site hierarchy visualization"
       },
       "stats": {
-        "total": 3,
+        "total": 157,
         "additions": 153,
         "deletions": 4
       },
@@ -251,7 +251,7 @@
         "message": "Refactor code structure and remove redundant sections for improved readability and maintainability"
       },
       "stats": {
-        "total": 31,
+        "total": 1333,
         "additions": 900,
         "deletions": 433
       },
@@ -267,7 +267,7 @@
         "message": "Add HTML pages for Jared and Mark Hazleton with SEO optimizations and structured data"
       },
       "stats": {
-        "total": 24,
+        "total": 1240,
         "additions": 539,
         "deletions": 701
       },
@@ -283,7 +283,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 21,
+        "total": 710,
         "additions": 355,
         "deletions": 355
       },
@@ -299,7 +299,7 @@
         "message": "Add economic analysis pages for Texas, Keller, and Roanoke with SEO optimizations and structured data"
       },
       "stats": {
-        "total": 35,
+        "total": 4146,
         "additions": 3448,
         "deletions": 698
       },
@@ -315,7 +315,7 @@
         "message": "Add new HTML pages for Texas, Keller, Roanoke, and team members Dr. Jared Hazleton and Mark Hazleton with SEO optimizations and structured data"
       },
       "stats": {
-        "total": 31,
+        "total": 3779,
         "additions": 3497,
         "deletions": 282
       },
@@ -331,7 +331,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 19,
+        "total": 830,
         "additions": 655,
         "deletions": 175
       },
@@ -347,7 +347,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 10,
+        "total": 469,
         "additions": 227,
         "deletions": 242
       },
@@ -363,7 +363,7 @@
         "message": "feat: add profile links for team members and update team data"
       },
       "stats": {
-        "total": 3,
+        "total": 36,
         "additions": 16,
         "deletions": 20
       },
@@ -379,7 +379,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 17,
+        "total": 820,
         "additions": 570,
         "deletions": 250
       },
@@ -395,7 +395,7 @@
         "message": "feat: configure custom domain for GitHub Pages deployment and update workflow"
       },
       "stats": {
-        "total": 3,
+        "total": 82,
         "additions": 78,
         "deletions": 4
       },
@@ -411,7 +411,7 @@
         "message": "Add version.json file with build metadata"
       },
       "stats": {
-        "total": 14,
+        "total": 404,
         "additions": 245,
         "deletions": 159
       },
@@ -427,7 +427,7 @@
         "message": "feat: enhance SEO and dynamic URL handling across multiple components"
       },
       "stats": {
-        "total": 7,
+        "total": 75,
         "additions": 52,
         "deletions": 23
       },
@@ -443,7 +443,7 @@
         "message": "fix: update artifact path in GitHub Pages workflow from './dist' to './target'"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -459,7 +459,7 @@
         "message": "update from api"
       },
       "stats": {
-        "total": 38,
+        "total": 871,
         "additions": 749,
         "deletions": 122
       },
@@ -475,7 +475,7 @@
         "message": "fix: update logo URL in structured data to use BASE_URL for better environment compatibility"
       },
       "stats": {
-        "total": 6,
+        "total": 50,
         "additions": 26,
         "deletions": 24
       },
@@ -491,7 +491,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 4,
+        "total": 51,
         "additions": 28,
         "deletions": 23
       },
@@ -507,7 +507,7 @@
         "message": "Refactor code structure and improve readability in multiple modules"
       },
       "stats": {
-        "total": 5,
+        "total": 122,
         "additions": 50,
         "deletions": 72
       },
@@ -523,7 +523,7 @@
         "message": "Add GitHub Pages Workflow Best Practices documentation\n\n- Document best practices for CI and deployment of the TexEcon site using Vite, React, and TypeScript.\n- Outline implemented features such as multi-job workflows, least-privilege permissions, concurrency guards, and reproducible Node setups.\n- Provide customization options for Node version, linting, content steps, and custom domains.\n- Include troubleshooting tips for common issues and security notes regarding deployment.\n- Suggest next steps for enhancing the workflow with ESLint, bundle-size checks, and matrix testing."
       },
       "stats": {
-        "total": 5,
+        "total": 107,
         "additions": 74,
         "deletions": 33
       },
@@ -539,7 +539,7 @@
         "message": "refactor: enhance GitHub Actions workflow for GitHub Pages deployment with improved permissions, concurrency, and Vite base path handling"
       },
       "stats": {
-        "total": 2,
+        "total": 88,
         "additions": 80,
         "deletions": 8
       },
@@ -555,7 +555,7 @@
         "message": "chore: update tailwindcss and related dependencies to latest versions"
       },
       "stats": {
-        "total": 5,
+        "total": 79,
         "additions": 25,
         "deletions": 54
       },
@@ -571,7 +571,7 @@
         "message": "Merge tailwind-v4-migration: Tailwind CSS v4 migration and cleanup"
       },
       "stats": {
-        "total": 28,
+        "total": 4011,
         "additions": 2941,
         "deletions": 1070
       },
@@ -587,7 +587,7 @@
         "message": "Tailwind v4 migration: switch to @tailwindcss/vite, CSS-first config, remove PostCSS deps; contrast fixes; build verified"
       },
       "stats": {
-        "total": 21,
+        "total": 1982,
         "additions": 915,
         "deletions": 1067
       },
@@ -603,7 +603,7 @@
         "message": "docs: Add comprehensive Tailwind CSS v4 migration research and attempt\n\n- Completed extensive research on Tailwind v4 breaking changes and benefits\n- Created detailed migration plan with step-by-step implementation guide\n- Attempted migration to v4 alpha but encountered stability issues\n- Successfully rolled back to stable v3.4.17 configuration\n- Documented lessons learned and future migration strategy\n\nResearch findings:\n- v4 offers 10x build performance improvements\n- CSS-first configuration approach\n- Native cascade layers and modern CSS features\n- Alpha version not production-ready (plugin errors, theme issues)\n\nDocumentation added:\n- tailwind-v4-migration-plan.md (comprehensive strategy)\n- tailwind-v4-research-summary.md (technical analysis)\n- tailwind-v4-action-plan.md (step-by-step guide)\n- tailwind-v4-migration-attempt-summary.md (attempt results)\n\nCurrent state: Stable v3.4.17 configuration restored and verified working"
       },
       "stats": {
-        "total": 13,
+        "total": 2145,
         "additions": 2084,
         "deletions": 61
       },
@@ -619,7 +619,7 @@
         "message": "feat: Add performance analysis and repository review documentation for TexEcon project\n\n- Created performance-analysis.md detailing bundle metrics, dependency optimization, and performance recommendations.\n- Added repository-review-improvements.md with executive summary, stability improvements, performance enhancements, and GitHub Pages hosting recommendations.\n- Documented session-summary.md capturing dependency analysis, build pipeline troubleshooting, and GitHub Copilot documentation setup.\n- Established GitHub Pages deployment guide with SPA routing configuration, production optimizations, and SEO performance metrics."
       },
       "stats": {
-        "total": 38,
+        "total": 4528,
         "additions": 2892,
         "deletions": 1636
       },
@@ -635,9 +635,313 @@
         "message": "feat: Implement dynamic routing for SEO-friendly URLs and sitemap generation\n\n- Added route debugger component for development\n- Created site.webmanifest for PWA support with favicon configurations\n- Developed SEO utilities for generating canonical URLs, meta descriptions, and structured data\n- Implemented dynamic sitemap generation and robots.txt for better SEO\n- Enhanced performance by optimizing URL management and memoizing expensive operations\n- Updated favicon implementation across components and ensured cross-platform support\n- Documented dynamic routing and favicon implementation details for future reference\n- Added content refresh script to fetch and analyze content from the WebSpark API"
       },
       "stats": {
-        "total": 88,
+        "total": 15376,
         "additions": 4791,
         "deletions": 10585
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "9994452eafcd31babd9341f0ca03c316c33ace93",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-02T21:26:29+00:00"
+        },
+        "message": "Transition website to a serverless static application\n\nRemove server-side dependencies like Express, Passport, and session management, and add the 'serve' package for serving static files. Introduce new scripts and configuration files for static deployment.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/rxSveYx"
+      },
+      "stats": {
+        "total": 2206,
+        "additions": 1078,
+        "deletions": 1128
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "fd4d165dabfbd2866f117f34fccc948dc9c93186",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-02T21:15:15+00:00"
+        },
+        "message": "Update team member information and remove database dependencies\n\nRemoves drizzle-orm, drizzle-kit, and related database configurations from the project, updating team member social links and migrating to API-based data.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/rxSveYx"
+      },
+      "stats": {
+        "total": 4488,
+        "additions": 1535,
+        "deletions": 2953
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "e1b6557e8dd5fb326ce0b6ce6447e414628b6cb7",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-02T20:52:24+00:00"
+        },
+        "message": "Update the team member profile to display the correct image\n\nUpdate team-data.json to link the correct image file for Dr. Jared Hazleton, and add the image asset to the public directory.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/bH0uPqL"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "dbf291e87c3c4a424b39c880031f6c2c94c7a264",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-02T20:24:43+00:00"
+        },
+        "message": "Update team member image to display correctly\n\nReplace placeholder image path in team data with the actual image file name.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/bH0uPqL"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "62bfeadca9a315935539afee5ee9d616ae3adc58",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-02T20:23:37+00:00"
+        },
+        "message": "Update team member profile picture to a new image\n\nUpdate Mark Hazleton's profile image in team-data.json to point to a new asset located in attached_assets.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/bH0uPqL"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "47f5e4034479bbc57b52b49e6edef8560d014fcf",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T20:15:49+00:00"
+        },
+        "message": "Improve contrast and readability in the \"Get In Touch\" section\n\nAdjusted the background gradient and text colors in the Newsletter component (client/src/components/newsletter.tsx) to enhance contrast and improve overall readability. Specific changes include updating the section's background to a gradient from muted to background, changing text colors to foreground and muted-foreground, and modifying the LinkedIn icon's container.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/pan4dBs"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 11,
+        "deletions": 9
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "22ad954ff40fae2ec9c00c61f3f8ee13549ea9ce",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T20:13:00+00:00"
+        },
+        "message": "Add team member details and social links to the website\n\nIntroduce a new JSON file for team member data, including profiles, titles, descriptions, and social media links, and update the team section to display this information.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/VWxfqbz"
+      },
+      "stats": {
+        "total": 59,
+        "additions": 57,
+        "deletions": 2
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "70efb6ffc40f8b5198811f06fc734eedcdbb9dab",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T20:04:07+00:00"
+        },
+        "message": "Update footer links and add validation for all footer links\n\nIntroduce a new `FooterLinkTest` component and `FooterLinkValidator` class to validate internal, external, and section links in the footer. Update footer links to use actual page IDs and integrate navigation event handling for footer links.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/pG6vdee"
+      },
+      "stats": {
+        "total": 490,
+        "additions": 410,
+        "deletions": 80
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "3388336927193ab02432cc73af974e5c7558edff",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T20:00:09+00:00"
+        },
+        "message": "Conditionally display hero and sections based on content selection\n\nRefactors the home page to conditionally render the Hero component and subsequent sections (Mission, Team, Insights, Dashboard) based on the `selectedContent` state, ensuring the Hero is only visible on the initial home page view.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/AWXgDJo"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 12,
+        "deletions": 5
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "3c19a42d40c65d19bae7894da31cf35f0f4ba579",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T19:58:36+00:00"
+        },
+        "message": "Improve validation of navigation items for site content\n\nUpdate `content-validator.ts` to validate navigation items more thoroughly. Changes include:\n- Checking for empty `label` instead of `title`.\n- Checking for empty `description` instead of `content`.\n- Adding a check for missing `href` attribute.\n- Adjusting HTML tag validation to target the `description` field.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/AWXgDJo"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 12,
+        "deletions": 9
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "66d3dc6549a10d577bcb6a24cacf269e6609507b",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T14:53:23+00:00"
+        },
+        "message": "Add automated content validation and monitoring features\n\nImplement an admin dashboard that includes content validation, error monitoring, and performance tracking using custom hooks and UI components.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/AWXgDJo"
+      },
+      "stats": {
+        "total": 1390,
+        "additions": 1390,
+        "deletions": 0
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "a269422b781bb32a15505f0390b761997df316ad",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T14:34:36+00:00"
+        },
+        "message": "Update contact information to direct inquiries to LinkedIn\n\nRefactor footer and newsletter components to remove contact forms and links, directing all inquiries to Mark Hazleton's LinkedIn profile and updating relevant UI elements.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/Q2L7Zcn"
+      },
+      "stats": {
+        "total": 107,
+        "additions": 35,
+        "deletions": 72
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "07847c71284d0a82fe232240f98b2d05a2c94f6d",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T14:32:47+00:00"
+        },
+        "message": "Enhance website searchability and indexing with SEO best practices\n\nAdds comprehensive SEO meta tags, structured data, sitemaps, and robots.txt for improved search engine visibility and performance. Implements performance monitoring for Core Web Vitals.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/6ifRe4i"
+      },
+      "stats": {
+        "total": 627,
+        "additions": 619,
+        "deletions": 8
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "6f82e86271adde9be6ad254490ec136d07e74160",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T14:20:15+00:00"
+        },
+        "message": "Add links to personal websites and update team member data\n\nUpdate team member social links to include personal websites with new `target=\"_blank\"` and `rel=\"noopener noreferrer\"` attributes. Also, update `lastUpdated` and `modified_w3c` timestamps in JSON data files.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/VE142OJ"
+      },
+      "stats": {
+        "total": 87,
+        "additions": 55,
+        "deletions": 32
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "6ed0da37df73b969af9426a9b3531192d626b9e9",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T14:17:42+00:00"
+        },
+        "message": "Structure navigation to use API data and display nested dropdown menus\n\nImplement dynamic navigation by fetching menu items from an API. Create nested dropdowns for parent-child menu items and display content based on user selection, including animations for dropdowns.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/2sn0vPg"
+      },
+      "stats": {
+        "total": 516,
+        "additions": 464,
+        "deletions": 52
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "409a08c672b7586fe745c8c15a9f6337b14bac19",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T14:07:19+00:00"
+        },
+        "message": "Update site content to use dynamic data from WebSpark CMS\n\nIntegrates dynamic content fetching from the WebSpark CMS API, replacing static data in the hero, navigation, team members, and insights sections. Includes type generation and caching mechanisms for build-time content retrieval.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/giNFTYH"
+      },
+      "stats": {
+        "total": 1587,
+        "additions": 1509,
+        "deletions": 78
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "3ccb58fda730984548f8cd10bf97e9a95fa09ede",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T14:01:15+00:00"
+        },
+        "message": "Update type for HTML element reference in counter hook\n\nRefine the type of `countRef` from `HTMLElement` to `HTMLHeadingElement` within the `useCounter` hook in `client/src/hooks/use-counter.ts`.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/8KSxGbO"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "c9104e9be8120a8809c256587e98f923180b2715",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T13:57:40+00:00"
+        },
+        "message": "Add API caching for website content and optimize build process\n\nImplements build-time API caching for static site generation, improving performance and enabling GitHub Pages deployment. Includes configuration for Replit environment and project setup.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: 489c0985-635b-4d95-86d2-b30624bc48cb\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/aa42b711-7586-4d5e-91ba-24cf436e8946/489c0985-635b-4d95-86d2-b30624bc48cb/8KSxGbO"
+      },
+      "stats": {
+        "total": 15929,
+        "additions": 15929,
+        "deletions": 0
+      },
+      "repo": "Texecon"
+    },
+    {
+      "sha": "e4e3ecd3661f9d39b21344521f78c123ed499c5e",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-09-01T13:54:03+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
       },
       "repo": "Texecon"
     }

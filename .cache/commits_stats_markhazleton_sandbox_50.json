@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:56:44.608728",
+  "timestamp": "2026-01-02T20:27:33.025629",
   "value": [
     {
       "sha": "ac86dba76859448cf26128ca03284d0ec12c12da",
@@ -11,7 +11,7 @@
         "message": "random junk"
       },
       "stats": {
-        "total": 405,
+        "total": 180698,
         "additions": 180689,
         "deletions": 9
       },
@@ -27,7 +27,7 @@
         "message": "inint GarageSpark"
       },
       "stats": {
-        "total": 177,
+        "total": 103756,
         "additions": 103755,
         "deletions": 1
       },
@@ -43,7 +43,7 @@
         "message": "Update Untitled Diagram.drawio"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -59,7 +59,7 @@
         "message": "Update Untitled Diagram.drawio"
       },
       "stats": {
-        "total": 1,
+        "total": 108,
         "additions": 80,
         "deletions": 28
       },
@@ -75,7 +75,7 @@
         "message": "Added Untitled Diagram.drawio"
       },
       "stats": {
-        "total": 1,
+        "total": 51,
         "additions": 46,
         "deletions": 5
       },
@@ -91,7 +91,7 @@
         "message": "Added Untitled Diagram.drawio"
       },
       "stats": {
-        "total": 1,
+        "total": 10,
         "additions": 10,
         "deletions": 0
       },
@@ -107,7 +107,7 @@
         "message": "Update TreeView sandbox project"
       },
       "stats": {
-        "total": 1,
+        "total": 102,
         "additions": 46,
         "deletions": 56
       },
@@ -123,7 +123,7 @@
         "message": "remove incomplete stuff"
       },
       "stats": {
-        "total": 13,
+        "total": 6292,
         "additions": 0,
         "deletions": 6292
       },
@@ -139,7 +139,7 @@
         "message": "remove concurrent (has own repo now)"
       },
       "stats": {
-        "total": 10,
+        "total": 695,
         "additions": 0,
         "deletions": 695
       },
@@ -155,7 +155,7 @@
         "message": "rework concurrent processor project"
       },
       "stats": {
-        "total": 8,
+        "total": 437,
         "additions": 312,
         "deletions": 125
       },
@@ -171,7 +171,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 105,
         "additions": 43,
         "deletions": 62
       },
@@ -187,7 +187,7 @@
         "message": "Add ReadMe for Concurrent Processing"
       },
       "stats": {
-        "total": 1,
+        "total": 318,
         "additions": 318,
         "deletions": 0
       },
@@ -203,7 +203,7 @@
         "message": "Revert \"remove ConcurrentProcessing to HttpClientDecorator Project\"\n\nThis reverts commit df174d0be455530c68a51baa57bd3a8e4524ffbd."
       },
       "stats": {
-        "total": 6,
+        "total": 188,
         "additions": 188,
         "deletions": 0
       },
@@ -219,7 +219,7 @@
         "message": "remove ConcurrentProcessing to HttpClientDecorator Project"
       },
       "stats": {
-        "total": 6,
+        "total": 188,
         "additions": 0,
         "deletions": 188
       },
@@ -235,7 +235,7 @@
         "message": "Move SimpleSiteCrawler to HttpClientDecorator Project"
       },
       "stats": {
-        "total": 6,
+        "total": 482,
         "additions": 0,
         "deletions": 482
       },
@@ -251,7 +251,7 @@
         "message": "Refactor to use output caching"
       },
       "stats": {
-        "total": 7,
+        "total": 187,
         "additions": 114,
         "deletions": 73
       },
@@ -267,7 +267,7 @@
         "message": "Create Thread Safe Property Bag class (WIP)"
       },
       "stats": {
-        "total": 2,
+        "total": 184,
         "additions": 151,
         "deletions": 33
       },
@@ -283,7 +283,7 @@
         "message": "refactor to create a generic implementation"
       },
       "stats": {
-        "total": 4,
+        "total": 175,
         "additions": 140,
         "deletions": 35
       },
@@ -299,9 +299,57 @@
         "message": "Code clean-up, add const for max number of tasks"
       },
       "stats": {
-        "total": 1,
+        "total": 10,
         "additions": 4,
         "deletions": 6
+      },
+      "repo": "sandbox"
+    },
+    {
+      "sha": "96c4249b74f796eb2eb3e54d33e98bda78b8ab49",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-13T16:30:40+00:00"
+        },
+        "message": "add blocking during cache refresh\nadd abilityt to return stale data while cache is being refreshed."
+      },
+      "stats": {
+        "total": 38,
+        "additions": 28,
+        "deletions": 10
+      },
+      "repo": "sandbox"
+    },
+    {
+      "sha": "9629fbae846dfa3295b267baedbb6d990d31141b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-13T05:26:41+00:00"
+        },
+        "message": "Trying to use a fire/foreget for cache refresh unless cache is empty. .."
+      },
+      "stats": {
+        "total": 72,
+        "additions": 45,
+        "deletions": 27
+      },
+      "repo": "sandbox"
+    },
+    {
+      "sha": "ad4ea760e20703d27c1405fb7e17f85093cc7554",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-11T01:27:41+00:00"
+        },
+        "message": "Create WebApiCache sample project"
+      },
+      "stats": {
+        "total": 189,
+        "additions": 189,
+        "deletions": 0
       },
       "repo": "sandbox"
     },
@@ -331,7 +379,7 @@
         "message": "bump package versions"
       },
       "stats": {
-        "total": 4,
+        "total": 3569,
         "additions": 1840,
         "deletions": 1729
       },
@@ -347,7 +395,7 @@
         "message": "Merge pull request #4 from markhazleton/dependabot/npm_and_yarn/hexo/blog/word-wrap-1.2.5\n\nBump word-wrap from 1.2.3 to 1.2.5 in /hexo/blog"
       },
       "stats": {
-        "total": 2,
+        "total": 2928,
         "additions": 1346,
         "deletions": 1582
       },
@@ -363,7 +411,7 @@
         "message": "Initial add of tree view of crawled site"
       },
       "stats": {
-        "total": 2,
+        "total": 60,
         "additions": 51,
         "deletions": 9
       },
@@ -379,7 +427,7 @@
         "message": "Add Tree View examples"
       },
       "stats": {
-        "total": 3,
+        "total": 95,
         "additions": 95,
         "deletions": 0
       },
@@ -395,7 +443,7 @@
         "message": "Thread Safe dictionary example"
       },
       "stats": {
-        "total": 3,
+        "total": 74,
         "additions": 74,
         "deletions": 0
       },
@@ -411,7 +459,7 @@
         "message": "Updates to Simple Crawler"
       },
       "stats": {
-        "total": 3,
+        "total": 245,
         "additions": 151,
         "deletions": 94
       },
@@ -427,7 +475,7 @@
         "message": "Concurrent Processing demo"
       },
       "stats": {
-        "total": 3,
+        "total": 85,
         "additions": 85,
         "deletions": 0
       },
@@ -443,7 +491,7 @@
         "message": "refactor crawl to manage depth"
       },
       "stats": {
-        "total": 3,
+        "total": 362,
         "additions": 251,
         "deletions": 111
       },
@@ -459,7 +507,7 @@
         "message": "LINQ Samples updates"
       },
       "stats": {
-        "total": 4,
+        "total": 26,
         "additions": 25,
         "deletions": 1
       },
@@ -475,9 +523,25 @@
         "message": "Updates to Funcs Example in Sandbox"
       },
       "stats": {
-        "total": 4,
+        "total": 100,
         "additions": 90,
         "deletions": 10
+      },
+      "repo": "sandbox"
+    },
+    {
+      "sha": "ef335004e6091f82a1e7c1857df864c39bafd1eb",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2023-08-04T18:29:51+00:00"
+        },
+        "message": "Bump word-wrap from 1.2.3 to 1.2.5 in /hexo/blog\n\nBumps [word-wrap](https://github.com/jonschlinkert/word-wrap) from 1.2.3 to 1.2.5.\n- [Release notes](https://github.com/jonschlinkert/word-wrap/releases)\n- [Commits](https://github.com/jonschlinkert/word-wrap/compare/1.2.3...1.2.5)\n\n---\nupdated-dependencies:\n- dependency-name: word-wrap\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2928,
+        "additions": 1346,
+        "deletions": 1582
       },
       "repo": "sandbox"
     },
@@ -491,7 +555,7 @@
         "message": "initial site crawler"
       },
       "stats": {
-        "total": 6,
+        "total": 243,
         "additions": 243,
         "deletions": 0
       },
@@ -507,7 +571,7 @@
         "message": "clean up refactoring"
       },
       "stats": {
-        "total": 7,
+        "total": 361,
         "additions": 166,
         "deletions": 195
       },
@@ -523,7 +587,7 @@
         "message": "Make Write to CSV Generic\nAdd check for non-primitive types"
       },
       "stats": {
-        "total": 1,
+        "total": 16,
         "additions": 10,
         "deletions": 6
       },
@@ -539,7 +603,7 @@
         "message": "Update Samples"
       },
       "stats": {
-        "total": 25,
+        "total": 742,
         "additions": 615,
         "deletions": 127
       },
@@ -555,7 +619,7 @@
         "message": "Add sandbox project for dealing with lists and CSV files"
       },
       "stats": {
-        "total": 9,
+        "total": 452,
         "additions": 452,
         "deletions": 0
       },
@@ -571,7 +635,7 @@
         "message": "create a simple hexo blog"
       },
       "stats": {
-        "total": 12,
+        "total": 6181,
         "additions": 6181,
         "deletions": 0
       },
@@ -587,7 +651,7 @@
         "message": "Add code to write/read a csv file from a list of objects"
       },
       "stats": {
-        "total": 4,
+        "total": 103,
         "additions": 93,
         "deletions": 10
       },
@@ -603,7 +667,7 @@
         "message": "more null list itteration tests/demos"
       },
       "stats": {
-        "total": 2,
+        "total": 46,
         "additions": 40,
         "deletions": 6
       },
@@ -619,7 +683,7 @@
         "message": "merge"
       },
       "stats": {
-        "total": 3,
+        "total": 72,
         "additions": 61,
         "deletions": 11
       },
@@ -635,9 +699,41 @@
         "message": "updates"
       },
       "stats": {
-        "total": 9,
+        "total": 242,
         "additions": 212,
         "deletions": 30
+      },
+      "repo": "sandbox"
+    },
+    {
+      "sha": "489fadfa436b3efceda6248199880c6df9859320",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-03T17:51:51+00:00"
+        },
+        "message": "Update code to get benchmarking to work"
+      },
+      "stats": {
+        "total": 27,
+        "additions": 14,
+        "deletions": 13
+      },
+      "repo": "sandbox"
+    },
+    {
+      "sha": "14deb93848d6d757367e8cc9039aeb889dd38b1b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-02T17:57:22+00:00"
+        },
+        "message": "Add Benchmarking test class"
+      },
+      "stats": {
+        "total": 83,
+        "additions": 66,
+        "deletions": 17
       },
       "repo": "sandbox"
     },
@@ -651,7 +747,7 @@
         "message": "Delete DateTimeStringUTC/.cr/personal/Navigation directory"
       },
       "stats": {
-        "total": 1,
+        "total": 6,
         "additions": 0,
         "deletions": 6
       },
@@ -667,7 +763,7 @@
         "message": "update git ignore"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 4,
         "deletions": 0
       },
@@ -683,7 +779,7 @@
         "message": "Date Time  String Issues"
       },
       "stats": {
-        "total": 5,
+        "total": 125,
         "additions": 125,
         "deletions": 0
       },
@@ -699,104 +795,8 @@
         "message": "Func Examples first commit"
       },
       "stats": {
-        "total": 6,
+        "total": 164,
         "additions": 164,
-        "deletions": 0
-      },
-      "repo": "sandbox"
-    },
-    {
-      "sha": "2f9c9f5a45d97898d0a3a6cd90f43555d2e0d4d0",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-24T16:41:24+00:00"
-        },
-        "message": "JSON Node Examples"
-      },
-      "stats": {
-        "total": 6,
-        "additions": 196,
-        "deletions": 0
-      },
-      "repo": "sandbox"
-    },
-    {
-      "sha": "bc8cbdfb887a35979d9eb214f501588cc42f330e",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-24T15:39:08+00:00"
-        },
-        "message": "Example project for JSON Document"
-      },
-      "stats": {
-        "total": 5,
-        "additions": 142,
-        "deletions": 0
-      },
-      "repo": "sandbox"
-    },
-    {
-      "sha": "a3a94ba1b95bbf2127e883fa11906c1dd2c278ea",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-08-24T15:32:02+00:00"
-        },
-        "message": "Add sample for JSON Serialization"
-      },
-      "stats": {
-        "total": 4,
-        "additions": 101,
-        "deletions": 0
-      },
-      "repo": "sandbox"
-    },
-    {
-      "sha": "c851fcbe4b2b8c2f724f6eed24384a1e9425f0b9",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-06-29T02:16:01+00:00"
-        },
-        "message": "organize models"
-      },
-      "stats": {
-        "total": 3,
-        "additions": 3,
-        "deletions": 11
-      },
-      "repo": "sandbox"
-    },
-    {
-      "sha": "d9bcbcc999c6014637f278ede0824c3a01ed127d",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-06-29T02:14:36+00:00"
-        },
-        "message": "code cleanup"
-      },
-      "stats": {
-        "total": 4,
-        "additions": 28,
-        "deletions": 30
-      },
-      "repo": "sandbox"
-    },
-    {
-      "sha": "3e4666d99a5855de3e59cca8da050462508d2ede",
-      "commit": {
-        "author": {
-          "name": "Mark Hazleton",
-          "date": "2022-06-29T02:12:57+00:00"
-        },
-        "message": "Merge branch 'main' of https://github.com/markhazleton/sandbox"
-      },
-      "stats": {
-        "total": 0,
-        "additions": 0,
         "deletions": 0
       },
       "repo": "sandbox"

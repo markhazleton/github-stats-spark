@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T16:00:27.863182",
+  "timestamp": "2026-01-02T20:42:25.487246",
   "value": [
     {
       "sha": "33e77a515ef1c94cca0f4eb134708259936946e1",
@@ -11,7 +11,7 @@
         "message": "Release v1.0.0"
       },
       "stats": {
-        "total": 64,
+        "total": 3880,
         "additions": 3009,
         "deletions": 871
       },
@@ -27,7 +27,7 @@
         "message": "Update packages, refactor domain events, and enhance logging\n\n- Updated package versions in `Directory.Packages.props` for compatibility.\n- Enhanced `README.md` with new NuGet badges and improved descriptions.\n- Refactored domain event handling into a new `Ardalis.SharedKernel.DomainEvents` namespace.\n- Improved support for domain events in `EntityBase` and `HasDomainEventsBase`.\n- Introduced `LoggingBehavior` for MediatR to enhance request logging.\n- Moved command and query interfaces to `Ardalis.SharedKernel.Behaviors` namespace.\n- Updated `ValueObject` class for better equality and comparison logic.\n- Adjusted unit tests to align with the new structure and namespaces."
       },
       "stats": {
-        "total": 24,
+        "total": 564,
         "additions": 519,
         "deletions": 45
       },
@@ -43,7 +43,7 @@
         "message": "Merge pull request #1 from ardalis/main\n\nUpdate from source repo"
       },
       "stats": {
-        "total": 14,
+        "total": 190,
         "additions": 155,
         "deletions": 35
       },
@@ -59,9 +59,185 @@
         "message": "Update to net 9, package updates"
       },
       "stats": {
-        "total": 4,
+        "total": 17,
         "additions": 10,
         "deletions": 7
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "af3998eefcb0fa379c47bc23b6745cc5185e5b61",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-22T19:13:37+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "8818bc8b8e858e78186a90b2ac3c051df2943e21",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:32:11+00:00"
+        },
+        "message": "Updated packages"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 3,
+        "deletions": 5
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "b5c49ccc89ad0e7d8e85c15c45ceffd310d7b036",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:19:12+00:00"
+        },
+        "message": "Fix use of async void in xunit tests"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "62d2237a9e5cd846436f592237e1ce4285c0ae1f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:15:19+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/ardalis/Ardalis.SharedKernel"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "19bec765aad586af89535880204fb0fb96bd90b6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:15:08+00:00"
+        },
+        "message": "Update ci.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "ebc3f751954f73bf94206d43609d1aff5c29013f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:14:53+00:00"
+        },
+        "message": "Update publish.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "c13a85ce8b1b8cec47df9bcc61c3fcfaa116b4ba",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:14:37+00:00"
+        },
+        "message": "Update to net8"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "54235e2ada65eee5ca2d8c16bf7965d5211c2fa7",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:12:50+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/ardalis/Ardalis.SharedKernel"
+      },
+      "stats": {
+        "total": 163,
+        "additions": 134,
+        "deletions": 29
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "ffd115341c20dde07395446a5c3f49fa63559f59",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-10-18T21:12:16+00:00"
+        },
+        "message": "Adding an EntityBase overload for Vogen Ids\n\nMinor cleanup\nUpdated packages"
+      },
+      "stats": {
+        "total": 39,
+        "additions": 27,
+        "deletions": 12
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "2ea322eb7b8923de70502a67a0236ba46c41ffd2",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-09-16T14:38:10+00:00"
+        },
+        "message": "Merge pull request #8 from Patrick2607/main\n\nAdded support for strongly-typed Entities"
+      },
+      "stats": {
+        "total": 163,
+        "additions": 134,
+        "deletions": 29
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "6fc3264cde209e5772879252d32bc3a296eb5bca",
+      "commit": {
+        "author": {
+          "name": "Patrick Groot Koerkamp",
+          "date": "2024-09-16T09:58:12+00:00"
+        },
+        "message": "Added support for strongly-typed Entities"
+      },
+      "stats": {
+        "total": 163,
+        "additions": 134,
+        "deletions": 29
       },
       "repo": "WebSpark.SharedKernel"
     },
@@ -75,9 +251,457 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 3,
+        "total": 18,
         "additions": 9,
         "deletions": 9
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "30a851a3f65e7793de763b0f82ccc4cfa22815da",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-07-22T01:56:38+00:00"
+        },
+        "message": "Update version"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "4f968d5659f72f53206bce81b560a68a85f46e5c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-07-22T01:56:06+00:00"
+        },
+        "message": "Update to latest packages"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "b2b54ee28f0b300d82be2785d39e1409b556648f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-03-20T15:13:20+00:00"
+        },
+        "message": "Update Ardalis.SharedKernel.csproj"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "a38403be2420c4266ede1879efd1d7bd71f427b7",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-03-20T15:12:11+00:00"
+        },
+        "message": "Merge pull request #5 from demidov-ad/Issue/644\n\nUpdate to Support Dispatching Events with Non-Integer IDs"
+      },
+      "stats": {
+        "total": 51,
+        "additions": 51,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "931403a5a1e635f549159a5ac226240bc094f51a",
+      "commit": {
+        "author": {
+          "name": "demidov-ad",
+          "date": "2024-03-12T18:06:15+00:00"
+        },
+        "message": "Add support for dispatching events with a non-int id"
+      },
+      "stats": {
+        "total": 51,
+        "additions": 51,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "8cc6556a4a7c941273e40285ec6251c80707c136",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2024-02-14T15:15:03+00:00"
+        },
+        "message": "Cleaning whitespace"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "b24935f44447cc5735639c994ba51d61a465e2f4",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-11-10T18:26:42+00:00"
+        },
+        "message": "Update version"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "b6934ce20e22022c62e05750b54680310d4934ca",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-11-10T18:25:47+00:00"
+        },
+        "message": "merge changes"
+      },
+      "stats": {
+        "total": 75,
+        "additions": 72,
+        "deletions": 3
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "632de4387b0621e56c6d943029161df697662b04",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-11-10T18:24:44+00:00"
+        },
+        "message": "Add support for typed IDs"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 24,
+        "deletions": 12
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "93d0ae9ea27a826e18c658ea464d5ceb53bd16e6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-08-01T21:13:28+00:00"
+        },
+        "message": "Adding LoggingBehavior"
+      },
+      "stats": {
+        "total": 75,
+        "additions": 72,
+        "deletions": 3
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "c86329bf991bf0c705477b19734c5b5673d1928f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-08-01T15:43:58+00:00"
+        },
+        "message": "Add CQRS omterfaces"
+      },
+      "stats": {
+        "total": 52,
+        "additions": 50,
+        "deletions": 2
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "3a7b4db6934e7228747f8b277001b9cc38073b66",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-08-01T11:27:03+00:00"
+        },
+        "message": "Merge pull request #2 from scleaver/bugfix/mediatr-unit-test"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "85aa5ff6c2ac8cac07a3e04ab654643dd120e00c",
+      "commit": {
+        "author": {
+          "name": "Seth Cleaver",
+          "date": "2023-08-01T03:01:29+00:00"
+        },
+        "message": "Fix build error with MediatR unit test."
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "0d2a4b31ad1f112d99e6484f6a0f64de69704c88",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-31T13:35:20+00:00"
+        },
+        "message": "Fix failing unit test"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "b5bb8266ac6ec040f1d3be35baffae1fb6fa0060",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-31T13:08:48+00:00"
+        },
+        "message": "Merge pull request #1 from scleaver/unit-tests\n\nAdded Unit Tests for SharedKernel Classes"
+      },
+      "stats": {
+        "total": 207,
+        "additions": 207,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "e7ba1dd77d15118e62b4bd1d1af9189224dedb8a",
+      "commit": {
+        "author": {
+          "name": "Seth Cleaver",
+          "date": "2023-07-31T04:28:56+00:00"
+        },
+        "message": "Revert changes to EntityBase.cs"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "c2400ad9790bd48686459d344a7b02d34ef73775",
+      "commit": {
+        "author": {
+          "name": "Seth Cleaver",
+          "date": "2023-07-31T03:30:59+00:00"
+        },
+        "message": "More tests"
+      },
+      "stats": {
+        "total": 147,
+        "additions": 145,
+        "deletions": 2
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "d54ca8d3018dd9d9989e0d6973e71ee905fb75eb",
+      "commit": {
+        "author": {
+          "name": "Seth Cleaver",
+          "date": "2023-07-31T02:34:57+00:00"
+        },
+        "message": "Add tests"
+      },
+      "stats": {
+        "total": 64,
+        "additions": 64,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "34c06af13d169bf1bba1835fb77c58411a12551d",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T21:45:41+00:00"
+        },
+        "message": "Add mediatr domain event dispatcher"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 28,
+        "deletions": 3
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "b23c5f7723ca11ddde5d57ceea79a6e0d3ea5408",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T21:36:27+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/ardalis/Ardalis.SharedKernel"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 30,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "c19844b3150e74385da466d032b0b4cf48948eb1",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T21:36:18+00:00"
+        },
+        "message": "Add icon\nUpdate build props\nUpdate package properties in proj file\nUpdate comment"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 33,
+        "deletions": 3
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "eb3888f2b6edd74bcce5940752f0daec219b6650",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T21:15:53+00:00"
+        },
+        "message": "Create publish.yml"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 25,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "c6470496e5c86c41c6a240a262181a29cfd8f9c8",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T21:13:49+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "b254ea95be7567dd6a6b7dc20cfda0fcc77fb77a",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T20:57:58+00:00"
+        },
+        "message": "Initial version"
+      },
+      "stats": {
+        "total": 390,
+        "additions": 390,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "9538183feff881f6c639dc11ddd9ec369fd09752",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T20:18:56+00:00"
+        },
+        "message": "Add solution"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 14,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "497c5b3efc97ff40371e4d91adbdd27f9290a206",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T20:18:31+00:00"
+        },
+        "message": "Create ci.yml"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 30,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "835798756ffb799aa55e683d8d86af58b64b7884",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2023-07-25T20:08:39+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "1cbfdd371e0d61ecebba74c8484371f17d237e5d",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-10-20T13:47:24+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 373,
+        "additions": 373,
+        "deletions": 0
       },
       "repo": "WebSpark.SharedKernel"
     }

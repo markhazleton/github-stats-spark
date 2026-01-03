@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:57:07.987763",
+  "timestamp": "2026-01-02T20:28:56.563693",
   "value": [
     {
       "sha": "b6928aa277f3d0686a65a773e6caf0502246cde2",
@@ -11,7 +11,7 @@
         "message": "Upgrade to Net 9"
       },
       "stats": {
-        "total": 3,
+        "total": 62,
         "additions": 27,
         "deletions": 35
       },
@@ -27,7 +27,7 @@
         "message": "nuget and pacakge updates"
       },
       "stats": {
-        "total": 18,
+        "total": 29682,
         "additions": 15296,
         "deletions": 14386
       },
@@ -43,7 +43,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 2,
+        "total": 18,
         "additions": 9,
         "deletions": 9
       },
@@ -59,7 +59,7 @@
         "message": "NuGet updates"
       },
       "stats": {
-        "total": 3,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -75,7 +75,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -91,7 +91,7 @@
         "message": "package updates"
       },
       "stats": {
-        "total": 4,
+        "total": 14,
         "additions": 5,
         "deletions": 9
       },
@@ -107,7 +107,7 @@
         "message": "Update Packages / Update to Net 7"
       },
       "stats": {
-        "total": 3,
+        "total": 60,
         "additions": 26,
         "deletions": 34
       },
@@ -123,7 +123,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 20,
         "additions": 10,
         "deletions": 10
       },
@@ -139,7 +139,7 @@
         "message": "update NuGet packages"
       },
       "stats": {
-        "total": 2,
+        "total": 23,
         "additions": 14,
         "deletions": 9
       },
@@ -155,7 +155,7 @@
         "message": "update to 6.0"
       },
       "stats": {
-        "total": 3,
+        "total": 22,
         "additions": 11,
         "deletions": 11
       },
@@ -171,7 +171,7 @@
         "message": "Update Packages\nCode Clean-up"
       },
       "stats": {
-        "total": 52,
+        "total": 322,
         "additions": 151,
         "deletions": 171
       },
@@ -187,7 +187,7 @@
         "message": "remove unused classes"
       },
       "stats": {
-        "total": 6,
+        "total": 62,
         "additions": 9,
         "deletions": 53
       },
@@ -203,7 +203,7 @@
         "message": "update solution"
       },
       "stats": {
-        "total": 1,
+        "total": 12,
         "additions": 12,
         "deletions": 0
       },
@@ -219,7 +219,7 @@
         "message": "Add WebAPI\nRefactor Logging to capture in batches"
       },
       "stats": {
-        "total": 66,
+        "total": 31591,
         "additions": 31485,
         "deletions": 106
       },
@@ -235,7 +235,7 @@
         "message": "Restructure code along Clean Architecture guidelines"
       },
       "stats": {
-        "total": 28,
+        "total": 239,
         "additions": 103,
         "deletions": 136
       },
@@ -251,7 +251,7 @@
         "message": "Initial DIP"
       },
       "stats": {
-        "total": 21,
+        "total": 315,
         "additions": 190,
         "deletions": 125
       },
@@ -267,7 +267,7 @@
         "message": "Interface Segregation Principal"
       },
       "stats": {
-        "total": 21,
+        "total": 519,
         "additions": 312,
         "deletions": 207
       },
@@ -283,7 +283,7 @@
         "message": "Open Closed Principal"
       },
       "stats": {
-        "total": 20,
+        "total": 251,
         "additions": 182,
         "deletions": 69
       },
@@ -299,7 +299,7 @@
         "message": "OCP - Create Rater Factory"
       },
       "stats": {
-        "total": 13,
+        "total": 347,
         "additions": 233,
         "deletions": 114
       },
@@ -315,7 +315,7 @@
         "message": "add rater folder"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 4,
         "deletions": 0
       },
@@ -331,7 +331,7 @@
         "message": "End of Single Responsiblity Principal"
       },
       "stats": {
-        "total": 11,
+        "total": 125,
         "additions": 97,
         "deletions": 28
       },
@@ -347,7 +347,7 @@
         "message": "Update Packages\nUpdate to Asp.Net 5.0"
       },
       "stats": {
-        "total": 2,
+        "total": 10,
         "additions": 5,
         "deletions": 5
       },
@@ -363,9 +363,185 @@
         "message": "Update to .Net Core 3.1"
       },
       "stats": {
-        "total": 2,
+        "total": 8,
         "additions": 4,
         "deletions": 4
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "aa37040138e7827673f531ffc4dad89c420c6538",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-07-02T22:08:57+00:00"
+        },
+        "message": "update nuGet packages"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 7,
+        "deletions": 4
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "608586093d946803d8411452efcd9e4917eaee3f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T15:00:57+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "08ba485acd4fddbfab25d7113669bda32a0311f8",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T15:00:00+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "937aea7a4f7f16aed07398a87d348efb696dbbf6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T14:59:01+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "31ce293d0560facedfbae0e12c383f94e61b277c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T14:58:01+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 23,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "2ef1e21c9f792c5a14de88860af415c33023c908",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T14:41:03+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 10,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "124c37147237a742f8b9f4fc230ddcbfca4e5498",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-11T14:52:49+00:00"
+        },
+        "message": "Formatting"
+      },
+      "stats": {
+        "total": 40,
+        "additions": 18,
+        "deletions": 22
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "3fa793dd8cc94b6cd05f1e61e8b2f69a9dd852a9",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-11T14:47:04+00:00"
+        },
+        "message": "Adding test project and 2 tests"
+      },
+      "stats": {
+        "total": 83,
+        "additions": 80,
+        "deletions": 3
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "17813628ad9d3f7c8bbf3df1fafaba042f0b38e6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-10T20:14:54+00:00"
+        },
+        "message": "Minor formatting"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "2fef634477decc42d7abf54f9591eef1ca9dddd1",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-10T16:45:57+00:00"
+        },
+        "message": "Initial version."
+      },
+      "stats": {
+        "total": 287,
+        "additions": 287,
+        "deletions": 0
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "01ad269e2849646bb04bbb37a7af7d1c840b4ecf",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-10T15:46:54+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 352,
+        "additions": 352,
+        "deletions": 0
       },
       "repo": "SolidSample"
     }

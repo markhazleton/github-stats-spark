@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:41:34.055067",
+  "timestamp": "2026-01-02T20:14:32.258747",
   "value": [
     {
       "sha": "aa8d609852521506b56f27702ac87f981af53777",
@@ -11,7 +11,7 @@
         "message": "Created a Relase"
       },
       "stats": {
-        "total": 2,
+        "total": 75,
         "additions": 75,
         "deletions": 0
       },
@@ -27,7 +27,7 @@
         "message": "Update README with new features and technical details\n\nSignificantly updated the README to reflect the latest changes:\n- Updated .NET runtime requirement to version 10.0.\n- Enhanced logging and data management details.\n- Documented new advanced features (e.g., idle detection, single-instance protection).\n- Improved statistics dashboard description with additional metrics.\n- Added configuration file details and default settings.\n- Updated build instructions and listed NuGet dependencies.\n- Refined technical details, including SharpHook integration.\n- Added development guidelines and known issues/limitations.\n- Included performance considerations and troubleshooting tips.\n- Updated contact information and added usage compliance notes."
       },
       "stats": {
-        "total": 1,
+        "total": 140,
         "additions": 116,
         "deletions": 24
       },
@@ -43,7 +43,7 @@
         "message": "Remove screenshot from README\n\nRemoved placeholder image from README."
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 0,
         "deletions": 4
       },
@@ -59,7 +59,7 @@
         "message": "Update SharpHook and add upgrade-related files\n\nUpgraded the SharpHook package from version 5.3.7 to 7.1.0,\npotentially bringing bug fixes, new features, or performance\nimprovements.\n\nAdded several upgrade-related documentation and script files\nto the project under the `.github/upgrades` directory:\n- COMPLETION-REPORT.md\n- CONVERSION-SCRIPTS-README.md\n- convert-presentation.bat\n- convert-presentation.ps1\n- QUICK-START-CONVERSION.md\n- SUMMARY.md"
       },
       "stats": {
-        "total": 1,
+        "total": 7,
         "additions": 6,
         "deletions": 1
       },
@@ -75,7 +75,7 @@
         "message": "docs: add quick start guide for presentation conversion"
       },
       "stats": {
-        "total": 1,
+        "total": 310,
         "additions": 310,
         "deletions": 0
       },
@@ -91,7 +91,7 @@
         "message": "feat: add automated presentation conversion scripts\n\nAdded batch and PowerShell scripts for easy Marp conversion\n\nFeatures:\n\n- convert-presentation.bat (Windows batch, simple)\n\n- convert-presentation.ps1 (PowerShell, advanced)\n\n- Auto-install Marp CLI if not present\n\n- Multiple output formats (PPTX, PDF, HTML)\n\n- Theme support (default, gaia, uncover)\n\n- Comprehensive documentation\n\nUsage:\n\n  Double-click: convert-presentation.bat\n\n  or run: .\\convert-presentation.ps1\n\nOutput: KeyLogger-NET10-Upgrade.pptx (42 slides)"
       },
       "stats": {
-        "total": 3,
+        "total": 944,
         "additions": 944,
         "deletions": 0
       },
@@ -107,7 +107,7 @@
         "message": "docs: add completion report - upgrade successful!\n\n- Merged to main (commit 395016d)\n\n- Tagged v2.0.0-net10\n\n- All tests passed (56/56, 100%)\n\n- Performance exceeded by 24-84%\n\n- Production ready"
       },
       "stats": {
-        "total": 1,
+        "total": 387,
         "additions": 387,
         "deletions": 0
       },
@@ -123,7 +123,7 @@
         "message": "chore: final updates before merge\n\n- Update execution log with task completions\n\n- Update tasks.md with test results\n\n- Add SUMMARY.md (was missing from commits)"
       },
       "stats": {
-        "total": 4,
+        "total": 832,
         "additions": 813,
         "deletions": 19
       },
@@ -139,7 +139,7 @@
         "message": "docs: add test results and finalization checklist\n\n- All 56 tests passed (100% pass rate)\n\n- Performance benchmarks exceeded by 24-84%\n\n- No issues found during 60-minute stability test\n\n- Approved for production deployment\n\n- Finalization checklist with step-by-step merge instructions"
       },
       "stats": {
-        "total": 2,
+        "total": 885,
         "additions": 885,
         "deletions": 0
       },
@@ -155,7 +155,7 @@
         "message": "docs: add presentation conversion guide"
       },
       "stats": {
-        "total": 1,
+        "total": 461,
         "additions": 461,
         "deletions": 0
       },
@@ -171,7 +171,7 @@
         "message": "docs: add documentation index and navigation guide"
       },
       "stats": {
-        "total": 1,
+        "total": 352,
         "additions": 352,
         "deletions": 0
       },
@@ -187,7 +187,7 @@
         "message": "docs: add presentation materials for .NET 10.0 upgrade\n\n- Add PRESENTATION.md (42-slide stakeholder presentation)\n\n- Add EXECUTIVE-SUMMARY.md (1-page executive overview)\n\n- Add QUICK-REFERENCE.md (quick reference card)"
       },
       "stats": {
-        "total": 3,
+        "total": 1231,
         "additions": 1231,
         "deletions": 0
       },
@@ -203,7 +203,7 @@
         "message": "Upgrade to .NET 10.0\n\n- Update target framework: net9.0-windows -> net10.0-windows\n\n- Update System.Management: 8.0.0 -> 10.0.0\n\n- Update System.Diagnostics.PerformanceCounter: 8.0.0 -> 10.0.0\n\n- Replace MouseKeyHook 5.7.1 with SharpHook 5.3.7\n\n- Refactor hook registration code for SharpHook API\n\n- Build successful with 0 errors"
       },
       "stats": {
-        "total": 6,
+        "total": 1718,
         "additions": 1709,
         "deletions": 9
       },
@@ -219,7 +219,7 @@
         "message": "update project"
       },
       "stats": {
-        "total": 9,
+        "total": 2185,
         "additions": 2098,
         "deletions": 87
       },
@@ -235,7 +235,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 2,
+        "total": 13,
         "additions": 4,
         "deletions": 9
       },
@@ -251,7 +251,7 @@
         "message": "clean up some warnings. . ."
       },
       "stats": {
-        "total": 3,
+        "total": 36,
         "additions": 8,
         "deletions": 28
       },
@@ -267,7 +267,7 @@
         "message": "Updated methods and icons in CustomApplicationContext and Counter classes\n\nUpdated several methods in the `CustomApplicationContext` and `Counter` classes. The `ToString` method in `Counter` now omits the timestamp. Simplified instantiation of `ContextMenuStrip` and `ToolStripMenuItem` in `CreateContextMenu` and added a new `statsItem` menu item. Changed the icon file in `InitializeContext` to `favicon.ico` and updated the tooltip text. Modified `UpdateTrayIconText` to show a balloon tip with stats instead of setting the tooltip text. In the `MWH.KeyPressCounter.csproj` file, replaced `Icon1.ico` with `favicon.ico`."
       },
       "stats": {
-        "total": 5,
+        "total": 28,
         "additions": 14,
         "deletions": 14
       },
@@ -283,7 +283,7 @@
         "message": "Remove Form, rename to match repository name\nRefactor to create a counter class"
       },
       "stats": {
-        "total": 9,
+        "total": 451,
         "additions": 168,
         "deletions": 283
       },
@@ -299,7 +299,7 @@
         "message": "Update Readme"
       },
       "stats": {
-        "total": 2,
+        "total": 21,
         "additions": 19,
         "deletions": 2
       },
@@ -315,7 +315,7 @@
         "message": "Initial Creation"
       },
       "stats": {
-        "total": 7,
+        "total": 383,
         "additions": 383,
         "deletions": 0
       },
@@ -331,7 +331,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 421,
         "additions": 421,
         "deletions": 0
       },

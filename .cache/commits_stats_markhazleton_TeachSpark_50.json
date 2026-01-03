@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:58:55.270538",
+  "timestamp": "2026-01-02T20:34:00.521566",
   "value": [
     {
       "sha": "627b1439a8f1e38a1ac133e9cb1122d8f8522b1e",
@@ -11,7 +11,7 @@
         "message": "updates for nuget versions"
       },
       "stats": {
-        "total": 24,
+        "total": 2885,
         "additions": 2380,
         "deletions": 505
       },
@@ -27,7 +27,7 @@
         "message": "Remove LayoutJson from worksheet templates\n\nThis commit removes the JSON validation logic for the `LayoutJson` property in the `WorksheetTemplatesController`, allowing templates to be created and edited without requiring a JSON layout. The input fields for `LayoutJson` have been removed from the `Create.cshtml` and `Edit.cshtml` forms, and its display has been eliminated from the `Details.cshtml` view.\n\nAdditionally, a new foreign key relationship has been established between `Worksheet` and `WorksheetTemplate` in `ApplicationDbContext.cs`, with `DeleteBehavior.SetNull` to handle deletions gracefully. The `LayoutJson` property has been removed from the `WorksheetTemplate` entity, and corresponding migration files have been added to update the database schema.\n\nThe logging service has been updated to log prompt templates directly from the `WorksheetGenerationRequest`, and the `OpenAILlmService` now uses these templates directly. Mapping extensions have also been adjusted to exclude the `LayoutJson` property."
       },
       "stats": {
-        "total": 13,
+        "total": 1476,
         "additions": 1161,
         "deletions": 315
       },
@@ -43,7 +43,7 @@
         "message": "Update where prompt is loaded from"
       },
       "stats": {
-        "total": 19,
+        "total": 22150,
         "additions": 22062,
         "deletions": 88
       },
@@ -59,7 +59,7 @@
         "message": "update for config and publishing"
       },
       "stats": {
-        "total": 16,
+        "total": 22025,
         "additions": 31,
         "deletions": 21994
       },
@@ -75,7 +75,7 @@
         "message": "feat: Enhance worksheet template system with prompt templates\n\n- Updated webpack configuration to include additional asset types (woff, woff2) in the assets manifest.\n- Modified assets-manifest.json to reflect logical asset paths with leading slashes for .NET compatibility.\n- Added comprehensive documentation for the new prompt template system, detailing available substitution tokens and usage examples.\n- Created migration to add SystemPromptTemplate and UserPromptTemplate columns to the WorksheetTemplates table, ensuring backward compatibility by initializing existing templates with null values."
       },
       "stats": {
-        "total": 20,
+        "total": 2378,
         "additions": 2166,
         "deletions": 212
       },
@@ -91,7 +91,7 @@
         "message": "clean up artifacts from agent"
       },
       "stats": {
-        "total": 3,
+        "total": 1131,
         "additions": 555,
         "deletions": 576
       },
@@ -107,7 +107,7 @@
         "message": "feat: Refactor OpenAILlmService to improve prompt generation and integrate Common Core and Bloom's Taxonomy standards"
       },
       "stats": {
-        "total": 2,
+        "total": 712,
         "additions": 80,
         "deletions": 632
       },
@@ -123,7 +123,7 @@
         "message": "feat: Remove unused tools for CSV import and database check"
       },
       "stats": {
-        "total": 3,
+        "total": 363,
         "additions": 0,
         "deletions": 363
       },
@@ -139,7 +139,7 @@
         "message": "Implement OpenAI LLM Service with logging and worksheet generation capabilities\n\n- Added OpenAILlmService class for generating educational worksheets using OpenAI.\n- Implemented methods for generating prompts based on worksheet types.\n- Integrated logging service for tracking LLM interactions and errors.\n- Created ILlmLoggingService interface for logging requests and responses.\n- Developed PowerShell script for managing LLM logs, including info, listing, cleaning, and analyzing logs."
       },
       "stats": {
-        "total": 11,
+        "total": 2071,
         "additions": 2003,
         "deletions": 68
       },
@@ -155,7 +155,7 @@
         "message": "feat: Implement Serilog logging with configuration and cleanup support"
       },
       "stats": {
-        "total": 15,
+        "total": 663,
         "additions": 422,
         "deletions": 241
       },
@@ -171,7 +171,7 @@
         "message": "feat: Enhance worksheet generation with configuration-driven options and improved dropdowns"
       },
       "stats": {
-        "total": 4,
+        "total": 272,
         "additions": 204,
         "deletions": 68
       },
@@ -187,7 +187,7 @@
         "message": "Add migrations for worksheet generation metadata and update metadata fields\n\n- Created migration to rename ContentJson to ContentMarkdown and add new columns: ConfidenceScore, EstimatedDurationMinutes, HasAnswerKey, QuestionCount, RenderedHtml, TokensUsed, and Warnings to the Worksheets table.\n- Added a second migration file for updating worksheet metadata fields with an empty Up and Down method.\n- Implemented a DatabaseCheck tool to verify database connection and display worksheet statistics.\n- Added SQL script for debugging worksheets, including checks for existing worksheets and schema information."
       },
       "stats": {
-        "total": 20,
+        "total": 5123,
         "additions": 4904,
         "deletions": 219
       },
@@ -203,7 +203,7 @@
         "message": "clean up"
       },
       "stats": {
-        "total": 5,
+        "total": 1584,
         "additions": 2,
         "deletions": 1582
       },
@@ -219,7 +219,7 @@
         "message": "clean up"
       },
       "stats": {
-        "total": 5,
+        "total": 42,
         "additions": 19,
         "deletions": 23
       },
@@ -235,7 +235,7 @@
         "message": "updates for WorksheetGenerator"
       },
       "stats": {
-        "total": 39,
+        "total": 3680,
         "additions": 3558,
         "deletions": 122
       },
@@ -251,7 +251,7 @@
         "message": "feat: Implement comprehensive Admin area with CRUD functionality and DataTables integration\n\n- Added Admin area documentation detailing features, structure, and navigation.\n- Completed CRUD views for CommonCoreStandards and WorksheetTemplates.\n- Partially completed CRUD views for Worksheets, ApiKeys, ApiUsage, and WorksheetExports.\n- Fixed DataTables AJAX integration issues across all controllers.\n- Modernized the build system using npm and webpack for optimized asset management.\n- Added DataTables.js usage guide for easy implementation in tables.\n- Implemented database models for a worksheet generator system, including CommonCoreStandard and BloomLevel.\n- Enhanced ApplicationUser model with education-specific fields and activity tracking."
       },
       "stats": {
-        "total": 10,
+        "total": 27,
         "additions": 2,
         "deletions": 25
       },
@@ -267,7 +267,7 @@
         "message": "Implement Worksheet Template Service and related CRUD functionality\n\n- Added WorksheetTemplateService for managing worksheet templates.\n- Created IWorksheetTemplateService interface for service abstraction.\n- Implemented mapping extensions for WorksheetTemplate and related view models.\n- Defined view models for creating, updating, and displaying worksheet templates.\n- Established query parameters and service result models for consistent API responses.\n- Documented service layer architecture and usage examples in README."
       },
       "stats": {
-        "total": 24,
+        "total": 5249,
         "additions": 5185,
         "deletions": 64
       },
@@ -283,7 +283,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 39,
+        "total": 28870,
         "additions": 28650,
         "deletions": 220
       },
@@ -299,7 +299,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 21,
+        "total": 22521,
         "additions": 128,
         "deletions": 22393
       },
@@ -315,7 +315,7 @@
         "message": "Add Worksheet Templates management views and functionality\n\n- Implemented Delete, Details, Edit, and Index views for Worksheet Templates.\n- Added form validation and user feedback for creating and editing worksheets.\n- Enhanced the Index view with DataTables for better data management.\n- Introduced a confirmation modal for deletion actions.\n- Created a new Create view for adding worksheets with detailed input fields.\n- Added JavaScript enhancements for admin dashboard interactions and alerts.\n- Updated _ViewImports and _ViewStart for consistent layout and tag helpers."
       },
       "stats": {
-        "total": 40,
+        "total": 6612,
         "additions": 6610,
         "deletions": 2
       },
@@ -331,7 +331,7 @@
         "message": "Add migration to fix seed data dates and implement worksheet generator database models\n\n- Created migration `20250620015321_FixSeedDataDates` to update the CreatedAt and UpdatedAt fields for worksheet templates.\n- Added comprehensive database models for the worksheet generator system, including ApplicationUser, CommonCoreStandard, BloomLevel, WorksheetTemplate, Worksheet, WorksheetExport, ApiKey, and ApiUsage.\n- Documented database implementation details, including model purposes, features, performance optimizations, data integrity, seed data, and migration information in WORKSHEET_DATABASE_README.md."
       },
       "stats": {
-        "total": 22,
+        "total": 4892,
         "additions": 4877,
         "deletions": 15
       },
@@ -347,7 +347,7 @@
         "message": "refactor: update namespaces and remove unused ApplicationUser model"
       },
       "stats": {
-        "total": 20,
+        "total": 92,
         "additions": 39,
         "deletions": 53
       },
@@ -363,7 +363,7 @@
         "message": "refactor: remove unused AssetsHtmlHelpers class"
       },
       "stats": {
-        "total": 1,
+        "total": 151,
         "additions": 0,
         "deletions": 151
       },
@@ -379,7 +379,7 @@
         "message": "remove Web/Extensions/AssetsHtmlHelpers.cs"
       },
       "stats": {
-        "total": 1,
+        "total": 45,
         "additions": 0,
         "deletions": 45
       },
@@ -395,7 +395,7 @@
         "message": "Implement Identity Management Features\n\n- Added AccountController for user account and profile management.\n- Created ApplicationUser model extending IdentityUser with additional properties.\n- Set up ApplicationDbContext for Identity and custom entities.\n- Added initial migration for Identity tables.\n- Created views for user dashboard and profile management.\n- Implemented validation scripts for forms.\n- Updated _ViewImports and _ViewStart for Identity area.\n- Enhanced login partial view for user greeting and management links."
       },
       "stats": {
-        "total": 31,
+        "total": 2331,
         "additions": 2314,
         "deletions": 17
       },
@@ -411,7 +411,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 18,
+        "total": 22355,
         "additions": 22322,
         "deletions": 33
       },
@@ -427,7 +427,7 @@
         "message": "feat: Add webpack manifest plugin and asset management\n\n- Updated package.json to include webpack-manifest-plugin for asset management.\n- Enhanced webpack configuration for development and production to generate an assets manifest.\n- Created HTML helper extensions for rendering script and stylesheet tags based on the asset manifest.\n- Implemented an AssetsService to retrieve asset paths from the manifest.\n- Added a model for the assets manifest to facilitate JSON deserialization.\n- Introduced asset management in Razor views using new HTML helpers.\n- Established a comprehensive documentation for GitHub Copilot usage and project guidelines."
       },
       "stats": {
-        "total": 18,
+        "total": 26960,
         "additions": 13949,
         "deletions": 13011
       },
@@ -443,7 +443,7 @@
         "message": "Refactor code structure for improved readability and maintainability"
       },
       "stats": {
-        "total": 23,
+        "total": 22726,
         "additions": 1028,
         "deletions": 21698
       },
@@ -459,7 +459,7 @@
         "message": "chore: add package.json with devDependencies for husky, lint-staged, and copy-webpack-plugin"
       },
       "stats": {
-        "total": 45,
+        "total": 37975,
         "additions": 37975,
         "deletions": 0
       },
@@ -475,7 +475,7 @@
         "message": "Initial commit"
       },
       "stats": {
-        "total": 3,
+        "total": 429,
         "additions": 429,
         "deletions": 0
       },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:53:30.253950",
+  "timestamp": "2026-01-02T20:11:54.327706",
   "value": [
     {
       "sha": "91b863c2f5f9922be0baf6c369502c591d8c0239",
@@ -11,7 +11,7 @@
         "message": "Update to Net 8 and refresh packages"
       },
       "stats": {
-        "total": 5,
+        "total": 192,
         "additions": 87,
         "deletions": 105
       },
@@ -27,7 +27,7 @@
         "message": "Update main_mapsintegration-fe.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 28,
         "additions": 13,
         "deletions": 15
       },
@@ -43,7 +43,7 @@
         "message": "Update NuGet packages"
       },
       "stats": {
-        "total": 7,
+        "total": 464,
         "additions": 234,
         "deletions": 230
       },
@@ -59,7 +59,7 @@
         "message": "remove open api stuff"
       },
       "stats": {
-        "total": 12,
+        "total": 167,
         "additions": 6,
         "deletions": 161
       },
@@ -75,7 +75,7 @@
         "message": "Updates"
       },
       "stats": {
-        "total": 1,
+        "total": 32,
         "additions": 26,
         "deletions": 6
       },
@@ -91,7 +91,7 @@
         "message": "Add HttpClientUtility"
       },
       "stats": {
-        "total": 34,
+        "total": 2000,
         "additions": 1985,
         "deletions": 15
       },
@@ -107,7 +107,7 @@
         "message": "Clean-up, update to match changes to HttpClientUtility projects"
       },
       "stats": {
-        "total": 23,
+        "total": 150,
         "additions": 74,
         "deletions": 76
       },
@@ -123,7 +123,7 @@
         "message": "remove unused files"
       },
       "stats": {
-        "total": 12,
+        "total": 825,
         "additions": 0,
         "deletions": 825
       },
@@ -139,7 +139,7 @@
         "message": "Update to use common HttpClientUtility project"
       },
       "stats": {
-        "total": 18,
+        "total": 277,
         "additions": 222,
         "deletions": 55
       },
@@ -155,7 +155,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 22,
         "additions": 15,
         "deletions": 7
       },
@@ -171,7 +171,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 11,
         "additions": 9,
         "deletions": 2
       },
@@ -187,7 +187,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 73,
         "additions": 10,
         "deletions": 63
       },
@@ -203,7 +203,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/google-maps"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
       },
@@ -219,7 +219,7 @@
         "message": "Create manual publish flow"
       },
       "stats": {
-        "total": 2,
+        "total": 196,
         "additions": 196,
         "deletions": 0
       },
@@ -235,7 +235,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 66,
         "additions": 66,
         "deletions": 0
       },
@@ -251,7 +251,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/google-maps"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 0,
         "deletions": 5
       },
@@ -267,7 +267,7 @@
         "message": "Standardize on FastEndpoints API"
       },
       "stats": {
-        "total": 10,
+        "total": 344,
         "additions": 0,
         "deletions": 344
       },
@@ -283,7 +283,7 @@
         "message": "Update README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 0,
         "deletions": 5
       },
@@ -299,7 +299,7 @@
         "message": "Create Fast Endpoints version of GoogleMaps API wrapper"
       },
       "stats": {
-        "total": 18,
+        "total": 429,
         "additions": 402,
         "deletions": 27
       },
@@ -315,7 +315,7 @@
         "message": "update tests"
       },
       "stats": {
-        "total": 2,
+        "total": 88,
         "additions": 85,
         "deletions": 3
       },
@@ -331,7 +331,7 @@
         "message": "Refactor HttpClientUtility\nMove Query String Parameter List to HttpClientUtility"
       },
       "stats": {
-        "total": 31,
+        "total": 374,
         "additions": 333,
         "deletions": 41
       },
@@ -347,7 +347,7 @@
         "message": "refactor HttpClientUtility"
       },
       "stats": {
-        "total": 11,
+        "total": 516,
         "additions": 230,
         "deletions": 286
       },
@@ -363,7 +363,7 @@
         "message": "Swagger Always On"
       },
       "stats": {
-        "total": 1,
+        "total": 9,
         "additions": 2,
         "deletions": 7
       },
@@ -379,7 +379,7 @@
         "message": "Replace GitHub Actions"
       },
       "stats": {
-        "total": 3,
+        "total": 117,
         "additions": 48,
         "deletions": 69
       },
@@ -395,7 +395,7 @@
         "message": "code clean-up remove warnings"
       },
       "stats": {
-        "total": 29,
+        "total": 1154,
         "additions": 736,
         "deletions": 418
       },
@@ -411,7 +411,7 @@
         "message": "minor updates"
       },
       "stats": {
-        "total": 1,
+        "total": 9,
         "additions": 6,
         "deletions": 3
       },
@@ -427,7 +427,7 @@
         "message": "Refactor to separate HttpClient and String Deserialization"
       },
       "stats": {
-        "total": 28,
+        "total": 682,
         "additions": 428,
         "deletions": 254
       },
@@ -443,7 +443,7 @@
         "message": "Refactor Library to pass in HttpClient to allow for use of HttpClientFactory"
       },
       "stats": {
-        "total": 20,
+        "total": 403,
         "additions": 201,
         "deletions": 202
       },
@@ -459,7 +459,7 @@
         "message": "create minimal api"
       },
       "stats": {
-        "total": 10,
+        "total": 260,
         "additions": 260,
         "deletions": 0
       },
@@ -475,9 +475,329 @@
         "message": "Update to Net 8\nMove API key to User Secrets to protect"
       },
       "stats": {
-        "total": 123,
+        "total": 5570,
         "additions": 2774,
         "deletions": 2796
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "8978709238394487fa2d62de533a3168f2bf327f",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2023-05-22T13:15:05+00:00"
+        },
+        "message": "Create SECURITY.md"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 21,
+        "deletions": 0
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "eeb821f0f7f5952f5a6f3fcb11d6cfc7b08b71eb",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-12-08T05:27:02+00:00"
+        },
+        "message": "Bump Newtonsoft.Json from 13.0.1 to 13.0.2 (#156)\n\nBumps [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) from 13.0.1 to 13.0.2.\r\n- [Release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)\r\n- [Commits](https://github.com/JamesNK/Newtonsoft.Json/compare/13.0.1...13.0.2)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Newtonsoft.Json\r\n  dependency-type: direct:production\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "d7f96d1c764c993293013d978c36add92741282e",
+      "commit": {
+        "author": {
+          "name": "Ruslan Keba",
+          "date": "2022-09-05T19:32:22+00:00"
+        },
+        "message": "feature: netstandard 2.0 support (#154)"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "5fedaf1f499891696d078b74201fff4510c2dd2d",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-22T16:39:25+00:00"
+        },
+        "message": "Version 1.2.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "bd3ca2b28abe22b5311e5ab5af87f6445c174267",
+      "commit": {
+        "author": {
+          "name": "Michel de Kok",
+          "date": "2021-12-22T16:17:45+00:00"
+        },
+        "message": "Improve GeocodingRequest. (#145)"
+      },
+      "stats": {
+        "total": 138,
+        "additions": 115,
+        "deletions": 23
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "0f28106a763433b7e74514b7c791ce7f60ec76c7",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T15:28:52+00:00"
+        },
+        "message": "Revert \"Update dotnet.yml\"\n\nThis reverts commit e8ed1072796fb3fd2e584bccb83373eb1ffe2d58."
+      },
+      "stats": {
+        "total": 7,
+        "additions": 2,
+        "deletions": 5
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "e8ed1072796fb3fd2e584bccb83373eb1ffe2d58",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T15:26:47+00:00"
+        },
+        "message": "Update dotnet.yml"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 5,
+        "deletions": 2
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "f055d2e1acd1873998d61d353e46f7a77c0ca922",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T15:25:31+00:00"
+        },
+        "message": "Update nuget.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "0a3ccbf891aed04e8589f5c4a3a188d249120387",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T15:18:08+00:00"
+        },
+        "message": "version"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "6eb8b715831134b75fb3bf05be2cf74f8a2b6109",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T15:13:17+00:00"
+        },
+        "message": "Update nuget.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "4da4bbd09cececf091e2870642d694eedc4edd02",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T15:11:10+00:00"
+        },
+        "message": "Update nuget.yml"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 1,
+        "deletions": 5
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "99015426e1f8a655f4a586643317c64b88177327",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T15:04:08+00:00"
+        },
+        "message": "Update nuget.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "0d64c4eaf0c9fc5c6e58b40fc8dd1c9b4b8e6bae",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T14:59:41+00:00"
+        },
+        "message": "Multiple .NET versions"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 5,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "3cc159a350c90a0b28192c3018fcd1666fd2c9e3",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T14:54:36+00:00"
+        },
+        "message": "Update GoogleMapsApi.csproj"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "46dd3bacd328624684b06de64bb32f5c530e1bae",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T12:57:55+00:00"
+        },
+        "message": "Nuget - licenseUrl -> license"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "913282eb63f6d437eeb322dbc6dfca3177a820c3",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T12:53:49+00:00"
+        },
+        "message": "Update nuget.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "9f46f0420f674b6eea784b59af4e822ee7dd8441",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T12:51:21+00:00"
+        },
+        "message": "Update nuget.yml"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 12,
+        "deletions": 1
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "9e08c9f4e27c60a00ee650b362e9298e49b27c36",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T12:49:11+00:00"
+        },
+        "message": "Delete nuget.yml"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 0,
+        "deletions": 30
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "d0de3294b6434fd1be285f76871e2eb9606fb235",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T12:48:58+00:00"
+        },
+        "message": "Create nuget.yml"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 31,
+        "deletions": 0
+      },
+      "repo": "google-maps"
+    },
+    {
+      "sha": "e09bd39fdc22886d131857c3f0010e933f4701ff",
+      "commit": {
+        "author": {
+          "name": "Maxim Novak",
+          "date": "2021-12-12T12:43:45+00:00"
+        },
+        "message": "Create nuget.yml\n\nNuget publish workflow"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 30,
+        "deletions": 0
       },
       "repo": "google-maps"
     }

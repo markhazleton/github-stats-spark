@@ -50,6 +50,9 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
    */
   const formatSize = (size) => {
     if (size == null || isNaN(size)) return 'N/A'
+    
+    // Show 0 if it's actually 0 (valid data)
+    if (size === 0) return '0.0'
 
     // Round to 1 decimal place
     return parseFloat(size).toFixed(1)
@@ -59,12 +62,20 @@ const TableRow = React.memo(function TableRow({ repository, isSelected = false, 
    * Format commit metric object (for largest/smallest commits)
    */
   const formatCommitMetric = (commitMetric) => {
-    if (!commitMetric || !commitMetric.size) {
+    // Check if the object exists first
+    if (!commitMetric) {
       return { display: 'N/A', tooltip: null }
     }
 
-    const display = formatSize(commitMetric.size)
-    const tooltip = `${commitMetric.sha?.substring(0, 7) || 'Unknown'} • ${formatDate(commitMetric.date)}`
+    // If size is explicitly 0, show it (rather than N/A)
+    const size = commitMetric.size
+    const display = size != null ? formatSize(size) : 'N/A'
+    
+    // Only create tooltip if we have meaningful data
+    const hasData = commitMetric.sha || commitMetric.date
+    const tooltip = hasData 
+      ? `${commitMetric.sha?.substring(0, 7) || 'Unknown'} • ${formatDate(commitMetric.date)}`
+      : null
 
     return { display, tooltip }
   }

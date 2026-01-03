@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T16:00:52.496996",
+  "timestamp": "2026-01-02T20:43:00.078336",
   "value": [
     {
       "sha": "696ead4fa47e0c9f6dfadf5f8e6c80973f8aab0f",
@@ -11,7 +11,7 @@
         "message": "update some nuget packages"
       },
       "stats": {
-        "total": 3,
+        "total": 34,
         "additions": 17,
         "deletions": 17
       },
@@ -27,7 +27,7 @@
         "message": "Update YelpApiWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -43,7 +43,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -59,7 +59,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 4,
+        "total": 32,
         "additions": 16,
         "deletions": 16
       },
@@ -75,7 +75,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 2,
+        "total": 3,
         "additions": 2,
         "deletions": 1
       },
@@ -91,7 +91,7 @@
         "message": "update to net 9"
       },
       "stats": {
-        "total": 4,
+        "total": 134,
         "additions": 62,
         "deletions": 72
       },
@@ -107,7 +107,7 @@
         "message": "Update NuGet Packagesupdates"
       },
       "stats": {
-        "total": 5,
+        "total": 78,
         "additions": 50,
         "deletions": 28
       },
@@ -123,7 +123,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 3,
+        "total": 34,
         "additions": 17,
         "deletions": 17
       },
@@ -139,7 +139,23 @@
         "message": "Merge pull request #4 from markhazleton/dependabot/nuget/Yelp.Api.Web/Azure.Identity-1.11.0\n\nBump Azure.Identity from 1.10.3 to 1.11.0 in /Yelp.Api.Web"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Yelp.Api"
+    },
+    {
+      "sha": "8df86766466bd2253d376edb84ba02c9e41a5d2f",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-04-11T20:18:31+00:00"
+        },
+        "message": "Bump Azure.Identity from 1.10.3 to 1.11.0 in /Yelp.Api.Web\n\nBumps [Azure.Identity](https://github.com/Azure/azure-sdk-for-net) from 1.10.3 to 1.11.0.\n- [Release notes](https://github.com/Azure/azure-sdk-for-net/releases)\n- [Commits](https://github.com/Azure/azure-sdk-for-net/compare/Azure.Identity_1.10.3...Azure.Identity_1.11.0)\n\n---\nupdated-dependencies:\n- dependency-name: Azure.Identity\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -155,7 +171,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/Yelp.Api"
       },
       "stats": {
-        "total": 1,
+        "total": 3,
         "additions": 2,
         "deletions": 1
       },
@@ -171,7 +187,7 @@
         "message": "NuGet Updates"
       },
       "stats": {
-        "total": 2,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -203,7 +219,7 @@
         "message": "Update YelpApiWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -219,7 +235,7 @@
         "message": "Update to Net 8"
       },
       "stats": {
-        "total": 3,
+        "total": 14,
         "additions": 7,
         "deletions": 7
       },
@@ -235,7 +251,7 @@
         "message": "down to 7"
       },
       "stats": {
-        "total": 3,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -251,7 +267,7 @@
         "message": "Update YelpApiWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -267,7 +283,7 @@
         "message": "Update YelpApiWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -283,7 +299,7 @@
         "message": "bump packag"
       },
       "stats": {
-        "total": 5,
+        "total": 18,
         "additions": 9,
         "deletions": 9
       },
@@ -299,7 +315,7 @@
         "message": "Merge branch 'main' of https://github.com/markhazleton/Yelp.Api"
       },
       "stats": {
-        "total": 1,
+        "total": 11,
         "additions": 0,
         "deletions": 11
       },
@@ -315,7 +331,7 @@
         "message": "nuget updates"
       },
       "stats": {
-        "total": 2,
+        "total": 16,
         "additions": 8,
         "deletions": 8
       },
@@ -331,7 +347,7 @@
         "message": "Update YelpApiWeb.yml\n\nremove publish to Azure"
       },
       "stats": {
-        "total": 1,
+        "total": 11,
         "additions": 0,
         "deletions": 11
       },
@@ -347,7 +363,7 @@
         "message": "Update Packages\nAdd Unit Test"
       },
       "stats": {
-        "total": 2,
+        "total": 22,
         "additions": 20,
         "deletions": 2
       },
@@ -363,7 +379,7 @@
         "message": "update NuGet Packages"
       },
       "stats": {
-        "total": 2,
+        "total": 12,
         "additions": 6,
         "deletions": 6
       },
@@ -379,7 +395,7 @@
         "message": "Code Clean-up, Update NuGet Packages"
       },
       "stats": {
-        "total": 29,
+        "total": 92,
         "additions": 33,
         "deletions": 59
       },
@@ -395,7 +411,7 @@
         "message": "minor footer tweak"
       },
       "stats": {
-        "total": 1,
+        "total": 5,
         "additions": 2,
         "deletions": 3
       },
@@ -411,7 +427,7 @@
         "message": "Update YelpApiWeb.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -427,7 +443,7 @@
         "message": "NuGet Updates"
       },
       "stats": {
-        "total": 3,
+        "total": 17,
         "additions": 8,
         "deletions": 9
       },
@@ -443,7 +459,7 @@
         "message": "Update to use IHttpClientFactory"
       },
       "stats": {
-        "total": 6,
+        "total": 23,
         "additions": 10,
         "deletions": 13
       },
@@ -459,7 +475,7 @@
         "message": "Update to Net 7, Update NuGet Packages"
       },
       "stats": {
-        "total": 3,
+        "total": 37,
         "additions": 20,
         "deletions": 17
       },
@@ -475,7 +491,7 @@
         "message": "Merge pull request #3 from markhazleton/feature/upateNuGet\n\nupdate packages"
       },
       "stats": {
-        "total": 11,
+        "total": 290,
         "additions": 163,
         "deletions": 127
       },
@@ -491,7 +507,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 11,
+        "total": 290,
         "additions": 163,
         "deletions": 127
       },
@@ -507,7 +523,7 @@
         "message": "Merge pull request #2 from markhazleton/feature/upateNuGet\n\nAdd Docker Support"
       },
       "stats": {
-        "total": 4,
+        "total": 73,
         "additions": 65,
         "deletions": 8
       },
@@ -523,7 +539,7 @@
         "message": "Add Docker Support"
       },
       "stats": {
-        "total": 4,
+        "total": 73,
         "additions": 65,
         "deletions": 8
       },
@@ -539,7 +555,7 @@
         "message": "Merge pull request #1 from markhazleton/feature/upateNuGet\n\nUpdate NuGet Packages"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -555,7 +571,7 @@
         "message": "Update NuGet Packages"
       },
       "stats": {
-        "total": 2,
+        "total": 6,
         "additions": 3,
         "deletions": 3
       },
@@ -571,7 +587,7 @@
         "message": "NuGet Updates"
       },
       "stats": {
-        "total": 5,
+        "total": 52,
         "additions": 28,
         "deletions": 24
       },
@@ -587,7 +603,7 @@
         "message": "Update NuGet Package"
       },
       "stats": {
-        "total": 2,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -603,7 +619,7 @@
         "message": "clean up the listings (work in progress)"
       },
       "stats": {
-        "total": 9,
+        "total": 145,
         "additions": 100,
         "deletions": 45
       },
@@ -619,7 +635,7 @@
         "message": "Setup Azure secrets and CI/CD GitHub Actions"
       },
       "stats": {
-        "total": 18,
+        "total": 286,
         "additions": 265,
         "deletions": 21
       },
@@ -635,7 +651,7 @@
         "message": "Add project files."
       },
       "stats": {
-        "total": 84,
+        "total": 15872,
         "additions": 15872,
         "deletions": 0
       },
@@ -651,7 +667,7 @@
         "message": "Add LICENSE.txt."
       },
       "stats": {
-        "total": 1,
+        "total": 21,
         "additions": 21,
         "deletions": 0
       },

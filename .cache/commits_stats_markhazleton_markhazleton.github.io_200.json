@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:45:28.324759",
+  "timestamp": "2026-01-02T20:18:46.803486",
   "value": [
     {
       "sha": "1b644e62f651597023803ab4c4d36d1407a4115e",
@@ -11,7 +11,7 @@
         "message": "Prefer site.author.name and site.author.email in footer; fall back to site.author/site.title and site.email"
       },
       "stats": {
-        "total": 1,
+        "total": 8,
         "additions": 6,
         "deletions": 2
       },
@@ -27,7 +27,7 @@
         "message": "Add comprehensive GitHub Copilot instructions and remove Azure-specific rule"
       },
       "stats": {
-        "total": 1,
+        "total": 209,
         "additions": 208,
         "deletions": 1
       },
@@ -43,7 +43,7 @@
         "message": "Remove Chaos Mode and 90s-themed assets; simplify templates and content\n\nDelete chaos CSS/JS, 90s-madness include, structured-data and chaotic archive layout. Simplify head, header and footer includes to use core main.css and minimal markup. Collapse home, post and page layouts to leaner templates, clean up about/index content to professional copy, and tighten robots.txt rules."
       },
       "stats": {
-        "total": 14,
+        "total": 1372,
         "additions": 115,
         "deletions": 1257
       },
@@ -59,9 +59,73 @@
         "message": "Update dependencies and modernize theme/UI\n\n- Refresh Gemfile.lock (bump numerous gems: activesupport, ffi, nokogiri, faraday, typhoeus, json, etc.)\n- Update _config.yml: improve site description and set minima skin to auto\n- Improve header: accessible theme toggle with icon, aria-label, persisted preference and initialization (default dark)\n- Remove placeholder image from default layout\n- Revamp _sass/minima.scss: modern CSS variables, typography, spacing, header/footer, theme switcher and post/list styling"
       },
       "stats": {
-        "total": 5,
+        "total": 714,
         "additions": 294,
         "deletions": 420
+      },
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "187bcd816d2805eb725ac74e741ef9796955d535",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-25T03:43:46+00:00"
+        },
+        "message": "Enhance site configuration and content with structured data, improved SEO, and vibrant 90s aesthetics. Update about page with engaging descriptions and links, add chaos-themed archive layout, and implement AI-friendly robots.txt for better crawling."
+      },
+      "stats": {
+        "total": 420,
+        "additions": 418,
+        "deletions": 2
+      },
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "3d02b7b364c69f1ba29843d25a3c1529cd91cc1d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-25T03:26:32+00:00"
+        },
+        "message": "Revamp site with 'Chaos Mode' featuring vibrant 90s aesthetics, dynamic animations, and enhanced visitor engagement elements"
+      },
+      "stats": {
+        "total": 667,
+        "additions": 627,
+        "deletions": 40
+      },
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "4a39fdf94436dc4064d9bedb4d263b42c7466182",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-25T03:16:35+00:00"
+        },
+        "message": "Add Bootstrap 5 theme transformation post with comprehensive redesign details"
+      },
+      "stats": {
+        "total": 154,
+        "additions": 154,
+        "deletions": 0
+      },
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "0d2767b6386ff290ea56f3e92b765f9f464b6d1e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-25T03:10:31+00:00"
+        },
+        "message": "Enhance website layout and styling with Bootstrap 5 integration\n\n- Updated default layout to include Bootstrap JS and a custom theme switcher for dark/light mode support.\n- Redesigned home layout with a hero section and improved post listing with cards for better visual appeal.\n- Revamped page layout to include breadcrumb navigation and a more structured content display.\n- Enhanced post layout with detailed metadata, sharing options, and improved accessibility features.\n- Added a new CSS file for custom styles, including typography, buttons, cards, and responsive design.\n- Introduced utility classes for animations and accessibility enhancements.\n- Implemented a featured content section on the homepage to highlight key topics."
+      },
+      "stats": {
+        "total": 2212,
+        "additions": 1857,
+        "deletions": 355
       },
       "repo": "markhazleton.github.io"
     },
@@ -75,7 +139,7 @@
         "message": "update about.markdown"
       },
       "stats": {
-        "total": 1,
+        "total": 14,
         "additions": 12,
         "deletions": 2
       },
@@ -91,7 +155,7 @@
         "message": "update the site about page"
       },
       "stats": {
-        "total": 4,
+        "total": 139,
         "additions": 126,
         "deletions": 13
       },
@@ -107,7 +171,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 31,
         "additions": 30,
         "deletions": 1
       },
@@ -123,7 +187,7 @@
         "message": "Add platform to Gemfile.lock"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 4,
         "deletions": 0
       },
@@ -139,7 +203,7 @@
         "message": "Create jekyll.yml"
       },
       "stats": {
-        "total": 1,
+        "total": 65,
         "additions": 65,
         "deletions": 0
       },
@@ -155,7 +219,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 2,
+        "total": 62,
         "additions": 45,
         "deletions": 17
       },
@@ -171,7 +235,7 @@
         "message": "update my site"
       },
       "stats": {
-        "total": 10,
+        "total": 490,
         "additions": 376,
         "deletions": 114
       },
@@ -187,7 +251,7 @@
         "message": "updates"
       },
       "stats": {
-        "total": 29,
+        "total": 1540,
         "additions": 1331,
         "deletions": 209
       },
@@ -203,7 +267,7 @@
         "message": "add new post"
       },
       "stats": {
-        "total": 1,
+        "total": 12,
         "additions": 12,
         "deletions": 0
       },
@@ -219,7 +283,7 @@
         "message": "update icon"
       },
       "stats": {
-        "total": 4,
+        "total": 12,
         "additions": 10,
         "deletions": 2
       },
@@ -235,7 +299,7 @@
         "message": "updates to post"
       },
       "stats": {
-        "total": 3,
+        "total": 79,
         "additions": 78,
         "deletions": 1
       },
@@ -251,7 +315,7 @@
         "message": "update to excludde docs folder"
       },
       "stats": {
-        "total": 8,
+        "total": 116,
         "additions": 107,
         "deletions": 9
       },
@@ -267,7 +331,7 @@
         "message": "update docs folder"
       },
       "stats": {
-        "total": 35,
+        "total": 2098,
         "additions": 46,
         "deletions": 2052
       },
@@ -283,7 +347,7 @@
         "message": "fix mispelling"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 3,
         "deletions": 1
       },
@@ -299,7 +363,7 @@
         "message": "Create README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 2,
         "deletions": 0
       },
@@ -315,7 +379,7 @@
         "message": "update site conifg"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 2,
         "deletions": 2
       },
@@ -331,7 +395,7 @@
         "message": "Update About Page"
       },
       "stats": {
-        "total": 2,
+        "total": 8,
         "additions": 5,
         "deletions": 3
       },
@@ -347,7 +411,7 @@
         "message": "update published site"
       },
       "stats": {
-        "total": 24,
+        "total": 781,
         "additions": 717,
         "deletions": 64
       },
@@ -379,7 +443,7 @@
         "message": "Delete _site directory added to Git Ignore as well"
       },
       "stats": {
-        "total": 36,
+        "total": 2672,
         "additions": 0,
         "deletions": 2672
       },
@@ -395,7 +459,7 @@
         "message": "update git ignore"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 2,
         "deletions": 0
       },
@@ -411,7 +475,7 @@
         "message": "update"
       },
       "stats": {
-        "total": 25,
+        "total": 809,
         "additions": 733,
         "deletions": 76
       },
@@ -427,7 +491,7 @@
         "message": "add updated site"
       },
       "stats": {
-        "total": 19,
+        "total": 771,
         "additions": 712,
         "deletions": 59
       },
@@ -443,7 +507,7 @@
         "message": "publish updated site"
       },
       "stats": {
-        "total": 9,
+        "total": 682,
         "additions": 682,
         "deletions": 0
       },
@@ -459,7 +523,7 @@
         "message": "minor copy updates to site"
       },
       "stats": {
-        "total": 24,
+        "total": 188,
         "additions": 69,
         "deletions": 119
       },
@@ -475,7 +539,7 @@
         "message": "update docs with latest"
       },
       "stats": {
-        "total": 14,
+        "total": 720,
         "additions": 702,
         "deletions": 18
       },
@@ -491,7 +555,7 @@
         "message": "update index pages"
       },
       "stats": {
-        "total": 6,
+        "total": 42,
         "additions": 23,
         "deletions": 19
       },
@@ -507,7 +571,7 @@
         "message": "Update docs"
       },
       "stats": {
-        "total": 35,
+        "total": 2868,
         "additions": 765,
         "deletions": 2103
       },
@@ -523,7 +587,7 @@
         "message": "udpdate template to use 3.0"
       },
       "stats": {
-        "total": 34,
+        "total": 2356,
         "additions": 2280,
         "deletions": 76
       },
@@ -539,7 +603,7 @@
         "message": "rebuild docs"
       },
       "stats": {
-        "total": 10,
+        "total": 794,
         "additions": 604,
         "deletions": 190
       },
@@ -555,7 +619,7 @@
         "message": "test"
       },
       "stats": {
-        "total": 1,
+        "total": 185,
         "additions": 121,
         "deletions": 64
       },
@@ -571,7 +635,7 @@
         "message": "setup-docs folder"
       },
       "stats": {
-        "total": 14,
+        "total": 880,
         "additions": 880,
         "deletions": 0
       },
@@ -587,7 +651,7 @@
         "message": "jekyll base source"
       },
       "stats": {
-        "total": 9,
+        "total": 254,
         "additions": 254,
         "deletions": 0
       },

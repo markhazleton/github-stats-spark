@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T10:48:46.125911",
+  "timestamp": "2026-01-02T20:22:06.783926",
   "value": [
     {
       "sha": "a7881f714da1e42c82257e8401d8a82b7e627c89",
@@ -11,7 +11,7 @@
         "message": "Update Orders database state (SHM and WAL files)\n\nModified Orders.db-shm and Orders.db-wal, reflecting changes to the database state. These updates are likely due to recent inserts, updates, or deletions in the Orders database."
       },
       "stats": {
-        "total": 2,
+        "total": 0,
         "additions": 0,
         "deletions": 0
       },
@@ -27,7 +27,7 @@
         "message": "Consolidate to single API; unify data access & docs\n\n- Removed separate MinApi project; all data now served by WiredBrainCoffee.API\n- Refactored Razor Pages to fetch menu data via HttpClient from API (async)\n- Updated IMenuService to async; removed hardcoded menu data\n- Added shared model/constants references to frontends\n- Updated Blazor UI for .NET 9 dynamic component API changes\n- Standardized ports and API base URL config across all projects\n- Added detailed architecture, quick start, and troubleshooting docs\n- Included start-all.ps1 script for easy multi-project startup\n- Added Orders.db SQLite files for API data persistence\n- Both frontends now demonstrate hybrid architecture using the same API"
       },
       "stats": {
-        "total": 16,
+        "total": 1240,
         "additions": 1133,
         "deletions": 107
       },
@@ -43,7 +43,7 @@
         "message": "Consolidate API, models, and config; remove MinApi project\n\n- Removed WiredBrainCoffee.MinApi project; migrated all order endpoints, models, and services into WiredBrainCoffee.API\n- Added WiredBrainCoffee.Shared for centralized constants and configuration keys; referenced by all projects\n- Unified MenuItem and Order models in WiredBrainCoffee.Models; introduced OrderDto for API/database transport\n- Centralized menu data in API MenuService; refactored MenuController and added endpoints for ID, slug, and category\n- Merged all minimal API endpoints (orders, status, health) into API Program.cs; unified SignalR and middleware\n- Standardized configuration via appsettings.json in all projects; API URLs and connection strings now config-driven\n- Updated project references and solution structure; removed all MinApi references\n- Added CONSOLIDATION_SUMMARY.md and MINAPI_REMOVAL_NOTICE.md for documentation\n- Cleaned up duplicate/outdated files and standardized logging across the solution\n\nAll projects now use a single API, shared models, and configuration, eliminating duplication and improving maintainability."
       },
       "stats": {
-        "total": 39,
+        "total": 1715,
         "additions": 1071,
         "deletions": 644
       },
@@ -59,7 +59,7 @@
         "message": "Update README.md to reflect full-stack demo and project details"
       },
       "stats": {
-        "total": 1,
+        "total": 118,
         "additions": 116,
         "deletions": 2
       },
@@ -75,7 +75,7 @@
         "message": "updates and fix min api db configuration and startup"
       },
       "stats": {
-        "total": 16,
+        "total": 262,
         "additions": 168,
         "deletions": 94
       },
@@ -91,7 +91,7 @@
         "message": "update to net 8"
       },
       "stats": {
-        "total": 5,
+        "total": 78,
         "additions": 29,
         "deletions": 49
       },
@@ -107,7 +107,7 @@
         "message": "update packages"
       },
       "stats": {
-        "total": 6,
+        "total": 18,
         "additions": 9,
         "deletions": 9
       },
@@ -123,7 +123,7 @@
         "message": "Update to 7, Update NuGet packages"
       },
       "stats": {
-        "total": 27,
+        "total": 127,
         "additions": 47,
         "deletions": 80
       },
@@ -139,7 +139,7 @@
         "message": "Add distributed example"
       },
       "stats": {
-        "total": 274,
+        "total": 95404,
         "additions": 95404,
         "deletions": 0
       },
@@ -155,7 +155,7 @@
         "message": "Create README.md"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 2,
         "deletions": 0
       },
@@ -171,9 +171,57 @@
         "message": "Convert to Net 6"
       },
       "stats": {
-        "total": 5,
+        "total": 99,
         "additions": 32,
         "deletions": 67
+      },
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "95223f7b60a71fcc28fa94f686605edd01cd657b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-03-29T04:03:58+00:00"
+        },
+        "message": "Code Clean-up\nInitial replacement of Menu"
+      },
+      "stats": {
+        "total": 16232,
+        "additions": 7989,
+        "deletions": 8243
+      },
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "96f862dd812d069ebc0cf9625239864af4b2625b",
+      "commit": {
+        "author": {
+          "name": "Alex Wolf",
+          "date": "2018-12-03T01:56:26+00:00"
+        },
+        "message": "squash"
+      },
+      "stats": {
+        "total": 38710,
+        "additions": 23805,
+        "deletions": 14905
+      },
+      "repo": "RazorPages"
+    },
+    {
+      "sha": "e9243266e50272fb687a8b0fb7b0eee79b028463",
+      "commit": {
+        "author": {
+          "name": "Alex Wolf",
+          "date": "2018-08-30T02:11:52+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 23768,
+        "additions": 23768,
+        "deletions": 0
       },
       "repo": "RazorPages"
     }

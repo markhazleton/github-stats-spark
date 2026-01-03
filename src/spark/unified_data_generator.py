@@ -225,31 +225,49 @@ class UnifiedDataGenerator:
                         first_commit_date = None
                         
                         for commit_dict in commits_with_stats:
-                            size = commit_dict.get("total_changes", 0)
+                            # Extract stats from the nested structure
+                            stats = commit_dict.get("stats", {})
+                            files_changed = stats.get("total", 0)
+                            additions = stats.get("additions", 0)
+                            deletions = stats.get("deletions", 0)
+                            
+                            # Calculate total size (files + lines changed)
+                            size = files_changed + additions + deletions
                             commit_sizes.append(size)
+                            
+                            # Get commit date from nested author structure
+                            commit_info_nested = commit_dict.get("commit", {})
+                            author_info = commit_info_nested.get("author", {})
+                            commit_date = author_info.get("date")
                             
                             commit_info = {
                                 "size": size,
-                                "files_changed": commit_dict.get("files_changed", 0),
-                                "lines_added": commit_dict.get("additions", 0),
-                                "lines_deleted": commit_dict.get("deletions", 0),
+                                "files_changed": files_changed,
+                                "lines_added": additions,
+                                "lines_deleted": deletions,
                                 "sha": commit_dict.get("sha", ""),
-                                "date": commit_dict.get("date"),
+                                "date": commit_date,
                             }
                             
                             if largest_commit is None or size > largest_commit["size"]:
                                 largest_commit = commit_info
                             
-                            if smallest_commit is None or (size < smallest_commit["size"] and size > 0):
+                            # For smallest, we want the smallest non-zero commit
+                            # If all commits are zero, we'll still track one
+                            if smallest_commit is None:
+                                smallest_commit = commit_info
+                            elif size > 0 and size < smallest_commit["size"]:
+                                smallest_commit = commit_info
+                            elif smallest_commit["size"] == 0 and size > 0:
                                 smallest_commit = commit_info
                             
-                            # Track first commit date
-                            commit_date_str = commit_dict.get("date")
-                            if commit_date_str:
+                            # Track first commit date (oldest commit)
+                            if commit_date:
                                 if first_commit_date is None:
-                                    first_commit_date = commit_date_str
+                                    first_commit_date = commit_date
                                 else:
-                                    first_commit_date = min(first_commit_date, commit_date_str)
+                                    # Find the oldest date
+                                    first_commit_date = min(first_commit_date, commit_date)
                         
                         if commit_sizes:
                             avg_size = sum(commit_sizes) / len(commit_sizes)

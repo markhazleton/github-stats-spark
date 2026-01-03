@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-02T15:55:25.625988",
+  "timestamp": "2026-01-02T20:21:16.362895",
   "value": [
     {
       "sha": "46400a0a4e9b1393bb0002b7c3570d617b02b89d",
@@ -11,7 +11,7 @@
         "message": "Implement strict types across the codebase: Added `declare(strict_types=1);` to all relevant files and updated function signatures with type hints and return types for improved type safety and code reliability."
       },
       "stats": {
-        "total": 18,
+        "total": 341,
         "additions": 326,
         "deletions": 15
       },
@@ -27,7 +27,7 @@
         "message": "Update build configuration: Upgrade PHP to 8.2, add Node.js setup, and update Vite to version 7.1.2; modify versioning information in version.php"
       },
       "stats": {
-        "total": 4,
+        "total": 32,
         "additions": 22,
         "deletions": 10
       },
@@ -43,7 +43,7 @@
         "message": "Update build process: Add version update functionality and increment build number; modify layout styles for better visibility"
       },
       "stats": {
-        "total": 5,
+        "total": 72,
         "additions": 59,
         "deletions": 13
       },
@@ -59,7 +59,7 @@
         "message": "Enhance contact management UI: Added titles and improved button labels for edit and delete actions in database.php. Updated database.db."
       },
       "stats": {
-        "total": 4,
+        "total": 122,
         "additions": 99,
         "deletions": 23
       },
@@ -75,7 +75,7 @@
         "message": "Refactor data analysis and chart functionality\n\n- Updated data-analysis.php to streamline CSV file handling and remove unnecessary processing logic.\n- Added new chart.php page for visualizing data from CSV files, including configuration options for chart type and columns.\n- Implemented AJAX endpoints for fetching CSV data and summaries, enhancing performance and user experience.\n- Created chart.js and data-analysis.js for managing chart generation and data analysis interactions.\n- Improved user interface with loading indicators and error handling for better feedback during data processing.\n- Updated sitemap.php to include the new chart page."
       },
       "stats": {
-        "total": 18,
+        "total": 1346,
         "additions": 1152,
         "deletions": 194
       },
@@ -91,7 +91,7 @@
         "message": "Add debug joke page and AJAX functionality for testing\n\n- Created debug_joke.php for testing joke fetching functionality.\n- Implemented buttons to test fetchJoke, jQuery, and AJAX calls.\n- Added debug information display for troubleshooting.\n- Developed joke_debug.php to provide a debug version of the joke fetching process.\n- Included error handling and loading indicators for AJAX requests.\n- Enhanced user experience with visual feedback during joke fetching."
       },
       "stats": {
-        "total": 8,
+        "total": 540,
         "additions": 478,
         "deletions": 62
       },
@@ -107,7 +107,7 @@
         "message": "Add comprehensive CI/CD pipeline documentation for PHPDocSpark, detailing GitHub Actions and Azure DevOps workflows, build processes, and troubleshooting guidelines."
       },
       "stats": {
-        "total": 1,
+        "total": 464,
         "additions": 464,
         "deletions": 0
       },
@@ -123,7 +123,7 @@
         "message": "Enhance PrismJS integration and resolve JavaScript errors\n\n- Updated PrismJS code block enhancement documentation with detailed error resolution steps and implementation details.\n- Improved doc_lookup_file_by_slug function to prevent false matches and ensure file existence before returning.\n- Added debug scripts for document mappings, directory structure, and SEO URL generation to facilitate troubleshooting.\n- Created a test page for verifying PrismJS implementation and ensuring no console errors occur."
       },
       "stats": {
-        "total": 10,
+        "total": 585,
         "additions": 552,
         "deletions": 33
       },
@@ -139,7 +139,7 @@
         "message": "Update SEO and security configurations; add Security.md for comprehensive safety information"
       },
       "stats": {
-        "total": 6,
+        "total": 101,
         "additions": 99,
         "deletions": 2
       },
@@ -155,7 +155,7 @@
         "message": "Add comprehensive tests for MarkdownProcessor functionality\n\n- Introduced inline HTML test to validate handling of various HTML elements within Markdown.\n- Implemented processor status page to monitor health, performance metrics, and cache operations.\n- Created runtime error test to ensure proper error handling and initialization of the MarkdownProcessor.\n- Developed tests for code blocks, including PHP, JavaScript, and CSS, to verify syntax highlighting and rendering.\n- Conducted security validation tests to check for XSS protection and path traversal vulnerabilities.\n- Enhanced tests for PrismJS integration to ensure proper class assignment for code blocks.\n- Verified functionality with real document content to ensure accurate Markdown processing."
       },
       "stats": {
-        "total": 40,
+        "total": 4374,
         "additions": 4319,
         "deletions": 55
       },
@@ -171,7 +171,7 @@
         "message": "Add Cloudflare Redirect Troubleshooting Guide with solutions and best practices"
       },
       "stats": {
-        "total": 1,
+        "total": 239,
         "additions": 239,
         "deletions": 0
       },
@@ -187,7 +187,7 @@
         "message": "Refactor Overview.md for clarity and enhanced project description; remove SEO.md; add comprehensive SEO strategy to Project/SEO.md; document Azure routing fix with GitHub Copilot in new AZURE_ROUTING_FIX.md; establish best practices for Copilot instructions in copilot-instructions-best-practices.md; minor UI adjustments in article_list.php."
       },
       "stats": {
-        "total": 7,
+        "total": 1110,
         "additions": 954,
         "deletions": 156
       },
@@ -203,7 +203,7 @@
         "message": "Refactor Nginx configuration and startup script for improved PHP handling\n\n- Updated nginx.conf to listen on port 8080 and streamline PHP processing.\n- Simplified location blocks and removed unnecessary custom routing.\n- Enhanced fastcgi parameters for better compatibility with PHP-FPM.\n- Modified startup.sh to use official Microsoft approach for applying custom nginx configuration and reloading the service."
       },
       "stats": {
-        "total": 4,
+        "total": 174,
         "additions": 83,
         "deletions": 91
       },
@@ -219,7 +219,7 @@
         "message": "Add startup script for PHP applications and custom Nginx configuration"
       },
       "stats": {
-        "total": 2,
+        "total": 58,
         "additions": 57,
         "deletions": 1
       },
@@ -235,7 +235,7 @@
         "message": "Update project references and add articles list page\n\n- Changed URLs and repository references from controlorigins to markhazleton in various markdown and PHP files.\n- Updated live demo and source code links in Overview.md and Project Overview.md.\n- Added new articles list page to display technical articles from an RSS feed.\n- Implemented filtering and searching functionality for articles.\n- Enhanced SEO metadata and navigation to include the new articles section."
       },
       "stats": {
-        "total": 18,
+        "total": 1082,
         "additions": 825,
         "deletions": 257
       },
@@ -251,7 +251,7 @@
         "message": "Enhance project data fetching by implementing remote URL retrieval with error handling; add debug script for testing"
       },
       "stats": {
-        "total": 2,
+        "total": 205,
         "additions": 199,
         "deletions": 6
       },
@@ -267,7 +267,7 @@
         "message": "Refactor GitHub Actions workflow to streamline composer install check and update artifact upload path"
       },
       "stats": {
-        "total": 1,
+        "total": 19,
         "additions": 9,
         "deletions": 10
       },
@@ -283,7 +283,7 @@
         "message": "Update PHP version to 8.0 in composer.json and workflow; set license to MIT"
       },
       "stats": {
-        "total": 3,
+        "total": 32,
         "additions": 15,
         "deletions": 17
       },
@@ -299,7 +299,7 @@
         "message": "Add or update the Azure App Service build and deployment workflow config"
       },
       "stats": {
-        "total": 1,
+        "total": 70,
         "additions": 70,
         "deletions": 0
       },
@@ -315,7 +315,7 @@
         "message": "Update package version to 1.2.0 in package-lock.json; enhance web.config with security headers and formatting improvements"
       },
       "stats": {
-        "total": 3,
+        "total": 52,
         "additions": 35,
         "deletions": 17
       },
@@ -331,7 +331,7 @@
         "message": "Add .vs directory to .gitignore and remove slnx.sqlite file"
       },
       "stats": {
-        "total": 2,
+        "total": 1,
         "additions": 1,
         "deletions": 0
       },
@@ -347,7 +347,7 @@
         "message": "Refactor URL construction for document view redirection in index.html"
       },
       "stats": {
-        "total": 2,
+        "total": 7,
         "additions": 4,
         "deletions": 3
       },
@@ -363,7 +363,7 @@
         "message": "Fix: Enhanced client-side routing for Azure App Service 404 issues\n\n- Improved index.html routing to properly convert /doc/ URLs to file parameters\n- Added path-to-file conversion logic for proper document routing\n- Enhanced debugging and console logging for troubleshooting\n\nThis should resolve the nginx 404 issues by handling routing client-side\nbefore requests reach the problematic Azure App Service nginx config."
       },
       "stats": {
-        "total": 1,
+        "total": 44,
         "additions": 33,
         "deletions": 11
       },
@@ -379,7 +379,7 @@
         "message": "Add versioning system with automated build information; update Azure pipeline and configuration files"
       },
       "stats": {
-        "total": 7,
+        "total": 223,
         "additions": 213,
         "deletions": 10
       },
@@ -395,7 +395,7 @@
         "message": "Enhance JavaScript routing in index.html for better URL handling; update Parsedown.php method signatures to support nullable parameters"
       },
       "stats": {
-        "total": 2,
+        "total": 69,
         "additions": 57,
         "deletions": 12
       },
@@ -411,7 +411,7 @@
         "message": "update configuration for custom error pages"
       },
       "stats": {
-        "total": 1,
+        "total": 27,
         "additions": 15,
         "deletions": 12
       },
@@ -427,7 +427,7 @@
         "message": "Implement custom 404 handler and JavaScript routing for Azure App Service; update Azure pipeline configuration"
       },
       "stats": {
-        "total": 4,
+        "total": 154,
         "additions": 148,
         "deletions": 6
       },
@@ -443,7 +443,7 @@
         "message": "Update PHP version to 8.4 in Azure pipeline and composer configuration"
       },
       "stats": {
-        "total": 2,
+        "total": 7,
         "additions": 4,
         "deletions": 3
       },
@@ -459,7 +459,7 @@
         "message": "Enhance Azure App Service configuration with custom routing and diagnostics; add URL handler for pretty URLs"
       },
       "stats": {
-        "total": 5,
+        "total": 195,
         "additions": 187,
         "deletions": 8
       },
@@ -475,7 +475,7 @@
         "message": "Add configuration files for PHP custom routing on Azure App Service\n\n- Created AZURE_ROUTING_FIX.md for detailed setup instructions.\n- Added .htaccess for Apache URL rewriting rules.\n- Created appsettings.json for application settings.\n- Added diagnostics.php for troubleshooting routing issues.\n- Implemented startup.sh to ensure .htaccess is present and configured.\n- Added web.config for IIS URL rewriting rules and server settings."
       },
       "stats": {
-        "total": 8,
+        "total": 454,
         "additions": 401,
         "deletions": 53
       },
@@ -491,7 +491,7 @@
         "message": "Update dependencies in package.json and package-lock.json; modify button style in document_view.php"
       },
       "stats": {
-        "total": 3,
+        "total": 304,
         "additions": 91,
         "deletions": 213
       },
@@ -507,7 +507,7 @@
         "message": "Add debugging scripts and documentation utilities\n\n- Introduced multiple debugging scripts to examine document mapping, pretty URLs, and selection logic.\n- Implemented centralized documentation utilities for slug generation and file lookup.\n- Enhanced SEO configuration and structured data generation for better search engine visibility.\n- Created a sitemap generator to improve site indexing.\n- Added a robots.txt file to manage crawler access.\n- Developed a routing mechanism for pretty URLs in the PHP built-in server.\n- Included tests for dropdown behavior, exact flow simulation, and routing logic.\n- Improved handling of URL encoding and decoding for better user experience."
       },
       "stats": {
-        "total": 44,
+        "total": 1967,
         "additions": 1781,
         "deletions": 186
       },
@@ -523,7 +523,7 @@
         "message": "chore: add configuration files for linting and formatting tools\n\n- Created .lintstagedrc.json for lint-staged configuration to run ESLint, Prettier, Stylelint on staged files.\n- Added .prettierignore to exclude specific files and directories from Prettier formatting.\n- Introduced .prettierrc.json to define Prettier formatting rules and overrides for different file types.\n- Established .stylelintrc.json with custom rules and ignored files for Stylelint.\n- Implemented eslint.config.js with recommended settings and custom rules for JavaScript files.\n- Added comprehensive documentation in Project Overview.md detailing the purpose, features, architecture, and usage of the Control Origins Documentation & Demo Application."
       },
       "stats": {
-        "total": 26,
+        "total": 32188,
         "additions": 24530,
         "deletions": 7658
       },
@@ -539,7 +539,7 @@
         "message": "Add CRUD functionality for contacts and GitHub API testing script\n\n- Implemented a complete CRUD interface for managing contacts using SQLite in `database.php`.\n- Added functions for creating, reading, updating, and deleting contacts.\n- Included a seeding function to populate the database with Star Trek characters.\n- Created a user-friendly HTML interface for contact management with Bootstrap styling.\n- Added a testing script for GitHub API calls in `test_github_api.php` to validate responses and check for errors."
       },
       "stats": {
-        "total": 54,
+        "total": 11020,
         "additions": 10375,
         "deletions": 645
       },
@@ -555,7 +555,7 @@
         "message": "Enhance fetch_joke.php with error handling and data validation\n\n- Improved cURL function to include error handling for connection issues.\n- Added checks for JSON decoding and API errors to provide user-friendly messages.\n- Sanitized output to prevent XSS vulnerabilities.\n- Updated comments for clarity on functionality."
       },
       "stats": {
-        "total": 4,
+        "total": 238,
         "additions": 229,
         "deletions": 9
       },
@@ -571,7 +571,7 @@
         "message": "Enhance project list and search functionality with improved UI and features\n\n- Refactored project_list.php to group projects by first letter, add search functionality, and implement pagination.\n- Improved UI with Bootstrap components, including filters and enhanced card layout for project display.\n- Updated search.php to provide detailed search results with file metadata, context excerpts, and improved user experience.\n- Created a new layout.php file for consistent styling across pages, including a responsive navbar and footer.\n- Introduced datatable.php for reusable DataTable component with export capabilities and responsive design."
       },
       "stats": {
-        "total": 12,
+        "total": 3308,
         "additions": 2587,
         "deletions": 721
       },
@@ -587,7 +587,7 @@
         "message": "update template"
       },
       "stats": {
-        "total": 9,
+        "total": 91,
         "additions": 82,
         "deletions": 9
       },
@@ -603,7 +603,7 @@
         "message": "Add Chart"
       },
       "stats": {
-        "total": 4,
+        "total": 170,
         "additions": 164,
         "deletions": 6
       },
@@ -619,7 +619,7 @@
         "message": "Add Database CRUD Example"
       },
       "stats": {
-        "total": 5,
+        "total": 899,
         "additions": 898,
         "deletions": 1
       },
@@ -635,7 +635,7 @@
         "message": "Merge branch 'main' of https://github.com/controlorigins/documents"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 3,
         "deletions": 1
       },
@@ -651,7 +651,7 @@
         "message": "On file not found, default to document view"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
@@ -667,7 +667,7 @@
         "message": "Update Readme.md"
       },
       "stats": {
-        "total": 1,
+        "total": 4,
         "additions": 3,
         "deletions": 1
       },
@@ -683,7 +683,7 @@
         "message": "Add links to code page on GitHub"
       },
       "stats": {
-        "total": 7,
+        "total": 82,
         "additions": 45,
         "deletions": 37
       },
@@ -699,7 +699,7 @@
         "message": "Format  Exeuctive Summary in Footer"
       },
       "stats": {
-        "total": 3,
+        "total": 28,
         "additions": 12,
         "deletions": 16
       },
@@ -715,7 +715,7 @@
         "message": "add executive summary to GitHub Api Page"
       },
       "stats": {
-        "total": 2,
+        "total": 107,
         "additions": 105,
         "deletions": 2
       },
@@ -731,7 +731,7 @@
         "message": "Add GitHub Api Access"
       },
       "stats": {
-        "total": 4,
+        "total": 1782,
         "additions": 1782,
         "deletions": 0
       },
@@ -747,7 +747,7 @@
         "message": "add joke and more context"
       },
       "stats": {
-        "total": 6,
+        "total": 462,
         "additions": 457,
         "deletions": 5
       },
@@ -763,7 +763,7 @@
         "message": "Update Navigation"
       },
       "stats": {
-        "total": 2,
+        "total": 32,
         "additions": 18,
         "deletions": 14
       },
@@ -779,7 +779,7 @@
         "message": "update document viewer"
       },
       "stats": {
-        "total": 1,
+        "total": 27,
         "additions": 24,
         "deletions": 3
       },
@@ -795,7 +795,7 @@
         "message": "update title"
       },
       "stats": {
-        "total": 1,
+        "total": 2,
         "additions": 1,
         "deletions": 1
       },
