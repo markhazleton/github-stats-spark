@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- Critical CSS for mobile-first (inline for faster FCP) -->
+    <style>
+      /* Mobile-first critical styles */
+      :root {
+        --touch-target-min: 44px;
+        --safe-area-top: env(safe-area-inset-top, 0px);
+        --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      * { box-sizing: border-box; }
+      body { 
+        margin: 0; 
+        padding: 0;
+        padding-top: var(--safe-area-top);
+        padding-bottom: var(--safe-area-bottom);
+        font-family: system-ui, -apple-system, sans-serif;
+        overflow-x: hidden;
+        overscroll-behavior-y: contain;
+      }
+      .touch-target {
+        min-width: var(--touch-target-min);
+        min-height: var(--touch-target-min);
+      }
+    </style>
 
     <!-- Primary Meta Tags -->
     <title>GitHub Stats Spark - Repository Comparison Dashboard</title>

@@ -1,4 +1,7 @@
 import React from 'react'
+import { useBreakpoint } from '@/hooks/useMediaQuery'
+import { RepositoryCard } from '@/components/Mobile/RepositoryCard/RepositoryCard'
+import { LoadingState } from '@/components/Mobile/LoadingState/LoadingState'
 import TableHeader from './TableHeader'
 import TableRow from './TableRow'
 import ExportButton from '@/components/Common/ExportButton'
@@ -37,7 +40,10 @@ export default function RepositoryTable({
   selectedRepos = [],
   sortField = 'stars',
   sortDirection = 'desc',
+  loading = false,
 }) {
+  const { isMobile } = useBreakpoint();
+
   /**
    * Handle column header click for sorting
    */
@@ -55,6 +61,15 @@ export default function RepositoryTable({
     return selectedRepos.includes(repoName)
   }
 
+  // Show loading state
+  if (loading) {
+    return (
+      <div className={styles.loadingWrapper}>
+        <LoadingState type={isMobile ? 'card' : 'list'} count={5} />
+      </div>
+    );
+  }
+
   // Show empty state if no repositories
   if (!repositories || repositories.length === 0) {
     return (
@@ -64,6 +79,42 @@ export default function RepositoryTable({
     )
   }
 
+  // Mobile view: Card layout
+  if (isMobile) {
+    return (
+      <div className={styles.mobileContainer}>
+        <div className={styles.mobileCardGrid}>
+          {repositories.map((repo) => (
+            <RepositoryCard
+              key={repo.name}
+              repository={repo}
+              selectable={true}
+              selected={isRepoSelected(repo.name)}
+              onSelect={onSelectRepo}
+              onClick={onRowClick}
+            />
+          ))}
+        </div>
+
+        {/* Mobile Footer */}
+        <div className={styles.mobileFooter}>
+          <p className="text-sm text-muted">
+            {repositories.length} {repositories.length === 1 ? 'repository' : 'repositories'}
+            {selectedRepos.length > 0 && (
+              <> • {selectedRepos.length} selected</>
+            )}
+          </p>
+          <ExportButton
+            data={repositories}
+            filename="repositories"
+            label="Export"
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop view: Table layout
   return (
     <div className={styles.tableWrapper}>
       <div className={styles.tableContainer}>

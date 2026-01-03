@@ -1,0 +1,95 @@
+/**
+ * Mobile-First Breakpoint System
+ * Defines responsive breakpoints for mobile-first design
+ * 
+ * Breakpoints:
+ * - xs: 0-319px (small mobile phones)
+ * - sm: 320-767px (standard mobile phones - BASE STYLES)
+ * - md: 768-1023px (tablets)
+ * - lg: 1024-1279px (desktops)
+ * - xl: 1280px+ (large desktops)
+ */
+
+:root {
+  /* Breakpoint values */
+  --bp-xs: 0px;
+  --bp-sm: 320px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* Container widths */
+  --container-xs: 100%;
+  --container-sm: 100%;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1200px;
+
+  /* Grid columns */
+  --grid-columns-xs: 1;
+  --grid-columns-sm: 1;
+  --grid-columns-md: 2;
+  --grid-columns-lg: 3;
+  --grid-columns-xl: 4;
+}
+
+/* Mobile-first base styles apply to xs and sm (0-767px) */
+/* No media query needed - these are the defaults */
+
+/* Tablet and above (md: 768px+) */
+@media (min-width: 768px) {
+  :root {
+    --current-breakpoint: 'md';
+  }
+}
+
+/* Desktop (lg: 1024px+) */
+@media (min-width: 1024px) {
+  :root {
+    --current-breakpoint: 'lg';
+  }
+}
+
+/* Large desktop (xl: 1280px+) */
+@media (min-width: 1280px) {
+  :root {
+    --current-breakpoint: 'xl';
+  }
+}
+
+/* Utility classes for responsive display */
+.mobile-only {
+  display: block;
+}
+
+.tablet-up {
+  display: none;
+}
+
+.desktop-up {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .tablet-up {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-up {
+    display: block;
+  }
+}
+
+/* Container query support (progressive enhancement) */
+@supports (container-type: inline-size) {
+  .responsive-container {
+    container-type: inline-size;
+    container-name: main;
+  }
+}

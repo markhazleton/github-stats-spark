@@ -8,19 +8,26 @@
     "dev": "vite",
     "build": "vite build",
     "postbuild": "node -e \"const fs=require('fs'); const path=require('path'); const src='../data'; const dest='../docs/data'; if(fs.existsSync(src)){fs.mkdirSync(dest,{recursive:true}); fs.cpSync(src,dest,{recursive:true}); console.log('✓ Copied data to docs/data');}\"",
-    "preview": "vite preview",
+    "preview": "vite preview --port 4173 --host",
+    "lighthouse": "lhci autorun",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "lint": "eslint src --ext js,jsx",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\""
   },
   "dependencies": {
+    "@use-gesture/react": "^10.3.1",
+    "chart.js": "^4.0.0",
+    "dexie": "^4.0.0",
     "react": "^19.2.3",
+    "react-chartjs-2": "^5.0.0",
     "react-dom": "^19.2.3",
+    "react-modal-sheet": "^5.2.1",
     "recharts": "^3.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@lhci/cli": "^0.15.0",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
@@ -31,7 +38,8 @@
     "prettier": "^3.7.4",
     "terser": "^5.44.1",
     "vite": "^7.3.0",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.16",
+    "workbox-window": "^7.0.0"
   },
   "engines": {
     "node": ">=18.0.0",

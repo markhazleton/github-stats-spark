@@ -1,0 +1,227 @@
+/**
+ * Gesture Feedback Styles
+ * Visual feedback for swipe, tap, and long-press gestures
+ */
+
+:root {
+  /* Gesture feedback colors */
+  --gesture-highlight: rgba(0, 122, 255, 0.15);
+  --gesture-swipe-indicator: #0066cc;
+  --gesture-long-press: rgba(255, 149, 0, 0.2);
+
+  /* Animation durations */
+  --gesture-feedback-duration: 200ms;
+  --swipe-animation-duration: 300ms;
+}
+
+/* Swipeable container */
+.swipeable {
+  position: relative;
+  overflow: hidden;
+  touch-action: pan-y; /* Allow vertical scrolling */
+}
+
+/* Swipe indicator (left/right actions) */
+.swipe-indicator {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--swipe-animation-duration) ease;
+  pointer-events: none;
+}
+
+.swipe-indicator-left {
+  left: 0;
+  background: linear-gradient(to right, var(--gesture-swipe-indicator), transparent);
+}
+
+.swipe-indicator-right {
+  right: 0;
+  background: linear-gradient(to left, var(--gesture-swipe-indicator), transparent);
+}
+
+.swipeable.swiping-left .swipe-indicator-left,
+.swipeable.swiping-right .swipe-indicator-right {
+  opacity: 1;
+}
+
+/* Swipe content transform */
+.swipe-content {
+  transform: translateX(0);
+  transition: transform var(--swipe-animation-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.swipeable.swiping .swipe-content {
+  transition: none; /* Disable transition during active swipe */
+}
+
+/* Long-press feedback */
+.long-pressable {
+  position: relative;
+  user-select: none;
+}
+
+.long-pressable::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gesture-long-press);
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity var(--gesture-feedback-duration) ease;
+  pointer-events: none;
+}
+
+.long-pressable.pressing::after {
+  opacity: 1;
+}
+
+/* Tap highlight (double-tap, quick tap) */
+.tap-highlight {
+  position: relative;
+}
+
+.tap-highlight::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--gesture-highlight);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes tap-pulse {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
+.tap-highlight.tapped::before {
+  animation: tap-pulse 400ms ease-out;
+}
+
+/* Drag handle indicator */
+.drag-handle {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.dragging {
+  opacity: 0.7;
+  transition: opacity var(--gesture-feedback-duration) ease;
+}
+
+/* Pull-to-refresh indicator */
+.pull-to-refresh {
+  position: relative;
+  overflow: hidden;
+}
+
+.ptr-indicator {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--swipe-animation-duration) ease;
+  z-index: 1;
+}
+
+.ptr-indicator.pulling {
+  transform: translateY(60px);
+}
+
+.ptr-indicator.refreshing {
+  transform: translateY(60px);
+}
+
+/* Swipe action buttons */
+.swipe-actions {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  opacity: 0;
+  transition: opacity var(--swipe-animation-duration) ease;
+  pointer-events: none;
+}
+
+.swipe-actions-left {
+  left: 0;
+}
+
+.swipe-actions-right {
+  right: 0;
+}
+
+.swipeable.swiping-left .swipe-actions-left,
+.swipeable.swiping-right .swipe-actions-right {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.swipe-action {
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  transition: background-color var(--gesture-feedback-duration) ease;
+}
+
+.swipe-action-delete {
+  background-color: #dc3545;
+}
+
+.swipe-action-archive {
+  background-color: #6c757d;
+}
+
+.swipe-action-favorite {
+  background-color: #ffc107;
+}
+
+/* Prevent text selection during gestures */
+.gesture-active {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Disable browser pull-to-refresh */
+body {
+  overscroll-behavior-y: contain;
+}
+
+.scroll-container {
+  overscroll-behavior-y: contain;
+}

@@ -1,4 +1,5 @@
-import React, { useState, useMemo, Suspense, lazy } from 'react'
+import React, { useState, useMemo, Suspense, lazy, useEffect } from 'react'
+import { ViewportProvider } from '@/contexts/ViewportContext'
 import useRepositoryData from '@/hooks/useRepositoryData'
 import RepositoryTable from '@/components/RepositoryTable/RepositoryTable'
 import LoadingState from '@/components/Common/LoadingState'
@@ -6,6 +7,7 @@ import FilterControls from '@/components/Common/FilterControls'
 import { useTableSort } from '@/hooks/useTableSort'
 import { extractLanguages } from '@/services/dataService'
 import VisualizationControls from '@/components/Visualizations/VisualizationControls'
+import { preloadResource, deferExecution, getConnectionType } from '@/utils/performance'
 
 // Lazy load chart components for better performance
 const BarChart = lazy(() => import('@/components/Visualizations/BarChart'))
@@ -38,6 +40,23 @@ import {
 function App() {
   // Data fetching with custom hook
   const { data, loading, error } = useRepositoryData()
+
+  // Preload critical data on mount
+  useEffect(() => {
+    // Preload repositories.json for faster initial load
+    preloadResource('/data/repositories.json', 'fetch');
+    
+    // Check connection type for adaptive loading
+    const connectionType = getConnectionType();
+    
+    // Defer non-critical operations based on connection quality
+    if (connectionType !== '2g' && connectionType !== 'slow-2g') {
+      deferExecution(() => {
+        // Preload comparison view for faster navigation
+        // Will be loaded when browser is idle
+      }, 3000);
+    }
+  }, []);
 
   // View state management
   const [currentView, setCurrentView] = useState('table') // 'table', 'visualizations', 'comparison'
@@ -183,9 +202,10 @@ function App() {
   }
 
   return (
-    <div className="app">
-      {/* Header */}
-      <header className="header">
+    <ViewportProvider>
+      <div className="app">
+        {/* Header */}
+        <header className="header">
         <div className="container">
           <div className="flex items-center justify-between" style={{ height: 'var(--header-height)' }}>
             <div className="flex items-center gap-md">
@@ -403,7 +423,8 @@ function App() {
             onPrevious={handlePreviousRepo}
           />
         </Suspense>
-      )}
+      </div>
+    </ViewportProvider
     </div>
   )
 }

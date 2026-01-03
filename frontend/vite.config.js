@@ -24,8 +24,8 @@ const serveDataPlugin = () => ({
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), serveDataPlugin()],
-
+  plugins: [
+    react(),react(), serveDataPlugin()
   // Base URL - use relative paths for flexibility
   base: './',
 
@@ -70,7 +70,7 @@ export default defineConfig({
     },
 
     // Performance budgets (warnings)
-    chunkSizeWarningLimit: 500, // 500KB warning threshold
+    chunkSizeWarningLimit: 170, // 170KB warning threshold (performance budget)
 
     // Source maps for debugging (disable for production)
     sourcemap: false

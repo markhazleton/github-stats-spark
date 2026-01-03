@@ -1,0 +1,23 @@
+# ESLint Ignore File
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+../docs/
+
+# Cache
+.vite/
+.vite-cache/
+.eslintcache
+
+# Coverage
+coverage/
+
+# Test output
+htmlcov/
+
+# Config files
+*.config.js
+vite.config.js

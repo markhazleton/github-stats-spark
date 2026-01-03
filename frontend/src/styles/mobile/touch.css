@@ -1,0 +1,164 @@
+/**
+ * Touch Target Styles
+ * Ensures minimum 44x44px touch targets (WCAG 2.5.5 AAA)
+ * Includes touch feedback states and proper spacing
+ */
+
+:root {
+  /* Touch target sizing */
+  --touch-target-min: 44px;
+  --touch-target-spacing: 8px;
+
+  /* Touch feedback colors */
+  --touch-feedback-color: rgba(0, 0, 0, 0.1);
+  --touch-feedback-duration: 150ms;
+
+  /* Focus indicator */
+  --focus-outline-width: 2px;
+  --focus-outline-color: #0066cc;
+  --focus-outline-offset: 2px;
+}
+
+/* Base touch target */
+.touch-target {
+  min-width: var(--touch-target-min);
+  min-height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch target spacing */
+.touch-target + .touch-target {
+  margin-left: var(--touch-target-spacing);
+}
+
+/* Touch feedback states */
+.touch-target::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--touch-feedback-color);
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity var(--touch-feedback-duration) ease;
+  pointer-events: none;
+}
+
+.touch-target:active::before {
+  opacity: 1;
+}
+
+/* Focus indicator (keyboard navigation) */
+.touch-target:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Disabled state */
+.touch-target:disabled,
+.touch-target[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.touch-target:disabled::before,
+.touch-target[aria-disabled="true"]::before {
+  display: none;
+}
+
+/* Button as touch target */
+button.touch-target,
+a.touch-target {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
+/* Ensure spacing between interactive elements */
+.interactive-row {
+  display: flex;
+  gap: var(--touch-target-spacing);
+  align-items: center;
+}
+
+/* Interactive card with proper touch targets */
+.interactive-card {
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.interactive-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--touch-feedback-color);
+  opacity: 0;
+  transition: opacity var(--touch-feedback-duration) ease;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.interactive-card:active::before {
+  opacity: 1;
+}
+
+/* Ripple effect for buttons (optional enhancement) */
+@keyframes ripple {
+  from {
+    transform: scale(0);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.touch-target.ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: var(--touch-feedback-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.touch-target.ripple:active::after {
+  animation: ripple 300ms ease-out;
+}
+
+/* Contrast requirements (4.5:1 for text) */
+.touch-target {
+  /* Text contrast should be handled by theme colors */
+}
+
+/* Ensure visible focus for accessibility */
+*:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Remove default browser focus styles */
+*:focus:not(:focus-visible) {
+  outline: none;
+}

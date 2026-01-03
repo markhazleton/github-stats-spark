@@ -394,6 +394,9 @@ code, pre {
   cursor: pointer;
   transition: all var(--transition-fast);
   text-decoration: none;
+  /* Mobile-first touch targets (WCAG 2.5.5 AAA) */
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .btn:hover {
@@ -404,6 +407,10 @@ code, pre {
 .btn:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 .btn-primary {

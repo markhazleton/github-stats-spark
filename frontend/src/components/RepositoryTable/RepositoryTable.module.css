@@ -262,6 +262,41 @@
   color: var(--color-text-muted);
 }
 
+/* Mobile Container - Card Layout */
+.mobileContainer {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  padding: 0;
+}
+
+.mobileCardGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  /* Ensure no horizontal scroll on mobile viewports */
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.mobileFooter {
+  padding: 1rem;
+  background-color: var(--color-surface-alt);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  border-radius: 0 0 8px 8px;
+}
+
+.loadingWrapper {
+  padding: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .table {
@@ -275,18 +310,24 @@
 }
 
 @media (max-width: 768px) {
-  /* Stack table cells vertically on mobile */
-  .tableContainer {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .table {
-    min-width: 900px; /* Force horizontal scroll */
-  }
-
+  /* Mobile view uses card layout instead of table */
   .tableWrapper {
     border-radius: var(--radius-md);
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  .tableContainer {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Hide table on mobile when card view is active */
+  .table {
+    display: none;
   }
 }
 
