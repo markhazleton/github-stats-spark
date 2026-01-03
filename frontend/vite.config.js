@@ -29,11 +29,11 @@ export default defineConfig({
     serveDataPlugin()
   ],
 
-  // Base URL - use relative paths for flexibility
-  base: './',
+  // Base URL for GitHub Pages deployment
+  base: '/github-stats-spark/',
 
-  // Exclude symlink from public directory
-  publicDir: false,
+  // Public directory for static assets (favicon, etc)
+  publicDir: 'public',
 
   // Build configuration
   build: {

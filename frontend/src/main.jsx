@@ -24,7 +24,9 @@ import "@/styles/global.css";
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/sw.js", { scope: "/" })
+      .register(import.meta.env.BASE_URL + "sw.js", {
+        scope: import.meta.env.BASE_URL,
+      })
       .then((registration) => {
         console.log(
           "[Service Worker] Registered successfully:",
