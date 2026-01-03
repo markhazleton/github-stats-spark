@@ -68,6 +68,13 @@ All operations MUST log to stdout/stderr for GitHub Actions workflow debugging. 
 - `config/themes.yml` - Theme definitions (colors, effects, layout)
 - Configuration validation MUST occur before API calls to fail fast
 
+**Documentation Organization**:
+
+- ALL markdown documentation files MUST be placed in `/documentation` folder
+- Only exception: Root-level `README.md` for repository overview
+- Generated analysis reports (SVGs, JSON) go to `output/` and `data/` directories
+- This organization ensures clean project structure and prevents documentation sprawl
+
 **Theme Requirements**:
 
 - All themes MUST maintain WCAG AA contrast compliance (4.5:1 for text)
