@@ -115,7 +115,12 @@
       "Bash(if [ -d \"documentation/spec/001-repo-comparison-dashboard\" ])",
       "Bash(then ls -1d docs/spec/*-mobile-first-redesign)",
       "Bash(if [ -d \"documentation/spec\" ])",
-      "Bash(then ls -1d documentation/spec/*-mobile-first-redesign)"
+      "Bash(then ls -1d documentation/spec/*-mobile-first-redesign)",
+      "Bash(else echo \"NO_SRC_DIR\")",
+      "Bash(if [ -f \"frontend/vite.config.js\" ])",
+      "Bash(then cat frontend/vite.config.js)",
+      "Bash(else echo \"NO_VITE_CONFIG\")",
+      "Bash(if [ -f \".specify/scripts/powershell/update-agent-context.ps1\" ])"
     ]
   }
 }
