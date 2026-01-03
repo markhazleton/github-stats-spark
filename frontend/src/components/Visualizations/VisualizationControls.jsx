@@ -1,11 +1,7 @@
 import { useState } from 'react';
+import ChartTypeSelector from './ChartTypeSelector';
+import { useBreakpoint } from '@/hooks/useMediaQuery';
 import styles from './VisualizationControls.module.css';
-
-const CHART_TYPES = [
-  { id: 'bar', label: 'Bar Chart', icon: '📊' },
-  { id: 'line', label: 'Line Graph', icon: '📈' },
-  { id: 'scatter', label: 'Scatter Plot', icon: '⚫' }
-];
 
 const METRICS = [
   { id: 'totalCommits', label: 'Total Commits' },
@@ -19,6 +15,7 @@ const METRICS = [
 /**
  * VisualizationControls Component
  * Provides controls for selecting chart type and metric to visualize
+ * Uses ChartTypeSelector for touch-friendly chart type selection
  * 
  * @param {Object} props
  * @param {string} props.chartType - Currently selected chart type
@@ -32,33 +29,25 @@ export default function VisualizationControls({
   selectedMetric, 
   onMetricChange 
 }) {
+  const { isMobile } = useBreakpoint();
+
   return (
     <div className={styles.controls}>
-      <div className={styles.section}>
-        <label className={styles.label}>Chart Type:</label>
-        <div className={styles.buttonGroup}>
-          {CHART_TYPES.map(type => (
-            <button
-              key={type.id}
-              className={`${styles.button} ${chartType === type.id ? styles.active : ''}`}
-              onClick={() => onChartTypeChange(type.id)}
-              aria-label={`Select ${type.label}`}
-              aria-pressed={chartType === type.id}
-            >
-              <span className={styles.icon}>{type.icon}</span>
-              <span className={styles.buttonLabel}>{type.label}</span>
-            </button>
-          ))}
-        </div>
-      </div>
+      {/* Chart Type Selector - Touch-optimized on mobile */}
+      <ChartTypeSelector
+        selectedType={chartType}
+        onTypeChange={onChartTypeChange}
+        availableTypes={['bar', 'line', 'pie', 'scatter']}
+      />
 
+      {/* Metric Selector */}
       <div className={styles.section}>
         <label className={styles.label} htmlFor="metric-select">
           Metric:
         </label>
         <select
           id="metric-select"
-          className={styles.select}
+          className={`${styles.select} ${isMobile ? styles.selectMobile : ''}`}
           value={selectedMetric}
           onChange={(e) => onMetricChange(e.target.value)}
           aria-label="Select metric to visualize"
@@ -73,3 +62,4 @@ export default function VisualizationControls({
     </div>
   );
 }
+

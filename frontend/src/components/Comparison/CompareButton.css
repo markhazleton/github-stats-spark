@@ -1,0 +1,160 @@
+/**
+ * CompareButton Styles
+ * 
+ * Floating action button positioned in thumb-reach zone (bottom 1/3 of screen)
+ */
+
+.compare-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  color: white;
+  border: none;
+  border-radius: 28px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  /* Touch target compliance (WCAG 2.5.5 AAA) */
+  min-height: 56px;
+  min-width: 56px;
+  /* Animation */
+  animation: slide-in-up 0.3s ease-out;
+}
+
+.compare-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.5);
+}
+
+.compare-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.4);
+}
+
+/* Disabled state */
+.compare-button-disabled {
+  background: linear-gradient(135deg, #999 0%, #777 100%);
+  cursor: not-allowed;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.compare-button-disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Max selections reached */
+.compare-button-max {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+}
+
+.compare-button-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.compare-button-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.compare-button-text {
+  white-space: nowrap;
+}
+
+.compare-button-badge {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.compare-button-hint {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Animations */
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive positioning - thumb reach zone */
+@media (max-width: 768px) {
+  .compare-button {
+    bottom: 1rem;
+    right: 1rem;
+    /* Optimize for one-handed use - bottom 1/3 of screen */
+  }
+}
+
+@media (min-width: 769px) {
+  .compare-button {
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .compare-button {
+    animation: none;
+    transition: none;
+  }
+
+  .compare-button:hover {
+    transform: none;
+  }
+
+  .compare-button-hint {
+    animation: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .compare-button {
+    border: 2px solid white;
+  }
+
+  .compare-button-badge {
+    border: 1px solid white;
+  }
+}

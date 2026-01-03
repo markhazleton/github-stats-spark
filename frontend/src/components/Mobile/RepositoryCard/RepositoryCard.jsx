@@ -1,31 +1,38 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { LanguageBadge } from './LanguageBadge';
+import { useGesture, triggerHapticFeedback } from '@/hooks/useGesture';
 import './RepositoryCard.css';
 
 /**
  * RepositoryCard Component
- * Mobile-optimized card layout for repository display
+ * Mobile-optimized card layout for repository display with swipe-to-delete
  * 
  * @param {Object} props
  * @param {Object} props.repository - Repository data
  * @param {string} props.variant - Display state ('collapsed'|'expanded')
  * @param {boolean} props.selectable - Show selection checkbox
  * @param {boolean} props.selected - Current selection state
+ * @param {boolean} props.swipeable - Enable swipe-to-delete
  * @param {Function} props.onSelect - Selection callback
  * @param {Function} props.onExpand - Expansion callback
  * @param {Function} props.onClick - Card click callback
+ * @param {Function} props.onDelete - Delete callback (for swipe-to-delete)
  */
 export function RepositoryCard({ 
   repository,
   variant = 'collapsed',
   selectable = false,
   selected = false,
+  swipeable = false,
   onSelect,
   onExpand,
-  onClick
+  onClick,
+  onDelete
 }) {
   const [isExpanded, setIsExpanded] = useState(variant === 'expanded');
+  const [swipeOffset, setSwipeOffset] = useState(0);
+  const [showDeleteButton, setShowDeleteButton] = useState(false);
 
   const handleCardClick = (e) => {
     // Don't trigger if clicking checkbox
@@ -44,19 +51,50 @@ export function RepositoryCard({
 
   const handleCheckboxChange = (e) => {
     e.stopPropagation();
+    triggerHapticFeedback('light');
     if (onSelect) {
       onSelect(repository.name);
     }
   };
 
-  const formatDate = (dateString) => {
-    if (!dateString) return 'Unknown';
-    const date = new Date(dateString);
-    const now = new Date();
-    const diffTime = Math.abs(now - date);
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    
-    if (diffDays === 0) return 'Today';
+  const handleDelete = () => {
+    triggerHapticFeedback('heavy');
+    if (onDelete) {
+      onDelete(repository.name);
+    }
+    setShowDeleteButton(false);
+    setSwipeOffset(0);
+  };
+
+  // Swipe gesture configuration for swipe-to-delete
+  const bind = useGesture(
+    swipeable
+      ? {
+          onSwipeLeft: ({ distance }) => {
+            if (distance > 100) {
+              setShowDeleteButton(true);
+              triggerHapticFeedback('medium');
+            }
+    showDeleteButton && 'repository-card-swipe-revealed',
+    'interactive-card'
+  ].filter(Boolean).join(' ');
+
+  return (
+    <div className="repository-card-wrapper">
+      <article 
+        {...(swipeable ? bind() : {})}
+        className={cardClasses}
+        onClick={handleCardClick}
+        role="button"
+        tabIndex={0}
+        onKeyPress={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handleCardClick(e);
+          }
+        }}
+        aria-expanded={isExpanded}
+        aria-label={`Repository: ${repository.name}`}
+      if (diffDays === 0) return 'Today';
     if (diffDays === 1) return 'Yesterday';
     if (diffDays < 7) return `${diffDays} days ago`;
     if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
@@ -168,11 +206,23 @@ export function RepositoryCard({
               </ul>
             </div>
           )}
+        {/* Expand/Collapse Indicator */}
+        <div className="repository-card-expand-indicator" aria-hidden="true">
+          {isExpanded ? '▲' : '▼'}
         </div>
-      )}
+      </article>
 
-      {/* Expand/Collapse Indicator */}
-      <div className="repository-card-expand-indicator" aria-hidden="true">
+      {/* Delete Button (revealed on swipe) */}
+      {swipeable && showDeleteButton && (
+        <button
+          className="repository-card-delete-button touch-target"
+          onClick={handleDelete}
+          aria-label={`Remove ${repository.name} from comparison`}
+        >
+          🗑️ Remove
+        </button>
+      )}
+    </divassName="repository-card-expand-indicator" aria-hidden="true">
         {isExpanded ? '▲' : '▼'}
       </div>
     </article>
@@ -182,9 +232,11 @@ export function RepositoryCard({
 RepositoryCard.propTypes = {
   repository: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    language: PropTypes.string,
-    stars: PropTypes.number,
-    lastCommitDate: PropTypes.string,
+  swipeable: PropTypes.bool,
+  onSelect: PropTypes.func,
+  onExpand: PropTypes.func,
+  onClick: PropTypes.func,
+  onDeleteommitDate: PropTypes.string,
     description: PropTypes.string,
     commits: PropTypes.number,
     contributors: PropTypes.number,

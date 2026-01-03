@@ -8,6 +8,9 @@ import { useTableSort } from '@/hooks/useTableSort'
 import { extractLanguages } from '@/services/dataService'
 import VisualizationControls from '@/components/Visualizations/VisualizationControls'
 import { preloadResource, deferExecution, getConnectionType } from '@/utils/performance'
+import CompareButton from '@/components/Comparison/CompareButton'
+import MobileComparisonView from '@/components/Comparison/MobileComparisonView'
+import { useBreakpoint } from '@/hooks/useMediaQuery'
 
 // Lazy load chart components for better performance
 const BarChart = lazy(() => import('@/components/Visualizations/BarChart'))
@@ -40,6 +43,7 @@ import {
 function App() {
   // Data fetching with custom hook
   const { data, loading, error } = useRepositoryData()
+  const { isMobile } = useBreakpoint()
 
   // Preload critical data on mount
   useEffect(() => {
@@ -368,21 +372,30 @@ function App() {
                       </p>
                     </div>
 
-                    {/* Comparison Selector */}
+                    {/* Mobile vs Desktop Comparison Views */}
                     <Suspense fallback={<LoadingState message="Loading comparison..." />}>
-                      <ComparisonSelector
-                        selectedRepos={selectedRepos}
-                        onClearSelection={handleClearSelection}
-                        maxSelections={5}
-                      />
-
-                      {/* Comparison View */}
-                      <div className="mt-lg">
-                        <ComparisonView
+                      {isMobile ? (
+                        /* Mobile: Vertical stacked layout with swipe navigation */
+                        <MobileComparisonView
                           repositories={selectedRepositoryObjects}
                           onRemoveRepo={handleRemoveRepo}
                         />
-                      </div>
+                      ) : (
+                        /* Desktop: Side-by-side table comparison */
+                        <>
+                          <ComparisonSelector
+                            selectedRepos={selectedRepos}
+                            onClearSelection={handleClearSelection}
+                            maxSelections={5}
+                          />
+                          <div className="mt-lg">
+                            <ComparisonView
+                              repositories={selectedRepositoryObjects}
+                              onRemoveRepo={handleRemoveRepo}
+                            />
+                          </div>
+                        </>
+                      )}
                     </Suspense>
                   </div>
                 )}
@@ -412,6 +425,15 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Floating Compare Button (mobile only) */}
+      {isMobile && currentView === 'table' && (
+        <CompareButton
+          count={selectedRepos.length}
+          onClick={() => setCurrentView('comparison')}
+          maxSelections={5}
+        />
+      )}
 
       {/* Detail Modal (for drill-down) */}
       {detailModalRepo && (

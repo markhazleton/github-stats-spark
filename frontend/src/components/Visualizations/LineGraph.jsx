@@ -1,60 +1,62 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-import styles from './Charts.module.css';
-
 /**
- * CustomTooltip Component
- * Displays formatted values on hover
+ * LineGraph Component
+ * 
+ * Renders a line graph visualization using Chart.js with touch-optimized tooltips.
+ * 
+ * @component
  */
-function CustomTooltip({ active, payload, metricLabel }) {
-  if (!active || !payload || !payload.length) {
-    return null;
-  }
 
-  const data = payload[0].payload;
-  
-  return (
-    <div className={styles.tooltip}>
-      <p className={styles.tooltipTitle}>{data.name}</p>
-      <p className={styles.tooltipValue}>
-        <strong>{metricLabel}:</strong> {formatValue(data.value, metricLabel)}
-      </p>
-      {data.date && (
-        <p className={styles.tooltipDate}>
-          Date: {new Date(data.date).toLocaleDateString()}
-        </p>
-      )}
-    </div>
-  );
-}
+import React from 'react';
+import PropTypes from 'prop-types';
+import ChartWrapper from './ChartWrapper';
 
 /**
  * Format values based on metric type
  */
 function formatValue(value, metricLabel) {
-  if (metricLabel.includes('Date')) {
+  if (!value && value !== 0) return 'N/A';
+  
+  if (metricLabel?.includes('Date')) {
     return new Date(value).toLocaleDateString();
   }
-  if (metricLabel.includes('Size')) {
+  if (metricLabel?.includes('Size')) {
     return `${value.toLocaleString()} changes`;
   }
-  return value.toLocaleString();
+  if (typeof value === 'number') {
+    if (value >= 1000000) {
+      return `${(value / 1000000).toFixed(1)}M`;
+    } else if (value >= 1000) {
+      return `${(value / 1000).toFixed(1)}K`;
+    }
+    return value.toLocaleString();
+  }
+  return value;
 }
 
 /**
  * LineGraph Component
- * Renders a line graph visualization using Recharts
  * 
  * @param {Object} props
  * @param {Array} props.data - Chart data array with {name, value, date} objects
  * @param {string} props.metricLabel - Label for the metric being displayed
  * @param {Function} props.onPointClick - Handler for point click events
+ * @param {string} props.lineColor - Line color (default: primary blue)
+ * @param {boolean} props.fill - Fill area under line (default: true)
  */
-export default function LineGraph({ data, metricLabel, onPointClick }) {
+export default function LineGraph({ 
+  data, 
+  metricLabel = 'Value',
+  onPointClick,
+  lineColor = '#0366d6',
+  fill = true
+}) {
   if (!data || data.length === 0) {
     return (
-      <div className={styles.emptyState}>
-        <p>No data available for visualization</p>
-      </div>
+      <ChartWrapper
+        type="line"
+        data={{ labels: [], datasets: [] }}
+        emptyMessage="No data available for visualization"
+      />
     );
   }
 
@@ -63,22 +65,122 @@ export default function LineGraph({ data, metricLabel, onPointClick }) {
     if (a.date && b.date) {
       return new Date(a.date) - new Date(b.date);
     }
-    return a.name.localeCompare(b.name);
+    return (a.name || '').localeCompare(b.name || '');
   });
 
+  // Prepare Chart.js data
+  const chartData = {
+    labels: sortedData.map(item => item.name || item.label || ''),
+    datasets: [
+      {
+        label: metricLabel,
+        data: sortedData.map(item => item.value),
+        borderColor: lineColor,
+        backgroundColor: fill ? `${lineColor}33` : 'transparent', // 20% opacity for fill
+        borderWidth: 3,
+        fill: fill,
+        tension: 0.4, // Curved lines
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        pointBackgroundColor: lineColor,
+        pointBorderColor: '#ffffff',
+        pointBorderWidth: 2,
+        pointHoverBackgroundColor: lineColor,
+        pointHoverBorderColor: '#ffffff',
+        pointHoverBorderWidth: 2,
+      },
+    ],
+  };
+
+  // Chart options
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    onClick: (event, elements) => {
+      if (elements.length > 0 && onPointClick) {
+        const index = elements[0].index;
+        const clickedData = sortedData[index];
+        onPointClick({ ...clickedData, fullData: clickedData });
+      }
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            const value = context.parsed.y;
+            return `${metricLabel}: ${formatValue(value, metricLabel)}`;
+          },
+          afterLabel: (context) => {
+            const item = sortedData[context.dataIndex];
+            if (item.date) {
+              return `Date: ${new Date(item.date).toLocaleDateString()}`;
+            }
+            return '';
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+        ticks: {
+          maxRotation: 45,
+          minRotation: 0,
+          font: {
+            size: 11,
+          },
+          autoSkip: true,
+          maxTicksLimit: 12,
+        },
+      },
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: true,
+          color: 'rgba(0, 0, 0, 0.05)',
+        },
+        ticks: {
+          callback: (value) => formatValue(value, metricLabel),
+        },
+      },
+    },
+    interaction: {
+      mode: 'nearest',
+      axis: 'x',
+      intersect: false,
+    },
+  };
+
   return (
-    <div className={styles.chartContainer}>
-      <ResponsiveContainer width="100%" height={400}>
-        <LineChart
-          data={sortedData}
-          margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-          <XAxis
-            dataKey="name"
-            angle={-45}
-            textAnchor="end"
-            height={100}
+    <ChartWrapper
+      type="line"
+      data={chartData}
+      options={options}
+      title={`${metricLabel} Over Time`}
+      enableHorizontalScroll={data.length > 15}
+      maxDataPoints={15}
+    />
+  );
+}
+
+LineGraph.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    label: PropTypes.string,
+    value: PropTypes.number,
+    date: PropTypes.string,
+  })).isRequired,
+  metricLabel: PropTypes.string,
+  onPointClick: PropTypes.func,
+  lineColor: PropTypes.string,
+  fill: PropTypes.bool,
+};
+
             tick={{ fill: 'var(--color-text)', fontSize: 12 }}
           />
           <YAxis

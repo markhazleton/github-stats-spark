@@ -1,0 +1,160 @@
+/**
+ * ChartWrapper Component Styles
+ * 
+ * Responsive chart container with horizontal scroll support
+ */
+
+.chart-wrapper {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.chart-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.chart-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chart-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.chart-container::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+/* Scrollable chart */
+.chart-scrollable {
+  scroll-behavior: smooth;
+}
+
+.chart-canvas-wrapper {
+  position: relative;
+  min-width: 100%;
+}
+
+/* Scroll hint */
+.chart-scroll-hint {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+/* Data info */
+.chart-data-info {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* Loading State */
+.chart-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #999;
+}
+
+/* Error State */
+.chart-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #dc3545;
+  text-align: center;
+}
+
+.chart-error-message {
+  font-size: 0.875rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Empty State */
+.chart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #999;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .chart-wrapper {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .chart-title {
+    font-size: 1.125rem;
+  }
+
+  .chart-container {
+    /* Enable momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  .chart-wrapper {
+    padding: 0.75rem;
+  }
+
+  .chart-title {
+    font-size: 1rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .chart-container {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .chart-wrapper {
+    border: 2px solid #000;
+  }
+
+  .chart-container::-webkit-scrollbar-thumb {
+    background-color: #000;
+  }
+}

@@ -93,6 +93,16 @@
   border-color: var(--color-primary);
 }
 
+/* Mobile-optimized select */
+.selectMobile {
+  width: 100%;
+  max-width: none;
+  padding: 1rem;
+  font-size: 1rem;
+  /* Touch target compliance */
+  min-height: 44px;
+}
+
 @media (min-width: 768px) {
   .controls {
     flex-direction: row;

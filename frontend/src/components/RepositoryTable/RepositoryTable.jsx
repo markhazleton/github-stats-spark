@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useBreakpoint } from '@/hooks/useMediaQuery'
 import { RepositoryCard } from '@/components/Mobile/RepositoryCard/RepositoryCard'
 import { LoadingState } from '@/components/Mobile/LoadingState/LoadingState'
+import FilterSheet from './FilterSheet'
+import SortSheet from './SortSheet'
 import TableHeader from './TableHeader'
 import TableRow from './TableRow'
 import ExportButton from '@/components/Common/ExportButton'
@@ -43,6 +45,44 @@ export default function RepositoryTable({
   loading = false,
 }) {
   const { isMobile } = useBreakpoint();
+  
+  // Bottom sheet state for mobile
+  const [filterSheetOpen, setFilterSheetOpen] = useState(false);
+  const [sortSheetOpen, setSortSheetOpen] = useState(false);
+  const [filters, setFilters] = useState({
+    language: null,
+    minStars: null,
+    dateRange: null,
+  });
+
+  /**
+   * Get unique languages from repositories for filter options
+   */
+  const availableLanguages = React.useMemo(() => {
+    const languages = repositories
+      .map(repo => repo.language)
+      .filter(Boolean);
+    return [...new Set(languages)].sort();
+  }, [repositories]);
+
+  /**
+   * Handle filter application
+   */
+  const handleApplyFilters = (newFilters) => {
+    setFilters(newFilters);
+    if (onFilter) {
+      onFilter(newFilters);
+    }
+  };
+
+  /**
+   * Handle sort application
+   */
+  const handleApplySort = ({ field, direction }) => {
+    if (onSort) {
+      onSort(field, direction);
+    }
+  };
 
   /**
    * Handle column header click for sorting
@@ -82,35 +122,78 @@ export default function RepositoryTable({
   // Mobile view: Card layout
   if (isMobile) {
     return (
-      <div className={styles.mobileContainer}>
-        <div className={styles.mobileCardGrid}>
-          {repositories.map((repo) => (
-            <RepositoryCard
-              key={repo.name}
-              repository={repo}
-              selectable={true}
-              selected={isRepoSelected(repo.name)}
-              onSelect={onSelectRepo}
-              onClick={onRowClick}
+      <>
+        <div className={styles.mobileContainer}>
+          {/* Mobile header with filter and sort buttons */}
+          <div className={styles.mobileHeader}>
+            <button
+              onClick={() => setFilterSheetOpen(true)}
+              className={styles.mobileHeaderButton}
+              aria-label="Filter repositories"
+            >
+              <span className={styles.mobileHeaderIcon}>🔍</span>
+              <span>Filter</span>
+              {(filters.language || filters.minStars || filters.dateRange) && (
+                <span className={styles.filterBadge} aria-label="Active filters">●</span>
+              )}
+            </button>
+            
+            <button
+              onClick={() => setSortSheetOpen(true)}
+              className={styles.mobileHeaderButton}
+              aria-label="Sort repositories"
+            >
+              <span className={styles.mobileHeaderIcon}>↕️</span>
+              <span>Sort</span>
+            </button>
+          </div>
+
+          <div className={styles.mobileCardGrid}>
+            {repositories.map((repo) => (
+              <RepositoryCard
+                key={repo.name}
+                repository={repo}
+                selectable={true}
+                selected={isRepoSelected(repo.name)}
+                onSelect={onSelectRepo}
+                onClick={onRowClick}
+              />
+            ))}
+          </div>
+
+          {/* Mobile Footer */}
+          <div className={styles.mobileFooter}>
+            <p className="text-sm text-muted">
+              {repositories.length} {repositories.length === 1 ? 'repository' : 'repositories'}
+              {selectedRepos.length > 0 && (
+                <> • {selectedRepos.length} selected</>
+              )}
+            </p>
+            <ExportButton
+              data={repositories}
+              filename="repositories"
+              label="Export"
             />
-          ))}
+          </div>
         </div>
 
-        {/* Mobile Footer */}
-        <div className={styles.mobileFooter}>
-          <p className="text-sm text-muted">
-            {repositories.length} {repositories.length === 1 ? 'repository' : 'repositories'}
-            {selectedRepos.length > 0 && (
-              <> • {selectedRepos.length} selected</>
-            )}
-          </p>
-          <ExportButton
-            data={repositories}
-            filename="repositories"
-            label="Export"
-          />
-        </div>
-      </div>
+        {/* Bottom sheets */}
+        <FilterSheet
+          isOpen={filterSheetOpen}
+          onClose={() => setFilterSheetOpen(false)}
+          filters={filters}
+          onApplyFilters={handleApplyFilters}
+          availableLanguages={availableLanguages}
+        />
+        
+        <SortSheet
+          isOpen={sortSheetOpen}
+          onClose={() => setSortSheetOpen(false)}
+          sortField={sortField}
+          sortDirection={sortDirection}
+          onApplySort={handleApplySort}
+        />
+      </>
     );
   }
 

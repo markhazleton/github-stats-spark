@@ -1,103 +1,204 @@
-import { BarChart as RechartsBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-import styles from './Charts.module.css';
+/**
+ * BarChart Component
+ * 
+ * Renders a bar chart visualization using Chart.js with mobile optimizations.
+ * Vertical orientation on mobile, limited to max 10 bars for readability.
+ * 
+ * @component
+ */
+
+import React from 'react';
+import PropTypes from 'prop-types';
+import ChartWrapper from './ChartWrapper';
 
 const COLORS = [
-  'var(--chart-color-1)',
-  'var(--chart-color-2)',
-  'var(--chart-color-3)',
-  'var(--chart-color-4)',
-  'var(--chart-color-5)'
+  '#0366d6', // Primary blue
+  '#28a745', // Green
+  '#6f42c1', // Purple
+  '#fd8c73', // Orange
+  '#ffd33d', // Yellow
+  '#ea4a5a', // Red
+  '#1b7cd3', // Light blue
+  '#79589f', // Lavender
+  '#f97583', // Pink
+  '#ffdf5d', // Light yellow
 ];
-
-/**
- * CustomTooltip Component
- * Displays formatted values on hover
- */
-function CustomTooltip({ active, payload, metricLabel }) {
-  if (!active || !payload || !payload.length) {
-    return null;
-  }
-
-  const data = payload[0].payload;
-  
-  return (
-    <div className={styles.tooltip}>
-      <p className={styles.tooltipTitle}>{data.name}</p>
-      <p className={styles.tooltipValue}>
-        <strong>{metricLabel}:</strong> {formatValue(data.value, metricLabel)}
-      </p>
-      {data.language && (
-        <p className={styles.tooltipLanguage}>Language: {data.language}</p>
-      )}
-    </div>
-  );
-}
 
 /**
  * Format values based on metric type
  */
 function formatValue(value, metricLabel) {
-  if (metricLabel.includes('Date')) {
+  if (!value && value !== 0) return 'N/A';
+  
+  if (metricLabel?.includes('Date')) {
     return new Date(value).toLocaleDateString();
   }
-  if (metricLabel.includes('Size')) {
+  if (metricLabel?.includes('Size')) {
     return `${value.toLocaleString()} changes`;
   }
-  return value.toLocaleString();
+  if (typeof value === 'number') {
+    if (value >= 1000000) {
+      return `${(value / 1000000).toFixed(1)}M`;
+    } else if (value >= 1000) {
+      return `${(value / 1000).toFixed(1)}K`;
+    }
+    return value.toLocaleString();
+  }
+  return value;
 }
 
 /**
  * BarChart Component
- * Renders a bar chart visualization using Recharts
  * 
  * @param {Object} props
  * @param {Array} props.data - Chart data array with {name, value} objects
  * @param {string} props.metricLabel - Label for the metric being displayed
  * @param {Function} props.onBarClick - Handler for bar click events
+ * @param {boolean} props.horizontal - Display horizontal bars (default: false for mobile)
+ * @param {number} props.maxBars - Maximum number of bars to display (default: 10 for mobile)
  */
-export default function BarChart({ data, metricLabel, onBarClick }) {
+export default function BarChart({ 
+  data, 
+  metricLabel = 'Value',
+  onBarClick,
+  horizontal = false,
+  maxBars = 10
+}) {
   if (!data || data.length === 0) {
     return (
-      <div className={styles.emptyState}>
-        <p>No data available for visualization</p>
-      </div>
+      <ChartWrapper
+        type="bar"
+        data={{ labels: [], datasets: [] }}
+        emptyMessage="No data available for visualization"
+      />
     );
   }
 
-  // Calculate dynamic height based on number of items (minimum 400px, 40px per bar)
-  const chartHeight = Math.max(400, data.length * 40);
+  // Limit data to maxBars for mobile readability
+  const limitedData = data.slice(0, maxBars);
+
+  // Prepare Chart.js data
+  const chartData = {
+    labels: limitedData.map(item => item.name || item.label),
+    datasets: [
+      {
+        label: metricLabel,
+        data: limitedData.map(item => item.value),
+        backgroundColor: limitedData.map((_, index) => COLORS[index % COLORS.length]),
+        borderColor: limitedData.map((_, index) => COLORS[index % COLORS.length]),
+        borderWidth: 0,
+        borderRadius: 4,
+        barThickness: horizontal ? 24 : 'flex',
+        maxBarThickness: horizontal ? 32 : 60,
+      },
+    ],
+  };
+
+  // Chart options
+  const options = {
+    indexAxis: horizontal ? 'y' : 'x',
+    responsive: true,
+    maintainAspectRatio: false,
+    onClick: (event, elements) => {
+      if (elements.length > 0 && onBarClick) {
+        const index = elements[0].index;
+        const clickedData = limitedData[index];
+        onBarClick({ ...clickedData, fullData: clickedData });
+      }
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+      tooltip: {
+        callbacks: {
+          label: (context) => {
+            const value = context.parsed.y || context.parsed.x;
+            return `${metricLabel}: ${formatValue(value, metricLabel)}`;
+          },
+          afterLabel: (context) => {
+            const item = limitedData[context.dataIndex];
+            if (item.language) {
+              return `Language: ${item.language}`;
+            }
+            return '';
+          },
+        },
+      },
+    },
+    scales: horizontal ? {
+      x: {
+        beginAtZero: true,
+        grid: {
+          display: true,
+          color: 'rgba(0, 0, 0, 0.05)',
+        },
+        ticks: {
+          callback: (value) => formatValue(value, metricLabel),
+        },
+      },
+      y: {
+        grid: {
+          display: false,
+        },
+        ticks: {
+          font: {
+            size: 11,
+          },
+          autoSkip: false,
+        },
+      },
+    } : {
+      x: {
+        grid: {
+          display: false,
+        },
+        ticks: {
+          maxRotation: 45,
+          minRotation: 0,
+          font: {
+            size: 11,
+          },
+        },
+      },
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: true,
+          color: 'rgba(0, 0, 0, 0.05)',
+        },
+        ticks: {
+          callback: (value) => formatValue(value, metricLabel),
+        },
+      },
+    },
+  };
 
   return (
-    <div className={styles.chartContainer}>
-      <ResponsiveContainer width="100%" height={chartHeight}>
-        <RechartsBarChart
-          data={data}
-          layout="vertical"
-          margin={{ top: 20, right: 30, left: 150, bottom: 20 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
-          <XAxis
-            type="number"
-            tick={{ fill: 'var(--color-text)', fontSize: 12 }}
-          />
-          <YAxis
-            type="category"
-            dataKey="name"
-            tick={{ fill: 'var(--color-text)', fontSize: 11 }}
-            width={140}
-          />
-          <Tooltip content={<CustomTooltip metricLabel={metricLabel} />} />
-          <Bar
-            dataKey="value"
-            cursor="pointer"
-            onClick={onBarClick}
-            radius={[0, 4, 4, 0]}
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
+    <ChartWrapper
+      type="bar"
+      data={chartData}
+      options={options}
+      title={`${metricLabel} by Repository`}
+      enableHorizontalScroll={!horizontal && data.length > maxBars}
+      maxDataPoints={maxBars}
+    />
+  );
+}
+
+BarChart.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    label: PropTypes.string,
+    value: PropTypes.number,
+    language: PropTypes.string,
+  })).isRequired,
+  metricLabel: PropTypes.string,
+  onBarClick: PropTypes.func,
+  horizontal: PropTypes.bool,
+  maxBars: PropTypes.number,
+};
+
             ))}
           </Bar>
         </RechartsBarChart>
