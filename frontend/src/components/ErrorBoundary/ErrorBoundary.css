@@ -1,0 +1,259 @@
+/**
+ * ErrorBoundary - Catastrophic error handling UI
+ * 
+ * Features:
+ * - Full-page error state
+ * - Clear error messaging
+ * - Manual retry button (44x44px touch target)
+ * - Automatic retry after 30 seconds
+ * - Error details in development
+ * - Responsive layout
+ */
+
+.error-boundary {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl, 32px) var(--spacing-lg, 24px);
+  background-color: var(--background-primary, #ffffff);
+}
+
+.error-boundary__container {
+  max-width: 600px;
+  text-align: center;
+}
+
+.error-boundary__icon {
+  font-size: 80px;
+  margin-bottom: var(--spacing-lg, 24px);
+  opacity: 0.8;
+}
+
+.error-boundary__title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 var(--spacing-md, 16px) 0;
+  color: var(--text-primary, #24292e);
+}
+
+.error-boundary__message {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-xl, 32px) 0;
+  color: var(--text-secondary, #586069);
+}
+
+.error-boundary__actions {
+  display: flex;
+  gap: var(--spacing-md, 16px);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-lg, 24px);
+}
+
+.error-boundary__retry,
+.error-boundary__reload {
+  /* Reset button styles */
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  
+  /* Button styling */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Touch target - minimum 44x44px */
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px 24px;
+  
+  /* Visual */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  
+  /* Touch feedback */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.error-boundary__retry {
+  background-color: var(--color-primary, #0366d6);
+  color: var(--text-on-primary, #ffffff);
+}
+
+.error-boundary__retry:active {
+  transform: scale(0.98);
+  background-color: var(--color-primary-dark, #0256c2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .error-boundary__retry:hover {
+    background-color: var(--color-primary-dark, #0256c2);
+  }
+}
+
+.error-boundary__reload {
+  background-color: var(--background-secondary, #f6f8fa);
+  color: var(--text-primary, #24292e);
+  border: 1px solid var(--border-color, #d0d7de);
+}
+
+.error-boundary__reload:active {
+  transform: scale(0.98);
+  background-color: var(--background-hover, #e1e4e8);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .error-boundary__reload:hover {
+    background-color: var(--background-hover, #e1e4e8);
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.error-boundary__retry:focus-visible,
+.error-boundary__reload:focus-visible {
+  outline: 2px solid var(--color-primary, #0366d6);
+  outline-offset: 2px;
+}
+
+.error-boundary__retry-count {
+  font-size: 13px;
+  color: var(--text-tertiary, #6a737d);
+  margin: 0 0 var(--spacing-md, 16px) 0;
+}
+
+.error-boundary__details {
+  margin: var(--spacing-lg, 24px) 0;
+  text-align: left;
+  background-color: var(--background-secondary, #f6f8fa);
+  border: 1px solid var(--border-color, #d0d7de);
+  border-radius: 6px;
+  padding: var(--spacing-md, 16px);
+}
+
+.error-boundary__details summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-secondary, #586069);
+  margin-bottom: var(--spacing-sm, 8px);
+}
+
+.error-boundary__details summary:hover {
+  color: var(--text-primary, #24292e);
+}
+
+.error-boundary__stack {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary, #586069);
+}
+
+.error-boundary__stack pre {
+  overflow-x: auto;
+  padding: var(--spacing-sm, 8px);
+  background-color: var(--background-primary, #ffffff);
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.error-boundary__help {
+  font-size: 14px;
+  color: var(--text-tertiary, #6a737d);
+  margin: var(--spacing-xl, 32px) 0 0 0;
+}
+
+/* Responsive sizing for small screens */
+@media (max-width: 479px) {
+  .error-boundary {
+    padding: var(--spacing-lg, 24px) var(--spacing-md, 16px);
+  }
+  
+  .error-boundary__icon {
+    font-size: 60px;
+  }
+  
+  .error-boundary__title {
+    font-size: 24px;
+  }
+  
+  .error-boundary__message {
+    font-size: 15px;
+  }
+  
+  .error-boundary__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .error-boundary__retry,
+  .error-boundary__reload {
+    width: 100%;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .error-boundary__retry,
+  .error-boundary__reload {
+    transition: none;
+  }
+  
+  .error-boundary__retry:active,
+  .error-boundary__reload:active {
+    transform: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .error-boundary {
+    background-color: var(--background-primary, #0d1117);
+  }
+  
+  .error-boundary__title {
+    color: var(--text-primary, #c9d1d9);
+  }
+  
+  .error-boundary__message {
+    color: var(--text-secondary, #8b949e);
+  }
+  
+  .error-boundary__retry {
+    background-color: var(--color-primary, #58a6ff);
+    color: var(--text-on-primary, #0d1117);
+  }
+  
+  .error-boundary__retry:active,
+  .error-boundary__retry:hover {
+    background-color: var(--color-primary-light, #79c0ff);
+  }
+  
+  .error-boundary__reload {
+    background-color: var(--background-secondary, #161b22);
+    color: var(--text-primary, #c9d1d9);
+    border-color: var(--border-color, #30363d);
+  }
+  
+  .error-boundary__reload:active,
+  .error-boundary__reload:hover {
+    background-color: var(--background-hover, #21262d);
+  }
+  
+  .error-boundary__details {
+    background-color: var(--background-secondary, #161b22);
+    border-color: var(--border-color, #30363d);
+  }
+  
+  .error-boundary__stack pre {
+    background-color: var(--background-primary, #0d1117);
+  }
+}

@@ -23,46 +23,67 @@ const getDataBaseUrl = () => {
 }
 
 /**
- * Fetch dashboard data from repositories.json
+ * Fetch dashboard data from repositories.json with automatic retry
  *
+ * @param {number} maxRetries - Maximum number of retry attempts (default: 3)
+ * @param {number} retryDelay - Delay between retries in ms (default: 2000)
  * @returns {Promise<Object>} Dashboard data object containing:
  *   - repositories: Array of repository objects with metrics
  *   - profile: User profile information
  *   - metadata: Generation metadata and schema version
  *
- * @throws {Error} If fetch fails or data is invalid
+ * @throws {Error} If fetch fails after all retries or data is invalid
  *
  * @example
  * const data = await fetchDashboardData()
  * console.log(`Loaded ${data.repositories.length} repositories`)
  */
-export async function fetchDashboardData() {
+export async function fetchDashboardData(maxRetries = 3, retryDelay = 2000) {
   const baseUrl = getDataBaseUrl()
   const url = `${baseUrl}/repositories.json`
 
-  try {
-    const response = await fetch(url)
+  let lastError = null;
+  
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      const response = await fetch(url)
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch dashboard data: ${response.status} ${response.statusText}`)
+      if (!response.ok) {
+        throw new Error(`Failed to fetch dashboard data: ${response.status} ${response.statusText}`)
+      }
+
+      const data = await response.json()
+
+      // Validate data structure
+      if (!data || typeof data !== 'object') {
+        throw new Error('Invalid dashboard data: expected object')
+      }
+
+      if (!Array.isArray(data.repositories)) {
+        throw new Error('Invalid dashboard data: repositories must be an array')
+      }
+
+      // Success - log if retried
+      if (attempt > 0) {
+        console.log(`Successfully fetched data after ${attempt} ${attempt === 1 ? 'retry' : 'retries'}`)
+      }
+
+      return data
+    } catch (error) {
+      lastError = error
+      console.error(`Error fetching dashboard data (attempt ${attempt + 1}/${maxRetries + 1}):`, error)
+      
+      // Don't retry on the last attempt
+      if (attempt < maxRetries) {
+        console.log(`Retrying in ${retryDelay / 1000} seconds...`)
+        await new Promise(resolve => setTimeout(resolve, retryDelay))
+      }
     }
-
-    const data = await response.json()
-
-    // Validate data structure
-    if (!data || typeof data !== 'object') {
-      throw new Error('Invalid dashboard data: expected object')
-    }
-
-    if (!Array.isArray(data.repositories)) {
-      throw new Error('Invalid dashboard data: repositories must be an array')
-    }
-
-    return data
-  } catch (error) {
-    console.error('Error fetching dashboard data:', error)
-    throw error
   }
+  
+  // All retries exhausted
+  console.error('Failed to fetch dashboard data after all retry attempts')
+  throw lastError
 }
 
 /**

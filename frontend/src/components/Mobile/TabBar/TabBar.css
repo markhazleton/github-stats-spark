@@ -1,0 +1,180 @@
+/**
+ * TabBar - Mobile-first bottom navigation
+ * 
+ * Features:
+ * - Fixed at bottom of viewport
+ * - Safe area insets for notched devices
+ * - 44x44px minimum touch targets
+ * - Active state highlighting
+ * - Badge support for notifications/counts
+ * - Hidden on desktop (>=768px)
+ */
+
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--background-primary, #ffffff);
+  border-top: 1px solid var(--border-color, #e1e4e8);
+  
+  /* Safe area insets for notched devices (iOS, Android) */
+  padding-bottom: env(safe-area-inset-bottom);
+  
+  /* Hide on desktop */
+  display: none;
+}
+
+/* Show only on mobile viewports */
+@media (max-width: 767px) {
+  .tab-bar {
+    display: block;
+  }
+}
+
+.tab-bar__container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  max-width: 100%;
+  height: 64px; /* Ensures 44px + padding meets touch target minimum */
+}
+
+.tab-bar__tab {
+  /* Reset button styles */
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  
+  /* Layout */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  
+  /* Touch target - minimum 44x44px */
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 12px;
+  
+  /* Visual */
+  color: var(--text-secondary, #586069);
+  transition: color 0.2s ease, background-color 0.2s ease;
+  
+  /* Touch feedback */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Touch feedback on press */
+.tab-bar__tab:active {
+  background-color: var(--background-hover, rgba(0, 0, 0, 0.05));
+}
+
+/* Active tab styling */
+.tab-bar__tab--active {
+  color: var(--color-primary, #0366d6);
+  font-weight: 600;
+}
+
+/* Hover state for desktop/pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .tab-bar__tab:hover {
+    color: var(--color-primary, #0366d6);
+    background-color: var(--background-hover, rgba(0, 0, 0, 0.03));
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.tab-bar__tab:focus-visible {
+  outline: 2px solid var(--color-primary, #0366d6);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.tab-bar__icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.tab-bar__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.tab-bar__badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  
+  background-color: var(--color-danger, #d73a49);
+  color: var(--text-on-danger, #ffffff);
+  
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  
+  border-radius: 9px;
+  box-shadow: 0 0 0 2px var(--background-primary, #ffffff);
+}
+
+.tab-bar__label {
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .tab-bar__tab {
+    transition: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .tab-bar {
+    background-color: var(--background-primary, #0d1117);
+    border-top-color: var(--border-color, #30363d);
+  }
+  
+  .tab-bar__tab {
+    color: var(--text-secondary, #8b949e);
+  }
+  
+  .tab-bar__tab--active {
+    color: var(--color-primary, #58a6ff);
+  }
+  
+  .tab-bar__tab:active {
+    background-color: var(--background-hover, rgba(255, 255, 255, 0.05));
+  }
+  
+  @media (hover: hover) and (pointer: fine) {
+    .tab-bar__tab:hover {
+      color: var(--color-primary, #58a6ff);
+      background-color: var(--background-hover, rgba(255, 255, 255, 0.03));
+    }
+  }
+  
+  .tab-bar__badge {
+    box-shadow: 0 0 0 2px var(--background-primary, #0d1117);
+  }
+}
