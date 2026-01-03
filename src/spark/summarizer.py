@@ -492,11 +492,13 @@ Be informative and technical. Focus on giving readers a clear understanding of t
         The cache key is based on:
         - Repository name
         - README content hash (to detect changes)
-        - Last commit date (NOT updated_at, to avoid regenerating when no new commits)
+        - Last commit date WEEK (NOT day, to reduce churn while staying reasonably fresh)
 
         This ensures AI summaries are only regenerated when:
-        1. A new commit is made (last_commit_date changes)
+        1. A new week starts AND there were commits (last_commit_date week changes)
         2. README content changes (hash changes)
+
+        This balances freshness with cache efficiency - weekly granularity instead of daily.
 
         Args:
             repo_name: Repository name
@@ -509,10 +511,15 @@ Be informative and technical. Focus on giving readers a clear understanding of t
         # Create hash of README content (first 1000 chars for efficiency)
         readme_hash = hashlib.md5(readme_content[:1000].encode()).hexdigest()[:12]
 
-        # Format: ai_summary_{repo}_{readme_hash}_{date}
-        # Using date instead of full timestamp to reduce cache churn
-        date_str = updated_at.strftime("%Y%m%d") if updated_at else "unknown"
-        return f"ai_summary_{repo_name}_{readme_hash}_{date_str}"
+        # Format: ai_summary_{repo}_{readme_hash}_{year_week}
+        # Using ISO week number to reduce cache churn (weekly granularity)
+        if updated_at:
+            # ISO week format: 2026W01 for week 1 of 2026
+            year_week = updated_at.strftime("%YW%V")
+        else:
+            year_week = "unknown"
+        
+        return f"ai_summary_{repo_name}_{readme_hash}_{year_week}"
 
     def get_usage_stats(self) -> Dict[str, any]:
         """Get API usage statistics including cache performance.

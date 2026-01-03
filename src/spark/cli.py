@@ -317,7 +317,12 @@ def handle_unified(args, logger):
         logger.info("STEP 2/3: Generating SVG Visualizations")
         logger.info("=" * 70)
         
-        cache = APICache()
+        # Initialize cache with config TTL
+        cache_config = config.config.get("cache", {})
+        cache = APICache(
+            cache_dir=cache_config.get("directory", ".cache"),
+            ttl_hours=cache_config.get("ttl_hours", 6)
+        )
         workflow = UnifiedReportWorkflow(config, cache, output_dir="output")
         
         try:
@@ -408,8 +413,12 @@ def handle_unified_analyze(args, logger):
         config = SparkConfig(args.config)
         config.load()
 
-        # Initialize workflow
-        cache = APICache()
+        # Initialize cache with config TTL
+        cache_config = config.get("cache", {})
+        cache = APICache(
+            cache_dir=cache_config.get("directory", ".cache"),
+            ttl_hours=cache_config.get("ttl_hours", 6)
+        )
         workflow = UnifiedReportWorkflow(config, cache, output_dir="output")
 
         # Execute unified workflow
@@ -484,8 +493,14 @@ def handle_dated_analyze(args, logger):
         config = SparkConfig(args.config)
         config.load()
 
+        # Initialize cache with config TTL
+        cache_config = config.config.get("cache", {})
+        cache = APICache(
+            cache_dir=cache_config.get("directory", ".cache"),
+            ttl_hours=cache_config.get("ttl_hours", 6)
+        )
+        
         # Initialize components
-        cache = APICache()
         fetcher = GitHubFetcher(cache=cache)
         ranker = RepositoryRanker(config=config.config.get("analyzer", {}).get("ranking_weights"))
         summarizer = RepositorySummarizer(cache=cache)  # Pass cache to save tokens!
