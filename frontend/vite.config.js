@@ -25,7 +25,10 @@ const serveDataPlugin = () => ({
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react(),react(), serveDataPlugin()
+    react(),
+    serveDataPlugin()
+  ],
+
   // Base URL - use relative paths for flexibility
   base: './',
 
@@ -54,7 +57,7 @@ export default defineConfig({
         manualChunks: {
           // Vendor chunks for better caching
           'vendor-react': ['react', 'react-dom'],
-          'vendor-charts': ['recharts']
+          'vendor-charts': ['chart.js', 'react-chartjs-2']
         }
       }
     },

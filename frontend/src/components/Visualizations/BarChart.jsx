@@ -198,11 +198,3 @@ BarChart.propTypes = {
   horizontal: PropTypes.bool,
   maxBars: PropTypes.number,
 };
-
-            ))}
-          </Bar>
-        </RechartsBarChart>
-      </ResponsiveContainer>
-    </div>
-  );
-}

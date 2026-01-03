@@ -175,35 +175,3 @@ ScatterPlot.propTypes = {
   yAxisLabel: PropTypes.string,
   onPointClick: PropTypes.func,
 };
-
-          />
-          <YAxis
-            type="number"
-            dataKey="y"
-            name={yAxisLabel}
-            tick={{ fill: 'var(--color-text)', fontSize: 12 }}
-            label={{
-              value: yAxisLabel,
-              angle: -90,
-              position: 'insideLeft',
-              style: { fill: 'var(--color-text)', fontSize: 14 }
-            }}
-          />
-          <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
-          <Scatter
-            data={data}
-            onClick={onPointClick}
-            cursor="pointer"
-          >
-            {data.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Scatter>
-        </ScatterChart>
-      </ResponsiveContainer>
-    </div>
-  );
-}

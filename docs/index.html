@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- Critical CSS for mobile-first (inline for faster FCP) -->
+    <style>
+      /* Mobile-first critical styles */
+      :root {
+        --touch-target-min: 44px;
+        --safe-area-top: env(safe-area-inset-top, 0px);
+        --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      * { box-sizing: border-box; }
+      body { 
+        margin: 0; 
+        padding: 0;
+        padding-top: var(--safe-area-top);
+        padding-bottom: var(--safe-area-bottom);
+        font-family: system-ui, -apple-system, sans-serif;
+        overflow-x: hidden;
+        overscroll-behavior-y: contain;
+      }
+      .touch-target {
+        min-width: var(--touch-target-min);
+        min-height: var(--touch-target-min);
+      }
+    </style>
 
     <!-- Primary Meta Tags -->
     <title>GitHub Stats Spark - Repository Comparison Dashboard</title>
@@ -27,16 +51,16 @@
 
     <!-- GitHub Pages Base URL Configuration -->
     <!-- This is automatically handled by Vite's base config -->
-    <script type="module" crossorigin src="./assets/site-kNEAGryI.js"></script>
+    <script type="module" crossorigin src="./assets/site-CeYNY0Mm.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/site-DF3nNwgj.js">
-    <link rel="modulepreload" crossorigin href="./assets/site-D9Uy3wj0.js">
-    <link rel="stylesheet" crossorigin href="./assets/site-KsgnjMs_.css">
+    <link rel="modulepreload" crossorigin href="./assets/site-Dt-bvWfg.js">
+    <link rel="stylesheet" crossorigin href="./assets/site-QpFFD3bz.css">
   </head>
   <body>
     <!-- Root element for React application -->
     <div id="root"></div>
 
-    <!-- Vite will inject the bundled JavaScript here -->
+    <!-- Vite will inject the bundled JavaScript here -->
 
     <!-- Fallback message for browsers with JavaScript disabled -->
     <noscript>

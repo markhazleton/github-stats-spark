@@ -180,36 +180,3 @@ LineGraph.propTypes = {
   lineColor: PropTypes.string,
   fill: PropTypes.bool,
 };
-
-            tick={{ fill: 'var(--color-text)', fontSize: 12 }}
-          />
-          <YAxis
-            tick={{ fill: 'var(--color-text)', fontSize: 12 }}
-            label={{
-              value: metricLabel,
-              angle: -90,
-              position: 'insideLeft',
-              style: { fill: 'var(--color-text)', fontSize: 14 }
-            }}
-          />
-          <Tooltip content={<CustomTooltip metricLabel={metricLabel} />} />
-          <Line
-            type="monotone"
-            dataKey="value"
-            stroke="var(--chart-color-1)"
-            strokeWidth={2}
-            dot={{
-              fill: 'var(--chart-color-1)',
-              r: 4,
-              cursor: 'pointer'
-            }}
-            activeDot={{
-              r: 6,
-              onClick: onPointClick
-            }}
-          />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  );
-}

@@ -445,9 +445,9 @@ function App() {
             onPrevious={handlePreviousRepo}
           />
         </Suspense>
+      )}
       </div>
-    </ViewportProvider
-    </div>
+    </ViewportProvider>
   )
 }
 

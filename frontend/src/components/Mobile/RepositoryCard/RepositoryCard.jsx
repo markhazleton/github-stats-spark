@@ -75,12 +75,51 @@ export function RepositoryCard({
               setShowDeleteButton(true);
               triggerHapticFeedback('medium');
             }
+          },
+        }
+      : {},
+    {}
+  );
+
+  // Format date to relative time
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Unknown';
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffDays = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 0) return 'Today';
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
+    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
+    return `${Math.floor(diffDays / 365)} years ago`;
+  };
+
+  const cardClasses = [
+    'repository-card',
+    isExpanded && 'repository-card-expanded',
+    selected && 'repository-card-selected',
     showDeleteButton && 'repository-card-swipe-revealed',
     'interactive-card'
   ].filter(Boolean).join(' ');
 
   return (
     <div className="repository-card-wrapper">
+      {/* Delete button (shown on swipe) */}
+      {swipeable && showDeleteButton && (
+        <button
+          className="repository-card-delete-button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleDelete();
+          }}
+          aria-label="Delete repository"
+        >
+          Delete
+        </button>
+      )}
+
       <article 
         {...(swipeable ? bind() : {})}
         className={cardClasses}
@@ -94,35 +133,7 @@ export function RepositoryCard({
         }}
         aria-expanded={isExpanded}
         aria-label={`Repository: ${repository.name}`}
-      if (diffDays === 0) return 'Today';
-    if (diffDays === 1) return 'Yesterday';
-    if (diffDays < 7) return `${diffDays} days ago`;
-    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
-    if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
-    return `${Math.floor(diffDays / 365)} years ago`;
-  };
-
-  const cardClasses = [
-    'repository-card',
-    isExpanded && 'repository-card-expanded',
-    selected && 'repository-card-selected',
-    'interactive-card'
-  ].filter(Boolean).join(' ');
-
-  return (
-    <article 
-      className={cardClasses}
-      onClick={handleCardClick}
-      role="button"
-      tabIndex={0}
-      onKeyPress={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          handleCardClick(e);
-        }
-      }}
-      aria-expanded={isExpanded}
-      aria-label={`Repository: ${repository.name}`}
-    >
+      >
       {/* Collapsed State - Always Visible */}
       <div className="repository-card-header">
         <div className="repository-card-title-row">
@@ -206,37 +217,24 @@ export function RepositoryCard({
               </ul>
             </div>
           )}
-        {/* Expand/Collapse Indicator */}
-        <div className="repository-card-expand-indicator" aria-hidden="true">
-          {isExpanded ? '▲' : '▼'}
         </div>
-      </article>
-
-      {/* Delete Button (revealed on swipe) */}
-      {swipeable && showDeleteButton && (
-        <button
-          className="repository-card-delete-button touch-target"
-          onClick={handleDelete}
-          aria-label={`Remove ${repository.name} from comparison`}
-        >
-          🗑️ Remove
-        </button>
       )}
-    </divassName="repository-card-expand-indicator" aria-hidden="true">
+
+      {/* Expand/Collapse Indicator */}
+      <div className="repository-card-expand-indicator" aria-hidden="true">
         {isExpanded ? '▲' : '▼'}
       </div>
     </article>
+  </div>
   );
 }
 
 RepositoryCard.propTypes = {
   repository: PropTypes.shape({
     name: PropTypes.string.isRequired,
-  swipeable: PropTypes.bool,
-  onSelect: PropTypes.func,
-  onExpand: PropTypes.func,
-  onClick: PropTypes.func,
-  onDeleteommitDate: PropTypes.string,
+    language: PropTypes.string,
+    stars: PropTypes.number,
+    updated_at: PropTypes.string,
     description: PropTypes.string,
     commits: PropTypes.number,
     contributors: PropTypes.number,
@@ -249,9 +247,11 @@ RepositoryCard.propTypes = {
   variant: PropTypes.oneOf(['collapsed', 'expanded']),
   selectable: PropTypes.bool,
   selected: PropTypes.bool,
+  swipeable: PropTypes.bool,
   onSelect: PropTypes.func,
   onExpand: PropTypes.func,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  onDelete: PropTypes.func,
 };
 
 export default RepositoryCard;
