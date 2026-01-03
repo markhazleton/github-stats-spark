@@ -174,8 +174,12 @@ class UnifiedDataGenerator:
                 )
                 repo = Repository.from_github_repo(github_repo)
 
-                # Fetch language stats
-                repo.language_stats = self.fetcher.fetch_languages(self.username, repo_name)
+                # Fetch language stats (pass push date for smart caching)
+                repo.language_stats = self.fetcher.fetch_languages(
+                    self.username, 
+                    repo_name,
+                    repo_pushed_at=github_repo.pushed_at
+                )
                 repo.language_count = len(repo.language_stats)
 
                 # Fetch commit data and metrics
@@ -210,10 +214,12 @@ class UnifiedDataGenerator:
                     max_commits_to_fetch = min(50, self.max_commits_per_repo)
                     logger.debug(f"  No recent activity, reducing to {max_commits_to_fetch} commits")
                 
+                # Pass push date for intelligent cache invalidation
                 commits_with_stats = self.fetcher.fetch_commits_with_stats(
                     username=self.username,
                     repo_name=repo_name,
-                    max_commits=max_commits_to_fetch
+                    max_commits=max_commits_to_fetch,
+                    repo_pushed_at=github_repo.pushed_at
                 )
                 
                 # Calculate commit metrics from fetched commits

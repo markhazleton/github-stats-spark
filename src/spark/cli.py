@@ -532,8 +532,12 @@ def handle_dated_analyze(args, logger):
                 github_repo = fetcher.github.get_repo(raw_repo['full_name'])
                 repo = Repository.from_github_repo(github_repo)
 
-                # Fetch language stats
-                repo.language_stats = fetcher.fetch_languages(args.user, repo.name)
+                # Fetch language stats (with push date for smart caching)
+                repo.language_stats = fetcher.fetch_languages(
+                    args.user, 
+                    repo.name,
+                    repo_pushed_at=github_repo.pushed_at
+                )
                 # Update language count (Tier 1)
                 repo.language_count = len(repo.language_stats)
 

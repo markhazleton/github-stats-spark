@@ -84,13 +84,26 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           echo "Starting unified generation with AI-powered repository summaries..."
-          echo "Cache status before generation:"
-          ls -1 .cache | wc -l
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 Cache Status Before Generation"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Total cache files: $(ls -1 .cache 2>/dev/null | wc -l)"
+          echo "Cache size: $(du -sh .cache 2>/dev/null | cut -f1)"
+          echo "AI summaries: $(ls -1 .cache/ai_summary_*.json 2>/dev/null | wc -l)"
+          echo "Commit caches: $(ls -1 .cache/commits_*.json 2>/dev/null | wc -l)"
           echo ""
+          
           spark unified --user ${{ github.repository_owner }} --include-ai-summaries --verbose
+          
           echo ""
-          echo "Cache status after generation:"
-          ls -1 .cache | wc -l
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "📊 Cache Status After Generation"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Total cache files: $(ls -1 .cache 2>/dev/null | wc -l)"
+          echo "Cache size: $(du -sh .cache 2>/dev/null | cut -f1)"
+          echo "AI summaries: $(ls -1 .cache/ai_summary_*.json 2>/dev/null | wc -l)"
+          echo "New files: $(($(ls -1 .cache 2>/dev/null | wc -l) - $(git ls-files .cache | wc -l)))"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
       - name: Set up Node.js
         uses: actions/setup-node@v4

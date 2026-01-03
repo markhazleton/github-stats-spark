@@ -290,7 +290,13 @@ class UnifiedReportWorkflow:
         # Add language statistics
         for repo in github_data.repositories:
             try:
-                languages = self.fetcher.fetch_languages(username, repo.name)
+                # Get repo object to access push date
+                github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
+                languages = self.fetcher.fetch_languages(
+                    username, 
+                    repo.name,
+                    repo_pushed_at=github_repo.pushed_at
+                )
                 if languages:
                     calculator.add_languages(languages)
             except Exception as e:
@@ -369,11 +375,22 @@ class UnifiedReportWorkflow:
 
         for rank, (repo, score) in enumerate(ranked, 1):
             try:
-                # Fetch README for AI summary
-                readme_content = self.fetcher.fetch_readme(username, repo.name)
+                # Get repo object for push date (smart caching)
+                github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
                 
-                # Fetch language statistics
-                language_stats = self.fetcher.fetch_languages(username, repo.name)
+                # Fetch README for AI summary (with push date for caching)
+                readme_content = self.fetcher.fetch_readme(
+                    username, 
+                    repo.name,
+                    repo_pushed_at=github_repo.pushed_at
+                )
+                
+                # Fetch language statistics (with push date for caching)
+                language_stats = self.fetcher.fetch_languages(
+                    username, 
+                    repo.name,
+                    repo_pushed_at=github_repo.pushed_at
+                )
                 
                 # Update repository with language stats
                 if language_stats:

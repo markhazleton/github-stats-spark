@@ -227,6 +227,7 @@ class GitHubFetcher:
         username: str,
         repo_name: str,
         max_commits: int = 200,
+        repo_pushed_at: Optional[datetime] = None,
     ) -> List[Dict[str, Any]]:
         """Fetch commits with detailed statistics for dashboard metrics.
 
@@ -238,6 +239,7 @@ class GitHubFetcher:
             username: Repository owner username
             repo_name: Repository name
             max_commits: Maximum commits to fetch per repository
+            repo_pushed_at: Last push date (for cache invalidation)
 
         Returns:
             List of commit dictionaries with 'stats' field containing:
@@ -245,10 +247,12 @@ class GitHubFetcher:
             - additions: Lines added
             - deletions: Lines deleted
         """
-        cache_key = f"commits_stats_{username}_{repo_name}_{max_commits}"
+        # Include push date in cache key for smart invalidation
+        push_date_str = repo_pushed_at.strftime("%Y%m%d") if repo_pushed_at else "unknown"
+        cache_key = f"commits_stats_{username}_{repo_name}_{max_commits}_{push_date_str}"
         cached = self.cache.get(cache_key)
         if cached:
-            self.logger.debug(f"Using cached commit stats for {username}/{repo_name}")
+            self.logger.debug(f"Using cached commit stats for {username}/{repo_name} (last push: {push_date_str})")
             return cached
 
         self.logger.info(f"Fetching commit statistics for {username}/{repo_name} (max: {max_commits})")
@@ -335,17 +339,20 @@ class GitHubFetcher:
             self.logger.debug(f"Could not fetch languages for {repo_name}: {e}")
             return {}
 
-    def fetch_readme(self, username: str, repo_name: str) -> Optional[str]:
+    def fetch_readme(self, username: str, repo_name: str, repo_pushed_at: Optional[datetime] = None) -> Optional[str]:
         """Fetch README content for a repository.
 
         Args:
             username: Repository owner username
             repo_name: Repository name
+            repo_pushed_at: Last push date (for cache invalidation)
 
         Returns:
             README content as string, or None if not found
         """
-        cache_key = f"readme_{username}_{repo_name}"
+        # Use month granularity for README (changes infrequently)
+        push_month_str = repo_pushed_at.strftime("%Y%m") if repo_pushed_at else "unknown"
+        cache_key = f"readme_{username}_{repo_name}_{push_month_str}"
         cached = self.cache.get(cache_key)
         if cached:
             return cached

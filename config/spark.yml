@@ -57,8 +57,20 @@ branding:
 # Cache Configuration
 cache:
   enabled: true               # Enable API response caching
-  ttl_hours: 6                # Cache time-to-live in hours
+  ttl_hours: 6                # Cache time-to-live in hours (for mutable data)
   directory: .cache           # Cache directory
+
+  # Smart Cache Strategy (invalidates based on repository push dates):
+  # - User profiles: 6 hours (changes infrequently)
+  # - Repository lists: 6 hours (new repos rare)
+  # - Commit stats: Daily granularity (invalidates on push_date)
+  # - Language stats: Weekly granularity (code changes infrequently)
+  # - README content: Monthly granularity (docs change rarely)
+  # - AI summaries: Weekly granularity (reduces regeneration churn)
+  # - Old commits: Permanent (commits never change once created)
+  #
+  # Performance: Only repos with new commits trigger fresh API calls
+  # Expected cache hit rate: >90% for weekly runs, >95% for stable repos
 
 # Repository Limits
 repositories:
