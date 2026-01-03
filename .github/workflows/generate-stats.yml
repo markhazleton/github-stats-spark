@@ -90,6 +90,14 @@ jobs:
             echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
+      - name: Prepare frontend data directory
+        if: steps.data-check.outputs.changed == 'true'
+        run: |
+          echo "Creating frontend public/data symlink..."
+          rm -f frontend/public/data
+          ln -s ../../data frontend/public/data
+          ls -la frontend/public/
+
       - name: Install frontend dependencies
         if: steps.data-check.outputs.changed == 'true'
         working-directory: ./frontend
@@ -99,6 +107,14 @@ jobs:
         if: steps.data-check.outputs.changed == 'true'
         working-directory: ./frontend
         run: npm run build
+
+      - name: Copy data to docs
+        if: steps.data-check.outputs.changed == 'true'
+        run: |
+          echo "Copying data directory to docs..."
+          mkdir -p docs/data
+          cp -r data/repositories.json docs/data/
+          ls -la docs/data/
 
       - name: Verify build output
         run: |

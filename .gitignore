@@ -368,6 +368,9 @@ frontend/.env
 frontend/.env.local
 frontend/.env.*.local
 
+# Frontend public/data symlink (created during build)
+frontend/public/data
+
 # ESLint cache
 frontend/.eslintcache
 

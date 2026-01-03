@@ -39,6 +39,9 @@ export default defineConfig({
   build: {
     outDir: '../docs',
     emptyOutDir: true, // Clean build - data will be copied after
+    
+    // Copy public directory manually to handle symlinks gracefully
+    copyPublicDir: fs.existsSync(path.join(__dirname, 'public', 'data')),
 
     // Single bundle output optimization
     rollupOptions: {
