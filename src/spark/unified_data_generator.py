@@ -6,7 +6,7 @@ comprehensive JSON file with all attributes needed by the frontend.
 
 import logging
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 
@@ -57,6 +57,7 @@ class UnifiedDataGenerator:
         username: str,
         output_dir: str = "data",
         force_refresh: bool = False,
+        max_repos_override: Optional[int] = None,
     ):
         """Initialize the UnifiedDataGenerator.
         
@@ -65,6 +66,7 @@ class UnifiedDataGenerator:
             username: GitHub username to analyze
             output_dir: Directory for output JSON file
             force_refresh: Whether to bypass cache and fetch fresh data
+            max_repos_override: Optional limit on number of repos (for testing)
         """
         self.config = config
         self.username = username
@@ -101,15 +103,134 @@ class UnifiedDataGenerator:
         self.max_commits_per_repo = data_gen_config.get("max_commits_per_repo", 200)
         self.include_ai_summaries = data_gen_config.get("include_ai_summaries", False)
         self.top_n_repos = config.config.get("analyzer", {}).get("top_repositories", 50)
+        
+        # Apply override for testing/debugging
+        if max_repos_override is not None:
+            self.max_repositories = max_repos_override
+            logger.info(f"⚠️  Testing mode: Limited to {max_repos_override} repositories")
 
         logger.info(f"UnifiedDataGenerator initialized for user: {username}")
         logger.info(f"Max repositories: {self.max_repositories}")
         logger.info(f"Include AI summaries: {self.include_ai_summaries}")
 
+    def _check_data_freshness(self) -> Optional[datetime]:
+        """Check if repositories.json exists and return its generation timestamp.
+
+        Returns:
+            Generation timestamp from repositories.json metadata, or None if file doesn't exist
+        """
+        repos_json_path = self.output_dir / "repositories.json"
+        
+        if not repos_json_path.exists():
+            logger.info("repositories.json not found - full generation required")
+            return None
+
+        try:
+            import json
+            with open(repos_json_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            
+            # Check metadata for generation timestamp
+            metadata = data.get("metadata", {})
+            generated_at_str = metadata.get("generated_at")
+            
+            if not generated_at_str:
+                logger.warning("repositories.json missing generation timestamp - full refresh required")
+                return None
+            
+            # Parse ISO format timestamp and ensure it's timezone-aware
+            generated_at_str_clean = generated_at_str.replace('Z', '+00:00')
+            generated_at = datetime.fromisoformat(generated_at_str_clean)
+            
+            # If parsed datetime is naive, assume UTC
+            if generated_at.tzinfo is None:
+                generated_at = generated_at.replace(tzinfo=timezone.utc)
+            
+            logger.info(f"Found existing repositories.json generated at: {generated_at}")
+            return generated_at
+            
+        except Exception as e:
+            logger.warning(f"Failed to read repositories.json metadata: {e}")
+            return None
+
+    def _selective_cache_refresh(self, generated_at: datetime) -> List[str]:
+        """Determine which repositories need cache refresh based on push dates.
+
+        Args:
+            generated_at: Timestamp when repositories.json was generated
+
+        Returns:
+            List of repository names that need cache refresh (have commits since generated_at)
+        """
+        logger.info("Checking for repositories with new commits since last generation...")
+        
+        # Fetch lightweight repository list (should be cached or quick)
+        raw_repos = self.fetcher.fetch_repositories(
+            username=self.username,
+            exclude_private=True,
+            exclude_forks=self.config.config.get("repositories", {}).get("exclude_forks", False)
+        )
+        
+        repos_needing_refresh = []
+        
+        for repo_data in raw_repos:
+            repo_name = repo_data["name"]
+            pushed_at_str = repo_data.get("pushed_at")
+            
+            if not pushed_at_str:
+                # If no push date, assume it needs refresh
+                repos_needing_refresh.append(repo_name)
+                continue
+            
+            try:
+                # Parse push date (ISO format with timezone)
+                pushed_at_clean = pushed_at_str.replace('Z', '+00:00')
+                pushed_at = datetime.fromisoformat(pushed_at_clean)
+                
+                # If parsed datetime is naive, assume UTC
+                if pushed_at.tzinfo is None:
+                    pushed_at = pushed_at.replace(tzinfo=timezone.utc)
+                
+                # Check if repository was pushed after repositories.json was generated
+                if pushed_at > generated_at:
+                    repos_needing_refresh.append(repo_name)
+                    logger.debug(f"  {repo_name}: needs refresh (pushed {pushed_at})")
+                else:
+                    logger.debug(f"  {repo_name}: cache valid (last push {pushed_at})")
+                    
+            except Exception as e:
+                logger.warning(f"Failed to parse push date for {repo_name}: {e}")
+                # On error, assume it needs refresh to be safe
+                repos_needing_refresh.append(repo_name)
+        
+        logger.info(f"Found {len(repos_needing_refresh)}/{len(raw_repos)} repositories needing cache refresh")
+        return repos_needing_refresh
+
+    def _apply_selective_cache_clear(self, repos_to_refresh: List[str]) -> None:
+        """Clear cache entries only for repositories that need refresh.
+
+        Args:
+            repos_to_refresh: List of repository names to clear cache for
+        """
+        if not repos_to_refresh:
+            logger.info("No repositories need cache refresh - using existing cache")
+            return
+        
+        logger.info(f"Clearing cache for {len(repos_to_refresh)} repositories with new commits...")
+        
+        total_cleared = 0
+        for repo_name in repos_to_refresh:
+            cleared = self.cache.clear_repository_cache(self.username, repo_name)
+            total_cleared += cleared
+            logger.debug(f"  Cleared {cleared} cache entries for {repo_name}")
+        
+        logger.info(f"Cleared {total_cleared} total cache entries for updated repositories")
+
     def generate(self) -> Dict[str, Any]:
         """Generate comprehensive unified repository data.
         
         This is the main entry point that orchestrates all data gathering:
+        0. Smart cache refresh (only update repos with new commits)
         1. Fetch all repositories
         2. Analyze commits and calculate metrics
         3. Rank repositories
@@ -120,10 +241,42 @@ class UnifiedDataGenerator:
         Returns:
             Dictionary with unified repository data including all attributes
         """
-        start_time = datetime.now()
+        start_time = datetime.now(timezone.utc)
         logger.info("=" * 70)
         logger.info("Starting Unified Data Generation")
         logger.info("=" * 70)
+        
+        # Step 0: Smart cache refresh logic
+        if not self.force_refresh:
+            generated_at = self._check_data_freshness()
+            
+            if generated_at:
+                # Check if data is less than 1 week old
+                age = datetime.now(timezone.utc) - generated_at
+                one_week = timedelta(days=7)
+                
+                if age < one_week:
+                    logger.info(f"repositories.json is {age.days} days old (< 7 days) - skipping generation")
+                    logger.info("Use --force-refresh to regenerate anyway")
+                    
+                    # Return existing data
+                    try:
+                        import json
+                        repos_json_path = self.output_dir / "repositories.json"
+                        with open(repos_json_path, "r", encoding="utf-8") as f:
+                            return json.load(f)
+                    except Exception as e:
+                        logger.warning(f"Failed to load existing data: {e} - proceeding with generation")
+                else:
+                    # Data is more than 1 week old - use selective cache refresh
+                    logger.info(f"repositories.json is {age.days} days old (>= 7 days) - using smart cache refresh")
+                    repos_to_refresh = self._selective_cache_refresh(generated_at)
+                    self._apply_selective_cache_clear(repos_to_refresh)
+            else:
+                logger.info("No existing repositories.json found - performing full generation")
+        else:
+            logger.info("Force refresh enabled - clearing all cache and regenerating")
+            self.cache.clear()
 
         # Step 1: Fetch all repositories
         logger.info(f"Fetching repositories for {self.username}...")
@@ -403,11 +556,11 @@ class UnifiedDataGenerator:
         }
 
         # Step 6: Create metadata
-        end_time = datetime.now()
+        end_time = datetime.now(timezone.utc)
         generation_time = (end_time - start_time).total_seconds()
 
         metadata = {
-            "generated_at": datetime.now().isoformat(),
+            "generated_at": datetime.now(timezone.utc).isoformat(),
             "schema_version": "2.0.0",
             "repository_count": len(unified_repos),
             "data_source": "GitHub API",

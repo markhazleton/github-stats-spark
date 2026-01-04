@@ -96,3 +96,27 @@ class APICache:
         """Clear all cached values."""
         for cache_file in self.cache_dir.glob("*.json"):
             cache_file.unlink()
+
+    def clear_repository_cache(self, username: str, repo_name: str) -> int:
+        """Clear all cache entries related to a specific repository.
+
+        Args:
+            username: Repository owner username
+            repo_name: Repository name
+
+        Returns:
+            Number of cache entries cleared
+        """
+        # Pattern matches all cache keys containing username and repo_name
+        # Examples: commits_user_repo_*, languages_user_repo_*, readme_user_repo_*, etc.
+        pattern = f"*{username}_{repo_name}_*.json"
+        cleared_count = 0
+
+        for cache_file in self.cache_dir.glob(pattern):
+            try:
+                cache_file.unlink()
+                cleared_count += 1
+            except Exception:
+                pass  # Continue even if deletion fails
+
+        return cleared_count

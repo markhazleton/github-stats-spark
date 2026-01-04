@@ -82,6 +82,12 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         action="store_true",
         help="Enable verbose logging",
     )
+    unified_parser.add_argument(
+        "--max-repos",
+        type=int,
+        default=None,
+        help="Maximum number of repositories to process (for testing/debugging)",
+    )
 
     # Analyze command (NEW - Repository analysis)
     analyze_parser = subparsers.add_parser("analyze", help="Analyze repositories and generate report")
@@ -303,6 +309,7 @@ def handle_unified(args, logger):
             username=args.user,
             output_dir=args.output_dir,
             force_refresh=args.force_refresh,
+            max_repos_override=args.max_repos,
         )
 
         # Generate and save unified data
@@ -323,7 +330,12 @@ def handle_unified(args, logger):
             cache_dir=cache_config.get("directory", ".cache"),
             ttl_hours=cache_config.get("ttl_hours", 6)
         )
-        workflow = UnifiedReportWorkflow(config, cache, output_dir="output")
+        workflow = UnifiedReportWorkflow(
+            config, 
+            cache, 
+            output_dir="output",
+            max_repos=args.max_repos
+        )
         
         try:
             unified_report = workflow.execute(args.user)
@@ -541,8 +553,12 @@ def handle_dated_analyze(args, logger):
                 # Update language count (Tier 1)
                 repo.language_count = len(repo.language_stats)
 
-                # Fetch commit counts
-                commit_data = fetcher.fetch_commit_counts(args.user, repo.name)
+                # Fetch commit counts (with push date for smart caching)
+                commit_data = fetcher.fetch_commit_counts(
+                    args.user, 
+                    repo.name,
+                    repo_pushed_at=github_repo.pushed_at
+                )
                 commit_history = CommitHistory(
                     repository_name=repo.name,
                     total_commits=commit_data["total"],

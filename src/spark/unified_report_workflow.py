@@ -47,6 +47,7 @@ class UnifiedReportWorkflow:
         config: SparkConfig,
         cache: Optional[APICache] = None,
         output_dir: str = "output",
+        max_repos: Optional[int] = None,
     ):
         """Initialize unified report workflow.
 
@@ -54,6 +55,7 @@ class UnifiedReportWorkflow:
             config: Spark configuration instance
             cache: API cache instance (creates new if not provided)
             output_dir: Base output directory for SVGs and reports
+            max_repos: Optional limit on number of repositories to process
         """
         self.logger = get_logger()
         self.config = config
@@ -75,6 +77,16 @@ class UnifiedReportWorkflow:
         self.warnings: List[str] = []
         self.start_time: float = 0.0
         self.api_calls: int = 0
+        
+        # Store max_repos limit
+        self.max_repos = max_repos
+        if max_repos is not None:
+            self.logger.info(f"⚠️  Testing mode: Limited to {max_repos} repositories for SVG/report generation")
+        
+        # Store max_repos limit
+        self.max_repos = max_repos
+        if max_repos is not None:
+            self.logger.info(f"⚠️  Testing mode: Limited to {max_repos} repositories for SVG/report generation")
 
     def execute(self, username: str) -> UnifiedReport:
         """Execute unified report workflow with partial failure handling.
@@ -170,6 +182,11 @@ class UnifiedReportWorkflow:
             # Fetch repositories (public only)
             repos_data = self.fetcher.fetch_repositories(username, exclude_private=True)
             repositories = [Repository.from_dict(r) for r in repos_data]
+            
+            # Apply max_repos limit if specified
+            if self.max_repos is not None and len(repositories) > self.max_repos:
+                self.logger.info(f"Limiting to first {self.max_repos} of {len(repositories)} repositories")
+                repositories = repositories[:self.max_repos]
 
             # Fetch commit histories for all repositories
             commit_histories: Dict[str, CommitHistory] = {}
@@ -286,7 +303,14 @@ class UnifiedReportWorkflow:
         self.logger.debug(f"Fetching commits for {len(github_data.repositories)} repositories")
         for repo in github_data.repositories:
             try:
-                commits = self.fetcher.fetch_commits(username, repo.name, max_commits=100)
+                # Get repo object to access push date for smart caching
+                github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
+                commits = self.fetcher.fetch_commits(
+                    username, 
+                    repo.name, 
+                    max_commits=100,
+                    repo_pushed_at=github_repo.pushed_at
+                )
                 if commits:
                     calculator.add_commits(commits)
             except Exception as e:

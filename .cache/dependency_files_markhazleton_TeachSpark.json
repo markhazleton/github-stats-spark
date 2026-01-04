@@ -1,6 +1,0 @@
-{
-  "timestamp": "2026-01-03T18:47:40.032685",
-  "value": {
-    "package.json": "{\n  \"devDependencies\": {\n    \"copy-webpack-plugin\": \"^13.0.0\",\n    \"husky\": \"^9.1.7\",\n    \"lint-staged\": \"^16.1.2\"\n  },\n  \"scripts\": {\n    \"prepare\": \"husky\"\n  }\n}\n"
-  }
-}

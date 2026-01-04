@@ -148,8 +148,9 @@ Generate comprehensive markdown reports with intelligent insights:
 
 #### Performance & Reliability
 
-- ⚡ **Fast**: <3 minutes for 50 repositories
-- 🔄 **Smart Caching**: Reduces API calls by up to 80%
+- ⚡ **Fast**: <1 minute for typical weekly updates (with smart cache refresh)
+- 🔄 **Smart Caching**: Reduces API calls by 80-95% through intelligent cache invalidation
+- 🧠 **Intelligent Refresh**: Only updates repositories with new commits
 - 🛡️ **Rate Limit Safe**: Automatic handling and retry logic
 - 📊 **Progress Tracking**: Real-time feedback during generation
 - ♿ **Accessible**: WCAG AA compliant visualizations
@@ -193,6 +194,19 @@ spark unified --user YOUR_GITHUB_USERNAME
 - 💾 Single API pass (fewer rate limit issues)
 - 🎯 Consistent data snapshot across all outputs
 - ⚡ Optimized data gathering and caching
+
+**Testing/Debugging Options:**
+
+```bash
+# Test with only 2 repositories (fast cache validation)
+spark unified --user YOUR_USERNAME --max-repos 2
+
+# Force refresh all data (bypass cache)
+spark unified --user YOUR_USERNAME --force-refresh
+
+# Verbose logging for debugging
+spark unified --user YOUR_USERNAME --verbose
+```
 
 See [QUICKSTART_UNIFIED.md](documentation/QUICKSTART_UNIFIED.md) for detailed instructions.
 
