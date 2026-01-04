@@ -1,0 +1,1189 @@
+{
+  "timestamp": "2026-01-03T18:17:21.380903",
+  "value": [
+    {
+      "sha": "919d42a5f47dd2073e2928f3122e90709760d0f8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T18:48:56+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 6551,
+        "additions": 4968,
+        "deletions": 1583
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "9a56a75ce9df010fa8284fbab027acd973845f60",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T15:22:22+00:00"
+        },
+        "message": "feat: add SEO asset validation script and integrate into build process"
+      },
+      "stats": {
+        "total": 268,
+        "additions": 267,
+        "deletions": 1
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "abe8abfebb3b88a204c6e104c26dddd483ab7c03",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T15:03:35+00:00"
+        },
+        "message": "fix: prevent circular dependency issues with Radix UI packages in chunking"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 10,
+        "deletions": 6
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "149ed5d9cb96be0d3215e61f588f0882b108f7c7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T14:58:28+00:00"
+        },
+        "message": "feat: add warning color palette and utility classes for toasts\n\n- Introduced a new warning color palette in index.css with various shades.\n- Added utility classes for background, text, and border colors related to warnings.\n- Updated home page to use the new background and text color utilities.\n- Enhanced Vite configuration for better chunking of dependencies.\n- Created contrast tests for hero elements and color tokens to ensure accessibility compliance.\n- Documented usage examples for the new warning toast variant and inline palette references.\n- Generated data quality reports confirming no critical errors in recipe data."
+      },
+      "stats": {
+        "total": 1557,
+        "additions": 1002,
+        "deletions": 555
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "b1de567fa2a079c2110b69b9f65664504f83bee1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T14:18:30+00:00"
+        },
+        "message": "Refactor color tokens and styles for success and destructive states; update blog and recipe detail pages for new design tokens; add semantic tokens and variant mapping guide; generate data quality validation report."
+      },
+      "stats": {
+        "total": 1671,
+        "additions": 1007,
+        "deletions": 664
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "fa0b1c8603b8aa1cb373fc2abae7948ddfa2c401",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T14:05:18+00:00"
+        },
+        "message": "feat: Migrate to Tailwind CSS v4 and implement dark mode toggle\n\n- Updated styles across various components to utilize Tailwind CSS v4 utilities.\n- Introduced semantic heading classes for improved typography.\n- Enhanced button and badge styles with semantic variants.\n- Implemented print styles for cleaner recipe printing.\n- Added a dark mode toggle component with localStorage persistence.\n- Refactored category and recipe pages to use new styles and semantic tokens.\n- Conducted a comprehensive audit to ensure data quality and compliance with new design standards."
+      },
+      "stats": {
+        "total": 1760,
+        "additions": 1174,
+        "deletions": 586
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "e71519fcbeb8253f7372c7e9dcbfad1ab6951d63",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T13:49:16+00:00"
+        },
+        "message": "feat: Implement comprehensive accessibility checklist for UI components\n\nfix: Enhance color contrast across the website for improved readability\n\nstyle: Complete redesign of CSS using Tailwind CSS v4 best practices\n\nfix: Resolve Tailwind CSS v4 error related to @apply directive misuse\n\ndocs: Finalize Tailwind CSS v4 design system implementation report\n\nchore: Generate data quality validation reports with perfect scores"
+      },
+      "stats": {
+        "total": 4373,
+        "additions": 2820,
+        "deletions": 1553
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "433fe78e11ff817c51bdeeef2ccbe774e77af2ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T23:41:50+00:00"
+        },
+        "message": "Refactor SSR entry point to remove React Query dehydrate state; update package dependencies; fix deep linking and hydration issues; enhance data quality validation reports."
+      },
+      "stats": {
+        "total": 2692,
+        "additions": 1567,
+        "deletions": 1125
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "a04a8f0710124a62626b70f32287060b8fe2e6b7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T21:18:49+00:00"
+        },
+        "message": "fix: sanitize route paths and slugs for filesystem compatibility\n\n- Updated the sanitization logic in `writeHtml` and `run` functions to use consistent double quotes for replacing invalid filesystem characters.\n- Added a new data quality report detailing metrics and recommendations for recipe data validation."
+      },
+      "stats": {
+        "total": 1103,
+        "additions": 586,
+        "deletions": 517
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "47c30df8e73663b3b697093ead71d682f0b1ea68",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T21:16:12+00:00"
+        },
+        "message": "feat: Implement server-side rendering (SSR) and static site generation (SSG) for improved performance and SEO\n\n- Updated main.tsx to support hydration for SSR and normal rendering based on existing content.\n- Added AppSSR component to handle routing and rendering for SSR.\n- Created ssr-entry.tsx for server-side rendering logic.\n- Enhanced Vite configuration to support SSR and optimized chunking.\n- Introduced SSG script to generate static HTML from React components with dehydrated query data.\n- Sanitized recipe URLs in data fetching to ensure filesystem compatibility.\n- Updated package.json and package-lock.json to include necessary dependencies for SSR and SSG.\n- Added data quality validation reports for monitoring data integrity."
+      },
+      "stats": {
+        "total": 1925,
+        "additions": 1320,
+        "deletions": 605
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "ef6f7f6cb3d3e0c54152e2ab50441bdb90acc213",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T20:34:42+00:00"
+        },
+        "message": "fix: improve error handling in ErrorBoundary component and update Content Security Policy"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 10,
+        "deletions": 20
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "3b1f36137f91ff9808fb44ca6e67089baeab494a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T20:30:50+00:00"
+        },
+        "message": "feat: enhance project configuration and testing setup\n\n- Added new npm scripts for analysis and coverage reporting in package.json.\n- Updated generate-sitemap.js to improve priority handling and added a TODO for future enhancements.\n- Modified prerender.js to support structured data injection for SEO improvements.\n- Adjusted tsconfig.json to exclude test files from compilation.\n- Updated vite.config.ts to refine test file inclusion patterns.\n- Added snapshot tests for ErrorBoundary component.\n- Created a temporary test file for seo-helpers to avoid double execution.\n- Generated multiple data quality validation reports with a perfect quality score."
+      },
+      "stats": {
+        "total": 2351,
+        "additions": 1731,
+        "deletions": 620
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "f194e81afa314edaeea1a61b5fa8951d410d3a83",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T19:57:50+00:00"
+        },
+        "message": "feat: update build scripts and add prerender functionality\n\n- Refactored build scripts in package.json to include clean and prerender steps.\n- Added prerender script to generate static HTML for key dynamic routes using JSDOM.\n- Enhanced sitemap generation to handle missing recipe URLs and normalize category URLs.\n- Implemented deduplication of URLs in the sitemap.\n- Generated multiple data quality validation reports with a consistent format and quality score."
+      },
+      "stats": {
+        "total": 1762,
+        "additions": 1119,
+        "deletions": 643
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "c77e4d2a64b3061f8990614cbee8e86dfa7eabe0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T17:27:55+00:00"
+        },
+        "message": "Refactor CSS and component styles for Tailwind v4 migration\n\n- Removed legacy CSS custom properties and unused color classes from index.css.\n- Updated component styles across multiple pages to utilize new Tailwind v4 arbitrary value syntax for colors.\n- Introduced brand utility classes for consistent color usage in buttons and text.\n- Ensured all components reflect the new color palette and utility classes, enhancing maintainability and consistency.\n- Conducted a final sweep to eliminate any remaining legacy class names, ensuring a clean transition to Tailwind v4."
+      },
+      "stats": {
+        "total": 1460,
+        "additions": 775,
+        "deletions": 685
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "ffc7164f9476c817bccf988243eb92ca046f47a8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T17:09:08+00:00"
+        },
+        "message": "feat: Implement build version tracking and inject metadata into index.html for cache busting\nfeat: Add breadcrumb navigation to blog, categories, and category recipes pages\nfix: Update breadcrumb generation to support legacy URL properties"
+      },
+      "stats": {
+        "total": 407,
+        "additions": 302,
+        "deletions": 105
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "1d5bdfd222b1b7b0a28df8a2e707d0c5d0d6995b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T16:50:12+00:00"
+        },
+        "message": "feat: Remove synthetic fields from recipe data and adjust UI components for API alignment"
+      },
+      "stats": {
+        "total": 117,
+        "additions": 33,
+        "deletions": 84
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "9104e093437264105861a0f767da955121200ecc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T16:42:49+00:00"
+        },
+        "message": "feat: Implement advanced analytics tracking for recipe interactions and user engagement\n\n- Added useAnalytics and useRecipeAnalytics hooks for tracking page views, recipe views, and user interactions.\n- Integrated Google Analytics 4 with enhanced ecommerce tracking.\n- Implemented tracking for search queries, category views, and button clicks across various components.\n- Enhanced recipe detail and category pages with specific engagement tracking for ingredients and instructions.\n- Documented analytics implementation and usage examples in ADVANCED_ANALYTICS_IMPLEMENTATION.md."
+      },
+      "stats": {
+        "total": 2056,
+        "additions": 1534,
+        "deletions": 522
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "99a4e8311d23c5a7908fa18e6ef8d576271cc041",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T16:28:01+00:00"
+        },
+        "message": "feat: Add comprehensive deep link routing analysis and fixes for special character handling\n\n- Introduced a detailed analysis document for deep link routing issues, highlighting problematic URLs and potential edge cases.\n- Implemented enhanced URL encoding and decoding functions to handle special characters in recipe slugs.\n- Normalized slug generation to ensure consistent routing and matching.\n- Created an edge case testing matrix to validate routing functionality.\n- Documented critical routing vulnerabilities and provided an implementation priority list for immediate fixes.\n\n---\n\nchore: Conduct a comprehensive SEO review and optimization strategy for 2025\n\n- Evaluated current SEO implementation, identifying strengths and opportunities for improvement.\n- Recommended critical image optimization strategies for recipe content.\n- Enhanced structured data for recipes to include missing fields and improve search visibility.\n- Proposed a content quality enhancement plan to improve recipe metadata and user engagement.\n- Outlined a technical implementation roadmap for immediate and long-term SEO improvements.\n\n---\n\nfix: Resolve SPA routing issues affecting deep link functionality\n\n- Corrected custom domain redirect logic in 404.html to ensure proper URL formatting.\n- Updated SPA parsing logic in index.html to eliminate unwanted leading slashes.\n- Verified that all deep links now function correctly and are indexed by search engines.\n- Ensured compatibility with both custom domain and GitHub Pages deployment scenarios."
+      },
+      "stats": {
+        "total": 2136,
+        "additions": 1608,
+        "deletions": 528
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "d775311624398bbd8bb150a3a987829d41ea67cd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T16:07:16+00:00"
+        },
+        "message": "feat: Enhance static data handling and API integration\n\n- Added `getApiData` function to retrieve complete API data structure.\n- Updated `Categories` page to calculate and display recipe counts for each category.\n- Modified `CategoryRecipes` page to handle paginated recipe responses from the API.\n- Refactored `RecipeDetail` page to simplify cooking time display.\n- Adjusted cooking time estimates in `seo-helpers` to remove prep time and ensure total time reflects cooking time."
+      },
+      "stats": {
+        "total": 1108,
+        "additions": 561,
+        "deletions": 547
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "2c5454456eddf9ea90eaba23d263f5f134ded03f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T15:45:56+00:00"
+        },
+        "message": "chore: complete repository cleanup and organization\n\n- Removed 30+ unused test files, outdated documentation, and unnecessary scripts.\n- Kept essential documentation and updated README.md for clarity.\n- Consolidated data quality reports and migration documents.\n- Verified all active scripts are functional and build process remains intact.\n- Improved repository structure for better maintainability and developer experience."
+      },
+      "stats": {
+        "total": 6379,
+        "additions": 1045,
+        "deletions": 5334
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "781e6a69beb6daea9cf419c41927bd1aba18eb72",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T04:57:53+00:00"
+        },
+        "message": "feat: Enhance routing logic for custom domain and GitHub Pages support, fixing 404 errors"
+      },
+      "stats": {
+        "total": 50,
+        "additions": 40,
+        "deletions": 10
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "7e9dbbd3795b7e03e15745b7b58a8cc6883cb237",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T04:57:25+00:00"
+        },
+        "message": "feat: Update routing and deployment logic for custom domain support and fix 404 errors"
+      },
+      "stats": {
+        "total": 229,
+        "additions": 192,
+        "deletions": 37
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "9a4ddbb68e3ec40e81aeacccbc5c484914f5ec78",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T03:53:28+00:00"
+        },
+        "message": "feat: Add comprehensive README and modernization documentation for Mechanics of Motherhood project\n\n- Implemented a world-class README.md with detailed project description, features, and usage instructions.\n- Completed repository modernization including URL corrections, developer attribution, and best practices documentation.\n- Generated data quality validation reports confirming 100% data quality and successful build metrics."
+      },
+      "stats": {
+        "total": 2155,
+        "additions": 1380,
+        "deletions": 775
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "7f18009e1869ccee275eabe700c31e2cbabbe620",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T03:42:53+00:00"
+        },
+        "message": "Update repository documentation and URLs for Mechanics of Motherhood project\n\n- Corrected repository references from sharesmallbiz-support to markhazleton\n- Updated live demo URLs to reflect primary domain mechanicsofmotherhood.com\n- Adjusted technology stack to React 19 and updated related documentation\n- Added developer attribution for Mark Hazleton across all markdown files\n- Implemented GitHub Pages best practices for custom domain hosting\n- Generated data quality validation reports confirming 100% quality score"
+      },
+      "stats": {
+        "total": 1744,
+        "additions": 1196,
+        "deletions": 548
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "2cbb5d18fdf02de428559d4ae0a7134d9ed582dd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T03:26:52+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 1061,
+        "additions": 539,
+        "deletions": 522
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "e4d01779e4575d4974b0ebccbacef7b388dccc6d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T03:18:23+00:00"
+        },
+        "message": "Update domain handling and deployment instructions\n\n- Added primary domain `https://mechanicsofmotherhood.com` and fallback URL in README.md.\n- Refactored base path logic in App.tsx for better routing with custom domains.\n- Enhanced SeoHead.tsx to dynamically determine canonical URLs.\n- Updated StructuredData.tsx for flexible site base URL generation.\n- Improved sitemap generation in generate-sitemap.js with custom domain support.\n- Adjusted vite.config.ts for custom domain deployment on GitHub Pages.\n- Added CLOUDFLARE_REDIRECT_RULE.md for setting up redirect rules."
+      },
+      "stats": {
+        "total": 178,
+        "additions": 148,
+        "deletions": 30
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "9e53a025b5f8f9d98e612179acab3cac84dcbf9a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T03:05:23+00:00"
+        },
+        "message": "feat: Enhance sitemap generation and Vite configuration for custom domain support\n\n- Updated generate-sitemap.js to allow overriding the site URL via the VITE_CUSTOM_DOMAIN environment variable.\n- Modified vite.config.ts to support deployment from the root for custom domains, while retaining the repository sub-path for GitHub Pages.\n- Added CNAME file for custom domain mechanicsofmotherhood.com and www.mechanicsofmotherhood.com.\n- Generated data quality validation reports confirming 100% data quality with no critical errors found."
+      },
+      "stats": {
+        "total": 1509,
+        "additions": 825,
+        "deletions": 684
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "bb49c12d2e07726addfb3f495778fecd7f231890",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T03:00:05+00:00"
+        },
+        "message": "chore: update dependencies and remove obsolete scripts\n\n- Removed scripts for creating v4 test branch and tailwind v4 readiness check.\n- Updated @tailwindcss/vite from ^4.1.12 to ^4.1.13.\n- Updated @tanstack/react-query from ^5.86.0 to ^5.87.1.\n- Updated web-vitals from ^4.2.4 to ^5.1.0.\n- Updated tailwindcss from ^4.1.12 to ^4.1.13.\n- Updated @testing-library/jest-dom from ^6.6.3 to ^6.8.0.\n- Updated @testing-library/react from ^16.0.1 to ^16.3.0.\n- Updated jsdom from ^25.0.1 to ^26.1.0.\n- Updated vitest from ^2.1.4 to ^3.2.4."
+      },
+      "stats": {
+        "total": 2805,
+        "additions": 795,
+        "deletions": 2010
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "a8a6000b71201791330b67dbf089c0791d63baa2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T18:24:06+00:00"
+        },
+        "message": "Refactor category data fetching: Update query keys and types to use ApiData instead of CategoriesResponse in Categories and CategoryRecipes components."
+      },
+      "stats": {
+        "total": 1091,
+        "additions": 540,
+        "deletions": 551
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "1027f35fef976049dbc10ecec0f249de7988e507",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T17:38:58+00:00"
+        },
+        "message": "feat: add testing setup with Vitest and Testing Library\n\n- Updated package.json to include Vitest and Testing Library dependencies.\n- Configured tsconfig.json to recognize Vitest types.\n- Modified vite.config.ts to integrate Vitest for testing.\n- Created tests for ErrorBoundary, SeoHead, and SEO helpers.\n- Added error logging utility for better error handling.\n- Implemented performance monitoring utility using web-vitals.\n- Set up Vitest configuration and global mocks in vitest.setup.ts."
+      },
+      "stats": {
+        "total": 3723,
+        "additions": 3106,
+        "deletions": 617
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "ccd62217aacbb9184fbc2b7ceabd597f830223c4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T16:42:05+00:00"
+        },
+        "message": "feat: Implement default values for prepTime and cookTime in recipe data\n\nfix: Update category-recipes page to handle new API response structure and improve pagination logic\n\nbuild: Optimize Vite configuration for better chunking and reduce bundle size\n\nfeat: Add ErrorBoundary component for improved error handling across the application\n\nfeat: Create PageSkeleton component for loading states in the UI\n\ndocs: Complete API cleanup and optimization documentation\n\ndocs: Outline immediate production fixes and improvements needed\n\ndocs: Conduct production readiness review with critical issues and recommendations"
+      },
+      "stats": {
+        "total": 2016,
+        "additions": 1399,
+        "deletions": 617
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "4835d953dcc272adc30ebd70a6407a42f5261537",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T16:15:08+00:00"
+        },
+        "message": "feat: Enhance API type definitions and improve pagination logic in category recipes page"
+      },
+      "stats": {
+        "total": 611,
+        "additions": 580,
+        "deletions": 31
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "7406b15b187aa8f1f666cb53b46fef2be66dacc0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T15:05:26+00:00"
+        },
+        "message": "Refactor: Remove server-side code and convert to static data handling\n\n- Eliminated all server-side API request infrastructure from queryClient.ts\n- Renamed functions and variables to reflect static data usage\n- Updated category-recipes.tsx to handle pagination logic more robustly\n- Documented the migration to a static web app in STATIC_WEB_APP_MIGRATION_SUMMARY.md\n- Resolved TypeScript build errors by enhancing response types and interfaces"
+      },
+      "stats": {
+        "total": 1466,
+        "additions": 862,
+        "deletions": 604
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "83eb34888ce25a07a0a8446e10069c679f7c15c5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T13:33:39+00:00"
+        },
+        "message": "feat: Complete Tailwind v4 implementation with best practices and dependency resolution"
+      },
+      "stats": {
+        "total": 29,
+        "additions": 28,
+        "deletions": 1
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "5a627c6b59623e3ee78fe5b1daed589f3be99433",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T13:33:05+00:00"
+        },
+        "message": "stuff"
+      },
+      "stats": {
+        "total": 931,
+        "additions": 671,
+        "deletions": 260
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "0a54446ca16dc878df7750e81718ebbbcfb3041a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T13:08:35+00:00"
+        },
+        "message": "chore: migrate to Tailwind CSS v4 and streamline configuration\n\n- Updated dependencies in package.json to include Tailwind CSS v4 and @tailwindcss/vite.\n- Removed autoprefixer and postcss from postcss.config.js, simplifying it to an empty placeholder.\n- Refactored tailwind.config.ts to retain only content globs and plugin registrations, removing extensive theme configurations.\n- Updated vite.config.ts to integrate the @tailwindcss/vite plugin.\n- Created TAILWIND_V4_BEST_PRACTICES.md and TAILWIND_V4_MIGRATION_EXECUTION.md for documentation on migration strategies and best practices."
+      },
+      "stats": {
+        "total": 3523,
+        "additions": 1686,
+        "deletions": 1837
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "a1aacc10ab1c6788f937a423a193e9824f21469c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-04T12:25:30+00:00"
+        },
+        "message": "feat: Enhance pagination logic and improve user experience in category recipes page\n\nchore: Update package.json for GitHub Pages build and preview scripts\n\nbuild: Optimize Vite configuration for production, including chunking and sourcemaps\n\nchore: Add .nojekyll file to prevent Jekyll processing on GitHub Pages\n\ndocs: Create _headers file for security headers documentation\n\ndocs: Add GitHub Pages deployment checklist for streamlined deployment process\n\ndocs: Document GitHub Pages implementation completion with detailed summary\n\ndocs: Outline GitHub Pages optimization plan for future improvements\n\nchore: Generate data quality validation reports with perfect scores\n\nchore: Add performance budget configuration for resource management"
+      },
+      "stats": {
+        "total": 2049,
+        "additions": 1464,
+        "deletions": 585
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "f9d632186347a843a948de5a55147b84ea3a0178",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-02T05:47:18+00:00"
+        },
+        "message": "Enhance menu statistics and WebCMS integration reporting\n\n- Updated MENU_STATISTICS_ENHANCEMENT.md to reflect detailed statistics display, including total menu items and categorized counts.\n- Improved WEBCMS_INTEGRATION_SUCCESS.md with clearer data fetching results, including menu item extraction logic and data structure verification.\n- Revised WEBCMS_SUCCESS_REPORT.md to provide a comprehensive overview of API integration success, data quality assessment, and generated data files."
+      },
+      "stats": {
+        "total": 1059,
+        "additions": 543,
+        "deletions": 516
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "44d5ad96e1c35b2d6cc200b5252438b6b5bea4fd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-02T05:44:52+00:00"
+        },
+        "message": "feat: Implement WebCMS API integration and update project structure\n\n- Added comprehensive setup guide for WebCMS API access in `WEBCMS_API_SETUP_GUIDE.md`.\n- Documented successful integration results in `WEBCMS_INTEGRATION_SUCCESS.md` and `WEBCMS_SUCCESS_REPORT.md`.\n- Updated environment configuration in `.env.example` for WebCMS API bearer token.\n- Modified scripts to fetch specific website data and menu items from WebCMS API.\n- Created sitemap generator script to include all relevant URLs for SEO.\n- Developed Tailwind v4 readiness check script to prepare for future migration.\n- Enhanced error handling and logging across scripts for better debugging."
+      },
+      "stats": {
+        "total": 19423,
+        "additions": 18109,
+        "deletions": 1314
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "8971996cdefe83a9759aac89d2be4224d405cf9d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-22T15:28:56+00:00"
+        },
+        "message": "feat: Add Crockpot Verde Chicken recipe and update validation report metrics"
+      },
+      "stats": {
+        "total": 729,
+        "additions": 685,
+        "deletions": 44
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "c0e8c7f1a6e9878fb69f7ab5c6606a16cad5d43f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T18:40:22+00:00"
+        },
+        "message": "feat: Add comprehensive data quality validation system\n\n- Implemented DataQualityValidator class for validating recipes, categories, websites, and menu items.\n- Created scripts for standalone data validation and category link validation.\n- Added functionality to generate detailed markdown and JSON reports for validation results.\n- Introduced automatic fixes for common data quality issues.\n- Enhanced error and warning reporting with detailed metrics and recommendations.\n- Updated data quality reports with improved formatting and content."
+      },
+      "stats": {
+        "total": 3086,
+        "additions": 3025,
+        "deletions": 61
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "950f24fd473ad825698256b49781bfcc21904f19",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T18:14:31+00:00"
+        },
+        "message": "chore: update fetchedAt timestamp in API data and regenerate types"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "92b4658726d694108001f90e4d7b45e0aa1d28cb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T18:02:03+00:00"
+        },
+        "message": "Final documentation updates and cleanup after Tailwind v4 reversion"
+      },
+      "stats": {
+        "total": 76,
+        "additions": 45,
+        "deletions": 31
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "5776de61153dc35fc7caacee8585ba1335eaec23",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T17:50:30+00:00"
+        },
+        "message": "Tailwind v4 migration attempt - reverted to v3.4.17 due to ecosystem compatibility"
+      },
+      "stats": {
+        "total": 503,
+        "additions": 475,
+        "deletions": 28
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "1d6556dfbca0e4db12e4e678d4bfc61268e83ecb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T17:40:20+00:00"
+        },
+        "message": "Pre-migration backup: TypeScript fixes complete, ready for Tailwind v4"
+      },
+      "stats": {
+        "total": 121,
+        "additions": 121,
+        "deletions": 0
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "366ca6fcbf764c1b88dbc59b0ac411e79cc1785e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T17:37:59+00:00"
+        },
+        "message": "feat: enhance TypeScript type definitions and improve API response handling across components"
+      },
+      "stats": {
+        "total": 796,
+        "additions": 786,
+        "deletions": 10
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "dad18e19cc1f0e0c145c3ea4abbe1152d4bf7970",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T18:20:45+00:00"
+        },
+        "message": "feat: update SEO keywords display in recipe detail with improved formatting and badge styles"
+      },
+      "stats": {
+        "total": 50,
+        "additions": 42,
+        "deletions": 8
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "0257f6d42fe17997b340f2c6ad0f5be1acfc9b93",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T18:09:14+00:00"
+        },
+        "message": "Add comprehensive documentation and guides for data fetching, image management, and Tailwind CSS v4 migration\n\n- Created DATA_SETUP.md to outline the data fetching setup process from RecipeSpark and WebCMS APIs.\n- Added DEMO.md for a live demo overview of the Mechanics of Motherhood project.\n- Documented GitHub Actions build fixes in GITHUB_ACTIONS_BUILD_FIX.md to resolve asset loading issues.\n- Established IMAGE_MANAGEMENT_GUIDE.md for best practices in managing images within the project.\n- Summarized logo implementation status in LOGO_IMPLEMENTATION_STATUS.md and LOGO_IMPLEMENTATION_SUMMARY.md.\n- Developed TAILWIND_V4_CHECKLIST.md and TAILWIND_V4_MIGRATION_PLAN.md for planning Tailwind CSS v4 migration.\n- Updated README.md to clarify the purpose and organization of the copilot documentation folder.\n- Added test scripts (test-image-url.js and test-markdown-helpers.js) for verifying image URL generation and markdown helper functions."
+      },
+      "stats": {
+        "total": 1660,
+        "additions": 1639,
+        "deletions": 21
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "4f3f7bff7e0714a9b2d1be89be391d00767eb3ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T17:28:57+00:00"
+        },
+        "message": "Fix recipe placeholder image 404 error on GitHub Pages\n\n- Update image-helpers.ts to use Vite's BASE_URL for correct path generation\n- Ensures recipe placeholder images work with GitHub Pages base path '/MechanicsOfMotherhood/'\n- Fixes 404 errors for mom-recipe-placeholder.svg on published site"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 13,
+        "deletions": 3
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "c00860df006b9f5783b97d7f94580ce81c0cea79",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T17:00:08+00:00"
+        },
+        "message": "feat: implement image helper functions and update recipe image handling across components"
+      },
+      "stats": {
+        "total": 188,
+        "additions": 153,
+        "deletions": 35
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "d96c74807c427700cd5b11e0b4f2c032d7a0ca55",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T16:46:42+00:00"
+        },
+        "message": "Add TypeScript declarations for image file modules in Vite project"
+      },
+      "stats": {
+        "total": 359,
+        "additions": 282,
+        "deletions": 77
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "1d196a0b8af97fd366a27b9572aec0112ba1c88a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T16:40:55+00:00"
+        },
+        "message": "feat: refactor logo imports in footer, hero section, and navigation components\nchore: update fetchedAt timestamp in api-data.json and regenerate api-types.ts"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 8,
+        "deletions": 5
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "e9ff320c21aea0b427b65a589df2239931403ae1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T16:36:08+00:00"
+        },
+        "message": "feat: enhance branding with logo integration and favicon setup across components"
+      },
+      "stats": {
+        "total": 643,
+        "additions": 634,
+        "deletions": 9
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "29848dd7018d3f597b466b0f9a1b80ba1287983d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T16:36:02+00:00"
+        },
+        "message": "fix: comment out public directory in .gitignore for Vite project"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "a7b552927ce1a6a62d596fefbff6e6451cdb58ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T16:35:45+00:00"
+        },
+        "message": "Add favicon, logos, recipe images, and web app manifest\n\n- Added favicon.zip for site branding.\n- Created README.md in images directory for image placement guidance.\n- Added various logo files to logos directory with a README.md for usage.\n- Included recipe images and a placeholder SVG for recipes.\n- Added README.md for recipe images with naming conventions and usage examples.\n- Created site.webmanifest for web app configuration.\n- Added web app manifest icons in 192x192 and 512x512 sizes."
+      },
+      "stats": {
+        "total": 228,
+        "additions": 228,
+        "deletions": 0
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "37c536d305db2b2586d21c938667a6657d8db43c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T15:45:29+00:00"
+        },
+        "message": "feat: add Tailwind CSS v4 migration scripts and documentation"
+      },
+      "stats": {
+        "total": 611,
+        "additions": 568,
+        "deletions": 43
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "55a6d35e47fd22ac023757029b5a61362b073cb6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T15:35:47+00:00"
+        },
+        "message": "chore: upgrade React and related dependencies to version 19.1.1"
+      },
+      "stats": {
+        "total": 499,
+        "additions": 311,
+        "deletions": 188
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "b23c594e3040f8cc6c62e33fbd074c6cde043564",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T15:34:13+00:00"
+        },
+        "message": "chore: update dependencies in package.json and package-lock.json"
+      },
+      "stats": {
+        "total": 114,
+        "additions": 57,
+        "deletions": 57
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "954e49dbb92e78ec5f5bf8388b00e6eb6bfd25aa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T15:30:49+00:00"
+        },
+        "message": "Remove storage and Vite server implementation files; update Vite configuration to remove shared alias"
+      },
+      "stats": {
+        "total": 18203,
+        "additions": 3256,
+        "deletions": 14947
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "5efa1aa635ccae15c1db4c73def52eb58400dda2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T15:14:50+00:00"
+        },
+        "message": "feat: integrate wouter for navigation and update links in blog and recipes pages"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 12,
+        "deletions": 8
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "39d9251fd8b5d2b04af8c578d2e48d79b14bb12b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T15:00:08+00:00"
+        },
+        "message": "feat: add cleaning scripts and commands to package.json\n\n- Added \"clean\" script to remove build products and temporary files.\n- Added \"clean:all\" script to remove node_modules and package-lock.json.\n- Introduced clean.js script to handle directory and file removals.\n- Updated package.json to include new scripts and added glob dependency."
+      },
+      "stats": {
+        "total": 3480,
+        "additions": 1871,
+        "deletions": 1609
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "de2e8175e2c57d4c7c50cf8cea6971efaffb4104",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T00:14:29+00:00"
+        },
+        "message": "chore: Update GitHub Actions workflow to set permissions and concurrency for deployment"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 12,
+        "deletions": 5
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "9da43a8766f7b60a00f8d5dcc979668eef21811f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T00:11:18+00:00"
+        },
+        "message": "refactor: Remove Replit-specific plugins and scripts from configuration files"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 1,
+        "deletions": 59
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "e17dec8714559788beffc4d721b9fbe811f78d26",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T00:04:25+00:00"
+        },
+        "message": "feat: Add recipe detail page with API integration and loading states\n\n- Implemented RecipeDetail component to display individual recipe details.\n- Integrated React Query for fetching recipe data by slug.\n- Added loading and error handling states for better user experience.\n- Created a JSON file for websites data.\n- Developed a script to fetch data from RecipeSpark and WebCMS APIs, including recipes, categories, and websites.\n- Added a test script to verify API connectivity before data fetching.\n- Generated TypeScript types for fetched data to ensure type safety."
+      },
+      "stats": {
+        "total": 13248,
+        "additions": 12335,
+        "deletions": 913
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "5450b117a824939a31de51c4643c4510334e2968",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-12T01:01:53+00:00"
+        },
+        "message": "Improve website navigation with user-friendly category URLs\n\nUpdate routing and utility functions to use SEO-friendly slugs for category navigation, replacing numeric IDs with human-readable URLs like `/recipes/category/drink`.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/Oj2RDzG"
+      },
+      "stats": {
+        "total": 103,
+        "additions": 70,
+        "deletions": 33
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "e63f657dd7e3d844967786d05c6718a135bd51f5",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-12T00:59:45+00:00"
+        },
+        "message": "Update recipe fetching to include category and search parameters correctly\n\nRefactor the useQuery hooks in CategoryRecipes and Recipes to utilize URLSearchParams for constructing dynamic API request URLs, ensuring correct filtering and searching by categoryId, searchTerm, pageNumber, and pageSize.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/ihANwmU"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 9,
+        "deletions": 3
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "07af23ca3232f4052a434df08ced0698c8d4428e",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-12T00:56:40+00:00"
+        },
+        "message": "Update recipe display to use new API parameters and pagination\n\nAdjust query parameters from `page` to `pageNumber` and `limit` to `pageSize` in the useQuery hook for fetching recipes. Refactor pagination logic to utilize the `pagination` object from the API response, including `totalPages`, `currentPage`, `hasPrevious`, and `hasNext` properties. Additionally, update the recipe link to use an anchor tag.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/KvZ6fxq"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 19,
+        "deletions": 17
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "b8c791d1ca4e9dd819afd64d56ac87f308553dcf",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-12T00:46:47+00:00"
+        },
+        "message": "Enable users to search recipes and refine results by category\n\nIntegrates the RecipeSpark API for recipe searching and filtering, updating query keys to use `pageNumber`, `pageSize`, `searchTerm`, and `categoryId` for more accurate results and includes UI elements for displaying active search terms and clear search functionality.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/35mbJCR"
+      },
+      "stats": {
+        "total": 39,
+        "additions": 30,
+        "deletions": 9
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "b916d52f76b2f8ad922972bb43636831632a6a84",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-12T00:44:50+00:00"
+        },
+        "message": "Organize recipes by category with dedicated browsing pages\n\nAdd new routes for category browsing and display recipes filtered by category, removing the unused \"Level\" filter.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/COGAPaP"
+      },
+      "stats": {
+        "total": 336,
+        "additions": 319,
+        "deletions": 17
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "247a29cbab4fe5a2a695061c8ad1c6142053f5ec",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-11T22:22:15+00:00"
+        },
+        "message": "Integrate live recipe data from external API for dynamic content\n\nAdd new API client to fetch and transform recipes and categories from the RecipeSpark API, enabling live data integration into the application.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/bakikCB"
+      },
+      "stats": {
+        "total": 242,
+        "additions": 205,
+        "deletions": 37
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "f8505c992590e2fd93cdc89268252e6b165d786b",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-11T22:12:01+00:00"
+        },
+        "message": "Add WebCMS API for website and menu management alongside existing APIs\n\nIntegrate the WebCMS API, introducing new endpoints for managing websites and menu items, alongside the existing RecipeSpark and legacy MoM APIs. This update includes schema definitions, storage implementations, and route registrations for the new functionalities.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/qrjqWUz"
+      },
+      "stats": {
+        "total": 977,
+        "additions": 969,
+        "deletions": 8
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "cd964497fc7d0e0e316234e5cf10aa2509b37577",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-11T21:50:35+00:00"
+        },
+        "message": "Enhance recipe display with fallback images and improved data handling\n\nImplement RecipeSpark API compatibility for dual-mode backend, offering fallback image URLs, unified data fetching, and updated schema definitions.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/eLfMFCA"
+      },
+      "stats": {
+        "total": 867,
+        "additions": 735,
+        "deletions": 132
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "a4306fb4719e8fe118de56fce33dc25ed893d793",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-11T21:44:41+00:00"
+        },
+        "message": "Update website with new branding and mechanical aesthetic\n\nIntroduce new logos, taglines, and a mechanical-kitchen theme across the site using React and TailwindCSS.\n\nReplit-Commit-Author: Agent\nReplit-Commit-Session-Id: ff42650b-2355-485f-9430-b337b4b87d7d\nReplit-Commit-Checkpoint-Type: full_checkpoint\nReplit-Commit-Screenshot-Url: https://storage.googleapis.com/screenshot-production-us-central1/55d3561f-357e-4d8c-be4c-dcec0cc5c696/ff42650b-2355-485f-9430-b337b4b87d7d/r6KcfLL"
+      },
+      "stats": {
+        "total": 17255,
+        "additions": 17255,
+        "deletions": 0
+      },
+      "repo": "MechanicsOfMotherhood"
+    },
+    {
+      "sha": "e4b9c4b12db12382ce149d084c720e38690a0879",
+      "commit": {
+        "author": {
+          "name": "markhazleton",
+          "date": "2025-08-11T21:38:59+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "MechanicsOfMotherhood"
+    }
+  ]
+}

@@ -1,0 +1,805 @@
+{
+  "timestamp": "2026-01-03T18:26:19.236031",
+  "value": [
+    {
+      "sha": "ad09ece1e884d796ce8ea40dd3228dea2d658569",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2026-01-03T23:37:39+00:00"
+        },
+        "message": "Merge pull request #4 from JohnnyCrazy/master\n\nupdate from fork source"
+      },
+      "stats": {
+        "total": 108,
+        "additions": 70,
+        "deletions": 38
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "8293f6419b298c0ef7303064003edd474e314a3a",
+      "commit": {
+        "author": {
+          "name": "Colin Bradley",
+          "date": "2025-03-31T07:45:10+00:00"
+        },
+        "message": "SimpleRetryHandler - sleep now uses CancellationToken. (#1032)\n\ncloses #1031"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 53,
+        "deletions": 7
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "b305b6d82163fd06f73a846d08bc6e9b65be0572",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2025-03-30T00:14:25+00:00"
+        },
+        "message": "chore: Fix tests"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 2,
+        "deletions": 18
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "0167cce39cc417f3618cccf538c283f9b3eb8fbd",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2025-03-30T00:05:53+00:00"
+        },
+        "message": "chore: Disable formatting rule Add accessibility modifiers (IDE0040)"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "d0a5167eb01cf43f9fac3604b219f11c40f1b14a",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-03-29T23:00:28+00:00"
+        },
+        "message": "Bump NUnit from 4.2.2 to 4.3.2 (#1023)\n\nBumps [NUnit](https://github.com/nunit/nunit) from 4.2.2 to 4.3.2.\n- [Release notes](https://github.com/nunit/nunit/releases)\n- [Changelog](https://github.com/nunit/nunit/blob/main/CHANGES.md)\n- [Commits](https://github.com/nunit/nunit/compare/4.2.2...4.3.2)\n\n---\nupdated-dependencies:\n- dependency-name: NUnit\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "fcd67888d3c5982dd6c744d4458f98d09ea81bcc",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-03-29T23:00:19+00:00"
+        },
+        "message": "Bump nanoid from 3.3.7 to 3.3.8 in /SpotifyAPI.Docs (#1018)\n\nBumps [nanoid](https://github.com/ai/nanoid) from 3.3.7 to 3.3.8.\n- [Release notes](https://github.com/ai/nanoid/releases)\n- [Changelog](https://github.com/ai/nanoid/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/ai/nanoid/compare/3.3.7...3.3.8)\n\n---\nupdated-dependencies:\n- dependency-name: nanoid\n  dependency-type: indirect\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "a860f2a304c10ae7c0d0cae214fc78bfc947e11b",
+      "commit": {
+        "author": {
+          "name": "Mihai Muresan",
+          "date": "2025-03-29T23:00:04+00:00"
+        },
+        "message": "feat: make top items paginatable (#1017)"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "e35302ca464c22cb2d9869e4bc4eb86a7332db69",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-03-29T22:56:24+00:00"
+        },
+        "message": "Bump Newtonsoft.Json and Microsoft.NET.Test.Sdk (#1015)\n\nBumps [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) and [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest). These dependencies needed to be updated together.\n\nUpdates `Newtonsoft.Json` from 13.0.3 to 13.0.1\n- [Release notes](https://github.com/JamesNK/Newtonsoft.Json/releases)\n- [Commits](https://github.com/JamesNK/Newtonsoft.Json/compare/13.0.3...13.0.1)\n\nUpdates `Microsoft.NET.Test.Sdk` from 17.11.1 to 17.12.0\n- [Release notes](https://github.com/microsoft/vstest/releases)\n- [Changelog](https://github.com/microsoft/vstest/blob/main/docs/releases.md)\n- [Commits](https://github.com/microsoft/vstest/compare/v17.11.1...v17.12.0)\n\n---\nupdated-dependencies:\n- dependency-name: Newtonsoft.Json\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n- dependency-name: Microsoft.NET.Test.Sdk\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "7d6cf103973222eb28657ee3fd112a22cf3b2465",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:43:01+00:00"
+        },
+        "message": "Bump System.Net.Http.Json from 8.0.0 to 9.0.0 (#1010)\n\nBumps [System.Net.Http.Json](https://github.com/dotnet/runtime) from 8.0.0 to 9.0.0.\r\n- [Release notes](https://github.com/dotnet/runtime/releases)\r\n- [Commits](https://github.com/dotnet/runtime/compare/v8.0.0...v9.0.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: System.Net.Http.Json\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-major\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "f5232837f13cc4150f970c71fedfbb17b7fcc3eb",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:42:49+00:00"
+        },
+        "message": "Bump express in /SpotifyAPI.Web.Examples/Example.TokenSwap/Server (#1014)\n\nBumps [express](https://github.com/expressjs/express) from 4.19.2 to 4.20.0.\r\n- [Release notes](https://github.com/expressjs/express/releases)\r\n- [Changelog](https://github.com/expressjs/express/blob/master/History.md)\r\n- [Commits](https://github.com/expressjs/express/compare/4.19.2...4.20.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: express\r\n  dependency-type: direct:production\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 90,
+        "additions": 48,
+        "deletions": 42
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "07d2ee331a87f50c83fabc50ba2740fa5ac4598b",
+      "commit": {
+        "author": {
+          "name": "XY Wang",
+          "date": "2024-12-01T15:38:20+00:00"
+        },
+        "message": "Add locale param for more endpoints (#1005)\n\n* Add market and locale param for PlayerGetQueue\r\n\r\n* Add locale param for UsersTopItemsRequest"
+      },
+      "stats": {
+        "total": 53,
+        "additions": 53,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "611740650967606de84081231c32f816a014ee10",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:37:39+00:00"
+        },
+        "message": "Bump cross-spawn from 7.0.3 to 7.0.6 in /SpotifyAPI.Docs (#1011)\n\nBumps [cross-spawn](https://github.com/moxystudio/node-cross-spawn) from 7.0.3 to 7.0.6.\r\n- [Changelog](https://github.com/moxystudio/node-cross-spawn/blob/master/CHANGELOG.md)\r\n- [Commits](https://github.com/moxystudio/node-cross-spawn/compare/v7.0.3...v7.0.6)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: cross-spawn\r\n  dependency-type: indirect\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "ebf89c297c10a78b2123410c271d0405f5981b0a",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:37:20+00:00"
+        },
+        "message": "Bump Microsoft.AspNetCore.Components.WebAssembly.DevServer (#1009)\n\nBumps [Microsoft.AspNetCore.Components.WebAssembly.DevServer](https://github.com/dotnet/aspnetcore) from 8.0.8 to 9.0.0.\r\n- [Release notes](https://github.com/dotnet/aspnetcore/releases)\r\n- [Changelog](https://github.com/dotnet/aspnetcore/blob/main/docs/ReleasePlanning.md)\r\n- [Commits](https://github.com/dotnet/aspnetcore/compare/v8.0.8...v9.0.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.AspNetCore.Components.WebAssembly.DevServer\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-major\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "2a3e0799df8c3a615a223bdeef6071edb9d3dbcf",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:37:09+00:00"
+        },
+        "message": "Bump http-proxy-middleware from 2.0.6 to 2.0.7 in /SpotifyAPI.Docs (#1007)\n\nBumps [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) from 2.0.6 to 2.0.7.\r\n- [Release notes](https://github.com/chimurai/http-proxy-middleware/releases)\r\n- [Changelog](https://github.com/chimurai/http-proxy-middleware/blob/v2.0.7/CHANGELOG.md)\r\n- [Commits](https://github.com/chimurai/http-proxy-middleware/compare/v2.0.6...v2.0.7)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: http-proxy-middleware\r\n  dependency-type: indirect\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "dc7fe2489ef289062840d813aa3c07951526789c",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:37:00+00:00"
+        },
+        "message": "Bump NUnit.Console from 3.18.2 to 3.18.3 (#1004)\n\nBumps [NUnit.Console](https://github.com/nunit/nunit-console) from 3.18.2 to 3.18.3.\r\n- [Release notes](https://github.com/nunit/nunit-console/releases)\r\n- [Changelog](https://github.com/nunit/nunit-console/blob/main/CHANGES.txt)\r\n- [Commits](https://github.com/nunit/nunit-console/compare/3.18.2...3.18.3)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: NUnit.Console\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "cd50ebb6d77f8ed5d6a373ffd8df6a1c6e948303",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:36:52+00:00"
+        },
+        "message": "Bump body-parser in /SpotifyAPI.Web.Examples/Example.TokenSwap/Server (#1001)\n\nBumps [body-parser](https://github.com/expressjs/body-parser) from 1.20.2 to 1.20.3.\r\n- [Release notes](https://github.com/expressjs/body-parser/releases)\r\n- [Changelog](https://github.com/expressjs/body-parser/blob/master/HISTORY.md)\r\n- [Commits](https://github.com/expressjs/body-parser/compare/1.20.2...1.20.3)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: body-parser\r\n  dependency-type: direct:production\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 28,
+        "deletions": 3
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "e2d2e456d700e06b009c2be2a532eddd588df45e",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:36:43+00:00"
+        },
+        "message": "Bump NUnit from 4.1.0 to 4.2.2 (#999)\n\nBumps [NUnit](https://github.com/nunit/nunit) from 4.1.0 to 4.2.2.\r\n- [Release notes](https://github.com/nunit/nunit/releases)\r\n- [Changelog](https://github.com/nunit/nunit/blob/main/CHANGES.md)\r\n- [Commits](https://github.com/nunit/nunit/compare/4.1.0...4.2.2)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: NUnit\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "feed33e220a5d3f9503512a9385d6795aa39c80b",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-12-01T15:36:36+00:00"
+        },
+        "message": "Bump Moq from 4.20.70 to 4.20.72 (#998)\n\nBumps [Moq](https://github.com/moq/moq) from 4.20.70 to 4.20.72.\r\n- [Release notes](https://github.com/moq/moq/releases)\r\n- [Changelog](https://github.com/devlooped/moq/blob/main/changelog.md)\r\n- [Commits](https://github.com/moq/moq/compare/v4.20.70...v4.20.72)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Moq\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "29d01ac201eb5eab49f0c69c76a976fc7fdcd948",
+      "commit": {
+        "author": {
+          "name": "GH Actions Docs Builder",
+          "date": "2024-10-12T22:54:11+00:00"
+        },
+        "message": "Fix unused directives (Need a commit hook for that...)"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 0,
+        "deletions": 2
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "acb8b985e7da84caded647c9747734b38aac3ade",
+      "commit": {
+        "author": {
+          "name": "GH Actions Docs Builder",
+          "date": "2024-10-12T22:49:45+00:00"
+        },
+        "message": "Switch more checks to the 200-299 success checks"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 14,
+        "deletions": 14
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "f7ba9c669f9d9f074cbdc57a98af41b10e528122",
+      "commit": {
+        "author": {
+          "name": "GH Actions Docs Builder",
+          "date": "2024-10-12T22:38:27+00:00"
+        },
+        "message": "Only parse JSON when content-type is set to JSON"
+      },
+      "stats": {
+        "total": 49,
+        "additions": 29,
+        "deletions": 20
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "e3705f0275568f7d1fd4b267f4d6c92999f8a44c",
+      "commit": {
+        "author": {
+          "name": "GH Actions Docs Builder",
+          "date": "2024-10-12T22:14:44+00:00"
+        },
+        "message": "Also set fetch depth to 0 to fetch all tags"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "8befedd8434a1797552746b26000ba3e7379a2be",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2024-10-12T22:11:40+00:00"
+        },
+        "message": "Fetch tags as part of doc building"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "7c33018f47df34abdddcfa84ed6ec99663751225",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2024-10-12T22:08:22+00:00"
+        },
+        "message": "Automatically determine latest tags for the docs"
+      },
+      "stats": {
+        "total": 78,
+        "additions": 51,
+        "deletions": 27
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "41ef1c351892533aec245d4d8aafffe4a7ae040d",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2024-10-12T21:52:49+00:00"
+        },
+        "message": "Update NodeJS and PNPM for docs building"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "e349ff743233cdb9268d287a43f92724afb7aabc",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2024-10-12T21:51:25+00:00"
+        },
+        "message": "Remove unnecessary usage directive"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 0,
+        "deletions": 2
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "b37587836d37c4ee87de59c59f2050dfe37485fd",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2024-10-12T21:44:02+00:00"
+        },
+        "message": "Add support for Chapters endpoints"
+      },
+      "stats": {
+        "total": 179,
+        "additions": 179,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "0442c464fb7635eb32404cc062ef1975e2e9cdb2",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2024-10-12T21:31:13+00:00"
+        },
+        "message": "Fix missing XML docs for ArtistsClient"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "3bc1c45e9cd83fcf0aea5bce9d0139bd0cf37fe6",
+      "commit": {
+        "author": {
+          "name": "Jonas Dellinger",
+          "date": "2024-10-12T21:29:44+00:00"
+        },
+        "message": "Add support for Audiobooks endpoints"
+      },
+      "stats": {
+        "total": 540,
+        "additions": 539,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "8fefed537bd9bbb331582717eff333eafd929c03",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:14:06+00:00"
+        },
+        "message": "Bump axios in /SpotifyAPI.Web.Examples/Example.TokenSwap/Server (#996)\n\nBumps [axios](https://github.com/axios/axios) from 1.6.0 to 1.7.4.\r\n- [Release notes](https://github.com/axios/axios/releases)\r\n- [Changelog](https://github.com/axios/axios/blob/v1.x/CHANGELOG.md)\r\n- [Commits](https://github.com/axios/axios/compare/v1.6.0...v1.7.4)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: axios\r\n  dependency-type: direct:production\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "09857959a1e21f05246a5543ed8912c2e7f724ba",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:13:37+00:00"
+        },
+        "message": "Bump express from 4.19.2 to 4.21.0 in /SpotifyAPI.Docs (#993)\n\nBumps [express](https://github.com/expressjs/express) from 4.19.2 to 4.21.0.\r\n- [Release notes](https://github.com/expressjs/express/releases)\r\n- [Changelog](https://github.com/expressjs/express/blob/4.21.0/History.md)\r\n- [Commits](https://github.com/expressjs/express/compare/4.19.2...4.21.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: express\r\n  dependency-type: indirect\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 110,
+        "additions": 68,
+        "deletions": 42
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "4fabd7f764e45e42f1a4fc89733831f17b9823e8",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:10:19+00:00"
+        },
+        "message": "Bump NUnit.Console from 3.17.0 to 3.18.2 (#994)\n\nBumps [NUnit.Console](https://github.com/nunit/nunit-console) from 3.17.0 to 3.18.2.\r\n- [Release notes](https://github.com/nunit/nunit-console/releases)\r\n- [Changelog](https://github.com/nunit/nunit-console/blob/main/CHANGES.txt)\r\n- [Commits](https://github.com/nunit/nunit-console/compare/3.17.0...3.18.2)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: NUnit.Console\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "d650ccdbbad69834b9eec3868e0956623d17ecd3",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:04:56+00:00"
+        },
+        "message": "Bump micromatch from 4.0.5 to 4.0.8 in /SpotifyAPI.Docs (#990)\n\nBumps [micromatch](https://github.com/micromatch/micromatch) from 4.0.5 to 4.0.8.\r\n- [Release notes](https://github.com/micromatch/micromatch/releases)\r\n- [Changelog](https://github.com/micromatch/micromatch/blob/master/CHANGELOG.md)\r\n- [Commits](https://github.com/micromatch/micromatch/compare/4.0.5...4.0.8)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: micromatch\r\n  dependency-type: indirect\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "1d24eb756b29488a23706d08baff93ffb4dc1fd2",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:01:29+00:00"
+        },
+        "message": "Bump Microsoft.NET.Test.Sdk from 17.10.0 to 17.11.1 (#992)\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 17.10.0 to 17.11.1.\r\n- [Release notes](https://github.com/microsoft/vstest/releases)\r\n- [Changelog](https://github.com/microsoft/vstest/blob/main/docs/releases.md)\r\n- [Commits](https://github.com/microsoft/vstest/compare/v17.10.0...v17.11.1)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.NET.Test.Sdk\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "619e8154e01dd3915beadc8c6995028de2709a5d",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:01:07+00:00"
+        },
+        "message": "Bump webpack from 5.90.1 to 5.94.0 in /SpotifyAPI.Docs (#989)\n\nBumps [webpack](https://github.com/webpack/webpack) from 5.90.1 to 5.94.0.\r\n- [Release notes](https://github.com/webpack/webpack/releases)\r\n- [Commits](https://github.com/webpack/webpack/compare/v5.90.1...v5.94.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: webpack\r\n  dependency-type: indirect\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 10899,
+        "additions": 6018,
+        "deletions": 4881
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "71b69540dc7f8fbd1699b224f9f585d80cb83a77",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:00:55+00:00"
+        },
+        "message": "Bump Newtonsoft.Json from 13.0.1 to 13.0.3 (#987)\n\nBumps Newtonsoft.Json from 13.0.1 to 13.0.3.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Newtonsoft.Json\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "0dd145ea58c031e5ac21657e64ca098196c31b05",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:00:44+00:00"
+        },
+        "message": "Bump Microsoft.AspNetCore.Components.WebAssembly.DevServer (#986)\n\nBumps [Microsoft.AspNetCore.Components.WebAssembly.DevServer](https://github.com/dotnet/aspnetcore) from 8.0.7 to 8.0.8.\r\n- [Release notes](https://github.com/dotnet/aspnetcore/releases)\r\n- [Changelog](https://github.com/dotnet/aspnetcore/blob/main/docs/ReleasePlanning.md)\r\n- [Commits](https://github.com/dotnet/aspnetcore/compare/v8.0.7...v8.0.8)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.AspNetCore.Components.WebAssembly.DevServer\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "b096a9fcd55423820a5efa5fab5039c9404bfef3",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-10-03T13:00:31+00:00"
+        },
+        "message": "Bump NUnit3TestAdapter from 4.5.0 to 4.6.0 (#984)\n\nBumps [NUnit3TestAdapter](https://github.com/nunit/nunit3-vs-adapter) from 4.5.0 to 4.6.0.\r\n- [Release notes](https://github.com/nunit/nunit3-vs-adapter/releases)\r\n- [Commits](https://github.com/nunit/nunit3-vs-adapter/compare/V4.5.0...V4.6.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: NUnit3TestAdapter\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "d2c91bae24db3ab1da7965954d79fe64ea668181",
+      "commit": {
+        "author": {
+          "name": "4or5trees",
+          "date": "2024-07-20T22:03:43+00:00"
+        },
+        "message": "Fix Playlist.ReplaceItems response (#972) (#982)\n\n* Fix Playlist.ReplaceItems response (#972)\r\n\r\n* Update SpotifyAPI.Web/Clients/PlaylistsClient.cs\r\n\r\nCo-authored-by: Jonas Dellinger <jonas@dellinger.dev>\r\n\r\n* Remove await\r\n\r\n---------\r\n\r\nCo-authored-by: 4or5trees <4or5trees@beautifultallwindows.ee>\r\nCo-authored-by: Jonas Dellinger <jonas@dellinger.dev>"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 3,
+        "deletions": 4
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "5bac8e6e45a6af6ca5be676531b3a1edb2b8696a",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-07-19T21:01:26+00:00"
+        },
+        "message": "Bump Microsoft.AspNetCore.Components.WebAssembly.DevServer (#981)\n\nBumps Microsoft.AspNetCore.Components.WebAssembly.DevServer from 8.0.4 to 8.0.7.\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.AspNetCore.Components.WebAssembly.DevServer\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "853404710fc420ae5c58b2d77e39000895e3f222",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-07-19T20:56:32+00:00"
+        },
+        "message": "Bump braces from 3.0.2 to 3.0.3 in /SpotifyAPI.Docs (#979)\n\nBumps [braces](https://github.com/micromatch/braces) from 3.0.2 to 3.0.3.\r\n- [Changelog](https://github.com/micromatch/braces/blob/master/CHANGELOG.md)\r\n- [Commits](https://github.com/micromatch/braces/compare/3.0.2...3.0.3)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: braces\r\n  dependency-type: indirect\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "c14ccbc9cf3e3d5d28c06c9aaed78dbc3eace918",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-07-19T20:56:20+00:00"
+        },
+        "message": "Bump ws from 7.5.9 to 7.5.10 in /SpotifyAPI.Docs (#978)\n\nBumps [ws](https://github.com/websockets/ws) from 7.5.9 to 7.5.10.\r\n- [Release notes](https://github.com/websockets/ws/releases)\r\n- [Commits](https://github.com/websockets/ws/compare/7.5.9...7.5.10)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: ws\r\n  dependency-type: indirect\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "ccffe7f0b9a1fb4828962cbafedb9d1ef8e48ca3",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-07-19T20:56:10+00:00"
+        },
+        "message": "Bump Microsoft.AspNetCore.Components.WebAssembly from 7.0.18 to 7.0.20 (#977)\n\nBumps [Microsoft.AspNetCore.Components.WebAssembly](https://github.com/dotnet/aspnetcore) from 7.0.18 to 7.0.20.\r\n- [Release notes](https://github.com/dotnet/aspnetcore/releases)\r\n- [Changelog](https://github.com/dotnet/aspnetcore/blob/main/docs/ReleasePlanning.md)\r\n- [Commits](https://github.com/dotnet/aspnetcore/compare/v7.0.18...v7.0.20)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.AspNetCore.Components.WebAssembly\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "46b16df28e35b0496839e0e26e5e1b976b66d84e",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-07-19T20:55:58+00:00"
+        },
+        "message": "Bump Microsoft.NET.Test.Sdk from 17.9.0 to 17.10.0 (#975)\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 17.9.0 to 17.10.0.\r\n- [Release notes](https://github.com/microsoft/vstest/releases)\r\n- [Changelog](https://github.com/microsoft/vstest/blob/main/docs/releases.md)\r\n- [Commits](https://github.com/microsoft/vstest/compare/v17.9.0...v17.10.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.NET.Test.Sdk\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "1281ce8732b10fa2c3e7b264c9cc33a983a7ab60",
+      "commit": {
+        "author": {
+          "name": "XY Wang",
+          "date": "2024-05-10T06:51:14+00:00"
+        },
+        "message": "Add SupportsVolume in Device response (#971)"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "72bf30aad559bdeefd74ad8d50739409225f133f",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-05-07T21:39:51+00:00"
+        },
+        "message": "Bump Microsoft.AspNetCore.Components.WebAssembly.DevServer (#964)\n\nBumps [Microsoft.AspNetCore.Components.WebAssembly.DevServer](https://github.com/dotnet/aspnetcore) from 8.0.3 to 8.0.4.\r\n- [Release notes](https://github.com/dotnet/aspnetcore/releases)\r\n- [Changelog](https://github.com/dotnet/aspnetcore/blob/main/docs/ReleasePlanning.md)\r\n- [Commits](https://github.com/dotnet/aspnetcore/compare/v8.0.3...v8.0.4)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.AspNetCore.Components.WebAssembly.DevServer\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "d1f3d0088ccbd1529731c9adc8b0d20a9a351ff8",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-05-07T21:18:48+00:00"
+        },
+        "message": "Bump Microsoft.AspNetCore.Components.WebAssembly from 7.0.17 to 7.0.18 (#963)\n\nBumps [Microsoft.AspNetCore.Components.WebAssembly](https://github.com/dotnet/aspnetcore) from 7.0.17 to 7.0.18.\r\n- [Release notes](https://github.com/dotnet/aspnetcore/releases)\r\n- [Changelog](https://github.com/dotnet/aspnetcore/blob/main/docs/ReleasePlanning.md)\r\n- [Commits](https://github.com/dotnet/aspnetcore/compare/v7.0.17...v7.0.18)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.AspNetCore.Components.WebAssembly\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "9cbd5f280e7b663d9b85a80eeb2755d422623cf6",
+      "commit": {
+        "author": {
+          "name": "Sam",
+          "date": "2024-05-07T21:18:42+00:00"
+        },
+        "message": "Add note about not including \"next\" field when limiting fields and using pagination (#962)"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "7bdaf060de7390d2d2638f1a147e161f7b2ccd76",
+      "commit": {
+        "author": {
+          "name": "Andrew Garvin",
+          "date": "2024-05-07T21:18:04+00:00"
+        },
+        "message": "Minor documentation update (#969)"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SpotifyAPI-NET"
+    },
+    {
+      "sha": "f6cfedd7efb0ebad4fb746076a2df0f12606697c",
+      "commit": {
+        "author": {
+          "name": "TheBoyLeastLikelyTo",
+          "date": "2024-05-07T21:17:44+00:00"
+        },
+        "message": "Add SpotifyGPX to showcase (#966)"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "repo": "SpotifyAPI-NET"
+    }
+  ]
+}

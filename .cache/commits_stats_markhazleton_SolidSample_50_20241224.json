@@ -1,0 +1,549 @@
+{
+  "timestamp": "2026-01-03T18:25:42.755550",
+  "value": [
+    {
+      "sha": "b6928aa277f3d0686a65a773e6caf0502246cde2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-24T13:46:55+00:00"
+        },
+        "message": "Upgrade to Net 9"
+      },
+      "stats": {
+        "total": 62,
+        "additions": 27,
+        "deletions": 35
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "24fd7b7664b2711ef511d4166c1c21c0b382aa2a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T02:30:25+00:00"
+        },
+        "message": "nuget and pacakge updates"
+      },
+      "stats": {
+        "total": 29682,
+        "additions": 15296,
+        "deletions": 14386
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "9020621fcf26cdd687efaa1b8143bf90393aca6c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-12T02:09:10+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "76f8fd7b1bad882e5d4a9fdfe398d25447f910d5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-22T20:42:52+00:00"
+        },
+        "message": "NuGet updates"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "44b10252f55fad05b18b6f06ee1dbc08116e0a78",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-30T23:26:43+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "a9b8bf4394439dff8683d1906c2b43bbf8616b2e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-25T17:09:48+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 5,
+        "deletions": 9
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "5ed33e384f9c826cccc71e4677874c137bc4b026",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-12T14:27:40+00:00"
+        },
+        "message": "Update Packages / Update to Net 7"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 26,
+        "deletions": 34
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "f0380736ec645f50d89cb0e42cba5321a4630bda",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-18T19:38:45+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "d8ea3f183199faf3f5f192d862d1f8568af95615",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-04-04T16:21:48+00:00"
+        },
+        "message": "update NuGet packages"
+      },
+      "stats": {
+        "total": 23,
+        "additions": 14,
+        "deletions": 9
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "d8f96df8a364c02d7d6143e9ef6cc5ffd7102b9d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-11-08T15:48:54+00:00"
+        },
+        "message": "update to 6.0"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 11,
+        "deletions": 11
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "a0f25f7eb0e534a6804cb078783fd89d76236ad4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-07-15T22:38:13+00:00"
+        },
+        "message": "Update Packages\nCode Clean-up"
+      },
+      "stats": {
+        "total": 322,
+        "additions": 151,
+        "deletions": 171
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "f864fdded96502a265351537ee201a5aefe4f165",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-15T20:56:58+00:00"
+        },
+        "message": "remove unused classes"
+      },
+      "stats": {
+        "total": 62,
+        "additions": 9,
+        "deletions": 53
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "d65177c70a8e9fc71d36a3596290e105b48ac82d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-15T20:12:24+00:00"
+        },
+        "message": "update solution"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 12,
+        "deletions": 0
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "1acf20484d95a9312a097e5403ed1255a5db1988",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-15T20:09:25+00:00"
+        },
+        "message": "Add WebAPI\nRefactor Logging to capture in batches"
+      },
+      "stats": {
+        "total": 31591,
+        "additions": 31485,
+        "deletions": 106
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "20870c607459fbf1047a60d9ab0c4e4db1f541cd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-15T13:36:33+00:00"
+        },
+        "message": "Restructure code along Clean Architecture guidelines"
+      },
+      "stats": {
+        "total": 239,
+        "additions": 103,
+        "deletions": 136
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "80e7a78bb57b88eb5ce99b3e828d5327810e2211",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-14T20:17:00+00:00"
+        },
+        "message": "Initial DIP"
+      },
+      "stats": {
+        "total": 315,
+        "additions": 190,
+        "deletions": 125
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "7188bb9c6fec08a066700d9b3d92bf809c9df59d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-14T11:37:19+00:00"
+        },
+        "message": "Interface Segregation Principal"
+      },
+      "stats": {
+        "total": 519,
+        "additions": 312,
+        "deletions": 207
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "8dbb2eeb916fef066aeb07745a56a885da434776",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-14T09:38:15+00:00"
+        },
+        "message": "Open Closed Principal"
+      },
+      "stats": {
+        "total": 251,
+        "additions": 182,
+        "deletions": 69
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "ba8e84d676e1438aad47410baffe56771e6bbe8b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-13T21:58:17+00:00"
+        },
+        "message": "OCP - Create Rater Factory"
+      },
+      "stats": {
+        "total": 347,
+        "additions": 233,
+        "deletions": 114
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "6f68a82f180208d71cd8aad8c8995a5bde89394f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-13T21:44:55+00:00"
+        },
+        "message": "add rater folder"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "ebd72892360a9dbce7f7ede6811fa328d641b677",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-13T21:25:35+00:00"
+        },
+        "message": "End of Single Responsiblity Principal"
+      },
+      "stats": {
+        "total": 125,
+        "additions": 97,
+        "deletions": 28
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "ee84b3b87b542152c3735e1c886d250b70a04cb1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-13T20:17:09+00:00"
+        },
+        "message": "Update Packages\nUpdate to Asp.Net 5.0"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "6c3583ff2f20f0ffde8353366c566ed2bdf45f3b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-10-01T13:32:47+00:00"
+        },
+        "message": "Update to .Net Core 3.1"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "aa37040138e7827673f531ffc4dad89c420c6538",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-07-02T22:08:57+00:00"
+        },
+        "message": "update nuGet packages"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 7,
+        "deletions": 4
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "608586093d946803d8411452efcd9e4917eaee3f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T15:00:57+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "08ba485acd4fddbfab25d7113669bda32a0311f8",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T15:00:00+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "937aea7a4f7f16aed07398a87d348efb696dbbf6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T14:59:01+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "31ce293d0560facedfbae0e12c383f94e61b277c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T14:58:01+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 23,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "2ef1e21c9f792c5a14de88860af415c33023c908",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-04-03T14:41:03+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 10,
+        "deletions": 1
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "124c37147237a742f8b9f4fc230ddcbfca4e5498",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-11T14:52:49+00:00"
+        },
+        "message": "Formatting"
+      },
+      "stats": {
+        "total": 40,
+        "additions": 18,
+        "deletions": 22
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "3fa793dd8cc94b6cd05f1e61e8b2f69a9dd852a9",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-11T14:47:04+00:00"
+        },
+        "message": "Adding test project and 2 tests"
+      },
+      "stats": {
+        "total": 83,
+        "additions": 80,
+        "deletions": 3
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "17813628ad9d3f7c8bbf3df1fafaba042f0b38e6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-10T20:14:54+00:00"
+        },
+        "message": "Minor formatting"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "2fef634477decc42d7abf54f9591eef1ca9dddd1",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-10T16:45:57+00:00"
+        },
+        "message": "Initial version."
+      },
+      "stats": {
+        "total": 287,
+        "additions": 287,
+        "deletions": 0
+      },
+      "repo": "SolidSample"
+    },
+    {
+      "sha": "01ad269e2849646bb04bbb37a7af7d1c840b4ecf",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-02-10T15:46:54+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 352,
+        "additions": 352,
+        "deletions": 0
+      },
+      "repo": "SolidSample"
+    }
+  ]
+}

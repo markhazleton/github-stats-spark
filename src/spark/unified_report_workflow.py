@@ -294,8 +294,7 @@ class UnifiedReportWorkflow:
                 github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
                 languages = self.fetcher.fetch_languages(
                     username, 
-                    repo.name,
-                    repo_pushed_at=github_repo.pushed_at
+                    repo.name
                 )
                 if languages:
                     calculator.add_languages(languages)
@@ -385,11 +384,10 @@ class UnifiedReportWorkflow:
                     repo_pushed_at=github_repo.pushed_at
                 )
                 
-                # Fetch language statistics (with push date for caching)
+                # Fetch language statistics
                 language_stats = self.fetcher.fetch_languages(
                     username, 
-                    repo.name,
-                    repo_pushed_at=github_repo.pushed_at
+                    repo.name
                 )
                 
                 # Update repository with language stats

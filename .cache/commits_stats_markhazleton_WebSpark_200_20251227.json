@@ -1,0 +1,3205 @@
+{
+  "timestamp": "2026-01-03T18:34:41.404709",
+  "value": [
+    {
+      "sha": "adb88879bb199c7dc6e550468ff07c7620fa9f1a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-27T16:53:56+00:00"
+        },
+        "message": "Update NuGet package versions in project files\n\nUpgraded Microsoft.VisualStudio.Web.CodeGeneration.Design to 10.0.1 in both PromptSpark.Domain.csproj and WebSpark.Portal.csproj. Also updated Scalar.AspNetCore to 2.11.10 in WebSpark.Portal.csproj."
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2217f7d41fffb394a89df7520ee45a93100cd9e7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-18T03:58:58+00:00"
+        },
+        "message": "Remove redundant NuGet packages, update deps, use C# 12\n\nRemoved unnecessary and redundant NuGet package references (e.g., System.Text.Json, System.Private.Uri, System.Formats.Asn1, etc.) from all projects, as detailed in the new nuget-package-review.md. Updated all package versions to latest stable releases for consistency. Refactored codebase to use C# 12 collection expressions ([.. collection]) instead of .ToList()/.ToArray() for conciseness. Cleaned up project files, excluded build-time infra from publish, and added missing/updated packages where needed. All changes validated: build succeeds, all functionality preserved, and all NuGet warnings eliminated. Added nuget-package-review.md for audit trail and future maintenance guidance."
+      },
+      "stats": {
+        "total": 660,
+        "additions": 449,
+        "deletions": 211
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "0c5c4c5f8beb660402895670f4cfd907e329edad",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-01T02:54:55+00:00"
+        },
+        "message": "003 seo optimization portal (#4)\n\n* feat(seo): Add comprehensive SEO optimization specification (003)\n\n- Complete SEO overhaul specification for WebSpark.Portal\n- 8 prioritized user stories covering discovery, social sharing, duplicate content\n- Detailed requirements for metadata, structured data, sitemaps, robots.txt\n- 10 measurable success criteria with baselines and targets\n- Implementation phases (P1-P3) spanning 5-6 weeks\n- Addresses 220+ views across 8 areas (Admin, AsyncSpark, GitHubSpark, Identity, PromptSpark, RecipeSpark, TriviaSpark, WebCMS)\n- Focus on Core Web Vitals, Schema.org JSON-LD, Open Graph optimization\n- Eliminates duplicate content via canonical URLs and robots.txt\n- Includes edge case handling, testing strategy, and risk mitigation\n\n* feat(seo): Add implementation plan for comprehensive SEO optimization overhaul\n\n* feat(seo): Add comprehensive tasks for SEO optimization overhaul in WebSpark.Portal\n\n* feat(seo): Enhance error handling and analytics integration in SEO tasks\n\n* Add comprehensive tests for SEO-related services and image accessibility\n\n- Implemented `ImageAccessibilityTests` to ensure all images in Razor views have proper alt text attributes, enhancing accessibility and SEO.\n- Created `NavigationMetadataServiceTests` to validate the functionality of the navigation metadata service, including case insensitivity and hierarchical matching.\n- Developed `PaginationMetadataServiceTests` to test pagination URL generation, including handling of query parameters and normalization of paths.\n- Updated the test project file to include necessary dependencies for testing.\n\n* feat(seo): Implement comprehensive SEO metadata across controllers and navigation for WebSpark.Portal\n\n- Added SEO metadata (title, description, keywords, NoIndex) to HomeController, ArtInstituteController, CrawlDomainController, and others.\n- Enhanced navigation.json with 52 fully qualified entries for various features and categories.\n- Ensured dynamic SEO metadata for specific actions, including user-specific titles in GitHubSpark and recipe details in RecipeSpark.\n- Established consistent ViewData conventions across all areas to improve SEO performance and user experience.\n\n* feat(seo): Enhance SEO capabilities with structured data and sitemap improvements\n\n- Added structured data service for generating Article, Recipe, HowTo, and FAQPage schemas.\n- Integrated structured data into PostController for blog posts.\n- Implemented sitemap index and pagination support in SitemapService for handling large sites.\n- Extended INavigationMetadataService to provide sitemap values including priority, change frequency, and noIndex flags.\n- Updated sitemap generation to include image metadata for rich results.\n- Created breadcrumbs view component for improved navigation and SEO.\n- Added comprehensive unit tests for SitemapService to ensure correct XML structure and metadata integration.\n\n* feat(seo): Complete Phase 9-10 of SEO Optimization for WebSpark.Portal\n\n- Implemented sitemap optimization with navigation metadata, image support, and sitemap-index for scalability.\n- Enhanced analytics and monitoring with GA4 custom dimensions, Web Vitals tracking, and structured logging.\n- Added multi-search-engine verification support for Google, Bing, and Yandex.\n- Created comprehensive documentation for monitoring and SEO audit logging.\n- Achieved 100% test pass rate with 47 tests covering new sitemap features and analytics enhancements.\n\n* Commit changes before fixing global.json file(s).\n\n* Upgrade solution to .NET 10.0\n\n- Updated all 11 projects from net9.0 to net10.0\n- Upgraded 21 packages to version 10.0.0\n- Fixed Azure.Identity security vulnerability (1.17.0 ? 1.17.1)\n- Removed System.Text.RegularExpressions (functionality included in framework)\n- Updated Microsoft.VisualStudio.Web.CodeGeneration.Design to 10.0.0-rc.1\n- Fixed compilation errors related to framework breaking changes\n- Verified all tests pass\n- Validated all application areas functional\n\nBreaking changes addressed:\n- System.Text.RegularExpressions removed from WebSpark.Core and PromptSpark.Domain (functionality now in framework)\n- Azure.Identity updated to resolve deprecated MSAL dependency\n- All Microsoft packages updated from 9.0.10 to 10.0.0\n\nProjects upgraded:\n- WebSpark.Core\n- WebSpark.SharedKernel\n- WebSpark.UserIdentity\n- WebSpark.RecipeCookbook\n- PromptSpark.Domain\n- TriviaSpark.Domain\n- TriviaSpark.JShow\n- OpenWeatherMapClient\n- WebSpark.Portal\n- WebSpark.Portal.Tests\n- PromptSpark.SchemaTest\n\nTesting performed:\n- All unit tests pass (47/47)\n- PromptSpark.SchemaTest executes successfully\n- Build succeeded with 0 errors\n- Performance benchmarks met\n\n* Upgrade WebSpark solution to .NET 10.0\n\nUpdated all 11 project `.csproj` files to target .NET 10.0, completing the Big Bang migration from .NET 9.0. Modified `Index.cshtml` to reflect the upgrade in descriptions and promotional text.\n\nAdded a new accordion section in `Index.cshtml` documenting the upgrade process, including:\n- Big Bang migration strategy.\n- Package modernization (21 NuGet updates).\n- Security enhancements (Azure.Identity vulnerability fix).\n- Framework optimizations (removed redundant packages).\n- Zero build errors and 47/47 unit tests passing.\n- SEO improvements (semantic HTML, meta tags, performance, accessibility).\n\nUpdated `tasks.md` to mark TASK-004 as complete and reflect 100% progress. Logged the successful upgrade in `.github/upgrades/execution-log.md`, including commit hash and clean working tree status.\n\nThis commit demonstrates the use of AI-assisted tools (GitHub Copilot) for efficient migration and modernization."
+      },
+      "stats": {
+        "total": 13466,
+        "additions": 13222,
+        "deletions": 244
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2bfc8835eee2f09c4db7425485bb408b5c9966b9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-27T19:46:12+00:00"
+        },
+        "message": "Refactor entity properties to use default values and improve nullability handling"
+      },
+      "stats": {
+        "total": 155,
+        "additions": 80,
+        "deletions": 75
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "a563d89b2295de27b33c8e0426df8053c15b8f54",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-27T19:29:20+00:00"
+        },
+        "message": "Fix security vulnerabilities in npm dependencies\n\n- Update glob from 11.0.0 to 11.1.0 (fixes CVE command injection vulnerability)\n- Fix brace-expansion ReDoS vulnerability\n- Resolves Dependabot alert #11 (high severity)\n- Resolves Dependabot alert #3 (low severity)\n\nAll npm audit vulnerabilities now resolved."
+      },
+      "stats": {
+        "total": 196,
+        "additions": 109,
+        "deletions": 87
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d4bd9f503564fa9cd98e520288e7637282a043e0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-27T19:25:51+00:00"
+        },
+        "message": "Merge: Add Document Agent API specification and Copilot documentation\n\n- Complete 5-step workflow specification (SPECIFY \u2192 PLAN \u2192 DRAFT \u2192 CRITIQUE \u2192 FINALIZE)\n- OpenAPI 3.0 contract definitions and data models\n- Implementation roadmap and acceptance criteria\n- Developer quickstart guide and research findings\n- Historical Copilot session documentation\n- Comprehensive Git branch analysis and cleanup recommendations\n\nRefs: 002-new-api-area-document"
+      },
+      "stats": {
+        "total": 3193,
+        "additions": 3189,
+        "deletions": 4
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "26b85485b3326bc9c4fadb8557ca47f1cf4bcde3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-27T19:24:24+00:00"
+        },
+        "message": "Add Copilot session documentation and branch analysis\n\n- Add historical React Recipe CMS spec from 2024-07-25\n- Add comprehensive Git branch analysis and recommendations from 2025-11-27\n- Documents cleanup strategies and workflow compliance"
+      },
+      "stats": {
+        "total": 766,
+        "additions": 766,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "23e8e4a4bbf20206576a53b9a53b991231988d77",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:49:39+00:00"
+        },
+        "message": "Add Document Agent API implementation with multi-step workflow and async job handling\n\n- Introduced new API area for a 5-step AI-assisted document generation workflow.\n- Implemented endpoints for synchronous and asynchronous processing, including job polling and health checks.\n- Defined data model for DocumentJob entity and established validation rules.\n- Enhanced documentation with detailed quickstart guide and research findings.\n- Integrated OpenAPI specifications for API contract and telemetry metrics."
+      },
+      "stats": {
+        "total": 805,
+        "additions": 804,
+        "deletions": 1
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "ccb6db02426c3b0a461e8a2970ce0fe08aa89792",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T18:33:03+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 1622,
+        "additions": 1619,
+        "deletions": 3
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "57c95ca217df04df6a31346f2e558420af9a367c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T12:08:56+00:00"
+        },
+        "message": "Refactor JShowAdminController and related controllers for improved null handling and async operations\n\n- Updated JShowAdminController to check for null rounds before adding questions.\n- Enhanced JShowMainController to use async method for fetching questions by ID.\n- Improved JShowQuestionController with null checks for question retrieval and updates.\n- Modified TriviaSparkBaseController to support nullable JShowVM parameters.\n- Initialized JsonInputModel's JsonData property to an empty string.\n- Updated Details.cshtml and JShow.cshtml views to handle potential null values in rounds.\n- Refactored _RoundGrid.cshtml to streamline modal implementation for question details.\n- Enhanced TriviaMatch views to safely access user and scorecard properties.\n- Added null checks in MenuController and WebCMSApiController for safer URL generation.\n- Updated Menu views to improve action determination logic.\n- Enhanced Post Index view to ensure filter is safely cast.\n- Removed obsolete spec workflow specification file.\n- Initialized properties in ChatMessage and NavigationMenu classes to avoid null references.\n- Updated Footer and NavBar views to handle potential null HttpContext scenarios.\n- Refactored Cookbook style properties to ensure default initialization.\n- Initialized UserRolesViewModel and ManageUserRolesViewModel properties to avoid null references."
+      },
+      "stats": {
+        "total": 1999,
+        "additions": 973,
+        "deletions": 1026
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "0cc99da67a8614e978de4f8267904f5c164007fa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T21:39:26+00:00"
+        },
+        "message": "[001] Spec-Driven Development Workflow - SpecKit Implementation (#3)\n\n* Add GitHubSpark GraphQL Troubleshooting Guide with common issues and solutions\n\n* feat: Add PowerShell script to update agent context files and templates\n\n- Implemented `update-agent-context.ps1` to manage agent context files based on `plan.md`.\n- Created agent file template in `.specify/templates/agent-file-template.md`.\n- Added checklist template in `.specify/templates/checklist-template.md`.\n- Developed implementation plan template in `.specify/templates/plan-template.md`.\n- Established feature specification template in `.specify/templates/spec-template.md`.\n- Introduced tasks template in `.specify/templates/tasks-template.md`.\n- Configured VSCode settings for chat prompt file recommendations and terminal auto-approval.\n\n* feat: Add Spec-Driven Development Workflow Specification and Task Breakdown\n\n- Introduced comprehensive feature specification for Spec-Driven Development Workflow, detailing user stories, acceptance criteria, functional requirements, and success criteria.\n- Created tasks.md to outline implementation phases, including setup, foundational prerequisites, user stories, and additional commands.\n- Organized tasks by user story for independent implementation and testing, ensuring clear dependencies and execution order.\n- Established checkpoints for each phase to validate progress and functionality.\n\n* fix: Clarify success criteria for generated plans and planning time reduction metrics\n\n* feat: Update copilot instructions and implementation plan; add API contract for SpecKit CLI\n\n* feat: Implement branch protection and spec synchronization validators\n\n- Added Test-BranchProtection.ps1 to validate if the current branch is protected (main, master, develop, etc.).\n- Added Test-BranchSpecSync.ps1 to ensure branch name matches the corresponding spec folder name.\n- Created command workflows for /speckit.critic, /speckit.implement, /speckit.plan, and /speckit.specify with detailed documentation.\n- Enhanced README.md with an overview of the SpecKit workflow and its key features.\n- Developed comprehensive unit tests for branch protection and spec synchronization functionalities.\n- Established a structured directory for specs and templates, ensuring compliance with project standards.\n- Introduced shared utility functions for consistent messaging and template expansion.\n\n* feat: Implement administrative commands and finalize documentation for SpecKit"
+      },
+      "stats": {
+        "total": 12202,
+        "additions": 12177,
+        "deletions": 25
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "de8915f2ea1855d066fdc8de1aa86853621da2a2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T18:53:04+00:00"
+        },
+        "message": "Merge pull request #2 from markhazleton/001-spec-driven-development-workflow\n\nAdd spec-driven development workflow with protected branch enforcement"
+      },
+      "stats": {
+        "total": 205,
+        "additions": 205,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "1e8f5ce4e4a46d4d797b9be92ca4be73ee30f35d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T18:50:33+00:00"
+        },
+        "message": "Add spec-driven development workflow with protected branch enforcement\n\n- Implement protected branch validation (main, master, develop, etc.)\n- Add smart branch name generation with stop-word filtering\n- Enforce NNN-short-name format for branches and spec folders\n- Update PowerShell scripts with centralized validation functions\n- Add comprehensive workflow documentation to constitution and copilot instructions\n- Support JSON output mode and non-git fallback\n- Enforce GitHub 244-byte branch name limit with warnings\n\nThis change implements the complete spec-driven workflow as documented in:\n- .specify/scripts/powershell/common.ps1 (validation functions)\n- .specify/scripts/powershell/create-new-feature.ps1 (protected branch enforcement)\n- .specify/scripts/powershell/setup-plan.ps1 (branch validation)\n- .specify/scripts/powershell/check-prerequisites.ps1 (prerequisites validation)\n- .specify/memory/constitution.md (workflow rules and rationale)\n- .github/copilot-instructions.md (developer guidance)"
+      },
+      "stats": {
+        "total": 205,
+        "additions": 205,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "90a9143e982fccb619ded863b0a40021e3673d67",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-27T11:47:05+00:00"
+        },
+        "message": "Update ReverseMarkdown and MediatR package versions\n\nUpdated ReverseMarkdown to version 4.7.1 in WebSpark.Core.csproj, addressing potential bug fixes or improvements.\nUpdated MediatR to version 13.1.0 in WebSpark.SharedKernel.csproj, incorporating enhancements or additional functionality."
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "96f8ba9c1a57b9ed6186345878be0581228bffb8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-26T15:20:14+00:00"
+        },
+        "message": "Fix DataTables and mobile UX issues in PromptSpark\n\nResolved DataTables Buttons error on `/userprompts` by adding missing dependencies (`datatables.net-buttons`, `jszip`, `pdfmake`) and updating the build process to include export functionality. Enhanced `Create.cshtml` with improved button styling and mobile-specific textarea behavior.\n\nImproved mobile responsiveness across all PromptSpark forms:\n- Added `max-height` constraints for textareas with internal scrolling.\n- Increased bottom padding to prevent footer overlap.\n- Stacked buttons vertically on smaller screens for better accessibility.\n\nUpdated global styles (`_create.scss`, `_explorer.scss`, `styles.scss`) to ensure consistent mobile behavior. Rebuilt JavaScript and CSS bundles to include DataTables extensions and responsive adjustments.\n\nThoroughly tested fixes across devices and browsers, ensuring WCAG 2.1 AA compliance and production readiness."
+      },
+      "stats": {
+        "total": 2260,
+        "additions": 2188,
+        "deletions": 72
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "8bca076bd49e748b7554f05967a6ba6153a07df1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-26T10:17:25+00:00"
+        },
+        "message": "Refactor AI recipe generation form and middleware\n\nRefactored the AI recipe generation form by introducing a new `MomCreateRequestModel` with enhanced validation and usability. Updated `HomeController` to use the new model, added detailed logging, and improved error handling. Modified `MomCreate.cshtml` to bind to the new model, added client-side logging, and enhanced form behavior with a loading spinner and autofocus.\n\nImproved middleware in `Program.cs` to skip POST requests in lowercase URL redirection, preventing POST-to-GET conversion issues. Refined conditions for skipping redirection to include static files and SignalR endpoints.\n\nPerformed general code cleanup, improved readability, and enhanced user experience with better validation feedback and error messages."
+      },
+      "stats": {
+        "total": 386,
+        "additions": 241,
+        "deletions": 145
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "26c030137bce699b65095ada6f755eeddb2bb57d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-25T21:41:48+00:00"
+        },
+        "message": "Update Markdig package to version 0.43.0\n\nUpdated the `Markdig` package from version `0.42.0` to `0.43.0` in both `WebSpark.Core.csproj` and `WebSpark.Portal.csproj`. This ensures the projects benefit from the latest improvements, bug fixes, and features provided by the updated library."
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "6bac40a8c4eadf08f407a7b9c63706bdee336178",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-21T02:02:11+00:00"
+        },
+        "message": "Add OpenAPI support and update dependencies\n\nIntroduce OpenAPI endpoints for API documentation and downloads, including JSON, pretty JSON, and YAML formats. Add a new `ApiDocs` view for interactive documentation and download options. Update `HomeController` with new actions for OpenAPI metadata and file downloads.\n\nRefactor middleware in `Program.cs` to enable OpenAPI and Scalar UI in all environments. Enhance `ApiDocs.cshtml` with detailed API documentation and usage examples.\n\nUpgrade multiple NuGet package dependencies across projects, including `Microsoft.EntityFrameworkCore`, `System.Text.Json`, `WebSpark.HttpClientUtility`, and others to their latest versions. Ensure consistent versioning for `Microsoft.Build` and `Microsoft.CodeAnalysis` packages.\n\nImprove logging and error handling for OpenAPI-related operations. Add clipboard functionality for copying API links in the `ApiDocs` view."
+      },
+      "stats": {
+        "total": 466,
+        "additions": 387,
+        "deletions": 79
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "567f8e92e4340892412f264462c83c8ec0583a60",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-05T22:28:23+00:00"
+        },
+        "message": "Modernize PromptSpark UI/UX with Purple Design System\n\nIntroduced a modern purple-based theme across the PromptSpark platform, replacing legacy orange styles. Enhanced chat interfaces with real-time connection status, typing indicators, and adaptive card rendering. Improved workflow management with modernized layouts, animations, and responsive design.\n\nAdded accessibility features, including high contrast mode, reduced motion support, and focus indicators. Updated navigation with unified headers, breadcrumbs, and floating action buttons. Enhanced database seeding for development environments with realistic data generation.\n\nRefactored SCSS files to align with the new design system, leveraging CSS variables for maintainability. Improved JavaScript build process with markdown parsing and sanitization. Optimized performance with GPU-accelerated animations and lazy loading. Ensured consistent theming and functionality across all components."
+      },
+      "stats": {
+        "total": 15769,
+        "additions": 13752,
+        "deletions": 2017
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "fd71af48c567ae95cdb0fe4eec02aa958ac15a1c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-29T11:55:57+00:00"
+        },
+        "message": "Enhance PromptSpark architecture and functionality\n\n- Updated `_ViewStart.cshtml` to use area-specific layout.\n- Added new endpoints in `DiagnosticsController.cs` for static file diagnostics and testing.\n- Refactored `Program.cs` middleware pipeline for proper static file serving and added debug logging.\n- Integrated `build:promptspark` step in `package.json` for area-specific asset builds.\n- Improved `clean.js` and `npm_build.js` for better error handling, directory management, and fallback mechanisms.\n- Optimized `main.scss` by removing redundant imports and using selective Bootstrap imports.\n- Removed legacy `web.config` to fix static file serving issues.\n- Enhanced `_Layout.cshtml` with breadcrumbs, floating actions, and area-specific styles/scripts.\n- Added dynamic meta tag generation in `_metatags.cshtml` for SEO improvements.\n- Introduced dynamic navigation rendering in `_Navigation.cshtml` based on JSON configuration.\n- Added area-specific styles in `PromptSpark.min.css` with animations and utility classes.\n- Documented architecture, troubleshooting, and build fixes in markdown files.\n\nThese changes improve build reliability, optimize asset sizes, and enhance the user experience with a scalable architecture for area-specific functionality."
+      },
+      "stats": {
+        "total": 1606,
+        "additions": 1456,
+        "deletions": 150
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b932539f9f7df57fdbf63c59ef0e972b35d7138a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-29T01:08:37+00:00"
+        },
+        "message": "Refactor chat UI and remove SignalR test page\n\nRefactored `Variant.cshtml` to enhance the chat interface with a modern design, markdown rendering, and improved streaming message handling. Introduced `PromptSpark.min.css` for consistent styling and updated `WebSpark.Portal.csproj` to include the new CSS folder.\n\nAdded a test method in `ChatHub.cs` to validate markdown rendering with various elements like bold text, code blocks, and lists.\n\nStreamlined `PromptSpark.min.css` by removing unnecessary metadata and the `@charset \"UTF-8\";` declaration.\n\nRemoved `signalr-test.html`, including its HTML structure, SignalR connection logic, and UI components, as part of a shift in testing strategy."
+      },
+      "stats": {
+        "total": 593,
+        "additions": 236,
+        "deletions": 357
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "842819e8171e72c7b6f43fa33fb7f02ba931efa1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T22:31:46+00:00"
+        },
+        "message": "Add SignalR for real-time AI chat and enhancements\n\nIntroduced SignalR for real-time communication in WebSpark.Portal, focusing on AI chat interfaces and streaming responses. Added `ChatHub`, `PromptSparkHub`, and `CrawlHub` with features like message streaming, conversation isolation, and logging.\n\nUpdated CORS policies and registered SignalR services in `Program.cs`. Enhanced security with input validation, rate limiting, and lifecycle management. Added Azure SignalR Service integration for production scaling.\n\nRefactored `ChatHub` for better performance, added JSON mode detection, and thread-safe caching. Improved error handling with new views for 403, 404, 405, and 500 errors. Simplified UI by removing toast notifications.\n\nAdded diagnostics tools, including a SignalR test page (`signalr-test.html`) and `/chathub/test` endpoint. Upgraded SignalR library to `7.0.9`. Enhanced logging and middleware for better debugging and monitoring.\n\nImproved build and testing workflow to include SignalR CORS configuration testing and ensured compatibility across browsers and devices."
+      },
+      "stats": {
+        "total": 1224,
+        "additions": 899,
+        "deletions": 325
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "8fb13a42bb57bd278d838f9bd481b6771cce731f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-28T18:35:58+00:00"
+        },
+        "message": "Modernize PromptSpark with UI, UX, and performance updates\n\nUpdated documentation, controllers, and views to align with a modular architecture and modern design system. Enhanced UI/UX with responsive layouts, animations, and accessibility improvements. Refactored controllers for better error handling, logging, and performance. Introduced a unified CSS system with reusable components and dark mode support. Improved build system and security practices, ensuring maintainability and scalability."
+      },
+      "stats": {
+        "total": 10848,
+        "additions": 7866,
+        "deletions": 2982
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "402d0210fe13b271d9228cc1271956353e329d43",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-26T17:49:49+00:00"
+        },
+        "message": "Enhance SEO and update dependencies\n\n- Upgraded NuGet packages across projects (e.g., `9.0.8` \u2192 `9.0.9`).\n- Added `INavigationMetadataService` and `ISitemapService` for SEO.\n- Implemented dynamic sitemap generation and metadata matching.\n- Added middleware for lowercase URL redirection.\n- Refactored `_metatags.cshtml` for dynamic metadata handling.\n- Updated `Markdig` and `sass` dependencies to latest versions.\n- Improved maintainability with centralized SEO logic."
+      },
+      "stats": {
+        "total": 435,
+        "additions": 275,
+        "deletions": 160
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "e14f797f0082794f74ed2ea14a698376056d1922",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-15T12:52:03+00:00"
+        },
+        "message": "Enhance CSHTML practices and resolve package conflicts\n\n- Updated `copilot-instructions.md` with best practices for Razor syntax, security, model binding, and JavaScript integration.\n- Modified project files for `PromptSpark.Domain`, `TriviaSpark.Domain`, and `WebSpark.Portal` to ensure consistent Microsoft.CodeAnalysis package versions (4.14.0).\n- Refactored JavaScript in `ChangePassword.cshtml` to use `<text>` tags for escaping special characters.\n- Adjusted email validation logic in `Create.cshtml` to use double `@` symbols.\n- Added `CODEANALYSIS_VERSION_RESOLUTION.md` to document package version conflict resolution.\n- Introduced `webspark_media_requirements.md` outlining the architecture and requirements for a media management system in WebSpark CMS."
+      },
+      "stats": {
+        "total": 853,
+        "additions": 834,
+        "deletions": 19
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "7a60e62ff0c03287993d730d5485618d42885d4a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-15T12:20:35+00:00"
+        },
+        "message": "Enhance WebSpark CMS with comprehensive blog management and full CRUD implementation\n\n- Resolved compilation errors in WebSpark.Portal, achieving successful build with 464 warnings.\n- Implemented BlogItem model property references and fixed Author model reference issues.\n- Corrected Razor syntax errors in Post Edit view and addressed NotFoundMiddleware header warnings.\n- Developed Blog Management Controllers (BlogController, PostController, AuthorController, CategoryController) for managing blog settings, posts, authors, and categories.\n- Enhanced WebCMS dashboard with new cards for blog posts, authors, categories, and recent posts.\n- Updated navigation and user experience with improved create menu and help documentation.\n- Implemented full CRUD functionality for Post and Blog entities, including advanced features like dual view modes, real-time search, and markdown support.\n- Fixed Post Details view by creating the missing Razor view and correcting model references.\n- Ensured responsive design and accessibility across all views, with a focus on user experience and security."
+      },
+      "stats": {
+        "total": 9149,
+        "additions": 9023,
+        "deletions": 126
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "576e7b20dedd557e4c907c6523ca5fd49b2e2f73",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T00:13:46+00:00"
+        },
+        "message": "Implement CORS policy for SignalR hubs and update appsettings for allowed origins"
+      },
+      "stats": {
+        "total": 170,
+        "additions": 166,
+        "deletions": 4
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4c4c9c9a624602259628b436973fbf144d4c8ad9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T23:59:42+00:00"
+        },
+        "message": "Remove obsolete projects from WebSpark.sln\n\nThis commit removes the following projects from the solution file `WebSpark.sln`:\n- InquirySpark.Domain\n- PromptSpark.Recipe.Console\n- DocSpark\n\nCorresponding configurations for these projects have also been deleted. The remaining projects, including OpenWeatherMapClient, TriviaSpark.Domain, TriviaSpark.JShow, and PromptSpark.SchemaTest, are unaffected."
+      },
+      "stats": {
+        "total": 21,
+        "additions": 0,
+        "deletions": 21
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "06b9f6715c21d73a08913f6b2c797d29248e6c28",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T23:50:55+00:00"
+        },
+        "message": "Refactor ChatCompletionController to send messages to all clients and update iText package version to 9.3.0; add initial cookies file."
+      },
+      "stats": {
+        "total": 23,
+        "additions": 17,
+        "deletions": 6
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "eb2375f633bbf849adbe9f1a0efe58b1de527157",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T23:16:13+00:00"
+        },
+        "message": "Update YouTube embedding policies and relax CORS and CSP settings"
+      },
+      "stats": {
+        "total": 217,
+        "additions": 57,
+        "deletions": 160
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "18c8b211be8dd643efe4c5a9b54e966a62938248",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T18:24:18+00:00"
+        },
+        "message": "Loosen CSP for inline event handlers and update API test files with comprehensive endpoints"
+      },
+      "stats": {
+        "total": 325,
+        "additions": 306,
+        "deletions": 19
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "12bbe00530c14df7fd3ce50f76e7d7dfede7fc03",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T18:07:02+00:00"
+        },
+        "message": "Enhance security by adding nonce support for inline scripts and update Cross-Origin policies"
+      },
+      "stats": {
+        "total": 58,
+        "additions": 45,
+        "deletions": 13
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "6aeb9fe5af6c47441e224d92cb9a4fc0dd66f726",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T17:57:26+00:00"
+        },
+        "message": "Implement code changes to enhance functionality and improve performance"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "71e607a64a2d9b6dbc451cd2d48771615ec45ab8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-06T17:55:42+00:00"
+        },
+        "message": "clean up / consolidate"
+      },
+      "stats": {
+        "total": 493136,
+        "additions": 2363,
+        "deletions": 490773
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "486c0a9acf1526a084c22f5f68eb1d373b027f18",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-01T13:39:49+00:00"
+        },
+        "message": "Add comprehensive API testing suite for WebCMS\n\n- Introduced PowerShell script `Test-WebCMS-API.ps1` for automated testing of all WebCMS API endpoints, including CRUD operations, error handling, and performance metrics.\n- Created detailed README file `WebCMS-API-Testing-README.md` outlining available endpoints, testing tools, usage instructions, and test scenarios.\n- Developed HTTP request file `WebCMS-API-Tests.http` containing 40+ test scenarios for manual testing of API endpoints.\n- Added `test-config.json` for centralized test data, scenarios, and configuration settings, including valid and invalid test cases for websites and menu items."
+      },
+      "stats": {
+        "total": 1784,
+        "additions": 1666,
+        "deletions": 118
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4b8cdeb9c345147273f2b2d14e6f9339aa1b781e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-20T13:26:44+00:00"
+        },
+        "message": "Refactor error logging in TriviaMatchService and update package versions in package.json and package-lock.json"
+      },
+      "stats": {
+        "total": 86,
+        "additions": 61,
+        "deletions": 25
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4fdcf8d1b3a261dd1f67284f6f24614dd4cfc2f5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T22:09:13+00:00"
+        },
+        "message": "Cleanup and optimization of project assets and files\n\nRemoved multiple binary files, including images and fonts, to streamline the project. Significant SVG files were deleted or modified, indicating a potential redesign or simplification of graphical assets. Updated Visual Studio solution files to remove unnecessary configurations. Cleaned up CSS and documentation files to enhance clarity and reduce size. Overall, these changes reflect an effort to optimize resources and improve project organization."
+      },
+      "stats": {
+        "total": 122,
+        "additions": 0,
+        "deletions": 122
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "086c11b4373e90f86ba22ceafa81e025de9f66b3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T22:03:44+00:00"
+        },
+        "message": "Fix AssemblyVersion formatting in .csproj files\n\nUpdated multiple .csproj files to correct the formatting of the <AssemblyVersion> tag by removing a leading hyphen. The versioning format remains unchanged, utilizing the current date and time for unique version generation. The <SourceRevisionId> line was retained for context."
+      },
+      "stats": {
+        "total": 15,
+        "additions": 5,
+        "deletions": 10
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d8cecb669ee98389676b2d201ca04276ca50732a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T21:54:31+00:00"
+        },
+        "message": "Enhance null safety and clean up project files\n\n- Introduced nullable reference types in `FileService.cs`, updating `GetFileSystemTree` return type and initializing properties in `FileSystemNode`.\n- Minor updates to `MarkdownGenerator.cs` for using directives.\n- Removed `Microsoft.CodeAnalysis.CSharp` package reference from multiple `.csproj` files and improved `AssemblyVersion` formatting.\n- Added constructors in GitHub-related classes to initialize string properties to empty strings, ensuring non-null values after deserialization.\n- Made formatting adjustments in `.csproj` files for better readability and modified build target command structures."
+      },
+      "stats": {
+        "total": 230,
+        "additions": 182,
+        "deletions": 48
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "7fbc043c6ea08daa5406a0615fb64442fdf16bd5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T21:41:48+00:00"
+        },
+        "message": "Initialize properties with default values across models\n\nThis commit updates various classes to initialize string properties with empty strings or default values, ensuring better null handling and reducing potential null reference exceptions. Key changes include:\n- Initialization of collections in `Author`, `Blog`, `Category`, `Post`, and others.\n- Updates to handle nullable properties in extension methods and filters.\n- Modifications to the project file for fixed assembly versioning.\n- Creation or update of the solution file to include project configurations."
+      },
+      "stats": {
+        "total": 1696,
+        "additions": 841,
+        "deletions": 855
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "3a381aa19b222f39fd54c71a3bd76bba38753651",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-17T18:11:47+00:00"
+        },
+        "message": "Update package versions in project files\n\n- Updated `Azure.Identity` to version `1.15.0` in `OpenWeatherMapClient.csproj`.\n- Updated `Microsoft.SemanticKernel` to version `1.62.0` in `PromptSpark.Domain.csproj` and `WebSpark.Portal.csproj`.\n- Updated `Scalar.AspNetCore` to version `2.6.9` in `WebSpark.Portal.csproj`."
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2d511c868e55d35ec42a75f2753148fbf4f01216",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-16T22:40:28+00:00"
+        },
+        "message": "Enhance documentation and improve CSV AI features\n\nUpdated documentation for DataSpark and WebSpark projects, clarifying debugging guides and feature descriptions.\n\nKey improvements to the CSV AI Processing Service include file management capabilities and multi-file analysis. Refined WebCMS API endpoints with new methods for managing websites and menu items, along with enhanced logging and validation responses. Introduced ConversationLogService for asynchronous logging of conversation entries to a CSV file, ensuring robust error handling and configuration management."
+      },
+      "stats": {
+        "total": 4187,
+        "additions": 3977,
+        "deletions": 210
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "91321c8ec078aaa60d5e78361cf49ed0fc76d60f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-08T01:46:16+00:00"
+        },
+        "message": "Enhance chat functionality and UI across multiple files\n\n- Updated `_Layout.cshtml` to include `webspark.min.js` and removed jQuery/Bootstrap scripts for a modern approach.\n- Modified `EnhancedChatCompletionController.cs` to add new dependencies, chat message handling, validation, and CSV logging.\n- Revamped `Enhanced.cshtml` with a new chat interface, improved styling, and user feedback mechanisms.\n- Improved `PickDefinition.cshtml` for better user experience with filters and layout enhancements.\n- Enhanced `Variant.cshtml` for a more interactive chat experience, including markdown response copying.\n- Updated `_ViewImports.cshtml` to include new namespaces for broader integration of models and services."
+      },
+      "stats": {
+        "total": 2621,
+        "additions": 2618,
+        "deletions": 3
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "5071e6cc0456128422b2d8edebb7bf0a1d3aa95d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-07T23:08:41+00:00"
+        },
+        "message": "Add chart configuration and display views with enhanced UI and functionality\n\n- Implemented Chart Configuration view with data source selection, chart list/grid view toggle, and chart actions (view, edit, duplicate, delete).\n- Added Chart Display view to show individual chart details, export options, and share functionality.\n- Created alternative layout with sidebar navigation for better user experience.\n- Introduced shared navigation partial for consistent navigation across layouts.\n- Enhanced JavaScript functionality for chart loading, exporting, and clipboard operations."
+      },
+      "stats": {
+        "total": 8235,
+        "additions": 7490,
+        "deletions": 745
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b095b8cceec67e0622b308f5af11b7628926392c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T02:27:35+00:00"
+        },
+        "message": "Implement Pivot Table ViewModel and Enhance Pivot Table Views\n\n- Created a new `PivotTableViewModel` class to encapsulate data for pivot table operations, including current file, available files, column headers, record count, and data.\n- Updated `SelectColumn.cshtml` to utilize the new ViewModel, enhancing the user interface for selecting columns with improved styling and functionality.\n- Refactored `fullpage.cshtml` to support the new ViewModel, adding fullscreen capabilities and controls for saving configurations and exporting data.\n- Added AJAX functionality for loading CSV data and managing pivot table configurations, including saving and exporting options.\n- Enhanced the user experience with loading indicators and error handling in the pivot table interface.\n- Updated `curl_commands.csv` with additional curl commands for API requests."
+      },
+      "stats": {
+        "total": 2867,
+        "additions": 2692,
+        "deletions": 175
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "9fa2a67aa1b908295921295bf25703e8d44c98d1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-27T21:14:47+00:00"
+        },
+        "message": "Update package references across multiple projects\n\n- WebSpark.RecipeCookbook: Removed itext7 and itext7.commons, added itext.\n- WebSpark.SharedKernel: Upgraded MediatR to 13.0.0 and Microsoft.Extensions packages to 9.0.7.\n- WebSpark.UserIdentity: Updated Microsoft.AspNetCore.Identity.EntityFrameworkCore and other Microsoft packages to 9.0.7.\n- WebSpark.Web: Upgraded System.Security.Cryptography.Xml, Microsoft.AspNetCore.Components.WebAssembly.Server, and System.ServiceModel.Syndication to 9.0.7."
+      },
+      "stats": {
+        "total": 868,
+        "additions": 457,
+        "deletions": 411
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "c1b10f8eb8951a4a85963096421ef50189895eb2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T16:46:20+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 758,
+        "additions": 728,
+        "deletions": 30
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "080ffd98205db46afa3f82df52dd0d73788750bc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T12:53:52+00:00"
+        },
+        "message": "Refactor controllers and update package dependencies\n\nThis commit includes significant updates to various C# source files, focusing on modifying namespaces, using directives, and class definitions. Key changes involve the removal of unused `using` statements in `SanityCheckController.cs` and `FilesController.cs`, and a substantial refactor in `CsvAIProcessingController_NEW.cs`.\n\nAdditionally, the `OpenAIFileAnalysisService.cs` file now includes `Microsoft.Extensions.Options`, indicating a shift in options management. Multiple project files have been updated to reference newer versions of NuGet packages, such as `Microsoft.Extensions.DependencyInjection` and `Microsoft.EntityFrameworkCore`, enhancing functionality and security.\n\nImprovements in string handling were made in `DefinitionResponseDto_Extension.cs` and `JsonCleaner.cs`, promoting clarity and consistency. Overall, these changes reflect a commitment to code quality, maintainability, and modernization of dependencies."
+      },
+      "stats": {
+        "total": 493,
+        "additions": 115,
+        "deletions": 378
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "59c9ed68fbd2b18aec0528724fc415cf221c7a9e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T00:36:16+00:00"
+        },
+        "message": "feat: Enhance CSV AI Processing Service with file management and multi-file analysis capabilities\n\n- Implemented a new file management system allowing users to upload, list, and remove CSV files for future analysis.\n- Added methods for analyzing multiple uploaded files together and enhanced single file analysis with options to keep files.\n- Updated CsvAIProcessingController to support new actions for file management and analysis.\n- Improved user interface with file selection dropdowns and analysis controls.\n- Fixed CSV file loading issues by ensuring proper file processing and assistant configuration validation.\n- Added diagnostic tools for troubleshooting and enhanced error handling throughout the service."
+      },
+      "stats": {
+        "total": 4838,
+        "additions": 2272,
+        "deletions": 2566
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "a93b72c3cb7bab28625027ac671db500b843055c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-05T00:25:10+00:00"
+        },
+        "message": "Refactor CSV analysis and enhance AI integration\n\nThis commit introduces significant changes to the DataSpark web application, focusing on CSV file analysis and OpenAI integration. Key updates include:\n\n- Replaced `Dashboard` actions in HomeController, UnivariateController, and VisualizationController with `CompleteAnalysis` for improved functionality.\n- Added new `CsvAIProcessingController` to handle CSV uploads and AI analysis.\n- Introduced `OpenAIFileAnalysisService` to manage interactions with the OpenAI API.\n- Enhanced error handling in `CsvFileService` for loading CSV files.\n- Created new views for `CompleteAnalysis` and `Index` to facilitate user interaction.\n- Improved SignalR hub in `ChatHub` for streaming responses and error handling.\n- Added `DiagnosticsController` for testing SignalR connections.\n- Updated CSS for better UI presentation.\n- Various project configuration updates, including package version upgrades and user secrets management."
+      },
+      "stats": {
+        "total": 3203,
+        "additions": 2789,
+        "deletions": 414
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "1db5c96cffe77b43d52afe372d3fb0616bb5cc33",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-26T18:01:12+00:00"
+        },
+        "message": "Refactore DataSpark.Web and stand alone compled Data Analysis Solution"
+      },
+      "stats": {
+        "total": 5351,
+        "additions": 4788,
+        "deletions": 563
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "81d0a2059a9b4a25427db63da5ee3597a59592c3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-21T06:23:56+00:00"
+        },
+        "message": "Enhance functionality and UI across the application\n\n- Added logging and error handling in HomeController.\n- Implemented validation checks for uploaded CSV files in FilesController.\n- Updated package references in DataSpark.Web.csproj for compatibility.\n- Integrated Bootswatch theme switcher in Program.cs and _Layout.cshtml.\n- Improved user interface in Files.cshtml and Index.cshtml for better usability.\n- Cleaned up site.css and site.js for responsiveness.\n- Updated configuration settings in appsettings.json files.\n- Reflected dependency updates in package.json and package-lock.json.\n- Added multiple curl commands for API interactions in curl_commands.csv."
+      },
+      "stats": {
+        "total": 9063,
+        "additions": 8729,
+        "deletions": 334
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "fc0d3a556fae04547a59fa21bb0e0d805546437e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-15T12:11:27+00:00"
+        },
+        "message": "Clean up\nSwitch to NuGet Package for WebSpark.Bootswatch (delete project)\nand WebSpark.HttpUtilities instead of HttpClientCrawler (delete project)"
+      },
+      "stats": {
+        "total": 3852,
+        "additions": 555,
+        "deletions": 3297
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "9eb3cb6b8437f02be2d0b7de81117046c6c6c091",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-13T19:26:06+00:00"
+        },
+        "message": "Update dependencies and enhance GitHub user search\n\nUpdated various NuGet package references to their latest versions, primarily from version 9.0.4 to 9.0.5.\n\nAdded new methods in the `HomeController` for handling GraphQL API requests, including user data fetching and searching. Introduced a `GitHubApiException` constructor for better exception handling.\n\nEnhanced the `GitHubUserService` to support GraphQL queries and updated the `Index.cshtml` view to include a search button for the GraphQL API.\n\nAlso made changes to the `package-lock.json` to reflect updates in JavaScript dependencies and updated binary files for Bootstrap icons."
+      },
+      "stats": {
+        "total": 2611,
+        "additions": 1695,
+        "deletions": 916
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "22f3b9a5b89bfc6a1eb5db2c5489987ab982fdee",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T00:20:01+00:00"
+        },
+        "message": "updates to use NuGet package more"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 13,
+        "deletions": 21
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "ba360752b42c0e02984b6d1dc246e27f9981233e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T20:25:13+00:00"
+        },
+        "message": "replace HttpClientUtility with NuGet Package"
+      },
+      "stats": {
+        "total": 4479,
+        "additions": 93,
+        "deletions": 4386
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "af7620bc4d341b08261895c329bc29d74ebf5ffa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:49:26+00:00"
+        },
+        "message": "move GitHub stuff"
+      },
+      "stats": {
+        "total": 4194,
+        "additions": 2968,
+        "deletions": 1226
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "6a43a1b2eda2298814b23896f26826a989890aaa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-04-28T16:25:02+00:00"
+        },
+        "message": "update crawler project"
+      },
+      "stats": {
+        "total": 1177,
+        "additions": 1024,
+        "deletions": 153
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4e421a07013c60076c59da3716d81ce4907495e1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-04-28T16:04:44+00:00"
+        },
+        "message": "clean up refactor stuff"
+      },
+      "stats": {
+        "total": 4223,
+        "additions": 3546,
+        "deletions": 677
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-04-28T12:12:26+00:00"
+        },
+        "message": "update pacakages, conver to npm for js/css libraries"
+      },
+      "stats": {
+        "total": 633257,
+        "additions": 246074,
+        "deletions": 387183
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "63ee2725374c7ed3a77ccc30bc21410a75d56262",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-04-28T02:10:07+00:00"
+        },
+        "message": "implement light/dark theme"
+      },
+      "stats": {
+        "total": 1337,
+        "additions": 1039,
+        "deletions": 298
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "9ad712b434d148f6b18cb64c2f114c45d75bbe37",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-31T11:54:46+00:00"
+        },
+        "message": "updates for editing"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 15,
+        "deletions": 15
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "e47c30294f463fdb07649df31eeb3df5ae0d3cd7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-30T18:55:42+00:00"
+        },
+        "message": "fix required fields in web cms"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 10,
+        "deletions": 9
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "a3225643dbd404ca78c4abf6770887c9b188ee9e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-30T14:02:29+00:00"
+        },
+        "message": "refactor recipe and web cms"
+      },
+      "stats": {
+        "total": 8485,
+        "additions": 6809,
+        "deletions": 1676
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "34148a35bd7a191db2f607834078be33f662f425",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-30T02:21:07+00:00"
+        },
+        "message": "refactor recipie area"
+      },
+      "stats": {
+        "total": 1597,
+        "additions": 1142,
+        "deletions": 455
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4d3f13f0fdcb3bc10c015df52e6cc2a7153caf84",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-15T17:03:46+00:00"
+        },
+        "message": "fix duplicate headings for speakers. . ."
+      },
+      "stats": {
+        "total": 122,
+        "additions": 66,
+        "deletions": 56
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "f74d840afedfbb798ed5a7f0c99d6de2fd4c6fae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-15T17:01:34+00:00"
+        },
+        "message": "update to signal r hub and chat client"
+      },
+      "stats": {
+        "total": 195,
+        "additions": 133,
+        "deletions": 62
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "f23b649fa7469c41571f9b2c5f8080777d622632",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-15T16:27:55+00:00"
+        },
+        "message": "update navigation"
+      },
+      "stats": {
+        "total": 459,
+        "additions": 316,
+        "deletions": 143
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d9ceb696f0974a6d1df0d6a24976aefadad3db08",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-15T15:00:51+00:00"
+        },
+        "message": "update chat experience"
+      },
+      "stats": {
+        "total": 626,
+        "additions": 309,
+        "deletions": 317
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "c9da9b27489a6d0e1a5c201a0735055b7cd2c03e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-15T14:13:38+00:00"
+        },
+        "message": "Update Variant Chat to have SEO Friendly URL"
+      },
+      "stats": {
+        "total": 467,
+        "additions": 461,
+        "deletions": 6
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b8eb15ddfed4e1ed13252727c4abb64be27f8f9f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-03-14T01:24:09+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 891,
+        "additions": 723,
+        "deletions": 168
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "848df4b4f813514bd192045d3fdb51417d9a46b7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-02-28T19:45:34+00:00"
+        },
+        "message": "update curl logging to include source"
+      },
+      "stats": {
+        "total": 982,
+        "additions": 555,
+        "deletions": 427
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "15b23ae67beaa04fb8ccfc3f6c907b7848e4aafc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-02-26T06:23:25+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 1254,
+        "additions": 876,
+        "deletions": 378
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d9438f1f19f0d8ea6910a2ced74abc59d6e6eb2d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-21T15:51:25+00:00"
+        },
+        "message": "Package Updates"
+      },
+      "stats": {
+        "total": 265,
+        "additions": 134,
+        "deletions": 131
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "e44e679db59b8b720dda8d43f3d812efef7ce140",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-14T13:56:43+00:00"
+        },
+        "message": "add repository analyis"
+      },
+      "stats": {
+        "total": 1516,
+        "additions": 1054,
+        "deletions": 462
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "108a56355e9e6dfa9cd76ae4b437d42500e65941",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-12T19:47:01+00:00"
+        },
+        "message": "add DocSpark"
+      },
+      "stats": {
+        "total": 762,
+        "additions": 762,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "cd4dcc67b78b572e1680f38a8205b6543ce90acf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-12T19:25:01+00:00"
+        },
+        "message": "Improve GitHub integration, start on Repo Analysis tool"
+      },
+      "stats": {
+        "total": 1561,
+        "additions": 924,
+        "deletions": 637
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "bb3750af9ba2b2750ff4b6b69db530f22112a99f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-09T14:42:17+00:00"
+        },
+        "message": "update markdow display\nupdate client side libraries\nfix some not found issue on Web"
+      },
+      "stats": {
+        "total": 41238,
+        "additions": 20813,
+        "deletions": 20425
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4406cf769097b435fa6add837fcfafd5dd28618c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-09T14:39:59+00:00"
+        },
+        "message": "Add Data Spark demo"
+      },
+      "stats": {
+        "total": 84095,
+        "additions": 84095,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "c2f476fe1dd7587334f1ea6824a42e4fad75644f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-03T17:22:28+00:00"
+        },
+        "message": "fix project name"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 10,
+        "deletions": 6
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "563edae7c130b8d9af86aab06568de23f6ab2c1f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-30T14:33:35+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "ce40e2e4dee7799eb8847ab7041cf8d8c6f85d26",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-27T17:44:45+00:00"
+        },
+        "message": "rework issues with routing and redirect for bad url"
+      },
+      "stats": {
+        "total": 746,
+        "additions": 431,
+        "deletions": 315
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2819f08061529f3a451441b6b3cebc2e062d16fe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-13T02:51:08+00:00"
+        },
+        "message": "add youtube link to podcast"
+      },
+      "stats": {
+        "total": 185,
+        "additions": 95,
+        "deletions": 90
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2a7230e1480791e2f1a247fa983c485f6ef5bec5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-03T00:46:54+00:00"
+        },
+        "message": "remove swagger"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 1,
+        "deletions": 15
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "00ecf56393ff3ef385d6159cba29693bb45c23e4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-02T22:15:23+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 2,
+        "deletions": 23
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-02T20:51:03+00:00"
+        },
+        "message": "clean up"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 1
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "0dd2b2901d65f24a5bcb59581a42c03e04a20a2f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-02T20:46:09+00:00"
+        },
+        "message": "Add schema based recipie generation"
+      },
+      "stats": {
+        "total": 1893,
+        "additions": 1030,
+        "deletions": 863
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "bd578212ee97923e1b169badfdf311fe3854df94",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-13T15:19:47+00:00"
+        },
+        "message": "add console app"
+      },
+      "stats": {
+        "total": 1189,
+        "additions": 1189,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "515b3c1049c44b4c46dbff7f14ba2935e19c9304",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-13T15:18:41+00:00"
+        },
+        "message": "Update NuGet Packages"
+      },
+      "stats": {
+        "total": 1326,
+        "additions": 780,
+        "deletions": 546
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "ec663fd8ec8154a26fc18a610ee571a9c4f5ab90",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-09T17:24:20+00:00"
+        },
+        "message": "add PromptSpark.Chat to Portal"
+      },
+      "stats": {
+        "total": 800,
+        "additions": 743,
+        "deletions": 57
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "162181c62bcd522c8712f303c0a7c29bde08faa4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-09T04:01:01+00:00"
+        },
+        "message": "move PromptSpark.Chat to Portal"
+      },
+      "stats": {
+        "total": 3183,
+        "additions": 3106,
+        "deletions": 77
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "39ff682b88f57c65132a9814a1c61c73d5315d5d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-09T00:24:39+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 41,
+        "additions": 36,
+        "deletions": 5
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4acef20b886fdd8a57af2e6af66019b745b78b27",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-08T22:43:03+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 1123,
+        "additions": 965,
+        "deletions": 158
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "210d986809ee88d5460b77ea6d1e4ba14d228f8e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-08T19:29:26+00:00"
+        },
+        "message": "update to support multiple workflows"
+      },
+      "stats": {
+        "total": 1388,
+        "additions": 942,
+        "deletions": 446
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "c7e4325fdb5b52e6256261d1e8ac06cb8fdbceb2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-07T00:13:28+00:00"
+        },
+        "message": "Give Names to Nodes"
+      },
+      "stats": {
+        "total": 176,
+        "additions": 3,
+        "deletions": 173
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "cf4a8ee4f69a3208ff2915a950367c8b072d2ca4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-04T20:09:12+00:00"
+        },
+        "message": "add admin for workflow"
+      },
+      "stats": {
+        "total": 371191,
+        "additions": 371165,
+        "deletions": 26
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "6f1156ef73405af03358080f7fc99769de8a8ce3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-04T13:20:27+00:00"
+        },
+        "message": "refactor"
+      },
+      "stats": {
+        "total": 191,
+        "additions": 96,
+        "deletions": 95
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "cfcbb5c2ccfac8dd9c3dd48ca4e3798ee2acdea2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T21:59:31+00:00"
+        },
+        "message": "refactor"
+      },
+      "stats": {
+        "total": 138,
+        "additions": 85,
+        "deletions": 53
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "af72fe52b04d6285f38b2c8c9c028d7574d76ef1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T18:40:58+00:00"
+        },
+        "message": "refactor"
+      },
+      "stats": {
+        "total": 166,
+        "additions": 112,
+        "deletions": 54
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4bbfbee566613ee3042d462ac19f40ec3bb6f72a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T16:57:25+00:00"
+        },
+        "message": "add ChatService to ConversationService"
+      },
+      "stats": {
+        "total": 52,
+        "additions": 31,
+        "deletions": 21
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "af4737c5acd883a3e07264f224cdf2fa289d967a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T16:39:33+00:00"
+        },
+        "message": "clean up refactoring"
+      },
+      "stats": {
+        "total": 247,
+        "additions": 123,
+        "deletions": 124
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "8ace3002ea75315bc828864597578b7d9eb58180",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T14:41:21+00:00"
+        },
+        "message": "refactor"
+      },
+      "stats": {
+        "total": 327,
+        "additions": 180,
+        "deletions": 147
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "df96f6c0fb19da4bc38850278c3726bffd5a535e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T00:36:46+00:00"
+        },
+        "message": "refactor"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 4,
+        "deletions": 17
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "22db757b5b3f7ada842d5e614d362edd84ebb80f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T00:30:45+00:00"
+        },
+        "message": "minor refactoring"
+      },
+      "stats": {
+        "total": 33,
+        "additions": 10,
+        "deletions": 23
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "f6457c914f9329e602898f7903d25185573d9cdb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-03T00:25:46+00:00"
+        },
+        "message": "minor refactor"
+      },
+      "stats": {
+        "total": 369,
+        "additions": 180,
+        "deletions": 189
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "57e95d580af9daf4842d87971eca534bec4f08a3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-02T23:05:25+00:00"
+        },
+        "message": "Update to create ConcurrentDictionaryService of T"
+      },
+      "stats": {
+        "total": 455,
+        "additions": 296,
+        "deletions": 159
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "72108e15a244b94fb1fd991b8484759342fce4fe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-02T18:55:56+00:00"
+        },
+        "message": "Fix streaming messages"
+      },
+      "stats": {
+        "total": 326,
+        "additions": 218,
+        "deletions": 108
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "681f824135711e78847834bcb01ac676559dc653",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-01T15:04:24+00:00"
+        },
+        "message": "chat workflow v1"
+      },
+      "stats": {
+        "total": 659,
+        "additions": 301,
+        "deletions": 358
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "50b40ad1137032ea772a850c2ce516b5d596ada8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-10-30T18:18:40+00:00"
+        },
+        "message": "Update Chat"
+      },
+      "stats": {
+        "total": 3262,
+        "additions": 3173,
+        "deletions": 89
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b8ebed6b9dce07744bfd3c43a9dfd492bae27b29",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-10-26T18:46:53+00:00"
+        },
+        "message": "Integrate ChatHub with PromptSpark"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 23,
+        "deletions": 7
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "1d11b46ed911955c8c746724854764ed311aefb4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-10-26T17:03:34+00:00"
+        },
+        "message": "update chat hub"
+      },
+      "stats": {
+        "total": 924,
+        "additions": 732,
+        "deletions": 192
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "94961b2f6640fc5b7af4405eb1998778e4692457",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-10-26T17:03:01+00:00"
+        },
+        "message": "Update NuGet Packages\nEnhance ChatHub"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "f8bcda175c54f9a7f329205f69a829fdeab27022",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-10-14T23:38:22+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 1262,
+        "additions": 871,
+        "deletions": 391
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "5ed813d4f9fcb9956515ad82d4970ff4e3e9e77e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-10-01T16:22:59+00:00"
+        },
+        "message": "refactor jshow a bit"
+      },
+      "stats": {
+        "total": 2059,
+        "additions": 1511,
+        "deletions": 548
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2d0f11635ff0b36e6ad3ccc67af3844c3a07980b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-28T22:12:35+00:00"
+        },
+        "message": "working on jshow admin stuff"
+      },
+      "stats": {
+        "total": 4616,
+        "additions": 4283,
+        "deletions": 333
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "977a1f4a74e7cc67d5f0e49997d21d66c4ed66c9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-27T21:16:26+00:00"
+        },
+        "message": "Fix issue with recipe on non-recipe sites"
+      },
+      "stats": {
+        "total": 1316,
+        "additions": 1259,
+        "deletions": 57
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b08f2dda4b78d50b9f26c296c3b065666cf10bcb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-27T15:11:53+00:00"
+        },
+        "message": "Merge pull request #1 from markhazleton/net9\n\nNet9"
+      },
+      "stats": {
+        "total": 7736,
+        "additions": 4433,
+        "deletions": 3303
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2a2bebd46de27a19111f30c85b1aec28b5f80697",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-27T15:04:19+00:00"
+        },
+        "message": "Refactor and update UI for consistancy"
+      },
+      "stats": {
+        "total": 1365,
+        "additions": 656,
+        "deletions": 709
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "747306b270598aa94201b7e3a1f26d949f034b55",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-27T02:42:48+00:00"
+        },
+        "message": "clean up standardize routes"
+      },
+      "stats": {
+        "total": 2162,
+        "additions": 1239,
+        "deletions": 923
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "420474409b2be57a0564de997f653f74e686e3f9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-26T04:28:14+00:00"
+        },
+        "message": "start migration of Trivia Spark"
+      },
+      "stats": {
+        "total": 2697,
+        "additions": 2014,
+        "deletions": 683
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "f2f4f689d2e803b02571c231c75a9d2825f46c74",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T14:30:24+00:00"
+        },
+        "message": "remove full service, update not found routing"
+      },
+      "stats": {
+        "total": 429,
+        "additions": 48,
+        "deletions": 381
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "72e595f8b165220d7e5a364f338bc74834b88d1a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T04:58:37+00:00"
+        },
+        "message": "remove 'GetService' replace with RequestResponse"
+      },
+      "stats": {
+        "total": 384,
+        "additions": 116,
+        "deletions": 268
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "44167feb77380af7ae12aa64a3e5b043bb703c53",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-22T17:33:40+00:00"
+        },
+        "message": "Update to net 9, refactor HttpCliet utilities, add RequestResult classes."
+      },
+      "stats": {
+        "total": 682,
+        "additions": 364,
+        "deletions": 318
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "fb29f5a0053ee41671a9a69d423df5bb14c6133e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T04:11:54+00:00"
+        },
+        "message": "Update to Net 9"
+      },
+      "stats": {
+        "total": 873,
+        "additions": 424,
+        "deletions": 449
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "732566dddaaa88a87a0670b7ca6a6cd0d4f85fa5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T04:02:11+00:00"
+        },
+        "message": "update npm packages"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4b5d2e4069182ac798c5bc0edf9ea4526f3bebbf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-20T21:25:02+00:00"
+        },
+        "message": "update repo display"
+      },
+      "stats": {
+        "total": 54,
+        "additions": 53,
+        "deletions": 1
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "5746397192e9217c3cd3bec9993d9bb22a8c0e80",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-20T18:53:58+00:00"
+        },
+        "message": "Update GitHub async example"
+      },
+      "stats": {
+        "total": 365,
+        "additions": 278,
+        "deletions": 87
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "34a883fe300e79ed9118711d3a180b836820d5ea",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-20T04:22:03+00:00"
+        },
+        "message": "Refacter Send Service"
+      },
+      "stats": {
+        "total": 656,
+        "additions": 338,
+        "deletions": 318
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d9e75790d7be2f4482e9822b76578d6c5d4b6966",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-19T01:10:42+00:00"
+        },
+        "message": "GitHub fun"
+      },
+      "stats": {
+        "total": 810,
+        "additions": 799,
+        "deletions": 11
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "005afccd86f666869ec09a2608c0a8d48b048f6e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-18T15:43:47+00:00"
+        },
+        "message": "add TriviaSpark and InquirySpark"
+      },
+      "stats": {
+        "total": 8451,
+        "additions": 8451,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d76e07effe7397c7a0beda9c9bf04105f8e66ce1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-18T15:43:28+00:00"
+        },
+        "message": "Update Prompt Spark admin pages"
+      },
+      "stats": {
+        "total": 730,
+        "additions": 410,
+        "deletions": 320
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "e83bbf52b71078c2d90bb83daa900a3dbc358d84",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-16T11:25:38+00:00"
+        },
+        "message": "add google anlytics property tag"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 11,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "e8f7256b87d001a1b985e7c36afd9d7f327d664e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-15T17:28:31+00:00"
+        },
+        "message": "update for search engines"
+      },
+      "stats": {
+        "total": 2797,
+        "additions": 2351,
+        "deletions": 446
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "1f19bcdd33255415f4cffa42b7f03ea3467dc163",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-15T14:21:46+00:00"
+        },
+        "message": "setup 301 redirects for old routes"
+      },
+      "stats": {
+        "total": 128,
+        "additions": 56,
+        "deletions": 72
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "f07ee9a02f41ea596cf36d432249c554659d2852",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-14T17:17:47+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 20,
+        "deletions": 1
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "c7e82225f2a8f48c8f0700b94b1947da6f446447",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-14T17:13:33+00:00"
+        },
+        "message": "Update UI for Pivot Table"
+      },
+      "stats": {
+        "total": 367,
+        "additions": 262,
+        "deletions": 105
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "5f05816158d66c250a0da3dd893d62aaef180e43",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-13T23:58:57+00:00"
+        },
+        "message": "nuget updates"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "726d427d3d1ffd2ab38931e81dd4fd18d5491161",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-13T23:56:37+00:00"
+        },
+        "message": "update functionality"
+      },
+      "stats": {
+        "total": 5304,
+        "additions": 2451,
+        "deletions": 2853
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "35f50c9804788bd52b5d72c757564de229890bf5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-10T12:59:00+00:00"
+        },
+        "message": "update for routing and refactor data spark"
+      },
+      "stats": {
+        "total": 1708,
+        "additions": 1247,
+        "deletions": 461
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "6eb5bbec09afec5bc13b110c4b5e5e55179e1cf7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-08T18:21:55+00:00"
+        },
+        "message": "refactor analaysis"
+      },
+      "stats": {
+        "total": 80095,
+        "additions": 1682,
+        "deletions": 78413
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "84f156e1e1a80a19f7225e4f754e4fdf75a4493a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-07T14:48:56+00:00"
+        },
+        "message": "fix polly in asyncspark\nadd apis for asyncspark for callback testing"
+      },
+      "stats": {
+        "total": 670,
+        "additions": 209,
+        "deletions": 461
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "f1d3db743f686a476f4c529f031fb9fabe4c547a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-06T19:08:51+00:00"
+        },
+        "message": "work on meta tags"
+      },
+      "stats": {
+        "total": 556,
+        "additions": 97,
+        "deletions": 459
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "95cac67d0d90754c0fbbc59ed1f23d61e270acff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-06T13:45:05+00:00"
+        },
+        "message": "Add Meta Tags sub page for SEO"
+      },
+      "stats": {
+        "total": 304,
+        "additions": 192,
+        "deletions": 112
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "10f0fcf7f9f9dbace3255350c1bdbd28ad98d5cb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-06T02:36:56+00:00"
+        },
+        "message": "Add Nasa POD to the AsyncSpark demo"
+      },
+      "stats": {
+        "total": 117,
+        "additions": 117,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "ee48096fcc66fbfca67e4f7af46a4634df6f5de3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-06T01:59:55+00:00"
+        },
+        "message": "fun with dataspark"
+      },
+      "stats": {
+        "total": 104633,
+        "additions": 13347,
+        "deletions": 91286
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "937f459ab46434e36b726e6a38bb92adf351f7ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-04T16:17:15+00:00"
+        },
+        "message": "add all sites to main soluion\nUpdate Footer on Portal site\nRemove Unused OpenAI code (breaking changes in NuGet)"
+      },
+      "stats": {
+        "total": 300,
+        "additions": 161,
+        "deletions": 139
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "9bccca76c1155691e7299d01acc6ce664d942b56",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-04T13:53:22+00:00"
+        },
+        "message": "rework  spark - variant - prompt navigation"
+      },
+      "stats": {
+        "total": 185,
+        "additions": 84,
+        "deletions": 101
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "01c750a9bd7b76912f23548174b3596f7e2942c3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-04T02:32:21+00:00"
+        },
+        "message": "code cleanup"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 6,
+        "deletions": 12
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "bf66463d62f094bdcad2006efd56021317640eae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-04T02:29:40+00:00"
+        },
+        "message": "consolidate to Portal (remove Main and PrompSpark stand alone sites)"
+      },
+      "stats": {
+        "total": 5643,
+        "additions": 5516,
+        "deletions": 127
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "999b96666f7a30352a272e83b04abe13565e73c9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-03T16:58:51+00:00"
+        },
+        "message": "npm package update"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "7382b7dfcfc809e1eaa9f5b24ade703f0e334981",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-03T16:56:04+00:00"
+        },
+        "message": "minor updates"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b9156aaf362282022cd92ba62038cba7dacf7838",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-30T21:59:01+00:00"
+        },
+        "message": "work in process - checkpoint"
+      },
+      "stats": {
+        "total": 4852,
+        "additions": 4482,
+        "deletions": 370
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "7930fc89fd5d9fe9bcb623b7dc637ac8474b47ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-28T20:25:12+00:00"
+        },
+        "message": "Add Joke to Main demo site"
+      },
+      "stats": {
+        "total": 328,
+        "additions": 308,
+        "deletions": 20
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "3fa25a356671e66a51659f869c2f7e3fc3c5cef3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-28T18:53:36+00:00"
+        },
+        "message": "update ui"
+      },
+      "stats": {
+        "total": 793,
+        "additions": 550,
+        "deletions": 243
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "617c1cd30184b11c37c006e03b15bacf11488b1b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-28T18:53:21+00:00"
+        },
+        "message": "update demo web app"
+      },
+      "stats": {
+        "total": 21663,
+        "additions": 21210,
+        "deletions": 453
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2289c85623efde6b4d7e4085fb39af00eebe67bb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-16T15:57:28+00:00"
+        },
+        "message": "remove admin from PromptSpark project\nconvert Main to use es Modules"
+      },
+      "stats": {
+        "total": 80574,
+        "additions": 1345,
+        "deletions": 79229
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "9014ba5b20ac183a2670dcfe48511a143832bb2b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-13T19:54:07+00:00"
+        },
+        "message": "nuget updates"
+      },
+      "stats": {
+        "total": 57,
+        "additions": 33,
+        "deletions": 24
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "006653f658e259936cec1d87d1da799f1e20fc08",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-13T19:54:00+00:00"
+        },
+        "message": "initial create WebSpark.Main"
+      },
+      "stats": {
+        "total": 34930,
+        "additions": 34930,
+        "deletions": 0
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "d6725761c98f920b038defd29f7d37fa6609a150",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-12T14:16:27+00:00"
+        },
+        "message": "refine cookbook pdf"
+      },
+      "stats": {
+        "total": 148,
+        "additions": 112,
+        "deletions": 36
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "8514f23c2019c2db5b241df8de41a8747d2a5fd8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-12T01:42:00+00:00"
+        },
+        "message": "update packages, refactor"
+      },
+      "stats": {
+        "total": 725,
+        "additions": 479,
+        "deletions": 246
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "054f550de4563660847da9f01dc38d5023720063",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-04T23:55:46+00:00"
+        },
+        "message": "update for responses and new types of requested format"
+      },
+      "stats": {
+        "total": 688,
+        "additions": 400,
+        "deletions": 288
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "e42a00c0434b7c1f9636ea0892522358b6c9b04f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-01T13:26:37+00:00"
+        },
+        "message": "clean-up"
+      },
+      "stats": {
+        "total": 2502,
+        "additions": 2229,
+        "deletions": 273
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "0e3e7950bf6fb9a216cc2106f4d2def0791485de",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-29T20:57:29+00:00"
+        },
+        "message": "code clean-up add xml docs."
+      },
+      "stats": {
+        "total": 1002,
+        "additions": 587,
+        "deletions": 415
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "57283d848ea4bae0792c98f7d70cfb7f47410e33",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-29T17:05:02+00:00"
+        },
+        "message": "Update Packages, code rush clean-up"
+      },
+      "stats": {
+        "total": 1529,
+        "additions": 1215,
+        "deletions": 314
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4293213f9cb908f49e9e5fc1beedaa33f27f9c0d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-24T16:53:45+00:00"
+        },
+        "message": "more refactoring"
+      },
+      "stats": {
+        "total": 111,
+        "additions": 37,
+        "deletions": 74
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b08c4c89bd53142c1efae88df1e1ca128f2670fa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-24T15:48:51+00:00"
+        },
+        "message": "refactor models and projects"
+      },
+      "stats": {
+        "total": 5181,
+        "additions": 1159,
+        "deletions": 4022
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "084f286898e28e501b24ecd203d26b0c2be7b6ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-24T13:38:18+00:00"
+        },
+        "message": "Refactor Libraries"
+      },
+      "stats": {
+        "total": 4373,
+        "additions": 3519,
+        "deletions": 854
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "4a63a6ba9ee543212aba3aee475ad7c7fc4372cb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-23T16:12:08+00:00"
+        },
+        "message": "Add meta tags description/keyword"
+      },
+      "stats": {
+        "total": 44,
+        "additions": 28,
+        "deletions": 16
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "a4deff114ffc71fb8858256141031363801d7605",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-17T15:03:49+00:00"
+        },
+        "message": "update for publishing"
+      },
+      "stats": {
+        "total": 1496,
+        "additions": 145,
+        "deletions": 1351
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "703dd8029d15ea241da8c430e9379f21b2635746",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-10T13:52:08+00:00"
+        },
+        "message": "Update routes and links and page title and cannonical links"
+      },
+      "stats": {
+        "total": 684,
+        "additions": 388,
+        "deletions": 296
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "32f2a4e11584c7241d9217d4e5f509b0bb7dad29",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-03T03:52:11+00:00"
+        },
+        "message": "handle .php files, add navigation to Portal Prompt Spark"
+      },
+      "stats": {
+        "total": 123,
+        "additions": 74,
+        "deletions": 49
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "455d35f7f1ad5fcf9e2eae33b6bc93279a6e1604",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-01T17:12:17+00:00"
+        },
+        "message": "standardize versions\ninitialize session on Web"
+      },
+      "stats": {
+        "total": 983,
+        "additions": 619,
+        "deletions": 364
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "0bc4b0a6e00398e65a8ad478b331f1c930ab6e5d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-30T15:22:09+00:00"
+        },
+        "message": "minor tweaks"
+      },
+      "stats": {
+        "total": 403,
+        "additions": 228,
+        "deletions": 175
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "ae4eba98ed230f404bda78ad4a49a8192030be93",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-29T16:19:21+00:00"
+        },
+        "message": "fix hidden top content in firefox"
+      },
+      "stats": {
+        "total": 52,
+        "additions": 2,
+        "deletions": 50
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "841b78d711e9baa10e8d4fda3473a355db8db248",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-29T15:57:34+00:00"
+        },
+        "message": "Implment area navigation"
+      },
+      "stats": {
+        "total": 76480,
+        "additions": 75972,
+        "deletions": 508
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "943f420e49abbbd46a1819d0ed914f9dbc3baba1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-25T22:27:20+00:00"
+        },
+        "message": "Add Portal Project"
+      },
+      "stats": {
+        "total": 25542,
+        "additions": 25536,
+        "deletions": 6
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "1482aa1623dc3e0b23ce16490f5fc15e9830d6da",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-24T15:37:26+00:00"
+        },
+        "message": "Setup batch pubishing for web apps\nAdd Prompt area to WebSpark.Admin"
+      },
+      "stats": {
+        "total": 2606,
+        "additions": 2314,
+        "deletions": 292
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "de722a8df222d44049e197d1ccf9c0d6650439ca",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-24T04:31:49+00:00"
+        },
+        "message": "Implement Alternative Web.Admin project"
+      },
+      "stats": {
+        "total": 69365,
+        "additions": 69350,
+        "deletions": 15
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "69f0fd243be147019164c42204a26f55db7c1e7f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-23T21:08:36+00:00"
+        },
+        "message": "Update JS and CSS build scripts"
+      },
+      "stats": {
+        "total": 30455,
+        "additions": 183,
+        "deletions": 30272
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "cab18f5a5cd5b6101b707ffead0be6d2bc63fc33",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-23T19:43:08+00:00"
+        },
+        "message": "remove unused files"
+      },
+      "stats": {
+        "total": 13896,
+        "additions": 6,
+        "deletions": 13890
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "498278d1c2e8f127b7e4e1d74bfca66c5e1cde38",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-23T19:29:41+00:00"
+        },
+        "message": "update db and ef"
+      },
+      "stats": {
+        "total": 1676,
+        "additions": 1656,
+        "deletions": 20
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "cc35d0c1681eb01de02e808872d5f9a9b9d7a6a2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-23T14:00:24+00:00"
+        },
+        "message": "minor clean-up"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 8,
+        "deletions": 3
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "52ca86cb342e88c59e2a53e732328db7cdf693b0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-22T16:16:59+00:00"
+        },
+        "message": "wip"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 8,
+        "deletions": 10
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2a567335df530374080620007e27edddca1aa611",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-19T20:37:31+00:00"
+        },
+        "message": "clean up"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "75a582a2f890714053d5771102e4cf335817f61a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-19T19:42:30+00:00"
+        },
+        "message": "standardize namespace"
+      },
+      "stats": {
+        "total": 630,
+        "additions": 312,
+        "deletions": 318
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "0d4d94602ddcc6c42fa8b8d047967c8c0c2fa1a5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-19T19:25:32+00:00"
+        },
+        "message": "standard logging"
+      },
+      "stats": {
+        "total": 50,
+        "additions": 11,
+        "deletions": 39
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "04639b4ff04b2f63d34def50ef0b442865980aca",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-19T19:16:33+00:00"
+        },
+        "message": "Add UserIdentity Project"
+      },
+      "stats": {
+        "total": 813,
+        "additions": 777,
+        "deletions": 36
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "44beda6513a4286c1a474ab0ebf9d96755c1189a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-19T17:21:12+00:00"
+        },
+        "message": "Set up Project DbContext Migration baselines."
+      },
+      "stats": {
+        "total": 7817,
+        "additions": 2187,
+        "deletions": 5630
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "b80ce6b5402a6c44b853867c26757ccdb1d4fb1e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-19T04:22:03+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 642,
+        "additions": 147,
+        "deletions": 495
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2cf36125ec516d3232d97128efd89d35aae4fc17",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-18T19:07:30+00:00"
+        },
+        "message": "update css for learnmore"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "705254173687899ff9e1c2426eaa88fb0a82b087",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-18T15:54:28+00:00"
+        },
+        "message": "Update Libraries\nFix issue with Mom AI Recipie generation"
+      },
+      "stats": {
+        "total": 163,
+        "additions": 84,
+        "deletions": 79
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "1b19ba0d2f269d2a250b6a98db9fbd630b30e256",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-12T13:16:55+00:00"
+        },
+        "message": "Standardize on WebSparkUser"
+      },
+      "stats": {
+        "total": 862,
+        "additions": 369,
+        "deletions": 493
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "898d8620cf0084c7202da1f23589a51fdea57f4b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-09T19:18:12+00:00"
+        },
+        "message": "standardize webspark"
+      },
+      "stats": {
+        "total": 84,
+        "additions": 6,
+        "deletions": 78
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "79f98b33d08315a02a62449d8035085d673d4f83",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-09T18:05:08+00:00"
+        },
+        "message": "merge 'spark' projects into single  repository"
+      },
+      "stats": {
+        "total": 50230,
+        "additions": 50163,
+        "deletions": 67
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "2910146b9ef03528bdf788a7f4bec7e4a7961156",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-03T03:03:33+00:00"
+        },
+        "message": "Update look and feel, add more prompspark"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 30,
+        "deletions": 30
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "951370371a66cb1b016d0bd190d9f341cb07bd7e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-14T14:10:04+00:00"
+        },
+        "message": "rework some of the ui"
+      },
+      "stats": {
+        "total": 128,
+        "additions": 57,
+        "deletions": 71
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "32cf1a95bd826604cd4b11267cc1288fe32f910d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-08T15:23:08+00:00"
+        },
+        "message": "test PromptSpark for recipe"
+      },
+      "stats": {
+        "total": 243,
+        "additions": 143,
+        "deletions": 100
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "c97dfc8d1b7d4b77c1b985bb707f8251111ca8cb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-08T14:08:45+00:00"
+        },
+        "message": "Update to UtcNow"
+      },
+      "stats": {
+        "total": 225,
+        "additions": 110,
+        "deletions": 115
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "a543a79bd29b62e5cf10207be06755e08bb7945a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-06T13:03:05+00:00"
+        },
+        "message": "wip"
+      },
+      "stats": {
+        "total": 33928,
+        "additions": 33598,
+        "deletions": 330
+      },
+      "repo": "WebSpark"
+    },
+    {
+      "sha": "fd196f0a171c0314e2c10cd75f4c1a74b88215cb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-04T15:03:36+00:00"
+        },
+        "message": "Create WebSpark"
+      },
+      "stats": {
+        "total": 6738,
+        "additions": 6120,
+        "deletions": 618
+      },
+      "repo": "WebSpark"
+    }
+  ]
+}

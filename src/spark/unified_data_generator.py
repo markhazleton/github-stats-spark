@@ -174,11 +174,10 @@ class UnifiedDataGenerator:
                 )
                 repo = Repository.from_github_repo(github_repo)
 
-                # Fetch language stats (pass push date for smart caching)
+                # Fetch language stats
                 repo.language_stats = self.fetcher.fetch_languages(
                     self.username, 
-                    repo_name,
-                    repo_pushed_at=github_repo.pushed_at
+                    repo_name
                 )
                 repo.language_count = len(repo.language_stats)
 

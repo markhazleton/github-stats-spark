@@ -1,6 +1,118 @@
 {
-  "timestamp": "2026-01-02T20:43:25.218331",
+  "timestamp": "2026-01-03T18:40:56.612352",
   "value": [
+    {
+      "sha": "514a660dabd8204025da884814695134b36e6f3d",
+      "message": "Implement intelligent cache invalidation based on repository push dates\n\nMajor Performance Improvements:\n- Add push_date-aware caching for commits, languages, and README\n- Only re-fetch data when repository is actually updated\n- Different granularity for different data types:\n  * Commit stats: Daily (invalidates on any push)\n  * Languages: Weekly (code changes less frequently)\n  * README: Monthly (docs rarely change)\n  * AI summaries: Weekly (already implemented)\n\nCache Strategy:\n- Unchanged repos: 100% cache hit (zero API calls)\n- Active repos: Only new commits fetched\n- Stale repos: Longer cache retention\n\nExpected Performance:\n- First run: ~5-7 minutes (cold cache)\n- Weekly run (few updates): <2 minutes (90%+ cache hits)\n- Daily run (unchanged): <1 minute (100% cache hits)\n\nChanges:\n- fetcher.py: Add repo_pushed_at parameter to caching methods\n- unified_data_generator.py: Pass push dates to all fetch calls\n- unified_report_workflow.py: Pass push dates for README/languages\n- cli.py: Pass push dates in analyze command\n- config/spark.yml: Document smart cache strategy\n- workflow: Enhanced cache status reporting with visual separators\n\nThis addresses the core issue: only ~5-10 repos update weekly,\nbut we were re-fetching all 50+ repos every time.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:55:23+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "68fe1eb1848099bb163bd10a9c5be071fc44c8c6",
+      "message": "Optimize caching for faster workflow execution\n\n- Change AI summary cache from daily to weekly granularity (reduces churn by 7x)\n- Add cache status logging in workflow for visibility\n- Initialize cache with config TTL (6 hours) instead of hardcoded 30 days\n- Add cache diagnostics step to show cache size and file count\n\nPerformance improvements:\n- Weekly cache keys prevent unnecessary AI regeneration every day\n- Config-driven TTL respects constitutional 6-hour requirement\n- Cache logging helps diagnose future performance issues\n\nExpected: Workflow should be <2 minutes on cached runs (was 7 minutes)",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:52:17+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "89c06b5f5d3e88a4288852e1e786ebd679b33bd8",
+      "message": "Fix GitHub Actions build: Handle frontend/public/data symlink properly\n\n- Remove tracked Windows file that breaks Linux builds\n- Add workflow step to create symlink before build\n- Add explicit data copy step after build\n- Configure Vite to handle missing symlink gracefully\n- Add frontend/public/data to .gitignore\n- Document setup in frontend/public/README.md\n\nFixes: ENOENT error when Vite tries to copy public/data directory",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:48:59+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "250637805e0a04ca54a1413e0b0e75e0618fe3dc",
+      "message": "feat: Update Node.js version to 22 in GitHub Actions workflow",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:35:48+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "b680090c118ae9bac4fb4ad0669ea2763d0fbcfc",
+      "message": "Add new assets and features for GitHub Stats Spark dashboard\n\n- Implemented new visualization components for repository metrics.\n- Added service worker for offline functionality and asset precaching.\n- Created a custom 404 page for better user experience.\n- Included manifest and favicon for PWA support.\n- Established sitemap and robots.txt for SEO optimization.\n- Added data directory for repository data management.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:24:11+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "920782f57d36f6b4c5d0b54674098c8d892fdd9e",
+      "message": "docs: Add feature closeout documentation for mobile-first redesign",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:07:13+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "46c388fce13ca2dc5b7bce1c129441ede8ab7dca",
+      "message": "feat: Complete mobile-first redesign implementation\n\n\u2728 Features\n- Mobile-first responsive design (320px-768px optimized)\n- 44x44px touch targets (WCAG 2.5.5 AAA compliant)\n- Offline-first with service worker + IndexedDB\n- WCAG 2.1 Level AA accessibility compliance\n- Keyboard navigation with skip links\n- Reduced motion support\n\n\ud83d\udce6 Bundle Optimization\n- Chart.js migration (-26KB from Recharts)\n- JS: 157KB gzipped (within 170KB budget)\n- CSS: 14KB gzipped (within 50KB budget)\n\n\ud83c\udfaf User Stories Completed (6/6)\n- US1: Mobile dashboard browsing\n- US2: Touch-optimized comparison\n- US3: Progressive chart visualization\n- US4: Bottom sheet navigation\n- US5: Offline-first data access\n- US6: Accessibility & reduced motion\n\n\ud83e\uddf9 Cleanup\n- Removed intermediate analysis documents\n- Updated tasks.md with completion status\n- Added comprehensive documentation\n\nTasks: 115/118 (97%) complete\nBuild: \u2705 Successful (5.16s)\nStatus: Production ready",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:05:15+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "b31e28df72ff05e73ae8168ff240df4f51f24779",
+      "message": "feat: Add ErrorBoundary component for graceful error handling\n\n- Implemented ErrorBoundary to catch JavaScript errors in the component tree.\n- Added retry mechanism with automatic retry after 30 seconds.\n- Included user-friendly error messages and detailed error information for development.\n- Styled the error boundary with responsive design.\n\nfeat: Create EmptyState component for displaying no content scenarios\n\n- Developed EmptyState component to show when no items are found.\n- Included customizable icon, title, description, and action button.\n- Ensured responsive design for various screen sizes.\n\nfeat: Introduce TabBar component for mobile navigation\n\n- Added TabBar for fixed bottom navigation on mobile devices.\n- Included three tabs: Dashboard, Compare, and Visualizations with active state highlighting.\n- Implemented badge support for notifications/counts.\n- Ensured compatibility with safe area insets for notched devices.\n\nfeat: Add visualization components for data representation\n\n- Created site-Dma2dNVo.js for scatter plot visualization of repository data.\n- Developed site-nBTfPpo_.js for repository selection comparison UI.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:17:01+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "0a1fd15d556d08ce260ec3d48e5d57948aba2886",
+      "message": "feat: Preload critical data file for improved performance",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:02:39+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "71f5429fa3e01185658c814626baee7c937f4d6e",
+      "message": "Add new components for repository detail and comparison views\n\n- Implemented RepositoryDetail component for displaying detailed information about a repository, including stats, summary, and commit activity.\n- Created ComparisonView component to compare multiple repositories based on various metrics such as stars, forks, and commit history.\n- Introduced Chart component for visualizing data with responsive design and improved tooltip functionality.\n- Added necessary styles and class names for better UI representation.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:00:25+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "37fff3652aaa52469f9dbc772e5266675ce93cc8",
+      "message": "feat: Add ChartTypeSelector, ChartWrapper, and PieChart components with responsive design and touch interactions\n\n- Implemented ChartTypeSelector for selecting chart types with haptic feedback.\n- Created ChartWrapper for responsive chart rendering with loading, error, and empty states.\n- Developed PieChart component for visualizing data in pie/doughnut format with customizable options.\n- Introduced useBottomSheet and useChart hooks for managing bottom sheet state and Chart.js initialization.\n- Added useGesture hook for touch gesture detection with haptic feedback support.\n- Enhanced performance and usability with responsive sizing and touch interactions.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T21:52:41+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "f0cbce9e00087267c1bd4bd2b8bda4b062bcd75a",
+      "message": "feat: Add mobile-first components and utilities for improved touch interactions and performance\n\n- Introduced TouchTarget component with minimum touch size and ripple effect.\n- Created ViewportContext for responsive design handling.\n- Implemented useMediaQuery and useNetworkStatus hooks for media queries and network status detection.\n- Added mobile breakpoints and gesture feedback styles for enhanced user experience.\n- Developed performance utilities for lazy loading, resource preloading, and critical CSS injection.\n- Established safe area styles to accommodate device notches and home indicators.\n- Included reduced motion support for accessibility compliance.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T21:30:52+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "d4e5f8e0849a3a8c28e88d06a00efda2ec9a9530",
+      "message": "Add templates for project documentation and task management\n\n- Created agent-file-template.md for development guidelines.\n- Added checklist-template.md for feature-specific checklists.\n- Introduced plan-template.md for implementation planning.\n- Developed spec-template.md for feature specifications.\n- Established tasks-template.md for organizing implementation tasks by user story.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T20:58:01+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "2519418a6146d423b34c1558ac6453b222439764",
+      "message": "Add mobile-first redesign task list with phases and user stories for frontend development",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T18:40:35+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "09902541bd4b5a496dc0e516289c78b9c2556c60",
+      "message": "Add mobile-first specification and quality checklist for redesign",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T17:54:06+00:00",
+      "repo": "github-stats-spark"
+    },
+    {
+      "sha": "618ea9a022ab06a0087c05478ae5313d2561e89e",
+      "message": "Refactor code structure and remove redundant code blocks for improved readability and maintainability",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T03:13:40+00:00",
+      "repo": "github-stats-spark"
+    },
     {
       "sha": "08a0b67fb7ad60230ac7e4cb8fdbfd48036cb601",
       "message": "Fix: Use npm install instead of npm ci (no package-lock.json)",

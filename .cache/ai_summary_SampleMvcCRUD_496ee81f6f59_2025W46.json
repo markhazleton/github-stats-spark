@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-03T18:24:00.743548",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nSampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern ASP.NET Core development techniques. The project showcases diverse architectural approaches including traditional MVC, Razor Pages, and Single Page Application (SPA) styles, with robust features like Bootswatch theme switching, REST API endpoints, and comprehensive CI/CD workflows via GitHub Actions and Azure deployments. Leveraging technologies such as Entity Framework Core, Swagger/OpenAPI, and Bootstrap 5, the repository provides a flexible, well-structured template for building scalable web applications with strong separation of concerns, dependency injection, and modern UI/UX design principles. Key differentiators include its multi-deployment strategy (IIS, Azure App Service, Docker), extensive theming capabilities, and a focus on demonstrating best practices across different .NET implementation patterns. Primarily targeted at .NET developers, software architects, and technical learners seeking a practical, production-ready reference implementation of enterprise web application design.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-03T18:24:00.743531",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2158,
+    "confidence_score": 90
+  }
+}

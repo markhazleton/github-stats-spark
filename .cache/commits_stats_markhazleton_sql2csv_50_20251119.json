@@ -1,0 +1,805 @@
+{
+  "timestamp": "2026-01-03T18:26:54.097351",
+  "value": [
+    {
+      "sha": "57c69ade8ec0e216c4d934f02353f9e39d1a8f75",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-15T13:50:41+00:00"
+        },
+        "message": "Enhance file path handling in HomeController\n\nUpdated file path and name management to prioritize newer TempData keys while ensuring backward compatibility with legacy keys. Improved data retrieval from multiple sources, including session storage. Added comments for clarity and updated logging statements for consistency."
+      },
+      "stats": {
+        "total": 50,
+        "additions": 42,
+        "deletions": 8
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "71c8d4b63be2b60a9c30a51c20b4c83a07095453",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-08T01:37:52+00:00"
+        },
+        "message": "Refactor views to focus on database file analysis\n\n- Updated AnalyzeTable.cshtml to handle null statistics gracefully.\n- Changed AnalyzeUnified.cshtml to redirect to database analysis for database files.\n- Modified Index.cshtml to clarify support for database files only.\n- Adjusted ManageFiles.cshtml to reflect the focus on database files.\n- Revised UnifiedData views to emphasize database table analysis and removed CSV references."
+      },
+      "stats": {
+        "total": 1958,
+        "additions": 94,
+        "deletions": 1864
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "ddfb5e1355c3979d193011ad1c957d216ade610e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T22:04:44+00:00"
+        },
+        "message": "Refactor: Move PersistedFileService and related models to Sql2Csv.Core\n\n- Moved PersistedFileService.cs to Sql2Csv.Core/Services for better separation of concerns.\n- Created FormFileWrapper to wrap IFormFile for web-specific file handling.\n- Updated WebViewModels to utilize core models and maintain web-specific logic.\n- Established interfaces for file operations to decouple web dependencies from core logic.\n- Implemented a refactoring plan to streamline the web project and enhance reusability of core services."
+      },
+      "stats": {
+        "total": 2738,
+        "additions": 1780,
+        "deletions": 958
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "59fad8f72a3a64df7edef85f8af85b0e161b597b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T19:06:02+00:00"
+        },
+        "message": "Add LoggingSchemaReportSink to service registration and update ApplicationServiceTests for null checks"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 18,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "a73282eb5689a988698efd2786dc7cb913d32791",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T18:49:02+00:00"
+        },
+        "message": "Refactor services and models for improved clarity\n\nSignificant refactoring of the codebase to enhance organization and clarity. Key changes include:\n\n- Moved classes to `Sql2Csv.Core.Models` namespace for better structure.\n- Replaced `CsvFileService` with `DataSpark.Web.Services.CsvFileService` in controllers.\n- Introduced `IDataExportService` and `DataExportService` for clearer data export functionalities.\n- Updated chart services to use core models, removing duplicates.\n- Modified controllers to align with the new service structure.\n- Adjusted ViewModels to utilize new core models.\n- Removed legacy code to streamline the codebase.\n- Improved error handling in `OpenAIFileAnalysisService`.\n- Updated UI components and Razor views to reflect new data models.\n- Enhanced JavaScript functions for better error handling and user experience."
+      },
+      "stats": {
+        "total": 1099,
+        "additions": 651,
+        "deletions": 448
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "ae1a4aa4194ce71adfccf01d55a6d3986af6928d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T17:19:57+00:00"
+        },
+        "message": "Refactor CSV processing and export services; integrate new core services and update controllers"
+      },
+      "stats": {
+        "total": 476,
+        "additions": 347,
+        "deletions": 129
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "fb259ab2e301b36a6928b8c185846a98f1556d45",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T17:06:11+00:00"
+        },
+        "message": "Implement chart configuration services and validation logic\n\n- Added ChartService for managing chart configurations with CRUD operations.\n- Introduced ChartValidationService for reusable validation logic on chart configurations.\n- Created FileSystemChartConfigurationRepository for file-based storage of chart configurations.\n- Defined IChartConfigurationRepository interface for chart configuration data access.\n- Established IChartDataService and IChartValidationService interfaces for data processing and validation.\n- Developed CsvFileService for handling CSV file operations and reading data.\n- Implemented CsvProcessingUtils for utility functions related to CSV data processing.\n- Added necessary models and data structures for chart configurations and validation results."
+      },
+      "stats": {
+        "total": 5751,
+        "additions": 2087,
+        "deletions": 3664
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "29a83f4f7316ee40b00d72af2ba120388d52cb0f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T14:55:53+00:00"
+        },
+        "message": "Implement schema report sinks and fix CSV file management\n\n- Added ISchemaReportSink interface for schema report handling.\n- Implemented LoggingSchemaReportSink for logging schema reports.\n- Created FileSchemaReportSink to persist schema reports to disk.\n- Developed CompositeSchemaReportSink to aggregate multiple sinks.\n- Updated ServiceCollectionExtensions to register new schema report sinks.\n- Fixed table count logic in HomeController to properly handle CSV files.\n- Enhanced UI to be file-type agnostic, updating terminology and display.\n- Added test CSV file for persistence testing."
+      },
+      "stats": {
+        "total": 99494,
+        "additions": 99429,
+        "deletions": 65
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "57caac476ace24c0b7fda912b487f906d9de36e5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-30T21:02:57+00:00"
+        },
+        "message": "Add Unified Analysis and Data View pages with enhanced functionality\n\n- Created UnifiedAnalysis.cshtml for detailed analysis of data sources, including summary statistics, column analysis, and export options.\n- Implemented UnifiedDataView.cshtml for real-time data viewing with search, filtering, and pagination capabilities.\n- Added JavaScript functions for exporting analysis and data, toggling column visibility, and refreshing data.\n- Introduced modal for column visibility settings in the data view.\n- Included sample CSV files (test.csv and test_data.csv) for testing purposes."
+      },
+      "stats": {
+        "total": 4370,
+        "additions": 3390,
+        "deletions": 980
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "325d439748cfaaf69e0632143f3b0401969ac9b6",
+      "commit": {
+        "author": {
+          "name": "github-actions",
+          "date": "2025-08-29T22:14:47+00:00"
+        },
+        "message": "chore: update coverage badge & benchmark baseline"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "4e2d3d8cfc881797209d26783849d559406230f4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-29T22:12:51+00:00"
+        },
+        "message": "Implement unified data handling for database and CSV files\n\n- Added UnifiedAnalysisViewModel and related view models for unified analysis results.\n- Created IUnifiedWebDataService interface and UnifiedWebDataService implementation for handling file uploads, analysis, and data retrieval.\n- Developed AnalyzeUnified.cshtml view for displaying analysis results with support for both CSV and database files.\n- Created ViewUnifiedData.cshtml view for displaying data in a table format with AJAX support.\n- Implemented methods for file type determination, data source retrieval, and CSV export functionality.\n- Enhanced error handling and logging throughout the service."
+      },
+      "stats": {
+        "total": 3584,
+        "additions": 3521,
+        "deletions": 63
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "9d247c6204337b076c719a8eaf87ebbab5c80178",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-12T01:09:59+00:00"
+        },
+        "message": "fix: remove Azure App Service Linux port configuration"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 0,
+        "deletions": 4
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "ca8132179f59757d1d120c18215609fb3973576a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T21:16:59+00:00"
+        },
+        "message": "remove publish action yml"
+      },
+      "stats": {
+        "total": 161,
+        "additions": 0,
+        "deletions": 161
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "d652f16e28e156ef4abe52649290c2a9da9fc02b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T20:55:48+00:00"
+        },
+        "message": "fix: configure app to listen on correct port for Azure App Service Linux"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "d0a7805ed322f069168a2883ccb89903495e5052",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T20:41:54+00:00"
+        },
+        "message": "fix: improve Azure deployment workflow\n\n- Add Node.js setup and npm build steps for frontend assets\n- Remove conflicting deployment from CI workflow\n- Add manual test deployment workflow\n- Fix build order with proper restore and no-build flags\n- Ensure Tailwind CSS and Webpack assets are built during deployment"
+      },
+      "stats": {
+        "total": 148,
+        "additions": 96,
+        "deletions": 52
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "0363a802d9489194f10a926bfc070b4eb9952169",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T20:05:31+00:00"
+        },
+        "message": "feat(css): add new utility classes for width, alignment, and background opacity"
+      },
+      "stats": {
+        "total": 15,
+        "additions": 14,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "8abc552a6b3c7efca7895bf5104b66c042127823",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T19:53:58+00:00"
+        },
+        "message": "fix(web): register DistributedMemoryCache for Session to prevent 500 on App Service"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "b828624405ec24575c6eb19d0c922a2a4f51dc21",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T19:26:44+00:00"
+        },
+        "message": "refactor: update build and publish steps in CI workflows for Azure deployment"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 39,
+        "deletions": 29
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "97f8bb915d00460d4c7f0875e50f1a2f70109f19",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T19:12:10+00:00"
+        },
+        "message": "chore: update deployment paths in CI workflow for consistency"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "1b642edf8137a4dcab3d1c15b399e60955ef8611",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T19:02:13+00:00"
+        },
+        "message": "chore: update CI/CD pipeline configuration and add coverage XML handling"
+      },
+      "stats": {
+        "total": 67,
+        "additions": 61,
+        "deletions": 6
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "67596739bfa30445447d8ee13c9d9a9496a6bfc8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T18:54:36+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 65,
+        "additions": 65,
+        "deletions": 0
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "f8fd713046d731d0f8c82e3204ae2bf7cb300bbf",
+      "commit": {
+        "author": {
+          "name": "github-actions",
+          "date": "2025-08-11T18:50:10+00:00"
+        },
+        "message": "chore: update coverage badge & benchmark baseline"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "4e46a91e9842cda07604d6b3dd813b2d4768a3d9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T18:49:17+00:00"
+        },
+        "message": "Add update-metrics.ps1 script for automated testing and coverage reporting\n\n- Implemented a PowerShell script to streamline the process of running tests with coverage, generating coverage badges, running benchmarks, and updating baseline reports.\n- Added parameters for launching the web app and skipping the build process.\n- Included detailed logging for each step of the process to enhance visibility and error handling.\n- Integrated coverage badge generation based on test results and coverage metrics.\n- Ensured benchmark results are copied to the appropriate baseline directory for future reference."
+      },
+      "stats": {
+        "total": 3928,
+        "additions": 3885,
+        "deletions": 43
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "defcdc45e9271a83bffb3e89078f0c77e77d3875",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T17:34:03+00:00"
+        },
+        "message": "chore(web): use PartialAsync instead of Partial to avoid deadlock warning"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "42b6d415b1e6faac409141e01a84a9bf5c2f6c2d",
+      "commit": {
+        "author": {
+          "name": "github-actions",
+          "date": "2025-08-11T17:03:39+00:00"
+        },
+        "message": "chore: update coverage badge"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 1,
+        "deletions": 6
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "93fb3994c3938d2b19e95c77a41f306fd8e567d4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T17:02:49+00:00"
+        },
+        "message": "chore: remove redundant cp in coverage badge step"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "7404e414cfc6898f775d16c90b0d41e8dc5af1b5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T17:00:58+00:00"
+        },
+        "message": "fix: improve path normalization for SQLite file handling on Unix"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "82ef9f8ab55c1d2f781293c7042b274464f5fac0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T17:00:32+00:00"
+        },
+        "message": "fix: normalize path separators for FromSqliteFile on Unix"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 7,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "7355a5c009298deb992f437c39b131d3f28631cf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T16:57:30+00:00"
+        },
+        "message": "fix: correct console project path casing in solution for Linux CI"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "f6eaa79cde89f37c5595f11a36feae9656ecc012",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T16:45:10+00:00"
+        },
+        "message": "Add dynamic database table component with sorting, filtering, and pagination\n\n- Implemented a new DatabaseTableComponent using AlpineJS and TailwindCSS for enhanced table functionality.\n- Added features for searching, sorting, and pagination of table data.\n- Integrated row details modal for viewing individual record information.\n- Created utility functions for exporting table data to CSV format.\n- Established a new solution file and JavaScript file for table components."
+      },
+      "stats": {
+        "total": 4546,
+        "additions": 3045,
+        "deletions": 1501
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "68da14d95614e738805f2453d5965ddc63112e84",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T13:51:17+00:00"
+        },
+        "message": "Implement table filtering for CSV export and enhance upload functionality; update README and add tests for new features"
+      },
+      "stats": {
+        "total": 631,
+        "additions": 585,
+        "deletions": 46
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "d09009dd114d400fc6e599b691110ade83ff74d7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T13:21:59+00:00"
+        },
+        "message": "Enhance CI workflow: enforce coverage regression policy, commit coverage badge, and update README for coverage badge integration; add optional parameters for CSV export and schema report formats; implement JSON and Markdown output for schema reports; add issue list for project tracking."
+      },
+      "stats": {
+        "total": 468,
+        "additions": 407,
+        "deletions": 61
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "d2bdd439b13b12c4da2b6f6b6a56798c873ef6c3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T12:48:35+00:00"
+        },
+        "message": "Update README.md for clarity and feature overview; add discover command to CLI; update test project dependencies; implement CI workflow for build and coverage reporting"
+      },
+      "stats": {
+        "total": 385,
+        "additions": 178,
+        "deletions": 207
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "895b8f0960fa9cc4e8fd70d690ea58850f339d86",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T19:37:03+00:00"
+        },
+        "message": "Enhance README.md: Revamp features section, add live demo details, and improve console application showcase"
+      },
+      "stats": {
+        "total": 603,
+        "additions": 509,
+        "deletions": 94
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "2b6af46be902f8b60808d16ebc5168b1d827e33a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T18:47:14+00:00"
+        },
+        "message": "Add table analysis view models and corresponding Razor view for table analysis results\n\n- Implemented TableAnalysisViewModel, TableStatisticsViewModel, and ColumnAnalysisViewModel to encapsulate analysis data.\n- Created a new Razor view (AnalyzeTable.cshtml) to display table analysis results, including summary statistics and detailed column analysis.\n- Integrated DataTables for server-side processing of table data with search and pagination features.\n- Added export functionality to download analysis results as a CSV file.\n- Included error handling for analysis failures with user-friendly messages."
+      },
+      "stats": {
+        "total": 3093,
+        "additions": 2496,
+        "deletions": 597
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "fb4659e38fd05d03163e511538b072ea506d215d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T16:01:36+00:00"
+        },
+        "message": "Implement file management features: add file upload, selection, and management UI; create PersistedFileService for handling database files; add models for persisted files and file management; update layout to include Manage Files link."
+      },
+      "stats": {
+        "total": 1281,
+        "additions": 1180,
+        "deletions": 101
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "ba6e6c62d588af42c064105880b2fe39fa28c8d6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T14:24:03+00:00"
+        },
+        "message": "Add initial styles.bundle.js file to the project"
+      },
+      "stats": {
+        "total": 8001,
+        "additions": 8001,
+        "deletions": 0
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "001c2c9072b08669df3609855d8e21ea5884d491",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T13:49:28+00:00"
+        },
+        "message": "Add unit tests for services: CodeGenerationService, DatabaseDiscoveryService, ExportService, and SchemaService\n\n- Implement tests for CodeGenerationService to validate constructor behavior, DTO class generation, and error handling.\n- Create tests for DatabaseDiscoveryService to ensure proper database discovery functionality and logging.\n- Develop tests for ExportService to verify CSV export functionality, including handling of various configurations and edge cases.\n- Add tests for SchemaService to check table retrieval, schema reporting, and cancellation token handling."
+      },
+      "stats": {
+        "total": 2591,
+        "additions": 2530,
+        "deletions": 61
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "d9ecc8f36d3f93b912fea0b63369ce8ec6127ddb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T12:50:41+00:00"
+        },
+        "message": "chore: Remove outdated README and LICENSE files; add new CONTRIBUTING guidelines"
+      },
+      "stats": {
+        "total": 369,
+        "additions": 99,
+        "deletions": 270
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "23180154d1f8813a2d37b9df4303bf3e09a30791",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T12:48:16+00:00"
+        },
+        "message": "Refactor and enhance SQL to CSV application structure\n\n- Updated `.gitignore` to include additional patterns for IDE and temporary files.\n- Refactored `ApplicationService.cs` to orchestrate export operations.\n- Introduced `Sql2CsvOptions.cs` for application configuration options.\n- Updated `IServices.cs` to define interfaces for core services.\n- Created `DatabaseConfiguration.cs` for database connection settings.\n- Added `DatabaseModels.cs` to define data models used in the application.\n- Implemented `CodeGenerationService.cs` for generating DTO classes.\n- Created `DatabaseDiscoveryService.cs` to discover database files.\n- Implemented `ExportService.cs` for exporting data to CSV files.\n- Created `SchemaService.cs` for managing database schema operations.\n- Updated `Sql2Csv.Tests.csproj` to include references to the new core project.\n- Added `UnitTest1.cs` as a placeholder for unit tests.\n- Modified `Sql2Csv.csproj` to reference the new core library.\n- Updated solution file to include `Sql2Csv.Core` and `Sql2Csv.Tests` projects."
+      },
+      "stats": {
+        "total": 641,
+        "additions": 610,
+        "deletions": 31
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "3f45f68e518ed52f6e0411d05df5e2908a0d5a7c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-05T12:21:54+00:00"
+        },
+        "message": "feat: Implement SQL to CSV Exporter with database discovery, CSV export, schema reporting, and code generation features\n\n- Added configuration options for the application in Sql2CsvOptions.cs\n- Created interfaces for database discovery, export, schema operations, and code generation\n- Developed models for database configuration, export results, column info, and table info\n- Implemented services for database discovery, exporting data to CSV, and generating code from database schemas\n- Established a command factory for CLI commands including export, schema reporting, and code generation\n- Integrated structured logging and JSON-based configuration\n- Added README documentation detailing features, usage, and architecture\n- Created unit test project with necessary dependencies\n- Configured appsettings.json for application settings and logging"
+      },
+      "stats": {
+        "total": 2753,
+        "additions": 1725,
+        "deletions": 1028
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "70866a68f2def4283e0374b4ea3d2259c12f5341",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T03:27:26+00:00"
+        },
+        "message": "update to net 9"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 2,
+        "deletions": 4
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "3960b869c38d8c192dd94711959053b236898d18",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-20T22:48:14+00:00"
+        },
+        "message": "code clean up"
+      },
+      "stats": {
+        "total": 120,
+        "additions": 49,
+        "deletions": 71
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "ef27665d4f31b29590a6896d9b96937384deb386",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-05T03:41:17+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "1aaee0a731422a8bea948a059e5a2daafae7074b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-09T18:11:45+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "4beeaa09d3e05b8e7bb3abd81929875c3b495cb8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T14:06:48+00:00"
+        },
+        "message": "update solutions"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "e574d4c256f69cf63214190e6d147cb4bad3979b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T14:05:15+00:00"
+        },
+        "message": "Merge pull request #1 from markhazleton/dependabot/nuget/System.Data.SqlClient-4.8.6\n\nBump System.Data.SqlClient from 4.8.5 to 4.8.6"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "a31d09e2d726935e98a5413b77268956a6150e03",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T14:04:10+00:00"
+        },
+        "message": "merge from main"
+      },
+      "stats": {
+        "total": 1696,
+        "additions": 1054,
+        "deletions": 642
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "066109ae6956b8a52557f8cc65879ab2059416b0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T14:03:15+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "sql2csv"
+    },
+    {
+      "sha": "3592cb5e57005135303d07b97d5eb32a080faef6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-05T19:20:33+00:00"
+        },
+        "message": "Update read me"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 18,
+        "deletions": 2
+      },
+      "repo": "sql2csv"
+    }
+  ]
+}

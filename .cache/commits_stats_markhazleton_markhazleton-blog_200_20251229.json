@@ -1,0 +1,3205 @@
+{
+  "timestamp": "2026-01-03T18:15:55.816285",
+  "value": [
+    {
+      "sha": "a39d2a2919a104abdfe38c691ba640be17dedc9d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-29T02:04:15+00:00"
+        },
+        "message": "Refactor estimation template to enhance clarity and usability; introduce three-pillar framework (Innovation, Scope, People) for quick estimates, and provide detailed scoring and multiplier guidelines. Add JSON/YAML templates for tooling integration and streamline communication with stakeholders through structured templates and examples."
+      },
+      "stats": {
+        "total": 9461,
+        "additions": 4774,
+        "deletions": 4687
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4a50986fca3cf740830c74cc12a6c4420e605791",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-28T23:22:47+00:00"
+        },
+        "message": "Refactor article content and update navigation links in test-driving-githubs-spec-kit.pug; enhance security policies in layout files; update last build dates in RSS and sitemap; optimize project change frequencies; improve static web app configuration for content security."
+      },
+      "stats": {
+        "total": 1849,
+        "additions": 1133,
+        "deletions": 716
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "d2985b581b9bea102ac9666d2bda15ddce9f5414",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-16T19:47:02+00:00"
+        },
+        "message": "Update lastBuildDate and lastmod timestamps in RSS and sitemap XML files"
+      },
+      "stats": {
+        "total": 2817,
+        "additions": 1057,
+        "deletions": 1760
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "7b67a16077dd79659c8fda95c06abbb15e3ccfdb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T19:23:01+00:00"
+        },
+        "message": "Update version to 9.0.6 and adjust last build dates in various documents and RSS feeds"
+      },
+      "stats": {
+        "total": 772,
+        "additions": 386,
+        "deletions": 386
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5c39ec7c676d0602636c1ea0f22f9aa6eea4dde7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T19:10:15+00:00"
+        },
+        "message": "Update RSS and Sitemap lastBuildDate and lastmod timestamps to reflect recent changes"
+      },
+      "stats": {
+        "total": 2202,
+        "additions": 593,
+        "deletions": 1609
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "76b9a09832aace9ff8dcb43d9ee3d6dcea871dbc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T19:09:42+00:00"
+        },
+        "message": "Update Content Security Policy for Google Analytics support; clarify precedence of Azure Static Web Apps headers"
+      },
+      "stats": {
+        "total": 1829,
+        "additions": 1577,
+        "deletions": 252
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "db898143d49f8abe11d529ddc6c1f7680b2705ca",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T19:02:32+00:00"
+        },
+        "message": "Update styles and scripts to version 9.0.4; synchronize sitemap and RSS feed last modified dates; enhance versioning script to update package.json"
+      },
+      "stats": {
+        "total": 818,
+        "additions": 415,
+        "deletions": 403
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8417603e2279bc361179a4b9b9c66fa5faf56e04",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T18:58:24+00:00"
+        },
+        "message": "Update build version to 1.0.25 and enhance typeahead debugging analysis with detailed investigation notes for Azure Static Web Apps issue"
+      },
+      "stats": {
+        "total": 1198,
+        "additions": 801,
+        "deletions": 397
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1fdc17ea1a04b95b278ea20a6282b3bd97ed73d0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T18:37:59+00:00"
+        },
+        "message": "Add YouTube embed best practices and critical configuration requirements to documentation"
+      },
+      "stats": {
+        "total": 116,
+        "additions": 116,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "0f209b4c4dcef60ceaa67db7508ce5c427208ab2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T18:35:37+00:00"
+        },
+        "message": "Update YouTube embed attributes and Content Security Policy across multiple files for improved security and compliance with best practices. Added referrer policy to video embeds and adjusted CSP directives to enhance privacy and functionality. Updated last build dates in RSS and sitemap files to reflect recent changes. Added comprehensive documentation on YouTube embedding best practices."
+      },
+      "stats": {
+        "total": 1721,
+        "additions": 1205,
+        "deletions": 516
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f95e5d9fec950c5b2c2fc335d2b118697e78eaa4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T18:17:23+00:00"
+        },
+        "message": "Update Content Security Policy and version numbers across multiple files\n\n- Enhanced Content Security Policy in HTML and Pug files to include markhazleton.com.\n- Updated version numbers in modern-styles.css, scripts.js, and footer sections to v1.0.22.\n- Adjusted lastBuildDate in RSS feeds and sitemap to reflect the latest build time."
+      },
+      "stats": {
+        "total": 980,
+        "additions": 490,
+        "deletions": 490
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "16f7730e7e0e204c6b8928932c24df81a2f267df",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T18:08:31+00:00"
+        },
+        "message": "Update Content Security Policy and version numbers across multiple HTML and Pug files; adjust last build dates in RSS and sitemap XML files."
+      },
+      "stats": {
+        "total": 980,
+        "additions": 490,
+        "deletions": 490
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "fd93085f4fc0a2a4dad9da1608e2eee40b1bb6d4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T17:56:31+00:00"
+        },
+        "message": "Update version numbers and last build dates across multiple documents to v1.0.19 and adjust timestamps for RSS and sitemap files."
+      },
+      "stats": {
+        "total": 766,
+        "additions": 383,
+        "deletions": 383
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "15c62aa5c5f3d3a22a96d4f27bbb9bbbd4121eab",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T17:51:12+00:00"
+        },
+        "message": "Update Content Security Policy and version numbers across multiple HTML and XML files\n\n- Enhanced Content Security Policy in task-list-processor.html, trivia-spark-development.html, using-chatgpt-for-developers.html, web-project-mechanics.html, modern-layout.pug, and performance-optimized-layout.pug to include additional sources for scripts, styles, and images.\n- Updated version numbers in HTML files for modern-styles.css and scripts.js from v1.0.17 to v1.0.18.\n- Modified lastBuildDate in articles-rss.xml and projects-rss.xml to reflect the latest build time.\n- Updated lastmod timestamps in sitemap.xml to match the new build time.\n- Adjusted Content Security Policy in staticwebapp.config.json for consistency with other files."
+      },
+      "stats": {
+        "total": 980,
+        "additions": 490,
+        "deletions": 490
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "efeb923dc9d2ab42ea9917b658b28163994ff99f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T17:44:26+00:00"
+        },
+        "message": "Update styles and scripts to version 1.0.17; modify RSS and sitemap last build dates"
+      },
+      "stats": {
+        "total": 1287,
+        "additions": 654,
+        "deletions": 633
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "60638888a6462acbf9677ef679356f927e4e6a5e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T17:39:13+00:00"
+        },
+        "message": "Merge: Add both Cloudflare Insights and Vimeo support to CSP"
+      },
+      "stats": {
+        "total": 3111,
+        "additions": 1447,
+        "deletions": 1664
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "d189b5c7a7ee8eef18e92b5ed9fce2f1de0736b5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-15T17:35:23+00:00"
+        },
+        "message": "Update Content Security Policy to include Cloudflare Insights and Vimeo support"
+      },
+      "stats": {
+        "total": 390,
+        "additions": 195,
+        "deletions": 195
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "09f2a2585136ace37d13933ac89f5269e349c3ae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-13T15:39:45+00:00"
+        },
+        "message": "Update article content and improve documentation structure\n\n- Revised introduction in \"test-driving-githubs-spec-kit.pug\" for clarity and engagement.\n- Updated table of contents to reflect new sections and improved navigation.\n- Enhanced executive summary with clearer explanations of documentation challenges and solutions.\n- Reorganized sections to better highlight key learnings and outcomes from using GitHub Spec Kit.\n- Adjusted feedback loop section to emphasize the importance of AI in maintaining documentation accuracy.\n- Added detailed descriptions of experiments conducted with Spec Kit, including specific goals and results.\n- Updated RSS feed and sitemap with new last modified dates and adjusted change frequencies for better SEO."
+      },
+      "stats": {
+        "total": 2655,
+        "additions": 890,
+        "deletions": 1765
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "7b8ba2db9203464cf0f267eef35b71858f8da33e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-25T13:48:31+00:00"
+        },
+        "message": "feat: Implement auto-incrementing build version system with cache busting\n\n- Added build version management with `build-version.json` to track version, build date, and build number.\n- Created `increment-version.js` to handle version increments on each build.\n- Updated build scripts to increment version before executing build tasks.\n- Integrated versioning into PUG templates for consistent display across all pages.\n- Implemented cache busting for CSS and JavaScript files using version query parameters to ensure browsers load the latest assets.\n- Enhanced footer in layouts to display current version and build date.\n- Updated RSS and sitemap files with new last build dates."
+      },
+      "stats": {
+        "total": 1525,
+        "additions": 1098,
+        "deletions": 427
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a93205050855917cb64f3be1654ddabffc07f6ae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-25T13:25:34+00:00"
+        },
+        "message": "Update content security policy, RSS feeds, and sitemap timestamps; enhance search engine functionality\n\n- Modified the Content Security Policy in `index.html` to include Cloudflare insights.\n- Updated `lastBuildDate` in `rss.xml` and `projects-rss.xml` to reflect the latest build time.\n- Adjusted `lastmod` dates in `sitemap.xml` for consistency across project URLs.\n- Changed the change frequency and priority for the `reactspark` project in `sitemap.xml`.\n- Added CORS headers for `search-index.json` in `staticwebapp.config.json`.\n- Improved the search engine implementation in `search-engine.js` to ensure global access."
+      },
+      "stats": {
+        "total": 198,
+        "additions": 110,
+        "deletions": 88
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5c9cfba53b650739bf1443089a18c0412ec6dca2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-24T15:43:52+00:00"
+        },
+        "message": "Add searchIndex task to build pipeline configuration"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "70a22d274cd7610964bcf334b74d72b435ad042e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-24T15:42:44+00:00"
+        },
+        "message": "Add search-index.json and fix CSP for Cloudflare Insights"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "d7a8233f18b9f5172c4af8ed8285040e09bb862a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-24T15:28:13+00:00"
+        },
+        "message": "Fix articles.json path - change search-index.json to articles.json"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "c469a82c680e011e656e7f47272121b9d0e44400",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-24T15:17:53+00:00"
+        },
+        "message": "Fix Safari and Android browser date parsing error in articles loading"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 25,
+        "deletions": 9
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e86993179ca7befb7f8e37174c16175f62c5f243",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-23T15:30:18+00:00"
+        },
+        "message": "Update Content Security Policy for Google Analytics across multiple HTML and Pug files to include Cloudflare Insights and improve security settings."
+      },
+      "stats": {
+        "total": 414,
+        "additions": 207,
+        "deletions": 207
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ba3ce809817cc8b41b30c149e5954df1dbd4361d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-22T20:11:20+00:00"
+        },
+        "message": "feat: Add structured data for articles and breadcrumbs in layouts\n\n- Implemented JSON-LD structured data for BlogPosting and BreadcrumbList in modern-layout.pug and performance-optimized-layout.pug.\n- Updated article header to use <h1> instead of <h2> for better SEO in article-mixins.pug.\n- Modified lastBuildDate in rss.xml and lastmod dates in sitemap.xml for consistency.\n- Introduced search index generation in build process to enhance search functionality.\n- Conducted SEO audit and H1 tag validation, addressing warnings and ensuring proper heading hierarchy."
+      },
+      "stats": {
+        "total": 24125,
+        "additions": 14562,
+        "deletions": 9563
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "7cbb1b056643b978a0aadc19d8cde861c78f3fb8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-19T14:12:51+00:00"
+        },
+        "message": "Update Project Mechanics link to LinkedIn across multiple documents and adjust RSS feed last build dates"
+      },
+      "stats": {
+        "total": 266,
+        "additions": 133,
+        "deletions": 133
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8fc40ed34d8531f916b8b67d6edc7fe5185ae236",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-18T22:44:19+00:00"
+        },
+        "message": "Update Project Mechanics links and dependencies\n\n- Replaced old Project Mechanics links with updated URLs across multiple project pages.\n- Updated last build dates in RSS and sitemap files.\n- Upgraded dependencies in package.json and package-lock.json:\n  - glob from 11.0.3 to 12.0.0\n  - terser from 5.44.0 to 5.44.1\n  - autoprefixer from 10.4.21 to 10.4.22\n  - jsdom from 27.1.0 to 27.2.0\n  - sass from 1.93.3 to 1.94.1"
+      },
+      "stats": {
+        "total": 176,
+        "additions": 88,
+        "deletions": 88
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8dfbeeb47e5d05ef205adeb7b76e1d93d8b22193",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-18T13:48:36+00:00"
+        },
+        "message": "Update articles RSS feed and remove outdated items; adjust timestamps in article stubs"
+      },
+      "stats": {
+        "total": 6605,
+        "additions": 35,
+        "deletions": 6570
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4ae5b1fb5ab13c8a3140252e0c2c7f90e8bee488",
+      "commit": {
+        "author": {
+          "name": "Claude",
+          "date": "2025-11-18T04:35:32+00:00"
+        },
+        "message": "docs: add SEO summary with implementation roadmap"
+      },
+      "stats": {
+        "total": 399,
+        "additions": 399,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "cbcf0ff1368a35e12470b90e5215f4fe7cf1961c",
+      "commit": {
+        "author": {
+          "name": "Claude",
+          "date": "2025-11-18T04:34:05+00:00"
+        },
+        "message": "docs: add comprehensive SEO audit, quick fixes guide, and automation\n\n- Created SEO_AUDIT.md with detailed analysis (30 issues identified)\n- Created SEO_QUICK_FIXES.md with actionable 2-hour improvement plan\n- Added seo-improvements.js automation script\n- Generated sitemap.xml with 13 pages\n- Generated robots.txt with proper crawler directives\n- Documented metadata recommendations for all pages\n- Provided JSON-LD structured data templates\n- Included title tag optimization guidelines\n- Current SEO score: 65/100, target: 90+/100\n\nKey findings:\n- Critical: Duplicate H1 tags, missing meta descriptions\n- High Priority: No sitemap/robots.txt, generic titles\n- Impact: +25 points possible with quick fixes\n\nQuick wins documented:\n1. Fix duplicate H1 (15 min)\n2. Add sitemap/robots.txt (DONE)\n3. Update meta descriptions (45 min)\n4. Optimize title tags (30 min)\n5. Add Google Analytics (15 min)\n6. Add structured data (15 min)\n\nTotal implementation time: 2 hours to achieve 85/100 score"
+      },
+      "stats": {
+        "total": 1884,
+        "additions": 1884,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "0566c26095654d89726afa0780cb2be6696b466d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-18T03:55:59+00:00"
+        },
+        "message": "Update project and article RSS feeds, modify navigation links, and clean up sitemap entries"
+      },
+      "stats": {
+        "total": 8086,
+        "additions": 579,
+        "deletions": 7507
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2d91bd37839bb13cc345df6ce1d837a63ad2f150",
+      "commit": {
+        "author": {
+          "name": "Claude",
+          "date": "2025-11-18T03:44:24+00:00"
+        },
+        "message": "docs: add comprehensive evolution plan and site review for ProjectMechanics\n\n- Created EVOLUTION_PLAN.md with 6-phase roadmap\n- Created SITE_REVIEW.md with detailed current state assessment\n- Identified critical issues: file naming, frontmatter, content quality\n- Defined success metrics and timelines\n- Prioritized improvements: content \u2192 UX \u2192 SEO \u2192 automation\n- Estimated 20-30 days of development over 3-6 months"
+      },
+      "stats": {
+        "total": 887,
+        "additions": 887,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "36e42cd6cb471875e87d133cb5caf609ef548203",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-18T03:40:44+00:00"
+        },
+        "message": "Add new HTML pages for change management, conflict management, leadership skills, and project overview\n\n- Created change-management-strategies.html with best practices for managing project changes.\n- Developed conflict-management-strategies.html outlining essential strategies for conflict resolution in project teams.\n- Added leadership-skills.html focusing on key leadership qualities and strategies for effective team management.\n- Introduced overview.html discussing the art and science of project management, including strategies for success."
+      },
+      "stats": {
+        "total": 289,
+        "additions": 196,
+        "deletions": 93
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f51a9678d12bfbcc8b9637836617e9d98970bb93",
+      "commit": {
+        "author": {
+          "name": "Claude",
+          "date": "2025-11-18T02:51:47+00:00"
+        },
+        "message": "feat: create standalone ProjectMechanics website and remove from main blog\n\n- Created new projectmechanics-site/ directory with markdown-driven static site generator\n- Implemented modern, responsive UI with updated design\n- Converted all .pug templates to markdown content format\n- Built Node.js-based build system using marked, gray-matter, and fs-extra\n- Generated static HTML pages with SEO-optimized meta tags\n- Removed ProjectMechanics pages from main blog:\n  * Deleted src/pug/projectmechanics/ directory and all .pug files\n  * Removed src/pug/layouts/projectmechanics.pug layout\n  * Removed src/pug/modules/projectmechanics-mixins.pug\n  * Removed src/scss/sections/_projectmechanics-section.scss\n  * Removed src/js/projectmechanics.js\n  * Moved content files to projectmechanics-site/content/\n- Updated src/sections.json to remove projectmechanics references\n- Updated src/scss/styles.scss to remove projectmechanics section import\n\nNew ProjectMechanics site features:\n- Markdown-driven content management\n- Modern responsive design with mobile support\n- Static site generation for fast, secure deployment\n- Simple build process: npm run build\n- Ready for deployment to any static hosting service"
+      },
+      "stats": {
+        "total": 7169,
+        "additions": 2451,
+        "deletions": 4718
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "bb8c76f093b3cdcb80a55e3e524764d6293bde58",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T09:57:54+00:00"
+        },
+        "message": "docs(content): correct repository layout example to use \"spec/\" and remove data-model.md"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "0e3e15ad3661a1a04c3b6c6b5aed279670ec6aab",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T03:56:56+00:00"
+        },
+        "message": "docs(constitution): align constitution with copilot-instructions and clarify build/template/SEO rules\n\n- Update Sync Impact Report and bump version to 1.0.1 (ratified 2025-11-02)\n- Standardize build path to tools/build/build.js and align build command references with npm scripts\n- Rework constitution structure to emphasize Content-First architecture and Build System Modularity\n- Clarify that modern-layout.pug auto-generates SEO meta tags from articles.json\n- Add reference to src/pug/modules/article-mixins.pug for consistent article components\n- Specify copilot/session-YYYY-MM-DD directory for generated AI/Copilot docs\n- Expand development workflow, build validation gates, deployment pipeline, and governance/amendment guidance\n- Reinforce SEO, accessibility, template formatting, and automated audit requirements"
+      },
+      "stats": {
+        "total": 250,
+        "additions": 166,
+        "deletions": 84
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "7354c3d74f38ebdc3b7111c9c75e93de82053f83",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T03:49:46+00:00"
+        },
+        "message": "feat(content): consolidate hotfix article and simplify estimation TOC\n\n- Dramatically shorten and refocus hotfix article by consolidating redundant sections (~30% reduction)\n  - Replaced verbose hotfix vs. patch prose with a compact comparison table\n  - Moved lengthy management-system comparisons into an \"Additional Resources\" cards section (MoSCoW, RICE, WSJF, Value vs Effort)\n  - Integrated core principles into a single \"Priority Scoring Framework\" block\n  - Converted checklist from 15 interactive checkboxes to three compact lists for faster scanning\n  - Reworked common pitfalls into compact cards with icons and colored headers for clearer visual hierarchy\n  - Slimmed down key takeaways into a single alert with inline core principles\n\n- Simplified client JS for the hotfix page\n  - Removed checklist progress tracking, print functionality, and keyboard shortcuts\n  - Consolidated DOMContentLoaded handlers and streamlined event listeners\n  - Simplified smooth-scrolling and back-to-top behavior for smaller, more maintainable script\n\n- Updated templates and HTML\n  - Updated PUG source and compiled HTML to reflect layout, markup and styling changes\n  - Updated quick-estimation article TOC: shortened labels and removed less-relevant TOC items to reduce clutter\n\n- Add copilot consolidation summary documenting changes and rationale"
+      },
+      "stats": {
+        "total": 1417,
+        "additions": 406,
+        "deletions": 1011
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "bfbd4e4243c9655959a53a901038ee931b35898b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T03:37:06+00:00"
+        },
+        "message": "feat(content): expand & restructure \"Building a Quick Estimation Template\"\n\n- Lead with a concrete \"4 PM Estimation Crisis\" example and visual ASCII flow\n- Deepen Innovation/Scope/People factor explanations with spectra, examples, common mistakes, and calibration questions\n- Add data-driven justification for progressive multipliers (historical averages + red-flag threshold)\n- Add practical sections: Team adoption roadmap, Failure story, Python implementation, Method comparison table, Quick Reference card\n- Improve mappings, AI guidance, reality-checks, cognitive-load guidance, and general writing polish\n- Add comprehensive ARTICLE_IMPROVEMENT_SUMMARY documenting changes"
+      },
+      "stats": {
+        "total": 1743,
+        "additions": 1482,
+        "deletions": 261
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "6d8164d95845649e23844f21b648908fdb6f6a17",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T03:16:22+00:00"
+        },
+        "message": "feat(content): rewrite \"Test Driving GitHub Spec Kit\" article to emphasize documentation drift and the post-implementation feedback loop\n\n- Rename sections/ids and update TOC (from-vibe-coding -> documentation-drift, ai-struggles -> feedback-examples)\n- Add new feedback-loop section with side-by-side comparison cards and a path-resolution example\n- Rework executive summary, results, conclusion and outcome copy to highlight 20-minute spec sync, institutional knowledge, and zero documentation debt\n- Adjust metrics/outcome ordering and wording to reflect documented patterns, warning remediation, and test documentation philosophy"
+      },
+      "stats": {
+        "total": 639,
+        "additions": 260,
+        "deletions": 379
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e3f5f0dd56a39ba5a3ac19fd5bd899b781c9108d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T03:03:12+00:00"
+        },
+        "message": "feat(content): restructure \"Test Driving GitHub's Spec Kit\" and update site metadata\n\n- Rework article to lead with the documentation-drift thesis and AI feedback-loop solution:\n  update TOC, headings, body copy, metrics, conclusion, and decision criteria (when to use / skip Spec Kit).\n- Update source PUG and generated HTML for the article (src/pug/... and docs/articles/...).\n- Revise SEO/OG/Twitter metadata (titles, descriptions, keywords, image alts) in articles.json / src/articles.json and generated pages.\n- Rename article title in sections.json and update article summary/keywords to emphasize \"AI\u2011maintained documentation\" and \"zero documentation debt\".\n- Update RSS feeds (src/rss.xml, rss.xml, articles-rss.xml, docs/articles-rss.xml) to use new title/description/pubDate and bump lastBuildDate.\n- Update sitemaps (src/sitemap.xml, docs/sitemap.xml) lastmod timestamps and increase changefreq/priority for the article.\n- Minor fixes: adjust article-stub time, remove extraneous <br/> lines in multiple project index pages, and update several projectmechanics card link titles/descriptions.\n- Add copilot session notes documenting the restructure (copilot/session-2025-11-02/spec-kit-article-restructure.md)."
+      },
+      "stats": {
+        "total": 1829,
+        "additions": 742,
+        "deletions": 1087
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "37e36f5a72a0692ef83c83540fcc6dc5a84112d6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T02:02:46+00:00"
+        },
+        "message": "feat(content): revise \"Test Driving GitHub Spec Kit\" article, improve PUG rules & accessibility\n\n- Replace articleHero/articleHeader mixins with inline hero/header; simplify and tighten lead copy\n- Update article content and headings (case study renamed to WebSpark.HttpClientUtility, revised metrics/time estimates, clearer spec wording)\n- Add Post-Implementation Feedback Loop section, lessons/alerts, and \"What I Learned\" weaknesses\n- Improve repository-layout explanation and add informational and validation callouts\n- Fix PUG period-continuation/link markup (use HTML anchors or split paragraphs) to prevent build issues\n- Add aria-labels to tables and accordion buttons for better accessibility\n- Regenerate corresponding docs HTML with content/layout updates\n- Extend .github/copilot-instructions.md with \"Period Continuation Syntax Rules\" and examples to prevent PUG formatting errors"
+      },
+      "stats": {
+        "total": 510,
+        "additions": 380,
+        "deletions": 130
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "7078c7b7e302bb629d3252806068584f0da5d8de",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-02T23:13:24+00:00"
+        },
+        "message": "feat(content): add \"Test Driving GitHub's Spec Kit\" case study and update site metadata/feeds\n\n- Add full Case Studies article (content, pug template and HTML) with expanded title, subtitle, author, summary, conclusion, tests/examples and increased read time\n- Update articles.json / src/articles.json and sections.json entries (name, description, keywords, lastmod, publishedDate, estimatedReadTime, seo/og/twitter metadata)\n- Insert article into RSS feeds (docs/src) and update feed lastBuildDate timestamps\n- Add article URL to sitemap(s) and refresh lastmod/changefreq/priority for affected entries\n- Update src/article-stub.html timestamp\n- Update multiple projectmechanics pages to refresh related-article cards and links\n- Misc: sync projects-rss.xml timestamps and several src/docs feed/sitemap timestamps to reflect changes"
+      },
+      "stats": {
+        "total": 1954,
+        "additions": 1107,
+        "deletions": 847
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5157f8e73e16592f3916d72971625b879e86fa29",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-02T21:28:08+00:00"
+        },
+        "message": "fix(ai): handle empty OpenAI responses, add defensive logging, relax JSON schema strictness\n\n- ArticleServiceHelpers.cs\n  - Changed json_schema.strict = true -> false for SEO and social schema to allow partial results\n  - Added debug logging of raw API responses for Steps 2 & 3\n  - Added checks for empty/null choices content; warn, log error via _aiLogger and return empty result objects instead of throwing\n  - Log AI response/debug info and preserve existing AI interaction logging behavior\n\n- Add diagnostics & notes\n  - Add AI_EMPTY_RESPONSE_FIX.md, AI_GENERATION_FAILURE_ANALYSIS.md, SCHEMA_FIX_APPLIED.md documenting the issue, analysis, and applied fix\n  - Add helper scripts: analyze-ai-logs.ps1, compare-steps.ps1, test-ai-fix.ps1 for local troubleshooting/verification\n\n- Content / site updates\n  - Add new article \"Test Driving GitHub's Spec Kit\" (src content, pug, html) and update articles data (src/articles.json, docs/articles.json)\n  - Update sections.json to include the new article and increment article counts\n  - Update RSS and projects RSS (src/rss.xml, src/articles-rss.xml, src/projects-rss.xml, docs/rss.xml, docs/articles-rss.xml) to include new item and adjust pubDate/lastBuildDate\n  - Update sitemap.xml (src/docs) entries and lastmod/changefreq/priority for affected pages\n  - Bump styles.css cache-bust query string across multiple projectmechanics pages and update article stub published time\n\nThis prevents JSON deserialization crashes when the API returns empty content, improves observability for debugging, and publishes new content & site metadata updates."
+      },
+      "stats": {
+        "total": 4926,
+        "additions": 4759,
+        "deletions": 167
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4d2b0fdf070d8e2147d4910704562fbf5faa462f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T20:01:36+00:00"
+        },
+        "message": "Add AI response logging, multi-step article generation helpers, new estimation article, and site + RSS/sitemap updates\n\n- Implement comprehensive AI response logging and multi-step AI generation helpers:\n  - Add AiResponseLogger service (logs step interactions, sessions, errors; cleanup; retrieval APIs).\n  - Add Generation models: SeoMetadataResult, SocialMediaResult, ConclusionResult.\n  - Add ArticleServiceHelpers partial with 4-step generation flow (content, SEO extraction, social media, conclusion), YouTube ID extraction, synchronous wrapper and SEO statistics.\n  - Add extensive documentation and operational guides (AI_RESPONSE_LOGGING_GUIDE.md, IMPLEMENTATION_SUMMARY.md, LOGGING_* docs, MULTI_STEP_AI_* plans).\n  - Add verify-logging.ps1 for quick validation.\n\n- Add new article \"Building a Quick Estimation Template When You Have Almost Nothing to Go On\":\n  - Add source content (src/content/*.md), pug template (src/pug/articles/...pug), generated HTML (docs/articles/...html).\n  - Add article entry to src/articles.json and sections.json so site index and navigation include the new article.\n  - Add article to sitemap.xml and sitemap in docs (with lastmod) and include item in articles-rss.xml / src/rss.xml.\n\n- Update site layout and styling:\n  - Remove extra <br /> after navbars in multiple docs pages to tighten layout.\n  - Remove explicit <br> in modern layout and adjust content flow.\n  - Update modern-styles.scss to add body padding-top (56px) to account for fixed navbar; include responsive rule.\n\n- Update RSS, sitemap and timestamps:\n  - Add new article item to RSS feeds (src/articles-rss.xml and src/rss.xml) and update lastBuildDate.\n  - Update sitemap.xml (docs and src) to include new article and refresh lastmod timestamps for site pages and project entries.\n\n- Add logging / deployment support content:\n  - Add large set of supporting docs about logging configuration, Serilog fix and quick reference, and verification steps.\n  - Add logs/ai-responses retention defaults and guidance in docs.\n\n- Minor and housekeeping:\n  - Ensure canonical, open graph and twitter metadata present for new article.\n  - Wire article social share button and floating LinkedIn share in article page.\n  - Sanitize filenames and logging JSON serializer options in logger.\n  - Add many Markdown/HTML/Pug assets and large documentation artifacts.\n\nNotes:\n- The commit focuses on adding robust AI logging, breaking AI article generation into smaller, more reliable steps, introducing a new article, and aligning site feeds/sitemaps/styles to support fixed-navbar layout and new content.\n- These changes add new services and docs; confirm DI registration for AiResponseLogger/ArticleService in Program.cs when deploying and ensure logs/ directory is excluded from version control (.gitignore)."
+      },
+      "stats": {
+        "total": 18087,
+        "additions": 7201,
+        "deletions": 10886
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "0b8aa99a25c0e39da3af3ae024fd66a4b7be9256",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T17:59:30+00:00"
+        },
+        "message": "fix: simplify content prep for GPT-5 - send only title/description/section"
+      },
+      "stats": {
+        "total": 287,
+        "additions": 229,
+        "deletions": 58
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "aa72a1ea512d43b4a761b46cbf1907794d6da65b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T17:44:07+00:00"
+        },
+        "message": "fix: increase HTTP timeout to 5 minutes for GPT-5 API calls"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "82bc704003927af715ecf9b1e120928f8e7fe37f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T17:28:17+00:00"
+        },
+        "message": "fix: omit temperature parameter for GPT-5 (only supports default value of 1)"
+      },
+      "stats": {
+        "total": 136,
+        "additions": 69,
+        "deletions": 67
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1c11f451e5919d7c546f09547c8171af0d5129f0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T17:14:29+00:00"
+        },
+        "message": "docs: update GPT-5 documentation with max_completion_tokens fix"
+      },
+      "stats": {
+        "total": 174,
+        "additions": 149,
+        "deletions": 25
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2d8ef0d311228f30c410be25f3240ac3b6ad4732",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T17:13:04+00:00"
+        },
+        "message": "fix: use max_completion_tokens for GPT-5 instead of max_tokens"
+      },
+      "stats": {
+        "total": 65,
+        "additions": 48,
+        "deletions": 17
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "fb222fa4a7071760bd05d06ee72fc76b7e82951f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T17:03:48+00:00"
+        },
+        "message": "debug: add error logging for OpenAI API failures"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 10,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "86b70c3b3cf6a8eea9b598796db5d2fe3287ea5e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:48:44+00:00"
+        },
+        "message": "docs: add GPT-5 upgrade documentation"
+      },
+      "stats": {
+        "total": 287,
+        "additions": 287,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4988f3aa9e7333fb81bc7ff2b64537f4fe124ae8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:47:47+00:00"
+        },
+        "message": "feat: upgrade to GPT-5 model for article generation"
+      },
+      "stats": {
+        "total": 67,
+        "additions": 45,
+        "deletions": 22
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f3b07c1fbc46d724f69d3ca6dc0d9fb6d6be072a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:35:06+00:00"
+        },
+        "message": "fix: increase OpenAI max_tokens to prevent JSON truncation"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 19,
+        "deletions": 19
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ad85af09bbf239c6e6b6ba2e88dfc00da9f6a435",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:21:42+00:00"
+        },
+        "message": "docs: add Phase 1 completion documentation"
+      },
+      "stats": {
+        "total": 402,
+        "additions": 402,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "9994bced928bb34a8e695c09a42c8472d47daad7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:20:23+00:00"
+        },
+        "message": "feat: implement markdown to Pug conversion"
+      },
+      "stats": {
+        "total": 420,
+        "additions": 408,
+        "deletions": 12
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "aaf739804319db159a6e5f7a4c971ef41fb287ca",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:10:40+00:00"
+        },
+        "message": "Merge feature/content-externalization into main"
+      },
+      "stats": {
+        "total": 36964,
+        "additions": 16460,
+        "deletions": 20504
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "538486095e89ba401dcaead60eddd85ae9c5d72f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:10:19+00:00"
+        },
+        "message": "chore: migrate all article content to external markdown files"
+      },
+      "stats": {
+        "total": 35704,
+        "additions": 15292,
+        "deletions": 20412
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1d723b71ef5a2bc54bdb944e0d188b47f33bcd68",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:03:31+00:00"
+        },
+        "message": "docs: add quick start guide for migration"
+      },
+      "stats": {
+        "total": 140,
+        "additions": 140,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "73e84f4c2747e9347883688339c2680bd04ec72b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:03:00+00:00"
+        },
+        "message": "docs: add complete implementation summary for content externalization"
+      },
+      "stats": {
+        "total": 307,
+        "additions": 307,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2a98a524e3c7d0f625ee26b2f12de33b2138d6e7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T16:02:03+00:00"
+        },
+        "message": "feat: implement content externalization to external markdown files"
+      },
+      "stats": {
+        "total": 813,
+        "additions": 721,
+        "deletions": 92
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8ed6575419b51726499e9f0b08cc75dc3a670ed0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T15:19:57+00:00"
+        },
+        "message": "feat(specify): update constitution to 1.1.0 \u2014 add AI content generation & build caching\n\n- Add VI. AI-Powered Content Generation principle and rationale\n- Point build orchestrator to tools/build/build.js and require intelligent caching (.build-cache/)\n- Expand Technology Standards, QA, and workflow notes for AI integration, logging, and caching\n- Add version bump and amend last amended date to 2025-11-01"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 26,
+        "deletions": 12
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5a4eff4463bb87b81b2ac96326aec58624b04a44",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T15:11:18+00:00"
+        },
+        "message": "chore(site): reformat src/sections.json and update artifacts/ssl.json days_remaining"
+      },
+      "stats": {
+        "total": 1012,
+        "additions": 506,
+        "deletions": 506
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "19049b4a7b94547f1be528322dd27658370b3d7f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-01T15:04:45+00:00"
+        },
+        "message": "Update stylesheet version, refresh content cards, bump deps, and update RSS/sitemap timestamps\n\n- Update CSS cache-buster query to ?version=20251101 across project mechanics pages (docs/projectmechanics/*) to force stylesheet refresh.\n- Refresh related content cards and internal article links/titles/descriptions across multiple pages (issue-management, leadership section pages, program-management-office, project-life-cycle, project-meetings, solution-architect, accountability/evolution/from-features pages) to surface updated article highlights.\n- Bump development dependencies in package.json and package-lock.json:\n  - cssnano -> 7.1.2, dayjs -> 1.11.19, jsdom -> 27.1.0, npm-check-updates -> 19.1.2, sass -> 1.93.3 (and propagate related lockfile changes).\n  - Add/update several lockfile entries and transient deps (e.g. @acemir/cssom, baseline-browser-mapping, browserslist and various postcss-related packages) to align with updated packages.\n- Update RSS feeds and sitemap timestamps:\n  - src/articles-rss.xml, src/projects-rss.xml, src/rss.xml lastBuildDate updated to Sat, 01 Nov 2025 14:56:05 GMT.\n  - projects RSS pubDate values updated to the same Nov 01 timestamp.\n  - src/sitemap.xml lastmod and multiple project <lastmod> entries updated to 2025-11-01T14:56:05-05:00; adjusted changefreq/priority for net-9-sample-mvc-crud to weekly/0.6.\n- Misc: small content and metadata adjustments to improve SEO and keep featured cards current.\n\nReason: content refresh and maintenance \u2014 ensure visitors see updated highlights and use latest dev tooling / dependency fixes."
+      },
+      "stats": {
+        "total": 661,
+        "additions": 367,
+        "deletions": 294
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4d30843aab4831367c88c744d8ea5d35963e9273",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-27T00:39:08+00:00"
+        },
+        "message": "chore(docs): simplify articles, streamline templates, update navigation and sections\n\n- Simplify \"Developing MarkHazleton.com\" (src pug + generated HTML): remove heavy styling/accordions, streamline hero/TOC, consolidate build/deploy/dev sections and code blocks for documentation-style layout\n- Simplify \"Moving to MarkHazleton.com\" (src pug + generated HTML): replace hero with concise introduction, reorganize TOC and migration guidance, add troubleshooting/timeline and final resources\n- Update many projectmechanics pages to refresh related article links and card copy (ensure recommendations match updated articles)\n- Normalize/refresh src/sections.json content formatting and article entries\n- Bump article timestamp in article-stub.html\n- Add copilot session ARTICLE_SIMPLIFICATION_REPORT.md documenting the simplification and validation results"
+      },
+      "stats": {
+        "total": 5661,
+        "additions": 1601,
+        "deletions": 4060
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ce8169603ea6a9b5f081593f82ef47af4d0c78ef",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-26T23:51:01+00:00"
+        },
+        "message": "feat(specify): add speckit prompts, templates, constitution, and PowerShell tooling\n\nAdd comprehensive spec-driven workflow scaffolding:\n- New speckit prompt definitions (.github/prompts): specify, plan, tasks, implement, clarify, checklist, analyze, constitution\n- New .specify templates: spec-template.md, plan-template.md, tasks-template.md, checklist-template.md, agent-file-template.md\n- Add project constitution (.specify/memory/constitution.md)\n- PowerShell tooling (.specify/scripts/powershell): common.ps1, check-prerequisites.ps1, create-new-feature.ps1, setup-plan.ps1, update-agent-context.ps1 (agent context generation/update)\n- Add uvx-tools.ps1 helper script\n\nThis adds read-only analysis prompts, generation templates, and scripts to drive feature creation, planning, task generation, agent context updates, and prerequisite checks."
+      },
+      "stats": {
+        "total": 3084,
+        "additions": 3084,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "fdb7e92199afc2c85979314f7e0759e481a833d1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-26T22:25:25+00:00"
+        },
+        "message": "chore(site): refresh generated artifacts, bump css cache-bust and commander\n\n- bump CSS cache-bust to ?version=20251026 across project mechanics pages\n- update RSS/feeds (articles/projects/root) lastBuildDate and item pubDate to 2025-10-26T21:55:43 GMT (including src copies)\n- update sitemap lastmod timestamps to 2025-10-26T21:55:43-05:00 (including src copies)\n- update article timestamp in article-stub to October 26, 2025\n- correct artifacts/ssl.json days_remaining (40 -> 37)\n- bump commander dev dependency to ^14.0.2 (package.json + package-lock.json)\n- refresh several sidebar card links/titles/descriptions in project mechanics pages"
+      },
+      "stats": {
+        "total": 258,
+        "additions": 129,
+        "deletions": 129
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f7d3986bd83e1b0e944993a194c90c882ac4836b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-26T21:54:32+00:00"
+        },
+        "message": "chore: add empty <code-changes> placeholders to changes manifest\n\nPopulate the changes manifest with multiple empty <code-changes> entries as placeholders.\nThis commit does not introduce any functional or behavioral changes to the codebase \u2014\nall entries are empty and intended to reserve space for future change descriptions.\n\nNo source files or runtime code were modified."
+      },
+      "stats": {
+        "total": 1843,
+        "additions": 1046,
+        "deletions": 797
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "3d1a09119be1048821b6b64e1b82b76be6d6bc5e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-22T22:47:51+00:00"
+        },
+        "message": "Update sections.json, sitemap.xml, and add local settings for Claude\n\n- Updated sections.json to include detailed articles across various categories, ensuring accurate article counts and descriptions.\n- Modified sitemap.xml to reflect updated last modified dates and adjusted change frequencies for specific project URLs.\n- Added local settings configuration for Claude to manage permissions for npm commands."
+      },
+      "stats": {
+        "total": 3137,
+        "additions": 1582,
+        "deletions": 1555
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "9a18c3e1dd6285ada03533102f31e876fc4b255e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-13T17:17:06+00:00"
+        },
+        "message": "feat(audit): Implement comprehensive site audit system with intelligent error handling and reporting\n\n- Consolidated multiple audit checks into a single command `npm run audit`\n- Added categories for Structural Validation, SEO & Accessibility, Performance, and Code Quality\n- Enhanced error handling to distinguish between critical and non-critical issues\n- Improved reporting with color-coded output and categorized results\n- Integrated Lighthouse CI with Windows-specific fixes for permission errors and process termination\n- Created a custom Lighthouse wrapper for better error handling and reporting\n- Updated package.json to include new audit command"
+      },
+      "stats": {
+        "total": 3813,
+        "additions": 2395,
+        "deletions": 1418
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "579707ab73a4ba1b32601b4785f2ae20f30fa187",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-13T16:47:07+00:00"
+        },
+        "message": "Fix SEO issues: H1 tag structure and canonical URL validation\n\n- Fixed heading hierarchy in exploratory-data-analysis-eda-using-python.pug\n  * Changed multiple h3 tags to h2 for proper structure (Table of Contents, EDA Process, Automating Analysis, FAQ, Summary, Glossary)\n- Fixed heading hierarchy in from-features-to-outcomes.pug\n  * Changed section headings from h3 to h2 (What are features?, What are outcomes?, Measurable Outcomes)\n- Fixed heading hierarchy in search.pug\n  * Added visually-hidden h2 tag for proper h1 > h2 > h3 structure\n- Updated canonical URL validation script (validate-canonical-urls.js)\n  * Added handling for directory-style slugs ending with '/' to check for index.html files\n  * Now validates all 102 articles correctly instead of missing 4\n\n\u2705 Canonical URLs: 102/102 validated successfully\n\u2705 H1 Structure: Reduced from 5 problematic files to 2 (only template files remain)\n\u2705 SEO Compliance: Addresses Bing Webmaster Tools warnings for multiple H1 tags and broken canonical URLs"
+      },
+      "stats": {
+        "total": 1854,
+        "additions": 1737,
+        "deletions": 117
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "52dc4485599efbcbcbd75e5b75c62cfd76931edd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-12T23:04:01+00:00"
+        },
+        "message": "Update RSS and sitemap last modified dates; add comprehensive test review report and performance fallback for Windows compatibility\n\n- Updated <lastBuildDate> in src/rss.xml and src/sitemap.xml to reflect new timestamps.\n- Added TEST_REVIEW_REPORT.md detailing testing strategy, findings, and recommendations for the Mark Hazleton Blog.\n- Introduced performance-fallback.js for alternative performance testing when Lighthouse fails on Windows.\n- Implemented windows-safe-test.js to handle Windows-specific issues with Lighthouse and pa11y, ensuring reliable test execution."
+      },
+      "stats": {
+        "total": 2441,
+        "additions": 1759,
+        "deletions": 682
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "801f610941d104e6854f077d4bbbf3f4775c61ad",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-12T19:18:07+00:00"
+        },
+        "message": "Refactor TailwindSpark article layout and styling for improved readability and consistency\n\n- Updated hero section background and text styles for better contrast\n- Simplified card borders and headers across multiple sections\n- Enhanced text color and utility classes for improved accessibility\n- Consolidated conclusion and technical implementation details into a more cohesive structure\n- Adjusted demo application sections for uniformity in card design\n- Improved hover effects and loading states with consistent styling"
+      },
+      "stats": {
+        "total": 3206,
+        "additions": 1179,
+        "deletions": 2027
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "81ad3a62bb45f96155d43e1f0a9638a73b36d491",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-12T18:33:22+00:00"
+        },
+        "message": "Add Font Awesome Audit Tool and Social Icons Analysis\n\n- Introduced a standalone Font Awesome Audit Tool to scan PUG files for Font Awesome class references and suggest Bootstrap Icons replacements.\n- Documented the tool's features, usage, and output in FONTAWESOME_AUDIT_TOOL.md.\n- Analyzed social icons issues due to the removal of Font Awesome from dependencies, detailed in SOCIAL_ICONS_ANALYSIS.md.\n- Updated PUG templates to replace Font Awesome classes with Bootstrap Icons equivalents.\n- Generated a JSON report of the audit findings, saved as fontawesome-audit-report.json.\n- Implemented both standalone and extended versions of the audit tool with glob support."
+      },
+      "stats": {
+        "total": 9428,
+        "additions": 3316,
+        "deletions": 6112
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ccd6c702ad72fba45917704662ee6daac2efff3b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-10T20:42:46+00:00"
+        },
+        "message": "Refactor articles and documentation for clarity and relevance\n\n- Updated article links and descriptions in the project mechanics documentation to reflect new content.\n- Revised the layout and content of the \"Engineering Metrics: Git Spark Story\" article for improved readability and structure.\n- Enhanced the clarity of sections discussing metrics, AI contributions, and the limitations of Git history.\n- Streamlined the presentation of key insights and lessons learned from the development of the git-spark tool."
+      },
+      "stats": {
+        "total": 1848,
+        "additions": 471,
+        "deletions": 1377
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8770b8060142056075115f2ad9ea0e28b85a9731",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-10T12:01:33+00:00"
+        },
+        "message": "Implement comprehensive performance optimizations including critical CSS extraction, JavaScript tracking improvements, and CSS bloat reduction\n\n- Added PERFORMANCE_OPTIMIZATION_REPORT.md detailing implemented solutions and expected improvements.\n- Developed CSSOptimizer tool to identify and remove unused CSS rules.\n- Created JSTrackingOptimizer for analyzing and optimizing JavaScript tracking scripts.\n- Implemented quick-performance-implementation.js for applying key performance fixes across articles.\n- Updated key articles to use performance-optimized layout.\n- Ensured GDPR compliance for tracking scripts and created consent-aware tracking implementation."
+      },
+      "stats": {
+        "total": 4980,
+        "additions": 4804,
+        "deletions": 176
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5f728557186d7ca401c03f711a7e749b198c17a6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-08T13:29:24+00:00"
+        },
+        "message": "Implement feature X to enhance user experience and fix bug Y in module Z"
+      },
+      "stats": {
+        "total": 588,
+        "additions": 105,
+        "deletions": 483
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "77912107f7e367de3e6da06f1e67d66b840e2625",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-08T13:28:00+00:00"
+        },
+        "message": "fix: resolve high-severity tar-fs vulnerability (CVE-2024-XXXX)"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "aa4a955836b68783a5260e765bd8010b8af61d7d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-08T13:19:28+00:00"
+        },
+        "message": "Update git-spark report before email address history rewrite"
+      },
+      "stats": {
+        "total": 1971,
+        "additions": 1007,
+        "deletions": 964
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "d267579518c45a25bd2989b83fd018d2acb33e5d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-08T13:15:07+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 1223,
+        "additions": 1007,
+        "deletions": 216
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "bde34a80fe44d349ec60e1485de2b157a15584ab",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-08T01:56:01+00:00"
+        },
+        "message": "Add initial HTML structure and SEO metadata for WebSpark Bootswatch project page"
+      },
+      "stats": {
+        "total": 5443,
+        "additions": 3878,
+        "deletions": 1565
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2017f3af8e37533615d727635b5aab56c14c9d28",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-06T22:49:12+00:00"
+        },
+        "message": "Refactor projects.json with new structure and metadata\n\nCompletely restructured and reorganized the `projects.json` file:\n- Replaced old project entries with detailed, consistent metadata.\n- Enhanced `seo` section with fields for improved search optimization.\n- Added `og` and `twitter` metadata for better social media sharing.\n- Expanded `repository` section with GitHub details for each project.\n- Updated `promotion` section with deployment pipeline and environments.\n- Added new projects, including Net 9 Sample MVC CRUD, PromptSpark,\n  ReactSpark, PrismSpark, and more, with comprehensive metadata.\n- Improved maintainability and robustness of the file."
+      },
+      "stats": {
+        "total": 1491,
+        "additions": 837,
+        "deletions": 654
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "771f32f78ad18d4e6c3ef5c7fd4de3039f87922f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-06T18:57:26+00:00"
+        },
+        "message": "feat: Add tools for downloading Google Fonts, generating placeholders, and updating RSS feed\n\n- Implemented FontDownloader to download Google Fonts for local hosting, including CSS generation and fallback handling.\n- Created PlaceholderGenerator to generate local SVG placeholder images for various sizes, including a generic fallback.\n- Developed updateProjectsRssFeed script to generate an RSS feed from projects.json, including project descriptions and metadata."
+      },
+      "stats": {
+        "total": 74957,
+        "additions": 62089,
+        "deletions": 12868
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "28e52db9295c64b069dc48ba4ed53b09a910b6e3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-06T16:04:41+00:00"
+        },
+        "message": "Enhanced SEO, AI, and project management features\n\n- Added comprehensive SEO and social media metadata generation.\n- Introduced fallback mechanisms for AI content generation.\n- Improved project creation/editing UI with dynamic elements.\n- Enhanced logging, validation, and error handling in services.\n- Updated documentation to reflect new features and workflows.\n- Added new test endpoints for debugging and validation.\n- Refactored slug generation and file operations for robustness.\n- Improved caching, debugging tools, and user experience."
+      },
+      "stats": {
+        "total": 38562,
+        "additions": 6202,
+        "deletions": 32360
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "18f3a848e0dec42dd384e975c0a6ab81fa654da4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-06T01:03:44+00:00"
+        },
+        "message": "Implement AI-driven project SEO generation and GitHub repository analysis\n\n- Added ProjectSeoLlmPromptConfig for generating SEO metadata based on GitHub repository analysis.\n- Introduced ProjectTestController to test AI generation and repository analysis functionalities.\n- Enhanced projects.json with new project entries and updated descriptions for existing projects.\n- Created PROJECT_AI_IMPLEMENTATION.md to document the new AI features, including GitHub integration and SEO optimization.\n- Implemented automated field population for project details and promotion pipeline suggestions.\n- Ensured backward compatibility and added error handling for API interactions."
+      },
+      "stats": {
+        "total": 1573,
+        "additions": 1444,
+        "deletions": 129
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5ed4744f40d9dfda7c10c9a738c1902e5091bcf7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-05T22:47:43+00:00"
+        },
+        "message": "feat: Add project portfolio pages with search and filter functionality\n\n- Implemented a comprehensive project portfolio page (`projects-backup.pug`) featuring a search input and category filter for enhanced user experience.\n- Created a simplified project listing page (`projects-simple.pug`) with basic search and filter capabilities.\n- Developed a detailed project view template (`project-detail.pug`) to showcase individual project information, including repository links and deployment environments.\n- Enhanced the main projects page (`projects.pug`) with similar search and filter functionalities as the backup page.\n- Introduced a build script (`render-project-pages.js`) to automate the rendering of project pages from JSON data, ensuring up-to-date content and SEO optimization.\n- Added client-side filtering logic to dynamically display projects based on user input.\n- Improved overall code structure and readability across all templates and scripts."
+      },
+      "stats": {
+        "total": 8840,
+        "additions": 8259,
+        "deletions": 581
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "0c3d7b8d13ead01b97ac871bf7a94e6aa9ace47a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-05T18:50:25+00:00"
+        },
+        "message": "Refactor project data structure in projects.json to include SEO, social media, and repository details for enhanced metadata management and improved project visibility."
+      },
+      "stats": {
+        "total": 2967,
+        "additions": 2477,
+        "deletions": 490
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "dea0870b43f7eba2ec397e733d0e9ec5a38fcc4d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-04T00:50:29+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 38141,
+        "additions": 25828,
+        "deletions": 12313
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "7ce3141f492d03904874b75237f414d6544db888",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-29T01:29:38+00:00"
+        },
+        "message": "Update stylesheets and content links across multiple documents\n\n- Updated stylesheet version in various HTML files to version 20250928.\n- Replaced outdated article links with new relevant content in leadership and project management sections.\n- Adjusted navigation links in multiple documents to streamline access to projects and articles.\n- Cleaned up the build script to ensure proper directory structure and safety checks during the cleaning process.\n- Updated RSS feed and sitemap last modified dates to reflect recent changes."
+      },
+      "stats": {
+        "total": 5006,
+        "additions": 288,
+        "deletions": 4718
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "9eac3963803e1a0bd5eae6d64db23a04084d1796",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-27T15:06:01+00:00"
+        },
+        "message": "Refactor article links and descriptions across multiple documents to enhance content relevance and clarity. Updated SCSS to remove hardcoded sidebar padding for a full-width layout."
+      },
+      "stats": {
+        "total": 99,
+        "additions": 50,
+        "deletions": 49
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1972a6e29bdcdfcff6fb8c62c7cadf5056d2f901",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-27T13:12:16+00:00"
+        },
+        "message": "Update CSS version and fix content links across multiple documents\n\n- Updated CSS version from 20250926 to 20250927 in various HTML files to ensure the latest styles are applied.\n- Replaced outdated article links with new relevant content in the following files:\n  - issue-management.html\n  - accountability-and-authority.html\n  - evolution-over-revolution.html\n  - from-features-to-outcomes.html\n  - project-meetings.html\n  - project-life-cycle.html\n  - program-management-office.html\n  - solution-architect-technology-decisions-that-impact-business.html\n- Adjusted layout file to restore standard CSS loading method for improved performance and visual consistency.\n- Resolved CSS loading issues by reverting to standard stylesheet links, ensuring all Bootstrap styles are properly applied."
+      },
+      "stats": {
+        "total": 616,
+        "additions": 196,
+        "deletions": 420
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e8bf4d4a4937982deb3afac81d2c76361e958cbf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-26T16:52:24+00:00"
+        },
+        "message": "feat: Add Critical CSS Extraction and Implementation Tools\n\n- Implemented Critical CSS Extractor to inline above-the-fold styles and generate non-critical CSS for deferred loading.\n- Created a script to implement critical CSS in performance-optimized layouts, enhancing page load speed.\n- Developed a Safe Audit Runner to handle Lighthouse permission issues and provide fallback options for audits.\n- Added a Lighthouse Windows Permission Fix script to manage temp directory permissions and improve compatibility.\n- Enhanced audit reporting with detailed summaries and performance metrics."
+      },
+      "stats": {
+        "total": 17331,
+        "additions": 11776,
+        "deletions": 5555
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "61429e65b9feb0cba8569129aa3ff871138834ab",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-26T16:51:31+00:00"
+        },
+        "message": "feat: enhance .gitignore to include additional Lighthouse files and reports"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 8,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "6a1233c46ec6ae951db43f10636861fdd867f1d0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T21:26:38+00:00"
+        },
+        "message": "reports"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 23,
+        "deletions": 2
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a3975d16687753354537a8b174bb4454900c77d0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T21:26:33+00:00"
+        },
+        "message": "feat: implement comprehensive tools structure requirements documentation"
+      },
+      "stats": {
+        "total": 591,
+        "additions": 591,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "6f0af647ad23012babf63c8fa713a9b5b682d6ee",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T21:15:54+00:00"
+        },
+        "message": "feat: add maintenance tools for SEO and performance reporting\n\n- Implemented `apply-autofixes.mjs` to ensure canonical links in modern-layout.pug.\n- Created `report-monthly.mjs` for generating monthly maintenance reports including performance metrics and SEO checks.\n- Developed `seo-a11y-checks.mjs` to perform SEO and accessibility checks on the website.\n- Added `seo-validation-report.js` for comprehensive validation of SEO issues across HTML files, mapping them to PUG sources.\n- Introduced `ssl-expiry.ts` to check SSL certificate expiration and report days remaining."
+      },
+      "stats": {
+        "total": 25847,
+        "additions": 10705,
+        "deletions": 15142
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f6a53f87c94850bfa2e9dfd83f38a4258a55fe0b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T15:59:41+00:00"
+        },
+        "message": "Update article-stub.html date and bump commander and npm-check-updates versions in package.json and package-lock.json"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 11,
+        "deletions": 11
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a98113bf1ef7110a00b49843b1e0fbb0dca7a57b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T15:58:29+00:00"
+        },
+        "message": "Update stylesheets to version 20250914 across multiple project documentation pages; enhance content structure and clarity in the AI contribution article, improving readability and measurement frameworks."
+      },
+      "stats": {
+        "total": 1398,
+        "additions": 555,
+        "deletions": 843
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e093b94b72cff9029475eecaed76c7f32a99241d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-13T21:02:49+00:00"
+        },
+        "message": "Add article on measuring AI's contribution to code\n\n- Introduced a comprehensive article discussing the complexities of measuring AI's impact on software development.\n- Included sections on the attribution problem, metrics framework, and the challenges faced by enterprises.\n- Explored various levels of AI assistance and their contributions to coding.\n- Provided recommendations for technical leaders on tracking and improving AI tool usage in development."
+      },
+      "stats": {
+        "total": 1813,
+        "additions": 1791,
+        "deletions": 22
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1e8eff7426d8fe1641a4c2465d203ad1eb20f503",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-12T23:43:06+00:00"
+        },
+        "message": "Implement comprehensive standardization of PUG templates in ProjectMechanics folder\n\n- Created ProjectMechanics Folder Consistency Analysis report detailing inconsistencies and recommendations for improvement.\n- Completed standardization implementation report highlighting critical fixes, mixin library creation, and content completion.\n- Developed PUG Article Standardization Report documenting the review and standardization of 244 PUG files.\n- Introduced new article mixins for consistent component usage across article templates.\n- Established projectmechanics mixins for standardized content presentation.\n- Resolved critical PUG syntax errors and improved overall build performance.\n- Enhanced accessibility, SEO optimization, and maintainability across all templates."
+      },
+      "stats": {
+        "total": 2358,
+        "additions": 1825,
+        "deletions": 533
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "afcd722a27b20ff0b5d9f7795f07eb79e6b88dc1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-12T16:59:12+00:00"
+        },
+        "message": "Update RSS and Sitemap with new last build dates; add comprehensive article standardization action plan, guidelines, and review report for PUG articles to ensure consistency and adherence to modern layout practices."
+      },
+      "stats": {
+        "total": 1890,
+        "additions": 1701,
+        "deletions": 189
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8efba96913f44dd67651cd69158b661b6fb20100",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-12T15:43:53+00:00"
+        },
+        "message": "Add BSW.EHR analysis tools and documentation\n\n- Implement Quick-GitReport.ps1 for launching various analysis tools (Git, Security, Dependencies, Quality).\n- Create README.md to provide comprehensive documentation for all scripts, including usage examples and features.\n- Develop RunGitReport.bat for a user-friendly command-line interface to execute different analysis types.\n- Introduce Test-GitReport-Simple.ps1 and Test-GitReport.ps1 for validating Git functionality and basic commit data retrieval.\n- Enhance scripts with detailed output and error handling for better user experience."
+      },
+      "stats": {
+        "total": 9575,
+        "additions": 9575,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "73ce444b58ae2f2c3876464bcfb68cb5e19512ec",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-09T03:03:42+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 23675,
+        "additions": 14338,
+        "deletions": 9337
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2dedbe381eefd37a78cb98b825e1223d68c187f6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-31T17:35:12+00:00"
+        },
+        "message": "feat: Implement comprehensive build system optimizations and documentation organization\n\n- Completed implementation of enhanced build system with caching, performance tracking, and error recovery.\n- Established a new directory structure for organized documentation management.\n- Migrated existing files to the new structure and updated Copilot instructions.\n- Enhanced file watcher capabilities for real-time development feedback.\n- Introduced performance analytics and improved CI/CD workflows.\n- Added new CLI commands for better build management and cache handling.\n- Conducted thorough testing and validation of all new features and optimizations."
+      },
+      "stats": {
+        "total": 22108,
+        "additions": 4710,
+        "deletions": 17398
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "aadad6946a838acbb22c78057985d19a9da902ef",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-21T13:23:08+00:00"
+        },
+        "message": "chore: update package.json for a11y audit logging and dependency versions\n\n- Modified the a11y audit command to log stderr to a separate file.\n- Updated `pa11y-ci` from version 4.0.0 to 4.0.1.\n- Updated `webpack` from version 5.101.1 to 5.101.3.\n\nfix: update RSS and sitemap last build dates\n\n- Changed <lastBuildDate> in rss.xml to \"Thu, 21 Aug 2025 13:22:53 GMT\".\n- Changed <lastmod> in sitemap.xml to \"2025-08-21T13:22:53-05:00\".\n- Adjusted change frequency and priority for specific articles in sitemap.xml.\n\nchore: add .npmrc to suppress deprecation warnings in CI\n\n- Created .npmrc file to set loglevel to error and disable audit and funding prompts.\n\ndocs: add DEPRECATION-WARNINGS-RESOLUTION.md for CI warnings\n\n- Documented the resolution for deprecation warnings related to dependencies.\n- Included steps taken to suppress warnings and maintain functionality.\n\nchore: add accessibility audit results and SSL information\n\n- Added a11y.json with detailed accessibility audit results.\n- Created a11y.stderr.log for error logging during a11y audits.\n- Added ssl.json with SSL certificate validity information."
+      },
+      "stats": {
+        "total": 10492,
+        "additions": 2214,
+        "deletions": 8278
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "bcc42ef10de06e215397e54a03e32183200beb8e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T21:57:22+00:00"
+        },
+        "message": "Merge pull request #5 from markhazleton/maintenance/monthly-16947703667\n\nMonthly maintenance report"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ad7be41dc77882ef622650ccac13c1b4ecfec36e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T21:57:05+00:00"
+        },
+        "message": "Merge branch 'main' into maintenance/monthly-16947703667"
+      },
+      "stats": {
+        "total": 18787,
+        "additions": 9433,
+        "deletions": 9354
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "3c0cac96dc528326a75e9f95dc20cd1b3fef72af",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T21:55:34+00:00"
+        },
+        "message": "Merge pull request #6 from markhazleton/maintenance/monthly-16947885615\n\nMonthly maintenance report"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 19,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "48c1c11606c9728da4f19f04c8113c439de24c15",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T21:50:39+00:00"
+        },
+        "message": "Add featured video section and enhance YouTube URL handling\n\n- Introduced a featured video section in the article \"Evolving PHP Development\" with an embedded YouTube player.\n- Improved YouTube URL parsing logic to handle different formats including /embed/ and /shorts/.\n- Updated RSS feed last build date to reflect recent changes.\n- Adjusted sitemap last modified date to match the new RSS feed timestamp."
+      },
+      "stats": {
+        "total": 18781,
+        "additions": 9430,
+        "deletions": 9351
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "727ffd7303574669b9d21792a2919c0aa41c4ac8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T20:01:14+00:00"
+        },
+        "message": "chore: add monthly maintenance report"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 19,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "9631febd2c2781e50327605e14307b59ad3a7085",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T19:56:51+00:00"
+        },
+        "message": "chore: update pa11y-ci command in audit:a11y script for improved configuration"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "716f24c1a653584d569f78c5963d82b0da05a2fd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T19:52:13+00:00"
+        },
+        "message": "chore: add monthly maintenance report"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 19,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "38392e8cdae51d56c75a5a7c0b83ebaaffd5cc7d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T19:47:12+00:00"
+        },
+        "message": "chore: standardize quotes in workflow paths and improve indentation"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "3a3f81e6a02388ffbc6c1503a42fdf527081335c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T19:02:01+00:00"
+        },
+        "message": "chore: refine workflow triggers and conditions for better clarity and functionality"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 8,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "6bc51590ee6f15a8742aad95f866f29f9ad4847f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T18:45:53+00:00"
+        },
+        "message": "chore: move artifacts directory creation to the main async function for better flow"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "04142147c131515f0c9bae33c534962a5a94fe18",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T18:36:30+00:00"
+        },
+        "message": "chore: enhance workflows with concurrency settings and improve dependency installation"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 22,
+        "deletions": 6
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e15902a01cb616381afaab0a7b46e1739d06fbb3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T18:21:42+00:00"
+        },
+        "message": "chore: update link check arguments in nightly quick checks workflow"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "d14c9164265ac24ed3518ed32b605a795a37775f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T18:15:49+00:00"
+        },
+        "message": "chore: remove unnecessary newline in monthly maintenance workflow"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ceb256d7f70d29b88229d0f20cef4b25bfd4b87d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T18:14:54+00:00"
+        },
+        "message": "chore: store monthly reports under /reports and remove Azure Blob backup; fix secrets usage"
+      },
+      "stats": {
+        "total": 121,
+        "additions": 53,
+        "deletions": 68
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a99238e11252a3adc2f4fd5472968ed951694396",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T18:06:14+00:00"
+        },
+        "message": "Merge pull request #4 from markhazleton/chore/site-monitoring\n\nchore: update package dependencies and improve SSL expiry script"
+      },
+      "stats": {
+        "total": 13090,
+        "additions": 10194,
+        "deletions": 2896
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "66bedb9f705175117775bc37bcc63edbb4abce99",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T18:02:39+00:00"
+        },
+        "message": "chore: update package dependencies and improve SSL expiry script\n\n- Updated `@lhci/cli` from 0.14.0 to 0.15.1\n- Upgraded `node-html-parser` from 6.1.13 to 7.0.1\n- Upgraded `pa11y-ci` from 3.1.0 to 4.0.0\n- Updated `tsx` from 4.19.1 to 4.20.4\n- Updated `typescript` from 5.5.4 to 5.9.2\n- Updated `webpack` from 5.101.0 to 5.101.1\n- Modified RSS and sitemap last build dates\n- Enhanced SSL expiry script for better error handling and readability"
+      },
+      "stats": {
+        "total": 13090,
+        "additions": 10194,
+        "deletions": 2896
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "26ca36ea6d0fd1bec555f6b4c0ddccd4340ab991",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T17:58:30+00:00"
+        },
+        "message": "Merge pull request #2 from markhazleton/chore/site-monitoring\n\nChore/site monitoring"
+      },
+      "stats": {
+        "total": 571,
+        "additions": 571,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2382b38ebf39d9dcf68baddc8c772c4dcdaf1856",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T17:51:07+00:00"
+        },
+        "message": "chore: tweak monthly backup step to no-op when secret missing"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 11,
+        "deletions": 8
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "290b1a42967177ca86e06c0acafd0bbd016bbc55",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-13T17:50:02+00:00"
+        },
+        "message": "chore: add site monitoring & maintenance automation (workflows, audits, reports, dependabot)"
+      },
+      "stats": {
+        "total": 568,
+        "additions": 568,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "d71c67ff2f1aa5d942a5a3fcf6d9ed4ffa2a4478",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T12:37:58+00:00"
+        },
+        "message": "Update project management and article links across multiple documents; enhance content descriptions and integrate new articles on PHP and ChatGPT. Adjust RSS feed and sitemap last modified dates. Update sections and articles JSON to reflect new content and article counts."
+      },
+      "stats": {
+        "total": 394,
+        "additions": 197,
+        "deletions": 197
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ef36dd9eba50de5ec18f9aaec8ca828b539c6d84",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T12:30:02+00:00"
+        },
+        "message": "Update articles and links across various sections to reflect new content and enhance relevance. Adjusted RSS and sitemap timestamps for consistency. Added evolution highlights and origin story alerts in PHP development articles to showcase project progression and AI tool integration."
+      },
+      "stats": {
+        "total": 579,
+        "additions": 485,
+        "deletions": 94
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2d5f3624db31f8311459ae0367a327512d84b726",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-11T12:12:28+00:00"
+        },
+        "message": "Add article on \"Evolving PHP Development: AI Agent Assistants in 2025\" with comprehensive sections on AI tools, modern practices, and the PhpDocSpark journey"
+      },
+      "stats": {
+        "total": 11118,
+        "additions": 6394,
+        "deletions": 4724
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "169fbc8af398950e75caa0a0a955e24b7935afac",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-06T15:06:57+00:00"
+        },
+        "message": "Refactor article title and content to emphasize \"Mountains of Misunderstanding\" in the AI Confidence Trap article; update RSS feed and sitemap with new last build dates and descriptions to reflect changes."
+      },
+      "stats": {
+        "total": 9443,
+        "additions": 4721,
+        "deletions": 4722
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2dc37e6e0cadad000dd419a84d16b7e192d50631",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T22:26:13+00:00"
+        },
+        "message": "Update navigation links across multiple articles to enhance clarity and consistency"
+      },
+      "stats": {
+        "total": 1133,
+        "additions": 611,
+        "deletions": 522
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4522338ec2a803e0c47286795dff32532e4a07eb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-30T18:42:55+00:00"
+        },
+        "message": "Add TailwindSpark article: My Journey from Bootstrap to Utility-First CSS\n\n- Introduced a comprehensive article detailing the transition from Bootstrap to Tailwind CSS.\n- Included sections on the evolution of WebSpark, challenges faced, and the benefits of utility-first CSS.\n- Highlighted three demo applications showcasing real-world use cases of TailwindSpark.\n- Discussed the learning curve, monorepo architecture, key discoveries, performance comparisons, and dark mode implementation.\n- Concluded with insights on the future of web development frameworks and the importance of choosing the right tool for the job."
+      },
+      "stats": {
+        "total": 2126,
+        "additions": 2074,
+        "deletions": 52
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "968cab320b0dfcbb645305cb826fc1db22db668f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-30T17:10:58+00:00"
+        },
+        "message": "Update article links and descriptions for improved relevance; adjust RSS and sitemap last build dates."
+      },
+      "stats": {
+        "total": 139,
+        "additions": 46,
+        "deletions": 93
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1bc59a04b5828c37adf9f57bab70b2047c9c75a5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-30T16:19:19+00:00"
+        },
+        "message": "Refactor content for clarity and readability in multiple articles; updated links and descriptions for improved relevance."
+      },
+      "stats": {
+        "total": 141,
+        "additions": 84,
+        "deletions": 57
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a0fbd057916ac43166104b4d50477b76ab789558",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-30T12:49:18+00:00"
+        },
+        "message": "Refactor hotfix prioritization article and related metadata\n\n- Updated title and description for the \"Hotfix Prioritization Matrix & Decision Framework\" article to enhance clarity and SEO.\n- Changed canonical URL to the correct article link.\n- Revised Open Graph and Twitter Card metadata for improved sharing on social platforms.\n- Adjusted published date to reflect the latest update.\n- Modified related articles in various sections to ensure relevance and accuracy.\n- Updated RSS and sitemap files with the latest last modified timestamps."
+      },
+      "stats": {
+        "total": 195,
+        "additions": 98,
+        "deletions": 97
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5ba07e413929073040a4ca6379d576672ac30bde",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-30T12:37:09+00:00"
+        },
+        "message": "Update stylesheets and content across multiple documents; revised article links and descriptions for improved relevance and clarity. Adjusted RSS and sitemap last build dates to reflect recent changes."
+      },
+      "stats": {
+        "total": 1233,
+        "additions": 1156,
+        "deletions": 77
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "56baa145035e2b1300694fee567eb77ec95d8c8a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T23:41:40+00:00"
+        },
+        "message": "Add Hotfix Prioritization Matrix & Decision Framework article\n\n- Introduced a comprehensive guide for efficient software maintenance.\n- Included sections on core principles, priority calculator, scoring criteria, priority matrix, decision tree, action protocols, workflow steps, success metrics, common pitfalls, and excellence checklist.\n- Implemented an interactive priority score calculator with dynamic updates.\n- Enhanced user experience with smooth scrolling and back-to-top functionality.\n- Added JavaScript for checklist progress tracking and print functionality."
+      },
+      "stats": {
+        "total": 2717,
+        "additions": 2643,
+        "deletions": 74
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a88b236e020e4f12145781c88aa2e4b7bf0ae847",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T18:23:16+00:00"
+        },
+        "message": "Add LinkedIn sharing functionality and article features inventory\n\n- Implemented a PowerShell script to analyze PUG article files for metadata and LinkedIn sharing components, generating a detailed CSV report.\n- Created a new article template with integrated LinkedIn sharing options, including primary sharing buttons and inline prompts.\n- Developed LinkedIn sharing mixins for various button styles and social sharing bars, enhancing user engagement.\n- Added comprehensive SCSS styles for LinkedIn sharing components, ensuring consistent branding and responsive design.\n- Established a new CSV file to track article features, including metadata presence and LinkedIn component integration status."
+      },
+      "stats": {
+        "total": 4489,
+        "additions": 3947,
+        "deletions": 542
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f35a8d06b105f9df274f1960d0e370b2879a01ec",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-27T20:32:39+00:00"
+        },
+        "message": "Add comprehensive article on the development of React-native-web-start\n\n- Introduced a detailed exploration of the creation, challenges, and benefits of React-native-web-start.\n- Included sections on project goals, genesis, foundation architecture, development environment, GitHub Actions, SEO optimization, lessons learned, and future enhancements.\n- Highlighted key insights and best practices for cross-platform development using React Native and Vite.\n- Provided thorough documentation and resources for developers to get started with the project."
+      },
+      "stats": {
+        "total": 2915,
+        "additions": 2653,
+        "deletions": 262
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "76a830ac19bfd6ac8bbc3bf16839aeb1c5f0fdfd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-26T17:10:53+00:00"
+        },
+        "message": "Update articles and metadata across multiple documents; remove YouTube links, update CSS version, and revise article references for improved content relevance. Bump npm-check-updates to version 18.0.2. Adjust RSS and sitemap last build dates and change frequencies for better SEO management."
+      },
+      "stats": {
+        "total": 165,
+        "additions": 78,
+        "deletions": 87
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "444f27594d9c49f076a311de5b56b195f0843356",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-26T16:28:50+00:00"
+        },
+        "message": "Remove YouTube URLs and titles for articles to clean up data structure"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "515e5734d3b043ea07c824eea0783c05766a49b1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-23T00:03:50+00:00"
+        },
+        "message": "reduce reuse recycle"
+      },
+      "stats": {
+        "total": 423,
+        "additions": 350,
+        "deletions": 73
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "eba0e58647c33f775b6eaa72db46544d699ac062",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-22T23:42:39+00:00"
+        },
+        "message": "next"
+      },
+      "stats": {
+        "total": 477,
+        "additions": 357,
+        "deletions": 120
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "fc3390b0e57d2b9d1b1eb05d94601cd753bc8f6b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-20T17:34:43+00:00"
+        },
+        "message": "Update sections and sitemap: Remove AI Observability article from Technical section, adjust article counts, and update last modified date in sitemap."
+      },
+      "stats": {
+        "total": 3613,
+        "additions": 1813,
+        "deletions": 1800
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ad60812f1984ba79faa122a387e2df10db7044b0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-17T17:36:49+00:00"
+        },
+        "message": "Add new sections and update article organization in sections.json; implement PowerShell script for section name updates in articles.json"
+      },
+      "stats": {
+        "total": 11185,
+        "additions": 10590,
+        "deletions": 595
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "730d58fdcc48c3f889e8926177340d2e89884fd2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-17T13:26:21+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 748,
+        "additions": 484,
+        "deletions": 264
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e4c7fed8052dd4f120d26d583ebca2dbc95226a3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-16T14:48:57+00:00"
+        },
+        "message": "Refactor article \"The AI Confidence Trap\" to \"Mountains of Misunderstanding\" with updated content and description; adjust image source and publication date. Update related HTML, RSS, and sitemap files to reflect changes. Revise links and descriptions in various project management articles for improved clarity and relevance."
+      },
+      "stats": {
+        "total": 202,
+        "additions": 71,
+        "deletions": 131
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "62ec60424b67b6c11752fc7057bbe12283320a08",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-16T12:52:26+00:00"
+        },
+        "message": "Update stylesheets and article links across multiple documents; enhance content relevance and accuracy. Adjust RSS and sitemap last modified dates for consistency."
+      },
+      "stats": {
+        "total": 466,
+        "additions": 210,
+        "deletions": 256
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "251a790b914199bdbf5d60056c669149220aef8b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-16T04:08:33+00:00"
+        },
+        "message": "Update article links and content across multiple pages to enhance relevance and accuracy. Adjusted titles and descriptions for better clarity and engagement. Modified RSS and sitemap timestamps for consistency."
+      },
+      "stats": {
+        "total": 460,
+        "additions": 163,
+        "deletions": 297
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "fd54d17249f17329dfe1dd33e990ae5ac6f2e5b9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-16T01:59:16+00:00"
+        },
+        "message": "Add article \"The AI Confidence Trap\" exploring AI's impact on learning and confidence"
+      },
+      "stats": {
+        "total": 1295,
+        "additions": 1223,
+        "deletions": 72
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "000089be8ce9ac1b8fadfc3b3899c7c0115e901d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-14T22:07:01+00:00"
+        },
+        "message": "fixing issues"
+      },
+      "stats": {
+        "total": 1363,
+        "additions": 732,
+        "deletions": 631
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "cc1c810d9ce6c8f0fb2aa21c174cbaa698fa4261",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-13T19:11:00+00:00"
+        },
+        "message": "fix: Correct path matching for missing HTML and orphan files"
+      },
+      "stats": {
+        "total": 33,
+        "additions": 28,
+        "deletions": 5
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "97ffc8820cd7edf63a607f7cdae6f69506b008a7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-13T19:06:27+00:00"
+        },
+        "message": "feat: Implement unified build system and SEO description fixer\n\n- Added `fix-twitter-seo.ps1` script to update Twitter Card and Open Graph descriptions based on defined criteria.\n- Introduced `build.js` as a unified build script consolidating all previous build functionalities.\n- Moved legacy build scripts to `legacy` directory, including individual build scripts for assets, SCSS, and PUG.\n- Updated SCSS rendering logic to improve performance and maintainability.\n- Enhanced logging and error handling across build processes.\n- Documented changes in `README.md` within the legacy folder to reflect the new structure and reasons for consolidation."
+      },
+      "stats": {
+        "total": 5469,
+        "additions": 1381,
+        "deletions": 4088
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "0906ff4b32797bb7c637deaa57e5d550dd233334",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-13T18:35:08+00:00"
+        },
+        "message": "Update article links and descriptions across multiple documents\n\n- Replaced outdated article links and descriptions in issue management, leadership, and project management documents to reflect new content and insights.\n- Enhanced header search functionality in scripts.js with Edge-specific fixes and improved keyboard navigation support.\n- Updated RSS and sitemap files with the latest build dates to ensure accurate feed and indexing."
+      },
+      "stats": {
+        "total": 259,
+        "additions": 194,
+        "deletions": 65
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2cb4df6c7191f4cd2d74ecb2db2714df5187b9da",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-13T17:56:25+00:00"
+        },
+        "message": "updates for missing values"
+      },
+      "stats": {
+        "total": 578,
+        "additions": 371,
+        "deletions": 207
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "6922cc06c0f1df83f82c6240a48fce15f2c92a66",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-13T17:42:46+00:00"
+        },
+        "message": "Update article metadata and simplify AI content handling\n\n- Modified button elements in `ArticleEdit.cshtml` to include `formnovalidate` for AI Keywords and added `asp-page-handler` to the Save Article button.\n- Removed JavaScript functionality related to AI Keywords button, indicating a shift in implementation.\n- Updated article descriptions and SEO metadata for \"Mastering Project Management Mechanics\" to enhance clarity and search visibility.\n- Revised `twitter` metadata for both articles to align with updated titles and descriptions.\n- Improved readability of the \"NuGet Packages: Benefits and Challenges\" article content and updated its published date."
+      },
+      "stats": {
+        "total": 76,
+        "additions": 10,
+        "deletions": 66
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "42b7bff781b0b553cb381887e7f8a814086755b6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-13T17:15:59+00:00"
+        },
+        "message": "Add dynamic HTML SEO score weighting to scoring config\n\nIntroduce `HtmlSeoScoreWeight` constant for HTML SEO score\nwith a value of 2. Update overall score calculation to\ndynamically include this weight, replacing the previous\nhardcoded value. This enhances the scoring logic for\nbetter flexibility and accuracy."
+      },
+      "stats": {
+        "total": 16,
+        "additions": 15,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "514e45b58af458c30009e2272e59ea593d047054",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-13T16:44:57+00:00"
+        },
+        "message": "Enhance SEO practices and improve content validation\n\nUpdated the Article Authoring Guide for clarity and SEO optimization. Enhanced the SEO Dashboard to display detailed warnings and errors. Improved the SEO"
+      },
+      "stats": {
+        "total": 5631,
+        "additions": 3814,
+        "deletions": 1817
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "94f67d45d08b05bf312cf4bd89d6a1277c41e120",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-07T14:23:02+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 37624,
+        "additions": 28083,
+        "deletions": 9541
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "61170107f2f7a0b412ca530498990480c2a74a1d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-07T13:25:18+00:00"
+        },
+        "message": "Update articles and SEO metadata across various project management and leadership pages; enhance content relevance and improve navigation. Add new articles on conflict management, project mechanics, and technology insights. Revise RSS and sitemap for better indexing and visibility."
+      },
+      "stats": {
+        "total": 239,
+        "additions": 132,
+        "deletions": 107
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "0eeecd8aa2f0a71799bb61a6be974b612b373d29",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-07T13:12:58+00:00"
+        },
+        "message": "Update articles and links across various documentation pages to reflect new content and improve relevance. Adjust RSS feed and sitemap to include recent articles and enhance navigation. Remove unnecessary redirects in static web app configuration for cleaner routing."
+      },
+      "stats": {
+        "total": 8963,
+        "additions": 4491,
+        "deletions": 4472
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "057321f760a8f03ff91af1015f4e53efd60f5b6d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-07T13:11:28+00:00"
+        },
+        "message": "Remove redundant metadata blocks and structured data from articles.pug for cleaner code and improved maintainability."
+      },
+      "stats": {
+        "total": 9006,
+        "additions": 4479,
+        "deletions": 4527
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "aed38831a5381dca15ce3407bb17a40930545f13",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-07T13:02:11+00:00"
+        },
+        "message": "Add additional redirects for project mechanics routes"
+      },
+      "stats": {
+        "total": 45,
+        "additions": 45,
+        "deletions": 0
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "d10edbe1343d8cd74b623d6a579dd092614a85fc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-06T19:41:38+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 3063,
+        "additions": 1272,
+        "deletions": 1791
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1363e8bfa1daef36ebb463c253464ee4851046cf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-06T19:27:10+00:00"
+        },
+        "message": "updates for seo and standardization"
+      },
+      "stats": {
+        "total": 17871,
+        "additions": 8183,
+        "deletions": 9688
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "6532e0ace972188f058b8eec1dfbeedd5a9871fa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-06T16:23:58+00:00"
+        },
+        "message": "Update article metadata and styling\n\n- Added conditional checks for publishedDate and estimatedReadTime in multiple Pug files to ensure default values are displayed when not provided.\n- Updated RSS and sitemap XML files with the latest build dates.\n- Removed unused SCSS files related to sidenav and modern styles, streamlining the stylesheet structure.\n- Created PowerShell scripts to automate the extraction of git commit dates for articles and update articles.json with publishedDate and estimatedReadTime."
+      },
+      "stats": {
+        "total": 2414,
+        "additions": 1243,
+        "deletions": 1171
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "02636ff28678721fbf0aebb220e5ed0d5f195e16",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-06T15:32:59+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 670,
+        "additions": 53,
+        "deletions": 617
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "bc1c320f99b8d3009ec811556b20a57eb35f821a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-06T15:24:59+00:00"
+        },
+        "message": "standardize layout"
+      },
+      "stats": {
+        "total": 25089,
+        "additions": 9771,
+        "deletions": 15318
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "dd24da15f485659d8e2edf6e0fdb14a610830d07",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-05T23:11:44+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 30805,
+        "additions": 19938,
+        "deletions": 10867
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "be4494921c243f28e0968e76535f42d623a0c318",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-04T20:15:30+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 16758,
+        "additions": 9108,
+        "deletions": 7650
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "261e9c2f78ff7b7becd8a21a7f00bec6ad3b8051",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-04T17:09:26+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 1496,
+        "additions": 968,
+        "deletions": 528
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "001b8beb224c8f033f10238e7a931176f99d5348",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-04T16:48:14+00:00"
+        },
+        "message": "seo updates"
+      },
+      "stats": {
+        "total": 21913,
+        "additions": 15799,
+        "deletions": 6114
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "73c2af8551fa499f4d6845a03b11beaf73169c93",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T21:22:48+00:00"
+        },
+        "message": "fix missing title page on home"
+      },
+      "stats": {
+        "total": 370,
+        "additions": 186,
+        "deletions": 184
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "66de44bdf00812d58e807522992d74088de762d6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T18:26:40+00:00"
+        },
+        "message": "Add article: Building TeachSpark - AI-Powered Educational Technology for Teachers\n\n- Introduced a comprehensive article detailing the development of TeachSpark, an AI-powered platform for educators.\n- Included sections on the genesis of the project, technical vision, architecture, model selection, standards integration, logging analytics, and more.\n- Highlighted the impact of TeachSpark on educational challenges and outlined future directions for the platform.\n- Emphasized the importance of user-centered design and technical excellence in educational technology."
+      },
+      "stats": {
+        "total": 10402,
+        "additions": 6265,
+        "deletions": 4137
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "2fb800247514a92755a467000b0b12994b9ae075",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T14:39:02+00:00"
+        },
+        "message": "fix building vite site article"
+      },
+      "stats": {
+        "total": 2760,
+        "additions": 1424,
+        "deletions": 1336
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4672d60c1f62b173d11b581eb1dbe1eadef5261e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T13:49:21+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 1947,
+        "additions": 503,
+        "deletions": 1444
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "82500d58834b2a117c1396fa13b4bcd331e5cac5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T03:15:53+00:00"
+        },
+        "message": "restore"
+      },
+      "stats": {
+        "total": 1893,
+        "additions": 779,
+        "deletions": 1114
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "fb5099b350b09a62cfdabff8ff4de545ac0d0006",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T02:19:06+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 1506,
+        "additions": 713,
+        "deletions": 793
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "b760fa9f697c8d9cc57899fe96c27aa115367ab3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T02:03:12+00:00"
+        },
+        "message": "stuf"
+      },
+      "stats": {
+        "total": 9749,
+        "additions": 7522,
+        "deletions": 2227
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "fe50dea03bc8d121c93ec106180bdecfad668c41",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T01:25:48+00:00"
+        },
+        "message": "Update articles and links across project documentation\n\n- Replaced links and descriptions in \"from-features-to-outcomes.html\" to feature new articles on key press counters, accountability, and career growth.\n- Updated \"program-management-office.html\" to include new content on project team dynamics and issue management.\n- Modified \"project-life-cycle.html\" to reflect new articles on the Wichita Sewer website creation and project team crafting.\n- Changed references in \"solution-architect-technology-decisions-that-impact-business.html\" to highlight new articles on AI and lifelong learning.\n- Adjusted RSS and sitemap files to reflect updated last build dates.\n- Removed outdated \"data-science-for-net-developers.pug\" file and replaced it with a new version featuring a comprehensive overview of data science for .NET developers."
+      },
+      "stats": {
+        "total": 1378,
+        "additions": 690,
+        "deletions": 688
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "ba4dfbec7452c92762ca7ec9559d3154f4328218",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T01:15:32+00:00"
+        },
+        "message": "Refactor project documentation and articles for improved clarity and relevance\n\n- Updated links and descriptions in the issue management and leadership sections to reflect current content and enhance user navigation.\n- Revised article content in the project life cycle and program management office pages to provide more accurate information.\n- Enhanced SEO metadata for articles on computer vision and data science for .NET developers, including keywords and social media tags.\n- Adjusted RSS feed and sitemap last modified dates to ensure accurate indexing and updates."
+      },
+      "stats": {
+        "total": 1862,
+        "additions": 1266,
+        "deletions": 596
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4c674f9cba1edb439dc69e2e750306029d53854f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T01:10:53+00:00"
+        },
+        "message": "Refactor project documentation and articles: Update links and content for improved relevance and clarity across various sections, including conflict management, change management, and project life cycle. Enhance the layout and structure of the ChatGPT Meets Jeopardy article for better readability and engagement."
+      },
+      "stats": {
+        "total": 1655,
+        "additions": 1054,
+        "deletions": 601
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "56752f298e4b7cb88d95a4b879b34224dbf47097",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T01:04:48+00:00"
+        },
+        "message": "Update lastBuildDate in RSS feed and lastmod in sitemap to reflect recent changes"
+      },
+      "stats": {
+        "total": 2945,
+        "additions": 2168,
+        "deletions": 777
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "5c7cb75438da0d23cac873f94299dc2816daad5f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-02T23:13:31+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 7722,
+        "additions": 4786,
+        "deletions": 2936
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "1038bd4a55248c3757967f748f94a5d02c2a5ec8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-02T21:33:13+00:00"
+        },
+        "message": "update azure static web app article"
+      },
+      "stats": {
+        "total": 4835,
+        "additions": 3583,
+        "deletions": 1252
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "4ff5bc2f7f6d0e5b9dea8763531ede1315d4adb1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T18:59:39+00:00"
+        },
+        "message": "Update URL slug prefix in ArticleAdd page"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "17f211adf4453661ba1628f8359847ff6e800e3e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-24T13:09:00+00:00"
+        },
+        "message": "Update article layout and metadata for Law and Order Episode Generator; adjust RSS and sitemap last modified dates"
+      },
+      "stats": {
+        "total": 3568,
+        "additions": 2181,
+        "deletions": 1387
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8b256f52ef7c49d5193386a22c000d5b490f0b8b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-19T15:18:25+00:00"
+        },
+        "message": "upates to docs"
+      },
+      "stats": {
+        "total": 635,
+        "additions": 338,
+        "deletions": 297
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "bfbeed6f68951e42cd2c60a8728ad70254723f44",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-19T15:00:52+00:00"
+        },
+        "message": "update azure wiki article"
+      },
+      "stats": {
+        "total": 1948,
+        "additions": 1245,
+        "deletions": 703
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f2d3b1bfebcc26161769bf22ea7e21fcda3d3a46",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-19T14:53:09+00:00"
+        },
+        "message": "update some template usage"
+      },
+      "stats": {
+        "total": 2773,
+        "additions": 1876,
+        "deletions": 897
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "8c49eafe3943654ea3dd025ae23056bbedac17d7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-19T14:18:19+00:00"
+        },
+        "message": "add link to artspark article"
+      },
+      "stats": {
+        "total": 735,
+        "additions": 385,
+        "deletions": 350
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "f6df4bf5fba6c6bd66a57b9651a7f5d8ff4b0adc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-17T22:34:12+00:00"
+        },
+        "message": "Update project documentation and articles links; enhance AI observability article with video integration\n\n- Replaced outdated article links in the issue management section with relevant project lifecycle and program management office links.\n- Updated leadership section links to reflect new articles on AI and technology decision-making.\n- Enhanced the \"AI Observability Is No Joke\" article by adding a featured video section for better engagement.\n- Updated RSS and sitemap last modified dates to reflect recent changes.\n- Upgraded dependencies in package.json and package-lock.json for Bootstrap and Terser."
+      },
+      "stats": {
+        "total": 668,
+        "additions": 365,
+        "deletions": 303
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "cf435a14ed2d6481fde26d482be2ca8858d46c53",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-17T13:41:37+00:00"
+        },
+        "message": "Update stylesheets and content across multiple project management pages\n\n- Updated stylesheet version from 20250616 to 20250617 in various HTML files to ensure consistent styling.\n- Replaced outdated article links and descriptions with new content in the following files:\n  - issue-management.html\n  - conflict-management/index.html\n  - index.html\n  - accountability-and-authority.html\n  - evolution-over-revolution.html\n  - from-features-to-outcomes.html\n  - leadership/index.html\n  - program-management-office.html\n  - project-life-cycle.html\n  - project-mechanics.html\n  - project-meetings.html\n  - solution-architect-technology-decisions-that-impact-business.html\n- Updated RSS and sitemap files with the latest build dates.\n- Enhanced content in the AI Observability article to improve clarity and depth."
+      },
+      "stats": {
+        "total": 993,
+        "additions": 612,
+        "deletions": 381
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e8deb30f5d2ec68f79a701cad9be8fafba5e7de7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-16T21:59:41+00:00"
+        },
+        "message": "Add article \"AI Observability Is No Joke\" with insights on AI transparency and monitoring practices"
+      },
+      "stats": {
+        "total": 3615,
+        "additions": 3066,
+        "deletions": 549
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e9acf0987bc5959b45101d4dfc32b33b33dfb8cf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-15T16:04:05+00:00"
+        },
+        "message": "Update stylesheets and content links across multiple HTML files; increment version to 20250615. Modify article stubs to enhance metadata and layout structure. Remove obsolete test page and update RSS and sitemap last build dates."
+      },
+      "stats": {
+        "total": 1292,
+        "additions": 761,
+        "deletions": 531
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "e3864e2f47903652f6f0748a2a9e5f141d52c7ec",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-11T20:29:50+00:00"
+        },
+        "message": "Update stylesheets and content across multiple documents; increment version number for CSS, update article links, and refresh RSS and sitemap last modified dates."
+      },
+      "stats": {
+        "total": 2567,
+        "additions": 1899,
+        "deletions": 668
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "dc7751bda83dd8cdda26651715f90d366a4dcfde",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-10T20:45:13+00:00"
+        },
+        "message": "Implement comprehensive client-side search functionality with enhanced UI and performance optimizations"
+      },
+      "stats": {
+        "total": 3707,
+        "additions": 3132,
+        "deletions": 575
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a7d561e6fb7476d8914f427f49930baeeec1e0c9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-10T18:26:15+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability; removed redundant code blocks and optimized function calls."
+      },
+      "stats": {
+        "total": 9424,
+        "additions": 6584,
+        "deletions": 2840
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "575ab43bd8cc0b102673c48e80763a711211ff1c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-07T07:50:03+00:00"
+        },
+        "message": "Update articles and metadata across the site\n\n- Replaced links and descriptions in the \"From Features to Outcomes\" section to reflect new articles on System Cache, PUG, and Trivia Spark.\n- Updated the \"Program Management Office\" section with new content on Solution Architect Technology Decisions and Project Life Cycle.\n- Modified the \"Project Life Cycle\" page to include links to \"Evolution Over Revolution\" and \"EDS Super Bowl Commercials.\"\n- Enhanced the \"Solution Architect Technology Decisions\" page with new links and descriptions for Program Management Office and Creating a PHP Website with ChatGPT.\n- Updated RSS feed and sitemap last build dates to reflect recent changes.\n- Refactored the article on automating GitHub profile updates with GitHub Actions to improve structure, metadata, and content clarity.\n- Made minor formatting adjustments in the \"Building Real-Time Chat\" article for consistency."
+      },
+      "stats": {
+        "total": 1767,
+        "additions": 1050,
+        "deletions": 717
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "a99e065a6596c90b0f45333db26080520c8c8b46",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-07T06:41:31+00:00"
+        },
+        "message": "Refactor NuGet Packages Article and Update Metadata\n\n- Updated the layout of the NuGet Packages article to use a modern layout.\n- Enhanced metadata including title, description, keywords, and Open Graph tags for better SEO.\n- Added structured data for improved search engine visibility.\n- Introduced additional CSS styles for a more visually appealing article presentation.\n- Updated RSS feed to include the new article details.\n- Modified sitemap to reflect the latest changes and added the new article.\n- Removed outdated item from RSS feed to prevent duplication."
+      },
+      "stats": {
+        "total": 15009,
+        "additions": 8121,
+        "deletions": 6888
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "df57fe007f39ab8a6694fb7d14f6a20f41a1dc0e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-02T23:49:06+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 975,
+        "additions": 627,
+        "deletions": 348
+      },
+      "repo": "markhazleton-blog"
+    },
+    {
+      "sha": "c05ff07bdd243b57999c2226963c955783fd4f7a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-06-02T22:16:48+00:00"
+        },
+        "message": "Refactor code structure and remove redundant sections for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 662,
+        "additions": 331,
+        "deletions": 331
+      },
+      "repo": "markhazleton-blog"
+    }
+  ]
+}

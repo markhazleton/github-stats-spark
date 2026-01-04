@@ -1,6 +1,55 @@
 {
-  "timestamp": "2026-01-02T20:44:15.805532",
+  "timestamp": "2026-01-03T18:41:46.273786",
   "value": [
+    {
+      "sha": "10395bb50d8ca4361ca345b3357fbf490ef19a5d",
+      "message": "Update docs for v2.2.0: package split, quality, .NET 10\n\nComprehensive documentation refresh for v2.2.0:\n- Updated all pages to v2.2.0, .NET 8/9/10 support, and 237+ tests (711 runs)\n- Added clear package split (Base & Crawler), install and DI guidance\n- Documented new quality features: Source Link, .snupkg, AOT/trimming, package validation, zero-warning builds\n- Expanded version history and migration guidance for v1.x users\n- Updated footers, meta tags, and navigation for consistency and SEO\n- Added docs-update-summary.md with change rationale and checklist",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:28:47+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "304c3a62e2fe4f5b63535c5c18b6bd82126ee135",
+      "message": "Add release execution summary for v2.2.0\n\nIncludes detailed markdown documenting the v2.2.0 release process: actions taken, workflow steps, package details, monitoring instructions, verification checklist, rollback plan, post-release tasks, timeline, and highlights of new features. This provides a transparent and traceable record of the release.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:06:59+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "02ae968ec288ac2dfbd98c1fbcb601246f3b0284",
+      "message": "chore: bump version to 2.2.0 - Quality and Tooling release\n\nAdded Source Link debugging, symbol packages, trimming/AOT readiness, package validation, zero-warning builds. Demo app migrated to Vite/NPM. All 237 tests passing. Zero breaking changes.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:05:30+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "5983313b4ad8c762795ebd68be24375e2594faae",
+      "message": "Enhance build pipeline: lint, format, docs, zero warnings\n\nUpgraded npm build process for WebSpark.HttpClientUtility.Web:\n- Added ESLint, Stylelint, Prettier with strict configs\n- New scripts for clean, lint, format, and zero-warning builds\n- Updated source files to pass all lint/format checks\n- Created config files for linting and formatting\n- Added detailed build and quick reference documentation\n- Build now fails on any lint warnings for maximum code quality",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:52:57+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "0e3d5357d01c15ade9289eac1b264c60e58de3c7",
+      "message": "Add explicit Microsoft.NET.ILLink.Tasks 10.0.1 to all projects\n\nExplicitly reference Microsoft.NET.ILLink.Tasks version 10.0.1\nin all .csproj files to ensure consistent linker/trimmer\nbehavior across the solution. This overrides the SDK-provided\nversion and helps address potential build or compatibility\nissues related to ILLink.Tasks.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:37:54+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "e60fc5a14d113ab38a441aa0f209ef7541025135",
+      "message": "Improve NuGet quality, trimming/AOT readiness, docs\n\n- Enable Source Link, symbol packages, and package validation for both base and crawler projects\n- Add trimming and AOT analyzers; annotate all reflection-based APIs with RequiresUnreferencedCode/RequiresDynamicCode\n- Add global suppressions for test and demo projects; disable analyzers where not needed\n- Update package icons, metadata, and documentation to reflect new quality features\n- Add markdown docs for build status, annotation patterns, and package improvements\n- Solution is now trimming-aware and ready for v2.2.0 release, with only minor annotation fixes remaining",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:12:12+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "7ac8a8256ab1737b8aaafd01434152f35f893ace",
+      "message": "Migrate to Vite/NPM pipeline for all client-side assets\n\n- Replace LibMan/CDN/lib folder with NPM-managed Vite build for JS/CSS\n- Add package.json, package-lock.json, and .gitignore for node_modules and Vite output\n- Configure Vite for bundling, minification, hashed filenames, and manifest\n- Add main.js, site.js, and site.css as modern entrypoints (Bootstrap, Icons, custom code)\n- Implement ViteAssetTagHelper for manifest-based asset injection in Razor\n- Update _Layout.cshtml to use <vite-style> and <vite-script>, remove all lib/CDN refs, and show warning if Vite assets missing\n- Enhance .csproj to auto-run npm install/build and clean Vite artifacts\n- Add detailed docs: README, BUILD-PIPELINE, MIGRATION-SUMMARY, VERIFICATION-CHECKLIST\n- Register TagHelper in _ViewImports.cshtml\n- App now uses only NPM-built, tree-shaken, minified, cache-busted assets",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T21:33:57+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
     {
       "sha": "a1bbf547f475bac21941be0234aba914d0b7baa0",
       "message": "Update Microsoft.Extensions.* packages to 10.0.1\n\nUpgraded Microsoft.Extensions.Caching.Memory to 10.0.1 in all projects. Also updated Microsoft.Extensions.Caching.Abstractions and Microsoft.Extensions.Http to 10.0.1 in WebSpark.HttpClientUtility.csproj. No other changes made.",
