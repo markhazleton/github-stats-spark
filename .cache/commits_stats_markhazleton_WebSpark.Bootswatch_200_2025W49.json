@@ -1,0 +1,869 @@
+{
+  "timestamp": "2026-01-04T09:52:14.811092",
+  "value": [
+    {
+      "sha": "7f736cc0b24828c7e3d824b16f47403369f30e67",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-04T03:14:42+00:00"
+        },
+        "message": "chore: release v1.34.0 - Developer experience improvements and demo UI enhancements\n\n- Enhanced dependency validation with comprehensive error messages\n- Added configuration validation service (BootswatchStartupValidation)\n- Improved XML documentation with code examples and remarks\n- Rewrote README with step-by-step setup guide and troubleshooting\n- Enhanced hero section visibility in demo site across all themes\n- Reorganized documentation files to copilot/ folder structure\n- Updated package metadata and release notes\n\nNo breaking changes - fully backward compatible"
+      },
+      "stats": {
+        "total": 2075,
+        "additions": 2043,
+        "deletions": 32
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "907e956c42c4c75d8da4142b05237c433d137bbe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T15:36:58+00:00"
+        },
+        "message": "Add theme switcher to Razor views\n\nModified `WebSparkBootswatch.cshtml` and `_Layout.cshtml` to integrate a theme switcher. Updated namespace usage for `WebSpark.Bootswatch.Services` and `WebSpark.Bootswatch.Helpers` with an additional `@` symbol. Dynamically set `data-bs-theme` attribute using `BootswatchThemeHelper.GetCurrentColorMode(HttpContext)` to adjust themes based on context."
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "cde7dd62afc7adb10ba3b04a9188728540651347",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T15:23:01+00:00"
+        },
+        "message": "Fix CI/CD issues: multi-targeting and SDK setup\n\nDocumented resolution of CI/CD issues in `CI_FIXES_APPLIED.md`.\nUpdated the demo project to multi-target .NET 8.0, 9.0, and 10.0,\nresolving build failures. Enhanced test workflows to set up all\nrequired SDKs, ensuring successful builds for multi-targeted\nprojects. Verified fixes with successful local tests and outlined\nexpected CI/CD outcomes. Provided next steps for monitoring,\nreviewing, and merging the PR, along with a summary of commits\nand success criteria."
+      },
+      "stats": {
+        "total": 169,
+        "additions": 169,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "3bf0cd476c44d7083a7365079f7a3a6721f1c18c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T15:22:21+00:00"
+        },
+        "message": "Merge pull request #1 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10"
+      },
+      "stats": {
+        "total": 4070,
+        "additions": 3934,
+        "deletions": 136
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "6c75caaa3263d08de86f8de3322a2f06bf70c258",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T15:20:53+00:00"
+        },
+        "message": "fix: setup all .NET SDKs in multi-framework test workflow\n\n- Add .NET 8.0, 9.0, and 10.0 SDK setup to each test job\n\n- Required because projects now multi-target and need all SDKs during restore\n\n- Resolves NETSDK1045 errors in test-net8 and test-net9 jobs"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 30,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "823753dc6c65a2135a1384a31a73ade5d43aad89",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T15:18:23+00:00"
+        },
+        "message": "fix: multi-target demo project for CI/CD compatibility\n\n- Change Demo project from single target (net10.0) to multi-target (net8.0;net9.0;net10.0)\n\n- Fixes CI/CD failures in .NET 8.0 and 9.0 test jobs\n\n- Resolves NETSDK1045 and NETSDK1005 errors\n\n- All 33 tests now pass across all frameworks"
+      },
+      "stats": {
+        "total": 386,
+        "additions": 385,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "b93a5348aeda5644dbc8b3afd5e81d0f7e519019",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T15:07:11+00:00"
+        },
+        "message": "docs: add ready to publish guide for v1.32.0"
+      },
+      "stats": {
+        "total": 370,
+        "additions": 370,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "3654be2ab2defcdf9ed82c7cf614d8aac5ff86e0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T15:06:10+00:00"
+        },
+        "message": "chore: prepare v1.32.0 with GitHub Actions automation\n\n- Bump version to 1.32.0\n\n- Update GitHub Actions workflow for multi-framework support\n\n- Add comprehensive package validation\n\n- Setup .NET 8.0, 9.0, and 10.0 in CI/CD\n\n- Update to latest GitHub Actions versions (v4)\n\n- Add automated GitHub release creation\n\n- Update CHANGELOG.md with v1.32.0 features\n\n- Add GITHUB_ACTIONS_PUBLISHING.md guide"
+      },
+      "stats": {
+        "total": 756,
+        "additions": 640,
+        "deletions": 116
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "38eced59f081163c6847f28692c58ec20be487f5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T14:54:07+00:00"
+        },
+        "message": "chore: add NuGet publishing automation and guide\n\n- Add publish-nuget-package.ps1 script with safety checks\n\n- Add comprehensive PUBLISHING_GUIDE.md\n\n- Include pre/post-publication checklists\n\n- Document troubleshooting and verification steps"
+      },
+      "stats": {
+        "total": 487,
+        "additions": 487,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "151c4c6d85ef124a86acb734ab2780f1ce45ce6e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T14:48:23+00:00"
+        },
+        "message": "docs: add upgrade completion summary"
+      },
+      "stats": {
+        "total": 226,
+        "additions": 226,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "a05c3880b4280e665aa75fa5ad578094d90f0916",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T14:47:30+00:00"
+        },
+        "message": "docs: comprehensive multi-targeting documentation\n\n- Update README.md with multi-framework support details\n\n- Add CHANGELOG.md with version history and migration guides\n\n- Enhance MULTI_FRAMEWORK_TESTING_SUMMARY.md with implementation details\n\n- Document .NET 8.0, 9.0, and 10.0 support\n\n- Add testing instructions for all frameworks\n\n- Include CI/CD integration documentation\n\n- Add framework-specific package version information"
+      },
+      "stats": {
+        "total": 721,
+        "additions": 712,
+        "deletions": 9
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "809b3a17490a54ee11d02bc41fa0d5b4482d5f58",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T14:37:07+00:00"
+        },
+        "message": "test: add multi-framework test project\n\n- Add WebSpark.Bootswatch.Tests project targeting net8.0, net9.0, and net10.0\n\n- Create framework compatibility, StyleModel, and StyleCache tests\n\n- Add GitHub Actions workflow for separate framework testing\n\n- Add PowerShell script for local multi-framework test execution\n\n- All tests pass on .NET 8.0, 9.0, and 10.0"
+      },
+      "stats": {
+        "total": 567,
+        "additions": 566,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "43755f90f6cbd13d44f47d7ebb6e9876cee1f004",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T14:27:16+00:00"
+        },
+        "message": "feat: add multi-targeting support for .NET 8.0, 9.0, and 10.0\n\n- Update TargetFrameworks to net8.0;net9.0;net10.0\n\n- Add framework-specific package references for Microsoft.Extensions.FileProviders.Embedded\n\n- Bump version to 1.31.0\n\n- Update release notes with multi-targeting details"
+      },
+      "stats": {
+        "total": 528,
+        "additions": 520,
+        "deletions": 8
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "e70df6a7b496c2a3bb9c43c8bccac9375aa60482",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-13T14:09:50+00:00"
+        },
+        "message": "chore: upgrade solution to .NET 10.0 (Big Bang)\n\nUpdate TargetFramework to net10.0 for all projects\n\nUpdate Microsoft.Extensions.FileProviders.Embedded to 10.0.0\n\nRemove System.Text.RegularExpressions package references"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 6,
+        "deletions": 8
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "fe3166ef9815aebad74adaf96b984e35ca5603c2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-27T02:31:16+00:00"
+        },
+        "message": "Standardize Git tags and fix GitHub sync issues\n\n- Removed duplicate and inconsistent tags (e.g., `1.0.7` without `v` prefix) to ensure all tags follow the `vMAJOR.MINOR.PATCH` format.\n- Resolved GitHub tag visibility issue by synchronizing local and remote tags, ensuring compatibility with workflows.\n- Verified and documented the current state of tags, aligning with semantic versioning and project versioning.\n- Added detailed instructions for tag creation, pushing, and verification, including troubleshooting steps.\n- Established future tagging best practices with clear guidelines for version bumping and tag message formatting."
+      },
+      "stats": {
+        "total": 183,
+        "additions": 183,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "aad0c926ba5fdfac4925883ef13f306eb0d22781",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-27T02:07:23+00:00"
+        },
+        "message": "Release version 1.30.0 - Repository enhancements\n\nUpdated WebSpark.Bootswatch to version 1.30.0 with significant improvements in repository structure, documentation, and community engagement.\n\nKey changes:\n- Updated version to 1.30.0 (assembly, file, and package).\n- Enhanced README.md with GitHub NuGet best practices.\n- Added community health files: CONTRIBUTING.md, SECURITY.md, CODE_OF_CONDUCT.md.\n- Introduced structured CHANGELOG.md and `/copilot/` directory.\n- Added professional GitHub issue templates and badges.\n- Improved documentation with architecture guides, troubleshooting, and browser compatibility.\n\nNo breaking changes; backward compatibility maintained. Repository now adheres to professional open-source standards."
+      },
+      "stats": {
+        "total": 156,
+        "additions": 156,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "584fa03690b4ae55537af7d20e7951c5d08dbab6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-27T02:05:06+00:00"
+        },
+        "message": "Release version 1.30.0 - Enhanced repository with GitHub NuGet best practices"
+      },
+      "stats": {
+        "total": 2608,
+        "additions": 2117,
+        "deletions": 491
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "610d7d49fcdc42c888950c9651d90e72051547b6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-27T01:13:16+00:00"
+        },
+        "message": "Enhance performance, security, and accessibility\n\n- Added meta tags for SEO and social media sharing.\n- Improved accessibility with ARIA roles and skip links.\n- Enabled Brotli/Gzip compression and caching strategies.\n- Added security headers and HSTS for HTTPS enforcement.\n- Redesigned footer with version info and NuGet link.\n- Introduced VersionService for dynamic version tracking.\n- Added `/debug-version` and `/version-test` pages.\n- Configured health checks and static file caching.\n- Updated dependencies and improved CSP policies.\n- Enhanced responsive design and footer styling.\n- Added best practices documentation and testing guides."
+      },
+      "stats": {
+        "total": 1344,
+        "additions": 1318,
+        "deletions": 26
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "13ed446f1da44ef2f870a1eeb30ff94d49d5a2e7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T13:37:42+00:00"
+        },
+        "message": "update build new nuget package check"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "efbda889272820dea4ced07f5c1f620e19abb5bc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T13:33:35+00:00"
+        },
+        "message": "upate version"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "0b033888ce9f364d1d4ad19721b753b2c3a9ad62",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T13:27:39+00:00"
+        },
+        "message": "Release v1.20.0: Updated NuGet package dependencies and documentation"
+      },
+      "stats": {
+        "total": 1467,
+        "additions": 1450,
+        "deletions": 17
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "8b95cc8cee75bd04f0ee2caefda36c45a3a908fb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-21T17:02:26+00:00"
+        },
+        "message": "Release v1.10.3"
+      },
+      "stats": {
+        "total": 196,
+        "additions": 184,
+        "deletions": 12
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "914f9d44735e83cbea6b1782e325dcfff49602dd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-20T19:03:20+00:00"
+        },
+        "message": "Bump version to 1.10.2 (patch release) and update documentation"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 10,
+        "deletions": 11
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "0e0d5be454b5d7730cb9bbc21ecf2ef87c934e04",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-20T19:01:44+00:00"
+        },
+        "message": "Bump version to 1.10.1 and update documentation for new release"
+      },
+      "stats": {
+        "total": 299,
+        "additions": 109,
+        "deletions": 190
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "71e4907a7556fdf7d7b85d919a594d32894477a4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-18T23:44:19+00:00"
+        },
+        "message": "Files Update for v1.10.1"
+      },
+      "stats": {
+        "total": 167,
+        "additions": 111,
+        "deletions": 56
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "ba461efefc7da3c2800544d8c333fdefadd65a36",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-15T15:15:35+00:00"
+        },
+        "message": "Release version 1.10.0"
+      },
+      "stats": {
+        "total": 499,
+        "additions": 442,
+        "deletions": 57
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "f862a33f57cde20a6843b758640e3a7783a6e101",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-15T01:51:42+00:00"
+        },
+        "message": "Release version 1.0.7"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 4,
+        "deletions": 8
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "540a9bad693639530d74c70f7e4c33779e18bd93",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-15T01:21:59+00:00"
+        },
+        "message": "Update package version and enhance Bootstrap styles\n\n- Updated version number from 1.0.6 to 1.0.7 in WebSpark.Bootswatch.csproj.\n- Added numerous CSS rules in bootstrap.min.css to improve styling and functionality of buttons, dropdowns, alerts, and modals, enhancing overall user experience.\n- Removed comment regarding bundling and minification in site.css.\n- Deleted unused binary file bg-kitchen-jars.jpg."
+      },
+      "stats": {
+        "total": 21467,
+        "additions": 21456,
+        "deletions": 11
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "01db87d107eb65e67a1be91a923338ab314d2304",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-05T02:15:32+00:00"
+        },
+        "message": "Update documentation and project metadata with important links and release notes for version 1.0.6"
+      },
+      "stats": {
+        "total": 49,
+        "additions": 43,
+        "deletions": 6
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "fc8e1d5edc01c823dc8ddd65582b358ec1336e64",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-05T01:34:01+00:00"
+        },
+        "message": "Refactor Bootswatch theme switcher implementation\n\n- Updated namespace for services in _ViewImports.cshtml\n- Refactored Program.cs to use new Bootswatch theme switcher registration methods\n- Removed StyleCache service from the demo project as it is now integrated into Bootswatch\n- Simplified JavaScript for theme switching by moving functionality to bootswatch-theme-switcher.js\n- Enhanced BootswatchExtensions to include theme switcher and style cache registration\n- Bumped version to 1.0.5 in the project file\n- Added ThemeSwitcherGuide.md for documentation on theme switcher implementation\n- Created ThemeSwitcherExample.cshtml and corresponding PageModel for demo purposes\n- Introduced new components for layout and theme switcher to streamline usage\n- Added helper methods for theme management in BootswatchThemeHelper\n- Implemented StyleCache service for caching Bootswatch styles\n- Added JavaScript functionality for theme switching and color mode toggling"
+      },
+      "stats": {
+        "total": 1446,
+        "additions": 847,
+        "deletions": 599
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "2d5d6bfa76786fb1fe86b19ea9deae6d5ec703d7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T22:34:48+00:00"
+        },
+        "message": "Release version 1.0.4"
+      },
+      "stats": {
+        "total": 1993,
+        "additions": 1959,
+        "deletions": 34
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "6602cb9e5215ed1328c9e6e978189ae4babd1ed5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T21:31:09+00:00"
+        },
+        "message": "Release version 1.0.3 with signed assemblies"
+      },
+      "stats": {
+        "total": 48,
+        "additions": 33,
+        "deletions": 15
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "ba3d4a787481b6d0a90df24f04bbf8509509be17",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T20:59:38+00:00"
+        },
+        "message": "v1.0.2"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 16,
+        "deletions": 14
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "3df4bf8d5ae857d126a3b61d98b5df06129f325e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T20:58:32+00:00"
+        },
+        "message": "Update for v1.0.1"
+      },
+      "stats": {
+        "total": 123,
+        "additions": 72,
+        "deletions": 51
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "0b21803cf77439b4e071fd9f1e2d2b4aa64ebf7b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T20:38:47+00:00"
+        },
+        "message": "update"
+      },
+      "stats": {
+        "total": 2391,
+        "additions": 2369,
+        "deletions": 22
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "bd10f72e23ea369802f633b97d8ecc11aec74914",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T20:37:56+00:00"
+        },
+        "message": "Bump version to 1.0.0"
+      },
+      "stats": {
+        "total": 114,
+        "additions": 101,
+        "deletions": 13
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "504585eccc93ab5ec8c9f43ab2a8eed4f1d7d367",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T18:54:11+00:00"
+        },
+        "message": "update for WebSpark.Bootswatch"
+      },
+      "stats": {
+        "total": 75175,
+        "additions": 75144,
+        "deletions": 31
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "a5fdf487630d48d9efd6ed7548a00909f1b0db59",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T18:53:37+00:00"
+        },
+        "message": "remove ControlSpark items"
+      },
+      "stats": {
+        "total": 74716,
+        "additions": 0,
+        "deletions": 74716
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "355a9c0c309758cfe25ddd92a67f4ea0122a554b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-09T22:35:49+00:00"
+        },
+        "message": "Update dotnet.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "4073674fe80c5299d5e97aa4063be19378f56f89",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-09T22:33:56+00:00"
+        },
+        "message": "update to net 9"
+      },
+      "stats": {
+        "total": 188,
+        "additions": 90,
+        "deletions": 98
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "736ea771b5d6a30ae5e398b102869e036472562a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-27T18:46:01+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/controlorigins/ControlSpark.Bootswatch"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "fce122bf5beb112290e8ee9e6e32ad1a215f13c7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-27T18:45:55+00:00"
+        },
+        "message": "Update and validate demo"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 3,
+        "deletions": 17
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "ea2a6571c53e417ef3e53abfc6a382d5f165c40a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-27T18:38:04+00:00"
+        },
+        "message": "Update dotnet.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "882dc05378c7639c3e81cbcbefd9f55c951588b7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-27T16:34:10+00:00"
+        },
+        "message": "Standardize logging for web and admin"
+      },
+      "stats": {
+        "total": 40,
+        "additions": 25,
+        "deletions": 15
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "51f26be4251efcb8c31a6317b06d52abf58a93a0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-12-18T20:33:07+00:00"
+        },
+        "message": "Update Version to 8\nMinor tweaks on UI of Admin"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "4e8153e3ddd01d70a8a648f4a14c3bee2f3dee0f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-12-13T19:03:14+00:00"
+        },
+        "message": "Upgrade to Net 8\nRemove Swagger"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "28a286fae715c5c3ba2adb55c5899b3f9cab48ae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-10T23:59:00+00:00"
+        },
+        "message": "Update dotnet.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "2d98bb6312ab03e8586a267cdd96c76398ec2994",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-10T17:27:47+00:00"
+        },
+        "message": "minor clean-up"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 0,
+        "deletions": 11
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "c0d1dff5c7bd86ed90be2c7a24981b32cb6db434",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-28T12:34:16+00:00"
+        },
+        "message": "fix sitemaps for non-recipe sites"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "97ff75e2195f9e771dea2942a9cefffcd305a31e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-04T19:50:00+00:00"
+        },
+        "message": "Update to Net 7"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "438ecbd92944060897afbf785a65882a2dba79db",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T23:25:39+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 74491,
+        "additions": 74488,
+        "deletions": 3
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "1dc7ee259af6546a24c0b8532170ae2338cec672",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-08-24T21:54:17+00:00"
+        },
+        "message": "Create dotnet.yml"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 25,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "8d08faa022516147bd9cb585b2a5a4bc0276ea8f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-08-24T19:20:13+00:00"
+        },
+        "message": "Initial Load"
+      },
+      "stats": {
+        "total": 285,
+        "additions": 285,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    },
+    {
+      "sha": "95992142ae9fb41a9d81f9e9d0d179feaa907fe0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-08-24T18:49:46+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 373,
+        "additions": 373,
+        "deletions": 0
+      },
+      "repo": "WebSpark.Bootswatch"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "timestamp": "2026-01-04T09:16:04.064183",
+  "value": [
+    {
+      "sha": "d0af03bb8603365411208d2af4dc256c4a939328",
+      "message": "Merge branch 'upgrade-to-NET10' - Complete .NET 10 upgrade with package updates",
+      "author": "Mark Hazleton",
+      "date": "2025-12-29T00:58:21+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "2e6e93018993ffb37daf074188c7b0c8164b9f59",
+      "message": "Upgrade to .NET 10, update NuGet packages, clean deps\n\nUpgraded all projects to .NET 10 and updated all NuGet packages to their latest stable versions, including FluentValidation, Swashbuckle, and xunit. Removed unnecessary packages now included in the framework. Modernized Identity setup and FluentValidation usage in CarvedRock.Admin. Improved test tooling and compatibility. Added a detailed nuget-audit-report.md. Deleted obsolete favicon.ico. All projects now build and test successfully with a streamlined, secure dependency set.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-29T00:56:54+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "4c7356aa1c8b663e66d7a0d53ddb52bd69482861",
+      "message": "Commit changes before fixing global.json file(s).",
+      "author": "Mark Hazleton",
+      "date": "2025-12-29T00:17:09+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "21b11efb7d10aa26b4d0e5bcc3e089163562c6f0",
+      "message": "Update dependencies, Bootstrap, and add BugTrackerUI projects\n\n- Upgraded .NET and npm dependencies, including Azure.Identity, System.Text.Json, Swashbuckle.AspNetCore, bootstrap, bootswatch, and sass.\n- Added Microsoft.Extensions.Caching.Memory and System.Text.Json to multiple projects for improved caching and JSON support.\n- Updated Bootstrap JS bundle to 5.3.8 for bug fixes and improvements.\n- Updated solution to Visual Studio 18.x and added BugTrackerUI and BugTrackerUI.Tests projects.\n- No changes were made to style.min.css.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-29T00:03:53+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "ea4e68eecc25024b81a5a28aef33757fb427dd25",
+      "message": "Update",
+      "author": "Mark Hazleton",
+      "date": "2024-10-29T12:43:28+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "a0ff50cea490d286acff7c46b3699a976493baa7",
+      "message": "remove unused file",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T14:48:15+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "26193b47d43133eedcb48169c7a5fd9382593ef1",
+      "message": "Update Bug Tracker to Net 9",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T14:22:36+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "a97262c00457281fedd3cab0fcb437f8c5409d0c",
+      "message": "Upgrade to Net 9",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T14:13:45+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "384e29654c67186ea4c1ba2f96a979e1e51585a1",
+      "message": "Run Carved Rock, save current state",
+      "author": "Mark Hazleton",
+      "date": "2024-09-24T13:55:20+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "caafd0b75da7ef82ecdb10719f115a04ba84f07a",
+      "message": "update nuget package",
+      "author": "Mark Hazleton",
+      "date": "2023-09-11T23:48:55+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "58cd217a5dc80d2c960b5f26437403187a981a7b",
+      "message": "Update to Net 7 (BugTracker)",
+      "author": "Mark Hazleton",
+      "date": "2023-08-31T12:40:27+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "d16c226d810be54d74b59c156d935f5a32795dea",
+      "message": "update NuGet packages",
+      "author": "Mark Hazleton",
+      "date": "2022-08-04T15:39:02+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "be7158a354ed54cb266e978aadd4803ddefdfca1",
+      "message": "make fields nullable",
+      "author": "Mark Hazleton",
+      "date": "2022-06-21T04:11:04+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "8db84c4937d9d0a4e5a277f45429062c22948197",
+      "message": "Add Identity Scaffolding fro Admin MVC site",
+      "author": "Mark Hazleton",
+      "date": "2022-06-20T20:48:54+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "0fd94462b9de8108cd20e776095a265d20f4b0ea",
+      "message": "Merge branch 'master' of https://github.com/markhazleton/csharp-blazor-bug-tracking",
+      "author": "Mark Hazleton",
+      "date": "2022-06-17T14:15:40+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "96979b0558bddea145070c3b645a47841ac7e4bd",
+      "message": "Add Carved Rock Blazor Server Side demo",
+      "author": "Mark Hazleton",
+      "date": "2022-06-17T14:15:30+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "037fa73e7704222a077c4f3b4972620413c1447c",
+      "message": "Update readme.md",
+      "author": "Mark Hazleton",
+      "date": "2022-06-17T13:07:40+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "c7e898a4ad99afe01a7a0d1fda474bd6f4192c30",
+      "message": "Refactor to create domain project  and minimal Api example",
+      "author": "Mark Hazleton",
+      "date": "2022-06-17T12:48:02+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "9340a13997e7557ef44b92f0991deac372e95e2a",
+      "message": "Refactor Category Maint",
+      "author": "Mark Hazleton",
+      "date": "2022-06-15T01:53:14+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "d70a125e52460184718b6efb24a6a7c3bda15051",
+      "message": "Add Carved Rock Admin (MVC) application",
+      "author": "Mark Hazleton",
+      "date": "2022-06-14T14:02:55+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "1ff461716b9a1499d01e811cfb4e468d59455ba4",
+      "message": "Updates for Net 6",
+      "author": "Mark Hazleton",
+      "date": "2022-06-09T13:02:54+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "fb20ec4fb516dbc7f5378795dff75745b371bf9b",
+      "message": "match solution",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T18:22:42+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "a43c6126d250caf307ac38119cc9c1a98d5cb26d",
+      "message": "rename list item to bug",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T18:19:31+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "6b15ed748eeca1252268011df94b32546490756e",
+      "message": "add bug list",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T18:17:40+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "efcd9295876e31f908452b3e280e4b1cf9b1bd58",
+      "message": "add validation",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T18:07:23+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "2c6cece83b27d03f0e1ba0bf121bf18903c75070",
+      "message": "wire up service to New Bug component",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T18:04:09+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "a74a9b299e900b83f1a3977672752fff4272ea10",
+      "message": "fix property",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T17:57:30+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "7e1ca6c920b69fc310f118c7474aeee6cd7dd40a",
+      "message": "fix spelling",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T17:55:34+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "6187fbc46adf0be482c7149efe69470949ede28f",
+      "message": "change \"Add\" to \"Enter\"",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T17:54:34+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "d743ddc8e562899c26d9f4c9071a9f4c595b4315",
+      "message": "setup net bug form",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T17:50:30+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    },
+    {
+      "sha": "5bf034ca51a10e52245c9bc3784c8241190cee59",
+      "message": "Project Section 2 complete",
+      "author": "Mark Hazleton",
+      "date": "2022-06-08T17:41:23+00:00",
+      "repo": "csharp-blazor-bug-tracking"
+    }
+  ]
+}

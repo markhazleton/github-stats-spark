@@ -1,6 +1,247 @@
 {
   "repositories": [
     {
+      "name": "csharp-blazor-bug-tracking",
+      "description": "Pluralsight Project for Blazor  Bug Tracking ",
+      "url": "https://github.com/markhazleton/csharp-blazor-bug-tracking",
+      "language": "C#",
+      "created_at": "2022-06-08T17:23:26+00:00",
+      "updated_at": "2025-12-29T00:58:29+00:00",
+      "pushed_at": "2025-12-29T00:58:34+00:00",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 1,
+      "size_kb": 1589,
+      "is_archived": false,
+      "is_fork": true,
+      "has_readme": true,
+      "has_license": false,
+      "has_ci_cd": false,
+      "has_tests": false,
+      "has_docs": false,
+      "language_stats": {
+        "C#": 212054,
+        "HTML": 166814,
+        "CSS": 8925,
+        "JavaScript": 2233,
+        "Dockerfile": 286,
+        "SCSS": 251
+      },
+      "language_count": 6,
+      "age_days": 1305,
+      "days_since_last_push": 6,
+      "commit_velocity": 1.1724137931034482,
+      "contributors_count": 3,
+      "release_count": 0,
+      "latest_release_date": null,
+      "rank": 1,
+      "composite_score": 9.29,
+      "commit_history": {
+        "total_commits": 51,
+        "recent_90d": 4,
+        "recent_180d": 4,
+        "recent_365d": 4,
+        "last_commit_date": "2025-12-29T00:58:21+00:00",
+        "first_commit_date": "2020-02-21T16:42:52+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 6960.24,
+        "largest_commit": {
+          "size": 154238,
+          "files_changed": 77119,
+          "lines_added": 2448,
+          "lines_deleted": 74671,
+          "sha": "384e29654c67186ea4c1ba2f96a979e1e51585a1",
+          "date": "2024-09-24T13:55:20+00:00"
+        },
+        "smallest_commit": {
+          "size": 2,
+          "files_changed": 1,
+          "lines_added": 0,
+          "lines_deleted": 1,
+          "sha": "fb20ec4fb516dbc7f5378795dff75745b371bf9b",
+          "date": "2022-06-08T18:22:42+00:00"
+        }
+      },
+      "summary": {
+        "text": "Technical Summary:\n\nThis is an ASP.NET Core 6 MVC web application designed as an administrative management system for a fictional company called Carved Rock, focusing on product and category management with robust authentication and data management capabilities. The application leverages Entity Framework Core with SQLite for data persistence, implements ASP.NET Identity for user authentication, and demonstrates modern web development practices including dependency injection, repository patterns, and comprehensive validation using both data annotations and FluentValidation. Key technical features include full CRUD operations for products and categories, role-based access control, self-registration functionality, and a clean, Bootstrap-styled user interface that showcases best practices in .NET web development. The project serves as an educational reference and starter template for developers learning ASP.NET Core MVC, demonstrating integration of multiple enterprise-level frameworks and techniques in a compact, demonstrable application. While primarily an educational resource, it provides a solid foundation for building administrative web applications with strong separation of concerns, testability, and modern .NET ecosystem tooling.",
+        "ai_generated": true,
+        "generation_method": "claude-3-5-haiku-20241022",
+        "confidence_score": 90,
+        "model_used": "claude-3-5-haiku-20241022"
+      }
+    },
+    {
+      "name": "ConcurrentProcessing",
+      "description": "Learning Concurrent Processing Through Code",
+      "url": "https://github.com/markhazleton/ConcurrentProcessing",
+      "language": "C#",
+      "created_at": "2023-09-18T01:28:29+00:00",
+      "updated_at": "2025-12-18T05:31:56+00:00",
+      "pushed_at": "2025-12-18T05:31:52+00:00",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 0,
+      "size_kb": 126,
+      "is_archived": false,
+      "is_fork": false,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": false,
+      "has_docs": true,
+      "language_stats": {
+        "C#": 10313
+      },
+      "language_count": 1,
+      "age_days": 839,
+      "days_since_last_push": 17,
+      "commit_velocity": 1.0369487485101312,
+      "contributors_count": 2,
+      "release_count": 0,
+      "latest_release_date": null,
+      "rank": 1,
+      "composite_score": 31.19,
+      "commit_history": {
+        "total_commits": 29,
+        "recent_90d": 19,
+        "recent_180d": 20,
+        "recent_365d": 20,
+        "last_commit_date": "2025-12-18T05:31:49+00:00",
+        "first_commit_date": "2023-09-18T01:28:29+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 887.31,
+        "largest_commit": {
+          "size": 10044,
+          "files_changed": 5022,
+          "lines_added": 4971,
+          "lines_deleted": 51,
+          "sha": "1e2b64430a14e111844fb05e3e71cd75d0ab0c46",
+          "date": "2025-12-18T05:10:54+00:00"
+        },
+        "smallest_commit": {
+          "size": 4,
+          "files_changed": 2,
+          "lines_added": 1,
+          "lines_deleted": 1,
+          "sha": "b61a46b434740b42bf2303698ff101cfad7b5ca0",
+          "date": "2025-12-18T05:24:30+00:00"
+        }
+      },
+      "tech_stack": {
+        "frameworks": [],
+        "dependencies": [
+          {
+            "name": ".NET SDK",
+            "current_version": "10.0",
+            "latest_version": null,
+            "ecosystem": "nuget",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "Microsoft.CodeAnalysis.NetAnalyzers",
+            "current_version": "10.0.101",
+            "latest_version": "10.0.101",
+            "ecosystem": "nuget",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "current"
+          }
+        ],
+        "dependency_file_type": "ConcurrentProcessing.csproj",
+        "total_dependencies": 2,
+        "outdated_count": 0,
+        "outdated_percentage": 0.0,
+        "currency_score": 75
+      },
+      "summary": {
+        "text": "Here's a comprehensive technical summary of the ConcurrentProcessing repository:\n\nThe ConcurrentProcessing repository is a sophisticated .NET 10 framework designed to provide advanced, high-performance concurrent task processing with fine-grained control over parallel execution. Leveraging C#'s Task Parallel Library (TPL) and semaphore-based concurrency management, the project offers a generic, extensible `ConcurrentProcessor<T>` abstract base class that enables developers to create custom parallel processing pipelines with built-in performance metrics and precise throttling capabilities. The framework implements several design patterns including Template Method, Factory, and Strategy patterns, allowing for type-safe, configurable task processing with automatic statistical analysis of execution metrics such as wait times, task durations, and throughput. Unique features include a strongly-typed architecture, minimal runtime overhead, and comprehensive performance tracking, making it an ideal solution for scenarios requiring controlled parallel processing like data transformation, batch processing, or distributed computing workloads. The project serves not only as a production-ready concurrent processing tool but also as an educational resource demonstrating advanced concurrent programming techniques in modern .NET development.",
+        "ai_generated": true,
+        "generation_method": "claude-3-5-haiku-20241022",
+        "confidence_score": 90,
+        "model_used": "claude-3-5-haiku-20241022"
+      }
+    },
+    {
+      "name": "barcodelib",
+      "description": "C# Barcode Image Generation Library",
+      "url": "https://github.com/markhazleton/barcodelib",
+      "language": "JavaScript",
+      "created_at": "2019-06-20T12:14:01+00:00",
+      "updated_at": "2025-12-09T02:43:06+00:00",
+      "pushed_at": "2025-12-09T02:43:01+00:00",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "open_issues": 1,
+      "size_kb": 53609,
+      "is_archived": false,
+      "is_fork": true,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": false,
+      "has_docs": false,
+      "language_stats": {
+        "JavaScript": 496625,
+        "C#": 256974,
+        "CSS": 200398,
+        "HTML": 19320,
+        "Dockerfile": 704,
+        "Shell": 212,
+        "ASP.NET": 109,
+        "Batchfile": 60
+      },
+      "language_count": 8,
+      "age_days": 2390,
+      "days_since_last_push": 26,
+      "commit_velocity": 3.527196652719665,
+      "contributors_count": 15,
+      "release_count": 0,
+      "latest_release_date": null,
+      "rank": 1,
+      "composite_score": 7.52,
+      "commit_history": {
+        "total_commits": 281,
+        "recent_90d": 1,
+        "recent_180d": 1,
+        "recent_365d": 2,
+        "last_commit_date": "2025-12-09T02:42:56+00:00",
+        "first_commit_date": "2018-04-09T03:20:24+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 11047.63,
+        "largest_commit": {
+          "size": 986848,
+          "files_changed": 493424,
+          "lines_added": 493407,
+          "lines_deleted": 17,
+          "sha": "3764e9686d8ba2e32a148ee5ea92a12d644d10bb",
+          "date": "2019-06-20T13:22:44+00:00"
+        },
+        "smallest_commit": {
+          "size": 2,
+          "files_changed": 1,
+          "lines_added": 1,
+          "lines_deleted": 0,
+          "sha": "3cb5dab50c6dd31742aac40d4d049ae8d6e8bf57",
+          "date": "2020-11-30T03:54:32+00:00"
+        }
+      },
+      "summary": {
+        "text": "Technical Summary:\n\nbarcodelib is a comprehensive barcode generation library primarily designed for .NET developers, offering robust support for 20+ different barcode symbologies including Code 128, UPC, EAN, ISBN, and more. The library provides a flexible and easy-to-use API for programmatically generating barcode images with customizable parameters such as encoding type, dimensions, and color, enabling developers to create barcode graphics across various applications like inventory management, retail, shipping, and document processing. Implemented in C# with cross-platform compatibility, the library leverages object-oriented design principles to abstract complex barcode encoding algorithms into simple, intuitive methods that can generate high-quality barcode images with minimal configuration. The project demonstrates strong engineering practices through continuous integration (CI), comprehensive documentation, and multiple constructor options that support both immediate and staged barcode generation, making it suitable for enterprise and small-scale software development scenarios. What distinguishes barcodelib is its wide symbology support, straightforward usage pattern, and the ability to generate barcode images dynamically with just a few lines of code, addressing a common technical requirement across multiple industries. The library targets software developers, system integrators, and technical professionals who need reliable, efficient barcode generation capabilities within their .NET-based applications.",
+        "ai_generated": true,
+        "generation_method": "claude-3-5-haiku-20241022",
+        "confidence_score": 90,
+        "model_used": "claude-3-5-haiku-20241022"
+      }
+    },
+    {
       "name": "AsyncDemo",
       "description": "Demonstration of some Async Methods",
       "url": "https://github.com/markhazleton/AsyncDemo",
@@ -65,7 +306,7 @@
         }
       },
       "summary": {
-        "text": "Here's a comprehensive technical summary of the AsyncDemo repository:\n\nAsyncDemo is an educational C# repository demonstrating advanced asynchronous programming techniques and best practices in .NET, featuring a comprehensive web application that serves as a living tutorial for async/await patterns, resilience strategies, and concurrency management. The project leverages modern .NET technologies, including ASP.NET Core, Polly for resilience, and Scalar for interactive API documentation, to showcase critical async programming concepts like cancellation token propagation, parallel task execution, semaphore-based throttling, and decorator pattern implementations. By providing real-world code examples across multiple API endpoints, the repository offers developers a practical, hands-on approach to understanding complex async programming challenges, with specific focus on avoiding common pitfalls like deadlocks, inefficient concurrency, and improper error handling. The project stands out through its structured learning approach, interactive documentation, and explicit demonstrations of production-grade async patterns, making it an invaluable resource for intermediate to advanced .NET developers seeking to master asynchronous programming techniques. Key architectural highlights include dependency injection, cross-cutting concern management, and comprehensive error resilience strategies, all packaged within a well-documented, Azure-deployable web application that serves both as a learning tool and a reference implementation for robust async programming.",
+        "text": "Here's a comprehensive technical summary for the AsyncDemo repository:\n\nAsyncDemo is an educational C# project demonstrating advanced asynchronous programming techniques and best practices in .NET, providing comprehensive, real-world examples of async/await patterns, concurrency management, and resilience strategies. The project showcases critical async programming concepts through interactive API endpoints, utilizing technologies like Polly for retry policies, SemaphoreSlim for throttling, and cancellation tokens for efficient resource management, with a focus on teaching developers how to write robust, performant asynchronous code. Architecturally, the project employs the decorator pattern, modular design, and leverages modern .NET features to illustrate complex async scenarios across different domains such as external API calls, concurrent processing, and error handling. A standout feature is its use of Scalar for generating beautiful, interactive API documentation that maps directly to learning objectives, making complex async concepts more accessible through clear, navigable examples. The repository is particularly valuable for intermediate to advanced .NET developers seeking to deepen their understanding of asynchronous programming patterns, resilience engineering, and best practices in concurrent systems design. By providing practical, well-documented code samples and comprehensive learning resources, AsyncDemo serves as both a reference implementation and an educational tool for mastering asynchronous programming in .NET.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
         "confidence_score": 90,
@@ -132,7 +373,7 @@
         }
       },
       "summary": {
-        "text": "Here's a comprehensive technical summary of the Azure.Data.Tables-Extensions repository:\n\nThis C# library provides extended functionality and utility methods for Azure Table Storage, specifically enhancing the Azure.Data.Tables library with simplified data manipulation, querying, and CSV import/export capabilities. The extension offers developers advanced methods like retrieving entities by partition/row keys, filtering by column prefixes, batch operations, safe table creation, and entity counting, which are not natively available in the standard Azure SDK. The project supports seamless CSV data transfer, enabling developers to export and import table data directly to/from CSV files with compatibility to Azure Storage Explorer and legacy Azure CLI, making data migration and backup processes more straightforward. Architected with async programming patterns and leveraging modern .NET core libraries, the extensions provide a developer-friendly abstraction layer over Azure Table Storage operations, reducing boilerplate code and simplifying complex data interaction scenarios. The library is particularly valuable for cloud developers, data engineers, and system administrators working with Azure Table Storage who require more flexible and intuitive data management tools beyond the base SDK functionality.",
+        "text": "The Azure.Data.Tables-Extensions is a C# library that provides enhanced functionality for working with Azure Table Storage, extending the capabilities of the official Azure.Data.Tables library. It offers a suite of convenient extension methods for querying, manipulating, and managing table entities, including advanced retrieval methods like getting all entities by partition key, finding the first entity, and performing bulk operations with auto-batching. The library also includes a robust CSV import/export package that aims to provide compatibility with Azure Storage Explorer and Azure CLI, enabling seamless data migration and backup workflows for Azure Table Storage. Architecturally, the project follows a clean extension method pattern, allowing developers to easily augment the existing Azure Tables SDK with additional utility functions without modifying the core library. Its primary value proposition is simplifying common table storage operations, reducing boilerplate code, and providing developer-friendly methods for data manipulation and migration. The library is particularly useful for .NET developers working with Azure Table Storage who need more flexible and comprehensive data access and transformation capabilities.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
         "confidence_score": 90,
@@ -145,7 +386,7 @@
     "avatar_url": "https://avatars.githubusercontent.com/u/223906?v=4",
     "public_repos_count": 48,
     "profile_url": "https://github.com/markhazleton",
-    "total_commits": 231,
+    "total_commits": 51,
     "total_stars": 0,
     "total_forks": 0,
     "bio": "Solutions Architect, lifelong learner, passionate for solutions which make technology work for business, not sidetracked by sizzle",
@@ -155,11 +396,11 @@
     "twitter_username": null
   },
   "metadata": {
-    "generated_at": "2026-01-04T14:27:28.790961+00:00",
+    "generated_at": "2026-01-04T15:15:59.059353+00:00",
     "schema_version": "2.0.0",
-    "repository_count": 2,
+    "repository_count": 5,
     "data_source": "GitHub API",
-    "generation_time_seconds": 111.331403,
+    "generation_time_seconds": 37.184594,
     "cache_hit_rate": null,
     "errors": null,
     "partial_results": false,
@@ -170,10 +411,10 @@
       "ranking": true
     },
     "ai_usage": {
-      "total_tokens": 4265,
-      "total_cost_usd": 0.0028,
+      "total_tokens": 1600,
+      "total_cost_usd": 0.001,
       "cache_hits": 0,
-      "cache_misses": 2,
+      "cache_misses": 1,
       "cache_hit_rate": "0.0%"
     }
   }

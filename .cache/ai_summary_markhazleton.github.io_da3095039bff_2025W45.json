@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-04T09:29:50.131834",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nThis is a personal Jekyll-based website repository designed to showcase Mark Hazleton's professional portfolio and technical blog, hosted on GitHub Pages with a fully automated deployment pipeline using GitHub Actions. The site leverages Jekyll 4.3 with a customized Minima theme, implementing a responsive design with dark/light mode toggle and comprehensive documentation for content creation and site maintenance. It's built using Ruby 3.2, SCSS for styling, and follows modern web development best practices, including SEO optimization, structured content management, and a detailed contributor guide for post creation and local development. The repository demonstrates a professional-grade static site generator setup with robust CI/CD workflows, comprehensive development environment instructions, and a well-organized project structure that supports easy content management and site expansion. Targeted primarily at developers, technical professionals, and potential employers, the site serves as both a personal branding platform and a technical showcase of Mark Hazleton's skills and expertise in web development and technical communication.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T09:29:50.131814",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2772,
+    "confidence_score": 90
+  }
+}

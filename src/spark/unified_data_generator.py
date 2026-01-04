@@ -4,7 +4,6 @@ This module combines data from generate, analyze, and dashboard commands into a 
 comprehensive JSON file with all attributes needed by the frontend.
 """
 
-import logging
 import os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -17,6 +16,7 @@ from spark.ranker import RepositoryRanker
 from spark.summarizer import RepositorySummarizer
 from spark.dependencies import RepositoryDependencyAnalyzer
 from spark.calculator import StatsCalculator
+from spark.logger import get_logger
 from spark.models.repository import Repository
 from spark.models.commit import CommitHistory
 from spark.models.summary import RepositorySummary
@@ -29,7 +29,7 @@ from spark.models.dashboard_data import (
     CommitMetric,
 )
 
-logger = logging.getLogger(__name__)
+logger = get_logger("unified-data-generator")
 
 
 class UnifiedDataGenerator:
@@ -107,7 +107,10 @@ class UnifiedDataGenerator:
         # Apply override for testing/debugging
         if max_repos_override is not None:
             self.max_repositories = max_repos_override
-            logger.info(f"⚠️  Testing mode: Limited to {max_repos_override} repositories")
+            logger.info(f"Testing mode: Limited to {max_repos_override} repositories")
+
+        # Track if generation was skipped due to fresh data
+        self.generation_skipped = False
 
         logger.info(f"UnifiedDataGenerator initialized for user: {username}")
         logger.info(f"Max repositories: {self.max_repositories}")
@@ -135,7 +138,7 @@ class UnifiedDataGenerator:
             generated_at_str = metadata.get("generated_at")
             
             if not generated_at_str:
-                logger.warning("repositories.json missing generation timestamp - full refresh required")
+                logger.warn("repositories.json missing generation timestamp - full refresh required")
                 return None
             
             # Parse ISO format timestamp and ensure it's timezone-aware
@@ -150,7 +153,7 @@ class UnifiedDataGenerator:
             return generated_at
             
         except Exception as e:
-            logger.warning(f"Failed to read repositories.json metadata: {e}")
+            logger.warn(f"Failed to read repositories.json metadata: {e}")
             return None
 
     def _selective_cache_refresh(self, generated_at: datetime) -> List[str]:
@@ -199,7 +202,7 @@ class UnifiedDataGenerator:
                     logger.debug(f"  {repo_name}: cache valid (last push {pushed_at})")
                     
             except Exception as e:
-                logger.warning(f"Failed to parse push date for {repo_name}: {e}")
+                logger.warn(f"Failed to parse push date for {repo_name}: {e}")
                 # On error, assume it needs refresh to be safe
                 repos_needing_refresh.append(repo_name)
         
@@ -246,27 +249,60 @@ class UnifiedDataGenerator:
         logger.info("Starting Unified Data Generation")
         logger.info("=" * 70)
         
+        # Track existing data for incremental updates
+        existing_data = None
+        existing_repo_names = set()
+        repos_to_refresh = []
+        
         # Step 0: Smart cache refresh logic
+        logger.info(f"Force refresh mode: {self.force_refresh}")
         if not self.force_refresh:
+            logger.info("Checking data freshness...")
             generated_at = self._check_data_freshness()
+            logger.info(f"Freshness check returned: {generated_at}")
             
             if generated_at:
                 # Check if data is less than 1 week old
                 age = datetime.now(timezone.utc) - generated_at
                 one_week = timedelta(days=7)
+                logger.info(f"Data age: {age.days} days, threshold: 7 days")
                 
                 if age < one_week:
-                    logger.info(f"repositories.json is {age.days} days old (< 7 days) - skipping generation")
-                    logger.info("Use --force-refresh to regenerate anyway")
-                    
-                    # Return existing data
+                    # Check if we have existing data to load
                     try:
                         import json
                         repos_json_path = self.output_dir / "repositories.json"
                         with open(repos_json_path, "r", encoding="utf-8") as f:
-                            return json.load(f)
+                            data = json.load(f)
+                        existing_repo_count = len(data.get('repositories', []))
+                        
+                        # Check if we're requesting MORE repos than what's in existing data
+                        if self.max_repositories > existing_repo_count:
+                            logger.info(f"Requesting {self.max_repositories} repos but only have {existing_repo_count} - will add missing repos")
+                            logger.info(f"repositories.json is {age.days} days old but incomplete - using incremental generation")
+                            # Use selective cache refresh for any repos with new commits
+                            repos_to_refresh = self._selective_cache_refresh(generated_at)
+                            if repos_to_refresh:
+                                logger.info(f"Found {len(repos_to_refresh)} repos with new commits - will refresh those")
+                                self._apply_selective_cache_clear(repos_to_refresh)
+                            else:
+                                logger.info("No repos with new commits - will only process new repos")
+                            # Store existing data to merge with new repos later
+                            existing_data = data
+                            existing_repo_names = set(r['name'] for r in data.get('repositories', []))
+                            # Continue to generation, but only for new repos
+                        else:
+                            # Data is fresh AND has enough repos - can skip
+                            logger.info(f"repositories.json is {age.days} days old (< 7 days) - skipping generation")
+                            logger.info("Use --force-refresh to regenerate anyway")
+                            logger.info(f"Loading existing data from: {repos_json_path}")
+                            logger.info(f"Loaded existing data with {existing_repo_count} repositories")
+                            self.generation_skipped = True  # Mark that we skipped generation
+                            return data
                     except Exception as e:
-                        logger.warning(f"Failed to load existing data: {e} - proceeding with generation")
+                        logger.warn(f"Failed to load existing data: {e} - proceeding with generation")
+                        import traceback
+                        logger.debug(traceback.format_exc())
                 else:
                     # Data is more than 1 week old - use selective cache refresh
                     logger.info(f"repositories.json is {age.days} days old (>= 7 days) - using smart cache refresh")
@@ -302,7 +338,7 @@ class UnifiedDataGenerator:
 
         # Apply max_repositories limit
         if len(raw_repos) > self.max_repositories:
-            logger.warning(
+            logger.warn(
                 f"Limiting to {self.max_repositories} repositories (found {len(raw_repos)})"
             )
             raw_repos = raw_repos[:self.max_repositories]
@@ -318,7 +354,17 @@ class UnifiedDataGenerator:
         for i, raw_repo in enumerate(raw_repos, 1):
             repo_name = raw_repo.get("name", "unknown")
             progress_pct = (i / len(raw_repos)) * 100
-            logger.info(f"[{i}/{len(raw_repos)}] ({progress_pct:.0f}%) Processing {repo_name}...")
+            
+            # Skip repos that already exist in fresh data and don't need refresh
+            if existing_data and repo_name in existing_repo_names and repo_name not in repos_to_refresh:
+                logger.info(f"[{i}/{len(raw_repos)}] ({progress_pct:.0f}%) Skipping {repo_name} (already in fresh data, no new commits)")
+                continue
+            elif existing_data and repo_name in existing_repo_names:
+                logger.info(f"[{i}/{len(raw_repos)}] ({progress_pct:.0f}%) Processing {repo_name} (needs refresh - has new commits)")
+            elif existing_data:
+                logger.info(f"[{i}/{len(raw_repos)}] ({progress_pct:.0f}%) Processing {repo_name} (new repository)")
+            else:
+                logger.info(f"[{i}/{len(raw_repos)}] ({progress_pct:.0f}%) Processing {repo_name}...")
 
             try:
                 # Get full GitHub repo object
@@ -475,7 +521,7 @@ class UnifiedDataGenerator:
                         summaries[repo_name] = summary
                         logger.debug("  AI summary generated")
                     except Exception as e:
-                        logger.warning(f"  Summary generation failed: {e}")
+                        logger.warn(f"  Summary generation failed: {e}")
 
                 repositories.append(repo)
 
@@ -486,7 +532,7 @@ class UnifiedDataGenerator:
                     errors.append(f"Rate limit at repo {i}/{len(raw_repos)}: {repo_name}")
                     break
                 else:
-                    logger.warning(f"Failed to process {repo_name}: {error_msg}")
+                    logger.warn(f"Failed to process {repo_name}: {error_msg}")
                     errors.append(f"Failed: {repo_name}: {error_msg}")
                     continue
 
@@ -526,6 +572,19 @@ class UnifiedDataGenerator:
                     summary=summaries.get(repo.name),
                 )
                 unified_repos.append(repo_data)
+
+        # Merge with existing data if we're doing incremental generation
+        if existing_data:
+            logger.info("Merging with existing repository data...")
+            existing_repos = existing_data.get('repositories', [])
+            # Get names of newly generated repos
+            new_repo_names = set(r['name'] for r in unified_repos)
+            # Add existing repos that weren't regenerated
+            for existing_repo in existing_repos:
+                if existing_repo['name'] not in new_repo_names:
+                    unified_repos.append(existing_repo)
+                    logger.info(f"  Preserved existing data for {existing_repo['name']}")
+            logger.info(f"  Total repositories after merge: {len(unified_repos)}")
 
         # Step 5: Generate user profile
         logger.info("Generating user profile...")
@@ -597,7 +656,7 @@ class UnifiedDataGenerator:
         # Log summary
         logger.info("")
         logger.info("=" * 70)
-        logger.info("✅ Unified Data Generation Complete")
+        logger.info(" Unified Data Generation Complete")
         logger.info("=" * 70)
         logger.info(f"Repositories: {len(unified_repos)}")
         logger.info(f"Top Ranked: {len(ranked_repos)}")
@@ -606,7 +665,7 @@ class UnifiedDataGenerator:
             logger.info(f"AI Summaries: {len(summaries)}")
         logger.info(f"Generation Time: {generation_time:.1f}s")
         if errors:
-            logger.warning(f"Errors: {len(errors)}")
+            logger.warn(f"Errors: {len(errors)}")
         logger.info("=" * 70)
 
         return unified_data
@@ -745,7 +804,7 @@ class UnifiedDataGenerator:
         # For now, return None as a placeholder
         return None
 
-    def save(self, unified_data: Optional[Dict[str, Any]] = None) -> Path:
+    def save(self, unified_data: Optional[Dict[str, Any]] = None) -> tuple[Path, bool]:
         """Generate and save unified data to repositories.json file.
         
         Args:
@@ -753,7 +812,7 @@ class UnifiedDataGenerator:
                          If None, will generate new data.
                          
         Returns:
-            Path to saved JSON file
+            Tuple of (Path to saved JSON file, whether generation was skipped)
         """
         if unified_data is None:
             unified_data = self.generate()
@@ -774,7 +833,7 @@ class UnifiedDataGenerator:
             file_size_kb = file_size / 1024
             logger.info(f"Unified data written successfully ({file_size_kb:.2f} KB)")
             
-            return output_path
+            return output_path, self.generation_skipped
             
         except Exception as e:
             logger.error(f"Failed to write unified data: {e}")
@@ -857,7 +916,7 @@ def main():
         output_path = generator.save()
         
         logger.info("")
-        logger.info("✅ Success! Unified data saved to:")
+        logger.info(" Success! Unified data saved to:")
         logger.info(f"   {output_path}")
         
         return 0
@@ -872,3 +931,5 @@ def main():
 if __name__ == "__main__":
     import sys
     sys.exit(main())
+
+

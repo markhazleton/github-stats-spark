@@ -313,8 +313,33 @@ def handle_unified(args, logger):
         )
 
         # Generate and save unified data
-        data_output_path = generator.save()
+        data_output_path, generation_skipped = generator.save()
         logger.info(f"✅ Unified data saved to: {data_output_path}")
+
+        # Skip SVG/Report generation if data was fresh and unchanged
+        if generation_skipped:
+            logger.info("")
+            logger.info("=" * 70)
+            logger.info("⏭️  Skipping SVG and Report Generation")
+            logger.info("=" * 70)
+            logger.info("Data is fresh (< 1 week old) - no repositories updated")
+            logger.info("SVG visualizations and reports are already up-to-date")
+            logger.info("Use --force-refresh to regenerate everything")
+            
+            end_time = datetime.now()
+            total_time = (end_time - start_time).total_seconds()
+            
+            logger.info("")
+            logger.info("=" * 70)
+            logger.info("✅ Unified Workflow Complete (No Updates Needed)")
+            logger.info("=" * 70)
+            logger.info(f"📊 Unified Data: {data_output_path}")
+            logger.info(f"🎨 SVG Files: output/*.svg (unchanged)")
+            logger.info(f"📝 Report: output/reports/{args.user}-analysis.md (unchanged)")
+            logger.info(f"⏱️  Total Time: {total_time:.1f}s")
+            logger.info("")
+            logger.info("All data is current - no regeneration needed!")
+            return 0
 
         # ===================================================================
         # STEP 2: Generate SVG Visualizations

@@ -1,0 +1,1445 @@
+{
+  "timestamp": "2026-01-04T09:44:41.073189",
+  "value": [
+    {
+      "sha": "3d69176b8d1bb16f510b612ca7b5c523d1087747",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T09:51:40+00:00"
+        },
+        "message": "ci(lighthouse): bump Node to 22, run Chrome under Xvfb, and relax LHCI timeouts\n\n- Update workflow NODE_VERSION to 22\n- Install and start Xvfb in the workflow and set DISPLAY for lhci\n- Add headless Chrome flags and set maxWaitForLoad in lighthouserc\n- Increase startServerReadyTimeout to 60000"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 15,
+        "deletions": 3
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "d362dcc8f374c8dc5d600e58e8480d580c7b5496",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T09:45:28+00:00"
+        },
+        "message": "fix(ci): use dist directory in deploy-optimized workflow"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "71de223abe47fd1eb063a8359700dd8fcfd98d34",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T09:43:17+00:00"
+        },
+        "message": "chore(scripts): add root preview script to run @tailwindspark/demo-app workspace"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "1a9086ee618303fca3174aa9d41669beaf5d34e8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T09:40:03+00:00"
+        },
+        "message": "fix(security): resolve CodeQL code scanning alerts\n\n- Replace Math.random() with crypto.getRandomValues() for secure API key generation\n- Add proper regex anchors to hostname patterns in service worker\n- Remove unused stdout/stderr variables in performance-test.mjs\n- Configure CodeQL to exclude generated files (reports, dist, coverage)\n\nFixes security alerts #1-4, #11-13, and addresses #5-10, #14-20"
+      },
+      "stats": {
+        "total": 47,
+        "additions": 32,
+        "deletions": 15
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "45636314e26f29417b0b6a4a0fd3b55a799c9a58",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-11-03T09:36:49+00:00"
+        },
+        "message": "deps-dev(deps-dev): bump the dev-dependencies group across 1 directory with 6 updates (#41)\n\nBumps the dev-dependencies group with 6 updates in the / directory:\n\n| Package | From | To |\n| --- | --- | --- |\n| [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/tree/HEAD/packages/plugin-react) | `5.0.4` | `5.1.0` |\n| [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/HEAD/packages/eslint-plugin-react-hooks) | `7.0.0` | `7.0.1` |\n| [eslint-plugin-react-refresh](https://github.com/ArnaudBarre/eslint-plugin-react-refresh) | `0.4.23` | `0.4.24` |\n| [vite](https://github.com/vitejs/vite/tree/HEAD/packages/vite) | `7.1.9` | `7.1.12` |\n| [globals](https://github.com/sindresorhus/globals) | `16.4.0` | `16.5.0` |\n| [rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer) | `6.0.4` | `6.0.5` |\n\n\n\nUpdates `@vitejs/plugin-react` from 5.0.4 to 5.1.0\n- [Release notes](https://github.com/vitejs/vite-plugin-react/releases)\n- [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)\n- [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@5.1.0/packages/plugin-react)\n\nUpdates `eslint-plugin-react-hooks` from 7.0.0 to 7.0.1\n- [Release notes](https://github.com/facebook/react/releases)\n- [Changelog](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/CHANGELOG.md)\n- [Commits](https://github.com/facebook/react/commits/HEAD/packages/eslint-plugin-react-hooks)\n\nUpdates `eslint-plugin-react-refresh` from 0.4.23 to 0.4.24\n- [Release notes](https://github.com/ArnaudBarre/eslint-plugin-react-refresh/releases)\n- [Changelog](https://github.com/ArnaudBarre/eslint-plugin-react-refresh/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/ArnaudBarre/eslint-plugin-react-refresh/compare/v0.4.23...v0.4.24)\n\nUpdates `vite` from 7.1.9 to 7.1.12\n- [Release notes](https://github.com/vitejs/vite/releases)\n- [Changelog](https://github.com/vitejs/vite/blob/v7.1.12/packages/vite/CHANGELOG.md)\n- [Commits](https://github.com/vitejs/vite/commits/v7.1.12/packages/vite)\n\nUpdates `globals` from 16.4.0 to 16.5.0\n- [Release notes](https://github.com/sindresorhus/globals/releases)\n- [Commits](https://github.com/sindresorhus/globals/compare/v16.4.0...v16.5.0)\n\nUpdates `rollup-plugin-visualizer` from 6.0.4 to 6.0.5\n- [Changelog](https://github.com/btd/rollup-plugin-visualizer/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/btd/rollup-plugin-visualizer/compare/v6.0.4...v6.0.5)\n\n---\nupdated-dependencies:\n- dependency-name: \"@vitejs/plugin-react\"\n  dependency-version: 5.1.0\n  dependency-type: direct:development\n  update-type: version-update:semver-minor\n  dependency-group: dev-dependencies\n- dependency-name: eslint-plugin-react-hooks\n  dependency-version: 7.0.1\n  dependency-type: direct:development\n  update-type: version-update:semver-patch\n  dependency-group: dev-dependencies\n- dependency-name: eslint-plugin-react-refresh\n  dependency-version: 0.4.24\n  dependency-type: direct:development\n  update-type: version-update:semver-patch\n  dependency-group: dev-dependencies\n- dependency-name: vite\n  dependency-version: 7.1.12\n  dependency-type: direct:development\n  update-type: version-update:semver-patch\n  dependency-group: dev-dependencies\n- dependency-name: globals\n  dependency-version: 16.5.0\n  dependency-type: direct:development\n  update-type: version-update:semver-minor\n  dependency-group: dev-dependencies\n- dependency-name: rollup-plugin-visualizer\n  dependency-version: 6.0.5\n  dependency-type: direct:development\n  update-type: version-update:semver-patch\n  dependency-group: dev-dependencies\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 1331,
+        "additions": 1073,
+        "deletions": 258
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "215486d8cf4f351ff134001f631a40add4227d49",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-11-03T09:35:30+00:00"
+        },
+        "message": "chore(deps): bump actions/download-artifact in /.github/workflows (#36)\n\nBumps [actions/download-artifact](https://github.com/actions/download-artifact) from 4 to 6.\n- [Release notes](https://github.com/actions/download-artifact/releases)\n- [Commits](https://github.com/actions/download-artifact/compare/v4...v6)\n\n---\nupdated-dependencies:\n- dependency-name: actions/download-artifact\n  dependency-version: '6'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "2aba3318d77490c3ab97af729e8b1b5e74dd9b43",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-11-03T09:35:17+00:00"
+        },
+        "message": "chore(deps): bump github/codeql-action from 3 to 4 in /.github/workflows (#37)\n\nBumps [github/codeql-action](https://github.com/github/codeql-action) from 3 to 4.\n- [Release notes](https://github.com/github/codeql-action/releases)\n- [Changelog](https://github.com/github/codeql-action/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/github/codeql-action/compare/v3...v4)\n\n---\nupdated-dependencies:\n- dependency-name: github/codeql-action\n  dependency-version: '4'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "75f44ee573dcf2711bebe1ae98a34dd1a308224f",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-11-03T09:35:06+00:00"
+        },
+        "message": "chore(deps): bump actions/upload-artifact in /.github/workflows (#38)\n\nBumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 4 to 5.\n- [Release notes](https://github.com/actions/upload-artifact/releases)\n- [Commits](https://github.com/actions/upload-artifact/compare/v4...v5)\n\n---\nupdated-dependencies:\n- dependency-name: actions/upload-artifact\n  dependency-version: '5'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "099aad17c555596214db64d0c92be347a1b79c26",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-11-03T09:34:55+00:00"
+        },
+        "message": "chore(deps): bump actions/github-script in /.github/workflows (#39)\n\nBumps [actions/github-script](https://github.com/actions/github-script) from 7 to 8.\n- [Release notes](https://github.com/actions/github-script/releases)\n- [Commits](https://github.com/actions/github-script/compare/v7...v8)\n\n---\nupdated-dependencies:\n- dependency-name: actions/github-script\n  dependency-version: '8'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "9af588d45e97b2b71dee1079e70606117a33b524",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-11-03T09:34:42+00:00"
+        },
+        "message": "chore(deps): bump actions/setup-node from 4 to 6 in /.github/workflows (#40)\n\nBumps [actions/setup-node](https://github.com/actions/setup-node) from 4 to 6.\n- [Release notes](https://github.com/actions/setup-node/releases)\n- [Commits](https://github.com/actions/setup-node/compare/v4...v6)\n\n---\nupdated-dependencies:\n- dependency-name: actions/setup-node\n  dependency-version: '6'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "d85ac5104c2dcc4ab3e6496fa708b8d925686778",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-03T09:32:47+00:00"
+        },
+        "message": "chore: no-op update \u2014 processed change entries but there were no code changes\n\nProcessed the incoming change entries and found no modifications to source files.\nThis commit acts as a placeholder to record that the change feed was handled,\nbut no actual code or content changes were made."
+      },
+      "stats": {
+        "total": 1616,
+        "additions": 820,
+        "deletions": 796
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "6c42a7303ce899328becdd453fcd5ef0d42694dc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-13T19:41:47+00:00"
+        },
+        "message": "feat: add local performance testing script using Lighthouse CI\n\n- Implemented a new script for running performance tests locally.\n- The script builds the project, starts a preview server, and runs Lighthouse tests on specified URLs.\n- Results are saved in a structured format, including individual scores and a summary report.\n- Added recommendations based on performance scores to improve web application quality."
+      },
+      "stats": {
+        "total": 13419,
+        "additions": 13278,
+        "deletions": 141
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "38cb70544c201b41294b761c16018c43910b8368",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-13T15:11:34+00:00"
+        },
+        "message": "deps(deps): bump lucide-react from 0.544.0 to 0.545.0 (#27)\n\nBumps [lucide-react](https://github.com/lucide-icons/lucide/tree/HEAD/packages/lucide-react) from 0.544.0 to 0.545.0.\n- [Release notes](https://github.com/lucide-icons/lucide/releases)\n- [Commits](https://github.com/lucide-icons/lucide/commits/0.545.0/packages/lucide-react)\n\n---\nupdated-dependencies:\n- dependency-name: lucide-react\n  dependency-version: 0.545.0\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\nCo-authored-by: Mark Hazleton <mark@markhazleton.com>"
+      },
+      "stats": {
+        "total": 3540,
+        "additions": 741,
+        "deletions": 2799
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "54fade334e70cf7f7040ee5d00a9cab5b23541b8",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-13T15:09:06+00:00"
+        },
+        "message": "deps-dev(deps-dev): bump @types/react-dom in the dev-dependencies group (#28)\n\nBumps the dev-dependencies group with 1 update: [@types/react-dom](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/react-dom).\n\n\nUpdates `@types/react-dom` from 19.2.1 to 19.2.2\n- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)\n- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/react-dom)\n\n---\nupdated-dependencies:\n- dependency-name: \"@types/react-dom\"\n  dependency-version: 19.2.2\n  dependency-type: direct:development\n  update-type: version-update:semver-patch\n  dependency-group: dev-dependencies\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "72a2c6131e3aaa46a0205f6879ab0934111d00a7",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-13T15:07:02+00:00"
+        },
+        "message": "deps(deps): bump react-router-dom from 7.9.3 to 7.9.4 (#26)\n\nBumps [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom) from 7.9.3 to 7.9.4.\n- [Release notes](https://github.com/remix-run/react-router/releases)\n- [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)\n- [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.9.4/packages/react-router-dom)\n\n---\nupdated-dependencies:\n- dependency-name: react-router-dom\n  dependency-version: 7.9.4\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "2da0e32612976b58d169e4303f31f6f52c640275",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-13T15:06:55+00:00"
+        },
+        "message": "deps(deps): bump lightningcss from 1.30.1 to 1.30.2 (#25)\n\nBumps [lightningcss](https://github.com/parcel-bundler/lightningcss) from 1.30.1 to 1.30.2.\n- [Release notes](https://github.com/parcel-bundler/lightningcss/releases)\n- [Commits](https://github.com/parcel-bundler/lightningcss/compare/v1.30.1...v1.30.2)\n\n---\nupdated-dependencies:\n- dependency-name: lightningcss\n  dependency-version: 1.30.2\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 392,
+        "additions": 335,
+        "deletions": 57
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "443bd9ca1d4902ed363b53ce67801b104fdca902",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-13T12:45:17+00:00"
+        },
+        "message": "Implement feature X to enhance user experience and fix bug Y in module Z"
+      },
+      "stats": {
+        "total": 3728,
+        "additions": 3728,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "ae4dc1c7a8b06241387ebe0e7cc6139f48f10edf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-13T12:28:16+00:00"
+        },
+        "message": "Fix React hooks rule violations for eslint-plugin-react-hooks v7.0.0\n\n- Replace window.location.hash direct assignment with setTimeout wrapper to avoid react-hooks/immutability violations\n- Convert useState + useEffect pattern to useMemo for filtered products to avoid react-hooks/set-state-in-effect violations\n- Add wrapper functions for filter/search/sort changes that reset pagination properly\n- Remove unnecessary useEffect that violated the new stricter React hooks rules\n\nBreaking changes in eslint-plugin-react-hooks v7.0.0:\n- Stricter immutability rules for external objects\n- No direct setState calls in useEffect bodies\n- Improved detection of problematic patterns\n\nAll React hooks rule violations are now resolved while maintaining functionality."
+      },
+      "stats": {
+        "total": 88,
+        "additions": 45,
+        "deletions": 43
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "5d3b0a89975c6ff2e150d38a31df415268a706a0",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-13T12:16:06+00:00"
+        },
+        "message": "deps-dev(deps-dev): bump the dev-dependencies group across 1 directory with 3 updates\n\nBumps the dev-dependencies group with 3 updates in the / directory: [@types/react](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/react), [@types/react-dom](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/HEAD/types/react-dom) and [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/HEAD/packages/eslint-plugin-react-hooks).\n\n\nUpdates `@types/react` from 19.2.0 to 19.2.2\n- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)\n- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/react)\n\nUpdates `@types/react-dom` from 19.2.0 to 19.2.1\n- [Release notes](https://github.com/DefinitelyTyped/DefinitelyTyped/releases)\n- [Commits](https://github.com/DefinitelyTyped/DefinitelyTyped/commits/HEAD/types/react-dom)\n\nUpdates `eslint-plugin-react-hooks` from 5.2.0 to 7.0.0\n- [Release notes](https://github.com/facebook/react/releases)\n- [Changelog](https://github.com/facebook/react/blob/main/packages/eslint-plugin-react-hooks/CHANGELOG.md)\n- [Commits](https://github.com/facebook/react/commits/HEAD/packages/eslint-plugin-react-hooks)\n\n---\nupdated-dependencies:\n- dependency-name: \"@types/react\"\n  dependency-version: 19.2.2\n  dependency-type: direct:development\n  update-type: version-update:semver-patch\n  dependency-group: dev-dependencies\n- dependency-name: \"@types/react-dom\"\n  dependency-version: 19.2.1\n  dependency-type: direct:development\n  update-type: version-update:semver-patch\n  dependency-group: dev-dependencies\n- dependency-name: eslint-plugin-react-hooks\n  dependency-version: 7.0.0\n  dependency-type: direct:development\n  update-type: version-update:semver-major\n  dependency-group: dev-dependencies\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 153,
+        "additions": 109,
+        "deletions": 44
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "71ead4ff3ca1b8f3b422c70fc99401e4b9925b91",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-13T12:14:55+00:00"
+        },
+        "message": "deps(deps): bump react-router-dom from 7.9.1 to 7.9.3\n\nBumps [react-router-dom](https://github.com/remix-run/react-router/tree/HEAD/packages/react-router-dom) from 7.9.1 to 7.9.3.\n- [Release notes](https://github.com/remix-run/react-router/releases)\n- [Changelog](https://github.com/remix-run/react-router/blob/main/packages/react-router-dom/CHANGELOG.md)\n- [Commits](https://github.com/remix-run/react-router/commits/react-router-dom@7.9.3/packages/react-router-dom)\n\n---\nupdated-dependencies:\n- dependency-name: react-router-dom\n  dependency-version: 7.9.3\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "5b45b6642532926c0fc9095ac64ca13eb4bbcf91",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-10-13T12:14:15+00:00"
+        },
+        "message": "deps(deps): bump lucide-react from 0.542.0 to 0.544.0\n\nBumps [lucide-react](https://github.com/lucide-icons/lucide/tree/HEAD/packages/lucide-react) from 0.542.0 to 0.544.0.\n- [Release notes](https://github.com/lucide-icons/lucide/releases)\n- [Commits](https://github.com/lucide-icons/lucide/commits/0.544.0/packages/lucide-react)\n\n---\nupdated-dependencies:\n- dependency-name: lucide-react\n  dependency-version: 0.544.0\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>"
+      },
+      "stats": {
+        "total": 74,
+        "additions": 67,
+        "deletions": 7
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "cfcb89b5e53da230a4669e25823f137afc6e308b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-13T12:14:00+00:00"
+        },
+        "message": "Add MPL-2.0 license to allowed licenses for dependency review\n\n- Resolves dependency-review failures for lightningcss package\n- MPL-2.0 is compatible with our project license requirements"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "dab21952c776d76de0ccb8d34cd45842104b2832",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-13T02:37:59+00:00"
+        },
+        "message": "feat(tests): add comprehensive tests for Card, Form, and Modal components\n\n- Implemented unit tests for Card component including rendering, variants, padding, header, footer, and ref forwarding.\n- Added tests for Form components (Input, Textarea, Select, Checkbox, Radio) covering rendering, error handling, helper text, and event handling.\n- Created tests for Modal component ensuring proper rendering, close functionality, size classes, and event handling.\n- Introduced increment-version script to automate patch version updates in package.json."
+      },
+      "stats": {
+        "total": 3782,
+        "additions": 3626,
+        "deletions": 156
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "9e8a49da43093df98d1b324ed6ba1423a1aefe50",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-05T14:58:27+00:00"
+        },
+        "message": "fix: resolve dark mode functionality and improve build process\n\n- Updated theme switching logic in ThemeContext to ensure proper toggling between light and dark modes.\n- Replaced problematic `@apply` usage in CSS with direct CSS custom properties for body styling.\n- Eliminated inline styles in MarketingPage.tsx by moving styles to CSS classes.\n- Ensured consistent usage of semantic color tokens across components, particularly in Layout and MarketingPage.\n- Verified build process for all assets, ensuring no inline styles remain and proper asset optimization.\n- Documented changes and analysis for future reference."
+      },
+      "stats": {
+        "total": 3065,
+        "additions": 2027,
+        "deletions": 1038
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "a97d4cb542beb67d7897c6a50a4a3450adacfe5c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T22:42:29+00:00"
+        },
+        "message": "style: Improve HTML formatting and structure in cache management pages"
+      },
+      "stats": {
+        "total": 143,
+        "additions": 84,
+        "deletions": 59
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "59cf1a91a1f566d5fdcae70e3527b85aaf324e8d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T22:39:56+00:00"
+        },
+        "message": "Fix GitHub Pages caching issues causing blank page\n\n- Update service worker cache version to v1.2.0 to force cache refresh\n- Add cache control meta tags to index.html to prevent stale HTML caching\n- Enhance Vite build config with explicit asset naming for better cache busting\n- Add clear-cache.html utility page for users experiencing cache issues\n- New JS bundle hash (index-e2MyGK1W.js) should resolve 404 errors\n\nThis addresses the blank page issue on refresh by ensuring browsers\nload the correct, current version of assets instead of cached stale files."
+      },
+      "stats": {
+        "total": 90,
+        "additions": 89,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "e25144dad046ec2314fb19207abed8266fdb3661",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T22:33:08+00:00"
+        },
+        "message": "Fix black placeholder images on ecommerce page\n\n- Create local SVG placeholder image (placeholder-product.svg)\n- Replace all /api/placeholder/400/300 URLs with local SVG\n- Eliminates 404 errors causing black image display on GitHub Pages\n- Adds simple, accessible placeholder with product icon and dimensions"
+      },
+      "stats": {
+        "total": 40,
+        "additions": 24,
+        "deletions": 16
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "46c47286cedd02fba4f23f8b01f7a066b83598e8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T22:27:07+00:00"
+        },
+        "message": "chore: remove unused color test HTML file"
+      },
+      "stats": {
+        "total": 39,
+        "additions": 0,
+        "deletions": 39
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "dad1397c3423b92abd3287c76a5b57f7700eb601",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T22:25:04+00:00"
+        },
+        "message": "Fix semantic text utilities for GitHub Pages\n\n- Add explicit .text-text and .text-text-muted utilities to @layer utilities\n- Ensures proper rendering of design system page headers and descriptions\n- Follows same pattern as status color utilities fix\n- Text colors now properly resolve to dark colors (#1c1917, #57534e) instead of faint grey"
+      },
+      "stats": {
+        "total": 51,
+        "additions": 49,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "3ef749172028d5e2af9b0663e5ae8728199756ac",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T22:15:17+00:00"
+        },
+        "message": "feat: Enhance TailwindCSS v4 utilities and documentation for improved performance and usability"
+      },
+      "stats": {
+        "total": 262,
+        "additions": 229,
+        "deletions": 33
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "e2ebab9d206ea6733ef1fac73491be048451ee39",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-14T22:15:07+00:00"
+        },
+        "message": "chore: upgrade dependencies and improve design tokens\n\n- Updated jsdom to version 27.0.0 and tsx to version 4.20.5 in package.json.\n- Added ajv as a new dependency.\n- Removed unused success, warning, and error color definitions from tailwind.config.js.\n- Added explicit status color utilities in theme.css for success, warning, and error states.\n- Updated Button, Card, Form, and Modal components to use new design tokens and color utilities.\n- Created a dummy safelist file to ensure status color utilities are generated correctly.\n- Documented performance analysis and migration summary for TailwindCSS v4."
+      },
+      "stats": {
+        "total": 3408,
+        "additions": 2132,
+        "deletions": 1276
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "76279669403e39b3115bf47a09e8a73669810ac8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T15:22:40+00:00"
+        },
+        "message": "content: Update Tailwind CSS version references from 3.4 to 4.1\n\n- Updated HomePage.tsx technology stack section to reflect current Tailwind CSS 4.1\n- Updated DemosPage.tsx technology list to show Tailwind CSS 4.1\n- Ensures all website content accurately reflects current project state"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 11,
+        "deletions": 3
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "43ace29c9b0ef46cf3271ef17e570efc193c4f80",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T15:17:59+00:00"
+        },
+        "message": "docs: Update all documentation for Tailwind CSS v4 migration\n\n- Updated README.md to reflect v4.1.13\n- Enhanced ARCHITECTURE.md with @theme directive details\n- Added v4 design token info to GETTING_STARTED.md\n- Added comprehensive v1.2.0 release notes to CHANGELOG.md\n- Completely rewrote demo app README with proper documentation\n- Updated GitHub Copilot instructions for v4 guidelines\n- Fixed markdown linting issues throughout\n- Updated session summary with documentation review completion"
+      },
+      "stats": {
+        "total": 450,
+        "additions": 363,
+        "deletions": 87
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "8d34f8ebc4a0c7a8802dbf5ad7f1614158d67fd4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T15:07:31+00:00"
+        },
+        "message": "feat: Upgrade to Tailwind CSS v4 and centralize design tokens\n\n- Updated Tailwind CSS version across all packages to ^4.1.13.\n- Introduced a centralized design tokens system in `packages/design-tokens/theme.css`.\n- Replaced raw Tailwind color classes with semantic tokens in UI components.\n- Enhanced Tailwind configuration to support dark mode and semantic color aliases.\n- Added pre-build script to generate meta files for deployment.\n- Implemented ESLint rule to disallow raw primary utility classes.\n- Improved build scripts for asset revisioning and SRI generation.\n- Fixed issues with dark/light mode functionality and routing behavior in the demo app."
+      },
+      "stats": {
+        "total": 1839,
+        "additions": 1356,
+        "deletions": 483
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "933ac4733a79e43d3de906caa4533f577e86ca39",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T12:14:32+00:00"
+        },
+        "message": "feat: Implement TailwindCSS v4 migration foundation\n\n- Install TailwindCSS v4 alpha across monorepo packages\n- Convert to CSS-first configuration with @theme directive\n- Implement comprehensive color system (primary, accent, secondary, success, warning, error)\n- Update PostCSS configuration to use @tailwindcss/postcss\n- Preserve custom spacing, typography, and component layers\n- Add comprehensive migration research and best practices documentation\n\nMigration is 85% complete with solid foundation established.\nRemaining: resolve native dependency blocker for full functionality."
+      },
+      "stats": {
+        "total": 2013,
+        "additions": 1642,
+        "deletions": 371
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "83d0ba2fcd1d1ceca3e1961a0eab46d8efea47c5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T11:55:45+00:00"
+        },
+        "message": "docs: Add TailwindCSS v4 migration plan and best practices analysis"
+      },
+      "stats": {
+        "total": 1345,
+        "additions": 1345,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "342eaaf2560d6f0f0aaebb06e576214dcc5f0677",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-09-07T11:29:43+00:00"
+        },
+        "message": "deps-dev(deps-dev): bump @vitejs/plugin-react\n\nBumps the dev-dependencies group with 1 update in the / directory: [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/tree/HEAD/packages/plugin-react).\n\n\nUpdates `@vitejs/plugin-react` from 4.7.0 to 5.0.2\n- [Release notes](https://github.com/vitejs/vite-plugin-react/releases)\n- [Changelog](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md)\n- [Commits](https://github.com/vitejs/vite-plugin-react/commits/plugin-react@5.0.2/packages/plugin-react)\n\n---\nupdated-dependencies:\n- dependency-name: \"@vitejs/plugin-react\"\n  dependency-version: 5.0.2\n  dependency-type: direct:development\n  update-type: version-update:semver-major\n  dependency-group: dev-dependencies\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 109,
+        "additions": 60,
+        "deletions": 49
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "a779fa6c97dcaa7a4e23753c7c4a48bba54061fe",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-09-07T11:07:57+00:00"
+        },
+        "message": "chore(deps): bump actions/upload-pages-artifact in /.github/workflows\n\nBumps [actions/upload-pages-artifact](https://github.com/actions/upload-pages-artifact) from 3 to 4.\n- [Release notes](https://github.com/actions/upload-pages-artifact/releases)\n- [Commits](https://github.com/actions/upload-pages-artifact/compare/v3...v4)\n\n---\nupdated-dependencies:\n- dependency-name: actions/upload-pages-artifact\n  dependency-version: '4'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "8ea753980c0c0402b3c07da6fb3d988db0cf5280",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-09-07T11:07:55+00:00"
+        },
+        "message": "chore(deps): bump actions/configure-pages in /.github/workflows\n\nBumps [actions/configure-pages](https://github.com/actions/configure-pages) from 4 to 5.\n- [Release notes](https://github.com/actions/configure-pages/releases)\n- [Commits](https://github.com/actions/configure-pages/compare/v4...v5)\n\n---\nupdated-dependencies:\n- dependency-name: actions/configure-pages\n  dependency-version: '5'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "3db1ed1666461a143debac35ced842da01a62159",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-09-07T11:15:27+00:00"
+        },
+        "message": "chore(deps): bump actions/setup-node from 4 to 5 in /.github/workflows\n\nBumps [actions/setup-node](https://github.com/actions/setup-node) from 4 to 5.\n- [Release notes](https://github.com/actions/setup-node/releases)\n- [Commits](https://github.com/actions/setup-node/compare/v4...v5)\n\n---\nupdated-dependencies:\n- dependency-name: actions/setup-node\n  dependency-version: '5'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "05b84e67dce9dc43c599e7472bed4d85ae2ed49a",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2025-09-07T11:07:52+00:00"
+        },
+        "message": "chore(deps): bump actions/checkout from 4 to 5 in /.github/workflows\n\nBumps [actions/checkout](https://github.com/actions/checkout) from 4 to 5.\n- [Release notes](https://github.com/actions/checkout/releases)\n- [Changelog](https://github.com/actions/checkout/blob/main/CHANGELOG.md)\n- [Commits](https://github.com/actions/checkout/compare/v4...v5)\n\n---\nupdated-dependencies:\n- dependency-name: actions/checkout\n  dependency-version: '5'\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "488b4341407204a1d6e4362ed3ec73396b6ae65f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T11:27:54+00:00"
+        },
+        "message": "fix: Improve formatting in setup.ts and ensure newline at end of vitest.config.ts"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 10,
+        "deletions": 4
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "39de5f457c5ca636e736967a37c6ac3c87f208dc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T11:27:13+00:00"
+        },
+        "message": "Update dependencies to latest minor versions\n\n- Update @types/react to ^19.1.12\n- Update @types/react-dom to ^19.1.9\n- Update @vitejs/plugin-react to ^5.0.2\n- Update lucide-react to ^0.542.0\n- Update react-router-dom to ^7.8.2\n- Update @eslint/js to ^9.35.0\n- Update eslint to ^9.35.0\n- Update typescript-eslint to ^8.42.0\n- Update vite to ^7.1.4\n- Add react-router-dom mock for vitest compatibility"
+      },
+      "stats": {
+        "total": 410,
+        "additions": 79,
+        "deletions": 331
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "3abf9a13c69cd301d551e3ef841b9f21d87efd72",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T11:14:28+00:00"
+        },
+        "message": "chore: update Node.js version from 18 to 20 in GitHub Actions workflow"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "48d05e360f63e01339fe8a3011ab3163d4867199",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T11:14:02+00:00"
+        },
+        "message": "Fix Node.js version compatibility and update package-lock.json"
+      },
+      "stats": {
+        "total": 99,
+        "additions": 43,
+        "deletions": 56
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "7c8ddcb8470f24fb28977b2f2607ca8fec32c8f9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T11:07:09+00:00"
+        },
+        "message": "chore: Refactor console.log to console.warn for improved logging consistency and update documentation formatting"
+      },
+      "stats": {
+        "total": 121,
+        "additions": 61,
+        "deletions": 60
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "cb5960148aae0c885190edfb4bcc513816114c80",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T10:50:58+00:00"
+        },
+        "message": "feat: Add comprehensive session summaries for TailwindSpark repository reviews\n\n- Created session summary for January 7, 2025, focusing on best practices and file organization.\n- Established a new directory structure for organizing agent-generated documents in the `/copilot/` directory.\n- Documented architecture overview, branding enhancements, and deployment processes.\n- Implemented testing guide with strategies and best practices for Vitest and React Testing Library.\n- Configured ESLint for consistent code quality across the project.\n- Developed unit tests for UI components, ensuring functionality and accessibility.\n- Enhanced CI/CD pipeline with automated testing and coverage reporting."
+      },
+      "stats": {
+        "total": 5385,
+        "additions": 4126,
+        "deletions": 1259
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "7cc7c791c91f29bff8e844c6d62e40abee3e46e4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T10:20:27+00:00"
+        },
+        "message": "chore: remove @turbo/gen dependency and add Dependabot configuration for automated updates"
+      },
+      "stats": {
+        "total": 2345,
+        "additions": 95,
+        "deletions": 2250
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "2826fccee0f08bc6f73d25f4899ddff436898577",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-07T10:09:53+00:00"
+        },
+        "message": "chore: update dependencies and improve code formatting\n\n- Upgraded various dependencies in package.json and ui-components package.\n- Updated ESLint and TypeScript-related packages to their latest versions.\n- Refactored Button, Card, Form, Modal, and other components for improved readability and consistency.\n- Adjusted class names for better styling practices.\n- Modified turbo.json to reflect changes in the pipeline configuration."
+      },
+      "stats": {
+        "total": 5240,
+        "additions": 2751,
+        "deletions": 2489
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "c272f1bff0050e6a501d9955ada9a8751683ebc1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-03T13:05:29+00:00"
+        },
+        "message": "chore: Add GitHub Copilot instructions for TailwindSpark project"
+      },
+      "stats": {
+        "total": 439,
+        "additions": 430,
+        "deletions": 9
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "65b70cb35d89f805a5d66705718a887a9412cc3c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T21:36:55+00:00"
+        },
+        "message": "Fix .gitignore and add missing public assets\n\n- Removed public directory from .gitignore (was preventing Vite assets from being tracked)\n- Added all public directory assets including:\n  - site.webmanifest and sw.js with fixed relative paths\n  - All favicon and icon files (TailwindSpark.png, favicon.ico, etc.)\n  - SEO assets (robots.txt, sitemap.xml, og-image.svg, 404.html)\n- These files are needed for proper GitHub Pages deployment"
+      },
+      "stats": {
+        "total": 202,
+        "additions": 201,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "75860c737f0c056154d85019982e2c113ef6c527",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T21:35:00+00:00"
+        },
+        "message": "Fix GitHub Pages 404 asset errors: Convert to relative paths\n\n- Updated HTML favicon and manifest links from /tailwind-demo/ to relative paths\n- Fixed site.webmanifest icons and scope to use relative paths\n- Updated service worker cache URLs to use relative paths\n- Fixed structured data logo reference from logo.png to TailwindSpark.png\n- Resolves 404 errors for favicon.ico, TailwindSpark.png, site.webmanifest, sw.js\n- All static assets now load correctly on GitHub Pages deployment"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "cf7f4fd118a96a2fc1e4bb1c674a63299d3785a1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T21:28:25+00:00"
+        },
+        "message": "Fix GitHub Actions build failure: Update Logo component to use BASE_URL for TailwindSpark.png\n\n- Changed from problematic import statement to runtime path construction\n- Uses import.meta.env.BASE_URL for proper Vite asset resolution\n- Resolves Rollup build error: 'failed to resolve import /TailwindSpark.png'\n- Build now completes successfully in both local and CI environments"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 2,
+        "deletions": 3
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "f5a7a520ba457de6d8d2e28dfdd8010cc2da7528",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T21:23:56+00:00"
+        },
+        "message": "fix: Update Logo component to use imported image for Vite compatibility"
+      },
+      "stats": {
+        "total": 233,
+        "additions": 117,
+        "deletions": 116
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "acd31b2870d37fe9e7a9f319bc9f7170e1b5037f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T21:05:54+00:00"
+        },
+        "message": "chore: Update dependencies and improve ESLint configuration for better code quality"
+      },
+      "stats": {
+        "total": 382,
+        "additions": 214,
+        "deletions": 168
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "39f197a7db2cce65d394a3f2e921254f7c76375e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T20:53:56+00:00"
+        },
+        "message": "fix: Correct formatting of build version declaration in Vite config"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 10,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "fd2d10f1526f7280e9bef7be578e55228034f49c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T20:51:44+00:00"
+        },
+        "message": "fix: Improve favicon configuration and manifest setup\n\n- Set TailwindSpark.png as primary favicon with shortcut icon\n- Reorganized favicon links for better browser compatibility\n- Updated web manifest structure and added TailwindSpark icon\n- Fixed manifest icon ordering and properties\n- Enhanced PWA icon support with purpose attribute"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "8df8b5e8c37e96ffb0dd404bf7befa579d62a476",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T20:44:06+00:00"
+        },
+        "message": "docs: Add build versioning to advanced features list"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "1ffa0dcac931ef5be681ccb82df4730e47257051",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T20:33:52+00:00"
+        },
+        "message": "feat: Add auto-incrementing build version to footer\n\n- Added BuildInfo component with timestamp and version\n- Implemented build-time version generation using current date/time\n- Updated Vite config to inject build constants\n- Added TypeScript declarations for build-time variables\n- Enhanced footer with build information display\n- Updated service worker cache version to v1.1.0\n\nThis will help track deployments and cache busting."
+      },
+      "stats": {
+        "total": 73,
+        "additions": 72,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "b1cfb8be031a63c8e35e174ebfe11d9e3dea495b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T16:15:33+00:00"
+        },
+        "message": "docs: Document GitHub Pages deployment challenges and solutions for TailwindSpark"
+      },
+      "stats": {
+        "total": 213,
+        "additions": 213,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "f34575cd13a45cff7ff1fa93588eaa030163eb36",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T15:33:37+00:00"
+        },
+        "message": "fix: Update paths for favicon and service worker registration to ensure correct loading"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "8f1724ab69f212b1fa2cf95a976e0c6d08e24913",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T15:11:22+00:00"
+        },
+        "message": "fix: Change router from HashRouter to BrowserRouter for improved routing"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "5cdc8213094d8796a32ffa9302a8d3dee21a00db",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T14:44:32+00:00"
+        },
+        "message": "fix: Update logo handling for CI/CD compatibility and improve accessibility"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 13,
+        "deletions": 5
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "85ff8f2882aeb8027bee96a171d1dbc9a071b3f6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-08-01T13:02:33+00:00"
+        },
+        "message": "feat: Enhance branding for TailwindSpark application\n\n- Added new accent color palette to design tokens.\n- Updated ui-components package.json to include design-tokens as a dependency.\n- Created BRANDING.md to document branding improvements and asset usage.\n- Implemented Logo component with new features including size options, text-only display, and lazy loading.\n- Developed TailwindSparkBrand component for consistent branding across various layouts (hero, footer, card, inline).\n- Enhanced LoadingSpinner and ErrorBoundary components for branded loading states and error displays.\n- Updated HomePage and Layout components to utilize new branding components for improved visual hierarchy and consistency."
+      },
+      "stats": {
+        "total": 1239,
+        "additions": 869,
+        "deletions": 370
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "6e6e7a4b7c26ec5f165405c82624177c165a7b07",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-31T22:22:03+00:00"
+        },
+        "message": "Update errorboundary.txt to fix build error"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "7d08e88e4b68bdeb9d7f2bea98fa85c4f823c1b2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-31T19:12:22+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 42,
+        "additions": 32,
+        "deletions": 10
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "1920e53471e53523e6349df428617940c610df2d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-31T19:07:57+00:00"
+        },
+        "message": "refactor and some SEO"
+      },
+      "stats": {
+        "total": 777,
+        "additions": 616,
+        "deletions": 161
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "10028887de3cf340f2ee6fb1ad34622d1723bda1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-30T12:52:54+00:00"
+        },
+        "message": "Add DemosPage and MarketingPage components with detailed layouts and functionality\n\n- Implement DemosPage showcasing various Tailwind CSS demos with descriptions, features, and business value.\n- Create MarketingPage featuring services, portfolio, testimonials, and a contact form with validation.\n- Enhance user experience with auto-rotating testimonials and responsive design.\n- Utilize Tailwind CSS for styling and layout consistency across both pages."
+      },
+      "stats": {
+        "total": 1270,
+        "additions": 1265,
+        "deletions": 5
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "1af28799993001ef1f73b947f166ee727a07dfc6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-30T12:12:12+00:00"
+        },
+        "message": "feat: Implement ProductGrid and QuickViewModal components for ecommerce page\n\n- Added ProductGrid component to display a grid of products with loading states, skeletons, and wishlist functionality.\n- Implemented QuickViewModal component for displaying product details, color and size selection, and adding to cart.\n- Created EcommercePage to manage product filtering, sorting, and pagination.\n- Introduced types for Product, FilterState, CartItem, and User to enhance type safety.\n- Mocked product data for initial testing and demonstration."
+      },
+      "stats": {
+        "total": 1626,
+        "additions": 1626,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "33faa6b87d13b95009c6a863b22ee23d04c38a42",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T23:18:28+00:00"
+        },
+        "message": "docs: Enhance README with WebSpark portfolio links and improve HTML meta tags"
+      },
+      "stats": {
+        "total": 70,
+        "additions": 56,
+        "deletions": 14
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "8e28dfac57d582a033ef130439297d2a0f037336",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T23:17:53+00:00"
+        },
+        "message": "feat: Update component imports to use TailwindSpark namespace"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 34,
+        "deletions": 34
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "ed096a56abb2de14cc3760dc8c07eee266b65509",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T23:10:32+00:00"
+        },
+        "message": "feat: Update React application with TailwindSpark branding and WebSpark integration\n\n\ud83c\udfa8 APPLICATION BRANDING OVERHAUL:\n\n\ud83d\udcf1 Homepage Updates:\n- Rebrand to 'TailwindSpark \u2728' with professional tagline\n- Add comprehensive WebSpark portfolio integration section\n- Include links to PromptSpark, RecipeSpark, TriviaSpark apps\n- Add Mark Hazleton attribution and philosophy quote\n- Enhance feature descriptions with technical details\n\n\ud83e\udded Navigation & Layout:\n- Update header logo to TailwindSpark with \u2728 icon\n- Change color scheme from blue to purple/blue gradient\n- Add comprehensive footer with WebSpark links\n- Include professional profile and GitHub links\n- Update navigation labels for better UX\n\n\ud83d\udcca Dashboard Branding:\n- Rebrand dashboard from 'PromptSpark' to 'TailwindSpark'\n- Update user profile to Mark Hazleton with WebSpark creator role\n- Add WebSpark portfolio link in sidebar\n- Modernize dashboard description and welcome text\n\n\ufffd\ufffd Component Pages:\n- Update Design System page with production-ready messaging\n- Enhance Animation page with interactive example badges\n- Add educational context and Tailwind CSS documentation links\n- Include TailwindSpark and WebSpark branding throughout\n\n\ud83d\udd17 SEO & Professional Integration:\n- Link to markhazleton.com professional profile\n- Reference WebSpark evolution article\n- Add comprehensive footer with portfolio links\n- Include social proof and credibility indicators\n\nThis transforms the application from a simple demo into a professional portfolio showcase that demonstrates both technical expertise and real-world design patterns."
+      },
+      "stats": {
+        "total": 228,
+        "additions": 176,
+        "deletions": 52
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "95062b2c63d0a05afa2860c0c4eaaa8de4a1eaa4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T23:02:08+00:00"
+        },
+        "message": "feat: Rebrand as TailwindSpark and integrate with WebSpark portfolio\n\n\ud83c\udf1f MAJOR BRANDING UPDATE: Transform to TailwindSpark\n\n\ud83d\udcdd Documentation Updates:\n- Rebrand from 'Tailwind CSS Demo' to 'TailwindSpark'\n- Add comprehensive WebSpark portfolio integration\n- Include SEO-optimized metadata and keywords\n- Add detailed author attribution and social links\n- Enhance description with educational and professional context\n\n\ud83d\udce6 Package Updates:\n- Update all package names to @tailwindspark/* namespace\n- Add author information and homepage links\n- Update build scripts and dependency references\n- Maintain backward compatibility in workflows\n\n\ud83c\udf10 SEO Optimization:\n- Add comprehensive meta tags for search engines\n- Include Open Graph and Twitter Card metadata\n- Add canonical URLs and social media optimization\n- Integrate with Mark Hazleton professional profile\n\n\ud83d\udd17 Portfolio Integration:\n- Link to WebSpark main portfolio site\n- Reference other WebSpark applications (PromptSpark, RecipeSpark, TriviaSpark)\n- Add professional background and philosophy\n- Include comprehensive support and community links\n\nThis transforms the project from a simple demo into a professional portfolio piece that showcases both technical expertise and real-world application design patterns as part of the WebSpark ecosystem."
+      },
+      "stats": {
+        "total": 686,
+        "additions": 169,
+        "deletions": 517
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "613871bba4fdf44cd301cb320d93d49c6d06f0b5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T22:51:18+00:00"
+        },
+        "message": "docs: Add comprehensive GitHub Pages deployment guide\n\n- Document complete GitHub Pages setup process with live demo URL\n- Include detailed troubleshooting section for common deployment issues\n- Add step-by-step solutions for module resolution, ESM compatibility, and git tracking\n- Document CI/CD pipeline and deployment verification checklist\n- Include deployment history showing technical challenges overcome\n- Add configuration examples for Vite, React Router, and GitHub Actions\n- Provide alternative deployment options for Vercel and Netlify"
+      },
+      "stats": {
+        "total": 295,
+        "additions": 286,
+        "deletions": 9
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "f9e2ed9eff235a3a86d5aef33ce131d480bf5ae0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T22:43:01+00:00"
+        },
+        "message": "fix: Update ui-components to use Vite 7 and compatible plugin versions\n\n- Add 'type': 'module' to package.json for proper ESM support\n- Update @vitejs/plugin-react from 4.2.1 to 4.6.0 for compatibility\n- Update vite from 5.1.0 to 7.0.4 to match demo-app version\n- Resolves GitHub Actions build error: ERR_REQUIRE_ESM"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "8834105579ae06588676c0d0e23a438904ae3da7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T22:40:06+00:00"
+        },
+        "message": "feat: add design tokens and UI components for Tailwind CSS\n\n- Introduced a new package for design tokens with Tailwind CSS configuration.\n- Created reusable UI components including Button, Card, Modal, and Form elements.\n- Updated the TypeScript configuration for better module resolution and type declarations.\n- Integrated Vite for building the UI components library.\n- Enhanced the GitHub Actions workflow for deployment to GitHub Pages.\n- Updated .gitignore to include monorepo package configurations."
+      },
+      "stats": {
+        "total": 1186,
+        "additions": 1186,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "260611812e4cb4fe3ddacd0572090982426041d7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T22:33:03+00:00"
+        },
+        "message": "feat: Enhance deployment workflow with additional debug information and structured package builds"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 15,
+        "deletions": 2
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "4ba27c64f2b405e6c401a91d63c13cc471c9537d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T22:23:31+00:00"
+        },
+        "message": "feat: Add debug step to display workspace packages and Turbo version in deployment workflow"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 8,
+        "deletions": 1
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "d238093235aec6afd6d816e0e97f14b29ee5bc66",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T22:13:18+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 4256,
+        "additions": 23,
+        "deletions": 4233
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "cd4f444d6550f166026f8f7cfdeaf1eb0e85bff9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T22:07:43+00:00"
+        },
+        "message": "feat: Enhance CI/CD deployment process by consolidating package builds and updating cookie management for Turborepo caching\nfix: Update clean script in demo app to use rimraf for cross-platform compatibility\nchore: Add rimraf as a dependency to package.json and package-lock.json\nchore: Update deploy.yml to build all packages in a single step\nchore: Add additional cookie files for improved caching tracking in Turborepo"
+      },
+      "stats": {
+        "total": 301,
+        "additions": 284,
+        "deletions": 17
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "634fe75b6398e00eb6221fb0a9a71e26b8f35ff5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T21:20:59+00:00"
+        },
+        "message": "upd"
+      },
+      "stats": {
+        "total": 102,
+        "additions": 102,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "da1c0743654ca970793f65e5d2d31298d19666fe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T21:20:39+00:00"
+        },
+        "message": "feat: Update Turbo log with additional package change warnings for improved monitoring"
+      },
+      "stats": {
+        "total": 182,
+        "additions": 182,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "57ace6eca57874df1bbe67f949e65457e1fbd1c0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T21:20:28+00:00"
+        },
+        "message": "feat: Refactor build process in CI/CD scripts; separate builds for design tokens, UI components, and demo app"
+      },
+      "stats": {
+        "total": 111,
+        "additions": 108,
+        "deletions": 3
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "d4637b2fe8f1365c967e50556345567cbf3ab273",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T21:15:55+00:00"
+        },
+        "message": "feat: Remove original App component and add new cookie files for Turborepo caching"
+      },
+      "stats": {
+        "total": 259,
+        "additions": 0,
+        "deletions": 259
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "c3e3cd5488d9258aad77104de44b739559bd35ed",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T21:09:38+00:00"
+        },
+        "message": "feat: Update index.html title and add SPA support for GitHub Pages; refactor App to use HashRouter; enhance deployment process with GitHub Actions workflow and detailed deployment guide"
+      },
+      "stats": {
+        "total": 141,
+        "additions": 136,
+        "deletions": 5
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "a6d71a73ccbb58e9ed3f089edb88e5401f7e6b05",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T20:39:45+00:00"
+        },
+        "message": "feat: Add Settings and Users pages with comprehensive configuration options\n\n- Implemented SettingsPage component for managing application settings including general, security, notification, API, and billing settings.\n- Introduced UsersPage component for managing team members, including user roles, statuses, and actions (edit/delete).\n- Added reusable components for form fields, toggle switches, and settings sections to enhance code reusability and maintainability.\n- Integrated state management for various settings and user data, allowing for dynamic updates and unsaved changes tracking.\n- Enhanced UI with responsive design and accessibility features, ensuring a better user experience across devices."
+      },
+      "stats": {
+        "total": 1934,
+        "additions": 1915,
+        "deletions": 19
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "dfdbf9baf0b56d34b951dc83352586ebb4837ea4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T19:29:52+00:00"
+        },
+        "message": "feat: Add Animation Showcase page and integrate animations into the demo app"
+      },
+      "stats": {
+        "total": 372,
+        "additions": 368,
+        "deletions": 4
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "f460b525a4ab996ca0292d4d5524d611d2e6dffd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T19:14:52+00:00"
+        },
+        "message": "feat: Refactor demo app to use React Router for navigation and add new pages\n\n- Updated package.json to include react-router-dom and related types\n- Created Layout component for consistent header and footer across pages\n- Implemented HomePage and DesignSystemShowcase pages with routing\n- Added FormShowcase section with various form components and validation\n- Enhanced HomePage with a grid layout showcasing features and a call-to-action button\n- Improved accessibility and user experience with theme toggle and navigation links"
+      },
+      "stats": {
+        "total": 1047,
+        "additions": 818,
+        "deletions": 229
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "1e9a00561b0e364f47875faec7728e907eb77811",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T18:47:20+00:00"
+        },
+        "message": "initial development"
+      },
+      "stats": {
+        "total": 14757,
+        "additions": 14660,
+        "deletions": 97
+      },
+      "repo": "tailwind-demo"
+    },
+    {
+      "sha": "cad1159b290f7b11a897843de085d2007622a507",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-29T16:30:33+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 441,
+        "additions": 441,
+        "deletions": 0
+      },
+      "repo": "tailwind-demo"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-04T09:35:49.822320",
+  "value": {
+    "ai_summary": "RESTRunner is a comprehensive .NET 10 solution designed for automated REST API testing, performance benchmarking, and regression testing, with a primary focus on integrating and executing Postman collections. The project offers a robust toolset for developers and QA engineers to run API tests, analyze performance metrics, and generate detailed reports, featuring capabilities like load testing, response time analysis, and CSV result export. Built using modern .NET technologies and following a microservices-oriented architecture, it supports both console and web interfaces (Razor Pages), enabling flexible API testing across different environments with high performance and security considerations. Key technical differentiators include its .NET 10 LTS foundation, built-in sample CRUD API, comprehensive statistical reporting, and a performance-optimized design that claims 19% faster builds and 25% faster test execution. The project is particularly valuable for software development teams seeking a standardized, automated approach to API testing and performance validation, with strong emphasis on maintainability, extensibility, and continuous integration practices.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T09:35:49.822272",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2198,
+    "confidence_score": 90
+  }
+}

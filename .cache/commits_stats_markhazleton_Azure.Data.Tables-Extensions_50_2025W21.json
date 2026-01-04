@@ -1,0 +1,805 @@
+{
+  "timestamp": "2026-01-04T09:03:17.990560",
+  "value": [
+    {
+      "sha": "64fe67442132383e3bc1a8d94209613b9e67aa6c",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T22:43:17+00:00"
+        },
+        "message": "Merge pull request #14 from ThomasPe/feature/csv-deps\n\nupdate csv deps"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 3,
+        "deletions": 10
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "70aff64003275b43ad0130615c45836de2c81464",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T22:41:46+00:00"
+        },
+        "message": "cleanup"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 2,
+        "deletions": 9
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "7e0a946928dc31d0d566bc756d279fedb40e1afe",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T21:35:04+00:00"
+        },
+        "message": "update deps"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "f36ddfd768b0a1d04952aca24b54589baa5034c1",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T21:32:00+00:00"
+        },
+        "message": "Merge pull request #13 from ThomasPe/feature/count-partitionkey\n\ncount by partitionkey"
+      },
+      "stats": {
+        "total": 65,
+        "additions": 36,
+        "deletions": 29
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "1bd6fa59a9d7e0b2568485715de385a7e0abb241",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T21:25:50+00:00"
+        },
+        "message": "Update Directory.Build.props"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "fb4d1e1dfb6411ae9f31a923205a4603f934f7c1",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T21:24:45+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 0,
+        "deletions": 7
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "1225be628f9e78fdd2bc9294c6fb36addd1aa04f",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T21:00:05+00:00"
+        },
+        "message": "Update CHANGELOG.md"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "6caa81ccc187d2037a3aa87371564eb88f1ca23c",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T20:51:22+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 16,
+        "deletions": 18
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "6b00b708cf6f5faad7ca87d994b4315a535d8ea8",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T19:48:12+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "3a34f2a9f04a390151f650049fb3587c85324371",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T19:44:29+00:00"
+        },
+        "message": "count by partitionkey"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 8,
+        "deletions": 4
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "e59b2af31f7d5213e0ff7264733d7a3f9c067e72",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T19:34:41+00:00"
+        },
+        "message": "Merge pull request #12 from ThomasPe/feature/directoryprops\n\ncode cleanup"
+      },
+      "stats": {
+        "total": 136,
+        "additions": 66,
+        "deletions": 70
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "de4c68d3cc7e74d9df7466c6ed1520c3651e2cfc",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-04-02T19:23:21+00:00"
+        },
+        "message": "fix tests"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 8,
+        "deletions": 26
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "b68d6edb0f2517a964e9c536f74084493f08f7da",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-03-23T00:50:16+00:00"
+        },
+        "message": "add directoryprops, code cleanup"
+      },
+      "stats": {
+        "total": 108,
+        "additions": 61,
+        "deletions": 47
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "5144c9a8c018e16efb47f94920cd173937fca75a",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-03-18T15:40:51+00:00"
+        },
+        "message": "Merge pull request #11 from ThomasPe/feature/drop-netstandard\n\ndrop netstandard"
+      },
+      "stats": {
+        "total": 1536,
+        "additions": 795,
+        "deletions": 741
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "006f226df11f9da08a0d28ddcc5ec3e811b7d5a5",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-03-18T15:28:03+00:00"
+        },
+        "message": "update syntax"
+      },
+      "stats": {
+        "total": 39,
+        "additions": 19,
+        "deletions": 20
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "5bf36982ce3e403e7d218e977b63f55818a5ad09",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-03-18T15:25:12+00:00"
+        },
+        "message": "fix nullables"
+      },
+      "stats": {
+        "total": 1289,
+        "additions": 646,
+        "deletions": 643
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "4d6ebeff902ab4f271839afa127b42bd6876b9c3",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-03-18T14:36:30+00:00"
+        },
+        "message": "drop netstandard, add Buid.props & Packages.props"
+      },
+      "stats": {
+        "total": 384,
+        "additions": 218,
+        "deletions": 166
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "000f890dd31331191cb06c0354d259bdb77983a5",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-03-18T13:34:33+00:00"
+        },
+        "message": "Merge pull request #10 from ThomasPe/feature/nuget-update\n\nupdate nuget"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 14,
+        "deletions": 14
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "dc9126b462a4ee3630ced0cf2aa3fe88b98d1f67",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2025-03-18T12:40:05+00:00"
+        },
+        "message": "update nuget"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 14,
+        "deletions": 14
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "9e3f8cc4a2823498f42daf1e7db96074e49f494c",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2024-03-13T22:17:20+00:00"
+        },
+        "message": "Merge pull request #9 from ThomasPe/feature/dependencies-update\n\nupdate dependencies"
+      },
+      "stats": {
+        "total": 81,
+        "additions": 50,
+        "deletions": 31
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "3f7804b32f15fce9080d4c8f37cef29fbbfb77d5",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2024-03-13T22:15:46+00:00"
+        },
+        "message": "update actions"
+      },
+      "stats": {
+        "total": 23,
+        "additions": 12,
+        "deletions": 11
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "dd3c2178802858f53c43c338c038340cbb488a01",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2024-03-13T22:10:04+00:00"
+        },
+        "message": "update deps"
+      },
+      "stats": {
+        "total": 58,
+        "additions": 38,
+        "deletions": 20
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "201a4459de0b66cf5b2e40d465b91b23d2acb07e",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-12-20T19:31:35+00:00"
+        },
+        "message": "Merge pull request #8 from ThomasPe/feature/update-csv-deps\n\nUpdate Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "848c580a40f01b2a1c84b8cb9359536c269778bf",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-12-20T19:29:24+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "c0cef9048522711f7f1fec20136fc81c77c03a81",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-12-20T19:17:03+00:00"
+        },
+        "message": "Merge pull request #7 from ThomasPe/feature/update-dependencies\n\nupdate deps, version, tests"
+      },
+      "stats": {
+        "total": 164,
+        "additions": 96,
+        "deletions": 68
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "627cdfbed627011e2eb89582a1119d18aeea8b12",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-12-20T19:13:34+00:00"
+        },
+        "message": "update version"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "b4284bb635f0eb8d48a2c13fe1f1dd69ec32d638",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-12-20T19:10:37+00:00"
+        },
+        "message": "update .net8"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "9998658865a6dc0e31bdbe25a72ada01a8c851e8",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-12-20T19:02:22+00:00"
+        },
+        "message": "update deps, version, tests"
+      },
+      "stats": {
+        "total": 152,
+        "additions": 90,
+        "deletions": 62
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "649d0cf802374a6abf027b41f0bb87154197d815",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-10-16T13:46:29+00:00"
+        },
+        "message": "Merge pull request #5 from ThomasPe/improve-tests\n\nupdate tests, dependencies, package version"
+      },
+      "stats": {
+        "total": 50,
+        "additions": 27,
+        "deletions": 23
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "049792fffadc9a3e65215e2438803e896aa0758c",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-10-16T13:34:15+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "f360fc9ca5058d3a206bd79e4b84da7aad892931",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-10-16T13:31:38+00:00"
+        },
+        "message": "update tests, dependencies, version"
+      },
+      "stats": {
+        "total": 49,
+        "additions": 26,
+        "deletions": 23
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "000efc9f9ed3d8a8f5ecd3e53a4e1221eaeb642d",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-18T15:45:52+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "98a3d122c19cc68e01ad4d2a2db0139266510f04",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:57:35+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 8,
+        "deletions": 6
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "1412f922cad84c83a74b63f621dd09d0e95e1e9e",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:53:57+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 1,
+        "deletions": 5
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "e039b962f96c10fde456de845c7dfaf93cee4f79",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:50:11+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "f32ddc92ff9856b9b9b2c30ec095b0348b643bab",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:46:02+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "500674b91fa86c4eb9d53c2bfc6626da6b4226ad",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:41:40+00:00"
+        },
+        "message": "rename"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "7d74ee141e24abcb78079ba916e4648a1cbdedef",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:40:51+00:00"
+        },
+        "message": "Merge pull request #3 from ThomasPe/csvexport\n\nCsvexport"
+      },
+      "stats": {
+        "total": 3748,
+        "additions": 3722,
+        "deletions": 26
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "9ed9244475a7117a2e91257495bed6e0c7de7cad",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:39:28+00:00"
+        },
+        "message": "Create publish-nuget-csv.yml"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 26,
+        "deletions": 0
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "32a03aba562e03cbcd189f5357d26fdb4c3aaad7",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:38:36+00:00"
+        },
+        "message": "docs, cleanup"
+      },
+      "stats": {
+        "total": 154,
+        "additions": 115,
+        "deletions": 39
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "4564b0687b6e29a91473291727b8416b2efaaed8",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T23:15:29+00:00"
+        },
+        "message": "add tests and summary"
+      },
+      "stats": {
+        "total": 3034,
+        "additions": 3033,
+        "deletions": 1
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "459bd484b6db22f3e9659a2b374874ddc06979aa",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T20:42:54+00:00"
+        },
+        "message": "fix parser & tests"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 55,
+        "deletions": 5
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "733d8ef10dd6bdd95779f10cc342778eff4812c3",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T16:51:39+00:00"
+        },
+        "message": "adjust dependencies"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 2,
+        "deletions": 3
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "88297c158b0d6f1a50dce5c20fa73a058e1f3c41",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T16:45:05+00:00"
+        },
+        "message": "merge from main"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "8c973e4112fea68d87929c8acd0bfbf4c64f0b49",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-17T14:58:56+00:00"
+        },
+        "message": "import helper"
+      },
+      "stats": {
+        "total": 83,
+        "additions": 78,
+        "deletions": 5
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "eeed5a7dacf14baa2c150020c637e031a1446511",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-15T23:08:16+00:00"
+        },
+        "message": "Update Medienstudio.Azure.Data.Tables.CSV.csproj"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 17,
+        "deletions": 0
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "05e836f03f2dd18a1161201dad322f1ede731574",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-15T22:59:15+00:00"
+        },
+        "message": "fix azurite"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "e939181d1d44b8b7c5554aafaaaf93db8b8c7cd4",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-15T22:55:27+00:00"
+        },
+        "message": "fix azurite"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 8,
+        "deletions": 6
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "be8a8f4ae6f49220e6ff1d23f95e59f51b14a6a8",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-15T22:45:32+00:00"
+        },
+        "message": "fix tests"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    },
+    {
+      "sha": "1961a999fd07cff3b85f9934376c8f5af3cb9fe0",
+      "commit": {
+        "author": {
+          "name": "Thomas Pentenrieder",
+          "date": "2023-02-15T22:43:32+00:00"
+        },
+        "message": "fix tests"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "Azure.Data.Tables-Extensions"
+    }
+  ]
+}

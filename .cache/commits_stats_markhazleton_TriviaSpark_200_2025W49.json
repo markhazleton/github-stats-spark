@@ -1,0 +1,1589 @@
+{
+  "timestamp": "2026-01-04T09:47:51.783860",
+  "value": [
+    {
+      "sha": "21a4088741df75763c9bb1fc840eca35d3e9a8db",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-02T04:07:49+00:00"
+        },
+        "message": "Document .NET 10 upgrade and PR process improvements\n\nAdded comprehensive documentation for the .NET 10 upgrade,\nhighlighting a 99.3% warning reduction (273 \u2192 2) and zero\nbreaking changes. Updated multiple files to streamline the\nPR creation, review, and merge process:\n\n- **PR_COMMANDS.md**: Detailed PR creation methods, reviewer\n  commands, and communication templates.\n- **PR_QUICK_REFERENCE.md**: Concise upgrade summary, review\n  checklist, and merge criteria.\n- **PR_VISUAL_SUMMARY.md**: Visual metrics, progress phases,\n  and impact assessment.\n- **PULL_REQUEST.md**: Comprehensive upgrade details,\n  technical improvements, and testing results.\n- **PULL_REQUEST_SHORT.md**: Concise PR summary for quick\n  reference.\n\nThese updates ensure clarity, efficiency, and alignment with\nmodern .NET 10 and C# 12 standards."
+      },
+      "stats": {
+        "total": 763,
+        "additions": 763,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "40372750ed3c8e7eec34d037e600b4698a092463",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-02T04:05:44+00:00"
+        },
+        "message": "Merge pull request #19 from controlorigins/upgrade-to-NET10\n\n.NET 10 Upgrade: 99.3% Warning Reduction (273\u21922)"
+      },
+      "stats": {
+        "total": 3576,
+        "additions": 3328,
+        "deletions": 248
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "fdb2c2d364b20d766760a38b1cced992ac71df1f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-02T03:38:57+00:00"
+        },
+        "message": "feat: Achieve 99.3% warning reduction in .NET 10 upgrade (273\u21922 warnings)\n\nComprehensive code quality improvement eliminating 271 warnings across 3 phases:\n- Phase 1: Fixed logging, ASP.NET, and member hiding warnings (15 fixed)\n- Phase 2: Fixed CS8618 property initialization warnings (90 fixed)\n- Phase 2.5: Fixed remaining nullable reference warnings (9 fixed)\n\nKey improvements:\n- All entities/models use required modifier and proper initialization\n- Fixed CA2017 logging template issues across all services\n- Modernized ASP.NET Core routing (top-level, Headers.Append)\n- Added .editorconfig and Directory.Build.props for standards\n- Created comprehensive WARNINGS_REPORT.md documentation\n\nFiles modified: 21 core files across entities, models, and services\nTests: All 68 tests passing (100% maintained)\nBuild: Zero errors, only 2 acceptable false positive warnings remain\n\nTechnical details:\n- Used SetsRequiredMembers attribute on constructors\n- Applied required modifier to non-nullable properties\n- Initialized collections to empty collections\n- Fixed operator overloads for nullable parameters\n- Removed unreachable code and fixed member hiding\n\nSee WARNINGS_REPORT.md for complete details of all improvements.\n\nCo-authored-by: GitHub Copilot <noreply@github.com>"
+      },
+      "stats": {
+        "total": 1431,
+        "additions": 1299,
+        "deletions": 132
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "fc7e400b60deca192e2d1bf6d6b126803fce4b37",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-02T02:48:12+00:00"
+        },
+        "message": "Upgrade solution to .NET 10.0\n\n- Updated all 6 projects from net9.0 to net10.0\n\n- Updated 10 NuGet packages to version 10.0.0\n\n- All tests pass (68/68)\n\n- Build succeeds with 0 errors\n\n- Applications validated: Web, Console, JeopardyData.Console"
+      },
+      "stats": {
+        "total": 2062,
+        "additions": 1991,
+        "deletions": 71
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "0759f107b0c8ff4c1742ddbcded50711e49fbe3e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-02-26T06:25:52+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 241,
+        "additions": 117,
+        "deletions": 124
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "ee65a42458d5fb28bd4e0d65d54b47ea37d41416",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-21T11:55:26+00:00"
+        },
+        "message": "Package Updates"
+      },
+      "stats": {
+        "total": 168,
+        "additions": 34,
+        "deletions": 134
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "59cd30b288d99eb8e839cdfc2ea360d27d7d2ac2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T16:25:30+00:00"
+        },
+        "message": "small refactors"
+      },
+      "stats": {
+        "total": 45,
+        "additions": 16,
+        "deletions": 29
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "3016837974dbfad80347f7db2d24ad7971c92c8a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T16:19:35+00:00"
+        },
+        "message": "minor clean up"
+      },
+      "stats": {
+        "total": 238,
+        "additions": 112,
+        "deletions": 126
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "a452edd5468c2fb2393c750e4ae79c26181f12e1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T15:53:36+00:00"
+        },
+        "message": "More clean-up and refactoring"
+      },
+      "stats": {
+        "total": 3508,
+        "additions": 1736,
+        "deletions": 1772
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "2f122b32e52e28e4b36554eaed8f52b5eebe8fb4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T14:24:27+00:00"
+        },
+        "message": "fix spelling issues"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "a44b573b9ab826e866afb53ce0c9b1a41ae67d0e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T14:23:18+00:00"
+        },
+        "message": "Clean up namespace issues"
+      },
+      "stats": {
+        "total": 80,
+        "additions": 34,
+        "deletions": 46
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "513ce48889bdcd0f77bd100380d50beb59174fa1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T14:18:55+00:00"
+        },
+        "message": "clean up"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 6,
+        "deletions": 12
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "895fd7c2a6d9742ec9f8923042f0649c229e4637",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T14:17:07+00:00"
+        },
+        "message": "Move entities to Core project out of Web App"
+      },
+      "stats": {
+        "total": 5399,
+        "additions": 2637,
+        "deletions": 2762
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "e2df03f3e3d7880baad5ac5ccebb08edede934b4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T13:52:15+00:00"
+        },
+        "message": "Remove Migrations and old GitHub workflow"
+      },
+      "stats": {
+        "total": 6859,
+        "additions": 0,
+        "deletions": 6859
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "0012575e5ebae665ceaa97dfb4974149ff731e3c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T02:18:31+00:00"
+        },
+        "message": "Clean up and refactor"
+      },
+      "stats": {
+        "total": 281,
+        "additions": 125,
+        "deletions": 156
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "c7e4afeb257e159c6e98ec505b2f2edc5b6501c4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-03T12:13:41+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 66,
+        "additions": 66,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "4af6b95cdf7bf4da8c4a27fb7645e4ebf6816d01",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-03T11:56:57+00:00"
+        },
+        "message": "Delete .github/workflows/dotnet.yml"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 0,
+        "deletions": 28
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "6e0c5fd1c1b28156e2028053304cb076d8643f0f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-03T11:55:35+00:00"
+        },
+        "message": "remove workflow"
+      },
+      "stats": {
+        "total": 66,
+        "additions": 0,
+        "deletions": 66
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "90f0d79ec67afe35005ac41710f192a69402ccea",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-03T11:41:15+00:00"
+        },
+        "message": "update client libraries"
+      },
+      "stats": {
+        "total": 184,
+        "additions": 10,
+        "deletions": 174
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "74e3db204c5e258ad76d2e37813daf0314d49158",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-03T11:40:10+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 66,
+        "additions": 66,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "f6afebc68a5e467639bcd5e4334dfeba7c821e39",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-02T15:20:54+00:00"
+        },
+        "message": "Merge pull request #18 from controlorigins/feature/updates\n\nFeature/updates"
+      },
+      "stats": {
+        "total": 271,
+        "additions": 175,
+        "deletions": 96
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "1e8be0f7ce60cbc8dffd4d20e0539e2aeadc5a74",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-02T15:20:15+00:00"
+        },
+        "message": "Add Jeopardy Console Application"
+      },
+      "stats": {
+        "total": 104,
+        "additions": 104,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "79808cd89e33bfd11b0bd193aff916b14485afc9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-23T17:51:14+00:00"
+        },
+        "message": "Update NuGet Packages and Client Libraries"
+      },
+      "stats": {
+        "total": 111,
+        "additions": 37,
+        "deletions": 74
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "050d99178bf2d8d7ef9a08f0e99cd8e273a227e3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-12-13T12:34:48+00:00"
+        },
+        "message": "Update Client Libs."
+      },
+      "stats": {
+        "total": 74,
+        "additions": 43,
+        "deletions": 31
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "9e43d16c95ce03e5ba9f2eb7a4dae10e0cf0b6ca",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-12-13T12:27:17+00:00"
+        },
+        "message": "Merge pull request #17 from controlorigins/feature/updates\n\nUpgrade to Net 8"
+      },
+      "stats": {
+        "total": 158,
+        "additions": 78,
+        "deletions": 80
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "0c9568f6a3a581b2dc45d6031b2a3ceb4fbf53b6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-12-13T12:19:57+00:00"
+        },
+        "message": "Upgrade to Net 8\nUpdate NuGet Packages"
+      },
+      "stats": {
+        "total": 158,
+        "additions": 78,
+        "deletions": 80
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "48ef2215e6390d2e923fbbcdc18676aec46042fc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-01T02:28:09+00:00"
+        },
+        "message": "Merge pull request #16 from controlorigins/feature/updates\n\nUpdate Package Versions"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 13,
+        "deletions": 13
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "a63bc34274a409925fae41a6ab85a68f246b74dd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-01T02:25:44+00:00"
+        },
+        "message": "Update NuGet Packages"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 13,
+        "deletions": 13
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "4c72c7f20dfe1408f7b62635b5512cc33972339d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-23T16:44:01+00:00"
+        },
+        "message": "update client libs. . ."
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "84b665da74389a81dee6f58378e35cc453ea2a8b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-23T14:00:29+00:00"
+        },
+        "message": "Merge pull request #15 from controlorigins/feature/Initial\n\nUpdate NuGet Packages"
+      },
+      "stats": {
+        "total": 55,
+        "additions": 27,
+        "deletions": 28
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "3b5a9ac27bbbff3a6eff4dcd9f98c979d1f82a2a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-23T13:59:19+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 13,
+        "deletions": 13
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "2880e2268277288b6683e2e8219ef73f3d6aceb9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-01T13:16:42+00:00"
+        },
+        "message": "Update NuGet Packages/client libraries"
+      },
+      "stats": {
+        "total": 49,
+        "additions": 24,
+        "deletions": 25
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "38394d77d1d0021d3cc91ef1d5dd360c4ffac97b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-10T04:33:34+00:00"
+        },
+        "message": "Merge pull request #14 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 1957,
+        "additions": 873,
+        "deletions": 1084
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "4d2577f140ef45e214670f5a8a0ec625397c444d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-10T04:31:23+00:00"
+        },
+        "message": "Update package versions"
+      },
+      "stats": {
+        "total": 1957,
+        "additions": 873,
+        "deletions": 1084
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "6f62db9087b7ea4c60cacc87871a0d254a9aa0e7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-17T12:39:07+00:00"
+        },
+        "message": "Merge branch 'main' into feature/Initial"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "a9ee35e010493ca60b66dc0556834997cb5d5858",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-13T17:01:12+00:00"
+        },
+        "message": "Update NuGet Packages"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "b38a6d394b203867c22bc842acb13dd30efaaa36",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-11T15:23:21+00:00"
+        },
+        "message": "Merge pull request #13 from controlorigins/feature/Initial\n\nfix issues with get next question on some Match Modes"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 9,
+        "deletions": 2
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "2ef2c4e478245ca19eecf6d1eb343a78dffaaf63",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-11T15:22:55+00:00"
+        },
+        "message": "fix issues with get next question on some Match Modes"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 9,
+        "deletions": 2
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "d68b7b0549b38f75ddebaf04724671645f04c679",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-03T13:18:24+00:00"
+        },
+        "message": "Merge pull request #12 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 2029120,
+        "additions": 952,
+        "deletions": 2028168
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "8b5cf12f4adb748697efa81fa3253408c13ad642",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-03T13:18:00+00:00"
+        },
+        "message": "Work on Match Display and ScoreCard"
+      },
+      "stats": {
+        "total": 2669,
+        "additions": 691,
+        "deletions": 1978
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "e1704b8cdbfb355fcda34ce739993c906dabc9ed",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-29T23:13:18+00:00"
+        },
+        "message": "Add User Roles and start Admin Controllers and Pages"
+      },
+      "stats": {
+        "total": 275,
+        "additions": 266,
+        "deletions": 9
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "fe451997abee82569b558399767230bb6c8eddf4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-29T18:03:24+00:00"
+        },
+        "message": "Questionable Source, removing from Project"
+      },
+      "stats": {
+        "total": 2026186,
+        "additions": 0,
+        "deletions": 2026186
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "dae75314b23c5142a9dc7a1876865ee26dc9d876",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-27T17:07:56+00:00"
+        },
+        "message": "Merge pull request #11 from controlorigins/feature/Initial\n\nUpdate for OneAndDone Game Mode"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 19,
+        "deletions": 6
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "01c4b02c9dbb87ee6c1105864a1d9451d0881819",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-27T17:07:17+00:00"
+        },
+        "message": "Update for OneAndDone Game Mode"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 19,
+        "deletions": 6
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "58bc701c45fde23f19f1363947cf3bd72054fbce",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T02:11:03+00:00"
+        },
+        "message": "Merge pull request #10 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 1344,
+        "additions": 1150,
+        "deletions": 194
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "84b5693b2f45c53847f88d936ee260ed0fa766ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T02:08:50+00:00"
+        },
+        "message": "CodeRush Clean-up"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 16,
+        "deletions": 22
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "62adbe8437f33135a33d2886aea98c89c6ee5e6f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T02:07:39+00:00"
+        },
+        "message": "Working on Mode scoring methods"
+      },
+      "stats": {
+        "total": 442,
+        "additions": 337,
+        "deletions": 105
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "6f319538e295ec8e617a3b449137ffbcb5bf26dd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-22T15:31:13+00:00"
+        },
+        "message": "Add User Attributes (First/Last/Picture)\nMinor code clean-up"
+      },
+      "stats": {
+        "total": 798,
+        "additions": 739,
+        "deletions": 59
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "907f5a438daeac03e1e171d4ec226782d7473b24",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-22T15:30:37+00:00"
+        },
+        "message": "Implement Delete Match"
+      },
+      "stats": {
+        "total": 41,
+        "additions": 35,
+        "deletions": 6
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "5e78ea011d7e377ced447c743562738abc4b9765",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-22T12:30:57+00:00"
+        },
+        "message": "Implement Application User Manager"
+      },
+      "stats": {
+        "total": 46,
+        "additions": 37,
+        "deletions": 9
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "1ca6699276324ee26bd13cd49ecbfd7e14824a09",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-22T12:30:39+00:00"
+        },
+        "message": "minor clean up"
+      },
+      "stats": {
+        "total": 15,
+        "additions": 4,
+        "deletions": 11
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "510177069ed05ba8091f664ac9e2f92e3d5d439d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-16T19:12:03+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "1ffed368f4142d02d0c2894202380d07379b9e44",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-16T17:35:32+00:00"
+        },
+        "message": "Create dotnet.yml"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 28,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "d8c3a44bd67f277c90d89b5f8c758dae639e2579",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-16T17:34:08+00:00"
+        },
+        "message": "Merge pull request #9 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 476,
+        "additions": 267,
+        "deletions": 209
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "8433226b02a47bfbb5aef4817088be34a65b80ea",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-16T16:59:43+00:00"
+        },
+        "message": "Remove DbContext from Admin/Matches, use Service instead"
+      },
+      "stats": {
+        "total": 433,
+        "additions": 255,
+        "deletions": 178
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "e7601c15cd66edb94eb55ae6faf63a45a8f4f5c6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-14T15:31:41+00:00"
+        },
+        "message": "Creaet Connection String in Program.cs to get application root\nMove SQLite db to App_Data folder"
+      },
+      "stats": {
+        "total": 43,
+        "additions": 12,
+        "deletions": 31
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "9545a37954072ded3df1e6231a35dbbe84ec8e01",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-14T14:51:29+00:00"
+        },
+        "message": "Merge pull request #8 from controlorigins/feature/Initial\n\nUpdate to Match Model"
+      },
+      "stats": {
+        "total": 1692,
+        "additions": 1387,
+        "deletions": 305
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "791bb5895675a9dda955b5113fe33a05d7662b76",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-14T14:50:17+00:00"
+        },
+        "message": "Update Home Page copy"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 5,
+        "deletions": 17
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "de4d45601c4041eda2dba15c32eae4f00bfc948f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-14T14:17:47+00:00"
+        },
+        "message": "Add Difficulty and Question Types to Match databse."
+      },
+      "stats": {
+        "total": 1022,
+        "additions": 904,
+        "deletions": 118
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "a6b258667e0805160b027c1e4520226249819a7c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-13T13:53:29+00:00"
+        },
+        "message": "Fix naming issue with partial razor page"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "3a6380c36069f265dd8c6ebea0a2c6eadcb598bc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-13T13:50:20+00:00"
+        },
+        "message": "Create Area for Admin Pages"
+      },
+      "stats": {
+        "total": 526,
+        "additions": 382,
+        "deletions": 144
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "4e4c49b28e673f504b3892efb52ded9abb4b57f8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-12T15:58:46+00:00"
+        },
+        "message": "nLog basic implementation"
+      },
+      "stats": {
+        "total": 168,
+        "additions": 119,
+        "deletions": 49
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "5b62e30f5d9b7f02c32c0c6452d6f9b60ac5f419",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-11T20:32:45+00:00"
+        },
+        "message": "Merge pull request #6 from controlorigins/feature/Initial\n\nUpdate the Read ME"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "486d0c6f8f406d856aa001e579237762c5c2a896",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-11T20:32:01+00:00"
+        },
+        "message": "Merge branch 'main' into feature/Initial"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "81e3c7be4f4071a7a0a12e0916596948d3402b30",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-11T20:31:35+00:00"
+        },
+        "message": "Update Readme"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "810f8d85cd57ebe178c3cca93599ff72ffcbff76",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-11T17:58:05+00:00"
+        },
+        "message": "Merge pull request #5 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 234,
+        "additions": 123,
+        "deletions": 111
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "8f490e396ccf212ca86c41c5174a090aae02094e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-11T17:57:47+00:00"
+        },
+        "message": "clean up db"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "851eb0b1d17f8d70c74e5230c3f770ebd88d944b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-11T01:42:11+00:00"
+        },
+        "message": "fix issues with adding questions to a match"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 27,
+        "deletions": 41
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "b03f6321fae7b00ed24272de3a530469322d8579",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-11T00:02:09+00:00"
+        },
+        "message": "Fix Enum Issues"
+      },
+      "stats": {
+        "total": 126,
+        "additions": 79,
+        "deletions": 47
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "a7a4a4c1ab72394623a6f7de781cabd5d486da3e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T16:58:44+00:00"
+        },
+        "message": "Merge branch 'main' into feature/Initial"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "64b09af8999e6cef13414dbfe21e0ae177b86364",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T16:58:09+00:00"
+        },
+        "message": "clean-up"
+      },
+      "stats": {
+        "total": 41,
+        "additions": 19,
+        "deletions": 22
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "b9b43d34ec1ed8b283e655f9a660042f7bf5220b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T15:19:01+00:00"
+        },
+        "message": "Merge pull request #4 from controlorigins/feature/Initial\n\nAdd more Enums to Db Models, migrations.."
+      },
+      "stats": {
+        "total": 1798,
+        "additions": 1711,
+        "deletions": 87
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "1bec698190425797188bb69fe15d0b0d264eedbe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T15:12:25+00:00"
+        },
+        "message": "Add more Enums to Db Models, migrations"
+      },
+      "stats": {
+        "total": 1798,
+        "additions": 1711,
+        "deletions": 87
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "2e0ea39f6d5011d5ae5ebf1c4720ac26059a2fb5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T01:07:14+00:00"
+        },
+        "message": "Merge pull request #3 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 1726350,
+        "additions": 1366676,
+        "deletions": 359674
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "3acd23b1323b310c85acd330a786646fb6a52267",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T01:06:26+00:00"
+        },
+        "message": "Add timer for quersion answer\nAdd grahics for Match Scoreboard"
+      },
+      "stats": {
+        "total": 1027,
+        "additions": 926,
+        "deletions": 101
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "a9c0ea05e774606e7282e8da708d299bd1db928c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-06T23:00:25+00:00"
+        },
+        "message": "Update Home Page\nRefactor Services and Interfaces"
+      },
+      "stats": {
+        "total": 1259,
+        "additions": 968,
+        "deletions": 291
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "d211efb85d93364fba24dd48d3f8df196b0b1311",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-04T15:35:42+00:00"
+        },
+        "message": "First take at ScoreCard\nImplement Adapter Pattern for Question Soruce"
+      },
+      "stats": {
+        "total": 390,
+        "additions": 335,
+        "deletions": 55
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "e85ef0a30c67820060580f830047bb73fd99e482",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T18:44:40+00:00"
+        },
+        "message": "Update Save Chages override to update the Modified and Created dates on save"
+      },
+      "stats": {
+        "total": 1723551,
+        "additions": 1364111,
+        "deletions": 359440
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "8f281f868a6ceb007d6c0697802b5dcbee2e9faf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T13:05:04+00:00"
+        },
+        "message": "Db updates"
+      },
+      "stats": {
+        "total": 672,
+        "additions": 609,
+        "deletions": 63
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "ded42808a946e188f82a398151524f72192d1a05",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T04:30:06+00:00"
+        },
+        "message": "Update NuGet packages"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 7,
+        "deletions": 4
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "99f481a29aeb72fd0c82e7e2dcffc7d19e06853e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T04:21:22+00:00"
+        },
+        "message": "Merge pull request #2 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 2761,
+        "additions": 1980,
+        "deletions": 781
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "0b48afe6ac4c993fea5a5fe7176b19ead61fe738",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T04:20:59+00:00"
+        },
+        "message": "Code Clean-up"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 9,
+        "deletions": 27
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "0765abad48c30458bdbee849ea88e27333141a56",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T04:06:28+00:00"
+        },
+        "message": "Add More Unit Test and Equality overrides for Match and Question"
+      },
+      "stats": {
+        "total": 738,
+        "additions": 503,
+        "deletions": 235
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "812b033c07f0f5482368bf6f8eee76d864ea5018",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T03:26:06+00:00"
+        },
+        "message": "Add Tests\nRefactor Db Serivce\nIntroduce ListProvider"
+      },
+      "stats": {
+        "total": 2193,
+        "additions": 1571,
+        "deletions": 622
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "9ebef2f81b50ac5319bccddb76a768c14039318c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-01T21:51:36+00:00"
+        },
+        "message": "Merge pull request #1 from controlorigins/feature/Initial\n\nFeature/initial"
+      },
+      "stats": {
+        "total": 1206957,
+        "additions": 1206948,
+        "deletions": 9
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "2db1d6268355f0d12a4adc356e0143fbc0cf30f1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-01T21:49:52+00:00"
+        },
+        "message": "Clean Up Db insert errors, cree logged in version and logged out version of match."
+      },
+      "stats": {
+        "total": 1350,
+        "additions": 949,
+        "deletions": 401
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "b8e43c805d5b6f0b8297a855386ee08fbea2daf9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-27T20:24:32+00:00"
+        },
+        "message": "Clean-up == Start services layer"
+      },
+      "stats": {
+        "total": 210,
+        "additions": 199,
+        "deletions": 11
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "935e587412efec518fb460d3f46fe22cb8081171",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-27T04:26:39+00:00"
+        },
+        "message": "minor tweaks"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "16962ad2bd28e782daa866592f11fb78f3e55e29",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-26T22:29:15+00:00"
+        },
+        "message": "CleanUp Organize files"
+      },
+      "stats": {
+        "total": 481,
+        "additions": 249,
+        "deletions": 232
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "94e28307c02d03a64c2296709d3b5f862d97e965",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-26T22:22:02+00:00"
+        },
+        "message": "Clean up for first run through"
+      },
+      "stats": {
+        "total": 198,
+        "additions": 184,
+        "deletions": 14
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "171c075cd7c2da9259d82a7e3ecc35557c414ae0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-26T21:52:41+00:00"
+        },
+        "message": "Remove use of Session on Index Page, use Db instead"
+      },
+      "stats": {
+        "total": 39,
+        "additions": 14,
+        "deletions": 25
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "5933060a7249bc9895fe88293f4857f73076ef37",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-26T21:42:00+00:00"
+        },
+        "message": "Update for game play that uses database, not session"
+      },
+      "stats": {
+        "total": 2130,
+        "additions": 2034,
+        "deletions": 96
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "433c954da532b3c268f2ff2e9cc35fc510fe221c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-26T19:40:34+00:00"
+        },
+        "message": "ready for ef migration. . .."
+      },
+      "stats": {
+        "total": 469,
+        "additions": 302,
+        "deletions": 167
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "70cafc709c54e463c1dfbbb4efb0034b5b242e4f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-26T16:53:01+00:00"
+        },
+        "message": "Revert Db Changes"
+      },
+      "stats": {
+        "total": 480,
+        "additions": 308,
+        "deletions": 172
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "f750c8cb32225f973ea23a90ec5efc8a5022c2b7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-25T21:29:45+00:00"
+        },
+        "message": "Add Identity Implementation"
+      },
+      "stats": {
+        "total": 4861,
+        "additions": 4858,
+        "deletions": 3
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "4e23fa07f501a679713648af5b13176627479bfe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-23T23:20:27+00:00"
+        },
+        "message": "update cache approach"
+      },
+      "stats": {
+        "total": 171,
+        "additions": 160,
+        "deletions": 11
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "1c4ade0fa2b84b06ca13748c36f529caac64ecb7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-23T13:57:38+00:00"
+        },
+        "message": "Initial Load of Triva sources and simple test of web q/a"
+      },
+      "stats": {
+        "total": 1198814,
+        "additions": 1198814,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "c5dd6106ec662aae49bce964308c4206ad7dfa87",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-22T17:16:34+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 55,
+        "additions": 53,
+        "deletions": 2
+      },
+      "repo": "TriviaSpark"
+    },
+    {
+      "sha": "e10f0c09bdbf7554b022395b547aa6cfb45869a6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-22T17:10:04+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 373,
+        "additions": 373,
+        "deletions": 0
+      },
+      "repo": "TriviaSpark"
+    }
+  ]
+}

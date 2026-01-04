@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-01-04T09:42:30.557147",
+  "value": {
+    "ai_summary": "SQL2CSV is a comprehensive .NET 9 toolkit designed to simplify SQLite database exploration, transformation, and code generation, offering robust capabilities for developers and data professionals to discover, export, and analyze SQLite databases across platforms. The project provides a versatile CLI and early-stage web interface that enables users to recursively discover SQLite databases, export tables to CSV with advanced filtering, generate schema reports in multiple formats (text/JSON/Markdown), and automatically create C# Data Transfer Object (DTO) classes from database schemas. Built using modern .NET technologies with a clean, modular architecture featuring dependency injection, structured logging, and separation of concerns, the toolkit supports cross-platform execution and includes advanced features like parallel processing, intelligent database discovery, and comprehensive error handling. What distinguishes SQL2CSV is its focus on developer productivity, offering a unified, extensible solution for database introspection and code generation with a flexible options pattern and comprehensive test coverage (115 passing tests). The project is particularly valuable for developers working with SQLite databases who need quick data extraction, schema analysis, and automated code generation, especially in scenarios involving legacy systems, data migration, or rapid prototyping.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T09:42:30.557131",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2728,
+    "confidence_score": 90
+  }
+}

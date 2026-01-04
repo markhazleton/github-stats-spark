@@ -1,0 +1,1269 @@
+{
+  "timestamp": "2026-01-04T09:39:06.297487",
+  "value": [
+    {
+      "sha": "6a1996954c0af96430a18de71ce2280a2b08a979",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T13:19:33+00:00"
+        },
+        "message": "Update issue templates"
+      },
+      "stats": {
+        "total": 58,
+        "additions": 58,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "521b1a78af9c26629720aa06a29bc327c7afa1ca",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T13:14:49+00:00"
+        },
+        "message": "Release v3.5.0: Add .NET 10 support and update documentation"
+      },
+      "stats": {
+        "total": 57,
+        "additions": 53,
+        "deletions": 4
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "48f14a346c248851591ba6ffd99a673801caf37b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T13:11:27+00:00"
+        },
+        "message": "Add source map for site.js to improve debugging experience"
+      },
+      "stats": {
+        "total": 8184,
+        "additions": 8184,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "fb5c6042db5ce6f6179dc91b2ac9092ec6b52389",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T13:08:47+00:00"
+        },
+        "message": "Merge pull request #2 from markhazleton/upgrade-to-NET10\n\nUpgrade to .NET 10"
+      },
+      "stats": {
+        "total": 94412,
+        "additions": 11348,
+        "deletions": 83064
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9e32acc8a82eb9d1692e41ca5eb19ea0ef6df15e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T13:07:18+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 15167,
+        "additions": 68,
+        "deletions": 15099
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "b938cce9e05aaaf05453266a18f77672ee04d6f0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T12:59:54+00:00"
+        },
+        "message": "feat: Add navigation toggle, smooth scrolling, and tabs functionality\n\n- Implemented navigation toggle for mobile view.\n- Added smooth scrolling with offset for fixed navbar.\n- Created tabs functionality with keyboard navigation support.\n- Integrated clipboard functionality for code blocks.\n- Enhanced navbar with scroll effect and active link highlighting.\n- Added Intersection Observer for animations on scroll.\n- Preloaded images for better performance.\n- Included loading indicator for async operations.\n- Established a responsive design for various screen sizes."
+      },
+      "stats": {
+        "total": 3416,
+        "additions": 3416,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "bf1fb5a722cb79c0d8d8a621266992b2bfd5fc48",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T12:49:24+00:00"
+        },
+        "message": "chore: add copy-webpack-plugin as a dev dependency"
+      },
+      "stats": {
+        "total": 97804,
+        "additions": 4121,
+        "deletions": 93683
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "07181a456336b3050929af4b56ba4175b26aabb1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T23:38:28+00:00"
+        },
+        "message": "Enhance build system and UI for Slurper Demo\n\nUpdated README.md to improve presentation with emojis, a \"Quick Start\" guide, and highlighted new features like a detective theme and gamification. Integrated npm into SlurperDemo.Web.csproj for build automation, including npm package installation and build tasks. Modified _Layout.cshtml to bundle CSS and JS via webpack, improving performance. Removed achievement counter script from _Layout.cshtml, likely integrated into new gamification features.\n\nEnhanced site.css with responsive design utilities, Font Awesome 7 integration, animations, and effects for improved interactivity. Updated site.js with new classes for achievement tracking, data table enhancements, form validation, smooth scrolling, toast notifications, and loading spinner utilities. Added vendor.js for third-party libraries and site.scss for SCSS features. Introduced build documentation, PowerShell script, and configuration files for a modern npm-based build system."
+      },
+      "stats": {
+        "total": 26119,
+        "additions": 26081,
+        "deletions": 38
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6ca58bfb2c3824f2d433b8d6737366b3f0f49392",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T15:41:56+00:00"
+        },
+        "message": "Update achievement icon for Format Explorer"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "b643c37c1aeb38f53570ce7715014303a02b2bef",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T15:28:25+00:00"
+        },
+        "message": "Add execution log for .NET 10 upgrade"
+      },
+      "stats": {
+        "total": 335,
+        "additions": 335,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "439f6b0fd5acd4ee1d33d0e68275a8abd90ed958",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T15:27:19+00:00"
+        },
+        "message": "Upgrade to .NET 10.0\n\nUpdated WebSpark.Slurper to multi-target net8.0;net9.0;net10.0\n\nUpdated SlurperDemo.Web to target net10.0\n\nUpdated WebSpark.Slurper.Tests to target net10.0\n\nUpgraded 6 Microsoft.Extensions.* packages to 10.0.0\n\nUpgraded System.Text.Json to 10.0.0\n\nAll tests passing: 96/99 passed, 3 intentionally skipped"
+      },
+      "stats": {
+        "total": 1411,
+        "additions": 1389,
+        "deletions": 22
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "fa0bdd544985fcda332178d871d16a62237404be",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-15T15:16:13+00:00"
+        },
+        "message": "Pre-upgrade commit: Save current state before .NET 10 upgrade"
+      },
+      "stats": {
+        "total": 1978,
+        "additions": 1847,
+        "deletions": 131
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "34c4e9560c247475fea1a2cb0a348359fe2117b8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-07T19:05:24+00:00"
+        },
+        "message": "Refactor Slurper for DI, HttpClient, and Validation\n\nUpgraded dependencies for compatibility, including `Microsoft.NET.Test.Sdk` (17.14.1 \u2192 18.0.0) and `xunit.runner.visualstudio` (3.1.1 \u2192 3.1.5). Added `Microsoft.Extensions.Http` for HTTP client support.\n\nIntroduced `HttpClientService` with retry logic, exponential backoff, and lifecycle management. Replaced static `HttpClient` in `JsonExtractor` with dependency-injected `IHttpClientService` for better testability and maintainability.\n\nRefactored `JsonSlurper` for modularity, added depth validation, and improved handling of JSON structures. Centralized input validation with the new `InputValidator` utility for file paths, URLs, and source content.\n\nEnhanced `SlurperFactory` to support `IHttpClientService` injection. Updated `ServiceCollectionExtensions` to register `HttpClientService` and related dependencies.\n\nImproved retry logic for HTTP requests and streamlined large file handling. Refactored methods for better readability and modularity. Updated test projects to align with these changes.\n\nMaintained backward compatibility with fallback logic for `HttpClient` and existing property structures."
+      },
+      "stats": {
+        "total": 988,
+        "additions": 691,
+        "deletions": 297
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9e66c91d75149c4e606b7ac91ce7a60a9a489162",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-01T14:20:23+00:00"
+        },
+        "message": "Release v3.3.0 - Enhanced demo application with raw content display"
+      },
+      "stats": {
+        "total": 545,
+        "additions": 521,
+        "deletions": 24
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "26a1f08b7e0641c7cf3b98709898192bae264bff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T15:19:06+00:00"
+        },
+        "message": "Add Tests and Demo Application\nEnhance JsonSlurper and CsvSlurper\nv3.20"
+      },
+      "stats": {
+        "total": 30792,
+        "additions": 25815,
+        "deletions": 4977
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "18a5edd7ef35b828073d7876f41ea5454974264f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T05:21:48+00:00"
+        },
+        "message": "update workflow"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "dee4c088c827f9d356d6aa4dab44d7206caba6ac",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T05:15:32+00:00"
+        },
+        "message": "update file"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 10,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6dc121c65cb802680e3c459d832e68a61d16a772",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T05:06:48+00:00"
+        },
+        "message": "Bump version to 3.1.5"
+      },
+      "stats": {
+        "total": 430,
+        "additions": 151,
+        "deletions": 279
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "88a092c4c674787d89c1eb5d45946c526253ba50",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T04:53:07+00:00"
+        },
+        "message": "v3.1.4 Version"
+      },
+      "stats": {
+        "total": 78,
+        "additions": 41,
+        "deletions": 37
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "024142e9cccc68033db3fa1538859269af8c17e9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T04:48:15+00:00"
+        },
+        "message": "simplify"
+      },
+      "stats": {
+        "total": 157,
+        "additions": 75,
+        "deletions": 82
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "5bbc3c23238c44b9250e8163304fdf6a2a8823af",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T04:43:37+00:00"
+        },
+        "message": "Publish Version 3.1.2"
+      },
+      "stats": {
+        "total": 107,
+        "additions": 107,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "2c33df708f9cccf6763f40183aede88a1c5619bc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T02:59:30+00:00"
+        },
+        "message": "Updates, init demo app"
+      },
+      "stats": {
+        "total": 65060,
+        "additions": 65054,
+        "deletions": 6
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9f19b3e28ae0813f569b4870ecdeafb7ab3eadbf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T18:40:05+00:00"
+        },
+        "message": "update readme"
+      },
+      "stats": {
+        "total": 129,
+        "additions": 113,
+        "deletions": 16
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "0805ee47a39e08abe02b4dbf36f59e56e62b7547",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:45:53+00:00"
+        },
+        "message": "update nuget document"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 36,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "20b1b60a34abc4197ea316ef00d659ce1c69641a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:42:48+00:00"
+        },
+        "message": "Document Managing a NuGet Package"
+      },
+      "stats": {
+        "total": 333,
+        "additions": 333,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "27c0f7546f9a73652cffc6d2d24a1e6292e06115",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:38:47+00:00"
+        },
+        "message": "update to version 3.1.1"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "4a00c677c59da8fb02d92b95797b5675c5097d24",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:34:49+00:00"
+        },
+        "message": "update for secret on GitHub"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "8e03bd269fc07ee0daa2d6a148896ec4637fbd1c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:29:33+00:00"
+        },
+        "message": "fix issues with package building"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 15,
+        "deletions": 5
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "c0f272bf37fc6946177314ce3a75e668c5a45202",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:26:53+00:00"
+        },
+        "message": "update gitversion config"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 1,
+        "deletions": 11
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "73fb36d103c615c3d3521e24a4df519da3991145",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:24:42+00:00"
+        },
+        "message": "updates for moving"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "ebd6f41413208576488ee6be1b452a388b7f92a3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:23:05+00:00"
+        },
+        "message": "setup workflow"
+      },
+      "stats": {
+        "total": 180,
+        "additions": 138,
+        "deletions": 42
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6dda6a4fb271a9beac409b878737b6236932363c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T17:15:27+00:00"
+        },
+        "message": "updates for building nuget package"
+      },
+      "stats": {
+        "total": 76,
+        "additions": 71,
+        "deletions": 5
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6121d9860feac5ad97b737129db18c22190f13bf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T16:13:33+00:00"
+        },
+        "message": "fix readme link in sln file"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "5efdd6b650a6e13734fca59f9ae40b225ee86842",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T16:12:10+00:00"
+        },
+        "message": "Refactor and ReName to WebSpark.Slurper"
+      },
+      "stats": {
+        "total": 1012,
+        "additions": 344,
+        "deletions": 668
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "145208438944d28c5ef9d9d0f3fee5325bc91d88",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T15:18:52+00:00"
+        },
+        "message": "update  documentation"
+      },
+      "stats": {
+        "total": 810,
+        "additions": 587,
+        "deletions": 223
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "4ddcbf9b3f9c9dc46656ea88abe4bd87e2546aac",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-03T15:07:26+00:00"
+        },
+        "message": "refactor and organize files"
+      },
+      "stats": {
+        "total": 4814,
+        "additions": 3516,
+        "deletions": 1298
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6b9b5678f85a25ce217c4b08a6e77d076a0e51e3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-27T20:02:22+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6f3311edb2d110c9a47ab1f85ceab2044587d0fb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-30T22:52:27+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "f1fd84471483f6969c3e6cc42a21ca3b0b3f0000",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-25T17:38:33+00:00"
+        },
+        "message": "update packages, update references to existing projects"
+      },
+      "stats": {
+        "total": 207,
+        "additions": 146,
+        "deletions": 61
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9d9aceb5224886d2429709c4700105f18115265f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-03T17:06:43+00:00"
+        },
+        "message": "Setup testing reading WebProjectMechanics.XML site profile"
+      },
+      "stats": {
+        "total": 12686,
+        "additions": 12686,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "71902753e7bc37a189dd10f4ce9c695e9b713cfa",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-24T15:03:38+00:00"
+        },
+        "message": "Package Updates"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 7,
+        "deletions": 4
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "11a5ca22357c8ef52cf8367c92dc3a4dd4df661e",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-21T13:00:37+00:00"
+        },
+        "message": "Update Dandraka.Slurper.csproj"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "5d4075be23c759f497ecb5109ebd61072b111828",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-21T12:59:41+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "089ebe2752d83ea73cdae2622a7f68188b00795c",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-21T12:59:14+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "1da33d345d294807b42fd28308b6cd9e5d8cb7dd",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-21T12:57:01+00:00"
+        },
+        "message": "Update build.yml"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 8,
+        "deletions": 2
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "77c761bab3ac225ecda158915fffe9fa9ea65dcd",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-12-20T19:55:28+00:00"
+        },
+        "message": "fix for bare arrays"
+      },
+      "stats": {
+        "total": 72,
+        "additions": 53,
+        "deletions": 19
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "ab160c7065b42bd4494990e727c4928c14b914a1",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-12-20T14:59:05+00:00"
+        },
+        "message": "readme for nuspec"
+      },
+      "stats": {
+        "total": 296,
+        "additions": 295,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "1f4be2db0633096d6771fe5074a228df87578e57",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-12-20T14:06:44+00:00"
+        },
+        "message": "readme"
+      },
+      "stats": {
+        "total": 197,
+        "additions": 191,
+        "deletions": 6
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "d472ae412d61ec179bf712c9d5bc015f30315e44",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-12-20T13:11:40+00:00"
+        },
+        "message": "all tests clean and passing"
+      },
+      "stats": {
+        "total": 72,
+        "additions": 36,
+        "deletions": 36
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "b2afd8082ce29893b8f6f7be0188a69ec60471fa",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-12-20T12:42:45+00:00"
+        },
+        "message": "json works!"
+      },
+      "stats": {
+        "total": 141,
+        "additions": 121,
+        "deletions": 20
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "19779106dd0e31617b025662fc55dd469f2d8c26",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-12-19T19:57:03+00:00"
+        },
+        "message": "arrays 2 (incomplete, but getting there)"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 9,
+        "deletions": 22
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "0ba9231b749b7c0b47109400efaae4e607e9d303",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-19T19:25:27+00:00"
+        },
+        "message": "arrays (incomplete)"
+      },
+      "stats": {
+        "total": 74,
+        "additions": 42,
+        "deletions": 32
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "5137ca8b9eb5f376fb832fbb2f3c698dcd9e85ce",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-19T17:14:22+00:00"
+        },
+        "message": "Update devcontainer.json"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "2837453eece0a7a6328418e1668e6d7e3fc392a1",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-19T17:07:06+00:00"
+        },
+        "message": "Update devcontainer.json"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "c7ce155915932739d5000af05b81024a8ddf66f5",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-19T16:53:11+00:00"
+        },
+        "message": "Update devcontainer.json"
+      },
+      "stats": {
+        "total": 191,
+        "additions": 48,
+        "deletions": 143
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "1a8e5abe8ae160205ba188c1dd62a3427b0ec7e1",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-19T16:42:49+00:00"
+        },
+        "message": "codespace config fix"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "c6428bcdf68497c607243307a649cf6c87ee48ff",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-19T16:32:24+00:00"
+        },
+        "message": "Create Dockerfile"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "92554f4bd5462fa8cac98a5c421b7114bd4432e9",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-12-19T16:29:59+00:00"
+        },
+        "message": "Create devcontainer.json"
+      },
+      "stats": {
+        "total": 145,
+        "additions": 145,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9abbb552492f4d265b4e082a637391c86ffed303",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-27T11:15:31+00:00"
+        },
+        "message": "test refactoring"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 37,
+        "deletions": 31
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "d5ca12e0072e52ffda968410e10fbb785bb12080",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-27T11:09:06+00:00"
+        },
+        "message": "tests refactoring"
+      },
+      "stats": {
+        "total": 100782,
+        "additions": 100631,
+        "deletions": 151
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "fa8139f6ad9442b8de7e276eb701fecf30623a65",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-26T08:59:51+00:00"
+        },
+        "message": "skip download for github"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "be3c36fe11dd89cade2acb325909cb8820a557ad",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-26T08:52:33+00:00"
+        },
+        "message": "disabled big file download"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "e6ff831f44a558e9f1ed61593a7757248fcbb48d",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-26T08:49:36+00:00"
+        },
+        "message": "fixed tests"
+      },
+      "stats": {
+        "total": 275,
+        "additions": 95,
+        "deletions": 180
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "d9cfcf38cd0f5ac6b36cf8fb76e2cc1d7c456999",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T17:37:20+00:00"
+        },
+        "message": "supports nested objects, not yet arrays"
+      },
+      "stats": {
+        "total": 89,
+        "additions": 47,
+        "deletions": 42
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "b234b13accc0ef076f928a101ba80d3dcd52a88f",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T16:17:51+00:00"
+        },
+        "message": "fix unicode tests"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "f6d454c0d6c56d7963ead025a295e34444f4a3ff",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T15:28:43+00:00"
+        },
+        "message": "fix tests encoding"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "d19704dd2c1bb1e41207610257db877faa4d0156",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T15:25:26+00:00"
+        },
+        "message": "fixed tests"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "a733f8407a2501622a45ff6f4a5a56cd27b88811",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T15:19:08+00:00"
+        },
+        "message": "tests"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 17,
+        "deletions": 9
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "c5dd48c08b29b3c32e43ff2c971ce2595adf0042",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T15:05:22+00:00"
+        },
+        "message": "do not execute not ready tests"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 15,
+        "deletions": 16
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "708d388e32ffff4bbca739f6efac7a3592bf259c",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T14:59:12+00:00"
+        },
+        "message": "faster github tests"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "023d179124ef65efc9822c24d1a78758b87aad20",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T14:56:41+00:00"
+        },
+        "message": "github actions"
+      },
+      "stats": {
+        "total": 52,
+        "additions": 47,
+        "deletions": 5
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "b075c7de8031ba6e2a75f33aa2150a9294984e14",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-22T14:49:19+00:00"
+        },
+        "message": "simple non-nested elements work"
+      },
+      "stats": {
+        "total": 224,
+        "additions": 180,
+        "deletions": 44
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "afbc84106c669d23f54e077962eba3df492b1137",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-21T07:17:24+00:00"
+        },
+        "message": "intermediate commit"
+      },
+      "stats": {
+        "total": 55,
+        "additions": 27,
+        "deletions": 28
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "8eceb78039148e56929a3c67b7c301cfc9c403fa",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-21T05:37:40+00:00"
+        },
+        "message": "json tests + updated actions"
+      },
+      "stats": {
+        "total": 565,
+        "additions": 538,
+        "deletions": 27
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "1fc876269d271e8c174483c9ed2aef531801a2ad",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-20T22:11:43+00:00"
+        },
+        "message": "added jsonslurper + tests (with old code)"
+      },
+      "stats": {
+        "total": 546,
+        "additions": 534,
+        "deletions": 12
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "3d94487c65aa951906c24fdd5691defaa6ce0dae",
+      "commit": {
+        "author": {
+          "name": "Jim Andrakakis",
+          "date": "2022-11-20T18:55:04+00:00"
+        },
+        "message": "first commit, migrate form XmlUtilities"
+      },
+      "stats": {
+        "total": 1309,
+        "additions": 1302,
+        "deletions": 7
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "42c5f182e1b2a0e1c1100856026efdb2aa82c62e",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-20T17:55:00+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 107,
+        "additions": 106,
+        "deletions": 1
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6f32a5e6c2df62e91dd6bbb3bd910fac7b5b7289",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-20T17:53:46+00:00"
+        },
+        "message": "Update LICENSE"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "repo": "Slurper"
+    },
+    {
+      "sha": "f135456f03c30fecaf3b8cb886ab223dfe823fc1",
+      "commit": {
+        "author": {
+          "name": "Jim (Dimitrios) Andrakakis",
+          "date": "2022-11-20T17:52:56+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 372,
+        "additions": 372,
+        "deletions": 0
+      },
+      "repo": "Slurper"
+    }
+  ]
+}
