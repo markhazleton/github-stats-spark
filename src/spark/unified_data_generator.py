@@ -174,15 +174,20 @@ class UnifiedDataGenerator:
                 )
                 repo = Repository.from_github_repo(github_repo)
 
-                # Fetch language stats
+                # Fetch language stats (with push date for weekly caching)
                 repo.language_stats = self.fetcher.fetch_languages(
                     self.username, 
-                    repo_name
+                    repo_name,
+                    repo_pushed_at=github_repo.pushed_at
                 )
                 repo.language_count = len(repo.language_stats)
 
-                # Fetch commit data and metrics
-                commit_data = self.fetcher.fetch_commit_counts(self.username, repo_name)
+                # Fetch commit data and metrics (with push date for weekly caching)
+                commit_data = self.fetcher.fetch_commit_counts(
+                    self.username, 
+                    repo_name, 
+                    repo_pushed_at=github_repo.pushed_at
+                )
                 commit_history = CommitHistory(
                     repository_name=repo_name,
                     total_commits=commit_data["total"],

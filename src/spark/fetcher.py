@@ -180,6 +180,7 @@ class GitHubFetcher:
         username: str,
         repo_name: str,
         max_commits: int = 200,
+        repo_pushed_at: Optional[datetime] = None,
     ) -> List[Dict[str, Any]]:
         """Fetch commits for a repository.
 
@@ -187,11 +188,14 @@ class GitHubFetcher:
             username: Repository owner username
             repo_name: Repository name
             max_commits: Maximum commits to fetch per repository
+            repo_pushed_at: Last push date (for cache invalidation)
 
         Returns:
             List of commit data dictionaries
         """
-        cache_key = f"commits_{username}_{repo_name}"
+        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
+        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
+        cache_key = f"commits_{username}_{repo_name}_{push_week_str}"
         cached = self.cache.get(cache_key)
         if cached:
             return cached
@@ -248,11 +252,13 @@ class GitHubFetcher:
             - deletions: Lines deleted
         """
         # Include push date in cache key for smart invalidation
-        push_date_str = repo_pushed_at.strftime("%Y%m%d") if repo_pushed_at else "unknown"
-        cache_key = f"commits_stats_{username}_{repo_name}_{max_commits}_{push_date_str}"
+        # Use WEEKLY granularity (ISO week format: 2026W01) to balance freshness with cache efficiency
+        # Cache will only be invalidated when: 1) new week starts OR 2) repo has new commits
+        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
+        cache_key = f"commits_stats_{username}_{repo_name}_{max_commits}_{push_week_str}"
         cached = self.cache.get(cache_key)
         if cached:
-            self.logger.debug(f"Using cached commit stats for {username}/{repo_name} (last push: {push_date_str})")
+            self.logger.debug(f"Using cached commit stats for {username}/{repo_name} (push week: {push_week_str})")
             return cached
 
         self.logger.info(f"Fetching commit statistics for {username}/{repo_name} (max: {max_commits})")
@@ -313,17 +319,20 @@ class GitHubFetcher:
             self.logger.error(f"Could not fetch commit stats for {repo_name}: {e}")
             return []
 
-    def fetch_languages(self, username: str, repo_name: str) -> Dict[str, int]:
+    def fetch_languages(self, username: str, repo_name: str, repo_pushed_at: Optional[datetime] = None) -> Dict[str, int]:
         """Fetch language statistics for a repository.
 
         Args:
             username: Repository owner username
             repo_name: Repository name
+            repo_pushed_at: Last push date (for cache invalidation)
 
         Returns:
             Dictionary mapping language names to byte counts
         """
-        cache_key = f"languages_{username}_{repo_name}"
+        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
+        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
+        cache_key = f"languages_{username}_{repo_name}_{push_week_str}"
         cached = self.cache.get(cache_key)
         if cached:
             return cached
@@ -350,9 +359,10 @@ class GitHubFetcher:
         Returns:
             README content as string, or None if not found
         """
-        # Use month granularity for README (changes infrequently)
-        push_month_str = repo_pushed_at.strftime("%Y%m") if repo_pushed_at else "unknown"
-        cache_key = f"readme_{username}_{repo_name}_{push_month_str}"
+        # Use weekly granularity (ISO week format: 2026W01) to balance freshness with cache efficiency
+        # Cache will only be invalidated when: 1) new week starts OR 2) repo has new commits
+        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
+        cache_key = f"readme_{username}_{repo_name}_{push_week_str}"
         cached = self.cache.get(cache_key)
         if cached:
             return cached
@@ -374,7 +384,7 @@ class GitHubFetcher:
             self.logger.debug(f"Error decoding README for {repo_name}: {e}")
             return None
 
-    def fetch_dependency_files(self, username: str, repo_name: str) -> Dict[str, str]:
+    def fetch_dependency_files(self, username: str, repo_name: str, repo_pushed_at: Optional[datetime] = None) -> Dict[str, str]:
         """Fetch dependency files from a repository.
 
         Looks for common dependency files like package.json, requirements.txt, etc.
@@ -382,11 +392,14 @@ class GitHubFetcher:
         Args:
             username: Repository owner username
             repo_name: Repository name
+            repo_pushed_at: Last push date (for cache invalidation)
 
         Returns:
             Dictionary mapping filename to file content
         """
-        cache_key = f"dependency_files_{username}_{repo_name}"
+        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
+        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
+        cache_key = f"dependency_files_{username}_{repo_name}_{push_week_str}"
         cached = self.cache.get(cache_key)
         if cached:
             return cached
@@ -442,7 +455,7 @@ class GitHubFetcher:
             return {}
 
     def fetch_commit_counts(
-        self, username: str, repo_name: str
+        self, username: str, repo_name: str, repo_pushed_at: Optional[datetime] = None
     ) -> Dict[str, int]:
         """Fetch time-windowed commit counts for ranking algorithm.
 
@@ -455,11 +468,14 @@ class GitHubFetcher:
         Args:
             username: Repository owner username
             repo_name: Repository name
+            repo_pushed_at: Last push date (for cache invalidation)
 
         Returns:
             Dictionary with commit counts by time window
         """
-        cache_key = f"commit_counts_{username}_{repo_name}"
+        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
+        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
+        cache_key = f"commit_counts_{username}_{repo_name}_{push_week_str}"
         cached = self.cache.get(cache_key)
         if cached:
             return cached

@@ -175,7 +175,12 @@ class UnifiedReportWorkflow:
             commit_histories: Dict[str, CommitHistory] = {}
             for repo in repositories:
                 try:
-                    commits_data = self.fetcher.fetch_commit_counts(username, repo.name)
+                    # Pass pushed_at for weekly cache invalidation
+                    commits_data = self.fetcher.fetch_commit_counts(
+                        username, 
+                        repo.name, 
+                        repo_pushed_at=repo.pushed_at
+                    )
                     # Add repository_name to the data before creating CommitHistory
                     commits_data["repository_name"] = repo.name
                     commit_histories[repo.name] = CommitHistory.from_dict(commits_data)
@@ -294,7 +299,8 @@ class UnifiedReportWorkflow:
                 github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
                 languages = self.fetcher.fetch_languages(
                     username, 
-                    repo.name
+                    repo.name,
+                    repo_pushed_at=github_repo.pushed_at
                 )
                 if languages:
                     calculator.add_languages(languages)
@@ -384,10 +390,11 @@ class UnifiedReportWorkflow:
                     repo_pushed_at=github_repo.pushed_at
                 )
                 
-                # Fetch language statistics
+                # Fetch language statistics (with push date for weekly caching)
                 language_stats = self.fetcher.fetch_languages(
                     username, 
-                    repo.name
+                    repo.name,
+                    repo_pushed_at=github_repo.pushed_at
                 )
                 
                 # Update repository with language stats
@@ -398,8 +405,12 @@ class UnifiedReportWorkflow:
                 # Analyze dependencies and tech stack (before summary)
                 tech_stack = None
                 try:
-                    # Fetch dependency files from the repository
-                    dependency_files = self.fetcher.fetch_dependency_files(username, repo.name)
+                    # Fetch dependency files from the repository (with push date for weekly caching)
+                    dependency_files = self.fetcher.fetch_dependency_files(
+                        username, 
+                        repo.name, 
+                        repo_pushed_at=github_repo.pushed_at
+                    )
                     
                     if dependency_files:
                         # Analyze dependencies if files were found
