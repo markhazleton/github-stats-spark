@@ -248,6 +248,42 @@ class UnifiedReportWorkflow:
         svg_types = ["overview", "heatmap", "streaks", "release", "languages", "fun"]
         enabled_stats = self.config.get_enabled_stats()
 
+        # Initialize calculator with fetched data
+        profile_dict = github_data.profile.to_dict() if github_data.profile else {}
+        repos_dict = [r.to_dict() for r in github_data.repositories]
+        calculator = StatsCalculator(profile_dict, repos_dict)
+
+        # Pre-fetch data for all repositories once
+        self.logger.info(f"[generate_svgs] Pre-fetching detailed stats for {len(github_data.repositories)} repositories")
+        
+        for repo in github_data.repositories:
+            try:
+                # Fetch actual commits (needed for heatmaps, time patterns, etc.)
+                # Use repo.pushed_at from existing object to avoid extra API call
+                commits = self.fetcher.fetch_commits(
+                    username, 
+                    repo.name, 
+                    max_commits=100,
+                    repo_pushed_at=repo.pushed_at
+                )
+                if commits:
+                    calculator.add_commits(commits)
+                
+                # Fetch language statistics
+                languages = self.fetcher.fetch_languages(
+                    username, 
+                    repo.name,
+                    repo_pushed_at=repo.pushed_at
+                )
+                if languages:
+                    calculator.add_languages(languages)
+                    
+            except Exception as e:
+                self.logger.debug(f"Could not fetch detailed stats for {repo.name}: {e}")
+
+        # Calculate statistics once
+        stats = calculator.calculate_statistics()
+
         for svg_type in svg_types:
             if svg_type not in enabled_stats:
                 self.logger.debug(f"Skipping disabled SVG: {svg_type}")
@@ -255,7 +291,7 @@ class UnifiedReportWorkflow:
 
             try:
                 svg_content = self._generate_single_svg(
-                    svg_type, username, github_data
+                    svg_type, username, stats
                 )
                 svg_path = self.output_dir / f"{svg_type}.svg"
                 svg_path.parent.mkdir(parents=True, exist_ok=True)
@@ -277,14 +313,14 @@ class UnifiedReportWorkflow:
         return available_svgs
 
     def _generate_single_svg(
-        self, svg_type: str, username: str, github_data: GitHubData
+        self, svg_type: str, username: str, stats: Dict[str, Any]
     ) -> str:
         """Generate a single SVG visualization.
 
         Args:
             svg_type: Type of SVG to generate
             username: GitHub username
-            github_data: GitHub data for calculations
+            stats: Calculated statistics dictionary
 
         Returns:
             SVG content as string
@@ -292,48 +328,6 @@ class UnifiedReportWorkflow:
         Raises:
             Exception: If SVG generation fails
         """
-        # Initialize calculator with fetched data
-        profile_dict = github_data.profile.to_dict() if github_data.profile else {}
-        repos_dict = [r.to_dict() for r in github_data.repositories]
-
-        calculator = StatsCalculator(profile_dict, repos_dict)
-
-        # Fetch actual commits for visualization (needed for heatmaps, time patterns, etc.)
-        # We'll fetch up to 100 commits per repo for the visualizations
-        self.logger.debug(f"Fetching commits for {len(github_data.repositories)} repositories")
-        for repo in github_data.repositories:
-            try:
-                # Get repo object to access push date for smart caching
-                github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
-                commits = self.fetcher.fetch_commits(
-                    username, 
-                    repo.name, 
-                    max_commits=100,
-                    repo_pushed_at=github_repo.pushed_at
-                )
-                if commits:
-                    calculator.add_commits(commits)
-            except Exception as e:
-                self.logger.debug(f"Could not fetch commits for {repo.name}: {e}")
-
-        # Add language statistics
-        for repo in github_data.repositories:
-            try:
-                # Get repo object to access push date
-                github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
-                languages = self.fetcher.fetch_languages(
-                    username, 
-                    repo.name,
-                    repo_pushed_at=github_repo.pushed_at
-                )
-                if languages:
-                    calculator.add_languages(languages)
-            except Exception as e:
-                self.logger.debug(f"Could not fetch languages for {repo.name}: {e}")
-
-        # Calculate statistics
-        stats = calculator.calculate_statistics()
-
         # Generate appropriate SVG based on type
         if svg_type == "overview":
             return self.visualizer.generate_overview(
@@ -361,11 +355,6 @@ class UnifiedReportWorkflow:
         elif svg_type == "languages":
             return self.visualizer.generate_languages(
                 languages=stats.get("languages", []),
-                username=username,
-            )
-        elif svg_type == "fun":
-            return self.visualizer.generate_fun_stats(
-                stats=stats,
                 username=username,
             )
         elif svg_type == "fun":
@@ -404,21 +393,19 @@ class UnifiedReportWorkflow:
 
         for rank, (repo, score) in enumerate(ranked, 1):
             try:
-                # Get repo object for push date (smart caching)
-                github_repo = self.fetcher.github.get_repo(f"{username}/{repo.name}")
-                
                 # Fetch README for AI summary (with push date for caching)
+                # Use repo.pushed_at from existing object to avoid extra API call
                 readme_content = self.fetcher.fetch_readme(
                     username, 
                     repo.name,
-                    repo_pushed_at=github_repo.pushed_at
+                    repo_pushed_at=repo.pushed_at
                 )
                 
                 # Fetch language statistics (with push date for weekly caching)
                 language_stats = self.fetcher.fetch_languages(
                     username, 
                     repo.name,
-                    repo_pushed_at=github_repo.pushed_at
+                    repo_pushed_at=repo.pushed_at
                 )
                 
                 # Update repository with language stats
@@ -433,7 +420,7 @@ class UnifiedReportWorkflow:
                     dependency_files = self.fetcher.fetch_dependency_files(
                         username, 
                         repo.name, 
-                        repo_pushed_at=github_repo.pushed_at
+                        repo_pushed_at=repo.pushed_at
                     )
                     
                     if dependency_files:
