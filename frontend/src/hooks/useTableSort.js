@@ -56,6 +56,12 @@ export function useTableSort(
         bVal = b.commit_history?.total_commits || b.commit_count || 0;
       }
 
+      // Handle date fields from nested commit_history structure
+      if (sortKey === "first_commit_date" || sortKey === "last_commit_date") {
+        aVal = a.commit_history?.[sortKey] || a[sortKey];
+        bVal = b.commit_history?.[sortKey] || b[sortKey];
+      }
+
       // Handle avg_commit_size from nested structure
       if (sortKey === "avg_commit_size") {
         aVal = a.commit_metrics?.avg_size || a.avg_commit_size || 0;
@@ -71,6 +77,33 @@ export function useTableSort(
       // Handle null/undefined values
       if (aVal == null) return sortOrder === "asc" ? 1 : -1;
       if (bVal == null) return sortOrder === "asc" ? -1 : 1;
+
+      // Handle date strings (ISO format) - check this before numeric/string handling
+      // Date fields: created_at, updated_at, pushed_at, first_commit_date, last_commit_date, etc.
+      const dateFields = [
+        "created_at",
+        "updated_at",
+        "pushed_at",
+        "first_commit_date",
+        "last_commit_date",
+        "latest_release_date",
+      ];
+      if (
+        dateFields.includes(sortKey) ||
+        sortKey.includes("date") ||
+        sortKey.includes("Date") ||
+        sortKey.endsWith("_at")
+      ) {
+        const dateA = new Date(aVal);
+        const dateB = new Date(bVal);
+        // Check for invalid dates
+        if (isNaN(dateA.getTime()) && isNaN(dateB.getTime())) return 0;
+        if (isNaN(dateA.getTime()))
+          return sortOrder === "asc" ? 1 : -1;
+        if (isNaN(dateB.getTime()))
+          return sortOrder === "asc" ? -1 : 1;
+        return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+      }
 
       // Handle numeric values (commits, sizes, stars, etc.)
       // Convert string numbers to actual numbers for numeric fields
@@ -89,13 +122,6 @@ export function useTableSort(
 
       if (typeof aVal === "number" && typeof bVal === "number") {
         return sortOrder === "asc" ? aVal - bVal : bVal - aVal;
-      }
-
-      // Handle date strings (ISO format)
-      if (sortKey.includes("date") || sortKey.includes("Date")) {
-        const dateA = new Date(aVal);
-        const dateB = new Date(bVal);
-        return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
       }
 
       // Handle string values (name, language)
