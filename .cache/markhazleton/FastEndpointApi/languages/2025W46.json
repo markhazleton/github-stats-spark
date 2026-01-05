@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-01-04T21:52:30.711077+00:00",
+  "value": {
+    "HTML": 34848,
+    "C#": 19206,
+    "JavaScript": 709
+  },
+  "hash": "ce887b4ae85918a02d50804e2d22fbeacb00c8917253041b7a761949319fd869",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "FastEndpointApi"
+    },
+    "category": "languages",
+    "pushed_at": "2025-11-16T23:08:34+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "FastEndpointApi",
+  "week": "2025W46"
+}

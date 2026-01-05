@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T22:46:48.228198+00:00",
+  "value": {
+    "total": 8,
+    "recent_90d": 0,
+    "recent_180d": 0,
+    "recent_365d": 8,
+    "last_commit_date": "2025-06-02T16:26:43+00:00"
+  },
+  "hash": "3034cec60de38a7c891372785a02888cd74ef8b573a4f5725d7467600304beca",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.PrismSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-06-02T16:26:46+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "WebSpark.PrismSpark",
+  "week": "2025W23"
+}

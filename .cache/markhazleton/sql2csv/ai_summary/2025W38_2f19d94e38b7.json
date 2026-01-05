@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:26:49.172956+00:00",
+  "value": {
+    "ai_summary": "SQL2CSV is a comprehensive .NET 9 toolkit designed to streamline SQLite database exploration and data extraction, providing developers and data analysts with powerful CLI and early-stage web UI capabilities for database discovery, CSV export, schema inspection, and C# data transfer object (DTO) generation. The project leverages modern .NET technologies, implementing a clean architecture with dependency injection, structured logging, and modular design across console and web interfaces, enabling users to recursively discover SQLite databases, export table data with flexible filtering, generate detailed schema reports in multiple formats, and automatically create C# model classes. Key technical strengths include parallel processing, cross-platform compatibility, robust error handling, and a extensible service-based architecture that supports dynamic table analysis, file management, and configurable export options. The toolkit is particularly valuable for data engineers, software developers, and database administrators who need efficient tools for database introspection, data migration, and code generation, with features like multi-format schema reporting, table filtering, and a progressive web application that provides an intuitive interface for database exploration and export tasks. By combining CLI flexibility with emerging web UI capabilities, SQL2CSV offers a versatile solution for database metadata extraction and transformation, emphasizing developer productivity and modern software design principles.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:26:49.172922",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2744,
+    "confidence_score": 90
+  },
+  "hash": "db6faabd62d1a3ea8729fef91870e3396cc48cf11f91ec0c75fa3a7d730e520d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "sql2csv"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-09-15T13:50:41+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "sql2csv",
+  "week": "2025W38_2f19d94e38b7"
+}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:27:32.261242+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nThe startbootstrap-modern-business repository is a sophisticated, production-ready Bootstrap 5 demo site designed for small businesses, featuring a comprehensive web application template with advanced frontend and build automation capabilities. Leveraging Pug as the primary templating language, Node.js for build processes, and Bootstrap 5 for responsive design, the project offers a modern, accessibility-focused web experience with progressive web app (PWA) support, dynamic theming, and robust build tooling. Key innovations include an interactive theme customizer, built-in light/dark mode, SEO optimization, accessibility widgets, and automated build scripts that handle minification, linting, testing, and asset generation with professional-grade configuration. The project stands out through its meticulous attention to web performance, accessibility standards, and developer experience, providing a reusable, extensible template that demonstrates best practices in modern web development. Targeted at small business owners, web developers, and technology leaders, the repository serves as both a practical website template and an educational reference for implementing contemporary web technologies and design patterns. By combining cutting-edge frontend frameworks with comprehensive build automation and a focus on user experience, this project represents a high-quality, adaptable solution for creating responsive, accessible, and performant business websites.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:27:32.261156",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1232,
+    "confidence_score": 90
+  },
+  "hash": "e9ed4a58b11cdc2515de28b4eed81ec75c1f8291633e45df783bb639fe53de86",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "startbootstrap-modern-business"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-05-13T23:08:16+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "startbootstrap-modern-business",
+  "week": "2025W20_2e18d6986b15"
+}

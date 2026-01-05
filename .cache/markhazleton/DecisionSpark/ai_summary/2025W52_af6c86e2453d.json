@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T21:50:38.252942+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the DecisionSpark repository:\n\nDecisionSpark is a sophisticated .NET 10-based decision routing engine that provides an intelligent, conversation-driven approach to guided decision-making through a flexible, configuration-driven API and web interface. The system leverages RESTful endpoints and Razor Pages to create interactive decision flows that dynamically generate and evaluate questions, using configurable JSON-based rules and optional OpenAI integration for natural language processing and question generation.\n\nThe architecture is modular and extensible, featuring multiple core services including a SessionStore for managing conversation state, a RoutingEvaluator for applying complex decision rules, and a TraitParser for extracting structured insights from user responses. Key innovations include support for multiple question types (text, single-select, multi-select), intelligent routing capabilities, and a plug-and-play configuration approach that allows users to define decision specifications without code modifications.\n\nTechnically sophisticated, the project implements advanced patterns such as dependency injection, service abstraction, and pluggable components, with built-in support for structured logging via Serilog, API documentation through Swagger/OpenAPI, and potential AI-enhanced interaction through OpenAI or Azure OpenAI services. The system is designed to be highly adaptable, with example use cases ranging from family activity planning to technology stack selection, demonstrating its potential across diverse domains.\n\nThe repository emphasizes developer experience and extensibility, providing comprehensive documentation, clear configuration mechanisms, and a robust set of features that make complex decision logic more accessible and manageable. Its approach of using conversational APIs and config-driven rules represents an innovative method for creating intelligent, guided decision support systems.\n\nPrimary technologies include .NET 10, C#, Razor Pages, OpenAI integration, and a JSON-based configuration system, targeting developers, product managers, and organizations seeking flexible, intelligent decision support solutions.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T15:50:38.252897",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2877,
+    "confidence_score": 90
+  },
+  "hash": "1582461884d2bdecf449e440bb7fcb1941432ed4cdc336d95e81c06cbba0c18e",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DecisionSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-27T03:30:06+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "DecisionSpark",
+  "week": "2025W52_af6c86e2453d"
+}

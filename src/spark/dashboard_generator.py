@@ -151,7 +151,10 @@ class DashboardGenerator:
 
             try:
                 # Calculate commit metrics for this repository
-                commit_metrics = self.calculate_commit_metrics(repo_name)
+                commit_metrics = self.calculate_commit_metrics(
+                    repo_name, 
+                    pushed_at=repo_data.get("pushed_at")
+                )
 
                 # Extract dates
                 created_at = repo_data.get("created_at")
@@ -191,7 +194,7 @@ class DashboardGenerator:
 
         return dashboard_repos
 
-    def calculate_commit_metrics(self, repo_name: str) -> Dict:
+    def calculate_commit_metrics(self, repo_name: str, pushed_at: Optional[str] = None) -> Dict:
         """Calculate commit size metrics for a repository.
 
         Fetches commits with detailed statistics and calculates aggregate metrics
@@ -199,6 +202,7 @@ class DashboardGenerator:
 
         Args:
             repo_name: Repository name
+            pushed_at: Last push date (ISO format string, for cache invalidation)
 
         Returns:
             Dictionary containing:
@@ -210,12 +214,21 @@ class DashboardGenerator:
         """
         logger.debug(f"Calculating commit metrics for {repo_name}...")
 
+        # Parse pushed_at for cache management
+        repo_pushed_at = None
+        if pushed_at:
+            try:
+                repo_pushed_at = datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
+            except (ValueError, AttributeError):
+                pass
+
         # Fetch commits with detailed stats
         max_commits = self.config.get("dashboard", {}).get("data_generation", {}).get("max_commits_per_repo", 200)
         commits_with_stats = self.fetcher.fetch_commits_with_stats(
             username=self.username,
             repo_name=repo_name,
-            max_commits=max_commits
+            max_commits=max_commits,
+            repo_pushed_at=repo_pushed_at
         )
 
         if not commits_with_stats:

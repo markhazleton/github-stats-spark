@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-01-04T21:48:03.415465+00:00",
+  "value": {
+    "Visual Basic .NET": 995905,
+    "ASP.NET": 235346,
+    "C#": 139761,
+    "JavaScript": 32882,
+    "CSS": 17542,
+    "HTML": 2948,
+    "PowerShell": 1836
+  },
+  "hash": "d70a50cb66423a071408dce9d9e0cb079e7236e71f4e80a1c9020e670760dff6",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DataAnalysisDemo"
+    },
+    "category": "languages",
+    "pushed_at": "2025-12-03T01:16:04+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "DataAnalysisDemo",
+  "week": "2025W49"
+}

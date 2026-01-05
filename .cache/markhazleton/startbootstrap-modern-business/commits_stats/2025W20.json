@@ -1,0 +1,819 @@
+{
+  "timestamp": "2026-01-04T22:27:22.468252+00:00",
+  "value": [
+    {
+      "sha": "a4f66d4ba9ba0c420e2365745520f6c633768ca0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-13T23:08:16+00:00"
+        },
+        "message": "Enhance README with additional features and build automation details"
+      },
+      "stats": {
+        "total": 27,
+        "additions": 21,
+        "deletions": 6
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "5f626282a71e44260301efdd928019651e758ebf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-13T23:07:18+00:00"
+        },
+        "message": "Add terms of service and testimonials pages, implement ESLint configuration, and enhance accessibility features\n\n- Created `terms.html` and `testimonials.html` with structured content and Bootstrap components.\n- Added ESLint configuration in `eslint.config.js` for JavaScript linting.\n- Developed Pug templates for 404, accessibility, call to action, developer scripts, features, privacy policy, and terms of service.\n- Implemented reusable Pug mixins for features, testimonials, and theme customizer.\n- Added a test suite for SCSS build verification in `build.test.js`."
+      },
+      "stats": {
+        "total": 10790,
+        "additions": 10029,
+        "deletions": 761
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "6e43e133a2a669041831e606aa7c07419475586e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-13T22:28:34+00:00"
+        },
+        "message": "update npm packages"
+      },
+      "stats": {
+        "total": 106,
+        "additions": 53,
+        "deletions": 53
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "0d59d3ac2a0bc013465130b75e1004025128b7b1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-13T22:18:56+00:00"
+        },
+        "message": "Update dependencies in package.json to latest versions"
+      },
+      "stats": {
+        "total": 1885,
+        "additions": 1425,
+        "deletions": 460
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "d533b1e2b40e78dd04d94bb7d767c45708f5bb90",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-10-01T15:47:38+00:00"
+        },
+        "message": "package upates"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "66317c6e8e7722f0108cba526f00fca088450bde",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-24T18:13:34+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 1318,
+        "additions": 691,
+        "deletions": 627
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "899aefe16337dd00e0e236bbcc27c61358610135",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-21T16:10:58+00:00"
+        },
+        "message": "Update package dependencies"
+      },
+      "stats": {
+        "total": 64,
+        "additions": 32,
+        "deletions": 32
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "fe6bf2cc45111a1c8d19e2b7255749c5e334b81c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-16T16:28:18+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 220,
+        "additions": 103,
+        "deletions": 117
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "c10529c5514b36e63ebf6eac6b6a3cbfea6050fb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-01-23T14:03:08+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 545,
+        "additions": 182,
+        "deletions": 363
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "bfee8e530ef3f379a35e291b0121668beef544a8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-16T15:22:56+00:00"
+        },
+        "message": "Bump Package Versions"
+      },
+      "stats": {
+        "total": 9832,
+        "additions": 9044,
+        "deletions": 788
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "03ac48fd6680bebeb3926623d65064cdc679ba49",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-31T12:49:17+00:00"
+        },
+        "message": "bump versions"
+      },
+      "stats": {
+        "total": 297,
+        "additions": 150,
+        "deletions": 147
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "54317005bc56f75bece09b71d01ff6eb7bd87f56",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-25T16:02:45+00:00"
+        },
+        "message": "clean-up, update packages"
+      },
+      "stats": {
+        "total": 898,
+        "additions": 449,
+        "deletions": 449
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "a0d79597f36574b8b98254517ac690d80765345d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-12T14:08:08+00:00"
+        },
+        "message": "Update Packages, add async/await for prettier"
+      },
+      "stats": {
+        "total": 199,
+        "additions": 119,
+        "deletions": 80
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "85a6eabe598227a0d03dd8b9afe0dad510ae13b2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-06-07T12:51:10+00:00"
+        },
+        "message": "bump versions"
+      },
+      "stats": {
+        "total": 2213,
+        "additions": 1725,
+        "deletions": 488
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "f3aff0c8e429c4b4e90037b708186c5e7d70b306",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-29T20:20:24+00:00"
+        },
+        "message": "start navigation mixin"
+      },
+      "stats": {
+        "total": 103,
+        "additions": 103,
+        "deletions": 0
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "186ea0fb18da2f076f0a93ddb2d2cf1858967083",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-29T15:27:14+00:00"
+        },
+        "message": "update to 2023"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 30,
+        "deletions": 30
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "52e993c4b211c6f6952f10efd8c30306969a0bd1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-29T15:24:26+00:00"
+        },
+        "message": "move dist to docs"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 19,
+        "deletions": 19
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "02e75e3082b4832b0584871520bc8dbee787e503",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-29T15:11:17+00:00"
+        },
+        "message": "update packages remove gulp"
+      },
+      "stats": {
+        "total": 5535,
+        "additions": 360,
+        "deletions": 5175
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "8353e6b5606b1bde6f963f6d547341264f61e907",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T20:25:10+00:00"
+        },
+        "message": "Update NPM Packages"
+      },
+      "stats": {
+        "total": 13257,
+        "additions": 8663,
+        "deletions": 4594
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "7ff984a8e08600560b6c7eb48f7f45cfad2cc75f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-06-01T14:41:14+00:00"
+        },
+        "message": "minor updates -- learning PUG"
+      },
+      "stats": {
+        "total": 75,
+        "additions": 32,
+        "deletions": 43
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "149911570f3b66fe5e03eb95b5e43a52a036704f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-06-01T13:49:22+00:00"
+        },
+        "message": "Update Package - fix issue with then in start.js"
+      },
+      "stats": {
+        "total": 4273,
+        "additions": 2925,
+        "deletions": 1348
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "bcdd1811ff9dc910e7672b8cb9ca6125fca4b7d7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-03-22T23:58:11+00:00"
+        },
+        "message": "accept merge from upstream"
+      },
+      "stats": {
+        "total": 69972,
+        "additions": 15371,
+        "deletions": 54601
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "77fd5d76fef1a1899e43db36fb4bdf0f87b63215",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2022-03-22T20:36:01+00:00"
+        },
+        "message": "dependencies update"
+      },
+      "stats": {
+        "total": 923,
+        "additions": 399,
+        "deletions": 524
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "1b12fb7273452c88a2bd53fbc55cb27dce06775d",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-10-18T22:57:34+00:00"
+        },
+        "message": "Bootstrap 5.1.3 dependency update"
+      },
+      "stats": {
+        "total": 480,
+        "additions": 140,
+        "deletions": 340
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "d5f188f5a42bac1505e9d83fead293efbd276739",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-08-05T20:03:11+00:00"
+        },
+        "message": "Bootstrap 5.1.0 Update"
+      },
+      "stats": {
+        "total": 1057,
+        "additions": 740,
+        "deletions": 317
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "bbd204e68baf0bfd51fa147ef20c331d4a5d1c65",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-06-29T17:08:59+00:00"
+        },
+        "message": "Bootstrap 5.0.2 update"
+      },
+      "stats": {
+        "total": 1306,
+        "additions": 578,
+        "deletions": 728
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "c74d0905ed5ef6275e2ef326d2272bcd0ec69ecf",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-06-06T03:19:53+00:00"
+        },
+        "message": "update sb forms links"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "6ed0554cb36327e2906828834e84827975708c80",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-06-06T00:06:28+00:00"
+        },
+        "message": "Merge pull request #89 from StartBootstrap/develop\n\ndependencies update and sb forms integration"
+      },
+      "stats": {
+        "total": 3899,
+        "additions": 622,
+        "deletions": 3277
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "78835d25c266d1bf933ff70d7b48fe0e43c01182",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-06-05T23:57:52+00:00"
+        },
+        "message": "update README with contact form info"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 13,
+        "deletions": 0
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "56124faea130bc8f862bd8435ee925f2b9186c59",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-06-05T23:42:33+00:00"
+        },
+        "message": "update dependencies"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "3046b918cdaf940c5871fb21b29e6db61d2195ff",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-06-04T18:18:22+00:00"
+        },
+        "message": "update sb forms js"
+      },
+      "stats": {
+        "total": 33,
+        "additions": 22,
+        "deletions": 11
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "c66aa5af10eaebe47f4b63ea1986ff4250365160",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-06-03T22:04:00+00:00"
+        },
+        "message": "update dependencies and begin SB Forms integration"
+      },
+      "stats": {
+        "total": 3867,
+        "additions": 594,
+        "deletions": 3273
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "e7649fa7c076e78dfd1cdfbf254afade93f56d34",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-05-20T16:48:39+00:00"
+        },
+        "message": "Merge pull request #88 from StartBootstrap/develop\n\nBootstrap 5 Update"
+      },
+      "stats": {
+        "total": 21744,
+        "additions": 9311,
+        "deletions": 12433
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "03e67efceb7398c6a5b07a52cfefe841d61d4f70",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-05-18T00:44:21+00:00"
+        },
+        "message": "BS5 update"
+      },
+      "stats": {
+        "total": 21744,
+        "additions": 9311,
+        "deletions": 12433
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "95bfb21934c55da424ca7fb7f4daf6d97a7d5b5a",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2021-04-28T17:45:21+00:00"
+        },
+        "message": "Bootstrap 4.6.0 and dev environment update"
+      },
+      "stats": {
+        "total": 56087,
+        "additions": 11415,
+        "deletions": 44672
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "dbcde3e40713c1cd1183a691918beecc2a075fe2",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2020-11-03T19:52:21+00:00"
+        },
+        "message": "Bootstrap 4.5.3 and dependencies update"
+      },
+      "stats": {
+        "total": 3065,
+        "additions": 1751,
+        "deletions": 1314
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "d277825d29b4363631663f1e23cdfffbd40b237f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-09-29T15:08:57+00:00"
+        },
+        "message": "gulp automation of build"
+      },
+      "stats": {
+        "total": 1104,
+        "additions": 1103,
+        "deletions": 1
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "bc1ea77ca09aeae56d5208f3e7b631210c573dce",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-09-26T14:50:38+00:00"
+        },
+        "message": "upate package for browser-sync"
+      },
+      "stats": {
+        "total": 796,
+        "additions": 654,
+        "deletions": 142
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "f967c7fad20af165930882d0afaf6352aea9569b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-07-08T18:03:33+00:00"
+        },
+        "message": "change to Project Mechanics"
+      },
+      "stats": {
+        "total": 943,
+        "additions": 468,
+        "deletions": 475
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "c5a446a33f82c02df53cef2d3654977813313421",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2020-07-08T17:00:54+00:00"
+        },
+        "message": "Update Pacakges with NPM"
+      },
+      "stats": {
+        "total": 10013,
+        "additions": 5007,
+        "deletions": 5006
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "5213428120c9041b73e3723e71df39a3e8d25d30",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2020-06-18T21:37:09+00:00"
+        },
+        "message": "fix HTML validation errors"
+      },
+      "stats": {
+        "total": 72,
+        "additions": 35,
+        "deletions": 37
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "794fd5017229cc25116f72aabb4dba83b5e489d9",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2020-06-18T21:24:46+00:00"
+        },
+        "message": "Update package-lock.json"
+      },
+      "stats": {
+        "total": 383,
+        "additions": 212,
+        "deletions": 171
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "8e630a0e80f14b5ce588b2425c2bcbf853bcff83",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2020-06-18T21:23:42+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "2d334e9d492dfd0cd2ffd251fa96a5862086a3f7",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2020-06-18T21:23:16+00:00"
+        },
+        "message": "update dependencies and build"
+      },
+      "stats": {
+        "total": 7250,
+        "additions": 4188,
+        "deletions": 3062
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "1013c3392dbe30befadc5c23d9af58570ed9ffbf",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2019-06-14T06:13:14+00:00"
+        },
+        "message": "update dependencies and run npm start script from local gulp install"
+      },
+      "stats": {
+        "total": 151,
+        "additions": 82,
+        "deletions": 69
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "2ae0021f8f387a55480536896cd2b844f86d6209",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2019-05-08T04:59:15+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "08b747f9583f2bbeadb4247b1d2547e1e6f89106",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2019-05-08T04:54:55+00:00"
+        },
+        "message": "update dependencies"
+      },
+      "stats": {
+        "total": 7784,
+        "additions": 6328,
+        "deletions": 1456
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "95f65b62f05bcf56cc59f452b0b16120a4b48845",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2019-03-26T06:06:51+00:00"
+        },
+        "message": "update dependencies"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 10,
+        "deletions": 7
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "de35d5564bd7caf21ebe156a62dd0e88e3ef65d0",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2019-02-01T04:29:20+00:00"
+        },
+        "message": "update dependencies and copyright dates"
+      },
+      "stats": {
+        "total": 25171,
+        "additions": 12551,
+        "deletions": 12620
+      },
+      "repo": "startbootstrap-modern-business"
+    },
+    {
+      "sha": "890ec47858d870f0b11c09df3f220a78338ae6eb",
+      "commit": {
+        "author": {
+          "name": "David Miller",
+          "date": "2018-07-10T03:48:32+00:00"
+        },
+        "message": "update dependencies and README"
+      },
+      "stats": {
+        "total": 417,
+        "additions": 206,
+        "deletions": 211
+      },
+      "repo": "startbootstrap-modern-business"
+    }
+  ],
+  "hash": "de3c1e34c6dd4055e388f5ad5bc83624f48610b04e6fd26156c088261b69d0c1",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "startbootstrap-modern-business"
+    },
+    "category": "commits_stats",
+    "pushed_at": "2025-05-13T23:08:19+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits_stats",
+  "owner": "markhazleton",
+  "repo": "startbootstrap-modern-business",
+  "week": "2025W20"
+}

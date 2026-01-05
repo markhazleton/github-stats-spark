@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T21:59:57.021715+00:00",
+  "value": {
+    "ai_summary": "InquirySpark is a .NET 10-powered survey and inquiry management system designed with a read-only SQLite database architecture, providing an MVC admin interface for managing survey data and user interactions. The solution is structured across multiple project layers (Admin, Repository, Common) and leverages modern .NET technologies including Entity Framework Core 10, ASP.NET Core Identity, and a Bootstrap 5-based frontend with DataTables integration. Its unique architectural approach emphasizes immutable data persistence, with SQLite databases configured in read-only mode, ensuring data integrity and preventing unintended schema modifications. The project implements robust dependency injection, nullable reference type enforcement, and comprehensive test coverage, making it a technically sophisticated solution for organizations seeking a lightweight, secure survey management platform. Key differentiators include its CDN-free implementation, automatic npm build processes, and a modular, extensible design that supports easy configuration and future enhancements. The system appears targeted at administrators and researchers who require a controlled, audit-friendly environment for managing survey data and user interactions.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T15:59:57.021671",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1411,
+    "confidence_score": 90
+  },
+  "hash": "c161ed0af5159ed1b8b0899b84409d388d9bb35fc2389a390c96f1555671297f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "InquirySpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-07T06:07:45+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "InquirySpark",
+  "week": "2025W49_38fb6477b0db"
+}

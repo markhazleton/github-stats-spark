@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T21:48:04.238687+00:00",
+  "value": {
+    "total": 14,
+    "recent_90d": 1,
+    "recent_180d": 6,
+    "recent_365d": 6,
+    "last_commit_date": "2025-12-03T00:14:42+00:00"
+  },
+  "hash": "45efaa95f87ccdadaeb30487a1ffda61f35de321ace4ba08f3d2a33e0d19e641",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DataAnalysisDemo"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-12-03T01:16:04+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "DataAnalysisDemo",
+  "week": "2025W49"
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-01-04T21:58:05.753817+00:00",
+  "value": {
+    "C#": 359838,
+    "HTML": 59548
+  },
+  "hash": "4e13aace6667a1d60b130a55c5f05bac157f4e4e89b260574ca3e0d390e5bbf5",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "google-maps"
+    },
+    "category": "languages",
+    "pushed_at": "2025-05-04T02:20:05+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "google-maps",
+  "week": "2025W18"
+}

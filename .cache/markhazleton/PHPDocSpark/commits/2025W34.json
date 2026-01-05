@@ -1,0 +1,719 @@
+{
+  "timestamp": "2026-01-04T22:13:21.479121+00:00",
+  "value": [
+    {
+      "sha": "46400a0a4e9b1393bb0002b7c3570d617b02b89d",
+      "message": "Implement strict types across the codebase: Added `declare(strict_types=1);` to all relevant files and updated function signatures with type hints and return types for improved type safety and code reliability.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-18T02:15:15+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "c597ce0b622daa93e32c385ae475fd2753631f87",
+      "message": "Update build configuration: Upgrade PHP to 8.2, add Node.js setup, and update Vite to version 7.1.2; modify versioning information in version.php",
+      "author": "Mark Hazleton",
+      "date": "2025-08-13T18:36:05+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "da2bb2c89fe8cb6aaf6185470800433ff225943d",
+      "message": "Update build process: Add version update functionality and increment build number; modify layout styles for better visibility",
+      "author": "Mark Hazleton",
+      "date": "2025-08-11T01:37:03+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "2719a2f1a2d7661c56e8d3f88df1e7dce321bfdb",
+      "message": "Enhance contact management UI: Added titles and improved button labels for edit and delete actions in database.php. Updated database.db.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-11T01:29:31+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "b6814a60e7f17f07182f4411972aad3d26de820b",
+      "message": "Refactor data analysis and chart functionality\n\n- Updated data-analysis.php to streamline CSV file handling and remove unnecessary processing logic.\n- Added new chart.php page for visualizing data from CSV files, including configuration options for chart type and columns.\n- Implemented AJAX endpoints for fetching CSV data and summaries, enhancing performance and user experience.\n- Created chart.js and data-analysis.js for managing chart generation and data analysis interactions.\n- Improved user interface with loading indicators and error handling for better feedback during data processing.\n- Updated sitemap.php to include the new chart page.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-11T00:50:17+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "295aec755857a8f715506d132d65e4bfdc167c39",
+      "message": "Add debug joke page and AJAX functionality for testing\n\n- Created debug_joke.php for testing joke fetching functionality.\n- Implemented buttons to test fetchJoke, jQuery, and AJAX calls.\n- Added debug information display for troubleshooting.\n- Developed joke_debug.php to provide a debug version of the joke fetching process.\n- Included error handling and loading indicators for AJAX requests.\n- Enhanced user experience with visual feedback during joke fetching.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T22:53:22+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "3f6b722945e9a0d8c0232ca84901fb216759cdf5",
+      "message": "Add comprehensive CI/CD pipeline documentation for PHPDocSpark, detailing GitHub Actions and Azure DevOps workflows, build processes, and troubleshooting guidelines.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T20:48:43+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "56ad4e86cb3cfb04f010b588bb4570427b3ac3a9",
+      "message": "Enhance PrismJS integration and resolve JavaScript errors\n\n- Updated PrismJS code block enhancement documentation with detailed error resolution steps and implementation details.\n- Improved doc_lookup_file_by_slug function to prevent false matches and ensure file existence before returning.\n- Added debug scripts for document mappings, directory structure, and SEO URL generation to facilitate troubleshooting.\n- Created a test page for verifying PrismJS implementation and ensuring no console errors occur.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T20:40:37+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "ac3680199a093047900f56194e0c9f46cdeda395",
+      "message": "Update SEO and security configurations; add Security.md for comprehensive safety information",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T20:21:27+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "fe20f118da0322fefc12358d983caa93ad53f723",
+      "message": "Add comprehensive tests for MarkdownProcessor functionality\n\n- Introduced inline HTML test to validate handling of various HTML elements within Markdown.\n- Implemented processor status page to monitor health, performance metrics, and cache operations.\n- Created runtime error test to ensure proper error handling and initialization of the MarkdownProcessor.\n- Developed tests for code blocks, including PHP, JavaScript, and CSS, to verify syntax highlighting and rendering.\n- Conducted security validation tests to check for XSS protection and path traversal vulnerabilities.\n- Enhanced tests for PrismJS integration to ensure proper class assignment for code blocks.\n- Verified functionality with real document content to ensure accurate Markdown processing.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T20:11:23+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "45514d13309f9bf03cc5e18a91d92ec0f2aeb922",
+      "message": "Add Cloudflare Redirect Troubleshooting Guide with solutions and best practices",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T18:54:18+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "96073a922e2014fb4057f18c5f40ca0baf77a33e",
+      "message": "Refactor Overview.md for clarity and enhanced project description; remove SEO.md; add comprehensive SEO strategy to Project/SEO.md; document Azure routing fix with GitHub Copilot in new AZURE_ROUTING_FIX.md; establish best practices for Copilot instructions in copilot-instructions-best-practices.md; minor UI adjustments in article_list.php.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T18:43:10+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "25646ad33fe3b96542875f9c6eaa9c2aa84dff99",
+      "message": "Refactor Nginx configuration and startup script for improved PHP handling\n\n- Updated nginx.conf to listen on port 8080 and streamline PHP processing.\n- Simplified location blocks and removed unnecessary custom routing.\n- Enhanced fastcgi parameters for better compatibility with PHP-FPM.\n- Modified startup.sh to use official Microsoft approach for applying custom nginx configuration and reloading the service.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T18:12:02+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "b1380b0fc59104e0e707343668701a24b369eda0",
+      "message": "Add startup script for PHP applications and custom Nginx configuration",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T17:58:41+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "8f784082fd6b3de6fd660833c42304ff726c46e2",
+      "message": "Update project references and add articles list page\n\n- Changed URLs and repository references from controlorigins to markhazleton in various markdown and PHP files.\n- Updated live demo and source code links in Overview.md and Project Overview.md.\n- Added new articles list page to display technical articles from an RSS feed.\n- Implemented filtering and searching functionality for articles.\n- Enhanced SEO metadata and navigation to include the new articles section.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T17:56:08+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "6103d921c238245dd946f9d352c878c8af1a109b",
+      "message": "Enhance project data fetching by implementing remote URL retrieval with error handling; add debug script for testing",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T17:40:29+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "07b2b32234d86ccfb7b2af1a062b3461fa77ab42",
+      "message": "Refactor GitHub Actions workflow to streamline composer install check and update artifact upload path",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T17:22:11+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "46b0d633ede4836f42bd4db9ab0b2ee903a84bd8",
+      "message": "Update PHP version to 8.0 in composer.json and workflow; set license to MIT",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T17:14:43+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "7210eb790ba9b0e109c15e0157541cab261bb52e",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T17:10:50+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "6be4aa98ae603a04fff8da17cc9f059d337e4dab",
+      "message": "Update package version to 1.2.0 in package-lock.json; enhance web.config with security headers and formatting improvements",
+      "author": "Mark Hazleton",
+      "date": "2025-08-10T03:04:59+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "974e6918466ad19c6bcfb54bb1f17b41a458a502",
+      "message": "Add .vs directory to .gitignore and remove slnx.sqlite file",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T22:24:45+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "241580bf19121e19fdac8b401e9fae3a5cd6dcd5",
+      "message": "Refactor URL construction for document view redirection in index.html",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T22:17:38+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "9e71d599a75409c00ab0ad06422b8ce4bb3483d3",
+      "message": "Fix: Enhanced client-side routing for Azure App Service 404 issues\n\n- Improved index.html routing to properly convert /doc/ URLs to file parameters\n- Added path-to-file conversion logic for proper document routing\n- Enhanced debugging and console logging for troubleshooting\n\nThis should resolve the nginx 404 issues by handling routing client-side\nbefore requests reach the problematic Azure App Service nginx config.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T22:13:59+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "0add8c5d62aa0ddc3bf36c0c7d3baaa164b09d1e",
+      "message": "Add versioning system with automated build information; update Azure pipeline and configuration files",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:56:05+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "0b9682a811cf9b47587ba19fed5e2259dcb85559",
+      "message": "Enhance JavaScript routing in index.html for better URL handling; update Parsedown.php method signatures to support nullable parameters",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:50:27+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "0f3be43d41f5d2bdd4b787253b4eb1d52801ec7f",
+      "message": "update configuration for custom error pages",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:46:57+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "acf817aa61f45bd70b861b8ba3005698a91c972f",
+      "message": "Implement custom 404 handler and JavaScript routing for Azure App Service; update Azure pipeline configuration",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:39:50+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "e85f0f819057825260a0642aaec6f579b83aa7da",
+      "message": "Update PHP version to 8.4 in Azure pipeline and composer configuration",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:28:38+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "687c52b0818974ba0929b08b4104507749a11f01",
+      "message": "Enhance Azure App Service configuration with custom routing and diagnostics; add URL handler for pretty URLs",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:24:00+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "6b6684713e361509bc881258b02421bd8a3ec94b",
+      "message": "Add configuration files for PHP custom routing on Azure App Service\n\n- Created AZURE_ROUTING_FIX.md for detailed setup instructions.\n- Added .htaccess for Apache URL rewriting rules.\n- Created appsettings.json for application settings.\n- Added diagnostics.php for troubleshooting routing issues.\n- Implemented startup.sh to ensure .htaccess is present and configured.\n- Added web.config for IIS URL rewriting rules and server settings.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:17:51+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "425264e7856f976e7360993e70244a305566f012",
+      "message": "Update dependencies in package.json and package-lock.json; modify button style in document_view.php",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:09:52+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "5be2bf49133f56404a06d5db62640155dc782b4a",
+      "message": "Add debugging scripts and documentation utilities\n\n- Introduced multiple debugging scripts to examine document mapping, pretty URLs, and selection logic.\n- Implemented centralized documentation utilities for slug generation and file lookup.\n- Enhanced SEO configuration and structured data generation for better search engine visibility.\n- Created a sitemap generator to improve site indexing.\n- Added a robots.txt file to manage crawler access.\n- Developed a routing mechanism for pretty URLs in the PHP built-in server.\n- Included tests for dropdown behavior, exact flow simulation, and routing logic.\n- Improved handling of URL encoding and decoding for better user experience.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T21:04:59+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "b8349b3db1de7c3122d1d4bff65ba9bc9350ed87",
+      "message": "chore: add configuration files for linting and formatting tools\n\n- Created .lintstagedrc.json for lint-staged configuration to run ESLint, Prettier, Stylelint on staged files.\n- Added .prettierignore to exclude specific files and directories from Prettier formatting.\n- Introduced .prettierrc.json to define Prettier formatting rules and overrides for different file types.\n- Established .stylelintrc.json with custom rules and ignored files for Stylelint.\n- Implemented eslint.config.js with recommended settings and custom rules for JavaScript files.\n- Added comprehensive documentation in Project Overview.md detailing the purpose, features, architecture, and usage of the Control Origins Documentation & Demo Application.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T19:31:05+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "bb42faa2e94fc4ea4d1a9e959eefd33fe62749c4",
+      "message": "Add CRUD functionality for contacts and GitHub API testing script\n\n- Implemented a complete CRUD interface for managing contacts using SQLite in `database.php`.\n- Added functions for creating, reading, updating, and deleting contacts.\n- Included a seeding function to populate the database with Star Trek characters.\n- Created a user-friendly HTML interface for contact management with Bootstrap styling.\n- Added a testing script for GitHub API calls in `test_github_api.php` to validate responses and check for errors.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T17:24:08+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "b2f37c001dd45ec0b81996a1845b960297d0c924",
+      "message": "Enhance fetch_joke.php with error handling and data validation\n\n- Improved cURL function to include error handling for connection issues.\n- Added checks for JSON decoding and API errors to provide user-friendly messages.\n- Sanitized output to prevent XSS vulnerabilities.\n- Updated comments for clarity on functionality.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T15:27:38+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "b9c7c1d02d3f5eba4d32dd8cc8e25f9405fd38a4",
+      "message": "Enhance project list and search functionality with improved UI and features\n\n- Refactored project_list.php to group projects by first letter, add search functionality, and implement pagination.\n- Improved UI with Bootstrap components, including filters and enhanced card layout for project display.\n- Updated search.php to provide detailed search results with file metadata, context excerpts, and improved user experience.\n- Created a new layout.php file for consistent styling across pages, including a responsive navbar and footer.\n- Introduced datatable.php for reusable DataTable component with export capabilities and responsive design.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-09T14:50:58+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "3ee4cb0c06ed71c9b068e78f32506025ebe084b5",
+      "message": "update template",
+      "author": "Mark Hazleton",
+      "date": "2024-04-03T12:40:37+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "d6f3011ed38f3b6929eba71eca22b89ccfb75c4d",
+      "message": "Add Chart",
+      "author": "Mark Hazleton",
+      "date": "2023-10-13T13:23:15+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "c1b2870e952452bb2285f12c2e510fbb27482a20",
+      "message": "Add Database CRUD Example",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T22:16:36+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "9644edc0836466a0cdb7626fdb0ad229379b77e0",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T13:21:54+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "5008c53890ba8fbd11e694c487da265934be94cb",
+      "message": "On file not found, default to document view",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T13:21:51+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "5b6e4a6e9a2687e73b0c22c139bec34acd4005c7",
+      "message": "Update Readme.md",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T13:15:42+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "7e21c66588de1184dc7f55633580d1616b3244af",
+      "message": "Add links to code page on GitHub",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T13:05:25+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "18162f9275e6acb38252c5da5bab5db622672b28",
+      "message": "Format  Exeuctive Summary in Footer",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T03:22:01+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "35ec512325b573587ee8a3d4dfd567a069514a24",
+      "message": "add executive summary to GitHub Api Page",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T03:12:28+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "58d1d671a4fd9b4b81daa0725eb6cf10889f2cf7",
+      "message": "Add GitHub Api Access",
+      "author": "Mark Hazleton",
+      "date": "2023-10-03T03:02:28+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "9f4bb78c50972c53c5a48168bdc8e18f7a64a7a6",
+      "message": "add joke and more context",
+      "author": "Mark Hazleton",
+      "date": "2023-10-02T20:09:39+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "577578ced053d4b3013ed9895ad901e00a6a398c",
+      "message": "Update Navigation",
+      "author": "Mark Hazleton",
+      "date": "2023-10-02T18:59:01+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "e4e662e3f5d67519faab40363544c34ea2d90110",
+      "message": "update document viewer",
+      "author": "Mark Hazleton",
+      "date": "2023-09-30T19:03:09+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "eef59f158dbb851db8faddb6813c2fc3242efa77",
+      "message": "update title",
+      "author": "Mark Hazleton",
+      "date": "2023-09-30T17:33:50+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "9fa31d87582fd10a41c1061fd6a1e709418148ee",
+      "message": "Update Markdown PHP File Viewer.md",
+      "author": "Mark Hazleton",
+      "date": "2023-09-29T00:23:39+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "37a3eb6fbdba17264642e510413aa34383b7afb2",
+      "message": "Update AzureDevOpsComposer Install Error Resolution.md",
+      "author": "Mark Hazleton",
+      "date": "2023-09-29T00:11:06+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "a9b4ef9ab89efb08a4f187c9658f855a6a40f352",
+      "message": "Update template.php",
+      "author": "Mark Hazleton",
+      "date": "2023-09-28T23:44:20+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "ad1d1a881403092a7b4a13d2cf343352e076c2ac",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T19:08:16+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "b9151a54183bf9054ae41f5f0d0a2f4a4d781af2",
+      "message": "Add Document Search",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T19:08:14+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "597d06d5e7021428782de178793fbb7b78fc3e7a",
+      "message": "Update Readme.md",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T17:45:33+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "520136edbd761f7bc455bc094f8a59371d332bff",
+      "message": "move json data files to data folder",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T17:16:40+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "ea52decb12dabdd03a20b20ac650eb94ef65deca",
+      "message": "Update display of markdown files, clean up names",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T17:10:45+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "aeee00286d93f76ff55136805a9448fb73b48016",
+      "message": "update layout/debug settings",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T16:45:01+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "08306d3f4901747cbb430d6986aa215ba028f847",
+      "message": "rework home page",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T14:51:31+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "95c87ecf15cb5668284cf7a3a6b925469dbb3665",
+      "message": "change to drop down for file list",
+      "author": "Mark Hazleton",
+      "date": "2023-09-26T14:02:42+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "e625f4b969fb4eba8127409880d61731e1e000e6",
+      "message": "remove accordian - did not work",
+      "author": "Mark Hazleton",
+      "date": "2023-09-22T21:49:09+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "d3539091f94a80f2dad6d531de6120156b23920c",
+      "message": "update renderlist for accordion",
+      "author": "Mark Hazleton",
+      "date": "2023-09-22T17:25:12+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "b2437d010f3d9bd45a71a41d21c81544ae1784cc",
+      "message": "reformat document display",
+      "author": "Mark Hazleton",
+      "date": "2023-09-21T00:12:04+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "2bb53773f8cc3f7f69604a4de09bf33d7bc60685",
+      "message": "update Chat GPT overview",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T09:54:27+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "ad304e8558b5c45e5f3b90be46cda98133fa2406",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T09:50:52+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "dd54dae36c08bf2cc9bcefa0df293a9def6fa53b",
+      "message": "readme updates",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T09:50:49+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "3aa96cb2b41e59ea9243e0d0f85d78688d84bde1",
+      "message": "Rename README.md to Readme.md",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T09:45:33+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "1291dd055dcc710cbd07928217bef1a3e5af355d",
+      "message": "fix issues with csv table display",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T09:22:17+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "7f1dc541655093280ba8a0bc77e105f0bd6c373e",
+      "message": "Update About Git document",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:37:06+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "f6190c8813ab1de12fa80dc1ec57e079c429b55f",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:30:31+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "4617f4f11b1c166f4209b8108adca25d843475a8",
+      "message": "add What is GIT",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:30:20+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "d1871b359f5b5d2541d3c4e9b1d0e91c66d55df2",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:24:39+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "e0559299d22c2f0e7792825935f0423c196493d7",
+      "message": "rename home page",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:23:43+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "c7decfaa3cb6a6aae65ab6bac3cfa0e76f78fdc0",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:14:04+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "02a4836daaaad4ae0ef2638edf6e9fc2841fc2b5",
+      "message": "add new ChatGPT Session",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:14:01+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "ae8304e950015c0932db335d3d7e594c10d16748",
+      "message": "add more table analysis",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T08:08:04+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "8c2561fbefff12d44816906be190ac19920f26a5",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T07:59:17+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "4f80194ba019e843fef942d3aeecf8bd86bf4ecf",
+      "message": "Update Overview Title",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T07:54:37+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "86372f29016c08379856192ebad5ecf1a22db62e",
+      "message": "update devcontainer.json",
+      "author": "Mark Hazleton",
+      "date": "2023-09-20T07:51:03+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "d43cc58af36cc32231d246287e624e543c1c7c1d",
+      "message": "update documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-13T17:30:27+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "585ea45524b4dc4b2b569bb3d4ed7cb340e70c8c",
+      "message": "Update Markdown viewer",
+      "author": "Mark Hazleton",
+      "date": "2023-09-13T15:46:36+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "5041875f17b4579adbd8b448983780121507f44b",
+      "message": "Update SourceCodeManagement.md",
+      "author": "Mark Hazleton",
+      "date": "2023-09-13T15:25:21+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "46f170972e93c47e6c2a26aab7cfa6db15de9c0c",
+      "message": "Add Source Code Management Document",
+      "author": "Mark Hazleton",
+      "date": "2023-09-13T15:19:32+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "bbccc027fda2a21684ccda3fa4996bc88ab659ab",
+      "message": "Update template and home page",
+      "author": "Mark Hazleton",
+      "date": "2023-09-11T20:48:05+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "97b9bc4c0404bf55127a4283d264f6facf45ea67",
+      "message": "updates to content admin",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T21:25:25+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "6545fcfd0c07789ea686306694fc783589b7b507",
+      "message": "Add Admin for content.json",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T21:06:36+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "cf6af7ee61758cea838f3cb4edf0b95a529cb402",
+      "message": "install composer",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T17:34:29+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "1ee68b5f661476fe245e3da0c483d797bdca906a",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:38:45+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "5903bc436075895f13f6d633a0f9a83977cfd35e",
+      "message": "Add Session for Azure Pipeline refinement",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:38:40+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "9e0d9718faac73b12796379b1d08044c24462641",
+      "message": "Update azure-pipelines.yml for Azure Pipelines",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:35:26+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "02c15c793440e7ba705eb85cb555f35aea081457",
+      "message": "update to use website as root folder",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:32:19+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "97721bae7bee07c1dcab2ab6f14a01491c7379af",
+      "message": "update to 8 and above",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:24:54+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "87e4da7ae8da440559ea00ee80c2f1252184e022",
+      "message": "remove oss lic",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:22:19+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "f71c02aed584b110cf727713de88b332c0f3ed7c",
+      "message": "Merge branch 'main' of https://github.com/controlorigins/documents",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:21:58+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "fae099624fce70c28dfac262992bbc14f05d64d0",
+      "message": "create composer.json file",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:21:56+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "70f7f05172c94ec7f9692127a0fb79bd86f9f5c8",
+      "message": "Set up CI with Azure Pipelines\n\n[skip ci]",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:14:14+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "282f5b5f998fadbc4230b9338f9ce9ae86d94663",
+      "message": "add folder for Chat GPT Sessions Markdown files",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T16:04:04+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "6d34a2a760149f28b96dbfaec92d9d280244fd3f",
+      "message": "Add Markdown for Chat GPT Sessions",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T14:45:28+00:00",
+      "repo": "PHPDocSpark"
+    },
+    {
+      "sha": "89a5efde5398859c3fc28aaae6b40f75fb35d3b6",
+      "message": "setup markdown browswer",
+      "author": "Mark Hazleton",
+      "date": "2023-09-10T14:38:00+00:00",
+      "repo": "PHPDocSpark"
+    }
+  ],
+  "hash": "b0bf53db7213853c2d60e4fde70a22a2985c9f42cafa8d45b6821394afaa925c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PHPDocSpark"
+    },
+    "category": "commits",
+    "pushed_at": "2025-08-18T02:15:18+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "PHPDocSpark",
+  "week": "2025W34"
+}

@@ -213,7 +213,12 @@ class TestUserStory1Scenarios:
             mock_anthropic.return_value = mock_client
 
             summarizer = RepositorySummarizer()
-            summary = summarizer.summarize_repository(repo, readme_content, commit_history)
+            summary = summarizer.summarize_repository(
+                repo,
+                readme_content,
+                commit_history,
+                repository_owner="testuser",
+            )
 
             assert summary is not None, "Summary should be generated"
             assert summary.repository_name == "test-repo"
@@ -247,7 +252,12 @@ class TestUserStory1Scenarios:
 
         # Test fallback summarization without README (FR-012 requirement)
         summarizer = RepositorySummarizer()
-        summary = summarizer.summarize_repository(repo, None, commit_history)
+        summary = summarizer.summarize_repository(
+            repo,
+            None,
+            commit_history,
+            repository_owner="testuser",
+        )
 
         assert summary is not None, "Summary should be generated even without README"
         assert summary.repository_name == "no-readme-repo"

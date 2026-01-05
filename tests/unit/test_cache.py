@@ -3,7 +3,7 @@
 import pytest
 import tempfile
 import shutil
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from spark.cache import APICache
@@ -23,65 +23,93 @@ class TestAPICache:
         """Test setting and getting cached values."""
         cache = APICache(cache_dir=temp_cache_dir)
 
-        test_key = "test_key"
-        test_value = {"data": "test_value", "count": 123}
+        cache.set("test_cat", "owner", {"data": "test_value"})
+        result = cache.get("test_cat", "owner")
 
-        cache.set(test_key, test_value)
-        result = cache.get(test_key)
-
-        assert result == test_value
+        assert result == {"data": "test_value"}
 
     def test_cache_miss(self, temp_cache_dir):
         """Test cache miss returns None."""
         cache = APICache(cache_dir=temp_cache_dir)
 
-        result = cache.get("nonexistent_key")
+        result = cache.get("nonexistent", "owner")
         assert result is None
 
     def test_cache_expiration(self, temp_cache_dir):
         """Test cache expiration based on TTL."""
-        # Create cache with very short TTL
-        cache = APICache(cache_dir=temp_cache_dir, ttl_hours=0)
+        # We need to mock config or rely on default
+        # Default TTL is 168 hours.
+        cache = APICache(cache_dir=temp_cache_dir)
+        
+        # Test is_expired method directly
+        old_timestamp = datetime.now(timezone.utc) - timedelta(hours=200)
+        assert cache.is_expired("test_cat", old_timestamp) is True
 
-        test_key = "expiring_key"
-        test_value = {"data": "expires"}
+        recent_timestamp = datetime.now(timezone.utc)
+        assert cache.is_expired("test_cat", recent_timestamp) is False
 
-        cache.set(test_key, test_value)
-
-        # Check expiration
-        from datetime import datetime, timedelta
-        old_timestamp = datetime.now() - timedelta(hours=1)
-        assert cache.is_expired(old_timestamp) is True
-
-        recent_timestamp = datetime.now()
-        assert cache.is_expired(recent_timestamp) is False
+    def test_cache_ttl_bypass_with_metadata(self, temp_cache_dir):
+        """Ensure metadata can disable TTL enforcement for repository caches."""
+        cache = APICache(cache_dir=temp_cache_dir)
+        
+        old_timestamp = datetime.now(timezone.utc) - timedelta(hours=200)
+        
+        # Should be expired
+        assert cache.is_expired("test_cat", old_timestamp) is True
+        
+        # Should not be expired with metadata
+        assert cache.is_expired("test_cat", old_timestamp, metadata={"ttl_enforced": False}) is False
 
     def test_cache_clear(self, temp_cache_dir):
         """Test clearing all cached values."""
         cache = APICache(cache_dir=temp_cache_dir)
 
         # Add multiple cache entries
-        cache.set("key1", "value1")
-        cache.set("key2", "value2")
-        cache.set("key3", "value3")
+        cache.set("cat1", "owner", "value1")
+        cache.set("cat2", "owner", "value2")
 
         # Clear cache
         cache.clear()
 
         # Verify all entries are gone
-        assert cache.get("key1") is None
-        assert cache.get("key2") is None
-        assert cache.get("key3") is None
+        assert cache.get("cat1", "owner") is None
+        assert cache.get("cat2", "owner") is None
 
-    def test_cache_key_sanitization(self, temp_cache_dir):
-        """Test that cache keys are sanitized for filesystem."""
+    def test_hierarchical_storage(self, temp_cache_dir):
+        """Test that cache uses hierarchical storage."""
         cache = APICache(cache_dir=temp_cache_dir)
+        
+        cache.set("category", "owner", "value", repo="repo", week="2026W01")
+        
+        expected_path = Path(temp_cache_dir) / "owner" / "repo" / "category" / "2026W01.json"
+        assert expected_path.exists()
 
-        # Keys with special characters
-        test_key = "user/repos:languages"
-        test_value = {"data": "sanitized"}
+    def test_manifest_update(self, temp_cache_dir):
+        """Test that manifest is updated."""
+        cache = APICache(cache_dir=temp_cache_dir)
+        
+        cache.set("category", "owner", "value", repo="repo", week="2026W01")
+        
+        entry = cache.get_entry_info("category", "owner", repo="repo")
+        assert entry is not None
+        assert "2026W01" in entry["weeks"]
+        assert entry["latest_week"] == "2026W01"
 
-        cache.set(test_key, test_value)
-        result = cache.get(test_key)
-
-        assert result == test_value
+    def test_prune(self, temp_cache_dir):
+        """Test pruning old entries."""
+        cache = APICache(cache_dir=temp_cache_dir)
+        
+        # Add 3 weeks
+        cache.set("cat", "owner", "v1", repo="repo", week="2026W01")
+        cache.set("cat", "owner", "v2", repo="repo", week="2026W02")
+        cache.set("cat", "owner", "v3", repo="repo", week="2026W03")
+        
+        # Prune to keep 2
+        cache.prune(keep_weeks=2)
+        
+        assert cache.get("cat", "owner", repo="repo", week="2026W03") == "v3"
+        assert cache.get("cat", "owner", repo="repo", week="2026W02") == "v2"
+        assert cache.get("cat", "owner", repo="repo", week="2026W01") is None
+        
+        entry = cache.get_entry_info("cat", "owner", repo="repo")
+        assert "2026W01" not in entry["weeks"]

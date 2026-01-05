@@ -1,0 +1,3219 @@
+{
+  "timestamp": "2026-01-04T21:44:10.969628+00:00",
+  "value": [
+    {
+      "sha": "b36b912e540a023383d1e129612f80cf0c50475c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-09T02:42:56+00:00"
+        },
+        "message": "Update NuGet package versions in project files\n\nUpgraded System.Drawing.Common and System.Text.Json to 9.0.7 in BarcodeStandard and BarcodeStandardExample projects. Updated test dependencies in BarcodeStandardTests: Microsoft.NET.Test.Sdk to 17.14.1, MSTest.TestAdapter and MSTest.TestFramework to 3.9.3. These changes improve compatibility and stability."
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "943d6ec78eff29b4485d86a6caf32f3d1374f728",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-04T03:27:28+00:00"
+        },
+        "message": "update version and nuget packages"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 10,
+        "deletions": 14
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "95f8b39350649f1d5c95a9fc75e6d8022672c823",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T01:33:31+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 407,
+        "additions": 202,
+        "deletions": 205
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d55bd93ce35681373782935fef9afcfe7a3be572",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-12T01:52:28+00:00"
+        },
+        "message": "update packages, update to net 8"
+      },
+      "stats": {
+        "total": 168,
+        "additions": 25,
+        "deletions": 143
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "78274d74557d84f5c4b5a4d42d485b644e0148d2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-30T22:48:28+00:00"
+        },
+        "message": "Update Packages"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c3515922e2e0e51a134165e50c73202b1b118be0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-13T22:40:25+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "25ce253782d6ae2655617a1626918ab36f7b2b8e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-22T22:39:56+00:00"
+        },
+        "message": "NuGet Update"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6e18978dab01e257c4d63de9bdb789018290bb62",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T19:39:24+00:00"
+        },
+        "message": "Merge pull request #3 from barnhill/master\n\nRemove unnecessary PenAlignment usage."
+      },
+      "stats": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f03e5eede9146a82351a2f1c498e1108cbeb53c4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-23T19:37:20+00:00"
+        },
+        "message": "Update to Net 7 / Net 4.8"
+      },
+      "stats": {
+        "total": 74434,
+        "additions": 74426,
+        "deletions": 8
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "72c919b329f06eb40b8121d49a5f893794113a56",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2023-02-20T04:50:40+00:00"
+        },
+        "message": "Remove unnecessary PenAlignment usage.\n\nThe documentation for Pen.Alignment states that PenAlignment.Right is treated as PenAlignment.Center when using the Pen for drawing lines.\n\nI tested the appearance of the ITF-14 barcode and removing the Pen.Alignment setting makes no observable difference in the output. This is consistent with the documentation."
+      },
+      "stats": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7f046de34ceeb9044cff0351f5973129f5a721a5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-06-13T12:43:35+00:00"
+        },
+        "message": "Update NuGet Packages"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 11,
+        "deletions": 17
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c3dbaf0042bed6b260a5d101a8b26c8e02d1a8d1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-06-13T05:28:14+00:00"
+        },
+        "message": "merge from upstream/master"
+      },
+      "stats": {
+        "total": 1262,
+        "additions": 716,
+        "deletions": 546
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2aded00ae9f9fda932b1b2bb796574a6e4d8fcc9",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2022-05-25T14:13:54+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "392bf201c9e1422bdb9ecbd93e7a9c23ce537867",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2022-05-10T03:17:31+00:00"
+        },
+        "message": "Merge pull request #143 from udlose/bug/xmlserializer_memory_leak\n\nFix dynamic assembly memory leak, optimize Regex usage"
+      },
+      "stats": {
+        "total": 39,
+        "additions": 22,
+        "deletions": 17
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b86078f0333990cb51de1dec2e968975f280c9cd",
+      "commit": {
+        "author": {
+          "name": "Dave Black",
+          "date": "2022-05-09T16:52:13+00:00"
+        },
+        "message": "- replace Regex with char.IsDigit"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 8,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c9a1e4375162ef7876bc7e39f870103fb9103f4f",
+      "commit": {
+        "author": {
+          "name": "Dave Black",
+          "date": "2022-05-05T19:21:30+00:00"
+        },
+        "message": "- performance optimization for Regex usage (reduces cpu time, memory, and dynamic assembly leakage)"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "015e6c8f11a9cd11f426251b1a981bfb7606b397",
+      "commit": {
+        "author": {
+          "name": "Dave Black",
+          "date": "2022-05-05T19:04:47+00:00"
+        },
+        "message": "- fix code analysis warning CA1816"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d18a2f8b31bca0178c1e259e536f56b990936541",
+      "commit": {
+        "author": {
+          "name": "Dave Black",
+          "date": "2022-05-05T19:02:41+00:00"
+        },
+        "message": "- fix dynamic assembly memory leak by changing XmlSerializer to be static"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 12,
+        "deletions": 13
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1e02aeb3b4a3a2a09eddb4d075277675c9990b18",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-11-16T13:35:45+00:00"
+        },
+        "message": "start migration/upgrade to Net 6.0"
+      },
+      "stats": {
+        "total": 3166,
+        "additions": 2303,
+        "deletions": 863
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "a85d66d3487398b2675eb3eb2c62e8d32c41ceea",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-08-15T02:32:34+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "bcdaec7c2b88136e517d34e26f1128c2e7538a66",
+      "commit": {
+        "author": {
+          "name": "bradbarnhill",
+          "date": "2021-08-01T22:04:23+00:00"
+        },
+        "message": "Merge branch 'master' of github.com:barnhill/barcodelib"
+      },
+      "stats": {
+        "total": 238,
+        "additions": 119,
+        "deletions": 119
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b8560dc9221196d9b59bc559831aa533beb33246",
+      "commit": {
+        "author": {
+          "name": "bradbarnhill",
+          "date": "2021-08-01T22:03:55+00:00"
+        },
+        "message": "fix issue where tests wouldnt run locally, update test dependency"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "418c2174efef46aa621d77291039f9033a818038",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-08-01T21:45:02+00:00"
+        },
+        "message": "Merge pull request #133 from barnhill/fix_positioning_in_example\n\nFix positioning in example app"
+      },
+      "stats": {
+        "total": 238,
+        "additions": 119,
+        "deletions": 119
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6c6e3efc3325682e55c294db0eaff012f9889e28",
+      "commit": {
+        "author": {
+          "name": "bradbarnhill",
+          "date": "2021-07-30T01:07:59+00:00"
+        },
+        "message": "Fix positioning in example app"
+      },
+      "stats": {
+        "total": 238,
+        "additions": 119,
+        "deletions": 119
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7d8048a79e2706c526648def87c7abd74343d08d",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-05-31T17:34:17+00:00"
+        },
+        "message": "Merge branch 'use-packagereference'"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 8,
+        "deletions": 12
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7b26c1a1df85bcecc4f2820e7d9b16cdf50c7e72",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-05-27T06:24:02+00:00"
+        },
+        "message": "BarcodeStandardExample: Use implicit package references.\n\nBy setting RestoreProjectStyle to PackageReference in\nDirectory.Build.props, the entire solution is opted into using\nPackageReference-style nuget restore, even if those packages do not\nthemselves have any direct PackageReference. This means that any\nPackageReference to another project will automatically pull in the\nnuget packages of that other project. For BarcodeStandardExample, this\nmeans that it will automatically get the version of\nSystem.Drawing.Common used by BarcodeStandard.\n\nThis may be a little sloppy, in that removing a PackageReference from\nBarcodeStandard may break the build of BarcodeStandardExample. But I\nthink the simpler project files and reduced number of\nmanually-maintained PackageReference is worth it. And such a break\nshould be caught by CI.\n\nThis gets rid of packages.config usage. The packages.config style of\nreferencing nugets is old-style and the very fact that this puts\nReference and HintPath in the .csproj is unfortunate. So it is good to\nmove away from that."
+      },
+      "stats": {
+        "total": 20,
+        "additions": 8,
+        "deletions": 12
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d30cb94089107f1f7b1af70d1f9824959bbd3753",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-05-27T06:36:33+00:00"
+        },
+        "message": "Merge pull request #130 from barnhill/update-dependencies\n\nUpdate dependencies"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 8,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e1248aad86cdbd6f0aad9bf1a1de6e9177a759bd",
+      "commit": {
+        "author": {
+          "name": "bradbarnhill",
+          "date": "2021-05-27T03:30:59+00:00"
+        },
+        "message": "Update dependencies"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 8,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b62ef4b87192b94e5ef679765aa244f40bf3bb51",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-05-27T02:55:47+00:00"
+        },
+        "message": "Merge pull request #124 from barnhill/issue123-net5\n\nAdd tests for CODE128 and support netcoreapp5.0."
+      },
+      "stats": {
+        "total": 627,
+        "additions": 386,
+        "deletions": 241
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "71d68bff95e0c597e7eabf04be3f8c6df15a6af8",
+      "commit": {
+        "author": {
+          "name": "bradbarnhill",
+          "date": "2021-05-09T17:17:48+00:00"
+        },
+        "message": "Allow disabling of the country code parsing in EAN-13, allow retrieval of the country code for consumers"
+      },
+      "stats": {
+        "total": 74,
+        "additions": 44,
+        "deletions": 30
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "4239194a44cb3bbddc58fdb0fb26f2f275f186fb",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-05-09T16:58:59+00:00"
+        },
+        "message": "Merge pull request #128 from CanSeeThePain/OptionalEAN13CountryException\n\nOptional ean13 country exception."
+      },
+      "stats": {
+        "total": 30,
+        "additions": 22,
+        "deletions": 8
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6f1358d19bbfc712b563c15040bcc34a6ecf56ee",
+      "commit": {
+        "author": {
+          "name": "s.tkachenko",
+          "date": "2021-05-05T15:09:30+00:00"
+        },
+        "message": "Visibility of the properties for invalid country code exception was changed from private to public."
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "56944bd5e30c39747397fcfd702a1a41dfd90c58",
+      "commit": {
+        "author": {
+          "name": "s.tkachenko",
+          "date": "2021-05-05T12:56:27+00:00"
+        },
+        "message": "New feature to disable EAN13 invalid country code exception."
+      },
+      "stats": {
+        "total": 30,
+        "additions": 22,
+        "deletions": 8
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7ae41cbb236b8e6e7e581efa9312442a90a79818",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-04-09T23:36:39+00:00"
+        },
+        "message": "NuGet Update\nUpdate Footer"
+      },
+      "stats": {
+        "total": 4815,
+        "additions": 4723,
+        "deletions": 92
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "5766fd18e29267c78515e462277d635f1dba62a9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-03-30T00:41:51+00:00"
+        },
+        "message": "clean-up"
+      },
+      "stats": {
+        "total": 97,
+        "additions": 5,
+        "deletions": 92
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "aa11222d90069c4e6aeb774468a5b6f12df7d694",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-03-29T20:22:21+00:00"
+        },
+        "message": "update NuGet"
+      },
+      "stats": {
+        "total": 435071,
+        "additions": 13769,
+        "deletions": 421302
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "acf88f07260bfff7c264a2416277296d60e19969",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2021-03-29T20:14:53+00:00"
+        },
+        "message": "Update Fork, Update NuGet Packages, Update to 4.8"
+      },
+      "stats": {
+        "total": 2819,
+        "additions": 1316,
+        "deletions": 1503
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6ac6856299a7ce65b151958c73b4fa6cad00b1ea",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-02-20T03:45:47+00:00"
+        },
+        "message": "Merge pull request #125 from barnhill/UpdateCommonLib\n\nSystem.Drawing.Common 5.0.1"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b4f8cbff7b42ba42ffbd6281f1d28fa51a407d62",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-02-20T03:45:15+00:00"
+        },
+        "message": "System.Drawing.Common 5.0.1"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "95828292528c00721efe000a03c1de43c87e4132",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-02-20T03:41:30+00:00"
+        },
+        "message": "Merge pull request #117 from barnhill/update-drawing-common\n\nUpdate to 5.0.0 of System.Drawing.Common, Add JSON Serialization"
+      },
+      "stats": {
+        "total": 759,
+        "additions": 472,
+        "deletions": 287
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6589e21e37b0c8948ae912668acd03648b0ec012",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-15T14:30:08+00:00"
+        },
+        "message": "Code128: Remove Code128Entry struct.\n\nThis should be slightly more memory efficient. Uses the index of the\nlist as the value instead of storing the index in the element\nitself. Reverse lookup of the symbolic name of a particular barcode\npattern is replaced with dictionary key probing which happens for the\ninitial character and when switching codes.\n\nSee #123, addresses comments by @jangernert."
+      },
+      "stats": {
+        "total": 434,
+        "additions": 199,
+        "deletions": 235
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c99d4e2e62fd449cf0fdb119ee3da8205b9f27b5",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-15T11:53:53+00:00"
+        },
+        "message": "Code128: Reuse a calculation result instead of recalculating it."
+      },
+      "stats": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1c2084a97ea28aadb6963e891c46e9b35754d1a4",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-15T11:51:52+00:00"
+        },
+        "message": "Code128: Remove some dead code."
+      },
+      "stats": {
+        "total": 5,
+        "additions": 0,
+        "deletions": 5
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "8c9d35188d93b92d6f3e416e12477edd931abfe7",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-15T00:55:05+00:00"
+        },
+        "message": "code128: Remove DataTable and support netcoreapp5.0.\n\nFixes #123 by avoiding the use of DataTable which used non-strict\nstring comparison and instead using Dictionary<string, TKey> which\nuses strict string value comparison.\n\nBy removing DataTable, we can use more efficient and type-safe data\nstructures for code128 generation. Though, due to how the data\nstructures are rebuilt for every code generation, this change may\nactually degrade performance."
+      },
+      "stats": {
+        "total": 452,
+        "additions": 249,
+        "deletions": 203
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f1a3ff48ee7f9837629029f1b31473bbe8fab92f",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-15T00:44:20+00:00"
+        },
+        "message": "Update CI to install netcore 3 and 5 side-by-side for tests.\n\nThis is done by using multiple install steps, one for each version we need."
+      },
+      "stats": {
+        "total": 6,
+        "additions": 5,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "236e6c0e7be6d7725072f2ee506d3fbc53b8ccf6",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-15T00:38:00+00:00"
+        },
+        "message": "Update CI to use dotnet-5.0.103 so it can run tests."
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1bdb218c423dab94430914016b00322b507c049f",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-15T00:35:33+00:00"
+        },
+        "message": "Add tests demonstrating issue #123.\n\nEnables running tests on netcoreapp5.0 and net472.\n\nAdds tests which break on netcoreapp5.0 due to the issue described in\n#123."
+      },
+      "stats": {
+        "total": 18,
+        "additions": 16,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "021ce6ccbddcf09f5a67f9c7b838d3aba9417bd7",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-14T22:11:38+00:00"
+        },
+        "message": "Make CODE128 tests fail with a stacktrace when possible.\n\nThis makes debugging certain issues a lot easier.\n\nSee #123."
+      },
+      "stats": {
+        "total": 21,
+        "additions": 12,
+        "deletions": 9
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b185b958270a239b943e2f55c16adebb14f11dec",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2021-02-14T16:31:14+00:00"
+        },
+        "message": "Add some rudimentary tests for existing CODE128 behavior.\n\nPreparation for changes for #123."
+      },
+      "stats": {
+        "total": 118,
+        "additions": 118,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "82f4927213e4f9ffc6e4037874a349c81a482a86",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-29T05:21:59+00:00"
+        },
+        "message": "release notes"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "3a0fa89dd8db7950307ab1f45701e16805a84952",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-29T05:20:48+00:00"
+        },
+        "message": "remove useless try/catch"
+      },
+      "stats": {
+        "total": 27,
+        "additions": 12,
+        "deletions": 15
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b1c71805af12d954af8792b7b868f34c08d36af6",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-29T05:18:11+00:00"
+        },
+        "message": "fix country codes not being found for EAN13"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 19,
+        "deletions": 12
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c36de8ad59cef977409d356423166433e583bb3b",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-20T05:52:55+00:00"
+        },
+        "message": "version to 2.3.0.0"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "ef33e3b48b8c2997776173f2d19292e03e8da9e9",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-20T05:47:14+00:00"
+        },
+        "message": "remove XML encoding by default, include JSON encoding, use .NET 4+ security model, update example app with features"
+      },
+      "stats": {
+        "total": 748,
+        "additions": 465,
+        "deletions": 283
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7e55a442aa46e82aa02226ec2f37191a5121653f",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-20T02:27:37+00:00"
+        },
+        "message": "Update to 5.0.0 of System.Drawing.Common"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "4014ce5fd64910379467dc98be364cebfdc960ce",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-17T05:09:04+00:00"
+        },
+        "message": "Merge pull request #116 from barnhill/fix-s2of5\n\nFix s2of5"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 16,
+        "deletions": 10
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f2e47c939e0d737a366e54fd98a54138a30ff187",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-17T05:08:08+00:00"
+        },
+        "message": "fix S2of5 encoding due to char parsing issue, bump version for release"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 9,
+        "deletions": 7
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2956b04657e736ed81a1126ffd7289dafe8bdec5",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2021-01-17T04:41:28+00:00"
+        },
+        "message": "Fix S2of5 encoding bug"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 11,
+        "deletions": 7
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "9c8bb526fbd21f1528d7aef4d00887ec31e057bd",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-12-06T06:02:40+00:00"
+        },
+        "message": "Merge pull request #112 from barnhill/fix-I2of5-encoding\n\nFix I2of5 encoding"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c72e683336d1dd2ab0e392423ab5c1e3a43c7ab7",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-12-05T23:06:29+00:00"
+        },
+        "message": "Fix I2of5 encoding"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "94e359426f728863aa224ad9a4c5311bcc0242e1",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-12-02T02:50:13+00:00"
+        },
+        "message": "bump version and release notes for release"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c7fae7e88ba71040c3935912de552b45f520facc",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-12-02T02:14:49+00:00"
+        },
+        "message": "Merge pull request #110 from barnhill/fix-S2of5-checksum\n\nFix S2of5 checksum"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f52127c60d6cdf929e2b8bcf118132f2b8d80664",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T05:54:01+00:00"
+        },
+        "message": "Fix S2of5 checksum"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7c28b9968926174f63fd5c2f9d73f9ae698fc2aa",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T04:50:44+00:00"
+        },
+        "message": "update release notes for release"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 4,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6cd98f6e48b06c74832bee74ff54fd5531d767ed",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T04:45:15+00:00"
+        },
+        "message": "Merge pull request #109 from barnhill/expose-dpi-property\n\nAllow specifying DPI for created Bitmap instance."
+      },
+      "stats": {
+        "total": 30,
+        "additions": 21,
+        "deletions": 9
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "78ea3cac9b0be8ad7bec43bc65ae1a62af280611",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T04:36:17+00:00"
+        },
+        "message": "fix UPC-E encoding issue"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "95bfbf6cb38cae7a7352d8aabb301cb398987f3b",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2020-11-30T03:59:29+00:00"
+        },
+        "message": "Allow specifying DPI for created Bitmap instance.\n\nAdd new public properties HorizontalResolution and VerticalResolution\nwhich is used to set the resolution of the create Bitmap.\n\nFixes #106."
+      },
+      "stats": {
+        "total": 30,
+        "additions": 21,
+        "deletions": 9
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "3cb5dab50c6dd31742aac40d4d049ae8d6e8bf57",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T03:54:32+00:00"
+        },
+        "message": "rename build scripts (one for windows one for linux)"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7d78d115ed04716b46e311bd29cb4dc17f151fdc",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T03:53:00+00:00"
+        },
+        "message": "Merge pull request #107 from barnhill/change-icon-and-proj-cleanup\n\nAdd license and icon to proj for insertion to nupkg"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 9,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f0b7a089767e8126f243cc1af7a78809af22ef16",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T03:02:25+00:00"
+        },
+        "message": "remove duplicate license entry in csproj file"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 0,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "ba17ed6b65d10fb2c2615a794bc1b251a6e79b44",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T02:57:25+00:00"
+        },
+        "message": "Merge pull request #105 from barnhill/upca-checksum-cleanup\n\nUPC-A checksum calculation cleanup"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 6,
+        "deletions": 10
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "290c3f2b6543bf04773985359b672a38c7a13a43",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T02:55:12+00:00"
+        },
+        "message": "Merge branch 'master' into upca-checksum-cleanup"
+      },
+      "stats": {
+        "total": 1527,
+        "additions": 738,
+        "deletions": 789
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e89b3b8ece38d4a17f089e11062db2a2a24cee98",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T02:51:19+00:00"
+        },
+        "message": "add license and icon to proj for insertion to nupkg"
+      },
+      "stats": {
+        "total": 15,
+        "additions": 13,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "49e5553f5e6f42b6cb58280b45667bd4d6211c81",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T02:45:24+00:00"
+        },
+        "message": "Merge pull request #104 from barnhill/cleanup\n\nCleanup"
+      },
+      "stats": {
+        "total": 1441,
+        "additions": 684,
+        "deletions": 757
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "92f6728ea8ceaacea7f48f9d3388f5d9d235c7dc",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-30T02:40:48+00:00"
+        },
+        "message": "Merge pull request #102 from binki/issue-98\n\nPreset the DPI of created Bitmap instances."
+      },
+      "stats": {
+        "total": 20,
+        "additions": 15,
+        "deletions": 5
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b6c2ae0010afa8d35cc56a3e4456f17d4a393786",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-29T21:50:16+00:00"
+        },
+        "message": "Merge pull request #101 from binki/issue-100\n\nIgnore system DPI when setting default font size."
+      },
+      "stats": {
+        "total": 31,
+        "additions": 22,
+        "deletions": 9
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "a1d7b75dbb0d80e96f825aa5aaca1eb0551d5e56",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-29T21:42:59+00:00"
+        },
+        "message": "Merge pull request #103 from barnhill/fix-I2of5-checkdigit\n\nFix checkdigit summation and calculation, cleanup"
+      },
+      "stats": {
+        "total": 41,
+        "additions": 20,
+        "deletions": 21
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2cbdf7a2e798bfa26b4192262cc0a7e60d834ad9",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-28T23:47:34+00:00"
+        },
+        "message": "cleanup checksum claculation for UPCA"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 6,
+        "deletions": 10
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "3ebc593d8c3925d88a82ec161323314cdea25b9a",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-28T23:30:09+00:00"
+        },
+        "message": "remove need for variable"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 1,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c0ef2fbaa62833e4659062195551581ed707c144",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-28T23:23:00+00:00"
+        },
+        "message": "fix bug in checksum calculation for i2of5"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 7,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "064ef41ba2d246bde2077f06178228b0c33b8632",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-28T22:55:31+00:00"
+        },
+        "message": "bump version, add snupkg support, cleanup msbuild support"
+      },
+      "stats": {
+        "total": 55,
+        "additions": 19,
+        "deletions": 36
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "9673e7cf175c9edb4b1d1f58090aa87891b0cc13",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2020-11-24T17:37:59+00:00"
+        },
+        "message": "Preset the DPI of created Bitmap instances.\n\nThis consolidates all constructions of Bitmap to go through a common\nmethod, providing a place to set the resolution. See #98.\n\nThis also presets the resolution to 96DPI for the generated Bitmap to\nhelp further isolate the library from any effects that the system DPI\nmight have on operation. See #100."
+      },
+      "stats": {
+        "total": 20,
+        "additions": 15,
+        "deletions": 5
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2364501cf230871e60c2f33a8e3c5cb887a4e2f4",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-27T20:22:05+00:00"
+        },
+        "message": "Cleanup"
+      },
+      "stats": {
+        "total": 1388,
+        "additions": 666,
+        "deletions": 722
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e4cd5a141975fe131413541a6b3083bc3a4bfedb",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-27T19:40:01+00:00"
+        },
+        "message": "Fix checkdigit summation and calculation, cleanup"
+      },
+      "stats": {
+        "total": 39,
+        "additions": 18,
+        "deletions": 21
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "aa529a36d670d9139186c683adba8d7edeb19fc2",
+      "commit": {
+        "author": {
+          "name": "Nathan Phillip Brink",
+          "date": "2020-11-23T22:50:35+00:00"
+        },
+        "message": "Ignore system DPI when setting default font size.\n\nTreat the destination bitmap as 96DPI which preserves the existing behavior\nfor most users of the library and also causes consistency between\ndifferent systems when used in a DPI-aware application such as a modern\nWPF application.\n\nFixes #100."
+      },
+      "stats": {
+        "total": 31,
+        "additions": 22,
+        "deletions": 9
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "790d73439058029ba4541a385c92bf3cc021cc0e",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:48:33+00:00"
+        },
+        "message": "Delete .travis.yml"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 0,
+        "deletions": 13
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7a43148530afff3bdd2c1f34707f3f9fb4072b3c",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:47:14+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "629266ab185a575e1458f2b863a0429035066231",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:46:45+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "51e7a637735e251e128677ad1bb4dde4614f70d8",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:44:47+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "cf54cc66bd245a5cf3000ab4506d65c84e174265",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:43:32+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "066cdaba53b605aadf19329b224c2b23d960c4d2",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:39:43+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "cda1bd9f77859aa1c2874ce0d4026e6c50966014",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:37:17+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "147057a36035f98ee4fde3be9af5560e5237bdc5",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:31:21+00:00"
+        },
+        "message": "Delete dotnet-core-desktop.yml"
+      },
+      "stats": {
+        "total": 115,
+        "additions": 0,
+        "deletions": 115
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "15fdbdf5ede1667727962e836cb9745994c3bf18",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:26:51+00:00"
+        },
+        "message": "Create dotnet-core-desktop.yml"
+      },
+      "stats": {
+        "total": 115,
+        "additions": 115,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "9252250111a85783d17b01a7b2ed9e5717dd9b88",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:24:16+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "74bf0535ed4dc58f34c47530ef88ddd4a19e75f1",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:22:21+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1b6dbea3027744207f8585494ff26869d36505ba",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:21:13+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e681e80d1b3b0b01a42ceeaa85ba98f8bb5679de",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:16:19+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 4,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "9887ca702c3872178365f5a00b6fcc9af11ca513",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T20:11:22+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "172a93643fa77696dbd629a2694188e700464d52",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T19:55:58+00:00"
+        },
+        "message": "Update dotnet-core.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 0,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "286ad1c630f30de40b2cf5a2cf8d8ae5e20ea814",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-11-11T19:54:10+00:00"
+        },
+        "message": "Create dotnet-core.yml"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 25,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d23b081f54bab69eec2dcd3c5217c675fb62545c",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-08-20T04:32:36+00:00"
+        },
+        "message": "fix bug where public method GenerateBarcode would always return an empty string"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 3,
+        "deletions": 6
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "bbd961bcb1293af1144d2f2a1f18d9f108e7ddfd",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-04-05T04:40:49+00:00"
+        },
+        "message": "Merge pull request #83 from danielchalmers/patch-2\n\nEnable syntax highlighting"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "0cfdf1d9845874568e6bc7619d55d238eae6cdeb",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-04-05T04:39:05+00:00"
+        },
+        "message": "Merge pull request #82 from danielchalmers/patch-1\n\nRemove unused solution configuration platforms"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 1,
+        "deletions": 21
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "8b4f6ad99784bd932f9fa70678499349bd460895",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-04-05T04:35:55+00:00"
+        },
+        "message": "Merge pull request #81 from danielchalmers/packages\n\nPackage reference fixes for BarcodeStandardExample"
+      },
+      "stats": {
+        "total": 348,
+        "additions": 6,
+        "deletions": 342
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "16c4d03e9036cd6b3d4373dc5e77d4442c8767fd",
+      "commit": {
+        "author": {
+          "name": "Daniel Chalmers",
+          "date": "2020-03-31T09:17:20+00:00"
+        },
+        "message": "Enable syntax highlighting\n\nhttps://help.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b320a8e6e2e8d5ed5c4dd154ba0b87d1bc8e837d",
+      "commit": {
+        "author": {
+          "name": "Daniel Chalmers",
+          "date": "2020-03-31T08:40:55+00:00"
+        },
+        "message": "Remove unused solution configuration platforms\n\nas far as I can tell, the `x86` and `.NET` platform configurations in `Barcode.sln` are not used anywhere and don't do anything.\r\n\r\nRemoved them to simplify things."
+      },
+      "stats": {
+        "total": 22,
+        "additions": 1,
+        "deletions": 21
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "ae07c9f6ebc27182ff0f30fbb180afccfc7fd3cb",
+      "commit": {
+        "author": {
+          "name": "Daniel Chalmers",
+          "date": "2020-03-31T08:26:32+00:00"
+        },
+        "message": "Migrate to PackageReference format\n\nMigrates nuget package references from legacy packages.config to new PackageReference format using the Visual Studio tool.\n\nBecause BarcodeStandard was already using the new format but BarcodeStandardExample wasn't, it'd give assembly reference errors like: \"The type 'Image' is defined in an assembly that is not referenced. You must add a reference to assembly 'System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'.\" Fixes https://github.com/barnhill/barcodelib/issues/80"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c8104782cb204691d2c72c15e4233d967d9165a8",
+      "commit": {
+        "author": {
+          "name": "Daniel Chalmers",
+          "date": "2020-03-31T08:20:47+00:00"
+        },
+        "message": "Remove duplicate reference\n\nAlready referenced in packages.config"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c1cd930d272e99b752abd8a4ae740940bc5f3f6a",
+      "commit": {
+        "author": {
+          "name": "Daniel Chalmers",
+          "date": "2020-03-31T08:18:25+00:00"
+        },
+        "message": "Delete packages\\ and add it to .gitgnore\n\ndoesn't need to be committed; will be restored locally on build"
+      },
+      "stats": {
+        "total": 335,
+        "additions": 1,
+        "deletions": 334
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "afb82b54e4b6264f227bc5b0d6fc6a1a0ebc1bbb",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-03-21T04:40:54+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "0f951cbb5bc0a78e9338174d00794b7d13ef8208",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-03-21T04:36:33+00:00"
+        },
+        "message": "donate button"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6b4c668d8e458188fb2c9b70bda452c1d77c11a9",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-03-21T04:31:06+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "ccd550b9a564b121ceb2c4afa9ddf28dee248fe8",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-02-23T23:49:56+00:00"
+        },
+        "message": "Remove unnecessary calculations to make Pharmacode more efficient"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 6,
+        "deletions": 15
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "0df2f074ba3311fdd3aeb6036e65806965064474",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2020-02-23T23:29:35+00:00"
+        },
+        "message": "fix single digit Pharmacode"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 14,
+        "deletions": 22
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1ceba1a4e14064b9efe1639c5ba1b36387220b9c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-11-20T19:20:28+00:00"
+        },
+        "message": "Merge pull request #1 from barnhill/master\n\nUpdate Fork from Source Repository"
+      },
+      "stats": {
+        "total": 304,
+        "additions": 265,
+        "deletions": 39
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "159301de90e4a7c83225197eb2404b6c867ddc9f",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-11-04T01:52:20+00:00"
+        },
+        "message": "add license file, fix nuget package deprecated attribute usage"
+      },
+      "stats": {
+        "total": 217,
+        "additions": 213,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "a51edbc3cef27d4cd896538e3cc1eb019d3bdec8",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-11-03T22:59:40+00:00"
+        },
+        "message": "Allow usage from partially trusted code (SSRS)"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c2222dc36cd461e8dc870c058a9b4a2f5fb8a59b",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-11-03T20:41:52+00:00"
+        },
+        "message": "Merge pull request #79 from rob313663/master\n\nMoved CheckNumericOnly to ctor. Non-numeric data made CheckDigit thro\u2026"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "679b3cfa5e6facc164bc0096b994a9f5c3aa2add",
+      "commit": {
+        "author": {
+          "name": "Rob",
+          "date": "2019-10-22T18:24:13+00:00"
+        },
+        "message": "Moved CheckNumericOnly to ctor. Non-numeric data made CheckDigit throw a FormatException instead of a the more informative error \"Numeric only\"."
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c914828db0fadcce48425c1a60433aac46252a1c",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-09-07T19:16:35+00:00"
+        },
+        "message": "Merge pull request #71 from bigbob556677/master\n\nGenerateBarcode method to allow barcode binary data to be generated without running through the image generation"
+      },
+      "stats": {
+        "total": 49,
+        "additions": 36,
+        "deletions": 13
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "320e111584ddd948353c25822f280e5983ea1195",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-09-07T19:11:02+00:00"
+        },
+        "message": "Merge pull request #67 from Zubastic/master\n\nFixed disposing methods when something is goes wrong"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 10,
+        "deletions": 18
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "ef06536b2da37253752f08dc21eecc0e8a5b133a",
+      "commit": {
+        "author": {
+          "name": "philipg",
+          "date": "2019-08-19T14:22:21+00:00"
+        },
+        "message": "Added GenerateBarcode method to allow for binary barcode data to be generated away from the actual image generation. Encode also calls this method."
+      },
+      "stats": {
+        "total": 395,
+        "additions": 1,
+        "deletions": 394
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f5bac73034f25b8380b42117dda75263b1f70d21",
+      "commit": {
+        "author": {
+          "name": "philipg",
+          "date": "2019-08-19T14:12:25+00:00"
+        },
+        "message": "Added GenerateBarcode method to allow for binary barcode data to be generated away from the actual image generation. Encode also calls this method."
+      },
+      "stats": {
+        "total": 444,
+        "additions": 430,
+        "deletions": 14
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "9f16ca25c492e61873acb212663f4a0ad4908547",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-08-06T16:19:11+00:00"
+        },
+        "message": "Merge pull request #69 from andremoraisp/master\n\nCorrect \"standard 2 of 5\" digit codes"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c4167ae41a0c3283b9579df2739b2eab4e2d2ef0",
+      "commit": {
+        "author": {
+          "name": "Andr\u00e9 Morais Pompermayer",
+          "date": "2019-07-29T16:45:31+00:00"
+        },
+        "message": "Correct \"standard 2 of 5\" digit codes"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f627ae259b4680bf808352224d4fb4d4f89e3f77",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-24T05:37:15+00:00"
+        },
+        "message": "start separate barcode class"
+      },
+      "stats": {
+        "total": 3200,
+        "additions": 3070,
+        "deletions": 130
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2fc4e611350e9c39e12559d5baf7942e4abae58c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-21T13:25:33+00:00"
+        },
+        "message": "Added Font Awesome to web demo proejct"
+      },
+      "stats": {
+        "total": 58167,
+        "additions": 58051,
+        "deletions": 116
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2e84a2e771b6d1d30ac175f283d96fa049ca61be",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-20T23:02:56+00:00"
+        },
+        "message": "Clean Up refrences, return bar code for all configurations in index page"
+      },
+      "stats": {
+        "total": 50,
+        "additions": 8,
+        "deletions": 42
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "52a4fb43b430cc2adeac8221e8df1b3d43b9f6b4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-20T22:35:30+00:00"
+        },
+        "message": "Split out Model and Helpers to stand alone project"
+      },
+      "stats": {
+        "total": 3249,
+        "additions": 824,
+        "deletions": 2425
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6575e0741e33b97254d615071067a497d2f1129b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-20T14:01:31+00:00"
+        },
+        "message": "wip image helpers"
+      },
+      "stats": {
+        "total": 102,
+        "additions": 91,
+        "deletions": 11
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "3764e9686d8ba2e32a148ee5ea92a12d644d10bb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2019-06-20T13:22:44+00:00"
+        },
+        "message": "Add Web Demo\nUpdate NuGet Packages\nUpdate Version of .Net Framework"
+      },
+      "stats": {
+        "total": 493424,
+        "additions": 493407,
+        "deletions": 17
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "19b0ceb3f2625edd32954d4fb2c874dd8eb4271d",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-24T13:17:09+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d28106ee5b195652477d4f27c533bb06db7752f6",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-21T03:35:20+00:00"
+        },
+        "message": "update travis build to latest linux distribution version"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e2f5f00946611f2889bbe97541671cf9d1b21d36",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-21T03:32:26+00:00"
+        },
+        "message": "attempt to fix travis build"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e9ffc17a87b889f3d400d8c714f9aad78c9188ac",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-21T03:26:58+00:00"
+        },
+        "message": "Merge branch 'master' of github.com:barnhill/barcodelib"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b5a9c89c882685675bc8eac769aaad45c453d212",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-21T03:26:43+00:00"
+        },
+        "message": "attempt to fix travis-ci build due to old .net framework in travis config"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d1d9d1afb4482bf04009bf6529c1ee2046a27b75",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-21T03:09:00+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "09ba6c8c9ba0720e26d77a8cdeeffaad53c1d895",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-21T03:08:23+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "4a92e210d785f150e3a5fcc53f18a558e5c5f81c",
+      "commit": {
+        "author": {
+          "name": "\u041d\u0438\u043a\u0438\u0442\u0430",
+          "date": "2019-04-18T08:47:50+00:00"
+        },
+        "message": "Fixed disposing methods when something is goes wrong"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 10,
+        "deletions": 18
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "35eb2f87cad26a359f249d60d3201a2d19d16bb4",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-03T03:53:12+00:00"
+        },
+        "message": "fix nuget package icon url"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "4c92eda2a657b8cb9463df62c63b088674568b69",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-03T03:48:12+00:00"
+        },
+        "message": "bump version and update release notes for release"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 6,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "82737663bd71fd683c3d09834f068d09d399d74e",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-03T02:22:56+00:00"
+        },
+        "message": "Allow FNC1 chars to be used in Code128-C barcodes"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 47,
+        "deletions": 21
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "bd6770246b1b63fb277429de01a51cb7d6d44672",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2019-04-03T02:22:18+00:00"
+        },
+        "message": "simplify the check for numeric codes and if the same object is used repeatedly it will perform faster due to compiling the regex"
+      },
+      "stats": {
+        "total": 45,
+        "additions": 3,
+        "deletions": 42
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e5310f2c6962cf38fca46d4c140d1933dde242a4",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-12-31T04:38:10+00:00"
+        },
+        "message": "Merge pull request #60 from justalemon/master\n\nUpdating the Travis CI badge plus adding a new one"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "6b3595feced1bdf11576a5f9b2e57e576093fe96",
+      "commit": {
+        "author": {
+          "name": "Hannele Ruiz",
+          "date": "2018-12-30T22:44:36+00:00"
+        },
+        "message": "Added NuGet shield instead of link"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "62c1a1cb8def194ce3224bf05c5726bc87479658",
+      "commit": {
+        "author": {
+          "name": "Hannele Ruiz",
+          "date": "2018-12-30T22:38:49+00:00"
+        },
+        "message": "Fixed Travis build link"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "98a689a9bff44856d2cea24ef1008c4c28991eae",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-12-20T04:45:09+00:00"
+        },
+        "message": "standard 2 of 5 append check digit encoding"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2b9b875d1ddbdaa47ea0522703be3645629c9968",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-12-20T03:25:53+00:00"
+        },
+        "message": "Add Interleaved 2 of 5 Mod 10, Add Standard 2 of 5 Mod 10"
+      },
+      "stats": {
+        "total": 305,
+        "additions": 174,
+        "deletions": 131
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "687c08d6f20311b8d9a6e02fc78854240a5f7414",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-12-19T02:46:11+00:00"
+        },
+        "message": "generate correct package number on build"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "a8572a782fb33cdcdf517e8447999ad483e323ee",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-12-18T06:03:32+00:00"
+        },
+        "message": "Add ability to generate 1500 barcodes as a mass generation test to the test app"
+      },
+      "stats": {
+        "total": 327,
+        "additions": 197,
+        "deletions": 130
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "70f2a5d776753f1d1acb3f5dfede20111ad17e91",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-12-18T05:25:40+00:00"
+        },
+        "message": "release resources to prevent leaks in IDisposable interface implementation"
+      },
+      "stats": {
+        "total": 328,
+        "additions": 205,
+        "deletions": 123
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "bfd68d932352fc10289ea49d053b3b4ed7901b48",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-11-22T20:39:01+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e5e7d4f25ebf469f8e21a43378eef047e06466c1",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-11-22T20:35:08+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "325ac29fc9989c17010fe8c62e3b2070c5bd6dcb",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-11-22T20:31:48+00:00"
+        },
+        "message": "Merge pull request #57 from barnhill/net-core-conversion\n\n.NET Standard Conversion"
+      },
+      "stats": {
+        "total": 3868,
+        "additions": 715,
+        "deletions": 3153
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b7ad7d738e2f1c898a08e9360c9026ca7d312fbb",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-11-22T20:26:57+00:00"
+        },
+        "message": "merge conflict resolution"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "118d4642b56d0fc6a6e7d240395524fab0d9f12c",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-11-22T20:20:20+00:00"
+        },
+        "message": "remove unused usings"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 0,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b3f735318fa49c543df4d4c1b8d4a819729346dd",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-11-22T20:18:55+00:00"
+        },
+        "message": "remove useless comment"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "39f691a29071f2cfed0cc15f0107b9dc31cd0e66",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-11-22T20:17:43+00:00"
+        },
+        "message": "fix NPE"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "a26b2a0d5c54ff9a403745822b9d182b5abcd8e1",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-10-30T03:45:32+00:00"
+        },
+        "message": "convert to .net standard 2.0 lib, rework example application to use .net standard dll, build nuget package on every build"
+      },
+      "stats": {
+        "total": 3143,
+        "additions": 631,
+        "deletions": 2512
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "75b935484904a9dcc169aa0d76eb95d8d82c330a",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-07-21T18:16:22+00:00"
+        },
+        "message": "point downloading of latest dll to the releases page in github"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b9784a778d9ced96648b5b74add965d66d831e2c",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-07-21T18:08:55+00:00"
+        },
+        "message": "update copyright date"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "43ca33cd8b99aaaf950aae695b7ac5770c35372d",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-07-21T18:04:57+00:00"
+        },
+        "message": "add release notes denoting upgrade to .net core compatibility"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "38982f3f7f17e33dadf0b568268d5c9968e54de6",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-07-21T17:51:13+00:00"
+        },
+        "message": "fix broken build of test app"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 3,
+        "deletions": 6
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7d04599b7129d83af40949fbb390ff525e4dcef8",
+      "commit": {
+        "author": {
+          "name": "teunlielu",
+          "date": "2018-06-02T22:36:43+00:00"
+        },
+        "message": "bug fixed: null reference exception (#47)\n\n* Update BarcodeLib.cs\r\n\r\n* Update BarcodeLib.cs"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "7cc6d17340d268f1925d4afd3aaf65ead1ec428a",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T17:53:49+00:00"
+        },
+        "message": "revert back to only .net core 2"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "258af1d74da197cc8a83827303a83679c78735b2",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T17:32:35+00:00"
+        },
+        "message": "attempt build for 462 and .net core"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "11d7b13db274c35b3e642474f0b0542e6edf8fc4",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T17:09:45+00:00"
+        },
+        "message": "enable signing only on windows machines since its not supported outside windows"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "28f8fb4897bd853fbfe9b724c04f35c519b9f9bc",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T16:18:11+00:00"
+        },
+        "message": "target only .net core"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "513c0b0add6c279ed9c5639198a71c3f9c868c3e",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T16:15:03+00:00"
+        },
+        "message": "try changing to the same folder of the individual project"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "22899894fe628f0ada4064fea8cbee592625cee9",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T16:10:22+00:00"
+        },
+        "message": "remove need for sudo since it didnt work either"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 2,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e88859eb84704d8c5e3b857f5ad3b6624ad3b6ae",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T16:08:13+00:00"
+        },
+        "message": "travis"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "aabab4ad07a3bb39e26fa287da6a706dc48631d3",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T06:26:40+00:00"
+        },
+        "message": "reference lib project direction instead of nuget"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 4,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2a9543a9a702270a23c9ac85e096fe8d9401769d",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T06:22:02+00:00"
+        },
+        "message": "travis"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "63903b070d0da31d6705de1474ddab11685e3ffc",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T06:14:52+00:00"
+        },
+        "message": "linux"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e055d5937985119f124f1d1391a2532183df24c7",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T06:04:34+00:00"
+        },
+        "message": "revert"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e33b93a9e0ff37b346914c00500dd1b17858283a",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T06:03:00+00:00"
+        },
+        "message": "try a diff dotnet version"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e4fac7c5575055eed1e01998c8942544a739e273",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T05:52:49+00:00"
+        },
+        "message": "specify solution file"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "0abc9ad8403f6a4dd9961f7b3f807400ee93ae5b",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T05:41:25+00:00"
+        },
+        "message": "travis"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 5,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "9fdbebad63c3b78aa78a91f70ba62171dd3d73a0",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T05:23:03+00:00"
+        },
+        "message": "travis attempt"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 5,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2038929edc4fcdb5fb7e3e76a74e706095ea9713",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T05:10:04+00:00"
+        },
+        "message": "travis, package reference"
+      },
+      "stats": {
+        "total": 370,
+        "additions": 7,
+        "deletions": 363
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2942f02f70a088b8bcc3f6bc35973c03c50a740a",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T04:50:50+00:00"
+        },
+        "message": "travis"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 9,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "11206e472d8bfdee1915b1e689cb3106d455cf3c",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T04:34:38+00:00"
+        },
+        "message": "travis ci"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "082e77489ded8a0f580f159ffb43365978402503",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T04:23:22+00:00"
+        },
+        "message": "attempt again to fix travis builds"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "32cce9919e97a9d0679c9fe2ce86ead257a6ba55",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-06-02T03:58:18+00:00"
+        },
+        "message": "run dotnet restore before building"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "c41236ea3af18134ad8e2bd052bbecfc0fde3126",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-05-30T03:45:40+00:00"
+        },
+        "message": "change back to a direct reference to see if this fixes the travis build"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 6,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "e74b078037217309d4bde8cb9c55ed4a5794d2c7",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-05-30T03:39:16+00:00"
+        },
+        "message": "attempt to fix travis CI build"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b7572a3161eda96b86b895e268789456f3fc0c14",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-05-30T03:35:42+00:00"
+        },
+        "message": "repackage and reference the built nuget package instead of the direct project reference"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 3,
+        "deletions": 6
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "d53443e82bd79cb1d5ef4dbe48f182949d2619ac",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-05-30T03:27:28+00:00"
+        },
+        "message": "conversion to compile for .net core 2 and .net 4.6.2 assemblies, package automatically on build to a nuget package"
+      },
+      "stats": {
+        "total": 2336,
+        "additions": 1055,
+        "deletions": 1281
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "5db78da4d13821a9e529dbffb0cb2ed524e4276b",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-21T18:00:29+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "ebe313977b80455160f24d7c93e941b9be9501a8",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-16T01:22:42+00:00"
+        },
+        "message": "bump version for 1.3.0 release"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "2f369a73e4fa339c928738103bcad12e31e7a1c4",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-16T01:16:12+00:00"
+        },
+        "message": "Merge branch 'master' of github.com:barnhill/barcodelib"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "b5d2d7213286be8564da885ba2efbd074cb4170c",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-16T01:15:09+00:00"
+        },
+        "message": "remove unused example images"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "30cbc4e69d8316333dfe29facf225d322be5e9cb",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-16T01:14:29+00:00"
+        },
+        "message": "update readme with example image"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "a8ea6888b390788ac3fa5ef163ca77e1ff2d3f85",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-16T01:09:55+00:00"
+        },
+        "message": "Merge branch 'master' of github.com:barnhill/barcodelib"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 0,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "f33ae36c3860bf853f31a129535567bd1fb725da",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-16T01:09:36+00:00"
+        },
+        "message": "clean up some of the alignment setting for UPCA, fix EAN-13 label drawing to be based off the first position of the bars, add example images to the repo for use in the readme"
+      },
+      "stats": {
+        "total": 159,
+        "additions": 69,
+        "deletions": 90
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "39f37b9cf38ae85f162d754998eb17fb31ae9559",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-16T01:05:23+00:00"
+        },
+        "message": "Remove invalid example from the readme"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 0,
+        "deletions": 4
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "1ff05cad04259729fb0e425f88c1705b30ebec05",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-15T19:11:15+00:00"
+        },
+        "message": "fix naming violations"
+      },
+      "stats": {
+        "total": 264,
+        "additions": 132,
+        "deletions": 132
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "9ca87232d08de8911277344d6f3eecf5c14995ad",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-15T19:10:59+00:00"
+        },
+        "message": "format UPC-A label to be more standard along with the EAN-13 label, make test app bigger by default and scale appropriately, move label generation to its own class"
+      },
+      "stats": {
+        "total": 1124,
+        "additions": 633,
+        "deletions": 491
+      },
+      "repo": "barcodelib"
+    },
+    {
+      "sha": "90f79a498b35759d5e9c943f005a2d27ff2c7dba",
+      "commit": {
+        "author": {
+          "name": "Brad Barnhill",
+          "date": "2018-04-09T03:20:24+00:00"
+        },
+        "message": "fix test app encoding time display location"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "barcodelib"
+    }
+  ],
+  "hash": "2ee59d263780a6bacbcdd7c9eb34f4f6993f46e4156a8ee0eb0cd856b9683f8f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "barcodelib"
+    },
+    "category": "commits_stats",
+    "pushed_at": "2025-12-09T02:43:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits_stats",
+  "owner": "markhazleton",
+  "repo": "barcodelib",
+  "week": "2025W50"
+}

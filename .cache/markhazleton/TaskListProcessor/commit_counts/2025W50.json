@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T22:38:08.867324+00:00",
+  "value": {
+    "total": 45,
+    "recent_90d": 11,
+    "recent_180d": 21,
+    "recent_365d": 30,
+    "last_commit_date": "2025-12-08T00:03:35+00:00"
+  },
+  "hash": "13e9c205da4edf2e175e8d53126f935a60627a2f05018d831e2260dd1aaeefe3",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TaskListProcessor"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-12-08T00:03:40+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "TaskListProcessor",
+  "week": "2025W50"
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T22:47:44.169666+00:00",
+  "value": {
+    "total": 42,
+    "recent_90d": 0,
+    "recent_180d": 0,
+    "recent_365d": 1,
+    "last_commit_date": "2025-05-04T02:35:29+00:00"
+  },
+  "hash": "1f4129dd625da5a31f471ae43ff3747cad058f063c3fdae8f7e15a1d394c222d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Yelp.Api"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-05-04T02:35:34+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "Yelp.Api",
+  "week": "2025W18"
+}

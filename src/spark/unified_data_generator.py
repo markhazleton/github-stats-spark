@@ -58,6 +58,7 @@ class UnifiedDataGenerator:
         output_dir: str = "data",
         force_refresh: bool = False,
         max_repos_override: Optional[int] = None,
+        cache: Optional[APICache] = None,
     ):
         """Initialize the UnifiedDataGenerator.
         
@@ -67,14 +68,22 @@ class UnifiedDataGenerator:
             output_dir: Directory for output JSON file
             force_refresh: Whether to bypass cache and fetch fresh data
             max_repos_override: Optional limit on number of repos (for testing)
+            cache: Optional APICache instance
         """
         self.config = config
         self.username = username
         self.output_dir = Path(output_dir)
         self.force_refresh = force_refresh
+        # Initialize cache with standardized TTL
+        if cache:
+            self.cache = cache
+        else:
+            cache_config = config.config.get("cache", {})
+            ttl_hours = cache_config.get("ttl_hours")
+            directory = cache_config.get("directory", ".cache")
+            self.cache = APICache(cache_dir=directory, config=config)
 
         # Initialize components
-        self.cache = APICache()
         if force_refresh:
             self.cache.clear()
             logger.info("Cache cleared for fresh data")
@@ -516,7 +525,10 @@ class UnifiedDataGenerator:
                                 logger.debug(f"  Could not fetch README: {e}")
 
                         summary = self.summarizer.summarize_repository(
-                            repo, readme_content, commit_history
+                            repo,
+                            readme_content,
+                            commit_history,
+                            repository_owner=self.username,
                         )
                         summaries[repo_name] = summary
                         logger.debug("  AI summary generated")

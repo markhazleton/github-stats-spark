@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-01-04T21:55:46.912612+00:00",
+  "value": "# Design Patterns In C#\n\nSome sample implementations of design patterns in C#.\n\n## Design Patterns Overview\n\n- [Pluralsight Course](https://www.pluralsight.com/courses/design-patterns-overview)\n- [Pluralsight Learning Path](https://www.pluralsight.com/paths/design-patterns-in-c)\n\n## Adapter Design Pattern\n\n- [Pluralsight Course](https://www.pluralsight.com/courses/c-sharp-design-patterns-adapter)\n- [Pluralsight Course (Patterns Library - Older)](https://www.pluralsight.com/courses/patterns-library)\n- [Twitch Live Stream Recording](https://www.youtube.com/watch?v=UNOlmL48fQc)\n\n## Memento Design Pattern\n\n- [Pluralsight Course (Patterns Library - Older)](https://www.pluralsight.com/courses/patterns-library)\n\n## Proxy Design Pattern\n\n- [Pluralsight Course](https://www.pluralsight.com/courses/c-sharp-design-patterns-proxy)\n- [Pluralsight Course (Patterns Library - Older)](https://www.pluralsight.com/courses/patterns-library)\n\n## Rules Engine Pattern\n\n- [Pluralsight Course](https://www.pluralsight.com/courses/c-sharp-design-patterns-rules-pattern)\n- [Pluralsight Course (Patterns Library - Older)](https://www.pluralsight.com/courses/patterns-library)\n\n## Singleton Design Pattern\n\n- [Pluralsight Course (Patterns Library - Older)](https://www.pluralsight.com/courses/patterns-library)\n\n## Specification Design Pattern\n\n- [Pluralsight Course (Patterns Library - Older)](https://www.pluralsight.com/courses/patterns-library)\n\n## State Design Pattern\n\n- [GitHub Repo](https://github.com/ardalis/StatePattern)\n\n## Template Method Pattern\n\n- [Pluralsight Course](https://www.pluralsight.com/courses/c-sharp-design-patterns-template-method)\n- [Pluralsight Course (Patterns Library - Older)](https://www.pluralsight.com/courses/patterns-library)\n",
+  "hash": "cde001cfe08cc7dede40135563be14f0c508d5289b40944389b261e264530a63",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DesignPatternsInCSharp"
+    },
+    "category": "readme",
+    "pushed_at": "2025-12-19T21:04:54+00:00",
+    "ttl_enforced": false
+  },
+  "category": "readme",
+  "owner": "markhazleton",
+  "repo": "DesignPatternsInCSharp",
+  "week": "2025W51"
+}

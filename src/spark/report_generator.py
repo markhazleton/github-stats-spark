@@ -154,12 +154,12 @@ class ReportGenerator:
 
         # Stats line
         stats = [
-            f"⭐ {repo.stars}",
-            f"🔱 {repo.forks}",
-            f"📝 {repo.primary_language or 'Unknown'}",
+            f"Stars: {repo.stars}",
+            f"Forks: {repo.forks}",
+            f"Language: {repo.primary_language or 'Unknown'}",
         ]
         if analysis.commit_history:
-            stats.append(f"📊 {analysis.commit_history.recent_90d} commits (90d)")
+            stats.append(f"{analysis.commit_history.recent_90d} commits (90d)")
         lines.append(" | ".join(stats))
         lines.append("")
 

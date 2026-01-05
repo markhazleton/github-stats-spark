@@ -1,0 +1,3123 @@
+{
+  "timestamp": "2026-01-04T21:52:19.264321+00:00",
+  "value": [
+    {
+      "sha": "3781c2927dbffc5ad8c9ef5f0db35424ac1886b9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-24T21:39:39+00:00"
+        },
+        "message": "Update dependencies: FluentAssertions 8.7.1 -> 8.8.0 and Google.Protobuf 3.33.0-rc2 -> 3.33.0"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b28d0986abe43332d697aa7f913cab4ada48675e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T19:36:20+00:00"
+        },
+        "message": "Update Google.Protobuf to version 3.33.0-rc2\n\nUpgraded the `Google.Protobuf` package reference in the\n`DesignPatternsInCSharp.csproj` file from version 3.32.1 to\n3.33.0-rc2. This moves the project to a newer release candidate\nversion of the package."
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "209bca661b07c0464c8abd8b616eda293f80ba72",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T00:39:56+00:00"
+        },
+        "message": "Implement feature X to enhance user experience and fix bug Y in module Z"
+      },
+      "stats": {
+        "total": 4522,
+        "additions": 4522,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "64ba64c4811b0cb7b7a59b146586f5a71cfe2c08",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-10-14T00:37:06+00:00"
+        },
+        "message": "Update package references and logging in GreeterService; add global.json for SDK configuration"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 18,
+        "deletions": 6
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "06a528d439bee537fe63749bc334d39954c124fb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-08T03:18:43+00:00"
+        },
+        "message": "Update package references across multiple projects\n\nUpdated `BenchmarkDotNet` in `DesignPatternsInCSharp.Benchmarks.csproj` to version `0.15.2`.\n\nIn `DesignPatternsInCSharp.csproj`, several packages were upgraded:\n- `FluentAssertions` to `8.6.0`\n- `Google.Protobuf` to `3.32.0`\n- `Grpc.Net.ClientFactory` to `2.71.0`\n- `Grpc.Tools` to `2.72.0`\n- `Microsoft.NET.Test.Sdk` to `17.14.1`\n- `xunit` to `2.9.3`\n- `xunit.runner.visualstudio` to `3.1.4`\n\nUpdated `Grpc.AspNetCore` in `GreeterService.csproj` to version `2.71.0`."
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5c275fd666652c4c79e2b7700232cf64959ebb82",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T03:20:17+00:00"
+        },
+        "message": "upgrade to net 9"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4893a3f1eff0e7cf7005391f7d26c33ab4a89ced",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T02:34:03+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 15,
+        "additions": 8,
+        "deletions": 7
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "bc6c8983cbac50a026e3cb5df775e1bb1ddab8bd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-12T01:45:27+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "a7f7020072262c3722bcb8ba55724b51aba0741f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-05T12:13:10+00:00"
+        },
+        "message": "update to net 8"
+      },
+      "stats": {
+        "total": 212,
+        "additions": 102,
+        "deletions": 110
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2dafceaf26007060611e03a5997788494a3c35d5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-30T22:46:09+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 105,
+        "additions": 51,
+        "deletions": 54
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5dccc7da8b5007f0d7449ea60e1c4aecfa38da51",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-03T12:35:06+00:00"
+        },
+        "message": "NuGet Updates, bump up to Net 7"
+      },
+      "stats": {
+        "total": 134,
+        "additions": 60,
+        "deletions": 74
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4f8d8cd3de443109b44bd32cc62721e2b24e3313",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-14T13:42:58+00:00"
+        },
+        "message": "merge from master"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "dbcb7d6cadd742fddff02e53796cfade68204f7e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-14T13:41:45+00:00"
+        },
+        "message": "update NuGet packages"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "54838b56042c66143775693e8f390b3e841cbb62",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:51:48+00:00"
+        },
+        "message": "merge from upstream, resolve conflicts"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "781a17bb4ce3d03fee64e6b47e2937169c8f2cea",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:40+00:00"
+        },
+        "message": "Merge pull request #14 from markhazleton/dependabot/nuget/xunit.runner.visualstudio-2.4.5\n\nBump xunit.runner.visualstudio from 2.4.3 to 2.4.5"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8c973a4bdb4fd752251ef15515f32b2547e085c5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:30+00:00"
+        },
+        "message": "Merge pull request #12 from markhazleton/dependabot/nuget/Google.Protobuf-3.20.1\n\nBump Google.Protobuf from 3.19.4 to 3.20.1"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "af359b002c071ebfd222880233e5df58a2fa97f1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:14+00:00"
+        },
+        "message": "Merge pull request #15 from markhazleton/dependabot/nuget/Microsoft.NET.Test.Sdk-17.2.0\n\nBump Microsoft.NET.Test.Sdk from 17.1.0 to 17.2.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b0a45e70ab3db115bd5327033e41923dc3189477",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:44:04+00:00"
+        },
+        "message": "Merge branch 'main' into dependabot/nuget/Microsoft.NET.Test.Sdk-17.2.0"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d45533ddd2341951e15dbb3ee37f218ffb80175e",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-11T17:43:10+00:00"
+        },
+        "message": "Bump Google.Protobuf from 3.19.4 to 3.20.1\n\nBumps [Google.Protobuf](https://github.com/protocolbuffers/protobuf) from 3.19.4 to 3.20.1.\n- [Release notes](https://github.com/protocolbuffers/protobuf/releases)\n- [Changelog](https://github.com/protocolbuffers/protobuf/blob/main/generate_changelog.py)\n- [Commits](https://github.com/protocolbuffers/protobuf/commits)\n\n---\nupdated-dependencies:\n- dependency-name: Google.Protobuf\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d934b9a19179a257c9903185b2d95e101bec193e",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-11T17:42:51+00:00"
+        },
+        "message": "Bump xunit.runner.visualstudio from 2.4.3 to 2.4.5\n\nBumps [xunit.runner.visualstudio](https://github.com/xunit/visualstudio.xunit) from 2.4.3 to 2.4.5.\n- [Release notes](https://github.com/xunit/visualstudio.xunit/releases)\n- [Commits](https://github.com/xunit/visualstudio.xunit/commits)\n\n---\nupdated-dependencies:\n- dependency-name: xunit.runner.visualstudio\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "25162d8d77d1fc0a4314548dfa5a618e7951ee47",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:42:48+00:00"
+        },
+        "message": "Merge pull request #11 from markhazleton/dependabot/nuget/Grpc.Net.ClientFactory-2.45.0\n\nBump Grpc.Net.ClientFactory from 2.44.0 to 2.45.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0298d03695695e875b94123adb3b758c21c1d47e",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-11T17:42:37+00:00"
+        },
+        "message": "Bump Grpc.Net.ClientFactory from 2.44.0 to 2.45.0\n\nBumps [Grpc.Net.ClientFactory](https://github.com/grpc/grpc-dotnet) from 2.44.0 to 2.45.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.44.0...v2.45.0)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.Net.ClientFactory\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2637d0b4958c4b5de38203491752e995e3903e7e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:42:20+00:00"
+        },
+        "message": "Merge pull request #10 from markhazleton/dependabot/nuget/Grpc.AspNetCore-2.45.0\n\nBump Grpc.AspNetCore from 2.44.0 to 2.45.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "224c8f37b4138c2c7b782bc99df25f8b821e65a3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:42:05+00:00"
+        },
+        "message": "Merge pull request #9 from markhazleton/dependabot/nuget/Microsoft.AspNet.WebApi.Client-5.2.8\n\nBump Microsoft.AspNet.WebApi.Client from 5.2.7 to 5.2.8"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9b1300f27a7012ae6de50d0e813ed0a96b84b2d9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-05-11T17:41:51+00:00"
+        },
+        "message": "Merge pull request #8 from markhazleton/dependabot/nuget/FluentAssertions-6.6.0\n\nBump FluentAssertions from 6.5.1 to 6.6.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b443ca7c98c70cd008b3b2b806b251eae5ae0e5a",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-11T17:34:16+00:00"
+        },
+        "message": "Bump Microsoft.NET.Test.Sdk from 17.1.0 to 17.2.0\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 17.1.0 to 17.2.0.\n- [Release notes](https://github.com/microsoft/vstest/releases)\n- [Commits](https://github.com/microsoft/vstest/compare/v17.1.0...v17.2.0)\n\n---\nupdated-dependencies:\n- dependency-name: Microsoft.NET.Test.Sdk\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "1ee386cba716ec38dab36214c6417386f5a614f3",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:48:31+00:00"
+        },
+        "message": "Merge pull request #80 from ardalis/dependabot/nuget/Grpc.Net.ClientFactory-2.45.0\n\nBump Grpc.Net.ClientFactory from 2.39.0 to 2.45.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "62feb07d508b5bec8188e0a395dd79fdb754a3f2",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:48:24+00:00"
+        },
+        "message": "Merge pull request #78 from ardalis/dependabot/nuget/Microsoft.AspNet.WebApi.Client-5.2.8\n\nBump Microsoft.AspNet.WebApi.Client from 5.2.7 to 5.2.8"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8c8c79e84a9342151d0c175c8b3a217dff4c6718",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:48:17+00:00"
+        },
+        "message": "Merge pull request #77 from ardalis/dependabot/nuget/FluentAssertions-6.6.0\n\nBump FluentAssertions from 5.10.3 to 6.6.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c2b4a8ae72151e96eec422906a6262ced3ec7d7c",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-10T13:47:54+00:00"
+        },
+        "message": "Bump Microsoft.AspNet.WebApi.Client from 5.2.7 to 5.2.8\n\nBumps [Microsoft.AspNet.WebApi.Client](https://github.com/aspnet/AspNetWebStack) from 5.2.7 to 5.2.8.\n- [Release notes](https://github.com/aspnet/AspNetWebStack/releases)\n- [Commits](https://github.com/aspnet/AspNetWebStack/commits)\n\n---\nupdated-dependencies:\n- dependency-name: Microsoft.AspNet.WebApi.Client\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "832e17dfa2dd8d2646ded69be7092152fcc37230",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-10T13:47:51+00:00"
+        },
+        "message": "Bump FluentAssertions from 5.10.3 to 6.6.0\n\nBumps [FluentAssertions](https://github.com/fluentassertions/fluentassertions) from 5.10.3 to 6.6.0.\n- [Release notes](https://github.com/fluentassertions/fluentassertions/releases)\n- [Changelog](https://github.com/fluentassertions/fluentassertions/blob/develop/AcceptApiChanges.ps1)\n- [Commits](https://github.com/fluentassertions/fluentassertions/compare/5.10.3...6.6.0)\n\n---\nupdated-dependencies:\n- dependency-name: FluentAssertions\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0bfa4eb40bec482fb65ae71af72265801f1a6884",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-10T13:47:49+00:00"
+        },
+        "message": "Bump Grpc.Net.ClientFactory from 2.39.0 to 2.45.0\n\nBumps [Grpc.Net.ClientFactory](https://github.com/grpc/grpc-dotnet) from 2.39.0 to 2.45.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.39.0...v2.45.0)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.Net.ClientFactory\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "30ecbb439190a8e8950245967a58b12d80eaf35c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:47:41+00:00"
+        },
+        "message": "Merge pull request #79 from ardalis/dependabot/nuget/Grpc.AspNetCore-2.45.0\n\nBump Grpc.AspNetCore from 2.39.0 to 2.45.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "6ed0fefa3b839dd577472f10117da00ae2c32ad7",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:47:23+00:00"
+        },
+        "message": "Merge pull request #75 from ardalis/dependabot/nuget/Grpc.Tools-2.45.0\n\nBump Grpc.Tools from 2.40.0 to 2.45.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "75fa6cc57d8e0a4006d6b9b8fb527dba58e702a5",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:47:13+00:00"
+        },
+        "message": "Merge pull request #70 from ardalis/dependabot/nuget/Microsoft.NET.Test.Sdk-17.1.0\n\nBump Microsoft.NET.Test.Sdk from 16.11.0 to 17.1.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c49935cbb8f04130b44f5ae78b36f0b4902d9d20",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:46:59+00:00"
+        },
+        "message": "Merge pull request #81 from ardalis/dependabot/nuget/Google.Protobuf-3.20.1\n\nBump Google.Protobuf from 3.18.0 to 3.20.1"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b76929caf6258eb4cef3593ea12e4d5bcfc33244",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2022-05-10T13:46:49+00:00"
+        },
+        "message": "Merge pull request #82 from ardalis/dependabot/nuget/xunit.runner.visualstudio-2.4.5\n\nBump xunit.runner.visualstudio from 2.4.3 to 2.4.5"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8a08d793256d7cb630c6a3c3fc6b9a5f4a05d255",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-05-05T21:02:26+00:00"
+        },
+        "message": "Bump xunit.runner.visualstudio from 2.4.3 to 2.4.5\n\nBumps [xunit.runner.visualstudio](https://github.com/xunit/visualstudio.xunit) from 2.4.3 to 2.4.5.\n- [Release notes](https://github.com/xunit/visualstudio.xunit/releases)\n- [Commits](https://github.com/xunit/visualstudio.xunit/commits)\n\n---\nupdated-dependencies:\n- dependency-name: xunit.runner.visualstudio\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5546a5ad70582f5c6e5e80387c45e769aacc7d99",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-04-22T20:12:14+00:00"
+        },
+        "message": "Bump Google.Protobuf from 3.18.0 to 3.20.1\n\nBumps [Google.Protobuf](https://github.com/protocolbuffers/protobuf) from 3.18.0 to 3.20.1.\n- [Release notes](https://github.com/protocolbuffers/protobuf/releases)\n- [Changelog](https://github.com/protocolbuffers/protobuf/blob/main/generate_changelog.py)\n- [Commits](https://github.com/protocolbuffers/protobuf/compare/v3.18.0...v3.20.1)\n\n---\nupdated-dependencies:\n- dependency-name: Google.Protobuf\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "645f8c74f847e44a733d04775c7c7b23b7c569a6",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-04-19T21:35:44+00:00"
+        },
+        "message": "Bump Grpc.AspNetCore from 2.44.0 to 2.45.0\n\nBumps [Grpc.AspNetCore](https://github.com/grpc/grpc-dotnet) from 2.44.0 to 2.45.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.44.0...v2.45.0)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.AspNetCore\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8e8addfde5e8ea1e7b8b0e04433c04fcc9780312",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-04-19T20:09:21+00:00"
+        },
+        "message": "Bump Grpc.AspNetCore from 2.39.0 to 2.45.0\n\nBumps [Grpc.AspNetCore](https://github.com/grpc/grpc-dotnet) from 2.39.0 to 2.45.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.39.0...v2.45.0)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.AspNetCore\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "45e3ca83f0a7b1cb3b096cd9a8c173472fc715e0",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-04-12T21:45:26+00:00"
+        },
+        "message": "Bump Microsoft.AspNet.WebApi.Client from 5.2.7 to 5.2.8\n\nBumps [Microsoft.AspNet.WebApi.Client](https://github.com/aspnet/AspNetWebStack) from 5.2.7 to 5.2.8.\n- [Release notes](https://github.com/aspnet/AspNetWebStack/releases)\n- [Commits](https://github.com/aspnet/AspNetWebStack/commits)\n\n---\nupdated-dependencies:\n- dependency-name: Microsoft.AspNet.WebApi.Client\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "545e5e0d9fb5b3989cfe1179670166bcf94f711e",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-04-04T21:46:32+00:00"
+        },
+        "message": "Bump FluentAssertions from 6.5.1 to 6.6.0\n\nBumps [FluentAssertions](https://github.com/fluentassertions/fluentassertions) from 6.5.1 to 6.6.0.\n- [Release notes](https://github.com/fluentassertions/fluentassertions/releases)\n- [Changelog](https://github.com/fluentassertions/fluentassertions/blob/develop/AcceptApiChanges.ps1)\n- [Commits](https://github.com/fluentassertions/fluentassertions/compare/6.5.1...6.6.0)\n\n---\nupdated-dependencies:\n- dependency-name: FluentAssertions\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0de90a5b376d15fd9c1b139d5836a53ff3ed09a4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-03-23T12:53:47+00:00"
+        },
+        "message": "Update NuGet\nUpdate Target to 6.0"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 11,
+        "deletions": 11
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "715739f6dc503f08791ea164bc6c58a118b5f158",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-03-22T20:09:56+00:00"
+        },
+        "message": "Bump Grpc.Tools from 2.40.0 to 2.45.0\n\nBumps [Grpc.Tools](https://github.com/grpc/grpc) from 2.40.0 to 2.45.0.\n- [Release notes](https://github.com/grpc/grpc/releases)\n- [Changelog](https://github.com/grpc/grpc/blob/master/doc/grpc_release_schedule.md)\n- [Commits](https://github.com/grpc/grpc/commits)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.Tools\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2828c088e16417122d6b4f772fb5d5778761e102",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2022-02-16T20:11:46+00:00"
+        },
+        "message": "Bump Microsoft.NET.Test.Sdk from 16.11.0 to 17.1.0\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 16.11.0 to 17.1.0.\n- [Release notes](https://github.com/microsoft/vstest/releases)\n- [Commits](https://github.com/microsoft/vstest/compare/v16.11.0...v17.1.0)\n\n---\nupdated-dependencies:\n- dependency-name: Microsoft.NET.Test.Sdk\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d99e0b9d8a4c191a2a53a6de3026784f4094cba4",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-09-15T21:28:56+00:00"
+        },
+        "message": "Merge pull request #43 from ardalis/dependabot/nuget/Grpc.AspNetCore-2.39.0\n\nBump Grpc.AspNetCore from 2.37.0 to 2.39.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "1e410e0125c86f265f39d92cd0dc91e830398395",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-09-15T21:28:46+00:00"
+        },
+        "message": "Merge pull request #46 from ardalis/dependabot/nuget/Google.Protobuf-3.18.0\n\nBump Google.Protobuf from 3.17.3 to 3.18.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "284f1fa22e1e4a7f1f734813a9d65b4f277e2a94",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-09-15T20:08:41+00:00"
+        },
+        "message": "Bump Google.Protobuf from 3.17.3 to 3.18.0\n\nBumps [Google.Protobuf](https://github.com/protocolbuffers/protobuf) from 3.17.3 to 3.18.0.\n- [Release notes](https://github.com/protocolbuffers/protobuf/releases)\n- [Changelog](https://github.com/protocolbuffers/protobuf/blob/master/generate_changelog.py)\n- [Commits](https://github.com/protocolbuffers/protobuf/compare/v3.17.3...v3.18.0)\n\n---\nupdated-dependencies:\n- dependency-name: Google.Protobuf\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "98b5dfecebaf53b78a7659d3a6b2fcf74fce3924",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-09-08T13:52:54+00:00"
+        },
+        "message": "Merge pull request #41 from ardalis/dependabot/nuget/Microsoft.NET.Test.Sdk-16.11.0\n\nBump Microsoft.NET.Test.Sdk from 16.10.0 to 16.11.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "ddea7c509d0fe83b8bb04a54294c2fe7651e945f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-09-08T13:52:41+00:00"
+        },
+        "message": "Merge pull request #42 from ardalis/dependabot/nuget/Grpc.Net.ClientFactory-2.39.0\n\nBump Grpc.Net.ClientFactory from 2.37.0 to 2.39.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c9b6f9ad47980438e84831c43bc22e2420fd25ca",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-09-08T13:37:45+00:00"
+        },
+        "message": "Bump Grpc.Net.ClientFactory from 2.37.0 to 2.39.0\n\nBumps [Grpc.Net.ClientFactory](https://github.com/grpc/grpc-dotnet) from 2.37.0 to 2.39.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/commits)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.Net.ClientFactory\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "6e9b5433a6eff3e98a5e132bfec02c5b0a766bc7",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-09-08T13:37:19+00:00"
+        },
+        "message": "Merge pull request #38 from ardalis/dependabot/nuget/BenchmarkDotNet-0.13.1\n\nBump BenchmarkDotNet from 0.13.0 to 0.13.1"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f9107d3d4bd908304eee3c65aaa7db8a159adcdb",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-09-08T13:37:09+00:00"
+        },
+        "message": "Merge pull request #45 from ardalis/dependabot/nuget/Grpc.Tools-2.40.0\n\nBump Grpc.Tools from 2.38.0 to 2.40.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "a95f0977be0b253f4d21cc5cd3f535825c308f1b",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-09-07T20:07:51+00:00"
+        },
+        "message": "Bump Grpc.Tools from 2.38.0 to 2.40.0\n\nBumps [Grpc.Tools](https://github.com/grpc/grpc) from 2.38.0 to 2.40.0.\n- [Release notes](https://github.com/grpc/grpc/releases)\n- [Changelog](https://github.com/grpc/grpc/blob/master/doc/grpc_release_schedule.md)\n- [Commits](https://github.com/grpc/grpc/commits)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.Tools\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "1044108dd42cd922196bd2d8fb07409cd734ec23",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-08-18T20:10:53+00:00"
+        },
+        "message": "Bump Grpc.AspNetCore from 2.37.0 to 2.39.0\n\nBumps [Grpc.AspNetCore](https://github.com/grpc/grpc-dotnet) from 2.37.0 to 2.39.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/commits)\n\n---\nupdated-dependencies:\n- dependency-name: Grpc.AspNetCore\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "7025547be0bdcf76f7a96e0c1a6b7a3007f6c772",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-08-13T20:08:42+00:00"
+        },
+        "message": "Bump Microsoft.NET.Test.Sdk from 16.10.0 to 16.11.0\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 16.10.0 to 16.11.0.\n- [Release notes](https://github.com/microsoft/vstest/releases)\n- [Commits](https://github.com/microsoft/vstest/compare/v16.10.0...v16.11.0)\n\n---\nupdated-dependencies:\n- dependency-name: Microsoft.NET.Test.Sdk\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "034c2173e275137daadd53670d07fef36e6bb985",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-08-11T20:13:25+00:00"
+        },
+        "message": "Bump BenchmarkDotNet from 0.13.0 to 0.13.1\n\nBumps [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) from 0.13.0 to 0.13.1.\n- [Release notes](https://github.com/dotnet/BenchmarkDotNet/releases)\n- [Commits](https://github.com/dotnet/BenchmarkDotNet/compare/v0.13.0...v0.13.1)\n\n---\nupdated-dependencies:\n- dependency-name: BenchmarkDotNet\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "10557b236d50d92e97dc6e231965fa470bd92c02",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-06-09T09:19:29+00:00"
+        },
+        "message": "Merge pull request #34 from ardalis/dependabot/nuget/Google.Protobuf-3.17.3\n\nBump Google.Protobuf from 3.15.8 to 3.17.3"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8e3cfd5c242733fe705062e333ff521dffd13db4",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-06-09T09:19:16+00:00"
+        },
+        "message": "Merge pull request #32 from ardalis/dependabot/nuget/Grpc.Tools-2.38.0\n\nBump Grpc.Tools from 2.37.0 to 2.38.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9e88aa37c83417e5ad672581e9dd4c4e4ebf1165",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-06-09T09:18:14+00:00"
+        },
+        "message": "Bump Google.Protobuf from 3.15.8 to 3.17.3\n\nBumps [Google.Protobuf](https://github.com/protocolbuffers/protobuf) from 3.15.8 to 3.17.3.\n- [Release notes](https://github.com/protocolbuffers/protobuf/releases)\n- [Changelog](https://github.com/protocolbuffers/protobuf/blob/master/generate_changelog.py)\n- [Commits](https://github.com/protocolbuffers/protobuf/compare/v3.15.8...v3.17.3)\n\n---\nupdated-dependencies:\n- dependency-name: Google.Protobuf\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "ddf4256808b7c4284a91b04b7c78ff5962f59471",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-06-09T09:18:04+00:00"
+        },
+        "message": "Bump Grpc.Tools from 2.37.0 to 2.38.0\n\nBumps [Grpc.Tools](https://github.com/grpc/grpc) from 2.37.0 to 2.38.0.\n- [Release notes](https://github.com/grpc/grpc/releases)\n- [Changelog](https://github.com/grpc/grpc/blob/master/doc/grpc_release_schedule.md)\n- [Commits](https://github.com/grpc/grpc/commits)\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "98627b1f47a48c7580a77fcf48391679786bf05c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-06-09T09:17:28+00:00"
+        },
+        "message": "Merge pull request #33 from ardalis/dependabot/nuget/Microsoft.NET.Test.Sdk-16.10.0\n\nBump Microsoft.NET.Test.Sdk from 16.9.4 to 16.10.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5d5879b5a95543a3af58f91067dc3688c36be31f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-06-09T09:17:10+00:00"
+        },
+        "message": "Merge pull request #29 from ardalis/dependabot/nuget/BenchmarkDotNet-0.13.0\n\nBump BenchmarkDotNet from 0.12.1 to 0.13.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "010fc2169e12b093984689d34b8d544a74c2ae20",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-06-09T09:17:00+00:00"
+        },
+        "message": "Merge pull request #24 from ardalis/dependabot/nuget/Grpc.Net.ClientFactory-2.37.0\n\nBump Grpc.Net.ClientFactory from 2.36.0 to 2.37.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4b59de55b1e5cb80fe2028b19508a32469c8b4eb",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-06-09T09:16:50+00:00"
+        },
+        "message": "Merge pull request #23 from ardalis/dependabot/nuget/Grpc.AspNetCore-2.37.0\n\nBump Grpc.AspNetCore from 2.36.0 to 2.37.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c74c8e1436a6449b32d5f7f9d50eef4cdd0fca4f",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-05-26T06:26:22+00:00"
+        },
+        "message": "Bump Microsoft.NET.Test.Sdk from 16.9.4 to 16.10.0\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 16.9.4 to 16.10.0.\n- [Release notes](https://github.com/microsoft/vstest/releases)\n- [Commits](https://github.com/microsoft/vstest/compare/v16.9.4...v16.10.0)\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "968c62da8b725a81aaf6f88758e6c2fda2dae126",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2021-05-20T06:44:51+00:00"
+        },
+        "message": "Bump BenchmarkDotNet from 0.12.1 to 0.13.0\n\nBumps [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) from 0.12.1 to 0.13.0.\n- [Release notes](https://github.com/dotnet/BenchmarkDotNet/releases)\n- [Commits](https://github.com/dotnet/BenchmarkDotNet/compare/v0.12.1...v0.13.0)\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4d534cd6d9b210a5f772a2fcc235581467817f22",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-04-29T20:45:55+00:00"
+        },
+        "message": "Merge pull request #25 from ardalis/dependabot/add-v2-config-file\n\nUpgrade to GitHub-native Dependabot"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "445506314bad263a1f7aa509f284569b2cc209e9",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-29T16:12:58+00:00"
+        },
+        "message": "Upgrade to GitHub-native Dependabot"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "68e8dc457e2af30de1004853ac260fe678e866cf",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-20T07:35:05+00:00"
+        },
+        "message": "Bump Grpc.Net.ClientFactory from 2.36.0 to 2.37.0\n\nBumps [Grpc.Net.ClientFactory](https://github.com/grpc/grpc-dotnet) from 2.36.0 to 2.37.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.36.0...v2.37.0)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "e24b94166dc9be035d586631293bea250118cc4c",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-20T07:34:43+00:00"
+        },
+        "message": "Bump Grpc.AspNetCore from 2.36.0 to 2.37.0\n\nBumps [Grpc.AspNetCore](https://github.com/grpc/grpc-dotnet) from 2.36.0 to 2.37.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.36.0...v2.37.0)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "ad448352b7f599c07a91a1b2e5ae9587d9dc549d",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-04-19T12:37:08+00:00"
+        },
+        "message": "Merge pull request #22 from ardalis/dependabot/nuget/Grpc.AspNetCore-2.36.0\n\nBump Grpc.AspNetCore from 2.24.0 to 2.36.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d24440ad087f73a6532ed4eb38e55da653030512",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-19T07:53:36+00:00"
+        },
+        "message": "Bump Grpc.AspNetCore from 2.24.0 to 2.36.0\n\nBumps [Grpc.AspNetCore](https://github.com/grpc/grpc-dotnet) from 2.24.0 to 2.36.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.24.0...v2.36.0)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "300c74c7deec1b6dc0989890585a89d83c2fc918",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-04-18T16:19:08+00:00"
+        },
+        "message": "Merge pull request #18 from ardalis/dependabot/nuget/Google.Protobuf-3.15.8\n\nBump Google.Protobuf from 3.9.1 to 3.15.8"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8f0e8a068e21e65868405632b7a2a46ca6bbe7ad",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-18T15:47:08+00:00"
+        },
+        "message": "Bump Google.Protobuf from 3.9.1 to 3.15.8\n\nBumps [Google.Protobuf](https://github.com/protocolbuffers/protobuf) from 3.9.1 to 3.15.8.\n- [Release notes](https://github.com/protocolbuffers/protobuf/releases)\n- [Changelog](https://github.com/protocolbuffers/protobuf/blob/master/generate_changelog.py)\n- [Commits](https://github.com/protocolbuffers/protobuf/compare/v3.9.1...v3.15.8)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "ee9c972080aa881ed876e1f696528f72c0ab3f78",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-04-18T15:46:04+00:00"
+        },
+        "message": "Merge pull request #19 from ardalis/dependabot/nuget/Grpc.Net.ClientFactory-2.36.0\n\nBump Grpc.Net.ClientFactory from 2.23.2 to 2.36.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "7254cd64eb84410c2f2e7be0e2f2b3dc6ab1f621",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-04-18T15:45:49+00:00"
+        },
+        "message": "Merge pull request #21 from ardalis/dependabot/nuget/xunit.runner.visualstudio-2.4.3\n\nBump xunit.runner.visualstudio from 2.4.1 to 2.4.3"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "48adfc80f78b5aee99b323d1df1d5c01bf0ad22f",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-18T14:49:54+00:00"
+        },
+        "message": "Bump Grpc.Net.ClientFactory from 2.23.2 to 2.36.0\n\nBumps [Grpc.Net.ClientFactory](https://github.com/grpc/grpc-dotnet) from 2.23.2 to 2.36.0.\n- [Release notes](https://github.com/grpc/grpc-dotnet/releases)\n- [Changelog](https://github.com/grpc/grpc-dotnet/blob/master/doc/release_process.md)\n- [Commits](https://github.com/grpc/grpc-dotnet/compare/v2.23.2...v2.36.0)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "85ba3adfd3c685b0ed76d947a0f5621bd5f2947d",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-04-18T14:48:49+00:00"
+        },
+        "message": "Merge pull request #20 from ardalis/dependabot/nuget/Grpc.Tools-2.37.0\n\nBump Grpc.Tools from 2.23.0 to 2.37.0"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "e6e2cdd61cbbde12ce7079a40eb7fe4d40723c6f",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-18T14:48:07+00:00"
+        },
+        "message": "Bump xunit.runner.visualstudio from 2.4.1 to 2.4.3\n\nBumps [xunit.runner.visualstudio](https://github.com/xunit/visualstudio.xunit) from 2.4.1 to 2.4.3.\n- [Release notes](https://github.com/xunit/visualstudio.xunit/releases)\n- [Commits](https://github.com/xunit/visualstudio.xunit/commits/v2.4.3)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2531135e55ba6cc8a3dc88754f6d6f441e1595dd",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-04-18T14:47:01+00:00"
+        },
+        "message": "Merge pull request #17 from ardalis/dependabot/nuget/Microsoft.NET.Test.Sdk-16.9.4\n\nBump Microsoft.NET.Test.Sdk from 16.5.0-preview-20191115-01 to 16.9.4"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "48056718a715d66542bf78d6e10240995533993d",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-18T14:37:09+00:00"
+        },
+        "message": "Bump Grpc.Tools from 2.23.0 to 2.37.0\n\nBumps [Grpc.Tools](https://github.com/grpc/grpc) from 2.23.0 to 2.37.0.\n- [Release notes](https://github.com/grpc/grpc/releases)\n- [Changelog](https://github.com/grpc/grpc/blob/master/doc/grpc_release_schedule.md)\n- [Commits](https://github.com/grpc/grpc/commits)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4b27dfacc08a0e467363855d3ccf87ec81aeab93",
+      "commit": {
+        "author": {
+          "name": "dependabot-preview[bot]",
+          "date": "2021-04-18T14:36:04+00:00"
+        },
+        "message": "Bump Microsoft.NET.Test.Sdk from 16.5.0-preview-20191115-01 to 16.9.4\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 16.5.0-preview-20191115-01 to 16.9.4.\n- [Release notes](https://github.com/microsoft/vstest/releases)\n- [Commits](https://github.com/microsoft/vstest/compare/v16.5.0-preview-20191115-01...v16.9.4)\n\nSigned-off-by: dependabot-preview[bot] <support@dependabot.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "fa004f0a0dca6398e553766d4d57e9499da56f11",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-01-14T18:10:23+00:00"
+        },
+        "message": "Merge pull request #16 from ardalis/ardalis/shortcircuitpriority\n\nCreate sample showing how to implement short circuiting priority rules."
+      },
+      "stats": {
+        "total": 368,
+        "additions": 367,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "e8a297196e34b51bca691117b3e077a05bafc9b5",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2021-01-14T18:09:38+00:00"
+        },
+        "message": "Create sample showing how to implement short circuiting priority rules."
+      },
+      "stats": {
+        "total": 368,
+        "additions": 367,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "83436015f48da0d80a1f0e1f323f44a5a806f987",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-10-23T12:57:39+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "07311caa6d4207decf98808caea24b08e26ec324",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-30T20:37:43+00:00"
+        },
+        "message": "Merge pull request #14 from ardalis/ardalis/apply-rules\n\nRemove old version and udpate to use reflection to load rules"
+      },
+      "stats": {
+        "total": 236,
+        "additions": 84,
+        "deletions": 152
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "fd264735cacec9287fb8f3b05aa6a4ec45baf0ae",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-30T08:39:06+00:00"
+        },
+        "message": "Remove old version and udpate to use reflection to load rules"
+      },
+      "stats": {
+        "total": 236,
+        "additions": 84,
+        "deletions": 152
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0e756487a8404ad89dcbbebc09f8ae1905e96bea",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-30T07:05:44+00:00"
+        },
+        "message": "Merge pull request #13 from ardalis/ardalis/rulesengine\n\nArdalis/rulesengine"
+      },
+      "stats": {
+        "total": 61,
+        "additions": 59,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9187659a6bfd07f63f3e6aa5a30ee469fc4f4267",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-30T06:35:29+00:00"
+        },
+        "message": "Merge pull request #12 from ardalis/ardalis/rulesengine\n\nArdalis/rulesengine"
+      },
+      "stats": {
+        "total": 161,
+        "additions": 161,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "e9916cc4efe962f0ad79c55769bb771e995b6f60",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-30T06:27:08+00:00"
+        },
+        "message": "Refactor tests; add helper"
+      },
+      "stats": {
+        "total": 35,
+        "additions": 25,
+        "deletions": 10
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0cc717bb22fcb76a9e8ca4932fb495a98dfb7871",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-30T06:03:07+00:00"
+        },
+        "message": "All tests pass for combined birthday rulse with loyalty rules"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 32,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4591d9465d3f93a2699ae67d30e70cdf783d56bb",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-30T05:53:23+00:00"
+        },
+        "message": "Add basic birthday discount"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 15,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "be1af5d1d388c3013cbbafc89162d12cda14f779",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-21T13:33:36+00:00"
+        },
+        "message": "Fix veteran discount bug"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 18,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d4ca3805ac8113d0636465418dde2b27bdadc80c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-20T18:09:23+00:00"
+        },
+        "message": "Added loyalty discount"
+      },
+      "stats": {
+        "total": 44,
+        "additions": 42,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "da924f46e3e9a69925bfb2e097804a4b1f864d0f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-18T19:27:50+00:00"
+        },
+        "message": "Adding veteran discount"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 18,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d9a5380a6c7a082b5fd38cb277b1ce1b816fdc14",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-18T19:24:58+00:00"
+        },
+        "message": "Adding first time purchase discount"
+      },
+      "stats": {
+        "total": 32,
+        "additions": 30,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2b77fe93b3cca502ff86b6cb963e8e9f3dfa18e9",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-18T19:18:08+00:00"
+        },
+        "message": "Adding senior discount"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 37,
+        "deletions": 31
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "944edde939b8db203757dc35200774b2af1c2a65",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-18T19:13:12+00:00"
+        },
+        "message": "Adding DiscountCalculator"
+      },
+      "stats": {
+        "total": 53,
+        "additions": 53,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c1e3ba5a3ef6624e57b4a279728b2b2898a1e98b",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-09-04T20:54:19+00:00"
+        },
+        "message": "Adding DiscountCalculator for Rule Engine demo"
+      },
+      "stats": {
+        "total": 133,
+        "additions": 133,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "1b9d39fb59ae4050085bb53dfec9919a6974a043",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-21T12:12:17+00:00"
+        },
+        "message": "Merge pull request #11 from ardalis/ardalis/memento\n\nAdd memento"
+      },
+      "stats": {
+        "total": 342,
+        "additions": 341,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "00854891a38a5e5b9457989dcd248bcea6567075",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-21T12:11:54+00:00"
+        },
+        "message": "Adding TODO comments"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "155e83985d6f71c7131c3836f5699ea7ef2c83d7",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-21T11:40:05+00:00"
+        },
+        "message": "Improving Hangman game error handling"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 27,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0e52d1618f63726399e9587686478178639c48bc",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-19T15:08:37+00:00"
+        },
+        "message": "add comment"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "300021bddfe6d5d1972b51a4135d105e0498da9d",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-19T15:07:08+00:00"
+        },
+        "message": "Added preprocessor to enable undo or not\nRefactored to use HangmanMemento with internal property"
+      },
+      "stats": {
+        "total": 52,
+        "additions": 31,
+        "deletions": 21
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f292180d27d02104c618177ce2b2eb89339578a9",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-13T14:00:56+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 12,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b40bf6b03a8bd7302fad66c0f787a6156f92b051",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-13T14:00:16+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "6416605a234f8e2053aa459cd79d96f4ea4eaf94",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-13T13:59:22+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "3823580333e6334b177290b2da2e984076ff8988",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-12T21:33:42+00:00"
+        },
+        "message": "Configure program to run in console without scrolling"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 6,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f422927ef3ca4cdcb34222eb54c56853b4f214b0",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-12T21:29:14+00:00"
+        },
+        "message": "Refactoring to use char"
+      },
+      "stats": {
+        "total": 67,
+        "additions": 33,
+        "deletions": 34
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "167fcd0fde9cf9c52d017f8a860b6827050e689b",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-12T21:15:38+00:00"
+        },
+        "message": "Added Memento support to HangmanGame"
+      },
+      "stats": {
+        "total": 55,
+        "additions": 51,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "34b5365e61a65c3ce67e1ca7b7c67791ca209348",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-12T19:14:00+00:00"
+        },
+        "message": "Basic game is working without undo/memento"
+      },
+      "stats": {
+        "total": 238,
+        "additions": 159,
+        "deletions": 79
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "3cba187c7f9d75780081ec67104bf018bb6c4253",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-08-07T18:12:32+00:00"
+        },
+        "message": "Working on initial hangman game for memento demo"
+      },
+      "stats": {
+        "total": 172,
+        "additions": 171,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b6a2fd378e7730720aa0d37efc6d4d446e0864a3",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-29T13:09:14+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "662f0875d56a0f70b1bca1dfe45bb8e3b00e3ad8",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-20T03:23:04+00:00"
+        },
+        "message": "Added TemplateBase"
+      },
+      "stats": {
+        "total": 31,
+        "additions": 31,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "991fefa205bfe086a39d83f9256a2c642b418df1",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-20T03:20:42+00:00"
+        },
+        "message": "Adding inheritance example"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 24,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9484d7a3e7c1920b3a6b061b14698f50d19750ec",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-08T17:58:28+00:00"
+        },
+        "message": "Merge pull request #8 from ardalis/ardalis/templatemethod\n\nTemplate Method Demos"
+      },
+      "stats": {
+        "total": 321,
+        "additions": 321,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "bd0918f02b3efe3bae966ec4eb77ff4da0439df3",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-08T17:27:22+00:00"
+        },
+        "message": "Cleanup"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 1,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "42265592d84f1f493dc69a9ec835790f56e5ccc1",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-08T17:20:22+00:00"
+        },
+        "message": "Adding better tests for pizza baking service"
+      },
+      "stats": {
+        "total": 74,
+        "additions": 62,
+        "deletions": 12
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "24cbf6c0c0a4dd3de522e49ca7a17c391a449796",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-08T17:09:10+00:00"
+        },
+        "message": "Added a pizza that doesn't require baking\nRenamed some stuff"
+      },
+      "stats": {
+        "total": 122,
+        "additions": 100,
+        "deletions": 22
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f0b2223f7b6031abc05c4b90d3176735a2585b37",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-08T16:42:24+00:00"
+        },
+        "message": "Applied Template Method to Pizza and Pie services."
+      },
+      "stats": {
+        "total": 116,
+        "additions": 68,
+        "deletions": 48
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "bc1401e7ace1f88bbdb0f8e16471af44efec291a",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-08T16:24:50+00:00"
+        },
+        "message": "Created initial template method problem sample"
+      },
+      "stats": {
+        "total": 176,
+        "additions": 176,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2395db2b1c1c352c6470bf7fd89044f6993d2d16",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-07T13:41:13+00:00"
+        },
+        "message": "Merge branch 'master' of https://github.com/ardalis/DesignPatternsInCSharp"
+      },
+      "stats": {
+        "total": 933,
+        "additions": 932,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2ae7c9f28e765cf370f363981cba4463611fecef",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-07T13:40:57+00:00"
+        },
+        "message": "adding pattern kata readme"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 11,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5177368028bdacea60756288aaee5a830d9b384b",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-07T13:37:17+00:00"
+        },
+        "message": "Merge pull request #7 from ardalis/ardalis/gildedpatterns\n\nAdding Pattern Kata"
+      },
+      "stats": {
+        "total": 701,
+        "additions": 701,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "52b81e2c9232fa16c8bfa6d2a5561753b0265e16",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-06T21:46:51+00:00"
+        },
+        "message": "Merge pull request #6 from justinhachemeister/feature/benchmarks\n\nAdd Benchmarks for Singleton"
+      },
+      "stats": {
+        "total": 232,
+        "additions": 231,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "60a75f1e17e6ef2b9ab2ecad8ed72e3ee9cee927",
+      "commit": {
+        "author": {
+          "name": "Justin Hachemeister",
+          "date": "2020-05-06T15:46:32+00:00"
+        },
+        "message": "Add README to Singleton directory outlining benchmarks and results as per PR feedback"
+      },
+      "stats": {
+        "total": 96,
+        "additions": 96,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "abf7d61c9d07dd0ce30cec6bf062cb2805f1e700",
+      "commit": {
+        "author": {
+          "name": "Justin Hachemeister",
+          "date": "2020-05-06T15:46:05+00:00"
+        },
+        "message": "Make Benchmarks use thread-safe collection\n\nRealized Naive implementation could be reporting incorrect allocations because collection is not thread-safe. Switch to thread-safe implementation so that adding to the collection will result in correct allocations.\n\nThis resulted in different results, but these results more closely match expectations"
+      },
+      "stats": {
+        "total": 27,
+        "additions": 14,
+        "deletions": 13
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c3f9ff4046d0cf10e655e520b3d50a6b8ba16c3d",
+      "commit": {
+        "author": {
+          "name": "Justin Hachemeister",
+          "date": "2020-05-05T20:29:17+00:00"
+        },
+        "message": "Add Benchmarks for Singleton"
+      },
+      "stats": {
+        "total": 135,
+        "additions": 134,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "65509b71e4ca31be1a036f60a935627d8468bc8c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T19:10:37+00:00"
+        },
+        "message": "Fixed test by adjusting SulfurasRule"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "724d6faa3385d35a75ba13d1d9ec71f6dc2f027e",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T19:09:48+00:00"
+        },
+        "message": "Introduce Template Method; note one failing test"
+      },
+      "stats": {
+        "total": 84,
+        "additions": 52,
+        "deletions": 32
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "89191ededf02613b951e625d68a4afd3905c7d96",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T19:00:13+00:00"
+        },
+        "message": "Added Builder for Engine"
+      },
+      "stats": {
+        "total": 52,
+        "additions": 45,
+        "deletions": 7
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d204700ab181457b6ab8ffdcd700e22d1da3eb07",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:51:39+00:00"
+        },
+        "message": "Extract rules engine into separate class"
+      },
+      "stats": {
+        "total": 45,
+        "additions": 31,
+        "deletions": 14
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "807bc2561a1a0b5d9d633526fad995d84ef1cd51",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:48:20+00:00"
+        },
+        "message": "Added BackstagePassesRule"
+      },
+      "stats": {
+        "total": 55,
+        "additions": 30,
+        "deletions": 25
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "14dad12796857d1085b9a92cd95b05011e5dfb19",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:46:14+00:00"
+        },
+        "message": "Added AgedBrieRule"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 21,
+        "deletions": 15
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5f212c0c878053cd459d126828e8acd47f0a64c2",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:44:52+00:00"
+        },
+        "message": "Move rules to separate files; add conjured item rule"
+      },
+      "stats": {
+        "total": 129,
+        "additions": 72,
+        "deletions": 57
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b070195ffb80840fe2540c9bcf3472e3dedc70ee",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:42:49+00:00"
+        },
+        "message": "Add Sulfuras rule and rule list with matching in UpdateQuality"
+      },
+      "stats": {
+        "total": 47,
+        "additions": 23,
+        "deletions": 24
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "e00b95eea06a54479707a3f191dac990cfecd7ea",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:39:16+00:00"
+        },
+        "message": "Introduce RuleBase and NormalItemRule"
+      },
+      "stats": {
+        "total": 29,
+        "additions": 28,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "59165c4a66b8620b877278ed94b035308b3229ad",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:33:58+00:00"
+        },
+        "message": "Add Conjured item support. All tests now pass."
+      },
+      "stats": {
+        "total": 37,
+        "additions": 31,
+        "deletions": 6
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "81bbc8ad4378c69724844399bb7febe776374fac",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:29:29+00:00"
+        },
+        "message": "Added Backstage Passes helper and removed checks"
+      },
+      "stats": {
+        "total": 51,
+        "additions": 24,
+        "deletions": 27
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "3f335c28a807a8f5687e804277d0fe248a2d1b5a",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:26:45+00:00"
+        },
+        "message": "Remove AgedBrie checks"
+      },
+      "stats": {
+        "total": 15,
+        "additions": 4,
+        "deletions": 11
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "353f4477c70dd3e46f31dc6eb583417d6939530c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:25:57+00:00"
+        },
+        "message": "Added AgedBrie helper"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 14,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8f0f9f69a645c1e388392212f6f1eb1ff6e3b71f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:24:09+00:00"
+        },
+        "message": "Fix bug with SellIn"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 11,
+        "deletions": 17
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "ac9418a0a9d0306799343254c3a18376ab1e8bd8",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:23:51+00:00"
+        },
+        "message": "Fix bug; Pull out Sulfuras logic to helper method"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 10,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "84e53cf4eeb7d4ac73ed365c66150cbe3764580f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:14:41+00:00"
+        },
+        "message": "Remove all range checks from UpdateQuality"
+      },
+      "stats": {
+        "total": 61,
+        "additions": 20,
+        "deletions": 41
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "32967ae1a186cf609fc33c58ae999649b5e217cd",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T18:13:03+00:00"
+        },
+        "message": "Introduce ItemProxy"
+      },
+      "stats": {
+        "total": 136,
+        "additions": 90,
+        "deletions": 46
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5f8a3b61acb9dfba60ff0feec36d0e9d5e4ad349",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T16:01:14+00:00"
+        },
+        "message": "Adding Backstage Pass and Conjured Item tests"
+      },
+      "stats": {
+        "total": 189,
+        "additions": 189,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "ab831c50c4ac70b4501e8e698567682748bbf20c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T15:51:22+00:00"
+        },
+        "message": "Adding Sulfuras tests"
+      },
+      "stats": {
+        "total": 51,
+        "additions": 51,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d5536a629e9115099c3a01b9449500a279069a3e",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T15:45:52+00:00"
+        },
+        "message": "Adding max 50 quality tests"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 22,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b73822a5ba8064fc9c172ccd2f973087ff6415c7",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T15:43:54+00:00"
+        },
+        "message": "Added AgedBrie tests"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 60,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "fcc589bdf3362de0b3d51b14cd12c827f1d885a9",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T15:41:11+00:00"
+        },
+        "message": "Refactoring to move things to class level"
+      },
+      "stats": {
+        "total": 53,
+        "additions": 34,
+        "deletions": 19
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "22ada08231cc1d8dc6f6572d8de596f684018ac3",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T15:34:35+00:00"
+        },
+        "message": "Added tests for normal item logic"
+      },
+      "stats": {
+        "total": 57,
+        "additions": 52,
+        "deletions": 5
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f21f32f679e5185528cd6bf98bdb6449bc2b072c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-05-05T15:28:01+00:00"
+        },
+        "message": "Starting GildedRose kata."
+      },
+      "stats": {
+        "total": 129,
+        "additions": 129,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "62cff6df64a1ab4b2ac52023c13bd00c96fece9c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-27T14:53:15+00:00"
+        },
+        "message": "Merge branch 'master' of https://github.com/ardalis/DesignPatternsInCSharp"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 6,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "5b615887870fb939e3ea48abb3b6f0b2b1e74bb6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-27T14:52:12+00:00"
+        },
+        "message": "Tweaking testing layout"
+      },
+      "stats": {
+        "total": 33,
+        "additions": 33,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "d55854ea851abc377b4cbcb595ccb9e6960a99bf",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-27T14:14:39+00:00"
+        },
+        "message": "Adding testing sample\nUsing NRTs in first demo"
+      },
+      "stats": {
+        "total": 108,
+        "additions": 98,
+        "deletions": 10
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c049759eb8b5437431d3256c4f523d3cb73cb778",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-24T15:15:53+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "51da1f4ac40130b5fcd76d5f0d4b43b9361dad66",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-24T15:15:33+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 6,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "2830fdf394accec83ac1cd016e785037029cf027",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-16T17:59:33+00:00"
+        },
+        "message": "Merge pull request #5 from ardalis/singleton\n\nSingleton"
+      },
+      "stats": {
+        "total": 699,
+        "additions": 671,
+        "deletions": 28
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4f9036cd9662f581ddfad991237453b72fca779e",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-16T17:58:55+00:00"
+        },
+        "message": "Adding lazy versions"
+      },
+      "stats": {
+        "total": 190,
+        "additions": 190,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c0f33102567d3ef4388a5c7e9c86f0f7614162c1",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-16T17:23:17+00:00"
+        },
+        "message": "Adding v4 singleton and tests"
+      },
+      "stats": {
+        "total": 105,
+        "additions": 105,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "4d510ac24f6ab0f7f723f7aafce0bbeae876a796",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-16T17:10:59+00:00"
+        },
+        "message": "Refactoring logger and helpers to remove duplication"
+      },
+      "stats": {
+        "total": 176,
+        "additions": 105,
+        "deletions": 71
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9b12bdc8cdd93ff14a78604becd4785cf349be39",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-16T16:23:53+00:00"
+        },
+        "message": "Using concurrentqueue to log correctly"
+      },
+      "stats": {
+        "total": 189,
+        "additions": 178,
+        "deletions": 11
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f9bea6947cf77410ac39ba937c1688f4523a6ada",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-16T15:01:32+00:00"
+        },
+        "message": "Singleton tests passing"
+      },
+      "stats": {
+        "total": 43,
+        "additions": 32,
+        "deletions": 11
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "b3d3988f8579dd8b13b82fab9c2d38056d70cc68",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-16T14:34:58+00:00"
+        },
+        "message": "Fixing swapi.co ->swapi.dev url change"
+      },
+      "stats": {
+        "total": 72,
+        "additions": 45,
+        "deletions": 27
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9bf3af9066a8e885f04f3ac018bb5f27537f4402",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-14T21:04:31+00:00"
+        },
+        "message": "Trying to isolate tests"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 23,
+        "deletions": 3
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9fe18d64d755a4ed9b10e37d14b249af91eba911",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-14T18:00:23+00:00"
+        },
+        "message": "Initial singleton"
+      },
+      "stats": {
+        "total": 88,
+        "additions": 88,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "7849144ef162b0333d78d9357ec6d1b8a890dc80",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-14T13:37:33+00:00"
+        },
+        "message": "Merge pull request #3 from ardalis/ardalis/proxy\n\nProxy Design Pattern"
+      },
+      "stats": {
+        "total": 699,
+        "additions": 698,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "0833beb2428d190eeadd707d4e09121cd9552f2a",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-09T02:00:24+00:00"
+        },
+        "message": "Finished proxy demos"
+      },
+      "stats": {
+        "total": 28,
+        "additions": 14,
+        "deletions": 14
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f1cc8cbf06999a45997bf8b1c436dd98135f0476",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-04-06T20:18:50+00:00"
+        },
+        "message": "Simplifying getters"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "9231a42ab1bec576ecce7f0caab376a501a75a7c",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-31T21:21:12+00:00"
+        },
+        "message": "Adding Smart File Proxy"
+      },
+      "stats": {
+        "total": 113,
+        "additions": 105,
+        "deletions": 8
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "681550c107e05f628a8fd417cb6746e98747540f",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-31T15:50:24+00:00"
+        },
+        "message": "Adding remote proxy for grpc"
+      },
+      "stats": {
+        "total": 199,
+        "additions": 198,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "cf16ec3746541fe0a761254f984a6f38e64519fc",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-31T13:26:20+00:00"
+        },
+        "message": "Adding console output to tests"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 20,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "cef914f0f42a3ea50a2cf37979ebe963fe07fff9",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-30T18:55:12+00:00"
+        },
+        "message": "Implemented behavior with Lazy<T>"
+      },
+      "stats": {
+        "total": 131,
+        "additions": 95,
+        "deletions": 36
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "3f957967e6b519480e40518aef4edd64d8ece7f6",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-30T18:34:14+00:00"
+        },
+        "message": "Adding lazy loaded expensive entity"
+      },
+      "stats": {
+        "total": 114,
+        "additions": 113,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "c3cc11b9f16f4ab5cef12638ec8b7bca33c5d0cb",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-30T17:58:12+00:00"
+        },
+        "message": "Refactoring tests"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 19,
+        "deletions": 49
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "dfa7bab051b2756a0bee61fcf2d1d61c72daade2",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-30T17:51:17+00:00"
+        },
+        "message": "Added reviewing functionality."
+      },
+      "stats": {
+        "total": 79,
+        "additions": 75,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "952b6ba28546adc033e61fa10b24f0dbf02d6743",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-30T17:35:30+00:00"
+        },
+        "message": "Adding factory method"
+      },
+      "stats": {
+        "total": 11,
+        "additions": 8,
+        "deletions": 3
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "f769e0c49db701634f0e1865ba81b6e36b1d39ca",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2020-03-30T17:33:58+00:00"
+        },
+        "message": "Initial proxy"
+      },
+      "stats": {
+        "total": 169,
+        "additions": 168,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "60d3ac8736f1149330bf205c164d2f7cc174c8b7",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-12-23T17:46:28+00:00"
+        },
+        "message": "Result wrapper and formatting"
+      },
+      "stats": {
+        "total": 208,
+        "additions": 200,
+        "deletions": 8
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "a7f74defedf0e871503886ee9f3558819b4c1c68",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-12-23T16:24:16+00:00"
+        },
+        "message": "Refactoring to introduce adapter and DI"
+      },
+      "stats": {
+        "total": 350,
+        "additions": 330,
+        "deletions": 20
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "57a87fe9109d096dd66a6e4e506730ea275f5125",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-12-19T21:25:15+00:00"
+        },
+        "message": "Adding step 3 introducing classes"
+      },
+      "stats": {
+        "total": 125,
+        "additions": 125,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "cfb7e69fdf8bf0c3fae5aa534ad80c9054c70e39",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-12-19T20:21:02+00:00"
+        },
+        "message": "Merge branch 'master' of https://github.com/ardalis/DesignPatternsInCSharp"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 24,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "222d9576578055a9f4977d50d66dd226fb177946",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-12-19T20:20:49+00:00"
+        },
+        "message": "Adding folders for initial problem demo"
+      },
+      "stats": {
+        "total": 161,
+        "additions": 157,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "46d880bde837cb50aa0d7a4959b6ccfd696ee634",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-12-08T17:20:03+00:00"
+        },
+        "message": "Create Adapter-PlantUML.txt"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 24,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "394c96b854afd20b13638abeb59c28df10c322b0",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-12-08T17:11:21+00:00"
+        },
+        "message": "Adding stream link"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "600fa0f86fce251a213a76d8aaecb45159b88868",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-08-30T17:24:21+00:00"
+        },
+        "message": "Adding third party adapter; refactor tests"
+      },
+      "stats": {
+        "total": 128,
+        "additions": 124,
+        "deletions": 4
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "ce984a2595cfcc894bc6558766bc07b4511634b0",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-08-30T16:54:51+00:00"
+        },
+        "message": "Refactor to use abstract base class"
+      },
+      "stats": {
+        "total": 105,
+        "additions": 74,
+        "deletions": 31
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "cda79ee55c604437a791ed9739c918095ad50235",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-08-30T16:41:24+00:00"
+        },
+        "message": "Read people from json file"
+      },
+      "stats": {
+        "total": 135,
+        "additions": 107,
+        "deletions": 28
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "8c6836aec6bc13ab705f343636d1626f32b15086",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-08-30T16:33:50+00:00"
+        },
+        "message": "Adding initial star wars sample"
+      },
+      "stats": {
+        "total": 64,
+        "additions": 64,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "a0ac8b89b2b270aa403cd2bfbe18fc6fd0cae831",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-08-30T16:07:41+00:00"
+        },
+        "message": "Update readme; move solution folder"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 9,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "380325349e5a666967790c4b917e58e11914e1bd",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-08-30T16:00:44+00:00"
+        },
+        "message": "Initial version"
+      },
+      "stats": {
+        "total": 54,
+        "additions": 53,
+        "deletions": 1
+      },
+      "repo": "DesignPatternsInCSharp"
+    },
+    {
+      "sha": "265b9e99ec9ff1912ab140c32407121d3cf7bc42",
+      "commit": {
+        "author": {
+          "name": "Steve Smith",
+          "date": "2019-08-30T12:45:32+00:00"
+        },
+        "message": "Initial commit"
+      },
+      "stats": {
+        "total": 352,
+        "additions": 352,
+        "deletions": 0
+      },
+      "repo": "DesignPatternsInCSharp"
+    }
+  ],
+  "hash": "f564154e4717e7bcb70497f8f7aba5789e8395c499ec7156193809f64ff30192",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DesignPatternsInCSharp"
+    },
+    "category": "commits_stats",
+    "pushed_at": "2025-12-19T21:04:54+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits_stats",
+  "owner": "markhazleton",
+  "repo": "DesignPatternsInCSharp",
+  "week": "2025W51"
+}

@@ -1,122 +1,421 @@
-"""API response caching with 30-day TTL."""
+"""API response caching with hierarchical storage and smart invalidation."""
+
+from __future__ import annotations
 
 import json
 import os
-from datetime import datetime, timedelta
+import shutil
+import hashlib
+import logging
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any, Optional, Dict, List, Union
+
+from spark.config import SparkConfig
+
+
+class _CacheFileLock:
+    """Cross-platform file lock to coordinate cache access."""
+
+    def __init__(self, lock_path: Path):
+        self.lock_path = lock_path
+        self._handle = None
+
+    def __enter__(self):
+        self.lock_path.parent.mkdir(parents=True, exist_ok=True)
+        # Binary append avoids truncation
+        self._handle = open(self.lock_path, "a+b")
+        if os.name == "nt":
+            import msvcrt
+
+            self._handle.seek(0)
+            msvcrt.locking(self._handle.fileno(), msvcrt.LK_LOCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(self._handle, fcntl.LOCK_EX)
+        return self
+
+    def __exit__(self, exc_type, exc, tb):
+        if not self._handle:
+            return False
+        if os.name == "nt":
+            import msvcrt
+
+            self._handle.seek(0)
+            try:
+                msvcrt.locking(self._handle.fileno(), msvcrt.LK_UNLCK, 1)
+            except OSError:
+                pass
+        else:
+            import fcntl
+
+            try:
+                fcntl.flock(self._handle, fcntl.LOCK_UN)
+            except OSError:
+                pass
+        self._handle.close()
+        self._handle = None
+        return False
+
+
+class CacheManifest:
+    """Manages the cache index file for quick lookups."""
+
+    def __init__(self, cache_dir: Path):
+        self.manifest_path = cache_dir / "index.json"
+        self.data: Dict[str, Any] = {"entries": {}}
+        self._dirty = False
+        self._last_mtime = 0
+
+    def load(self):
+        """Load manifest from disk."""
+        if self.manifest_path.exists():
+            try:
+                mtime = self.manifest_path.stat().st_mtime
+                if mtime > self._last_mtime:
+                    with open(self.manifest_path, "r", encoding="utf-8") as f:
+                        self.data = json.load(f)
+                    self._last_mtime = mtime
+            except (json.JSONDecodeError, OSError):
+                # If corrupt, start fresh
+                self.data = {"entries": {}}
+
+    def save(self):
+        """Save manifest to disk if modified."""
+        if self._dirty:
+            with open(self.manifest_path, "w", encoding="utf-8") as f:
+                json.dump(self.data, f, indent=2)
+            self._dirty = False
+            try:
+                self._last_mtime = self.manifest_path.stat().st_mtime
+            except OSError:
+                pass
+
+    def update_entry(self, key: str, week: str):
+        """Update an entry in the manifest."""
+        if key not in self.data["entries"]:
+            self.data["entries"][key] = {
+                "latest_week": week,
+                "weeks": [week],
+                "updated_at": datetime.now(timezone.utc).isoformat()
+            }
+            self._dirty = True
+        else:
+            entry = self.data["entries"][key]
+            if week not in entry["weeks"]:
+                entry["weeks"].append(week)
+                entry["weeks"].sort(reverse=True) # Keep newest first
+                self._dirty = True
+            
+            if entry.get("latest_week") != week:
+                # Only update latest_week if the new one is "newer" or we just treat the last written as latest?
+                # For now, let's assume the caller knows what they are doing.
+                # But usually we want the lexically largest week (e.g. 2026W02 > 2026W01)
+                if week > entry.get("latest_week", ""):
+                    entry["latest_week"] = week
+                    self._dirty = True
+            
+            entry["updated_at"] = datetime.now(timezone.utc).isoformat()
+
+    def get_entry(self, key: str) -> Optional[Dict[str, Any]]:
+        return self.data["entries"].get(key)
+
+    def remove_week(self, key: str, week: str):
+        """Remove a week from an entry."""
+        if key in self.data["entries"]:
+            entry = self.data["entries"][key]
+            if week in entry["weeks"]:
+                entry["weeks"].remove(week)
+                self._dirty = True
+                # If we removed the latest week, update it
+                if entry["latest_week"] == week:
+                    entry["latest_week"] = entry["weeks"][0] if entry["weeks"] else None
+
+            if not entry["weeks"]:
+                del self.data["entries"][key]
+                self._dirty = True
 
 
 class APICache:
-    """Manages cached API responses with 30-day TTL."""
+    """Manages cached API responses with repository-aware invalidation."""
 
-    def __init__(self, cache_dir: str = ".cache", ttl_hours: int = 720):
+    DEFAULT_TTL_HOURS = 24 * 7  # 1 week
+
+    def __init__(self, cache_dir: str = ".cache", config: Optional[SparkConfig] = None):
         """Initialize the cache.
 
         Args:
             cache_dir: Directory to store cache files
-            ttl_hours: Time-to-live in hours (default: 720 = 30 days)
+            config: SparkConfig instance for TTL policies
         """
         self.cache_dir = Path(cache_dir)
-        self.ttl = timedelta(hours=ttl_hours)
+        self.config = config or SparkConfig()
+        # Ensure config is loaded if passed empty
+        if not self.config.config and Path("config/spark.yml").exists():
+             self.config.load()
+
         self.cache_dir.mkdir(parents=True, exist_ok=True)
+        self._lock_path = self.cache_dir / ".cache.lock"
+        self.logger = logging.getLogger(__name__)
+        
+        self.manifest = CacheManifest(self.cache_dir)
+        with self._acquire_lock():
+            self.manifest.load()
 
-    def _get_cache_path(self, key: str) -> Path:
-        """Get the file path for a cache key.
+    def _acquire_lock(self):
+        return _CacheFileLock(self._lock_path)
+
+    def _get_key_path(self, category: str, owner: str, repo: Optional[str]) -> str:
+        """Generate the logical key for manifest lookup."""
+        if repo:
+            return f"{owner}/{repo}/{category}"
+        return f"{owner}/_global_/{category}"
+
+    def _get_fs_path(self, category: str, owner: str, repo: Optional[str], week: str) -> Path:
+        """Generate the filesystem path."""
+        if repo:
+            return self.cache_dir / owner / repo / category / f"{week}.json"
+        return self.cache_dir / owner / "_global_" / category / f"{week}.json"
+
+    def _calculate_hash(self, data: Any) -> str:
+        """Calculate SHA256 hash of the data."""
+        serialized = json.dumps(data, sort_keys=True)
+        return hashlib.sha256(serialized.encode("utf-8")).hexdigest()
+
+    def get(self, category: str, owner: str, repo: Optional[str] = None, week: Optional[str] = None) -> Optional[Any]:
+        """Retrieve a cached value.
 
         Args:
-            key: Cache key
+            category: Cache category
+            owner: Repository owner
+            repo: Repository name (optional)
+            week: Specific week to retrieve (optional, defaults to latest)
 
         Returns:
-            Path to cache file
+            Cached value or None
         """
-        # Sanitize key for filesystem
-        safe_key = key.replace("/", "_").replace(":", "_")
-        return self.cache_dir / f"{safe_key}.json"
+        key = self._get_key_path(category, owner, repo)
+        
+        with self._acquire_lock():
+            self.manifest.load()
+            # If week not specified, look up latest in manifest
+            if not week:
+                entry = self.manifest.get_entry(key)
+                if not entry or not entry.get("latest_week"):
+                    return None
+                week = entry["latest_week"]
 
-    def get(self, key: str) -> Optional[Any]:
-        """Retrieve a cached value if not expired.
-
-        Args:
-            key: Cache key
-
-        Returns:
-            Cached value or None if not found/expired
-        """
-        cache_path = self._get_cache_path(key)
-
-        if not cache_path.exists():
-            return None
-
-        try:
-            with open(cache_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-
-            timestamp = datetime.fromisoformat(data["timestamp"])
-            if self.is_expired(timestamp):
-                # Remove expired cache
-                cache_path.unlink()
+            cache_path = self._get_fs_path(category, owner, repo, week)
+            
+            if not cache_path.exists():
                 return None
 
-            return data["value"]
-        except (json.JSONDecodeError, KeyError, ValueError):
-            # Invalid cache file, remove it
-            cache_path.unlink()
-            return None
+            try:
+                with open(cache_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except (json.JSONDecodeError, OSError) as exc:
+                self.logger.warning(f"Corrupt cache file {cache_path}: {exc}")
+                try:
+                    cache_path.unlink(missing_ok=True)
+                except OSError:
+                    pass
+                return None
 
-    def set(self, key: str, value: Any) -> None:
-        """Store a value in the cache.
+            # Integrity check
+            stored_hash = data.get("hash")
+            value = data.get("value")
+            if stored_hash:
+                current_hash = self._calculate_hash(value)
+                if current_hash != stored_hash:
+                    self.logger.error(f"Cache integrity failure for {cache_path}")
+                    try:
+                        cache_path.unlink(missing_ok=True)
+                    except OSError:
+                        pass
+                    return None
 
-        Args:
-            key: Cache key
-            value: Value to cache (must be JSON serializable)
-        """
-        cache_path = self._get_cache_path(key)
+            # TTL Check
+            timestamp_raw = data.get("timestamp")
+            metadata = data.get("metadata", {})
+            
+            try:
+                timestamp = datetime.fromisoformat(timestamp_raw) if timestamp_raw else None
+            except ValueError:
+                timestamp = None
 
-        data = {
-            "timestamp": datetime.now().isoformat(),
+            if timestamp and self.is_expired(category, timestamp, metadata):
+                # We don't delete immediately on read expiry if it's a historical record (week specified)
+                # But if it's just a TTL expiry for a "current" thing, maybe we should?
+                # For now, return None but keep file for janitor? 
+                # Actually, if it's expired, we should treat it as miss.
+                return None
+
+            return value
+
+    def has_entry(self, category: str, owner: str, repo: Optional[str] = None, week: Optional[str] = None) -> bool:
+        """Check if a cache entry exists."""
+        key = self._get_key_path(category, owner, repo)
+        with self._acquire_lock():
+            self.manifest.load()
+            entry = self.manifest.get_entry(key)
+            if not entry:
+                return False
+            if week:
+                return week in entry.get("weeks", [])
+            return bool(entry.get("latest_week"))
+
+    def get_entry_info(self, category: str, owner: str, repo: Optional[str] = None) -> Optional[Dict[str, Any]]:
+        """Get info about a cache entry from manifest."""
+        key = self._get_key_path(category, owner, repo)
+        with self._acquire_lock():
+            self.manifest.load()
+            return self.manifest.get_entry(key)
+
+    def set(self, category: str, owner: str, value: Any, repo: Optional[str] = None, week: Optional[str] = None, metadata: Optional[Dict[str, Any]] = None) -> None:
+        """Store a value in the cache."""
+        if week is None:
+            # Default to current week if not provided
+            week = datetime.now(timezone.utc).strftime("%YW%V")
+
+        key = self._get_key_path(category, owner, repo)
+        cache_path = self._get_fs_path(category, owner, repo, week)
+        
+        payload = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "value": value,
+            "hash": self._calculate_hash(value),
+            "metadata": metadata or {},
+            "category": category,
+            "owner": owner,
+            "repo": repo,
+            "week": week
         }
 
-        with open(cache_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
+        with self._acquire_lock():
+            self.manifest.load()
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                # Atomic write
+                import tempfile
+                with tempfile.NamedTemporaryFile("w", delete=False, dir=self.cache_dir, encoding="utf-8") as tmp:
+                    json.dump(payload, tmp, indent=2)
+                    temp_name = tmp.name
+                
+                # Move to final location
+                if os.path.exists(cache_path):
+                    os.remove(cache_path)
+                shutil.move(temp_name, cache_path)
+                
+                # Update manifest
+                self.manifest.update_entry(key, week)
+                self.manifest.save()
+                
+            except Exception as exc:
+                self.logger.error(f"Failed to write cache file {cache_path}: {exc}")
+                if "temp_name" in locals() and os.path.exists(temp_name):
+                    os.remove(temp_name)
+                raise
 
-    def is_expired(self, timestamp: datetime) -> bool:
-        """Check if a timestamp is expired based on TTL.
+    def is_expired(self, category: str, timestamp: datetime, metadata: Optional[Dict[str, Any]] = None) -> bool:
+        """Check if a timestamp is expired based on category TTL."""
+        ttl_hours = self.config.get_cache_ttl(category)
+        ttl = timedelta(hours=ttl_hours)
+        
+        # Check if TTL is enforced in metadata
+        if metadata and not metadata.get("ttl_enforced", True):
+            return False
 
-        Args:
-            timestamp: Timestamp to check
+        now = datetime.now(timezone.utc)
+        if timestamp.tzinfo is None:
+            timestamp = timestamp.replace(tzinfo=timezone.utc)
+        else:
+            timestamp = timestamp.astimezone(timezone.utc)
+            
+        return now - timestamp > ttl
 
-        Returns:
-            True if expired, False otherwise
-        """
-        return datetime.now() - timestamp > self.ttl
+    def prune(self, keep_weeks: int = 2):
+        """Prune old cache entries."""
+        self.logger.info("Running cache janitor...")
+        
+        with self._acquire_lock():
+            # Reload manifest to be safe
+            self.manifest.load()
+            
+            entries_to_remove = []
+            
+            for key, entry in self.manifest.data["entries"].items():
+                weeks = entry.get("weeks", [])
+                if len(weeks) > keep_weeks:
+                    # Sort weeks descending
+                    weeks.sort(reverse=True)
+                    weeks_to_keep = weeks[:keep_weeks]
+                    weeks_to_remove = weeks[keep_weeks:]
+                    
+                    parts = key.split("/")
+                    if len(parts) == 3:
+                        owner, repo, category = parts
+                        if repo == "_global_":
+                            repo = None
+                    else:
+                        continue
+
+                    for week in weeks_to_remove:
+                        path = self._get_fs_path(category, owner, repo, week)
+                        try:
+                            if path.exists():
+                                path.unlink()
+                            self.manifest.remove_week(key, week)
+                        except OSError as e:
+                            self.logger.warning(f"Failed to delete {path}: {e}")
+            
+            self.manifest.save()
 
     def clear(self) -> None:
         """Clear all cached values."""
-        for cache_file in self.cache_dir.glob("*.json"):
-            cache_file.unlink()
+        with self._acquire_lock():
+            # Remove all files in cache dir except lock and index?
+            # Or just recreate the dir
+            for item in self.cache_dir.iterdir():
+                if item.name == ".cache.lock":
+                    continue
+                try:
+                    if item.is_dir():
+                        shutil.rmtree(item)
+                    else:
+                        item.unlink()
+                except OSError as e:
+                    self.logger.warning(f"Failed to delete {item}: {e}")
+            
+            # Reset manifest
+            self.manifest.data = {"entries": {}}
+            self.manifest.save()
 
     def clear_repository_cache(self, username: str, repo_name: str) -> int:
-        """Clear all cache entries related to a specific repository.
-
-        Args:
-            username: Repository owner username
-            repo_name: Repository name
-
-        Returns:
-            Number of cache entries cleared
-        """
-        # Pattern matches all cache keys containing username and repo_name
-        # Examples: commits_user_repo_*, languages_user_repo_*, readme_user_repo_*, etc.
-        pattern = f"*{username}_{repo_name}_*.json"
-        cleared_count = 0
-
-        for cache_file in self.cache_dir.glob(pattern):
-            try:
-                cache_file.unlink()
-                cleared_count += 1
-            except Exception:
-                pass  # Continue even if deletion fails
-
-        return cleared_count
+        """Clear all cache entries related to a specific repository."""
+        count = 0
+        repo_dir = self.cache_dir / username / repo_name
+        
+        with self._acquire_lock():
+            self.manifest.load()
+            if repo_dir.exists():
+                # Count files
+                for _ in repo_dir.rglob("*.json"):
+                    count += 1
+                shutil.rmtree(repo_dir)
+                
+                # Update manifest
+                keys_to_remove = []
+                prefix = f"{username}/{repo_name}/"
+                for key in self.manifest.data["entries"]:
+                    if key.startswith(prefix):
+                        keys_to_remove.append(key)
+                
+                for key in keys_to_remove:
+                    del self.manifest.data["entries"][key]
+                
+                if keys_to_remove:
+                    self.manifest._dirty = True
+                    self.manifest.save()
+                    
+        return count

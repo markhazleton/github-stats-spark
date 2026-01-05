@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:04:46.939898+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the KeyPressCounter repository:\n\nKeyPressCounter is a sophisticated Windows system tray utility designed for comprehensive input and system performance monitoring, providing granular tracking of keyboard and mouse interactions alongside real-time hardware metrics. Developed in C# using .NET 10.0, the application leverages low-level system APIs and performance counters to capture detailed metrics including keystroke frequencies, CPU/memory usage, network performance, and system resource utilization with minimal user overhead. The project implements advanced monitoring techniques such as global input hooking via SharpHook, Windows Management Instrumentation (WMI) for hardware information, and native idle detection to ensure accurate, privacy-focused activity tracking without capturing sensitive input content. Its architecture emphasizes system tray integration, configurable logging, and a user-friendly graphical interface that presents complex system data through intuitive visualizations and exportable reports. Unique features like automatic idle time filtering, daily summary generation, and direct access to system utilities distinguish it from basic monitoring tools, making it particularly valuable for productivity analysts, system administrators, and users interested in detailed computational behavior insights. The application is primarily targeted at Windows desktop users seeking comprehensive, privacy-conscious system and input activity tracking with minimal performance impact.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:04:46.939853",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2167,
+    "confidence_score": 90
+  },
+  "hash": "ac85b2ec25c5515d229162617a4fa0a02684fc18ffdb47d99954c4990c3ef20b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "KeyPressCounter"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-07T23:45:17+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "KeyPressCounter",
+  "week": "2025W49_62505d88b853"
+}

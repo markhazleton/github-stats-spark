@@ -96,10 +96,14 @@ class RepositoryRanker:
 
         # Return top N
         top_repos = scored_repos[:top_n]
-        self.logger.info(
-            f"Ranked top {len(top_repos)} repositories "
-            f"(scores: {top_repos[0][1]:.1f} to {top_repos[-1][1]:.1f})"
-        )
+        
+        if top_repos:
+            self.logger.info(
+                f"Ranked top {len(top_repos)} repositories "
+                f"(scores: {top_repos[0][1]:.1f} to {top_repos[-1][1]:.1f})"
+            )
+        else:
+            self.logger.info("No repositories to rank")
 
         return top_repos
 

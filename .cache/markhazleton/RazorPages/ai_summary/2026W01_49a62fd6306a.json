@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:12:15.430997+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nThe RazorPages repository is a comprehensive full-stack .NET demonstration project for a fictional coffee shop application, showcasing modern web development techniques across multiple project types including Razor Pages, Blazor WebAssembly, ASP.NET Core Web APIs, and Minimal APIs. The solution provides a robust, multi-layered architecture that illustrates best practices in .NET development, featuring a shared model library, responsive user interfaces, RESTful API endpoints, and real-time communication capabilities using SignalR. Key technologies include ASP.NET Core, Entity Framework Core, Bootstrap, Blazorise, and SQLite, with a focus on clean separation of concerns, strongly-typed models, and scalable application design. The project serves as an educational reference for developers looking to understand contemporary .NET web application development patterns, demonstrating advanced techniques in building interactive, performant web applications with multiple frontend and backend components. Targeted at .NET developers, software architects, and learners, this repository provides a practical, production-like example of building a full-stack web application with modern Microsoft development technologies.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:12:15.430967",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1567,
+    "confidence_score": 90
+  },
+  "hash": "a8b8a27f00f26a9fdbdf5d1e294358c3828243d606911aa3c843fb49e119ea4d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RazorPages"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-02T06:38:50+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "RazorPages",
+  "week": "2026W01_49a62fd6306a"
+}

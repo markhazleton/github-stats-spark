@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T22:20:21.476845+00:00",
+  "value": {
+    "total": 586,
+    "recent_90d": 13,
+    "recent_180d": 20,
+    "recent_365d": 29,
+    "last_commit_date": "2025-11-16T21:56:09+00:00"
+  },
+  "hash": "58f04e3c75926106b6ed239c18703e50dc434a35a99847a8a93577f9e462062e",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-12-24T14:05:56+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2025W52"
+}

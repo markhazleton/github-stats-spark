@@ -1,0 +1,643 @@
+{
+  "timestamp": "2026-01-04T21:52:50.750232+00:00",
+  "value": [
+    {
+      "sha": "124548d265703d7ae07ad18ec1af659556d9407f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T23:06:10+00:00"
+        },
+        "message": "Enhance CI/CD workflow and update solution file\n\nUpdated the GitHub Actions workflow to improve the build and deployment process for the ASP.NET Core app. Key changes include adding environment variables, caching dependencies, running tests with code coverage, and ensuring proper cleanup post-deployment. Updated the Visual Studio solution file to version 18 and included the workflow file in the solution items."
+      },
+      "stats": {
+        "total": 54,
+        "additions": 39,
+        "deletions": 15
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "826e6f4d74ce0cda7227cfbc60dce3658090c7ed",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T23:01:43+00:00"
+        },
+        "message": "Merge pull request #1 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10"
+      },
+      "stats": {
+        "total": 1161,
+        "additions": 1130,
+        "deletions": 31
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "35233d3273ae05d716a77f79fd6e50c9630b75cc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T23:01:18+00:00"
+        },
+        "message": "Update README for .NET 10 and FastEndpoints 7.x\n\nAdded a \"Project Upgrade History\" section to document the migration to .NET 10 and package updates, including FastEndpoints and Bogus. Highlighted breaking changes in FastEndpoints 7.x, such as the removal of several helper methods. Provided a migration solution using `HttpContext.Response` for responses, with examples for common patterns. Updated code examples to reflect these changes.\n\nIntroduced a new \"Error Handling and Responses\" section, detailing handling of HTTP responses. Added a real-world example for error handling. Included a \"Troubleshooting\" section for common issues post-upgrade, and confirmed .NET 10 compatibility. Provided guidance for getting help with links to documentation and reference implementations."
+      },
+      "stats": {
+        "total": 217,
+        "additions": 206,
+        "deletions": 11
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "cc5b8f411fbbe4d486d920b3b47e6becbf52edcb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T22:56:45+00:00"
+        },
+        "message": "Upgrade to .NET 10.0 and update async handling\n\nUpgraded FastEndpointApi to .NET 10.0, updating the TargetFramework in the project file. Updated package references in FastEndpointApi.csproj to ensure compatibility with the new framework version, including upgrading FastEndpoints to version 7.1.1.\n\nRefactored HandleAsync methods in endpoint files to use async/await patterns, replacing SendAsync and SendNotFoundAsync with direct HttpContext.Response manipulation and WriteAsJsonAsync for response handling.\n\nUpdated tasks.md to reflect completion of all upgrade tasks. Created execution-log.md to document the successful upgrade process, including build status and warnings."
+      },
+      "stats": {
+        "total": 66,
+        "additions": 44,
+        "deletions": 22
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "9e4007b2aa7fbcfc4f2b5120b751a396b9d807fc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T22:30:53+00:00"
+        },
+        "message": "chore: upgrade solution to .NET 10.0\n\n- Update FastEndpointApi.csproj target framework from net9.0 to net10.0\n\n- Verify all packages compatible with .NET 10.0\n\n- Validate application builds and runs successfully\n\n- Test all endpoints for functionality\n\nBREAKING CHANGE: This upgrades the solution to .NET 10.0 Preview.\n\nRequires .NET 10.0 SDK to build and run."
+      },
+      "stats": {
+        "total": 58,
+        "additions": 42,
+        "deletions": 16
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "7a0ae3aa2ea471379f741a053e17c8d096d76cf5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T22:26:00+00:00"
+        },
+        "message": "Commit changes before fixing global.json file(s)."
+      },
+      "stats": {
+        "total": 858,
+        "additions": 857,
+        "deletions": 1
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "55ba21d3a2300c0fd256e9c72529fe7f5b6c5af0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T02:39:51+00:00"
+        },
+        "message": "Upgrade FastEndpoints packages and validate GUID format\n\nUpdated `FastEndpointApi.csproj` to upgrade FastEndpoints packages from version `6.1.0` to `6.2.0`.\n\nModified the `ReadPerson` method in `PersonService.cs` to validate the `id` parameter using `Guid.TryParse`, throwing a `FormatException` for invalid formats."
+      },
+      "stats": {
+        "total": 13,
+        "additions": 8,
+        "deletions": 5
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "56020ad7b24d0b15c6022fa03fbe6b049aa4b806",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-20T11:41:12+00:00"
+        },
+        "message": "Add static HTML sample pages for API demonstration and documentation"
+      },
+      "stats": {
+        "total": 46,
+        "additions": 41,
+        "deletions": 5
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "2ee5e755f87e698264033e1f166cf2f77f676335",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-20T11:35:23+00:00"
+        },
+        "message": "update for demo, docs, on ui testing of api"
+      },
+      "stats": {
+        "total": 524,
+        "additions": 438,
+        "deletions": 86
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "400592d530285941921e98a4c03100d77d4cee60",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T23:16:26+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 477,
+        "additions": 343,
+        "deletions": 134
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "00affa8936c177b43bbd98f8ce9704808a4d6703",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T23:15:43+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 68,
+        "additions": 68,
+        "deletions": 0
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "1f0b275363f6dea8910b38386ee81b7ad2e37ff8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T23:13:07+00:00"
+        },
+        "message": "Add documentation page and link to index.html"
+      },
+      "stats": {
+        "total": 250,
+        "additions": 157,
+        "deletions": 93
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "08c22b37906adc0e868232b6cad521a89ba0ffab",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T23:03:02+00:00"
+        },
+        "message": "Update README.md with API enhancements and CI/CD details\n\n- Added sections for Data Seeding and new API endpoints for managing persons (create, read, update, delete).\n- Expanded implementation details for each endpoint, including request/response models and HATEOAS links.\n- Updated PersonService class to include methods for reading, updating, and deleting persons with in-memory data management.\n- Introduced a new section on Continuous Integration & Deployment (CI/CD) using GitHub Actions for Azure Web Apps.\n- Added a Visual Demo section for an interactive web UI to interact with the API.\n- Made minor formatting changes and code improvements for clarity and maintainability."
+      },
+      "stats": {
+        "total": 288,
+        "additions": 262,
+        "deletions": 26
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "d6934c1b26ed9effc8813158f04b891a75219ce3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T23:02:53+00:00"
+        },
+        "message": "Add CRUD functionality and UI for Person resource\n\n- Updated `FastEndpointApi.csproj` to include `Bogus` for data generation.\n- Modified `Program.cs` to serve a static HTML file and clarified Swagger UI usage.\n- Enhanced `README.md` with CRUD endpoint details and data seeding information.\n- Simplified routes in `CreatePersonEndpoint`, `DeletePersonEndpoint`, and `ReadPersonEndpoint` to follow RESTful conventions.\n- Changed property names in `ReadPersonRequest` and updated related files for consistency.\n- Updated `UpdatePersonRequest` to use `string` for `Id` and made service return types nullable.\n- Improved `PersonService` initialization and data seeding.\n- Added `index.html` for a user-friendly API interface.\n- Introduced `swagger-inject.js` to link the demo UI in Swagger."
+      },
+      "stats": {
+        "total": 427,
+        "additions": 411,
+        "deletions": 16
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "b5abbd96df0fe25c486d456f8ec4c35309ca7209",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T17:54:13+00:00"
+        },
+        "message": "Refactor Azure Web App deployment workflow\n\nCompletely rewrite the workflow configuration for building and deploying the ASP.Net Core application. Update `actions/upload-artifact` and `actions/download-artifact` from version `@v3` to `@v4`, while maintaining the same functionality and structure. Ensure the application is built, tested, published, and deployed correctly, including a post-deployment health check."
+      },
+      "stats": {
+        "total": 186,
+        "additions": 93,
+        "deletions": 93
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "7bdfd37f32b056c4068298acc843c70f0ec21f77",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T17:48:17+00:00"
+        },
+        "message": "Update workflow and README for .NET 9.x support\n\n- Upgraded to .NET Core version 9.x and setup action to v3 in `main_fastendpointsdemo.yml`.\n- Added caching for NuGet packages and separated restore from build commands.\n- Introduced a new test step with optional continuation on failures.\n- Reformatted Azure deployment job for consistency and added audience parameter for security.\n- Implemented a post-deployment health check to verify application status.\n- Revamped `README.md` with a new title, improved structure, expanded features, and additional sections for better guidance on FastEndpoints."
+      },
+      "stats": {
+        "total": 455,
+        "additions": 415,
+        "deletions": 40
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "da95322d2801d271f196ac3250f135c86e0eeac4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T17:06:26+00:00"
+        },
+        "message": "Fix issue with Swagger and JSON"
+      },
+      "stats": {
+        "total": 30,
+        "additions": 7,
+        "deletions": 23
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "5d2d6e2c99fdf57b8456ced0b1f1534ddd30a813",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-19T16:59:26+00:00"
+        },
+        "message": "update packages..."
+      },
+      "stats": {
+        "total": 390,
+        "additions": 382,
+        "deletions": 8
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "798635a42dc020fd1cc2b564c192de166a3f62eb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T03:17:16+00:00"
+        },
+        "message": "Upgrade to Net 9"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 18,
+        "deletions": 18
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "3e3ce9dfe6f0e155612adabd716002460e7f5a77",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T01:30:35+00:00"
+        },
+        "message": "update nuget package"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "489c6cf59104573f98b37ddb0d1d62171d840286",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-05T03:35:39+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 150,
+        "additions": 75,
+        "deletions": 75
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "0502e6059d4ede6fbf493cf67449cfa052244644",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-08T18:32:52+00:00"
+        },
+        "message": "nuget update"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "e42662e22978307c5b5f1447d662366461b7c901",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T20:50:38+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "5bf054d23e9a5942cac06744372374f48e85aa85",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-09T01:19:41+00:00"
+        },
+        "message": "Add route for cs-client generation"
+      },
+      "stats": {
+        "total": 63,
+        "additions": 48,
+        "deletions": 15
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "7e034672c56bfceaff4bdb1ca8e5bb05ab7a04c6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-09T00:49:35+00:00"
+        },
+        "message": "Add some error handling"
+      },
+      "stats": {
+        "total": 23,
+        "additions": 18,
+        "deletions": 5
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "87920d93214ce0739737a044919a5f2e8f597792",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-09T00:32:22+00:00"
+        },
+        "message": "Fix issue with read all, update, and delete\nMake entity a record"
+      },
+      "stats": {
+        "total": 216,
+        "additions": 148,
+        "deletions": 68
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "4b70acbc2e4f9d8e5d8d032ca47783778b0488e0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-08T15:43:56+00:00"
+        },
+        "message": "Add XML docs, clean up warnings"
+      },
+      "stats": {
+        "total": 104,
+        "additions": 67,
+        "deletions": 37
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "0686ce32631a0042f3dc27c009f0027e5a4a6736",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-08T15:36:26+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/markhazleton/FastEndpointApi"
+      },
+      "stats": {
+        "total": 114,
+        "additions": 66,
+        "deletions": 48
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "2947d90937700dd3264076665766a9c4fd932d16",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-08T15:36:22+00:00"
+        },
+        "message": "Simplify Layout\nImplement Mapper from Fast Endpoints"
+      },
+      "stats": {
+        "total": 574,
+        "additions": 317,
+        "deletions": 257
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "edb07a7e542d4cf63e6db2bd8c0cb28d1836b520",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T19:49:55+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 66,
+        "additions": 66,
+        "deletions": 0
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "62fc7b623166d48b56d36f387895ad4694a9d06c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T19:48:04+00:00"
+        },
+        "message": "Delete .github/workflows/FastEndpointsDemo.yml"
+      },
+      "stats": {
+        "total": 48,
+        "additions": 0,
+        "deletions": 48
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "bf71e5d4c28962bdfd7a5130ca9925f7431f4b2e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T19:46:37+00:00"
+        },
+        "message": "Add GitHub Actions to Build It and Deploy to Azure"
+      },
+      "stats": {
+        "total": 48,
+        "additions": 48,
+        "deletions": 0
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "ceed35759413d803a6667c45a20743097b4c5cc6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T19:41:04+00:00"
+        },
+        "message": "change 'user' to 'person' in api routes to match entity name"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "10e2de5893c76e96c740a63fee81705ac1cd04a8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T19:39:29+00:00"
+        },
+        "message": "trying to fix swager for Create Person"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "2c048a6d26dce23c3b487abebf9f2670a12d6f44",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T18:48:47+00:00"
+        },
+        "message": "update readme"
+      },
+      "stats": {
+        "total": 21,
+        "additions": 21,
+        "deletions": 0
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "76600e1ec8b227203122c5c690482fe5857cc6ff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T18:44:35+00:00"
+        },
+        "message": "Add CRUD services and end points for person"
+      },
+      "stats": {
+        "total": 403,
+        "additions": 367,
+        "deletions": 36
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "e1cd61b240fa71834cb41ff48f86792348e4ac45",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T17:39:57+00:00"
+        },
+        "message": "Add Swagger Support"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 17,
+        "deletions": 2
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "4d63b620f5fbc90554517380af2e9c0023486185",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T14:56:05+00:00"
+        },
+        "message": "Add project files."
+      },
+      "stats": {
+        "total": 178,
+        "additions": 178,
+        "deletions": 0
+      },
+      "repo": "FastEndpointApi"
+    },
+    {
+      "sha": "2eee4a43bdae20c4ffd97e6c39021b9c7996e902",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-04-06T14:56:03+00:00"
+        },
+        "message": "Add .gitattributes, .gitignore, README.md, and LICENSE.txt."
+      },
+      "stats": {
+        "total": 448,
+        "additions": 448,
+        "deletions": 0
+      },
+      "repo": "FastEndpointApi"
+    }
+  ],
+  "hash": "35f61cf80c0448c7a9f7d6d5316f4ae3ca7d12cbae0a6414b12ef609a3037781",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "FastEndpointApi"
+    },
+    "category": "commits_stats",
+    "pushed_at": "2025-11-16T23:08:34+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits_stats",
+  "owner": "markhazleton",
+  "repo": "FastEndpointApi",
+  "week": "2025W46"
+}

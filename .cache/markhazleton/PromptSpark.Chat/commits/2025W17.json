@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-01-04T22:13:22.689697+00:00",
+  "value": [
+    {
+      "sha": "23e2454d998cbe33d39f9cebf54e277d68f7f797",
+      "message": "add light/dark theme",
+      "author": "Mark Hazleton",
+      "date": "2025-04-27T04:54:14+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "92de6c4b56f268d70f074c71b7d72834657428db",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-01-09T19:14:56+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "176bc28a63b3934ded0c6ba7ecc26ca1f556d4d2",
+      "message": "update workflow ui",
+      "author": "Mark Hazleton",
+      "date": "2025-01-04T14:04:56+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "1eb9ac86c40b699b5959362f4b34abdc2c5ab2fd",
+      "message": "add scss build and remove libman.json",
+      "author": "Mark Hazleton",
+      "date": "2025-01-03T19:47:44+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "1771228477202287ecfb734557a2aa86f1e6d822",
+      "message": "refactor for DDD",
+      "author": "Mark Hazleton",
+      "date": "2025-01-03T03:14:03+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "715e20966a9a2b47a1469e70552e1426c55cec66",
+      "message": "update readme",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T05:17:44+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "41b6289068dda342109233b772b83899510362b6",
+      "message": "update readme",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T05:15:47+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "10c0b56700830ad92c52f64180a0b96614ce4b7e",
+      "message": "add license file",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T05:06:09+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "cc84ceb1d0fb78efa9c203186ac1978663d9d7c1",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T05:03:03+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "12ead85043427b9f000a54616616946b5bc34534",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T05:01:58+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "a1e18336889073f4a6ed10b0764614556c3bb0c7",
+      "message": "Delete PromptSpark.Chat/obj/Debug/net9.0 directory",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T05:00:08+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "7f9708975c1969321f4359ad54e488a4352370b9",
+      "message": "update",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T04:59:40+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "f2c3fdb8103e7f3e40790f89b244746a72ad2288",
+      "message": "update readme",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T04:57:35+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "2d557315c6644251f6891e2d5386518cdd0fb7ac",
+      "message": "Delete .vs/PromptSpark.Chat/CopilotIndices/17.13.196.30798 directory",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T04:55:54+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "1a5372a56bbf573ed5a8ed030e21632cbb3acec9",
+      "message": "Delete .cr/personal/FavoritesList directory",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T04:55:39+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "217adb8d8407a9636e4b9955241652335e113409",
+      "message": "fix gitignore, add readme",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T04:54:05+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "f1940f80d631eb80d96a26be3a523a7fbc8c7510",
+      "message": "initial migration, develoopment as stand alone app",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T04:50:38+00:00",
+      "repo": "PromptSpark.Chat"
+    },
+    {
+      "sha": "d40ab05406927f200cebb7b984fa8df23977bab8",
+      "message": "Initial commit",
+      "author": "Mark Hazleton",
+      "date": "2024-12-31T04:00:15+00:00",
+      "repo": "PromptSpark.Chat"
+    }
+  ],
+  "hash": "a4e0de3a58f3591889159acc7d2cd3b5f0295e080acc12ef532d30acb9308639",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "commits",
+    "pushed_at": "2025-04-27T04:54:17+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2025W17"
+}

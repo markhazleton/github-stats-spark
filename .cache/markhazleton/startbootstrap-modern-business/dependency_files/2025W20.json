@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-04T22:33:52.896141+00:00",
+  "value": {
+    "package.json": "{\n    \"title\": \"Modern Business\",\n    \"name\": \"startbootstrap-modern-business\",\n    \"version\": \"5.0.5\",\n    \"scripts\": {\n        \"prebuild\": \"npm run lint\",\n        \"lint\": \"eslint src/**/*.js scripts/**/*.js\",\n        \"format\": \"prettier --write .\",\n        \"fix\": \"npm run lint -- --fix && npm run format\",\n        \"test\": \"npm run build && mocha test/**/*.test.js\",\n        \"prepare\": \"echo Preparing project...\",\n        \"build\": \"npm run clean && npm run build:pug && npm run build:scss && npm run build:scripts && npm run build:assets && npm run minify:css && npm run minify:js\",\n        \"start\": \"npm run build && node scripts/start.js\",\n        \"start:debug\": \"npm run build && node scripts/start-debug.js\",\n        \"clean\": \"node scripts/clean.js\",\n        \"build:pug\": \"node scripts/build-pug.js\",\n        \"build:scss\": \"node scripts/build-scss.js\",\n        \"build:scripts\": \"node scripts/build-scripts.js\",\n        \"build:assets\": \"node scripts/build-assets.js\",\n        \"minify:css\": \"npx postcss docs/css/styles.css --use cssnano -o docs/css/styles.min.css\",\n        \"minify:js\": \"npx terser docs/js/scripts.js -c -m -o docs/js/scripts.min.js\"\n    },\n    \"description\": \"A multipurpose HTML website template built with Bootstrap\",\n    \"keywords\": [\n        \"css\",\n        \"sass\",\n        \"html\",\n        \"responsive\",\n        \"theme\",\n        \"template\"\n    ],\n    \"homepage\": \"https://startbootstrap.com/template-overviews/modern-business\",\n    \"bugs\": {\n        \"url\": \"https://github.com/StartBootstrap/startbootstrap-modern-business/issues\",\n        \"email\": \"feedback@startbootstrap.com\"\n    },\n    \"license\": \"MIT\",\n    \"author\": \"Start Bootstrap\",\n    \"contributors\": [\n        \"David Miller (https://davidmiller.io/)\"\n    ],\n    \"repository\": {\n        \"type\": \"git\",\n        \"url\": \"https://github.com/StartBootstrap/startbootstrap-modern-business.git\"\n    },\n    \"dependencies\": {\n        \"bootstrap\": \"5.3.6\",\n        \"bootstrap-icons\": \"^1.13.1\",\n        \"ncp\": \"^2.0.0\"\n    },\n    \"devDependencies\": {\n        \"autoprefixer\": \"10.4.21\",\n        \"browser-sync\": \"3.0.4\",\n        \"chokidar\": \"4.0.3\",\n        \"concurrently\": \"9.1.2\",\n        \"cssnano\": \"^7.0.7\",\n        \"eslint\": \"^9.26.0\",\n        \"mocha\": \"^11.2.2\",\n        \"postcss\": \"8.5.3\",\n        \"postcss-cli\": \"^11.0.1\",\n        \"prettier\": \"^3.5.3\",\n        \"pug\": \"3.0.3\",\n        \"sass\": \"1.88.0\",\n        \"shelljs\": \"0.10.0\",\n        \"terser\": \"^5.39.1\",\n        \"upath\": \"2.0.1\"\n    }\n}\n"
+  },
+  "hash": "eaa5e28e74a8b119545ada2cd873ab6f6a378ccd781f044e78319d09bfa63c56",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "startbootstrap-modern-business"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2025-05-13T23:08:19+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "startbootstrap-modern-business",
+  "week": "2025W20"
+}

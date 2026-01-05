@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T21:53:01.615959+00:00",
+  "value": {
+    "ai_summary": "Here's a detailed technical summary of the FastEndpointApi repository:\n\nFastEndpointApi is a comprehensive demonstration project showcasing the FastEndpoints framework for building high-performance, clean, and maintainable ASP.NET Core REST APIs using the REPR (Request-Endpoint-Response) architectural pattern. The project implements a complete Person Management API with full CRUD operations, featuring a lightweight, modular approach to API development that emphasizes minimal boilerplate code and strong separation of concerns. Leveraging .NET 9.0 and the FastEndpoints library, the application provides a robust implementation of RESTful endpoints with advanced features like HATEOAS (Hypermedia as the Engine of Application State), automatic mapping, dependency injection, and integrated Swagger documentation.\n\nKey technical highlights include:\n- Modular endpoint structure with dedicated folders for create, read, update, and delete operations\n- In-memory data persistence with a service layer abstraction\n- Comprehensive request/response model mapping\n- Built-in HATEOAS link generation\n- Interactive Swagger UI for API exploration\n- Static HTML sample pages for demonstration\n\nThe project is particularly noteworthy for developers seeking a clean, performant alternative to traditional ASP.NET Core MVC controllers, offering a more streamlined and maintainable approach to API development. It serves as both a practical implementation guide and a reference architecture for building modern .NET web APIs.\n\nTarget users include:\n- .NET developers looking to modernize their API development approach\n- Teams seeking to reduce boilerplate code\n- Developers interested in clean architecture and separation of concerns",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T15:53:01.615913",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2541,
+    "confidence_score": 90
+  },
+  "hash": "fe8516d5e1bbe569e98ef5d14a8d327fea29387d28b590818c71eb1011144ca5",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "FastEndpointApi"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-11-16T23:06:10+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "FastEndpointApi",
+  "week": "2025W46_ee90f96f0773"
+}

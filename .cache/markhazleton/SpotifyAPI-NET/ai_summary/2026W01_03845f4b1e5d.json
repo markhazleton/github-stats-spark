@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:26:09.130301+00:00",
+  "value": {
+    "ai_summary": "SpotifyAPI-NET is a comprehensive .NET library for interacting with the Spotify Web API, designed to provide developers with a robust and type-safe interface for integrating Spotify functionality into .NET applications. The library supports a wide range of Spotify API endpoints (over 74), enabling developers to perform actions such as retrieving track and playlist information, managing user libraries, controlling music playback, and implementing various authentication methods. Built with cross-platform compatibility in mind, it supports .NET Standard 2.x, which ensures functionality across .NET Framework, .NET Core, UWP, and Xamarin platforms, and features modular architecture with support for custom HTTP clients, logging, retry handling, and proxy configurations. Its key differentiators include strongly-typed responses, comprehensive OAuth2 authentication support, and a developer-friendly design that abstracts complex API interactions into simple, intuitive method calls. The library is particularly valuable for developers building music-related applications, desktop/mobile apps with Spotify integration, or custom music management tools within the .NET ecosystem. By providing a clean, well-documented, and extensible SDK, SpotifyAPI-NET simplifies the process of leveraging Spotify's rich API capabilities for .NET developers.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:26:09.130265",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1420,
+    "confidence_score": 90
+  },
+  "hash": "451921e6348df923ffd5dae0564d458a6652123e33f1fb40887137dc2f826ccf",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SpotifyAPI-NET"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-03T23:37:39+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SpotifyAPI-NET",
+  "week": "2026W01_03845f4b1e5d"
+}

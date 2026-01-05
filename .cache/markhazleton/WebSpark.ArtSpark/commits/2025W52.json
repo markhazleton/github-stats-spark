@@ -1,0 +1,481 @@
+{
+  "timestamp": "2026-01-04T22:48:49.872212+00:00",
+  "value": [
+    {
+      "sha": "7c821b4244dcb886c6145b0c613960fcf5920226",
+      "message": "Feature 003: Add AI Persona Prompt Management summary\n\nAdd a detailed merge summary for the AI Persona Prompt Management System (Feature 003). Includes implementation stats, test coverage (83 tests), configuration and performance highlights, documentation links, and post-merge tasks. Confirms full backward compatibility, no breaking changes, and production readiness.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-28T16:59:08+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "e00bae4ad0e8f4a56d8251ed711b81df37066edf",
+      "message": "Merge feature: AI Persona Prompt Management System\n\n- Externalize AI persona prompts to markdown files with YAML front matter\n- Add hot reload support for local development iterations\n- Implement comprehensive logging and operational visibility\n- Support metadata overrides and token validation\n- Add 83 passing tests covering all functionality\n- Complete documentation in specs/003-prompt-management/\n\nAll tasks completed. Feature branch 003-prompt-management merged into main.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-27T20:32:46+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "a89a109e7bff1c2b5d05635625f38b61b52d3e14",
+      "message": "fix: Add missing project reference for WebSpark.ArtSpark.Agent",
+      "author": "Mark Hazleton",
+      "date": "2025-12-27T20:31:11+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "b9a35b23d99f9a891039797c97145414ebc121a6",
+      "message": "feat: Implement AI Persona Prompt Management System\n\n- Added file-based prompt management with YAML front matter for metadata overrides.\n- Introduced hot reload functionality for development, allowing live updates to prompts.\n- Established a safe fallback system to ensure 100% uptime with hardcoded prompts.\n- Enhanced operator visibility with structured logging and footer metadata display.\n- Developed comprehensive test coverage for prompt loading, fallback, and variant testing.\n- Created performance metrics documentation and release notes for the new system.\n- Updated configuration schema to support new features and ensure backward compatibility.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-27T20:12:40+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "b014bc70d54c6e9f3bd4f8fd5e3598cddd9f3a42",
+      "message": "Fix profile photo bugs, add carousel & UI enhancements\n\n- Fixes critical bug where new profile photos were deleted after upload by moving deletion logic before upload in AccountController.\n- Adds detailed logging and a diagnostics controller for upload directory and static file troubleshooting.\n- Refactors ProfilePhotoService to ensure files are saved before size checks, returns actual filenames, and consistently generates URLs and thumbnails.\n- Introduces ProfilePhotoViewComponent for displaying user photos or initials in navbar, dropdown, and reviews.\n- Updates reviews and navigation UI to show profile photos; adds CSS for consistent circular display.\n- Replaces AI Personas grid with a Bootstrap carousel on the home page, including detailed persona descriptions and quick navigation.\n- Limits home page featured artworks to 4 random items for improved layout.\n- Enables Markdown rendering for AI chat responses with custom styling.\n- Adds extensive documentation on implementation, debugging, and fixes.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-27T19:45:49+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "2140f3cc84ea806a854784ad47293cc3519eb129",
+      "message": "Add admin collection transfer, static file & UI updates\n\n- Implement \"Move Collection\" feature for admins to transfer collections between users, with audit logging and UI modal for user search/selection\n- Add CollectionMediaPath to FileUploadOptions; update MediaController and static file serving for separate collection media and profile photo paths\n- Enhance application cookie and access denied handling; add AccessDenied view/action\n- Update NuGet package versions and appsettings upload paths\n- Remove unused/test image files\n- Improve collection queries to include artwork counts",
+      "author": "Mark Hazleton",
+      "date": "2025-12-27T18:14:36+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "db5d71d02ad0f1d7bb7072597eef854ee9679c64",
+      "message": "fix: Update quality audit report generation time and duration",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T15:16:48+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "8e21fb6c31d275e65be5f285e9b762ed2f718d5f",
+      "message": "Add comprehensive implementation completion documentation\n\n- Add CS8618 warning resolution documentation\n- Add implementation complete summary with all metrics\n- Document quality audit results (0 warnings, 62/62 tests passing)\n- Confirm production readiness for prompt management feature\n- Mark implementation as ready for review/merge",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T15:15:17+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "c80f8b799e1665583716fcb916dd979ea96e3b97",
+      "message": "Add quality audit report for WebSpark.ArtSpark generated on 2025-11-17\n\n- Summary of build diagnostics, dependency currency, and safeguard controls\n- Detailed findings on safeguard controls with one follow-up needed\n- No backlog recommendations identified",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T15:11:23+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "79be821ab0e0c051f41c232b6217c80c5f1888a9",
+      "message": "feat: Implement externalized prompt management with hot reload support and comprehensive documentation",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T14:55:37+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "81b2e9de4877ad22faf38adc1f7bd580cdd947c5",
+      "message": "Implement prompt management system with comprehensive tests and hot reload functionality\n\n- Added `PromptLoader`, `PromptMetadataParser`, and `FileBackedPersonaHandler` for dynamic prompt management.\n- Created tests for prompt loading, metadata parsing, and token validation.\n- Implemented hot reload feature for prompt files, ensuring updates are reflected without redeployment.\n- Established strict token whitelisting to prevent injection attacks.\n- Developed detailed documentation summarizing implementation, architecture, and operational guidance.\n- Achieved 100% test coverage for prompt management features.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T14:42:01+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "b43519ae3ecdaf0808299f70dfc04c6a60714bf2",
+      "message": "feat: Implement persona prompt management system with cultural sensitivity\n\n- Added DefaultSystemPrompt for Artist, Artwork, Curator, and Historian personas to enhance cultural context and sensitivity in responses.\n- Introduced PromptOptions and PersonaPromptConfiguration for managing prompt loading and validation.\n- Developed FileBackedPersonaHandler to utilize file-backed prompts with fallback options.\n- Created PromptLoader service for loading prompts from markdown files with YAML front matter, including hot reload support.\n- Established PromptMetadataParser for extracting metadata from prompt files.\n- Seeded initial markdown prompt files for each persona with structured content and guidelines.\n- Updated appsettings for prompt management configuration in development and production environments.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T14:13:05+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "7d34f12d5feb2e262fde819ade2e9595628fe268",
+      "message": "feat: Add prompt data path validation at startup and enhance test coverage for prompt path validation",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T13:56:46+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "b786673bb37efec70f6a34d32a65513346966813",
+      "message": "feat: Add support for selecting prompt variants and enhance telemetry for active prompt metadata",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T13:53:06+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "a5ac4c2db6d9fb5fb1a0e136f9b7243cfd55c258",
+      "message": "feat: Enhance AI Persona Prompt Management with metadata overrides, hot reload support, and validation improvements",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T13:47:49+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "1ce02e6bc32f130ea87499e8afe8a471107f2c92",
+      "message": "feat: Implement AI Persona Prompt Management System with markdown-based prompts and hot reload support",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T13:32:45+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "218ff0acd1d82378e756a919d123d685ed3ba749",
+      "message": "feat: Add specification and quality checklist for AI Persona Prompt Management System",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T03:13:11+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "3bd3640a9697a72140f057baba7f0f02d9d1e95d",
+      "message": "Feature: Enhanced User Registration and Profile Management (#2)\n\n* feat: Enhance user registration and profile management\n\n- Added support for C# 13 / .NET 10 (Preview) with ASP.NET Core Identity and EF Core for user profile management.\n- Introduced SQLite for EF Core migrations, ensuring production readiness for single-node demos.\n- Created a comprehensive specification quality checklist for the enhanced user registration and profile management feature.\n- Developed OpenAPI contract for the User Profile API, detailing endpoints for user registration, profile retrieval, and admin user management.\n- Defined a new data model for user profiles and audit logs, including validation rules and relationships.\n- Outlined an implementation plan for the feature, including setup steps and validation checklists.\n- Documented research findings on identity extension, EF Core schema, image processing, and observability enhancements.\n- Drafted a detailed feature specification, including user scenarios, functional requirements, and success criteria.\n\n* feat: Add comprehensive tasks for enhanced user registration and profile management\n\n* feat: Implement Enhanced User Registration and Profile Management\n\n- Completed backend infrastructure for user registration and profile management.\n- Added profile photo upload, management, and role-based access control.\n- Enhanced profile editing with real-time validation and password strength checking.\n- Integrated email verification infrastructure and audit logging.\n- Created comprehensive documentation for implementation status and analysis remediation.\n- Resolved high-priority issues identified in specification analysis.\n\n* refactor: Clean up whitespace and formatting across multiple files\n\n* feat: Update layout and configuration for admin role navigation and database paths\n\n* feat: Mark profile editing integration and unit tests as complete for User Story 4",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T03:06:36+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "3d51baa57f16422efa1e4427f3413d946eb73229",
+      "message": "docs: Update Copilot instructions for .NET 10 and enhance project guidelines",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T01:13:49+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "0781ba10571e3f4851ddfab8a238ea5d794aff14",
+      "message": "Quality Audit & Package Currency System (#1)\n\n* feat: Implement Quality Audit & Package Currency feature\n\n- Added comprehensive quality checklist for specification validation.\n- Created OpenAPI contract for internal quality audit service.\n- Developed data model for quality audit and package currency entries.\n- Drafted implementation plan outlining audit workflow and objectives.\n- Provided quickstart guide for running the quality audit script.\n- Documented research findings on build diagnostics and package currency strategies.\n- Specified feature requirements and user scenarios for quality audit.\n- Established tasks for phased implementation of the quality audit feature.\n\n* feat: Implement initial quality audit infrastructure with report generation and module setup",
+      "author": "Mark Hazleton",
+      "date": "2025-11-17T01:02:33+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "1b2d3cdaaf5d259a804b645a0481ae50511c5448",
+      "message": "docs: Add documentation for 401 error fix",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:45:21+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "3f7372e07b2ee5239c8748a6a45972d02c1afa40",
+      "message": "fix: Allow anonymous access to AI chat features and public artwork endpoints\n\nAdded [AllowAnonymous] to Index, Details, Search, Featured actions\n\nAdded [AllowAnonymous] to GetReviews for public review viewing\n\nAdded [AllowAnonymous] to Chat endpoint for AI conversations\n\nAdded [AllowAnonymous] to ConversationStarters for AI persona features\n\nResolves 401 errors on ConversationStarters endpoint",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:44:39+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "407548f3cb2cd05f0a8aaf9ac0031c3ed2ffd20e",
+      "message": "docs: Add main branch replacement summary",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:40:20+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "23435713330622c5489bf36b16a3f293d977a347",
+      "message": "Upgrade to .NET 10.0 and update dependencies\n\nUpgraded the WebSpark.ArtSpark solution from .NET 9.0 to .NET 10.0 (Preview). Updated the README.md to reflect the new .NET version and prerequisites. Completed all tasks in tasks.md, marking the upgrade process as 100% complete. Modified WebSpark.ArtSpark.Demo.csproj to update the target framework and several NuGet package versions. Updated WebSpark.ArtSpark.Tests.csproj with newer testing package versions. Created and pushed the \"upgrade-net10-complete\" tag to the remote repository. Verified successful integration and agent functionality.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:34:04+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "d2a7006d8dfa04007365a4f0039088415f705e7e",
+      "message": "upgrade-net10-complete",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:31:44+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "e05c232084d34f69f719b4c10e49cf82e51084b9",
+      "message": "TASK-004: Upgrade Tier 3 test project and update packages",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:27:51+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "dc0460613cf9b3baf3fc1c8b93ae48098c4391e4",
+      "message": "TASK-003: Upgrade Tier 2 projects and update packages",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:26:13+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "c15370b80169b7eb8c65ba6c372b11355598431e",
+      "message": "TASK-002: Upgrade Tier 1 projects to .NET 10.0",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:24:08+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "9540cda4a93a9dee1bedd35d90aceb8e7e0cb83b",
+      "message": "Add upgrade assessment, plan, and tasks for .NET 10 upgrade",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:23:04+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "c20f39d47822f6eb8e92d867300d3388a0a8ef51",
+      "message": "Pre-upgrade: Commit pending changes before .NET 10 upgrade",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T23:15:38+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "6501daaf27371b63f6cb65677a6d0a248e222450",
+      "message": "feat: Update README and documentation for live demo, enhance caching, and improve theme persistence",
+      "author": "Mark Hazleton",
+      "date": "2025-07-08T13:17:14+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "7ac968461e3e0911c96961e06ed591c8e638a437",
+      "message": "Set fixed theme and color mode across the application\n\nUpdated the HTML layout to hardcode the `data-bs-theme` to \"light\" and set the default theme to \"yeti\" without user customization. Removed JavaScript functions for cookie management, ensuring a simplified theme handling process with fixed settings. Eliminated theme switcher components from the navigation for a cleaner interface. Deleted CSS styles related to theme loading states and mobile responsiveness, as the application now uses a fixed theme approach. Updated debugging information to reflect the new fixed theme and color mode settings.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-07T04:48:41+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "1a67a5e94c658dd1678261c44933253c7abaa340",
+      "message": "Add API controllers for Events, Exhibitions, Media, and Shop\n\n- Implemented EventsApiController with endpoints for retrieving events, event programs, and event occurrences.\n- Created ExhibitionsApiController to manage exhibitions and galleries, including search functionality.\n- Developed MediaApiController for handling media-related operations such as images, videos, sounds, and mobile sounds.\n- Established ShopApiController for product management, including retrieval and search capabilities.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-26T13:34:59+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "178e6c1f5753e1c91d300cd210a4532f872f83c0",
+      "message": "Update packages, refactor controllers, and enhance SEO\n\n- Updated package references in `WebSpark.ArtSpark.Agent.csproj` and `WebSpark.ArtSpark.Console.csproj` to newer versions.\n- Modified `AccountController.cs` to clean up using statements.\n- Changed terminology from \"artworks\" to \"artwork\" in `ArtworkController.cs` and `ArtworkFilterController.cs` for consistency.\n- Added `[Authorize]` attribute to `ArtworkFilterController.cs`.\n- Refactored random collection handling in `HomeController.cs`.\n- Improved layout and formatting in `Index.cshtml`.\n- Updated `WebSpark.ArtSpark.Demo.csproj` and `WebSpark.ArtSpark.Tests.csproj` for newer Entity Framework Core versions.\n- Added migrations to enhance the database schema.\n- Improved slug generation logic in `SlugGenerator.cs`.\n- Updated solution file `WebSpark.ArtSpark.Demo.sln` with project configuration details.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-26T12:03:13+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "17999f147572cc4de2a1bef37c373df210aa11fa",
+      "message": "fix: Update .NET version in About section to reflect .NET 9",
+      "author": "Mark Hazleton",
+      "date": "2025-06-09T02:37:33+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "2cccb32d237d7c9b88876b46b9c6f5508f329795",
+      "message": "feat: Revamp home and fallback page layouts for improved UI/UX",
+      "author": "Mark Hazleton",
+      "date": "2025-06-08T13:22:26+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "c798bebac9831be0e891dcb4800fedb6557d4c04",
+      "message": "feat: Implement Random Collection Showcase on Home Page\n\n- Transformed home page to display a randomly selected public collection on each visit.\n- Enhanced user engagement with a \"New Collection\" button for instant refresh.\n- Updated service layer with GetRandomPublicCollectionAsync method for random selection.\n- Modified HomeController to handle random collection retrieval and fallback to featured artworks.\n- Redesigned home page view to showcase collection metadata and artworks.\n- Created IndexFallback view for graceful degradation when no collections are available.\n- Added comprehensive documentation for the new feature and updated existing documentation.\n- Improved SEO with clickable artwork titles linked to SEO-friendly URLs.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-07T05:31:05+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "95c987caefe1001971faa7cbeb43b37f11bddafe",
+      "message": "Implement cookie-based theme persistence with Materia Light as default\n\n- Updated _Layout.cshtml to set default theme and manage theme switching with cookies.\n- Enhanced JavaScript for cookie management and theme/color mode persistence.\n- Added visual feedback for theme changes with notifications.\n- Introduced new styles in site.css for theme change indicators and loading states.\n- Created theme-test.html for testing cookie functionality and theme persistence.\n- Documented implementation details in Cookie-Based-Theme-Persistence-Implementation.md and Implementation-Complete-Cookie-Theme-Persistence.md.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-07T04:29:28+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "b58a7b530d3ae55f656987c5dbfc9d58d281af21",
+      "message": "feat: Add comprehensive tests for artist search functionality",
+      "author": "Mark Hazleton",
+      "date": "2025-06-07T04:13:41+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "25a0839d5e9577ba3d07da3abd75af359465ec9d",
+      "message": "Add artist search functionality and new UI components\n\n- Implemented `GetArtworksByArtistAsync` in `ArtInstituteClient` for searching artworks by artist name with error handling and pagination.\n- Enhanced `ArtworkFilteringExamples` with new usage examples for artist search.\n- Updated `IArtInstituteClient` interface and `ArtworkFilterController` to support artist filtering.\n- Improved `PublicCollectionService` to accurately count artworks in collections.\n- Added a chat feature in `CollectionItemDetails.cshtml` for user engagement.\n- Created a reusable search bar component in `_SearchBar.cshtml` and integrated it across various views.\n- Removed old search forms from layout files to streamline the user interface.\n- Enhanced CSS for the new search bar to improve responsiveness and appearance.\n- Added `TestArtistSearch` program to validate the new functionality.\n- Updated documentation to reflect changes and benefits of the new search implementation.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-06T13:59:30+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "0d5f34b83920b4a2951734aeb50136367987bcca",
+      "message": "Enhance collection details and description rendering\n\nUpdated `CollectionDetails.cshtml` to improve the display of creation dates and allow HTML line breaks in descriptions.\n\nMinor adjustments made in `Index.cshtml`, including logo structure and image rendering logic.\n\nModified `CollectionItemDetails.cshtml` to simplify artwork description rendering.\n\nOverall, these changes enhance the user interface and presentation of collection details.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-05T19:29:33+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "0f85286d1322202186eb82fc6a36922702f4eb7d",
+      "message": "feat: Implement SEO-friendly collection routing and slug generation\n\n- Added Slug property to EnrichedArtworkViewModel for SEO-friendly URLs.\n- Enhanced PublicCollectionService to populate Slug from collectionArtwork.\n- Updated SEO Optimization Service to generate engaging content with cultural significance.\n- Improved CollectionDetails and CollectionItemDetails views to use new slug-based URLs.\n- Implemented database migration to populate existing collections with slugs.\n- Created tests for collection routing and slug functionality.\n- Enhanced user interface with dynamic image loading and improved navigation.\n- Updated documentation to reflect recent changes and new features.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-05T19:04:31+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "085fa0eadfa70b450bd6ceb697d0d453b230cada",
+      "message": "Enhance SEO features and user permissions in collection\n\nUpdated `AccountController` to include `CanEdit` property for authenticated users. Enhanced `EditCollectionItem` with an SEO optimization button and added SEO tips for better content creation. Implemented JavaScript for handling SEO optimization requests and updating form fields with optimized content. Added CSS for loading animation during the optimization process.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-05T16:02:49+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "39663ad3869a5a06fcf8ce444493ddd8f6b5c428",
+      "message": "feat: Implement SEO Optimization Service with endpoints for optimizing collections and artworks\n\n- Added `Collections.cshtml` view for displaying public collections with search and filter functionality.\n- Created `SeoOptimizationController` with methods for optimizing collections and artworks.\n- Developed unit tests for `SeoOptimizationController` to ensure correct behavior for valid and invalid requests.\n- Implemented `SeoOptimizationService` with validation and error handling for optimizing collection and artwork data.\n- Added comprehensive documentation for the SEO Optimization Service, including API endpoints and usage examples.\n- Updated test project configuration and added necessary dependencies for testing.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-05T14:36:28+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "53dab9a583e9ab57bc54152246a520e7735a5430",
+      "message": "Enhance collections feature and SEO support\n\n- Updated `AccountController` to include `IArtInstituteClient` for API interactions and modified methods for collection management.\n- Added new methods in `HomeController` for displaying public and featured collections.\n- Enhanced `ArtSparkDbContext` with new DbSet properties for `CollectionContentSection`, `CollectionMedia`, and `CollectionLink`.\n- Updated `UserCollection` model with SEO fields and navigation properties.\n- Modified view models to include new fields for descriptions and SEO metadata.\n- Improved `CollectionDetails.cshtml` and `CollectionItemDetails.cshtml` for better SEO and user experience.\n- Created `MediaController` for handling media uploads and management.\n- Introduced `SlugGenerator` and `UrlHelper` for generating SEO-friendly slugs and URLs.\n- Enhanced `Collections.cshtml` with search and filter functionality.\n- Added migrations to update the database schema for new features.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-04T14:52:11+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "0e443dfd2c3086eca372f50f19e24ebfcae6cff1",
+      "message": "Implement chat input validation system with guard rails for appropriate content\n\n- Added IChatInputValidator interface for validating chat requests.\n- Created ChatValidationResult model to encapsulate validation results.\n- Developed ChatInputValidator service to enforce content policies and persona appropriateness.\n- Implemented validation for message format, inappropriate content, art relevance, and persona alignment.\n- Enhanced documentation to include details on validation implementation and usage examples.\n- Established comprehensive error handling and user guidance for invalid messages.\n- Integrated validation checks into the chat processing pipeline to ensure quality interactions.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-04T13:27:21+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "43c968f643c7da4ef3562b44fb69954fb0fa4bc3",
+      "message": "Update README.md to enhance project description, add AI chat features, and improve structure",
+      "author": "Mark Hazleton",
+      "date": "2025-06-02T23:08:43+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "44e7c99480594727615273a10b90639e012b7868",
+      "message": "doc updates",
+      "author": "Mark Hazleton",
+      "date": "2025-06-02T20:27:08+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "6a18e592539e681264cbfd5bf3bb0374fad00cf8",
+      "message": "Add AI chat persona implementations with artwork interaction features\n\n- Add comprehensive AI chat system with 4 distinct personas (Artwork, Artist, Curator, Historian)\n- Implement OpenAI integration with Vision API for artwork analysis\n- Add conversation memory and contextual chat capabilities\n- Include Microsoft Semantic Kernel for AI orchestration\n- Add artwork data provider and chat agent services\n- Update demo application with new AI chat functionality\n- Configure secure settings management for API keys",
+      "author": "Mark Hazleton",
+      "date": "2025-06-02T20:26:22+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "279cb0625709ae1ec6224e2f520727dc12ed66a5",
+      "message": "Refactor using directives for consistency and update package references to latest versions",
+      "author": "Mark Hazleton",
+      "date": "2025-06-02T16:55:43+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "0e729e3152a9eacd4320754cf17cfe53918bb088",
+      "message": "Enhance application with Build Info Service and consolidated navigation\n\n- Added IBuildInfoService and BuildInfoService to provide version and build date information.\n- Registered BuildInfoService as a singleton in Program.cs.\n- Integrated Build Info display in the footer using a new FooterViewComponent.\n- Updated layout to include the footer component with build information.\n- Consolidated \"Artworks\" and \"Filter Artworks\" navigation menus into a single dropdown for improved user experience.\n- Updated documentation to reflect changes in navigation and footer implementation.",
+      "author": "Mark Hazleton",
+      "date": "2025-06-01T16:55:21+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "0fa05c97a0c30e1fd780599bca534a3aa381206b",
+      "message": "Add user-related entities and views for collections, favorites, and profile management\n\n- Created migration files to add user-related entities to the database.\n- Implemented views for managing user collections, including creating, viewing, and deleting collections.\n- Added functionality for displaying and managing user favorites.\n- Developed a profile management view for users to update their display name, bio, and profile image.\n- Enhanced user experience with alerts for success and error messages.\n- Included validation and user-friendly UI elements in forms.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-31T21:52:10+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "851769ddacc32929199ccd6481a3ae440f191b14",
+      "message": "Enhance navigation and logging features\n\n- Updated `ArtInstituteClient` to include additional fields in `SearchQuery`.\n- Modified `ArtworkController` to support `returnUrl` for better navigation context.\n- Enhanced `Details.cshtml` to utilize `returnUrl` for user navigation.\n- Improved logging in `HomeController` for better monitoring.\n- Restructured `_Layout.cshtml` for improved navigation and user experience.\n- Updated CSS for mobile-first design enhancements.\n- Integrated Serilog for logging with configurations in `appsettings.json`.\n- Created `LoggingUtility` class for centralized logging configuration.\n- Updated multiple views to maintain user context with `returnUrl`.\n- Revised documentation to reflect changes and project status.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-31T17:15:37+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "f1a9ecae2df793fd067a1d6d15b4ba20e95ca95b",
+      "message": "Add initial project files and configuration\n\n- Created robots.txt to manage web crawler access.\n- Added site.webmanifest for PWA support with app details and icons.\n- Initialized Visual Studio solution file with three projects: WebSpark.ArtSpark.Console, WebSpark.ArtSpark.Client, and WebSpark.ArtSpark.Demo.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-31T15:11:44+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "64d7ae087de1e2b166f7974b435e3dcbec594cd1",
+      "message": "Enhance Art Institute API client with filtering features\n\nSignificant updates to the Art Institute of Chicago API client, focusing on artwork filtering by style, medium, and classification using strongly-typed enums.\n\nRemoved direct dependency on HttpClient in favor of IHttpRequestResultService for improved testability. Added new filtering methods to IArtInstituteClient and updated the ArtworkController to support these features.\n\nNew view files created for filtering functionality, along with enhancements to user registration and review management through the AccountController and ReviewService.\n\nImplemented caching for HTTP requests with HttpClientMemoryCache to improve performance. Updated documentation to reflect new features and usage patterns, and added comprehensive tests for the new filtering methods.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-31T14:41:39+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "9b5b14db6e8e98fb719c0bdc4397952cf6c16e3f",
+      "message": "Remove HttpClientDecorator reference and add package\n\nUpdated `ArtInstituteChicago.Console.csproj` to remove the\n`HttpClientDecorator` project reference and added a new\npackage reference for `Microsoft.AspNet.WebApi.Client`\nversion `6.0.0`.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-30T18:06:26+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "81c684b61b14cc65b534e87ae63f88d3d6082c8f",
+      "message": "Update to Net 9",
+      "author": "Mark Hazleton",
+      "date": "2024-09-21T03:52:51+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "d6503ad1b7a0d75523525a729366ece95629d32a",
+      "message": "nuget pacckage check",
+      "author": "Mark Hazleton",
+      "date": "2024-05-14T18:53:46+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "642efa2b364964a5bbb05e691bdab55d8e854a1a",
+      "message": "package updates. . . .",
+      "author": "Mark Hazleton",
+      "date": "2023-11-10T02:14:24+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "3354b4d9fb296ad6bf1b8c3456da5d515668e1af",
+      "message": "cleanup",
+      "author": "Mark Hazleton",
+      "date": "2023-08-30T17:17:52+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "f690e9c8a3049d7ec41fdda95e50cd00ae5c1c04",
+      "message": "update to Net 8",
+      "author": "Mark Hazleton",
+      "date": "2023-08-07T18:04:03+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "d898aa1a2df855803e5621f076db1f9079c0b47a",
+      "message": "Updates",
+      "author": "Mark Hazleton",
+      "date": "2023-07-13T22:31:49+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "535766ac6fb93a99ffe763fd463d98a6790270fa",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2023-01-30T17:13:23+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "1e3418fc31caa27c64694d06279179550e81c26e",
+      "message": "Initial creation",
+      "author": "Mark Hazleton",
+      "date": "2023-01-30T17:05:47+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "1f45942a2c66e23b9d1d91b69cb7047aa71bcaed",
+      "message": "Add project files.",
+      "author": "Mark Hazleton",
+      "date": "2023-01-30T15:23:30+00:00",
+      "repo": "WebSpark.ArtSpark"
+    },
+    {
+      "sha": "8682415015dfc5c2ae1404729e13994db2d2d2e1",
+      "message": "Add .gitattributes, .gitignore, README.md, and LICENSE.txt.",
+      "author": "Mark Hazleton",
+      "date": "2023-01-30T15:23:27+00:00",
+      "repo": "WebSpark.ArtSpark"
+    }
+  ],
+  "hash": "33e819d1e9151cf33678ed307e0ec7b010ee183ece7670866c2805174975e2fc",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.ArtSpark"
+    },
+    "category": "commits",
+    "pushed_at": "2025-12-28T16:59:15+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "WebSpark.ArtSpark",
+  "week": "2025W52"
+}

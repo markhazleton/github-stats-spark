@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-01-04T22:10:49.436647+00:00",
+  "value": {
+    "PHP": 361062,
+    "JavaScript": 50757,
+    "SCSS": 27080,
+    "CSS": 13916,
+    "Hack": 8030,
+    "HTML": 3550,
+    "Shell": 2678
+  },
+  "hash": "9feb1bb70560f90cc4a1f7e1c4723c83f990a3783f5d6147b08a8ba45d431d09",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PHPDocSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2025-08-18T02:15:18+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "PHPDocSpark",
+  "week": "2025W34"
+}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:20:08.041263+00:00",
+  "value": {
+    "ai_summary": "RESTRunner is a comprehensive .NET 10 solution designed for automated REST API testing, performance benchmarking, and regression testing, with a primary focus on integrating and executing Postman collections. The project provides a robust toolset for developers and QA professionals, featuring capabilities like automated test execution, detailed performance analysis, load testing, and comprehensive reporting through both console and web interfaces. Built using modern .NET technologies, the solution leverages Razor Pages for its web interface and supports cross-platform execution (Windows, macOS, Linux), with a strong emphasis on performance optimization, achieving 19% faster builds and 25% faster test execution compared to previous versions. The project demonstrates a modular architecture that supports importing Postman collections, generating detailed CSV reports, and providing a flexible framework for API testing with built-in statistical analysis of response times, success rates, and performance metrics. Unique aspects include its integration of performance benchmarking, security-conscious package management (93% packages at latest versions), and long-term support through .NET 10 LTS, making it particularly valuable for teams seeking a comprehensive, high-performance API testing solution.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:20:08.041229",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2222,
+    "confidence_score": 90
+  },
+  "hash": "33e8aecf42ad9795592eb46ec5ba6ac3f2a010fe6c76818393d7411e2ef125c7",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RESTRunner"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-23T19:07:32+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "RESTRunner",
+  "week": "2025W52_d6bcd2658b91"
+}

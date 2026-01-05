@@ -1,0 +1,2356 @@
+{
+  "entries": {
+    "markhazleton/list_True_False/repositories": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T21:40:21.302596+00:00"
+    },
+    "markhazleton/AsyncDemo/languages": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:40:25.528745+00:00"
+    },
+    "markhazleton/AsyncDemo/commit_counts": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:40:28.620641+00:00"
+    },
+    "markhazleton/AsyncDemo/commits_stats": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:41:27.060885+00:00"
+    },
+    "markhazleton/AsyncDemo/ai_summary": {
+      "latest_week": "2025W49_676f5070384e",
+      "weeks": [
+        "2025W49_676f5070384e"
+      ],
+      "updated_at": "2026-01-04T21:41:37.334762+00:00"
+    },
+    "markhazleton/Azure.Data.Tables-Extensions/languages": {
+      "latest_week": "2025W21",
+      "weeks": [
+        "2025W21"
+      ],
+      "updated_at": "2026-01-04T21:41:41.405022+00:00"
+    },
+    "markhazleton/Azure.Data.Tables-Extensions/commit_counts": {
+      "latest_week": "2025W21",
+      "weeks": [
+        "2025W21"
+      ],
+      "updated_at": "2026-01-04T21:41:43.932461+00:00"
+    },
+    "markhazleton/Azure.Data.Tables-Extensions/commits_stats": {
+      "latest_week": "2025W21",
+      "weeks": [
+        "2025W21"
+      ],
+      "updated_at": "2026-01-04T21:42:09.266259+00:00"
+    },
+    "markhazleton/Azure.Data.Tables-Extensions/ai_summary": {
+      "latest_week": "2025W14_acef3ad28061",
+      "weeks": [
+        "2025W14_acef3ad28061"
+      ],
+      "updated_at": "2026-01-04T21:42:19.130656+00:00"
+    },
+    "markhazleton/barcodelib/languages": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T21:42:23.271483+00:00"
+    },
+    "markhazleton/barcodelib/commit_counts": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T21:42:28.746811+00:00"
+    },
+    "markhazleton/barcodelib/commits_stats": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T21:44:10.978636+00:00"
+    },
+    "markhazleton/barcodelib/ai_summary": {
+      "latest_week": "2025W50_e98e3987fbe9",
+      "weeks": [
+        "2025W50_e98e3987fbe9"
+      ],
+      "updated_at": "2026-01-04T21:44:20.427546+00:00"
+    },
+    "markhazleton/ConcurrentProcessing/languages": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:44:24.264829+00:00"
+    },
+    "markhazleton/ConcurrentProcessing/commit_counts": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:44:25.165377+00:00"
+    },
+    "markhazleton/ConcurrentProcessing/commits_stats": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:44:40.039443+00:00"
+    },
+    "markhazleton/ConcurrentProcessing/ai_summary": {
+      "latest_week": "2025W51_d07a3d08752d",
+      "weeks": [
+        "2025W51_d07a3d08752d"
+      ],
+      "updated_at": "2026-01-04T21:44:50.944914+00:00"
+    },
+    "markhazleton/csharp-blazor-bug-tracking/languages": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:44:54.764255+00:00"
+    },
+    "markhazleton/csharp-blazor-bug-tracking/commit_counts": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:44:57.320064+00:00"
+    },
+    "markhazleton/csharp-blazor-bug-tracking/commits_stats": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:45:24.216587+00:00"
+    },
+    "markhazleton/csharp-blazor-bug-tracking/ai_summary": {
+      "latest_week": "2025W01_b888e0c483ea",
+      "weeks": [
+        "2025W01_b888e0c483ea"
+      ],
+      "updated_at": "2026-01-04T21:45:47.486064+00:00"
+    },
+    "markhazleton/_global_/user_profile": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T21:45:47.633311+00:00"
+    },
+    "markhazleton/AsyncDemo/commits": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:45:50.859063+00:00"
+    },
+    "markhazleton/Azure.Data.Tables-Extensions/commits": {
+      "latest_week": "2025W21",
+      "weeks": [
+        "2025W21"
+      ],
+      "updated_at": "2026-01-04T22:52:23.494611+00:00"
+    },
+    "markhazleton/barcodelib/commits": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T21:45:53.651102+00:00"
+    },
+    "markhazleton/ConcurrentProcessing/commits": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:45:54.931352+00:00"
+    },
+    "markhazleton/csharp-blazor-bug-tracking/commits": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:45:56.742955+00:00"
+    },
+    "markhazleton/csharp-blazor-bug-tracking/readme": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:46:29.263437+00:00"
+    },
+    "markhazleton/csharp-blazor-bug-tracking/dependency_files": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T22:54:11.000683+00:00"
+    },
+    "markhazleton/ConcurrentProcessing/readme": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:46:34.138038+00:00"
+    },
+    "markhazleton/ConcurrentProcessing/dependency_files": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:46:38.083981+00:00"
+    },
+    "markhazleton/AsyncDemo/readme": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:46:39.580879+00:00"
+    },
+    "markhazleton/AsyncDemo/dependency_files": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:54:44.856423+00:00"
+    },
+    "markhazleton/barcodelib/readme": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T21:46:44.891326+00:00"
+    },
+    "markhazleton/barcodelib/dependency_files": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T22:54:48.783591+00:00"
+    },
+    "markhazleton/Azure.Data.Tables-Extensions/readme": {
+      "latest_week": "2025W21",
+      "weeks": [
+        "2025W21"
+      ],
+      "updated_at": "2026-01-04T21:46:49.953309+00:00"
+    },
+    "markhazleton/Azure.Data.Tables-Extensions/dependency_files": {
+      "latest_week": "2025W21",
+      "weeks": [
+        "2025W21"
+      ],
+      "updated_at": "2026-01-04T22:55:14.062679+00:00"
+    },
+    "markhazleton/DataAnalysisDemo/languages": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:48:03.419249+00:00"
+    },
+    "markhazleton/DataAnalysisDemo/commit_counts": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:48:04.240735+00:00"
+    },
+    "markhazleton/DataAnalysisDemo/commits_stats": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:48:12.470398+00:00"
+    },
+    "markhazleton/DataAnalysisDemo/ai_summary": {
+      "latest_week": "2025W49_3b60c099fdb6",
+      "weeks": [
+        "2025W49_3b60c099fdb6"
+      ],
+      "updated_at": "2026-01-04T21:48:25.501112+00:00"
+    },
+    "markhazleton/DataAnalysisDemo/commits": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:48:30.242162+00:00"
+    },
+    "markhazleton/DataAnalysisDemo/readme": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:49:18.183732+00:00"
+    },
+    "markhazleton/DataAnalysisDemo/dependency_files": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T21:49:21.557532+00:00"
+    },
+    "markhazleton/DecisionSpark/languages": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:50:14.028240+00:00"
+    },
+    "markhazleton/DecisionSpark/commit_counts": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:50:15.146785+00:00"
+    },
+    "markhazleton/DecisionSpark/commits_stats": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:50:24.507251+00:00"
+    },
+    "markhazleton/DecisionSpark/ai_summary": {
+      "latest_week": "2025W52_af6c86e2453d",
+      "weeks": [
+        "2025W52_af6c86e2453d"
+      ],
+      "updated_at": "2026-01-04T21:50:38.254877+00:00"
+    },
+    "markhazleton/DesignPatternsInCSharp/languages": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:50:42.131906+00:00"
+    },
+    "markhazleton/DesignPatternsInCSharp/commit_counts": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:50:45.880701+00:00"
+    },
+    "markhazleton/DesignPatternsInCSharp/commits_stats": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:52:19.271491+00:00"
+    },
+    "markhazleton/DesignPatternsInCSharp/ai_summary": {
+      "latest_week": "2025W43_baff46cd5dcf",
+      "weeks": [
+        "2025W43_baff46cd5dcf"
+      ],
+      "updated_at": "2026-01-04T21:52:27.149742+00:00"
+    },
+    "markhazleton/FastEndpointApi/languages": {
+      "latest_week": "2025W46",
+      "weeks": [
+        "2025W46"
+      ],
+      "updated_at": "2026-01-04T21:52:30.713296+00:00"
+    },
+    "markhazleton/FastEndpointApi/commit_counts": {
+      "latest_week": "2025W46",
+      "weeks": [
+        "2025W46"
+      ],
+      "updated_at": "2026-01-04T21:52:32.103737+00:00"
+    },
+    "markhazleton/FastEndpointApi/commits_stats": {
+      "latest_week": "2025W46",
+      "weeks": [
+        "2025W46"
+      ],
+      "updated_at": "2026-01-04T21:52:50.754381+00:00"
+    },
+    "markhazleton/FastEndpointApi/ai_summary": {
+      "latest_week": "2025W46_ee90f96f0773",
+      "weeks": [
+        "2025W46_ee90f96f0773"
+      ],
+      "updated_at": "2026-01-04T21:53:01.618626+00:00"
+    },
+    "markhazleton/git-spark/languages": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:53:06.103904+00:00"
+    },
+    "markhazleton/git-spark/commit_counts": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:53:08.157711+00:00"
+    },
+    "markhazleton/git-spark/commits_stats": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:54:05.927531+00:00"
+    },
+    "markhazleton/git-spark/ai_summary": {
+      "latest_week": "2025W01_1308c8e51387",
+      "weeks": [
+        "2025W01_1308c8e51387"
+      ],
+      "updated_at": "2026-01-04T21:54:20.644704+00:00"
+    },
+    "markhazleton/DecisionSpark/commits": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:54:25.921978+00:00"
+    },
+    "markhazleton/DesignPatternsInCSharp/commits": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:54:27.333557+00:00"
+    },
+    "markhazleton/FastEndpointApi/commits": {
+      "latest_week": "2025W46",
+      "weeks": [
+        "2025W46"
+      ],
+      "updated_at": "2026-01-04T21:54:28.980973+00:00"
+    },
+    "markhazleton/git-spark/commits": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:54:31.459851+00:00"
+    },
+    "markhazleton/git-spark/readme": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:55:25.882120+00:00"
+    },
+    "markhazleton/git-spark/dependency_files": {
+      "latest_week": "2025W01",
+      "weeks": [
+        "2025W01"
+      ],
+      "updated_at": "2026-01-04T21:55:29.280267+00:00"
+    },
+    "markhazleton/FastEndpointApi/readme": {
+      "latest_week": "2025W46",
+      "weeks": [
+        "2025W46"
+      ],
+      "updated_at": "2026-01-04T21:55:32.842075+00:00"
+    },
+    "markhazleton/FastEndpointApi/dependency_files": {
+      "latest_week": "2025W46",
+      "weeks": [
+        "2025W46"
+      ],
+      "updated_at": "2026-01-04T22:54:06.988979+00:00"
+    },
+    "markhazleton/DecisionSpark/readme": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:55:42.034265+00:00"
+    },
+    "markhazleton/DecisionSpark/dependency_files": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:54:27.740262+00:00"
+    },
+    "markhazleton/DesignPatternsInCSharp/readme": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T21:55:46.914638+00:00"
+    },
+    "markhazleton/DesignPatternsInCSharp/dependency_files": {
+      "latest_week": "2025W51",
+      "weeks": [
+        "2025W51"
+      ],
+      "updated_at": "2026-01-04T22:54:36.413964+00:00"
+    },
+    "markhazleton/github-stats-spark/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T21:57:06.974872+00:00"
+    },
+    "markhazleton/github-stats-spark/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T21:57:08.703251+00:00"
+    },
+    "markhazleton/github-stats-spark/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T21:57:47.657836+00:00"
+    },
+    "markhazleton/github-stats-spark/ai_summary": {
+      "latest_week": "2026W01_c3a7e8be0e74",
+      "weeks": [
+        "2026W01_c3a7e8be0e74"
+      ],
+      "updated_at": "2026-01-04T21:58:02.001406+00:00"
+    },
+    "markhazleton/google-maps/languages": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T21:58:05.756672+00:00"
+    },
+    "markhazleton/google-maps/commit_counts": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T21:58:14.120861+00:00"
+    },
+    "markhazleton/google-maps/commits_stats": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T21:58:38.241758+00:00"
+    },
+    "markhazleton/google-maps/ai_summary": {
+      "latest_week": "2025W18_7ca7d3821dc6",
+      "weeks": [
+        "2025W18_7ca7d3821dc6"
+      ],
+      "updated_at": "2026-01-04T21:58:46.829235+00:00"
+    },
+    "markhazleton/HttpClientDecoratorPattern/languages": {
+      "latest_week": "2025W19",
+      "weeks": [
+        "2025W19"
+      ],
+      "updated_at": "2026-01-04T21:58:50.398134+00:00"
+    },
+    "markhazleton/HttpClientDecoratorPattern/commit_counts": {
+      "latest_week": "2025W19",
+      "weeks": [
+        "2025W19"
+      ],
+      "updated_at": "2026-01-04T21:58:53.552451+00:00"
+    },
+    "markhazleton/HttpClientDecoratorPattern/commits_stats": {
+      "latest_week": "2025W19",
+      "weeks": [
+        "2025W19"
+      ],
+      "updated_at": "2026-01-04T21:59:18.354761+00:00"
+    },
+    "markhazleton/HttpClientDecoratorPattern/ai_summary": {
+      "latest_week": "2025W19_737c43c1c999",
+      "weeks": [
+        "2025W19_737c43c1c999"
+      ],
+      "updated_at": "2026-01-04T21:59:28.008881+00:00"
+    },
+    "markhazleton/InquirySpark/languages": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:59:31.565801+00:00"
+    },
+    "markhazleton/InquirySpark/commit_counts": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:59:32.408767+00:00"
+    },
+    "markhazleton/InquirySpark/commits_stats": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T21:59:48.053920+00:00"
+    },
+    "markhazleton/InquirySpark/ai_summary": {
+      "latest_week": "2025W49_38fb6477b0db",
+      "weeks": [
+        "2025W49_38fb6477b0db"
+      ],
+      "updated_at": "2026-01-04T21:59:57.024075+00:00"
+    },
+    "markhazleton/js-dev-env/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:00:00.761648+00:00"
+    },
+    "markhazleton/js-dev-env/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:00:02.535705+00:00"
+    },
+    "markhazleton/js-dev-env/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:00:46.022946+00:00"
+    },
+    "markhazleton/js-dev-env/ai_summary": {
+      "latest_week": "2025W49_7a55a120a539",
+      "weeks": [
+        "2025W49_7a55a120a539"
+      ],
+      "updated_at": "2026-01-04T22:00:59.536096+00:00"
+    },
+    "markhazleton/github-stats-spark/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:01:07.496668+00:00"
+    },
+    "markhazleton/google-maps/commits": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:01:09.322027+00:00"
+    },
+    "markhazleton/HttpClientDecoratorPattern/commits": {
+      "latest_week": "2025W19",
+      "weeks": [
+        "2025W19"
+      ],
+      "updated_at": "2026-01-04T22:01:11.905107+00:00"
+    },
+    "markhazleton/InquirySpark/commits": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:01:13.198197+00:00"
+    },
+    "markhazleton/js-dev-env/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:01:15.343755+00:00"
+    },
+    "markhazleton/github-stats-spark/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:02:35.531277+00:00"
+    },
+    "markhazleton/github-stats-spark/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:02:38.939954+00:00"
+    },
+    "markhazleton/js-dev-env/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:02:40.479537+00:00"
+    },
+    "markhazleton/js-dev-env/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:02:43.904709+00:00"
+    },
+    "markhazleton/InquirySpark/readme": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:02:54.981167+00:00"
+    },
+    "markhazleton/InquirySpark/dependency_files": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:54:19.242380+00:00"
+    },
+    "markhazleton/google-maps/readme": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:03:21.050435+00:00"
+    },
+    "markhazleton/google-maps/dependency_files": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:55:18.021841+00:00"
+    },
+    "markhazleton/HttpClientDecoratorPattern/readme": {
+      "latest_week": "2025W19",
+      "weeks": [
+        "2025W19"
+      ],
+      "updated_at": "2026-01-04T22:03:25.749111+00:00"
+    },
+    "markhazleton/HttpClientDecoratorPattern/dependency_files": {
+      "latest_week": "2025W19",
+      "weeks": [
+        "2025W19"
+      ],
+      "updated_at": "2026-01-04T22:55:21.869867+00:00"
+    },
+    "markhazleton/KeyPressCounter/languages": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:04:24.807297+00:00"
+    },
+    "markhazleton/KeyPressCounter/commit_counts": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:04:25.664439+00:00"
+    },
+    "markhazleton/KeyPressCounter/commits_stats": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:04:36.016043+00:00"
+    },
+    "markhazleton/KeyPressCounter/ai_summary": {
+      "latest_week": "2025W49_62505d88b853",
+      "weeks": [
+        "2025W49_62505d88b853"
+      ],
+      "updated_at": "2026-01-04T22:04:46.942249+00:00"
+    },
+    "markhazleton/markhazleton/languages": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:54.115241+00:00"
+    },
+    "markhazleton/markhazleton/commit_counts": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:04:53.488608+00:00"
+    },
+    "markhazleton/markhazleton/commits_stats": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:05:57.899033+00:00"
+    },
+    "markhazleton/markhazleton/ai_summary": {
+      "latest_week": "2025W52_4d1be9483734",
+      "weeks": [
+        "2025W52_4d1be9483734"
+      ],
+      "updated_at": "2026-01-04T22:06:07.073465+00:00"
+    },
+    "markhazleton/markhazleton-blog/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:06:10.793921+00:00"
+    },
+    "markhazleton/markhazleton-blog/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:06:19.327537+00:00"
+    },
+    "markhazleton/markhazleton-blog/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:08:17.588891+00:00"
+    },
+    "markhazleton/markhazleton-blog/ai_summary": {
+      "latest_week": "2025W01_feb0629ba702",
+      "weeks": [
+        "2025W01_feb0629ba702"
+      ],
+      "updated_at": "2026-01-04T22:08:28.678082+00:00"
+    },
+    "markhazleton/markhazleton.github.io/languages": {
+      "latest_week": "2025W45",
+      "weeks": [
+        "2025W45"
+      ],
+      "updated_at": "2026-01-04T22:08:32.400112+00:00"
+    },
+    "markhazleton/markhazleton.github.io/commit_counts": {
+      "latest_week": "2025W45",
+      "weeks": [
+        "2025W45"
+      ],
+      "updated_at": "2026-01-04T22:08:33.677207+00:00"
+    },
+    "markhazleton/markhazleton.github.io/commits_stats": {
+      "latest_week": "2025W45",
+      "weeks": [
+        "2025W45"
+      ],
+      "updated_at": "2026-01-04T22:08:53.651243+00:00"
+    },
+    "markhazleton/markhazleton.github.io/ai_summary": {
+      "latest_week": "2025W45_da3095039bff",
+      "weeks": [
+        "2025W45_da3095039bff"
+      ],
+      "updated_at": "2026-01-04T22:09:03.564939+00:00"
+    },
+    "markhazleton/MechanicsOfMotherhood/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:09:07.167017+00:00"
+    },
+    "markhazleton/MechanicsOfMotherhood/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:09:08.853430+00:00"
+    },
+    "markhazleton/MechanicsOfMotherhood/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:09:46.871713+00:00"
+    },
+    "markhazleton/MechanicsOfMotherhood/ai_summary": {
+      "latest_week": "2026W01_da853eb067ea",
+      "weeks": [
+        "2026W01_da853eb067ea"
+      ],
+      "updated_at": "2026-01-04T22:10:00.885944+00:00"
+    },
+    "markhazleton/openai-dotnet/languages": {
+      "latest_week": "2025W11",
+      "weeks": [
+        "2025W11"
+      ],
+      "updated_at": "2026-01-04T22:10:04.544872+00:00"
+    },
+    "markhazleton/openai-dotnet/commit_counts": {
+      "latest_week": "2025W11",
+      "weeks": [
+        "2025W11"
+      ],
+      "updated_at": "2026-01-04T22:10:07.580236+00:00"
+    },
+    "markhazleton/openai-dotnet/commits_stats": {
+      "latest_week": "2025W11",
+      "weeks": [
+        "2025W11"
+      ],
+      "updated_at": "2026-01-04T22:10:34.934073+00:00"
+    },
+    "markhazleton/openai-dotnet/ai_summary": {
+      "latest_week": "2025W11_123ae5b236fd",
+      "weeks": [
+        "2025W11_123ae5b236fd"
+      ],
+      "updated_at": "2026-01-04T22:10:45.840320+00:00"
+    },
+    "markhazleton/PHPDocSpark/languages": {
+      "latest_week": "2025W34",
+      "weeks": [
+        "2025W34"
+      ],
+      "updated_at": "2026-01-04T22:10:49.438858+00:00"
+    },
+    "markhazleton/PHPDocSpark/commit_counts": {
+      "latest_week": "2025W34",
+      "weeks": [
+        "2025W34"
+      ],
+      "updated_at": "2026-01-04T22:10:51.629508+00:00"
+    },
+    "markhazleton/PHPDocSpark/commits_stats": {
+      "latest_week": "2025W34",
+      "weeks": [
+        "2025W34"
+      ],
+      "updated_at": "2026-01-04T22:11:15.780964+00:00"
+    },
+    "markhazleton/PHPDocSpark/ai_summary": {
+      "latest_week": "2025W34_680c1bd2d9b9",
+      "weeks": [
+        "2025W34_680c1bd2d9b9"
+      ],
+      "updated_at": "2026-01-04T22:11:29.110813+00:00"
+    },
+    "markhazleton/PromptSpark.Chat/languages": {
+      "latest_week": "2025W17",
+      "weeks": [
+        "2025W17"
+      ],
+      "updated_at": "2026-01-04T22:11:32.548060+00:00"
+    },
+    "markhazleton/PromptSpark.Chat/commit_counts": {
+      "latest_week": "2025W17",
+      "weeks": [
+        "2025W17"
+      ],
+      "updated_at": "2026-01-04T22:11:33.383131+00:00"
+    },
+    "markhazleton/PromptSpark.Chat/commits_stats": {
+      "latest_week": "2025W17",
+      "weeks": [
+        "2025W17"
+      ],
+      "updated_at": "2026-01-04T22:11:44.008024+00:00"
+    },
+    "markhazleton/PromptSpark.Chat/ai_summary": {
+      "latest_week": "2025W17_fb081740060d",
+      "weeks": [
+        "2025W17_fb081740060d"
+      ],
+      "updated_at": "2026-01-04T22:11:54.313537+00:00"
+    },
+    "markhazleton/RazorPages/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:11:57.996421+00:00"
+    },
+    "markhazleton/RazorPages/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:11:58.845250+00:00"
+    },
+    "markhazleton/RazorPages/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:12:07.041158+00:00"
+    },
+    "markhazleton/RazorPages/ai_summary": {
+      "latest_week": "2026W01_49a62fd6306a",
+      "weeks": [
+        "2026W01_49a62fd6306a"
+      ],
+      "updated_at": "2026-01-04T22:12:15.433021+00:00"
+    },
+    "markhazleton/react-native-web-start/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:12:18.976004+00:00"
+    },
+    "markhazleton/react-native-web-start/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:12:20.237525+00:00"
+    },
+    "markhazleton/react-native-web-start/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:12:45.393684+00:00"
+    },
+    "markhazleton/react-native-web-start/ai_summary": {
+      "latest_week": "2025W43_62bd4f318dbe",
+      "weeks": [
+        "2025W43_62bd4f318dbe"
+      ],
+      "updated_at": "2026-01-04T22:13:00.115219+00:00"
+    },
+    "markhazleton/KeyPressCounter/commits": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:13:09.201816+00:00"
+    },
+    "markhazleton/markhazleton/commits": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:13:11.400830+00:00"
+    },
+    "markhazleton/markhazleton-blog/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:13:13.909613+00:00"
+    },
+    "markhazleton/markhazleton.github.io/commits": {
+      "latest_week": "2025W45",
+      "weeks": [
+        "2025W45"
+      ],
+      "updated_at": "2026-01-04T22:13:15.580289+00:00"
+    },
+    "markhazleton/MechanicsOfMotherhood/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:13:17.620111+00:00"
+    },
+    "markhazleton/openai-dotnet/commits": {
+      "latest_week": "2025W11",
+      "weeks": [
+        "2025W11"
+      ],
+      "updated_at": "2026-01-04T22:52:32.515199+00:00"
+    },
+    "markhazleton/PHPDocSpark/commits": {
+      "latest_week": "2025W34",
+      "weeks": [
+        "2025W34"
+      ],
+      "updated_at": "2026-01-04T22:13:21.482454+00:00"
+    },
+    "markhazleton/PromptSpark.Chat/commits": {
+      "latest_week": "2025W17",
+      "weeks": [
+        "2025W17"
+      ],
+      "updated_at": "2026-01-04T22:13:22.691854+00:00"
+    },
+    "markhazleton/RazorPages/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:13:24.038837+00:00"
+    },
+    "markhazleton/react-native-web-start/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:13:25.750676+00:00"
+    },
+    "markhazleton/markhazleton-blog/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:15:42.955108+00:00"
+    },
+    "markhazleton/markhazleton-blog/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:15:46.367577+00:00"
+    },
+    "markhazleton/react-native-web-start/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:15:50.092321+00:00"
+    },
+    "markhazleton/react-native-web-start/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:15:53.457969+00:00"
+    },
+    "markhazleton/KeyPressCounter/readme": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:15:59.578668+00:00"
+    },
+    "markhazleton/KeyPressCounter/dependency_files": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:16:03.280309+00:00"
+    },
+    "markhazleton/MechanicsOfMotherhood/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:16:05.009301+00:00"
+    },
+    "markhazleton/MechanicsOfMotherhood/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:16:08.455171+00:00"
+    },
+    "markhazleton/markhazleton/readme": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:16:10.815581+00:00"
+    },
+    "markhazleton/markhazleton/dependency_files": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:57.566022+00:00"
+    },
+    "markhazleton/RazorPages/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:16:24.482533+00:00"
+    },
+    "markhazleton/RazorPages/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:54:15.406698+00:00"
+    },
+    "markhazleton/markhazleton.github.io/readme": {
+      "latest_week": "2025W45",
+      "weeks": [
+        "2025W45"
+      ],
+      "updated_at": "2026-01-04T22:16:48.142138+00:00"
+    },
+    "markhazleton/markhazleton.github.io/dependency_files": {
+      "latest_week": "2025W45",
+      "weeks": [
+        "2025W45"
+      ],
+      "updated_at": "2026-01-04T22:16:51.503343+00:00"
+    },
+    "markhazleton/PHPDocSpark/readme": {
+      "latest_week": "2025W34",
+      "weeks": [
+        "2025W34"
+      ],
+      "updated_at": "2026-01-04T22:16:55.258617+00:00"
+    },
+    "markhazleton/PHPDocSpark/dependency_files": {
+      "latest_week": "2025W34",
+      "weeks": [
+        "2025W34"
+      ],
+      "updated_at": "2026-01-04T22:16:58.641711+00:00"
+    },
+    "markhazleton/openai-dotnet/readme": {
+      "latest_week": "2025W11",
+      "weeks": [
+        "2025W11"
+      ],
+      "updated_at": "2026-01-04T22:17:12.004665+00:00"
+    },
+    "markhazleton/openai-dotnet/dependency_files": {
+      "latest_week": "2025W11",
+      "weeks": [
+        "2025W11"
+      ],
+      "updated_at": "2026-01-04T22:55:25.998265+00:00"
+    },
+    "markhazleton/PromptSpark.Chat/readme": {
+      "latest_week": "2025W17",
+      "weeks": [
+        "2025W17"
+      ],
+      "updated_at": "2026-01-04T22:17:16.653299+00:00"
+    },
+    "markhazleton/PromptSpark.Chat/dependency_files": {
+      "latest_week": "2025W17",
+      "weeks": [
+        "2025W17"
+      ],
+      "updated_at": "2026-01-04T22:55:29.883927+00:00"
+    },
+    "markhazleton/ReactSparkPortfolio/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:18:06.722551+00:00"
+    },
+    "markhazleton/ReactSparkPortfolio/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:18:08.872123+00:00"
+    },
+    "markhazleton/ReactSparkPortfolio/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:19:11.945352+00:00"
+    },
+    "markhazleton/ReactSparkPortfolio/ai_summary": {
+      "latest_week": "2025W51_52d844c048e3",
+      "weeks": [
+        "2025W51_52d844c048e3"
+      ],
+      "updated_at": "2026-01-04T22:19:23.333499+00:00"
+    },
+    "markhazleton/RESTRunner/languages": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:19:26.912485+00:00"
+    },
+    "markhazleton/RESTRunner/commit_counts": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:19:28.650218+00:00"
+    },
+    "markhazleton/RESTRunner/commits_stats": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:19:58.734783+00:00"
+    },
+    "markhazleton/RESTRunner/ai_summary": {
+      "latest_week": "2025W52_d6bcd2658b91",
+      "weeks": [
+        "2025W52_d6bcd2658b91"
+      ],
+      "updated_at": "2026-01-04T22:20:08.043666+00:00"
+    },
+    "markhazleton/SampleMvcCRUD/languages": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:20:11.691901+00:00"
+    },
+    "markhazleton/SampleMvcCRUD/commit_counts": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:20:21.478925+00:00"
+    },
+    "markhazleton/SampleMvcCRUD/commits_stats": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:21:56.229608+00:00"
+    },
+    "markhazleton/SampleMvcCRUD/ai_summary": {
+      "latest_week": "2025W46_496ee81f6f59",
+      "weeks": [
+        "2025W46_496ee81f6f59"
+      ],
+      "updated_at": "2026-01-04T22:22:05.817464+00:00"
+    },
+    "markhazleton/sandbox/languages": {
+      "latest_week": "2025W28",
+      "weeks": [
+        "2025W28"
+      ],
+      "updated_at": "2026-01-04T22:22:09.447698+00:00"
+    },
+    "markhazleton/sandbox/commit_counts": {
+      "latest_week": "2025W28",
+      "weeks": [
+        "2025W28"
+      ],
+      "updated_at": "2026-01-04T22:22:10.794219+00:00"
+    },
+    "markhazleton/sandbox/commits_stats": {
+      "latest_week": "2025W28",
+      "weeks": [
+        "2025W28"
+      ],
+      "updated_at": "2026-01-04T22:22:35.608837+00:00"
+    },
+    "markhazleton/Slurper/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:22:42.578966+00:00"
+    },
+    "markhazleton/Slurper/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:22:44.426978+00:00"
+    },
+    "markhazleton/Slurper/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:23:23.957691+00:00"
+    },
+    "markhazleton/Slurper/ai_summary": {
+      "latest_week": "2025W46_181481cf41d5",
+      "weeks": [
+        "2025W46_181481cf41d5"
+      ],
+      "updated_at": "2026-01-04T22:23:34.764253+00:00"
+    },
+    "markhazleton/SolidSample/languages": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:23:38.451844+00:00"
+    },
+    "markhazleton/SolidSample/commit_counts": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:23:39.832864+00:00"
+    },
+    "markhazleton/SolidSample/commits_stats": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:23:56.747085+00:00"
+    },
+    "markhazleton/SolidSample/ai_summary": {
+      "latest_week": "2024W52_03fb65df52ca",
+      "weeks": [
+        "2024W52_03fb65df52ca"
+      ],
+      "updated_at": "2026-01-04T22:24:06.115026+00:00"
+    },
+    "markhazleton/SpotifyAPI-NET/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:24:09.880864+00:00"
+    },
+    "markhazleton/SpotifyAPI-NET/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:24:24.647601+00:00"
+    },
+    "markhazleton/SpotifyAPI-NET/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:26:00.152696+00:00"
+    },
+    "markhazleton/SpotifyAPI-NET/ai_summary": {
+      "latest_week": "2026W01_03845f4b1e5d",
+      "weeks": [
+        "2026W01_03845f4b1e5d"
+      ],
+      "updated_at": "2026-01-04T22:26:09.132758+00:00"
+    },
+    "markhazleton/sql2csv/languages": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:26:12.773386+00:00"
+    },
+    "markhazleton/sql2csv/commit_counts": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:26:14.463870+00:00"
+    },
+    "markhazleton/sql2csv/commits_stats": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:26:38.763257+00:00"
+    },
+    "markhazleton/sql2csv/ai_summary": {
+      "latest_week": "2025W38_2f19d94e38b7",
+      "weeks": [
+        "2025W38_2f19d94e38b7"
+      ],
+      "updated_at": "2026-01-04T22:26:49.175633+00:00"
+    },
+    "markhazleton/startbootstrap-modern-business/languages": {
+      "latest_week": "2025W20",
+      "weeks": [
+        "2025W20"
+      ],
+      "updated_at": "2026-01-04T22:26:53.568921+00:00"
+    },
+    "markhazleton/startbootstrap-modern-business/commit_counts": {
+      "latest_week": "2025W20",
+      "weeks": [
+        "2025W20"
+      ],
+      "updated_at": "2026-01-04T22:26:55.847387+00:00"
+    },
+    "markhazleton/startbootstrap-modern-business/commits_stats": {
+      "latest_week": "2025W20",
+      "weeks": [
+        "2025W20"
+      ],
+      "updated_at": "2026-01-04T22:27:22.472696+00:00"
+    },
+    "markhazleton/startbootstrap-modern-business/ai_summary": {
+      "latest_week": "2025W20_2e18d6986b15",
+      "weeks": [
+        "2025W20_2e18d6986b15"
+      ],
+      "updated_at": "2026-01-04T22:27:32.263503+00:00"
+    },
+    "markhazleton/supermarket-api/languages": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:27:36.059240+00:00"
+    },
+    "markhazleton/supermarket-api/commit_counts": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:27:37.972517+00:00"
+    },
+    "markhazleton/supermarket-api/commits_stats": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:28:02.755221+00:00"
+    },
+    "markhazleton/supermarket-api/ai_summary": {
+      "latest_week": "2024W06_8908907f8464",
+      "weeks": [
+        "2024W06_8908907f8464"
+      ],
+      "updated_at": "2026-01-04T22:28:11.925222+00:00"
+    },
+    "markhazleton/ReactSparkPortfolio/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:28:27.819296+00:00"
+    },
+    "markhazleton/RESTRunner/commits": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:28:30.025952+00:00"
+    },
+    "markhazleton/SampleMvcCRUD/commits": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:28:32.817629+00:00"
+    },
+    "markhazleton/sandbox/commits": {
+      "latest_week": "2025W28",
+      "weeks": [
+        "2025W28"
+      ],
+      "updated_at": "2026-01-04T22:28:34.706084+00:00"
+    },
+    "markhazleton/Slurper/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:28:36.575070+00:00"
+    },
+    "markhazleton/SolidSample/commits": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:28:38.030027+00:00"
+    },
+    "markhazleton/SpotifyAPI-NET/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:28:39.441542+00:00"
+    },
+    "markhazleton/sql2csv/commits": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:28:41.654284+00:00"
+    },
+    "markhazleton/startbootstrap-modern-business/commits": {
+      "latest_week": "2025W20",
+      "weeks": [
+        "2025W20"
+      ],
+      "updated_at": "2026-01-04T22:28:43.101629+00:00"
+    },
+    "markhazleton/supermarket-api/commits": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:52:39.537187+00:00"
+    },
+    "markhazleton/SampleMvcCRUD/readme": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:32:01.254487+00:00"
+    },
+    "markhazleton/SampleMvcCRUD/dependency_files": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:20.436836+00:00"
+    },
+    "markhazleton/RESTRunner/readme": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:32:05.998506+00:00"
+    },
+    "markhazleton/RESTRunner/dependency_files": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:35.072175+00:00"
+    },
+    "markhazleton/Slurper/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:32:18.076006+00:00"
+    },
+    "markhazleton/Slurper/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:32:21.570781+00:00"
+    },
+    "markhazleton/ReactSparkPortfolio/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:32:29.146688+00:00"
+    },
+    "markhazleton/ReactSparkPortfolio/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:32:32.570463+00:00"
+    },
+    "markhazleton/SpotifyAPI-NET/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:32:35.153796+00:00"
+    },
+    "markhazleton/SpotifyAPI-NET/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:54:03.120826+00:00"
+    },
+    "markhazleton/sql2csv/readme": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:33:12.233133+00:00"
+    },
+    "markhazleton/sql2csv/dependency_files": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:54:57.951289+00:00"
+    },
+    "markhazleton/sandbox/dependency_files": {
+      "latest_week": "2025W28",
+      "weeks": [
+        "2025W28"
+      ],
+      "updated_at": "2026-01-04T22:55:10.102039+00:00"
+    },
+    "markhazleton/SolidSample/readme": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:33:44.562926+00:00"
+    },
+    "markhazleton/SolidSample/dependency_files": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:55:33.787007+00:00"
+    },
+    "markhazleton/startbootstrap-modern-business/readme": {
+      "latest_week": "2025W20",
+      "weeks": [
+        "2025W20"
+      ],
+      "updated_at": "2026-01-04T22:33:49.363928+00:00"
+    },
+    "markhazleton/startbootstrap-modern-business/dependency_files": {
+      "latest_week": "2025W20",
+      "weeks": [
+        "2025W20"
+      ],
+      "updated_at": "2026-01-04T22:33:52.898148+00:00"
+    },
+    "markhazleton/supermarket-api/readme": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:33:54.280887+00:00"
+    },
+    "markhazleton/supermarket-api/dependency_files": {
+      "latest_week": "2024W52",
+      "weeks": [
+        "2024W52"
+      ],
+      "updated_at": "2026-01-04T22:55:38.268524+00:00"
+    },
+    "markhazleton/tailwind-demo/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:37:06.722769+00:00"
+    },
+    "markhazleton/tailwind-demo/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:37:08.990213+00:00"
+    },
+    "markhazleton/tailwind-demo/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:37:53.472074+00:00"
+    },
+    "markhazleton/tailwind-demo/ai_summary": {
+      "latest_week": "2025W45_665421012ae5",
+      "weeks": [
+        "2025W45_665421012ae5"
+      ],
+      "updated_at": "2026-01-04T22:38:03.885534+00:00"
+    },
+    "markhazleton/TaskListProcessor/languages": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T22:38:07.526839+00:00"
+    },
+    "markhazleton/TaskListProcessor/commit_counts": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T22:38:08.869196+00:00"
+    },
+    "markhazleton/TaskListProcessor/commits_stats": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T22:38:30.871668+00:00"
+    },
+    "markhazleton/TaskListProcessor/ai_summary": {
+      "latest_week": "2025W50_518fc3e0b8dd",
+      "weeks": [
+        "2025W50_518fc3e0b8dd"
+      ],
+      "updated_at": "2026-01-04T22:38:40.734064+00:00"
+    },
+    "markhazleton/TeachSpark/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:38:44.423779+00:00"
+    },
+    "markhazleton/TeachSpark/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:38:45.770709+00:00"
+    },
+    "markhazleton/TeachSpark/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:39:01.961563+00:00"
+    },
+    "markhazleton/TeachSpark/ai_summary": {
+      "latest_week": "2025W27_763602725c84",
+      "weeks": [
+        "2025W27_763602725c84"
+      ],
+      "updated_at": "2026-01-04T22:39:11.863845+00:00"
+    },
+    "markhazleton/Texecon/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:39:15.556479+00:00"
+    },
+    "markhazleton/Texecon/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:39:17.332978+00:00"
+    },
+    "markhazleton/Texecon/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:39:49.060489+00:00"
+    },
+    "markhazleton/Texecon/ai_summary": {
+      "latest_week": "2026W01_f8d0abdf7c37",
+      "weeks": [
+        "2026W01_f8d0abdf7c37"
+      ],
+      "updated_at": "2026-01-04T22:40:00.455915+00:00"
+    },
+    "markhazleton/TriviaSpark/languages": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:40:04.097539+00:00"
+    },
+    "markhazleton/TriviaSpark/commit_counts": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:40:06.661682+00:00"
+    },
+    "markhazleton/TriviaSpark/commits_stats": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:41:08.075887+00:00"
+    },
+    "markhazleton/TriviaSpark/ai_summary": {
+      "latest_week": "2025W49_5d8a58ab9ac7",
+      "weeks": [
+        "2025W49_5d8a58ab9ac7"
+      ],
+      "updated_at": "2026-01-04T22:41:16.346484+00:00"
+    },
+    "markhazleton/WebProjectMechanics/languages": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:41:20.015738+00:00"
+    },
+    "markhazleton/WebProjectMechanics/commit_counts": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:41:22.791581+00:00"
+    },
+    "markhazleton/WebProjectMechanics/commits_stats": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:41:50.849648+00:00"
+    },
+    "markhazleton/WebProjectMechanics/ai_summary": {
+      "latest_week": "2025W09_1f389042a08a",
+      "weeks": [
+        "2025W09_1f389042a08a"
+      ],
+      "updated_at": "2026-01-04T22:41:59.244050+00:00"
+    },
+    "markhazleton/WebSpark/languages": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:42:02.894220+00:00"
+    },
+    "markhazleton/WebSpark/commit_counts": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:42:07.380471+00:00"
+    },
+    "markhazleton/WebSpark/commits_stats": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:43:56.241259+00:00"
+    },
+    "markhazleton/WebSpark/ai_summary": {
+      "latest_week": "2025W52_99ab994a2947",
+      "weeks": [
+        "2025W52_99ab994a2947"
+      ],
+      "updated_at": "2026-01-04T22:44:08.071389+00:00"
+    },
+    "markhazleton/WebSpark.ArtSpark/languages": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:44:11.705768+00:00"
+    },
+    "markhazleton/WebSpark.ArtSpark/commit_counts": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:44:13.512227+00:00"
+    },
+    "markhazleton/WebSpark.ArtSpark/commits_stats": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:44:46.831943+00:00"
+    },
+    "markhazleton/WebSpark.ArtSpark/ai_summary": {
+      "latest_week": "2025W52_7c9cd8d9178b",
+      "weeks": [
+        "2025W52_7c9cd8d9178b"
+      ],
+      "updated_at": "2026-01-04T22:44:56.228054+00:00"
+    },
+    "markhazleton/WebSpark.Bootswatch/languages": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:45:00.512640+00:00"
+    },
+    "markhazleton/WebSpark.Bootswatch/commit_counts": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:45:01.861105+00:00"
+    },
+    "markhazleton/WebSpark.Bootswatch/commits_stats": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:45:28.749871+00:00"
+    },
+    "markhazleton/WebSpark.Bootswatch/ai_summary": {
+      "latest_week": "2025W49_dbe03d7937c6",
+      "weeks": [
+        "2025W49_dbe03d7937c6"
+      ],
+      "updated_at": "2026-01-04T22:45:38.282883+00:00"
+    },
+    "markhazleton/WebSpark.HttpClientUtility/languages": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:45:42.550601+00:00"
+    },
+    "markhazleton/WebSpark.HttpClientUtility/commit_counts": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:45:44.920794+00:00"
+    },
+    "markhazleton/WebSpark.HttpClientUtility/commits_stats": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:46:33.088720+00:00"
+    },
+    "markhazleton/WebSpark.HttpClientUtility/ai_summary": {
+      "latest_week": "2026W01_0adcd245892e",
+      "weeks": [
+        "2026W01_0adcd245892e"
+      ],
+      "updated_at": "2026-01-04T22:46:43.750958+00:00"
+    },
+    "markhazleton/WebSpark.PrismSpark/languages": {
+      "latest_week": "2025W23",
+      "weeks": [
+        "2025W23"
+      ],
+      "updated_at": "2026-01-04T22:46:47.374811+00:00"
+    },
+    "markhazleton/WebSpark.PrismSpark/commit_counts": {
+      "latest_week": "2025W23",
+      "weeks": [
+        "2025W23"
+      ],
+      "updated_at": "2026-01-04T22:46:48.230012+00:00"
+    },
+    "markhazleton/WebSpark.PrismSpark/commits_stats": {
+      "latest_week": "2025W23",
+      "weeks": [
+        "2025W23"
+      ],
+      "updated_at": "2026-01-04T22:46:53.234714+00:00"
+    },
+    "markhazleton/WebSpark.PrismSpark/ai_summary": {
+      "latest_week": "2025W23_00bc113592b9",
+      "weeks": [
+        "2025W23_00bc113592b9"
+      ],
+      "updated_at": "2026-01-04T22:47:02.879154+00:00"
+    },
+    "markhazleton/WebSpark.SharedKernel/languages": {
+      "latest_week": "2025W22",
+      "weeks": [
+        "2025W22"
+      ],
+      "updated_at": "2026-01-04T22:47:06.641463+00:00"
+    },
+    "markhazleton/WebSpark.SharedKernel/commit_counts": {
+      "latest_week": "2025W22",
+      "weeks": [
+        "2025W22"
+      ],
+      "updated_at": "2026-01-04T22:47:08.501653+00:00"
+    },
+    "markhazleton/WebSpark.SharedKernel/commits_stats": {
+      "latest_week": "2025W22",
+      "weeks": [
+        "2025W22"
+      ],
+      "updated_at": "2026-01-04T22:47:29.866366+00:00"
+    },
+    "markhazleton/WebSpark.SharedKernel/ai_summary": {
+      "latest_week": "2025W22_8dc4d9dd2e5a",
+      "weeks": [
+        "2025W22_8dc4d9dd2e5a"
+      ],
+      "updated_at": "2026-01-04T22:47:39.187104+00:00"
+    },
+    "markhazleton/Yelp.Api/languages": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:47:42.792611+00:00"
+    },
+    "markhazleton/Yelp.Api/commit_counts": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:47:44.172278+00:00"
+    },
+    "markhazleton/Yelp.Api/commits_stats": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:48:04.767803+00:00"
+    },
+    "markhazleton/Yelp.Api/ai_summary": {
+      "latest_week": "2025W18_af1d7c238d8e",
+      "weeks": [
+        "2025W18_af1d7c238d8e"
+      ],
+      "updated_at": "2026-01-04T22:48:14.253725+00:00"
+    },
+    "markhazleton/tailwind-demo/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:48:35.061222+00:00"
+    },
+    "markhazleton/TaskListProcessor/commits": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T22:48:36.698272+00:00"
+    },
+    "markhazleton/TeachSpark/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:48:38.338821+00:00"
+    },
+    "markhazleton/Texecon/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:48:40.041741+00:00"
+    },
+    "markhazleton/TriviaSpark/commits": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:48:42.627822+00:00"
+    },
+    "markhazleton/WebProjectMechanics/commits": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:48:45.262224+00:00"
+    },
+    "markhazleton/WebSpark/commits": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:48:47.761426+00:00"
+    },
+    "markhazleton/WebSpark.ArtSpark/commits": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:48:49.874386+00:00"
+    },
+    "markhazleton/WebSpark.Bootswatch/commits": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:48:51.614548+00:00"
+    },
+    "markhazleton/WebSpark.HttpClientUtility/commits": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:48:54.117154+00:00"
+    },
+    "markhazleton/WebSpark.PrismSpark/commits": {
+      "latest_week": "2025W23",
+      "weeks": [
+        "2025W23"
+      ],
+      "updated_at": "2026-01-04T22:48:55.399594+00:00"
+    },
+    "markhazleton/WebSpark.SharedKernel/commits": {
+      "latest_week": "2025W22",
+      "weeks": [
+        "2025W22"
+      ],
+      "updated_at": "2026-01-04T22:48:56.762473+00:00"
+    },
+    "markhazleton/Yelp.Api/commits": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:48:58.430178+00:00"
+    },
+    "markhazleton/WebSpark.HttpClientUtility/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:53:11.547668+00:00"
+    },
+    "markhazleton/WebSpark.HttpClientUtility/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:53:15.008413+00:00"
+    },
+    "markhazleton/tailwind-demo/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:53:21.640773+00:00"
+    },
+    "markhazleton/tailwind-demo/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:53:25.142357+00:00"
+    },
+    "markhazleton/WebSpark.ArtSpark/readme": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:27.873374+00:00"
+    },
+    "markhazleton/WebSpark.ArtSpark/dependency_files": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:31.257700+00:00"
+    },
+    "markhazleton/WebSpark/readme": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:36.265425+00:00"
+    },
+    "markhazleton/WebSpark/dependency_files": {
+      "latest_week": "2025W52",
+      "weeks": [
+        "2025W52"
+      ],
+      "updated_at": "2026-01-04T22:53:39.672368+00:00"
+    },
+    "markhazleton/Texecon/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:53:46.170729+00:00"
+    },
+    "markhazleton/Texecon/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:53:49.611763+00:00"
+    },
+    "markhazleton/TaskListProcessor/readme": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T22:54:20.489756+00:00"
+    },
+    "markhazleton/TaskListProcessor/dependency_files": {
+      "latest_week": "2025W50",
+      "weeks": [
+        "2025W50"
+      ],
+      "updated_at": "2026-01-04T22:54:23.924568+00:00"
+    },
+    "markhazleton/WebProjectMechanics/readme": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:54:28.932420+00:00"
+    },
+    "markhazleton/WebProjectMechanics/dependency_files": {
+      "latest_week": "2025W47",
+      "weeks": [
+        "2025W47"
+      ],
+      "updated_at": "2026-01-04T22:54:32.411224+00:00"
+    },
+    "markhazleton/WebSpark.Bootswatch/readme": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:54:37.624469+00:00"
+    },
+    "markhazleton/WebSpark.Bootswatch/dependency_files": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:54:41.037388+00:00"
+    },
+    "markhazleton/TeachSpark/readme": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:54:50.016891+00:00"
+    },
+    "markhazleton/TeachSpark/dependency_files": {
+      "latest_week": "2026W01",
+      "weeks": [
+        "2026W01"
+      ],
+      "updated_at": "2026-01-04T22:54:53.419893+00:00"
+    },
+    "markhazleton/TriviaSpark/readme": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:54:59.183869+00:00"
+    },
+    "markhazleton/TriviaSpark/dependency_files": {
+      "latest_week": "2025W49",
+      "weeks": [
+        "2025W49"
+      ],
+      "updated_at": "2026-01-04T22:55:02.629167+00:00"
+    },
+    "markhazleton/WebSpark.PrismSpark/readme": {
+      "latest_week": "2025W23",
+      "weeks": [
+        "2025W23"
+      ],
+      "updated_at": "2026-01-04T22:55:39.522995+00:00"
+    },
+    "markhazleton/WebSpark.PrismSpark/dependency_files": {
+      "latest_week": "2025W23",
+      "weeks": [
+        "2025W23"
+      ],
+      "updated_at": "2026-01-04T22:55:42.966997+00:00"
+    },
+    "markhazleton/WebSpark.SharedKernel/readme": {
+      "latest_week": "2025W22",
+      "weeks": [
+        "2025W22"
+      ],
+      "updated_at": "2026-01-04T22:55:44.257851+00:00"
+    },
+    "markhazleton/WebSpark.SharedKernel/dependency_files": {
+      "latest_week": "2025W22",
+      "weeks": [
+        "2025W22"
+      ],
+      "updated_at": "2026-01-04T22:55:47.748639+00:00"
+    },
+    "markhazleton/Yelp.Api/readme": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:55:48.947274+00:00"
+    },
+    "markhazleton/Yelp.Api/dependency_files": {
+      "latest_week": "2025W18",
+      "weeks": [
+        "2025W18"
+      ],
+      "updated_at": "2026-01-04T22:55:52.347472+00:00"
+    }
+  }
+}

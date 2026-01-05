@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:45:38.280668+00:00",
+  "value": {
+    "ai_summary": "WebSpark.Bootswatch is a sophisticated .NET Razor Class Library designed to streamline and enhance theme management for ASP.NET Core applications using Bootswatch themes. The library provides a comprehensive theming solution built on Bootstrap 5, offering dynamic theme switching, light/dark mode support, and advanced caching mechanisms with multi-framework compatibility (.NET 8.0, 9.0, 10.0). Its architecture leverages dependency injection, tag helpers, and a custom StyleCache service to enable seamless theme integration, with robust error handling and performance optimizations that allow developers to easily implement responsive, visually adaptable web interfaces. The project distinguishes itself through its modular design, requiring a companion HttpClientUtility package for enhanced HTTP request management, and provides extensive configuration options for theme selection, caching, and runtime customization. Targeted primarily at .NET web developers seeking a plug-and-play theming solution, WebSpark.Bootswatch simplifies the complex task of implementing and managing dynamic, responsive design themes across different .NET web applications.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:45:38.280630",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2824,
+    "confidence_score": 90
+  },
+  "hash": "f58432d2a71b9c1050a127c6cc6fcb10479dacc568e97aad0da05bbd784448d5",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.Bootswatch"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-04T03:14:42+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebSpark.Bootswatch",
+  "week": "2025W49_dbe03d7937c6"
+}

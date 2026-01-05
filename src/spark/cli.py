@@ -214,9 +214,34 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         help="Clear all cached data",
     )
     cache_parser.add_argument(
+        "--prune",
+        action="store_true",
+        help="Prune old cache entries (keep last 2 weeks)",
+    )
+    cache_parser.add_argument(
         "--info",
         action="store_true",
         help="Show cache information",
+    )
+    cache_parser.add_argument(
+        "--status",
+        action="store_true",
+        help="Show cache status for repositories",
+    )
+    cache_parser.add_argument(
+        "--update-status",
+        action="store_true",
+        help="Update cache status in repositories cache file",
+    )
+    cache_parser.add_argument(
+        "--list-refresh-needed",
+        action="store_true",
+        help="List repositories that need cache refresh",
+    )
+    cache_parser.add_argument(
+        "--user",
+        type=str,
+        help="GitHub username (required for status commands)",
     )
     cache_parser.add_argument(
         "--dir",
@@ -303,6 +328,12 @@ def handle_unified(args, logger):
                 dashboard_config["data_generation"] = {}
             dashboard_config["data_generation"]["include_ai_summaries"] = True
 
+        cache_config = config.config.get("cache", {})
+        shared_cache = APICache(
+            cache_dir=cache_config.get("directory", ".cache"),
+            config=config,
+        )
+
         # Create generator
         generator = UnifiedDataGenerator(
             config=config,
@@ -310,11 +341,12 @@ def handle_unified(args, logger):
             output_dir=args.output_dir,
             force_refresh=args.force_refresh,
             max_repos_override=args.max_repos,
+            cache=shared_cache,
         )
 
         # Generate and save unified data
         data_output_path, generation_skipped = generator.save()
-        logger.info(f"✅ Unified data saved to: {data_output_path}")
+        logger.info(f"Unified data saved to: {data_output_path}")
 
         # Skip SVG/Report generation if data was fresh and unchanged
         if generation_skipped:
@@ -331,12 +363,12 @@ def handle_unified(args, logger):
             
             logger.info("")
             logger.info("=" * 70)
-            logger.info("✅ Unified Workflow Complete (No Updates Needed)")
+            logger.info("Unified Workflow Complete (No Updates Needed)")
             logger.info("=" * 70)
-            logger.info(f"📊 Unified Data: {data_output_path}")
-            logger.info(f"🎨 SVG Files: output/*.svg (unchanged)")
-            logger.info(f"📝 Report: output/reports/{args.user}-analysis.md (unchanged)")
-            logger.info(f"⏱️  Total Time: {total_time:.1f}s")
+            logger.info(f"Unified Data: {data_output_path}")
+            logger.info(f"SVG Files: output/*.svg (unchanged)")
+            logger.info(f"Report: output/reports/{args.user}-analysis.md (unchanged)")
+            logger.info(f"Total Time: {total_time:.1f}s")
             logger.info("")
             logger.info("All data is current - no regeneration needed!")
             return 0
@@ -350,21 +382,16 @@ def handle_unified(args, logger):
         logger.info("=" * 70)
         
         # Initialize cache with config TTL
-        cache_config = config.config.get("cache", {})
-        cache = APICache(
-            cache_dir=cache_config.get("directory", ".cache"),
-            ttl_hours=cache_config.get("ttl_hours", 6)
-        )
         workflow = UnifiedReportWorkflow(
             config, 
-            cache, 
+            shared_cache, 
             output_dir="output",
             max_repos=args.max_repos
         )
         
         try:
             unified_report = workflow.execute(args.user)
-            logger.info(f"✅ Generated {len(unified_report.available_svgs)} SVG files")
+            logger.info(f"Generated {len(unified_report.available_svgs)} SVG files")
             
             # ===================================================================
             # STEP 3: Generate Markdown Reports
@@ -380,7 +407,7 @@ def handle_unified(args, logger):
             
             generator_report = UnifiedReportGenerator(config)
             generator_report.generate_report(unified_report, str(report_path))
-            logger.info(f"✅ Report saved to: {report_path}")
+            logger.info(f"Report saved to: {report_path}")
             
         except WorkflowError as e:
             logger.warning(f"SVG/Report generation had issues: {e}")
@@ -394,11 +421,11 @@ def handle_unified(args, logger):
         
         logger.info("")
         logger.info("=" * 70)
-        logger.info("✅ ALL-IN-ONE Generation Complete!")
+        logger.info("ALL-IN-ONE Generation Complete!")
         logger.info("=" * 70)
         logger.info(f"📊 Unified Data: {data_output_path}")
-        logger.info(f"🎨 SVG Files: output/*.svg")
-        logger.info(f"📝 Report: output/reports/{args.user}-analysis.md")
+        logger.info(f"SVG Files: output/*.svg")
+        logger.info(f"Report: output/reports/{args.user}-analysis.md")
         logger.info(f"⏱️  Total Time: {total_time:.1f}s")
         logger.info("")
         logger.info("All data gathered, LLM summaries generated (if enabled),")
@@ -454,7 +481,7 @@ def handle_unified_analyze(args, logger):
         cache_config = config.get("cache", {})
         cache = APICache(
             cache_dir=cache_config.get("directory", ".cache"),
-            ttl_hours=cache_config.get("ttl_hours", 6)
+            config=config,
         )
         workflow = UnifiedReportWorkflow(config, cache, output_dir="output")
 
@@ -475,7 +502,7 @@ def handle_unified_analyze(args, logger):
 
         logger.info("")
         logger.info("=" * 70)
-        logger.info("✅ Unified Report Generated Successfully")
+        logger.info("Unified Report Generated Successfully")
         logger.info("=" * 70)
         logger.info(f"Report: {unified_path}")
         logger.info(f"SVGs: {len(unified_report.available_svgs)}/6")
@@ -534,7 +561,7 @@ def handle_dated_analyze(args, logger):
         cache_config = config.config.get("cache", {})
         cache = APICache(
             cache_dir=cache_config.get("directory", ".cache"),
-            ttl_hours=cache_config.get("ttl_hours", 6)
+            config=config,
         )
         
         # Initialize components
@@ -655,7 +682,10 @@ def handle_dated_analyze(args, logger):
 
                 # Generate summary
                 summary = summarizer.summarize_repository(
-                    repo, readme_content, commit_histories.get(repo.name)
+                    repo,
+                    readme_content,
+                    commit_histories.get(repo.name),
+                    repository_owner=args.user,
                 )
 
                 # Analyze dependencies (T085: Technology stack section with currency indicators)
@@ -728,10 +758,10 @@ def handle_dated_analyze(args, logger):
         # Summary
         logger.info("\n" + "="*60)
         if len(errors) > 0:
-            logger.info("⚠️  Analysis Complete (with errors)")
+            logger.info("Analysis Complete (with errors)")
             logger.info(f"   Errors Encountered: {len(errors)}")
         else:
-            logger.info("✅ Analysis Complete!")
+            logger.info("Analysis Complete!")
         logger.info(f"   Report: {output_file}")
         logger.info(f"   Repositories: {len(repository_analyses)}")
         logger.info(f"   AI Summaries: {report.ai_summary_rate:.1f}%")
@@ -793,7 +823,11 @@ def handle_generate(args, logger):
 
         # Clear cache if force refresh
         if args.force_refresh:
-            cache = APICache()
+            cache_config = config.config.get("cache", {})
+            cache = APICache(
+                cache_dir=cache_config.get("directory", ".cache"),
+                config=config,
+            )
             cache.clear()
             logger.info("Cache cleared for fresh data")
 
@@ -844,7 +878,7 @@ def handle_dashboard_generation(args, logger, config):
         # Summary
         logger.info("")
         logger.info("=" * 70)
-        logger.info("✅ Dashboard Generation Complete!")
+        logger.info("Dashboard Generation Complete!")
         logger.info("=" * 70)
         logger.info(f"Output: {output_path}")
         logger.info(f"Repositories: {len(dashboard_data.repositories)}")
@@ -958,13 +992,20 @@ def handle_cache(args, logger):
 
     try:
         from spark.cache import APICache
+        from spark.cache_status import CacheStatusTracker
 
         cache = APICache(cache_dir=args.dir)
+        cache_tracker = CacheStatusTracker(cache_dir=args.dir)
 
         if args.clear:
             logger.info(f"Clearing cache directory: {args.dir}")
             cache.clear()
             logger.info("Cache cleared successfully!")
+
+        if args.prune:
+            logger.info(f"Pruning cache directory: {args.dir}")
+            cache.prune(keep_weeks=2)
+            logger.info("Cache pruned successfully!")
 
         if args.info:
             cache_path = Path(args.dir)
@@ -978,8 +1019,58 @@ def handle_cache(args, logger):
             else:
                 logger.info(f"Cache directory does not exist: {args.dir}")
 
+        if args.status:
+            if not args.user:
+                logger.error("--user is required for cache status")
+                sys.exit(1)
+            
+            logger.info(f"Cache status for user: {args.user}")
+            stats = cache_tracker.get_cache_statistics(username=args.user)
+            logger.info(f"Total repositories: {stats['total_repositories']}")
+            logger.info(f"Cached repositories: {stats['cached_repositories']}")
+            logger.info(f"Needs refresh: {stats['needs_refresh']}")
+            logger.info(f"Up to date: {stats['up_to_date']}")
+            logger.info(f"Cache hit rate: {stats['cache_hit_rate']}")
+            logger.info(f"Refresh rate: {stats['refresh_rate']}")
+
+        if args.update_status:
+            if not args.user:
+                logger.error("--user is required for cache status update")
+                sys.exit(1)
+            
+            logger.info(f"Updating cache status for user: {args.user}")
+            cache_data = cache_tracker.update_repositories_cache_with_status(username=args.user)
+            logger.info(f"Updated cache status for {len(cache_data.get('value', []))} repositories")
+            logger.info(f"Cache status updated at: {cache_data.get('cache_status_updated')}")
+
+        if args.list_refresh_needed:
+            if not args.user:
+                logger.error("--user is required for listing refresh-needed repositories")
+                sys.exit(1)
+            
+            logger.info(f"Repositories needing refresh for user: {args.user}")
+            repos = cache_tracker.get_repositories_needing_refresh(username=args.user)
+            
+            if not repos:
+                logger.info("All repositories have up-to-date cache!")
+            else:
+                logger.info(f"\n{len(repos)} repositories need refresh:")
+                for repo in repos[:20]:  # Show first 20
+                    cache_status = repo.get("cache_status", {})
+                    reasons = cache_status.get("refresh_reasons", [])
+                    logger.info(f"  - {repo['name']}: {', '.join(reasons)}")
+                
+                if len(repos) > 20:
+                    logger.info(f"  ... and {len(repos) - 20} more")
+
+    except FileNotFoundError as e:
+        logger.error(f"Cache file not found: {e}")
+        logger.info("Run 'spark unified --user USERNAME' first to generate cache")
+        sys.exit(1)
     except Exception as e:
         logger.error("Cache command failed", e)
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
 
 

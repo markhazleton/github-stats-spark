@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T22:24:09.878341+00:00",
+  "value": {
+    "C#": 459269,
+    "HTML": 18032,
+    "JavaScript": 14864,
+    "CSS": 12997,
+    "Shell": 973
+  },
+  "hash": "a0c285e02d540957374f445f7785b2a5cb3b716711aa316d9bbaf5e993233e51",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SpotifyAPI-NET"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-03T23:42:55+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "SpotifyAPI-NET",
+  "week": "2026W01"
+}

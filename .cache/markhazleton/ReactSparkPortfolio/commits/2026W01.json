@@ -1,0 +1,719 @@
+{
+  "timestamp": "2026-01-04T22:28:27.816478+00:00",
+  "value": [
+    {
+      "sha": "60baee6aa9c206a0e9463c4c8816207009503213",
+      "message": "Add new SVG icon components: info-circle, profile, and search\n\n- Created `info-circle-IPnV1waG.js` for the info-circle icon with customizable properties.\n- Created `profile-BXyl_00R.js` for the profile icon, supporting color, size, title, and className props.\n- Created `search-CsUTBgux.js` for the search icon, also allowing customization of color, size, title, and className.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-15T04:42:08+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "8e8e697c58c553a7d5f61d6613866e5b6c3dfa09",
+      "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon with customizable properties.\n- Added `profile` icon with various attributes for color, size, and title.\n- Created `search` icon component, also supporting customization.\n- All components utilize React and PropTypes for type checking.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-03T03:56:47+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "53a18854afc884a13787081e173577103cee6180",
+      "message": "chore: add package overrides for cookie and tmp dependencies",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T17:59:10+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "fe3f112dd33e450d2e51e6837270b6bcb260fbd1",
+      "message": "Add new SVG components and update existing assets\n\n- Introduced new SVG components for info-circle, profile, and search functionalities.\n- Enhanced the profile component with additional props for better customization.\n- Implemented forwardRef for SVG components to allow ref forwarding.\n- Updated asset files to include necessary imports and prop types for better type checking.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T13:46:40+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "e2659431e7863cd381108d51426044411141cf73",
+      "message": "Add new SVG components and assets for ReactSpark application\n\n- Introduced `index-DetDEU9z.js` for main application logic.\n- Added `info-circle-DO9tuuYf.js` component for info circle icon.\n- Implemented `profile-D7LpDnzG.js` component for profile icon with extensive features.\n- Created `search-DuY7ttz6.js` component for search icon functionality.\n- Enhanced the overall structure and organization of SVG assets.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-24T23:43:36+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "11abad0ebd6f35c8608cb5c023c4115762641074",
+      "message": "Refactor code structure for improved readability and maintainability; removed redundant code blocks and optimized function calls.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-21T19:33:18+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "aaae52ad2d40d77be790c6f877f169e88ffe9d6d",
+      "message": "feat: Implement cache busting and version management system\n\n- Enhanced Vite build configuration to include file hashing for cache busting.\n- Added a new documentation file detailing the cache busting and version management features.\n- Created `UpdateNotification` component for user notifications about available updates.\n- Developed `useVersionCheck` hook to manage version checking and updates.\n- Introduced image utility functions for cache busting and optimization.\n- Implemented a version management utility to handle versioning and update checks.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-13T14:08:32+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "bc840da34d86940e73f9e6281c15df161d7a03ff",
+      "message": "feat: Transform project image URLs to absolute paths and enhance validation in ProjectService",
+      "author": "Mark Hazleton",
+      "date": "2025-10-05T17:42:48+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "cd03dbe1576b97bec07b88bf9ebc4ff9cc040af0",
+      "message": "feat: Add proxy services for jokes and projects, including error handling and caching\n\n- Implemented Azure Functions to proxy requests for jokes and projects.\n- Added CORS support and error handling in proxy functions.\n- Integrated Axios for API requests with timeouts and fallback data.\n- Enhanced Vite configuration to include SCSS preprocessor options and asset handling for font files.\n- Created a custom FontAwesome CSS file to resolve build-time warnings.\n- Developed JokeService and ProjectService for fetching data with caching mechanisms.\n- Included detailed logging for request and response handling in proxies.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-05T17:34:39+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "375c31894b8e4a9b5704a11cb655fcbdc719cea9",
+      "message": "Add new SVG components for info-circle, profile, and search icons\n\n- Implemented `info-circle` icon component with customizable properties.\n- Created `profile` icon component featuring multiple paths and props.\n- Developed `search` icon component with adjustable size and color.\n- All components utilize React's forwardRef and prop-types for better integration and type checking.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-15T03:07:47+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "0cab10d355dd5199695a1b56d4588d013ad7a9c4",
+      "message": "feat: Implement connection retry logic in Chat component; enhance error handling and UI feedback",
+      "author": "Mark Hazleton",
+      "date": "2025-09-14T23:41:22+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "01ce8c8c50910e4e1f0af5b9303e3a5469e8c9a6",
+      "message": "feat: Enhance Chat component with input sanitization and message handling; add CSS for layout",
+      "author": "Mark Hazleton",
+      "date": "2025-09-14T23:22:20+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "27cd6693a30e586c00c363304551b00f1507f7a4",
+      "message": "chore: update build artifacts and dependency lockfile",
+      "author": "Mark Hazleton",
+      "date": "2025-09-14T22:49:29+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "0a5c7d76cf02ef89d2584ef1eeeda2d6b09085fd",
+      "message": "Add new SVG icon components and update existing assets\n\n- Introduced new icon components: info-circle, profile, and search.\n- Implemented forwardRef for better ref handling in icon components.\n- Added prop types for color, size, title, and className for better type checking.\n- Updated the index file to export new components for usage in the application.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-07T01:55:11+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "266cb19cde248c9224e579d3bbaf73119dc6bcad",
+      "message": "feat: Enhance Chat component with connection error handling and retry functionality",
+      "author": "Mark Hazleton",
+      "date": "2025-09-07T01:54:21+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "b3e986b387205f7856d81dfb8f06398edec93fb9",
+      "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon component with customizable properties.\n- Added `profile` icon component featuring multiple paths and props.\n- Created `search` icon component with adjustable size and color.\n- All components utilize React's forwardRef and prop-types for better integration and validation.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-07T00:02:36+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "ac6357fdc0ceff566f14cac1e26e73f3c2cb57cd",
+      "message": "feat: Add comprehensive API dependencies documentation for ReactSparkPortfolio",
+      "author": "Mark Hazleton",
+      "date": "2025-09-02T12:26:32+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "69baa6e5e4d01a54a513fb5c45a086790a51e874",
+      "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon component with customizable properties.\n- Created `profile` icon component featuring multiple paths and props.\n- Added `search` icon component with adjustable size and color.\n- All components utilize React's forwardRef for better ref handling.\n- Included prop types for validation and improved documentation.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-02T12:18:52+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "f73c76c5a175b261e91ab67c0b32fb232ea96ab5",
+      "message": "feat: Add search icon component and SVG implementation\n\ndocs: Introduce comprehensive architecture documentation\n\ndocs: Create a detailed changelog for project updates\n\ndocs: Establish contributing guidelines for project collaboration\n\ndocs: Develop a deployment guide for various hosting options\n\ndocs: Summarize SASS and CSS implementation improvements\n\ndocs: Outline a migration plan for transitioning to modern SASS syntax",
+      "author": "Mark Hazleton",
+      "date": "2025-08-05T11:24:50+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "d6f65b529597c51b93a45bf5f4a8c084616d8f35",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2025-05-12T23:20:43+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "4605e5a9d3901f8886f65aed60392393583fbb37",
+      "message": "Add new SVG icon components for info-circle, profile, and search\n\n- Implemented `info-circle` icon component with customizable properties.\n- Added `profile` icon component featuring multiple paths and props.\n- Created `search` icon component with adjustable size and color.\n- All components utilize forwardRef for better integration with React.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-12T23:14:04+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "80e1f0babebe0ba71ad5f32964262ca1fc232071",
+      "message": "update some UI",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T03:16:59+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "4ddfdb2060086d34ca0b9d6cd76c08c0c2c3c0e9",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T15:51:49+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "81749bbcae7d89ec3b9c54cbdb067eb8ae203982",
+      "message": "remove old url references",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T15:35:03+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "4f6903ec9617b36196f7bbd926c37311b091be38",
+      "message": "let's try this?",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T15:24:31+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "4f068ddd578e444cd1e1080aa3761d1723f7c577",
+      "message": "try agoin, fix this build",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T15:19:58+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "c38e73851c171bee6bbdb9c23d6ed962581ef340",
+      "message": "try to fix build errors",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T15:08:14+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "4c751336f9ae6e7f68bd2abeb895245d6e71b4f5",
+      "message": "more updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:57:53+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "9e777ebba5f02fbfa7758981507749ffdd5df0e0",
+      "message": "update to fix build",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:55:47+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "f5fff0352e37ca10db85e845c22c07c6044dfd0e",
+      "message": "fix build errors",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:50:14+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "453de653d91205feb932a84debac09712855264f",
+      "message": "nav updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:33:53+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "5698b4ed616b8e7fce16581c9da828cda5ce50d4",
+      "message": "Update issue templates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:20:09+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "c16ad6d8da9a46a1a7aac1f21d585013931aba37",
+      "message": "upate readme.md",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:16:18+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "2e3b4b6fae15ffbc8196194d95e294a533ea6fb0",
+      "message": "update readme.md",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:12:59+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "2ed1b336d4a67fbb05ed7e928844436f1e1ea38a",
+      "message": "Update .gitignore to exclude sensitive files",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T14:03:01+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "e8c67404884e9b2ce60df7ab72f7400db0126248",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T13:39:28+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "dfd20298977c2a47c0b6b756679afc93ded0e7b4",
+      "message": "try again",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T13:26:33+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "b7b635ea04b714d3d46d8bd21784a63faa76fad9",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T13:20:29+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "e51a4564216261dae6cf99ed6ff2ba445b32dde9",
+      "message": "fix build issues",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T13:12:15+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "90d6794810ba380c4428ed66912b42c1e01c3fac",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T13:03:51+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "39a62d7423bd664fc0ffd6422049cd0770cbf3f9",
+      "message": "fix logo",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T12:30:05+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "f255f731e3c84d29ab0c7aa418d7c503cf4a2b27",
+      "message": "fix deployment issues",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T12:23:00+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "ab23e3d2d550ac4f1e31ff82cb37a772b05e8b95",
+      "message": "standardize on /docs for deployment",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T12:15:16+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "a5c2838ea3078b0134343a4429d57b1f1fdbe4e3",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T12:09:50+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "9749abd390c6f7b05a50347d24d566d1fef6554c",
+      "message": "remove old method",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T11:54:31+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "38080fb3cfa1f86c0275645d3136019f0bd5b4bc",
+      "message": "ci: add Azure Static Web Apps workflow file\r\non-behalf-of: @Azure opensource@microsoft.com",
+      "author": "Mark Hazleton",
+      "date": "2025-04-16T11:53:38+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "64ad3f58fa984977b0522428ee5959590c9eee4d",
+      "message": "remove old action",
+      "author": "Mark Hazleton",
+      "date": "2025-04-15T13:01:24+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "6da512716f09dbb3d517c19ef8249c8ecbcf9b73",
+      "message": "update",
+      "author": "Mark Hazleton",
+      "date": "2025-04-15T13:00:43+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "7e8facd1aca9975fd4afe2eb99136ee6e51b0dbf",
+      "message": "Create main.yml",
+      "author": "Mark Hazleton",
+      "date": "2025-04-15T13:00:03+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "680f3ed78fed762b9bf95cc44a0e299079d9a8a9",
+      "message": "clean up",
+      "author": "Mark Hazleton",
+      "date": "2025-04-15T12:48:26+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "ad2a1a2a220248b457d7eb28f7c0452ff75e0491",
+      "message": "fix build",
+      "author": "Mark Hazleton",
+      "date": "2025-04-15T12:24:49+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "94b02003d6872d93c499d3d2c0e653a07330e7f5",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-15T12:19:49+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "e72753d666b14618bfed2818ec1d6f247a12c7e8",
+      "message": "update styles",
+      "author": "Mark Hazleton",
+      "date": "2025-04-15T05:03:46+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "85c0050b109f70fbb60a226c3b13c1ae24720abf",
+      "message": "updats",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T14:56:24+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "e6fdb27daf007c211e99560767ce5705844845f4",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T14:51:01+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "822d483aff1fd45c286994dd095abb4bec56d5b8",
+      "message": "updates, add page.yml",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T14:41:28+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "f6d82535ef6ddde7a8af0f475bc49658699fe111",
+      "message": "fix warnings and other issues with config",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T14:11:02+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "732ef8ab514a656c2c18fac98c157d65cd12d0bd",
+      "message": "updaet themes for consitantcy",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T13:39:02+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "0ec3d11197ad6dc03334270207dda8dd6004aff3",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T13:10:26+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "02fc02d74c79b4430e25a1df3c1aa482721f12c8",
+      "message": "updates for doc folder",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T13:01:21+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "a3e50e6157a01bf56471b8708151169e8b2cefc9",
+      "message": "updtes",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T03:56:17+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "ce48dc545c621d56689ef1b34a8fc5d39e2ac216",
+      "message": "update articles",
+      "author": "Mark Hazleton",
+      "date": "2025-04-14T00:27:59+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "2b29098cf0a03266f6458c40086a2203972b6625",
+      "message": "update articles, add function",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T19:51:52+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "397f6afc6d64d385ebe72e91827047abeee87ac9",
+      "message": "fix article fll back logic",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T18:24:30+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "66b86bf6cf5c6a867679f905fcee78a184224190",
+      "message": "fix about page issue with icons and content",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T16:13:39+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "3b1d492e8d6351468b0006c8f9d33728872ad38e",
+      "message": "update colors of site",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T15:22:01+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "b2e17fbc9a66c4153e9ba071902193fc2311fa4e",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T14:49:23+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "3de61595314e8746cd65f453ab117f7fea7c9eb9",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T14:39:40+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "6145c90a3cb5a37afb17e2f7061fe4b9aea63bf2",
+      "message": "update to fix build",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T14:02:14+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "cfd261264612dbb3f721218c38b0575fd20324f0",
+      "message": "Update node.js.yml",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T13:25:24+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "9eaeb6fecb6260b8b1081c08c2a13b8be48b64d0",
+      "message": "agent updates via vs and github",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T00:28:15+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "bbf66d70e25d8559b1438be2a9093189f97182cb",
+      "message": "soem updates",
+      "author": "Mark Hazleton",
+      "date": "2025-03-28T21:49:23+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "1f726b8d2348d3ac531a7fc9c49bd3db2dca0957",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2025-03-24T23:24:00+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "b0c34b01fa84bce8db130f0ed42e14544c3193cd",
+      "message": "refactor the variant chat",
+      "author": "Mark Hazleton",
+      "date": "2025-01-05T17:20:01+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "a471332628bffedff8d044e5d1378eed10c669cd",
+      "message": "update the logo",
+      "author": "Mark Hazleton",
+      "date": "2024-12-30T20:42:14+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "a3e49c08a2dcb514a1c00dcf08a8614bbb18fae9",
+      "message": "fix package issues",
+      "author": "Mark Hazleton",
+      "date": "2024-12-13T14:09:40+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "1df483414ba36c7807e30d4c6575177faa0cbc30",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2024-12-13T05:27:05+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "fd6295bee098453307661eabb798b439774fda8e",
+      "message": "updataes",
+      "author": "Mark Hazleton",
+      "date": "2024-12-13T05:14:55+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "49510d70c0412238edbc1af013906a62685019e1",
+      "message": "add some copy and youtube video",
+      "author": "Mark Hazleton",
+      "date": "2024-12-13T05:09:45+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "d5c11551499c3f94100307ae4de85880385fea51",
+      "message": "minor updates, package updates",
+      "author": "Mark Hazleton",
+      "date": "2024-12-04T14:53:07+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "ab32d1c90a6df9155ea1ac7377fe314953830807",
+      "message": "Package Updates",
+      "author": "Mark Hazleton",
+      "date": "2024-12-03T00:46:03+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "ebdb0680fa2e613ca6c7a54cbb7665bd61690ec6",
+      "message": "package updates",
+      "author": "Mark Hazleton",
+      "date": "2024-11-14T20:30:52+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "c99209fad09696b8715de93db34fd2545ad2ac12",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-10-29T12:48:11+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "52224c37e311e4459df53bbda53ae77f06bb60a1",
+      "message": "update joke and chat",
+      "author": "Mark Hazleton",
+      "date": "2024-10-27T19:45:46+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "0939174fa105568bfa22f54c2a75023e44dcae68",
+      "message": "Update for Chat",
+      "author": "Mark Hazleton",
+      "date": "2024-10-26T18:54:06+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "87d007033e70f38151b5d63b273d3dc3217ad983",
+      "message": "upates",
+      "author": "Mark Hazleton",
+      "date": "2024-10-22T19:21:50+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "c4e5496b8af14b03d10567644812f8b3a0f4bfed",
+      "message": "Update UI and error handling",
+      "author": "Mark Hazleton",
+      "date": "2024-10-22T15:13:51+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "16d985a0d0fc4d563daae272205c1846743f6c12",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2024-10-22T13:39:11+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "d2f1bedf54ab28c15f7a2cc0f156dd1d1f26774a",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-10-19T22:02:35+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "2a414de2853a2073a30371b22d6e9425b3fa88e6",
+      "message": "add weather component",
+      "author": "Mark Hazleton",
+      "date": "2024-10-15T13:13:58+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "ad02874f85be90a61846b791d1654a87830dbaec",
+      "message": "restore env files",
+      "author": "Mark Hazleton",
+      "date": "2024-10-15T12:10:42+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "3aecd463c4eb3e4945ceb1cda31d2dab50171019",
+      "message": "update .gitignore",
+      "author": "Mark Hazleton",
+      "date": "2024-10-15T12:05:28+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "8ce3e1ce206775d596cb685b0ed9a2f278c33d5c",
+      "message": "update footer",
+      "author": "Mark Hazleton",
+      "date": "2024-10-15T04:26:42+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "744124ab951ba00a78d010b23369a7a8b3911916",
+      "message": "Update Footer.tsx",
+      "author": "Mark Hazleton",
+      "date": "2024-10-15T01:02:00+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "9cae2d4ae2c2533115b7faa0f9191aaa779a9160",
+      "message": "update gitignore",
+      "author": "Mark Hazleton",
+      "date": "2024-10-14T21:43:50+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "7d35bddd473d80918457567b78b90ca12c761857",
+      "message": "update bootstrap styles",
+      "author": "Mark Hazleton",
+      "date": "2024-10-14T21:33:16+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "50e78c1f463f72a604904acb98bf3c165c791c19",
+      "message": "fix prod env on build",
+      "author": "Mark Hazleton",
+      "date": "2024-10-14T18:17:25+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "28840a7cf9da295886acdd4a8c25d8038fd8a15b",
+      "message": "update footer",
+      "author": "Mark Hazleton",
+      "date": "2024-10-14T17:38:19+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "9b887be2a296f4098b65aa94f7f4333f0e775191",
+      "message": "Update node.js.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-10-14T17:23:41+00:00",
+      "repo": "ReactSparkPortfolio"
+    },
+    {
+      "sha": "d33e8f8048083768c9a08bc25fbdc14e4843258a",
+      "message": "set prod env for github pages",
+      "author": "Mark Hazleton",
+      "date": "2024-10-14T17:16:31+00:00",
+      "repo": "ReactSparkPortfolio"
+    }
+  ],
+  "hash": "546810928262b2bfd4ebbe4ce6af7f51126e42d5ac071f5c719d8bbe5d9c1778",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "ReactSparkPortfolio"
+    },
+    "category": "commits",
+    "pushed_at": "2026-01-01T19:40:59+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "ReactSparkPortfolio",
+  "week": "2026W01"
+}

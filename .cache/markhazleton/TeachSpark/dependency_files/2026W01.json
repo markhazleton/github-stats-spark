@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-04T22:54:53.417961+00:00",
+  "value": {
+    "package.json": "{\n  \"devDependencies\": {\n    \"copy-webpack-plugin\": \"^13.0.0\",\n    \"husky\": \"^9.1.7\",\n    \"lint-staged\": \"^16.1.2\"\n  },\n  \"scripts\": {\n    \"prepare\": \"husky\"\n  }\n}\n"
+  },
+  "hash": "4b7921d7dd9b6fe71429e04644148a3f6703dd6d8753b61f7a9b4decb3c2df2d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TeachSpark"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-01-01T18:14:14+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "TeachSpark",
+  "week": "2026W01"
+}

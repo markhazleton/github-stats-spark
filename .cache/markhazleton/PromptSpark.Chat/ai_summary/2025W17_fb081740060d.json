@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:11:54.311668+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is an innovative ASP.NET Core web application that provides a dynamic, real-time conversational workflow platform designed to guide users through multi-step interactive processes using SignalR for real-time communication and Adaptive Cards for rich, interactive user interfaces. The application implements a flexible, server-side workflow engine that supports branching logic, persistent conversation states using thread-safe Concurrent Dictionaries, and optional AI integration for handling complex or unexpected user interactions. By leveraging modern web technologies like .NET 7+, SignalR, and Adaptive Cards, the project enables developers to create sophisticated, interactive conversational experiences with minimal overhead, supporting use cases ranging from guided surveys and onboarding processes to interactive decision trees and configurable chat-based workflows. The architecture emphasizes modularity, with a clear separation of concerns between controllers, services, and models, and provides extensibility through JSON-defined workflow configurations that can be easily modified without changing the core application logic. What makes PromptSpark.Chat particularly noteworthy is its combination of real-time interactivity, workflow persistence, and potential AI augmentation, making it suitable for scenarios requiring structured yet dynamic user interactions across various domains like customer support, training, and interactive documentation.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:11:54.311634",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2179,
+    "confidence_score": 90
+  },
+  "hash": "d8171b8c4edaf2493772ad5afd868dd3a8624ef5805898a497413e86a47983cf",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-04-27T04:54:14+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2025W17_fb081740060d"
+}

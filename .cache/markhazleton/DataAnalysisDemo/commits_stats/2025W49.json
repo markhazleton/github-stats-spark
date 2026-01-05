@@ -1,0 +1,243 @@
+{
+  "timestamp": "2026-01-04T21:48:12.467294+00:00",
+  "value": [
+    {
+      "sha": "f247106dc1b61ca3d6f129dccd91332fa96fb76b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-12-03T00:14:42+00:00"
+        },
+        "message": "Pre-upgrade commit: Save current state before .NET 10.0 upgrade"
+      },
+      "stats": {
+        "total": 803,
+        "additions": 372,
+        "deletions": 431
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "3e4d6370fe36b85b852065099583c619c32ff890",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-09T17:47:02+00:00"
+        },
+        "message": "Update inherits attributes and enhance documentation\n\nUpdated the `inherits` attribute in various ASP.NET Web Forms pages and user controls from `App_Web_c1xchfhz` to `App_Web_chn4v2ow` to reflect changes in dynamically generated class names. This update affects multiple files, including `Chart.aspx`, `DataTable.aspx`, `Default.aspx`, and others.\n\nAdded a new section titled \"Copilot Instructions for Data Analytics Demo (DAWPM)\" to the `copilot-instructions.md` file, providing an overview of the project, architecture, key technologies, and detailed instructions for building and deploying the application."
+      },
+      "stats": {
+        "total": 1108,
+        "additions": 1094,
+        "deletions": 14
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "a1c33f993003c91ece421a6a031983c7692f19e1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-09T01:05:39+00:00"
+        },
+        "message": "Add initial web project settings for IIS Express configuration"
+      },
+      "stats": {
+        "total": 51479,
+        "additions": 51460,
+        "deletions": 19
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "01e76ec1e089b2d03d4dbc66e689c2d4e2ea8b7c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-09T00:53:08+00:00"
+        },
+        "message": "feat: Add custom styles and functionality for Pivot Table implementation\n\n- Introduced pivot.css for custom styling of pivot table components.\n- Implemented app.js to initialize the Data Analysis Demo application with global event handlers and utility functions.\n- Added datatables.js for DataTables configuration and utility functions.\n- Created pivot.js for enhanced PivotTable utilities with error handling and performance monitoring.\n- Updated site.js to serve as a single entry point for all client-side dependencies and initialize components.\n- Included vendor.js for core vendor libraries and Bootstrap component initialization.\n- Configured webpack to bundle JavaScript and CSS files, optimizing for production."
+      },
+      "stats": {
+        "total": 84246,
+        "additions": 14601,
+        "deletions": 69645
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "16d7c929c264028b52ec7199cbb2e8eb8da5fd42",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-08T19:01:23+00:00"
+        },
+        "message": "Update .gitignore to include .vscode directory\n\nAdded the .vscode directory to the .gitignore file to prevent local development environment settings from being tracked in the repository. This ensures that only relevant project files are included in version control."
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "7db357bffc6b68402c7c3d547a9bb9d8d35a1fc5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-08T19:00:12+00:00"
+        },
+        "message": "Minor tweaks"
+      },
+      "stats": {
+        "total": 65,
+        "additions": 65,
+        "deletions": 0
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "2afc490d36631883711e9d654724ed9aeff3afae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-24T15:55:44+00:00"
+        },
+        "message": "updates"
+      },
+      "stats": {
+        "total": 120580,
+        "additions": 120275,
+        "deletions": 305
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "5a1ae9dd804205d05694953f15b98df37b37e2a1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-27T13:38:20+00:00"
+        },
+        "message": "cleanup"
+      },
+      "stats": {
+        "total": 26563,
+        "additions": 744,
+        "deletions": 25819
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "33552b4967bbb4397a21454943eaaa0607852700",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-23T17:06:05+00:00"
+        },
+        "message": "Update to 4.8.1\nStart implementation of client side libaries"
+      },
+      "stats": {
+        "total": 69129,
+        "additions": 68968,
+        "deletions": 161
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "6e00e94d1d19e3bce15745b27c705e184c0b0aff",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-20T16:59:47+00:00"
+        },
+        "message": "Update Links on Mater Page"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 7,
+        "deletions": 9
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "98091041f9d64f2b51d7a77b6424850c7ce09478",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-20T16:58:36+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 44,
+        "additions": 43,
+        "deletions": 1
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "ad38a61a451eceb1b2fb2f6f2f3bf133e1dcdfbf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-20T16:48:09+00:00"
+        },
+        "message": "Add some charts"
+      },
+      "stats": {
+        "total": 254,
+        "additions": 126,
+        "deletions": 128
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "15f5e8085390ef39a3b80a5a104fe824deaa6eec",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-20T16:41:15+00:00"
+        },
+        "message": "Add project files."
+      },
+      "stats": {
+        "total": 106290,
+        "additions": 106290,
+        "deletions": 0
+      },
+      "repo": "DataAnalysisDemo"
+    },
+    {
+      "sha": "38644224404c55b015b810f6495a15dbc39f2573",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-20T16:41:12+00:00"
+        },
+        "message": "Add .gitattributes."
+      },
+      "stats": {
+        "total": 63,
+        "additions": 63,
+        "deletions": 0
+      },
+      "repo": "DataAnalysisDemo"
+    }
+  ],
+  "hash": "e0e034ef35c54c0adc4c1e5a2bc9350aba324113b6af6d0566a70698cd75b615",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DataAnalysisDemo"
+    },
+    "category": "commits_stats",
+    "pushed_at": "2025-12-03T01:16:04+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits_stats",
+  "owner": "markhazleton",
+  "repo": "DataAnalysisDemo",
+  "week": "2025W49"
+}

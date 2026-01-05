@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T22:00:02.524254+00:00",
+  "value": {
+    "total": 88,
+    "recent_90d": 21,
+    "recent_180d": 44,
+    "recent_365d": 60,
+    "last_commit_date": "2025-12-03T02:01:11+00:00"
+  },
+  "hash": "b4436bfea659706ebbb481502f3421abc2a0aa4cdb0da46502749f4adab11cd7",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "js-dev-env"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-01T19:27:45+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "js-dev-env",
+  "week": "2026W01"
+}

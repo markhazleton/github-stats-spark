@@ -1,0 +1,3219 @@
+{
+  "timestamp": "2026-01-04T22:21:56.221253+00:00",
+  "value": [
+    {
+      "sha": "4fb6c6986498cb164ee6fb117e617369d53640ee",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T21:56:09+00:00"
+        },
+        "message": "Upgrade Dockerfile and global.json to .NET 10 for improved compatibility"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 11,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "803e14583939340d1748087c2b1c2ff13a131b3d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T21:48:06+00:00"
+        },
+        "message": "Refactor code structure for improved readability and maintainability"
+      },
+      "stats": {
+        "total": 5025,
+        "additions": 5023,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "bca3563163336dc0a0d4492805fa863faed4ba00",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T21:47:23+00:00"
+        },
+        "message": "Document history and add changelog"
+      },
+      "stats": {
+        "total": 65,
+        "additions": 65,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2edd129b8bf2211825dfde97675020c1bb9f4b10",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T21:17:09+00:00"
+        },
+        "message": "Enhance CI/CD workflow and documentation\n\nUpdated `docker-image.yml` to rename the workflow, add debugging steps, and verify `HttpClientFactory` presence. Upgraded Docker actions and added metadata extraction, local testing, and Trivy security scanning. Improved cache management and output details.\n\nRefined `Dockerfile` to use wildcard patterns for project files and optimized the publish command for smaller image size.\n\nCreated comprehensive documentation: `GITHUB_ACTIONS_FIX_SUMMARY.md` for action resolutions, `ACTIONS_FAILURES_ANALYSIS.md` for in-depth failure analysis, `ACTIONS_FIX_CHECKLIST.md` for tracking fixes, `GITHUB_ACTIONS_TROUBLESHOOTING.md` for troubleshooting guidance, and `GITHUB_CLI_REFERENCE.md` for CLI usage.\n\nAdded `check-dependabot.ps1` script to verify and guide `dependabot.yml` configuration updates."
+      },
+      "stats": {
+        "total": 7,
+        "additions": 6,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0995388b849bc62fc982f00efad7cba2645c3cc7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T21:14:04+00:00"
+        },
+        "message": "Migrate from System.Drawing to SkiaSharp for cross-platform image processing\n\n- Replace System.Drawing.Common with SkiaSharp (v3.116.0) for MIT-licensed, cross-platform image support\n- Update ImageExtensions to use SKBitmap and SKSamplingOptions APIs\n- Update BaseController image upload to use SkiaSharp encoding\n- Update ImageExtensionsTests to use SkiaSharp types\n- Remove libgdiplus dependency from Azure workflow (no longer needed)\n- All 192 tests now pass on both Windows and Linux without native library dependencies\n\nBenefits:\n- No more libgdiplus dependency issues on Linux\n- Pure cross-platform solution with native library bundles\n- MIT license (no commercial restrictions)\n- Modern API using SKSamplingOptions instead of deprecated SKFilterQuality\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 28,
+        "deletions": 32
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4826d7623ea46016f77df1e8e5a3f7c10b378375",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:59:18+00:00"
+        },
+        "message": "Add permissions configuration for GitHub Actions workflows"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 13,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4337390a1277fc7cb222ee7fba95f4cb2dde7f71",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:57:27+00:00"
+        },
+        "message": "Fix failing GitHub Actions workflows\n\n- Remove check for non-existent Mwh.Sample.HttpClientFactory directory in Docker workflow\n- Add libgdiplus installation step for System.Drawing GDI+ tests in Azure workflow\n- Fix Trivy SARIF upload to only run when scan succeeds\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 8,
+        "deletions": 4
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "28191e3b66b1f75c8fdeff3ec96102ec494da9cd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:54:02+00:00"
+        },
+        "message": "Update Dockerfile and add GitHub Actions documentation"
+      },
+      "stats": {
+        "total": 1254,
+        "additions": 1192,
+        "deletions": 62
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "576fe8d3c7a37b5b1070377f31f6a7c75b3d3146",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:39:57+00:00"
+        },
+        "message": "Merge pull request #37 from markhazleton/upgrade-to-NET10\n\nUpgrade to net10"
+      },
+      "stats": {
+        "total": 3553,
+        "additions": 2921,
+        "deletions": 632
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4ad93c1f1c2c1193bb3218057e4dfe5bd8f97440",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:35:49+00:00"
+        },
+        "message": "Update workflows and add migration documentation\n\nEnhanced the `docker-image.yml` workflow by making Docker image tests conditional on non-pull request events and extending the sleep duration before log checks. Updated Trivy scanner options and switched to `upload-sarif@v4` for GitHub Security uploads, adding a new Trivy report step.\n\nAdded `CODEQL_MIGRATION.md` to document the migration from CodeQL Action v3 to v4, detailing deprecation timelines, required changes, and testing recommendations. Confirmed repository compliance with upcoming deprecation.\n\nIntroduced `dependabot.yml` for automated dependency updates, covering GitHub Actions, NuGet, npm, and Docker dependencies with a weekly schedule and specific configurations for each ecosystem."
+      },
+      "stats": {
+        "total": 300,
+        "additions": 291,
+        "deletions": 9
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "dfc26b6a72a74df81fc138812e99eb510e0822ae",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:18:19+00:00"
+        },
+        "message": "Enhance CI/CD workflows for Docker and Azure\n\nUpdated `docker-image.yml` to rename the workflow, add environment variables, and improve Docker build and push processes with metadata extraction, multi-platform support, and security scanning. Enhanced `main_samplecrud.yml` with caching, dynamic .NET versioning, and improved Azure deployment steps, including health checks and test result publishing."
+      },
+      "stats": {
+        "total": 186,
+        "additions": 154,
+        "deletions": 32
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "727a1a2e0cf3b98c576f10ed2813d98d1388918e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T20:12:48+00:00"
+        },
+        "message": "Upgrade to .NET 10.0 and refactor solution\n\nUpgraded the entire SampleMvcCRUD solution from .NET 9.0 to .NET 10.0 using a Big Bang strategy, updating all 7 projects simultaneously. Modified project files to reflect the new framework version and updated package references to .NET 10 compatible versions. Removed the `Mwh.Sample.HttpClientFactory` project and its files, indicating a refactor or consolidation of functionality.\n\nRefactored test methods in `StringExtensionsTests.cs` and `DepartmentDtoTests.cs` to manually check for exceptions, improving test clarity. Updated `README.md` with new framework details, project goals, and instructions. Created `UPGRADE-SUMMARY.md` to document the upgrade process.\n\nEnhanced the user interface in `Index.cshtml` with new table actions and a DataTable script. Updated `Program.cs` for Swagger configuration changes and added HttpClient factory registration. Deleted unused binary files for cleanup.\n\nUpdated the solution file to remove references to the deleted project and reflect the new Visual Studio version. Created documentation files to track the upgrade process and ensure a detailed audit trail. All 192 unit tests passed, confirming compatibility with .NET 10.0 and no breaking changes."
+      },
+      "stats": {
+        "total": 1323,
+        "additions": 733,
+        "deletions": 590
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5e476ac98dc91e7939ece2e5ef532577416966af",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-11-16T18:59:56+00:00"
+        },
+        "message": "feat: upgrade solution to .NET 10.0\n\n- Update all projects from net9.0 to net10.0\n- Update Entity Framework Core packages to 10.0.0\n- Update System.Text.Json to 10.0.0\n- Update System.Drawing.Common to 10.0.0\n- Update Microsoft.Extensions.Http to 10.0.0\n- Update System.Formats.Asn1 to 10.0.0\n- Update Microsoft.VisualStudio.Web.CodeGeneration.Design to 10.0.0-rc.1\n\nAll projects build successfully with 0 errors.\nAll 192 unit tests pass (137 Domain tests + 55 Repository tests).\nNo breaking changes identified.\n\nProjects upgraded:\n- Mwh.Sample.Domain\n- Mwh.Sample.Repository\n- Mwh.Sample.HttpClientFactory\n- Mwh.Sample.Web (Blazor)\n- Mwh.Sample.Console\n- Mwh.Sample.Domain.Tests\n- Mwh.Sample.Repository.Tests"
+      },
+      "stats": {
+        "total": 1784,
+        "additions": 1763,
+        "deletions": 21
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9ecc85c75eefe1a887e08172ea93c66e3d7ddb6d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-09-08T03:11:05+00:00"
+        },
+        "message": "Update NuGet package versions across projects\n\nUpdated several NuGet packages to their latest versions, including MSTest (3.9.3 to 3.10.4), System.Drawing.Common (9.0.7 to 9.0.8), Microsoft.Extensions.Http (9.0.7 to 9.0.8), and various Entity Framework Core packages (9.0.7 to 9.0.8). Also updated Azure.Identity (1.14.2 to 1.15.0) and downgraded Swashbuckle.AspNetCore (9.0.3 to 9.0.4), while updating System.Formats.Asn1 and System.Text.Json to 9.0.8."
+      },
+      "stats": {
+        "total": 36,
+        "additions": 18,
+        "deletions": 18
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "77fd8d20105b57ee0014807bac45d5fe515d4f99",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T23:01:41+00:00"
+        },
+        "message": "Fix lint command syntax in Docker image workflow"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8da2913173d98009bbf64170a477382f823e0c5c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T23:00:14+00:00"
+        },
+        "message": "Add .hadolint.yaml configuration and update Dockerfile linting to ignore DL3008"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4e4a89eac1f0fdb1ce40023dc72e6d39891504b8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T22:53:28+00:00"
+        },
+        "message": "Update Dockerfile to improve error handling and optimize package installation"
+      },
+      "stats": {
+        "total": 113,
+        "additions": 56,
+        "deletions": 57
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e486b3814d84b7fb0322c98045c3e9300833cd99",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T22:27:42+00:00"
+        },
+        "message": "Enhance breadcrumb handling and layout updates\n\n- Improved `GenerateBreadcrumbs` method in `BreadcrumbHelper.cs` to better manage Razor Pages and streamline breadcrumb generation.\n- Updated HTML structure and styling in `_Breadcrumb.cshtml` for improved visual integration with the dark theme.\n- Adjusted breadcrumb placement and added CSS styles in `_Layout.cshtml` for better mobile and desktop responsiveness.\n- Applied similar changes to `_LayoutPivot.cshtml` for consistency.\n- Modified `robots.txt` to disallow access to `/MvcEmployee/` while allowing `/api/` endpoints for better search engine indexing."
+      },
+      "stats": {
+        "total": 223,
+        "additions": 157,
+        "deletions": 66
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "66b4ecb535a32a21e1d6a1843cd7f268db1445e1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T21:50:02+00:00"
+        },
+        "message": "Update NuGet packages, enhance SEO, and add icons\n\nUpdated several NuGet packages to their latest versions, including `System.Drawing.Common`, `Microsoft.Extensions.Http`, and `Microsoft.EntityFrameworkCore` packages, ensuring the application benefits from the latest features and security fixes.\n\nModified the `Details.cshtml` file to improve department name display and added structured data generation for employee details. Introduced a new `BreadcrumbHelper` class for enhanced navigation and updated the `_metatags.cshtml` file for better SEO.\n\nIncluded new favicon images and updated the `site.webmanifest` to support additional app icons, improving the visual branding across platforms."
+      },
+      "stats": {
+        "total": 636,
+        "additions": 580,
+        "deletions": 56
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "cec204b272a68d26da3cb24d50f56a2817cff9e8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-28T20:05:16+00:00"
+        },
+        "message": "Add SitemapController, update metatags, and enhance favicon setup"
+      },
+      "stats": {
+        "total": 303,
+        "additions": 301,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2d490701f2616c5420de93ce8245670d1fa9fd57",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-07-03T02:24:27+00:00"
+        },
+        "message": "Update package references across multiple projects\n\nUpdated various package references to their latest versions, including:\n- `Microsoft.NET.Test.Sdk` to `17.14.1`\n- `MSTest.TestAdapter` and `MSTest.TestFramework` to `3.9.3`\n- `System.Drawing.Common` to `9.0.6`\n- `Microsoft.Extensions.Http` and `System.Text.Json` to `9.0.6`\n- `Microsoft.EntityFrameworkCore` and related packages to `9.0.6`\n- `Azure.Identity` to `1.14.1`\n- Other packages in `Mwh.Sample.Web.csproj` were also updated and outdated references were removed."
+      },
+      "stats": {
+        "total": 46,
+        "additions": 23,
+        "deletions": 23
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "09e3ecee6ad090475cfa5e9e5ec73126bc534645",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-25T12:00:13+00:00"
+        },
+        "message": "updates for bootswatch theme switcher"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c8e19ca656abf1e114ac11803083eb28df28ce01",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-24T22:00:35+00:00"
+        },
+        "message": "Update README.md to enhance project description, add theme switcher details, and improve deployment instructions"
+      },
+      "stats": {
+        "total": 171,
+        "additions": 142,
+        "deletions": 29
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c61f49d21cd5785af086ef64a1aa1244c8146438",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-24T21:09:47+00:00"
+        },
+        "message": "Add Bootswatch theming and HTTP client utilities\n\nUpdated project to include WebSpark.Bootswatch and WebSpark.HttpClientUtility packages. Removed Microsoft.VisualStudio.Web.CodeGeneration.Design reference.\n\nEnhanced Program.cs with new services and middleware for Bootswatch. Modified _Layout.cshtml to support dynamic theming and added a theme switcher.\n\nUpdated _ViewImports.cshtml for Bootswatch integration and added new settings in appsettings.json for CSV output and HTTP request handling options."
+      },
+      "stats": {
+        "total": 50,
+        "additions": 37,
+        "deletions": 13
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b7a5db418ccd81cdfceddfd3e08bdb46867546ce",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-05-24T20:05:08+00:00"
+        },
+        "message": "Update NuGet packages and refine project configurations\n\nUpdated various NuGet packages to their latest versions, including test SDKs, MSTest components, Entity Framework Core, and others. Adjusted NPM installation targets in `Mwh.Sample.Web.csproj` for better error handling and formatting. Modified the `PublishClientAssets` target to ensure correct inclusion and exclusion of resolved files during the publish process."
+      },
+      "stats": {
+        "total": 49,
+        "additions": 23,
+        "deletions": 26
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6b1bdf79e5d495e505210c7aef6781ad036c8499",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-04-22T12:27:58+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 15,
+        "additions": 9,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7a48e4ed5070f5bb6cc124ecad7f1819e7f2e3e3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-04-18T12:56:32+00:00"
+        },
+        "message": "add npm to docker image"
+      },
+      "stats": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6780a3bb2172ed6f27400dadf6f02c8a3e2f820b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-04-17T13:43:06+00:00"
+        },
+        "message": "update project UI"
+      },
+      "stats": {
+        "total": 22970,
+        "additions": 20027,
+        "deletions": 2943
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fbd7cd87b6881ee8b7fc713103f83c372b92fac6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2025-01-20T14:49:19+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "bc4774f58bf6574e02ba163b6163fba68182bc7e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-24T13:53:07+00:00"
+        },
+        "message": "update nuget packages"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "363302aab9c809632cc159b96ec23f3100195ec9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-12-03T03:48:56+00:00"
+        },
+        "message": "update nuget packages"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fa9563c01d623eac3e2a95a12c076dc73b7997ba",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-11-13T15:26:44+00:00"
+        },
+        "message": "NuGet Upgrade"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 19,
+        "deletions": 19
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d6ebc416f24237745e9f3278e1367ece3ca5886b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-24T13:12:03+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ce273e18a2019ae6b26593fd47d832c019cca85c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-24T02:43:46+00:00"
+        },
+        "message": "update dockerfile"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 14,
+        "deletions": 4
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d46a3a35ca6f9f0e65d954c9fd831ecb924b1b14",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-24T02:40:55+00:00"
+        },
+        "message": "yml changes"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 23,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d446b35354fc31c224f9f9f09902ebc40f8905fd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-24T02:37:53+00:00"
+        },
+        "message": "update razor pages"
+      },
+      "stats": {
+        "total": 646,
+        "additions": 338,
+        "deletions": 308
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "577f98fc9ee433227696ce054c1ff9d4deefdce5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T21:32:42+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 65,
+        "additions": 65,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "41c46c68bb7bce2a5d584bd5cec1ea8e57196ad4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T21:29:20+00:00"
+        },
+        "message": "remove old pipeline"
+      },
+      "stats": {
+        "total": 125,
+        "additions": 0,
+        "deletions": 125
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d0329a5e48d5dc8301f0c0dcdf8eacc2edbea27e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T21:08:15+00:00"
+        },
+        "message": "update version number"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "1eefd1003cb82efa47d60b6c9e2eef773d485977",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T20:40:08+00:00"
+        },
+        "message": "Update main_samplecrud.yml"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 11,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9ac7c66d2a439844f0662c57f7ca6cb5ce14e0cb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T20:24:39+00:00"
+        },
+        "message": "Merge pull request #36 from markhazleton/dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7\n\nBump actions/download-artifact from 3 to 4.1.7 in /.github/workflows"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "37fe0aac67869ec6ae34ab99272ece1cf1e646df",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T20:22:28+00:00"
+        },
+        "message": "Update main_samplecrud.yml"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 21,
+        "deletions": 17
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a0ddb6375e02a37e85f99fa7ce5e84278bed560f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T20:20:54+00:00"
+        },
+        "message": "Update docker-image.yml"
+      },
+      "stats": {
+        "total": 63,
+        "additions": 38,
+        "deletions": 25
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fedc7c30946a43494ad8b7d9d0a18ed407c6d903",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T20:15:53+00:00"
+        },
+        "message": "Merge branch 'main' into dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7"
+      },
+      "stats": {
+        "total": 1537,
+        "additions": 942,
+        "deletions": 595
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "359c55380de3615bb03c97552807b1383f9cde2f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-23T20:14:43+00:00"
+        },
+        "message": "Update to net 9\nCreate unique title/description/keywords"
+      },
+      "stats": {
+        "total": 1012,
+        "additions": 683,
+        "deletions": 329
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "565fde328b75aa7f4b8deb7c25ffe898bc45b8bf",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T03:36:28+00:00"
+        },
+        "message": "update to net 9"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "530836f57cf45d52933b07009095309ee24ac60c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T03:35:33+00:00"
+        },
+        "message": "update to net 9"
+      },
+      "stats": {
+        "total": 523,
+        "additions": 258,
+        "deletions": 265
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0f692ed9c301219e79cae0bc9fa42d466f8b914e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-09-21T01:53:11+00:00"
+        },
+        "message": "NuGet updates"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0246424dd9886dc8ebb48619664b355d5b13389c",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-09-03T22:47:44+00:00"
+        },
+        "message": "Bump actions/download-artifact from 3 to 4.1.7 in /.github/workflows\n\nBumps [actions/download-artifact](https://github.com/actions/download-artifact) from 3 to 4.1.7.\n- [Release notes](https://github.com/actions/download-artifact/releases)\n- [Commits](https://github.com/actions/download-artifact/compare/v3...v4.1.7)\n\n---\nupdated-dependencies:\n- dependency-name: actions/download-artifact\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f0d698603fa8e437a7bb3c03322e02dc3095a5b9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-27T23:11:41+00:00"
+        },
+        "message": "Nuget Updates"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 3,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c33e646dcb1445a8d66c6d164a186ac4f4a146c2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-21T18:17:33+00:00"
+        },
+        "message": "commit readme"
+      },
+      "stats": {
+        "total": 61,
+        "additions": 35,
+        "deletions": 26
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5c6ee7d29c0f7e402a053db1215dd71c476d6805",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-21T18:16:53+00:00"
+        },
+        "message": "Update main_samplecrud.yml"
+      },
+      "stats": {
+        "total": 19,
+        "additions": 12,
+        "deletions": 7
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ca3c73ad60c0bc24eaf18f627a0eeae2ff27eb58",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-21T18:15:06+00:00"
+        },
+        "message": "Update main_samplecrud.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "1b1cc3ba13bdfae41b5f8e8f33939c27899d4bee",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-21T16:07:10+00:00"
+        },
+        "message": "update packages"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 18,
+        "deletions": 18
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c1de279b319ffde2197b4b63d8fcd995bf65ab68",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-08-03T14:23:51+00:00"
+        },
+        "message": "package update"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3339a3eda0700aa9827a2c5578345f02ed994081",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-07-23T13:43:53+00:00"
+        },
+        "message": "Update packages, work on pure JS stand alone page"
+      },
+      "stats": {
+        "total": 109,
+        "additions": 62,
+        "deletions": 47
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e50dc9e5f04ca1974237e79935601ab422731462",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-06-26T21:41:04+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ebd4b1bcd797774dde1a3e3143113059d2f1d3a3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T13:01:44+00:00"
+        },
+        "message": "Merge pull request #31 from markhazleton/dependabot/nuget/Mwh.Sample.Web/Azure.Identity-1.11.0\n\nBump Azure.Identity from 1.10.4 to 1.11.0 in /Mwh.Sample.Web"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5764b5ac755a48cba55fb5df81524da667d73233",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T13:01:19+00:00"
+        },
+        "message": "Merge pull request #32 from markhazleton/dependabot/nuget/AspireAppHost.ServiceDefaults/OpenTelemetry.Instrumentation.AspNetCore-1.8.1\n\nBump OpenTelemetry.Instrumentation.AspNetCore from 1.7.1 to 1.8.1 in /AspireAppHost.ServiceDefaults"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c9ddc4d17264ae92ba047a10e84928a729614b7b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T13:00:55+00:00"
+        },
+        "message": "Merge pull request #33 from markhazleton/dependabot/nuget/AspireAppHost.ServiceDefaults/OpenTelemetry.Instrumentation.Http-1.8.1\n\nBump OpenTelemetry.Instrumentation.Http from 1.7.1 to 1.8.1 in /AspireAppHost.ServiceDefaults"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "18215052b57c4a6cf4a3cb28c6d95b07d586749c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T12:59:24+00:00"
+        },
+        "message": "merge from main"
+      },
+      "stats": {
+        "total": 587,
+        "additions": 281,
+        "deletions": 306
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3ece14061863207703868f02728dec6496efeee8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T12:58:49+00:00"
+        },
+        "message": "merge from main"
+      },
+      "stats": {
+        "total": 587,
+        "additions": 281,
+        "deletions": 306
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "21fae9f0255095fb49223ac950946618e904567d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T12:57:45+00:00"
+        },
+        "message": "update from main"
+      },
+      "stats": {
+        "total": 587,
+        "additions": 281,
+        "deletions": 306
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "de96a8f3a3ab676109943e9f025169c31a0e283d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T12:54:40+00:00"
+        },
+        "message": "move aspire out"
+      },
+      "stats": {
+        "total": 204,
+        "additions": 0,
+        "deletions": 204
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "57fa6c90181fe7b4325f32495f7e2100df63ab00",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-29T12:48:29+00:00"
+        },
+        "message": "Upgrade packages..."
+      },
+      "stats": {
+        "total": 32,
+        "additions": 16,
+        "deletions": 16
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2b375fd7ad0fab97e8617ad8ce74b1ded1798d70",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-02T16:09:57+00:00"
+        },
+        "message": "clean up deploy stuff"
+      },
+      "stats": {
+        "total": 193,
+        "additions": 193,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2e9aa7dff3effec1142764cf85ec63fce84cff64",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-02T13:38:55+00:00"
+        },
+        "message": "remove aspire"
+      },
+      "stats": {
+        "total": 71,
+        "additions": 25,
+        "deletions": 46
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b43ddef046e3c3f3694a48bea8db2d73599d0359",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-02T13:48:26+00:00"
+        },
+        "message": "remove old workflow"
+      },
+      "stats": {
+        "total": 59,
+        "additions": 0,
+        "deletions": 59
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9efe4e03551da707af8fea7e80d3e132057aeff3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-02T13:42:45+00:00"
+        },
+        "message": "Update main_samplecrud.yml"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 11,
+        "deletions": 11
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9931c9efbb5ec8983ee9e9ac6b0a5488f140e98f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-05-02T13:33:13+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 66,
+        "additions": 66,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "73fc71dff20763656e3729bd5b90a97bb86835e1",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-04-12T22:59:35+00:00"
+        },
+        "message": "Bump OpenTelemetry.Instrumentation.Http\n\nBumps [OpenTelemetry.Instrumentation.Http](https://github.com/open-telemetry/opentelemetry-dotnet) from 1.7.1 to 1.8.1.\n- [Release notes](https://github.com/open-telemetry/opentelemetry-dotnet/releases)\n- [Commits](https://github.com/open-telemetry/opentelemetry-dotnet/compare/Instrumentation.Http-1.7.1...Instrumentation.Http-1.8.1)\n\n---\nupdated-dependencies:\n- dependency-name: OpenTelemetry.Instrumentation.Http\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3115cd8dc57e677c17dc11d3371f1b9534492ae0",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-04-12T22:59:16+00:00"
+        },
+        "message": "Bump OpenTelemetry.Instrumentation.AspNetCore\n\nBumps [OpenTelemetry.Instrumentation.AspNetCore](https://github.com/open-telemetry/opentelemetry-dotnet) from 1.7.1 to 1.8.1.\n- [Release notes](https://github.com/open-telemetry/opentelemetry-dotnet/releases)\n- [Commits](https://github.com/open-telemetry/opentelemetry-dotnet/compare/Instrumentation.Http-1.7.1...Instrumentation.Http-1.8.1)\n\n---\nupdated-dependencies:\n- dependency-name: OpenTelemetry.Instrumentation.AspNetCore\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8dc9d9e6a2d4ff5a93a69cb490910794e2a41fbe",
+      "commit": {
+        "author": {
+          "name": "dependabot[bot]",
+          "date": "2024-04-11T20:29:43+00:00"
+        },
+        "message": "Bump Azure.Identity from 1.10.4 to 1.11.0 in /Mwh.Sample.Web\n\nBumps [Azure.Identity](https://github.com/Azure/azure-sdk-for-net) from 1.10.4 to 1.11.0.\n- [Release notes](https://github.com/Azure/azure-sdk-for-net/releases)\n- [Commits](https://github.com/Azure/azure-sdk-for-net/compare/Azure.Identity_1.10.4...Azure.Identity_1.11.0)\n\n---\nupdated-dependencies:\n- dependency-name: Azure.Identity\n  dependency-type: direct:production\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "15a392a0bb5cddaba2b3d81157a8dfdd02d4bee1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-28T17:19:50+00:00"
+        },
+        "message": "Update Readme to point to moved resources"
+      },
+      "stats": {
+        "total": 60,
+        "additions": 33,
+        "deletions": 27
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2e3e78441c8d7ed932f539613c842cf687f5ba97",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-20T22:44:50+00:00"
+        },
+        "message": "Update for MarkHazleton.com"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d95667accb077d12d3189681835650a0af63e542",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-13T03:05:53+00:00"
+        },
+        "message": "Updated packages, added new endpoints, and modified requests\n\nUpdated the `coverlet.collector` package version from `6.0.1` to `6.0.2` in `Mwh.Sample.Domain.Tests.csproj` and `Mwh.Sample.Repository.Tests.csproj` files. Added a new POST endpoint `/employees` in `Program.cs` that accepts an `EmployeeDto` object and uses the `IEmployeeService` to save the employee. Also added a new static class `EmployeeGroupEndpoints` in `Program.cs` that maps GET and DELETE operations for the `IEmployeeService`. Replaced the `GET` request for `/weatherforecast` with a `GET` request for `/employees/` in the `SampleMinimalApi.http` file."
+      },
+      "stats": {
+        "total": 34,
+        "additions": 31,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "531f8a2b0cfc879eef3ea49a9c336bcd17ee21e8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-12T20:49:40+00:00"
+        },
+        "message": "Add Minimal API"
+      },
+      "stats": {
+        "total": 275,
+        "additions": 259,
+        "deletions": 16
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "37028149bec7cb080870c09c1cd170899f515c6b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-12T13:51:12+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ace5292f3145a79a119707e83f0926e672cb391a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-12T13:50:55+00:00"
+        },
+        "message": "Add Aspire Host\nUpdate NuGet Packages"
+      },
+      "stats": {
+        "total": 215,
+        "additions": 215,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "cc29c3a71fd3346762217cd5d0d30ed8906d78f0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-12T13:12:47+00:00"
+        },
+        "message": "package updates\nremove Aspire"
+      },
+      "stats": {
+        "total": 252,
+        "additions": 20,
+        "deletions": 232
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "954bb2469ad64e0da87802a143ffb93019dd0b80",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-06T13:49:13+00:00"
+        },
+        "message": "Delete .github/workflows/main_mwhsamplecrud.yml"
+      },
+      "stats": {
+        "total": 66,
+        "additions": 0,
+        "deletions": 66
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "31aa3dce5f9b21b9aa70926fce26f8a5da412a4f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-03-06T13:32:32+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 66,
+        "additions": 66,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "746316dce4f7387ba1389558ecebf86a43f39cfd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-02-13T07:10:58+00:00"
+        },
+        "message": "update libman"
+      },
+      "stats": {
+        "total": 20,
+        "additions": 10,
+        "deletions": 10
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "554d7000054dc1323e3adfbdf03dede6c311975e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-02-12T17:37:49+00:00"
+        },
+        "message": "update NuGet packages"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0972d2df04ca97d580ccc76e88e91f057dcf760d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-01-24T18:29:51+00:00"
+        },
+        "message": "Package Updates"
+      },
+      "stats": {
+        "total": 40,
+        "additions": 20,
+        "deletions": 20
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f8a8ee8fb7d829a864d42dba86e64c21f282a96c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2024-01-02T14:47:28+00:00"
+        },
+        "message": "Add AspireHost project"
+      },
+      "stats": {
+        "total": 216,
+        "additions": 214,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "fdb4cf3de570547ce165ac1fc48b413df56f186a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-12-11T01:36:11+00:00"
+        },
+        "message": "Update NuGet/Client Libs."
+      },
+      "stats": {
+        "total": 54,
+        "additions": 27,
+        "deletions": 27
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4ee5714c79d7cc77c80b47b624837f4213123335",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-11-12T21:13:35+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 11,
+        "deletions": 11
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "00315dc6e8b587066a2eaeac4129375395ceabe0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-22T23:07:41+00:00"
+        },
+        "message": "update docker file, remove unused project reference"
+      },
+      "stats": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3eab93b9a8e674b4abbab7746378e8e7df4021fe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-22T23:05:28+00:00"
+        },
+        "message": "Update docker-image.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b04eb0b91d78efe9f8a344d31f944a58cc6c32e4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-22T22:35:22+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD"
+      },
+      "stats": {
+        "total": 13,
+        "additions": 9,
+        "deletions": 4
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "316d0e2933f654cd782c0ba17bf7250b0a120279",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-22T22:34:34+00:00"
+        },
+        "message": "Update to Net 8, refactor Swagger implementation"
+      },
+      "stats": {
+        "total": 339,
+        "additions": 77,
+        "deletions": 262
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f3daa977c7f2d55e855b306d2ad9889917002ed7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:55:41+00:00"
+        },
+        "message": "Set up CI with Azure Pipelines\n\n[skip ci]"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8599b8c94f2bcf37914be0ef3d6b7ca882072998",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:40:15+00:00"
+        },
+        "message": "Update azure-pipelines.yml for Azure Pipelines"
+      },
+      "stats": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b8d136dab9fa48965a4bedb89d350597a40a93f7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:38:20+00:00"
+        },
+        "message": "Update azure-pipelines.yml for Azure Pipelines"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4f8935d4da96531eb66bc43f9bf3e21595795308",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:36:40+00:00"
+        },
+        "message": "Update azure-pipelines.yml for Azure Pipelines"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ade10eb88fa4cea430f7daa78dbb50f5abf15666",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:33:35+00:00"
+        },
+        "message": "Update azure-pipelines.yml for Azure Pipelines"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ae1917ab359da3f4b1fae0cf8380923e0ad55bc2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:32:42+00:00"
+        },
+        "message": "add global.json for solution"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "636f85945071f561a0cdf1fbce0583d81037287f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:19:22+00:00"
+        },
+        "message": "update to use wildcard version"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3910e527281d08d94c62ddea2e4640b7a4489956",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:17:20+00:00"
+        },
+        "message": "add global.json"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e15e9d077cc5f741bd27004ffd49961ef1b5efa5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T02:03:02+00:00"
+        },
+        "message": "Fix Issues with EF Core on unit tests"
+      },
+      "stats": {
+        "total": 24,
+        "additions": 16,
+        "deletions": 8
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "20c06a1b8acc43887c400775cda6198cc7b805dc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T01:28:28+00:00"
+        },
+        "message": "merge from remote"
+      },
+      "stats": {
+        "total": 376,
+        "additions": 197,
+        "deletions": 179
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "37c063fad4e52774870e1e621034e563050d5415",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T01:27:14+00:00"
+        },
+        "message": "Update Docker File"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 13,
+        "deletions": 12
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7f0144fb0e7a2c6e3cab01ac63713b05eda157b5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T00:19:56+00:00"
+        },
+        "message": "Update main_mwhsampleweb.yml"
+      },
+      "stats": {
+        "total": 56,
+        "additions": 31,
+        "deletions": 25
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b15ebcb2f6af62c09642700c46697e592cf42fd5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T00:15:10+00:00"
+        },
+        "message": "Update main_mwhsampleweb.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9aac240a5e855e97e4207a2f9499d00e16dc7dce",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T00:13:02+00:00"
+        },
+        "message": "Merge pull request #30 from markhazleton/feature/Net8\n\nUpdate To Net 8"
+      },
+      "stats": {
+        "total": 340,
+        "additions": 176,
+        "deletions": 164
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7adee7d96e0bd40fff9fed3d047ddd9974920233",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-10-10T00:12:23+00:00"
+        },
+        "message": "Update main_mwhsampleweb.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c1c9fe3544e39526a313e5d45a7d896a31cf680e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-25T17:34:34+00:00"
+        },
+        "message": "NuGet packages updates"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "1fb85cd1d77a5374fb238d83e0217f3f5a52c144",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-11T23:33:34+00:00"
+        },
+        "message": "Fix Gender in mock data"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 10,
+        "deletions": 7
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c139f152cfb150023ae6bf8e41364b682abffaa0",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-09-08T14:55:34+00:00"
+        },
+        "message": "Clean some issues with adding employees w/out adding new depatment."
+      },
+      "stats": {
+        "total": 154,
+        "additions": 72,
+        "deletions": 82
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e2ac8242e7f80b63c7a0718cfd9efcdd26710c64",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-08-30T20:55:15+00:00"
+        },
+        "message": "Update packages"
+      },
+      "stats": {
+        "total": 108,
+        "additions": 59,
+        "deletions": 49
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "2fe0717aa241e05b2a893b92b640c73d08f875dc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-30T23:06:16+00:00"
+        },
+        "message": "client script updates"
+      },
+      "stats": {
+        "total": 29,
+        "additions": 14,
+        "deletions": 15
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7758d3a231705e7f66244ea35a4f7a0b0f5b6a2e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-28T20:29:15+00:00"
+        },
+        "message": "Update to Net 8"
+      },
+      "stats": {
+        "total": 36,
+        "additions": 23,
+        "deletions": 13
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "28b9c5abaf7f6c358b43991840ee9182a6c1ec0f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-27T00:56:26+00:00"
+        },
+        "message": "Add Gender to Employee database/models"
+      },
+      "stats": {
+        "total": 217,
+        "additions": 175,
+        "deletions": 42
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c13336090441a1d848a143833bc24522dd61a3f9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-26T22:18:27+00:00"
+        },
+        "message": "package updates"
+      },
+      "stats": {
+        "total": 77,
+        "additions": 42,
+        "deletions": 35
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "588cf553de81df546e3fee18e387fb1b27fe995e",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-07-03T18:33:54+00:00"
+        },
+        "message": "NuGet Updates"
+      },
+      "stats": {
+        "total": 22,
+        "additions": 11,
+        "deletions": 11
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a96b17d7a55b442039bcc3fee99f4294f4186000",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-06-05T21:41:05+00:00"
+        },
+        "message": "remove deprecated NuGet Packages"
+      },
+      "stats": {
+        "total": 109,
+        "additions": 56,
+        "deletions": 53
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b7f97c16b6c495a03aa26a5ca2cbe66ac15c84fb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-06-05T17:56:02+00:00"
+        },
+        "message": "Refactor Department DTO to use Enum values where possible"
+      },
+      "stats": {
+        "total": 515,
+        "additions": 309,
+        "deletions": 206
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a2a1dbb6a2c9b1a827c20ab0e92ce81bffa05b05",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-28T21:09:43+00:00"
+        },
+        "message": "Add Unit Test coverage"
+      },
+      "stats": {
+        "total": 1099,
+        "additions": 899,
+        "deletions": 200
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c42b21eb4cd276f69e8f10694ffcca8aa4b3c660",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-26T17:34:16+00:00"
+        },
+        "message": "Update Test Coverage\nRefactor some Domain Models"
+      },
+      "stats": {
+        "total": 2695,
+        "additions": 1453,
+        "deletions": 1242
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0b690e5052b13000784f263abac125e55502cfb2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-10T11:56:39+00:00"
+        },
+        "message": "Merge pull request #29 from markhazleton/feature/UpdateNuGetPackages\n\nFeature/update NuGet packages"
+      },
+      "stats": {
+        "total": 202,
+        "additions": 109,
+        "deletions": 93
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5b9d31f8b26819950476ebf2359a18d5c62054e4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-09T22:12:17+00:00"
+        },
+        "message": "Merge branch 'main' into feature/UpdateNuGetPackages"
+      },
+      "stats": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ef8d548ded1a672797cb67ae5abe0d2bbe895711",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-09T22:11:35+00:00"
+        },
+        "message": "Merge branch 'feature/UpdateNuGetPackages' of https://github.com/markhazleton/SampleMvcCRUD into feature/UpdateNuGetPackages"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 9,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c54dd687f2a69c87a8f36df70d8d9f1f13d35fc1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-05-09T22:11:29+00:00"
+        },
+        "message": "update client libraries, create interface for domain entities"
+      },
+      "stats": {
+        "total": 202,
+        "additions": 109,
+        "deletions": 93
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "209fd1d62682e6e7e4676f43272502b45109090d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-18T19:27:44+00:00"
+        },
+        "message": "Merge pull request #28 from markhazleton/feature/UpdateNuGetPackages\n\nUpdate NuGet, add test .http file"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 24,
+        "deletions": 14
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "96791a351d02a3f2470183844c736827243c58b7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-18T19:27:35+00:00"
+        },
+        "message": "Merge branch 'main' into feature/UpdateNuGetPackages"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 9,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ff06c88f3d02ca5aca5af23f51aedf1984b6142c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-18T19:27:00+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 9,
+        "additions": 9,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c2ba7ea77b011dd29d3541aa41a17c6bd97f68de",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-18T19:16:01+00:00"
+        },
+        "message": "Update NuGet, add test .http file"
+      },
+      "stats": {
+        "total": 38,
+        "additions": 24,
+        "deletions": 14
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "06bf0737497a8a08161d16df49be4d08e169612f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-04-06T14:12:54+00:00"
+        },
+        "message": "Updates for Employee Headshot"
+      },
+      "stats": {
+        "total": 286,
+        "additions": 102,
+        "deletions": 184
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "457d676e3d68e9e322bc77c53f1c0f650b025eb8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-29T14:50:03+00:00"
+        },
+        "message": "Merge pull request #27 from markhazleton/feature/UpdateNuGetPackages\n\nupdate NuGEt packages"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6651be602f0aa4b24ca3289856e80769b76f5321",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-29T14:48:16+00:00"
+        },
+        "message": "update NuGEt packages"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c41242f19c27372d52b764dec44938265738c934",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-20T22:32:33+00:00"
+        },
+        "message": "Merge pull request #26 from markhazleton/feature/UpdateNuGetPackages\n\nFeature/update nu get packages."
+      },
+      "stats": {
+        "total": 172,
+        "additions": 100,
+        "deletions": 72
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4ac13d1dc7f5423999c63e55045c1b324a6b16f9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-20T21:21:18+00:00"
+        },
+        "message": "Upadte for consistancy"
+      },
+      "stats": {
+        "total": 158,
+        "additions": 93,
+        "deletions": 65
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "11327958eadd8d3607a218020b4ccb70cff67246",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-14T19:17:39+00:00"
+        },
+        "message": "Update NuGet Packages"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ecc3bcbb9786939e48775b05f7fe633efd6752a9",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T19:41:13+00:00"
+        },
+        "message": "Add Razor Page to Navigation"
+      },
+      "stats": {
+        "total": 218,
+        "additions": 79,
+        "deletions": 139
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3e91fb00ed6a343b447984d1746ee34e000837e8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-03-08T18:08:34+00:00"
+        },
+        "message": "Create Employee Razor Using Scaffolding and Entity Framework CRUD"
+      },
+      "stats": {
+        "total": 778,
+        "additions": 778,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c3fc18cec6cdb6631ff3635a4327b8f70b0be652",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-24T19:43:40+00:00"
+        },
+        "message": "Fix boken test"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 2,
+        "deletions": 4
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3d527873ff525d29de7b4eba505ed047cb62a2a6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-24T18:53:50+00:00"
+        },
+        "message": "Add Image Extensitions, move file upload into base controller"
+      },
+      "stats": {
+        "total": 120,
+        "additions": 83,
+        "deletions": 37
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "5bc13918dfbeef3d28c2b84fab023b9312269514",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-18T19:34:24+00:00"
+        },
+        "message": "Update NuGet Pacakges"
+      },
+      "stats": {
+        "total": 16,
+        "additions": 8,
+        "deletions": 8
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "32163489953fee0d4fafb7a91e149721d55f16c8",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-08T14:12:55+00:00"
+        },
+        "message": "Update azure-pipelines.yml for Azure Pipelines"
+      },
+      "stats": {
+        "total": 8,
+        "additions": 6,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "290d82b37b324f2901d2840f9e151eec909492a3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-08T13:58:18+00:00"
+        },
+        "message": "Set up CI with Azure Pipelines\n\n[skip ci]"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 34,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c4d6e35afd0dcedf2afeff1bc36bce7c7f20fd4b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-07T15:41:57+00:00"
+        },
+        "message": "Update Home page to use README.md\nupdate NuGet Packages"
+      },
+      "stats": {
+        "total": 159,
+        "additions": 89,
+        "deletions": 70
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "08e3f1768d984d426032567f32c2768ed6e0d080",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-07T14:44:27+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c1a2023f50e8ff5e754f650c41c7c92746034301",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-07T14:41:50+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a15a2effd2b147cdd35f1d0941685784689ebaeb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-07T14:38:46+00:00"
+        },
+        "message": "Update CSS for mobile device usability"
+      },
+      "stats": {
+        "total": 82,
+        "additions": 58,
+        "deletions": 24
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7454d12384666a88582d3ea1c78f28e6bde3a606",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-02-06T22:13:18+00:00"
+        },
+        "message": "Add Profile Picture with ablity to update picture and save in images folder"
+      },
+      "stats": {
+        "total": 669,
+        "additions": 270,
+        "deletions": 399
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6f5abd7463d03d2e3514a31011bd2ab1fd03dc19",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-23T18:41:37+00:00"
+        },
+        "message": "Update main_mwhsampleweb.yml"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 0,
+        "deletions": 4
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "c3b2117276ecc97dcab197deb9c3aa75f93d7fcd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-23T18:13:18+00:00"
+        },
+        "message": "update yml for GitHub Action CI/CD"
+      },
+      "stats": {
+        "total": 88,
+        "additions": 44,
+        "deletions": 44
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "897a112eb6574e1541ac2ef42d988e360d5a9624",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-19T02:11:19+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "22bf223c19cd91716b95cdfd2d27f9b1caa3fc97",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-19T02:11:14+00:00"
+        },
+        "message": "Update Footer"
+      },
+      "stats": {
+        "total": 375,
+        "additions": 359,
+        "deletions": 16
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0329edef133825685f2d5290b35e9c1297f61cb3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-18T21:26:39+00:00"
+        },
+        "message": "Update main_mwhsampleweb.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e14435f68aa8377c0074f7e63f6f587945ad30d1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-18T21:25:33+00:00"
+        },
+        "message": "Delete master_markhazletonsampleweb.yml"
+      },
+      "stats": {
+        "total": 57,
+        "additions": 0,
+        "deletions": 57
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "58646087935f6878743063fd5f14359f02b23cc1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-18T21:03:38+00:00"
+        },
+        "message": "Add or update the Azure App Service build and deployment workflow config"
+      },
+      "stats": {
+        "total": 57,
+        "additions": 57,
+        "deletions": 0
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6bc377c20776ce6de87960c9cb1602c710ecaa7d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-10T03:28:30+00:00"
+        },
+        "message": "Merge pull request #25 from markhazleton/feature/UpdateDictionaryExtensions\n\nFeature/update dictionary extensions"
+      },
+      "stats": {
+        "total": 309,
+        "additions": 249,
+        "deletions": 60
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "596b9eaa74d08829f2880ce97569e2949fe370f7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-09T22:11:09+00:00"
+        },
+        "message": "Merge branch 'main' into feature/UpdateDictionaryExtensions"
+      },
+      "stats": {
+        "total": 35,
+        "additions": 14,
+        "deletions": 21
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9ec69d7851a4cd5fd07dcd5d874ff1b50a20d950",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-09T20:11:34+00:00"
+        },
+        "message": "Update Solution"
+      },
+      "stats": {
+        "total": 35,
+        "additions": 14,
+        "deletions": 21
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b4e3db2bb873775d04fad6021fb3ddafbcd665dc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-09T19:57:53+00:00"
+        },
+        "message": "work in process"
+      },
+      "stats": {
+        "total": 309,
+        "additions": 249,
+        "deletions": 60
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "992f15e36e9b64957f608aed79d88ac7c6e01d10",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-04T21:43:11+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 2,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "1fe84def3a8a4d5053c1fd01d56028fdc3fa27ab",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-04T21:41:56+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "568d09aab85bc6e002e16af608c8752193b1a395",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-04T21:35:18+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "40b78f89e69c03b31e028f82d949f0d64e575493",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-03T00:50:49+00:00"
+        },
+        "message": "Merge pull request #24 from markhazleton/feature/AddContextToHomePage\n\nFeature/add context to home page"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "840e9f570faf2094694ea97cfe8454b3d0c7ea06",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-03T00:37:22+00:00"
+        },
+        "message": "Merge branch 'main' into feature/AddContextToHomePage"
+      },
+      "stats": {
+        "total": 472,
+        "additions": 253,
+        "deletions": 219
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "54713322021886f11909d3ced050a14f496fa23c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-03T00:36:46+00:00"
+        },
+        "message": "Update Site Version Number to 7 to match .Net runtime"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a74aa27efae480a7e5d5c4512e99735af8ed37ce",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-02T04:05:47+00:00"
+        },
+        "message": "A lock mechanism to increase thread safety of client"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 7,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4c5bc0d1cd11f6d46ee38259f6d144ae04932abe",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2023-01-01T18:39:25+00:00"
+        },
+        "message": "Remove unecessary code"
+      },
+      "stats": {
+        "total": 87,
+        "additions": 40,
+        "deletions": 47
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "087221f6df1f421ecac4278d8f04f3a9dcde835b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-12-27T15:48:18+00:00"
+        },
+        "message": "footer updates"
+      },
+      "stats": {
+        "total": 175,
+        "additions": 1,
+        "deletions": 174
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3921822ca11e0085761d26328e582916646f69eb",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-12-27T15:48:04+00:00"
+        },
+        "message": "merge from origin"
+      },
+      "stats": {
+        "total": 242,
+        "additions": 213,
+        "deletions": 29
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b1b5e209024f8699a31e5702e30663c1022c1a7c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-12-27T15:40:26+00:00"
+        },
+        "message": "update client libraries"
+      },
+      "stats": {
+        "total": 34,
+        "additions": 17,
+        "deletions": 17
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "3763bbf172b364b3f0ebc2ae167083a652402c57",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-09T01:51:58+00:00"
+        },
+        "message": "Merge pull request #23 from markhazleton/feature/UpgradeToNet7\n\nUpdate to Net 7"
+      },
+      "stats": {
+        "total": 266,
+        "additions": 225,
+        "deletions": 41
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f396ee6b63268e7e9098a61f07468e382bd471d3",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-09T01:16:57+00:00"
+        },
+        "message": "Update Dockerfile"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "28cdbe32e101a14ee1ec9e77b63421bdb1bc9acd",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T23:20:32+00:00"
+        },
+        "message": "Create linux v7 publish profile"
+      },
+      "stats": {
+        "total": 191,
+        "additions": 186,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0bc9beacacaff3731bcabcfad6656e7a1889582b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T22:15:44+00:00"
+        },
+        "message": "update solution"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 4,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "70f0392cf67f2028314a2d1b430590178330e07f",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T21:59:21+00:00"
+        },
+        "message": "Update master_markhazletonsampleweb.yml"
+      },
+      "stats": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "cb0e9405dc0dcb76a92b4dd55dddb062e8677288",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T21:58:31+00:00"
+        },
+        "message": "Update MwhSampleWeb.yml"
+      },
+      "stats": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8651dac985fcb882b01cd33e6920627cb0d237c1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T21:43:34+00:00"
+        },
+        "message": "updae build pipelines"
+      },
+      "stats": {
+        "total": 18,
+        "additions": 9,
+        "deletions": 9
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "6d41188947808c306be81d5c307f75e5b794da01",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T20:45:25+00:00"
+        },
+        "message": "Merge branch 'main' into feature/UpgradeToNet7"
+      },
+      "stats": {
+        "total": 272,
+        "additions": 149,
+        "deletions": 123
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d60e66e6537672935c9fef4a1c74269261b28460",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-11-08T20:43:49+00:00"
+        },
+        "message": "Update to Net 7"
+      },
+      "stats": {
+        "total": 44,
+        "additions": 22,
+        "deletions": 22
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "76d459e2f9625e59165bcca3e36ab62b0f922e8b",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-26T14:15:57+00:00"
+        },
+        "message": "Merge pull request #22 from markhazleton/feature/UpdatePackages\n\nupdate packages"
+      },
+      "stats": {
+        "total": 272,
+        "additions": 149,
+        "deletions": 123
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0096b34e96585b1b72fd80c868b970840185ef9a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-26T14:11:18+00:00"
+        },
+        "message": "update packages\nupddate footer"
+      },
+      "stats": {
+        "total": 272,
+        "additions": 149,
+        "deletions": 123
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "da90126c73c1977b0404f3c17895107f258aae66",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-20T21:10:39+00:00"
+        },
+        "message": "Merge pull request #21 from markhazleton/feature/AddContextToHomePage\n\nAdd some text to Home page for more context on how CI/CD works"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 12,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "82edf2609f2154cee9cd3d62b27e0b6699b0c877",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-20T21:08:55+00:00"
+        },
+        "message": "Add some text to Home page for more context on how CI/CD works"
+      },
+      "stats": {
+        "total": 17,
+        "additions": 12,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7f8bbdc240b587fe01ee572ac23125f4c9ca39cc",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-12T05:52:11+00:00"
+        },
+        "message": "update nuGet packages"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4db8204dd35ebd72c2e61a72642a096a2467e3d2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-03T17:49:45+00:00"
+        },
+        "message": "Add default web.confg to disable WebDAV module/handler for IIS deploylment. (Fix issue with PUT/DELETE http verbs)."
+      },
+      "stats": {
+        "total": 53,
+        "additions": 35,
+        "deletions": 18
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "72dc68ac6a588d41dcc22e4ff982080f3fa33e30",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-01T17:23:47+00:00"
+        },
+        "message": "Merge pull request #20 from markhazleton/feature/AddTreeView\n\nFeature/add tree view"
+      },
+      "stats": {
+        "total": 214,
+        "additions": 158,
+        "deletions": 56
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7721df710afc65bd3e5b51bc4748fc3c63156f91",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-01T17:18:05+00:00"
+        },
+        "message": "Merge branch 'main' into feature/AddTreeView"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 6,
+        "deletions": 20
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "ee8ac7e921d20bb2232e4571bb69d911b4d09756",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-10-01T17:08:13+00:00"
+        },
+        "message": "Change Dept to Record Class"
+      },
+      "stats": {
+        "total": 76,
+        "additions": 61,
+        "deletions": 15
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "57ea0d0d4e15927d20ff2ee891d3a37225078ef7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-28T13:45:15+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 26,
+        "additions": 6,
+        "deletions": 20
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0f6a81137d7c141b05c96534b6de4452b7721b58",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-27T18:55:21+00:00"
+        },
+        "message": "Add TreeNode"
+      },
+      "stats": {
+        "total": 140,
+        "additions": 98,
+        "deletions": 42
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "9978aaf08793da4d25dd10d02affbf53643ea85d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T23:25:20+00:00"
+        },
+        "message": "Merge branch 'main' of https://github.com/markhazleton/SampleMvcCRUD"
+      },
+      "stats": {
+        "total": 25,
+        "additions": 20,
+        "deletions": 5
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "4505cb3e1fdeaed8dfb95c8214aed90d45a5023a",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T23:24:17+00:00"
+        },
+        "message": "code clean-up"
+      },
+      "stats": {
+        "total": 62,
+        "additions": 35,
+        "deletions": 27
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "0e17ff625fbb9e58662bec9ad4a8a9ae7df4faa2",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T23:23:54+00:00"
+        },
+        "message": "add employee list with tests"
+      },
+      "stats": {
+        "total": 81,
+        "additions": 79,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "7f6144931ac56adbff70a0eee93e9d5c5880bd0d",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T22:51:01+00:00"
+        },
+        "message": "more error checking and testing of AjaxDictionary"
+      },
+      "stats": {
+        "total": 52,
+        "additions": 50,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d231e0badd2a7217e2411e74839ce6fd128cbed6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T21:06:15+00:00"
+        },
+        "message": "Resolve warnings with AjaxDictionary (Nullability)"
+      },
+      "stats": {
+        "total": 10,
+        "additions": 7,
+        "deletions": 3
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a0b6db1df4bcca7e10e7c09259b8df4b142455c1",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T17:57:22+00:00"
+        },
+        "message": "Update MwhSampleWeb.yml"
+      },
+      "stats": {
+        "total": 14,
+        "additions": 12,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "a642b4ecd6279d90e8950f1d2fd5e047539502f6",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T17:48:49+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 6,
+        "additions": 5,
+        "deletions": 1
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "f394d11f73294dec0b0bddd3bf29859b031659d5",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-22T16:29:15+00:00"
+        },
+        "message": "Update README.md"
+      },
+      "stats": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "e27bf807490680cd4ce0e7a26d4afeb9f847e14c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-17T23:41:11+00:00"
+        },
+        "message": "cleanup- testing"
+      },
+      "stats": {
+        "total": 70,
+        "additions": 37,
+        "deletions": 33
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "b7420976161110f80a87629bb0ffefcb7b56bba7",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-17T20:16:00+00:00"
+        },
+        "message": "Update NuGet Packages"
+      },
+      "stats": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "d48ff9e39d26f27818953ca345cef813e3c75f8c",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-17T20:12:55+00:00"
+        },
+        "message": "Update EmployeeDto guard clauses\nReduce use of empty constructor"
+      },
+      "stats": {
+        "total": 857,
+        "additions": 414,
+        "deletions": 443
+      },
+      "repo": "SampleMvcCRUD"
+    },
+    {
+      "sha": "8e54273476c79ce6a2e804e88150068183f00bc4",
+      "commit": {
+        "author": {
+          "name": "Mark Hazleton",
+          "date": "2022-09-17T15:02:54+00:00"
+        },
+        "message": "Revise Department Dto guard clauses."
+      },
+      "stats": {
+        "total": 79,
+        "additions": 49,
+        "deletions": 30
+      },
+      "repo": "SampleMvcCRUD"
+    }
+  ],
+  "hash": "0858f4878601b471eea38715a04b7eb48c28092cdbae20461dca23a9de86dbf8",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "commits_stats",
+    "pushed_at": "2025-12-24T14:05:56+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits_stats",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2025W52"
+}

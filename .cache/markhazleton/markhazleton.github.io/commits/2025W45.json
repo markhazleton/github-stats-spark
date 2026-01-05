@@ -1,0 +1,278 @@
+{
+  "timestamp": "2026-01-04T22:13:15.577761+00:00",
+  "value": [
+    {
+      "sha": "1b644e62f651597023803ab4c4d36d1407a4115e",
+      "message": "Prefer site.author.name and site.author.email in footer; fall back to site.author/site.title and site.email",
+      "author": "Mark Hazleton",
+      "date": "2025-11-03T13:19:07+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "924f63d2eabda83692089f8cda0f4a3c03152e19",
+      "message": "Add comprehensive GitHub Copilot instructions and remove Azure-specific rule",
+      "author": "Mark Hazleton",
+      "date": "2025-11-03T13:17:38+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "fbb6202f1a1097cb21edd49a94c357644f13dc8a",
+      "message": "Remove Chaos Mode and 90s-themed assets; simplify templates and content\n\nDelete chaos CSS/JS, 90s-madness include, structured-data and chaotic archive layout. Simplify head, header and footer includes to use core main.css and minimal markup. Collapse home, post and page layouts to leaner templates, clean up about/index content to professional copy, and tighten robots.txt rules.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-03T12:59:23+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "a9003a5e1d71c53a1a334bb1a9b76eb8d373784d",
+      "message": "Update dependencies and modernize theme/UI\n\n- Refresh Gemfile.lock (bump numerous gems: activesupport, ffi, nokogiri, faraday, typhoeus, json, etc.)\n- Update _config.yml: improve site description and set minima skin to auto\n- Improve header: accessible theme toggle with icon, aria-label, persisted preference and initialization (default dark)\n- Remove placeholder image from default layout\n- Revamp _sass/minima.scss: modern CSS variables, typography, spacing, header/footer, theme switcher and post/list styling",
+      "author": "Mark Hazleton",
+      "date": "2025-11-03T12:45:33+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "4c7b53589b3a5a7f5079e56e6faca697d13dd1ae",
+      "message": "update about.markdown",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T18:53:08+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "5457a4c2313d03ed14a4df8c5c5285168a73d7d5",
+      "message": "update the site about page",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T18:52:18+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "dd76a7017f83550d88a601998ec6692d6dac41c3",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T18:46:17+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "5e1530bf6d6d5d39670afd6aecd349085c2b2948",
+      "message": "Add platform to Gemfile.lock",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T18:44:49+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "175a2fdc71f1b4f03507bb92cda7474d2f4d99a4",
+      "message": "Create jekyll.yml",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T18:41:45+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "67fd71f4531a618cc56b9e96021099de7357f379",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T18:37:51+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "0a9fd7299cf8265ba7edfe65cca35d791b8ebedd",
+      "message": "update my site",
+      "author": "Mark Hazleton",
+      "date": "2025-04-13T16:02:43+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "fe5bcc74682cb81d2a53098bdd8b1d3a11127a57",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2024-12-24T14:39:44+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "9ff12d73f5f598c4c6c46e0294996b980ab4e416",
+      "message": "add new post",
+      "author": "Mark Hazleton",
+      "date": "2022-08-03T16:01:23+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "31c4ac556ba537e824f63328abdf8c5510b33c86",
+      "message": "update icon",
+      "author": "Mark Hazleton",
+      "date": "2022-08-03T15:54:48+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "123c87198969950c04350d84579bca70a4fefe32",
+      "message": "updates to post",
+      "author": "Mark Hazleton",
+      "date": "2021-06-16T15:04:53+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "90579298b6fedb7ed76478488496941347eb5d2c",
+      "message": "update to excludde docs folder",
+      "author": "Mark Hazleton",
+      "date": "2021-06-16T14:32:42+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "b491e2f17b6825461d34f14e04fa567d6471f849",
+      "message": "update docs folder",
+      "author": "Mark Hazleton",
+      "date": "2021-06-16T14:16:34+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "47ac5aa43b399a670f1d124754ac8ebf5dcb2380",
+      "message": "fix mispelling",
+      "author": "Mark Hazleton",
+      "date": "2021-06-16T13:59:14+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "22becdcb808318091fc09307f3e9e45330a05adb",
+      "message": "Create README.md",
+      "author": "Mark Hazleton",
+      "date": "2021-06-16T13:54:33+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "9e4592de9aeca4826aeb018c5e1417b239abfec8",
+      "message": "update site conifg",
+      "author": "Mark Hazleton",
+      "date": "2021-06-16T13:51:14+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "41252afe6c1ffc26e7c7867cacde8e0d7fdbb17d",
+      "message": "Update About Page",
+      "author": "Mark Hazleton",
+      "date": "2021-06-16T13:49:10+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "c3a49717e98d8e66fa48258a0aacb1e0f31c5d20",
+      "message": "update published site",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T18:28:02+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "9bc5452ec56ed80b9543e9bdca5179312e1be1cd",
+      "message": "add stack overflow link",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T18:27:12+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "cc255ced7a677d6229d9b5b91e59e86acaf63041",
+      "message": "Delete _site directory added to Git Ignore as well",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T18:06:26+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "470124af25d3af9b38cbc8d77e232572c5c03e4d",
+      "message": "update git ignore",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T18:05:18+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "996fadea6c58094223f364103dd6e7479cc5614e",
+      "message": "update",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T18:04:36+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "7353ba89bb703541eb8d22da815f70a7e6bb95ad",
+      "message": "add updated site",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T18:00:56+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "12f18ec6d272a77a4b72c39048438d7fefd2890f",
+      "message": "publish updated site",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:55:25+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "c58c8903e231892483ed29b1e52af8e1102b0668",
+      "message": "minor copy updates to site",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:54:27+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "a4d68d1b9f387669e02c48fc26fcb993a79381d4",
+      "message": "update docs with latest",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:45:14+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "0c475852733f4a2d4461a12b282d727b9f304811",
+      "message": "update index pages",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:44:00+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "256d92a798e78362d37343b507f10312b02ad0b9",
+      "message": "Update docs",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:38:57+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "2390d27ff943cc52ccf18d4c5574d9ac913d207a",
+      "message": "udpdate template to use 3.0",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:37:12+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "816da4e82cee4c02c203d5f5d5f16ae4e2768ba0",
+      "message": "rebuild docs",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:32:08+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "6c153ca8e86af928329b24d16bef121ee42df874",
+      "message": "test",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:28:40+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "3bff8f37df784cc74bef99b7429dd051601cbe04",
+      "message": "setup-docs folder",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:27:40+00:00",
+      "repo": "markhazleton.github.io"
+    },
+    {
+      "sha": "e3b173593b9322b5b0bebb13c37db947eb7a26d8",
+      "message": "jekyll base source",
+      "author": "Mark Hazleton",
+      "date": "2021-04-18T17:11:48+00:00",
+      "repo": "markhazleton.github.io"
+    }
+  ],
+  "hash": "69bb04d7d6aa760ee562134fcdd5e7984434f30b8de9ecae28272bfa72a1bbf2",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton.github.io"
+    },
+    "category": "commits",
+    "pushed_at": "2025-11-03T13:22:36+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "markhazleton.github.io",
+  "week": "2025W45"
+}

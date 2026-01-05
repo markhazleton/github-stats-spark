@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-01-04T22:48:56.760708+00:00",
+  "value": [
+    {
+      "sha": "33e77a515ef1c94cca0f4eb134708259936946e1",
+      "message": "Release v1.0.0",
+      "author": "Mark Hazleton",
+      "date": "2025-05-26T04:14:54+00:00",
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "839c50f9ba7af6591c0ec9357969272961a2edc3",
+      "message": "Update packages, refactor domain events, and enhance logging\n\n- Updated package versions in `Directory.Packages.props` for compatibility.\n- Enhanced `README.md` with new NuGet badges and improved descriptions.\n- Refactored domain event handling into a new `Ardalis.SharedKernel.DomainEvents` namespace.\n- Improved support for domain events in `EntityBase` and `HasDomainEventsBase`.\n- Introduced `LoggingBehavior` for MediatR to enhance request logging.\n- Moved command and query interfaces to `Ardalis.SharedKernel.Behaviors` namespace.\n- Updated `ValueObject` class for better equality and comparison logic.\n- Adjusted unit tests to align with the new structure and namespaces.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-25T15:46:02+00:00",
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "d886adc8fdda9da44b7049f96de3fae57176a836",
+      "message": "Merge pull request #1 from ardalis/main\n\nUpdate from source repo",
+      "author": "Mark Hazleton",
+      "date": "2024-10-29T13:18:47+00:00",
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "1818f60549cde9fc7e2df799cbcb59b99f67b9a7",
+      "message": "Update to net 9, package updates",
+      "author": "Mark Hazleton",
+      "date": "2024-10-29T13:17:07+00:00",
+      "repo": "WebSpark.SharedKernel"
+    },
+    {
+      "sha": "7b6c35220876840aee84f2a361f817c81e87c233",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-07-25T12:04:35+00:00",
+      "repo": "WebSpark.SharedKernel"
+    }
+  ],
+  "hash": "97388d062aa07b5e49838ed7821ce427ad357b9d2ff316c61fe7ec2da9f9876b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.SharedKernel"
+    },
+    "category": "commits",
+    "pushed_at": "2025-05-26T04:15:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "WebSpark.SharedKernel",
+  "week": "2025W22"
+}

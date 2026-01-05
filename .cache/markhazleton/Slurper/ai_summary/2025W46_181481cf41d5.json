@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:23:34.761650+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the Slurper repository:\n\nSlurper is a dynamic data extraction and transformation library for .NET that provides a seamless, configuration-free mechanism for parsing and converting structured data formats (XML, JSON, CSV, HTML) into flexible, dynamically typed C# objects without requiring explicit type declarations. The library leverages .NET's dynamic object capabilities and uses an advanced parsing strategy that enables developers to access nested data through intuitive property navigation, effectively eliminating the need for manual model creation and complex parsing logic. Architecturally, Slurper implements a flexible factory pattern with support for multiple data extractors, dependency injection, and a plugin-based extensibility model, which allows developers to work with diverse data sources using a consistent, unified API across different formats. Key technological innovations include its use of a custom ExpandoObject-like implementation, comprehensive async support, and built-in features like serialization, error handling, and logging, making it particularly valuable for scenarios involving data integration, transformation, and rapid prototyping. The library targets modern .NET frameworks (8.0+) and is designed with performance and developer experience in mind, offering features like streaming, parallel processing, and caching options. Slurper is especially beneficial for developers working with heterogeneous data sources, microservices architectures, data migration projects, and scenarios requiring flexible, schema-less data manipulation.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:23:34.761618",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2711,
+    "confidence_score": 90
+  },
+  "hash": "4150a6f56f2eb006fe3da747c27d178a1856457fa813d6a3e208ad090885c74e",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Slurper"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-11-16T13:19:33+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "Slurper",
+  "week": "2025W46_181481cf41d5"
+}

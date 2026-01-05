@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:22:42.576718+00:00",
+  "value": {
+    "C#": 228094,
+    "HTML": 88162,
+    "JavaScript": 10792,
+    "PowerShell": 8054,
+    "SCSS": 5055,
+    "CSS": 877
+  },
+  "hash": "66b5b8426278feb4b93a4d9cfc1b30f09a3dffcf2c7a7112e40f97e339077689",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Slurper"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-01T13:54:03+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "Slurper",
+  "week": "2026W01"
+}

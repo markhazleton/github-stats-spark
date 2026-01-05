@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-04T22:22:44.425148+00:00",
+  "value": {
+    "total": 79,
+    "recent_90d": 13,
+    "recent_180d": 13,
+    "recent_365d": 36,
+    "last_commit_date": "2025-11-16T13:19:33+00:00"
+  },
+  "hash": "a7658e36644914ac73c44b6cffcf0a0407d2239532d367e1ce94371451458a1a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Slurper"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-01T13:54:03+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "Slurper",
+  "week": "2026W01"
+}

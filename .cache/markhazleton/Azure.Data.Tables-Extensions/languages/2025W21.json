@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-04T21:41:41.401825+00:00",
+  "value": {
+    "C#": 40284
+  },
+  "hash": "5cffa585d0b99cb16e221a66b027fa6dfaf1ad2051c5ef3dcaae09660881e96b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Azure.Data.Tables-Extensions"
+    },
+    "category": "languages",
+    "pushed_at": "2025-05-20T11:45:52+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "Azure.Data.Tables-Extensions",
+  "week": "2025W21"
+}

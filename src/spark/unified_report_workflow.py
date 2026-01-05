@@ -468,6 +468,7 @@ class UnifiedReportWorkflow:
                     commit_history=commit_histories.get(repo.name),
                     language_stats=language_stats,
                     tech_stack=tech_stack,
+                    repository_owner=username,
                 )
 
                 analysis = RepositoryAnalysis(

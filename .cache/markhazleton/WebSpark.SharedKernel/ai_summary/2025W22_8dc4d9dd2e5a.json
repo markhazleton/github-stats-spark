@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T22:47:39.185430+00:00",
+  "value": {
+    "ai_summary": "WebSpark.SharedKernel is a comprehensive .NET library designed to implement Domain-Driven Design (DDD) patterns and clean architecture principles, providing a robust set of base classes and utilities for building enterprise-level applications. The library offers type-safe entity base classes, value object implementations, domain event infrastructure with MediatR integration, and repository pattern abstractions that support CQRS and specification-based querying. Built primarily in C#, it leverages modern .NET features to provide developers with a flexible framework for creating well-structured, maintainable domain models with strong separation of concerns and built-in support for complex architectural patterns. Key differentiators include its generic entity base classes, comprehensive domain event handling, integrated logging behaviors, and first-class support for different ID types, making it particularly valuable for developers building complex enterprise applications with sophisticated domain modeling requirements. The library is particularly suited for .NET developers implementing clean architecture, microservices, or complex business logic applications that require sophisticated domain modeling and event-driven design patterns.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T16:47:39.185399",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2692,
+    "confidence_score": 90
+  },
+  "hash": "d824d7afaee9bcca030eae54da4b85be0172f80d46763e0a0cd1d1bfce8a549b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.SharedKernel"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-05-26T04:14:54+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebSpark.SharedKernel",
+  "week": "2025W22_8dc4d9dd2e5a"
+}

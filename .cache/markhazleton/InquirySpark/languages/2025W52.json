@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T21:59:31.562895+00:00",
+  "value": {
+    "C#": 581819,
+    "HTML": 488327,
+    "TSQL": 316357,
+    "PowerShell": 53237,
+    "JavaScript": 17744,
+    "CSS": 1021
+  },
+  "hash": "70b2a2b8c198870b0e00da46d37b0ea901c6faab4e00df2d653d669e6fcbe309",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "InquirySpark"
+    },
+    "category": "languages",
+    "pushed_at": "2025-12-23T00:22:00+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "InquirySpark",
+  "week": "2025W52"
+}

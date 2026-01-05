@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-04T21:45:47.484000+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nThis is an ASP.NET Core 6 MVC web application designed as an administrative management system for a fictional company called Carved Rock, focused on product and category management with robust authentication and data handling capabilities. The application implements a comprehensive administrative interface using Entity Framework Core with SQLite, featuring full CRUD operations, complex validation through FluentValidation, and ASP.NET Identity for secure user authentication and registration. Built with a clear separation of concerns, the project demonstrates dependency injection, repository pattern implementation, and follows modern .NET development best practices, utilizing technologies like Bootstrap for styling and implementing domain logic classes to enhance testability and maintainability. The application is particularly noteworthy for its structured approach to data modeling, with navigation properties between products and categories, and its ability to reset initial data dynamically, making it an excellent reference implementation for developers learning ASP.NET Core MVC and enterprise application development patterns. Targeted primarily at .NET developers, software architects, and students looking to understand comprehensive web application design in the ASP.NET ecosystem, the project serves as an educational tool and potential starting point for building more complex administrative management systems.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-04T15:45:47.483947",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1624,
+    "confidence_score": 90
+  },
+  "hash": "88abe6b61a2ed170a71f72b8509d7707d192961e64b399f2bab1571ffee5120b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "csharp-blazor-bug-tracking"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-29T00:58:21+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "csharp-blazor-bug-tracking",
+  "week": "2025W01_b888e0c483ea"
+}

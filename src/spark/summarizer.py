@@ -10,7 +10,7 @@ import os
 import re
 import hashlib
 from datetime import datetime
-from typing import Optional, Dict, List
+from typing import Optional, Dict, List, Any
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 from spark.models.repository import Repository
@@ -74,6 +74,7 @@ class RepositorySummarizer:
         commit_history: Optional[CommitHistory] = None,
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
+        repository_owner: Optional[str] = None,
     ) -> RepositorySummary:
         """Generate summary for a repository.
 
@@ -98,7 +99,12 @@ class RepositorySummarizer:
         if self.anthropic and readme_content:
             try:
                 return self._generate_ai_summary(
-                    repo, readme_content, commit_history, language_stats, tech_stack
+                    repo,
+                    readme_content,
+                    commit_history,
+                    language_stats,
+                    tech_stack,
+                    repository_owner,
                 )
             except Exception as e:
                 self.logger.warn(f"AI summary failed for {repo.name}: {e}, using fallback")
@@ -117,6 +123,7 @@ class RepositorySummarizer:
         commit_history: Optional[CommitHistory],
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
+        repository_owner: Optional[str] = None,
     ) -> RepositorySummary:
         """Generate AI-powered summary using Claude API with caching.
 
@@ -141,10 +148,22 @@ class RepositorySummarizer:
         # Create cache key from repository content
         # Use last commit date if available (more stable than updated_at)
         cache_date = commit_history.last_commit_date if commit_history and commit_history.last_commit_date else repo.updated_at
-        cache_key = self._create_cache_key(repo.name, truncated_readme, cache_date)
+        
+        # Create hash of README content (first 1000 chars for efficiency)
+        readme_hash = hashlib.md5(readme_content[:1000].encode()).hexdigest()[:12]
+
+        # Format: {year_week}_{readme_hash}
+        # Using ISO week number to reduce cache churn (weekly granularity)
+        if cache_date:
+            # ISO week format: 2026W01 for week 1 of 2026
+            year_week = cache_date.strftime("%YW%V")
+        else:
+            year_week = "unknown"
+            
+        week_key = f"{year_week}_{readme_hash}"
 
         # Check cache first (SAVES TOKENS!)
-        cached_summary = self.cache.get(cache_key)
+        cached_summary = self.cache.get("ai_summary", repository_owner, repo=repo.name, week=week_key)
         if cached_summary:
             self.cache_hits += 1
             self.logger.debug(f"Cache HIT for {repo.name} (saved ~{cached_summary.get('tokens_used', 0)} tokens)")
@@ -189,14 +208,22 @@ class RepositorySummarizer:
         )
 
         # Cache the response for future use
-        self.cache.set(cache_key, {
-            'ai_summary': summary_text,
-            'generation_method': self.model,
-            'generation_timestamp': summary.generation_timestamp.isoformat(),
-            'model_used': self.model,
-            'tokens_used': tokens_used,
-            'confidence_score': 90,
-        })
+        metadata = self._build_cache_metadata(repo.name, repository_owner, cache_date)
+        self.cache.set(
+            "ai_summary",
+            repository_owner,
+            {
+                'ai_summary': summary_text,
+                'generation_method': self.model,
+                'generation_timestamp': summary.generation_timestamp.isoformat(),
+                'model_used': self.model,
+                'tokens_used': tokens_used,
+                'confidence_score': 90,
+            },
+            repo=repo.name,
+            week=week_key,
+            metadata=metadata,
+        )
 
         return summary
 
@@ -520,6 +547,32 @@ Be informative and technical. Focus on giving readers a clear understanding of t
             year_week = "unknown"
         
         return f"ai_summary_{repo_name}_{readme_hash}_{year_week}"
+
+    def _build_cache_metadata(
+        self,
+        repo_name: str,
+        repository_owner: Optional[str],
+        cache_date: Optional[datetime],
+    ) -> Dict[str, Any]:
+        """Build metadata payload for summary cache entries."""
+
+        pushed_at = None
+        if cache_date:
+            pushed_at = cache_date.isoformat()
+
+        metadata = {
+            "repository": {
+                "owner": repository_owner,
+                "name": repo_name,
+            },
+            "category": "ai_summary",
+            "ttl_enforced": False,
+        }
+
+        if pushed_at:
+            metadata["pushed_at"] = pushed_at
+
+        return metadata
 
     def get_usage_stats(self) -> Dict[str, any]:
         """Get API usage statistics including cache performance.

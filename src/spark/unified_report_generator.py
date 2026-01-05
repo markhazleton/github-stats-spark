@@ -221,8 +221,8 @@ class UnifiedReportGenerator:
             commits_90d = analysis.commit_history.recent_90d
 
         lines.append(
-            f"⭐ {stars} | 🔱 {forks} | 📝 {language} | "
-            f"📊 {commits_90d} commits (90d)"
+            f"Stars: {stars} | Forks: {forks} | Language: {language} | "
+            f"{commits_90d} commits (90d)"
         )
         lines.append("")
 
