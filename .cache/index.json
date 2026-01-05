@@ -505,32 +505,36 @@
       "updated_at": "2026-01-04T22:54:36.413964+00:00"
     },
     "markhazleton/github-stats-spark/languages": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T21:57:06.974872+00:00"
+      "updated_at": "2026-01-05T02:29:35.034282+00:00"
     },
     "markhazleton/github-stats-spark/commit_counts": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T21:57:08.703251+00:00"
+      "updated_at": "2026-01-05T02:29:36.942979+00:00"
     },
     "markhazleton/github-stats-spark/commits_stats": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T21:57:47.657836+00:00"
+      "updated_at": "2026-01-05T02:30:30.538733+00:00"
     },
     "markhazleton/github-stats-spark/ai_summary": {
-      "latest_week": "2026W01_c3a7e8be0e74",
+      "latest_week": "2026W02_c3a7e8be0e74",
       "weeks": [
+        "2026W02_c3a7e8be0e74",
         "2026W01_c3a7e8be0e74"
       ],
-      "updated_at": "2026-01-04T21:58:02.001406+00:00"
+      "updated_at": "2026-01-05T02:30:43.805037+00:00"
     },
     "markhazleton/google-maps/languages": {
       "latest_week": "2025W18",

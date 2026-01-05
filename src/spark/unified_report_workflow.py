@@ -359,7 +359,8 @@ class UnifiedReportWorkflow:
             )
         elif svg_type == "fun":
             return self.visualizer.generate_fun_stats(
-                fun_stats=stats.get("fun_stats", {})
+                stats=stats.get("fun_stats", {}),
+                username=username,
             )
         else:
             raise ValueError(f"Unknown SVG type: {svg_type}")
