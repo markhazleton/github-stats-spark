@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-01-05 01:45:07 UTC
+**Generated**: 2026-01-05 02:43:03 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 48
 **AI Summary Rate**: 97.9%
@@ -25,7 +25,7 @@
 
 ![Language Distribution](../languages.svg)
 
-*Fun visualization unavailable*
+![Fun Statistics](../fun.svg)
 
 ### Release Patterns
 
@@ -935,16 +935,10 @@ Yelp.Api is a C# class library that provides a robust, developer-friendly wrappe
 
 ---
 
-## ⚠️ Generation Warnings
-
-- SVG generation failed: fun
-
----
-
 ## Report Metadata
 
-- **Generation Time**: 140.4 seconds
-- **SVGs Generated**: 5/6
+- **Generation Time**: 135.8 seconds
+- **SVGs Generated**: 6/6
 - **Total API Calls**: 0
 - **Total AI Tokens**: 101,780
 - **Success Rate**: 100.0%
