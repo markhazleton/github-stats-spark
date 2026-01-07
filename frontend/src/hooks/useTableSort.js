@@ -98,10 +98,8 @@ export function useTableSort(
         const dateB = new Date(bVal);
         // Check for invalid dates
         if (isNaN(dateA.getTime()) && isNaN(dateB.getTime())) return 0;
-        if (isNaN(dateA.getTime()))
-          return sortOrder === "asc" ? 1 : -1;
-        if (isNaN(dateB.getTime()))
-          return sortOrder === "asc" ? -1 : 1;
+        if (isNaN(dateA.getTime())) return sortOrder === "asc" ? 1 : -1;
+        if (isNaN(dateB.getTime())) return sortOrder === "asc" ? -1 : 1;
         return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
       }
 

@@ -63,8 +63,8 @@ export default function ScatterPlot({
         backgroundColor: data.map((_, index) => COLORS[index % COLORS.length]),
         borderColor: data.map((_, index) => COLORS[index % COLORS.length]),
         borderWidth: 2,
-        pointRadius: 6,
-        pointHoverRadius: 8,
+        pointRadius: 8, // T044: Larger touch targets (increased from 6)
+        pointHoverRadius: 12, // T044: Larger hover radius for touch
         pointHoverBorderWidth: 3,
       },
     ],
@@ -74,6 +74,10 @@ export default function ScatterPlot({
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    interaction: {
+      mode: "nearest", // T046: Touch-friendly interaction
+      intersect: false,
+    },
     onClick: (event, elements) => {
       if (elements.length > 0 && onPointClick) {
         const index = elements[0].index;
@@ -86,6 +90,15 @@ export default function ScatterPlot({
         display: false,
       },
       tooltip: {
+        enabled: true,
+        padding: 12, // T044: Larger touch target area
+        titleFont: {
+          size: 14, // T047: Minimum 14px for mobile readability
+          weight: "bold",
+        },
+        bodyFont: {
+          size: 14, // T047: Minimum 14px for mobile readability
+        },
         callbacks: {
           title: (context) => {
             return context[0]?.raw?.name || "";
@@ -154,10 +167,6 @@ export default function ScatterPlot({
           },
         },
       },
-    },
-    interaction: {
-      mode: "nearest",
-      intersect: true,
     },
   };
 

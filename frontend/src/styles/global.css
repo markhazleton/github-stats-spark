@@ -143,9 +143,24 @@
 
 /* Set core root defaults */
 html {
+  font-size: 16px; /* Mobile-first base: 1rem = 16px (prevents iOS zoom on input focus) */
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* T079: Tablet typography scaling - 18px base at 768px+ */
+@media (min-width: 768px) {
+  html {
+    font-size: 18px; /* Tablet: 1rem = 18px (scales all rem-based typography proportionally) */
+  }
+}
+
+/* T094: Desktop typography scaling - 20px base at 1024px+ */
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px; /* Desktop: 1rem = 20px (optimal readability on large screens) */
+  }
 }
 
 /* Set core body defaults */
@@ -205,6 +220,40 @@ h6 {
 h1 {
   font-size: var(--font-size-3xl);
   margin-bottom: var(--spacing-lg);
+}
+
+/* Mobile header adjustments */
+@media (max-width: 767px) {
+  h1 {
+    font-size: var(--font-size-xl); /* 20px on mobile instead of 30px */
+    margin-bottom: 0;
+  }
+
+  .header h1 {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .header-title-line1 {
+    font-size: var(--font-size-xs); /* 12px for "GitHub" */
+    font-weight: var(--font-weight-normal);
+  }
+
+  .header-title-line2 {
+    font-size: var(--font-size-base); /* 16px for "StatsSpark" */
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .badge {
+    font-size: 0.625rem; /* 10px */
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .header .gap-md {
+    gap: var(--spacing-sm); /* 8px instead of 16px on mobile */
+  }
 }
 
 h2 {
@@ -482,32 +531,52 @@ pre {
 }
 
 /* =========================================
-   Responsive Design
+   Responsive Design - Mobile-First Approach
    ========================================= */
 
-/* Breakpoints */
-@media (max-width: 640px) {
+/* Base styles are mobile-first (320px+) - no media query needed */
+/* These apply to all viewports unless overridden by larger breakpoint queries */
+
+/* Mobile base: Single column grid, 16px container padding */
+.grid-cols-2,
+.grid-cols-3,
+.grid-cols-4 {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet breakpoint (768px+): 2-column layouts, increased spacing */
+@media (min-width: 768px) {
   :root {
-    --font-size-3xl: 1.5rem; /* 24px on mobile */
-    --font-size-2xl: 1.25rem; /* 20px on mobile */
+    font-size: 18px; /* Scale up base font to 18px on tablet */
+    --font-size-3xl: 1.875rem; /* 33.75px on tablet */
+    --font-size-2xl: 1.5rem; /* 27px on tablet */
   }
 
   .container {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
   }
 
   .grid-cols-2,
   .grid-cols-3,
   .grid-cols-4 {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 641px) and (max-width: 1024px) {
+/* Desktop breakpoint (1024px+): 3+ column layouts, larger spacing */
+@media (min-width: 1024px) {
+  :root {
+    font-size: 20px; /* Scale up base font to 20px on desktop */
+  }
+
   .grid-cols-3,
   .grid-cols-4 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -525,22 +594,6 @@ pre {
 ::selection {
   background-color: var(--color-primary-light);
   color: #ffffff;
-}
-
-/* Skip to main content link (for screen readers) */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-primary);
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  z-index: 9999;
-}
-
-.skip-link:focus {
-  top: 0;
 }
 
 /* =========================================
@@ -578,6 +631,113 @@ pre {
 /* Smooth transitions for table/visualization switching */
 .main > .container > div {
   transition: opacity var(--transition-base) ease-in-out;
+}
+
+/* T041: Mobile main content padding for fixed bottom TabBar */
+@media (max-width: 767px) {
+  .main {
+    padding-bottom: 80px; /* TabBar height (64px) + extra spacing */
+  }
+}
+
+/* T078: Tablet container padding - 32px at 768px+ */
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem; /* 32px at 18px base font */
+    padding-right: 2rem;
+  }
+}
+
+/* T093: Desktop max-width to prevent excessive line length */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+.nav-menu-item {
+  /* Reset button styles */
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+
+  /* Touch targets */
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu-item:hover {
+  color: var(--color-text);
+  border-bottom-color: var(--color-border);
+}
+
+.nav-menu-item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.nav-menu-item--active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.nav-menu-item--active:hover {
+  color: var(--color-primary-dark);
+  border-bottom-color: var(--color-primary-dark);
+}
+
+/* Mobile navigation menu */
+@media (max-width: 767px) {
+  .nav-menu {
+    width: 100%;
+    background-color: var(--color-surface-alt);
+    border-radius: var(--radius-md);
+    padding: 4px;
+    border: 1px solid var(--color-border);
+  }
+
+  .nav-menu-item {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    border-bottom: none;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-menu-item--active {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-bottom-color: transparent;
+  }
+
+  .nav-menu-item--active:hover {
+    background-color: var(--color-primary-dark);
+  }
+
+  .nav-menu-item:hover {
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border-bottom-color: transparent;
+  }
 }
 
 /* Filter and control transitions */

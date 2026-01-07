@@ -1,0 +1,97 @@
+# Comparison Feature References Report
+Date: 2026-01-06
+Branch: 001-mobile-first-ui (before removal)
+Search Pattern: comparison|compare|Comparison|Compare|selectedRepos
+
+## Files with Comparison References
+
+### Core Comparison Components (TO BE DELETED)
+| File | Matches | Action |
+|------|---------|--------|
+| src/components/Comparison/MobileComparisonView.jsx | 37 | ❌ DELETE ENTIRE FILE |
+| src/components/Comparison/MobileComparisonView.css | 32 | ❌ DELETE ENTIRE FILE |
+| src/components/Comparison/ComparisonView.jsx | 22 | ❌ DELETE ENTIRE FILE |
+| src/components/Comparison/CompareButton.css | 19 | ❌ DELETE ENTIRE FILE |
+| src/components/Comparison/CompareButton.jsx | 18 | ❌ DELETE ENTIRE FILE |
+| src/components/Comparison/ComparisonSelector.jsx | 12 | ❌ DELETE ENTIRE FILE |
+| src/components/Comparison/ComparisonView.module.css | 7 | ❌ DELETE ENTIRE FILE |
+
+**Total**: 7 files in Comparison/ directory → DELETE ENTIRE DIRECTORY
+
+### Files Requiring Cleanup (REMOVE REFERENCES)
+| File | Matches | Action |
+|------|---------|--------|
+| src/App.jsx | 66 | 🔧 Remove comparison routes, state, handlers, imports |
+| src/components/RepositoryTable/RepositoryTable.jsx | 11 | 🔧 Remove onSelectRepo prop, selection logic |
+| src/services/metricsCalculator.js | 11 | 🔧 Remove compareRepositories() function |
+| src/components/Mobile/TabBar/TabBar.jsx | 8 | 🔧 Remove comparison tab, comparisonCount prop |
+| src/components/RepositoryTable/TableRow.jsx | 2 | 🔧 Remove selection checkbox column |
+
+### Files with Minor References (VERIFY)
+| File | Matches | Action |
+|------|---------|--------|
+| src/components/Visualizations/ChartTypeSelector.jsx | 1 | ✅ Verify - likely unrelated to feature |
+| src/components/Visualizations/LineGraph.jsx | 1 | ✅ Verify - likely "compare" in comment |
+| src/components/RepositoryTable/RepositoryTable.module.css | 1 | ✅ Verify - likely CSS class name |
+| src/components/Mobile/EmptyState/EmptyState.css | 1 | ✅ Verify - may be unrelated |
+| src/services/dataService.js | 1 | ✅ Verify - check context |
+| src/styles/global.css | 1 | ✅ Verify - check context |
+| src/utils/performance.js | 1 | ✅ Verify - likely unrelated |
+
+## Removal Order (Sequential to Prevent Breakage)
+
+### Phase 1: Remove UI Components
+1. Delete `src/components/Comparison/` directory (all 7 files)
+2. Remove lazy imports from `App.jsx`
+3. Remove comparison button from mobile UI
+
+### Phase 2: Clean State Management
+4. Remove `selectedRepos` state from `App.jsx`
+5. Remove `handleRepoSelect`, `handleClearSelection`, `handleRemoveRepo` functions
+6. Remove comparison view conditional rendering
+
+### Phase 3: Update Routing
+7. Remove comparison routes from `App.jsx`
+8. Remove comparison navigation from `TabBar.jsx`
+
+### Phase 4: Clean Data Layer
+9. Remove `compareRepositories()` from `metricsCalculator.js`
+10. Remove selection props from `RepositoryTable.jsx`
+11. Remove selection checkbox from `TableRow.jsx`
+
+### Phase 5: Verification
+12. Run `grep -r "comparison|compare" frontend/src` → verify 0 critical matches
+13. Run `npm run build` → verify no errors
+14. Run `npm test` → verify all tests pass
+15. Compare bundle size → verify ≥15% reduction
+
+## Expected Bundle Size Impact
+**Current Total**: 734.27 KB
+**Estimated Removal**: ~50-75 KB (comparison components + state)
+**Target After Removal**: ≤624 KB (15% reduction)
+**Expected Actual**: ~660-685 KB (10-12% reduction from code, additional savings from improved splitting)
+
+## Files NOT Requiring Changes
+- ViewportContext.jsx (viewport detection unrelated)
+- All visualization components (charts are separate feature)
+- dataService.js (unless comparison-specific data fetching)
+- Mobile gesture/touch components (independent features)
+- Layout components (unaffected by comparison removal)
+
+## Verification Commands
+```bash
+# Count remaining references after cleanup
+grep -r "comparison\|compare\|Comparison\|Compare\|selectedRepos" frontend/src --include="*.jsx" --include="*.js" | wc -l
+
+# Expected result: <10 matches (only false positives in comments/unrelated code)
+
+# Build and measure
+npm run build
+# Check docs/assets/*.js sizes → verify reduction
+```
+
+## Notes
+- Total matches found: 186 across 19 files
+- 147 matches (79%) are in Comparison/ directory (will be deleted entirely)
+- 39 matches (21%) require selective removal from other files
+- App.jsx has highest concentration outside Comparison/ (66 matches)

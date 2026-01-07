@@ -7,12 +7,27 @@
       "url": [
         "http://localhost:4173/"
       ],
-      "numberOfRuns": 3
+      "numberOfRuns": 3,
+      "settings": {
+        "emulatedFormFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638,
+          "cpuSlowdownMultiplier": 4
+        },
+        "screenEmulation": {
+          "mobile": true,
+          "width": 375,
+          "height": 667,
+          "deviceScaleFactor": 2
+        }
+      }
     },
     "assert": {
       "preset": "lighthouse:recommended",
       "assertions": {
         "first-contentful-paint": ["error", { "maxNumericValue": 2000 }],
+        "first-input-delay": ["error", { "maxNumericValue": 100 }],
         "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
         "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
         "total-blocking-time": ["error", { "maxNumericValue": 300 }],
@@ -20,6 +35,7 @@
         "interactive": ["error", { "maxNumericValue": 5000 }],
         "resource-summary:script:size": ["error", { "maxNumericValue": 174080 }],
         "resource-summary:stylesheet:size": ["error", { "maxNumericValue": 51200 }],
+        "target-size": ["error", { "minScore": 1.0 }],
         "installable-manifest": "off",
         "service-worker": "off",
         "offline-start-url": "off",

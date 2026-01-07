@@ -86,6 +86,12 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost',
+      port: 5173,
+      clientPort: 5173
+    },
     fs: {
       // Allow serving files from parent directory (/data)
       allow: ['..']

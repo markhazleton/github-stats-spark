@@ -12,24 +12,15 @@ import styles from "./RepositoryTable.module.css";
  * @component
  * @param {Object} props - Component props
  * @param {Object} props.repository - Repository object with metrics
- * @param {boolean} [props.isSelected] - Whether row is selected for comparison
- * @param {Function} [props.onSelect] - Callback when selection checkbox is toggled
  * @param {Function} [props.onClick] - Callback when row is clicked for drill-down
  *
  * @example
  * <TableRow
  *   repository={repo}
- *   isSelected={true}
- *   onSelect={(name) => toggleSelection(name)}
  *   onClick={(repo) => showDetails(repo)}
  * />
  */
-const TableRow = React.memo(function TableRow({
-  repository,
-  isSelected = false,
-  onSelect,
-  onClick,
-}) {
+const TableRow = React.memo(function TableRow({ repository, onClick }) {
   /**
    * Format date to readable string (MM/DD/YYYY)
    */
@@ -89,24 +80,13 @@ const TableRow = React.memo(function TableRow({
    * Handle row click (for drill-down)
    */
   const handleRowClick = (e) => {
-    // Don't trigger if clicking checkbox or link
-    if (e.target.type === "checkbox" || e.target.tagName === "A") {
+    // Don't trigger if clicking link
+    if (e.target.tagName === "A") {
       return;
     }
 
     if (onClick) {
       onClick(repository);
-    }
-  };
-
-  /**
-   * Handle checkbox change
-   */
-  const handleCheckboxChange = (e) => {
-    e.stopPropagation(); // Prevent row click
-
-    if (onSelect) {
-      onSelect(repository.name);
     }
   };
 
@@ -131,23 +111,10 @@ const TableRow = React.memo(function TableRow({
   );
 
   return (
-    <tr
-      className={`${styles.tableRow} ${isSelected ? styles.tableRowSelected : ""}`}
-      onClick={handleRowClick}
-      role="row"
-    >
+    <tr className={styles.tableRow} onClick={handleRowClick} role="row">
       {/* Repository Name */}
       <td className={styles.tableCell}>
         <div className={styles.tableCellContent}>
-          {onSelect && (
-            <input
-              type="checkbox"
-              checked={isSelected}
-              onChange={handleCheckboxChange}
-              aria-label={`Select ${repository.name} for comparison`}
-              className={styles.checkbox}
-            />
-          )}
           <button
             className={styles.repoNameButton}
             onClick={() => onClick && onClick(repository)}
