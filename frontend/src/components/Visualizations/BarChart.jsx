@@ -103,6 +103,11 @@ export default function BarChart({
     indexAxis: horizontal ? "y" : "x",
     responsive: true,
     maintainAspectRatio: false,
+    interaction: {
+      mode: "nearest", // T046: Touch-friendly interaction
+      intersect: false,
+      axis: horizontal ? "y" : "x",
+    },
     onClick: (event, elements) => {
       if (elements.length > 0 && onBarClick) {
         const index = elements[0].index;
@@ -115,6 +120,14 @@ export default function BarChart({
         display: false,
       },
       tooltip: {
+        enabled: true,
+        padding: 12, // T044: Larger touch target area for tooltips
+        titleFont: {
+          size: 14, // T047: Minimum 14px for mobile readability
+        },
+        bodyFont: {
+          size: 14, // T047: Minimum 14px for mobile readability
+        },
         callbacks: {
           label: (context) => {
             const value = context.parsed.y || context.parsed.x;

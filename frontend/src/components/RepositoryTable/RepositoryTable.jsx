@@ -13,16 +13,14 @@ import styles from "./RepositoryTable.module.css";
  * RepositoryTable Component
  *
  * Main table component that displays repository data with comprehensive metrics.
- * Supports sorting, filtering, and row selection for comparison.
+ * Supports sorting, filtering, and responsive layouts.
  *
  * @component
  * @param {Object} props - Component props
  * @param {Array} props.repositories - Array of repository objects to display
  * @param {Function} [props.onSort] - Callback when column header is clicked for sorting
  * @param {Function} [props.onFilter] - Callback when filter is applied
- * @param {Function} [props.onSelectRepo] - Callback when repository is selected for comparison
  * @param {Function} [props.onRowClick] - Callback when row is clicked for drill-down
- * @param {Array} [props.selectedRepos] - Array of selected repository names
  * @param {string} [props.sortField] - Current sort field name
  * @param {string} [props.sortDirection] - Current sort direction ('asc' or 'desc')
  *
@@ -37,9 +35,7 @@ export default function RepositoryTable({
   repositories = [],
   onSort,
   onFilter,
-  onSelectRepo,
   onRowClick,
-  selectedRepos = [],
   sortField = "stars",
   sortDirection = "desc",
   loading = false,
@@ -90,13 +86,6 @@ export default function RepositoryTable({
     if (onSort) {
       onSort(field);
     }
-  };
-
-  /**
-   * Check if repository is selected
-   */
-  const isRepoSelected = (repoName) => {
-    return selectedRepos.includes(repoName);
   };
 
   // Show loading state
@@ -156,9 +145,6 @@ export default function RepositoryTable({
               <RepositoryCard
                 key={repo.name}
                 repository={repo}
-                selectable={true}
-                selected={isRepoSelected(repo.name)}
-                onSelect={onSelectRepo}
                 onClick={onRowClick}
               />
             ))}
@@ -169,9 +155,6 @@ export default function RepositoryTable({
             <p className="text-sm text-muted">
               {repositories.length}{" "}
               {repositories.length === 1 ? "repository" : "repositories"}
-              {selectedRepos.length > 0 && (
-                <> • {selectedRepos.length} selected</>
-              )}
             </p>
             <ExportButton
               data={repositories}
@@ -220,8 +203,6 @@ export default function RepositoryTable({
               <TableRow
                 key={repo.name}
                 repository={repo}
-                isSelected={isRepoSelected(repo.name)}
-                onSelect={onSelectRepo}
                 onClick={onRowClick}
               />
             ))}
@@ -234,9 +215,6 @@ export default function RepositoryTable({
         <p className="text-sm text-muted">
           Showing {repositories.length}{" "}
           {repositories.length === 1 ? "repository" : "repositories"}
-          {selectedRepos.length > 0 && (
-            <> • {selectedRepos.length} selected for comparison</>
-          )}
         </p>
         <ExportButton
           data={repositories}

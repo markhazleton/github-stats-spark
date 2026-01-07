@@ -66,6 +66,31 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--spacing-md);
+  position: relative;
+}
+
+.headerContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.backButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.backButton:hover {
+  background-color: var(--color-background);
+  color: var(--color-secondary);
 }
 
 .modalTitle {
@@ -174,6 +199,49 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+}
+
+/* Collapsible Section Styles */
+.collapsible {
+  cursor: pointer;
+  user-select: none;
+  justify-content: space-between;
+  padding: var(--spacing-sm, 8px);
+  margin: calc(var(--spacing-sm, 8px) * -1);
+  margin-bottom: var(--spacing-md, 16px);
+  border-radius: var(--border-radius, 4px);
+  transition: background-color 0.2s ease;
+}
+
+.collapsible:hover {
+  background-color: var(--color-background, #f6f8fa);
+}
+
+.collapsible:focus {
+  outline: 2px solid var(--color-primary, #0366d6);
+  outline-offset: 2px;
+}
+
+.chevron {
+  font-size: 0.875rem;
+  color: var(--color-text-muted, #586069);
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.sectionContent {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subsectionTitle {
@@ -476,6 +544,22 @@
     margin: 0;
     animation: slideUp 0.2s ease-out;
     box-shadow: none;
+    touch-action: pan-y;
+  }
+
+  .backButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs, 4px);
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--spacing-sm, 8px) var(--spacing-md, 16px);
+    font-size: 0.95rem;
+  }
+
+  .backButton:active {
+    background-color: var(--color-border, #e1e4e8);
+    transform: scale(0.98);
   }
 
   .modalHeader {
@@ -590,6 +674,24 @@
   .sectionTitle {
     font-size: 1rem;
     flex-wrap: wrap;
+  }
+
+  .collapsible {
+    min-height: 44px;
+    padding: var(--spacing-sm, 8px);
+    margin: calc(var(--spacing-sm, 8px) * -1);
+    margin-bottom: var(--spacing-md, 16px);
+    display: flex;
+    align-items: center;
+  }
+
+  .collapsible:active {
+    background-color: var(--color-border, #e1e4e8);
+    transform: scale(0.98);
+  }
+
+  .chevron {
+    font-size: 1rem;
   }
 
   .badgeGrid {

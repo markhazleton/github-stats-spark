@@ -80,14 +80,14 @@ export default function LineGraph({
         borderWidth: 3,
         fill: fill,
         tension: 0.4, // Curved lines
-        pointRadius: 4,
-        pointHoverRadius: 6,
+        pointRadius: 6, // T044: Larger touch targets (increased from 4)
+        pointHoverRadius: 10, // T044: Larger hover radius for touch
         pointBackgroundColor: lineColor,
         pointBorderColor: "#ffffff",
         pointBorderWidth: 2,
         pointHoverBackgroundColor: lineColor,
         pointHoverBorderColor: "#ffffff",
-        pointHoverBorderWidth: 2,
+        pointHoverBorderWidth: 3,
       },
     ],
   };
@@ -108,6 +108,14 @@ export default function LineGraph({
         display: false,
       },
       tooltip: {
+        enabled: true,
+        padding: 12, // T044: Larger touch target area
+        titleFont: {
+          size: 14, // T047: Minimum 14px for mobile readability
+        },
+        bodyFont: {
+          size: 14, // T047: Minimum 14px for mobile readability
+        },
         callbacks: {
           label: (context) => {
             const value = context.parsed.y;
@@ -129,13 +137,13 @@ export default function LineGraph({
           display: false,
         },
         ticks: {
-          maxRotation: 45,
-          minRotation: 0,
+          maxRotation: 45, // T045: Rotate labels for better mobile fit
+          minRotation: 45, // T045: Always rotate on mobile for consistency
           font: {
-            size: 11,
+            size: 12, // Slightly larger for mobile readability
           },
           autoSkip: true,
-          maxTicksLimit: 12,
+          maxTicksLimit: 10, // Reduce for mobile viewports
         },
       },
       y: {
