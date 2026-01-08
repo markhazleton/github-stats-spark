@@ -42,7 +42,7 @@ class TestSVGGeneration:
         )
 
         # Validate SVG structure
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         assert "testuser" in svg
         assert "75.5" in svg or "75" in svg  # Score
         assert "⚡" in svg  # Lightning bolts
@@ -70,7 +70,7 @@ class TestSVGGeneration:
             time_pattern={"category": "balanced", "most_active_hour": 14},
         )
 
-        assert "<?xml" in svg
+        assert "<svg" in svg
         assert len(svg) > 500  # Should be substantial
 
     def test_generate_heatmap_structure(self):
@@ -85,9 +85,9 @@ class TestSVGGeneration:
             "2025-12-25": 8,
         }
 
-        svg = visualizer.generate_heatmap("testuser", commits_by_date)
+        svg = visualizer.generate_heatmap(commits_by_date, "testuser")
 
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         assert "testuser" in svg
         # Should contain rect elements for calendar grid
         assert "rect" in svg
@@ -104,9 +104,9 @@ class TestSVGGeneration:
             {"name": "CSS", "percentage": 9.0, "bytes": 2000},
         ]
 
-        svg = visualizer.generate_languages("testuser", languages)
+        svg = visualizer.generate_languages(languages, "testuser")
 
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         assert "Python" in svg
         assert "45.2" in svg or "45" in svg
         assert "JavaScript" in svg
@@ -123,9 +123,9 @@ class TestSVGGeneration:
             "account_age_days": 1825,
         }
 
-        svg = visualizer.generate_fun_stats("testuser", stats)
+        svg = visualizer.generate_fun_stats(stats, "testuser")
 
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         assert "testuser" in svg
         assert "23" in svg or "11 PM" in svg
         assert "Night Owl" in svg or "night" in svg.lower()
@@ -151,7 +151,7 @@ class TestSVGGeneration:
 
         svg = visualizer.generate_release_cadence(cadence, "testuser")
 
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         assert "Release Cadence" in svg
         assert "Weekly Repo Diversity" in svg
         assert "Monthly Repo Diversity" in svg
@@ -162,13 +162,14 @@ class TestSVGGeneration:
         theme = SparkLightTheme()
         visualizer = StatisticsVisualizer(theme)
 
-        svg = visualizer.generate_streaks(
-            username="testuser",
-            current_streak=15,
-            longest_streak=45,
-        )
+        streaks = {
+            "current_streak": 15,
+            "longest_streak": 45,
+        }
 
-        assert svg.startswith("<?xml")
+        svg = visualizer.generate_streaks(streaks, "testuser")
+
+        assert svg.startswith("<svg")
         assert "testuser" in svg
         assert "15" in svg
         assert "45" in svg
@@ -210,7 +211,7 @@ class TestThemeApplication:
 
         languages = [{"name": "Python", "percentage": 100.0, "bytes": 10000}]
 
-        svg = visualizer.generate_languages("testuser", languages)
+        svg = visualizer.generate_languages(languages, "testuser")
 
         # Light theme should have light background
         assert theme.background_color.lower() in svg.lower()
@@ -232,14 +233,14 @@ class TestCommitMessageSanitization:
             "account_age_days": 1825,
         }
 
-        svg = visualizer.generate_fun_stats("testuser", stats)
+        svg = visualizer.generate_fun_stats(stats, "testuser")
 
         # Should not contain raw script tags
         assert "<script>" not in svg
         assert "alert(" not in svg
 
         # Should be properly escaped or sanitized
-        assert "<?xml" in svg  # Valid SVG
+        assert "<svg" in svg  # Valid SVG
 
     def test_truncate_long_text(self):
         """Test that extremely long text is truncated."""
@@ -251,10 +252,10 @@ class TestCommitMessageSanitization:
 
         languages = [{"name": long_name, "percentage": 100.0, "bytes": 10000}]
 
-        svg = visualizer.generate_languages("testuser", languages)
+        svg = visualizer.generate_languages(languages, "testuser")
 
         # Should still generate valid SVG
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         # Should not contain the full 500-character name
         assert long_name not in svg
 
@@ -283,7 +284,7 @@ class TestEdgeCases:
             time_pattern={"category": "balanced", "most_active_hour": 12},
         )
 
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         assert "testuser" in svg
 
     def test_zero_commits_heatmap(self):
@@ -291,9 +292,9 @@ class TestEdgeCases:
         theme = SparkDarkTheme()
         visualizer = StatisticsVisualizer(theme)
 
-        svg = visualizer.generate_heatmap("testuser", {})
+        svg = visualizer.generate_heatmap({}, "testuser")
 
-        assert svg.startswith("<?xml")
+        assert svg.startswith("<svg")
         assert "testuser" in svg
 
     def test_zero_streak(self):
@@ -301,13 +302,14 @@ class TestEdgeCases:
         theme = SparkDarkTheme()
         visualizer = StatisticsVisualizer(theme)
 
-        svg = visualizer.generate_streaks(
-            username="testuser",
-            current_streak=0,
-            longest_streak=0,
-        )
+        streaks = {
+            "current_streak": 0,
+            "longest_streak": 0,
+        }
 
-        assert svg.startswith("<?xml")
+        svg = visualizer.generate_streaks(streaks, "testuser")
+
+        assert svg.startswith("<svg")
         assert "0" in svg or "No" in svg
 
 
@@ -332,8 +334,8 @@ class TestWCAGCompliance:
         theme = SparkDarkTheme()
 
         # Dark theme should have light text on dark background
-        assert theme.background_color == "#0F172A"
-        assert theme.text_color != "#0F172A"  # Not dark on dark
+        assert theme.background_color == "#0D1117"
+        assert theme.text_color != "#0D1117"  # Not dark on dark
 
         # Verify colors are distinct
         assert theme.primary_color != theme.background_color

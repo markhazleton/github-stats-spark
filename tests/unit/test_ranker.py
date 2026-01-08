@@ -39,7 +39,13 @@ def create_repository_from_scenario(scenario_data):
     now = datetime.now()
     created_at = now - timedelta(days=repo_data["created_days_ago"])
     updated_at = now - timedelta(days=repo_data["updated_days_ago"])
-    last_commit = now - timedelta(days=commit_data["last_commit_days_ago"])
+    last_commit_days = commit_data["last_commit_days_ago"]
+    
+    # For empty repos (no commits ever), set pushed_at to None
+    if commit_data["total"] == 0 or last_commit_days > 9000:
+        last_commit = None
+    else:
+        last_commit = now - timedelta(days=last_commit_days)
 
     # Create Repository object
     repository = Repository(
@@ -393,11 +399,11 @@ class TestErrorHandling:
         now = datetime.now()
         repo = Repository(
             name="no-history",
-            full_name="user/no-history",
             description="Test repo",
             url="https://github.com/user/no-history",
             created_at=now - timedelta(days=100),
             updated_at=now - timedelta(days=10),
+            pushed_at=now - timedelta(days=10),
             primary_language="Python",
             language_stats={"Python": 10000},
             stars=50,

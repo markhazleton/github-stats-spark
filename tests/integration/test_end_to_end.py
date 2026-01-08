@@ -74,18 +74,14 @@ class TestEndToEndWorkflow:
             time_pattern=time_patterns,
         )
 
-        languages_svg = visualizer.generate_languages(profile["username"], languages)
+        languages_svg = visualizer.generate_languages(languages, profile["username"])
 
-        streaks_svg = visualizer.generate_streaks(
-            username=profile["username"],
-            current_streak=streaks["current_streak"],
-            longest_streak=streaks["longest_streak"],
-        )
+        streaks_svg = visualizer.generate_streaks(streaks, profile["username"])
 
         # Step 4: Verify SVG outputs
-        assert overview_svg.startswith("<?xml")
-        assert languages_svg.startswith("<?xml")
-        assert streaks_svg.startswith("<?xml")
+        assert overview_svg.startswith("<svg")
+        assert languages_svg.startswith("<svg")
+        assert streaks_svg.startswith("<svg")
 
         # Verify content in overview
         assert profile["username"] in overview_svg
@@ -186,7 +182,7 @@ class TestEndToEndWorkflow:
         # Should return sensible defaults
         assert spark_score["total_score"] >= 0
         assert spark_score["lightning_rating"] >= 1
-        assert time_patterns["category"] in ["night_owl", "early_bird", "balanced", "no_data"]
+        assert time_patterns["category"] in ["night_owl", "early_bird", "balanced", "unknown"]
         assert languages == []
         assert streaks["current_streak"] == 0
 

@@ -604,7 +604,7 @@ def handle_dated_analyze(args, logger):
         summarizer = RepositorySummarizer(cache=cache)  # Pass cache to save tokens!
         profile_generator = UserProfileGenerator(summarizer)
         report_generator = ReportGenerator()
-        dependency_analyzer = RepositoryDependencyAnalyzer(cache=cache, config=config.config.get("analyzer", {}))
+        dependency_analyzer = RepositoryDependencyAnalyzer(config=config.config.get("analyzer", {}))
 
         start_time = datetime.now()
 

@@ -28,11 +28,11 @@ def sample_repository():
     now = datetime.now()
     return Repository(
         name="awesome-project",
-        full_name="testuser/awesome-project",
         description="A really cool open source project",
         url="https://github.com/testuser/awesome-project",
         created_at=now - timedelta(days=365),
         updated_at=now - timedelta(days=5),
+        pushed_at=now - timedelta(days=5),
         primary_language="Python",
         language_stats={"Python": 80000, "JavaScript": 15000, "HTML": 5000},
         stars=1250,
@@ -124,7 +124,7 @@ class TestAIIntegration:
         mock_client.messages.create.return_value = mock_response
 
         # Generate summary
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             repository=sample_repository,
             commit_history=sample_commits,
             readme_content=sample_readme
@@ -150,7 +150,7 @@ class TestAIIntegration:
         mock_client.messages.create.side_effect = Exception("API Error: Rate limit exceeded")
 
         # Generate summary (should fallback)
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             repository=sample_repository,
             commit_history=sample_commits,
             readme_content=sample_readme
@@ -183,7 +183,7 @@ class TestAIIntegration:
         ]
 
         # Generate summary
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             repository=sample_repository,
             commit_history=sample_commits,
             readme_content=sample_readme
@@ -225,54 +225,8 @@ class TestREADMETruncation:
         assert "Important intro" in truncated
 
 
-class TestCommitPatternAnalysis:
-    """Test commit pattern analysis."""
-
-    def test_active_pattern_detection(self, summarizer, sample_commits):
-        """Test detection of active commit patterns."""
-        analysis = summarizer._analyze_commit_patterns(sample_commits)
-
-        assert "frequency" in analysis
-        assert "recency" in analysis
-        assert "consistency" in analysis
-
-        # Active repo should have positive indicators
-        assert analysis["frequency"] in ["active", "very_active", "moderate"]
-
-    def test_stale_pattern_detection(self, summarizer):
-        """Test detection of stale commit patterns."""
-        now = datetime.now()
-        stale_commits = CommitHistory(
-            repository_name="stale",
-            total_commits=500,
-            recent_90d=0,
-            recent_180d=0,
-            recent_365d=2,
-            last_commit_date=now - timedelta(days=300),
-            patterns={}
-        )
-
-        analysis = summarizer._analyze_commit_patterns(stale_commits)
-
-        assert analysis["frequency"] in ["low", "minimal", "inactive"]
-        assert analysis["recency"] in ["stale", "old", "outdated"]
-
-    def test_sporadic_pattern_detection(self, summarizer):
-        """Test detection of sporadic commit patterns."""
-        now = datetime.now()
-        sporadic_commits = CommitHistory(
-            repository_name="sporadic",
-            total_commits=100,
-            recent_90d=5,
-            recent_180d=5,
-            recent_365d=20,
-            last_commit_date=now - timedelta(days=60),
-            patterns={}
-        )
-
-        analysis = summarizer._analyze_commit_patterns(sporadic_commits)
-
-        assert analysis["consistency"] in ["sporadic", "inconsistent", "irregular"]
+# TestCommitPatternAnalysis class removed - _analyze_commit_patterns method no longer exists
+# The functionality has been moved to StatsCalculator
 
 
 class TestPromptEngineering:
@@ -290,7 +244,7 @@ class TestPromptEngineering:
         mock_response.usage.output_tokens = 50
         mock_client.messages.create.return_value = mock_response
 
-        summarizer.generate_summary(sample_repository, sample_commits, sample_readme)
+        summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
 
         # Get the prompt that was sent
         call_args = mock_client.messages.create.call_args
@@ -313,7 +267,7 @@ class TestPromptEngineering:
         mock_response.usage.output_tokens = 50
         mock_client.messages.create.return_value = mock_response
 
-        summarizer.generate_summary(sample_repository, sample_commits, sample_readme)
+        summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
 
         call_args = mock_client.messages.create.call_args
         prompt_messages = call_args[1]["messages"]
@@ -357,11 +311,11 @@ class TestFallbackStrategies:
         # Repository without README
         no_readme_repo = Repository(
             name="no-readme-project",
-            full_name="testuser/no-readme-project",
             description="A project without documentation",
             url="https://github.com/testuser/no-readme-project",
             created_at=datetime.now() - timedelta(days=180),
             updated_at=datetime.now() - timedelta(days=10),
+            pushed_at=datetime.now() - timedelta(days=10),
             primary_language="JavaScript",
             language_stats={"JavaScript": 50000},
             stars=50,
@@ -377,7 +331,7 @@ class TestFallbackStrategies:
         )
 
         # Generate summary without README (should use basic template)
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             repository=no_readme_repo,
             commit_history=sample_commits,
             readme_content=None
@@ -407,7 +361,7 @@ class TestFallbackStrategies:
         mock_client.messages.create.return_value = mock_response
 
         # Generate summary without README
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             repository=sample_repository,
             commit_history=sample_commits,
             readme_content=None
@@ -434,7 +388,7 @@ class TestCostTracking:
         mock_client.messages.create.return_value = mock_response
 
         with patch.object(summarizer.logger, 'info') as mock_logger:
-            summarizer.generate_summary(sample_repository, sample_commits, sample_readme)
+            summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
 
             # Verify cost logging
             logged_calls = [str(call) for call in mock_logger.call_args_list]
@@ -452,7 +406,7 @@ class TestCostTracking:
         mock_response.usage.output_tokens = 1000  # Output tokens
         mock_client.messages.create.return_value = mock_response
 
-        summary = summarizer.generate_summary(sample_repository, sample_commits, sample_readme)
+        summary = summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
 
         # Cost should be tracked (Haiku pricing: ~$0.25/$1.25 per million tokens)
         # This is a basic check that cost tracking exists
@@ -464,7 +418,7 @@ class TestErrorHandling:
 
     def test_empty_readme(self, summarizer, sample_repository, sample_commits):
         """Test handling of empty README content."""
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             sample_repository,
             sample_commits,
             ""  # Empty string
@@ -478,7 +432,7 @@ class TestErrorHandling:
         """Test handling of malformed README content."""
         malformed = "# \n\n\n\n<<>>{}[]invalid"
 
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             sample_repository,
             sample_commits,
             malformed
@@ -494,7 +448,7 @@ class TestErrorHandling:
 
         # Should initialize but use fallback strategies
         assert summarizer is not None
-        # Fallback functionality is tested through generate_summary method
+        # Fallback functionality is tested through summarize_repository method
 
     @patch('spark.summarizer.anthropic.Anthropic')
     def test_api_timeout_fallback(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
@@ -503,7 +457,7 @@ class TestErrorHandling:
         mock_anthropic.return_value = mock_client
         mock_client.messages.create.side_effect = TimeoutError("Request timed out")
 
-        summary = summarizer.generate_summary(
+        summary = summarizer.summarize_repository(
             sample_repository,
             sample_commits,
             sample_readme
@@ -533,7 +487,7 @@ class TestSummaryQuality:
         mock_response.usage.output_tokens = 80
         mock_client.messages.create.return_value = mock_response
 
-        summary = summarizer.generate_summary(sample_repository, sample_commits, sample_readme)
+        summary = summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
 
         # Check quality indicators
         assert len(summary.ai_summary) > 50  # Should be substantive

@@ -217,9 +217,9 @@ class GitHubFetcher:
         Returns:
             List of commit data dictionaries
         """
-        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
-        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
-        cached = self.cache.get("commits", username, repo=repo_name, week=push_week_str)
+        # Use pushed_at hash for cache key (change-based invalidation, not time-based)
+        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        cached = self.cache.get("commits", username, repo=repo_name, week=push_key)
         if cached:
             return cached
 
@@ -243,7 +243,7 @@ class GitHubFetcher:
                 commits.append(commit_data)
 
             metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "commits")
-            self.cache.set("commits", username, commits, repo=repo_name, week=push_week_str, metadata=metadata)
+            self.cache.set("commits", username, commits, repo=repo_name, week=push_key, metadata=metadata)
             return commits
 
         except GithubException as e:
@@ -278,9 +278,8 @@ class GitHubFetcher:
             - deletions: Lines deleted
         """
         # Include push date in cache key for smart invalidation
-        # Use WEEKLY granularity (ISO week format: 2026W01) to balance freshness with cache efficiency
-        # Cache will only be invalidated when: 1) new week starts OR 2) repo has new commits
-        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
+        # Use pushed_at hash for cache key (change-based invalidation, not time-based)
+        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
         
         # Check cache status if enabled and not forcing refresh
         if self.use_cache_status and not force_refresh:
@@ -293,14 +292,14 @@ class GitHubFetcher:
             
             # If refresh not needed and cache exists, return cached data
             if not cache_status.get("refresh_needed", True):
-                cached = self.cache.get("commits_stats", username, repo=repo_name, week=push_week_str)
+                cached = self.cache.get("commits_stats", username, repo=repo_name, week=push_key)
                 if cached:
                     self.logger.info(f"Skipping {repo_name} - cache is up-to-date (age: {cache_status.get('cache_age_hours', 0):.1f}h)")
                     return cached
         
-        cached = self.cache.get("commits_stats", username, repo=repo_name, week=push_week_str)
+        cached = self.cache.get("commits_stats", username, repo=repo_name, week=push_key)
         if cached:
-            self.logger.debug(f"Using cached commit stats for {username}/{repo_name} (push week: {push_week_str})")
+            self.logger.debug(f"Using cached commit stats for {username}/{repo_name} (pushed_at: {push_key})")
             return cached
 
         self.logger.info(f"Fetching commit statistics for {username}/{repo_name} (max: {max_commits})")
@@ -355,7 +354,7 @@ class GitHubFetcher:
 
             self.logger.info(f"Fetched {len(commits_with_stats)} commits with stats for {repo_name}")
             metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "commits_stats")
-            self.cache.set("commits_stats", username, commits_with_stats, repo=repo_name, week=push_week_str, metadata=metadata)
+            self.cache.set("commits_stats", username, commits_with_stats, repo=repo_name, week=push_key, metadata=metadata)
             return commits_with_stats
 
         except GithubException as e:
@@ -373,9 +372,9 @@ class GitHubFetcher:
         Returns:
             Dictionary mapping language names to byte counts
         """
-        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
-        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
-        cached = self.cache.get("languages", username, repo=repo_name, week=push_week_str)
+        # Use pushed_at hash for cache key (change-based invalidation, not time-based)
+        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        cached = self.cache.get("languages", username, repo=repo_name, week=push_key)
         if cached:
             return cached
 
@@ -384,7 +383,7 @@ class GitHubFetcher:
             languages = repo.get_languages()
 
             metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "languages")
-            self.cache.set("languages", username, languages, repo=repo_name, week=push_week_str, metadata=metadata)
+            self.cache.set("languages", username, languages, repo=repo_name, week=push_key, metadata=metadata)
             return languages
 
         except GithubException as e:
@@ -402,10 +401,9 @@ class GitHubFetcher:
         Returns:
             README content as string, or None if not found
         """
-        # Use weekly granularity (ISO week format: 2026W01) to balance freshness with cache efficiency
-        # Cache will only be invalidated when: 1) new week starts OR 2) repo has new commits
-        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
-        cached = self.cache.get("readme", username, repo=repo_name, week=push_week_str)
+        # Use pushed_at hash for cache key (change-based invalidation, not time-based)
+        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        cached = self.cache.get("readme", username, repo=repo_name, week=push_key)
         if cached:
             return cached
 
@@ -417,7 +415,7 @@ class GitHubFetcher:
             content = readme.decoded_content.decode('utf-8')
             
             metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "readme")
-            self.cache.set("readme", username, content, repo=repo_name, week=push_week_str, metadata=metadata)
+            self.cache.set("readme", username, content, repo=repo_name, week=push_key, metadata=metadata)
             return content
 
         except GithubException as e:
@@ -440,9 +438,9 @@ class GitHubFetcher:
         Returns:
             Dictionary mapping filename to file content
         """
-        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
-        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
-        cached = self.cache.get("dependency_files", username, repo=repo_name, week=push_week_str)
+        # Use pushed_at hash for cache key (change-based invalidation, not time-based)
+        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        cached = self.cache.get("dependency_files", username, repo=repo_name, week=push_key)
         if cached:
             return cached
 
@@ -487,7 +485,7 @@ class GitHubFetcher:
                     continue
 
             metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "dependency_files")
-            self.cache.set("dependency_files", username, dependency_files, repo=repo_name, week=push_week_str, metadata=metadata)
+            self.cache.set("dependency_files", username, dependency_files, repo=repo_name, week=push_key, metadata=metadata)
             return dependency_files
 
         except GithubException as e:
@@ -516,9 +514,9 @@ class GitHubFetcher:
         Returns:
             Dictionary with commit counts by time window
         """
-        # Use weekly granularity (ISO week format: 2026W01) for cache invalidation
-        push_week_str = repo_pushed_at.strftime("%YW%V") if repo_pushed_at else "unknown"
-        cached = self.cache.get("commit_counts", username, repo=repo_name, week=push_week_str)
+        # Use pushed_at hash for cache key (change-based invalidation, not time-based)
+        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        cached = self.cache.get("commits_stats", username, repo=repo_name, week=push_key)
         if cached:
             return cached
 
@@ -582,7 +580,7 @@ class GitHubFetcher:
             }
 
             metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "commit_counts")
-            self.cache.set("commit_counts", username, result, repo=repo_name, week=push_week_str, metadata=metadata)
+            self.cache.set("commit_counts", username, result, repo=repo_name, week=push_key, metadata=metadata)
             return result
 
         except (GithubException, IndexError, AttributeError) as e:

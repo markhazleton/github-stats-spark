@@ -100,7 +100,6 @@ class UnifiedDataGenerator:
         
         analyzer_config = config.config.get("analyzer", {})
         self.dependency_analyzer = RepositoryDependencyAnalyzer(
-            cache=self.cache,
             config=analyzer_config
         )
 

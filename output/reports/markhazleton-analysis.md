@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-01-08 14:35:55 UTC
+**Generated**: 2026-01-08 17:21:01 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 45
 **AI Summary Rate**: 100.0%
@@ -883,7 +883,7 @@ Yelp.Api is a C# class library that provides a robust, developer-friendly wrappe
 
 ## Report Metadata
 
-- **Generation Time**: 119.9 seconds
+- **Generation Time**: 103.4 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
 - **Total AI Tokens**: 98,290
@@ -893,10 +893,13 @@ Yelp.Api is a C# class library that provides a robust, developer-friendly wrappe
 
 - GitHub API (public repositories only)
 - Anthropic Claude API (repository summaries)
+- Dependency package registries (npm, PyPI, RubyGems, Go, Maven, NuGet)
 
 ### Report Details
 
-- **Composite Score Weights**: Popularity 30% • Activity 45% • Health 25%\n- **AI Model**: claude-3-5-haiku-20241022
+- **Composite Score Weights**: Popularity 30% • Activity 45% • Health 25%
+- **Technology Currency**: Calculated from latest versions in package registries
+- **AI Model**: claude-3-5-haiku-20241022
 
 ---
 

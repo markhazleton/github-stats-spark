@@ -181,8 +181,8 @@ class TestReportGenerator:
         assert "https://github.com/user/test-repo" in entry
 
         # Check stats
-        assert "⭐ 100" in entry
-        assert "🔱 20" in entry
+        assert "Stars: 100" in entry
+        assert "Forks: 20" in entry
         assert "Python" in entry
         assert "30 commits (90d)" in entry
 

@@ -44,11 +44,11 @@ def complete_repository():
     now = datetime.now()
     return Repository(
         name="complete-project",
-        full_name="user/complete-project",
         description="A fully documented project with all metadata",
         url="https://github.com/user/complete-project",
         created_at=now - timedelta(days=730),
         updated_at=now - timedelta(days=3),
+        pushed_at=now - timedelta(days=3),
         primary_language="Python",
         language_stats={"Python": 75000, "JavaScript": 20000, "CSS": 5000},
         stars=850,
@@ -70,11 +70,11 @@ def minimal_repository():
     now = datetime.now()
     return Repository(
         name="minimal-project",
-        full_name="user/minimal-project",
         description="",
         url="https://github.com/user/minimal-project",
         created_at=now - timedelta(days=90),
         updated_at=now - timedelta(days=10),
+        pushed_at=now - timedelta(days=10),
         primary_language="Go",
         language_stats={"Go": 50000},
         stars=5,
@@ -398,11 +398,11 @@ class TestEdgeCases:
         now = datetime.now()
         empty_desc_repo = Repository(
             name="no-desc",
-            full_name="user/no-desc",
             description="",  # Empty description
             url="https://github.com/user/no-desc",
             created_at=now - timedelta(days=100),
             updated_at=now - timedelta(days=5),
+            pushed_at=now - timedelta(days=5),
             primary_language="Ruby",
             language_stats={"Ruby": 30000},
             stars=10,
@@ -432,11 +432,11 @@ class TestEdgeCases:
         now = datetime.now()
         archived_repo = Repository(
             name="archived",
-            full_name="user/archived",
             description="Archived project",
             url="https://github.com/user/archived",
             created_at=now - timedelta(days=1000),
             updated_at=now - timedelta(days=365),
+            pushed_at=now - timedelta(days=365),
             primary_language="Java",
             language_stats={"Java": 100000},
             stars=5000,
@@ -468,11 +468,11 @@ class TestEdgeCases:
         now = datetime.now()
         fork_repo = Repository(
             name="forked-lib",
-            full_name="user/forked-lib",
             description="Fork of popular library",
             url="https://github.com/user/forked-lib",
             created_at=now - timedelta(days=200),
             updated_at=now - timedelta(days=20),
+            pushed_at=now - timedelta(days=20),
             primary_language="TypeScript",
             language_stats={"TypeScript": 60000},
             stars=3,
@@ -568,11 +568,11 @@ class TestPerformance:
             now = datetime.now()
             repo = Repository(
                 name=f"project-{i}",
-                full_name=f"user/project-{i}",
                 description=f"Project {i}",
                 url=f"https://github.com/user/project-{i}",
                 created_at=now - timedelta(days=365 + i*10),
                 updated_at=now - timedelta(days=i),
+                pushed_at=now - timedelta(days=i),
                 primary_language="Python",
                 language_stats={"Python": 50000 + i*1000},
                 stars=100 + i*10,
