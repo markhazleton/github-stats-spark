@@ -2,12 +2,11 @@
 
 from __future__ import annotations
 
-import json
 from datetime import datetime, timezone
-from pathlib import Path
 from typing import Dict, List, Optional, Any
 
 from spark.cache import APICache
+from spark.time_utils import sanitize_timestamp_for_filename
 
 
 class CacheStatusTracker:
@@ -29,16 +28,15 @@ class CacheStatusTracker:
     ) -> Dict[str, Any]:
         """Get comprehensive cache status for a repository."""
         
-        # Determine current week for cache key validation
-        current_week = datetime.now(timezone.utc).strftime("%YW%V")
+        # Determine expected cache key from pushed_at timestamp
         if pushed_at:
-            pushed_date = datetime.fromisoformat(pushed_at.replace("+00:00", ""))
+            pushed_date = datetime.fromisoformat(pushed_at.replace("Z", "+00:00"))
             if pushed_date.tzinfo is None:
                 pushed_date = pushed_date.replace(tzinfo=timezone.utc)
-            push_week = pushed_date.strftime("%YW%V")
+            cache_key = sanitize_timestamp_for_filename(pushed_date)
         else:
-            push_week = "unknown"
             pushed_date = None
+            cache_key = None
 
         cache_types = [
             "commits_stats",
@@ -64,23 +62,17 @@ class CacheStatusTracker:
             
             if entry_info:
                 weeks = entry_info.get("weeks", [])
-                # Check if we have a matching week
-                # For ai_summary, week might be {week}_{hash}
-                matching_week = None
-                for w in weeks:
-                    if w.startswith(push_week):
-                        matching_week = w
-                        break
-                
-                if matching_week:
+                # Check if we have a matching cache key (timestamp-based)
+                if cache_key and cache_key in weeks:
                     exists = True
-                    # We need to read the file to get timestamp/metadata?
-                    # Or rely on manifest updated_at?
-                    # Manifest updated_at is when the cache was written.
-                    # That's what we want for "cache age".
-                    timestamp_str = entry_info.get("updated_at")
-                    if timestamp_str:
-                        timestamp = datetime.fromisoformat(timestamp_str)
+                elif not cache_key and entry_info.get("latest_week"):
+                    exists = True
+
+                # Manifest updated_at is when the cache was written.
+                # That's what we want for "cache age".
+                timestamp_str = entry_info.get("updated_at")
+                if timestamp_str:
+                    timestamp = datetime.fromisoformat(timestamp_str)
             
             if exists and timestamp:
                 if oldest_timestamp is None or timestamp < oldest_timestamp:
@@ -122,8 +114,7 @@ class CacheStatusTracker:
             "refresh_needed": refresh_needed,
             "refresh_reasons": refresh_reasons,
             "cache_files": cache_files,
-            "push_week": push_week,
-            "current_week": current_week,
+            "cache_key": cache_key,
         }
 
     def update_repositories_cache_with_status(

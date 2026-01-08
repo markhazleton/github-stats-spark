@@ -114,7 +114,8 @@ class UnifiedDataGenerator:
         refresh_summary = self.cache_manager.refresh_user_data(
             username=self.username,
             repo_list=raw_repos,
-            force_refresh=self.force_refresh
+            force_refresh=self.force_refresh,
+            include_ai_summaries=self.include_ai_summaries,
         )
         logger.info(f"Refreshed: {refresh_summary.repos_refreshed}, " 
                    f"Unchanged: {refresh_summary.repos_unchanged}, "

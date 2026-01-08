@@ -8,13 +8,15 @@ from typing import List, Dict, Any, Optional
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 from github import RateLimitExceededException
 
-from spark.cache import APICache
 from spark.config import SparkConfig
 from spark.fetcher import GitHubFetcher
 from spark.calculator import StatsCalculator
 from spark.visualizer import StatisticsVisualizer
 from spark.ranker import RepositoryRanker
 from spark.summarizer import RepositorySummarizer
+from spark.cache import APICache
+from spark.models.summary import RepositorySummary
+from spark.time_utils import sanitize_timestamp_for_filename
 from spark.dependencies.analyzer import RepositoryDependencyAnalyzer
 from spark.models import (
     UnifiedReport,
@@ -48,6 +50,7 @@ class UnifiedReportWorkflow:
         cache: Optional[APICache] = None,
         output_dir: str = "output",
         max_repos: Optional[int] = None,
+        cache_only: bool = True,
     ):
         """Initialize unified report workflow.
 
@@ -61,6 +64,7 @@ class UnifiedReportWorkflow:
         self.config = config
         self.cache = cache or APICache()
         self.output_dir = Path(output_dir)
+        self.cache_only = cache_only
 
         # Initialize components
         self.fetcher = GitHubFetcher(cache=self.cache)
@@ -69,7 +73,7 @@ class UnifiedReportWorkflow:
 
         analyzer_config = self.config.get("analyzer", {})
         self.ranker = RepositoryRanker(config=analyzer_config)
-        self.summarizer = RepositorySummarizer(cache=self.cache)
+        self.summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False)
         self.dependency_analyzer = RepositoryDependencyAnalyzer()
 
         # Track errors and warnings
@@ -170,12 +174,31 @@ class UnifiedReportWorkflow:
         fetch_start = time.time()
 
         try:
-            # Fetch user profile
-            profile_data = self.fetcher.fetch_user_profile(username)
+            # Fetch user profile (cache-only when enabled)
+            profile_data = self.cache.get("user_profile", username)
+            if not profile_data:
+                if self.cache_only:
+                    raise WorkflowError(
+                        "User profile cache missing. Run unified step 1 to populate caches.",
+                        stage="fetch_github_data",
+                    )
+                profile_data = self.fetcher.fetch_user_profile(username)
             user_profile = UserProfile.from_dict(profile_data)
 
-            # Fetch repositories (public only)
-            repos_data = self.fetcher.fetch_repositories(username, exclude_private=True)
+            # Fetch repositories (public only, cache-only when enabled)
+            exclude_private = True
+            exclude_forks = self.config.get("repositories.exclude_forks", False)
+            variant = f"list_{exclude_private}_{exclude_forks}"
+            repos_data = self.cache.get("repositories", username, repo=variant)
+            if not repos_data:
+                if self.cache_only:
+                    raise WorkflowError(
+                        "Repositories cache missing. Run unified step 1 to populate caches.",
+                        stage="fetch_github_data",
+                    )
+                repos_data = self.fetcher.fetch_repositories(
+                    username, exclude_private=exclude_private, exclude_forks=exclude_forks
+                )
             repositories = [Repository.from_dict(r) for r in repos_data]
             
             # Apply max_repos limit if specified
@@ -187,19 +210,32 @@ class UnifiedReportWorkflow:
             commit_histories: Dict[str, CommitHistory] = {}
             for repo in repositories:
                 try:
-                    # Pass pushed_at for change-based cache invalidation
-                    commits_data = self.fetcher.fetch_commit_counts(
-                        username, 
-                        repo.name, 
-                        repo_pushed_at=repo.pushed_at
+                    cache_key = sanitize_timestamp_for_filename(repo.pushed_at)
+                    commits_data = self.cache.get(
+                        "commit_counts",
+                        username,
+                        repo=repo.name,
+                        week=cache_key,
                     )
-                    # Add repository_name to the data before creating CommitHistory
+                    if not commits_data:
+                        if self.cache_only:
+                            commits_data = {
+                                "total": 0,
+                                "recent_90d": 0,
+                                "recent_180d": 0,
+                                "recent_365d": 0,
+                                "last_commit_date": None,
+                            }
+                        else:
+                            commits_data = self.fetcher.fetch_commit_counts(
+                                username,
+                                repo.name,
+                                repo_pushed_at=repo.pushed_at,
+                            )
                     commits_data["repository_name"] = repo.name
                     commit_histories[repo.name] = CommitHistory.from_dict(commits_data)
                 except Exception as e:
-                    self.logger.warn(
-                        f"Failed to fetch commits for {repo.name}: {e}"
-                    )
+                    self.logger.warn(f"Failed to fetch commits for {repo.name}: {e}")
                     self.errors.append(f"Commit fetch failed: {repo.name}")
 
             fetch_time = time.time() - fetch_start
@@ -253,22 +289,24 @@ class UnifiedReportWorkflow:
         
         for repo in github_data.repositories:
             try:
-                # Fetch actual commits (needed for heatmaps, time patterns, etc.)
-                # Use repo.pushed_at from existing object to avoid extra API call
-                commits = self.fetcher.fetch_commits(
-                    username, 
-                    repo.name, 
-                    max_commits=100,
-                    repo_pushed_at=repo.pushed_at
+                cache_key = sanitize_timestamp_for_filename(repo.pushed_at)
+
+                # Read actual commits from cache only (needed for heatmaps, time patterns, etc.)
+                commits = self.cache.get(
+                    "commits",
+                    username,
+                    repo=repo.name,
+                    week=cache_key,
                 )
                 if commits:
                     calculator.add_commits(commits)
                 
-                # Fetch language statistics
-                languages = self.fetcher.fetch_languages(
-                    username, 
-                    repo.name,
-                    repo_pushed_at=repo.pushed_at
+                # Read language statistics from cache only
+                languages = self.cache.get(
+                    "languages",
+                    username,
+                    repo=repo.name,
+                    week=cache_key,
                 )
                 if languages:
                     calculator.add_languages(languages)
@@ -389,19 +427,22 @@ class UnifiedReportWorkflow:
 
         for rank, (repo, score) in enumerate(ranked, 1):
             try:
-                # Fetch README for AI summary (with push date for caching)
-                # Use repo.pushed_at from existing object to avoid extra API call
-                readme_content = self.fetcher.fetch_readme(
-                    username, 
-                    repo.name,
-                    repo_pushed_at=repo.pushed_at
+                cache_key = sanitize_timestamp_for_filename(repo.pushed_at)
+
+                # Read README from cache only
+                readme_content = self.cache.get(
+                    "readme",
+                    username,
+                    repo=repo.name,
+                    week=cache_key,
                 )
                 
-                # Fetch language statistics (with push date for change-based caching)
-                language_stats = self.fetcher.fetch_languages(
-                    username, 
-                    repo.name,
-                    repo_pushed_at=repo.pushed_at
+                # Read language statistics from cache only
+                language_stats = self.cache.get(
+                    "languages",
+                    username,
+                    repo=repo.name,
+                    week=cache_key,
                 )
                 
                 # Update repository with language stats
@@ -412,11 +453,12 @@ class UnifiedReportWorkflow:
                 # Analyze dependencies and tech stack (before summary)
                 tech_stack = None
                 try:
-                    # Fetch dependency files from the repository (with push date for change-based caching)
-                    dependency_files = self.fetcher.fetch_dependency_files(
-                        username, 
-                        repo.name, 
-                        repo_pushed_at=repo.pushed_at
+                    # Read dependency files from cache only
+                    dependency_files = self.cache.get(
+                        "dependency_files",
+                        username,
+                        repo=repo.name,
+                        week=cache_key,
                     )
                     
                     if dependency_files:
@@ -424,36 +466,56 @@ class UnifiedReportWorkflow:
                         dep_report = self.dependency_analyzer.analyze_repository(dependency_files)
                         
                         # Convert to TechnologyStack model (if needed)
-                        from spark.models.tech_stack import TechnologyStack, Dependency as TechDependency
+                        from spark.models.tech_stack import TechnologyStack, DependencyInfo
                         tech_stack = TechnologyStack(
                             repository_name=repo.name,
                             dependencies=[
-                                TechDependency(
+                                DependencyInfo(
                                     name=detail.name,
-                                    version=detail.installed_version,
+                                    current_version=detail.current_version,
                                     ecosystem=detail.ecosystem,
-                                    category='library',  # Could be enhanced based on package type
                                 )
                                 for detail in dep_report.details
                             ],
-                            currency_score=int(dep_report.currency_score),
-                            outdated_count=dep_report.outdated_dependencies,
                         )
                 except Exception as e:
                     self.logger.debug(
                         f"Dependency analysis skipped for {repo.name}: {e}"
                     )
                 
-                # Generate summary with all collected stats (uses AI if README available)
-                summary = self.summarizer.summarize_repository(
-                    repo=repo,
-                    readme_content=readme_content,
-                    commit_history=commit_histories.get(repo.name),
-                    language_stats=language_stats,
-                    tech_stack=tech_stack,
-                    repository_owner=username,
-                    repo_pushed_at=repo.pushed_at,
+                # Use cached AI summary if available; otherwise fallback without AI
+                cached_summary = self.cache.get(
+                    "ai_summary",
+                    username,
+                    repo=repo.name,
+                    week=cache_key,
                 )
+                if cached_summary:
+                    summary = RepositorySummary(
+                        repo_id=repo.name,
+                        ai_summary=cached_summary.get("ai_summary"),
+                        generation_method=cached_summary.get("generation_method", "cached"),
+                        generation_timestamp=(
+                            datetime.fromisoformat(cached_summary["generation_timestamp"])
+                            if cached_summary.get("generation_timestamp")
+                            else None
+                        ),
+                        model_used=cached_summary.get("model_used"),
+                        tokens_used=cached_summary.get("tokens_used", 0),
+                        confidence_score=cached_summary.get("confidence_score", 0),
+                    )
+                else:
+                    summary = self.summarizer.summarize_repository(
+                        repo=repo,
+                        readme_content=readme_content,
+                        commit_history=commit_histories.get(repo.name),
+                        language_stats=language_stats,
+                        tech_stack=tech_stack,
+                        repository_owner=username,
+                        repo_pushed_at=repo.pushed_at,
+                        write_cache=False,
+                        allow_ai=False,
+                    )
 
                 analysis = RepositoryAnalysis(
                     repository=repo,

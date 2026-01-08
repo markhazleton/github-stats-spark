@@ -8,7 +8,6 @@ This module implements three-tier fallback strategy:
 
 import os
 import re
-import hashlib
 from datetime import datetime
 from typing import Optional, Dict, List, Any
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
@@ -31,7 +30,13 @@ class RepositorySummarizer:
     # Anthropic API model (Claude 3.5 Haiku - latest as of Dec 2024)
     DEFAULT_MODEL = "claude-3-5-haiku-20241022"
 
-    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None, cache: Optional[APICache] = None):
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        model: Optional[str] = None,
+        cache: Optional[APICache] = None,
+        enable_ai: bool = True,
+    ):
         """Initialize repository summarizer.
 
         Args:
@@ -52,7 +57,7 @@ class RepositorySummarizer:
 
         # Initialize Anthropic client if API key available
         self.anthropic = None
-        if self.api_key:
+        if enable_ai and self.api_key:
             try:
                 import anthropic
                 self.anthropic = anthropic.Anthropic(api_key=self.api_key)
@@ -76,6 +81,8 @@ class RepositorySummarizer:
         tech_stack: Optional["TechnologyStack"] = None,
         repository_owner: Optional[str] = None,
         repo_pushed_at: Optional[datetime] = None,
+        write_cache: bool = True,
+        allow_ai: bool = True,
     ) -> RepositorySummary:
         """Generate summary for a repository.
 
@@ -97,7 +104,7 @@ class RepositorySummarizer:
         self.logger.debug(f"Generating summary for {repo.name}")
 
         # Try AI summary first
-        if self.anthropic and readme_content:
+        if allow_ai and self.anthropic and readme_content:
             try:
                 return self._generate_ai_summary(
                     repo,
@@ -107,6 +114,7 @@ class RepositorySummarizer:
                     tech_stack,
                     repository_owner,
                     repo_pushed_at,
+                    write_cache,
                 )
             except Exception as e:
                 self.logger.warn(f"AI summary failed for {repo.name}: {e}, using fallback")
@@ -127,6 +135,7 @@ class RepositorySummarizer:
         tech_stack: Optional["TechnologyStack"] = None,
         repository_owner: Optional[str] = None,
         repo_pushed_at: Optional[datetime] = None,
+        write_cache: bool = True,
     ) -> RepositorySummary:
         """Generate AI-powered summary using Claude API with caching.
 
@@ -149,19 +158,15 @@ class RepositorySummarizer:
         )
 
         # Create cache key from repository push date (invalidate ONLY when repo changes)
-        # Import sanitization function from fetcher
-        from spark.fetcher import _sanitize_timestamp_for_filename
+        # Import sanitization function from shared utilities
+        from spark.time_utils import sanitize_timestamp_for_filename
         
         # Use repo_pushed_at if available, fallback to last_commit_date or updated_at
         cache_timestamp = repo_pushed_at or (commit_history.last_commit_date if commit_history and commit_history.last_commit_date else repo.updated_at)
-        
-        # Create hash of README content (first 1000 chars for efficiency)
-        readme_hash = hashlib.md5(readme_content[:1000].encode()).hexdigest()[:12]
 
-        # Cache key: sanitized_timestamp + readme_hash
+        # Cache key: sanitized timestamp only (per repo last commit/update)
         # This ensures cache invalidation ONLY when repository changes (new push)
-        timestamp_key = _sanitize_timestamp_for_filename(cache_timestamp)
-        cache_key = f"{timestamp_key}_{readme_hash}"
+        cache_key = sanitize_timestamp_for_filename(cache_timestamp)
 
         # Check cache first (SAVES TOKENS!)
         cached_summary = self.cache.get("ai_summary", repository_owner, repo=repo.name, week=cache_key)
@@ -208,8 +213,30 @@ class RepositorySummarizer:
             confidence_score=90,
         )
 
-        # Cache writes now handled by CacheManager (will be added later)
-        # For now, AI summaries are generated on-demand during assembly phase
+        # Write to cache for future runs
+        if write_cache and repository_owner:
+            cache_payload = {
+                "ai_summary": summary_text,
+                "generation_method": summary.generation_method,
+                "generation_timestamp": summary.generation_timestamp.isoformat(),
+                "model_used": summary.model_used,
+                "tokens_used": summary.tokens_used,
+                "confidence_score": summary.confidence_score,
+            }
+            metadata = self._build_cache_metadata(
+                repo_name=repo.name,
+                repository_owner=repository_owner,
+                cache_date=cache_timestamp,
+            )
+            self.cache.set(
+                "ai_summary",
+                repository_owner,
+                cache_payload,
+                repo=repo.name,
+                week=cache_key,
+                metadata=metadata,
+            )
+
         return summary
 
     def _generate_enhanced_fallback(

@@ -244,6 +244,11 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         help="List repositories that need cache refresh",
     )
     cache_parser.add_argument(
+        "--migrate-ai-summary",
+        action="store_true",
+        help="Migrate ai_summary cache keys to timestamp-only format",
+    )
+    cache_parser.add_argument(
         "--user",
         type=str,
         help="GitHub username (required for status commands)",
@@ -721,6 +726,7 @@ def handle_dated_analyze(args, logger):
                     commit_histories.get(repo.name),
                     repository_owner=args.user,
                     repo_pushed_at=repo.pushed_at,
+                    write_cache=False,
                 )
 
                 # Analyze dependencies (T085: Technology stack section with currency indicators)
@@ -1163,6 +1169,17 @@ def handle_cache(args, logger):
                 
                 if len(repos) > 20:
                     logger.info(f"  ... and {len(repos) - 20} more")
+
+        if args.migrate_ai_summary:
+            logger.info("Migrating ai_summary cache keys to timestamp-only format...")
+            results = cache.migrate_ai_summary_cache_keys()
+            logger.info(
+                "Migration results: "
+                f"moved={results['moved']}, "
+                f"skipped_exists={results['skipped_exists']}, "
+                f"missing={results['missing']}, "
+                f"errors={results['errors']}"
+            )
 
     except FileNotFoundError as e:
         logger.error(f"Cache file not found: {e}")

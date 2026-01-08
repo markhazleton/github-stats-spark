@@ -394,3 +394,61 @@ class APICache:
                     self.manifest.save()
                     
         return count
+
+    def migrate_ai_summary_cache_keys(self) -> Dict[str, int]:
+        """Migrate ai_summary cache keys from timestamp_hash to timestamp-only."""
+        results = {
+            "moved": 0,
+            "skipped_exists": 0,
+            "missing": 0,
+            "errors": 0,
+        }
+
+        with self._acquire_lock():
+            self.manifest.load()
+
+            for key, entry in list(self.manifest.data["entries"].items()):
+                if not key.endswith("/ai_summary"):
+                    continue
+
+                parts = key.split("/")
+                if len(parts) != 3:
+                    continue
+
+                owner, repo, category = parts
+                repo_name = None if repo == "_global_" else repo
+                weeks = list(entry.get("weeks", []))
+
+                for week in weeks:
+                    if "_" not in week:
+                        continue
+                    new_week = week.rsplit("_", 1)[0]
+                    if new_week == week:
+                        continue
+
+                    old_path = self._get_fs_path(category, owner, repo_name, week)
+                    new_path = self._get_fs_path(category, owner, repo_name, new_week)
+
+                    try:
+                        if not old_path.exists():
+                            results["missing"] += 1
+                            self.manifest.remove_week(key, week)
+                            continue
+
+                        new_path.parent.mkdir(parents=True, exist_ok=True)
+                        if new_path.exists():
+                            results["skipped_exists"] += 1
+                            old_path.unlink(missing_ok=True)
+                            self.manifest.remove_week(key, week)
+                            continue
+
+                        os.replace(old_path, new_path)
+                        results["moved"] += 1
+                        self.manifest.update_entry(key, new_week)
+                        self.manifest.remove_week(key, week)
+                    except OSError:
+                        results["errors"] += 1
+
+            self.manifest.save()
+
+        return results
