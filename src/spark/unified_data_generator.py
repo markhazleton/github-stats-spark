@@ -228,6 +228,15 @@ class UnifiedDataGenerator:
                 "pushed_at": repo.pushed_at.isoformat() if repo.pushed_at else None,
                 "total_commits": commit_history.total_commits if commit_history else 0,
                 "recent_commits_90d": commit_history.recent_90d if commit_history else 0,
+                "first_commit_date": (
+                    repo.created_at.isoformat() if repo.created_at else None
+                ),
+                "last_commit_date": (
+                    commit_history.last_commit_date.isoformat()
+                    if commit_history and commit_history.last_commit_date
+                    else (repo.pushed_at.isoformat() if repo.pushed_at else None)
+                ),
+                "commit_history": commit_history.to_dict() if commit_history else None,
                 "rank": rank,
                 "composite_score": score,
             }

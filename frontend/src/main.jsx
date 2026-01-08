@@ -22,7 +22,7 @@ import "@/styles/global.css";
 /**
  * Register Service Worker for offline functionality
  */
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && !import.meta.env.DEV) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register(import.meta.env.BASE_URL + "sw.js", {

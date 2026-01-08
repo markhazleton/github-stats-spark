@@ -31,17 +31,23 @@ export default function useRepositoryData() {
   /**
    * Fetch dashboard data and update state
    */
-  const fetchData = async () => {
+  const fetchData = async (options = {}) => {
     try {
       setLoading(true);
       setError(null);
 
-      const dashboardData = await fetchDashboardData();
+      const dashboardData = await fetchDashboardData({
+        useCache: options.useCache ?? false,
+        forceRefresh: options.forceRefresh ?? true,
+        cacheBust: options.cacheBust ?? true,
+      });
 
       setData(dashboardData);
+      return dashboardData;
     } catch (err) {
       console.error("Error in useRepositoryData:", err);
       setError(err);
+      throw err;
     } finally {
       setLoading(false);
     }
@@ -57,8 +63,8 @@ export default function useRepositoryData() {
   /**
    * Manual refetch function
    */
-  const refetch = () => {
-    fetchData();
+  const refetch = (options = {}) => {
+    return fetchData(options);
   };
 
   return {

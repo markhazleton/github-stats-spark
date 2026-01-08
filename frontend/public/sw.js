@@ -79,6 +79,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
+  if (url.pathname.endsWith('/data/repositories.json')) {
+    event.respondWith(fetch(request, { cache: 'no-store' }));
+    return;
+  }
+
   event.respondWith(
     caches.match(request)
       .then((cachedResponse) => {

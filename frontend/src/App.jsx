@@ -5,7 +5,11 @@ import RepositoryTable from "@/components/RepositoryTable/RepositoryTable";
 import LoadingState from "@/components/Common/LoadingState";
 import FilterControls from "@/components/Common/FilterControls";
 import { useTableSort } from "@/hooks/useTableSort";
-import { extractLanguages, setupBackgroundSync } from "@/services/dataService";
+import {
+  extractLanguages,
+  setupBackgroundSync,
+  clearCache,
+} from "@/services/dataService";
 import VisualizationControls from "@/components/Visualizations/VisualizationControls";
 import { deferExecution, getConnectionType } from "@/utils/performance";
 import TabBar from "@/components/Mobile/TabBar/TabBar";
@@ -45,7 +49,7 @@ import {
  */
 function App() {
   // Data fetching with custom hook
-  const { data, loading, error } = useRepositoryData();
+  const { data, loading, error, refetch } = useRepositoryData();
 
   // Toast notifications state
   const [toasts, setToasts] = useState([]);
@@ -224,6 +228,23 @@ function App() {
     );
     if (currentIndex > 0) {
       setDetailModalRepo(processedRepositories[currentIndex - 1]);
+    }
+  };
+
+  const formatGeneratedAt = (timestamp) => {
+    if (!timestamp) return "Unknown";
+    const parsed = new Date(timestamp);
+    if (Number.isNaN(parsed.getTime())) return "Unknown";
+    return parsed.toLocaleString();
+  };
+
+  const handleForceRefresh = async () => {
+    try {
+      await clearCache();
+      await refetch({ forceRefresh: true, cacheBust: true });
+      addToast("Data refreshed and cache cleared", "success", 3000);
+    } catch {
+      addToast("Refresh failed. Check the console for details.", "error", 4000);
     }
   };
 
@@ -464,14 +485,23 @@ function App() {
                   GitHub Stats Spark
                 </a>
               </p>
-              {data?.metadata && (
-                <p className="text-xs text-muted">
-                  Last updated:{" "}
-                  {new Date(data.metadata.generated_at).toLocaleDateString()}
-                  {" • "}
-                  Schema v{data.metadata.schema_version}
-                </p>
-              )}
+              <div className="flex items-center gap-md">
+                {data?.metadata && (
+                  <p className="text-xs text-muted">
+                    repositories.json:{" "}
+                    {formatGeneratedAt(data.metadata.generated_at)} {" | "}
+                    Schema v{data.metadata.schema_version}
+                  </p>
+                )}
+                <button
+                  className="btn btn-secondary"
+                  onClick={handleForceRefresh}
+                  disabled={loading}
+                  aria-label="Force refresh repositories data"
+                >
+                  {loading ? "Refreshing..." : "Force Refresh"}
+                </button>
+              </div>
             </div>
           </div>
         </footer>

@@ -8,8 +8,9 @@ const serveDataPlugin = () => ({
   name: 'serve-data',
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
-      if (req.url.startsWith('/data/')) {
-        const filePath = path.resolve(__dirname, '..', req.url.slice(1))
+      const url = new URL(req.url, 'http://localhost')
+      if (url.pathname.startsWith('/data/')) {
+        const filePath = path.resolve(__dirname, '..', url.pathname.slice(1))
         if (fs.existsSync(filePath)) {
           const content = fs.readFileSync(filePath)
           res.setHeader('Content-Type', 'application/json')

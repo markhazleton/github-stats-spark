@@ -20,6 +20,25 @@
       "pushed_at": "2026-01-07T13:14:56+00:00",
       "total_commits": 92,
       "recent_commits_90d": 92,
+      "first_commit_date": "2025-12-28T17:01:51+00:00",
+      "last_commit_date": "2026-01-07T13:14:55+00:00",
+      "commit_history": {
+        "repository_name": "github-stats-spark",
+        "total_commits": 92,
+        "recent_90d": 92,
+        "recent_180d": 92,
+        "recent_365d": 92,
+        "last_commit_date": "2026-01-07T13:14:55+00:00",
+        "patterns": [
+          "highly_active",
+          "recently_updated",
+          "accelerating"
+        ],
+        "commit_frequency": 30.67,
+        "consistency_score": 0,
+        "activity_rate": 1.022,
+        "days_since_last_commit": 1
+      },
       "rank": 1,
       "composite_score": 80.27
     },
@@ -36,6 +55,25 @@
       "pushed_at": "2026-01-05T12:28:55+00:00",
       "total_commits": 99,
       "recent_commits_90d": 71,
+      "first_commit_date": "2025-05-03T18:36:10+00:00",
+      "last_commit_date": "2026-01-05T12:28:51+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark.HttpClientUtility",
+        "total_commits": 99,
+        "recent_90d": 71,
+        "recent_180d": 75,
+        "recent_365d": 99,
+        "last_commit_date": "2026-01-05T12:28:51+00:00",
+        "patterns": [
+          "highly_active",
+          "recently_updated",
+          "accelerating"
+        ],
+        "commit_frequency": 23.67,
+        "consistency_score": 0,
+        "activity_rate": 0.789,
+        "days_since_last_commit": 3
+      },
       "rank": 2,
       "composite_score": 71.63
     },
@@ -52,6 +90,25 @@
       "pushed_at": "2025-12-29T02:22:25+00:00",
       "total_commits": 119,
       "recent_commits_90d": 56,
+      "first_commit_date": "2025-09-29T14:12:08+00:00",
+      "last_commit_date": "2025-12-29T02:20:44+00:00",
+      "commit_history": {
+        "repository_name": "git-spark",
+        "total_commits": 119,
+        "recent_90d": 56,
+        "recent_180d": 119,
+        "recent_365d": 119,
+        "last_commit_date": "2025-12-29T02:20:44+00:00",
+        "patterns": [
+          "highly_active",
+          "current",
+          "consistent"
+        ],
+        "commit_frequency": 18.67,
+        "consistency_score": 0,
+        "activity_rate": 0.622,
+        "days_since_last_commit": 10
+      },
       "rank": 3,
       "composite_score": 63.74
     },
@@ -68,6 +125,25 @@
       "pushed_at": "2026-01-06T01:01:13+00:00",
       "total_commits": 559,
       "recent_commits_90d": 80,
+      "first_commit_date": "2023-07-28T16:25:05+00:00",
+      "last_commit_date": "2026-01-06T01:00:47+00:00",
+      "commit_history": {
+        "repository_name": "markhazleton-blog",
+        "total_commits": 559,
+        "recent_90d": 80,
+        "recent_180d": 161,
+        "recent_365d": 265,
+        "last_commit_date": "2026-01-06T01:00:47+00:00",
+        "patterns": [
+          "highly_active",
+          "recently_updated",
+          "consistent"
+        ],
+        "commit_frequency": 26.67,
+        "consistency_score": 0,
+        "activity_rate": 0.889,
+        "days_since_last_commit": 2
+      },
       "rank": 4,
       "composite_score": 62.51
     },
@@ -84,6 +160,24 @@
       "pushed_at": "2026-01-05T15:13:23+00:00",
       "total_commits": 587,
       "recent_commits_90d": 14,
+      "first_commit_date": "2019-04-25T18:45:29+00:00",
+      "last_commit_date": "2026-01-05T15:11:15+00:00",
+      "commit_history": {
+        "repository_name": "SampleMvcCRUD",
+        "total_commits": 587,
+        "recent_90d": 14,
+        "recent_180d": 21,
+        "recent_365d": 30,
+        "last_commit_date": "2026-01-05T15:11:15+00:00",
+        "patterns": [
+          "active",
+          "recently_updated"
+        ],
+        "commit_frequency": 4.67,
+        "consistency_score": 0,
+        "activity_rate": 0.156,
+        "days_since_last_commit": 3
+      },
       "rank": 5,
       "composite_score": 44.1
     },
@@ -100,6 +194,24 @@
       "pushed_at": "2026-01-05T03:32:58+00:00",
       "total_commits": 91,
       "recent_commits_90d": 24,
+      "first_commit_date": "2025-07-29T16:30:33+00:00",
+      "last_commit_date": "2026-01-05T03:30:17+00:00",
+      "commit_history": {
+        "repository_name": "tailwind-demo",
+        "total_commits": 91,
+        "recent_90d": 24,
+        "recent_180d": 91,
+        "recent_365d": 91,
+        "last_commit_date": "2026-01-05T03:30:17+00:00",
+        "patterns": [
+          "active",
+          "recently_updated"
+        ],
+        "commit_frequency": 8.0,
+        "consistency_score": 0,
+        "activity_rate": 0.267,
+        "days_since_last_commit": 3
+      },
       "rank": 6,
       "composite_score": 34.35
     },
@@ -116,6 +228,24 @@
       "pushed_at": "2025-12-23T19:07:37+00:00",
       "total_commits": 61,
       "recent_commits_90d": 15,
+      "first_commit_date": "2021-09-30T13:38:06+00:00",
+      "last_commit_date": "2025-12-23T19:07:32+00:00",
+      "commit_history": {
+        "repository_name": "RESTRunner",
+        "total_commits": 61,
+        "recent_90d": 15,
+        "recent_180d": 20,
+        "recent_365d": 25,
+        "last_commit_date": "2025-12-23T19:07:32+00:00",
+        "patterns": [
+          "active",
+          "current"
+        ],
+        "commit_frequency": 5.0,
+        "consistency_score": 0,
+        "activity_rate": 0.167,
+        "days_since_last_commit": 16
+      },
       "rank": 7,
       "composite_score": 33.4
     },
@@ -132,6 +262,24 @@
       "pushed_at": "2025-12-27T16:54:00+00:00",
       "total_commits": 252,
       "recent_commits_90d": 18,
+      "first_commit_date": "2024-01-11T17:25:12+00:00",
+      "last_commit_date": "2025-12-27T16:53:56+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark",
+        "total_commits": 252,
+        "recent_90d": 18,
+        "recent_180d": 46,
+        "recent_365d": 79,
+        "last_commit_date": "2025-12-27T16:53:56+00:00",
+        "patterns": [
+          "active",
+          "current"
+        ],
+        "commit_frequency": 6.0,
+        "consistency_score": 0,
+        "activity_rate": 0.2,
+        "days_since_last_commit": 12
+      },
       "rank": 8,
       "composite_score": 32.99
     },
@@ -148,6 +296,25 @@
       "pushed_at": "2026-01-05T03:22:48+00:00",
       "total_commits": 90,
       "recent_commits_90d": 20,
+      "first_commit_date": "2022-06-06T13:41:25+00:00",
+      "last_commit_date": "2026-01-05T03:21:14+00:00",
+      "commit_history": {
+        "repository_name": "js-dev-env",
+        "total_commits": 90,
+        "recent_90d": 20,
+        "recent_180d": 46,
+        "recent_365d": 62,
+        "last_commit_date": "2026-01-05T03:21:14+00:00",
+        "patterns": [
+          "active",
+          "recently_updated",
+          "consistent"
+        ],
+        "commit_frequency": 6.67,
+        "consistency_score": 0,
+        "activity_rate": 0.222,
+        "days_since_last_commit": 3
+      },
       "rank": 9,
       "composite_score": 32.45
     },
@@ -164,6 +331,23 @@
       "pushed_at": "2026-01-01T18:27:30+00:00",
       "total_commits": 53,
       "recent_commits_90d": 20,
+      "first_commit_date": "2025-07-26T17:21:18+00:00",
+      "last_commit_date": "2025-10-21T13:47:50+00:00",
+      "commit_history": {
+        "repository_name": "react-native-web-start",
+        "total_commits": 53,
+        "recent_90d": 20,
+        "recent_180d": 53,
+        "recent_365d": 53,
+        "last_commit_date": "2025-10-21T13:47:50+00:00",
+        "patterns": [
+          "active"
+        ],
+        "commit_frequency": 6.67,
+        "consistency_score": 0,
+        "activity_rate": 0.222,
+        "days_since_last_commit": 79
+      },
       "rank": 10,
       "composite_score": 29.48
     },
@@ -180,6 +364,25 @@
       "pushed_at": "2026-01-04T17:47:32+00:00",
       "total_commits": 62,
       "recent_commits_90d": 15,
+      "first_commit_date": "2025-09-03T17:53:02+00:00",
+      "last_commit_date": "2026-01-04T17:47:31+00:00",
+      "commit_history": {
+        "repository_name": "Texecon",
+        "total_commits": 62,
+        "recent_90d": 15,
+        "recent_180d": 62,
+        "recent_365d": 62,
+        "last_commit_date": "2026-01-04T17:47:31+00:00",
+        "patterns": [
+          "active",
+          "recently_updated",
+          "declining"
+        ],
+        "commit_frequency": 5.0,
+        "consistency_score": 0,
+        "activity_rate": 0.167,
+        "days_since_last_commit": 4
+      },
       "rank": 11,
       "composite_score": 29.02
     },
@@ -196,6 +399,25 @@
       "pushed_at": "2025-12-28T16:59:15+00:00",
       "total_commits": 66,
       "recent_commits_90d": 30,
+      "first_commit_date": "2023-01-30T15:23:30+00:00",
+      "last_commit_date": "2025-12-28T16:59:08+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark.ArtSpark",
+        "total_commits": 66,
+        "recent_90d": 30,
+        "recent_180d": 30,
+        "recent_365d": 56,
+        "last_commit_date": "2025-12-28T16:59:08+00:00",
+        "patterns": [
+          "highly_active",
+          "current",
+          "accelerating"
+        ],
+        "commit_frequency": 10.0,
+        "consistency_score": 0,
+        "activity_rate": 0.333,
+        "days_since_last_commit": 11
+      },
       "rank": 12,
       "composite_score": 28.97
     },
@@ -212,6 +434,25 @@
       "pushed_at": "2026-01-04T18:02:36+00:00",
       "total_commits": 75,
       "recent_commits_90d": 2,
+      "first_commit_date": "2025-09-01T13:10:13+00:00",
+      "last_commit_date": "2026-01-04T18:02:32+00:00",
+      "commit_history": {
+        "repository_name": "MechanicsOfMotherhood",
+        "total_commits": 75,
+        "recent_90d": 2,
+        "recent_180d": 75,
+        "recent_365d": 75,
+        "last_commit_date": "2026-01-04T18:02:32+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated",
+          "declining"
+        ],
+        "commit_frequency": 0.67,
+        "consistency_score": 0,
+        "activity_rate": 0.022,
+        "days_since_last_commit": 4
+      },
       "rank": 13,
       "composite_score": 27.1
     },
@@ -228,6 +469,24 @@
       "pushed_at": "2026-01-01T13:54:03+00:00",
       "total_commits": 79,
       "recent_commits_90d": 12,
+      "first_commit_date": "2023-03-24T12:48:38+00:00",
+      "last_commit_date": "2025-11-16T13:19:33+00:00",
+      "commit_history": {
+        "repository_name": "Slurper",
+        "total_commits": 79,
+        "recent_90d": 12,
+        "recent_180d": 13,
+        "recent_365d": 36,
+        "last_commit_date": "2025-11-16T13:19:33+00:00",
+        "patterns": [
+          "active",
+          "accelerating"
+        ],
+        "commit_frequency": 4.0,
+        "consistency_score": 0,
+        "activity_rate": 0.133,
+        "days_since_last_commit": 53
+      },
       "rank": 14,
       "composite_score": 27.06
     },
@@ -244,6 +503,24 @@
       "pushed_at": "2026-01-05T03:11:48+00:00",
       "total_commits": 119,
       "recent_commits_90d": 10,
+      "first_commit_date": "2024-10-11T23:31:56+00:00",
+      "last_commit_date": "2026-01-05T03:11:45+00:00",
+      "commit_history": {
+        "repository_name": "ReactSparkPortfolio",
+        "total_commits": 119,
+        "recent_90d": 10,
+        "recent_180d": 25,
+        "recent_365d": 79,
+        "last_commit_date": "2026-01-05T03:11:45+00:00",
+        "patterns": [
+          "active",
+          "recently_updated"
+        ],
+        "commit_frequency": 3.33,
+        "consistency_score": 0,
+        "activity_rate": 0.111,
+        "days_since_last_commit": 3
+      },
       "rank": 15,
       "composite_score": 26.67
     },
@@ -260,6 +537,25 @@
       "pushed_at": "2026-01-03T23:42:55+00:00",
       "total_commits": 892,
       "recent_commits_90d": 1,
+      "first_commit_date": "2022-10-25T18:06:22+00:00",
+      "last_commit_date": "2026-01-03T23:37:39+00:00",
+      "commit_history": {
+        "repository_name": "SpotifyAPI-NET",
+        "total_commits": 892,
+        "recent_90d": 1,
+        "recent_180d": 1,
+        "recent_365d": 8,
+        "last_commit_date": "2026-01-03T23:37:39+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated",
+          "accelerating"
+        ],
+        "commit_frequency": 0.33,
+        "consistency_score": 0,
+        "activity_rate": 0.011,
+        "days_since_last_commit": 4
+      },
       "rank": 16,
       "composite_score": 25.0
     },
@@ -276,6 +572,24 @@
       "pushed_at": "2025-12-07T23:45:31+00:00",
       "total_commits": 21,
       "recent_commits_90d": 13,
+      "first_commit_date": "2024-03-07T13:46:50+00:00",
+      "last_commit_date": "2025-12-07T23:45:17+00:00",
+      "commit_history": {
+        "repository_name": "KeyPressCounter",
+        "total_commits": 21,
+        "recent_90d": 13,
+        "recent_180d": 13,
+        "recent_365d": 14,
+        "last_commit_date": "2025-12-07T23:45:17+00:00",
+        "patterns": [
+          "active",
+          "accelerating"
+        ],
+        "commit_frequency": 4.33,
+        "consistency_score": 0,
+        "activity_rate": 0.144,
+        "days_since_last_commit": 31
+      },
       "rank": 17,
       "composite_score": 24.47
     },
@@ -292,6 +606,24 @@
       "pushed_at": "2025-11-16T23:08:34+00:00",
       "total_commits": 39,
       "recent_commits_90d": 6,
+      "first_commit_date": "2024-04-06T14:56:06+00:00",
+      "last_commit_date": "2025-11-16T23:06:10+00:00",
+      "commit_history": {
+        "repository_name": "FastEndpointApi",
+        "total_commits": 39,
+        "recent_90d": 6,
+        "recent_180d": 6,
+        "recent_365d": 18,
+        "last_commit_date": "2025-11-16T23:06:10+00:00",
+        "patterns": [
+          "maintained",
+          "accelerating"
+        ],
+        "commit_frequency": 2.0,
+        "consistency_score": 0,
+        "activity_rate": 0.067,
+        "days_since_last_commit": 53
+      },
       "rank": 18,
       "composite_score": 23.82
     },
@@ -308,6 +640,25 @@
       "pushed_at": "2025-12-18T05:31:52+00:00",
       "total_commits": 29,
       "recent_commits_90d": 19,
+      "first_commit_date": "2023-09-18T01:28:29+00:00",
+      "last_commit_date": "2025-12-18T05:31:49+00:00",
+      "commit_history": {
+        "repository_name": "ConcurrentProcessing",
+        "total_commits": 29,
+        "recent_90d": 19,
+        "recent_180d": 20,
+        "recent_365d": 20,
+        "last_commit_date": "2025-12-18T05:31:49+00:00",
+        "patterns": [
+          "active",
+          "current",
+          "accelerating"
+        ],
+        "commit_frequency": 6.33,
+        "consistency_score": 0,
+        "activity_rate": 0.211,
+        "days_since_last_commit": 21
+      },
       "rank": 19,
       "composite_score": 23.7
     },
@@ -324,6 +675,25 @@
       "pushed_at": "2026-01-05T14:34:02+00:00",
       "total_commits": 42,
       "recent_commits_90d": 3,
+      "first_commit_date": "2020-07-02T20:43:20+00:00",
+      "last_commit_date": "2026-01-05T14:14:16+00:00",
+      "commit_history": {
+        "repository_name": "SolidSample",
+        "total_commits": 42,
+        "recent_90d": 3,
+        "recent_180d": 3,
+        "recent_365d": 3,
+        "last_commit_date": "2026-01-05T14:14:16+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated",
+          "accelerating"
+        ],
+        "commit_frequency": 1.0,
+        "consistency_score": 0,
+        "activity_rate": 0.033,
+        "days_since_last_commit": 3
+      },
       "rank": 20,
       "composite_score": 23.4
     },
@@ -340,6 +710,25 @@
       "pushed_at": "2026-01-02T06:38:54+00:00",
       "total_commits": 14,
       "recent_commits_90d": 3,
+      "first_commit_date": "2020-03-29T03:22:14+00:00",
+      "last_commit_date": "2026-01-02T06:38:50+00:00",
+      "commit_history": {
+        "repository_name": "RazorPages",
+        "total_commits": 14,
+        "recent_90d": 3,
+        "recent_180d": 3,
+        "recent_365d": 5,
+        "last_commit_date": "2026-01-02T06:38:50+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated",
+          "accelerating"
+        ],
+        "commit_frequency": 1.0,
+        "consistency_score": 0,
+        "activity_rate": 0.033,
+        "days_since_last_commit": 6
+      },
       "rank": 21,
       "composite_score": 23.38
     },
@@ -356,6 +745,24 @@
       "pushed_at": "2025-12-23T00:22:00+00:00",
       "total_commits": 28,
       "recent_commits_90d": 18,
+      "first_commit_date": "2023-10-24T13:14:08+00:00",
+      "last_commit_date": "2025-12-07T06:07:45+00:00",
+      "commit_history": {
+        "repository_name": "InquirySpark",
+        "total_commits": 28,
+        "recent_90d": 18,
+        "recent_180d": 18,
+        "recent_365d": 18,
+        "last_commit_date": "2025-12-07T06:07:45+00:00",
+        "patterns": [
+          "active",
+          "accelerating"
+        ],
+        "commit_frequency": 6.0,
+        "consistency_score": 0,
+        "activity_rate": 0.2,
+        "days_since_last_commit": 32
+      },
       "rank": 22,
       "composite_score": 23.13
     },
@@ -372,6 +779,25 @@
       "pushed_at": "2025-12-28T21:59:38+00:00",
       "total_commits": 139,
       "recent_commits_90d": 4,
+      "first_commit_date": "2021-04-17T15:50:07+00:00",
+      "last_commit_date": "2025-12-28T21:59:38+00:00",
+      "commit_history": {
+        "repository_name": "markhazleton",
+        "total_commits": 139,
+        "recent_90d": 4,
+        "recent_180d": 25,
+        "recent_365d": 49,
+        "last_commit_date": "2025-12-28T21:59:38+00:00",
+        "patterns": [
+          "maintained",
+          "current",
+          "declining"
+        ],
+        "commit_frequency": 1.33,
+        "consistency_score": 0,
+        "activity_rate": 0.044,
+        "days_since_last_commit": 11
+      },
       "rank": 23,
       "composite_score": 22.18
     },
@@ -388,6 +814,25 @@
       "pushed_at": "2026-01-05T13:34:17+00:00",
       "total_commits": 14,
       "recent_commits_90d": 6,
+      "first_commit_date": "2025-05-27T15:14:29+00:00",
+      "last_commit_date": "2026-01-05T13:34:10+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark.PrismSpark",
+        "total_commits": 14,
+        "recent_90d": 6,
+        "recent_180d": 6,
+        "recent_365d": 14,
+        "last_commit_date": "2026-01-05T13:34:10+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated",
+          "accelerating"
+        ],
+        "commit_frequency": 2.0,
+        "consistency_score": 0,
+        "activity_rate": 0.067,
+        "days_since_last_commit": 3
+      },
       "rank": 24,
       "composite_score": 21.6
     },
@@ -404,6 +849,25 @@
       "pushed_at": "2025-12-27T20:30:21+00:00",
       "total_commits": 18,
       "recent_commits_90d": 18,
+      "first_commit_date": "2025-10-29T00:44:37+00:00",
+      "last_commit_date": "2025-12-27T03:30:06+00:00",
+      "commit_history": {
+        "repository_name": "DecisionSpark",
+        "total_commits": 18,
+        "recent_90d": 18,
+        "recent_180d": 18,
+        "recent_365d": 18,
+        "last_commit_date": "2025-12-27T03:30:06+00:00",
+        "patterns": [
+          "active",
+          "current",
+          "accelerating"
+        ],
+        "commit_frequency": 6.0,
+        "consistency_score": 0,
+        "activity_rate": 0.2,
+        "days_since_last_commit": 12
+      },
       "rank": 25,
       "composite_score": 20.58
     },
@@ -420,6 +884,23 @@
       "pushed_at": "2025-11-17T00:31:10+00:00",
       "total_commits": 130,
       "recent_commits_90d": 0,
+      "first_commit_date": "2017-09-19T20:17:04+00:00",
+      "last_commit_date": "2025-02-26T12:32:00+00:00",
+      "commit_history": {
+        "repository_name": "WebProjectMechanics",
+        "total_commits": 130,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 1,
+        "last_commit_date": "2025-02-26T12:32:00+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 316
+      },
       "rank": 26,
       "composite_score": 20.23
     },
@@ -436,6 +917,24 @@
       "pushed_at": "2025-12-19T21:04:54+00:00",
       "total_commits": 194,
       "recent_commits_90d": 4,
+      "first_commit_date": "2021-02-03T15:03:16+00:00",
+      "last_commit_date": "2025-10-24T21:39:39+00:00",
+      "commit_history": {
+        "repository_name": "DesignPatternsInCSharp",
+        "total_commits": 194,
+        "recent_90d": 4,
+        "recent_180d": 5,
+        "recent_365d": 5,
+        "last_commit_date": "2025-10-24T21:39:39+00:00",
+        "patterns": [
+          "maintained",
+          "accelerating"
+        ],
+        "commit_frequency": 1.33,
+        "consistency_score": 0,
+        "activity_rate": 0.044,
+        "days_since_last_commit": 76
+      },
       "rank": 27,
       "composite_score": 19.73
     },
@@ -452,6 +951,25 @@
       "pushed_at": "2025-12-29T00:58:34+00:00",
       "total_commits": 51,
       "recent_commits_90d": 4,
+      "first_commit_date": "2022-06-08T17:23:26+00:00",
+      "last_commit_date": "2025-12-29T00:58:21+00:00",
+      "commit_history": {
+        "repository_name": "csharp-blazor-bug-tracking",
+        "total_commits": 51,
+        "recent_90d": 4,
+        "recent_180d": 4,
+        "recent_365d": 4,
+        "last_commit_date": "2025-12-29T00:58:21+00:00",
+        "patterns": [
+          "maintained",
+          "current",
+          "accelerating"
+        ],
+        "commit_frequency": 1.33,
+        "consistency_score": 0,
+        "activity_rate": 0.044,
+        "days_since_last_commit": 10
+      },
       "rank": 28,
       "composite_score": 19.28
     },
@@ -468,6 +986,24 @@
       "pushed_at": "2025-12-04T03:15:14+00:00",
       "total_commits": 54,
       "recent_commits_90d": 14,
+      "first_commit_date": "2022-08-24T18:49:45+00:00",
+      "last_commit_date": "2025-12-04T03:14:42+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark.Bootswatch",
+        "total_commits": 54,
+        "recent_90d": 14,
+        "recent_180d": 18,
+        "recent_365d": 40,
+        "last_commit_date": "2025-12-04T03:14:42+00:00",
+        "patterns": [
+          "active",
+          "accelerating"
+        ],
+        "commit_frequency": 4.67,
+        "consistency_score": 0,
+        "activity_rate": 0.156,
+        "days_since_last_commit": 35
+      },
       "rank": 29,
       "composite_score": 19.22
     },
@@ -484,6 +1020,24 @@
       "pushed_at": "2025-12-04T11:54:36+00:00",
       "total_commits": 114,
       "recent_commits_90d": 15,
+      "first_commit_date": "2022-08-07T16:37:21+00:00",
+      "last_commit_date": "2025-12-04T11:54:32+00:00",
+      "commit_history": {
+        "repository_name": "AsyncDemo",
+        "total_commits": 114,
+        "recent_90d": 15,
+        "recent_180d": 15,
+        "recent_365d": 28,
+        "last_commit_date": "2025-12-04T11:54:32+00:00",
+        "patterns": [
+          "active",
+          "accelerating"
+        ],
+        "commit_frequency": 5.0,
+        "consistency_score": 0,
+        "activity_rate": 0.167,
+        "days_since_last_commit": 35
+      },
       "rank": 30,
       "composite_score": 19.1
     },
@@ -500,6 +1054,25 @@
       "pushed_at": "2025-12-09T02:43:01+00:00",
       "total_commits": 281,
       "recent_commits_90d": 1,
+      "first_commit_date": "2019-06-20T12:14:01+00:00",
+      "last_commit_date": "2025-12-09T02:42:56+00:00",
+      "commit_history": {
+        "repository_name": "barcodelib",
+        "total_commits": 281,
+        "recent_90d": 1,
+        "recent_180d": 1,
+        "recent_365d": 2,
+        "last_commit_date": "2025-12-09T02:42:56+00:00",
+        "patterns": [
+          "maintained",
+          "current",
+          "accelerating"
+        ],
+        "commit_frequency": 0.33,
+        "consistency_score": 0,
+        "activity_rate": 0.011,
+        "days_since_last_commit": 30
+      },
       "rank": 31,
       "composite_score": 18.83
     },
@@ -516,6 +1089,23 @@
       "pushed_at": "2026-01-01T18:14:14+00:00",
       "total_commits": 30,
       "recent_commits_90d": 0,
+      "first_commit_date": "2025-06-19T21:15:05+00:00",
+      "last_commit_date": "2025-07-03T02:14:56+00:00",
+      "commit_history": {
+        "repository_name": "TeachSpark",
+        "total_commits": 30,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 30,
+        "last_commit_date": "2025-07-03T02:14:56+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 189
+      },
       "rank": 32,
       "composite_score": 17.51
     },
@@ -532,6 +1122,24 @@
       "pushed_at": "2025-12-08T00:03:40+00:00",
       "total_commits": 45,
       "recent_commits_90d": 11,
+      "first_commit_date": "2023-11-09T20:25:04+00:00",
+      "last_commit_date": "2025-12-08T00:03:35+00:00",
+      "commit_history": {
+        "repository_name": "TaskListProcessor",
+        "total_commits": 45,
+        "recent_90d": 11,
+        "recent_180d": 20,
+        "recent_365d": 30,
+        "last_commit_date": "2025-12-08T00:03:35+00:00",
+        "patterns": [
+          "active",
+          "consistent"
+        ],
+        "commit_frequency": 3.67,
+        "consistency_score": 0,
+        "activity_rate": 0.122,
+        "days_since_last_commit": 31
+      },
       "rank": 33,
       "composite_score": 17.31
     },
@@ -548,6 +1156,24 @@
       "pushed_at": "2025-11-03T13:22:36+00:00",
       "total_commits": 41,
       "recent_commits_90d": 4,
+      "first_commit_date": "2021-04-18T16:34:26+00:00",
+      "last_commit_date": "2025-11-03T13:19:07+00:00",
+      "commit_history": {
+        "repository_name": "markhazleton.github.io",
+        "total_commits": 41,
+        "recent_90d": 4,
+        "recent_180d": 8,
+        "recent_365d": 15,
+        "last_commit_date": "2025-11-03T13:19:07+00:00",
+        "patterns": [
+          "maintained",
+          "consistent"
+        ],
+        "commit_frequency": 1.33,
+        "consistency_score": 0,
+        "activity_rate": 0.044,
+        "days_since_last_commit": 66
+      },
       "rank": 34,
       "composite_score": 15.32
     },
@@ -564,6 +1190,24 @@
       "pushed_at": "2025-11-19T02:09:52+00:00",
       "total_commits": 81,
       "recent_commits_90d": 0,
+      "first_commit_date": "2017-11-06T16:04:58+00:00",
+      "last_commit_date": "2025-09-15T13:50:41+00:00",
+      "commit_history": {
+        "repository_name": "sql2csv",
+        "total_commits": 81,
+        "recent_90d": 0,
+        "recent_180d": 41,
+        "recent_365d": 41,
+        "last_commit_date": "2025-09-15T13:50:41+00:00",
+        "patterns": [
+          "minimal_activity",
+          "declining"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 115
+      },
       "rank": 35,
       "composite_score": 15.04
     },
@@ -580,6 +1224,24 @@
       "pushed_at": "2025-12-02T04:08:09+00:00",
       "total_commits": 99,
       "recent_commits_90d": 4,
+      "first_commit_date": "2023-02-22T17:10:04+00:00",
+      "last_commit_date": "2025-12-02T04:07:49+00:00",
+      "commit_history": {
+        "repository_name": "TriviaSpark",
+        "total_commits": 99,
+        "recent_90d": 4,
+        "recent_180d": 4,
+        "recent_365d": 5,
+        "last_commit_date": "2025-12-02T04:07:49+00:00",
+        "patterns": [
+          "maintained",
+          "accelerating"
+        ],
+        "commit_frequency": 1.33,
+        "consistency_score": 0,
+        "activity_rate": 0.044,
+        "days_since_last_commit": 37
+      },
       "rank": 36,
       "composite_score": 14.77
     },
@@ -596,6 +1258,24 @@
       "pushed_at": "2025-12-03T01:16:04+00:00",
       "total_commits": 14,
       "recent_commits_90d": 1,
+      "first_commit_date": "2023-04-20T16:41:16+00:00",
+      "last_commit_date": "2025-12-03T00:14:42+00:00",
+      "commit_history": {
+        "repository_name": "DataAnalysisDemo",
+        "total_commits": 14,
+        "recent_90d": 1,
+        "recent_180d": 6,
+        "recent_365d": 6,
+        "last_commit_date": "2025-12-03T00:14:42+00:00",
+        "patterns": [
+          "maintained",
+          "declining"
+        ],
+        "commit_frequency": 0.33,
+        "consistency_score": 0,
+        "activity_rate": 0.011,
+        "days_since_last_commit": 36
+      },
       "rank": 37,
       "composite_score": 13.79
     },
@@ -612,6 +1292,24 @@
       "pushed_at": "2025-08-18T02:15:18+00:00",
       "total_commits": 119,
       "recent_commits_90d": 0,
+      "first_commit_date": "2023-09-08T16:08:13+00:00",
+      "last_commit_date": "2025-08-18T02:15:15+00:00",
+      "commit_history": {
+        "repository_name": "PHPDocSpark",
+        "total_commits": 119,
+        "recent_90d": 0,
+        "recent_180d": 36,
+        "recent_365d": 36,
+        "last_commit_date": "2025-08-18T02:15:15+00:00",
+        "patterns": [
+          "minimal_activity",
+          "declining"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 143
+      },
       "rank": 38,
       "composite_score": 9.31
     },
@@ -628,6 +1326,23 @@
       "pushed_at": "2025-05-04T02:20:05+00:00",
       "total_commits": 345,
       "recent_commits_90d": 0,
+      "first_commit_date": "2024-03-28T18:29:46+00:00",
+      "last_commit_date": "2025-05-04T02:20:01+00:00",
+      "commit_history": {
+        "repository_name": "google-maps",
+        "total_commits": 345,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 1,
+        "last_commit_date": "2025-05-04T02:20:01+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 249
+      },
       "rank": 39,
       "composite_score": 0.0
     },
@@ -644,6 +1359,23 @@
       "pushed_at": "2025-05-08T21:21:55+00:00",
       "total_commits": 162,
       "recent_commits_90d": 0,
+      "first_commit_date": "2023-02-09T16:14:08+00:00",
+      "last_commit_date": "2025-05-08T21:21:52+00:00",
+      "commit_history": {
+        "repository_name": "HttpClientDecoratorPattern",
+        "total_commits": 162,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 8,
+        "last_commit_date": "2025-05-08T21:21:52+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 245
+      },
       "rank": 40,
       "composite_score": 0.0
     },
@@ -660,6 +1392,23 @@
       "pushed_at": "2025-03-12T16:28:17+00:00",
       "total_commits": 136,
       "recent_commits_90d": 0,
+      "first_commit_date": "2025-03-16T21:41:19+00:00",
+      "last_commit_date": "2025-03-12T16:28:16+00:00",
+      "commit_history": {
+        "repository_name": "openai-dotnet",
+        "total_commits": 136,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 14,
+        "last_commit_date": "2025-03-12T16:28:16+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 302
+      },
       "rank": 41,
       "composite_score": 0.0
     },
@@ -676,6 +1425,23 @@
       "pushed_at": "2025-04-27T04:54:17+00:00",
       "total_commits": 18,
       "recent_commits_90d": 0,
+      "first_commit_date": "2024-12-31T04:00:15+00:00",
+      "last_commit_date": "2025-04-27T04:54:14+00:00",
+      "commit_history": {
+        "repository_name": "PromptSpark.Chat",
+        "total_commits": 18,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 2,
+        "last_commit_date": "2025-04-27T04:54:14+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 256
+      },
       "rank": 42,
       "composite_score": 0.0
     },
@@ -692,6 +1458,23 @@
       "pushed_at": "2025-05-13T23:08:19+00:00",
       "total_commits": 91,
       "recent_commits_90d": 0,
+      "first_commit_date": "2020-07-08T16:39:45+00:00",
+      "last_commit_date": "2025-05-13T23:08:16+00:00",
+      "commit_history": {
+        "repository_name": "startbootstrap-modern-business",
+        "total_commits": 91,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 4,
+        "last_commit_date": "2025-05-13T23:08:16+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 240
+      },
       "rank": 43,
       "composite_score": 0.0
     },
@@ -708,6 +1491,23 @@
       "pushed_at": "2025-05-26T04:15:01+00:00",
       "total_commits": 44,
       "recent_commits_90d": 0,
+      "first_commit_date": "2024-07-25T11:49:27+00:00",
+      "last_commit_date": "2025-05-26T04:14:54+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark.SharedKernel",
+        "total_commits": 44,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 2,
+        "last_commit_date": "2025-05-26T04:14:54+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 227
+      },
       "rank": 44,
       "composite_score": 0.0
     },
@@ -724,12 +1524,29 @@
       "pushed_at": "2025-05-04T02:35:34+00:00",
       "total_commits": 42,
       "recent_commits_90d": 0,
+      "first_commit_date": "2022-08-10T16:28:06+00:00",
+      "last_commit_date": "2025-05-04T02:35:29+00:00",
+      "commit_history": {
+        "repository_name": "Yelp.Api",
+        "total_commits": 42,
+        "recent_90d": 0,
+        "recent_180d": 0,
+        "recent_365d": 1,
+        "last_commit_date": "2025-05-04T02:35:29+00:00",
+        "patterns": [
+          "minimal_activity"
+        ],
+        "commit_frequency": 0.0,
+        "consistency_score": 0,
+        "activity_rate": 0.0,
+        "days_since_last_commit": 249
+      },
       "rank": 45,
       "composite_score": 0.0
     }
   ],
   "metadata": {
-    "generated_at": "2026-01-08T22:58:18.656539+00:00",
+    "generated_at": "2026-01-08T23:28:11.421154+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }

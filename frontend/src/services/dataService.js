@@ -62,9 +62,11 @@ export async function fetchDashboardData({
   forceRefresh = false,
   maxRetries = 3,
   retryDelay = 2000,
+  cacheBust = true,
 } = {}) {
   const baseUrl = getDataBaseUrl();
-  const url = `${baseUrl}/repositories.json`;
+  const cacheToken = cacheBust ? `?v=${Date.now()}` : "";
+  const url = `${baseUrl}/repositories.json${cacheToken}`;
   const isOnline = navigator.onLine;
 
   // Try cache first if enabled and not forcing refresh
@@ -90,7 +92,7 @@ export async function fetchDashboardData({
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url, { cache: "no-store" });
 
       if (!response.ok) {
         throw new Error(
