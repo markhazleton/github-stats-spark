@@ -1,11 +1,12 @@
 {
   "entries": {
     "markhazleton/list_True_False/repositories": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T21:40:21.302596+00:00"
+      "updated_at": "2026-01-08T14:13:17.865321+00:00"
     },
     "markhazleton/AsyncDemo/languages": {
       "latest_week": "2025W49",
@@ -474,7 +475,7 @@
       "weeks": [
         "2025W46"
       ],
-      "updated_at": "2026-01-04T22:54:06.988979+00:00"
+      "updated_at": "2026-01-08T14:29:07.446114+00:00"
     },
     "markhazleton/DecisionSpark/readme": {
       "latest_week": "2025W52",
@@ -621,39 +622,44 @@
       "updated_at": "2026-01-04T21:59:57.024075+00:00"
     },
     "markhazleton/js-dev-env/languages": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:00:00.761648+00:00"
+      "updated_at": "2026-01-08T14:14:43.898141+00:00"
     },
     "markhazleton/js-dev-env/commit_counts": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:00:02.535705+00:00"
+      "updated_at": "2026-01-08T14:14:46.164115+00:00"
     },
     "markhazleton/js-dev-env/commits_stats": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:00:46.022946+00:00"
+      "updated_at": "2026-01-08T14:15:33.726281+00:00"
     },
     "markhazleton/js-dev-env/ai_summary": {
-      "latest_week": "2025W49_7a55a120a539",
+      "latest_week": "2026W02_7a55a120a539",
       "weeks": [
+        "2026W02_7a55a120a539",
         "2025W49_7a55a120a539"
       ],
-      "updated_at": "2026-01-04T22:00:59.536096+00:00"
+      "updated_at": "2026-01-08T14:15:46.770956+00:00"
     },
     "markhazleton/github-stats-spark/commits": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:01:07.496668+00:00"
+      "updated_at": "2026-01-08T14:27:48.884705+00:00"
     },
     "markhazleton/google-maps/commits": {
       "latest_week": "2025W18",
@@ -677,39 +683,44 @@
       "updated_at": "2026-01-04T22:01:13.198197+00:00"
     },
     "markhazleton/js-dev-env/commits": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:01:15.343755+00:00"
+      "updated_at": "2026-01-08T14:27:50.875717+00:00"
     },
     "markhazleton/github-stats-spark/readme": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:02:35.531277+00:00"
+      "updated_at": "2026-01-08T14:28:07.383003+00:00"
     },
     "markhazleton/github-stats-spark/dependency_files": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:02:38.939954+00:00"
+      "updated_at": "2026-01-08T14:28:10.879354+00:00"
     },
     "markhazleton/js-dev-env/readme": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:02:40.479537+00:00"
+      "updated_at": "2026-01-08T14:28:41.506850+00:00"
     },
     "markhazleton/js-dev-env/dependency_files": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:02:43.904709+00:00"
+      "updated_at": "2026-01-08T14:28:45.007131+00:00"
     },
     "markhazleton/InquirySpark/readme": {
       "latest_week": "2025W52",
@@ -723,7 +734,7 @@
       "weeks": [
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:54:19.242380+00:00"
+      "updated_at": "2026-01-08T14:29:19.094708+00:00"
     },
     "markhazleton/google-maps/readme": {
       "latest_week": "2025W18",
@@ -786,7 +797,7 @@
       "weeks": [
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:53:54.115241+00:00"
+      "updated_at": "2026-01-08T14:29:19.942320+00:00"
     },
     "markhazleton/markhazleton/commit_counts": {
       "latest_week": "2025W52",
@@ -810,32 +821,36 @@
       "updated_at": "2026-01-04T22:06:07.073465+00:00"
     },
     "markhazleton/markhazleton-blog/languages": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:06:10.793921+00:00"
+      "updated_at": "2026-01-08T14:16:04.562396+00:00"
     },
     "markhazleton/markhazleton-blog/commit_counts": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:06:19.327537+00:00"
+      "updated_at": "2026-01-08T14:16:13.885184+00:00"
     },
     "markhazleton/markhazleton-blog/commits_stats": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:08:17.588891+00:00"
+      "updated_at": "2026-01-08T14:18:18.177889+00:00"
     },
     "markhazleton/markhazleton-blog/ai_summary": {
-      "latest_week": "2025W01_feb0629ba702",
+      "latest_week": "2026W02_feb0629ba702",
       "weeks": [
+        "2026W02_feb0629ba702",
         "2025W01_feb0629ba702"
       ],
-      "updated_at": "2026-01-04T22:08:28.678082+00:00"
+      "updated_at": "2026-01-08T14:18:29.877300+00:00"
     },
     "markhazleton/markhazleton.github.io/languages": {
       "latest_week": "2025W45",
@@ -1048,11 +1063,12 @@
       "updated_at": "2026-01-04T22:13:11.400830+00:00"
     },
     "markhazleton/markhazleton-blog/commits": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:13:13.909613+00:00"
+      "updated_at": "2026-01-08T14:27:54.052418+00:00"
     },
     "markhazleton/markhazleton.github.io/commits": {
       "latest_week": "2025W45",
@@ -1073,7 +1089,7 @@
       "weeks": [
         "2025W11"
       ],
-      "updated_at": "2026-01-04T22:52:32.515199+00:00"
+      "updated_at": "2026-01-08T14:27:54.966818+00:00"
     },
     "markhazleton/PHPDocSpark/commits": {
       "latest_week": "2025W34",
@@ -1104,18 +1120,20 @@
       "updated_at": "2026-01-04T22:13:25.750676+00:00"
     },
     "markhazleton/markhazleton-blog/readme": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:15:42.955108+00:00"
+      "updated_at": "2026-01-08T14:28:18.898642+00:00"
     },
     "markhazleton/markhazleton-blog/dependency_files": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:15:46.367577+00:00"
+      "updated_at": "2026-01-08T14:28:22.436879+00:00"
     },
     "markhazleton/react-native-web-start/readme": {
       "latest_week": "2026W01",
@@ -1171,7 +1189,7 @@
       "weeks": [
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:53:57.566022+00:00"
+      "updated_at": "2026-01-08T14:29:23.384942+00:00"
     },
     "markhazleton/RazorPages/readme": {
       "latest_week": "2026W01",
@@ -1185,7 +1203,7 @@
       "weeks": [
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:54:15.406698+00:00"
+      "updated_at": "2026-01-08T14:29:15.567808+00:00"
     },
     "markhazleton/markhazleton.github.io/readme": {
       "latest_week": "2025W45",
@@ -1244,32 +1262,36 @@
       "updated_at": "2026-01-04T22:55:29.883927+00:00"
     },
     "markhazleton/ReactSparkPortfolio/languages": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:18:06.722551+00:00"
+      "updated_at": "2026-01-08T14:19:18.948572+00:00"
     },
     "markhazleton/ReactSparkPortfolio/commit_counts": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:18:08.872123+00:00"
+      "updated_at": "2026-01-08T14:19:21.372939+00:00"
     },
     "markhazleton/ReactSparkPortfolio/commits_stats": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:19:11.945352+00:00"
+      "updated_at": "2026-01-08T14:20:30.360179+00:00"
     },
     "markhazleton/ReactSparkPortfolio/ai_summary": {
-      "latest_week": "2025W51_52d844c048e3",
+      "latest_week": "2026W02_52d844c048e3",
       "weeks": [
+        "2026W02_52d844c048e3",
         "2025W51_52d844c048e3"
       ],
-      "updated_at": "2026-01-04T22:19:23.333499+00:00"
+      "updated_at": "2026-01-08T14:20:40.381444+00:00"
     },
     "markhazleton/RESTRunner/languages": {
       "latest_week": "2025W52",
@@ -1300,32 +1322,36 @@
       "updated_at": "2026-01-04T22:20:08.043666+00:00"
     },
     "markhazleton/SampleMvcCRUD/languages": {
-      "latest_week": "2025W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:20:11.691901+00:00"
+      "updated_at": "2026-01-08T14:20:50.282560+00:00"
     },
     "markhazleton/SampleMvcCRUD/commit_counts": {
-      "latest_week": "2025W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:20:21.478925+00:00"
+      "updated_at": "2026-01-08T14:21:00.593536+00:00"
     },
     "markhazleton/SampleMvcCRUD/commits_stats": {
-      "latest_week": "2025W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:21:56.229608+00:00"
+      "updated_at": "2026-01-08T14:23:03.379546+00:00"
     },
     "markhazleton/SampleMvcCRUD/ai_summary": {
-      "latest_week": "2025W46_496ee81f6f59",
+      "latest_week": "2026W02_496ee81f6f59",
       "weeks": [
+        "2026W02_496ee81f6f59",
         "2025W46_496ee81f6f59"
       ],
-      "updated_at": "2026-01-04T22:22:05.817464+00:00"
+      "updated_at": "2026-01-08T14:23:12.509807+00:00"
     },
     "markhazleton/sandbox/languages": {
       "latest_week": "2025W28",
@@ -1377,32 +1403,36 @@
       "updated_at": "2026-01-04T22:23:34.764253+00:00"
     },
     "markhazleton/SolidSample/languages": {
-      "latest_week": "2024W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2024W52"
       ],
-      "updated_at": "2026-01-04T22:23:38.451844+00:00"
+      "updated_at": "2026-01-08T14:23:23.186767+00:00"
     },
     "markhazleton/SolidSample/commit_counts": {
-      "latest_week": "2024W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2024W52"
       ],
-      "updated_at": "2026-01-04T22:23:39.832864+00:00"
+      "updated_at": "2026-01-08T14:23:24.576557+00:00"
     },
     "markhazleton/SolidSample/commits_stats": {
-      "latest_week": "2024W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2024W52"
       ],
-      "updated_at": "2026-01-04T22:23:56.747085+00:00"
+      "updated_at": "2026-01-08T14:23:45.813176+00:00"
     },
     "markhazleton/SolidSample/ai_summary": {
-      "latest_week": "2024W52_03fb65df52ca",
+      "latest_week": "2026W02_03fb65df52ca",
       "weeks": [
+        "2026W02_03fb65df52ca",
         "2024W52_03fb65df52ca"
       ],
-      "updated_at": "2026-01-04T22:24:06.115026+00:00"
+      "updated_at": "2026-01-08T14:23:54.658258+00:00"
     },
     "markhazleton/SpotifyAPI-NET/languages": {
       "latest_week": "2026W01",
@@ -1517,11 +1547,12 @@
       "updated_at": "2026-01-04T22:28:11.925222+00:00"
     },
     "markhazleton/ReactSparkPortfolio/commits": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:28:27.819296+00:00"
+      "updated_at": "2026-01-08T14:27:57.338728+00:00"
     },
     "markhazleton/RESTRunner/commits": {
       "latest_week": "2025W52",
@@ -1531,11 +1562,12 @@
       "updated_at": "2026-01-04T22:28:30.025952+00:00"
     },
     "markhazleton/SampleMvcCRUD/commits": {
-      "latest_week": "2025W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:28:32.817629+00:00"
+      "updated_at": "2026-01-08T14:27:59.841256+00:00"
     },
     "markhazleton/sandbox/commits": {
       "latest_week": "2025W28",
@@ -1552,11 +1584,12 @@
       "updated_at": "2026-01-04T22:28:36.575070+00:00"
     },
     "markhazleton/SolidSample/commits": {
-      "latest_week": "2024W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2024W52"
       ],
-      "updated_at": "2026-01-04T22:28:38.030027+00:00"
+      "updated_at": "2026-01-08T14:28:00.822330+00:00"
     },
     "markhazleton/SpotifyAPI-NET/commits": {
       "latest_week": "2026W01",
@@ -1587,18 +1620,20 @@
       "updated_at": "2026-01-04T22:52:39.537187+00:00"
     },
     "markhazleton/SampleMvcCRUD/readme": {
-      "latest_week": "2025W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:32:01.254487+00:00"
+      "updated_at": "2026-01-08T14:28:24.330856+00:00"
     },
     "markhazleton/SampleMvcCRUD/dependency_files": {
-      "latest_week": "2025W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:53:20.436836+00:00"
+      "updated_at": "2026-01-08T14:28:27.789124+00:00"
     },
     "markhazleton/RESTRunner/readme": {
       "latest_week": "2025W52",
@@ -1612,7 +1647,7 @@
       "weeks": [
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:53:35.072175+00:00"
+      "updated_at": "2026-01-08T14:28:37.164339+00:00"
     },
     "markhazleton/Slurper/readme": {
       "latest_week": "2026W01",
@@ -1629,18 +1664,20 @@
       "updated_at": "2026-01-04T22:32:21.570781+00:00"
     },
     "markhazleton/ReactSparkPortfolio/readme": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:32:29.146688+00:00"
+      "updated_at": "2026-01-08T14:28:55.682552+00:00"
     },
     "markhazleton/ReactSparkPortfolio/dependency_files": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:32:32.570463+00:00"
+      "updated_at": "2026-01-08T14:28:59.114698+00:00"
     },
     "markhazleton/SpotifyAPI-NET/readme": {
       "latest_week": "2026W01",
@@ -1654,7 +1691,7 @@
       "weeks": [
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:54:03.120826+00:00"
+      "updated_at": "2026-01-08T14:29:03.522930+00:00"
     },
     "markhazleton/sql2csv/readme": {
       "latest_week": "2025W47",
@@ -1678,18 +1715,20 @@
       "updated_at": "2026-01-04T22:55:10.102039+00:00"
     },
     "markhazleton/SolidSample/readme": {
-      "latest_week": "2024W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2024W52"
       ],
-      "updated_at": "2026-01-04T22:33:44.562926+00:00"
+      "updated_at": "2026-01-08T14:29:08.438906+00:00"
     },
     "markhazleton/SolidSample/dependency_files": {
-      "latest_week": "2024W52",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2024W52"
       ],
-      "updated_at": "2026-01-04T22:55:33.787007+00:00"
+      "updated_at": "2026-01-08T14:29:11.979062+00:00"
     },
     "markhazleton/startbootstrap-modern-business/readme": {
       "latest_week": "2025W20",
@@ -1720,32 +1759,36 @@
       "updated_at": "2026-01-04T22:55:38.268524+00:00"
     },
     "markhazleton/tailwind-demo/languages": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:37:06.722769+00:00"
+      "updated_at": "2026-01-08T14:24:17.109331+00:00"
     },
     "markhazleton/tailwind-demo/commit_counts": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:37:08.990213+00:00"
+      "updated_at": "2026-01-08T14:24:19.335534+00:00"
     },
     "markhazleton/tailwind-demo/commits_stats": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:37:53.472074+00:00"
+      "updated_at": "2026-01-08T14:25:04.421972+00:00"
     },
     "markhazleton/tailwind-demo/ai_summary": {
-      "latest_week": "2025W45_665421012ae5",
+      "latest_week": "2026W02_0b8d78eb9447",
       "weeks": [
+        "2026W02_0b8d78eb9447",
         "2025W45_665421012ae5"
       ],
-      "updated_at": "2026-01-04T22:38:03.885534+00:00"
+      "updated_at": "2026-01-08T14:25:14.326466+00:00"
     },
     "markhazleton/TaskListProcessor/languages": {
       "latest_week": "2025W50",
@@ -1972,60 +2015,68 @@
       "updated_at": "2026-01-04T22:45:38.282883+00:00"
     },
     "markhazleton/WebSpark.HttpClientUtility/languages": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:45:42.550601+00:00"
+      "updated_at": "2026-01-08T14:26:08.192554+00:00"
     },
     "markhazleton/WebSpark.HttpClientUtility/commit_counts": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:45:44.920794+00:00"
+      "updated_at": "2026-01-08T14:26:10.608138+00:00"
     },
     "markhazleton/WebSpark.HttpClientUtility/commits_stats": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:46:33.088720+00:00"
+      "updated_at": "2026-01-08T14:26:59.889734+00:00"
     },
     "markhazleton/WebSpark.HttpClientUtility/ai_summary": {
-      "latest_week": "2026W01_0adcd245892e",
+      "latest_week": "2026W02_0adcd245892e",
       "weeks": [
+        "2026W02_0adcd245892e",
         "2026W01_0adcd245892e"
       ],
-      "updated_at": "2026-01-04T22:46:43.750958+00:00"
+      "updated_at": "2026-01-08T14:27:11.675622+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/languages": {
-      "latest_week": "2025W23",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W23"
       ],
-      "updated_at": "2026-01-04T22:46:47.374811+00:00"
+      "updated_at": "2026-01-08T14:27:15.534936+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/commit_counts": {
-      "latest_week": "2025W23",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W23"
       ],
-      "updated_at": "2026-01-04T22:46:48.230012+00:00"
+      "updated_at": "2026-01-08T14:27:16.415064+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/commits_stats": {
-      "latest_week": "2025W23",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W23"
       ],
-      "updated_at": "2026-01-04T22:46:53.234714+00:00"
+      "updated_at": "2026-01-08T14:27:24.408750+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/ai_summary": {
-      "latest_week": "2025W23_00bc113592b9",
+      "latest_week": "2026W02_435b68041ac4",
       "weeks": [
+        "2026W02_435b68041ac4",
         "2025W23_00bc113592b9"
       ],
-      "updated_at": "2026-01-04T22:47:02.879154+00:00"
+      "updated_at": "2026-01-08T14:27:34.732014+00:00"
     },
     "markhazleton/WebSpark.SharedKernel/languages": {
       "latest_week": "2025W22",
@@ -2084,11 +2135,12 @@
       "updated_at": "2026-01-04T22:48:14.253725+00:00"
     },
     "markhazleton/tailwind-demo/commits": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:48:35.061222+00:00"
+      "updated_at": "2026-01-08T14:28:02.941160+00:00"
     },
     "markhazleton/TaskListProcessor/commits": {
       "latest_week": "2025W50",
@@ -2147,18 +2199,20 @@
       "updated_at": "2026-01-04T22:48:51.614548+00:00"
     },
     "markhazleton/WebSpark.HttpClientUtility/commits": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:48:54.117154+00:00"
+      "updated_at": "2026-01-08T14:28:05.538133+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/commits": {
-      "latest_week": "2025W23",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W23"
       ],
-      "updated_at": "2026-01-04T22:48:55.399594+00:00"
+      "updated_at": "2026-01-08T14:28:06.532967+00:00"
     },
     "markhazleton/WebSpark.SharedKernel/commits": {
       "latest_week": "2025W22",
@@ -2175,32 +2229,36 @@
       "updated_at": "2026-01-04T22:48:58.430178+00:00"
     },
     "markhazleton/WebSpark.HttpClientUtility/readme": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:53:11.547668+00:00"
+      "updated_at": "2026-01-08T14:28:12.171252+00:00"
     },
     "markhazleton/WebSpark.HttpClientUtility/dependency_files": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:53:15.008413+00:00"
+      "updated_at": "2026-01-08T14:28:15.653712+00:00"
     },
     "markhazleton/tailwind-demo/readme": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:53:21.640773+00:00"
+      "updated_at": "2026-01-08T14:28:28.729949+00:00"
     },
     "markhazleton/tailwind-demo/dependency_files": {
-      "latest_week": "2026W01",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2026W01"
       ],
-      "updated_at": "2026-01-04T22:53:25.142357+00:00"
+      "updated_at": "2026-01-08T14:28:32.259806+00:00"
     },
     "markhazleton/WebSpark.ArtSpark/readme": {
       "latest_week": "2025W52",
@@ -2214,7 +2272,7 @@
       "weeks": [
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:53:31.257700+00:00"
+      "updated_at": "2026-01-08T14:28:54.637964+00:00"
     },
     "markhazleton/WebSpark/readme": {
       "latest_week": "2025W52",
@@ -2228,7 +2286,7 @@
       "weeks": [
         "2025W52"
       ],
-      "updated_at": "2026-01-04T22:53:39.672368+00:00"
+      "updated_at": "2026-01-08T14:28:40.597186+00:00"
     },
     "markhazleton/Texecon/readme": {
       "latest_week": "2026W01",
@@ -2315,18 +2373,20 @@
       "updated_at": "2026-01-04T22:55:02.629167+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/readme": {
-      "latest_week": "2025W23",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W23"
       ],
-      "updated_at": "2026-01-04T22:55:39.522995+00:00"
+      "updated_at": "2026-01-08T14:29:24.300260+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/dependency_files": {
-      "latest_week": "2025W23",
+      "latest_week": "2026W02",
       "weeks": [
+        "2026W02",
         "2025W23"
       ],
-      "updated_at": "2026-01-04T22:55:42.966997+00:00"
+      "updated_at": "2026-01-08T14:29:27.746785+00:00"
     },
     "markhazleton/WebSpark.SharedKernel/readme": {
       "latest_week": "2025W22",

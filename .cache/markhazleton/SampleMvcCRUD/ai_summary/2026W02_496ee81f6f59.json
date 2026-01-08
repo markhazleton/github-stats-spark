@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-08T14:23:12.507811+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the SampleMvcCRUD repository:\n\nThis is a sophisticated .NET 10 ASP.NET Core web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as both an educational resource and reference architecture for modern web development. The project showcases diverse UI patterns including traditional MVC, Razor Pages, and Single Page Application (SPA) approaches, with robust features like Bootswatch theme switching, REST API endpoints, EF Core data access, and comprehensive DevOps integration via GitHub Actions and Docker containerization. Architecturally, the solution employs clean architecture principles, dependency injection, and a layered approach across multiple projects (web, domain, repository) with strong emphasis on modularity, testability, and extensibility. Unique capabilities include dynamic theme switching, Swagger/OpenAPI documentation, application health checks, and multiple deployment targets spanning Windows IIS, Azure App Service, and containerized environments. The repository is primarily targeted at .NET developers seeking a comprehensive, production-ready reference implementation that bridges modern web development techniques with enterprise-grade architectural patterns and tooling.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-08T08:23:12.507765",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2171,
+    "confidence_score": 90
+  },
+  "hash": "421185a309aa45dba7f4ef2016941e40d5bfa065f4593689dad091db56b64bcd",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-05T15:11:15+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026W02_496ee81f6f59"
+}

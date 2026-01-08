@@ -90,11 +90,10 @@ branding:
 ```yaml
 cache:
   enabled: true               # Enable API response caching
-  ttl_hours: 6                # Cache time-to-live (hours)
   directory: .cache           # Cache directory
 ```
 
-**Note**: Caching significantly reduces GitHub API calls. Keep enabled unless debugging.
+**Smart Caching**: Stats Spark uses change-based caching that checks repository `pushed_at` timestamps. Cache never expires based on time - only when actual repository changes are detected. This dramatically reduces API calls while keeping data current.
 
 ### Repository Limits
 

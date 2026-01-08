@@ -131,14 +131,45 @@ class CacheStatusTracker:
         username: str,
         exclude_private: bool = True,
         exclude_forks: bool = False,
+        fetch_fresh: bool = False,
     ) -> Dict[str, Any]:
-        """Update repositories cache file with cache status for each repo."""
-        # We need to read the repositories cache using APICache
-        variant = f"list_{exclude_private}_{exclude_forks}"
-        repos = self.cache.get("repositories", username, repo=variant)
+        """Update repositories cache file with cache status for each repo.
         
-        if not repos:
-             raise FileNotFoundError(f"Repositories cache not found for {username}")
+        Args:
+            username: GitHub username
+            exclude_private: Exclude private repositories
+            exclude_forks: Exclude forked repositories
+            fetch_fresh: If True, fetch fresh data from GitHub API before updating status
+        
+        Returns:
+            Dictionary with updated repos and metadata
+        """
+        variant = f"list_{exclude_private}_{exclude_forks}"
+        
+        if fetch_fresh:
+            # Clear cached repository list to force fresh fetch from GitHub API
+            import os
+            from pathlib import Path
+            cache_key = f"{username}/{variant}/repositories"
+            cache_dir = Path(self.cache.cache_dir) / username / variant / "repositories"
+            if cache_dir.exists():
+                import shutil
+                shutil.rmtree(cache_dir)
+            
+            # Fetch fresh repository data from GitHub (1 API call)
+            from spark.fetcher import GitHubFetcher
+            fetcher = GitHubFetcher(cache=self.cache)
+            repos = fetcher.fetch_repositories(
+                username=username,
+                exclude_private=exclude_private,
+                exclude_forks=exclude_forks,
+            )
+        else:
+            # Use cached repositories
+            repos = self.cache.get("repositories", username, repo=variant)
+            
+            if not repos:
+                 raise FileNotFoundError(f"Repositories cache not found for {username}")
 
         # Add cache status to each repository
         for repo in repos:
@@ -156,7 +187,11 @@ class CacheStatusTracker:
         # Update the cache
         self.cache.set("repositories", username, repos, repo=variant)
         
-        return {"value": repos}
+        from datetime import datetime
+        return {
+            "value": repos,
+            "cache_status_updated": datetime.now().isoformat()
+        }
 
     def get_repositories_needing_refresh(
         self,

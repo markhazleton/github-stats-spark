@@ -176,7 +176,16 @@ class UnifiedDataGenerator:
         """
         logger.info("Checking for repositories with new commits since last generation...")
         
-        # Fetch lightweight repository list (should be cached or quick)
+        # CRITICAL: Clear the cached repository list to get fresh pushed_at timestamps
+        import shutil
+        from pathlib import Path
+        variant = "list_True_False"  # Default: exclude_private=True, exclude_forks=False
+        repo_cache_dir = Path(self.cache.cache_dir) / self.username / variant / "repositories"
+        if repo_cache_dir.exists():
+            shutil.rmtree(repo_cache_dir)
+            logger.debug(f"Cleared cached repository list to fetch fresh pushed_at timestamps")
+        
+        # Fetch fresh repository list from GitHub (1 API call)
         raw_repos = self.fetcher.fetch_repositories(
             username=self.username,
             exclude_private=True,
@@ -263,65 +272,91 @@ class UnifiedDataGenerator:
         existing_repo_names = set()
         repos_to_refresh = []
         
-        # Step 0: Smart cache refresh logic
+        # Step 0: Smart cache refresh logic - NO TIME-BASED CHECKS
         logger.info(f"Force refresh mode: {self.force_refresh}")
         if not self.force_refresh:
-            logger.info("Checking data freshness...")
+            logger.info("Checking for repositories with new commits since last generation...")
             generated_at = self._check_data_freshness()
-            logger.info(f"Freshness check returned: {generated_at}")
             
             if generated_at:
-                # Check if data is less than 1 week old
-                age = datetime.now(timezone.utc) - generated_at
-                one_week = timedelta(days=7)
-                logger.info(f"Data age: {age.days} days, threshold: 7 days")
+                logger.info(f"Found existing repositories.json generated at: {generated_at}")
+                # Use smart cache refresh - only update repos with new commits
+                repos_to_refresh = self._selective_cache_refresh(generated_at)
                 
-                if age < one_week:
-                    # Check if we have existing data to load
+                if not repos_to_refresh:
+                    logger.info("✅ No repositories with new commits detected")
+                    logger.info("📝 Only updating lightweight metadata (pushed_at, stars, forks) from GitHub")
+                    logger.info("💡 Reusing ALL cached data (commits, tech stacks, AI summaries) - no reprocessing needed")
+                    # Load existing data and update only lightweight metadata
                     try:
                         import json
                         repos_json_path = self.output_dir / "repositories.json"
                         with open(repos_json_path, "r", encoding="utf-8") as f:
-                            data = json.load(f)
-                        existing_repo_count = len(data.get('repositories', []))
+                            existing_data = json.load(f)
+                        logger.info(f"Loaded {len(existing_data.get('repositories', []))} existing repositories")
                         
-                        # Check if we're requesting MORE repos than what's in existing data
-                        if self.max_repositories > existing_repo_count:
-                            logger.info(f"Requesting {self.max_repositories} repos but only have {existing_repo_count} - will add missing repos")
-                            logger.info(f"repositories.json is {age.days} days old but incomplete - using incremental generation")
-                            # Use selective cache refresh for any repos with new commits
-                            repos_to_refresh = self._selective_cache_refresh(generated_at)
-                            if repos_to_refresh:
-                                logger.info(f"Found {len(repos_to_refresh)} repos with new commits - will refresh those")
-                                self._apply_selective_cache_clear(repos_to_refresh)
-                            else:
-                                logger.info("No repos with new commits - will only process new repos")
-                            # Store existing data to merge with new repos later
-                            existing_data = data
-                            existing_repo_names = set(r['name'] for r in data.get('repositories', []))
-                            # Continue to generation, but only for new repos
-                        else:
-                            # Data is fresh AND has enough repos - can skip
-                            logger.info(f"repositories.json is {age.days} days old (< 7 days) - skipping generation")
-                            logger.info("Use --force-refresh to regenerate anyway")
-                            logger.info(f"Loading existing data from: {repos_json_path}")
-                            logger.info(f"Loaded existing data with {existing_repo_count} repositories")
-                            self.generation_skipped = True  # Mark that we skipped generation
-                            return data
+                        # Fetch fresh repository list to get current metadata
+                        raw_repos = self.fetcher.fetch_repositories(
+                            username=self.username,
+                            exclude_private=True,
+                            exclude_forks=self.config.config.get("repositories", {}).get("exclude_forks", False)
+                        )
+                        repo_metadata_map = {r.get('name'): r for r in raw_repos}
+                        
+                        # Update lightweight metadata for each repo
+                        updated_count = 0
+                        for repo in existing_data.get('repositories', []):
+                            repo_name = repo.get('name')
+                            if repo_name in repo_metadata_map:
+                                fresh_metadata = repo_metadata_map[repo_name]
+                                repo['stars'] = fresh_metadata.get('stargazers_count', repo.get('stars', 0))
+                                repo['forks'] = fresh_metadata.get('forks_count', repo.get('forks', 0))
+                                repo['open_issues'] = fresh_metadata.get('open_issues_count', repo.get('open_issues', 0))
+                                repo['watchers'] = fresh_metadata.get('watchers_count', repo.get('watchers', 0))
+                                repo['description'] = fresh_metadata.get('description', repo.get('description', ''))
+                                repo['pushed_at'] = fresh_metadata.get('pushed_at', repo.get('pushed_at', ''))
+                                repo['updated_at'] = fresh_metadata.get('updated_at', repo.get('updated_at', ''))
+                                updated_count += 1
+                        
+                        # Update metadata timestamps
+                        existing_data['metadata']['generated_at'] = start_time.isoformat()
+                        existing_data['metadata']['last_checked'] = start_time.isoformat()
+                        
+                        logger.info(f"Updated lightweight metadata for {updated_count} repositories")
+                        end_time = datetime.now(timezone.utc)
+                        duration = (end_time - start_time).total_seconds()
+                        logger.info(f"Metadata refresh completed in {duration:.1f}s (vs ~{duration*50:.0f}s for full reprocessing)")
+                        return existing_data
+                        
                     except Exception as e:
-                        logger.warn(f"Failed to load existing data: {e} - proceeding with generation")
-                        import traceback
-                        logger.debug(traceback.format_exc())
+                        logger.warning(f"Could not load existing data: {e} - proceeding with full generation")
+                        existing_data = None
+                        existing_repo_names = set()
                 else:
-                    # Data is more than 1 week old - use selective cache refresh
-                    logger.info(f"repositories.json is {age.days} days old (>= 7 days) - using smart cache refresh")
-                    repos_to_refresh = self._selective_cache_refresh(generated_at)
+                    logger.info(f"Found {len(repos_to_refresh)} repos with new commits - will refresh those")
                     self._apply_selective_cache_clear(repos_to_refresh)
+                    
+                    # Load existing data to merge with refreshed repos
+                    try:
+                        import json
+                        repos_json_path = self.output_dir / "repositories.json"
+                        with open(repos_json_path, "r", encoding="utf-8") as f:
+                            existing_data = json.load(f)
+                        existing_repo_names = set(r['name'] for r in existing_data.get('repositories', []))
+                        logger.info(f"Loaded {len(existing_repo_names)} existing repositories for incremental update")
+                    except Exception as e:
+                        logger.info(f"No existing data to merge: {e}")
+                        existing_data = None
+                        existing_repo_names = set()
             else:
                 logger.info("No existing repositories.json found - performing full generation")
+                existing_data = None
+                existing_repo_names = set()
         else:
             logger.info("Force refresh enabled - clearing all cache and regenerating")
             self.cache.clear()
+            existing_data = None
+            existing_repo_names = set()
 
         # Step 1: Fetch all repositories
         logger.info(f"Fetching repositories for {self.username}...")
@@ -364,7 +399,7 @@ class UnifiedDataGenerator:
             repo_name = raw_repo.get("name", "unknown")
             progress_pct = (i / len(raw_repos)) * 100
             
-            # Skip repos that already exist in fresh data and don't need refresh
+            # Skip repos that already exist and don't need refresh
             if existing_data and repo_name in existing_repo_names and repo_name not in repos_to_refresh:
                 logger.info(f"[{i}/{len(raw_repos)}] ({progress_pct:.0f}%) Skipping {repo_name} (already in fresh data, no new commits)")
                 continue

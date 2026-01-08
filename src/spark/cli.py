@@ -234,6 +234,11 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         help="Update cache status in repositories cache file",
     )
     cache_parser.add_argument(
+        "--fetch-fresh",
+        action="store_true",
+        help="Fetch fresh repository data from GitHub when updating status (makes 1 API call)",
+    )
+    cache_parser.add_argument(
         "--list-refresh-needed",
         action="store_true",
         help="List repositories that need cache refresh",
@@ -248,6 +253,33 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         type=str,
         default=".cache",
         help="Cache directory (default: .cache)",
+    )
+
+    # Refresh command - smart incremental updates
+    refresh_parser = subparsers.add_parser(
+        "refresh",
+        help="Smart incremental refresh - only update repos with new commits"
+    )
+    refresh_parser.add_argument(
+        "--user",
+        type=str,
+        required=True,
+        help="GitHub username",
+    )
+    refresh_parser.add_argument(
+        "--clear-summaries",
+        action="store_true",
+        help="Clear AI summaries and tech stack data to regenerate",
+    )
+    refresh_parser.add_argument(
+        "--include-ai-summaries",
+        action="store_true",
+        help="Generate AI summaries for updated repositories",
+    )
+    refresh_parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Enable verbose logging",
     )
 
     args = parser.parse_args()
@@ -272,6 +304,8 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         handle_config(args, logger)
     elif args.command == "cache":
         handle_cache(args, logger)
+    elif args.command == "refresh":
+        handle_refresh(args, logger)
 
 
 def handle_unified(args, logger):
@@ -1038,10 +1072,76 @@ def handle_cache(args, logger):
                 logger.error("--user is required for cache status update")
                 sys.exit(1)
             
-            logger.info(f"Updating cache status for user: {args.user}")
-            cache_data = cache_tracker.update_repositories_cache_with_status(username=args.user)
+            fetch_fresh = getattr(args, 'fetch_fresh', False)
+            if fetch_fresh:
+                logger.info(f"Fetching fresh repository data from GitHub for user: {args.user}")
+            else:
+                logger.info(f"Updating cache status for user: {args.user}")
+            
+            cache_data = cache_tracker.update_repositories_cache_with_status(
+                username=args.user,
+                fetch_fresh=fetch_fresh
+            )
             logger.info(f"Updated cache status for {len(cache_data.get('value', []))} repositories")
             logger.info(f"Cache status updated at: {cache_data.get('cache_status_updated')}")
+            
+            # Show summary of refresh needs and recent activity
+            repos = cache_data.get('value', [])
+            needs_refresh = sum(1 for r in repos if r.get('cache_status', {}).get('refresh_needed', False))
+            
+            # Count repositories updated in the past 7 days
+            from datetime import datetime, timezone, timedelta
+            seven_days_ago = datetime.now(timezone.utc) - timedelta(days=7)
+            recently_updated = 0
+            recently_updated_with_outdated_cache = 0
+            recently_updated_repos = []
+            
+            for r in repos:
+                pushed_at = r.get('pushed_at')
+                if pushed_at:
+                    try:
+                        pushed_date = datetime.fromisoformat(pushed_at.replace('+00:00', ''))
+                        if pushed_date.tzinfo is None:
+                            pushed_date = pushed_date.replace(tzinfo=timezone.utc)
+                        if pushed_date >= seven_days_ago:
+                            recently_updated += 1
+                            cache_status = r.get('cache_status', {})
+                            cache_date = cache_status.get('cache_date', 'No cache')
+                            is_outdated = False
+                            
+                            # Check if this recently-updated repo has outdated cache
+                            if cache_status.get('refresh_needed', False):
+                                refresh_reasons = cache_status.get('refresh_reasons', [])
+                                if 'repo_has_new_commits' in refresh_reasons:
+                                    recently_updated_with_outdated_cache += 1
+                                    is_outdated = True
+                            
+                            recently_updated_repos.append({
+                                'name': r['name'],
+                                'pushed_at': pushed_at,
+                                'cache_date': cache_date,
+                                'is_outdated': is_outdated
+                            })
+                    except (ValueError, AttributeError):
+                        pass
+            
+            logger.info(f"Repositories updated in past 7 days: {recently_updated}")
+            if recently_updated_with_outdated_cache > 0:
+                logger.info(f"  └─ Of those, {recently_updated_with_outdated_cache} have outdated cache (new commits since last fetch)")
+            
+            # Display the list of recently updated repositories
+            if recently_updated_repos:
+                logger.info("\nRecently updated repositories:")
+                for repo_info in recently_updated_repos:
+                    status_marker = "⚠️ OUTDATED" if repo_info['is_outdated'] else "✓ cached"
+                    logger.info(f"  • {repo_info['name']}")
+                    logger.info(f"      Last update: {repo_info['pushed_at']}")
+                    logger.info(f"      Cache date:  {repo_info['cache_date']} {status_marker}")
+            
+            if needs_refresh > 0:
+                logger.info(f"\n{needs_refresh} repositories need cache refresh")
+            else:
+                logger.info("\nAll repositories have up-to-date cache!")
 
         if args.list_refresh_needed:
             if not args.user:
@@ -1069,6 +1169,37 @@ def handle_cache(args, logger):
         sys.exit(1)
     except Exception as e:
         logger.error("Cache command failed", e)
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+
+
+def handle_refresh(args, logger):
+    """Handle smart incremental refresh command."""
+    from spark.refresh import SmartRefresh
+
+    logger.info("Stats Spark - Smart Incremental Refresh")
+    logger.info("=" * 80)
+
+    try:
+        refresher = SmartRefresh()
+        result = refresher.refresh(
+            username=args.user,
+            include_ai_summaries=args.include_ai_summaries,
+            clear_summaries=args.clear_summaries,
+        )
+
+        logger.info("\n" + "=" * 80)
+        logger.info("Refresh Summary:")
+        logger.info(f"  🔄 Refreshed: {result['refreshed']} repositories")
+        logger.info(f"  ✅ Unchanged: {result['unchanged']} repositories")
+        logger.info(f"  🗑️  Removed: {result['removed']} repositories")
+
+        if result['refreshed'] > 0:
+            logger.info("\n💡 Tip: Run 'cd frontend && npm run build' to update the dashboard")
+
+    except Exception as e:
+        logger.error("Refresh command failed", e)
         import traceback
         traceback.print_exc()
         sys.exit(1)

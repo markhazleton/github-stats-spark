@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-08T14:27:34.730134+00:00",
+  "value": {
+    "ai_summary": "WebSpark.PrismSpark is a comprehensive .NET-based syntax highlighting library designed to port and enhance the functionality of PrismJS for C# and .NET ecosystems. The library provides advanced code syntax highlighting capabilities across 20+ programming languages, featuring a robust plugin system, extensive theming support, and high-performance tokenization with async processing and caching mechanisms. Built for .NET 10.0 LTS, the library offers deep integration with ASP.NET Web MVC, supporting dependency injection, custom theming, and extensible hook-based customization through interfaces like IPlugin and sophisticated configuration options. Its architecture emphasizes modularity, with support for language-specific grammars, theme generation, and context-aware highlighting that allows developers to easily transform raw code into richly styled, semantically parsed HTML representations. The project stands out by providing a feature-complete, performant alternative to traditional syntax highlighting libraries, with first-class support for modern .NET development patterns and a flexible, event-driven design that enables complex code rendering scenarios. Target users include web developers, documentation generators, code snippet platforms, and educational technology tools seeking a robust, extensible syntax highlighting solution within the .NET ecosystem.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-08T08:27:34.730093",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1855,
+    "confidence_score": 90
+  },
+  "hash": "a63915476ee716e61cc917b2df2698abe6b9f1cfd5072a61f9b3c4b20045fed9",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.PrismSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-05T13:34:10+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebSpark.PrismSpark",
+  "week": "2026W02_435b68041ac4"
+}

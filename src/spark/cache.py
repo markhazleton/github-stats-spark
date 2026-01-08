@@ -235,21 +235,9 @@ class APICache:
                         pass
                     return None
 
-            # TTL Check
-            timestamp_raw = data.get("timestamp")
-            metadata = data.get("metadata", {})
-            
-            try:
-                timestamp = datetime.fromisoformat(timestamp_raw) if timestamp_raw else None
-            except ValueError:
-                timestamp = None
-
-            if timestamp and self.is_expired(category, timestamp, metadata):
-                # We don't delete immediately on read expiry if it's a historical record (week specified)
-                # But if it's just a TTL expiry for a "current" thing, maybe we should?
-                # For now, return None but keep file for janitor? 
-                # Actually, if it's expired, we should treat it as miss.
-                return None
+            # No TTL check - cache is valid until data changes on GitHub
+            # Higher-level logic (cache_status.py) compares pushed_at timestamps
+            # to determine if refresh is needed
 
             return value
 
@@ -318,21 +306,11 @@ class APICache:
                 raise
 
     def is_expired(self, category: str, timestamp: datetime, metadata: Optional[Dict[str, Any]] = None) -> bool:
-        """Check if a timestamp is expired based on category TTL."""
-        ttl_hours = self.config.get_cache_ttl(category)
-        ttl = timedelta(hours=ttl_hours)
-        
-        # Check if TTL is enforced in metadata
-        if metadata and not metadata.get("ttl_enforced", True):
-            return False
-
-        now = datetime.now(timezone.utc)
-        if timestamp.tzinfo is None:
-            timestamp = timestamp.replace(tzinfo=timezone.utc)
-        else:
-            timestamp = timestamp.astimezone(timezone.utc)
-            
-        return now - timestamp > ttl
+        """
+        Legacy method kept for backwards compatibility.
+        Always returns False - cache validity is now determined by pushed_at comparison.
+        """
+        return False
 
     def prune(self, keep_weeks: int = 2):
         """Prune old cache entries."""

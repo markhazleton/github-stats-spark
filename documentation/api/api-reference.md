@@ -636,7 +636,7 @@ cache.set("user:markhazleton:profile", profile_data)
 
 ##### `is_expired(key: str) -> bool`
 
-Check if cache entry is expired.
+**Deprecated**: Always returns `False`. Cache validation now uses change-based logic (comparing `pushed_at` timestamps) instead of time-based expiration. Kept for backward compatibility only.
 
 **Parameters:**
 - `key` (str): Cache key
