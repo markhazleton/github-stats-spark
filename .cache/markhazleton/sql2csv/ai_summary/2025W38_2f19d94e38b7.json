@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-01-04T22:26:49.172956+00:00",
+  "timestamp": "2026-01-08T17:50:50.484416+00:00",
   "value": {
-    "ai_summary": "SQL2CSV is a comprehensive .NET 9 toolkit designed to streamline SQLite database exploration and data extraction, providing developers and data analysts with powerful CLI and early-stage web UI capabilities for database discovery, CSV export, schema inspection, and C# data transfer object (DTO) generation. The project leverages modern .NET technologies, implementing a clean architecture with dependency injection, structured logging, and modular design across console and web interfaces, enabling users to recursively discover SQLite databases, export table data with flexible filtering, generate detailed schema reports in multiple formats, and automatically create C# model classes. Key technical strengths include parallel processing, cross-platform compatibility, robust error handling, and a extensible service-based architecture that supports dynamic table analysis, file management, and configurable export options. The toolkit is particularly valuable for data engineers, software developers, and database administrators who need efficient tools for database introspection, data migration, and code generation, with features like multi-format schema reporting, table filtering, and a progressive web application that provides an intuitive interface for database exploration and export tasks. By combining CLI flexibility with emerging web UI capabilities, SQL2CSV offers a versatile solution for database metadata extraction and transformation, emphasizing developer productivity and modern software design principles.",
+    "ai_summary": "SQL2CSV is a comprehensive .NET 9 toolkit designed to simplify SQLite database exploration, transformation, and code generation, offering developers a versatile utility for database metadata analysis and data extraction. The project provides a multi-modal approach to database interaction through both a CLI (command-line interface) and an early-stage web UI, enabling users to discover SQLite databases, export table data to CSV, generate schema reports in multiple formats (text/JSON/markdown), and automatically create C# Data Transfer Object (DTO) classes from database schemas. Built with modern .NET technologies and following clean architecture principles, the toolkit leverages dependency injection, structured logging, and modular service design to provide a robust, extensible solution for database introspection and data migration tasks. Key differentiators include its parallel processing capabilities, cross-platform compatibility, intelligent database discovery engine, and built-in error recovery mechanisms, making it particularly valuable for developers, data analysts, and engineers who need to quickly extract, transform, or analyze SQLite database structures. The project supports advanced features like multi-table filtering, dynamic table analysis, and configurable export options, positioning it as a powerful tool for scenarios involving database exploration, migration, documentation, and code generation.",
     "generation_method": "claude-3-5-haiku-20241022",
-    "generation_timestamp": "2026-01-04T16:26:49.172922",
+    "generation_timestamp": "2026-01-08T11:50:50.484375",
     "model_used": "claude-3-5-haiku-20241022",
-    "tokens_used": 2744,
+    "tokens_used": 2764,
     "confidence_score": 90
   },
-  "hash": "db6faabd62d1a3ea8729fef91870e3396cc48cf11f91ec0c75fa3a7d730e520d",
+  "hash": "ac377a8ce22c65b83f47f9fd205dcb2bc1bb48d61e203f1fd6f5e152f7fd66b5",
   "metadata": {
     "repository": {
       "owner": "markhazleton",

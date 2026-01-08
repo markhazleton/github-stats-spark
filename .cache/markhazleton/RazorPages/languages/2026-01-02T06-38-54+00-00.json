@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-08T17:43:04.560855+00:00",
+  "value": {
+    "JavaScript": 438460,
+    "SCSS": 240976,
+    "HTML": 52768,
+    "C#": 44304,
+    "CSS": 8679,
+    "PowerShell": 2589
+  },
+  "hash": "d0875275a9d8315e60ba1c884a4ae38f0092d516f631a71c8073aa37b93667ac",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RazorPages"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-02T06:38:54+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "RazorPages",
+  "week": "2026-01-02T06-38-54+00-00"
+}

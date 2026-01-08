@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-01-08T17:43:37.091799+00:00",
+  "value": {
+    "C#": 277192,
+    "HTML": 120141,
+    "CSS": 55982,
+    "JavaScript": 580
+  },
+  "hash": "5c98124e8110de76a0911d625fef03881c7d3d9465a6df7ac9142abf667f9129",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TriviaSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2025-12-02T04:08:09+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "TriviaSpark",
+  "week": "2025-12-02T04-08-09+00-00"
+}

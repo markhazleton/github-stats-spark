@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-01-08T17:50:19.200006+00:00",
+  "value": {},
+  "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TaskListProcessor"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2025-12-08T00:03:40+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "TaskListProcessor",
+  "week": "2025-12-08T00-03-40+00-00"
+}

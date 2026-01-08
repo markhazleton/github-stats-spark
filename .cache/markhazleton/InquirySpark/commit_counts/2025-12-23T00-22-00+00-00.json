@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:40:40.623535+00:00",
+  "value": {
+    "total": 28,
+    "recent_90d": 18,
+    "recent_180d": 18,
+    "recent_365d": 18,
+    "last_commit_date": "2025-12-07T06:07:45+00:00"
+  },
+  "hash": "94d71a3004a3ffccae68590c4123e8748ab89bad7497a1bebd82abd6e99c355b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "InquirySpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-12-23T00:22:00+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "InquirySpark",
+  "week": "2025-12-23T00-22-00+00-00"
+}

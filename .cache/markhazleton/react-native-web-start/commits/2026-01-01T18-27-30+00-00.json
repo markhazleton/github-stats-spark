@@ -1,0 +1,327 @@
+{
+  "timestamp": "2026-01-08T17:43:05.843059+00:00",
+  "value": [
+    {
+      "sha": "dd16442fe82ed7da769d42ef096f978b152bbbd9",
+      "message": "chore: remove unused dependency 'react-native-super-grid' and update build information",
+      "author": "Mark Hazleton",
+      "date": "2025-10-21T13:47:50+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "8ce7c2a79b0689675d8b552b976d42963dfc4104",
+      "message": "chore: update dependencies and build information\n\n- Bump react-native and related packages to version 0.82.1\n- Update @typescript-eslint packages to version 8.46.2\n- Upgrade tailwindcss to version 4.1.15\n- Modify buildInfo.json with new build timestamp, date, and commit hash\n- Update node version to v25.0.0 in buildInfo.json\n- Enhance error handling for response headers in jokeApi.ts",
+      "author": "Mark Hazleton",
+      "date": "2025-10-21T11:44:23+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "ac612e2845f3e59f428a155722c917bfdb29eb84",
+      "message": "feat: enhance web compatibility in JokesScreen by flattening styles for better rendering",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T21:32:53+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "840f5608b5e738be54d52b061c79edc5fb7d614b",
+      "message": "chore: update jest configuration to support jsx files and lower coverage thresholds\n\nchore: upgrade @testing-library/react-native and eslint packages in package-lock.json\n\nchore: update package.json to reflect new versions of dependencies\n\nchore: update buildInfo.json with new build timestamp and commit hash\n\nfix: update TabBar and DocumentationBrowserScreen props to improve type safety\n\nfeat: enhance JokesScreen with debug information for API calls\n\nfeat: add detailed logging in JokeApiService for better error handling",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T21:27:51+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "d529046cbe5165be38476ed75c71c3b935d16572",
+      "message": "feat: unify JokesScreen for web and mobile, removing platform-specific logic",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T20:44:58+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "ea3876fac881dc93f038ad67012459a21d67c364",
+      "message": "feat: add identity-obj-proxy for CSS module support and refactor components for improved readability",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T20:36:43+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "10439d396da62fd360ad6a73e821eb5579530df0",
+      "message": "feat: enhance web compatibility with JokeAPI and improve navigation structure",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T20:16:16+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "0005f4f5281104a39035a91868c976d034880612",
+      "message": "chore: update @testing-library/react-native to 12.9.0 and adjust peer dependencies",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T14:23:05+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "d63e340cfbd3835908c9afdc6013dd3597e117e4",
+      "message": "chore: update dependencies and improve markdown renderer\n\n- Added @testing-library/jest-dom and jest-environment-jsdom to package.json for enhanced testing capabilities.\n- Updated buildInfo.json with new build timestamp and commit information.\n- Refactored ImprovedMarkdownRenderer to enhance error handling and fallback rendering.\n- Introduced fallback styles for markdown rendering and improved link handling.\n- Created babel.config.cjs for Babel configuration.\n- Added jest.config.cjs for Jest configuration, including coverage thresholds and module mapping.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T14:19:51+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "5651d734b25c60c486a0ecc9bfcfc84d0f12d521",
+      "message": "fix: resolve ESLint errors and TypeScript issues for CI/CD pipeline\n\n- Add missing globals (window, document, navigator, fetch, setTimeout)\n- Fix React Hook dependencies with useCallback\n- Remove 'any' types and replace with proper TypeScript types\n- Update ESLint rules to be more lenient during development\n- Fix parsing errors in markdown renderers\n- Resolve unused variable warnings",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T00:42:44+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "feefc29854d2dc088dcb669c2fa225cf750a06c4",
+      "message": "chore: Update package.json with new scripts and dependency versions\n\nfeat: Add security audit scripts and configurations\n\nfix: Update TypeScript configuration for stricter checks\n\ndocs: Create .env.example for environment configuration\n\nchore: Add CODEOWNERS for repository management\n\nchore: Configure Dependabot for automated dependency updates\n\nchore: Add .prettierignore and .prettierrc for code formatting\n\ndocs: Create SECURITY_ANALYSIS.md for vulnerability documentation\n\ndocs: Create SECURITY_RESOLUTION.md for tracking security resolutions\n\nchore: Implement ESLint configuration for improved code quality\n\ntest: Add Jest configuration and setup for testing\n\nchore: Create security-check script for comprehensive security checks",
+      "author": "Mark Hazleton",
+      "date": "2025-10-14T00:35:29+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "d2569638a78b1b8cd4809f2f7af69dafe9c6cdb8",
+      "message": "chore: update dependencies to latest versions in package.json and package-lock.json; modify buildInfo.json with new build details",
+      "author": "Mark Hazleton",
+      "date": "2025-09-14T22:54:00+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "e3034eff13dde60a2b74520139ebde997078fa2c",
+      "message": "feat: update package.json with repository info, bug tracking, and engine requirements; add new scripts for formatting and cleaning; update dependencies and devDependencies to latest versions\n\nchore: update buildInfo.json with new build metadata, including build time, commit hash, and node version\n\ndocs: enhance README.md with new features, project structure, application screens, component architecture, and development guidelines; update technology versions and add new sections for styling and build systems",
+      "author": "Mark Hazleton",
+      "date": "2025-09-08T02:55:09+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "49890ebea7cd19aae25b4cda81499f10e8e34067",
+      "message": "feat: Enhance README with additional features and updated technology versions",
+      "author": "Mark Hazleton",
+      "date": "2025-08-06T05:24:43+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "ab899b1418f5df9fed92ac3a76154c9d1382ddd2",
+      "message": "feat: Integrate Tailwind CSS and SASS for enhanced styling capabilities\n\n- Updated styles in DocumentationScreen, JokesScreen, and WelcomeScreen to use transparent backgrounds and improved layout.\n- Added responsive design features and modernized button and card styles.\n- Introduced Tailwind CSS and SASS integration with necessary configuration files.\n- Implemented build scripts for Tailwind CSS and SASS.\n- Enhanced the build process with PostCSS and Autoprefixer for better CSS management.\n- Created documentation for Tailwind CSS and SASS setup, including usage examples and build process details.\n- Fixed GitHub Actions issues related to import resolution and file tracking in the monorepo structure.",
+      "author": "Mark Hazleton",
+      "date": "2025-08-06T05:19:04+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "6fc09c09839c43f6a857a7aa8af70b3d81ad089a",
+      "message": "fix: Resolve GitHub Actions build failures by addressing import resolution and .gitignore conflicts",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:48:39+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "fe6d0b6d3d117ce6c7f147fbf60979b93d7534e1",
+      "message": "Add comprehensive documentation on monorepo GitHub Actions issues\n\nThis document provides detailed analysis of:\n- Import resolution failures and their causes\n- Missing files due to .gitignore conflicts\n- Module resolution and export issues\n- Build process reliability improvements\n- Solutions implemented and lessons learned\n- Best practices for monorepo CI/CD\n\nThe documentation serves as a reference for future monorepo projects and troubleshooting similar issues.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:46:14+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "c762a85ac417135a4834e7d2eb5393bb7c1846bd",
+      "message": "feat: Update build information with new build time and commit details",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:35:04+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "1f5590bf9e7f5b706a100319782faaeaa610dc3a",
+      "message": "Add shared package files and fix .gitignore to exclude only NuGet packages\n\n- Fixed .gitignore to only exclude NuGet packages directories, not our monorepo packages/\n- Added all shared package source files that were previously ignored\n- Added verification step to build process to catch missing files early\n- Enhanced vite config with path validation and better extension resolution\n\nThis should fix the GitHub Actions build failure where shared package files were missing.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:34:20+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "9fc53324f385506a85a194fbf423192f3ae20fbc",
+      "message": "feat: Add project structure verification and update import paths for shared components",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:20:16+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "4832667417d9b4c405454d3394eb9091be234194",
+      "message": "feat: Refactor imports and remove alias for '@monorepo/shared' for clarity",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:13:26+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "e6df89bec8317cc93cd9d1c0ba217a037f11066f",
+      "message": "feat: Update alias for '@monorepo/shared' to point to the index file for clarity",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:07:39+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "9d4acacc9b09bb152f9eca1e770d65c924ae8ff6",
+      "message": "feat: Update import paths to use '@monorepo/shared' for consistency across the project",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T15:03:21+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "c7ef6a8d3a22dff50e42e9d1e46157a5c6ee7e2e",
+      "message": "feat: Update import paths for shared components and enhance TypeScript configuration",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T14:59:49+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "99b3a02420ff2815b6bd9600adaaecb45dd262a2",
+      "message": "feat: Enhance markdown rendering capabilities and improve project structure\n\n- Added new dependencies for improved markdown rendering: `marked`, `react-native-markdown-display`, and `react-native-render-html`.\n- Updated project structure to support a monorepo approach with shared components and assets.\n- Enhanced the README documentation for better clarity on project setup and usage.\n- Implemented a build info generation script that ensures the target directory exists before writing.\n- Introduced a comprehensive markdown rendering improvements document outlining current issues and proposed solutions.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T14:57:45+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "3026872992c7f43587decfeb68c6bc76e4a2dc1e",
+      "message": "feat: Implement comprehensive build and clean scripts\n\n- Added build.js to automate the build process, including generating build info, copying assets, and building the web application.\n- Introduced clean.js to remove generated files and directories, ensuring a fresh build environment.\n- Created copy-assets.js to handle the copying of asset files to the public folder.\n- Developed copy-docs.js to manage the copying of documentation files to the public directory.\n- Enhanced logging for better visibility during build and clean operations.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T14:37:44+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "caefc92c792c4af3453efe2053309ed2735ee553",
+      "message": "feat: Enhance build info generation and display\n\n- Added predev and preweb scripts to package.json for build info generation.\n- Updated dependencies to the latest versions, including React and Babel packages.\n- Improved generate-build-info.js to include comprehensive Git information (commit, branch, tag) and additional build metadata (node version, platform, architecture).\n- Modified buildInfo.json to reflect new build information structure.\n- Updated Navigation component to remove unused Footer component.\n- Enhanced WelcomeScreen to display detailed build and runtime information, including user agent and viewport details.\n- Created BuildInfoService to encapsulate build info retrieval and formatting methods.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-27T13:10:43+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "6852fdaafb1fd6c716e0138c2da3ad96cea43212",
+      "message": "Add comprehensive article: The Building of React-native-web-start\n\n- Created detailed 41KB article by Mark Hazleton covering complete development journey\n- Documented entire process from GitHub repo creation to production deployment\n- Included technical challenges, solutions, and enterprise best practices\n- Added SEO-optimized content with proper keywords and meta descriptions\n- Updated documentation service to include new article\n- Enhanced verification script to track new documentation file\n- Article covers: architecture decisions, build pipeline, CI/CD, troubleshooting, performance\n- Written in engaging voice of Solutions Architect and creator of WebSpark applications\n- Comprehensive resource for developers building cross-platform applications",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T19:12:57+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "b3517ff459eeeeae06ae32df0e5b4aaa065e3c4e",
+      "message": "Update verification script to include GitHub Pages guide\n\n- Add GITHUB_PAGES_PUBLISHING.md to expected files list\n- Include live URL for the new troubleshooting guide\n- Ensure comprehensive documentation verification",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:55:09+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "2684df5d8e57eacf5297d94d3580648af8611d87",
+      "message": "Add comprehensive GitHub Pages publishing troubleshooting guide\n\n- Create GITHUB_PAGES_PUBLISHING.md with detailed troubleshooting steps\n- Document all issues encountered: dependency conflicts, build failures, path resolution\n- Include solutions for React version conflicts, Vite compatibility, cross-platform scripts\n- Add workflow examples, configuration files, and best practices\n- Cover GitHub Actions vs gh-pages deployment methods\n- Provide step-by-step checklist for future developers\n- Add file to documentation service for web access\n\nThis guide documents our complete journey from initial setup problems to final working solution.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:53:52+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "67097f63e034eb094acbbf659821129e291be093",
+      "message": "Fix GitHub Actions build process\n\n- Use Node.js 20 to resolve crypto.hash Vite compatibility issue\n- Replace npm run copy-docs with direct Unix commands for Linux runner\n- Add separate generate-build-info script for CI/CD\n- Avoid Windows PowerShell commands in Linux environment\n- This should resolve both the copy-docs script error and Vite build failure",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:49:06+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "252af6380f58c7e0de6e58d2a97a7bee2a146c7c",
+      "message": "Fix GitHub Actions dependency conflicts\n\n- Change npm ci to npm install --legacy-peer-deps in workflow\n- Update React dependencies to use caret range for flexibility\n- Add .npmrc with legacy-peer-deps=true to handle version conflicts\n- This resolves ERESOLVE errors with react-test-renderer version mismatch",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:47:12+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "c01f957c444c24464cfaadcbcb16ced6db2cd95d",
+      "message": "Update build information and standardize YAML formatting",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:44:58+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "ea4b0b517468d6cdd72d63b50b977498bc3ce7f8",
+      "message": "Add GitHub Actions workflow for Pages deployment\n\n- Create .github/workflows/deploy.yml for automated deployment\n- Configure proper build process with environment variables\n- Use GITHUB_SHA for commit info in production builds\n- Add manual deploy script option\n- This will fix the GitHub Pages deployment issue where changes weren't showing up",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:43:38+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "040888cc4d5860aac39de7ed63b13d2186ccae19",
+      "message": "Apply formatting improvements to TypeScript files\n\n- Format vite-env.d.ts with proper semicolons\n- Clean up buildInfoService.ts formatting\n- Update documentationService.ts formatting\n- Refresh buildInfo.json with latest build data",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:38:00+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "8673883fcc6ff25e4ae44f8d13d6a0b3d4667c7a",
+      "message": "Fix GitHub Pages documentation loading and add version footer\n\n- Fix documentation service to use correct BASE_URL for GitHub Pages\n- Add automated build info generation with version and timestamp\n- Create Footer component with version, build date, and environment info\n- Update package.json prebuild script to generate build info\n- Add Vite environment types for proper TypeScript support\n- Documentation files now load correctly on GitHub Pages instead of showing fallback content\n\nThis resolves the CORS/path issues when running on github.io vs locally.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:33:43+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "6e587fc26e7e615be13eb342c7679c80bc463b21",
+      "message": "Add documentation deployment verification system\n\n\u2728 Features:\n- Created comprehensive documentation verification script\n- Automated checking of documentation files across all deployment stages\n- Verification of source, public, and distribution directories\n- Package.json scripts validation\n- Live URL accessibility reporting\n\n\ud83d\udd27 Implementation:\n- ES module compatible verification script (scripts/verify-docs.js)\n- New npm script: 'npm run verify-docs' for quick verification\n- Color-coded console output for easy status identification\n- File size reporting for each documentation file\n- Complete deployment pipeline validation\n\n\ud83d\udcca Verification Coverage:\n- Source documentation files (/documentation)\n- Public directory files (/public/documentation)\n- Distribution files (/dist/documentation)\n- Package.json deployment scripts\n- Live GitHub Pages URLs\n\n\ud83c\udfaf Benefits:\n- Quick troubleshooting of documentation deployment issues\n- Automated verification of all expected files\n- Clear reporting of deployment status\n- Professional deployment pipeline monitoring\n- Easy identification of missing or corrupted files",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:25:25+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "1f1749b168819ae28038347afe6ad5f36462e168",
+      "message": "Enhance issue templates and README.md for improved clarity and usability",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:20:23+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "21444725a5858c06dfda232f0a68d7e8bbbd5ded",
+      "message": "Create world-class README.md and comprehensive GitHub repository management\n\n\u2728 Features:\n- Completely rewritten README.md with enterprise-grade documentation\n- Professional badges, live demo links, and comprehensive feature overview\n- Detailed pros/cons analysis of using starter kits for development projects\n- Architecture overview with tech stack table and project structure\n- Platform compatibility matrix and browser support details\n- Step-by-step quick start guide and deployment instructions\n- Performance metrics and bundle analysis information\n- Best practices guidelines for when to use this starter kit\n\n\ud83c\udfaf GitHub Repository Management:\n- Professional issue templates (Bug Report, Feature Request, Documentation, Question)\n- Comprehensive pull request template with detailed checklists\n- Contributing guidelines with development workflow and coding standards\n- Security policy with responsible disclosure process\n- GitHub issue configuration with contact links\n\n\ud83d\udcda Documentation Standards:\n- World-class example for React Native Web starter kit repositories\n- Structured for different audience levels (beginners to advanced)\n- Cross-platform considerations throughout all documentation\n- Professional formatting with tables, code examples, and visual hierarchy\n- Clear call-to-actions and community engagement guidelines\n\n\ud83c\udfc6 Repository Excellence:\n- Model repository structure for other React Native Web projects\n- Comprehensive developer onboarding process\n- Professional issue management and contribution workflows\n- Security-first approach with vulnerability reporting process\n- Community-focused with multiple engagement channels",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:19:11+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "43c3d857618a30a88fb93a372242ed386d83c2fb",
+      "message": "Upgrade Vite from 5.2.0 to 7.0.6 - security update\n\n- Resolves Dependabot security alert\n- Maintains enhanced deployment scripts with documentation copying\n- Build and development server tested successfully\n- No breaking changes in configuration required\n- Bundle size: 321.37 kB (was 318.42 kB) - minimal increase",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:10:09+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "4546c0cf2298d92785cbd85c269fb4803ee5ea22",
+      "message": "Update deploy process to include latest documentation and README.md\n\n- Enhanced copy-docs script with cross-platform support (Windows/Unix)\n- Added prebuild hook to ensure docs are copied before every build\n- Updated predeploy to copy latest files from /documentation and /README.md\n- Documentation now automatically synced to public/documentation/ before deployment\n- Both Windows PowerShell and Unix commands supported for better compatibility",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T18:06:02+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "e4f5d2bc1849c185e54c1040394ae0700c10bfe4",
+      "message": "\ud83c\udf10 Add GitHub Pages deployment configuration\n\n\u2728 Features:\n- Configure Vite base path for GitHub Pages subdirectory hosting\n- Add gh-pages deployment scripts to package.json\n- Set homepage URL for GitHub Pages deployment\n- Update TypeScript configuration for web builds\n- Add predeploy and deploy scripts for automated deployment\n\n\ud83d\udce6 Deployment:\n- Base path: /react-native-web-start/ for GitHub Pages\n- Homepage: https://markhazleton.github.io/react-native-web-start\n- Automated build and deploy process with npm run deploy\n- Production-ready build with optimized bundle\n\n\ud83d\ude80 Usage:\n- npm run build: Build for production\n- npm run deploy: Build and deploy to GitHub Pages\n- npm run deploy:gh-pages: Combined build and deploy command\n\nThe React Native Web application is now ready for GitHub Pages hosting!",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T17:59:43+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "7136e9844cf9ddf46d3707f60bb14d469c032d68",
+      "message": "\ud83d\ude80 Initial React Native Web + Vite Starter with Documentation Browser\n\n\u2728 Features:\n- Complete cross-platform React Native Web application using Vite\n- TypeScript support with strict type checking\n- Cross-platform navigation with TabBar (Home, Jokes, Docs, About)\n- API integration with JokeAPI for demonstration\n- In-app documentation browser with markdown rendering\n- Platform-specific styling and optimizations\n- Comprehensive error handling and loading states\n\n\ud83d\udcf1 Platform Support:\n- Web: Fast development with Vite HMR at localhost:3000\n- iOS: React Native CLI configuration ready\n- Android: React Native CLI configuration ready\n- Responsive design for all screen sizes\n\n\ud83d\udee0\ufe0f Technical Architecture:\n- Vite build tool with React Native Web aliases\n- Metro configuration for mobile bundling\n- Babel configuration for React Native preset\n- TypeScript with proper cross-platform types\n- Service layer architecture for API calls\n- Component-based architecture with screen navigation\n\n\ud83d\udcda Documentation System:\n- In-app documentation browser with search functionality\n- Markdown renderer supporting headers, lists, code blocks, quotes\n- Documentation files served from public directory\n- File metadata display with size and modification dates\n- Comprehensive setup guides and technical analysis\n\n\ud83c\udfaf Key Components:\n- WelcomeScreen: Platform info and feature overview\n- JokesScreen: API integration with error handling\n- DocumentationScreen: File browser and markdown viewer\n- AboutScreen: Technology stack and resource links\n- Cross-platform TabBar navigation\n\n\ud83d\udce6 Configuration Files:\n- package.json: Dependencies and scripts for all platforms\n- vite.config.ts: Optimized for React Native Web\n- tsconfig.json: Strict TypeScript configuration\n- metro.config.js: Mobile bundler configuration\n- babel.config.js: React Native preset\n\n\ud83d\ude80 Ready for Development:\n- npm run web: Start web development server\n- npm run android: Run on Android device/emulator\n- npm run ios: Run on iOS device/simulator (macOS only)\n- npm run build: Production web build\n- npm run type-check: TypeScript validation\n\n\ud83d\udcd6 Documentation:\n- Complete setup guide for all platforms\n- Project summary with achievements\n- Technical analysis of API integration\n- Step-by-step development instructions\n\nThis commit establishes a production-ready foundation for cross-platform React Native Web development with comprehensive documentation and modern tooling.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T17:55:41+00:00",
+      "repo": "react-native-web-start"
+    },
+    {
+      "sha": "4437cd4c0189b57bff626bc8b865adfdfc3bc8d9",
+      "message": "Initial commit",
+      "author": "Mark Hazleton",
+      "date": "2025-07-26T17:21:18+00:00",
+      "repo": "react-native-web-start"
+    }
+  ],
+  "hash": "f9cee03202f122fc0548517054aeeff4cec824b44ecda9d57bd5f0e4122d759b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "react-native-web-start"
+    },
+    "category": "commits",
+    "pushed_at": "2026-01-01T18:27:30+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "react-native-web-start",
+  "week": "2026-01-01T18-27-30+00-00"
+}

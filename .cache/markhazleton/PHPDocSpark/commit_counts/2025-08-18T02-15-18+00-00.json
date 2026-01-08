@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:41:04.486972+00:00",
+  "value": {
+    "total": 119,
+    "recent_90d": 0,
+    "recent_180d": 36,
+    "recent_365d": 36,
+    "last_commit_date": "2025-08-18T02:15:15+00:00"
+  },
+  "hash": "065dd02c96fa7ac19dfeb70b9a4476f65079dba6dacb97ee3956f9371f1afebd",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PHPDocSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-08-18T02:15:18+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "PHPDocSpark",
+  "week": "2025-08-18T02-15-18+00-00"
+}

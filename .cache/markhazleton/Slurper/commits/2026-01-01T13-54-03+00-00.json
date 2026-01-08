@@ -1,0 +1,299 @@
+{
+  "timestamp": "2026-01-08T17:43:16.417528+00:00",
+  "value": [
+    {
+      "sha": "6a1996954c0af96430a18de71ce2280a2b08a979",
+      "message": "Update issue templates",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T13:19:33+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "521b1a78af9c26629720aa06a29bc327c7afa1ca",
+      "message": "Release v3.5.0: Add .NET 10 support and update documentation",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T13:14:49+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "48f14a346c248851591ba6ffd99a673801caf37b",
+      "message": "Add source map for site.js to improve debugging experience",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T13:11:27+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "fb5c6042db5ce6f6179dc91b2ac9092ec6b52389",
+      "message": "Merge pull request #2 from markhazleton/upgrade-to-NET10\n\nUpgrade to .NET 10",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T13:08:47+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9e32acc8a82eb9d1692e41ca5eb19ea0ef6df15e",
+      "message": "Refactor code structure for improved readability and maintainability",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T13:07:18+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "b938cce9e05aaaf05453266a18f77672ee04d6f0",
+      "message": "feat: Add navigation toggle, smooth scrolling, and tabs functionality\n\n- Implemented navigation toggle for mobile view.\n- Added smooth scrolling with offset for fixed navbar.\n- Created tabs functionality with keyboard navigation support.\n- Integrated clipboard functionality for code blocks.\n- Enhanced navbar with scroll effect and active link highlighting.\n- Added Intersection Observer for animations on scroll.\n- Preloaded images for better performance.\n- Included loading indicator for async operations.\n- Established a responsive design for various screen sizes.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T12:59:54+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "bf1fb5a722cb79c0d8d8a621266992b2bfd5fc48",
+      "message": "chore: add copy-webpack-plugin as a dev dependency",
+      "author": "Mark Hazleton",
+      "date": "2025-11-16T12:49:24+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "07181a456336b3050929af4b56ba4175b26aabb1",
+      "message": "Enhance build system and UI for Slurper Demo\n\nUpdated README.md to improve presentation with emojis, a \"Quick Start\" guide, and highlighted new features like a detective theme and gamification. Integrated npm into SlurperDemo.Web.csproj for build automation, including npm package installation and build tasks. Modified _Layout.cshtml to bundle CSS and JS via webpack, improving performance. Removed achievement counter script from _Layout.cshtml, likely integrated into new gamification features.\n\nEnhanced site.css with responsive design utilities, Font Awesome 7 integration, animations, and effects for improved interactivity. Updated site.js with new classes for achievement tracking, data table enhancements, form validation, smooth scrolling, toast notifications, and loading spinner utilities. Added vendor.js for third-party libraries and site.scss for SCSS features. Introduced build documentation, PowerShell script, and configuration files for a modern npm-based build system.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-15T23:38:28+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6ca58bfb2c3824f2d433b8d6737366b3f0f49392",
+      "message": "Update achievement icon for Format Explorer",
+      "author": "Mark Hazleton",
+      "date": "2025-11-15T15:41:56+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "b643c37c1aeb38f53570ce7715014303a02b2bef",
+      "message": "Add execution log for .NET 10 upgrade",
+      "author": "Mark Hazleton",
+      "date": "2025-11-15T15:28:25+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "439f6b0fd5acd4ee1d33d0e68275a8abd90ed958",
+      "message": "Upgrade to .NET 10.0\n\nUpdated WebSpark.Slurper to multi-target net8.0;net9.0;net10.0\n\nUpdated SlurperDemo.Web to target net10.0\n\nUpdated WebSpark.Slurper.Tests to target net10.0\n\nUpgraded 6 Microsoft.Extensions.* packages to 10.0.0\n\nUpgraded System.Text.Json to 10.0.0\n\nAll tests passing: 96/99 passed, 3 intentionally skipped",
+      "author": "Mark Hazleton",
+      "date": "2025-11-15T15:27:19+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "fa0bdd544985fcda332178d871d16a62237404be",
+      "message": "Pre-upgrade commit: Save current state before .NET 10 upgrade",
+      "author": "Mark Hazleton",
+      "date": "2025-11-15T15:16:13+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "34c4e9560c247475fea1a2cb0a348359fe2117b8",
+      "message": "Refactor Slurper for DI, HttpClient, and Validation\n\nUpgraded dependencies for compatibility, including `Microsoft.NET.Test.Sdk` (17.14.1 \u2192 18.0.0) and `xunit.runner.visualstudio` (3.1.1 \u2192 3.1.5). Added `Microsoft.Extensions.Http` for HTTP client support.\n\nIntroduced `HttpClientService` with retry logic, exponential backoff, and lifecycle management. Replaced static `HttpClient` in `JsonExtractor` with dependency-injected `IHttpClientService` for better testability and maintainability.\n\nRefactored `JsonSlurper` for modularity, added depth validation, and improved handling of JSON structures. Centralized input validation with the new `InputValidator` utility for file paths, URLs, and source content.\n\nEnhanced `SlurperFactory` to support `IHttpClientService` injection. Updated `ServiceCollectionExtensions` to register `HttpClientService` and related dependencies.\n\nImproved retry logic for HTTP requests and streamlined large file handling. Refactored methods for better readability and modularity. Updated test projects to align with these changes.\n\nMaintained backward compatibility with fallback logic for `HttpClient` and existing property structures.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-07T19:05:24+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9e66c91d75149c4e606b7ac91ce7a60a9a489162",
+      "message": "Release v3.3.0 - Enhanced demo application with raw content display",
+      "author": "Mark Hazleton",
+      "date": "2025-07-01T14:20:23+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "26a1f08b7e0641c7cf3b98709898192bae264bff",
+      "message": "Add Tests and Demo Application\nEnhance JsonSlurper and CsvSlurper\nv3.20",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T15:19:06+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "18a5edd7ef35b828073d7876f41ea5454974264f",
+      "message": "update workflow",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T05:21:48+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "dee4c088c827f9d356d6aa4dab44d7206caba6ac",
+      "message": "update file",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T05:15:32+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6dc121c65cb802680e3c459d832e68a61d16a772",
+      "message": "Bump version to 3.1.5",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T05:06:48+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "88a092c4c674787d89c1eb5d45946c526253ba50",
+      "message": "v3.1.4 Version",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T04:53:07+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "024142e9cccc68033db3fa1538859269af8c17e9",
+      "message": "simplify",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T04:48:15+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "5bbc3c23238c44b9250e8163304fdf6a2a8823af",
+      "message": "Publish Version 3.1.2",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T04:43:37+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "2c33df708f9cccf6763f40183aede88a1c5619bc",
+      "message": "Updates, init demo app",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T02:59:30+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9f19b3e28ae0813f569b4870ecdeafb7ab3eadbf",
+      "message": "update readme",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T18:40:05+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "0805ee47a39e08abe02b4dbf36f59e56e62b7547",
+      "message": "update nuget document",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:45:53+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "20b1b60a34abc4197ea316ef00d659ce1c69641a",
+      "message": "Document Managing a NuGet Package",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:42:48+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "27c0f7546f9a73652cffc6d2d24a1e6292e06115",
+      "message": "update to version 3.1.1",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:38:47+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "4a00c677c59da8fb02d92b95797b5675c5097d24",
+      "message": "update for secret on GitHub",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:34:49+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "8e03bd269fc07ee0daa2d6a148896ec4637fbd1c",
+      "message": "fix issues with package building",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:29:33+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "c0f272bf37fc6946177314ce3a75e668c5a45202",
+      "message": "update gitversion config",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:26:53+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "73fb36d103c615c3d3521e24a4df519da3991145",
+      "message": "updates for moving",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:24:42+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "ebd6f41413208576488ee6be1b452a388b7f92a3",
+      "message": "setup workflow",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:23:05+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6dda6a4fb271a9beac409b878737b6236932363c",
+      "message": "updates for building nuget package",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T17:15:27+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6121d9860feac5ad97b737129db18c22190f13bf",
+      "message": "fix readme link in sln file",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T16:13:33+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "5efdd6b650a6e13734fca59f9ae40b225ee86842",
+      "message": "Refactor and ReName to WebSpark.Slurper",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T16:12:10+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "145208438944d28c5ef9d9d0f3fee5325bc91d88",
+      "message": "update  documentation",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T15:18:52+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "4ddcbf9b3f9c9dc46656ea88abe4bd87e2546aac",
+      "message": "refactor and organize files",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T15:07:26+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6b9b5678f85a25ce217c4b08a6e77d076a0e51e3",
+      "message": "package updates",
+      "author": "Mark Hazleton",
+      "date": "2024-03-27T20:02:22+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "6f3311edb2d110c9a47ab1f85ceab2044587d0fb",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2023-08-30T22:52:27+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "f1fd84471483f6969c3e6cc42a21ca3b0b3f0000",
+      "message": "update packages, update references to existing projects",
+      "author": "Mark Hazleton",
+      "date": "2023-08-25T17:38:33+00:00",
+      "repo": "Slurper"
+    },
+    {
+      "sha": "9d9aceb5224886d2429709c4700105f18115265f",
+      "message": "Setup testing reading WebProjectMechanics.XML site profile",
+      "author": "Mark Hazleton",
+      "date": "2023-04-03T17:06:43+00:00",
+      "repo": "Slurper"
+    }
+  ],
+  "hash": "1359336eaa1fc1cfbdf621bab9ddb04ff7b8569b89f92c99912b0cbdbedea054",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Slurper"
+    },
+    "category": "commits",
+    "pushed_at": "2026-01-01T13:54:03+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "Slurper",
+  "week": "2026-01-01T13-54-03+00-00"
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-08T17:47:38.495327+00:00",
+  "value": {
+    "ConcurrentProcessing.csproj": "\ufeff<Project Sdk=\"Microsoft.NET.Sdk\">\n  <PropertyGroup>\n    <OutputType>Exe</OutputType>\n    <TargetFramework>net10.0</TargetFramework>\n    <IsAotCompatible>true</IsAotCompatible>\n  </PropertyGroup>\n  <ItemGroup>\n    <None Include=\".github\\CREATE_PR.md\" />\n    <None Include=\".github\\PULL_REQUEST.md\" />\n  </ItemGroup>\n  <ItemGroup>\n    <PackageReference Include=\"Microsoft.CodeAnalysis.NetAnalyzers\" Version=\"10.0.101\">\n      <PrivateAssets>all</PrivateAssets>\n      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>\n    </PackageReference>\n  </ItemGroup>\n</Project>\n"
+  },
+  "hash": "8a96274b3f8025b4a18964e3cc6a73d55d97e5cd160d1a02bb0f2d75cf513a27",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "ConcurrentProcessing"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2025-12-18T05:31:52+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "ConcurrentProcessing",
+  "week": "2025-12-18T05-31-52+00-00"
+}

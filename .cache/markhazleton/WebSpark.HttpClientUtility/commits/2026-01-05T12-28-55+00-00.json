@@ -1,0 +1,670 @@
+{
+  "timestamp": "2026-01-08T17:43:49.767022+00:00",
+  "value": [
+    {
+      "sha": "0bc50c44290e119430f93d7af4bc2d0b9929dd73",
+      "message": "docs: Add strategic improvements summary for WebSpark.HttpClientUtility\n\n- Implemented 7 high-impact improvements focusing on discoverability, trust signals, developer experience, and testing infrastructure.\n- Restructured README for better positioning and clarity.\n- Created a new Testing package to facilitate easier testing.\n- Enhanced NuGet package metadata for improved SEO and visibility.\n- Added production-readiness signals to build trust with users.\n- Documented implementation metrics and expected outcomes for future tracking.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-05T12:28:51+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "84a756bb8f520dda8589d929de0c4aa6b700a160",
+      "message": "Fix SignalR race condition, implement real-time updates, and enhance results display\n\n- Added final fix for SignalR script loading race condition to ensure proper initialization.\n- Updated CrawlerController to handle asynchronous crawling and return 202 Accepted response.\n- Implemented real-time updates via SignalR for crawl progress and completion messages.\n- Enhanced JavaScript to display results upon crawl completion using SignalR.\n- Resolved Visual Studio npm build errors by making npm build non-blocking and adding verification for output.\n- Fixed permission issues during Vite build in Visual Studio by improving clean script with retry logic.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-04T19:06:34+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "10395bb50d8ca4361ca345b3357fbf490ef19a5d",
+      "message": "Update docs for v2.2.0: package split, quality, .NET 10\n\nComprehensive documentation refresh for v2.2.0:\n- Updated all pages to v2.2.0, .NET 8/9/10 support, and 237+ tests (711 runs)\n- Added clear package split (Base & Crawler), install and DI guidance\n- Documented new quality features: Source Link, .snupkg, AOT/trimming, package validation, zero-warning builds\n- Expanded version history and migration guidance for v1.x users\n- Updated footers, meta tags, and navigation for consistency and SEO\n- Added docs-update-summary.md with change rationale and checklist",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:28:47+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "304c3a62e2fe4f5b63535c5c18b6bd82126ee135",
+      "message": "Add release execution summary for v2.2.0\n\nIncludes detailed markdown documenting the v2.2.0 release process: actions taken, workflow steps, package details, monitoring instructions, verification checklist, rollback plan, post-release tasks, timeline, and highlights of new features. This provides a transparent and traceable record of the release.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:06:59+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "02ae968ec288ac2dfbd98c1fbcb601246f3b0284",
+      "message": "chore: bump version to 2.2.0 - Quality and Tooling release\n\nAdded Source Link debugging, symbol packages, trimming/AOT readiness, package validation, zero-warning builds. Demo app migrated to Vite/NPM. All 237 tests passing. Zero breaking changes.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T23:05:30+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "5983313b4ad8c762795ebd68be24375e2594faae",
+      "message": "Enhance build pipeline: lint, format, docs, zero warnings\n\nUpgraded npm build process for WebSpark.HttpClientUtility.Web:\n- Added ESLint, Stylelint, Prettier with strict configs\n- New scripts for clean, lint, format, and zero-warning builds\n- Updated source files to pass all lint/format checks\n- Created config files for linting and formatting\n- Added detailed build and quick reference documentation\n- Build now fails on any lint warnings for maximum code quality",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:52:57+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "0e3d5357d01c15ade9289eac1b264c60e58de3c7",
+      "message": "Add explicit Microsoft.NET.ILLink.Tasks 10.0.1 to all projects\n\nExplicitly reference Microsoft.NET.ILLink.Tasks version 10.0.1\nin all .csproj files to ensure consistent linker/trimmer\nbehavior across the solution. This overrides the SDK-provided\nversion and helps address potential build or compatibility\nissues related to ILLink.Tasks.",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:37:54+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "e60fc5a14d113ab38a441aa0f209ef7541025135",
+      "message": "Improve NuGet quality, trimming/AOT readiness, docs\n\n- Enable Source Link, symbol packages, and package validation for both base and crawler projects\n- Add trimming and AOT analyzers; annotate all reflection-based APIs with RequiresUnreferencedCode/RequiresDynamicCode\n- Add global suppressions for test and demo projects; disable analyzers where not needed\n- Update package icons, metadata, and documentation to reflect new quality features\n- Add markdown docs for build status, annotation patterns, and package improvements\n- Solution is now trimming-aware and ready for v2.2.0 release, with only minor annotation fixes remaining",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T22:12:12+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "7ac8a8256ab1737b8aaafd01434152f35f893ace",
+      "message": "Migrate to Vite/NPM pipeline for all client-side assets\n\n- Replace LibMan/CDN/lib folder with NPM-managed Vite build for JS/CSS\n- Add package.json, package-lock.json, and .gitignore for node_modules and Vite output\n- Configure Vite for bundling, minification, hashed filenames, and manifest\n- Add main.js, site.js, and site.css as modern entrypoints (Bootstrap, Icons, custom code)\n- Implement ViteAssetTagHelper for manifest-based asset injection in Razor\n- Update _Layout.cshtml to use <vite-style> and <vite-script>, remove all lib/CDN refs, and show warning if Vite assets missing\n- Enhance .csproj to auto-run npm install/build and clean Vite artifacts\n- Add detailed docs: README, BUILD-PIPELINE, MIGRATION-SUMMARY, VERIFICATION-CHECKLIST\n- Register TagHelper in _ViewImports.cshtml\n- App now uses only NPM-built, tree-shaken, minified, cache-busted assets",
+      "author": "Mark Hazleton",
+      "date": "2026-01-03T21:33:57+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "a1bbf547f475bac21941be0234aba914d0b7baa0",
+      "message": "Update Microsoft.Extensions.* packages to 10.0.1\n\nUpgraded Microsoft.Extensions.Caching.Memory to 10.0.1 in all projects. Also updated Microsoft.Extensions.Caching.Abstractions and Microsoft.Extensions.Http to 10.0.1 in WebSpark.HttpClientUtility.csproj. No other changes made.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-29T01:44:52+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "529d98bb262ab0bf1022b02c0dd3e030189c205e",
+      "message": "chore: bump version to 2.1.2 for security patch release\n\nSecurity fixes:\n\n- Fixed js-yaml prototype pollution (GHSA-mh29-5h37-fv8m - MODERATE)\n\n- Fixed glob command injection (GHSA-5j98-mcp5-4vw2 - HIGH)\n\n- Updated CHANGELOG with security patch details\n\n- Lockstep version bump for both base and crawler packages\n\nAll Dependabot alerts resolved. Zero breaking changes.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-04T04:09:07+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "ef85d034bfa4355aea0fc21ddc6e575de7190f11",
+      "message": "fix(deps): update glob and js-yaml to fix security vulnerabilities\n\n- Update glob from 11.0.3 to 11.1.0 (fixes GHSA-5j98-mcp5-4vw2 - HIGH)\n\n- Update js-yaml to 3.14.2 and 4.1.1 (fixes GHSA-mh29-5h37-fv8m - MODERATE)\n\n- Add comprehensive security review report\n\nResolves all open Dependabot security alerts",
+      "author": "Mark Hazleton",
+      "date": "2025-12-04T04:05:49+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "ee356e4efed848272349a90df8d397c01e5a18ee",
+      "message": "feat: Refactor HttpClientServiceTelemetry to use consistent private field naming\n\nfix: Update ConcurrentProcessorT to use consistent private field naming for task list\n\nrefactor: Change service field to _service in HttpClientConcurrentProcessor for clarity\n\nrefactor: Update HttpRequestResultService to use _curlCommandSaver for consistency\n\nstyle: Rename BufferSize constant to _bufferSize in StreamingHelper for consistency\n\nchore: Enhance NuGet package metadata and SEO for better discoverability\n\nchore: Add local settings for Claude configuration\n\ndocs: Add detailed implementation summary for strategic improvements\n\ntest: Add AssemblyInfo for parallel test execution in Crawler tests\n\ntest: Implement FakeHttpResponseHandler for simplified HTTP testing\n\ndocs: Create README for Testing package with usage examples\n\nchore: Initialize Testing project with multi-targeting and dependencies",
+      "author": "Mark Hazleton",
+      "date": "2025-12-04T03:58:49+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "191046d0000f07fc3200f04d0ac7e2f562223396",
+      "message": "feat: auto-trigger docs rebuild when NuGet packages are published\n\nAdd workflow_run trigger to publish-docs.yml\n\nEnsures documentation site stays in sync with NuGet package versions\n\nOnly runs if the NuGet publish workflow succeeds",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T23:26:06+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "ce78a691a24f791bc748c29c5e617fc5aa1abea6",
+      "message": "chore: bump version to 2.1.1\n\nUpdate version in Directory.Build.props from 2.1.0 to 2.1.1\n\nUpdate CHANGELOG.md with GitHub Actions workflow fix details",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T23:12:54+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "d2d0878562d9a6bf277752b3296feb16b99e006a",
+      "message": "fix: Handle grep exit codes in package verification step\n\nAdd fallback to prevent grep from failing the workflow\n\nUse [0-9]* pattern to avoid matching .snupkg files\n\nAdd directory listing to help debug package issues",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T23:00:51+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "130ccf7ce049f1bf1038aa85e4ab3c5808d0b63c",
+      "message": "fix: revert SDK version and rollForward settings in global.json",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T22:28:06+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "1d63876b736e1fef208cdfc65911e39f051c5298",
+      "message": "Improve GitHub Actions test reporting\n\nEnhanced the `publish-nuget.yml` workflow by using auto-generated TRX file names to prevent overwriting and organizing test results into separate directories for each .NET framework version. Added detailed debugging output and a verification step to ensure TRX files exist before reporting. Configured the test reporter to not block the workflow if issues arise.\n\nUpdated `github-actions-fix.md` to document these changes, explaining the root causes and solutions, and providing a troubleshooting guide.\n\nAdded `quick-fix-summary.md` to offer a concise overview of the fixes, highlighting key changes and expected outcomes in GitHub Actions logs.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T21:33:31+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "3f1dbd6507bc83d1c0d1da686aa3e646c5e322f3",
+      "message": "Fix GitHub Actions SDK and test reporting issues\n\nUpdated `publish-nuget.yml` to improve the GitHub Actions workflow by addressing SDK version mismatches and test result reporting issues. Changed `global.json` rollForward policy to `latestFeature` to allow preview/RC .NET 10 versions. Consolidated test results into a single directory with explicit TRX file names, and ensured test reporting runs regardless of build success. Added `github-actions-fix.md` for detailed documentation. Updated Visual Studio solution file version.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T21:23:25+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "0375b50958d1fd471f7d5b0ba22ad0f10460e16d",
+      "message": "docs: update test reporter fix documentation with root cause analysis",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:50:35+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "66c7f131727c16d8daaac1ce7002251b4f8f750d",
+      "message": "fix: allow auto-generated test result filenames to prevent file collision",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:49:29+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "5de75b311d70adc90f48d60af8f6d012fbc2bf48",
+      "message": "docs: add branch merge summary for upgrade-to-NET10 to main",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:44:04+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "50e3b414f7934771cc1a4fc97c14169611ef90a4",
+      "message": "fix: resolve test reporter file discovery issue and consolidate test results",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:43:11+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "45b69eabb4803ddaf0102dd738344083756baae7",
+      "message": "Fix GitHub Actions test reporting issue\n\nUpdated `publish-nuget.yml` by removing steps for .NET SDK setup, dependency restoration, solution building, and test execution across multiple .NET versions. Added `github-actions-test-reporter-fix.md` to document the resolution of test result discovery issues caused by directory structure mismatches and path pattern problems. Consolidated test results into a single directory, simplified path patterns, and added a debug step to ensure correct test result reporting. Maintained compatibility with existing artifact uploads and code coverage generation.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:40:12+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "24929b81f2680c4a18a2392270b36a55664ccbea",
+      "message": "Upgrade to net10 (#3)\n\n* feat: Add .NET 10 multi-targeting to base library\n\n* feat: Add .NET 10 multi-targeting to crawler library\n\n* feat: Add .NET 10 multi-targeting to base library tests\n\n* feat: Add .NET 10 multi-targeting to crawler tests\n\n* feat: Add .NET 10 multi-targeting to demo application\n\n* docs: Update documentation for .NET 10 multi-targeting support\n\n* docs: Update for .NET 10 multi-targeting support\n\nUpdated README.md to include .NET 8-10 support, highlighting .NET 10's preview status. Added a detailed entry in CHANGELOG.md for v2.1 release, documenting .NET 10 multi-targeting. Documented .NET 10 SDK requirements. Verified all related commits for clarity and adherence to conventional commit format. Updated tasks.md to mark TASK-018 as complete, ensuring all documentation is current and ready for merge.\n\n* chore: Bump version to 2.1.0 for .NET 10 multi-targeting release\n\n* ci: Update workflow to support .NET 10 multi-targeting. Add .NET 8, 9, and 10 SDK setup. Run tests on all three frameworks. Add package verification.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:33:08+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "5c70c4ef2224d7e792df0e471fcdd1f3af326025",
+      "message": "ci: Update workflow to support .NET 10 multi-targeting. Add .NET 8, 9, and 10 SDK setup. Run tests on all three frameworks. Add package verification.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:31:13+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "32ec41992b31e785defd8e619b49125c3c2614da",
+      "message": "chore: Bump version to 2.1.0 for .NET 10 multi-targeting release",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T20:01:40+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "a60ae13892d6593874a8805f2a4da44700c08294",
+      "message": "docs: Update for .NET 10 multi-targeting support\n\nUpdated README.md to include .NET 8-10 support, highlighting .NET 10's preview status. Added a detailed entry in CHANGELOG.md for v2.1 release, documenting .NET 10 multi-targeting. Documented .NET 10 SDK requirements. Verified all related commits for clarity and adherence to conventional commit format. Updated tasks.md to mark TASK-018 as complete, ensuring all documentation is current and ready for merge.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T19:33:08+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "9aec21a2fddf7472384dda084099190e177e60f6",
+      "message": "docs: Update documentation for .NET 10 multi-targeting support",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T19:29:17+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "791e3dda5894b24e00e9fdcfc22a6acd8de20802",
+      "message": "feat: Add .NET 10 multi-targeting to demo application",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T19:24:12+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "34950470f4730c443189fd6d8d9cf054d8e52892",
+      "message": "feat: Add .NET 10 multi-targeting to crawler tests",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T18:17:42+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "0d1ac9847aec43145614a4ccdb8fa0313e020c9b",
+      "message": "feat: Add .NET 10 multi-targeting to base library tests",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T18:15:45+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "222a639e85465163a0a729aff34f92df6023989c",
+      "message": "feat: Add .NET 10 multi-targeting to crawler library",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T18:10:24+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "accf3f110f7f1d8218ab4d056b55cee5839301e2",
+      "message": "feat: Add .NET 10 multi-targeting to base library",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T17:01:41+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "f7931614f1b814be13a64cfd20f2bfea9a3db104",
+      "message": "docs(release): add complete v2.0.0 release notes\n\nAdd a comprehensive release document (copilot/session-2025-11-05/release-v2.0.0-complete.md) summarizing the v2.0.0 release:\n- Documents merge of 003-split-nuget-packages and creation of v2.0.0 tag\n- Notes atomic CI/CD publish of two packages (base + crawler) to NuGet with package hashes\n- Includes build/test results (build success, 474 tests passing), code quality and signing details\n- Describes package-split migration steps, sitemap/RSS discovery feature, demo app, and key bug fixes\n- Lists release metrics, lessons learned, next steps and repository/remote state",
+      "author": "Mark Hazleton",
+      "date": "2025-11-05T18:24:11+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "cbcff8de5f60884b3584ffe31b28107cab6c37c2",
+      "message": "Merge feature: Split NuGet packages into base and crawler extension (v2.0.0)\n\nCompleted implementation of 003-split-nuget-packages feature:\n- Split monolithic package into WebSpark.HttpClientUtility (base) and WebSpark.HttpClientUtility.Crawler (extension)\n- Base package size reduced by 63% (164.52 KB vs ~450 KB in v1.5.1)\n- Dependencies reduced from 13 to 10 in base package\n- All 474 tests passing (420 base + 54 crawler)\n- Added interactive demo UI with real-time SignalR progress updates\n- Implemented sitemap/RSS discovery feature for JavaScript SPA sites\n- Fixed StreamingHelper JSON deserialization for string responses\n- Improved crawler defaults (MaxDepth: 3, MaxPages: 100)\n\nBreaking Changes:\n- Users of crawler features must now install WebSpark.HttpClientUtility.Crawler package\n- Users must call both AddHttpClientUtility() and AddHttpClientCrawler() in DI\n- Non-crawler users experience zero breaking changes\n\nSee CHANGELOG.md for full details.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-05T18:20:08+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "99b9150e29af23e3ae4a312f6df853be7276a456",
+      "message": "feat(crawler,web): add sitemap/RSS discovery, demo MVC UI, and streaming string handling\n\n- Add CrawlerOptions.DiscoverFromSitemapAndRss (default: true)\n- Implement SiteCrawler.DiscoverUrlsFromSitemapAndRssAsync() and ExtractUrlsFromXml() to fetch sitemap.xml, rss.xml, feed.xml and atom.xml and enqueue discovered same-domain URLs\n- Update crawl notifications to send per-page progress (Crawled/Queue/Found)\n- Switch CrawlerController from API (ControllerBase) to MVC (Controller); add Index view action, change Crawl endpoint to return a serializable DTO and improved error handling; add helper to extract page titles\n- Add interactive Razor UI at Views/Crawler/Index.cshtml with SignalR client for real-time progress, crawler options (including sitemap/RSS toggle), and results table\n- Fix StreamingHelper to return raw string content when T == string (avoid JSON deserialization for HTML)\n- UI/layout fixes: update _Layout.cshtml menu/version badges, remove absolute footer positioning and convert layout to flexbox (.container flex:1) to prevent overlap\n- Add development logging settings for crawler/streaming in appsettings.Development.json\n- Update specs/plan/tasks documentation to reflect sitemap/RSS discovery and demo enhancements",
+      "author": "Mark Hazleton",
+      "date": "2025-11-05T18:18:00+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "44f3e2df1893504c8aa2fb305f86cf734943b234",
+      "message": "chore(crawler): add README-Crawler to package and finalize package-split docs\n\n- WebSpark.HttpClientUtility.Crawler.csproj: enable PackageReadmeFile, include README-Crawler.md in package, clarify PackageIcon comment\n- Add comprehensive WebSpark.HttpClientUtility.Crawler/README-Crawler.md (quickstart, examples, options, requirements, migration)\n- Mark split implementation complete across specs: update spec.md, plan.md, tasks.md (status summaries, task completion)\n- Add implementation artifacts and reports: copilot session README, implementation-status-report.md, and IMPLEMENTATION-COMPLETE.md\n\nPrimarily documentation and package metadata updates to finalize the NuGet package split and prepare for release.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-05T17:10:31+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "4e105b3ad94e232a5e13a86a874f81317bb0e79f",
+      "message": "feat(crawler): extract crawler into separate NuGet package and update packaging, CI, docs, and tests\n\n- Add new WebSpark.HttpClientUtility.Crawler project with crawler surface:\n  SiteCrawler, SimpleSiteCrawler, ISiteCrawler, CrawlResult, CrawlException,\n  RobotsTxtParser, CrawlHub, SiteCrawlerHelpers, Lock, CrawlerOptions,\n  CrawlerPerformanceTracker and related types.\n- Implement AddHttpClientCrawler DI extension and ServiceCollection wiring\n  (SignalR, HttpClientFactory, default IConfiguration/IStringConverter, IHttpRequestResultService factory).\n- Move crawler demo controller and web app integrations:\n  register crawler package (AddHttpClientCrawler), map CrawlHub, update Program.cs.\n- Change CurlCommandSaver to use JSON Lines (.jsonl) instead of CSV:\n  remove CsvHelper usage, update options and file rotation/logging paths.\n- Update packaging and project metadata:\n  - WebSpark.HttpClientUtility (base) trimmed description, removed crawler deps (CsvHelper, HtmlAgilityPack, Markdig),\n    disabled package validation for v2.0.0, note versioning now lockstep.\n  - WebSpark.HttpClientUtility.Crawler csproj contains crawler-specific metadata and release notes.\n- Update CI workflow (.github/workflows/publish-nuget.yml) to pack both packages,\n  upload combined artifact and publish both packages atomically on version tags.\n- Documentation and release notes:\n  - README and CHANGELOG updated with v2.0.0 two-package split, migration steps and features.\n- Tests and test projects:\n  - Adjust test project NoWarn settings, add OpenTelemetry in test csproj,\n  - Move and rework crawler tests into crawler test project, add global using for MSTest,\n  - Remove outdated/duplicated test files and update assertions to JSONL expectations.\n- Misc: various cleanup, small API/option renames (CsvFileName -> FileName) and improved defaults.\n\nThis implements the v2.0 package split: lightweight base package (core HTTP features) + dedicated crawler extension (web crawling features) with coordinated build/publish and migration guidance.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-05T16:42:22+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "ae1341ecbc6004a3890edd57507c33eb56a5c11b",
+      "message": "feat: split Crawler into its own NuGet package and update build/solution\n\n- Extract crawler functionality into a new WebSpark.HttpClientUtility.Crawler package\n  (add Crawler csproj, CrawlerOptions, ServiceCollectionExtensions and a Crawler.Test project).\n- Remove crawler implementation files from the main library (moved to the new package).\n- Update solution to include WebSpark.HttpClientUtility.Crawler and its test project.\n- Centralize and enrich build/package metadata in Directory.Build.props:\n  versioning, multi-targeting, license, project URL, strong-name signing, SourceLink,\n  and NuGet package generation settings (symbols/docs).\n- Adjust WebSpark.HttpClientUtility.csproj for the split:\n  remove ASP.NET Core framework reference and crawler-specific deps, swap caching package,\n  remove SourceLink/in-memory OTEL exporter from the published package.\n- Remove in-memory OpenTelemetry exporter from library OpenTelemetry setup (kept for test projects).",
+      "author": "Mark Hazleton",
+      "date": "2025-11-03T15:55:08+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "a6fbf6283bdce8c79be2a3264e9e664bc153806a",
+      "message": "docs(specs/003-split-nuget-packages): add full package-split specification, plans, contracts and docs; update copilot instructions\n\n- Add comprehensive feature spec, implementation plan, research, data model, tasks, quickstart, and requirements/checklists for v2.0.0 split (base + crawler)\n- Add API contracts for base and crawler packages (contracts/*.md)\n- Add detailed plan, migration guide, test/task breakdown, and package metadata recommendations\n- Update .github/copilot-instructions.md with Planned Feature summary for 003-split-nuget-packages",
+      "author": "Mark Hazleton",
+      "date": "2025-11-03T14:52:42+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "dc87590aeebf38a0a36c97a736d4c2196c912ca2",
+      "message": "ci(publish-docs): add contents: write permission to build-and-deploy job so workflow can push docs",
+      "author": "Mark Hazleton",
+      "date": "2025-11-03T13:37:03+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "1fbfde2cc67a3f146db3809b5232cdc35a478cb3",
+      "message": "docs(specify): strengthen NuGet CI/CD policy in constitution and add daily session summary\n\nClarify that ALL NuGet publications must go through GitHub Actions (explicitly forbid manual uploads, `dotnet nuget push`, bypassing CI/CD, and combining version bumps with feature work) and expand rationale that the workflow is the single source of truth. Also add copilot session daily-summary (2025-11-02) documenting the static docs site, zero-warning effort, tests, and repository cleanup.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T19:38:52+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "57754e8d41184f66acffd2b3d198dfd7c582b755",
+      "message": "docs: enforce GitHub Actions CI/CD requirement for NuGet publishing\n\n- Clarify that ALL NuGet package publications MUST go through GitHub Actions\n- Prohibit manual publishing via NuGet.org upload or dotnet nuget push\n- Emphasize CI/CD pipeline as single source of truth for releases\n- Ensures consistent builds, proper testing, and audit trails",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T19:25:02+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "baeeedbafe22ca9f96939592c475660b3b09a221",
+      "message": "chore: bump version to 1.5.1\n\nQuality improvements release:\n- Enabled TreatWarningsAsErrors solution-wide\n- Zero-warning baseline established\n- All 520 tests passing (net8.0 + net9.0)\n- Fixed npm security vulnerabilities",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T19:22:11+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "4c77bcdc9c6613b3a77edc1c12a41bc5eed8ce95",
+      "message": "fix: Remove hyperlink and update npm packages to resolve security vulnerabilities\n\nSecurity fixes:\n- Removed hyperlink package (had 10 transitive vulnerabilities)\n- All 4 GitHub Dependabot alerts resolved (1 critical, 1 high, 2 medium)\n\nPackage updates:\n- @11ty/eleventy: 3.0.0 \u2192 3.1.2\n- htmlhint: 1.1.4 \u2192 1.7.1\n- rimraf: 5.0.5 \u2192 6.1.0\n\nVerification: npm audit shows 0 vulnerabilities",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T19:18:57+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "f62269c0e1e0122b5be9e04114a3f00a3401a2e9",
+      "message": "Enable TreatWarningsAsErrors with Zero Warnings Policy\n\nEnables TreatWarningsAsErrors across the entire solution with zero warnings and all 520 tests passing.\n\nKey changes:\n- Enabled TreatWarningsAsErrors in Directory.Build.props\n- Adjusted analyzer severities in .editorconfig (CA2007, CA1062, IDE0055)\n- Added test-specific suppressions in test/web projects\n- Updated StreamingHelperTests for null/empty parameter validation\n- Maintained only 2 justified suppressions in library code\n\nValidation: 0 errors, 0 warnings, 520/520 tests passing\nImpact: Establishes zero-warning baseline enforced by CI/CD",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T19:08:47+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "060bba6d718fbecedfb833af0865e60b2738ead4",
+      "message": "docs: add favicon/icon assets, use local icons and enforce relative internal links\n\n- Add favicon.ico and icon.png to web and docs assets and include in wwwroot\n- Update Shared/_Layout.cshtml and base.njk to reference local favicon and apple-touch-icon\n- Replace external GitHub-hosted logo in Home/Index.cshtml with local ~/icon.png\n- Update generated docs pages to include explicit favicon tags and convert CTA/internal hrefs to relative paths (compatible with GitHub Pages subdirectory)\n- Expand specs to mandate relative internal links, add link-validation guidance and troubleshooting notes",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T17:32:19+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "937aa1f7c6b379db8aa03646c85d2f0b37b648c2",
+      "message": "Release v1.5.0 - documentation website release",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T17:08:25+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "8de43ddd1edffd4ac9488ccff24c23df26f6e060",
+      "message": "docs(specs): replace pathPrefix/env approach with relativePath filter and update Eleventy docs\n\n- Adopt a custom `relativePath` filter as the canonical solution for asset/nav paths (replaces environment-aware `pathPrefix` usage)\n- Add filter and template usage examples; require all templates to use `| relativePath`\n- Update plan/spec/tasks content to describe simplified workflow, testing, and troubleshooting for relative paths\n- Remove references to `cross-env`/ELEVENTY_ENV in build examples and note no environment variables required\n- Update npm script guidance, passthrough copy, output structure, and local/prod testing steps to reflect root-level `docs/` output and relative asset paths\n- Fix troubleshooting table entries and remove complexity around pathPrefix-based deployments",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T17:01:49+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "6e997837e7659942ee6c5a6b5014a40bbef7e40e",
+      "message": "refactor: use relative paths for assets instead of pathPrefix",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T16:53:55+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "95d373b903061cc2ef26765b355318d2f21e0e57",
+      "message": "fix: add pathPrefix back for GitHub Pages subdirectory serving",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T16:49:04+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "adfb2aa2e696f50488d7138595ae20cd56f48df6",
+      "message": "fix: correct asset paths for GitHub Pages root serving",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T16:44:14+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "e003d880c61f430d27ff32675292f45b69f044ae",
+      "message": "feat: Add static documentation site with Eleventy (#1)\n\n* initial spec/plan/task\n\n* chore(docs): add initial Eleventy docs site, homepage, assets, and npm lock\n\n- Add package.json to define the docs site project:\n  - project name: webspark-httpclientutility-docs v1.4.0\n  - Node engines: >=20, npm >=10\n  - scripts: clean, dev, build, build:prod, test:links, test:html, validate\n  - dependencies: node-fetch\n  - devDependencies: @11ty/eleventy, htmlhint, hyperlink, markdown-it, markdown-it-anchor, rimraf\n\n- Add package-lock.json (full lockfile) to lock all dependencies for reproducible builds.\n\n- Add documentation homepage (src/pages/index.md):\n  - Eleventy markdown template using layouts/base.njk with frontmatter (title, description, permalink)\n  - Hero, features, quick C# example, architecture, telemetry, targets, license and CTAs\n  - Designed as the landing page for WebSpark.HttpClientUtility docs\n\n- Add Prism syntax-highlighting placeholders:\n  - src/assets/css/prism-tomorrow.css \u2014 Tomorrow Night theme fallback styles\n  - src/assets/js/prism.min.js \u2014 placeholder script with instructions to replace with a custom Prism build\n  - Note: these are placeholders; replace with the downloaded/custom Prism build when ready\n\n- Add other site assets:\n  - src/assets/images/favicon.ico \u2014 placeholder favicon file\n  - src/robots.txt \u2014 robots policy allowing all and pointing to sitemap\n\nNotes:\n- This commit bootstraps the static documentation site and locks dependencies. Further work:\n  - Add real Prism build, site styles, and templates\n  - Integrate CI publishing (if desired) and update sitemap URL as needed\n\n* Implement full static docs site (Eleventy) with environment-aware build, Prism.js, NuGet integration, and generated /docs output\n\nSummary:\n- Finish implementation and deployment of the static documentation site for WebSpark.HttpClientUtility.\n- Add environment-aware Eleventy configuration (dev vs production) including dynamic pathPrefix, conditional passthrough copy, watch ignores to avoid infinite rebuilds, and helpful template filters.\n- Integrate real Prism.js syntax highlighting (C#, JS, JSON, PowerShell, Bash, markup) with a bundler script and theme.\n- Add NuGet data fetch + cache fallback and update navigation/templates to use Eleventy url filter so production subdirectory works.\n- Produce final generated site in /docs with all pages (home, features, getting-started, examples, api-reference, about).\n- Update specs and tasks docs with Implementation Summary and detailed Eleventy configuration learnings / troubleshooting guidance.\n\nKey changes (files & highlights):\n- src/.eleventy.js\n  - Make pathPrefix environment-aware (ELEVENTY_ENV=production \u2192 \"/WebSpark.HttpClientUtility/\"; otherwise \"/\")\n  - Add eleventyConfig.watchIgnores.add(\"./_data/nuget-cache.json\") to prevent infinite rebuild loop\n  - Conditional addPassthroughCopy for assets and favicon depending on environment\n  - Add helpful template filters (formatNumber, formatDate, dateISO) and dev server options\n\n- src/package.json & src/package-lock.json\n  - Add prismjs and cross-env dependency entries\n  - Update scripts:\n    - \"dev\": eleventy --serve\n    - \"build\": clean + copy:prism + cross-env ELEVENTY_ENV=production eleventy\n    - \"copy:prism\": node scripts/copy-prism.js\n  - Add validation/test scripts (htmlhint, hyperlink) and engine hints\n\n- src/scripts/copy-prism.js\n  - New script that bundles prism core + selected language components into assets/js/prism.min.js and copies prism-tomorrow.css into assets/css/\n\n- src/assets/js/prism.min.js & src/assets/css/prism-tomorrow.css\n  - Add real Prism.js bundle (core + language components) and Tomorrow theme (replaced placeholders)\n\n- src/_data/navigation.json\n  - Replace hardcoded /WebSpark.HttpClientUtility/... URLs with relative paths (\"/\", \"/features/\", etc.)\n\n- src/_data/nuget-cache.json\n  - Update cachedAt timestamp (cache file present in repo; now ignored by watcher)\n\n- src/_includes/layouts/base.njk, header.njk, footer.njk, pages (index.md, features.md, getting-started.md, api-reference.md, examples.md, about.md)\n  - Replace hardcoded paths with url filter usages ({{ '/assets/... ' | url }}), update front-matter permalinks to relative\n  - Footer: make author name a clickable link to https://markhazleton.com\n  - Header: use url filter for home link and navigation items; nav items use item.url | url\n\n- src/assets/css/main.css\n  - Add footer link styles and small polish\n\n- src/pages/* (Markdown) and src/_includes/*\n  - Add content pages (about, api-reference, features, getting-started, examples, home) with proper front matter and content; ensure permalinks are relative\n\n- src/_data and data fetcher (nuget.js referenced in spec; cache handling described)\n  - NuGet API integration implemented with cache fallback pattern (documented in spec and tasks)\n\n- specs/*\n  - specs/001-static-docs-site/plan.md: extensive \"Implementation Completed\" summary, Implementation Learnings, env patterns, configuration, testing & troubleshooting, and success metrics\n  - specs/001-static-docs-site/spec.md: mark feature as complete + add \"Implementation Guide: Eleventy Configuration\"\n  - specs/001-static-docs-site/tasks.md: mark IMPLEMENTATION COMPLETE and include full Eleventy Configuration Guide, scripts, troubleshooting, and verification steps\n\n- docs/ (generated output)\n  - Add generated site files under /docs and subfolders:\n    - docs/index.html\n    - docs/features/index.html\n    - docs/getting-started/index.html\n    - docs/examples/index.html\n    - docs/api-reference/index.html\n    - docs/about/index.html\n  - These files reference /assets/... (runtime url filter will rewrite during production), include prism.min.js and theme references, and contain the final site content ready for GitHub Pages.\n\nNotes / rationale:\n- pathPrefix in Eleventy affects both URL generation and output layout. The commit adopts an environment-aware pathPrefix and ensures all templates use the `url` filter so assets and links work identically in dev (root) and production (GitHub Pages subdirectory).\n- Data cache files written during build must be excluded from Eleventy watch to avoid infinite rebuild loops - added watchIgnores for nuget-cache.json.\n- Replaced placeholder Prism assets with a real npm-based bundling approach (scripts/copy-prism.js) to supply full syntax highlighting for C# and other languages.\n- Updated package scripts to run copy-prism before production builds and to set ELEVENTY_ENV via cross-env for cross-platform compatibility.\n- Specs and tasks were updated with an Implementation Summary and detailed \"Implementation Learnings\" to aid future maintenance.\n\nTesting / verification:\n- Local dev: run `cd src && npm install && npm run copy:prism && npm run dev` ; verify http://localhost:8080 loads site with CSS and Prism highlighting.\n- Production build: `npm run build` will output `../docs/WebSpark.HttpClientUtility/` containing the production-ready site; serve it locally to verify behavior before pushing to GitHub Pages.\n- GitHub Pages: target /docs folder; pathPrefix ensures subdirectory URLs are correct.\n\nThis commit completes the static documentation site end-to-end: configuration, content, build tooling, syntax highlighting, NuGet integration, tests/validation scripts, and generated /docs output ready for publishing.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T16:39:51+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "806b3e235af66351256fc0e9e9b20e255012fdda",
+      "message": "chore(docs,specify): move docs to documentation and add .specify scaffolding\n\n- Move top-level docs from /docs to /documentation and update README links\n- Update WebSpark.HttpClientUtility.csproj to pack documentation files under PackagePath \"documentation\\\"\n- Remove legacy docs/* files and add corresponding files under documentation/ (CONTRIBUTING, GettingStarted, SECURITY, archive/QUICK_PUBLISH_CHECKLIST, etc.)\n- Add .specify feature tooling and templates:\n  - .specify/templates: spec/plan/tasks/checklist/agent-file templates\n  - .specify/memory/constitution.md (initial constitution v1.0.0)\n  - .specify/scripts/powershell: check-prerequisites.ps1, common.ps1, create-new-feature.ps1, setup-plan.ps1, update-agent-context.ps1\n  - .github/prompts: speckit.* prompts for specify/plan/tasks/implement/checklist/clarify/constitution/etc.\n- Add agent-file-template and copilot session artifacts for documentation of template changes\n- Add .vscode/settings.json to recommend speckit prompts and auto-approve specify scripts\n- Housekeeping: update packaging and README references; no changes to library runtime code\n\nThis change reorganizes docs and adds the Spec-Driven Development scaffolding for feature/spec/plan/task workflows.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T14:30:02+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "2070facfd243e05b95126e6779a5a17c65e309be",
+      "message": "chore: clean up repository root directory\n\n- Move CONTRIBUTING.md and SECURITY.md to docs/\n- Archive QUICK_PUBLISH_CHECKLIST.md to docs/archive/\n- Remove 12 outdated process/release documents:\n  * CHECKLIST_v1.3.2.md\n  * COVERAGE_FILES_RESOLUTION.md\n  * GITIGNORE_UPDATE_COMPLETE.md\n  * IMPROVEMENTS-v1.4.0.md\n  * PACKAGE_REVIEW_SUMMARY.md\n  * PHASE1_COMPLETION_REPORT.md\n  * PHASE1_SUMMARY.md\n  * POST_REVIEW_ACTION_PLAN.md\n  * PUBLISH_v1.3.2.md\n  * PUBLISHING_GUIDE_v1.1.0.md\n  * PUBLISHING_GUIDE_v1.3.1.md\n  * RELEASE_SUMMARY_v1.3.1.md\n- Remove orphaned Program.cs from root (exists in Web project)\n- Update README.md links to moved documentation\n- Add .github/copilot-instructions.md for AI coding agents\n- Add copilot/session-2025-11-02/ for AI-generated documentation\n\nReduces root directory clutter by 62% (40+ items \u2192 15 items)",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T14:09:42+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "4f648a2d1f2bb7ff34ffec389fc502a49b0adc35",
+      "message": "Release v1.4.0 - Add .NET 8 support, simplified DI, improved docs",
+      "author": "Mark Hazleton",
+      "date": "2025-11-02T13:09:46+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "28d427baf2632b63eb83bc703e321bc123cb77a7",
+      "message": "Release v1.3.2: Fix CurlCommandSaver tests and improve test reliability",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T22:52:02+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "64064c5c8bd49e72f281d2a292fd17e9617f7c89",
+      "message": "Refactor tests and add logging improvements\n\nRefactored `CurlCommandSaverTests` for better readability and maintainability. Added `Microsoft.Extensions.Logging` for enhanced logging. Improved configuration handling and added new test cases to verify behavior when `CsvOutputFolder` is missing. Replaced outdated test with `SaveCurlCommandAsync_WithoutConfiguration_DoesNotCreateFile`.\n\nUpdated solution file to include `Solution Items` folder with `.gitignore` and GitHub Actions workflow for CI/CD support.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T22:45:34+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "5779dd59a2907fae800054c64dfa27287f7b690d",
+      "message": "Fix NuGet Packages signature validation in GitHub Actions",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T22:35:28+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "1c83bac21c2ea3dde64cff87b6818763e99c951b",
+      "message": "Patch release enhancing CurlCommandSaver with:\n\u2022 \u2728 Batch processing (100 commands/batch)\n\u2022 \ud83d\udcc1 File rotation (10MB default)\n\u2022 \ud83d\udd12 Sensitive data sanitization (headers & JSON)\n\u2022 \ud83d\udd04 Retry logic with exponential backoff\n\u2022 \u2699\ufe0f Comprehensive configuration options\nThe test web (WebSpark.HttpClientUtility.Web) already exists and can be used to demonstrate these new CurlCommandSaver features.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T22:19:19+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "a62d6b4cfe9f653c273780eb46f31bd5dac25ff5",
+      "message": "feat: improve packaging, docs, and code quality\n\n- Switched project SDK to `Microsoft.NET.Sdk` for proper library packaging.\n- Added `.editorconfig` for consistent code style enforcement.\n- Enhanced documentation with `CONTRIBUTING.md`, `SECURITY.md`, and more.\n- Updated `.gitignore` to exclude coverage, build artifacts, and test results.\n- Added new tests for `HttpClientConcurrentProcessor` and OpenTelemetry.\n- Improved NuGet configuration with `nuget.config` and metadata updates.\n- Reduced build warnings by 35% and applied automated code formatting.\n- Enhanced OpenTelemetry integration with configurable exporters.\n- Enabled deterministic builds and Source Link for better debugging.\n- Documented future roadmap for multi-targeting and versioning automation.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T21:07:27+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "6a6e2c702fa046a5a779ff4165e7001c4e53886c",
+      "message": "chore: expand gitignore for test artifacts\n\nAdded patterns for: auto-generated Properties folders, TestResults directory, .trx test results, and .runsettings.user files\n\nThese are test framework artifacts that should not be committed.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T20:38:52+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "cb53744ed4202bb3d0ca68c0f2f2361bc2efdcb4",
+      "message": "chore: ignore coverage reports and build artifacts\n\nAdded patterns to .gitignore for: CoverageReport/, coverage-*/, build_output.txt, artifacts/\n\nThese are generated artifacts that should not be committed to the repository.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T20:34:32+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "8230c176bb93344389c440133b0c5e4bd4209fcd",
+      "message": "fix: apply code formatting and suppress test-specific warnings\n\nReduces build warnings from 582 to 377 (35% reduction)\n\nChanges: Add CA2007 suppression to test project, Apply automated formatting to 111 files, Ensure EditorConfig compliance\n\nAll 251 tests passing, no functional changes. Phase 1 complete.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-01T20:23:45+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "efc3d2da9d030276fa88bf75f4d5cd849230cd32",
+      "message": "Release v1.3.0: .NET 9 only, comprehensive test coverage, zero warnings",
+      "author": "Mark Hazleton",
+      "date": "2025-10-06T23:59:18+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "5f4d4c5d89178bbb91faebf894ed1f95b1c14b34",
+      "message": "Fix GitHub Actions permissions for release creation - add contents: write permission",
+      "author": "Mark Hazleton",
+      "date": "2025-09-26T23:23:45+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "b806b1d0d400ac09d7aae623c4f7ef5955c8b291",
+      "message": "Release v1.2.0 - Updated all NuGet package dependencies to latest stable versions",
+      "author": "Mark Hazleton",
+      "date": "2025-09-26T23:18:44+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "75485c69df4c3c2862260261e6e2989f5f0e3885",
+      "message": "Release v1.2.0: Updates, improvements, and cleanup\n\nUpdated README.md for v1.2.0 release, highlighting new features, dependency updates, and stability improvements. Removed deprecated web crawler functionality from the library and documentation. Upgraded multiple NuGet package dependencies to their latest stable versions for enhanced compatibility and security. Bumped library version to 1.2.0 in the project file.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-26T23:11:37+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "73992d90dac31c52edc2fc36339f03347de4243a",
+      "message": "update comments",
+      "author": "Mark Hazleton",
+      "date": "2025-07-01T13:13:21+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "34d30bc20f4571a27da738287cd49cacb0c2b5b3",
+      "message": "Remove manual publishing script - using GitHub Actions workflow instead",
+      "author": "Mark Hazleton",
+      "date": "2025-07-01T13:11:54+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "41905852f62f60598d247310b41289c788fcb91b",
+      "message": "Release v1.1.0: Remove deprecated Jaeger exporter, modernize to OTLP-only approach\n\n- BREAKING: Removed OpenTelemetry.Exporter.Jaeger package dependency\n- BREAKING: Updated AddWebSparkOpenTelemetryWithExporters API to use OTLP-only\n- Updated to modern OTLP exporter (supports Jaeger, Zipkin, and other OTLP-compatible systems)\n- Enhanced documentation with migration guide\n- Build stability improvements and code cleanup\n- All 79 tests passing",
+      "author": "Mark Hazleton",
+      "date": "2025-07-01T13:11:12+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "4a759a09a549dc3cb4a7a6837b1c5f81886548f3",
+      "message": "Release v1.0.10: Major feature updates\n\nAdded Features:\n- OpenTelemetry integration with comprehensive tracing support\n- Streaming support for large HTTP responses (configurable threshold)\n- Authentication providers (API Key, Basic Auth, Bearer Token)\n- Object pooling for HttpRequestMessage and StringBuilder\n- Enhanced telemetry and observability\n\nImprovements:\n- Enhanced error handling and resource management\n- Better async/await patterns with ConfigureAwait(false)\n- Improved memory efficiency for large responses\n- Comprehensive test coverage for new features\n\nBug Fixes:\n- Fixed HttpVersion compatibility issues\n- Resolved resource disposal patterns\n- Fixed nullable reference warnings\n\nDocumentation:\n- Updated README.md with new features and examples\n- Enhanced CHANGELOG.md with detailed v1.0.10 changes\n- Added comprehensive code examples for new functionality",
+      "author": "Mark Hazleton",
+      "date": "2025-05-24T20:40:13+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "2db0a90659afba8cf14c8256f76614b98b15feef",
+      "message": "set to v1.0.9",
+      "author": "Mark Hazleton",
+      "date": "2025-05-19T18:34:09+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "cb18310448173e6f0e717409cfead7a773925375",
+      "message": "Fix path for test path rights",
+      "author": "Mark Hazleton",
+      "date": "2025-05-19T18:30:18+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "75a1c153a5addd4b7b664e78213379b51832dd35",
+      "message": "Fix path for snk",
+      "author": "Mark Hazleton",
+      "date": "2025-05-19T18:28:17+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "8c5f5ac7b3069f4ef88239bfe14b3bb7dfad0e9f",
+      "message": "Fix issue build pipeline yml",
+      "author": "Mark Hazleton",
+      "date": "2025-05-19T18:25:41+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "a9361b6e397588254e2b3350fa30255e50c9fe45",
+      "message": "Update for NuGet package build v1.0.8",
+      "author": "Mark Hazleton",
+      "date": "2025-05-19T14:05:03+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "829c8e36a2b3dc73e3cbae4721e8c9188d60ac31",
+      "message": "commit",
+      "author": "Mark Hazleton",
+      "date": "2025-05-05T00:19:26+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "87e3f11c64d93c73609f5cb81140ddc7655d918b",
+      "message": "Enhance JSON converters and cURL command handling\n\n- Updated `NewtonsoftJsonStringConverterTests.cs` and `SystemJsonStringConverterTests.cs` to include necessary using directives and a `TestModel` class for JSON conversion tests.\n- Introduced `CurlCommandSaverOptions` in `CurlCommandSaver.cs` for configuration management, enhancing cURL command saving with batch processing, error handling, and file rotation.\n- Added `CurlCommandSaverTests.cs` to cover unit tests for the `CurlCommandSaver` class, validating various request scenarios.\n- Introduced `HttpRequestResultTests.cs` to test the `HttpRequestResult<T>` class, ensuring proper handling of status codes, request duration, and error logging.\n- Updated project version from `1.0.5` to `1.0.6` in `WebSpark.HttpClientUtility.csproj`.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T16:16:48+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "c17944b1d73038667e165015613dd16298bf9986",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-05-04T02:23:52+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "6af46506428807ab7587fd298c1e7fd3f6e6e9e3",
+      "message": "fix image in readme",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T23:16:06+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "420d881f5545d773a1b3def10e66776f67c1fb85",
+      "message": "merge in crawler",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T22:52:49+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "71a31f19220f2826fd73955e5b3d86962a026912",
+      "message": "Simplify versioning approach with hardcoded version",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T21:26:59+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "4dba68896fa709b4307c51ab2871bb1c819f6880",
+      "message": "Fix GitVersion configuration for clean NuGet package versioning",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T21:23:51+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "58e416c2310dd982fac71cc53dc23b110b1c402d",
+      "message": "Bump version to 1.0.3",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T21:21:47+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "f4d1369fd5e89e4b869fc8a7af1bc2298a7faa93",
+      "message": "fix versiioning template in GitVersion",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T21:02:59+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "c89c56102f4f255d3685ec36dcc9ad6708820c64",
+      "message": "add test project",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T20:59:16+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "57f03a1fcdde7a860620a2ce74d13267efc6e15e",
+      "message": "Release v1.0.2",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T19:31:35+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "14b7342e0b5c9b784724067b715fbd119a432090",
+      "message": "update sdk version",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T19:19:36+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "67471df553740041d8df2ac410e947fa13dfa01f",
+      "message": "update for package build",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T19:17:43+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "399166213a10b666d99cc59c7e8d4e7fc2d61ce9",
+      "message": "initial port to WebSpark.HttpClientUtility",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T18:53:21+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    },
+    {
+      "sha": "d92cf1797754ccbbfd2a657d52b6c5b3c184d629",
+      "message": "Initial commit",
+      "author": "Mark Hazleton",
+      "date": "2025-05-03T18:36:10+00:00",
+      "repo": "WebSpark.HttpClientUtility"
+    }
+  ],
+  "hash": "1c74d105e54373fe53cd0836a9f632ef044d43280baf072f020ff74c6acc8793",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.HttpClientUtility"
+    },
+    "category": "commits",
+    "pushed_at": "2026-01-05T12:28:55+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "WebSpark.HttpClientUtility",
+  "week": "2026-01-05T12-28-55+00-00"
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:41:43.585858+00:00",
+  "value": {
+    "total": 81,
+    "recent_90d": 0,
+    "recent_180d": 41,
+    "recent_365d": 41,
+    "last_commit_date": "2025-09-15T13:50:41+00:00"
+  },
+  "hash": "f99105ec9a58a182c5fe7bbdc6e9599e7fe9d268035633678a6351b0818d2177",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "sql2csv"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-11-19T02:09:52+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "sql2csv",
+  "week": "2025-11-19T02-09-52+00-00"
+}

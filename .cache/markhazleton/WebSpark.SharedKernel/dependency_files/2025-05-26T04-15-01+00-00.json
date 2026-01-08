@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-01-08T17:52:26.646179+00:00",
+  "value": {},
+  "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.SharedKernel"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2025-05-26T04:15:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "WebSpark.SharedKernel",
+  "week": "2025-05-26T04-15-01+00-00"
+}

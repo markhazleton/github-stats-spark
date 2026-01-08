@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-01-08T17:28:52.468226+00:00",
+  "timestamp": "2026-01-08T17:40:10.877540+00:00",
   "value": [
     {
       "name": "AsyncDemo",
@@ -14,48 +14,7 @@
       "updated_at": "2025-12-04T11:54:41+00:00",
       "pushed_at": "2025-12-04T11:54:36+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:44.856423+00:00",
-        "cache_age_hours": 90.56875595916668,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:41:27.060885+00:00",
-            "age_hours": 91.79036538499999
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:40:28.620641+00:00",
-            "age_hours": 91.80659887694445
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:40:25.528745+00:00",
-            "age_hours": 91.80745782833333
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:44.856423+00:00",
-            "age_hours": 90.56875578305556
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:46:39.580879+00:00",
-            "age_hours": 91.7035546325
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:41:37.334762+00:00",
-            "age_hours": 91.787511975
-          }
-        },
-        "push_week": "2025W49",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "barcodelib",
@@ -70,48 +29,7 @@
       "updated_at": "2025-12-09T02:43:06+00:00",
       "pushed_at": "2025-12-09T02:43:01+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:48.783591+00:00",
-        "cache_age_hours": 90.56766577472222,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:10.978636+00:00",
-            "age_hours": 91.74483321333334
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:42:28.746811+00:00",
-            "age_hours": 91.77323102722222
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:42:23.271483+00:00",
-            "age_hours": 91.7747520588889
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:48.783591+00:00",
-            "age_hours": 90.56766550583333
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:46:44.891326+00:00",
-            "age_hours": 91.70208015861111
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:20.427546+00:00",
-            "age_hours": 91.74220911916667
-          }
-        },
-        "push_week": "2025W50",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "ConcurrentProcessing",
@@ -126,48 +44,7 @@
       "updated_at": "2025-12-18T05:31:56+00:00",
       "pushed_at": "2025-12-18T05:31:52+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T21:46:38.083981+00:00",
-        "cache_age_hours": 91.70397190472222,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:40.039443+00:00",
-            "age_hours": 91.73676148666667
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:25.165377+00:00",
-            "age_hours": 91.74089328222223
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:24.264829+00:00",
-            "age_hours": 91.74114357833334
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:46:38.083981+00:00",
-            "age_hours": 91.70397169527777
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:46:34.138038+00:00",
-            "age_hours": 91.7050678986111
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:50.944914+00:00",
-            "age_hours": 91.73373275555555
-          }
-        },
-        "push_week": "2025W51",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "csharp-blazor-bug-tracking",
@@ -182,48 +59,7 @@
       "updated_at": "2025-12-29T00:58:29+00:00",
       "pushed_at": "2025-12-29T00:58:34+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:11.000683+00:00",
-        "cache_age_hours": 90.57816231083333,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:45:24.216587+00:00",
-            "age_hours": 91.72449072972223
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:57.320064+00:00",
-            "age_hours": 91.73196209083333
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:44:54.764255+00:00",
-            "age_hours": 91.73267214555555
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:11.000683+00:00",
-            "age_hours": 90.57816213555554
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:46:29.263437+00:00",
-            "age_hours": 91.70642257111112
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:45:47.486064+00:00",
-            "age_hours": 91.71802748194445
-          }
-        },
-        "push_week": "2025W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "DataAnalysisDemo",
@@ -238,48 +74,7 @@
       "updated_at": "2025-12-03T01:16:09+00:00",
       "pushed_at": "2025-12-03T01:16:04+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T21:49:21.557532+00:00",
-        "cache_age_hours": 91.65856372472223,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:48:12.470398+00:00",
-            "age_hours": 91.67775414555555
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:48:04.240735+00:00",
-            "age_hours": 91.68004024916667
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:48:03.419249+00:00",
-            "age_hours": 91.68026852333332
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:49:21.557532+00:00",
-            "age_hours": 91.65856352944445
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:49:18.183732+00:00",
-            "age_hours": 91.65950079694444
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:48:25.501112+00:00",
-            "age_hours": 91.6741349513889
-          }
-        },
-        "push_week": "2025W49",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "DecisionSpark",
@@ -294,48 +89,7 @@
       "updated_at": "2025-12-27T03:30:13+00:00",
       "pushed_at": "2025-12-27T20:30:21+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:27.740262+00:00",
-        "cache_age_hours": 90.57351349472222,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:50:24.507251+00:00",
-            "age_hours": 91.64107778361111
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:50:15.146785+00:00",
-            "age_hours": 91.64367799861111
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:50:14.028240+00:00",
-            "age_hours": 91.64398879138889
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:27.740262+00:00",
-            "age_hours": 90.57351331666666
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:55:42.034265+00:00",
-            "age_hours": 91.55287617916666
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:50:38.254877+00:00",
-            "age_hours": 91.63725943416667
-          }
-        },
-        "push_week": "2025W52",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "DesignPatternsInCSharp",
@@ -350,48 +104,7 @@
       "updated_at": "2026-01-05T14:00:39+00:00",
       "pushed_at": "2025-12-19T21:04:54+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:36.413964+00:00",
-        "cache_age_hours": 90.57110465222223,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:52:19.271491+00:00",
-            "age_hours": 91.60919935472222
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:50:45.880701+00:00",
-            "age_hours": 91.63514132611111
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:50:42.131906+00:00",
-            "age_hours": 91.63618274666666
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:36.413964+00:00",
-            "age_hours": 90.5711044811111
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:55:46.914638+00:00",
-            "age_hours": 91.55152104722222
-          },
-          "ai_summary": {
-            "exists": false,
-            "timestamp": null,
-            "age_hours": null
-          }
-        },
-        "push_week": "2025W51",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "FastEndpointApi",
@@ -406,48 +119,7 @@
       "updated_at": "2025-11-16T23:08:38+00:00",
       "pushed_at": "2025-11-16T23:08:34+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:29:07.446114+00:00",
-        "cache_age_hours": 2.995818465277778,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:52:50.754381+00:00",
-            "age_hours": 91.60045462472222
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:52:32.103737+00:00",
-            "age_hours": 91.60563544333334
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:52:30.713296+00:00",
-            "age_hours": 91.60602176055556
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:07.446114+00:00",
-            "age_hours": 2.9958182847222226
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:55:32.842075+00:00",
-            "age_hours": 91.55543061277777
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:53:01.618626+00:00",
-            "age_hours": 91.59743721111111
-          }
-        },
-        "push_week": "2025W46",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "git-spark",
@@ -462,48 +134,7 @@
       "updated_at": "2025-12-29T02:22:28+00:00",
       "pushed_at": "2025-12-29T02:22:25+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T21:55:29.280267+00:00",
-        "cache_age_hours": 91.556420685,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:54:05.927531+00:00",
-            "age_hours": 91.57957371944445
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:53:08.157711+00:00",
-            "age_hours": 91.59562097583333
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:53:06.103904+00:00",
-            "age_hours": 91.5961915625
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:55:29.280267+00:00",
-            "age_hours": 91.55642043944445
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:55:25.882120+00:00",
-            "age_hours": 91.55736445222223
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:54:20.644704+00:00",
-            "age_hours": 91.57548611722223
-          }
-        },
-        "push_week": "2025W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "github-stats-spark",
@@ -518,48 +149,7 @@
       "updated_at": "2026-01-07T13:14:59+00:00",
       "pushed_at": "2026-01-07T13:14:56+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:10.879354+00:00",
-        "cache_age_hours": 3.011532728333333,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-05T02:30:30.538733+00:00",
-            "age_hours": 86.97273793333333
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-05T02:29:36.942979+00:00",
-            "age_hours": 86.98762575361111
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-05T02:29:35.034282+00:00",
-            "age_hours": 86.98815604972224
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:10.879354+00:00",
-            "age_hours": 3.0115325191666664
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:07.383003+00:00",
-            "age_hours": 3.012503834722222
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-05T02:30:43.805037+00:00",
-            "age_hours": 86.96905337027779
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "google-maps",
@@ -574,48 +164,7 @@
       "updated_at": "2025-05-04T02:20:09+00:00",
       "pushed_at": "2025-05-04T02:20:05+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:55:18.021841+00:00",
-        "cache_age_hours": 90.55954936583333,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:58:38.241758+00:00",
-            "age_hours": 91.5039321713889
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:58:14.120861+00:00",
-            "age_hours": 91.51063254416667
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:58:05.756672+00:00",
-            "age_hours": 91.51295605388889
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:18.021841+00:00",
-            "age_hours": 90.55954916388889
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:03:21.050435+00:00",
-            "age_hours": 91.42537465388888
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:58:46.829235+00:00",
-            "age_hours": 91.50154731083333
-          }
-        },
-        "push_week": "2025W18",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "HttpClientDecoratorPattern",
@@ -630,48 +179,7 @@
       "updated_at": "2025-05-08T21:21:59+00:00",
       "pushed_at": "2025-05-08T21:21:55+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:55:21.869867+00:00",
-        "cache_age_hours": 90.558481085,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:59:18.354761+00:00",
-            "age_hours": 91.49279032777778
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:58:53.552451+00:00",
-            "age_hours": 91.49967995972223
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:58:50.398134+00:00",
-            "age_hours": 91.50055628499999
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:21.869867+00:00",
-            "age_hours": 90.55848089444444
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:03:25.749111+00:00",
-            "age_hours": 91.42407007944445
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:59:28.008881+00:00",
-            "age_hours": 91.49010913527778
-          }
-        },
-        "push_week": "2025W19",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "InquirySpark",
@@ -686,48 +194,7 @@
       "updated_at": "2025-12-07T06:07:52+00:00",
       "pushed_at": "2025-12-23T00:22:00+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:29:19.094708+00:00",
-        "cache_age_hours": 2.9925858463888892,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:59:48.053920+00:00",
-            "age_hours": 91.48454117194444
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:59:32.408767+00:00",
-            "age_hours": 91.48888714388889
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T21:59:31.565801+00:00",
-            "age_hours": 91.48912138777779
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:19.094708+00:00",
-            "age_hours": 2.992585669722222
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:02:54.981167+00:00",
-            "age_hours": 91.4326172975
-          },
-          "ai_summary": {
-            "exists": false,
-            "timestamp": null,
-            "age_hours": null
-          }
-        },
-        "push_week": "2025W52",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "js-dev-env",
@@ -742,48 +209,7 @@
       "updated_at": "2026-01-05T03:21:20+00:00",
       "pushed_at": "2026-01-05T03:22:48+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:45.007131+00:00",
-        "cache_age_hours": 3.002055158333333,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:15:33.726281+00:00",
-            "age_hours": 3.2218549483333336
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:14:46.164115+00:00",
-            "age_hours": 3.2350667575
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:14:43.898141+00:00",
-            "age_hours": 3.2356962844444443
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:45.007131+00:00",
-            "age_hours": 3.0020549825
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:41.506850+00:00",
-            "age_hours": 3.0030273725
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:15:46.770956+00:00",
-            "age_hours": 3.2182318725
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "KeyPressCounter",
@@ -798,48 +224,7 @@
       "updated_at": "2025-12-07T23:45:36+00:00",
       "pushed_at": "2025-12-07T23:45:31+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:16:03.280309+00:00",
-        "cache_age_hours": 91.21364649444445,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:04:36.016043+00:00",
-            "age_hours": 91.40455277777778
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:04:25.664439+00:00",
-            "age_hours": 91.40742830888888
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:04:24.807297+00:00",
-            "age_hours": 91.40766648833333
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:03.280309+00:00",
-            "age_hours": 91.21364629388889
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:15:59.578668+00:00",
-            "age_hours": 91.21467464027778
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:04:46.942249+00:00",
-            "age_hours": 91.40151817694444
-          }
-        },
-        "push_week": "2025W49",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "markhazleton",
@@ -854,48 +239,7 @@
       "updated_at": "2025-12-28T21:59:41+00:00",
       "pushed_at": "2025-12-28T21:59:38+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:29:23.384942+00:00",
-        "cache_age_hours": 2.9913957305555554,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:05:57.899033+00:00",
-            "age_hours": 91.38180805027777
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:04:53.488608+00:00",
-            "age_hours": 91.39969992166667
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:19.942320+00:00",
-            "age_hours": 2.9923517547222223
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:23.384942+00:00",
-            "age_hours": 2.991395558611111
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:10.815581+00:00",
-            "age_hours": 91.2115538013889
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:06:07.073465+00:00",
-            "age_hours": 91.3792600286111
-          }
-        },
-        "push_week": "2025W52",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "markhazleton-blog",
@@ -910,48 +254,7 @@
       "updated_at": "2026-01-06T01:00:54+00:00",
       "pushed_at": "2026-01-06T01:01:13+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:22.436879+00:00",
-        "cache_age_hours": 3.0083263941666667,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:18:18.177889+00:00",
-            "age_hours": 3.1761755541666665
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:16:13.885184+00:00",
-            "age_hours": 3.2107013880555555
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:16:04.562396+00:00",
-            "age_hours": 3.2132912180555553
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:22.436879+00:00",
-            "age_hours": 3.008326181388889
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:18.898642+00:00",
-            "age_hours": 3.0093091233333333
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:18:29.877300+00:00",
-            "age_hours": 3.172926276111111
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "markhazleton.github.io",
@@ -966,48 +269,7 @@
       "updated_at": "2025-11-03T13:19:14+00:00",
       "pushed_at": "2025-11-03T13:22:36+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:16:51.503343+00:00",
-        "cache_age_hours": 91.2002531038889,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:08:53.651243+00:00",
-            "age_hours": 91.33298919361111
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:08:33.677207+00:00",
-            "age_hours": 91.3385376963889
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:08:32.400112+00:00",
-            "age_hours": 91.33889259888889
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:51.503343+00:00",
-            "age_hours": 91.20025291833333
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:48.142138+00:00",
-            "age_hours": 91.20118667805556
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:09:03.564939+00:00",
-            "age_hours": 91.33023599277777
-          }
-        },
-        "push_week": "2025W45",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "MechanicsOfMotherhood",
@@ -1022,48 +284,7 @@
       "updated_at": "2026-01-04T18:02:40+00:00",
       "pushed_at": "2026-01-04T18:02:36+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:16:08.455171+00:00",
-        "cache_age_hours": 91.21221147055554,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:09:46.871713+00:00",
-            "age_hours": 91.3182064286111
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:09:08.853430+00:00",
-            "age_hours": 91.32876715583333
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:09:07.167017+00:00",
-            "age_hours": 91.32923569111111
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:08.455171+00:00",
-            "age_hours": 91.21221129694445
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:05.009301+00:00",
-            "age_hours": 91.21316857055555
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:10:00.885944+00:00",
-            "age_hours": 91.31431403250001
-          }
-        },
-        "push_week": "2026W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "openai-dotnet",
@@ -1078,48 +299,7 @@
       "updated_at": "2025-03-16T21:41:19+00:00",
       "pushed_at": "2025-03-12T16:28:17+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:55:25.998265+00:00",
-        "cache_age_hours": 90.557338945,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:10:34.934073+00:00",
-            "age_hours": 91.30485631111112
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:10:07.580236+00:00",
-            "age_hours": 91.31245471138888
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:10:04.544872+00:00",
-            "age_hours": 91.31329796277777
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:25.998265+00:00",
-            "age_hours": 90.55733877388889
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:17:12.004665+00:00",
-            "age_hours": 91.1945593036111
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:10:45.840320+00:00",
-            "age_hours": 91.30182726222223
-          }
-        },
-        "push_week": "2025W11",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "PHPDocSpark",
@@ -1134,48 +314,7 @@
       "updated_at": "2025-08-18T02:15:22+00:00",
       "pushed_at": "2025-08-18T02:15:18+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:16:58.641711+00:00",
-        "cache_age_hours": 91.19827184694444,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:15.780964+00:00",
-            "age_hours": 91.29351051694445
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:10:51.629508+00:00",
-            "age_hours": 91.30021934027778
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:10:49.438858+00:00",
-            "age_hours": 91.30082794194445
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:58.641711+00:00",
-            "age_hours": 91.1982716775
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:55.258617+00:00",
-            "age_hours": 91.19921150972223
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:29.110813+00:00",
-            "age_hours": 91.28980820666668
-          }
-        },
-        "push_week": "2025W34",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "PromptSpark.Chat",
@@ -1190,48 +329,7 @@
       "updated_at": "2025-04-27T04:54:21+00:00",
       "pushed_at": "2025-04-27T04:54:17+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:55:29.883927+00:00",
-        "cache_age_hours": 90.55626064361113,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:44.008024+00:00",
-            "age_hours": 91.28567018083334
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:33.383131+00:00",
-            "age_hours": 91.28862162749999
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:32.548060+00:00",
-            "age_hours": 91.28885367611112
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:29.883927+00:00",
-            "age_hours": 90.55626047111112
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:17:16.653299+00:00",
-            "age_hours": 91.19326906250001
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:54.313537+00:00",
-            "age_hours": 91.28280797305555
-          }
-        },
-        "push_week": "2025W17",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "RazorPages",
@@ -1246,48 +344,7 @@
       "updated_at": "2026-01-02T06:38:57+00:00",
       "pushed_at": "2026-01-02T06:38:54+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:29:15.567808+00:00",
-        "cache_age_hours": 2.9935712069444445,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:12:07.041158+00:00",
-            "age_hours": 91.27927261444444
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:58.845250+00:00",
-            "age_hours": 91.28154934666667
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:11:57.996421+00:00",
-            "age_hours": 91.28178522055556
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:15.567808+00:00",
-            "age_hours": 2.993571041111111
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:16:24.482533+00:00",
-            "age_hours": 91.20776147777778
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:12:15.433021+00:00",
-            "age_hours": 91.27694198027777
-          }
-        },
-        "push_week": "2026W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "react-native-web-start",
@@ -1302,48 +359,7 @@
       "updated_at": "2025-10-21T13:48:03+00:00",
       "pushed_at": "2026-01-01T18:27:30+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:15:53.457969+00:00",
-        "cache_age_hours": 91.21638010083333,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:12:45.393684+00:00",
-            "age_hours": 91.2686196625
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:12:20.237525+00:00",
-            "age_hours": 91.27560756944445
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:12:18.976004+00:00",
-            "age_hours": 91.27595807555555
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:15:53.457969+00:00",
-            "age_hours": 91.21637983527778
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:15:50.092321+00:00",
-            "age_hours": 91.21731482055556
-          },
-          "ai_summary": {
-            "exists": false,
-            "timestamp": null,
-            "age_hours": null
-          }
-        },
-        "push_week": "2026W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "ReactSparkPortfolio",
@@ -1358,48 +374,7 @@
       "updated_at": "2026-01-05T03:11:52+00:00",
       "pushed_at": "2026-01-05T03:11:48+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:59.114698+00:00",
-        "cache_age_hours": 2.998142645277778,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:20:30.360179+00:00",
-            "age_hours": 3.1394629138888885
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:19:21.372939+00:00",
-            "age_hours": 3.1586261225
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:19:18.948572+00:00",
-            "age_hours": 3.159299643888889
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:59.114698+00:00",
-            "age_hours": 2.9981424738888887
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:55.682552+00:00",
-            "age_hours": 2.9990959336111107
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:20:40.381444+00:00",
-            "age_hours": 3.1366796591666666
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "RESTRunner",
@@ -1414,48 +389,7 @@
       "updated_at": "2025-12-23T19:07:40+00:00",
       "pushed_at": "2025-12-23T19:07:37+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:37.164339+00:00",
-        "cache_age_hours": 3.004240525,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:19:58.734783+00:00",
-            "age_hours": 91.14824827027778
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:19:28.650218+00:00",
-            "age_hours": 91.15660520666667
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:19:26.912485+00:00",
-            "age_hours": 91.15708800166668
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:37.164339+00:00",
-            "age_hours": 3.004240352222222
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:32:05.998506+00:00",
-            "age_hours": 90.94623094805556
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:20:08.043666+00:00",
-            "age_hours": 91.14566293333334
-          }
-        },
-        "push_week": "2025W52",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "SampleMvcCRUD",
@@ -1470,48 +404,7 @@
       "updated_at": "2026-01-05T15:11:24+00:00",
       "pushed_at": "2026-01-05T15:13:23+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:27.789124+00:00",
-        "cache_age_hours": 3.0068453305555556,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:23:03.379546+00:00",
-            "age_hours": 3.0969586294444444
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:21:00.593536+00:00",
-            "age_hours": 3.1310659536111114
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:20:50.282560+00:00",
-            "age_hours": 3.133930211944444
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:27.789124+00:00",
-            "age_hours": 3.0068451563888887
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:24.330856+00:00",
-            "age_hours": 3.0078058750000003
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:23:12.509807+00:00",
-            "age_hours": 3.0944229174999998
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "Slurper",
@@ -1526,48 +419,7 @@
       "updated_at": "2025-11-16T13:19:37+00:00",
       "pushed_at": "2026-01-01T13:54:03+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:32:21.570781+00:00",
-        "cache_age_hours": 90.94190660722222,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:23:23.957691+00:00",
-            "age_hours": 91.09124307527777
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:22:44.426978+00:00",
-            "age_hours": 91.10222391972223
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:22:42.578966+00:00",
-            "age_hours": 91.10273734138889
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:32:21.570781+00:00",
-            "age_hours": 90.94190636527777
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:32:18.076006+00:00",
-            "age_hours": 90.94287728694444
-          },
-          "ai_summary": {
-            "exists": false,
-            "timestamp": null,
-            "age_hours": null
-          }
-        },
-        "push_week": "2026W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "SolidSample",
@@ -1582,48 +434,7 @@
       "updated_at": "2026-01-05T14:14:24+00:00",
       "pushed_at": "2026-01-05T14:34:02+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:29:11.979062+00:00",
-        "cache_age_hours": 2.9945715236111115,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:23:45.813176+00:00",
-            "age_hours": 3.085172703611111
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:23:24.576557+00:00",
-            "age_hours": 3.091071850277778
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:23:23.186767+00:00",
-            "age_hours": 3.0914579886111113
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:11.979062+00:00",
-            "age_hours": 2.994571344166667
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:08.438906+00:00",
-            "age_hours": 2.9955548125
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:23:54.658258+00:00",
-            "age_hours": 3.082716190277778
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "SpotifyAPI-NET",
@@ -1638,48 +449,7 @@
       "updated_at": "2026-01-03T23:37:45+00:00",
       "pushed_at": "2026-01-03T23:42:55+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:29:03.522930+00:00",
-        "cache_age_hours": 2.996920977777778,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:26:00.152696+00:00",
-            "age_hours": 91.04785671611111
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:24:24.647601+00:00",
-            "age_hours": 91.07438599305556
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:24:09.880864+00:00",
-            "age_hours": 91.07848795027778
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:03.522930+00:00",
-            "age_hours": 2.9969208125
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:32:35.153796+00:00",
-            "age_hours": 90.93813454305555
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:26:09.132758+00:00",
-            "age_hours": 91.04536269138889
-          }
-        },
-        "push_week": "2026W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "sql2csv",
@@ -1694,48 +464,7 @@
       "updated_at": "2025-09-15T13:50:50+00:00",
       "pushed_at": "2025-11-19T02:09:52+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:57.951289+00:00",
-        "cache_age_hours": 90.56513582666666,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:26:38.763257+00:00",
-            "age_hours": 91.03713208361111
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:26:14.463870+00:00",
-            "age_hours": 91.04388199694445
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:26:12.773386+00:00",
-            "age_hours": 91.04435166
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:57.951289+00:00",
-            "age_hours": 90.56513566083333
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:33:12.233133+00:00",
-            "age_hours": 90.92783523166668
-          },
-          "ai_summary": {
-            "exists": false,
-            "timestamp": null,
-            "age_hours": null
-          }
-        },
-        "push_week": "2025W47",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "startbootstrap-modern-business",
@@ -1750,48 +479,7 @@
       "updated_at": "2025-05-13T23:08:23+00:00",
       "pushed_at": "2025-05-13T23:08:19+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:33:52.898148+00:00",
-        "cache_age_hours": 90.91654024527779,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:27:22.472696+00:00",
-            "age_hours": 91.02499107805556
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:26:55.847387+00:00",
-            "age_hours": 91.03238708055555
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:26:53.568921+00:00",
-            "age_hours": 91.03302007138889
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:33:52.898148+00:00",
-            "age_hours": 90.91653990472223
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:33:49.363928+00:00",
-            "age_hours": 90.91752183611112
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:27:32.263503+00:00",
-            "age_hours": 91.02227208972224
-          }
-        },
-        "push_week": "2025W20",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "tailwind-demo",
@@ -1806,48 +494,7 @@
       "updated_at": "2026-01-05T03:30:29+00:00",
       "pushed_at": "2026-01-05T03:32:58+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:32.259806+00:00",
-        "cache_age_hours": 3.0056070769444445,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:25:04.421972+00:00",
-            "age_hours": 3.0633393166666667
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:24:19.335534+00:00",
-            "age_hours": 3.075863436944444
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:24:17.109331+00:00",
-            "age_hours": 3.0764819302777777
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:32.259806+00:00",
-            "age_hours": 3.005606893888889
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:28.729949+00:00",
-            "age_hours": 3.0065875025
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:25:14.326466+00:00",
-            "age_hours": 3.0605885591666664
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "TaskListProcessor",
@@ -1862,48 +509,7 @@
       "updated_at": "2025-12-08T00:03:43+00:00",
       "pushed_at": "2025-12-08T00:03:40+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:23.924568+00:00",
-        "cache_age_hours": 90.574589625,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:38:30.871668+00:00",
-            "age_hours": 90.83932609499999
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:38:08.869196+00:00",
-            "age_hours": 90.8454379825
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:38:07.526839+00:00",
-            "age_hours": 90.84581095
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:23.924568+00:00",
-            "age_hours": 90.57458945055555
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:20.489756+00:00",
-            "age_hours": 90.57554364944444
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:38:40.734064+00:00",
-            "age_hours": 90.83658698638888
-          }
-        },
-        "push_week": "2025W50",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "TeachSpark",
@@ -1918,48 +524,7 @@
       "updated_at": "2025-07-03T14:41:39+00:00",
       "pushed_at": "2026-01-01T18:14:14+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:53.419893+00:00",
-        "cache_age_hours": 90.56639701222221,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:39:01.961563+00:00",
-            "age_hours": 90.83069054805556
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:38:45.770709+00:00",
-            "age_hours": 90.83518809305556
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:38:44.423779+00:00",
-            "age_hours": 90.83556232416666
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:53.419893+00:00",
-            "age_hours": 90.56639682250001
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:50.016891+00:00",
-            "age_hours": 90.567342185
-          },
-          "ai_summary": {
-            "exists": false,
-            "timestamp": null,
-            "age_hours": null
-          }
-        },
-        "push_week": "2026W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "Texecon",
@@ -1974,48 +539,7 @@
       "updated_at": "2026-01-04T17:47:35+00:00",
       "pushed_at": "2026-01-04T17:47:32+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:53:49.611763+00:00",
-        "cache_age_hours": 90.5841220111111,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:39:49.060489+00:00",
-            "age_hours": 90.81760805277779
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:39:17.332978+00:00",
-            "age_hours": 90.82642133527779
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:39:15.556479+00:00",
-            "age_hours": 90.82691489083334
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:53:49.611763+00:00",
-            "age_hours": 90.58412184083333
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:53:46.170729+00:00",
-            "age_hours": 90.5850777688889
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:40:00.455915+00:00",
-            "age_hours": 90.81444307916667
-          }
-        },
-        "push_week": "2026W01",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "TriviaSpark",
@@ -2030,48 +554,7 @@
       "updated_at": "2025-12-02T23:56:32+00:00",
       "pushed_at": "2025-12-02T04:08:09+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:55:02.629167+00:00",
-        "cache_age_hours": 90.56383991333333,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:41:08.075887+00:00",
-            "age_hours": 90.79565984277778
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:40:06.661682+00:00",
-            "age_hours": 90.81271942861112
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:40:04.097539+00:00",
-            "age_hours": 90.81343177333333
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:02.629167+00:00",
-            "age_hours": 90.56383974222223
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:59.183869+00:00",
-            "age_hours": 90.56479685500001
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:41:16.346484+00:00",
-            "age_hours": 90.79336287999999
-          }
-        },
-        "push_week": "2025W49",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "WebProjectMechanics",
@@ -2086,48 +569,7 @@
       "updated_at": "2025-02-26T12:32:08+00:00",
       "pushed_at": "2025-11-17T00:31:10+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:32.411224+00:00",
-        "cache_age_hours": 90.57223428666666,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:41:50.849648+00:00",
-            "age_hours": 90.78377875527778
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:41:22.791581+00:00",
-            "age_hours": 90.79157274527778
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:41:20.015738+00:00",
-            "age_hours": 90.79234389444444
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:32.411224+00:00",
-            "age_hours": 90.57223411916667
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:28.932420+00:00",
-            "age_hours": 90.57320053694444
-          },
-          "ai_summary": {
-            "exists": false,
-            "timestamp": null,
-            "age_hours": null
-          }
-        },
-        "push_week": "2025W47",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "WebSpark",
@@ -2142,48 +584,7 @@
       "updated_at": "2025-12-27T16:54:03+00:00",
       "pushed_at": "2025-12-27T16:54:00+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:40.597186+00:00",
-        "cache_age_hours": 3.0032942469444444,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:43:56.241259+00:00",
-            "age_hours": 90.74894825555556
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:42:07.380471+00:00",
-            "age_hours": 90.77918744611111
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:42:02.894220+00:00",
-            "age_hours": 90.78043371194445
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:40.597186+00:00",
-            "age_hours": 3.0032940816666667
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:53:36.265425+00:00",
-            "age_hours": 90.58783076361111
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:44:08.071389+00:00",
-            "age_hours": 90.74566252222222
-          }
-        },
-        "push_week": "2025W52",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "WebSpark.ArtSpark",
@@ -2198,48 +599,7 @@
       "updated_at": "2025-12-28T16:59:18+00:00",
       "pushed_at": "2025-12-28T16:59:15+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:54.637964+00:00",
-        "cache_age_hours": 2.9993946158333333,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:44:46.831943+00:00",
-            "age_hours": 90.73489581694444
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:44:13.512227+00:00",
-            "age_hours": 90.74415138
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:44:11.705768+00:00",
-            "age_hours": 90.74465326527778
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:54.637964+00:00",
-            "age_hours": 2.9993944233333334
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:53:27.873374+00:00",
-            "age_hours": 90.59016246055555
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:44:56.228054+00:00",
-            "age_hours": 90.73228625638889
-          }
-        },
-        "push_week": "2025W52",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "WebSpark.Bootswatch",
@@ -2254,48 +614,7 @@
       "updated_at": "2025-12-04T03:15:11+00:00",
       "pushed_at": "2025-12-04T03:15:14+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:54:41.037388+00:00",
-        "cache_age_hours": 90.56983981805556,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:45:28.749871+00:00",
-            "age_hours": 90.72325252277778
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:45:01.861105+00:00",
-            "age_hours": 90.73072173055556
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:45:00.512640+00:00",
-            "age_hours": 90.73109640138888
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:41.037388+00:00",
-            "age_hours": 90.56983962277778
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:54:37.624469+00:00",
-            "age_hours": 90.57078775250001
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:45:38.282883+00:00",
-            "age_hours": 90.72060495722222
-          }
-        },
-        "push_week": "2025W49",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "WebSpark.HttpClientUtility",
@@ -2310,48 +629,7 @@
       "updated_at": "2026-01-05T12:28:58+00:00",
       "pushed_at": "2026-01-05T12:28:55+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:28:15.653712+00:00",
-        "cache_age_hours": 3.0102247388888888,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:26:59.889734+00:00",
-            "age_hours": 3.031269824722222
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:26:10.608138+00:00",
-            "age_hours": 3.0449592558333336
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:26:08.192554+00:00",
-            "age_hours": 3.045630346666667
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:15.653712+00:00",
-            "age_hours": 3.010224566666667
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:28:12.171252+00:00",
-            "age_hours": 3.0111920030555557
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:27:11.675622+00:00",
-            "age_hours": 3.027996429444445
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "WebSpark.PrismSpark",
@@ -2366,48 +644,7 @@
       "updated_at": "2026-01-05T13:34:21+00:00",
       "pushed_at": "2026-01-05T13:34:17+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-08T14:29:27.746785+00:00",
-        "cache_age_hours": 2.9901993924999997,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:27:24.408750+00:00",
-            "age_hours": 3.0244595361111113
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:27:16.415064+00:00",
-            "age_hours": 3.026680086666667
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:27:15.534936+00:00",
-            "age_hours": 3.0269246566666665
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:27.746785+00:00",
-            "age_hours": 2.990199225
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:29:24.300260+00:00",
-            "age_hours": 2.9911566744444444
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-08T14:27:34.732014+00:00",
-            "age_hours": 3.0215923836111114
-          }
-        },
-        "push_week": "2026W02",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "WebSpark.SharedKernel",
@@ -2422,48 +659,7 @@
       "updated_at": "2025-05-26T04:16:26+00:00",
       "pushed_at": "2025-05-26T04:15:01+00:00",
       "is_fork": true,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:55:47.748639+00:00",
-        "cache_age_hours": 90.55131049388889,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:47:29.866366+00:00",
-            "age_hours": 90.68961070444445
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:47:08.501653+00:00",
-            "age_hours": 90.69554542916667
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:47:06.641463+00:00",
-            "age_hours": 90.6960622361111
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:47.748639+00:00",
-            "age_hours": 90.55131032472222
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:44.257851+00:00",
-            "age_hours": 90.55228007194444
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:47:39.187104+00:00",
-            "age_hours": 90.68702203055555
-          }
-        },
-        "push_week": "2025W22",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     },
     {
       "name": "Yelp.Api",
@@ -2478,51 +674,10 @@
       "updated_at": "2025-05-04T02:35:38+00:00",
       "pushed_at": "2025-05-04T02:35:34+00:00",
       "is_fork": false,
-      "is_private": false,
-      "cache_status": {
-        "has_cache": true,
-        "cache_date": "2026-01-04T22:55:52.347472+00:00",
-        "cache_age_hours": 90.55003353805556,
-        "refresh_needed": false,
-        "refresh_reasons": [],
-        "cache_files": {
-          "commits_stats": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:48:04.767803+00:00",
-            "age_hours": 90.6799163686111
-          },
-          "commit_counts": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:47:44.172278+00:00",
-            "age_hours": 90.68563743027778
-          },
-          "languages": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:47:42.792611+00:00",
-            "age_hours": 90.6860207525
-          },
-          "dependency_files": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:52.347472+00:00",
-            "age_hours": 90.55003337333333
-          },
-          "readme": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:55:48.947274+00:00",
-            "age_hours": 90.550977955
-          },
-          "ai_summary": {
-            "exists": true,
-            "timestamp": "2026-01-04T22:48:14.253725+00:00",
-            "age_hours": 90.67728180027777
-          }
-        },
-        "push_week": "2025W18",
-        "current_week": "2026W02"
-      }
+      "is_private": false
     }
   ],
-  "hash": "5d5e352bbc3759be3cf3bb5dbe1453e02a0547e27573bd03917a3e49581116fc",
+  "hash": "9903aff7742bf894eaec4c355521fe25802357b31d250af82adc5435e181a00d",
   "metadata": {},
   "category": "repositories",
   "owner": "markhazleton",

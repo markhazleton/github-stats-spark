@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:42:42.449924+00:00",
+  "value": {
+    "JavaScript": 533114,
+    "EJS": 138227,
+    "SCSS": 12484,
+    "TypeScript": 1367,
+    "Dockerfile": 888
+  },
+  "hash": "a3f3e01474e2442440015ec2d3b645487e7c6fca5932d6b65eb9c7a8448309b8",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "js-dev-env"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-05T03:22:48+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "js-dev-env",
+  "week": "2026-01-05T03-22-48+00-00"
+}

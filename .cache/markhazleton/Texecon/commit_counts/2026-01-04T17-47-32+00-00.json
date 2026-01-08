@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:41:52.712127+00:00",
+  "value": {
+    "total": 62,
+    "recent_90d": 15,
+    "recent_180d": 62,
+    "recent_365d": 62,
+    "last_commit_date": "2026-01-04T17:47:31+00:00"
+  },
+  "hash": "8f4c44dcd3a4f0b775fa3ee38c361a1876453f7ae9034d9bf84822c9f0381ce6",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Texecon"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-04T17:47:32+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "Texecon",
+  "week": "2026-01-04T17-47-32+00-00"
+}

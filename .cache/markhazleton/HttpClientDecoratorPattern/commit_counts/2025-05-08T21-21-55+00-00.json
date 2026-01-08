@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:40:39.789633+00:00",
+  "value": {
+    "total": 162,
+    "recent_90d": 0,
+    "recent_180d": 0,
+    "recent_365d": 8,
+    "last_commit_date": "2025-05-08T21:21:52+00:00"
+  },
+  "hash": "ea831056c9668df1bb2cea73f0438d9030b662a074675f780c0b4552da351b74",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "HttpClientDecoratorPattern"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-05-08T21:21:55+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "HttpClientDecoratorPattern",
+  "week": "2025-05-08T21-21-55+00-00"
+}

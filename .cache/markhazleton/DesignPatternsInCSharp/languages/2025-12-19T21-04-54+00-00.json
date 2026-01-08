@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-01-08T17:42:25.693554+00:00",
+  "value": {
+    "HTML": 454054,
+    "C#": 129287
+  },
+  "hash": "1eb8e04a5e6d0df52e5f24de757535fa5fe2d1fbd607ffb5a27b2e2eb7b7575b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DesignPatternsInCSharp"
+    },
+    "category": "languages",
+    "pushed_at": "2025-12-19T21:04:54+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "DesignPatternsInCSharp",
+  "week": "2025-12-19T21-04-54+00-00"
+}

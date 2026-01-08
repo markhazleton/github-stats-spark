@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:41:06.324206+00:00",
+  "value": {
+    "total": 14,
+    "recent_90d": 3,
+    "recent_180d": 3,
+    "recent_365d": 5,
+    "last_commit_date": "2026-01-02T06:38:50+00:00"
+  },
+  "hash": "6ed66cd6552b8692937b5b09be6b19b627c4d07dd16a456b46c7a17b0f661721",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RazorPages"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-02T06:38:54+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "RazorPages",
+  "week": "2026-01-02T06-38-54+00-00"
+}

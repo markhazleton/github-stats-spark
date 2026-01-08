@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-08T17:42:44.043498+00:00",
+  "value": {
+    "C#": 76951
+  },
+  "hash": "b7d2114bc9e0d6ca5b2a30bf17ffa5d886ebc94bedbbc2995393a797d60ca475",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "KeyPressCounter"
+    },
+    "category": "languages",
+    "pushed_at": "2025-12-07T23:45:31+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "KeyPressCounter",
+  "week": "2025-12-07T23-45-31+00-00"
+}

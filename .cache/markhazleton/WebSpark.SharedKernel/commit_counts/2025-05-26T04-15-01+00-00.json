@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:42:10.628243+00:00",
+  "value": {
+    "total": 44,
+    "recent_90d": 0,
+    "recent_180d": 0,
+    "recent_365d": 2,
+    "last_commit_date": "2025-05-26T04:14:54+00:00"
+  },
+  "hash": "07edd17cc3b92bf9a6c178367718dce978801045a4eeeef8433fdb8fb8a9a60d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.SharedKernel"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2025-05-26T04:15:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "WebSpark.SharedKernel",
+  "week": "2025-05-26T04-15-01+00-00"
+}

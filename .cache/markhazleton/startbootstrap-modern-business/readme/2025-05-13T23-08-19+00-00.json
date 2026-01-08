@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-01-08T17:52:12.966440+00:00",
+  "value": "# Modern Business - Bootstrap 5 Demo\n\nA world-class demonstration site for small businesses, built and maintained by [Mark Hazleton](https://markhazleton.com), showcasing the best of Bootstrap 5, Pug, and Node.js build automation.\n\n## About Mark Hazleton\n\nMark Hazleton is a passionate web developer and technology leader, dedicated to building accessible, high-performance, and beautiful web experiences. This project is a testament to his commitment to modern web standards, open source, and the small business community.\n\n## Features\n\n- Responsive, mobile-first design with Bootstrap 5\n- Light/Dark mode toggle (Bootstrap 5 best practices)\n- Interactive Theme Customizer (live color, font, border radius, exportable CSS)\n- Animated hero section with SVG wave\n- Animated counters/stats for business impact\n- Dynamic testimonials carousel (Bootstrap Carousel)\n- Accessibility widget (font size, contrast, dyslexia font)\n- SEO and social meta tags (Open Graph, Twitter)\n- Minified CSS/JS for performance\n- PWA support (manifest & service worker, installable)\n- Modern pages: Home, About, Contact, Features, Testimonials, FAQ, Pricing, 404, Privacy, Terms, Accessibility, Developer\n- Reusable Pug mixins for features, testimonials, CTAs\n- All social and legal links always up-to-date\n- All social icons point to [markhazleton.com](https://markhazleton.com)\n- Contact page links directly to the [GitHub repository](https://github.com/markhazleton/startbootstrap-modern-business)\n- `/developer` page with copy-to-clipboard npm scripts\n- `/build-status.md` with demo badges for build and Lighthouse scores\n\n## Build Scripts & Automation\n\n- **npm run build**: Cleans, lints, builds Pug, SCSS, JS, assets, and minifies CSS/JS for production\n- **npm run lint/format/fix**: Enforces code quality and style\n- **npm test**: Runs build and automated tests (Mocha)\n- **Prebuild hooks**: Linting runs before every build\n- **Minification**: CSS (cssnano, postcss-cli) and JS (terser) for fast load times\n- **PWA**: Manifest and service worker generated and registered automatically\n- **SEO**: robots.txt and sitemap.xml generated for search engines\n- **CI/CD ready**: Scripts are designed for easy integration with GitHub Actions or other CI tools\n\n## Getting Started\n\n```sh\nnpm install\nnpm run build\nnpm start\n```\n\n## Light/Dark Mode\n\n- Toggle in the navbar\n- Remembers user preference\n- Uses Bootstrap 5's `data-bs-theme` for best compatibility\n\n## Testing\n\n```sh\nnpm test\n```\n\n## Deployment\n\n- Output is in the `docs/` folder (ready for static hosting)\n- Includes PWA manifest and service worker\n- SEO files: `robots.txt`, `sitemap.xml`\n\n## Contributing\n\n- PRs welcome! Please lint and test before submitting.\n- Built with \u2764\ufe0f by Mark Hazleton\n\n## License\n\nMIT\n",
+  "hash": "1c486f570959b5d537d795fd713bb1b4ed51aecf9d44649804f4e3c8dd73c1f1",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "startbootstrap-modern-business"
+    },
+    "category": "readme",
+    "pushed_at": "2025-05-13T23:08:19+00:00",
+    "ttl_enforced": false
+  },
+  "category": "readme",
+  "owner": "markhazleton",
+  "repo": "startbootstrap-modern-business",
+  "week": "2025-05-13T23-08-19+00-00"
+}

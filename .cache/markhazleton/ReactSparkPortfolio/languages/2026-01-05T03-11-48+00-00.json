@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:43:09.545189+00:00",
+  "value": {
+    "CSS": 317186,
+    "TypeScript": 207046,
+    "SCSS": 36522,
+    "JavaScript": 31889,
+    "HTML": 8878
+  },
+  "hash": "336e416bcc71dbe5e55cff493457e9ff9724c666456b2cd3319aaddadebe9183",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "ReactSparkPortfolio"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-05T03:11:48+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "ReactSparkPortfolio",
+  "week": "2026-01-05T03-11-48+00-00"
+}

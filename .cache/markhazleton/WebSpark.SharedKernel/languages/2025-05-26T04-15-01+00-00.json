@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-08T17:43:53.951615+00:00",
+  "value": {
+    "C#": 17393
+  },
+  "hash": "6e55b20fef63fd01377989606fa3729ce4888c4fc749ee428018fceecbb1861c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.SharedKernel"
+    },
+    "category": "languages",
+    "pushed_at": "2025-05-26T04:15:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "WebSpark.SharedKernel",
+  "week": "2025-05-26T04-15-01+00-00"
+}

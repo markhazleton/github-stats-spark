@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-01-04T22:48:14.251290+00:00",
+  "timestamp": "2026-01-08T17:52:44.960198+00:00",
   "value": {
-    "ai_summary": "Here's a comprehensive technical summary for the Yelp.Api repository:\n\nYelp.Api is a C# class library that provides a robust, developer-friendly wrapper for Yelp's v3 Fusion API, enabling .NET developers to seamlessly integrate comprehensive local business search and review capabilities into their applications. The library abstracts the complexity of REST API interactions, offering a strongly-typed, async-friendly client that supports flexible search parameters including geolocation, business type, maximum results, and real-time availability filtering. Built for .NET 6, the library implements a clean, intuitive interface for querying Yelp's extensive business database across 32 countries, with simple initialization using an API key and streamlined methods for retrieving business information. The implementation follows a straightforward client-based architectural pattern, focusing on ease of use with minimal configuration, making it particularly valuable for developers building location-based services, recommendation systems, or local business discovery applications. What distinguishes this library is its low-friction approach to consuming the Yelp API, providing developers with a type-safe, modern C# implementation that handles the underlying HTTP communication and data mapping transparently. The primary target users are .NET developers seeking a reliable, lightweight solution for integrating rich local business data into web, mobile, or desktop applications.",
+    "ai_summary": "Here's a comprehensive technical summary for the Yelp.Api repository:\n\nThe Yelp.Api is a C# class library that provides a clean, intuitive wrapper for interacting with Yelp's v3 Fusion API, enabling .NET developers to easily integrate comprehensive local business search and review capabilities into their applications. The library supports full-featured business searches with flexible parameters like geolocation, search terms, result limits, and business status (e.g., open now), allowing developers to retrieve detailed business information across 32 countries with minimal configuration overhead. Built for .NET 6, the library follows a straightforward client-based architecture where developers can instantiate a Yelp API client with an authentication key and perform asynchronous searches using either simple method signatures or advanced SearchRequest objects. The library abstracts away complex HTTP request handling and JSON parsing, providing a developer-friendly interface for accessing Yelp's extensive business dataset through strongly-typed models and async methods. What makes this library particularly valuable is its simplicity and direct alignment with Yelp's API specifications, reducing the typical boilerplate code required for third-party API integrations and enabling rapid development of location-based and local business discovery features. Primary use cases include building local search applications, recommendation engines, travel platforms, and any .NET project requiring rich, up-to-date local business information.",
     "generation_method": "claude-3-5-haiku-20241022",
-    "generation_timestamp": "2026-01-04T16:48:14.251236",
+    "generation_timestamp": "2026-01-08T11:52:44.960161",
     "model_used": "claude-3-5-haiku-20241022",
-    "tokens_used": 852,
+    "tokens_used": 890,
     "confidence_score": 90
   },
-  "hash": "99a6bb4251d9ad2cd9c3b4e771368215fb5815c7b0eebfa516aea9eb92c3a800",
+  "hash": "7d28032bb4cc8f7a7b523787ff3d5e6165788ff9a7479fc582b4b23c70522c20",
   "metadata": {
     "repository": {
       "owner": "markhazleton",

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:41:25.731097+00:00",
+  "value": {
+    "total": 42,
+    "recent_90d": 3,
+    "recent_180d": 3,
+    "recent_365d": 3,
+    "last_commit_date": "2026-01-05T14:14:16+00:00"
+  },
+  "hash": "f2a9514cb09aa227aa0254a1424785d9fbe6f2177f86e4e522463ada9733c466",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SolidSample"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-05T14:34:02+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "SolidSample",
+  "week": "2026-01-05T14-34-02+00-00"
+}

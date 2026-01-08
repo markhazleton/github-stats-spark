@@ -1,0 +1,719 @@
+{
+  "timestamp": "2026-01-08T17:42:14.208875+00:00",
+  "value": [
+    {
+      "sha": "ee6028d82240587e6be7e674f4797ecfd53a120f",
+      "message": "Integrate Bootswatch and improve API handling\n\n- Added `WebSpark.Bootswatch` and `WebSpark.HttpClientUtility` packages for dynamic theme switching and enhanced HTTP client utilities.\n- Updated `RemoteController` with `[Consumes(\"application/json\")]` and `[FromBody]` for better API content type handling.\n- Refactored `PollyController` to use `HttpClient.PostAsync` with JSON serialization and added detailed logging.\n- Integrated Bootswatch services and middleware in `Program.cs` and updated `_Layout.cshtml` to dynamically load themes.\n- Removed redundant custom styles, scripts, and dependencies related to theming, simplifying the project.\n- Updated `appsettings.json` with Bootswatch and Polly configuration options.\n- Simplified `build.js` by removing Bootstrap Icons font copying, as they are now loaded via CDN.\n- Updated `package.json` to remove unused dependencies and ensure compatibility with the new theming system.\n- Added detailed documentation and scripts for testing and troubleshooting API and build issues.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-04T11:54:32+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "b09368bfe6e215889ba440b9434952c00080812a",
+      "message": "Refactor OpenWeatherMap models to use required properties for better null safety; update Bootstrap license in site.min.js.LICENSE.txt; add AssemblyInfo.cs for test parallelization configuration.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-03T22:17:19+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c9239207e21536e8441b78c10098a5908813a12e",
+      "message": "feat: Implement comprehensive educational platform for async/await patterns\n\n- Added new learning page at `/home/learn` with structured modules for Beginner, Intermediate, and Advanced paths.\n- Created detailed interactive modules covering key async concepts such as cancellation tokens, parallel execution, and resilience patterns.\n- Developed new API controllers to demonstrate focused async patterns with real-world scenarios.\n- Enhanced documentation with clear learning objectives, code references, and common pitfalls.\n- Updated existing controllers and views to emphasize learning outcomes and improve navigation.\n- Introduced extensive test suites to validate async patterns and ensure robust implementation.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-03T21:58:31+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "7cbb8a20cbf7b5e74710f8a15b80cdcdb9264bc7",
+      "message": "Enhance encoding, UI, and middleware functionality\n\n- Added `EncodingMiddleware` to enforce UTF-8 encoding for all responses.\n- Updated `Program.cs` to include `UseEncodingMiddleware` and simplified memory cache health checks.\n- Redesigned `Error.cshtml` with Bootstrap cards and alerts for improved UX.\n- Upgraded Bootstrap and Bootstrap Icons to latest versions (5.3.3, 1.11.3).\n- Replaced Unicode emojis in `README.md` with ASCII-safe markers to fix encoding issues.\n- Updated `web.config` to ensure UTF-8 encoding for IIS responses.\n- Changed header handling in `RequestLoggingMiddleware` for safer operations.\n- Made `BuildVersion` nullable in `ApplicationStatus.cs` to handle unset scenarios.\n- Removed unused `System.Text.Json` package from `OpenWeatherMapClient.csproj`.\n- Added performance optimizations in `webpack.config.js` for asset size limits.\n- Improved documentation with guides for Bootstrap updates and encoding fixes.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-03T03:58:04+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "ff664bfae0fa7736e62ae5c947832b5d4ffd9de7",
+      "message": "update AsyncDemo.Web/AsyncDemo.Web.csproj and AsyncDemo.Web/wwwroot/AsyncDemo.Web.xml",
+      "author": "Mark Hazleton",
+      "date": "2025-12-03T02:25:37+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "3415c8b971960b20c1e24cccc5656ca17e006b13",
+      "message": "Upgrade to .NET 10 and migrate from Swagger to Scalar\n\nUpgraded all projects to target .NET 10, updating `TargetFramework` to `net10.0` and incrementing assembly versions. Updated NuGet dependencies to their latest versions compatible with .NET 10.\n\nReplaced Swagger/Swashbuckle with Scalar for API documentation. Introduced `Scalar.AspNetCore` and replaced `CustomSwaggerExtensions.cs` with `CustomScalarExtensions.cs`. Updated `Program.cs` to use Scalar methods and removed the `swagger-ui` folder.\n\nCustomized Scalar UI with a \"Back to Home\" button and enhanced API descriptions. Updated `launchSettings.json` to set `/scalar/v1` as the default launch URL. Updated UI references in `Index.cshtml` and `_Layout.cshtml` to point to Scalar endpoints.\n\nOverhauled documentation, including `README.md`, and added detailed migration guides (`MIGRATION_TO_SCALAR.md`, etc.). Improved XML documentation in `AsyncDemo.Web.xml` for comprehensive API coverage.\n\nPerformed thorough testing to validate Scalar endpoints and removed all Swagger references. Cleaned up outdated code and ensured the project is maintainable and future-ready.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-03T02:22:54+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "ca92e56539ece71bb95a2279fdad008af75cbda2",
+      "message": "Update main_azyncdemo.yml",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T16:47:43+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "81f7076221d5dfa03f630e99bad0b3099bf9ea1d",
+      "message": "Merge pull request #4 from markhazleton/upgrade-to-NET10\n\nUpgrade to Net 10",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T16:39:58+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "b8ae1736b535489810acf030491d087b6a4dcb0d",
+      "message": "Update NuGet packages and adjust OpenAPI usage\n\nUpdated several NuGet package versions in `AsyncDemo.Tests.csproj`:\n- `Microsoft.NET.Test.Sdk` to 18.0.1\n- `MSTest.TestAdapter` and `MSTest.TestFramework` to 4.0.2\n\nIn `AsyncDemo.Web.csproj`, updated:\n- `Microsoft.Extensions.Http.Resilience` to 10.0.0\n- `Swashbuckle.AspNetCore` to 10.0.0\n- Added `Microsoft.OpenApi` version 2.3.0\n\nModified `CustomSwaggerExtensions.cs` to use `Microsoft.OpenApi`\ninstead of `Microsoft.OpenApi.Models`, aligning with the new\npackage addition and potentially reorganizing OpenAPI usage.",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T16:38:49+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "6b2dc3aa4b65604ee32c3c84a2ea4009160ddf79",
+      "message": "Fix nullable reference warnings CS8600-CS8604",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T15:33:32+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "a2b81da0d9ceae26b58db08fb7096ef2078d45e1",
+      "message": "Add XML documentation comments to resolve CS1591 warnings",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T15:27:05+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "43072a57da1f37fb1408d3c953daa4cd2f536279",
+      "message": "Complete .NET 10 upgrade - Updated all projects and packages to .NET 10",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T15:12:48+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "93541429a64cec894b6848d675cdafc8830d7536",
+      "message": "Commit changes before fixing global.json file(s).",
+      "author": "Mark Hazleton",
+      "date": "2025-11-12T15:09:31+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "92ddfdaf9a5eeefe42d8157804cfa0bb70981270",
+      "message": "Refactor for DI, logging, and security improvements\n\nRefactored BaseController to follow DI best practices using ILogger and IHttpClientFactory. Updated BulkCallsController and OpenWeatherController to align with the new BaseController pattern. Enhanced HomeController with improved error handling and logging.\n\nIntroduced RequestLoggingMiddleware for structured request/response logging. Added ConfigurationValidationService and StartupService for configuration validation and initialization tasks. Enhanced health checks with configuration validation and memory cache checks.\n\nImproved HTTP client configuration with default timeouts and removed anti-patterns. Added security headers, HSTS, and forwarded headers support. Enhanced session management with secure cookie settings.\n\nUpdated Program.cs to register new services and middleware. Improved logging configuration with structured logging and graceful shutdown handling. Added XML documentation for new features and created IMPROVEMENTS_SUMMARY.md.\n\nImproved maintainability, reliability, and observability by following modern .NET best practices.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-24T23:23:46+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "aa461ca4a03f8f6624d803bac422a1638c18d878",
+      "message": "Upgrade package dependencies across all projects\n\nUpdated package references in `AsyncDemo.Tests.csproj`, `AsyncDemo.Web.csproj`, `AsyncDemo.csproj`, and `OpenWeatherMapClient.csproj` to newer versions for improved compatibility, bug fixes, and security enhancements. Key updates include:\n\n- Upgraded `Microsoft.Extensions.*` packages to version `9.0.10`.\n- Upgraded `Azure.Identity` to version `1.17.0`.\n- Upgraded `Microsoft.NET.Test.Sdk` to version `18.0.0`.\n- Upgraded MSTest packages to version `4.0.1`.\n- Upgraded `Polly` to version `8.6.4` and `Swashbuckle.AspNetCore` to version `9.0.6`.\n\nThese changes ensure consistency and alignment across all projects.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-24T23:13:21+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "66b0a5083a24ddfc8d8df848849ace01d1ecd8ed",
+      "message": "Update NuGet packages and clean up code\n\nUpdated project files for `AsyncDemo.Tests`, `AsyncDemo.Web`, `AsyncDemo`, and `OpenWeatherMapClient` to reference the latest versions of various NuGet packages. Removed an unused `using` directive in `BulkCallsController.cs` for improved code cleanliness. These changes ensure the project benefits from the latest features and fixes.",
+      "author": "Mark Hazleton",
+      "date": "2025-07-03T02:32:31+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "1c82ac22fa53b2841060ac3feb7618a53d2279fc",
+      "message": "Update NuGet packages and refactor tests\n\nUpdated several NuGet package versions across the `AsyncDemo` project and its components, including key libraries such as `Microsoft.Extensions` and `Azure.Identity`. Removed the `PerformActionWithLock_ShouldPerformAction` test method from `MemoryCacheManagerTests.cs`. Additionally, created or updated the solution file `AsyncDemo.sln` to enhance project configuration and management in Visual Studio.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-13T21:42:17+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "772a820cd2a56fe4afda75799e1ffa4f2ac85206",
+      "message": "clean up warnings",
+      "author": "Mark Hazleton",
+      "date": "2025-04-27T16:23:58+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "6dcc225ee527d980dc37be36944addfe74475451",
+      "message": "update the theme switching",
+      "author": "Mark Hazleton",
+      "date": "2025-04-25T13:54:08+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "f0357728f815bc9a91c3dc95e1358c044e1a2071",
+      "message": "update startup / ui changes",
+      "author": "Mark Hazleton",
+      "date": "2025-04-22T03:10:44+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "531720c65cee91657dc575bd785fd4f2fc50e181",
+      "message": "fix build",
+      "author": "Mark Hazleton",
+      "date": "2025-04-22T02:33:37+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "479871eabebce9095db629f2e41023362e75aeb3",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2025-04-22T02:30:56+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "7fe433b6c8cbaa08e143abe1443b6120ac5b9286",
+      "message": "Delete .github/workflows/main_asyncdemo.yml",
+      "author": "Mark Hazleton",
+      "date": "2025-04-22T02:28:59+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "a5e598b3b5a37d781fa60699bed8ca1698b4313e",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2025-04-22T02:14:12+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "271b75c8da1005a5f5707ce7724446b3ee54e837",
+      "message": "update workflow",
+      "author": "Mark Hazleton",
+      "date": "2025-04-22T02:11:29+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "f787c64cd1b10f5e2f86b53ea30fd4c90c8e8c83",
+      "message": "vibing a new ui",
+      "author": "Mark Hazleton",
+      "date": "2025-04-18T16:10:00+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "9d920e404433605b5ccacf27be57a09244db36e5",
+      "message": "vibing with vs code",
+      "author": "Mark Hazleton",
+      "date": "2025-04-18T14:22:54+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "6600fd7bdc70e3c8696b8e69062ae401fbd9df14",
+      "message": "vibing with vs code",
+      "author": "Mark Hazleton",
+      "date": "2025-04-18T14:22:50+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "60ccd6fba823c57155fc29166825f46ea35a2094",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-11-13T15:58:59+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "504514a1928ad4082579423614853b22c725b875",
+      "message": "package Updates",
+      "author": "Mark Hazleton",
+      "date": "2024-10-29T13:11:38+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "52da5026ae13d09d16ff1773a4cd01279f4b2262",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T21:19:36+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "ebc179f6df87bd3041e2e0771180c67ade39db8a",
+      "message": "Update main_asyncdemo.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T21:11:18+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "072b8b630b29c70225f0499bc1342ce7be68cbef",
+      "message": "Update main_asyncdemo.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T21:08:19+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c5ea7130a992b87a14967d9f2f0be5937084f824",
+      "message": "Update main_asyncdemo.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T21:01:56+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "b223ea7fb4fa9e2bcbe732608a9fcd80322cf8b8",
+      "message": "Update main_asyncdemo.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T20:57:59+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "78b09b0078ffc53c6517dfa01109343f832a2df0",
+      "message": "Update main_asyncdemo.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T20:50:41+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "7704f21ea6a300570622139a9181b14c129d4cdc",
+      "message": "update to net 9",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T20:49:27+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "715fa6bc5e0defba4b8fb5d53df4e0dcf92b29c2",
+      "message": "Merge pull request #2 from markhazleton/dependabot/github_actions/dot-github/workflows/actions/download-artifact-4.1.7\n\nBump actions/download-artifact from 3 to 4.1.7 in /.github/workflows",
+      "author": "Mark Hazleton",
+      "date": "2024-09-29T20:37:25+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "1ea5b60834c19643d663954f0ed7ec7e2bb737e6",
+      "message": "update nuget packages",
+      "author": "Mark Hazleton",
+      "date": "2024-08-14T15:20:42+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "09c2d57aaddf1ed024922eb7792368542636cd6f",
+      "message": "Refactore use of Polly for remote calls",
+      "author": "Mark Hazleton",
+      "date": "2024-08-10T18:44:22+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "2411eda9b3887ac0ad0dadaed872c4e1ddd60877",
+      "message": "package update\nrefactoring stuff",
+      "author": "Mark Hazleton",
+      "date": "2024-08-10T14:54:33+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "327b5886518347cc9743ac3c35a12bee9e6a2ef5",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-08-05T12:46:15+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "33e6c9b908db7738a8bb3c5e1e21b062cf6e0d37",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-06-08T18:28:08+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "41464b419c72ad11110182a98b4c7cdc82cdee29",
+      "message": "fix fil location for upload",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T21:04:42+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "bb19df3ce1fcaec7b087c48c43968c847af2981f",
+      "message": "update packages",
+      "author": "Mark Hazleton",
+      "date": "2024-05-29T20:54:08+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "5bc473adc81494d219b3675c4563bf413e48dbc3",
+      "message": "nuGet updates",
+      "author": "Mark Hazleton",
+      "date": "2024-05-14T18:51:16+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "e8abf11b0bccd94ec9d4fedf9b12589d25879e92",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2024-04-09T13:51:33+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "1409f15388ef033be99901cdb867bf5c9172e7ba",
+      "message": "fix urls",
+      "author": "Mark Hazleton",
+      "date": "2024-04-09T13:22:34+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "e50fde7d1f81126729e34ce6775e5a9431bd7ff4",
+      "message": "remove keyvault logic",
+      "author": "Mark Hazleton",
+      "date": "2024-04-09T12:44:04+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "0a5f95fc09d4d632bbdc013600024ce5597680bd",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2024-04-09T12:23:36+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c1a752bc4990e2f5cb7255228b20e63d33421028",
+      "message": "Delete .github/workflows/main_asyncdemoweb.yml",
+      "author": "Mark Hazleton",
+      "date": "2024-04-09T12:21:02+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "a5d8aa6a89e6979e38a5cb71b89c5a0108495b19",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2024-04-09T12:17:47+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "b419b04766df345a828b62f9f3be72be8743393a",
+      "message": "update packages, code cleanup",
+      "author": "Mark Hazleton",
+      "date": "2024-04-09T12:15:10+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c1b12cf76f8037a34067af2e0dd56b09e3d16151",
+      "message": "improve formatting of Polly test",
+      "author": "Mark Hazleton",
+      "date": "2024-03-26T16:44:10+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "5eb5e374762e989cb082a757a4ba6dee17270006",
+      "message": "improve polly test page layout",
+      "author": "Mark Hazleton",
+      "date": "2024-03-26T16:31:46+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "b4c72607ec3363f8a840695b9cd46da4510946a6",
+      "message": "Add Cancellation Token to Get Call Service",
+      "author": "Mark Hazleton",
+      "date": "2024-01-21T15:28:02+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "1f044143cf3af99b4f3b538b9030fc2f8a660543",
+      "message": "Add Fire And Forget Demos",
+      "author": "Mark Hazleton",
+      "date": "2024-01-20T17:58:41+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "dd7bd9d04fb9da5cbca2cc5c3c98c37d7e43aa66",
+      "message": "NuGet Updates",
+      "author": "Mark Hazleton",
+      "date": "2023-12-11T01:31:19+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "dcea04db262ffab7ff1bdf6934358aff521ea9cb",
+      "message": "Package Updates, minor tweaks, add unit tests",
+      "author": "Mark Hazleton",
+      "date": "2023-11-15T13:59:10+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "4903bac798c4c5d523364c3c26f2bf668b905b05",
+      "message": "NuGet Updates",
+      "author": "Mark Hazleton",
+      "date": "2023-11-10T02:16:57+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "26f4284cbcd7e33ec6c3d886a3008c7705c71b70",
+      "message": "minor ui changes",
+      "author": "Mark Hazleton",
+      "date": "2023-10-22T14:05:17+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "11ba83e1699bdf047318c798314f4e65b10928d7",
+      "message": "Merge pull request #1 from markhazleton/feature/net8\n\nImplement Net 8",
+      "author": "Mark Hazleton",
+      "date": "2023-10-09T23:28:30+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "7fe05bf91138231f6126cc0341f4e8d25e7765d9",
+      "message": "Update NuGet\nTarget Net 8",
+      "author": "Mark Hazleton",
+      "date": "2023-10-09T23:27:48+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "623ff5c59e2626baf447a1887181b92d8fe818db",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2023-08-30T23:55:10+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "e5d101564fbb59717229ede1bf4d4a07eb116da7",
+      "message": "Update to Net8",
+      "author": "Mark Hazleton",
+      "date": "2023-08-23T13:16:47+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "1455fb77a7f7fbf4f98af02a417dc3882da9cb9a",
+      "message": "Cache the Status to improve performance and reduce impact of multiple calls.",
+      "author": "Mark Hazleton",
+      "date": "2023-07-27T22:24:53+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "d3b5782cae5381fdf1c1c5b107f9a63be2324a19",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2023-07-27T01:45:18+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "687a4f4d151c927ae4f6e7499001fab56f802569",
+      "message": "Update NuGet Packages. . .",
+      "author": "Mark Hazleton",
+      "date": "2023-07-27T01:40:33+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c3aebbd210593515c7eaeb9d07edc9267a7956cc",
+      "message": "nuget version updates",
+      "author": "Mark Hazleton",
+      "date": "2023-07-04T15:58:49+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "850c1e03e00894bd22a2c7b56d16972155870301",
+      "message": "Delete azure-webapps-dotnet-core.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T15:32:30+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "590aa709058549153b64bb87eb7b86c93bbd2055",
+      "message": "Delete main_asyncdemoweb.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T15:32:18+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "4d6d2c54d7be26c7cc47933be8af79d8fb153872",
+      "message": "Update main_asyncdemoweb.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T15:31:21+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c9f3985ac74c71fadea76ce5fc6f6935b3f2aaf8",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T15:28:25+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "26997174b59ac6616540693dba3f2026ed02a15f",
+      "message": "Update azure-webapps-dotnet-core.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T15:25:20+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "9d2bbeb1bedcbe507aec7c9119c10555770b4f0a",
+      "message": "Update azure-webapps-dotnet-core.yml\n\nfix .net version",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T15:14:06+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "f7d2178a9a31961d194028c24b65b59b4a4470d7",
+      "message": "Create azure-webapps-dotnet-core.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T15:12:04+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "5b3514204b726eda8a4162b030dacf1fde99355f",
+      "message": "Delete main_asyncdemoweb.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T14:59:32+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "f9cd89a440b600c10c298cfdd27168fde29d7a28",
+      "message": "work on publish profile",
+      "author": "Mark Hazleton",
+      "date": "2023-06-01T14:50:58+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "2d2411e5b1dc50eab1f8f9d006cb1ae0c3616f05",
+      "message": "Bump Versions\nUI Tweaks on home page",
+      "author": "Mark Hazleton",
+      "date": "2023-05-24T14:13:27+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c2aa1e9f487947abaa2faf10bf62d06ae4a6a0ae",
+      "message": "Add or update the Azure App Service build and deployment workflow config",
+      "author": "Mark Hazleton",
+      "date": "2023-05-23T15:16:50+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "ca753ae93aa828a3ffd7dab3c4fe3e3009d7ba3f",
+      "message": "Delete AsyncDemoWeb.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-05-23T15:12:28+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "6e5d12e5a8a0c3a3dc9c22bb9cec0be343dee2d4",
+      "message": "minor tweaks",
+      "author": "Mark Hazleton",
+      "date": "2023-05-23T15:05:41+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "4d6564c376104c8804d83f5447a5208903c905e4",
+      "message": "nuget updates",
+      "author": "Mark Hazleton",
+      "date": "2023-05-22T22:40:45+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "d34bc1fea71062537ad93f6e2f4c310cf16f1b0a",
+      "message": "merge readme.md versions",
+      "author": "Mark Hazleton",
+      "date": "2023-05-08T23:24:03+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "c5798e9700aec7e36e9416959a7925f29cae3442",
+      "message": "update footer",
+      "author": "Mark Hazleton",
+      "date": "2023-05-08T23:23:02+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "d6cc2c0d6ce27ae28e0fbb1bd53bf4de46cd286a",
+      "message": "Update README.md",
+      "author": "Mark Hazleton",
+      "date": "2023-05-08T23:22:27+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "675fda6cfcc50c3871d91041b582761a2ad47dde",
+      "message": "update publishing profiles",
+      "author": "Mark Hazleton",
+      "date": "2023-05-08T14:02:21+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "b49966a3a73bdec03d80cf91e836c5e56d7ad0d2",
+      "message": "update NuGet, remove deprecated package",
+      "author": "Mark Hazleton",
+      "date": "2023-05-08T13:57:25+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "5ab906baddb6362c1ebb4fb73f52fcc0e0531b96",
+      "message": "add link to https://markhazleton.controlorigins.com/cancellation-token.html",
+      "author": "Mark Hazleton",
+      "date": "2023-05-03T20:05:45+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "5cb347c186b7be14426b63c7846e6257e07fc902",
+      "message": "pass token to async methods",
+      "author": "Mark Hazleton",
+      "date": "2023-05-02T22:53:20+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "59240ec6e4e470b3c3fa6863efd22fbcf9b2d643",
+      "message": "Add Tests for Cancellation Token",
+      "author": "Mark Hazleton",
+      "date": "2023-05-02T20:05:46+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "e056b07ff12714421927dc2316fd210440cba37f",
+      "message": "Update Packages",
+      "author": "Mark Hazleton",
+      "date": "2023-03-21T16:17:19+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "230da7b45949e387a2384c55b39919bb947749b3",
+      "message": "Update AsyncDemoWeb.yml",
+      "author": "Mark Hazleton",
+      "date": "2023-02-09T15:10:57+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "72747591f194cc9bf4f57ce20873693999b5d75c",
+      "message": "Add HttpGetService with Telemetry decorator",
+      "author": "Mark Hazleton",
+      "date": "2023-02-09T15:07:59+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "f443fcd40abde787ad353206cf1f210f3a07ddd2",
+      "message": "Update Home page frrom README.md\nFix issue with footer on mobile\nFis URL for Mark Hazleton profile link",
+      "author": "Mark Hazleton",
+      "date": "2023-02-08T21:21:07+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "aae68328c8fe02f5a11060772f1b13e06643f151",
+      "message": "Update to Net 7",
+      "author": "Mark Hazleton",
+      "date": "2023-01-31T01:36:49+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "210ebc0026628993729168176d9b32cc3f536b2d",
+      "message": "Update XML docs, clean-up",
+      "author": "Mark Hazleton",
+      "date": "2023-01-30T23:12:24+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "4d759ba06f312d92e39d1ec8b48861a776433459",
+      "message": "Refactor List of Current Weather",
+      "author": "Mark Hazleton",
+      "date": "2023-01-17T15:40:56+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "605cc9f4c7b8072eb282704e4628b5b8822dd977",
+      "message": "updates packages / footer update",
+      "author": "Mark Hazleton",
+      "date": "2022-12-28T04:53:34+00:00",
+      "repo": "AsyncDemo"
+    },
+    {
+      "sha": "1b20e3455a350234b12e7c69858f152f2aec3772",
+      "message": "Updates, check for bad connection to User Secrets",
+      "author": "Mark Hazleton",
+      "date": "2022-09-27T18:53:05+00:00",
+      "repo": "AsyncDemo"
+    }
+  ],
+  "hash": "6a96c6b644179ec4e0378f0aa20d394cee14a4755e06809ca25c5f1b90744c4f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "AsyncDemo"
+    },
+    "category": "commits",
+    "pushed_at": "2025-12-04T11:54:36+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "AsyncDemo",
+  "week": "2025-12-04T11-54-36+00-00"
+}

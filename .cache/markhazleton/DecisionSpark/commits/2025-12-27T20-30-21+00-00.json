@@ -1,0 +1,145 @@
+{
+  "timestamp": "2026-01-08T17:42:23.188588+00:00",
+  "value": [
+    {
+      "sha": "06c756e4c59afcebfa9ad80c84738c7e833e15a9",
+      "message": "Enhance LLM tie-breaking, summaries, and context awareness\n\n- Use OpenAI to generate clarifying questions (text/enum/enum_list) for ties, considering known user traits\n- Select winning outcome and generate personalized summary via LLM after clarifier answer\n- Add FinalSummary to EvaluationResult and display it in completion responses\n- Pass knownTraits to all question generation methods to avoid redundant questions\n- Refactor RoutingEvaluator for LLM-based tie resolution and summary generation\n- Update ConversationController to support dynamic clarifier traits and pass knownTraits\n- Remove bundled JSON spec files; switch to external config paths in csproj and appsettings\n- Improves user experience with more natural, context-aware explanations and tie resolution",
+      "author": "Mark Hazleton",
+      "date": "2025-12-27T03:30:06+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "14ab4d96cdd37a9ab0290efa645746fc9c4e4849",
+      "message": "Refactor: extract core logic to DecisionSpark.Core project\n\nMoved all core models and services to new DecisionSpark.Core project for better separation of concerns and reusability. Updated main web project and tests to reference core types. Improved logging config and switched log/conversation paths to relative. No functional changes; enables use of core logic outside ASP.NET Core.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-27T02:40:56+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "3bb7941a344236ebe5e565ef83bb5416e16c922e",
+      "message": "Add comprehensive README and update solution items\n\nReplaced minimal README with detailed documentation covering features, architecture, setup, API reference, configuration, deployment, testing, and contribution guidelines. Updated the solution file to remove the HTTP test file and include the new README.md, improving onboarding and maintainability.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-26T19:14:35+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "6617acd80e20a8c5080c38363161932b104d16ba",
+      "message": "Refactor API to /conversation/*, remove demo & update docs\n\n- Move all production endpoints to /conversation/*; remove legacy /start and /start/specs\n- Remove demo endpoints and DemoController; delete all demo UI, DTOs, and Playwright browser tests\n- Redesign About.cshtml as a full API documentation page with improved UI and navigation\n- Update Index.cshtml with new navbar, layout, and resizable debug sidebar; remove demo scenario buttons\n- Update API key middleware to only exempt Swagger, health, about, and home pages\n- Revise README and HTTP test files for new endpoint structure and usage\n- Add start.ps1 script for local dev startup and browser launch\n- Clean up solution/project files to remove Playwright test project\n- General UI/UX improvements and code sample clarity\n- All code and docs now aligned to the new production API surface",
+      "author": "Mark Hazleton",
+      "date": "2025-12-26T18:59:24+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "77b21de09f8c4d29675a61a248916494f0da999c",
+      "message": "Merge feature: Multiple Question Input Types (001-question-types)\n\nComplete implementation of interactive question types with full test coverage.\n\nSummary:\n- 40/40 tasks completed\n- 4 user stories implemented (US1-US4)\n- 26 unit tests passing\n- WCAG 2.1 AA accessibility compliant\n- Backward compatible with legacy clients\n\nMajor components:\n- Question type arbitration system\n- Option ID generation with stable slugs\n- User selection service with multi-select support\n- Razor view components for text/radio/checkbox inputs\n- Validation history and retry logic\n- Negative option exclusivity enforcement\n- Comprehensive telemetry instrumentation",
+      "author": "Mark Hazleton",
+      "date": "2025-12-26T16:30:42+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "e9b2d6753ce0c7118c683c146b5d93691213e649",
+      "message": "feat: Complete implementation of multiple question input types feature\n\n- \u2705 All 40 tasks completed (T001-T040)\n- \u2705 Accessibility audit complete (WCAG 2.1 AA compliant)\n- \u2705 Regression testing verified (26/26 unit tests passing)\n- \u2705 Added comprehensive final report\n\nFeatures implemented:\n- Free text input with enhanced metadata and telemetry\n- Single-select radio buttons with ARIA roles\n- Multi-select checkboxes with selection counter\n- Negative option exclusive behavior\n\nDocumentation:\n- Final implementation report with accessibility audit\n- All tasks marked complete in tasks.md\n- API contracts verified and documented\n\nTesting:\n- 26 xUnit unit tests passing\n- 23 Playwright E2E tests ready\n- Backward compatibility maintained",
+      "author": "Mark Hazleton",
+      "date": "2025-12-26T16:30:33+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "65722f474f0841d8d1ec66cb425bb883d701f717",
+      "message": "feat: Enhance conversation management and spec handling\n\n- Added IConversationPersistence interface and FileConversationPersistence implementation for saving conversation sessions to disk.\n- Updated ConversationController and StartController to utilize conversation persistence.\n- Introduced SpecListResponse and SpecInfo models for managing available decision specs.\n- Enhanced StartController to retrieve and display available specs.\n- Modified StartRequest to include optional spec_id for session initialization.\n- Improved user input handling in the frontend to support dynamic question types and spec selection.\n- Updated logging and error handling for better traceability.\n- Adjusted response mapping to reflect new conversation flow and spec handling.\n- Added new parsing methods in ITraitParser for improved input validation and extraction.\n- Updated OpenAIQuestionGenerator to enforce structured selection for enum types.\n- Enhanced UI to dynamically render input fields based on question type.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-26T15:53:13+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "bd92bc293c99c171ff4c562ae540b39dc1b4879b",
+      "message": "feat: Update DefaultSpecId and add TECH_STACK_ADVISOR_V1 configuration",
+      "author": "Mark Hazleton",
+      "date": "2025-12-26T15:05:20+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "3833ec4b50a6f717a722f1fec96dd61ba84fe427",
+      "message": "Support multi-question input types & negative options\n\nImplements full support for text, single-select, and multi-select questions with deterministic option IDs, negative option enforcement, and robust input normalization. Adds question type arbitration logic, validation history tracking, and telemetry for renderer selection and latency. Updates API/DTOs, OpenAPI spec, and UI components for new question types. Includes comprehensive unit and Playwright browser tests, plus telemetry dashboard and documentation. Satisfies FR-006, FR-024a/b, FR-033, FR-034a, FR-042, FR-043, FR-044, and SC-001 to SC-004.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-26T00:15:32+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "82694d8dad23396c830d595ec22970633a179af7",
+      "message": "feat: Add PowerShell scripts for feature management and agent context updates\n\n- Created `create-new-feature.ps1` for generating new feature branches and specs.\n- Added `setup-plan.ps1` to set up implementation plans for features.\n- Introduced `update-agent-context.ps1` to update agent context files based on plan data.\n- Added VSCode settings for chat prompt file recommendations and terminal auto-approval.\n- Implemented OpenAPI specification for DecisionSpark Conversation API with endpoints for starting sessions and submitting answers.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-25T20:32:00+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "f5c9b2efccb6b067d02c155fa98cbf98b2ed375a",
+      "message": "updates for middleware",
+      "author": "Mark Hazleton",
+      "date": "2025-12-25T18:21:22+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "f1e9fcac498d8fee921e90ced9c62ec6dc204fa2",
+      "message": "Add comprehensive documentation and Copilot workflow guides\n\n- Added extensive Markdown documentation covering API usage, web UI features, OpenAI integration, troubleshooting, restart procedures, demo scenarios, encoding fixes, debugging enhancements, and CORS/browser cache solutions.\n- Introduced copilot-instructions.md and a new /docs/copilot/README.md to formalize Copilot AI-assisted development, documentation structure, and repository hygiene.\n- Updated .gitignore to enforce that only README.md and copilot-instructions.md are allowed in the repo root; all other markdown files must reside in /docs/.\n- Removed the old Requirements.md from solution items, reflecting the new documentation organization.\n- Added WEB_UI_SUMMARY.md as a high-level overview of the new Bootstrap 5 web UI, its architecture, features, and deployment steps.\n- No application code changes; all updates focus on documentation, workflow, and maintainability.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-25T17:46:45+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "d3690ae308280c33c953f1ed895ee172bcd836dd",
+      "message": "OpenAI integration: natural language parsing & questions\n\nMajor upgrade: added OpenAI/Azure OpenAI support for natural language parsing, question generation, and tie resolution. TraitParser now uses LLMs for parsing when regex fails; RoutingEvaluator generates clarifying questions via OpenAI. Improved model binding, logging, and emoji encoding. Updated spec and added comprehensive docs and restart script. System gracefully falls back when OpenAI is unavailable. **Restart required to apply changes.**",
+      "author": "Mark Hazleton",
+      "date": "2025-12-25T16:38:02+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "512771084fa4d82e3dd6f2d8ab06551081056267",
+      "message": "Fix JSON case, CORS, and add debug console & logging\n\n- Make JSON deserialization case-insensitive to accept both snake_case and PascalCase (fixes \"Could not find a number\" error)\n- Add aggressive backend logging and a custom model binder for NextRequest to trace deserialization\n- Simplify API routes and generate URLs using the actual request host to fix CORS issues\n- Add a comprehensive debug console to the web UI for real-time API request/response logging and troubleshooting\n- Provide browser cache and troubleshooting documentation to ensure latest JS is loaded and issues are easily diagnosed",
+      "author": "Mark Hazleton",
+      "date": "2025-12-25T14:27:42+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "6d011d8dc86fc3af1cedc1c636b22e4ea7c81833",
+      "message": "Add Web UI and enhance API testing capabilities\n\nIntegrated Serilog for structured logging and added MVC support with Razor views. Enhanced Swagger configuration with API key authentication and XML comments. Updated routing to support static files and MVC, moving Swagger UI to `/swagger`.\n\nImplemented a complete Web UI with three views (`Index`, `Demo`, `About`) for API testing, featuring real-time conversation flow, pre-built scenarios, and HATEOAS navigation. Designed a responsive, modern UI using Bootstrap 5 with custom animations and styles.\n\nAdded comprehensive documentation (`QUICK_START_WEB_UI.md`, `WEB_UI_DOCUMENTATION.md`, `WEB_UI_SUMMARY.md`) covering setup, usage, and deployment. Ensured production readiness with API key authentication, HTTPS, and responsive design.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-29T02:25:00+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "ccf652208a8f6e2e879b7606c55bafd28185f176",
+      "message": "Add Swagger, Demo API, and improve error handling\n\n- Integrated Swagger/OpenAPI for interactive API documentation.\n- Added `DemoController` for simplified testing and pre-built scenarios.\n- Enhanced error handling with detailed messages and retry hints.\n- Updated `DecisionSpark.csproj` to copy config files to output.\n- Improved JSON deserialization with snake_case support.\n- Added HTTP test files for production and demo APIs.\n- Enhanced logging with Serilog and added troubleshooting guides.\n- Updated documentation with quick start and detailed API guides.\n- Fixed IIS Express 500 errors with multi-path config resolution.\n- Improved session management and added demo-specific DTOs.\n- Verified changes with comprehensive tests and Swagger UI.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-29T02:08:48+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "a8ff89cd6c781b263a9dc8076b70afed7329686d",
+      "message": "Initial implementation of DecisionSpark engine\n\nAdded a complete solution for the DecisionSpark project, including:\n- Solution structure with `DecisionSpark.slnx` and `DecisionSpark.csproj`.\n- Core components: session management, rule evaluation, and trait parsing.\n- API endpoints: `/start` and `/v2/pub/conversation/{sessionId}/next`.\n- Configuration files with Serilog logging and DecisionEngine settings.\n- Documentation: README, Quick Start Guide, and Implementation Summary.\n- DecisionSpec JSON for traits, rules, and outcomes.\n- Dependency injection setup and HTTP request pipeline in `Program.cs`.\n- Future extensibility for OpenAI integration and advanced features.\n\nThe project is ready for local testing and further development.",
+      "author": "Mark Hazleton",
+      "date": "2025-10-29T01:10:47+00:00",
+      "repo": "DecisionSpark"
+    },
+    {
+      "sha": "ded192fa85e0aba2d018191b3b8c7f93c94712fb",
+      "message": "Initial commit",
+      "author": "Mark Hazleton",
+      "date": "2025-10-29T00:44:37+00:00",
+      "repo": "DecisionSpark"
+    }
+  ],
+  "hash": "eec454f8e945b206a29e0628e4b49c48c45fd94d7d915a93fe91b112805ba102",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DecisionSpark"
+    },
+    "category": "commits",
+    "pushed_at": "2025-12-27T20:30:21+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "DecisionSpark",
+  "week": "2025-12-27T20-30-21+00-00"
+}

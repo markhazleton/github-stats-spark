@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-08T17:42:08.185975+00:00",
+  "value": {
+    "total": 99,
+    "recent_90d": 71,
+    "recent_180d": 75,
+    "recent_365d": 99,
+    "last_commit_date": "2026-01-05T12:28:51+00:00"
+  },
+  "hash": "a5da354fabac7f03706b9b7f144a11814812520e1b5db3847b9b4fa93999393c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.HttpClientUtility"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-05T12:28:55+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "WebSpark.HttpClientUtility",
+  "week": "2026-01-05T12-28-55+00-00"
+}

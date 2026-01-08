@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-01-08T14:27:34.730134+00:00",
+  "timestamp": "2026-01-08T17:48:42.843792+00:00",
   "value": {
-    "ai_summary": "WebSpark.PrismSpark is a comprehensive .NET-based syntax highlighting library designed to port and enhance the functionality of PrismJS for C# and .NET ecosystems. The library provides advanced code syntax highlighting capabilities across 20+ programming languages, featuring a robust plugin system, extensive theming support, and high-performance tokenization with async processing and caching mechanisms. Built for .NET 10.0 LTS, the library offers deep integration with ASP.NET Web MVC, supporting dependency injection, custom theming, and extensible hook-based customization through interfaces like IPlugin and sophisticated configuration options. Its architecture emphasizes modularity, with support for language-specific grammars, theme generation, and context-aware highlighting that allows developers to easily transform raw code into richly styled, semantically parsed HTML representations. The project stands out by providing a feature-complete, performant alternative to traditional syntax highlighting libraries, with first-class support for modern .NET development patterns and a flexible, event-driven design that enables complex code rendering scenarios. Target users include web developers, documentation generators, code snippet platforms, and educational technology tools seeking a robust, extensible syntax highlighting solution within the .NET ecosystem.",
+    "ai_summary": "WebSpark.PrismSpark is a sophisticated C#/.NET library designed to provide advanced syntax highlighting and code rendering capabilities, serving as a comprehensive port of the popular PrismJS JavaScript library. The project offers robust tokenization and highlighting support for over 20 programming languages, with a modular architecture that includes a plugin system, extensive theming capabilities, and high-performance rendering through async processing and caching mechanisms. Leveraging .NET 10.0 LTS, the library provides developers with a flexible, extensible syntax highlighting solution that supports custom themes, hooks, and plugins, enabling rich code presentation across web applications, documentation systems, and development tools. The library's design emphasizes performance, extensibility, and ease of integration, with built-in support for various .NET web frameworks like MVC and explicit mechanisms for language grammar management, theme generation, and contextual code processing. Key differentiators include its comprehensive plugin ecosystem, advanced theming capabilities with CSS generation, and a flexible hook system that allows deep customization of the highlighting process. Target users include .NET web developers, documentation generators, code editors, and technical content platforms seeking a robust, performant syntax highlighting solution with extensive customization options.",
     "generation_method": "claude-3-5-haiku-20241022",
-    "generation_timestamp": "2026-01-08T08:27:34.730093",
+    "generation_timestamp": "2026-01-08T11:48:42.843762",
     "model_used": "claude-3-5-haiku-20241022",
-    "tokens_used": 1855,
+    "tokens_used": 1876,
     "confidence_score": 90
   },
-  "hash": "a63915476ee716e61cc917b2df2698abe6b9f1cfd5072a61f9b3c4b20045fed9",
+  "hash": "8a44e06126ef09cb0a9fc7c1bddab3baa3f2865ea878e25ddc94715a0c5b434a",
   "metadata": {
     "repository": {
       "owner": "markhazleton",

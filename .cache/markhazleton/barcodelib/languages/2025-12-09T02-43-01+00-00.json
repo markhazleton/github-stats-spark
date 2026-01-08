@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-01-08T17:42:16.766917+00:00",
+  "value": {
+    "JavaScript": 496625,
+    "C#": 256974,
+    "CSS": 200398,
+    "HTML": 19320,
+    "Dockerfile": 704,
+    "Shell": 212,
+    "ASP.NET": 109,
+    "Batchfile": 60
+  },
+  "hash": "99099790dc8cba26341659d0f39124dbddc5f48ac9cc7471eddc7592cdbebd89",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "barcodelib"
+    },
+    "category": "languages",
+    "pushed_at": "2025-12-09T02:43:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "barcodelib",
+  "week": "2025-12-09T02-43-01+00-00"
+}

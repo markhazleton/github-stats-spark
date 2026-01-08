@@ -1,0 +1,446 @@
+{
+  "timestamp": "2026-01-08T17:43:11.296773+00:00",
+  "value": [
+    {
+      "sha": "ae2f28b0a2dd543ebcf56e67e6c7f285b783d75d",
+      "message": "Enhance Swagger, DI, and endpoints; refactor async methods\n\n- Expand Swagger config: add tags, descriptions, Newtonsoft.Json support, and improved schema handling\n- Register SampleCRUDService for DI and refactor endpoints to use DI\n- Add IHttpClientFactory constructor to SampleCRUDService\n- Update ExecutionController Results route for clarity\n- Fix dashboard AverageSuccessRate calculation\n- Refactor RealExecutionService methods to use Task.FromResult for async compatibility\n- Add Swashbuckle.AspNetCore.Newtonsoft package\n- Improve endpoint metadata for better documentation",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T19:07:32+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "488608e02900999a948dadd7106ec44bdeef37ee",
+      "message": "Add real-time execution, history, and SignalR progress UI\n\nImplemented full-featured test execution in the web app, including:\n- RealExecutionService for running, tracking, and exporting executions\n- SignalR hub for real-time progress updates and notifications\n- ExecutionController with API and MVC endpoints for execution management\n- New Razor views for execution history and results\n- Real-time progress modal and toasts in configuration details via SignalR\n- Test parallelization support and improved CsvOutputTests\n- Enhanced DI/service registration and file upload validation\n- Miscellaneous UI and code improvements\n\nUsers can now run tests from the UI, see live progress, and view/download results.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T18:38:45+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "84b6c8707552ba011b9fde5a184f2c5c200ace2a",
+      "message": "Upgrade Bootstrap, add security docs, and update reports\n\nUpgraded Bootstrap to v5.3.8 and replaced the minified bundle. Added comprehensive documentation files: DEPENDABOT-ANALYSIS.md (security analysis and remediation), VULNERABILITIES-RESOLVED.md (resolution report), DEPLOYMENT-COMPLETE.md (deployment summary), and README-UPDATE-COMPLETE.md (README update log). These changes improve project security, documentation, and transparency regarding recent upgrades and vulnerability management.",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T17:44:48+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "646304896e85c734485d6ba1ba59dc2940722dea",
+      "message": "Fix npm security vulnerabilities\n\nResolved Dependabot alerts:\n\n- Alert #7: glob command injection (CVE-2025-64756) - Updated to 11.1.0+\n\n- Alert #5: js-yaml prototype pollution (CVE-2025-64718) - Updated to 4.1.1+\n\nChanges:\n\n- Ran npm update to update transitive dependencies\n\n- Added 2 packages, removed 15 packages, changed 17 packages\n\n- Verified: npm audit shows 0 vulnerabilities\n\n- Tested: npm run build completes successfully\n\nImpact:\n\n- Development dependencies only (no runtime impact)\n\n- Bootstrap and jQuery asset pipeline working correctly\n\n- All security alerts resolved",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T17:40:20+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "14e7f382df08281da70e7e3ae7b12649b40c8058",
+      "message": "Update README for .NET 10 release\n\nMajor updates:\n\n- Updated .NET badge to 10.0 (LTS)\n\n- Added release badge and v10.0.0 update notice\n\n- Updated prerequisites to .NET 10.0 SDK\n\n- Added 'Why .NET 10?' section with LTS benefits\n\n- Added Performance section showcasing improvements\n\n- Added detailed v10.0.0 changelog\n\n- Added Documentation section with upgrade guide links\n\n- Updated issue reporting to reference .NET 10\n\nPerformance highlights:\n\n- Build 19% faster (5.1s \u2192 4.1s)\n\n- Tests 25% faster (0.8s \u2192 0.6s)\n\n- 93% packages at latest versions",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T17:33:44+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "0d7f83904303812c60206ecfc0085ecf3940ea50",
+      "message": "Merge upgrade-to-NET10: Complete .NET 10 upgrade with comprehensive package optimization\n\nSummary of Changes:\n\n- Upgraded all 6 projects from .NET 9.0 to .NET 10.0 (LTS)\n\n- Updated 7 packages to version 10.0.1\n\n- Removed 2 framework-included packages\n\n- Updated 5 additional packages (including 4 major versions)\n\n- MSTest v4 with code quality analyzers\n\n- WebSpark packages updated to latest\n\nResults:\n\n- Build performance: 19% faster (5.1s \u2192 4.1s)\n\n- Test performance: 25% faster (0.8s \u2192 0.6s)\n\n- All 21 tests passing (100%)\n\n- 93% packages at latest versions\n\n- Zero build errors\n\n- NU1510 warnings eliminated\n\nQuality Score: A+ (98%)\n\nTotal Commits: 8",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T17:26:52+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "c80cf1e75d9de060ff018c5615a139f5368f67be",
+      "message": "Add comprehensive upgrade documentation and issue templates\n\n- Added complete upgrade summary with all metrics and results\n\n- Added package optimization complete summary\n\n- Added GitHub issue templates for MSTest v4 and Swashbuckle v10\n\nDocumentation includes detailed reports, acceptance criteria, and next steps",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T17:26:39+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "eedfff5e97913b207b6eda2be060bcdda0172584",
+      "message": "Merge package-optimization: Complete package updates (7 improvements)\n\nPriority 1: Removed 2 framework-included packages (System.Text.Json, System.Security.Cryptography.Xml)\n\nPriority 2: Updated 2 WebSpark packages (Bootswatch 1.34.0, HttpClientUtility 2.1.2)\n\nPriority 3: Updated 3 MSTest packages to v4 (Test.Sdk 18.0.1, TestAdapter 4.0.2, TestFramework 4.0.2)\n\nResults: 0 errors, 21/21 tests passing, build 19% faster, 93% packages at latest versions",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T16:48:24+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "d547dccce83db19a8180efd9916d83426e8e69dd",
+      "message": "Update MSTest packages to v4 (major version upgrade)\n\nUpdated Microsoft.NET.Test.Sdk: 17.14.1 -> 18.0.1\n\nUpdated MSTest.TestAdapter: 3.10.4 -> 4.0.2\n\nUpdated MSTest.TestFramework: 3.10.4 -> 4.0.2\n\nNote: MSTest v4 introduces new code analyzers (7 warnings for code quality improvements)\n\nValidation: All 21 tests passing, builds with 0 errors",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T16:27:39+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "fd5b353e0f624c6ec1cc59e5ded95c229bf8343d",
+      "message": "Update WebSpark packages to latest versions\n\nUpdated WebSpark.Bootswatch: 1.30.0 -> 1.34.0\n\nUpdated WebSpark.HttpClientUtility: 1.2.0 -> 2.1.2 (major version)\n\nNote: Swashbuckle.AspNetCore v10 upgrade deferred due to breaking changes in Microsoft.OpenApi v2.x\n\nValidation: All 21 tests passing, builds with 0 errors",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T15:54:27+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "cf345d13a440502a4250cee4c18f8acf60813000",
+      "message": "Remove framework-included packages (System.Text.Json, System.Security.Cryptography.Xml)\n\nResolves NU1510 warnings by removing redundant package references\n\n- Removed System.Text.Json from RESTRunner.csproj (framework-included in .NET 10)\n\n- Removed System.Security.Cryptography.Xml from RESTRunner.Web.csproj (NU1510 warning)\n\nValidation: All 21 tests passing, builds with 0 errors, warnings reduced from 7 to 3",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T15:49:18+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "55e1372dbf1999abb5dedbd79449f1b38546be7c",
+      "message": "TASK-003: Complete .NET 10.0 upgrade testing and validation\n\nAll 21 unit tests passed with 0 failures\n\nWeb application builds successfully\n\nManual smoke testing recommended for console and web apps",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T14:34:34+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "0db94f71b9fc7682ae23c31e15323c1076748fae",
+      "message": "TASK-002: Complete .NET 10.0 atomic framework and package upgrade\n\nUpdated all 6 projects from net9.0 to net10.0\n\nUpdated 7 packages to version 10.0.1\n\nRemoved 3 packages from RESTRunner.Web\n\nSolution builds with 0 errors",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T14:33:38+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "08e4d00ceda7551ebb18f9f16f1e99c94adda06a",
+      "message": "Commit changes before fixing global.json file(s).",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T14:31:14+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "df717ecca7ba3b46131ad3a28aa4e3b6824a5261",
+      "message": "Pre-upgrade commit: Save current state before .NET 10 upgrade",
+      "author": "Mark Hazleton",
+      "date": "2025-12-23T14:17:22+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "3e91893c898fe174133f0ed52a3aaa5cff200c62",
+      "message": "Add RESTRunner views, controllers, and services\n\nIntroduced comprehensive views for managing configurations, collections, and executions, including `Create.cshtml`, `Edit.cshtml`, `Details.cshtml`, and dashboards. Added controllers for configurations, collections, and the runner dashboard. Implemented services for file storage, configuration, and execution management.\n\nEnhanced documentation in `README.md` with badges, features, and detailed instructions. Added sample data files like `sample-collection.json` and `9e068100-eb4f-46e3-a415-fc7c2bef7b48.json`.\n\nUpdated `Program.cs` to support Swagger, IIS/Kestrel configurations, and service registration. Added new models and view models for configurations, collections, and executions. Introduced debugging tools like `debug-config.html` for inspecting configurations.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-28T15:35:34+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "ecc4da67004c1a6c7931ff817373602d31bc970c",
+      "message": "Refactor REST Runner with enhanced logging & statistics\n\n- Updated `IExecuteRunner` to return execution statistics.\n- Added `ExecutionStatistics` class for tracking metrics.\n- Improved HTTP request handling with support for more methods.\n- Introduced structured logging using `ILogger`.\n- Enhanced error handling and output reporting.\n- Added detailed execution statistics display in `Program.cs`.\n- Updated `RESTRunner.Services.HttpClientRunner.csproj` with new dependencies.\n- Refactored `GetResultAsync` for better null handling and clarity.\n- Removed legacy console logging and improved semaphore usage.\n- Performed general code cleanup for readability and maintainability.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-27T17:21:04+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "d5479d09659321b789ec3a917d2ee02ac00d3e43",
+      "message": "Refactor and enhance RESTRunner domain models\n\n- Updated namespaces and added missing `using` directives.\n- Enhanced `StrongDictionary` with `IDisposable`, new methods, and safer operations.\n- Introduced `DomainConstants` for centralized constants.\n- Added custom exceptions in `RESTRunnerExceptions` for better error handling.\n- Improved models (`CompareBody`, `CompareInstance`, etc.) with validation, immutability, and encapsulation.\n- Modernized code with C# features like `init` properties and `ThrowIfNull`.\n- Optimized dictionary operations and replaced `MemoryStream` with `System.Text.Json`.\n- Added helper methods (`IsValid`, `ToString`) and metadata support in `CompareResult`.\n- Improved documentation and standardized naming conventions.\n- Fixed null reference issues and improved performance.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-27T16:40:58+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "593fd8baca6534a5cbb6efe6a1b52b2f56b16cff",
+      "message": "Enhance functionality and add tests for CsvOutput\n\n- Added unit tests for the CsvOutput class, including resource disposal validation.\n- Upgraded MSTest and Microsoft.NET.Test.Sdk package versions.\n- Improved StrongDictionary with better documentation, a notnull constraint for TKey, and simplified serialization logic.\n- Enhanced CsvOutput with XML documentation, a constructor, and proper Dispose pattern implementation.\n- Refactored ExecuteRunnerService for cleaner null checks and consistent logging.\n- Updated RESTRunner.sln to include RESTRunner.Domain.Tests and upgraded to Visual Studio 18.\n- Added global.json to specify .NET SDK version 9.0.305.\n- Improved dependency injection setup in Program.cs.\n- Made miscellaneous improvements to comments, namespaces, and formatting.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-27T16:23:10+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "ec725800450010a8ef41b2051f85eae19e7abae2",
+      "message": "Update NuGet package versions across projects\n\nUpdated various NuGet package dependencies to their latest versions:\n- `Newtonsoft.Json` updated to `13.0.4` in `RESTRunner.PostmanImport.csproj` and `RESTRunner.Web.csproj`.\n- `Microsoft.Extensions.Http` updated to `9.0.9` in `RESTRunner.Services.HttpClientRunner.csproj` and `RESTRunner.csproj`.\n- `Microsoft.VisualStudio.Azure.Containers.Tools.Targets` updated to `1.22.1` in `RESTRunner.Web.csproj`.\n- `Swashbuckle.AspNetCore` updated to `9.0.4` in `RESTRunner.Web.csproj`.\n- `System.Security.Cryptography.Xml` updated to `9.0.9` in `RESTRunner.Web.csproj`.\n- `WebSpark.Bootswatch` updated to `1.30.0` in `RESTRunner.Web.csproj`.\n- `WebSpark.HttpClientUtility` updated to `1.2.0` in `RESTRunner.Web.csproj`.\n- `CsvHelper` updated to `33.1.0` in `RESTRunner.csproj`.\n- `Microsoft.Extensions.Hosting` updated to `9.0.9` in `RESTRunner.csproj`.\n- `System.Configuration.ConfigurationManager` updated to `9.0.9` in `RESTRunner.csproj`.\n- `System.Text.Json` updated to `9.0.9` in `RESTRunner.csproj`.\n\nThese updates aim to incorporate bug fixes, performance improvements, and new features, while ensuring consistency across the solution.",
+      "author": "Mark Hazleton",
+      "date": "2025-09-27T15:40:57+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "d387398ebaaa96d57a0e6b4d788299621c1cc72c",
+      "message": "Enhance Program.cs and update project dependencies\n\nUpdated `Program.cs` to include new using directives for Swagger, Bootswatch, and HttpRequestResultService, while removing unused ones. Added builder configuration for Swagger services.\n\nAdded new package references in `RESTRunner.Web.csproj` for `System.Net.Http`, `System.Security.Cryptography.Xml`, and `System.Text.RegularExpressions` to improve functionality and security.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-20T15:38:31+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "98b79a9b30dda623b7989dad5a8f3b3256399f98",
+      "message": "Add Swagger, Bootswatch, and HTTP client enhancements\n\nThis commit introduces Swagger support for API documentation and integrates Bootswatch for theming. The `Program.cs` file is updated to include necessary services for Swagger, Bootswatch, and HTTP client utilities. New API endpoints for managing employees and departments are added, along with a status endpoint.\n\nThe `SampleCRUDService.cs` file is refactored to utilize an `HttpClient` for making API calls, improving the structure and maintainability of the code. The project file (`RESTRunner.Web.csproj`) is updated to include new package references for Swagger and Bootswatch.\n\nAdditionally, front-end files (`Index.cshtml`, `_Layout.cshtml`, etc.) are modified to implement a responsive UI with Bootstrap 5 and provide a theme switcher feature. Configuration settings in `appsettings.json` are also added for HTTP request options.\n\nAlso, new comments and licensing information are added to the top of `bootstrap.bundle.min.js` and `jquery.min.js` files to enhance documentation and clarify usage rights.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-20T15:36:19+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "25e2d3f28e3f81645ce91cbcf9bcf3e28466e305",
+      "message": "Update projects to .NET 9.0 and modify service endpoint\n\n- Upgraded target framework from .NET 8.0 to .NET 9.0 in multiple project files.\n- Modified `GetEmployeeCount()` in `Program.cs` to use `ConfigureAwait(true)`.\n- Changed `HttpClient` base address in `SampleCRUDService.cs` to a new service endpoint.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-20T13:57:56+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "987145ecd39f395a91bbb28f1baf1b7c9dabf673",
+      "message": "Upgrade package versions across multiple projects\n\nUpdated testing packages in `RESTRunner.Domain.Tests.csproj`,\nincreased `Microsoft.Extensions.Http` version in\n`RESTRunner.Services.HttpClientRunner.csproj`, and\nrefreshed `Microsoft.VisualStudio.Azure.Containers.Tools.Targets`\nin `RESTRunner.Web.csproj`. Additionally, upgraded several\npackages in `RESTRunner.csproj` to version `9.0.5`.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-20T13:49:48+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "a91f0ad575647482daa7dc5e86a1e40f7cc1b848",
+      "message": "update nuget package",
+      "author": "Mark Hazleton",
+      "date": "2024-09-21T01:46:15+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "58f363d6f092c7c518866c2dcc4533d0dad4fb5f",
+      "message": "package updates",
+      "author": "Mark Hazleton",
+      "date": "2024-08-05T11:51:59+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "bec579df38ab4ff5d1c344b74fb12d2cfca6de76",
+      "message": "Update NuGet Packages",
+      "author": "Mark Hazleton",
+      "date": "2023-12-11T02:02:35+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "3382e35437581d5b90a8801a27a1d857a01cca4e",
+      "message": "udate packages approaches",
+      "author": "Mark Hazleton",
+      "date": "2023-10-22T23:38:36+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "e517480ce88d6d8f867c36d72f5124e34b286cf3",
+      "message": "Implement generated REST Client",
+      "author": "Mark Hazleton",
+      "date": "2023-10-07T14:11:08+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "26ecf6bdc9981597b8f1ef9adc5317ccab561c05",
+      "message": "Update to Net 8",
+      "author": "Mark Hazleton",
+      "date": "2023-07-28T19:02:28+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "680d3b4071a34287b3f3a09a6b121282b16116e0",
+      "message": "Upgrade to Net8",
+      "author": "Mark Hazleton",
+      "date": "2023-07-28T17:54:28+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "eee912a33490bff214c17df2b0fa282f26f56fd1",
+      "message": "Update Visual Studio version and remove test project\n\nUpdated the Visual Studio version in `RESTRunner.sln` to 17.0.31717.71. Removed the `RESTRunner.Domain.Tests` project and its associated build configurations, while retaining the remaining projects and their configurations.",
+      "author": "Mark Hazleton",
+      "date": "2025-05-20T13:58:18+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "8fb7a8be6f72a17b16cad18fbc8ed780bf580891",
+      "message": "Update NuGet Packages",
+      "author": "Mark Hazleton",
+      "date": "2023-07-07T16:26:21+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "fa9a5ddc429d46b93f37dcb7d4637f8525c0c956",
+      "message": "minor clean up remove unused files",
+      "author": "Mark Hazleton",
+      "date": "2023-03-23T16:38:25+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "c3ac7641f75df7f7cfc1a593534e03e03bfbec50",
+      "message": "Update to use IHttpClientFactory to get HttpClient",
+      "author": "Mark Hazleton",
+      "date": "2023-03-23T14:44:30+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "c2efa3c21bf2be879114c90814a1393d03eff563",
+      "message": "minor updates",
+      "author": "Mark Hazleton",
+      "date": "2023-03-23T02:18:45+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "86eb890944bff60b71f1204e7462d8c71ff34674",
+      "message": "Add Unit Tests",
+      "author": "Mark Hazleton",
+      "date": "2023-01-25T13:06:06+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "4699e74c5cc38dfdd623c13dded207bd8a59efa7",
+      "message": "updates to run local and use HttpClientFactory",
+      "author": "Mark Hazleton",
+      "date": "2023-01-18T21:34:05+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "f442764e9beb3ad33aa2227369abaa49d3e51fc7",
+      "message": "Upgrade to Net 7, Update NuGet Packages",
+      "author": "Mark Hazleton",
+      "date": "2023-01-11T20:55:58+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "d3c9e4cb7a01ef10e9b4eeee080047697802fe90",
+      "message": "update test SDK nuget package",
+      "author": "Mark Hazleton",
+      "date": "2022-10-03T18:33:29+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "24038d218aacf50d396a924c7c85d343c49082c7",
+      "message": "testing",
+      "author": "Mark Hazleton",
+      "date": "2022-09-18T20:43:49+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "7f16cae03d2783baa9861ca0532992213cdb93e1",
+      "message": "Package Updates, Code Clean-up",
+      "author": "Mark Hazleton",
+      "date": "2022-09-18T19:55:09+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "4a097b2b19a0681bb2550003d3b7b1da6675990d",
+      "message": "updates",
+      "author": "Mark Hazleton",
+      "date": "2022-06-13T05:03:27+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "03dd951a46a4759c89b14f139f1de9ba60bdabb7",
+      "message": "testing HttpClient .. remove RestSharp",
+      "author": "Mark Hazleton",
+      "date": "2022-01-20T23:22:40+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "9317905de13b057c534880904c9c1ce98ce7fdc3",
+      "message": "update date format",
+      "author": "Mark Hazleton",
+      "date": "2022-01-06T20:36:43+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "450281b5582406e75fbea997d2d08cdaa8445d9d",
+      "message": "formatting",
+      "author": "Mark Hazleton",
+      "date": "2022-01-03T18:53:02+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "1ec2ec13cafff465a2d23e245e4a58907f2c0521",
+      "message": "Modify CSV output to append if the file is already there",
+      "author": "Mark Hazleton",
+      "date": "2022-01-03T18:52:47+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "90593050e1f08a34055f443e0bd8f161cf63dfe3",
+      "message": "merge from Last good refactor branch",
+      "author": "Mark Hazleton",
+      "date": "2021-12-18T22:32:08+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "30ed810d2bb1cc858aab17c054bb0edd1acfa911",
+      "message": "refactor Output",
+      "author": "Mark Hazleton",
+      "date": "2021-12-18T22:19:19+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "993d7449eef3fe9b7d550aef3676c04e8627e883",
+      "message": "rework Memory Store Results Service",
+      "author": "Mark Hazleton",
+      "date": "2021-12-08T00:29:20+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "a73208e9b0dff7cba67e58e80a43e16a040c969e",
+      "message": "add comments, clean up errors",
+      "author": "Mark Hazleton",
+      "date": "2021-12-07T13:56:02+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "a6ec9aef3959638fc441ff82e7f331856a14b6eb",
+      "message": "Refactor use more C# stuff",
+      "author": "Mark Hazleton",
+      "date": "2021-12-05T18:40:18+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "c63af008a96ff2c48edcfcd302795b9ebe2fadd0",
+      "message": "Code clean-up\nAdd Global Usings\nUse File Namespace",
+      "author": "Mark Hazleton",
+      "date": "2021-12-05T18:09:04+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "41e64f3857fa1b58a7408be25da0a1ac3b39d7b3",
+      "message": "Update to .Net 6\nUpdate NuGet Packages",
+      "author": "Mark Hazleton",
+      "date": "2021-12-05T16:50:28+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "221597b6012f540911c221fb5665fb95ff0b57b6",
+      "message": "refactor, clean-up",
+      "author": "Mark Hazleton",
+      "date": "2021-11-07T23:20:04+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "f8089b728b9aeaa2190858287757c122780a1353",
+      "message": "add postman import",
+      "author": "Mark Hazleton",
+      "date": "2021-10-26T22:37:57+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "a1cc5ffdf7a9b504bb3b834498dd871658327df5",
+      "message": "Put Postman Import Into separate Project",
+      "author": "Mark Hazleton",
+      "date": "2021-10-26T17:37:32+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "0d89fb48679251337821d16c15b23fbaf599f318",
+      "message": "Add Postman Collection import",
+      "author": "Mark Hazleton",
+      "date": "2021-10-05T21:29:24+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "372b39a09d99e8b3f257ca7e7239e35ed49388df",
+      "message": "updates add tests",
+      "author": "Mark Hazleton",
+      "date": "2021-10-05T16:45:06+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "ea43917691ec8f45d816ba98c773fea3d91e56d9",
+      "message": "inital load",
+      "author": "Mark Hazleton",
+      "date": "2021-10-04T22:49:54+00:00",
+      "repo": "RESTRunner"
+    },
+    {
+      "sha": "9cb306572be51609c6abfef97fd5568baeb55c23",
+      "message": "Initial commit",
+      "author": "Mark Hazleton",
+      "date": "2021-09-30T13:38:07+00:00",
+      "repo": "RESTRunner"
+    }
+  ],
+  "hash": "2e50a79ff0db7cc90dadb9ff3b6ca0571ea8963ea3a87285a7232fa403d75500",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RESTRunner"
+    },
+    "category": "commits",
+    "pushed_at": "2025-12-23T19:07:37+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commits",
+  "owner": "markhazleton",
+  "repo": "RESTRunner",
+  "week": "2025-12-23T19-07-37+00-00"
+}

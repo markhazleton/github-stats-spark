@@ -14,6 +14,27 @@ from spark.cache_status import CacheStatusTracker
 from spark.logger import get_logger
 
 
+def _sanitize_timestamp_for_filename(timestamp: Optional[datetime]) -> str:
+    """Convert datetime to Windows-safe filename string.
+    
+    ISO format timestamps contain colons which are invalid in Windows filenames.
+    This converts timestamps like '2026-01-05T03:22:48+00:00' to '2026-01-05T03-22-48+00-00'.
+    
+    Args:
+        timestamp: Datetime object to convert
+        
+    Returns:
+        Windows-safe timestamp string
+    """
+    if not timestamp:
+        return "unknown"
+    
+    # Convert to ISO format and replace colons with hyphens
+    iso_str = timestamp.isoformat()
+    # Replace all colons with hyphens to make Windows-compatible
+    return iso_str.replace(':', '-')
+
+
 class GitHubFetcher:
     """Fetches GitHub user data with rate limiting and caching."""
 
@@ -218,7 +239,7 @@ class GitHubFetcher:
             List of commit data dictionaries
         """
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
-        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
         cached = self.cache.get("commits", username, repo=repo_name, week=push_key)
         if cached:
             return cached
@@ -279,7 +300,7 @@ class GitHubFetcher:
         """
         # Include push date in cache key for smart invalidation
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
-        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
         
         # Check cache status if enabled and not forcing refresh
         if self.use_cache_status and not force_refresh:
@@ -373,7 +394,7 @@ class GitHubFetcher:
             Dictionary mapping language names to byte counts
         """
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
-        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
         cached = self.cache.get("languages", username, repo=repo_name, week=push_key)
         if cached:
             return cached
@@ -402,7 +423,7 @@ class GitHubFetcher:
             README content as string, or None if not found
         """
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
-        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
         cached = self.cache.get("readme", username, repo=repo_name, week=push_key)
         if cached:
             return cached
@@ -439,7 +460,7 @@ class GitHubFetcher:
             Dictionary mapping filename to file content
         """
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
-        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
         cached = self.cache.get("dependency_files", username, repo=repo_name, week=push_key)
         if cached:
             return cached
@@ -515,7 +536,7 @@ class GitHubFetcher:
             Dictionary with commit counts by time window
         """
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
-        push_key = repo_pushed_at.isoformat() if repo_pushed_at else "unknown"
+        push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
         cached = self.cache.get("commits_stats", username, repo=repo_name, week=push_key)
         if cached:
             return cached
