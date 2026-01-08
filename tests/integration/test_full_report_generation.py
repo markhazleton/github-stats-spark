@@ -513,71 +513,8 @@ class TestUserStory2Scenarios:
             assert profile.overall_impression is not None, "Should have overall impression"
 
 
-class TestUserStory3Scenarios:
-    """Test scenarios for User Story 3 (P2 - Technology Stack Currency Assessment)."""
-
-    def test_technology_currency_multiple_ecosystems(self):
-        """T108: Test technology currency assessment with multiple ecosystems."""
-        from spark.dependencies.parser import DependencyParser
-        from spark.dependencies.version_checker import VersionChecker
-        from spark.dependencies.analyzer import RepositoryDependencyAnalyzer
-
-        # Create sample dependency files
-        package_json = """
-        {
-          "dependencies": {
-            "react": "^17.0.2",
-            "express": "^4.17.1"
-          }
-        }
-        """
-
-        requirements_txt = """
-        django==3.2.0
-        requests==2.26.0
-        numpy==1.21.0
-        """
-
-        # Test parser
-        parser = DependencyParser()
-
-        # Parse package.json
-        npm_deps = parser.parse_package_json(package_json)
-        assert "react" in npm_deps, "Should parse NPM dependencies"
-        assert "express" in npm_deps
-
-        # Parse requirements.txt
-        pypi_deps = parser.parse_requirements_txt(requirements_txt)
-        assert "django" in pypi_deps, "Should parse PyPI dependencies"
-        assert "requests" in pypi_deps
-        assert "numpy" in pypi_deps
-
-        # Version checker should work with mocked registry responses
-        with patch("spark.dependencies.version_checker.requests.get") as mock_get:
-            # Mock NPM registry response
-            def mock_registry(url, *args, **kwargs):
-                response = MagicMock()
-                if "registry.npmjs.org/react" in url:
-                    response.json.return_value = {"dist-tags": {"latest": "18.2.0"}}
-                    response.status_code = 200
-                elif "pypi.org/pypi/django" in url:
-                    response.json.return_value = {"info": {"version": "4.2.0"}}
-                    response.status_code = 200
-                else:
-                    response.status_code = 404
-                return response
-
-            mock_get.side_effect = mock_registry
-
-            checker = VersionChecker()
-
-            # Check NPM versions
-            react_latest = checker.get_latest_version("react", "npm")
-            assert react_latest == "18.2.0", "Should get latest React version"
-
-            # Check PyPI versions
-            django_latest = checker.get_latest_version("django", "pypi")
-            assert django_latest == "4.2.0", "Should get latest Django version"
+# REMOVED: TestUserStory3Scenarios - Technology currency assessment out of scope
+# Version checking functionality removed as it's better handled by specialized tools (Dependabot, Renovate)
 
 
 class TestEdgeCases:

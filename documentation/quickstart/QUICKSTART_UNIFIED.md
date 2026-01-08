@@ -110,8 +110,7 @@ Complete dataset with all attributes:
       },
       "tech_stack": {
         "frameworks": ["Flask", "React"],
-        "dependencies": [...],
-        "currency_score": 85.5
+        "dependencies": [...]
       },
       "summary": {
         "text": "AI-generated summary...",

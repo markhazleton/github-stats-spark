@@ -60,7 +60,7 @@ def complete_repository():
         is_private=False,
         size_kb=8000,
         has_readme=True,
-        default_branch="main"
+
     )
 
 
@@ -86,7 +86,7 @@ def minimal_repository():
         is_private=False,
         size_kb=1500,
         has_readme=False,
-        default_branch="main"
+
     )
 
 
@@ -414,7 +414,7 @@ class TestEdgeCases:
             is_private=False,
             size_kb=2000,
             has_readme=False,
-            default_branch="main"
+
         )
 
         summary = summarizer_without_api.generate_summary(
@@ -448,7 +448,7 @@ class TestEdgeCases:
             is_private=False,
             size_kb=25000,
             has_readme=True,
-            default_branch="main"
+
         )
 
         readme = "# Archived Project\n\nThis project is no longer maintained.\n"
@@ -484,7 +484,7 @@ class TestEdgeCases:
             is_private=False,
             size_kb=8000,
             has_readme=True,
-            default_branch="main"
+
         )
 
         summary = summarizer_without_api.generate_summary(
@@ -584,7 +584,7 @@ class TestPerformance:
                 is_private=False,
                 size_kb=5000 + i*100,
                 has_readme=True,
-                default_branch="main"
+
             )
             repos.append(repo)
 

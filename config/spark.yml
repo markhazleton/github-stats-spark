@@ -57,16 +57,15 @@ branding:
 # Cache Configuration
 cache:
   enabled: true               # Enable API response caching
-  ttl_hours: 168              # Cache time-to-live in hours (standardized to 1 week)
   directory: .cache           # Cache directory
 
   # Smart Cache Strategy (commit-driven invalidation):
-  # - All repository-scoped caches persist for 1 week and only refresh when new commits land
-  # - User profiles & repository lists still respect the 1-week TTL
-  # - Commit stats, languages, READMEs, dependencies, and AI summaries store push metadata
+  # - All repository-scoped caches only refresh when new commits are detected
+  # - Cache validity determined by comparing repository push_at timestamps
+  # - Commit stats, languages, READMEs, dependencies, and AI summaries persist until code changes
   # - Old commits remain cached indefinitely (commits never change once created)
   #
-  # Performance: Only repos with new commits trigger fresh API calls regardless of cache age
+  # Performance: Only repos with new commits trigger fresh API calls
   # Expected cache hit rate: >95% for weekly runs, near 100% for inactive repositories
 
 # Repository Limits

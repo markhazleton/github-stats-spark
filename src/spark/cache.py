@@ -140,14 +140,12 @@ class CacheManifest:
 class APICache:
     """Manages cached API responses with repository-aware invalidation."""
 
-    DEFAULT_TTL_HOURS = 24 * 7  # 1 week
-
     def __init__(self, cache_dir: str = ".cache", config: Optional[SparkConfig] = None):
         """Initialize the cache.
 
         Args:
             cache_dir: Directory to store cache files
-            config: SparkConfig instance for TTL policies
+            config: SparkConfig instance for configuration
         """
         self.cache_dir = Path(cache_dir)
         self.config = config or SparkConfig()
@@ -304,13 +302,6 @@ class APICache:
                 if "temp_name" in locals() and os.path.exists(temp_name):
                     os.remove(temp_name)
                 raise
-
-    def is_expired(self, category: str, timestamp: datetime, metadata: Optional[Dict[str, Any]] = None) -> bool:
-        """
-        Legacy method kept for backwards compatibility.
-        Always returns False - cache validity is now determined by pushed_at comparison.
-        """
-        return False
 
     def prune(self, keep_weeks: int = 2):
         """Prune old cache entries."""

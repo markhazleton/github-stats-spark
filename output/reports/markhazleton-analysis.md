@@ -893,13 +893,10 @@ Yelp.Api is a C# class library that provides a robust, developer-friendly wrappe
 
 - GitHub API (public repositories only)
 - Anthropic Claude API (repository summaries)
-- Dependency package registries (npm, PyPI, RubyGems, Go, Maven, NuGet)
 
 ### Report Details
 
-- **Composite Score Weights**: Popularity 30% • Activity 45% • Health 25%
-- **Technology Currency**: Calculated from latest versions in package registries
-- **AI Model**: claude-3-5-haiku-20241022
+- **Composite Score Weights**: Popularity 30% • Activity 45% • Health 25%\n- **AI Model**: claude-3-5-haiku-20241022
 
 ---
 

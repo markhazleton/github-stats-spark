@@ -9,7 +9,6 @@ The `spark analyze` command generates detailed markdown reports analyzing your t
 - **Intelligent Ranking**: Composite algorithm balancing popularity, activity, and health
 - **AI Summaries**: Claude Haiku-powered technical summaries with automatic fallbacks
 - **Developer Profiles**: Overall analysis of your technology diversity and activity patterns
-- **Technology Currency**: Dependency version checking across multiple ecosystems
 - **Activity Analysis**: Multi-window time decay (90d/180d/365d) for accurate ranking
 
 ## Quick Start
@@ -107,9 +106,6 @@ analyzer:
   # Model selection (if ai_provider enabled)
   ai_model: claude-haiku-3.5  # Cost-effective summaries
 
-  # Cache TTL for dependency version checks (days)
-  dependency_cache_ttl: 7
-
   # Ranking algorithm weights (must sum to 1.0)
   ranking_weights:
     popularity: 0.30          # Stars, forks, watchers
@@ -143,14 +139,8 @@ For each repository (sorted by composite score):
 - **Release information**: Total releases, latest release date with days ago
 - **AI-generated summary** or template fallback
 - **Technology stack** (if dependency files present)
-- **Currency assessment** (versions behind latest)
 
-### 4. Technology Stack Summary
-- Dependency ecosystems used across repositories
-- Version currency indicators
-- Outdated dependencies highlighted
-
-### 5. Failure Notes (if any)
+### 4. Failure Notes (if any)
 - Repositories that couldn't be analyzed
 - API errors or rate limiting notices
 - Recommendations for resolution
@@ -221,38 +211,6 @@ The AI prompt is optimized for technical repositories:
 - Highlight unique features or approaches
 - Keep summaries concise (2-3 sentences)
 - Avoid marketing language
-
-## Technology Stack Currency
-
-The analyzer checks dependency versions across multiple ecosystems:
-
-### Supported Ecosystems
-
-| Ecosystem | Dependency File(s) | Registry |
-|-----------|-------------------|----------|
-| **NPM** (JavaScript/TypeScript) | `package.json` | npmjs.org |
-| **PyPI** (Python) | `requirements.txt`, `pyproject.toml` | pypi.org |
-| **RubyGems** (Ruby) | `Gemfile` | rubygems.org |
-| **Go Modules** (Go) | `go.mod` | proxy.golang.org |
-| **Maven** (Java) | `pom.xml` | search.maven.org |
-| **NuGet** (.NET) | `*.csproj` | api.nuget.org |
-
-**Coverage**: ~98% of repositories with dependency files
-
-**Note**: For .NET projects, the analyzer detects the .NET SDK version from the `TargetFramework` property (e.g., `net8.0`) and checks NuGet package versions.
-
-### Version Comparison
-
-- Uses semantic versioning (SemVer) comparison
-- Calculates major versions behind latest
-- Handles version range specifiers (^, ~, >=)
-- Gracefully handles unsupported ecosystems
-
-### Caching Strategy
-
-- **File cache**: 7-day TTL for package registry responses
-- **Memory cache**: In-session caching for repeated lookups
-- **Performance**: 80-90% cache hit rate on subsequent runs
 
 ## Performance
 

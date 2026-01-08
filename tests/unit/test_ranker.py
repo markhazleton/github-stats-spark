@@ -44,11 +44,11 @@ def create_repository_from_scenario(scenario_data):
     # Create Repository object
     repository = Repository(
         name=repo_data["name"],
-        full_name=f"testuser/{repo_data['name']}",
         description=f"Test repository: {scenario_data['description']}",
         url=f"https://github.com/testuser/{repo_data['name']}",
         created_at=created_at,
         updated_at=updated_at,
+        pushed_at=last_commit,
         primary_language="Python",
         language_stats={"Python": 10000},
         stars=repo_data["stars"],
@@ -60,7 +60,7 @@ def create_repository_from_scenario(scenario_data):
         is_private=repo_data.get("is_private", False),
         size_kb=repo_data.get("size_kb", 1000),
         has_readme=repo_data.get("has_readme", True),
-        default_branch="main"
+
     )
 
     # Create CommitHistory object
@@ -82,42 +82,9 @@ def create_repository_from_scenario(scenario_data):
 
 class TestPrivacyFilter:
     """Test privacy filter (constitution requirement - T027)."""
-
-    def test_private_repos_excluded(self, ranker, ranking_scenarios):
-        """Test that private repositories are explicitly excluded."""
-        # Find private repository scenario
-        private_scenario = None
-        for scenario in ranking_scenarios["scenarios"]:
-            if scenario["name"] == "private_repo":
-                private_scenario = scenario
-                break
-
-        assert private_scenario is not None, "Private repo scenario not found in fixtures"
-
-        # Create private and public repositories
-        private_repo, private_commits = create_repository_from_scenario(private_scenario)
-
-        # Also create a public repo for comparison
-        public_scenario = ranking_scenarios["scenarios"][0]  # Use first scenario
-        public_repo, public_commits = create_repository_from_scenario(public_scenario)
-
-        # Verify private repo is marked private
-        assert private_repo.is_private is True
-        assert public_repo.is_private is False
-
-        # Rank both repositories
-        repos = [private_repo, public_repo]
-        commit_histories = {
-            private_repo.name: private_commits,
-            public_repo.name: public_commits
-        }
-
-        ranked = ranker.rank_repositories(repos, commit_histories, top_n=10)
-
-        # Private repository should be filtered out
-        ranked_names = [repo.name for repo, score in ranked]
-        assert private_repo.name not in ranked_names, "Private repository was not filtered out"
-        assert public_repo.name in ranked_names, "Public repository was incorrectly filtered"
+    # REMOVED: test_private_repos_excluded - Cannot create private Repository anymore
+    # Privacy enforcement is now at model level (Repository.__post_init__ raises ValueError)
+    # The ranker filter is now defensive code that cannot be reached in production
 
     def test_all_public_repos_included(self, ranker, ranking_scenarios):
         """Test that all public repositories pass privacy filter."""
@@ -442,7 +409,7 @@ class TestErrorHandling:
             is_private=False,
             size_kb=2000,
             has_readme=True,
-            default_branch="main"
+
         )
 
         # No commit history provided

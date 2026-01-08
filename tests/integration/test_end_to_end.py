@@ -111,21 +111,21 @@ class TestEndToEndWorkflow:
         assert (temp_output_dir / "streaks.svg").stat().st_size > 200
 
     def test_cache_integration(self, temp_cache_dir):
-        """Test cache integration with API fetcher workflow."""
-        cache = APICache(cache_dir=str(temp_cache_dir), ttl_hours=6)
+        """Test cache integration with hierarchical storage."""
+        cache = APICache(cache_dir=str(temp_cache_dir))
 
-        # Test cache set and get
+        # Test cache set and get with new hierarchical API
         test_data = {"username": "testuser", "repos": 50}
-        cache_key = "user:testuser:profile"
-
-        cache.set(cache_key, test_data)
+        
+        # New API: category, owner, value
+        cache.set("profile", "testuser", test_data)
 
         # Should retrieve cached data
-        cached = cache.get(cache_key)
+        cached = cache.get("profile", "testuser")
         assert cached == test_data
 
-        # Verify cache file exists
-        cache_files = list(temp_cache_dir.glob("*.json"))
+        # Verify cache file exists in hierarchical structure
+        cache_files = list(temp_cache_dir.rglob("*.json"))
         assert len(cache_files) > 0
 
     def test_selective_statistics_generation(self, sample_data, temp_output_dir):

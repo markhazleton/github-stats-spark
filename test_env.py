@@ -45,7 +45,7 @@ def check_environment():
     if anthropic_key and github_token:
         print("✓ All required variables are set!")
         print("\nYou can now run:")
-        print("  python src/main.py")
+        print("  spark unified --user markhazleton --include-ai-summaries")
         print("  spark analyze --user markhazleton")
         return True
     else:

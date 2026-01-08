@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+- **Version Checker Module**: Removed out-of-scope version checking functionality
+  - Deleted `src/spark/dependencies/version_checker.py` (271 lines)
+  - Deleted `tests/unit/test_version_checker.py` (entire test suite)
+  - Simplified `RepositoryDependencyAnalyzer` to only parse dependencies without checking versions
+  - Removed fields from `DependencyStatus`: `latest_version`, `versions_behind`, `is_current`, `status`
+  - Removed fields from `RepositoryDependencyReport`: `analyzed_dependencies`, `current_dependencies`, `outdated_dependencies`, `unknown_dependencies`, `currency_score`
+  - Rationale: Version checking is out of scope for a repository reporting tool; better tools exist (Dependabot, Renovate, etc.)
+
 ### Added
 - **Change-Based Smart Caching**: Revolutionary caching system that eliminates time-based expiration
   - Compares repository `pushed_at` timestamps with cache timestamps
@@ -162,7 +171,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Parses `.csproj` files (SDK-style projects for .NET Core/.NET 5+)
   - Detects .NET SDK version from `TargetFramework`
   - Checks NuGet package versions against api.nuget.org
-  - Supports NuGet package currency assessment
 - **Enhanced Date Display**: Repository reports now show "days ago" for dates
   - Created date with days since creation
   - Last modified (pushed) date with days since last commit
@@ -183,7 +191,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **AI-Powered Summaries**: Integration with Anthropic Claude Haiku for generating technical repository summaries
 - **Three-Tier Fallback Strategy**: AI summaries → Enhanced template → Basic template for maximum reliability
 - **Developer Profile Analysis**: Automatic generation of overall developer profile with technology diversity and activity patterns
-- **Technology Stack Currency**: Dependency version checking across 5+ package ecosystems (NPM, PyPI, RubyGems, Go, Maven)
 - **Multi-Window Activity Analysis**: Time-decay scoring using 90d/180d/365d commit windows
 - **GitHub-Flavored Markdown Reports**: Professional markdown reports with embedded statistics
 
@@ -200,8 +207,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `src/spark/summarizer.py`: AI-powered summary generation with fallbacks
 - `src/spark/report_generator.py`: Markdown report generation
 - `src/spark/dependencies/parser.py`: Multi-ecosystem dependency file parsing
-- `src/spark/dependencies/version_checker.py`: Package registry API clients
-- `src/spark/dependencies/analyzer.py`: Dependency currency assessment
+- `src/spark/dependencies/analyzer.py`: Dependency ecosystem identification
 
 #### CLI Enhancements
 - `spark analyze --user <username>`: Generate full analysis report
@@ -213,7 +219,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Testing
 - 17 comprehensive integration tests covering all user stories
-- Unit tests for ranking algorithm, dependency parsing, version checking
+- Unit tests for ranking algorithm, dependency parsing
 - Edge case validation (no repos, unrecognized languages, unparseable dependencies, archived repos)
 - Performance validation (3-minute target for 50 repositories)
 - Accuracy metrics validation (90% AI summary accuracy, 95% tech identification)
@@ -227,7 +233,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #### Configuration
 - New `analyzer` section in `config/spark.yml`
 - Configurable ranking weights, AI provider, dependency ecosystems
-- 7-day cache TTL for package registry responses
 - Hybrid caching strategy (file-based + in-memory)
 
 #### Dependencies Added
@@ -257,7 +262,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Performance
 - Repository analysis completes in <3 minutes for 50 repositories
-- 80-90% cache hit rate for dependency version checks
 - Intelligent parallel processing for AI summaries
 - Optimized GitHub API usage with 6-hour cache TTL
 

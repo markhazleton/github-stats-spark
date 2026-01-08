@@ -67,8 +67,8 @@ class TestCLIAnalyzeCommand:
 
         # Mock the components
         mock_repos = [
-            Mock(name="repo1", stars=100, full_name="testuser/repo1"),
-            Mock(name="repo2", stars=50, full_name="testuser/repo2"),
+            Mock(name="repo1", stars=100),
+            Mock(name="repo2", stars=50),
         ]
 
         with patch("sys.argv", test_args):
@@ -327,17 +327,11 @@ class TestCLIAnalyzeCommand:
 class TestCLIGitHubActionsIntegration:
     """Test GitHub Actions integration (T097)."""
 
-    def test_main_py_supports_analyze_command(self):
-        """Test that src/main.py supports analyze command for GitHub Actions."""
-        # Read main.py and verify analyze command support
-        main_py_path = Path(__file__).parent.parent.parent / "src" / "main.py"
-
-        if main_py_path.exists():
-            content = main_py_path.read_text()
-            # Should import or reference analyze functionality
-            # Exact verification depends on main.py implementation
-            assert "analyze" in content.lower() or "cli" in content.lower(), \
-                "main.py should support analyze command"
+    def test_cli_supports_analyze_command(self):
+        """Test that CLI supports analyze command for GitHub Actions."""
+        # Verify CLI module has analyze command
+        from spark.cli import handle_analyze
+        assert callable(handle_analyze), "CLI should have handle_analyze function"
 
     def test_github_actions_environment_variables(self):
         """Test that required environment variables are accessible."""

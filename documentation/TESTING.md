@@ -372,7 +372,6 @@ git push origin 001-repo-comparison-dashboard
 
 4. **Continue development**:
    - User Story 2: Enhanced sorting/filtering
-   - User Story 3: Data visualizations
    - User Story 4: Repository comparison
    - User Story 5: Drill-down details
 

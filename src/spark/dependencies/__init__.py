@@ -1,13 +1,11 @@
-"""Dependency analysis modules for technology stack currency assessment.
+"""Dependency analysis module for repository technology stacks.
 
-This package provides:
-- DependencyParser: Parse dependency files (package.json, requirements.txt, etc.)
-- VersionChecker: Check latest versions from package registries
-- RepositoryDependencyAnalyzer: Analyze repository dependencies for currency
+This module provides:
+- DependencyParser: Extract dependencies from various package managers
+- RepositoryDependencyAnalyzer: Dependency parsing and ecosystem identification
 """
 
 from spark.dependencies.parser import DependencyParser
-from spark.dependencies.version_checker import VersionChecker
 from spark.dependencies.analyzer import RepositoryDependencyAnalyzer
 
-__all__ = ["DependencyParser", "VersionChecker", "RepositoryDependencyAnalyzer"]
+__all__ = ["DependencyParser", "RepositoryDependencyAnalyzer"]

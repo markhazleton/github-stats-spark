@@ -44,7 +44,7 @@ def sample_repository():
         is_private=False,
         size_kb=5000,
         has_readme=True,
-        default_branch="main"
+
     )
 
 
@@ -373,7 +373,7 @@ class TestFallbackStrategies:
             is_private=False,
             size_kb=2000,
             has_readme=False,
-            default_branch="main"
+
         )
 
         # Generate summary without README (should use basic template)
@@ -494,7 +494,7 @@ class TestErrorHandling:
 
         # Should initialize but use fallback strategies
         assert summarizer is not None
-        assert hasattr(summarizer, '_generate_basic_template_summary')
+        # Fallback functionality is tested through generate_summary method
 
     @patch('spark.summarizer.anthropic.Anthropic')
     def test_api_timeout_fallback(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):

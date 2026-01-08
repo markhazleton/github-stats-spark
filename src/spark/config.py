@@ -126,20 +126,3 @@ class SparkConfig:
             if value is None:
                 return default
         return value
-
-    def get_cache_ttl(self, category: str) -> int:
-        """Get TTL in hours for a specific cache category.
-
-        Args:
-            category: Cache category (e.g., 'user_profile', 'repositories')
-
-        Returns:
-            TTL in hours
-        """
-        # Get global TTL
-        default_ttl = self.config.get("cache", {}).get("ttl_hours", 168)
-        
-        # Get category specific policies
-        policies = self.config.get("cache", {}).get("ttl_policies", {})
-        
-        return policies.get(category, default_ttl)

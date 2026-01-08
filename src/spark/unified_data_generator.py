@@ -74,12 +74,11 @@ class UnifiedDataGenerator:
         self.username = username
         self.output_dir = Path(output_dir)
         self.force_refresh = force_refresh
-        # Initialize cache with standardized TTL
+        # Initialize cache
         if cache:
             self.cache = cache
         else:
             cache_config = config.config.get("cache", {})
-            ttl_hours = cache_config.get("ttl_hours")
             directory = cache_config.get("directory", ".cache")
             self.cache = APICache(cache_dir=directory, config=config)
 

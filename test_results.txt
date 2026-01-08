@@ -1,0 +1,1072 @@
+============================= test session starts =============================
+platform win32 -- Python 3.14.0, pytest-9.0.2, pluggy-1.6.0 -- C:\Python314\python.exe
+cachedir: .pytest_cache
+rootdir: C:\GitHub\MarkHazleton\github-stats-spark
+plugins: cov-7.0.0, mock-3.15.1, anyio-4.11.0
+collecting ... collected 239 items
+
+tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_command_parsing PASSED [  0%]
+tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_list_only_dry_run FAILED [  0%]
+tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_progress_tracking FAILED [  1%]
+tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_rate_limit_handling FAILED [  1%]
+tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_partial_report_generation FAILED [  2%]
+tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_error_logging_actionable FAILED [  2%]
+tests/integration/test_cli_analyze.py::TestCLIGitHubActionsIntegration::test_cli_supports_analyze_command PASSED [  2%]
+tests/integration/test_cli_analyze.py::TestCLIGitHubActionsIntegration::test_github_actions_environment_variables PASSED [  3%]
+tests/integration/test_cli_analyze.py::TestPhase8CompletionCriteria::test_cli_commands_exist PASSED [  3%]
+tests/integration/test_cli_analyze.py::TestPhase8CompletionCriteria::test_progress_tracking_implementation PASSED [  4%]
+tests/integration/test_cli_analyze.py::TestPhase8CompletionCriteria::test_error_handling_implementation PASSED [  4%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_npm_dependencies ERROR [  5%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_python_dependencies ERROR [  5%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_mixed_ecosystems ERROR [  5%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_no_dependencies ERROR [  6%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_malformed_file ERROR [  6%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_outdated_summary ERROR [  7%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_real_npm_package ERROR [  7%]
+tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_real_pypi_package ERROR [  7%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_complete_generation_workflow FAILED [  8%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_cache_integration PASSED [  8%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_selective_statistics_generation FAILED [  9%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_error_handling_no_commits FAILED [  9%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_success_rate_validation FAILED [ 10%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_accuracy_validation PASSED [ 10%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_repository_limit_enforcement PASSED [ 10%]
+tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_theme_switching PASSED [ 11%]
+tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_user_with_50_plus_repositories FAILED [ 11%]
+tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_user_with_fewer_than_50_repositories FAILED [ 12%]
+tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_repository_with_readme_and_commits FAILED [ 12%]
+tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_repository_without_readme_fallback FAILED [ 12%]
+tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_empty_repository_handling FAILED [ 13%]
+tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_github_api_rate_limit_partial_report FAILED [ 13%]
+tests/integration/test_full_report_generation.py::TestUserStory2Scenarios::test_profile_analysis_diverse_repositories FAILED [ 14%]
+tests/integration/test_full_report_generation.py::TestUserStory3Scenarios::test_technology_currency_multiple_ecosystems FAILED [ 14%]
+tests/integration/test_full_report_generation.py::TestEdgeCases::test_user_with_no_public_repositories FAILED [ 15%]
+tests/integration/test_full_report_generation.py::TestEdgeCases::test_unrecognized_programming_language FAILED [ 15%]
+tests/integration/test_full_report_generation.py::TestEdgeCases::test_unparseable_dependency_file PASSED [ 15%]
+tests/integration/test_full_report_generation.py::TestEdgeCases::test_archived_repository_activity_penalty FAILED [ 16%]
+tests/integration/test_full_report_generation.py::TestPerformanceValidation::test_report_generation_performance_target FAILED [ 16%]
+tests/integration/test_full_report_generation.py::TestPrivacyFilter::test_privacy_filter_excludes_private_repositories FAILED [ 17%]
+tests/integration/test_smart_cache_integration.py::test_smart_cache_integration PASSED [ 17%]
+tests/integration/test_smart_cache_integration.py::test_fresh_data_skip PASSED [ 17%]
+tests/integration/test_summarizer_fallback.py::TestTier1_AISummary::test_ai_summary_success ERROR [ 18%]
+tests/integration/test_summarizer_fallback.py::TestTier1_AISummary::test_ai_summary_with_minimal_repo ERROR [ 18%]
+tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_on_api_failure ERROR [ 19%]
+tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_extracts_from_readme ERROR [ 19%]
+tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_includes_metadata ERROR [ 20%]
+tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_with_partial_readme ERROR [ 20%]
+tests/integration/test_summarizer_fallback.py::TestTier3_BasicTemplate::test_basic_template_no_readme ERROR [ 20%]
+tests/integration/test_summarizer_fallback.py::TestTier3_BasicTemplate::test_basic_template_minimal_repo ERROR [ 21%]
+tests/integration/test_summarizer_fallback.py::TestTier3_BasicTemplate::test_basic_template_includes_commit_info ERROR [ 21%]
+tests/integration/test_summarizer_fallback.py::TestFallbackChain::test_fallback_chain_tier1_to_tier2 ERROR [ 22%]
+tests/integration/test_summarizer_fallback.py::TestFallbackChain::test_fallback_chain_tier1_to_tier3 ERROR [ 22%]
+tests/integration/test_summarizer_fallback.py::TestFallbackChain::test_fallback_chain_all_tiers_available ERROR [ 23%]
+tests/integration/test_summarizer_fallback.py::TestEdgeCases::test_empty_repository_description FAILED [ 23%]
+tests/integration/test_summarizer_fallback.py::TestEdgeCases::test_archived_repository FAILED [ 23%]
+tests/integration/test_summarizer_fallback.py::TestEdgeCases::test_fork_repository FAILED [ 24%]
+tests/integration/test_summarizer_fallback.py::TestConsistency::test_same_input_same_output ERROR [ 24%]
+tests/integration/test_summarizer_fallback.py::TestConsistency::test_different_repos_different_summaries ERROR [ 25%]
+tests/integration/test_summarizer_fallback.py::TestPerformance::test_fallback_faster_than_ai ERROR [ 25%]
+tests/integration/test_summarizer_fallback.py::TestPerformance::test_batch_fallback_performance FAILED [ 25%]
+tests/unit/test_cache.py::TestAPICache::test_cache_set_and_get PASSED    [ 26%]
+tests/unit/test_cache.py::TestAPICache::test_cache_miss PASSED           [ 26%]
+tests/unit/test_cache.py::TestAPICache::test_cache_clear PASSED          [ 27%]
+tests/unit/test_cache.py::TestAPICache::test_hierarchical_storage PASSED [ 27%]
+tests/unit/test_cache.py::TestAPICache::test_manifest_update PASSED      [ 28%]
+tests/unit/test_cache.py::TestAPICache::test_prune PASSED                [ 28%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_init PASSED [ 28%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_get_repository_cache_status_no_cache PASSED [ 29%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_get_repository_cache_status_with_cache PASSED [ 29%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_get_repository_cache_status_old_cache_without_new_commits PASSED [ 30%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_get_repository_cache_status_recently_pushed PASSED [ 30%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_update_repositories_cache_with_status PASSED [ 30%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_update_repositories_cache_file_not_found PASSED [ 31%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_get_repositories_needing_refresh PASSED [ 31%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_get_cache_statistics PASSED [ 32%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_get_cache_statistics_no_cache PASSED [ 32%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_cache_files_structure PASSED [ 33%]
+tests/unit/test_cache_status.py::TestCacheStatusTracker::test_ai_summary_optional PASSED [ 33%]
+tests/unit/test_calculator.py::TestSparkScore::test_calculate_spark_score_with_data PASSED [ 33%]
+tests/unit/test_calculator.py::TestSparkScore::test_calculate_spark_score_no_data PASSED [ 34%]
+tests/unit/test_calculator.py::TestLightningRating::test_lightning_rating_levels PASSED [ 34%]
+tests/unit/test_calculator.py::TestTimePatterns::test_night_owl_detection PASSED [ 35%]
+tests/unit/test_calculator.py::TestTimePatterns::test_early_bird_detection PASSED [ 35%]
+tests/unit/test_calculator.py::TestTimePatterns::test_balanced_pattern PASSED [ 35%]
+tests/unit/test_calculator.py::TestStreaks::test_consecutive_streak PASSED [ 36%]
+tests/unit/test_calculator.py::TestStreaks::test_no_streak PASSED        [ 36%]
+tests/unit/test_calculator.py::TestLanguages::test_aggregate_languages PASSED [ 37%]
+tests/unit/test_calculator.py::TestLanguages::test_aggregate_languages_grouping PASSED [ 37%]
+tests/unit/test_calculator.py::TestReleaseCadence::test_release_cadence_counts_unique_repos PASSED [ 38%]
+tests/unit/test_config.py::TestSparkConfig::test_load_config PASSED      [ 38%]
+tests/unit/test_config.py::TestSparkConfig::test_validate_valid_config PASSED [ 38%]
+tests/unit/test_config.py::TestSparkConfig::test_validate_invalid_stats_category PASSED [ 39%]
+tests/unit/test_config.py::TestSparkConfig::test_get_theme PASSED        [ 39%]
+tests/unit/test_config.py::TestSparkConfig::test_get_enabled_stats PASSED [ 40%]
+tests/unit/test_config.py::TestSparkConfig::test_get_user PASSED         [ 40%]
+tests/unit/test_config.py::TestSparkConfig::test_get_nested_value PASSED [ 41%]
+tests/unit/test_config.py::TestSparkConfig::test_missing_config_file PASSED [ 41%]
+tests/unit/test_cross_platform_datetime.py::TestCrossPlatformDatetimeHandling::test_parses_various_timestamp_formats[2026-01-01T00:00:00Z] PASSED [ 41%]
+tests/unit/test_cross_platform_datetime.py::TestCrossPlatformDatetimeHandling::test_parses_various_timestamp_formats[2026-01-01T00:00:00+00:00] PASSED [ 42%]
+tests/unit/test_cross_platform_datetime.py::TestCrossPlatformDatetimeHandling::test_parses_various_timestamp_formats[2026-01-01T00:00:00] PASSED [ 42%]
+tests/unit/test_cross_platform_datetime.py::TestCrossPlatformDatetimeHandling::test_datetime_comparison_with_various_formats PASSED [ 43%]
+tests/unit/test_cross_platform_datetime.py::TestCrossPlatformDatetimeHandling::test_generated_metadata_always_uses_utc PASSED [ 43%]
+tests/unit/test_cross_platform_datetime.py::TestCrossPlatformDatetimeHandling::test_age_calculation_works_across_platforms PASSED [ 43%]
+tests/unit/test_cross_platform_datetime.py::TestCrossPlatformDatetimeHandling::test_timezone_aware_comparison_never_fails PASSED [ 44%]
+tests/unit/test_cross_platform_datetime.py::test_windows_and_linux_path_compatibility PASSED [ 44%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_parse_package_json PASSED [ 45%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_parse_requirements_txt PASSED [ 45%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_parse_pyproject_toml PASSED [ 46%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_parse_gemfile PASSED [ 46%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_parse_go_mod PASSED [ 46%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_unsupported_file PASSED [ 47%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_malformed_json PASSED [ 47%]
+tests/unit/test_dependency_parser.py::TestDependencyParser::test_clean_npm_version PASSED [ 48%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_generate_profile_basic PASSED [ 48%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_technology_diversity_calculation PASSED [ 48%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_framework_aggregation PASSED [ 49%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_activity_pattern_detection_technology_focus PASSED [ 49%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_activity_pattern_detection_consistency PASSED [ 50%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_template_impression_generation PASSED [ 50%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_contribution_classification PASSED [ 51%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_no_active_repositories PASSED [ 51%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_ai_impression_generation PASSED [ 51%]
+tests/unit/test_profile_generator.py::TestUserProfileGenerator::test_top_languages_property PASSED [ 52%]
+tests/unit/test_ranker.py::TestPrivacyFilter::test_private_repos_excluded FAILED [ 52%]
+tests/unit/test_ranker.py::TestPrivacyFilter::test_all_public_repos_included FAILED [ 53%]
+tests/unit/test_ranker.py::TestCompositeScoring::test_composite_score_range FAILED [ 53%]
+tests/unit/test_ranker.py::TestCompositeScoring::test_composite_weights_applied PASSED [ 53%]
+tests/unit/test_ranker.py::TestRankingIntegration::test_rank_repositories FAILED [ 54%]
+tests/unit/test_ranker.py::TestRankingIntegration::test_top_n_selection FAILED [ 54%]
+tests/unit/test_ranker.py::TestRankingIntegration::test_empty_repository_filter FAILED [ 55%]
+tests/unit/test_ranker.py::TestEdgeCases::test_archived_repository_handling FAILED [ 55%]
+tests/unit/test_ranker.py::TestEdgeCases::test_fork_handling FAILED      [ 56%]
+tests/unit/test_ranker.py::TestEdgeCases::test_new_active_repo_vs_legacy FAILED [ 56%]
+tests/unit/test_ranker.py::TestScenarioValidation::test_ideal_active_repo_scores_high FAILED [ 56%]
+tests/unit/test_ranker.py::TestScenarioValidation::test_stale_repo_scores_low FAILED [ 57%]
+tests/unit/test_ranker.py::TestPerformance::test_ranking_50_repos FAILED [ 57%]
+tests/unit/test_ranker.py::TestConfigurationCustomization::test_custom_weights PASSED [ 58%]
+tests/unit/test_ranker.py::TestConfigurationCustomization::test_default_weights PASSED [ 58%]
+tests/unit/test_ranker.py::TestErrorHandling::test_empty_repository_list PASSED [ 58%]
+tests/unit/test_ranker.py::TestErrorHandling::test_repository_without_commit_history FAILED [ 59%]
+tests/unit/test_ranker.py::TestErrorHandling::test_top_n_larger_than_repo_count FAILED [ 59%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_generate_header PASSED [ 60%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_generate_profile_section PASSED [ 60%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_generate_repositories_section PASSED [ 61%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_format_repository_entry FAILED [ 61%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_format_tech_stack_with_outdated_deps PASSED [ 61%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_get_currency_emoji PASSED [ 62%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_generate_metadata_section PASSED [ 62%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_generate_errors_section PASSED [ 63%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_build_markdown_complete PASSED [ 63%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_build_markdown_without_profile PASSED [ 64%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_build_markdown_with_errors PASSED [ 64%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_generate_report_writes_file PASSED [ 64%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_archived_repository_indicator PASSED [ 65%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_fork_repository_indicator PASSED [ 65%]
+tests/unit/test_report_generator.py::TestReportGenerator::test_github_flavored_markdown_compliance PASSED [ 66%]
+tests/unit/test_smart_cache_refresh.py::TestAPICacheClearRepository::test_clear_repository_cache_removes_matching_files FAILED [ 66%]
+tests/unit/test_smart_cache_refresh.py::TestAPICacheClearRepository::test_clear_repository_cache_handles_no_matches PASSED [ 66%]
+tests/unit/test_smart_cache_refresh.py::TestDataFreshnessCheck::test_check_data_freshness_returns_none_when_file_missing PASSED [ 67%]
+tests/unit/test_smart_cache_refresh.py::TestDataFreshnessCheck::test_check_data_freshness_parses_timestamp FAILED [ 67%]
+tests/unit/test_smart_cache_refresh.py::TestSelectiveCacheRefresh::test_selective_cache_refresh_identifies_updated_repos PASSED [ 68%]
+tests/unit/test_smart_cache_refresh.py::TestSelectiveCacheRefresh::test_apply_selective_cache_clear_calls_cache_clear PASSED [ 68%]
+tests/unit/test_smart_cache_refresh.py::TestGenerateWithSmartRefresh::test_generate_skips_when_data_is_fresh FAILED [ 69%]
+tests/unit/test_smart_cache_refresh.py::TestGenerateWithSmartRefresh::test_generate_uses_selective_refresh_when_data_is_old PASSED [ 69%]
+tests/unit/test_summarizer.py::TestAIIntegration::test_successful_ai_summary ERROR [ 69%]
+tests/unit/test_summarizer.py::TestAIIntegration::test_ai_api_error_fallback ERROR [ 70%]
+tests/unit/test_summarizer.py::TestAIIntegration::test_retry_logic ERROR [ 70%]
+tests/unit/test_summarizer.py::TestREADMETruncation::test_readme_truncation_for_context_window PASSED [ 71%]
+tests/unit/test_summarizer.py::TestREADMETruncation::test_short_readme_not_truncated PASSED [ 71%]
+tests/unit/test_summarizer.py::TestREADMETruncation::test_truncation_preserves_beginning PASSED [ 71%]
+tests/unit/test_summarizer.py::TestCommitPatternAnalysis::test_active_pattern_detection FAILED [ 72%]
+tests/unit/test_summarizer.py::TestCommitPatternAnalysis::test_stale_pattern_detection FAILED [ 72%]
+tests/unit/test_summarizer.py::TestCommitPatternAnalysis::test_sporadic_pattern_detection FAILED [ 73%]
+tests/unit/test_summarizer.py::TestPromptEngineering::test_prompt_includes_repo_metadata ERROR [ 73%]
+tests/unit/test_summarizer.py::TestPromptEngineering::test_prompt_includes_commit_analysis ERROR [ 74%]
+tests/unit/test_summarizer.py::TestFallbackStrategies::test_enhanced_template_with_readme ERROR [ 74%]
+tests/unit/test_summarizer.py::TestFallbackStrategies::test_basic_template_without_readme ERROR [ 74%]
+tests/unit/test_summarizer.py::TestFallbackStrategies::test_no_readme_fallback_scenario ERROR [ 75%]
+tests/unit/test_summarizer.py::TestFallbackStrategies::test_no_readme_with_ai_available ERROR [ 75%]
+tests/unit/test_summarizer.py::TestCostTracking::test_token_usage_logging ERROR [ 76%]
+tests/unit/test_summarizer.py::TestCostTracking::test_cost_calculation ERROR [ 76%]
+tests/unit/test_summarizer.py::TestErrorHandling::test_empty_readme ERROR [ 76%]
+tests/unit/test_summarizer.py::TestErrorHandling::test_malformed_readme ERROR [ 77%]
+tests/unit/test_summarizer.py::TestErrorHandling::test_missing_api_key FAILED [ 77%]
+tests/unit/test_summarizer.py::TestErrorHandling::test_api_timeout_fallback ERROR [ 78%]
+tests/unit/test_summarizer.py::TestSummaryQuality::test_summary_mentions_key_features ERROR [ 78%]
+tests/unit/test_summarizer.py::TestSummaryQuality::test_template_summary_structure ERROR [ 79%]
+tests/unit/test_version_checker.py::TestNPMRegistryClient::test_get_latest_version_success PASSED [ 79%]
+tests/unit/test_version_checker.py::TestNPMRegistryClient::test_get_latest_version_not_found PASSED [ 79%]
+tests/unit/test_version_checker.py::TestNPMRegistryClient::test_memory_cache PASSED [ 80%]
+tests/unit/test_version_checker.py::TestPyPIRegistryClient::test_get_latest_version_success PASSED [ 80%]
+tests/unit/test_version_checker.py::TestRubyGemsRegistryClient::test_get_latest_version_success PASSED [ 81%]
+tests/unit/test_version_checker.py::TestGoProxyClient::test_get_latest_version_success PASSED [ 81%]
+tests/unit/test_version_checker.py::TestVersionChecker::test_compare_versions_equal PASSED [ 82%]
+tests/unit/test_version_checker.py::TestVersionChecker::test_compare_versions_behind PASSED [ 82%]
+tests/unit/test_version_checker.py::TestVersionChecker::test_compare_versions_ahead PASSED [ 82%]
+tests/unit/test_version_checker.py::TestVersionChecker::test_compare_versions_with_prefix PASSED [ 83%]
+tests/unit/test_version_checker.py::TestVersionChecker::test_clean_version PASSED [ 83%]
+tests/unit/test_version_checker.py::TestVersionChecker::test_get_latest_version_npm PASSED [ 84%]
+tests/unit/test_version_checker.py::TestVersionChecker::test_get_latest_version_unsupported_ecosystem PASSED [ 84%]
+tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_overview_structure FAILED [ 84%]
+tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_overview_with_effects FAILED [ 85%]
+tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_heatmap_structure FAILED [ 85%]
+tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_languages_structure FAILED [ 86%]
+tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_fun_stats_structure FAILED [ 86%]
+tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_release_cadence_structure FAILED [ 87%]
+tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_streaks_structure FAILED [ 87%]
+tests/unit/test_visualizer.py::TestThemeApplication::test_dark_theme_colors PASSED [ 87%]
+tests/unit/test_visualizer.py::TestThemeApplication::test_light_theme_colors FAILED [ 88%]
+tests/unit/test_visualizer.py::TestCommitMessageSanitization::test_sanitize_special_characters FAILED [ 88%]
+tests/unit/test_visualizer.py::TestCommitMessageSanitization::test_truncate_long_text FAILED [ 89%]
+tests/unit/test_visualizer.py::TestEdgeCases::test_empty_languages FAILED [ 89%]
+tests/unit/test_visualizer.py::TestEdgeCases::test_zero_commits_heatmap FAILED [ 89%]
+tests/unit/test_visualizer.py::TestEdgeCases::test_zero_streak FAILED    [ 90%]
+tests/unit/test_visualizer.py::TestWCAGCompliance::test_light_theme_contrast PASSED [ 90%]
+tests/unit/test_visualizer.py::TestWCAGCompliance::test_dark_theme_contrast FAILED [ 91%]
+tests/unit/test_wcag.py::TestWCAGContrastDarkTheme::test_text_background_contrast PASSED [ 91%]
+tests/unit/test_wcag.py::TestWCAGContrastDarkTheme::test_primary_background_contrast PASSED [ 92%]
+tests/unit/test_wcag.py::TestWCAGContrastDarkTheme::test_accent_background_contrast PASSED [ 92%]
+tests/unit/test_wcag.py::TestWCAGContrastDarkTheme::test_primary_accent_distinction PASSED [ 92%]
+tests/unit/test_wcag.py::TestWCAGContrastLightTheme::test_text_background_contrast PASSED [ 93%]
+tests/unit/test_wcag.py::TestWCAGContrastLightTheme::test_primary_background_contrast PASSED [ 93%]
+tests/unit/test_wcag.py::TestWCAGContrastLightTheme::test_accent_background_contrast FAILED [ 94%]
+tests/unit/test_wcag.py::TestWCAGContrastLightTheme::test_border_visibility FAILED [ 94%]
+tests/unit/test_wcag.py::TestContrastRatioCalculation::test_black_white_contrast PASSED [ 94%]
+tests/unit/test_wcag.py::TestContrastRatioCalculation::test_same_color_contrast PASSED [ 95%]
+tests/unit/test_wcag.py::TestContrastRatioCalculation::test_wcag_aa_threshold PASSED [ 95%]
+tests/unit/test_wcag.py::TestContrastRatioCalculation::test_wcag_aaa_threshold PASSED [ 96%]
+tests/unit/test_wcag.py::TestCustomThemeValidation::test_validate_custom_theme_colors FAILED [ 96%]
+tests/unit/test_wcag.py::TestCustomThemeValidation::test_warn_on_low_contrast PASSED [ 97%]
+tests/unit/test_wcag.py::TestColorCombinations::test_color_combination_contrast[#000000-#FFFFFF-21.0] PASSED [ 97%]
+tests/unit/test_wcag.py::TestColorCombinations::test_color_combination_contrast[#FFFFFF-#000000-21.0] PASSED [ 97%]
+tests/unit/test_wcag.py::TestColorCombinations::test_color_combination_contrast[#0EA5E9-#0F172A-3.0] PASSED [ 98%]
+tests/unit/test_wcag.py::TestColorCombinations::test_color_combination_contrast[#FCD34D-#0F172A-3.0] PASSED [ 98%]
+tests/unit/test_wcag.py::TestColorCombinations::test_color_combination_contrast[#0284C7-#FFFFFF-3.0] PASSED [ 99%]
+tests/unit/test_wcag.py::TestColorCombinations::test_spark_dark_theme_all_combinations PASSED [ 99%]
+tests/unit/test_wcag.py::TestColorCombinations::test_spark_light_theme_all_combinations FAILED [100%]
+
+=================================== ERRORS ====================================
+_ ERROR at setup of TestDependencyAnalysisIntegration.test_analyze_npm_dependencies _
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+_ ERROR at setup of TestDependencyAnalysisIntegration.test_analyze_python_dependencies _
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+_ ERROR at setup of TestDependencyAnalysisIntegration.test_analyze_mixed_ecosystems _
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+_ ERROR at setup of TestDependencyAnalysisIntegration.test_analyze_no_dependencies _
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+_ ERROR at setup of TestDependencyAnalysisIntegration.test_analyze_malformed_file _
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+__ ERROR at setup of TestDependencyAnalysisIntegration.test_outdated_summary __
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+__ ERROR at setup of TestDependencyAnalysisIntegration.test_real_npm_package __
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+_ ERROR at setup of TestDependencyAnalysisIntegration.test_real_pypi_package __
+tests\integration\test_dependency_analysis.py:14: in analyzer
+    return RepositoryDependencyAnalyzer(cache_dir=tmp_path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: RepositoryDependencyAnalyzer.__init__() got an unexpected keyword argument 'cache_dir'
+________ ERROR at setup of TestTier1_AISummary.test_ai_summary_success ________
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:25] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___ ERROR at setup of TestTier1_AISummary.test_ai_summary_with_minimal_repo ___
+tests\integration\test_summarizer_fallback.py:71: in minimal_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:26] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestTier2_EnhancedTemplate.test_enhanced_template_on_api_failure _
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:26] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestTier2_EnhancedTemplate.test_enhanced_template_extracts_from_readme _
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:26] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestTier2_EnhancedTemplate.test_enhanced_template_includes_metadata _
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:27] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestTier2_EnhancedTemplate.test_enhanced_template_with_partial_readme _
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:27] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___ ERROR at setup of TestTier3_BasicTemplate.test_basic_template_no_readme ___
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:27] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestTier3_BasicTemplate.test_basic_template_minimal_repo __
+tests\integration\test_summarizer_fallback.py:71: in minimal_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:28] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestTier3_BasicTemplate.test_basic_template_includes_commit_info _
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:28] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___ ERROR at setup of TestFallbackChain.test_fallback_chain_tier1_to_tier2 ____
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:28] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___ ERROR at setup of TestFallbackChain.test_fallback_chain_tier1_to_tier3 ____
+tests\integration\test_summarizer_fallback.py:71: in minimal_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:29] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestFallbackChain.test_fallback_chain_all_tiers_available _
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:29] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+________ ERROR at setup of TestConsistency.test_same_input_same_output ________
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:30] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestConsistency.test_different_repos_different_summaries __
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:31] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_______ ERROR at setup of TestPerformance.test_fallback_faster_than_ai ________
+tests\integration\test_summarizer_fallback.py:45: in complete_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:31] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_______ ERROR at setup of TestAIIntegration.test_successful_ai_summary ________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_______ ERROR at setup of TestAIIntegration.test_ai_api_error_fallback ________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:33] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+____________ ERROR at setup of TestAIIntegration.test_retry_logic _____________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:33] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestPromptEngineering.test_prompt_includes_repo_metadata __
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:35] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestPromptEngineering.test_prompt_includes_commit_analysis _
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:36] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestFallbackStrategies.test_enhanced_template_with_readme _
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:36] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_ ERROR at setup of TestFallbackStrategies.test_basic_template_without_readme _
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:36] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+__ ERROR at setup of TestFallbackStrategies.test_no_readme_fallback_scenario __
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:37] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+__ ERROR at setup of TestFallbackStrategies.test_no_readme_with_ai_available __
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:37] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_________ ERROR at setup of TestCostTracking.test_token_usage_logging _________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:37] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+__________ ERROR at setup of TestCostTracking.test_cost_calculation ___________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:38] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+____________ ERROR at setup of TestErrorHandling.test_empty_readme ____________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:38] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+__________ ERROR at setup of TestErrorHandling.test_malformed_readme __________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:38] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+________ ERROR at setup of TestErrorHandling.test_api_timeout_fallback ________
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:39] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___ ERROR at setup of TestSummaryQuality.test_summary_mentions_key_features ___
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:39] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+____ ERROR at setup of TestSummaryQuality.test_template_summary_structure _____
+tests\unit\test_summarizer.py:29: in sample_repository
+    return Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:39] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+================================== FAILURES ===================================
+____________ TestCLIAnalyzeCommand.test_analyze_list_only_dry_run _____________
+tests\integration\test_cli_analyze.py:75: in test_analyze_list_only_dry_run
+    with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1503: in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1473: in get_original
+    raise AttributeError(
+E   AttributeError: <module 'spark.cli' from 'C:\\GitHub\\MarkHazleton\\github-stats-spark\\src\\spark\\cli.py'> does not have the attribute 'GitHubFetcher'
+____________ TestCLIAnalyzeCommand.test_analyze_progress_tracking _____________
+tests\integration\test_cli_analyze.py:120: in test_analyze_progress_tracking
+    with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1503: in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1473: in get_original
+    raise AttributeError(
+E   AttributeError: <module 'spark.cli' from 'C:\\GitHub\\MarkHazleton\\github-stats-spark\\src\\spark\\cli.py'> does not have the attribute 'GitHubFetcher'
+___________ TestCLIAnalyzeCommand.test_analyze_rate_limit_handling ____________
+tests\integration\test_cli_analyze.py:169: in test_analyze_rate_limit_handling
+    with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1503: in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1473: in get_original
+    raise AttributeError(
+E   AttributeError: <module 'spark.cli' from 'C:\\GitHub\\MarkHazleton\\github-stats-spark\\src\\spark\\cli.py'> does not have the attribute 'GitHubFetcher'
+________ TestCLIAnalyzeCommand.test_analyze_partial_report_generation _________
+tests\integration\test_cli_analyze.py:215: in test_analyze_partial_report_generation
+    with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1503: in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1473: in get_original
+    raise AttributeError(
+E   AttributeError: <module 'spark.cli' from 'C:\\GitHub\\MarkHazleton\\github-stats-spark\\src\\spark\\cli.py'> does not have the attribute 'GitHubFetcher'
+_________ TestCLIAnalyzeCommand.test_analyze_error_logging_actionable _________
+tests\integration\test_cli_analyze.py:292: in test_analyze_error_logging_actionable
+    with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1503: in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\unittest\mock.py:1473: in get_original
+    raise AttributeError(
+E   AttributeError: <module 'spark.cli' from 'C:\\GitHub\\MarkHazleton\\github-stats-spark\\src\\spark\\cli.py'> does not have the attribute 'GitHubFetcher'
+___________ TestEndToEndWorkflow.test_complete_generation_workflow ____________
+tests\integration\test_end_to_end.py:77: in test_complete_generation_workflow
+    languages_svg = visualizer.generate_languages(profile["username"], languages)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:402: in generate_languages
+    lang_name = lang.get("name", "Unknown")
+                ^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'get'
+__________ TestEndToEndWorkflow.test_selective_statistics_generation __________
+tests\integration\test_end_to_end.py:165: in test_selective_statistics_generation
+    generated_svgs["languages"] = visualizer.generate_languages(profile["username"], languages)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:402: in generate_languages
+    lang_name = lang.get("name", "Unknown")
+                ^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'get'
+_____________ TestEndToEndWorkflow.test_error_handling_no_commits _____________
+tests\integration\test_end_to_end.py:189: in test_error_handling_no_commits
+    assert time_patterns["category"] in ["night_owl", "early_bird", "balanced", "no_data"]
+E   AssertionError: assert 'unknown' in ['night_owl', 'early_bird', 'balanced', 'no_data']
+______________ TestEndToEndWorkflow.test_success_rate_validation ______________
+tests\integration\test_end_to_end.py:228: in test_success_rate_validation
+    assert success_rate >= 0.99, f"Success rate {success_rate*100}% is below 99% requirement"
+E   AssertionError: Success rate 0.0% is below 99% requirement
+E   assert 0.0 >= 0.99
+_________ TestUserStory1Scenarios.test_user_with_50_plus_repositories _________
+tests\integration\test_full_report_generation.py:60: in test_user_with_50_plus_repositories
+    fetcher = GitHubFetcher()
+              ^^^^^^^^^^^^^^^
+src\spark\fetcher.py:38: in __init__
+    raise ValueError("GitHub token required (GITHUB_TOKEN environment variable or token parameter)")
+E   ValueError: GitHub token required (GITHUB_TOKEN environment variable or token parameter)
+______ TestUserStory1Scenarios.test_user_with_fewer_than_50_repositories ______
+tests\integration\test_full_report_generation.py:144: in test_user_with_fewer_than_50_repositories
+    Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+_______ TestUserStory1Scenarios.test_repository_with_readme_and_commits _______
+tests\integration\test_full_report_generation.py:167: in test_repository_with_readme_and_commits
+    repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+_______ TestUserStory1Scenarios.test_repository_without_readme_fallback _______
+tests\integration\test_full_report_generation.py:229: in test_repository_without_readme_fallback
+    repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+___________ TestUserStory1Scenarios.test_empty_repository_handling ____________
+tests\integration\test_full_report_generation.py:270: in test_empty_repository_handling
+    repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+______ TestUserStory1Scenarios.test_github_api_rate_limit_partial_report ______
+tests\integration\test_full_report_generation.py:334: in test_github_api_rate_limit_partial_report
+    fetcher = GitHubFetcher()
+              ^^^^^^^^^^^^^^^
+src\spark\fetcher.py:38: in __init__
+    raise ValueError("GitHub token required (GITHUB_TOKEN environment variable or token parameter)")
+E   ValueError: GitHub token required (GITHUB_TOKEN environment variable or token parameter)
+_____ TestUserStory2Scenarios.test_profile_analysis_diverse_repositories ______
+tests\integration\test_full_report_generation.py:419: in test_profile_analysis_diverse_repositories
+    Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+____ TestUserStory3Scenarios.test_technology_currency_multiple_ecosystems _____
+tests\integration\test_full_report_generation.py:545: in test_technology_currency_multiple_ecosystems
+    npm_deps = parser.parse_package_json(package_json)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'DependencyParser' object has no attribute 'parse_package_json'
+_____________ TestEdgeCases.test_user_with_no_public_repositories _____________
+tests\integration\test_full_report_generation.py:593: in test_user_with_no_public_repositories
+    fetcher = GitHubFetcher()
+              ^^^^^^^^^^^^^^^
+src\spark\fetcher.py:38: in __init__
+    raise ValueError("GitHub token required (GITHUB_TOKEN environment variable or token parameter)")
+E   ValueError: GitHub token required (GITHUB_TOKEN environment variable or token parameter)
+____________ TestEdgeCases.test_unrecognized_programming_language _____________
+tests\integration\test_full_report_generation.py:623: in test_unrecognized_programming_language
+    repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+___________ TestEdgeCases.test_archived_repository_activity_penalty ___________
+tests\integration\test_full_report_generation.py:682: in test_archived_repository_activity_penalty
+    archived_repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+_____ TestPerformanceValidation.test_report_generation_performance_target _____
+tests\integration\test_full_report_generation.py:759: in test_report_generation_performance_target
+    Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'issues'
+_____ TestPrivacyFilter.test_privacy_filter_excludes_private_repositories _____
+tests\integration\test_full_report_generation.py:902: in test_privacy_filter_excludes_private_repositories
+    fetcher = GitHubFetcher()
+              ^^^^^^^^^^^^^^^
+src\spark\fetcher.py:38: in __init__
+    raise ValueError("GitHub token required (GITHUB_TOKEN environment variable or token parameter)")
+E   ValueError: GitHub token required (GITHUB_TOKEN environment variable or token parameter)
+_______________ TestEdgeCases.test_empty_repository_description _______________
+tests\integration\test_summarizer_fallback.py:399: in test_empty_repository_description
+    empty_desc_repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:29] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___________________ TestEdgeCases.test_archived_repository ____________________
+tests\integration\test_summarizer_fallback.py:433: in test_archived_repository
+    archived_repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:30] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_____________________ TestEdgeCases.test_fork_repository ______________________
+tests\integration\test_summarizer_fallback.py:469: in test_fork_repository
+    fork_repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:30] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_______________ TestPerformance.test_batch_fallback_performance _______________
+tests\integration\test_summarizer_fallback.py:569: in test_batch_fallback_performance
+    repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:31] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+________________ TestPrivacyFilter.test_private_repos_excluded ________________
+tests\unit\test_ranker.py:98: in test_private_repos_excluded
+    private_repo, private_commits = create_repository_from_scenario(private_scenario)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+______________ TestPrivacyFilter.test_all_public_repos_included _______________
+tests\unit\test_ranker.py:134: in test_all_public_repos_included
+    repo, commits = create_repository_from_scenario(scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+_______________ TestCompositeScoring.test_composite_score_range _______________
+tests\unit\test_ranker.py:155: in test_composite_score_range
+    repo, commits = create_repository_from_scenario(scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+________________ TestRankingIntegration.test_rank_repositories ________________
+tests\unit\test_ranker.py:189: in test_rank_repositories
+    repo, commits = create_repository_from_scenario(scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+_________________ TestRankingIntegration.test_top_n_selection _________________
+tests\unit\test_ranker.py:215: in test_top_n_selection
+    repo, commits = create_repository_from_scenario(scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+_____________ TestRankingIntegration.test_empty_repository_filter _____________
+tests\unit\test_ranker.py:238: in test_empty_repository_filter
+    repo, commits = create_repository_from_scenario(empty_scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+_______________ TestEdgeCases.test_archived_repository_handling _______________
+tests\unit\test_ranker.py:261: in test_archived_repository_handling
+    repo, commits = create_repository_from_scenario(archived_scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+______________________ TestEdgeCases.test_fork_handling _______________________
+tests\unit\test_ranker.py:276: in test_fork_handling
+    repo, commits = create_repository_from_scenario(scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+________________ TestEdgeCases.test_new_active_repo_vs_legacy _________________
+tests\unit\test_ranker.py:296: in test_new_active_repo_vs_legacy
+    new_repo, new_commits = create_repository_from_scenario(new_active)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+__________ TestScenarioValidation.test_ideal_active_repo_scores_high __________
+tests\unit\test_ranker.py:324: in test_ideal_active_repo_scores_high
+    repo, commits = create_repository_from_scenario(ideal_scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+______________ TestScenarioValidation.test_stale_repo_scores_low ______________
+tests\unit\test_ranker.py:344: in test_stale_repo_scores_low
+    repo, commits = create_repository_from_scenario(stale_scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+____________________ TestPerformance.test_ranking_50_repos ____________________
+tests\unit\test_ranker.py:373: in test_ranking_50_repos
+    repo, commits = create_repository_from_scenario(scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+__________ TestErrorHandling.test_repository_without_commit_history ___________
+tests\unit\test_ranker.py:427: in test_repository_without_commit_history
+    repo = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+_____________ TestErrorHandling.test_top_n_larger_than_repo_count _____________
+tests\unit\test_ranker.py:464: in test_top_n_larger_than_repo_count
+    repo, commits = create_repository_from_scenario(scenario)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\unit\test_ranker.py:45: in create_repository_from_scenario
+    repository = Repository(
+E   TypeError: Repository.__init__() got an unexpected keyword argument 'full_name'
+______________ TestReportGenerator.test_format_repository_entry _______________
+tests\unit\test_report_generator.py:184: in test_format_repository_entry
+    assert "\u2b50 100" in entry
+E   AssertionError: assert '\u2b50 100' in '### #1. [test-repo](https://github.com/user/test-repo)\\n\\nStars: 100 | Forks: 20 | Language: Python | 30 commits (90d)\\n\\nA comprehensive test repository with excellent documentation.\\n\\n**Technology Stack Currency**: \U0001f7e2 75/100\\n**Dependencies**: 2 total (1 current, 1 outdated)\\n**Most Outdated**:\\n  - `flask`: 2.0.0 \u2192 3.0.0 (1 major versions behind)\\n\\n**Created**: 2023-01-01 (1,103 days ago)\\n**Last Modified**: 2024-12-01 (403 days ago)'
+_ TestAPICacheClearRepository.test_clear_repository_cache_removes_matching_files _
+tests\unit\test_smart_cache_refresh.py:49: in test_clear_repository_cache_removes_matching_files
+    assert cleared_count == len(cache_files)
+E   AssertionError: assert 0 == 6
+E    +  where 6 = len(['commits_testuser_testrepo_2026W01.json', 'languages_testuser_testrepo_2026W01.json', 'readme_testuser_testrepo_2026W01.json', 'commit_counts_testuser_testrepo_2026W01.json', 'commits_stats_testuser_testrepo_200_2026W01.json', 'dependency_files_testuser_testrepo_2026W01.json'])
+______ TestDataFreshnessCheck.test_check_data_freshness_parses_timestamp ______
+tests\unit\test_smart_cache_refresh.py:112: in test_check_data_freshness_parses_timestamp
+    generator = UnifiedDataGenerator(
+src\spark\unified_data_generator.py:94: in __init__
+    self.fetcher = GitHubFetcher(cache=self.cache, token=token)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\fetcher.py:42: in __init__
+    self.cache_status_tracker = CacheStatusTracker(cache_dir=self.cache.cache_dir)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\cache_status.py:22: in __init__
+    self.cache = APICache(cache_dir)
+                 ^^^^^^^^^^^^^^^^^^^
+src\spark\cache.py:154: in __init__
+    self.config.load()
+src\spark\config.py:32: in load
+    self.config = yaml.safe_load(f)
+                  ^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\site-packages\yaml\__init__.py:125: in safe_load
+    return load(stream, SafeLoader)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\site-packages\yaml\__init__.py:81: in load
+    return loader.get_single_data()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\site-packages\yaml\constructor.py:49: in get_single_data
+    node = self.get_single_node()
+           ^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\site-packages\yaml\composer.py:39: in get_single_node
+    if not self.check_event(StreamEndEvent):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\site-packages\yaml\parser.py:98: in check_event
+    self.current_event = self.state()
+                         ^^^^^^^^^^^^
+C:\Python314\Lib\site-packages\yaml\parser.py:171: in parse_document_start
+    raise ParserError(None, None,
+E   yaml.parser.ParserError: expected '<document start>', but found '{'
+E     in "<MagicMock name='open().name' id='1922840069856'>", line 1, column 102
+_____ TestGenerateWithSmartRefresh.test_generate_skips_when_data_is_fresh _____
+tests\unit\test_smart_cache_refresh.py:229: in test_generate_skips_when_data_is_fresh
+    result = generator.generate()
+             ^^^^^^^^^^^^^^^^^^^^
+src\spark\unified_data_generator.py:283: in generate
+    repos_to_refresh = self._selective_cache_refresh(generated_at)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\unified_data_generator.py:184: in _selective_cache_refresh
+    shutil.rmtree(repo_cache_dir)
+C:\Python314\Lib\shutil.py:852: in rmtree
+    _rmtree_impl(path, dir_fd, onexc)
+C:\Python314\Lib\shutil.py:675: in _rmtree_unsafe
+    onexc(os.lstat, path, err)
+C:\Python314\Lib\shutil.py:673: in _rmtree_unsafe
+    st = os.lstat(path)
+         ^^^^^^^^^^^^^^
+E   FileNotFoundError: [WinError 3] The system cannot find the path specified: '.cache\\testuser\\list_True_False\\repositories'
+---------------------------- Captured stdout call -----------------------------
+[2026-01-08 09:40:32] [unified-data-generator] INFO: UnifiedDataGenerator initialized for user: testuser
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Max repositories: 200
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Include AI summaries: False
+[2026-01-08 09:40:32] [unified-data-generator] INFO: ======================================================================
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Starting Unified Data Generation
+[2026-01-08 09:40:32] [unified-data-generator] INFO: ======================================================================
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Force refresh mode: False
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Checking for repositories with new commits since last generation...
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Found existing repositories.json generated at: 2026-01-06 15:40:32.588334+00:00
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Found existing repositories.json generated at: 2026-01-06 15:40:32.588334+00:00
+[2026-01-08 09:40:32] [unified-data-generator] INFO: Checking for repositories with new commits since last generation...
+___________ TestCommitPatternAnalysis.test_active_pattern_detection ___________
+tests\unit\test_summarizer.py:233: in test_active_pattern_detection
+    analysis = summarizer._analyze_commit_patterns(sample_commits)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'RepositorySummarizer' object has no attribute '_analyze_commit_patterns'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:34] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___________ TestCommitPatternAnalysis.test_stale_pattern_detection ____________
+tests\unit\test_summarizer.py:255: in test_stale_pattern_detection
+    analysis = summarizer._analyze_commit_patterns(stale_commits)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'RepositorySummarizer' object has no attribute '_analyze_commit_patterns'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:35] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+__________ TestCommitPatternAnalysis.test_sporadic_pattern_detection __________
+tests\unit\test_summarizer.py:273: in test_sporadic_pattern_detection
+    analysis = summarizer._analyze_commit_patterns(sporadic_commits)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'RepositorySummarizer' object has no attribute '_analyze_commit_patterns'
+---------------------------- Captured stdout setup ----------------------------
+[2026-01-08 09:40:35] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+___________________ TestErrorHandling.test_missing_api_key ____________________
+tests\unit\test_summarizer.py:497: in test_missing_api_key
+    assert hasattr(summarizer, '_generate_basic_template_summary')
+E   AssertionError: assert False
+E    +  where False = hasattr(<spark.summarizer.RepositorySummarizer object at 0x000001BFB25EE3F0>, '_generate_basic_template_summary')
+---------------------------- Captured stdout call -----------------------------
+[2026-01-08 09:40:38] [unified-data-generator] INFO: Initialized Anthropic client with model claude-3-5-haiku-20241022
+_____________ TestSVGGeneration.test_generate_overview_structure ______________
+tests\unit\test_visualizer.py:45: in test_generate_overview_structure
+    assert svg.startswith("<?xml")
+E   assert False
+E    +  where False = <built-in method startswith of str object at 0x000001BFB2C00090>('<?xml')
+E    +    where <built-in method startswith of str object at 0x000001BFB2C00090> = '<svg baseProfile="full" height="400" version="1.1" width="800" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs /><rect fill="#0D1117" height="400" width="800" x="0" y="0" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="28px" font-weight="bold" text-anchor="middle" x="400" y="40">GitHub Stats - testuser</text><circle cx="150" cy="160" fill="#0EA5E9" opacity="0.2" r="60" /><circle cx="150" cy="160" fill="none" r="55" stroke="#0EA5E9" stroke-width="3" /><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="36px" font-weight="bold" text-anchor="middle" x="150" y="170">75.5</text><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="24px" text-anchor="middle" x="150" y="240">\u26a1\u26a1\u26a1\u26a1</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="120">Total Commits:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="120">1250</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="155">Consistency:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-si...f" font-size="16px" font-weight="bold" x="450" y="190">80.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="225">Collaboration:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="225">75.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="520" y="120">Top Languages</text><rect fill="#30363D" height="18" rx="2" width="150" x="520" y="138" /><rect fill="#0EA5E9" height="18" rx="2" width="67" x="520" y="138" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="12px" x="680" y="150">Python 45.2%</text><rect fill="#30363D" height="18" rx="2" width="150" x="520" y="168" /><rect fill="#0EA5E9" height="18" rx="2" width="45" x="520" y="168" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="12px" x="680" y="180">JavaScript 30.1%</text><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="16px" text-anchor="middle" x="400" y="360">\U0001f989 Night Owl</text><text fill="#30363D" font-family="Arial, sans-serif" font-size="10px" opacity="0.7" text-anchor="end" x="790" y="390">\u26a1 Generated with Stats Spark</text></svg>'.startswith
+____________ TestSVGGeneration.test_generate_overview_with_effects ____________
+tests\unit\test_visualizer.py:73: in test_generate_overview_with_effects
+    assert "<?xml" in svg
+E   assert '<?xml' in '<svg baseProfile="full" height="400" version="1.1" width="800" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs /><rect fill="#0D1117" height="400" width="800" x="0" y="0" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="28px" font-weight="bold" text-anchor="middle" x="400" y="40">GitHub Stats - testuser</text><circle cx="150" cy="160" fill="#0EA5E9" opacity="0.2" r="60" /><circle cx="150" cy="160" fill="none" r="55" stroke="#0EA5E9" stroke-width="3" /><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="36px" font-weight="bold" text-anchor="middle" x="150" y="170">85.0</text><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="24px" text-anchor="middle" x="150" y="240">\u26a1\u26a1\u26a1\u26a1\u26a1</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="120">Total Commits:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="120">2000</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="155">Consistency:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="155">80.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="190">Volume:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="190">90.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="225">Collaboration:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="225">85.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="520" y="120">Top Languages</text><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="16px" text-anchor="middle" x="400" y="360">\u2696\ufe0f Balanced</text><text fill="#30363D" font-family="Arial, sans-serif" font-size="10px" opacity="0.7" text-anchor="end" x="790" y="390">\u26a1 Generated with Stats Spark</text></svg>'
+______________ TestSVGGeneration.test_generate_heatmap_structure ______________
+tests\unit\test_visualizer.py:88: in test_generate_heatmap_structure
+    svg = visualizer.generate_heatmap("testuser", commits_by_date)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:268: in generate_heatmap
+    max_commits = max(commits_by_date.values()) if commits_by_date else 1
+                      ^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'values'
+_____________ TestSVGGeneration.test_generate_languages_structure _____________
+tests\unit\test_visualizer.py:107: in test_generate_languages_structure
+    svg = visualizer.generate_languages("testuser", languages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:402: in generate_languages
+    lang_name = lang.get("name", "Unknown")
+                ^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'get'
+_____________ TestSVGGeneration.test_generate_fun_stats_structure _____________
+tests\unit\test_visualizer.py:126: in test_generate_fun_stats_structure
+    svg = visualizer.generate_fun_stats("testuser", stats)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:641: in generate_fun_stats
+    most_active_hour = stats.get('most_active_hour', 0)
+                       ^^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'get'
+__________ TestSVGGeneration.test_generate_release_cadence_structure __________
+tests\unit\test_visualizer.py:154: in test_generate_release_cadence_structure
+    assert svg.startswith("<?xml")
+E   assert False
+E    +  where False = <built-in method startswith of str object at 0x000001BFB0D7F0C0>('<?xml')
+E    +    where <built-in method startswith of str object at 0x000001BFB0D7F0C0> = '<svg baseProfile="full" height="420" version="1.1" width="900" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs /><rect fill="#0D1117" height="420" width="900" x="0" y="0" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="26px" font-weight="bold" text-anchor="middle" x="450" y="40">Release Cadence - testuser</text><text fill="#30363D" font-family="Arial, sans-serif" font-size="14px" text-anchor="middle" x="450" y="70">Unique repositories touched in period: 5</text><rect fill="#30363D" height="220" opacity="0.15" rx="16" width="360" x="40" y="100" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="18px" font-weight="bold" x="60" y="130">Weekly Repo Diversity</text><line opacity="0.4" stroke="#30363D" stroke-width="1" x1="60" x2="380" y1="270" y2="270" /><polyline fill="none" points="60.0,230.0 380.0,150.0" stroke="#0EA5E9" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" /><circle cx="60.0" cy="230.0" fill="#FCD34D" r="4"><title>W01: 1 repos</title></circle><circle cx="380.0" cy="150.0" fill="#FCD34D" r="4"><title>W02: 3 repos</title></circle><polygon fill...xt><rect fill="#30363D" height="220" opacity="0.15" rx="16" width="360" x="480" y="100" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="18px" font-weight="bold" x="500" y="130">Monthly Repo Diversity</text><line opacity="0.4" stroke="#30363D" stroke-width="1" x1="500" x2="820" y1="270" y2="270" /><polyline fill="none" points="500.0,210.0 820.0,150.0" stroke="#0EA5E9" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" /><circle cx="500.0" cy="210.0" fill="#FCD34D" r="4"><title>Jan: 2 repos</title></circle><circle cx="820.0" cy="150.0" fill="#FCD34D" r="4"><title>Feb: 4 repos</title></circle><polygon fill="#0EA5E9" opacity="0.1" points="500.0,210.0 820.0,150.0 820,270 500,270" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="12px" x="500" y="290">Jan</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="12px" text-anchor="end" x="820" y="290">Feb</text><text fill="#30363D" font-family="Arial, sans-serif" font-size="12px" x="500" y="300">Peak: 4 repos (Feb)</text><text fill="#30363D" font-family="Arial, sans-serif" font-size="10px" opacity="0.7" text-anchor="end" x="890" y="410">\u26a1 Generated with Stats Spark</text></svg>'.startswith
+______________ TestSVGGeneration.test_generate_streaks_structure ______________
+tests\unit\test_visualizer.py:165: in test_generate_streaks_structure
+    svg = visualizer.generate_streaks(
+E   TypeError: StatisticsVisualizer.generate_streaks() got an unexpected keyword argument 'current_streak'
+________________ TestThemeApplication.test_light_theme_colors _________________
+tests\unit\test_visualizer.py:213: in test_light_theme_colors
+    svg = visualizer.generate_languages("testuser", languages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:402: in generate_languages
+    lang_name = lang.get("name", "Unknown")
+                ^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'get'
+_______ TestCommitMessageSanitization.test_sanitize_special_characters ________
+tests\unit\test_visualizer.py:235: in test_sanitize_special_characters
+    svg = visualizer.generate_fun_stats("testuser", stats)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:641: in generate_fun_stats
+    most_active_hour = stats.get('most_active_hour', 0)
+                       ^^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'get'
+____________ TestCommitMessageSanitization.test_truncate_long_text ____________
+tests\unit\test_visualizer.py:254: in test_truncate_long_text
+    svg = visualizer.generate_languages("testuser", languages)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:402: in generate_languages
+    lang_name = lang.get("name", "Unknown")
+                ^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'get'
+_____________________ TestEdgeCases.test_empty_languages ______________________
+tests\unit\test_visualizer.py:286: in test_empty_languages
+    assert svg.startswith("<?xml")
+E   assert False
+E    +  where False = <built-in method startswith of str object at 0x000001BFB06179D0>('<?xml')
+E    +    where <built-in method startswith of str object at 0x000001BFB06179D0> = '<svg baseProfile="full" height="400" version="1.1" width="800" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs /><rect fill="#0D1117" height="400" width="800" x="0" y="0" /><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="28px" font-weight="bold" text-anchor="middle" x="400" y="40">GitHub Stats - testuser</text><circle cx="150" cy="160" fill="#0EA5E9" opacity="0.2" r="60" /><circle cx="150" cy="160" fill="none" r="55" stroke="#0EA5E9" stroke-width="3" /><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="36px" font-weight="bold" text-anchor="middle" x="150" y="170">50.0</text><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="24px" text-anchor="middle" x="150" y="240">\u26a1\u26a1\u26a1</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="120">Total Commits:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="120">0</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="155">Consistency:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="155">50.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="190">Volume:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="190">50.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="14px" x="300" y="225">Collaboration:</text><text fill="#0EA5E9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="450" y="225">50.0/100</text><text fill="#C9D1D9" font-family="Arial, sans-serif" font-size="16px" font-weight="bold" x="520" y="120">Top Languages</text><text fill="#FCD34D" font-family="Arial, sans-serif" font-size="16px" text-anchor="middle" x="400" y="360">\u2696\ufe0f Balanced</text><text fill="#30363D" font-family="Arial, sans-serif" font-size="10px" opacity="0.7" text-anchor="end" x="790" y="390">\u26a1 Generated with Stats Spark</text></svg>'.startswith
+___________________ TestEdgeCases.test_zero_commits_heatmap ___________________
+tests\unit\test_visualizer.py:294: in test_zero_commits_heatmap
+    svg = visualizer.generate_heatmap("testuser", {})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\spark\visualizer.py:268: in generate_heatmap
+    max_commits = max(commits_by_date.values()) if commits_by_date else 1
+                      ^^^^^^^^^^^^^^^^^^^^^^
+E   AttributeError: 'str' object has no attribute 'values'
+_______________________ TestEdgeCases.test_zero_streak ________________________
+tests\unit\test_visualizer.py:304: in test_zero_streak
+    svg = visualizer.generate_streaks(
+E   TypeError: StatisticsVisualizer.generate_streaks() got an unexpected keyword argument 'current_streak'
+_________________ TestWCAGCompliance.test_dark_theme_contrast _________________
+tests\unit\test_visualizer.py:335: in test_dark_theme_contrast
+    assert theme.background_color == "#0F172A"
+E   AssertionError: assert '#0D1117' == '#0F172A'
+E     
+E     - #0F172A
+E     + #0D1117
+_________ TestWCAGContrastLightTheme.test_accent_background_contrast __________
+tests\unit\test_wcag.py:134: in test_accent_background_contrast
+    assert contrast >= 3.0, f"Accent contrast {contrast:.2f} is below minimum (3:1)"
+E   AssertionError: Accent contrast 2.94 is below minimum (3:1)
+E   assert 2.9376972985882066 >= 3.0
+______________ TestWCAGContrastLightTheme.test_border_visibility ______________
+tests\unit\test_wcag.py:143: in test_border_visibility
+    assert contrast >= 3.0, f"Border contrast {contrast:.2f} is too low"
+E   AssertionError: Border contrast 1.24 is too low
+E   assert 1.238090749353873 >= 3.0
+_________ TestCustomThemeValidation.test_validate_custom_theme_colors _________
+tests\unit\test_wcag.py:200: in test_validate_custom_theme_colors
+    assert accent_bg_contrast >= 3.0, "Accent contrast too low"
+E   AssertionError: Accent contrast too low
+E   assert 2.1476626917618766 >= 3.0
+________ TestColorCombinations.test_spark_light_theme_all_combinations ________
+tests\unit\test_wcag.py:261: in test_spark_light_theme_all_combinations
+    assert contrast >= min_ratio, f"{description}: {contrast:.2f} < {min_ratio}"
+E   AssertionError: accent on background: 2.94 < 3.0
+E   assert 2.9376972985882066 >= 3.0
+============================== warnings summary ===============================
+tests\integration\test_dependency_analysis.py:93
+  C:\GitHub\MarkHazleton\github-stats-spark\tests\integration\test_dependency_analysis.py:93: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tests\integration\test_dependency_analysis.py:106
+  C:\GitHub\MarkHazleton\github-stats-spark\tests\integration\test_dependency_analysis.py:106: PytestUnknownMarkWarning: Unknown pytest.mark.slow - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.slow
+
+tests/integration/test_smart_cache_integration.py: 2 warnings
+tests/unit/test_cross_platform_datetime.py: 6 warnings
+tests/unit/test_smart_cache_refresh.py: 6 warnings
+  C:\GitHub\MarkHazleton\github-stats-spark\src\spark\fetcher.py:40: DeprecationWarning: Argument login_or_token is deprecated, please use auth=github.Auth.Token(...) instead
+    self.github = Github(self.token)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_list_only_dry_run
+FAILED tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_progress_tracking
+FAILED tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_rate_limit_handling
+FAILED tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_partial_report_generation
+FAILED tests/integration/test_cli_analyze.py::TestCLIAnalyzeCommand::test_analyze_error_logging_actionable
+FAILED tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_complete_generation_workflow
+FAILED tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_selective_statistics_generation
+FAILED tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_error_handling_no_commits
+FAILED tests/integration/test_end_to_end.py::TestEndToEndWorkflow::test_success_rate_validation
+FAILED tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_user_with_50_plus_repositories
+FAILED tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_user_with_fewer_than_50_repositories
+FAILED tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_repository_with_readme_and_commits
+FAILED tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_repository_without_readme_fallback
+FAILED tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_empty_repository_handling
+FAILED tests/integration/test_full_report_generation.py::TestUserStory1Scenarios::test_github_api_rate_limit_partial_report
+FAILED tests/integration/test_full_report_generation.py::TestUserStory2Scenarios::test_profile_analysis_diverse_repositories
+FAILED tests/integration/test_full_report_generation.py::TestUserStory3Scenarios::test_technology_currency_multiple_ecosystems
+FAILED tests/integration/test_full_report_generation.py::TestEdgeCases::test_user_with_no_public_repositories
+FAILED tests/integration/test_full_report_generation.py::TestEdgeCases::test_unrecognized_programming_language
+FAILED tests/integration/test_full_report_generation.py::TestEdgeCases::test_archived_repository_activity_penalty
+FAILED tests/integration/test_full_report_generation.py::TestPerformanceValidation::test_report_generation_performance_target
+FAILED tests/integration/test_full_report_generation.py::TestPrivacyFilter::test_privacy_filter_excludes_private_repositories
+FAILED tests/integration/test_summarizer_fallback.py::TestEdgeCases::test_empty_repository_description
+FAILED tests/integration/test_summarizer_fallback.py::TestEdgeCases::test_archived_repository
+FAILED tests/integration/test_summarizer_fallback.py::TestEdgeCases::test_fork_repository
+FAILED tests/integration/test_summarizer_fallback.py::TestPerformance::test_batch_fallback_performance
+FAILED tests/unit/test_ranker.py::TestPrivacyFilter::test_private_repos_excluded
+FAILED tests/unit/test_ranker.py::TestPrivacyFilter::test_all_public_repos_included
+FAILED tests/unit/test_ranker.py::TestCompositeScoring::test_composite_score_range
+FAILED tests/unit/test_ranker.py::TestRankingIntegration::test_rank_repositories
+FAILED tests/unit/test_ranker.py::TestRankingIntegration::test_top_n_selection
+FAILED tests/unit/test_ranker.py::TestRankingIntegration::test_empty_repository_filter
+FAILED tests/unit/test_ranker.py::TestEdgeCases::test_archived_repository_handling
+FAILED tests/unit/test_ranker.py::TestEdgeCases::test_fork_handling - TypeErr...
+FAILED tests/unit/test_ranker.py::TestEdgeCases::test_new_active_repo_vs_legacy
+FAILED tests/unit/test_ranker.py::TestScenarioValidation::test_ideal_active_repo_scores_high
+FAILED tests/unit/test_ranker.py::TestScenarioValidation::test_stale_repo_scores_low
+FAILED tests/unit/test_ranker.py::TestPerformance::test_ranking_50_repos - Ty...
+FAILED tests/unit/test_ranker.py::TestErrorHandling::test_repository_without_commit_history
+FAILED tests/unit/test_ranker.py::TestErrorHandling::test_top_n_larger_than_repo_count
+FAILED tests/unit/test_report_generator.py::TestReportGenerator::test_format_repository_entry
+FAILED tests/unit/test_smart_cache_refresh.py::TestAPICacheClearRepository::test_clear_repository_cache_removes_matching_files
+FAILED tests/unit/test_smart_cache_refresh.py::TestDataFreshnessCheck::test_check_data_freshness_parses_timestamp
+FAILED tests/unit/test_smart_cache_refresh.py::TestGenerateWithSmartRefresh::test_generate_skips_when_data_is_fresh
+FAILED tests/unit/test_summarizer.py::TestCommitPatternAnalysis::test_active_pattern_detection
+FAILED tests/unit/test_summarizer.py::TestCommitPatternAnalysis::test_stale_pattern_detection
+FAILED tests/unit/test_summarizer.py::TestCommitPatternAnalysis::test_sporadic_pattern_detection
+FAILED tests/unit/test_summarizer.py::TestErrorHandling::test_missing_api_key
+FAILED tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_overview_structure
+FAILED tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_overview_with_effects
+FAILED tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_heatmap_structure
+FAILED tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_languages_structure
+FAILED tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_fun_stats_structure
+FAILED tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_release_cadence_structure
+FAILED tests/unit/test_visualizer.py::TestSVGGeneration::test_generate_streaks_structure
+FAILED tests/unit/test_visualizer.py::TestThemeApplication::test_light_theme_colors
+FAILED tests/unit/test_visualizer.py::TestCommitMessageSanitization::test_sanitize_special_characters
+FAILED tests/unit/test_visualizer.py::TestCommitMessageSanitization::test_truncate_long_text
+FAILED tests/unit/test_visualizer.py::TestEdgeCases::test_empty_languages - a...
+FAILED tests/unit/test_visualizer.py::TestEdgeCases::test_zero_commits_heatmap
+FAILED tests/unit/test_visualizer.py::TestEdgeCases::test_zero_streak - TypeE...
+FAILED tests/unit/test_visualizer.py::TestWCAGCompliance::test_dark_theme_contrast
+FAILED tests/unit/test_wcag.py::TestWCAGContrastLightTheme::test_accent_background_contrast
+FAILED tests/unit/test_wcag.py::TestWCAGContrastLightTheme::test_border_visibility
+FAILED tests/unit/test_wcag.py::TestCustomThemeValidation::test_validate_custom_theme_colors
+FAILED tests/unit/test_wcag.py::TestColorCombinations::test_spark_light_theme_all_combinations
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_npm_dependencies
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_python_dependencies
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_mixed_ecosystems
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_no_dependencies
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_analyze_malformed_file
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_outdated_summary
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_real_npm_package
+ERROR tests/integration/test_dependency_analysis.py::TestDependencyAnalysisIntegration::test_real_pypi_package
+ERROR tests/integration/test_summarizer_fallback.py::TestTier1_AISummary::test_ai_summary_success
+ERROR tests/integration/test_summarizer_fallback.py::TestTier1_AISummary::test_ai_summary_with_minimal_repo
+ERROR tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_on_api_failure
+ERROR tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_extracts_from_readme
+ERROR tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_includes_metadata
+ERROR tests/integration/test_summarizer_fallback.py::TestTier2_EnhancedTemplate::test_enhanced_template_with_partial_readme
+ERROR tests/integration/test_summarizer_fallback.py::TestTier3_BasicTemplate::test_basic_template_no_readme
+ERROR tests/integration/test_summarizer_fallback.py::TestTier3_BasicTemplate::test_basic_template_minimal_repo
+ERROR tests/integration/test_summarizer_fallback.py::TestTier3_BasicTemplate::test_basic_template_includes_commit_info
+ERROR tests/integration/test_summarizer_fallback.py::TestFallbackChain::test_fallback_chain_tier1_to_tier2
+ERROR tests/integration/test_summarizer_fallback.py::TestFallbackChain::test_fallback_chain_tier1_to_tier3
+ERROR tests/integration/test_summarizer_fallback.py::TestFallbackChain::test_fallback_chain_all_tiers_available
+ERROR tests/integration/test_summarizer_fallback.py::TestConsistency::test_same_input_same_output
+ERROR tests/integration/test_summarizer_fallback.py::TestConsistency::test_different_repos_different_summaries
+ERROR tests/integration/test_summarizer_fallback.py::TestPerformance::test_fallback_faster_than_ai
+ERROR tests/unit/test_summarizer.py::TestAIIntegration::test_successful_ai_summary
+ERROR tests/unit/test_summarizer.py::TestAIIntegration::test_ai_api_error_fallback
+ERROR tests/unit/test_summarizer.py::TestAIIntegration::test_retry_logic - Ty...
+ERROR tests/unit/test_summarizer.py::TestPromptEngineering::test_prompt_includes_repo_metadata
+ERROR tests/unit/test_summarizer.py::TestPromptEngineering::test_prompt_includes_commit_analysis
+ERROR tests/unit/test_summarizer.py::TestFallbackStrategies::test_enhanced_template_with_readme
+ERROR tests/unit/test_summarizer.py::TestFallbackStrategies::test_basic_template_without_readme
+ERROR tests/unit/test_summarizer.py::TestFallbackStrategies::test_no_readme_fallback_scenario
+ERROR tests/unit/test_summarizer.py::TestFallbackStrategies::test_no_readme_with_ai_available
+ERROR tests/unit/test_summarizer.py::TestCostTracking::test_token_usage_logging
+ERROR tests/unit/test_summarizer.py::TestCostTracking::test_cost_calculation
+ERROR tests/unit/test_summarizer.py::TestErrorHandling::test_empty_readme - T...
+ERROR tests/unit/test_summarizer.py::TestErrorHandling::test_malformed_readme
+ERROR tests/unit/test_summarizer.py::TestErrorHandling::test_api_timeout_fallback
+ERROR tests/unit/test_summarizer.py::TestSummaryQuality::test_summary_mentions_key_features
+ERROR tests/unit/test_summarizer.py::TestSummaryQuality::test_template_summary_structure
+=========== 66 failed, 134 passed, 16 warnings, 39 errors in 16.14s ===========

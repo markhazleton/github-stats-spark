@@ -3,7 +3,6 @@
 import pytest
 import tempfile
 import shutil
-from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from spark.cache import APICache
@@ -34,31 +33,6 @@ class TestAPICache:
 
         result = cache.get("nonexistent", "owner")
         assert result is None
-
-    def test_cache_expiration(self, temp_cache_dir):
-        """Test cache expiration based on TTL."""
-        # We need to mock config or rely on default
-        # Default TTL is 168 hours.
-        cache = APICache(cache_dir=temp_cache_dir)
-        
-        # Test is_expired method directly
-        old_timestamp = datetime.now(timezone.utc) - timedelta(hours=200)
-        assert cache.is_expired("test_cat", old_timestamp) is True
-
-        recent_timestamp = datetime.now(timezone.utc)
-        assert cache.is_expired("test_cat", recent_timestamp) is False
-
-    def test_cache_ttl_bypass_with_metadata(self, temp_cache_dir):
-        """Ensure metadata can disable TTL enforcement for repository caches."""
-        cache = APICache(cache_dir=temp_cache_dir)
-        
-        old_timestamp = datetime.now(timezone.utc) - timedelta(hours=200)
-        
-        # Should be expired
-        assert cache.is_expired("test_cat", old_timestamp) is True
-        
-        # Should not be expired with metadata
-        assert cache.is_expired("test_cat", old_timestamp, metadata={"ttl_enforced": False}) is False
 
     def test_cache_clear(self, temp_cache_dir):
         """Test clearing all cached values."""
