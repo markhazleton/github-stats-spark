@@ -512,41 +512,6 @@ Be informative and technical. Focus on giving readers a clear understanding of t
         cost = (input_tokens * 0.25 / 1_000_000) + (output_tokens * 1.25 / 1_000_000)
         self.total_cost += cost
 
-    def _create_cache_key(self, repo_name: str, readme_content: str, updated_at: datetime) -> str:
-        """Create a unique cache key for AI summaries.
-
-        The cache key is based on:
-        - Repository name
-        - README content hash (to detect changes)
-        - Last commit date WEEK (NOT day, to reduce churn while staying reasonably fresh)
-
-        This ensures AI summaries are only regenerated when:
-        1. A new week starts AND there were commits (last_commit_date week changes)
-        2. README content changes (hash changes)
-
-        This balances freshness with cache efficiency - weekly granularity instead of daily.
-
-        Args:
-            repo_name: Repository name
-            readme_content: README content
-            updated_at: Last commit datetime (or repo updated_at as fallback)
-
-        Returns:
-            Cache key string
-        """
-        # Create hash of README content (first 1000 chars for efficiency)
-        readme_hash = hashlib.md5(readme_content[:1000].encode()).hexdigest()[:12]
-
-        # Format: ai_summary_{repo}_{readme_hash}_{year_week}
-        # Using ISO week number to reduce cache churn (weekly granularity)
-        if updated_at:
-            # ISO week format: 2026W01 for week 1 of 2026
-            year_week = updated_at.strftime("%YW%V")
-        else:
-            year_week = "unknown"
-        
-        return f"ai_summary_{repo_name}_{readme_hash}_{year_week}"
-
     def _build_cache_metadata(
         self,
         repo_name: str,

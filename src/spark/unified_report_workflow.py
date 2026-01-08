@@ -457,6 +457,7 @@ class UnifiedReportWorkflow:
                     language_stats=language_stats,
                     tech_stack=tech_stack,
                     repository_owner=username,
+                    repo_pushed_at=repo.pushed_at,
                 )
 
                 analysis = RepositoryAnalysis(

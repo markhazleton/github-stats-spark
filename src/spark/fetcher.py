@@ -7,7 +7,6 @@ from datetime import datetime
 
 from github import Github, GithubException, RateLimitExceededException
 from github.Repository import Repository
-from github.NamedUser import NamedUser
 
 from spark.cache import APICache
 from spark.cache_status import CacheStatusTracker

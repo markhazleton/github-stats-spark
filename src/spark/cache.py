@@ -261,9 +261,10 @@ class APICache:
     def set(self, category: str, owner: str, value: Any, repo: Optional[str] = None, week: Optional[str] = None, metadata: Optional[Dict[str, Any]] = None) -> None:
         """Store a value in the cache."""
         if week is None:
-            # Default to current week if not provided
-            week = datetime.now(timezone.utc).strftime("%YW%V")
-
+            # This fallback should NEVER be used - all callers must provide a week parameter
+            # Using repo_pushed_at as the cache key, not time-based weekly keys
+            raise ValueError("week parameter is required - cache keys must be based on repo_pushed_at, not time-based")
+            
         key = self._get_key_path(category, owner, repo)
         cache_path = self._get_fs_path(category, owner, repo, week)
         

@@ -720,6 +720,7 @@ def handle_dated_analyze(args, logger):
                     readme_content,
                     commit_histories.get(repo.name),
                     repository_owner=args.user,
+                    repo_pushed_at=repo.pushed_at,
                 )
 
                 # Analyze dependencies (T085: Technology stack section with currency indicators)
