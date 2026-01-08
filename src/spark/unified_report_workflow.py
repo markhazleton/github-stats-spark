@@ -81,12 +81,7 @@ class UnifiedReportWorkflow:
         # Store max_repos limit
         self.max_repos = max_repos
         if max_repos is not None:
-            self.logger.info(f"⚠️  Testing mode: Limited to {max_repos} repositories for SVG/report generation")
-        
-        # Store max_repos limit
-        self.max_repos = max_repos
-        if max_repos is not None:
-            self.logger.info(f"⚠️  Testing mode: Limited to {max_repos} repositories for SVG/report generation")
+            self.logger.info(f"WARNING: Testing mode: Limited to {max_repos} repositories for SVG/report generation")
 
     def execute(self, username: str) -> UnifiedReport:
         """Execute unified report workflow with partial failure handling.
@@ -192,7 +187,7 @@ class UnifiedReportWorkflow:
             commit_histories: Dict[str, CommitHistory] = {}
             for repo in repositories:
                 try:
-                    # Pass pushed_at for weekly cache invalidation
+                    # Pass pushed_at for change-based cache invalidation
                     commits_data = self.fetcher.fetch_commit_counts(
                         username, 
                         repo.name, 
@@ -402,7 +397,7 @@ class UnifiedReportWorkflow:
                     repo_pushed_at=repo.pushed_at
                 )
                 
-                # Fetch language statistics (with push date for weekly caching)
+                # Fetch language statistics (with push date for change-based caching)
                 language_stats = self.fetcher.fetch_languages(
                     username, 
                     repo.name,
@@ -417,7 +412,7 @@ class UnifiedReportWorkflow:
                 # Analyze dependencies and tech stack (before summary)
                 tech_stack = None
                 try:
-                    # Fetch dependency files from the repository (with push date for weekly caching)
+                    # Fetch dependency files from the repository (with push date for change-based caching)
                     dependency_files = self.fetcher.fetch_dependency_files(
                         username, 
                         repo.name, 

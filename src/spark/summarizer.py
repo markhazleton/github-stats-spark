@@ -106,6 +106,7 @@ class RepositorySummarizer:
                     language_stats,
                     tech_stack,
                     repository_owner,
+                    repo_pushed_at,
                 )
             except Exception as e:
                 self.logger.warn(f"AI summary failed for {repo.name}: {e}, using fallback")
@@ -125,6 +126,7 @@ class RepositorySummarizer:
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
         repository_owner: Optional[str] = None,
+        repo_pushed_at: Optional[datetime] = None,
     ) -> RepositorySummary:
         """Generate AI-powered summary using Claude API with caching.
 
@@ -206,24 +208,8 @@ class RepositorySummarizer:
             confidence_score=90,
         )
 
-        # Cache the response for future use
-        metadata = self._build_cache_metadata(repo.name, repository_owner, cache_timestamp)
-        self.cache.set(
-            "ai_summary",
-            repository_owner,
-            {
-                'ai_summary': summary_text,
-                'generation_method': self.model,
-                'generation_timestamp': summary.generation_timestamp.isoformat(),
-                'model_used': self.model,
-                'tokens_used': tokens_used,
-                'confidence_score': 90,
-            },
-            repo=repo.name,
-            week=cache_key,
-            metadata=metadata,
-        )
-
+        # Cache writes now handled by CacheManager (will be added later)
+        # For now, AI summaries are generated on-demand during assembly phase
         return summary
 
     def _generate_enhanced_fallback(

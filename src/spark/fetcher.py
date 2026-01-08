@@ -153,7 +153,7 @@ class GitHubFetcher:
                 "updated_at": user.updated_at.isoformat() if user.updated_at else None,
             }
 
-            self.cache.set("user_profile", username, profile_data)
+            # Cache writes now handled by CacheManager
             return profile_data
 
         except GithubException as e:
@@ -216,7 +216,7 @@ class GitHubFetcher:
                     "is_private": repo.private,
                 })
 
-            self.cache.set("repositories", username, repos, repo=variant)
+            # Cache writes now handled by CacheManager
             self.logger.info(f"Fetched {len(repos)} repositories")
             return repos
 
@@ -244,10 +244,13 @@ class GitHubFetcher:
         """
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
         push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
+        self.logger.debug(f"fetch_commits cache lookup: {username}/{repo_name} with key={push_key}")
         cached = self.cache.get("commits", username, repo=repo_name, week=push_key)
         if cached:
+            self.logger.debug(f"Cache HIT for commits: {username}/{repo_name}")
             return cached
 
+        self.logger.debug(f"Cache MISS for commits: {username}/{repo_name}, fetching from GitHub...")
         self.logger.debug(f"Fetching commits for {username}/{repo_name}")
 
         try:
@@ -267,8 +270,7 @@ class GitHubFetcher:
                 }
                 commits.append(commit_data)
 
-            metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "commits")
-            self.cache.set("commits", username, commits, repo=repo_name, week=push_key, metadata=metadata)
+            # Cache writes now handled by CacheManager
             return commits
 
         except GithubException as e:
@@ -407,8 +409,7 @@ class GitHubFetcher:
             repo = self.github.get_repo(f"{username}/{repo_name}")
             languages = repo.get_languages()
 
-            metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "languages")
-            self.cache.set("languages", username, languages, repo=repo_name, week=push_key, metadata=metadata)
+            # Cache writes now handled by CacheManager
             return languages
 
         except GithubException as e:
@@ -439,8 +440,7 @@ class GitHubFetcher:
             # Decode content from base64
             content = readme.decoded_content.decode('utf-8')
             
-            metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "readme")
-            self.cache.set("readme", username, content, repo=repo_name, week=push_key, metadata=metadata)
+            # Cache writes now handled by CacheManager
             return content
 
         except GithubException as e:
@@ -509,8 +509,7 @@ class GitHubFetcher:
                     self.logger.debug(f"Error fetching {filename} from {repo_name}: {e}")
                     continue
 
-            metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "dependency_files")
-            self.cache.set("dependency_files", username, dependency_files, repo=repo_name, week=push_key, metadata=metadata)
+            # Cache writes now handled by CacheManager
             return dependency_files
 
         except GithubException as e:
@@ -604,8 +603,7 @@ class GitHubFetcher:
                 "last_commit_date": last_commit_date.isoformat() if last_commit_date else None,
             }
 
-            metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "commit_counts")
-            self.cache.set("commit_counts", username, result, repo=repo_name, week=push_key, metadata=metadata)
+            # Cache writes now handled by CacheManager
             return result
 
         except (GithubException, IndexError, AttributeError) as e:

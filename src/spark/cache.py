@@ -261,9 +261,14 @@ class APICache:
     def set(self, category: str, owner: str, value: Any, repo: Optional[str] = None, week: Optional[str] = None, metadata: Optional[Dict[str, Any]] = None) -> None:
         """Store a value in the cache."""
         if week is None:
-            # This fallback should NEVER be used - all callers must provide a week parameter
-            # Using repo_pushed_at as the cache key, not time-based weekly keys
-            raise ValueError("week parameter is required - cache keys must be based on repo_pushed_at, not time-based")
+            # For user-level data (repositories list, user profile), use a simple default
+            # For repo-specific data, week should ALWAYS be provided based on repo_pushed_at
+            if repo and not repo.startswith("list_"):
+                # This is repo-specific data - week parameter is required
+                raise ValueError(f"week parameter is required for repo-specific data (category: {category}, repo: {repo}). Cache keys must be based on repo_pushed_at, not time-based.")
+            
+            # User-level data: use a simple cache key (refreshed when list changes)
+            week = "current"
             
         key = self._get_key_path(category, owner, repo)
         cache_path = self._get_fs_path(category, owner, repo, week)

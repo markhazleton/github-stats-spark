@@ -386,7 +386,7 @@ def handle_unified(args, logger):
         if generation_skipped:
             logger.info("")
             logger.info("=" * 70)
-            logger.info("⏭️  Skipping SVG and Report Generation")
+            logger.info(">> Skipping SVG and Report Generation")
             logger.info("=" * 70)
             logger.info("Data is fresh (< 1 week old) - no repositories updated")
             logger.info("SVG visualizations and reports are already up-to-date")
@@ -457,10 +457,10 @@ def handle_unified(args, logger):
         logger.info("=" * 70)
         logger.info("ALL-IN-ONE Generation Complete!")
         logger.info("=" * 70)
-        logger.info(f"📊 Unified Data: {data_output_path}")
+        logger.info(f"Unified Data: {data_output_path}")
         logger.info(f"SVG Files: output/*.svg")
         logger.info(f"Report: output/reports/{args.user}-analysis.md")
-        logger.info(f"⏱️  Total Time: {total_time:.1f}s")
+        logger.info(f"Total Time: {total_time:.1f}s")
         logger.info("")
         logger.info("All data gathered, LLM summaries generated (if enabled),")
         logger.info("and visualizations/reports created in a single optimized run!")
@@ -668,8 +668,8 @@ def handle_dated_analyze(args, logger):
                 # T096: Rate limit handling
                 error_msg = str(e)
                 if "rate limit" in error_msg.lower() or "403" in error_msg:
-                    logger.error(f"⚠️  GitHub API rate limit reached!")
-                    logger.info("💡 Actionable steps:")
+                    logger.error(f"WARNING: GitHub API rate limit reached!")
+                    logger.info("Actionable steps:")
                     logger.info("   1. Wait for rate limit to reset (check: https://api.github.com/rate_limit)")
                     logger.info("   2. Use a GitHub Personal Access Token for higher limits (5000/hour)")
                     logger.info("   3. Cached data will be used where available")
@@ -678,7 +678,7 @@ def handle_dated_analyze(args, logger):
                     break
                 else:
                     # T095: Error logging with actionable guidance
-                    logger.warn(f"❌ Failed to fetch {repo_name}: {error_msg}")
+                    logger.warn(f"FAILED to fetch {repo_name}: {error_msg}")
                     errors.append(f"Failed to fetch {repo_name}: {error_msg}")
                     continue
 
@@ -748,7 +748,7 @@ def handle_dated_analyze(args, logger):
                 # T094 & T095: Handle errors gracefully with actionable messages
                 error_msg = str(e)
                 if "rate limit" in error_msg.lower():
-                    logger.error(f"⚠️  Rate limit during summary generation for {repo.name}")
+                    logger.error(f"WARNING: Rate limit during summary generation for {repo.name}")
                     errors.append(f"Rate limit during summary for {repo.name}")
                     # Create analysis without summary for partial results
                     analysis = RepositoryAnalysis(
@@ -761,7 +761,7 @@ def handle_dated_analyze(args, logger):
                     )
                     repository_analyses.append(analysis)
                 else:
-                    logger.warn(f"❌ Failed to summarize {repo.name}: {error_msg}")
+                    logger.warn(f"FAILED to summarize {repo.name}: {error_msg}")
                     errors.append(f"Failed to summarize {repo.name}: {error_msg}")
 
         # Step 5: Generate user profile
@@ -812,9 +812,9 @@ def handle_dated_analyze(args, logger):
 
         # T095: Show errors with actionable guidance
         if len(errors) > 0:
-            logger.info("\n⚠️  Errors Summary:")
+            logger.info("\nErrors Summary:")
             for error in errors[:5]:  # Show first 5 errors
-                logger.info(f"   • {error}")
+                logger.info(f"  - {error}")
             if len(errors) > 5:
                 logger.info(f"   ... and {len(errors) - 5} more (see report for details)")
 
@@ -1128,14 +1128,14 @@ def handle_cache(args, logger):
             
             logger.info(f"Repositories updated in past 7 days: {recently_updated}")
             if recently_updated_with_outdated_cache > 0:
-                logger.info(f"  └─ Of those, {recently_updated_with_outdated_cache} have outdated cache (new commits since last fetch)")
+                logger.info(f"  - Of those, {recently_updated_with_outdated_cache} have outdated cache (new commits since last fetch)")
             
             # Display the list of recently updated repositories
             if recently_updated_repos:
                 logger.info("\nRecently updated repositories:")
                 for repo_info in recently_updated_repos:
-                    status_marker = "⚠️ OUTDATED" if repo_info['is_outdated'] else "✓ cached"
-                    logger.info(f"  • {repo_info['name']}")
+                    status_marker = "OUTDATED" if repo_info['is_outdated'] else "cached"
+                    logger.info(f"  - {repo_info['name']}")
                     logger.info(f"      Last update: {repo_info['pushed_at']}")
                     logger.info(f"      Cache date:  {repo_info['cache_date']} {status_marker}")
             
@@ -1192,12 +1192,12 @@ def handle_refresh(args, logger):
 
         logger.info("\n" + "=" * 80)
         logger.info("Refresh Summary:")
-        logger.info(f"  🔄 Refreshed: {result['refreshed']} repositories")
-        logger.info(f"  ✅ Unchanged: {result['unchanged']} repositories")
-        logger.info(f"  🗑️  Removed: {result['removed']} repositories")
+        logger.info(f"  Refreshed: {result['refreshed']} repositories")
+        logger.info(f"  Unchanged: {result['unchanged']} repositories")
+        logger.info(f"  Removed: {result['removed']} repositories")
 
         if result['refreshed'] > 0:
-            logger.info("\n💡 Tip: Run 'cd frontend && npm run build' to update the dashboard")
+            logger.info("\nTip: Run 'cd frontend && npm run build' to update the dashboard")
 
     except Exception as e:
         logger.error("Refresh command failed", e)

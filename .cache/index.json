@@ -1,11 +1,12 @@
 {
   "entries": {
     "markhazleton/list_True_False/repositories": {
-      "latest_week": "2026W02",
+      "latest_week": "current",
       "weeks": [
+        "current",
         "2026W02"
       ],
-      "updated_at": "2026-01-08T17:40:10.881180+00:00"
+      "updated_at": "2026-01-08T18:28:43.249365+00:00"
     },
     "markhazleton/_global_/user_profile": {
       "latest_week": "2026W02",
