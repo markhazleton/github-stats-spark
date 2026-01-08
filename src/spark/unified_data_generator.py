@@ -562,6 +562,7 @@ class UnifiedDataGenerator:
                             readme_content,
                             commit_history,
                             repository_owner=self.username,
+                            repo_pushed_at=github_repo.pushed_at,
                         )
                         summaries[repo_name] = summary
                         logger.debug("  AI summary generated")

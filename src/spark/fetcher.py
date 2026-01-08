@@ -18,19 +18,24 @@ def _sanitize_timestamp_for_filename(timestamp: Optional[datetime]) -> str:
     """Convert datetime to Windows-safe filename string.
     
     ISO format timestamps contain colons which are invalid in Windows filenames.
-    This converts timestamps like '2026-01-05T03:22:48+00:00' to '2026-01-05T03-22-48+00-00'.
+    Also normalizes timestamps by removing microseconds to ensure consistent cache keys.
+    This converts timestamps like '2026-01-05T03:22:48.123456+00:00' to '2026-01-05T03-22-48+00-00'.
     
     Args:
         timestamp: Datetime object to convert
         
     Returns:
-        Windows-safe timestamp string
+        Windows-safe timestamp string without microseconds
     """
     if not timestamp:
         return "unknown"
     
+    # Remove microseconds for consistent cache keys
+    # GitHub API sometimes returns timestamps with/without microseconds
+    timestamp_no_micro = timestamp.replace(microsecond=0)
+    
     # Convert to ISO format and replace colons with hyphens
-    iso_str = timestamp.isoformat()
+    iso_str = timestamp_no_micro.isoformat()
     # Replace all colons with hyphens to make Windows-compatible
     return iso_str.replace(':', '-')
 
@@ -537,7 +542,7 @@ class GitHubFetcher:
         """
         # Use pushed_at hash for cache key (change-based invalidation, not time-based)
         push_key = _sanitize_timestamp_for_filename(repo_pushed_at)
-        cached = self.cache.get("commits_stats", username, repo=repo_name, week=push_key)
+        cached = self.cache.get("commit_counts", username, repo=repo_name, week=push_key)
         if cached:
             return cached
 

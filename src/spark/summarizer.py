@@ -75,6 +75,7 @@ class RepositorySummarizer:
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
         repository_owner: Optional[str] = None,
+        repo_pushed_at: Optional[datetime] = None,
     ) -> RepositorySummary:
         """Generate summary for a repository.
 
@@ -145,25 +146,23 @@ class RepositorySummarizer:
             repo, truncated_readme, commit_history, language_stats, tech_stack
         )
 
-        # Create cache key from repository content
-        # Use last commit date if available (more stable than updated_at)
-        cache_date = commit_history.last_commit_date if commit_history and commit_history.last_commit_date else repo.updated_at
+        # Create cache key from repository push date (invalidate ONLY when repo changes)
+        # Import sanitization function from fetcher
+        from spark.fetcher import _sanitize_timestamp_for_filename
+        
+        # Use repo_pushed_at if available, fallback to last_commit_date or updated_at
+        cache_timestamp = repo_pushed_at or (commit_history.last_commit_date if commit_history and commit_history.last_commit_date else repo.updated_at)
         
         # Create hash of README content (first 1000 chars for efficiency)
         readme_hash = hashlib.md5(readme_content[:1000].encode()).hexdigest()[:12]
 
-        # Format: {year_week}_{readme_hash}
-        # Using ISO week number to reduce cache churn (weekly granularity)
-        if cache_date:
-            # ISO week format: 2026W01 for week 1 of 2026
-            year_week = cache_date.strftime("%YW%V")
-        else:
-            year_week = "unknown"
-            
-        week_key = f"{year_week}_{readme_hash}"
+        # Cache key: sanitized_timestamp + readme_hash
+        # This ensures cache invalidation ONLY when repository changes (new push)
+        timestamp_key = _sanitize_timestamp_for_filename(cache_timestamp)
+        cache_key = f"{timestamp_key}_{readme_hash}"
 
         # Check cache first (SAVES TOKENS!)
-        cached_summary = self.cache.get("ai_summary", repository_owner, repo=repo.name, week=week_key)
+        cached_summary = self.cache.get("ai_summary", repository_owner, repo=repo.name, week=cache_key)
         if cached_summary:
             self.cache_hits += 1
             self.logger.debug(f"Cache HIT for {repo.name} (saved ~{cached_summary.get('tokens_used', 0)} tokens)")
@@ -208,7 +207,7 @@ class RepositorySummarizer:
         )
 
         # Cache the response for future use
-        metadata = self._build_cache_metadata(repo.name, repository_owner, cache_date)
+        metadata = self._build_cache_metadata(repo.name, repository_owner, cache_timestamp)
         self.cache.set(
             "ai_summary",
             repository_owner,
@@ -221,7 +220,7 @@ class RepositorySummarizer:
                 'confidence_score': 90,
             },
             repo=repo.name,
-            week=week_key,
+            week=cache_key,
             metadata=metadata,
         )
 
