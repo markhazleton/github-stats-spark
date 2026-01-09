@@ -58,16 +58,16 @@ export function BottomSheet({
       }
     };
 
-    const sheetElement = sheetRef.current;
-    if (sheetElement) {
-      sheetElement.addEventListener("touchmove", preventRefresh, {
+    const contentElement = contentRef.current;
+    if (contentElement?.addEventListener) {
+      contentElement.addEventListener("touchmove", preventRefresh, {
         passive: false,
       });
     }
 
     return () => {
-      if (sheetElement) {
-        sheetElement.removeEventListener("touchmove", preventRefresh);
+      if (contentElement?.removeEventListener) {
+        contentElement.removeEventListener("touchmove", preventRefresh);
       }
     };
   }, [isOpen]);
@@ -76,12 +76,13 @@ export function BottomSheet({
    * Focus trap: Focus the sheet when it opens for keyboard accessibility
    */
   useEffect(() => {
-    if (isOpen && sheetRef.current) {
-      const focusableElements = sheetRef.current.querySelectorAll(
+    if (isOpen) {
+      const focusRoot = contentRef.current ?? sheetRef.current;
+      const focusableElements = focusRoot?.querySelectorAll?.(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
       );
 
-      if (focusableElements.length > 0) {
+      if (focusableElements?.length > 0) {
         // Focus the first focusable element
         focusableElements[0]?.focus();
       }
