@@ -107,7 +107,7 @@
         "commit_frequency": 18.67,
         "consistency_score": 0,
         "activity_rate": 0.622,
-        "days_since_last_commit": 10
+        "days_since_last_commit": 11
       },
       "rank": 3,
       "composite_score": 63.74
@@ -142,7 +142,7 @@
         "commit_frequency": 26.67,
         "consistency_score": 0,
         "activity_rate": 0.889,
-        "days_since_last_commit": 2
+        "days_since_last_commit": 3
       },
       "rank": 4,
       "composite_score": 62.51
@@ -210,7 +210,7 @@
         "commit_frequency": 8.0,
         "consistency_score": 0,
         "activity_rate": 0.267,
-        "days_since_last_commit": 3
+        "days_since_last_commit": 4
       },
       "rank": 6,
       "composite_score": 34.35
@@ -313,7 +313,7 @@
         "commit_frequency": 6.67,
         "consistency_score": 0,
         "activity_rate": 0.222,
-        "days_since_last_commit": 3
+        "days_since_last_commit": 4
       },
       "rank": 9,
       "composite_score": 32.45
@@ -519,10 +519,10 @@
         "commit_frequency": 3.33,
         "consistency_score": 0,
         "activity_rate": 0.111,
-        "days_since_last_commit": 3
+        "days_since_last_commit": 4
       },
       "rank": 15,
-      "composite_score": 26.67
+      "composite_score": 26.68
     },
     {
       "name": "SpotifyAPI-NET",
@@ -554,7 +554,7 @@
         "commit_frequency": 0.33,
         "consistency_score": 0,
         "activity_rate": 0.011,
-        "days_since_last_commit": 4
+        "days_since_last_commit": 5
       },
       "rank": 16,
       "composite_score": 25.0
@@ -588,7 +588,7 @@
         "commit_frequency": 4.33,
         "consistency_score": 0,
         "activity_rate": 0.144,
-        "days_since_last_commit": 31
+        "days_since_last_commit": 32
       },
       "rank": 17,
       "composite_score": 24.47
@@ -657,10 +657,10 @@
         "commit_frequency": 6.33,
         "consistency_score": 0,
         "activity_rate": 0.211,
-        "days_since_last_commit": 21
+        "days_since_last_commit": 22
       },
       "rank": 19,
-      "composite_score": 23.7
+      "composite_score": 23.71
     },
     {
       "name": "SolidSample",
@@ -866,10 +866,10 @@
         "commit_frequency": 6.0,
         "consistency_score": 0,
         "activity_rate": 0.2,
-        "days_since_last_commit": 12
+        "days_since_last_commit": 13
       },
       "rank": 25,
-      "composite_score": 20.58
+      "composite_score": 20.59
     },
     {
       "name": "WebProjectMechanics",
@@ -968,7 +968,7 @@
         "commit_frequency": 1.33,
         "consistency_score": 0,
         "activity_rate": 0.044,
-        "days_since_last_commit": 10
+        "days_since_last_commit": 11
       },
       "rank": 28,
       "composite_score": 19.28
@@ -1002,7 +1002,7 @@
         "commit_frequency": 4.67,
         "consistency_score": 0,
         "activity_rate": 0.156,
-        "days_since_last_commit": 35
+        "days_since_last_commit": 36
       },
       "rank": 29,
       "composite_score": 19.22
@@ -1042,41 +1042,6 @@
       "composite_score": 19.1
     },
     {
-      "name": "barcodelib",
-      "description": "C# Barcode Image Generation Library",
-      "url": "https://github.com/markhazleton/barcodelib",
-      "stars": 0,
-      "forks": 0,
-      "language": "JavaScript",
-      "languages": {},
-      "created_at": "2019-06-20T12:14:01+00:00",
-      "updated_at": "2025-12-09T02:43:06+00:00",
-      "pushed_at": "2025-12-09T02:43:01+00:00",
-      "total_commits": 281,
-      "recent_commits_90d": 1,
-      "first_commit_date": "2019-06-20T12:14:01+00:00",
-      "last_commit_date": "2025-12-09T02:42:56+00:00",
-      "commit_history": {
-        "repository_name": "barcodelib",
-        "total_commits": 281,
-        "recent_90d": 1,
-        "recent_180d": 1,
-        "recent_365d": 2,
-        "last_commit_date": "2025-12-09T02:42:56+00:00",
-        "patterns": [
-          "maintained",
-          "current",
-          "accelerating"
-        ],
-        "commit_frequency": 0.33,
-        "consistency_score": 0,
-        "activity_rate": 0.011,
-        "days_since_last_commit": 30
-      },
-      "rank": 31,
-      "composite_score": 18.83
-    },
-    {
       "name": "TeachSpark",
       "description": "LLM-Powered Educational Website",
       "url": "https://github.com/markhazleton/TeachSpark",
@@ -1104,9 +1069,9 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 189
+        "days_since_last_commit": 190
       },
-      "rank": 32,
+      "rank": 31,
       "composite_score": 17.51
     },
     {
@@ -1138,9 +1103,9 @@
         "commit_frequency": 3.67,
         "consistency_score": 0,
         "activity_rate": 0.122,
-        "days_since_last_commit": 31
+        "days_since_last_commit": 32
       },
-      "rank": 33,
+      "rank": 32,
       "composite_score": 17.31
     },
     {
@@ -1174,7 +1139,7 @@
         "activity_rate": 0.044,
         "days_since_last_commit": 66
       },
-      "rank": 34,
+      "rank": 33,
       "composite_score": 15.32
     },
     {
@@ -1208,7 +1173,7 @@
         "activity_rate": 0.0,
         "days_since_last_commit": 115
       },
-      "rank": 35,
+      "rank": 34,
       "composite_score": 15.04
     },
     {
@@ -1240,10 +1205,44 @@
         "commit_frequency": 1.33,
         "consistency_score": 0,
         "activity_rate": 0.044,
-        "days_since_last_commit": 37
+        "days_since_last_commit": 38
+      },
+      "rank": 35,
+      "composite_score": 14.77
+    },
+    {
+      "name": "barcodelib",
+      "description": "C# Barcode Image Generation Library",
+      "url": "https://github.com/markhazleton/barcodelib",
+      "stars": 0,
+      "forks": 0,
+      "language": "JavaScript",
+      "languages": {},
+      "created_at": "2019-06-20T12:14:01+00:00",
+      "updated_at": "2025-12-09T02:43:06+00:00",
+      "pushed_at": "2025-12-09T02:43:01+00:00",
+      "total_commits": 281,
+      "recent_commits_90d": 1,
+      "first_commit_date": "2019-06-20T12:14:01+00:00",
+      "last_commit_date": "2025-12-09T02:42:56+00:00",
+      "commit_history": {
+        "repository_name": "barcodelib",
+        "total_commits": 281,
+        "recent_90d": 1,
+        "recent_180d": 1,
+        "recent_365d": 2,
+        "last_commit_date": "2025-12-09T02:42:56+00:00",
+        "patterns": [
+          "maintained",
+          "accelerating"
+        ],
+        "commit_frequency": 0.33,
+        "consistency_score": 0,
+        "activity_rate": 0.011,
+        "days_since_last_commit": 31
       },
       "rank": 36,
-      "composite_score": 14.77
+      "composite_score": 14.33
     },
     {
       "name": "DataAnalysisDemo",
@@ -1274,7 +1273,7 @@
         "commit_frequency": 0.33,
         "consistency_score": 0,
         "activity_rate": 0.011,
-        "days_since_last_commit": 36
+        "days_since_last_commit": 37
       },
       "rank": 37,
       "composite_score": 13.79
@@ -1308,7 +1307,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 143
+        "days_since_last_commit": 144
       },
       "rank": 38,
       "composite_score": 9.31
@@ -1341,7 +1340,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 249
+        "days_since_last_commit": 250
       },
       "rank": 39,
       "composite_score": 0.0
@@ -1440,7 +1439,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 256
+        "days_since_last_commit": 257
       },
       "rank": 42,
       "composite_score": 0.0
@@ -1506,7 +1505,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 227
+        "days_since_last_commit": 228
       },
       "rank": 44,
       "composite_score": 0.0
@@ -1539,14 +1538,14 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 249
+        "days_since_last_commit": 250
       },
       "rank": 45,
       "composite_score": 0.0
     }
   ],
   "metadata": {
-    "generated_at": "2026-01-08T23:29:43.988018+00:00",
+    "generated_at": "2026-01-09T06:01:58.243581+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }
