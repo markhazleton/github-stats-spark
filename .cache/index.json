@@ -552,7 +552,7 @@
       "weeks": [
         "2025-12-28T21-59-38+00-00"
       ],
-      "updated_at": "2026-01-08T17:48:19.946756+00:00"
+      "updated_at": "2026-01-10T22:03:26.532780+00:00"
     },
     "markhazleton/markhazleton-blog/commits": {
       "latest_week": "2026-01-06T01-01-13+00-00",
@@ -998,9 +998,10 @@
     "markhazleton/WebSpark.HttpClientUtility/ai_summary": {
       "latest_week": "2026W02_0adcd245892e",
       "weeks": [
-        "2026W02_0adcd245892e"
+        "2026W02_0adcd245892e",
+        "2026-01-05T12-28-55+00-00"
       ],
-      "updated_at": "2026-01-08T17:44:24.240914+00:00"
+      "updated_at": "2026-01-10T22:05:22.469559+00:00"
     },
     "markhazleton/git-spark/readme": {
       "latest_week": "2025-12-29T02-22-25+00-00",
@@ -1061,9 +1062,10 @@
     "markhazleton/SampleMvcCRUD/ai_summary": {
       "latest_week": "2026W02_496ee81f6f59",
       "weeks": [
-        "2026W02_496ee81f6f59"
+        "2026W02_496ee81f6f59",
+        "2026-01-05T15-13-23+00-00"
       ],
-      "updated_at": "2026-01-08T17:44:57.888063+00:00"
+      "updated_at": "2026-01-10T22:04:06.272161+00:00"
     },
     "markhazleton/tailwind-demo/readme": {
       "latest_week": "2026-01-05T03-32-58+00-00",
@@ -1103,9 +1105,10 @@
     "markhazleton/RESTRunner/ai_summary": {
       "latest_week": "2025W52_d6bcd2658b91",
       "weeks": [
-        "2025W52_d6bcd2658b91"
+        "2025W52_d6bcd2658b91",
+        "2025-12-23T19-07-37+00-00"
       ],
-      "updated_at": "2026-01-08T17:45:19.330488+00:00"
+      "updated_at": "2026-01-10T22:03:59.517506+00:00"
     },
     "markhazleton/WebSpark/readme": {
       "latest_week": "2025-12-27T16-54-00+00-00",
@@ -1124,9 +1127,10 @@
     "markhazleton/WebSpark/ai_summary": {
       "latest_week": "2025W52_99ab994a2947",
       "weeks": [
-        "2025W52_99ab994a2947"
+        "2025W52_99ab994a2947",
+        "2025-12-27T16-54-00+00-00"
       ],
-      "updated_at": "2026-01-08T17:45:34.246886+00:00"
+      "updated_at": "2026-01-10T22:04:56.586982+00:00"
     },
     "markhazleton/js-dev-env/readme": {
       "latest_week": "2026-01-05T03-22-48+00-00",
@@ -1208,9 +1212,10 @@
     "markhazleton/WebSpark.ArtSpark/ai_summary": {
       "latest_week": "2025W52_7c9cd8d9178b",
       "weeks": [
-        "2025W52_7c9cd8d9178b"
+        "2025W52_7c9cd8d9178b",
+        "2025-12-28T16-59-15+00-00"
       ],
-      "updated_at": "2026-01-08T17:46:22.449914+00:00"
+      "updated_at": "2026-01-10T22:05:06.987145+00:00"
     },
     "markhazleton/MechanicsOfMotherhood/readme": {
       "latest_week": "2026-01-04T18-02-36+00-00",
@@ -1292,9 +1297,10 @@
     "markhazleton/SpotifyAPI-NET/ai_summary": {
       "latest_week": "2026W01_03845f4b1e5d",
       "weeks": [
-        "2026W01_03845f4b1e5d"
+        "2026W01_03845f4b1e5d",
+        "2026-01-03T23-42-55+00-00"
       ],
-      "updated_at": "2026-01-08T17:47:09.743167+00:00"
+      "updated_at": "2026-01-10T22:04:19.211486+00:00"
     },
     "markhazleton/KeyPressCounter/readme": {
       "latest_week": "2025-12-07T23-45-31+00-00",
@@ -1334,9 +1340,10 @@
     "markhazleton/FastEndpointApi/ai_summary": {
       "latest_week": "2025W46_ee90f96f0773",
       "weeks": [
-        "2025W46_ee90f96f0773"
+        "2025W46_ee90f96f0773",
+        "2025-11-16T23-08-34+00-00"
       ],
-      "updated_at": "2026-01-08T17:47:34.015455+00:00"
+      "updated_at": "2026-01-10T22:03:07.069152+00:00"
     },
     "markhazleton/ConcurrentProcessing/readme": {
       "latest_week": "2025-12-18T05-31-52+00-00",
@@ -1376,9 +1383,10 @@
     "markhazleton/SolidSample/ai_summary": {
       "latest_week": "2026W02_03fb65df52ca",
       "weeks": [
-        "2026W02_03fb65df52ca"
+        "2026W02_03fb65df52ca",
+        "2026-01-05T14-34-02+00-00"
       ],
-      "updated_at": "2026-01-08T17:47:57.361407+00:00"
+      "updated_at": "2026-01-10T22:04:12.372690+00:00"
     },
     "markhazleton/RazorPages/readme": {
       "latest_week": "2026-01-02T06-38-54+00-00",
@@ -1397,9 +1405,10 @@
     "markhazleton/RazorPages/ai_summary": {
       "latest_week": "2026W01_49a62fd6306a",
       "weeks": [
-        "2026W01_49a62fd6306a"
+        "2026W01_49a62fd6306a",
+        "2026-01-02T06-38-54+00-00"
       ],
-      "updated_at": "2026-01-08T17:48:08.255374+00:00"
+      "updated_at": "2026-01-10T22:03:52.526563+00:00"
     },
     "markhazleton/InquirySpark/readme": {
       "latest_week": "2025-12-23T00-22-00+00-00",
@@ -1418,9 +1427,10 @@
     "markhazleton/InquirySpark/ai_summary": {
       "latest_week": "2025W49_38fb6477b0db",
       "weeks": [
-        "2025W49_38fb6477b0db"
+        "2025W49_38fb6477b0db",
+        "2025-12-23T00-22-00+00-00"
       ],
-      "updated_at": "2026-01-08T17:48:18.427956+00:00"
+      "updated_at": "2026-01-10T22:03:25.573617+00:00"
     },
     "markhazleton/markhazleton/readme": {
       "latest_week": "2025-12-28T21-59-38+00-00",
@@ -1439,9 +1449,10 @@
     "markhazleton/markhazleton/ai_summary": {
       "latest_week": "2025W52_4d1be9483734",
       "weeks": [
-        "2025W52_4d1be9483734"
+        "2025W52_4d1be9483734",
+        "2025-12-28T21-59-38+00-00"
       ],
-      "updated_at": "2026-01-08T17:48:30.360158+00:00"
+      "updated_at": "2026-01-10T22:03:32.083274+00:00"
     },
     "markhazleton/WebSpark.PrismSpark/readme": {
       "latest_week": "2026-01-05T13-34-17+00-00",
@@ -1460,9 +1471,10 @@
     "markhazleton/WebSpark.PrismSpark/ai_summary": {
       "latest_week": "2026W02_435b68041ac4",
       "weeks": [
-        "2026W02_435b68041ac4"
+        "2026W02_435b68041ac4",
+        "2026-01-05T13-34-17+00-00"
       ],
-      "updated_at": "2026-01-08T17:48:42.845615+00:00"
+      "updated_at": "2026-01-10T22:05:28.995827+00:00"
     },
     "markhazleton/DecisionSpark/readme": {
       "latest_week": "2025-12-27T20-30-21+00-00",
@@ -1481,9 +1493,10 @@
     "markhazleton/DecisionSpark/ai_summary": {
       "latest_week": "2025W52_af6c86e2453d",
       "weeks": [
-        "2025W52_af6c86e2453d"
+        "2025W52_af6c86e2453d",
+        "2025-12-27T20-30-21+00-00"
       ],
-      "updated_at": "2026-01-08T17:48:59.698341+00:00"
+      "updated_at": "2026-01-10T22:02:53.943561+00:00"
     },
     "markhazleton/WebProjectMechanics/readme": {
       "latest_week": "2025-11-17T00-31-10+00-00",
@@ -1502,9 +1515,10 @@
     "markhazleton/WebProjectMechanics/ai_summary": {
       "latest_week": "2025W09_1f389042a08a",
       "weeks": [
-        "2025W09_1f389042a08a"
+        "2025W09_1f389042a08a",
+        "2025-11-17T00-31-10+00-00"
       ],
-      "updated_at": "2026-01-08T17:49:10.348371+00:00"
+      "updated_at": "2026-01-10T22:04:45.519223+00:00"
     },
     "markhazleton/DesignPatternsInCSharp/readme": {
       "latest_week": "2025-12-19T21-04-54+00-00",
@@ -1523,9 +1537,10 @@
     "markhazleton/DesignPatternsInCSharp/ai_summary": {
       "latest_week": "2025W43_baff46cd5dcf",
       "weeks": [
-        "2025W43_baff46cd5dcf"
+        "2025W43_baff46cd5dcf",
+        "2025-12-19T21-04-54+00-00"
       ],
-      "updated_at": "2026-01-08T17:49:21.706474+00:00"
+      "updated_at": "2026-01-10T22:02:59.376546+00:00"
     },
     "markhazleton/csharp-blazor-bug-tracking/readme": {
       "latest_week": "2025-12-29T00-58-34+00-00",
@@ -1544,9 +1559,10 @@
     "markhazleton/csharp-blazor-bug-tracking/ai_summary": {
       "latest_week": "2025W01_b888e0c483ea",
       "weeks": [
-        "2025W01_b888e0c483ea"
+        "2025W01_b888e0c483ea",
+        "2025-12-29T00-58-34+00-00"
       ],
-      "updated_at": "2026-01-08T17:49:31.998373+00:00"
+      "updated_at": "2026-01-10T22:02:42.272210+00:00"
     },
     "markhazleton/WebSpark.Bootswatch/readme": {
       "latest_week": "2025-12-04T03-15-14+00-00",
@@ -1565,9 +1581,10 @@
     "markhazleton/WebSpark.Bootswatch/ai_summary": {
       "latest_week": "2025W49_dbe03d7937c6",
       "weeks": [
-        "2025W49_dbe03d7937c6"
+        "2025W49_dbe03d7937c6",
+        "2025-12-04T03-15-14+00-00"
       ],
-      "updated_at": "2026-01-08T17:49:43.303570+00:00"
+      "updated_at": "2026-01-10T22:05:14.516537+00:00"
     },
     "markhazleton/AsyncDemo/readme": {
       "latest_week": "2025-12-04T11-54-36+00-00",
@@ -1586,9 +1603,10 @@
     "markhazleton/AsyncDemo/ai_summary": {
       "latest_week": "2025W49_676f5070384e",
       "weeks": [
-        "2025W49_676f5070384e"
+        "2025W49_676f5070384e",
+        "2025-12-04T11-54-36+00-00"
       ],
-      "updated_at": "2026-01-08T17:49:54.057421+00:00"
+      "updated_at": "2026-01-10T22:02:30.465706+00:00"
     },
     "markhazleton/barcodelib/readme": {
       "latest_week": "2025-12-09T02-43-01+00-00",
@@ -1607,9 +1625,10 @@
     "markhazleton/barcodelib/ai_summary": {
       "latest_week": "2025W50_e98e3987fbe9",
       "weeks": [
-        "2025W50_e98e3987fbe9"
+        "2025W50_e98e3987fbe9",
+        "2025-12-09T02-43-01+00-00"
       ],
-      "updated_at": "2026-01-08T17:50:03.930484+00:00"
+      "updated_at": "2026-01-10T22:02:36.540809+00:00"
     },
     "markhazleton/TeachSpark/readme": {
       "latest_week": "2026-01-01T18-14-14+00-00",
@@ -1649,9 +1668,10 @@
     "markhazleton/TaskListProcessor/ai_summary": {
       "latest_week": "2025W50_518fc3e0b8dd",
       "weeks": [
-        "2025W50_518fc3e0b8dd"
+        "2025W50_518fc3e0b8dd",
+        "2025-12-08T00-03-40+00-00"
       ],
-      "updated_at": "2026-01-08T17:50:27.861934+00:00"
+      "updated_at": "2026-01-10T22:04:33.763794+00:00"
     },
     "markhazleton/markhazleton.github.io/readme": {
       "latest_week": "2025-11-03T13-22-36+00-00",
@@ -1691,9 +1711,10 @@
     "markhazleton/sql2csv/ai_summary": {
       "latest_week": "2025W38_2f19d94e38b7",
       "weeks": [
-        "2025W38_2f19d94e38b7"
+        "2025W38_2f19d94e38b7",
+        "2025-11-19T02-09-52+00-00"
       ],
-      "updated_at": "2026-01-08T17:50:50.486405+00:00"
+      "updated_at": "2026-01-10T22:04:25.858961+00:00"
     },
     "markhazleton/TriviaSpark/readme": {
       "latest_week": "2025-12-02T04-08-09+00-00",
@@ -1712,9 +1733,10 @@
     "markhazleton/TriviaSpark/ai_summary": {
       "latest_week": "2025W49_5d8a58ab9ac7",
       "weeks": [
-        "2025W49_5d8a58ab9ac7"
+        "2025W49_5d8a58ab9ac7",
+        "2025-12-02T04-08-09+00-00"
       ],
-      "updated_at": "2026-01-08T17:51:01.481359+00:00"
+      "updated_at": "2026-01-10T22:04:39.914432+00:00"
     },
     "markhazleton/DataAnalysisDemo/readme": {
       "latest_week": "2025-12-03T01-16-04+00-00",
@@ -1775,9 +1797,10 @@
     "markhazleton/google-maps/ai_summary": {
       "latest_week": "2025W18_7ca7d3821dc6",
       "weeks": [
-        "2025W18_7ca7d3821dc6"
+        "2025W18_7ca7d3821dc6",
+        "2025-05-04T02-20-05+00-00"
       ],
-      "updated_at": "2026-01-08T17:51:39.009774+00:00"
+      "updated_at": "2026-01-10T22:03:13.175502+00:00"
     },
     "markhazleton/HttpClientDecoratorPattern/readme": {
       "latest_week": "2025-05-08T21-21-55+00-00",
@@ -1796,9 +1819,10 @@
     "markhazleton/HttpClientDecoratorPattern/ai_summary": {
       "latest_week": "2025W19_737c43c1c999",
       "weeks": [
-        "2025W19_737c43c1c999"
+        "2025W19_737c43c1c999",
+        "2025-05-08T21-21-55+00-00"
       ],
-      "updated_at": "2026-01-08T17:51:49.230462+00:00"
+      "updated_at": "2026-01-10T22:03:19.731698+00:00"
     },
     "markhazleton/openai-dotnet/readme": {
       "latest_week": "2025-03-12T16-28-17+00-00",
@@ -1817,9 +1841,10 @@
     "markhazleton/openai-dotnet/ai_summary": {
       "latest_week": "2025W11_123ae5b236fd",
       "weeks": [
-        "2025W11_123ae5b236fd"
+        "2025W11_123ae5b236fd",
+        "2025-03-12T16-28-17+00-00"
       ],
-      "updated_at": "2026-01-08T17:52:01.716015+00:00"
+      "updated_at": "2026-01-10T22:03:39.969218+00:00"
     },
     "markhazleton/PromptSpark.Chat/readme": {
       "latest_week": "2025-04-27T04-54-17+00-00",
@@ -1838,9 +1863,10 @@
     "markhazleton/PromptSpark.Chat/ai_summary": {
       "latest_week": "2025W17_fb081740060d",
       "weeks": [
-        "2025W17_fb081740060d"
+        "2025W17_fb081740060d",
+        "2025-04-27T04-54-17+00-00"
       ],
-      "updated_at": "2026-01-08T17:52:12.321616+00:00"
+      "updated_at": "2026-01-10T22:03:45.940719+00:00"
     },
     "markhazleton/startbootstrap-modern-business/readme": {
       "latest_week": "2025-05-13T23-08-19+00-00",
@@ -1880,9 +1906,10 @@
     "markhazleton/WebSpark.SharedKernel/ai_summary": {
       "latest_week": "2025W22_8dc4d9dd2e5a",
       "weeks": [
-        "2025W22_8dc4d9dd2e5a"
+        "2025W22_8dc4d9dd2e5a",
+        "2025-05-26T04-15-01+00-00"
       ],
-      "updated_at": "2026-01-08T17:52:33.470226+00:00"
+      "updated_at": "2026-01-10T22:05:36.087724+00:00"
     },
     "markhazleton/Yelp.Api/readme": {
       "latest_week": "2025-05-04T02-35-34+00-00",
@@ -1901,9 +1928,10 @@
     "markhazleton/Yelp.Api/ai_summary": {
       "latest_week": "2025W18_af1d7c238d8e",
       "weeks": [
-        "2025W18_af1d7c238d8e"
+        "2025W18_af1d7c238d8e",
+        "2025-05-04T02-35-34+00-00"
       ],
-      "updated_at": "2026-01-08T17:52:44.962295+00:00"
+      "updated_at": "2026-01-10T22:05:43.222188+00:00"
     }
   }
 }

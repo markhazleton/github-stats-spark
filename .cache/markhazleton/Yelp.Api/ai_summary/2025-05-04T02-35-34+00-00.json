@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:05:43.220204+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nYelp.Api is a specialized C# class library that provides a robust, developer-friendly wrapper for the Yelp Fusion API (v3), enabling .NET developers to easily integrate Yelp's extensive business search and review data into their applications. The library supports comprehensive business search capabilities, allowing developers to query local business information using flexible parameters such as geolocation, search terms, maximum results, and real-time availability status, with built-in async support for modern .NET 6 applications. Architecturally, the library follows a clean, intuitive client-based design where developers can instantiate a Yelp API client with an authentication key and perform various search operations through strongly-typed methods and request objects. Its primary value proposition lies in simplifying the complex process of interacting with Yelp's API by providing a high-level, strongly-typed abstraction that handles authentication, request formatting, and response parsing, making local business data retrieval straightforward for developers across different .NET project types. The library is particularly useful for applications requiring local business discovery, such as travel guides, restaurant recommendation systems, location-based services, and mapping or review aggregation platforms. While the repository shows minimal recent activity, it represents a practical, purpose-built solution for developers seeking to leverage Yelp's comprehensive business data within their .NET ecosystem.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:05:43.220134",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 888,
+    "confidence_score": 90
+  },
+  "hash": "701f31c7d8d1ef56def5accce6fc0e42e3513269e92eb2d7799eaba76628a588",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Yelp.Api"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-05-04T02:35:34+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "Yelp.Api",
+  "week": "2025-05-04T02-35-34+00-00"
+}

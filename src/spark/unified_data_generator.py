@@ -18,8 +18,10 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from spark.cache import APICache
+from spark.calculator import StatsCalculator
 from spark.cache_manager import CacheManager
 from spark.config import SparkConfig
+from spark.dependencies.analyzer import RepositoryDependencyAnalyzer
 from spark.fetcher import GitHubFetcher
 from spark.logger import get_logger
 from spark.models import (
@@ -27,7 +29,10 @@ from spark.models import (
     Repository,
     UserProfile,
 )
+from spark.models.tech_stack import TechnologyStack, DependencyInfo
 from spark.ranker import RepositoryRanker
+from spark.summarizer import RepositorySummarizer
+from spark.time_utils import sanitize_timestamp_for_filename
 
 # Initialize logger
 logger = get_logger(__name__)
@@ -68,13 +73,13 @@ class UnifiedDataGenerator:
         self.config = config
         self.output_dir = Path(output_dir)
         self.force_refresh = force_refresh
-        self.include_ai_summaries = include_ai_summaries
         
         # Get max_repositories from config or override
         dashboard_config = config.config.get("dashboard", {})
         data_gen_config = dashboard_config.get("data_generation", {})
         self.max_repositories = max_repos_override or data_gen_config.get("max_repositories", 50)
         self.top_n_repos = data_gen_config.get("top_n_repos", 50)
+        self.include_ai_summaries = include_ai_summaries or data_gen_config.get("include_ai_summaries", False)
         
         # Initialize components
         self.cache = cache if cache is not None else APICache()
@@ -153,6 +158,9 @@ class UnifiedDataGenerator:
         """
         repositories = []
         commit_histories = {}
+        repo_cache = {}
+        dependency_analyzer = RepositoryDependencyAnalyzer()
+        summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False)
         
         for i, repo_data in enumerate(raw_repos[:self.max_repositories], 1):
             repo_name = repo_data["name"]
@@ -168,6 +176,8 @@ class UnifiedDataGenerator:
                 else:
                     pushed_at = None
                 
+                cache_key = sanitize_timestamp_for_filename(pushed_at) if pushed_at else None
+
                 # Read commit counts from cache
                 commit_data = self.fetcher.fetch_commit_counts(
                     self.username,
@@ -195,13 +205,43 @@ class UnifiedDataGenerator:
                     repo_name,
                     repo_pushed_at=pushed_at
                 ) or {}
-                
+
+                # Read cached AI summary, README, dependency files, and commit stats
+                readme_content = ""
+                dependency_files = {}
+                commit_stats = None
+                cached_summary = None
+
+                if cache_key:
+                    readme_content = self.cache.get(
+                        "readme", self.username, repo=repo_name, week=cache_key
+                    ) or ""
+                    dependency_files = self.cache.get(
+                        "dependency_files", self.username, repo=repo_name, week=cache_key
+                    ) or {}
+                    commit_stats = self.cache.get(
+                        "commits_stats", self.username, repo=repo_name, week=cache_key
+                    )
+                    cached_summary = self.cache.get(
+                        "ai_summary", self.username, repo=repo_name, week=cache_key
+                    )
+
+                if cached_summary is None:
+                    cached_summary = self.cache.get("ai_summary", self.username, repo=repo_name)
+
                 # Create Repository object
                 repo_data["language_stats"] = language_stats
                 repo_data["language_count"] = len(language_stats)
                 repo = Repository.from_dict(repo_data)
+                repo.has_readme = bool(readme_content)
                 repositories.append(repo)
-                
+                repo_cache[repo_name] = {
+                    "readme_content": readme_content,
+                    "dependency_files": dependency_files,
+                    "commit_stats": commit_stats,
+                    "cached_summary": cached_summary,
+                }
+
             except Exception as e:
                 logger.warn(f"Failed to assemble {repo_name}: {e}")
                 continue
@@ -214,14 +254,119 @@ class UnifiedDataGenerator:
         unified_repos = []
         for rank, (repo, score) in enumerate(ranked_repos, 1):
             commit_history = commit_histories.get(repo.name)
-            
+            repo_extras = repo_cache.get(repo.name, {})
+            readme_content = repo_extras.get("readme_content", "")
+            dependency_files = repo_extras.get("dependency_files", {})
+            commit_stats = repo_extras.get("commit_stats")
+            cached_summary = repo_extras.get("cached_summary")
+            commit_history_dict = commit_history.to_dict() if commit_history else None
+            commit_metrics = None
+            avg_commit_size = None
+            largest_commit = None
+            smallest_commit = None
+            first_commit_date = repo.created_at
+
+            if commit_stats:
+                metrics = StatsCalculator.calculate_repository_commit_metrics(commit_stats)
+                commit_metrics = {
+                    "avg_size": metrics.get("avg_commit_size", 0.0),
+                    "largest_commit": metrics.get("largest_commit"),
+                    "smallest_commit": metrics.get("smallest_commit"),
+                    "total_commits": metrics.get("total_commits", 0),
+                    "commit_size_distribution": metrics.get("commit_size_distribution"),
+                }
+                avg_commit_size = commit_metrics["avg_size"]
+                largest_commit = commit_metrics["largest_commit"]
+                smallest_commit = commit_metrics["smallest_commit"]
+
+                commit_dates = []
+                for commit in commit_stats:
+                    date_str = commit.get("commit", {}).get("author", {}).get("date")
+                    if not date_str:
+                        continue
+                    try:
+                        commit_dates.append(datetime.fromisoformat(date_str.replace("Z", "+00:00")))
+                    except ValueError:
+                        continue
+                if commit_dates:
+                    first_commit_date = min(commit_dates)
+
+            if commit_history_dict is not None:
+                commit_history_dict["first_commit_date"] = (
+                    first_commit_date.isoformat() if first_commit_date else None
+                )
+
+            tech_stack = None
+            if dependency_files:
+                dep_report = dependency_analyzer.analyze_repository(dependency_files)
+                if dep_report.total_dependencies > 0:
+                    tech_stack = TechnologyStack(
+                        repository_name=repo.name,
+                        dependencies=[
+                            DependencyInfo(
+                                name=detail.name,
+                                current_version=detail.current_version,
+                                ecosystem=detail.ecosystem,
+                            )
+                            for detail in dep_report.details
+                        ],
+                        dependency_file_type=next(iter(dependency_files.keys()), None),
+                        languages=repo.language_stats or {},
+                    )
+
+            summary_payload = None
+            if cached_summary and cached_summary.get("ai_summary"):
+                summary_payload = {
+                    "text": cached_summary.get("ai_summary"),
+                    "ai_generated": True,
+                    "generation_method": cached_summary.get("generation_method"),
+                    "generated_at": cached_summary.get("generation_timestamp"),
+                    "model_used": cached_summary.get("model_used"),
+                    "tokens_used": cached_summary.get("tokens_used"),
+                    "confidence_score": cached_summary.get("confidence_score"),
+                }
+            else:
+                fallback_summary = summarizer.summarize_repository(
+                    repo=repo,
+                    readme_content=readme_content or None,
+                    commit_history=commit_history,
+                    language_stats=repo.language_stats,
+                    tech_stack=tech_stack,
+                    repository_owner=self.username,
+                    repo_pushed_at=repo.pushed_at,
+                    write_cache=False,
+                    allow_ai=False,
+                )
+                summary_payload = {
+                    "text": fallback_summary.summary,
+                    "ai_generated": fallback_summary.is_ai_generated,
+                    "generation_method": fallback_summary.generation_method,
+                    "generated_at": (
+                        fallback_summary.generation_timestamp.isoformat()
+                        if fallback_summary.generation_timestamp
+                        else None
+                    ),
+                    "model_used": fallback_summary.model_used,
+                    "tokens_used": fallback_summary.tokens_used,
+                    "confidence_score": fallback_summary.confidence_score,
+                }
+
+            ai_summary_text = (
+                summary_payload.get("text")
+                if summary_payload and summary_payload.get("ai_generated")
+                else None
+            )
+
             repo_dict = {
                 "name": repo.name,
                 "description": repo.description,
+                "summary": summary_payload,
                 "url": repo.url,
                 "stars": repo.stars,
                 "forks": repo.forks,
+                "watchers": repo.watchers,
                 "language": repo.primary_language,
+                "language_stats": repo.language_stats,
                 "languages": repo.language_stats,
                 "created_at": repo.created_at.isoformat() if repo.created_at else None,
                 "updated_at": repo.updated_at.isoformat() if repo.updated_at else None,
@@ -229,14 +374,28 @@ class UnifiedDataGenerator:
                 "total_commits": commit_history.total_commits if commit_history else 0,
                 "recent_commits_90d": commit_history.recent_90d if commit_history else 0,
                 "first_commit_date": (
-                    repo.created_at.isoformat() if repo.created_at else None
+                    first_commit_date.isoformat() if first_commit_date else None
                 ),
                 "last_commit_date": (
                     commit_history.last_commit_date.isoformat()
                     if commit_history and commit_history.last_commit_date
                     else (repo.pushed_at.isoformat() if repo.pushed_at else None)
                 ),
-                "commit_history": commit_history.to_dict() if commit_history else None,
+                "commit_history": commit_history_dict,
+                "commit_metrics": commit_metrics,
+                "avg_commit_size": avg_commit_size,
+                "largest_commit": largest_commit,
+                "smallest_commit": smallest_commit,
+                "commit_velocity": commit_history.commit_frequency if commit_history else None,
+                "tech_stack": tech_stack.to_dict() if tech_stack else None,
+                "has_readme": repo.has_readme,
+                "language_count": repo.language_count,
+                "size_kb": repo.size_kb,
+                "is_fork": repo.is_fork,
+                "is_private": repo.is_private,
+                "age_days": repo.age_days,
+                "days_since_last_push": repo.days_since_last_push,
+                "ai_summary": ai_summary_text,
                 "rank": rank,
                 "composite_score": score,
             }

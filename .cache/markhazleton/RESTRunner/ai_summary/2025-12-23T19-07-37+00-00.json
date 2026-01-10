@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:03:59.515830+00:00",
+  "value": {
+    "ai_summary": "RESTRunner is a comprehensive .NET 10 solution designed for automated REST API testing, performance benchmarking, and regression testing, with a primary focus on integrating Postman collections for comprehensive API validation. The project offers a robust toolkit that enables developers and QA engineers to perform detailed API tests, including load testing, performance analysis, and generating comprehensive statistical reports through both a console application and a Razor Pages web interface. Built using modern .NET technologies, the solution supports cross-platform execution and emphasizes performance optimization, with features like 19% faster builds, 25% faster test execution, and a focus on package health and security. Key technical capabilities include Postman collection import, automated test suite execution, response time analysis, CSV result export, and a built-in sample CRUD API for demonstration and testing purposes. What makes RESTRunner particularly noteworthy is its commitment to long-term support (.NET 10 LTS), comprehensive testing infrastructure, and a user-friendly approach to API testing that bridges the gap between manual Postman collections and automated, scalable testing frameworks. The project is particularly valuable for software development teams seeking a robust, performance-oriented solution for API quality assurance and performance monitoring.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:03:59.515755",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2249,
+    "confidence_score": 90
+  },
+  "hash": "4bba9ec291b0f1390ec6f0f124d1f98a2ef045172b86031f6cac3d35916c235c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RESTRunner"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-23T19:07:37+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "RESTRunner",
+  "week": "2025-12-23T19-07-37+00-00"
+}

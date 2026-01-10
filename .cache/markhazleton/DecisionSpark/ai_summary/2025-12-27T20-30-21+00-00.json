@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:02:53.941956+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the DecisionSpark repository:\n\nDecisionSpark is an innovative .NET 10 web application that implements a dynamic, conversation-driven decision routing engine designed to guide users through intelligent decision-making processes using minimal, contextually-aware questioning. The system leverages a flexible, config-driven architecture that combines RESTful APIs, Razor Pages web interface, and OpenAI integration to generate intelligent recommendations across various domains by evaluating user responses against configurable rule sets.\n\nThe application's core architecture is modular and service-oriented, featuring key components like a Session Store, Routing Evaluator, Trait Parser, and OpenAI-powered Question Generator that work together to create adaptive, context-sensitive decision workflows. It supports multiple question types (text input, single-select, multi-select) and uses JSON-based configuration files to define decision specifications, allowing users to create complex decision trees without modifying code. The system's unique approach involves dynamically generating questions, parsing user responses, and applying intelligent routing logic to recommend optimal outcomes.\n\nTechnically, the project is built on .NET 10 with a comprehensive technology stack including Razor Pages for the web interface, Swagger/OpenAPI for API documentation, Serilog for structured logging, and optional OpenAI integration for natural language processing. The architecture supports session management, file-based conversation persistence, and a pluggable design that allows easy extension and configuration of decision scenarios.\n\nKey distinguishing features include its conversation-driven API, intelligent question generation, rule-based evaluation with derived traits, and the ability to create complex decision workflows through simple JSON configuration. The system is particularly well-suited for scenarios requiring guided decision-making, such as recommendation engines, interactive planning tools, or adaptive questionnaires across various domains.\n\nWhile currently demonstrated with example use cases like a \"Family Saturday Planner\" and \"Tech Stack Advisor\", the framework is designed to be highly generic and adaptable, enabling developers and domain experts to quickly create sophisticated, intelligent decision support systems with minimal technical overhead.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:02:53.941900",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2931,
+    "confidence_score": 90
+  },
+  "hash": "677c5f4f1333a759f5295f58b695595f27c97640c4aa0a32e74a249a8e96e093",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "DecisionSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-27T20:30:21+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "DecisionSpark",
+  "week": "2025-12-27T20-30-21+00-00"
+}

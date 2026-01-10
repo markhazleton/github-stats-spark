@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:03:45.939050+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nPromptSpark.Chat is an interactive, real-time workflow management application built with ASP.NET Core and SignalR that enables users to navigate multi-step conversational processes through an adaptive, dynamic chat interface. The application leverages Adaptive Cards for interactive UI elements, a concurrent server-side state management system, and optional AI integration to guide users through structured workflows with branching logic and persistent conversation tracking. Key technical features include real-time communication via SignalR, server-side workflow state preservation using Concurrent Dictionary, and a flexible architecture that supports dynamic workflow definition through JSON configuration files. The platform is designed to handle complex, interactive conversational scenarios by providing a lightweight, extensible framework for creating guided user experiences across various domains such as customer support, onboarding, or interactive questionnaires. What distinguishes PromptSpark.Chat is its ability to combine structured workflow management with real-time interactivity, making it particularly useful for scenarios requiring guided, context-aware user interactions with minimal backend complexity.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:03:45.938993",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2140,
+    "confidence_score": 90
+  },
+  "hash": "7114b4d3941df8e8311518e96e7f41c139e90e2b680cf13a2c565b0387efb977",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-04-27T04:54:17+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2025-04-27T04-54-17+00-00"
+}

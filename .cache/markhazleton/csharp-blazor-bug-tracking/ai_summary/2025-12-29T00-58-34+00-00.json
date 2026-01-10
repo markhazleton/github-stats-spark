@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:02:42.270550+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nThis is an ASP.NET Core 6 MVC web application designed as an administrative product management system for a fictional company called Carved Rock, providing comprehensive CRUD functionality for managing products and categories. The application leverages modern .NET technologies including Entity Framework Core with SQLite databases, ASP.NET Identity for authentication, and implements robust architectural patterns such as dependency injection and repository logic to enhance testability and maintainability. Key technical features include user registration, product and category management with complex validation using FluentValidation, and a responsive Bootstrap-styled user interface that demonstrates best practices in web application development. The project serves as an educational reference for developers learning ASP.NET Core MVC, showcasing implementation of core web development concepts like data modeling, authentication, validation, and UI design. It's particularly valuable for developers seeking a practical, full-featured example of building enterprise-grade web applications using Microsoft's modern web development stack, with a focus on clean architecture and extensible design principles.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:02:42.270490",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1626,
+    "confidence_score": 90
+  },
+  "hash": "4408858f4b25fd273e3ab3eaa194b9acc5a99844d9cc7c2e9183a9dfba2b258e",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "csharp-blazor-bug-tracking"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-29T00:58:34+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "csharp-blazor-bug-tracking",
+  "week": "2025-12-29T00-58-34+00-00"
+}

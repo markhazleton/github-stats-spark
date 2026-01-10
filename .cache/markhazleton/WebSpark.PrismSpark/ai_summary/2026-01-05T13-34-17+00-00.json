@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:05:28.994195+00:00",
+  "value": {
+    "ai_summary": "WebSpark.PrismSpark is a sophisticated .NET-based syntax highlighting library inspired by PrismJS, designed to provide advanced code rendering and tokenization capabilities for multiple programming languages. The library offers a comprehensive suite of features including support for 20+ programming languages, a plugin system, theme generation, async processing, and extensible highlighting mechanisms with robust .NET 10.0 LTS compatibility. Architecturally, it implements a modular design with interfaces like `IHighlighter`, `IPlugin`, and `ITheme`, enabling developers to easily customize and extend syntax highlighting through dependency injection, hooks, and context-aware processing. The project distinguishes itself through its performance-oriented approach, supporting advanced options like line number rendering, context-based metadata, and dynamic theme generation, making it particularly valuable for web developers, documentation platforms, and code presentation frameworks targeting .NET ecosystems. By providing a type-safe, performant alternative to traditional syntax highlighting libraries, WebSpark.PrismSpark offers developers a powerful tool for rendering and styling code snippets across various .NET web frameworks like MVC, Razor, and potentially Blazor.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:05:28.994137",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1867,
+    "confidence_score": 90
+  },
+  "hash": "d4c4c96c4a80cdfa114d4e0bed2b4fa770c89dc2272e6b86f7b67efd9f71bf9f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.PrismSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-05T13:34:17+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebSpark.PrismSpark",
+  "week": "2026-01-05T13-34-17+00-00"
+}

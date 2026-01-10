@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:03:52.524974+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the RazorPages repository:\n\nThe RazorPages repository is a full-stack .NET demonstration project for \"Wired Brain Coffee\", showcasing a comprehensive web application ecosystem with multiple interconnected projects that illustrate modern web development practices. The solution encompasses a Razor Pages web application, a Blazor WebAssembly single-page application, RESTful Web APIs (both traditional and Minimal API approaches), and a shared models library, all designed to provide a cohesive coffee shop management and ordering platform. Leveraging cutting-edge Microsoft technologies like ASP.NET Core, Blazor, Entity Framework Core, and SignalR, the project implements responsive user interfaces, real-time communication, API endpoints, and robust data modeling with a focus on clean architecture, separation of concerns, and developer-friendly design patterns. Key technical highlights include client-side and server-side rendering approaches, dynamic menu management, interactive components, file upload capabilities, API documentation via Swagger, and cross-platform compatibility. This reference implementation serves as an educational resource and best-practices template for developers learning modern .NET web development, demonstrating how to build scalable, maintainable full-stack applications with a comprehensive technology stack and modular architectural approach.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:03:52.524916",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1634,
+    "confidence_score": 90
+  },
+  "hash": "f2fd98853dc45b0e9e8dbe3a22b5530cd8cbf5bf1b85d203dd820768caf882c1",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RazorPages"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-02T06:38:54+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "RazorPages",
+  "week": "2026-01-02T06-38-54+00-00"
+}

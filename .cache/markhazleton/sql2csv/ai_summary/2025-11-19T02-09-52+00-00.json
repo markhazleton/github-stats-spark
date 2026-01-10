@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:04:25.857343+00:00",
+  "value": {
+    "ai_summary": "SQL2CSV is a comprehensive .NET 9-based toolkit designed to simplify SQLite database exploration, analysis, and data extraction, providing developers and data professionals with powerful capabilities for database introspection and data migration. The project offers a versatile CLI and early-stage web interface that enables users to discover SQLite databases, export table data to CSV, generate detailed schema reports in multiple formats (text/JSON/Markdown), and automatically generate C# Data Transfer Object (DTO) classes from database schemas. Built using modern .NET technologies with a clean, modular architecture that emphasizes dependency injection, structured logging, and cross-platform compatibility, the tool implements advanced features like parallel processing, smart database discovery, and dynamic table analysis with pagination and filtering. The project distinguishes itself through its comprehensive approach to database utility functions, supporting complex scenarios like recursive database scanning, configurable export options, and a flexible, extensible design that allows for future enhancements in code generation and visualization. Target users include developers, data analysts, and database administrators who need efficient tools for database exploration, schema documentation, and quick data extraction across different environments and platforms.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:04:25.857287",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2743,
+    "confidence_score": 90
+  },
+  "hash": "9cde9791d34661186cf5b6f985c3bcaff944ffbe7dddca7ef8b3c11e866dd11d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "sql2csv"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-11-19T02:09:52+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "sql2csv",
+  "week": "2025-11-19T02-09-52+00-00"
+}

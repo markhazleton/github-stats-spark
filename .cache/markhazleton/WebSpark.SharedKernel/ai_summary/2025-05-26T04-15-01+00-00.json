@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:05:36.085914+00:00",
+  "value": {
+    "ai_summary": "WebSpark.SharedKernel is a comprehensive .NET library designed to implement Domain-Driven Design (DDD) patterns by providing a robust set of base classes and utilities for building clean, maintainable enterprise applications. The package offers type-safe entity base classes, value object implementations, domain event infrastructure, and repository pattern abstractions, all built with strong support for CQRS, MediatR integration, and advanced architectural patterns. Leveraging C# and targeting .NET developers, it provides a flexible framework that simplifies complex domain modeling by offering generic implementations for entities, value objects, domain events, and repositories with built-in support for features like guard clauses, specification patterns, and automatic domain event handling. The library is particularly notable for its extensible design, which allows developers to create strongly-typed entities with multiple ID types, implement rich domain models with proper event-driven behavior, and maintain clean separation of concerns through its repository and CQRS abstractions. Primarily targeted at enterprise software developers, solution architects, and teams looking to implement sophisticated domain models with clean architecture principles, WebSpark.SharedKernel serves as a powerful toolkit for creating more maintainable and semantically rich .NET applications.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:05:36.085837",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2733,
+    "confidence_score": 90
+  },
+  "hash": "3d1f31dcdeb0fcc6c8dfc931aeabdb712b70e732365d134e7d39e875ab3db7fa",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.SharedKernel"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-05-26T04:15:01+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebSpark.SharedKernel",
+  "week": "2025-05-26T04-15-01+00-00"
+}

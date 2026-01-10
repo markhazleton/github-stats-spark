@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:05:14.514627+00:00",
+  "value": {
+    "ai_summary": "Here's a detailed technical summary of the WebSpark.Bootswatch repository:\n\nWebSpark.Bootswatch is a sophisticated .NET Razor Class Library designed to streamline Bootswatch theme integration into ASP.NET Core applications, providing a comprehensive theming solution with advanced dynamic theme management capabilities. The library offers a robust implementation of Bootstrap 5 themes, supporting multi-framework compatibility (.NET 8.0, 9.0, 10.0) and featuring sophisticated caching mechanisms, light/dark mode switching, and seamless theme customization through dependency injection and tag helpers. Architecturally, the project leverages modern .NET dependency injection patterns, implements a flexible StyleCache service for performance optimization, and provides extensive configuration options through appsettings and extension methods. The library distinguishes itself through its comprehensive error handling, automatic theme detection, responsive design support, and a developer-friendly approach that simplifies complex theming scenarios, making it particularly valuable for .NET developers seeking a plug-and-play solution for dynamic, responsive web application styling.\n\nKey technical highlights include:\n- Multi-framework support (.NET 8.0-10.0)\n- Bootstrap 5 foundation\n- Dependency injection-based theme management\n- Integrated caching mechanism\n- Polly-based resilience for HTTP requests\n- Tag helper support for theme switching\n- Comprehensive configuration options",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:05:14.514570",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2920,
+    "confidence_score": 90
+  },
+  "hash": "21a49ad76ded6f271f85ffb050bd0be143adf25a1d7b04f4a0934b2eb17fe38f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.Bootswatch"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-04T03:15:14+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebSpark.Bootswatch",
+  "week": "2025-12-04T03-15-14+00-00"
+}

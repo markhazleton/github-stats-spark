@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-10T22:02:30.464098+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the AsyncDemo repository:\n\nAsyncDemo is an educational C# project demonstrating advanced asynchronous programming techniques and best practices in .NET, focusing on solving common async/await challenges through practical, real-world code examples. The repository provides a comprehensive learning platform for developers, featuring interactive API documentation powered by Scalar, and showcasing critical async patterns such as cancellation token management, concurrency control, resilience with Polly, and cross-cutting concern implementation using the decorator pattern. Built on .NET 10 and integrating with external APIs like OpenWeather, the project offers structured learning modules that explore scenarios like avoiding deadlocks, implementing timeouts, throttling concurrent operations, and handling complex asynchronous workflows through meticulously organized API endpoints. The unique value proposition lies in its combination of hands-on code demonstrations, extensive documentation, and a systematic approach to teaching advanced async programming concepts, making it an invaluable resource for .NET developers seeking to master asynchronous programming techniques. By providing real-world implementations and clear learning objectives, AsyncDemo serves as both a reference implementation and an educational tool for developers looking to improve their understanding of asynchronous programming patterns and best practices.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-10T16:02:30.463995",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2783,
+    "confidence_score": 90
+  },
+  "hash": "b0fbacc345ca3af0ea786816c80af5cdd0a69437f7d0edff60e538ad68df4e57",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "AsyncDemo"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-04T11:54:36+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "AsyncDemo",
+  "week": "2025-12-04T11-54-36+00-00"
+}
