@@ -1,11 +1,11 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-01-11 00:40:23 UTC
+**Generated**: 2026-01-12 05:11:13 UTC
 **Report Version**: 1.0.0
-**Repositories Analyzed**: 45
-**AI Summary Rate**: 62.2%
+**Repositories Analyzed**: 35
+**AI Summary Rate**: 54.3%
 
-> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-45-repositories) | [Metadata](#report-metadata)
+> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-35-repositories) | [Metadata](#report-metadata)
 
 ---
 
@@ -33,13 +33,13 @@
 
 ---
 
-## Top 45 Repositories
+## Top 35 Repositories
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 92 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 108 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 7335 KB | 🚀 30.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 8836 KB | 🚀 36.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -49,7 +49,7 @@ Stars: 0 | Forks: 0 | Language: Python | 92 commits (90d)
 **Dependencies**: 9 total (9 current, 0 outdated)
 
 **Created**: 2025-12-28
-**Last Modified**: 2026-01-07
+**Last Modified**: 2026-01-11
 
 ---
 
@@ -101,9 +101,9 @@ Stars: 0 | Forks: 0 | Language: TypeScript | 56 commits (90d)
 
 ### #4. [markhazleton-blog](https://github.com/markhazleton/markhazleton-blog)
 
-Stars: 1 | Forks: 1 | Language: Pug | 80 commits (90d)
+Stars: 1 | Forks: 1 | Language: Pug | 74 commits (90d)
 
-👥 0 contributors | 🌐 9 languages | 💾 121228 KB | 🚀 26.7 commits/month
+👥 0 contributors | 🌐 9 languages | 💾 121329 KB | 🚀 24.7 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
@@ -194,7 +194,7 @@ Target users include developers, content creators, and organizations seeking a r
 
 Stars: 0 | Forks: 0 | Language: JavaScript | 20 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 3001 KB | 🚀 6.7 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 3027 KB | 🚀 6.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -204,7 +204,7 @@ Stars: 0 | Forks: 0 | Language: JavaScript | 20 commits (90d)
 **Dependencies**: 30 total (30 current, 0 outdated)
 
 **Created**: 2022-06-06
-**Last Modified**: 2026-01-05
+**Last Modified**: 2026-01-09
 
 ---
 
@@ -279,11 +279,29 @@ Stars: 0 | Forks: 0 | Language: TypeScript | 2 commits (90d)
 
 ---
 
-### #13. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
+### #13. [mark-hazleton-s-notes](https://github.com/markhazleton/mark-hazleton-s-notes)
 
-Stars: 0 | Forks: 0 | Language: CSS | 10 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 23 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 44254 KB | 🚀 3.3 commits/month
+👥 0 contributors | 🌐 4 languages | 💾 95573 KB | 🚀 7.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Personal site for Mark Hazleton, a Technical Solutions Architect. The site combines long-form writing, a project portfolio, and a /github page that highlights recent GitHub activity. Built with TypeScript. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 55 total (55 current, 0 outdated)
+
+**Created**: 2026-01-10
+**Last Modified**: 2026-01-11
+
+---
+
+### #14. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
+
+Stars: 0 | Forks: 0 | Language: CSS | 9 commits (90d)
+
+👥 0 contributors | 🌐 5 languages | 💾 44354 KB | 🚀 3.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -294,21 +312,6 @@ Stars: 0 | Forks: 0 | Language: CSS | 10 commits (90d)
 
 **Created**: 2024-10-11
 **Last Modified**: 2026-01-05
-
----
-
-### #14. [SpotifyAPI-NET](https://github.com/markhazleton/SpotifyAPI-NET)
-
-Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 6182 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-SpotifyAPI-NET is a comprehensive, open-source .NET library designed to provide seamless interaction with the Spotify Web API, enabling developers to easily query, manage, and control Spotify music-related data and functionality across multiple .NET platforms. The library offers robust, typed support for over 74 API endpoints, supporting operations like retrieving track/album information, managing user playlists, controlling music playback, and implementing various authentication methods (OAuth2) for both web and CLI applications. Architecturally, it is modular and cross-platform, compatible with .NET Standard 2.X, which ensures broad compatibility with platforms like .NET Framework, UWP, .NET Core, and Xamarin.Forms, and features advanced capabilities such as custom HTTP client support, logging, retry handlers, proxy configurations, and pagination. Its key differentiators include comprehensive type safety, extensive endpoint coverage, flexible authentication mechanisms, and a clean, developer-friendly interface that abstracts the complexities of direct API interactions. The library is particularly valuable for .NET developers building music-related applications, integration projects, or tools that require programmatic access to Spotify's rich ecosystem of music data and services. By providing a well-structured, actively maintained SDK, SpotifyAPI-NET significantly simplifies the process of integrating Spotify functionality into .NET applications.
-
-**Created**: 2022-10-25
-**Last Modified**: 2026-01-03
 
 ---
 
@@ -392,22 +395,7 @@ Stars: 0 | Forks: 0 | Language: C# | 19 commits (90d)
 
 ---
 
-### #19. [SolidSample](https://github.com/markhazleton/SolidSample)
-
-Stars: 0 | Forks: 0 | Language: C# | 3 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 1453 KB | 🚀 1.0 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-This GitHub repository is a comprehensive educational resource demonstrating the application of SOLID principles in C# software design, specifically created as a companion to a Pluralsight course. The project serves as a step-by-step tutorial and code sample showing how to refactor and improve object-oriented code by progressively implementing Single Responsibility Principle (SRP), Open-Closed Principle (OCP), Liskov Substitution Principle (LSP), Interface Segregation Principle (ISP), and Dependency Inversion Principle (DIP). Developed using Visual Studio 2019 and targeting .NET developers, the repository provides multiple branch points corresponding to each SOLID principle, allowing developers to track incremental improvements in code structure and maintainability. The project is language-agnostic in its educational approach but specifically uses C# to illustrate design patterns, with accompanying HTML, CSS, and minimal JavaScript to support the learning experience. What makes this repository unique is its pragmatic, progressive approach to teaching software design principles, offering developers a practical walkthrough of transforming tightly-coupled, monolithic code into more modular, extensible, and maintainable software architectures. The primary audience includes intermediate C# developers looking to enhance their understanding of object-oriented design principles and improve their software engineering skills.
-
-**Created**: 2020-07-02
-**Last Modified**: 2026-01-05
-
----
-
-### #20. [InquirySpark](https://github.com/markhazleton/InquirySpark)
+### #19. [InquirySpark](https://github.com/markhazleton/InquirySpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 18 commits (90d)
 
@@ -422,25 +410,7 @@ InquirySpark is a .NET 10-based survey and inquiry management system designed fo
 
 ---
 
-### #21. [Slurper](https://github.com/markhazleton/Slurper)
-
-Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 4134 KB | 🚀 4.0 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/MarkHazleton/Slurper) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) Built with C#. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 1 total (1 current, 0 outdated)
-
-**Created**: 2023-03-24
-**Last Modified**: 2025-11-16
-
----
-
-### #22. [markhazleton](https://github.com/markhazleton/markhazleton)
+### #20. [markhazleton](https://github.com/markhazleton/markhazleton)
 
 Stars: 0 | Forks: 0 | Language: Unknown | 4 commits (90d)
 
@@ -455,7 +425,7 @@ Based on the README and repository overview, this appears to be a personal portf
 
 ---
 
-### #23. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
+### #21. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
 
 Stars: 0 | Forks: 0 | Language: HTML | 6 commits (90d)
 
@@ -470,7 +440,7 @@ WebSpark.PrismSpark is a sophisticated .NET-based syntax highlighting library in
 
 ---
 
-### #24. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
+### #22. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 18 commits (90d)
 
@@ -495,7 +465,7 @@ While currently demonstrated with example use cases like a "Family Saturday Plan
 
 ---
 
-### #25. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
+### #23. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
 
 Stars: 3 | Forks: 0 | Language: Visual Basic .NET | 0 commits (90d)
 
@@ -510,41 +480,7 @@ Web Project Mechanics is a custom web content management system (CMS) designed t
 
 ---
 
-### #26. [DesignPatternsInCSharp](https://github.com/markhazleton/DesignPatternsInCSharp)
-
-Stars: 0 | Forks: 0 | Language: HTML | 4 commits (90d)
-
-👥 0 contributors | 🌐 2 languages | 💾 246 KB | 🚀 1.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Technical Summary:
-
-The DesignPatternsInCSharp repository is a comprehensive educational resource demonstrating implementation of various software design patterns in C#, with a primary focus on providing practical code examples and learning references for software developers and architects. The project covers multiple design patterns including Adapter, Memento, Proxy, Rules Engine, Singleton, Specification, State, and Template Method, with each pattern linked to corresponding Pluralsight learning resources and course materials. Leveraging C# and HTML, the repository appears to be a structured learning guide that bridges theoretical design pattern concepts with concrete, implementable code examples, making it valuable for developers seeking to understand and apply object-oriented design principles. The project's unique value lies in its curated collection of design pattern implementations, supplemented by professional learning pathways and complementary video resources from Pluralsight. While primarily an educational resource, the repository serves as an excellent reference for intermediate to advanced .NET developers looking to enhance their software design skills and understand complex architectural patterns.
-
-**Created**: 2021-02-03
-**Last Modified**: 2026-01-05
-
----
-
-### #27. [csharp-blazor-bug-tracking](https://github.com/markhazleton/csharp-blazor-bug-tracking)
-
-Stars: 0 | Forks: 0 | Language: C# | 4 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 1589 KB | 🚀 1.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Technical Summary:
-
-This is an ASP.NET Core 6 MVC web application designed as an administrative product management system for a fictional company called Carved Rock, providing comprehensive CRUD functionality for managing products and categories. The application leverages modern .NET technologies including Entity Framework Core with SQLite databases, ASP.NET Identity for authentication, and implements robust architectural patterns such as dependency injection and repository logic to enhance testability and maintainability. Key technical features include user registration, product and category management with complex validation using FluentValidation, and a responsive Bootstrap-styled user interface that demonstrates best practices in web application development. The project serves as an educational reference for developers learning ASP.NET Core MVC, showcasing implementation of core web development concepts like data modeling, authentication, validation, and UI design. It's particularly valuable for developers seeking a practical, full-featured example of building enterprise-grade web applications using Microsoft's modern web development stack, with a focus on clean architecture and extensible design principles.
-
-**Created**: 2022-06-08
-**Last Modified**: 2025-12-29
-
----
-
-### #28. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
+### #24. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
 
 Stars: 0 | Forks: 0 | Language: HTML | 14 commits (90d)
 
@@ -570,7 +506,7 @@ Key technical highlights include:
 
 ---
 
-### #29. [AsyncDemo](https://github.com/markhazleton/AsyncDemo)
+### #25. [AsyncDemo](https://github.com/markhazleton/AsyncDemo)
 
 Stars: 0 | Forks: 0 | Language: C# | 15 commits (90d)
 
@@ -587,24 +523,7 @@ AsyncDemo is an educational C# project demonstrating advanced asynchronous progr
 
 ---
 
-### #30. [RazorPages](https://github.com/markhazleton/RazorPages)
-
-Stars: 0 | Forks: 0 | Language: JavaScript | 3 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 19351 KB | 🚀 1.0 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-Here's a comprehensive technical summary of the RazorPages repository:
-
-The RazorPages repository is a full-stack .NET demonstration project for "Wired Brain Coffee", showcasing a comprehensive web application ecosystem with multiple interconnected projects that illustrate modern web development practices. The solution encompasses a Razor Pages web application, a Blazor WebAssembly single-page application, RESTful Web APIs (both traditional and Minimal API approaches), and a shared models library, all designed to provide a cohesive coffee shop management and ordering platform. Leveraging cutting-edge Microsoft technologies like ASP.NET Core, Blazor, Entity Framework Core, and SignalR, the project implements responsive user interfaces, real-time communication, API endpoints, and robust data modeling with a focus on clean architecture, separation of concerns, and developer-friendly design patterns. Key technical highlights include client-side and server-side rendering approaches, dynamic menu management, interactive components, file upload capabilities, API documentation via Swagger, and cross-platform compatibility. This reference implementation serves as an educational resource and best-practices template for developers learning modern .NET web development, demonstrating how to build scalable, maintainable full-stack applications with a comprehensive technology stack and modular architectural approach.
-
-**Created**: 2020-03-29
-**Last Modified**: 2026-01-02
-
----
-
-### #31. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
+### #26. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
 
 Stars: 0 | Forks: 0 | Language: C# | 11 commits (90d)
 
@@ -623,7 +542,7 @@ The library is particularly well-suited for microservice architectures, distribu
 
 ---
 
-### #32. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
+### #27. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
 
 Stars: 0 | Forks: 0 | Language: SCSS | 4 commits (90d)
 
@@ -641,7 +560,7 @@ Stars: 0 | Forks: 0 | Language: SCSS | 4 commits (90d)
 
 ---
 
-### #33. [sql2csv](https://github.com/markhazleton/sql2csv)
+### #28. [sql2csv](https://github.com/markhazleton/sql2csv)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -656,7 +575,7 @@ SQL2CSV is a comprehensive .NET 9-based toolkit designed to simplify SQLite data
 
 ---
 
-### #34. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
+### #29. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 4 commits (90d)
 
@@ -673,24 +592,7 @@ TriviaSpark is an experimental multiplayer web and mobile trivia game applicatio
 
 ---
 
-### #35. [barcodelib](https://github.com/markhazleton/barcodelib)
-
-Stars: 0 | Forks: 0 | Language: JavaScript | 1 commits (90d)
-
-👥 0 contributors | 🌐 8 languages | 💾 53609 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Technical Summary:
-
-BarcodeLib is a comprehensive cross-platform barcode generation library primarily written in JavaScript and C# that enables developers to programmatically create high-quality barcode images across multiple symbology standards. The library supports an extensive range of barcode types including Code 128, UPC, EAN, ISBN, PostNet, and 13 additional formats, providing flexibility for diverse encoding requirements. Its design emphasizes ease of use through simple constructors and method calls, allowing developers to generate barcode images with minimal configuration by specifying data, symbology type, dimensions, and color preferences. The library leverages object-oriented programming principles and appears to support multiple platforms, with implementations in both .NET and JavaScript ecosystems, making it versatile for web, desktop, and potentially mobile applications requiring barcode generation. With active maintenance since 2019 and an Apache 2.0 license, BarcodeLib offers a robust, open-source solution for developers needing programmatic barcode image creation across various technical environments. The project is particularly valuable for industries like retail, logistics, inventory management, and any domain requiring dynamic barcode generation with extensive format support.
-
-**Created**: 2019-06-20
-**Last Modified**: 2025-12-09
-
----
-
-### #36. [DataAnalysisDemo](https://github.com/markhazleton/DataAnalysisDemo)
+### #30. [DataAnalysisDemo](https://github.com/markhazleton/DataAnalysisDemo)
 
 Stars: 0 | Forks: 0 | Language: Visual Basic .NET | 1 commits (90d)
 
@@ -708,7 +610,7 @@ Stars: 0 | Forks: 0 | Language: Visual Basic .NET | 1 commits (90d)
 
 ---
 
-### #37. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+### #31. [TeachSpark](https://github.com/markhazleton/TeachSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -726,7 +628,7 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 ---
 
-### #38. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
+### #32. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
 
 Stars: 0 | Forks: 0 | Language: PHP | 0 commits (90d)
 
@@ -744,24 +646,7 @@ Stars: 0 | Forks: 0 | Language: PHP | 0 commits (90d)
 
 ---
 
-### #39. [google-maps](https://github.com/markhazleton/google-maps)
-
-Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
-
-👥 0 contributors | 🌐 2 languages | 💾 2230 KB | 🚀 0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Technical Summary:
-
-This repository is a C# wrapper for the Google Maps Web Services API, designed to simplify and enhance interaction with Google Maps services through a modular and extensible architecture. The project introduces a sophisticated HttpClientUtility with generic HTTP request handling, leveraging Fast Endpoints for creating a minimal API layer that abstracts away complex HTTP communication details. By implementing a robust HttpResponseContent<T> generic response container and a generics-based HttpClientService, the library provides a flexible, type-safe approach to making API requests with improved error handling and resource management. The architecture emphasizes separation of concerns, with distinct components for HTTP client management, API mapping, and response processing, making it particularly valuable for .NET developers seeking a clean, reusable solution for integrating Google Maps web services. Key technologies include .NET, C#, Fast Endpoints, and a custom HttpClient management approach that enhances performance and maintainability compared to traditional HTTP client implementations. This library is primarily targeted at .NET developers building mapping, geolocation, or location-based services who require a sophisticated, well-structured approach to consuming Google Maps web services.
-
-**Created**: 2024-03-28
-**Last Modified**: 2025-05-04
-
----
-
-### #40. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
+### #33. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
 
 Stars: 0 | Forks: 0 | Language: HTML | 0 commits (90d)
 
@@ -778,24 +663,7 @@ The HttpClientDecoratorPattern repository is a comprehensive demonstration of im
 
 ---
 
-### #41. [openai-dotnet](https://github.com/markhazleton/openai-dotnet)
-
-Stars: 0 | Forks: 0 | Language: Unknown | 0 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 16923 KB | 🚀 0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Here's a comprehensive technical summary of the openai-dotnet repository:
-
-The openai-dotnet repository is an official .NET library that provides a comprehensive, type-safe SDK for interacting with OpenAI's REST API, enabling developers to seamlessly integrate advanced AI capabilities into .NET applications across multiple domains such as chat completions, image generation, audio transcription, and embeddings. Leveraging C# and .NET Standard 2.0, the library offers a well-organized, namespace-based architecture with dedicated client classes for each OpenAI service, supporting both synchronous and asynchronous programming models and featuring advanced functionalities like streaming responses, function calling, and structured outputs. The library is generated from OpenAI's OpenAPI specification in collaboration with Microsoft, ensuring high fidelity and alignment with the latest API capabilities, and supports multiple deployment scenarios including standard OpenAI and Azure OpenAI environments. Its design emphasizes developer ergonomics through intuitive method signatures, environment variable-based configuration, and comprehensive error handling, making complex AI interactions more accessible to .NET developers. The library is particularly noteworthy for its experimental support of cutting-edge features like assistants, retrieval-augmented generation (RAG), and vector stores, positioning it as a forward-looking solution for integrating advanced AI technologies into .NET software ecosystems. Target users include .NET developers building intelligent applications across enterprise, research, and creative domains who require robust, type-safe access to OpenAI's machine learning capabilities.
-
-**Created**: 2025-03-16
-**Last Modified**: 2025-03-16
-
----
-
-### #42. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
+### #34. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -812,40 +680,7 @@ PromptSpark.Chat is an interactive, real-time workflow management application bu
 
 ---
 
-### #43. [startbootstrap-modern-business](https://github.com/markhazleton/startbootstrap-modern-business)
-
-Stars: 0 | Forks: 0 | Language: Pug | 0 commits (90d)
-
-👥 0 contributors | 🌐 3 languages | 💾 6268 KB | 🚀 0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-A world-class demonstration site for small businesses, built and maintained by [Mark Hazleton](https://markhazleton.com), showcasing the best of Bootstrap 5, Pug, and Node.js build automation. Built with Pug. Key features: Responsive, mobile-first design with Bootstrap 5, Light/Dark mode toggle (Bootstrap 5 best practices), Interactive Theme Customizer (live color, font, border radius, exportable CSS). Maintained project with periodic updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 18 total (18 current, 0 outdated)
-
-**Created**: 2020-07-08
-**Last Modified**: 2025-05-13
-
----
-
-### #44. [WebSpark.SharedKernel](https://github.com/markhazleton/WebSpark.SharedKernel)
-
-Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 91 KB | 🚀 0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-WebSpark.SharedKernel is a comprehensive .NET library designed to implement Domain-Driven Design (DDD) patterns by providing a robust set of base classes and utilities for building clean, maintainable enterprise applications. The package offers type-safe entity base classes, value object implementations, domain event infrastructure, and repository pattern abstractions, all built with strong support for CQRS, MediatR integration, and advanced architectural patterns. Leveraging C# and targeting .NET developers, it provides a flexible framework that simplifies complex domain modeling by offering generic implementations for entities, value objects, domain events, and repositories with built-in support for features like guard clauses, specification patterns, and automatic domain event handling. The library is particularly notable for its extensible design, which allows developers to create strongly-typed entities with multiple ID types, implement rich domain models with proper event-driven behavior, and maintain clean separation of concerns through its repository and CQRS abstractions. Primarily targeted at enterprise software developers, solution architects, and teams looking to implement sophisticated domain models with clean architecture principles, WebSpark.SharedKernel serves as a powerful toolkit for creating more maintainable and semantically rich .NET applications.
-
-**Created**: 2024-07-25
-**Last Modified**: 2025-05-26
-
----
-
-### #45. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
+### #35. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -870,7 +705,7 @@ Yelp.Api is a specialized C# class library that provides a robust, developer-fri
 - **Generation Time**: 0.1 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 56,528
+- **Total AI Tokens**: 41,952
 - **Success Rate**: 100.0%
 
 ### Data Sources
@@ -888,4 +723,4 @@ Yelp.Api is a specialized C# class library that provides a robust, developer-fri
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2026-01-11*
+*Last updated: 2026-01-12*
