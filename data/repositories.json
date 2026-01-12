@@ -3312,7 +3312,7 @@
         "text": "Personal site for Mark Hazleton, a Technical Solutions Architect. The site combines long-form writing, a project portfolio, and a /github page that highlights recent GitHub activity. Built with TypeScript. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-01-12T09:15:43.237189",
+        "generated_at": "2026-01-12T15:20:25.286574",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -5945,7 +5945,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-01-12T15:15:43.237893+00:00",
+    "generated_at": "2026-01-12T15:20:25.287707+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }
