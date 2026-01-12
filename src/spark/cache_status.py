@@ -159,11 +159,19 @@ class CacheStatusTracker:
                 exclude_archived=exclude_archived,
             )
         else:
-            # Use cached repositories
+            # Try to use cached repositories
             repos = self.cache.get("repositories", username, repo=variant)
             
             if not repos:
-                 raise FileNotFoundError(f"Repositories cache not found for {username}")
+                # Cache doesn't exist, fetch fresh data automatically
+                from spark.fetcher import GitHubFetcher
+                fetcher = GitHubFetcher(cache=self.cache)
+                repos = fetcher.fetch_repositories(
+                    username=username,
+                    exclude_private=exclude_private,
+                    exclude_forks=exclude_forks,
+                    exclude_archived=exclude_archived,
+                )
 
         repos = [
             repo for repo in repos

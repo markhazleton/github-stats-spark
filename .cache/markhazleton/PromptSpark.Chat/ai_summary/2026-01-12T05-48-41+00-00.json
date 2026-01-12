@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-12T15:13:36.459064+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the PromptSpark.Chat repository:\n\nPromptSpark.Chat is a sophisticated real-time conversational workflow application that enables dynamic, interactive multi-step processes through a web-based chat interface, leveraging ASP.NET Core, SignalR, and Adaptive Cards to create guided user experiences. The application implements a flexible workflow engine that allows users to progress through configurable conversation nodes, with server-side state management using thread-safe concurrent dictionaries and optional AI integration for handling complex or unexpected user interactions. By utilizing SignalR for real-time communication and supporting dynamic workflow definitions through JSON configuration, the project provides a robust framework for creating interactive, state-aware conversational experiences across various domains such as customer support, guided onboarding, or interactive questionnaires. The architecture emphasizes modular design, with clear separation between workflow logic, communication mechanisms, and presentation layers, enabling easy extensibility and customization through its pluggable service model and support for adaptive UI rendering. Unique features include server-side conversation persistence, interactive Adaptive Card interfaces, and a scalable approach to managing complex, branching conversational workflows that can be easily modified without significant code changes. This tool is particularly valuable for developers and organizations seeking to create guided, interactive user experiences with minimal overhead and maximum flexibility.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-12T09:13:36.459013",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2206,
+    "confidence_score": 90
+  },
+  "hash": "e6e0079ee8916a8d30974b7b97d5ede202ca14de6d68d0b8db353ebfd0f4e041",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-12T05:48:41+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2026-01-12T05-48-41+00-00"
+}

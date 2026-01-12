@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-12T15:14:40.964314+00:00",
+  "value": {
+    "total": 67,
+    "recent_90d": 31,
+    "recent_180d": 31,
+    "recent_365d": 57,
+    "last_commit_date": "2026-01-12T04:43:19+00:00"
+  },
+  "hash": "a2593b00296fbe226a0d6ce7c00db9bcd7b73e252616830ce9ba94de350d6eb6",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.ArtSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-12T04:43:22+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "WebSpark.ArtSpark",
+  "week": "2026-01-12T04-43-22+00-00"
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-12T15:12:34.543098+00:00",
+  "value": {
+    "total": 40,
+    "recent_90d": 7,
+    "recent_180d": 7,
+    "recent_365d": 19,
+    "last_commit_date": "2026-01-12T12:00:32+00:00"
+  },
+  "hash": "362a5e3dc5cf2c50b403ba3de0659da348c3bdf81cda7b84de97f90df2be971b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "FastEndpointApi"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-12T12:00:37+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "FastEndpointApi",
+  "week": "2026-01-12T12-00-37+00-00"
+}

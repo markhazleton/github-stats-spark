@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-12T15:13:45.060905+00:00",
+  "value": {
+    "total": 62,
+    "recent_90d": 16,
+    "recent_180d": 21,
+    "recent_365d": 26,
+    "last_commit_date": "2026-01-12T14:56:10+00:00"
+  },
+  "hash": "2e22bc334fa5698d48f9abeb1011f0ee26b92e0c79f1daf61946a4c9243d68be",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RESTRunner"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-12T14:56:14+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "RESTRunner",
+  "week": "2026-01-12T14-56-14+00-00"
+}

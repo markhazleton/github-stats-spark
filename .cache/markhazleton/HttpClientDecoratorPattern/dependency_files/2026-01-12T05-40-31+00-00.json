@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-01-12T15:13:02.731947+00:00",
+  "value": {},
+  "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "HttpClientDecoratorPattern"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-01-12T05:40:31+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "HttpClientDecoratorPattern",
+  "week": "2026-01-12T05-40-31+00-00"
+}

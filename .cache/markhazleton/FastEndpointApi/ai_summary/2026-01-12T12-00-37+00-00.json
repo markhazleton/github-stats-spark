@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-12T15:12:46.713926+00:00",
+  "value": {
+    "ai_summary": "Technical Summary of FastEndpointApi Repository:\n\nFastEndpointApi is a demonstration project showcasing the FastEndpoints framework for building high-performance, minimalistic REST APIs in ASP.NET Core, focusing on a Person Management system that implements CRUD operations with a clean, lightweight architectural approach. The project leverages the REPR (Request-Endpoint-Response) pattern to create streamlined API endpoints with minimal boilerplate code, utilizing technologies like .NET 10.0, Bogus for data generation, and integrated Swagger documentation. By implementing a complete API with features such as in-memory data storage, dependency injection, and HATEOAS-style link generation, the repository serves as both a practical tutorial and a reference implementation for developers looking to adopt a more modern, efficient approach to API development. The project stands out by emphasizing code simplicity, maintainability, and performance, providing a comprehensive example of how FastEndpoints can significantly reduce complexity in ASP.NET Core API design while maintaining robust functionality. It is particularly valuable for .NET developers seeking to modernize their API development practices, offering a real-world template for building clean, efficient web services with minimal overhead.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-12T09:12:46.713871",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2544,
+    "confidence_score": 90
+  },
+  "hash": "bb4ed0b03b030c3e101eb5619e11a178b72d3d31af9d2cc2460f7847056c4ba4",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "FastEndpointApi"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-12T12:00:37+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "FastEndpointApi",
+  "week": "2026-01-12T12-00-37+00-00"
+}

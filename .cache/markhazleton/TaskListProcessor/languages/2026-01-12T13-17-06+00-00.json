@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-01-12T15:14:12.687457+00:00",
+  "value": {
+    "C#": 367357,
+    "PowerShell": 17427,
+    "Python": 4425
+  },
+  "hash": "3753f0525b46bb317a41149ca967fa07bb0c5347f66bd78af9299e3f4c22bc84",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TaskListProcessor"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-12T13:17:06+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "TaskListProcessor",
+  "week": "2026-01-12T13-17-06+00-00"
+}

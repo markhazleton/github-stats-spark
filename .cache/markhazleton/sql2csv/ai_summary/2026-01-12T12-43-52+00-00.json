@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-12T15:14:10.025826+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the sql2csv repository:\n\nSql2Csv is a comprehensive .NET 10 toolkit designed for SQLite database manipulation and analysis, offering robust capabilities for database file discovery, table export, schema introspection, and code generation across both CLI and web interfaces. The project provides multi-modal functionality including command-line and web-based interactions for tasks like exporting database tables to CSV, generating detailed schema reports, and automatically creating C# data transfer objects (DTOs) from database schemas. Built using modern .NET technologies with a modular architecture featuring separate projects for core services, console application, web interface, and testing, the toolkit leverages dependency injection, ASP.NET Core MVC, and supports flexible configuration through appsettings. Its unique value proposition lies in its comprehensive approach to SQLite database exploration, offering developers and data analysts a versatile tool for database metadata extraction, transformation, and code generation with support for various output formats and programmatic interactions. The project is particularly useful for scenarios involving database migration, data analysis, code generation, and rapid prototyping across different development and data engineering workflows.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-12T09:14:10.025776",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1503,
+    "confidence_score": 90
+  },
+  "hash": "ebd91b378d546a45fb6c5487a5063588c2b5126823420fe9200cd183670d2218",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "sql2csv"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-12T12:43:52+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "sql2csv",
+  "week": "2026-01-12T12-43-52+00-00"
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-01-12T15:15:12.137206+00:00",
+  "value": "# Yelp.API\nC# Class Library for Yelp (v3) Fusion API works with .NET projects using Net 6. \nYelp's (v3) Fusion API allows you to get the best local business information and \nuser reviews of over million businesses in 32 countries.\n\n## How to use the Yelp API in your .NET based app\n\nIntegrating this API is very easy.\n\n1. **[Register](https://www.yelp.com/developers/v3/manage_app)** yourself with Yelp's developer program\n\n2. Add the API_KEY to the secrets file for both Test and Web projects\n\n```c#\n    var client = new Yelp.Api.Client(\"API_KEY\");\n    var results = await client.SearchBusinessesAllAsync(\"cupcakes\", 37.786882, -122.399972);\n```\nor if you want to perform a more advanced search, use the `SearchParameters` object.\n\n```c#\n    var request = new Yelp.Api.Models.SearchRequest();\n    request.Latitude = 37.786882;\n    request.Longitude = -122.399972;\n    request.Term = \"cupcakes\";\n    request.MaxResults = 40;\n    request.OpenNow = true;\n\n    var client = new Yelp.Api.Client(\"API_KEY\");\n    var results = await client.SearchBusinessesAllAsync(request);\n```\n\n\n",
+  "hash": "2deb8d53144a390dbfff1116bd6a83aba3b7fdd6fecc42ed6f68b198ad57018c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Yelp.Api"
+    },
+    "category": "readme",
+    "pushed_at": "2026-01-12T11:36:56+00:00",
+    "ttl_enforced": false
+  },
+  "category": "readme",
+  "owner": "markhazleton",
+  "repo": "Yelp.Api",
+  "week": "2026-01-12T11-36-56+00-00"
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-12T15:15:11.257516+00:00",
+  "value": {
+    "C#": 71007,
+    "CSS": 51868,
+    "HTML": 9763,
+    "Dockerfile": 781,
+    "JavaScript": 290
+  },
+  "hash": "fad4addb49c195a19a748793a86fc9fa80951b0a7dd1353e299a01853ce66b2b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Yelp.Api"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-12T11:36:56+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "Yelp.Api",
+  "week": "2026-01-12T11-36-56+00-00"
+}

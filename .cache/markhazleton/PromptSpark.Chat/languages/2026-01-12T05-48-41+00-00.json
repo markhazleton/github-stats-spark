@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-12T15:13:23.966975+00:00",
+  "value": {
+    "C#": 91661,
+    "SCSS": 89221,
+    "HTML": 84486,
+    "JavaScript": 26615,
+    "CSS": 3467
+  },
+  "hash": "91bb9029f8c42cf06143eb33a2cf3d74a0aee1033fd272a9d938af6694765e74",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-12T05:48:41+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2026-01-12T05-48-41+00-00"
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-01-12T15:13:45.849372+00:00",
+  "value": {
+    "C#": 354622,
+    "HTML": 202770,
+    "Dockerfile": 839
+  },
+  "hash": "287be67595851735c62a586a33385fce7e646be83b49fea75d0979e38553898b",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RESTRunner"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-12T14:56:14+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "RESTRunner",
+  "week": "2026-01-12T14-56-14+00-00"
+}

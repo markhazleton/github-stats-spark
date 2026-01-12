@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-12T15:13:59.226396+00:00",
+  "value": {
+    "C#": 703059,
+    "HTML": 477864,
+    "CSS": 80271,
+    "JavaScript": 29407,
+    "PowerShell": 6103,
+    "SCSS": 4360
+  },
+  "hash": "b4f978553f31f7667a312ab184ac023774fa6f5e8e4e2c4a437739d49262c4e5",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "sql2csv"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-12T12:43:52+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "sql2csv",
+  "week": "2026-01-12T12-43-52+00-00"
+}
