@@ -128,12 +128,14 @@ class DashboardGenerator:
 
         # Fetch all public repositories
         repos_config = self.config.get("repositories", {})
-        exclude_forks = repos_config.get("exclude_forks", False)
+        exclude_forks = repos_config.get("exclude_forks", True)
+        exclude_archived = repos_config.get("exclude_archived", True)
 
         raw_repos = self.fetcher.fetch_repositories(
             username=self.username,
             exclude_private=True,  # Always exclude private per constitution
-            exclude_forks=exclude_forks
+            exclude_forks=exclude_forks,
+            exclude_archived=exclude_archived,
         )
 
         logger.info(f"Found {len(raw_repos)} repositories")

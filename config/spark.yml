@@ -72,7 +72,8 @@ cache:
 repositories:
   max_count: 500              # Maximum repositories to process
   exclude_private: true       # Exclude private repositories (per constitution)
-  exclude_forks: false        # Exclude forked repositories
+  exclude_forks: true         # Exclude forked repositories
+  exclude_archived: true      # Exclude archived repositories
 
 # Repository Analysis Configuration
 analyzer:

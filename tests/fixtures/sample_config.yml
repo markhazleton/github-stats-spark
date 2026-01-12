@@ -34,4 +34,5 @@ cache:
 repositories:
   max_count: 500
   exclude_private: true
-  exclude_forks: false
+  exclude_forks: true
+  exclude_archived: true

@@ -615,7 +615,12 @@ def handle_dated_analyze(args, logger):
 
         # Step 1: Fetch all repositories
         logger.info(f"Fetching repositories for {args.user}...")
-        raw_repos = fetcher.fetch_repositories(args.user, exclude_private=True)
+        raw_repos = fetcher.fetch_repositories(
+            args.user,
+            exclude_private=True,
+            exclude_forks=True,
+            exclude_archived=True,
+        )
         logger.info(f"Found {len(raw_repos)} public repositories")
 
         # Step 2: Convert to Repository objects and fetch commit data

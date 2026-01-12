@@ -33,7 +33,7 @@ class SmartRefresh:
         1. Fetch fresh repository list (1 API call)
         2. Load existing data/repositories.json
         3. Identify repos that need refresh (new commits since cache)
-        4. Identify archived/private repos to remove
+        4. Identify archived/private/forked repos to remove
         5. Only fetch detailed data for repos needing refresh
         6. Update data/repositories.json incrementally
         """
@@ -74,7 +74,7 @@ class SmartRefresh:
                 # No new commits, keep existing data
                 repos_unchanged.append(existing_repo)
 
-        # Identify removed/archived/private repos
+        # Identify removed/archived/private/forked repos
         fresh_repo_names = {r["name"] for r in fresh_repos}
         for existing_name in existing_repos:
             if existing_name not in fresh_repo_names:
@@ -87,7 +87,7 @@ class SmartRefresh:
         self.logger.info(f"  🗑️  To remove: {len(repos_to_remove)} repositories")
 
         if repos_to_remove:
-            self.logger.info(f"\nRemoving archived/private repositories:")
+            self.logger.info(f"\nRemoving archived/private/forked repositories:")
             for name in repos_to_remove:
                 self.logger.info(f"  - {name}")
 
@@ -160,14 +160,19 @@ class SmartRefresh:
         """Fetch fresh repository list, clearing cache first."""
         # Clear the repo list cache to force fresh fetch
         import shutil
-        cache_dir = Path(self.cache.cache_dir) / username / "list_True_False" / "repositories"
+        exclude_private = True
+        exclude_forks = True
+        exclude_archived = True
+        variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
+        cache_dir = Path(self.cache.cache_dir) / username / variant / "repositories"
         if cache_dir.exists():
             shutil.rmtree(cache_dir)
 
         return self.fetcher.fetch_repositories(
             username=username,
-            exclude_private=True,
-            exclude_forks=False,
+            exclude_private=exclude_private,
+            exclude_forks=exclude_forks,
+            exclude_archived=exclude_archived,
         )
 
     def _load_existing_data(self) -> Dict[str, Any]:

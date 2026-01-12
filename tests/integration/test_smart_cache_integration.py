@@ -37,7 +37,7 @@ def test_smart_cache_integration():
             config.config = {
                 "analyzer": {},
                 "dashboard": {"data_generation": {}},
-                "repositories": {"exclude_forks": False, "exclude_archived": True}
+                "repositories": {"exclude_forks": True, "exclude_archived": True}
             }
             
             generator = UnifiedDataGenerator(

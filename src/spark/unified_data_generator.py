@@ -139,10 +139,14 @@ class UnifiedDataGenerator:
         Returns:
             List of repository dicts with metadata
         """
+        repos_config = self.config.config.get("repositories", {})
+        exclude_forks = repos_config.get("exclude_forks", True)
+        exclude_archived = repos_config.get("exclude_archived", True)
         return self.fetcher.fetch_repositories(
             username=self.username,
             exclude_private=True,
-            exclude_forks=self.config.config.get("repositories", {}).get("exclude_forks", False)
+            exclude_forks=exclude_forks,
+            exclude_archived=exclude_archived,
         )
     
     def _assemble_data(self, raw_repos: List[Dict]) -> Dict[str, Any]:

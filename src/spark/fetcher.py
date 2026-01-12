@@ -139,7 +139,8 @@ class GitHubFetcher:
         self,
         username: str,
         exclude_private: bool = True,
-        exclude_forks: bool = False,
+        exclude_forks: bool = True,
+        exclude_archived: bool = True,
     ) -> List[Dict[str, Any]]:
         """Fetch user repositories with pagination.
 
@@ -147,11 +148,12 @@ class GitHubFetcher:
             username: GitHub username
             exclude_private: Exclude private repositories
             exclude_forks: Exclude forked repositories
+            exclude_archived: Exclude archived repositories
 
         Returns:
             List of repository data dictionaries
         """
-        variant = f"list_{exclude_private}_{exclude_forks}"
+        variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
         cached = self.cache.get("repositories", username, repo=variant)
         if cached:
             self.logger.debug(f"Using cached repositories for {username}")
@@ -168,6 +170,8 @@ class GitHubFetcher:
                 if exclude_private and repo.private:
                     continue
                 if exclude_forks and repo.fork:
+                    continue
+                if exclude_archived and repo.archived:
                     continue
 
                 # Stop if we've hit the max
@@ -189,6 +193,7 @@ class GitHubFetcher:
                     "pushed_at": repo.pushed_at.isoformat() if repo.pushed_at else None,
                     "is_fork": repo.fork,
                     "is_private": repo.private,
+                    "is_archived": repo.archived,
                 })
 
             # Cache writes now handled by CacheManager

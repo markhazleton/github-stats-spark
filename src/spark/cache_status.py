@@ -121,7 +121,8 @@ class CacheStatusTracker:
         self,
         username: str,
         exclude_private: bool = True,
-        exclude_forks: bool = False,
+        exclude_forks: bool = True,
+        exclude_archived: bool = True,
         fetch_fresh: bool = False,
     ) -> Dict[str, Any]:
         """Update repositories cache file with cache status for each repo.
@@ -130,12 +131,13 @@ class CacheStatusTracker:
             username: GitHub username
             exclude_private: Exclude private repositories
             exclude_forks: Exclude forked repositories
+            exclude_archived: Exclude archived repositories
             fetch_fresh: If True, fetch fresh data from GitHub API before updating status
         
         Returns:
             Dictionary with updated repos and metadata
         """
-        variant = f"list_{exclude_private}_{exclude_forks}"
+        variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
         
         if fetch_fresh:
             # Clear cached repository list to force fresh fetch from GitHub API
@@ -154,6 +156,7 @@ class CacheStatusTracker:
                 username=username,
                 exclude_private=exclude_private,
                 exclude_forks=exclude_forks,
+                exclude_archived=exclude_archived,
             )
         else:
             # Use cached repositories
@@ -161,6 +164,11 @@ class CacheStatusTracker:
             
             if not repos:
                  raise FileNotFoundError(f"Repositories cache not found for {username}")
+
+        repos = [
+            repo for repo in repos
+            if not self._is_excluded_repo(repo, exclude_private, exclude_forks, exclude_archived)
+        ]
 
         # Add cache status to each repository
         for repo in repos:
@@ -188,14 +196,20 @@ class CacheStatusTracker:
         self,
         username: str,
         exclude_private: bool = True,
-        exclude_forks: bool = False,
+        exclude_forks: bool = True,
+        exclude_archived: bool = True,
     ) -> List[Dict[str, Any]]:
         """Get list of repositories that need cache refresh."""
-        variant = f"list_{exclude_private}_{exclude_forks}"
+        variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
         repos = self.cache.get("repositories", username, repo=variant)
         
         if not repos:
             raise FileNotFoundError(f"Repositories cache not found")
+
+        repos = [
+            repo for repo in repos
+            if not self._is_excluded_repo(repo, exclude_private, exclude_forks, exclude_archived)
+        ]
 
         return [
             repo for repo in repos
@@ -206,10 +220,11 @@ class CacheStatusTracker:
         self,
         username: str,
         exclude_private: bool = True,
-        exclude_forks: bool = False,
+        exclude_forks: bool = True,
+        exclude_archived: bool = True,
     ) -> Dict[str, Any]:
         """Get overall cache statistics for a user's repositories."""
-        variant = f"list_{exclude_private}_{exclude_forks}"
+        variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
         repos = self.cache.get("repositories", username, repo=variant)
         
         if not repos:
@@ -221,6 +236,11 @@ class CacheStatusTracker:
                 "cache_hit_rate": "0%",
                 "refresh_rate": "0%",
             }
+
+        repos = [
+            repo for repo in repos
+            if not self._is_excluded_repo(repo, exclude_private, exclude_forks, exclude_archived)
+        ]
 
         total = len(repos)
         cached = sum(1 for repo in repos if repo.get("cache_status", {}).get("has_cache", False))
@@ -235,3 +255,28 @@ class CacheStatusTracker:
             "cache_hit_rate": f"{(cached / total * 100):.1f}%" if total > 0 else "0%",
             "refresh_rate": f"{(needs_refresh / total * 100):.1f}%" if total > 0 else "0%",
         }
+
+    @staticmethod
+    def _is_excluded_repo(
+        repo: Dict[str, Any],
+        exclude_private: bool,
+        exclude_forks: bool,
+        exclude_archived: bool,
+    ) -> bool:
+        is_private = repo.get("is_private")
+        if is_private is None:
+            is_private = repo.get("private", False)
+
+        is_fork = repo.get("is_fork")
+        if is_fork is None:
+            is_fork = repo.get("fork", False)
+
+        is_archived = repo.get("is_archived")
+        if is_archived is None:
+            is_archived = repo.get("archived", False)
+
+        return (
+            (exclude_private and bool(is_private))
+            or (exclude_forks and bool(is_fork))
+            or (exclude_archived and bool(is_archived))
+        )

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-11T19:55:53.600540+00:00",
+  "value": {
+    "total": 119,
+    "recent_90d": 9,
+    "recent_180d": 25,
+    "recent_365d": 79,
+    "last_commit_date": "2026-01-05T03:11:45+00:00"
+  },
+  "hash": "f6a5e26c8d9901d83cc08f1c1b2aa179fad65b21a042addd7208cd098168def3",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "ReactSparkPortfolio"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-09T00:32:40+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "ReactSparkPortfolio",
+  "week": "2026-01-09T00-32-40+00-00"
+}

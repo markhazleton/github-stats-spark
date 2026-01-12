@@ -65,7 +65,7 @@ class TestCrossPlatformDatetimeHandling:
             config.config = {
                 "analyzer": {},
                 "dashboard": {"data_generation": {}},
-                "repositories": {"exclude_forks": False}
+                "repositories": {"exclude_forks": True, "exclude_archived": True}
             }
             
             generator = UnifiedDataGenerator(
@@ -165,7 +165,7 @@ class TestCrossPlatformDatetimeHandling:
             config.config = {
                 "analyzer": {},
                 "dashboard": {"data_generation": {}},
-                "repositories": {"exclude_forks": False}
+                "repositories": {"exclude_forks": True, "exclude_archived": True}
             }
             
             generator = UnifiedDataGenerator(

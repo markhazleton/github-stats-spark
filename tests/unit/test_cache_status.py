@@ -50,7 +50,7 @@ def repos_cache_file(cache_dir, sample_repo_data):
             "pushed_at": (datetime.now(timezone.utc) - timedelta(days=60)).isoformat(),
         }
     ]
-    cache.set("repositories", "testuser", repos, repo="list_True_False")
+    cache.set("repositories", "testuser", repos, repo="list_True_True_True")
     return cache
 
 
@@ -257,7 +257,8 @@ class TestCacheStatusTracker:
         result = cache_tracker.update_repositories_cache_with_status(
             username="testuser",
             exclude_private=True,
-            exclude_forks=False
+            exclude_forks=True,
+            exclude_archived=True,
         )
         
         # result is {"value": [...]}
@@ -277,7 +278,8 @@ class TestCacheStatusTracker:
             cache_tracker.update_repositories_cache_with_status(
                 username="nonexistent",
                 exclude_private=True,
-                exclude_forks=False
+                exclude_forks=True,
+                exclude_archived=True,
             )
 
     def test_get_repositories_needing_refresh(self, cache_tracker, repos_cache_file, cache_dir):
@@ -286,14 +288,16 @@ class TestCacheStatusTracker:
         cache_tracker.update_repositories_cache_with_status(
             username="testuser",
             exclude_private=True,
-            exclude_forks=False
+            exclude_forks=True,
+            exclude_archived=True,
         )
         
         # Get repos needing refresh
         needs_refresh = cache_tracker.get_repositories_needing_refresh(
             username="testuser",
             exclude_private=True,
-            exclude_forks=False
+            exclude_forks=True,
+            exclude_archived=True,
         )
         
         # Both repos should need refresh since no cache files exist
@@ -307,13 +311,15 @@ class TestCacheStatusTracker:
         cache_tracker.update_repositories_cache_with_status(
             username="testuser",
             exclude_private=True,
-            exclude_forks=False
+            exclude_forks=True,
+            exclude_archived=True,
         )
         
         stats = cache_tracker.get_cache_statistics(
             username="testuser",
             exclude_private=True,
-            exclude_forks=False
+            exclude_forks=True,
+            exclude_archived=True,
         )
         
         assert "total_repositories" in stats
@@ -332,7 +338,8 @@ class TestCacheStatusTracker:
         stats = cache_tracker.get_cache_statistics(
             username="nonexistent",
             exclude_private=True,
-            exclude_forks=False
+            exclude_forks=True,
+            exclude_archived=True,
         )
         
         assert stats["total_repositories"] == 0

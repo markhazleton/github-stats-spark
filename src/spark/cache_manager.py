@@ -579,7 +579,10 @@ class CacheManager:
         Returns:
             RefreshSummary with results
         """
-        self.logger.info(f"Starting cache refresh for {len(repo_list)} repositories")
+        eligible_repos = [
+            repo for repo in repo_list if not self._is_excluded_repo(repo)
+        ]
+        self.logger.info(f"Starting cache refresh for {len(eligible_repos)} repositories")
         self.api_calls = 0
         
         all_results = []
@@ -587,7 +590,7 @@ class CacheManager:
         repos_unchanged = 0
         repos_failed = 0
         
-        for i, repo_data in enumerate(repo_list, 1):
+        for i, repo_data in enumerate(eligible_repos, 1):
             repo_name = repo_data["name"]
             pushed_at_str = repo_data.get("pushed_at")
             
@@ -615,12 +618,12 @@ class CacheManager:
                     for category in categories_to_check
                 )
                 if not needs_update:
-                    self.logger.debug(f"[{i}/{len(repo_list)}] OK {repo_name} - cache valid")
+                    self.logger.debug(f"[{i}/{len(eligible_repos)}] OK {repo_name} - cache valid")
                     repos_unchanged += 1
                     continue
             
             # Refresh this repository
-            self.logger.info(f"[{i}/{len(repo_list)}] Refreshing {repo_name}")
+            self.logger.info(f"[{i}/{len(eligible_repos)}] Refreshing {repo_name}")
             repo_results = self.refresh_repository(
                 username,
                 repo_name,
@@ -643,10 +646,26 @@ class CacheManager:
         self.logger.info(f"  API calls: {self.api_calls}")
         
         return RefreshSummary(
-            total_repos=len(repo_list),
+            total_repos=len(eligible_repos),
             repos_refreshed=repos_refreshed,
             repos_unchanged=repos_unchanged,
             repos_failed=repos_failed,
             results=all_results,
             api_calls_made=self.api_calls
         )
+
+    @staticmethod
+    def _is_excluded_repo(repo_data: Dict[str, Any]) -> bool:
+        is_private = repo_data.get("is_private")
+        if is_private is None:
+            is_private = repo_data.get("private", False)
+
+        is_fork = repo_data.get("is_fork")
+        if is_fork is None:
+            is_fork = repo_data.get("fork", False)
+
+        is_archived = repo_data.get("is_archived")
+        if is_archived is None:
+            is_archived = repo_data.get("archived", False)
+
+        return bool(is_private) or bool(is_fork) or bool(is_archived)

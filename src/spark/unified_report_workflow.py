@@ -187,8 +187,9 @@ class UnifiedReportWorkflow:
 
             # Fetch repositories (public only, cache-only when enabled)
             exclude_private = True
-            exclude_forks = self.config.get("repositories.exclude_forks", False)
-            variant = f"list_{exclude_private}_{exclude_forks}"
+            exclude_forks = self.config.get("repositories.exclude_forks", True)
+            exclude_archived = self.config.get("repositories.exclude_archived", True)
+            variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
             repos_data = self.cache.get("repositories", username, repo=variant)
             if not repos_data:
                 if self.cache_only:
@@ -197,7 +198,10 @@ class UnifiedReportWorkflow:
                         stage="fetch_github_data",
                     )
                 repos_data = self.fetcher.fetch_repositories(
-                    username, exclude_private=exclude_private, exclude_forks=exclude_forks
+                    username,
+                    exclude_private=exclude_private,
+                    exclude_forks=exclude_forks,
+                    exclude_archived=exclude_archived,
                 )
             repositories = [Repository.from_dict(r) for r in repos_data]
             
