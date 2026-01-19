@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-01-19T05:20:17.560620+00:00",
+  "value": {
+    "C#": 1792946,
+    "HTML": 1551978,
+    "SCSS": 256836,
+    "PowerShell": 94571,
+    "Batchfile": 32317,
+    "JavaScript": 28994,
+    "CSS": 3467
+  },
+  "hash": "2b5e746c835eca02e7902aaec5abc4ad47577dbd8820c40c000e43639c3decdc",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-13T05:59:43+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "WebSpark",
+  "week": "2026-01-13T05-59-43+00-00"
+}

@@ -425,7 +425,8 @@ def handle_unified(args, logger):
             config, 
             shared_cache, 
             output_dir="output",
-            max_repos=args.max_repos
+            max_repos=args.max_repos,
+            cache_only=False  # Allow fresh data fetching from GitHub
         )
         
         try:
@@ -522,7 +523,7 @@ def handle_unified_analyze(args, logger):
             cache_dir=cache_config.get("directory", ".cache"),
             config=config,
         )
-        workflow = UnifiedReportWorkflow(config, cache, output_dir="output")
+        workflow = UnifiedReportWorkflow(config, cache, output_dir="output", cache_only=False)
 
         # Execute unified workflow
         logger.info("=" * 70)
