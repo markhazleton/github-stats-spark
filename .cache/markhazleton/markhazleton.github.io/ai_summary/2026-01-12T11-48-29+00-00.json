@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-19T05:00:22.484339+00:00",
+  "value": {
+    "ai_summary": "Technical Repository Summary:\n\nThis is a personal Jekyll-powered static website repository designed for Mark Hazleton's professional and blogging needs, hosted on GitHub Pages. The site leverages a customized Minima theme with modern web development practices, featuring a responsive design, dark/light mode toggle, and comprehensive content management workflow for technical blogging. Built using Ruby 3.2.2, Jekyll 3.10.0, and SCSS, the repository demonstrates a well-structured static site generator approach with robust development and deployment automation via GitHub Actions. The project emphasizes developer experience through detailed documentation, local development setup instructions, and best practices for content creation, including SEO optimization, post structuring guidelines, and flexible publishing workflows. Its unique strengths include a clean, framework-agnostic implementation, extensive post creation guidelines, and a focus on maintainability and extensibility for personal/professional technical communication.\n\nKey Technical Highlights:\n- Static site generation with Jekyll\n- Custom Minima theme implementation\n- GitHub Pages hosting\n- Automated CI/CD via GitHub Actions\n- Comprehensive development and publishing documentation\n- Dark/light mode support\n- Responsive design\n- SEO-friendly content management",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-18T23:00:22.484261",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2872,
+    "confidence_score": 90
+  },
+  "hash": "c0902a1678efe8b2d71d11342cad6de283b7ad8be6b4db114c241d6c7069ad18",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton.github.io"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-12T11:48:29+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "markhazleton.github.io",
+  "week": "2026-01-12T11-48-29+00-00"
+}

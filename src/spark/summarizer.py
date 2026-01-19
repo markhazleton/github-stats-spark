@@ -393,7 +393,7 @@ Size: {repo.size_kb} KB | Created: {repo.created_at.strftime('%Y-%m-%d') if repo
         # Add dependency/tech stack info
         if tech_stack and tech_stack.dependencies:
             dep_count = len(tech_stack.dependencies)
-            frameworks = [dep.name for dep in tech_stack.dependencies if dep.category in ['framework', 'library']][:5]
+            frameworks = [dep.name for dep in tech_stack.dependencies][:5]
             if frameworks:
                 prompt += f"Key Dependencies ({dep_count} total): {', '.join(frameworks)}\n"
             if tech_stack.currency_score is not None:

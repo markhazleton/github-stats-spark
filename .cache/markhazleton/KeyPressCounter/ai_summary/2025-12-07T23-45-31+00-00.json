@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-19T05:00:01.288247+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary of the KeyPressCounter repository:\n\nKeyPressCounter is a sophisticated Windows utility designed for comprehensive system and user activity monitoring, leveraging .NET 10.0 and low-level system APIs to track keyboard/mouse interactions, system performance metrics, and resource utilization in real-time. The application employs a multi-layered monitoring approach using technologies like SharpHook for global input event tracking, Windows Performance Counters for system metrics, and WMI (Windows Management Instrumentation) for hardware information retrieval, creating a robust system tray application that provides granular insights into user behavior and computational resource consumption. Its architecture emphasizes privacy-conscious tracking, with features like idle time filtering, local data storage, and detailed logging, making it a powerful tool for productivity analysis, system diagnostics, and performance optimization. The project demonstrates advanced Windows system integration techniques, including registry management, single-instance protection, and seamless system tray interaction, with a modular design that allows for extensive customization of monitoring parameters and logging behaviors. Unique strengths include its comprehensive metrics collection, minimal system overhead, and user-friendly graphical interface that transforms complex system data into digestible visualizations and statistics. Ideal for system administrators, developers, researchers, and power users seeking deep insights into computer usage patterns and system performance characteristics.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-18T23:00:01.288176",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2229,
+    "confidence_score": 90
+  },
+  "hash": "76523f1c1648d28ccf03665debcaba3080c6e6402606b0bb8e6a24d4c00cf341",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "KeyPressCounter"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2025-12-07T23:45:31+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "KeyPressCounter",
+  "week": "2025-12-07T23-45-31+00-00"
+}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-19T05:00:15.661147+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nThe markhazleton-blog is a sophisticated static site generation system designed for personal blogging and professional portfolio presentation, leveraging a modern web development architecture built with PUG templates, Node.js build scripts, and Azure Static Web Apps deployment. The project implements a comprehensive, modular build system that dynamically generates semantic HTML, processes SCSS with advanced compilation techniques, and provides automated content management features like RSS feed and sitemap generation. Its unique architecture emphasizes a unified build process with specialized renderers for different asset types, supporting granular control over template rendering, styling, and script processing while maintaining a clean, organized project structure that separates concerns between source files, build scripts, and generated content. The repository demonstrates advanced web development practices by incorporating SEO optimization, continuous integration via GitHub Actions, responsive design with Bootstrap 5, and a flexible content management approach using JSON-based configuration files, making it an exemplary template for developers seeking a robust, modern static site generation workflow with extensive customization capabilities.\n\nKey Technical Highlights:\n- Static site generation with PUG and Node.js\n- Modular build system with specialized renderers\n- Automated RSS/sitemap generation\n- Azure Static Web Apps deployment\n- Comprehensive SEO and content management tooling",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-18T23:00:15.661088",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2656,
+    "confidence_score": 90
+  },
+  "hash": "bc85a79764d45ab0fce99b925ec5e95a6e0bdbc5e7a99edf8f6651b8870dced1",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton-blog"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-11T09:02:40+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "markhazleton-blog",
+  "week": "2026-01-11T09-02-40+00-00"
+}

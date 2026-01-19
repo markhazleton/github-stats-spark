@@ -104,32 +104,52 @@ class UnifiedDataGenerator:
         Returns:
             Dict with profile, repositories, and metadata
         """
+        from time import time
+        
         logger.info("="*70)
         logger.info("Starting Unified Data Generation")
         logger.info("="*70)
         logger.info(f"Force refresh mode: {self.force_refresh}")
+        logger.info(f"AI summaries: {self.include_ai_summaries}")
+        logger.info(f"Max repositories: {self.max_repositories}")
+        
+        total_start = time()
         
         # PHASE 1: Fetch repository list from GitHub
         logger.info("\n[Phase 1] Fetching Repository List")
+        phase1_start = time()
         raw_repos = self._fetch_repository_list()
-        logger.info(f"Found {len(raw_repos)} repositories")
+        phase1_time = time() - phase1_start
+        logger.info(f"Found {len(raw_repos)} repositories ({phase1_time:.2f}s)")
         
         # PHASE 2: Validate & refresh caches
         logger.info("\n[Phase 2] Cache Validation & Refresh")
+        phase2_start = time()
         refresh_summary = self.cache_manager.refresh_user_data(
             username=self.username,
             repo_list=raw_repos,
             force_refresh=self.force_refresh,
             include_ai_summaries=self.include_ai_summaries,
         )
+        phase2_time = time() - phase2_start
         logger.info(f"Refreshed: {refresh_summary.repos_refreshed}, " 
                    f"Unchanged: {refresh_summary.repos_unchanged}, "
-                   f"API calls: {refresh_summary.api_calls_made}")
+                   f"API calls: {refresh_summary.api_calls_made} ({phase2_time:.2f}s)")
         
         # PHASE 3: Assemble data from cache
         logger.info("\n[Phase 3] Assembling Data from Cache")
+        phase3_start = time()
         unified_data = self._assemble_data(raw_repos)
-        logger.info(f"Assembled data for {len(unified_data['repositories'])} repositories")
+        phase3_time = time() - phase3_start
+        logger.info(f"Assembled data for {len(unified_data['repositories'])} repositories ({phase3_time:.2f}s)")
+        
+        total_time = time() - total_start
+        logger.info("\n" + "="*70)
+        logger.info(f"Data Generation Complete: {total_time:.2f}s total")
+        logger.info(f"  Phase 1 (Fetch): {phase1_time:.2f}s")
+        logger.info(f"  Phase 2 (Refresh): {phase2_time:.2f}s")
+        logger.info(f"  Phase 3 (Assemble): {phase3_time:.2f}s")
+        logger.info("="*70)
         
         return unified_data
     

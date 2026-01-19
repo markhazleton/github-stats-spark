@@ -168,19 +168,51 @@ Generate comprehensive markdown reports with intelligent insights:
 
 ## 🚀 Quick Start
 
-### ⚡ All-In-One Command (Recommended)
+### ⚡ Unified Pipeline Script (Recommended)
 
-Generate **everything** in a single optimized run:
+The easiest way to run the complete 4-phase pipeline:
+
+```powershell
+# Windows PowerShell
+.\run-spark.ps1 -User YOUR_USERNAME -IncludeAI -Verbose
+
+# Check environment first
+.\run-spark.ps1 -CheckOnly
+```
+
+**Script handles:**
+- ✅ Environment validation (virtual env, tokens, config)
+- ✅ Python package installation
+- ✅ Cache management
+- ✅ Complete 4-phase pipeline execution
+- ✅ Output verification and summary
+
+**Options:**
+- `-User` - GitHub username (default: markhazleton)
+- `-IncludeAI` - Generate AI summaries
+- `-ClearCache` - Clear all caches before running
+- `-ForceRefresh` - Force refresh all data
+- `-Verbose` - Enable detailed logging
+- `-CheckOnly` - Validate environment only
+
+### 📦 Manual Setup & CLI
+
+For direct Python CLI usage:
 
 ```bash
-# Set your GitHub token
+# 1. Install dependencies
+python -m venv .venv
+source .venv/bin/activate  # Unix/Mac
+# .\.venv\Scripts\Activate.ps1  # Windows
+pip install -r requirements.txt
+pip install -e .
+
+# 2. Set environment variables
 export GITHUB_TOKEN=your_github_token_here
+export ANTHROPIC_API_KEY=your_anthropic_key_here  # Optional
 
-# Optional: Enable AI summaries
-export ANTHROPIC_API_KEY=your_anthropic_key_here
-
-# Run the all-in-one command
-spark unified --user YOUR_GITHUB_USERNAME
+# 3. Run unified command
+spark unified --user YOUR_GITHUB_USERNAME --include-ai-summaries
 ```
 
 **This single command generates:**
