@@ -202,7 +202,7 @@ visualization:
     gradient: true
 cache:
   enabled: true
-  ttl_hours: 12
+  # Cache invalidates based on repository pushed_at timestamps
 repositories:
   max_count: 1000
   exclude_forks: true
@@ -222,7 +222,7 @@ visualization:
     glow: false  # Disable for simpler SVGs
 cache:
   enabled: true
-  ttl_hours: 24  # Cache longer
+  # Cache invalidates based on repository pushed_at timestamps
 repositories:
   max_count: 100  # Process fewer repos
   exclude_forks: true
@@ -245,7 +245,7 @@ python -c "from spark.config import SparkConfig; c = SparkConfig(); c.load(); pr
 1. **Start Simple**: Begin with default configuration and customize gradually
 2. **Test Locally**: Use `spark preview --theme your-theme` to preview changes
 3. **Performance**: Reduce `max_count` if workflow takes too long
-4. **Caching**: Increase `ttl_hours` if your activity doesn't change frequently
+4. **Caching**: Cache automatically invalidates when repositories are updated (pushed_at based)
 5. **Selective Output**: Disable unused categories to speed up generation
 
 ## Next Steps

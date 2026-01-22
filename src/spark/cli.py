@@ -420,7 +420,7 @@ def handle_unified(args, logger):
         logger.info("STEP 2/3: Generating SVG Visualizations")
         logger.info("=" * 70)
         
-        # Initialize cache with config TTL
+        # Initialize workflow with shared cache (content-addressed by pushed_at)
         workflow = UnifiedReportWorkflow(
             config, 
             shared_cache, 
@@ -517,7 +517,7 @@ def handle_unified_analyze(args, logger):
         config = SparkConfig(args.config)
         config.load()
 
-        # Initialize cache with config TTL
+        # Initialize cache (content-addressed by pushed_at timestamps)
         cache_config = config.get("cache", {})
         cache = APICache(
             cache_dir=cache_config.get("directory", ".cache"),
@@ -597,7 +597,7 @@ def handle_dated_analyze(args, logger):
         config = SparkConfig(args.config)
         config.load()
 
-        # Initialize cache with config TTL
+        # Initialize cache (content-addressed by pushed_at timestamps)
         cache_config = config.config.get("cache", {})
         cache = APICache(
             cache_dir=cache_config.get("directory", ".cache"),

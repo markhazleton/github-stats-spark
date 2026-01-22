@@ -28,8 +28,8 @@ visualization:
 
 cache:
   enabled: true
-  ttl_hours: 6
   directory: ".cache"
+  # Cache invalidates based on repository pushed_at timestamps
 
 repositories:
   max_count: 500

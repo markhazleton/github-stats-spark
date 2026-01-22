@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Example: `spark unified --user USERNAME --max-repos 2`
 
 ### Changed
-- **Removed TTL-Based Expiration**: Cache never expires based on time, only on actual repository changes
+- **Content-Addressed Caching**: Cache uses repository pushed_at timestamps as keys, automatically invalidating when repository is updated (no time-based TTL)
 - **Intelligent Metadata Updates**: Lightweight metadata (stars, forks, pushed_at) updated separately from expensive processing
 - Cache key format uses ISO week (`YYYYWWW`) for organizational purposes only (not expiration)
 - `UnifiedDataGenerator.generate()` checks for repository changes before processing
@@ -263,7 +263,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Performance
 - Repository analysis completes in <3 minutes for 50 repositories
 - Intelligent parallel processing for AI summaries
-- Optimized GitHub API usage with 6-hour cache TTL
+- Optimized GitHub API usage with content-addressed caching (replaced with pushed_at-based strategy in v2.1.0)
 
 ### Constitution Compliance
 - ✅ Python-First: All modules independently importable
@@ -282,7 +282,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **GitHub Actions Integration**: Fully automated daily generation at midnight UTC
 - **Theme Support**: Dark, light, and custom themes with WCAG AA compliance
 - **Local CLI**: `spark generate` command for local testing
-- **Intelligent Caching**: 6-hour TTL with automatic cache invalidation
+- **Intelligent Caching**: Content-addressed by pushed_at timestamp with automatic invalidation on repo updates
 - **Rate Limit Handling**: Automatic retry logic for GitHub API limits
 - **Selective Output**: Choose which statistics categories to generate
 - **Configuration System**: YAML-based configuration with sensible defaults

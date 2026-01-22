@@ -86,8 +86,8 @@ analyzer:
   # Model selection (if ai_provider enabled)
   ai_model: claude-haiku-3.5  # Claude Haiku for cost-effective summaries
 
-  # Cache TTL for dependency version checks (days)
-  dependency_cache_ttl: 7     # 7 days for package registry responses
+  # Cache duration for external dependency version checks (days)
+  dependency_cache_ttl: 7     # 7 days for package registry API responses
 
   # Supported dependency ecosystems
   dependency_ecosystems:
@@ -139,7 +139,8 @@ dashboard:
     # Enable client-side data compression
     compress_json: false
 
-    # Cache dashboard data (hours)
+    # Dashboard data refresh interval (hours)
+    # Note: Backend cache uses pushed_at-based invalidation
     cache_ttl_hours: 6
 
     # Lazy load visualization components

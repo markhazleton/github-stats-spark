@@ -43,7 +43,8 @@ All operations MUST log to stdout/stderr for GitHub Actions workflow debugging. 
 
 **API Rate Limiting**:
 
-- MUST implement 6-hour cache TTL for all GitHub API responses
+- MUST implement content-addressed caching based on repository pushed_at timestamps
+- Cache invalidates automatically when repository is updated (new pushed_at value)
 - MUST support force-refresh flag to bypass cache when needed
 - MUST handle rate limit errors with exponential backoff (1s, 2s, 4s, 8s)
 - MUST limit repository processing to top 500 by default (configurable via `spark.yml`)

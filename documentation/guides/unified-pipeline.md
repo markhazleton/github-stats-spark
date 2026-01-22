@@ -281,7 +281,8 @@ analyzer:
     health: 0.25
 
 cache:
-  ttl_hours: 6
+  enabled: true
+  # Cache invalidates based on repository pushed_at timestamps
 ```
 
 ### Selective Cache Refresh

@@ -79,7 +79,7 @@ Dataclasses for Repository, CommitHistory, TechnologyStack, RepositorySummary, U
 - Repository exclusions (private repos MUST be excluded - constitutional requirement)
 - Theme selection (spark-dark default, spark-light) - all themes MUST meet WCAG AA contrast (4.5:1)
 - Analyzer settings: top_n repositories (default 50, max 500), ranking weights, AI provider
-- Cache TTL: 6 hours (constitutional requirement for rate limit protection)
+- Cache strategy: Content-addressed by repository pushed_at timestamp (cache valid until repo updates)
 
 ### React Frontend (`frontend/src/`)
 
@@ -133,7 +133,7 @@ Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
 
 ### GitHub API Rate Limits
 - Authenticated: 5000 requests/hour
-- **Smart caching** in `cache.py` reduces calls by 80% (6-hour TTL)
+- **Smart caching** in `cache.py` reduces calls by 80% (content-addressed by pushed_at)
 - Workflow handles `RateLimitExceededException` with automatic retry
 
 ### AI Summarization (Optional)
@@ -207,7 +207,7 @@ spark cache --clear  # Or delete .cache/ directory
 3. **CLI Interface**: MUST support `generate`, `preview`, `config`, `cache` commands
 4. **Testability**: >80% coverage for core modules, fixtures in `tests/fixtures/`
 5. **Observable**: All operations MUST log to stdout/stderr, no silent failures
-6. **Performance**: <5 min for <500 repos, 6-hour cache TTL, exponential backoff (1s, 2s, 4s, 8s)
+6. **Performance**: <5 min for <500 repos, pushed_at-based cache invalidation, exponential backoff (1s, 2s, 4s, 8s)
 7. **Accuracy**: <1% discrepancy vs GitHub, deterministic Spark Score
 8. **Themes**: WCAG AA contrast compliance (4.5:1 for text)
 9. **Demo Account**: Use `markhazleton` for all examples

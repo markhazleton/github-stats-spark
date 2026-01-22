@@ -53,7 +53,7 @@ Validate configuration structure and values.
 - Theme exists (built-in or in themes.yml)
 - Enabled statistics are valid categories
 - Repository limits are positive integers
-- Cache TTL is positive
+- Cache directory is valid path
 
 **Example:**
 ```python
@@ -518,7 +518,7 @@ Fetch user profile data.
 **Returns:**
 - `Dict[str, Any]`: User profile with public_repos, followers, created_at, etc.
 
-**Caching:** 6 hours by default
+**Caching:** Content-addressed by repository pushed_at timestamps
 
 **Example:**
 ```python
@@ -587,21 +587,23 @@ print(languages)  # {"Python": 5000, "HTML": 300}
 
 ### `spark.cache.APICache`
 
-File-based caching system for API responses.
+File-based caching system for API responses using content-addressed storage.
 
 #### Constructor
 
 ```python
-APICache(cache_dir: str = ".cache", ttl_hours: int = 6)
+APICache(cache_dir: str = ".cache", config: SparkConfig = None)
 ```
 
 **Parameters:**
 - `cache_dir` (str): Directory for cache files. Defaults to `.cache`.
-- `ttl_hours` (int): Time-to-live in hours. Defaults to 6.
+- `config` (SparkConfig): Configuration instance for cache settings.
+
+**Cache Strategy:** Content-addressed by repository `pushed_at` timestamps. Cache entries remain valid until the repository is updated (new `pushed_at` value).
 
 **Example:**
 ```python
-cache = APICache(cache_dir=".cache", ttl_hours=6)
+cache = APICache(cache_dir=".cache", config=config)
 ```
 
 #### Methods

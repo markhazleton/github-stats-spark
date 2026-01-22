@@ -227,7 +227,7 @@ The analyzer is optimized for speed:
 
 ### Optimization Tips
 
-1. **Use caching**: Don't disable the 6-hour cache for GitHub API responses
+1. **Use caching**: Cache is content-addressed by repository pushed_at timestamp (valid until repo updates)
 2. **Run during off-peak**: Lower GitHub API latency
 3. **Parallel processing**: AI summaries process in parallel when possible
 4. **Skip dependency analysis**: Use `--no-deps` flag if not needed (future enhancement)
@@ -287,7 +287,7 @@ jobs:
 **Cause**: GitHub API rate limit (5,000 requests/hour for authenticated)
 
 **Solution**:
-- Enable caching (default: 6-hour TTL)
+- Enable caching (content-addressed by pushed_at timestamps)
 - Wait for rate limit reset
 - Run during off-peak hours
 
