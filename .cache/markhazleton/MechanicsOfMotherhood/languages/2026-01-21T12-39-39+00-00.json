@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-01-22T01:24:13.128218+00:00",
+  "value": {
+    "TypeScript": 216171,
+    "JavaScript": 103458,
+    "CSS": 18042,
+    "HTML": 7706
+  },
+  "hash": "3f3595dcf167aefed59a37167afb055831c580c40a2ad88a622ebb2bd221d9f9",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MechanicsOfMotherhood"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-21T12:39:39+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "MechanicsOfMotherhood",
+  "week": "2026-01-21T12-39-39+00-00"
+}

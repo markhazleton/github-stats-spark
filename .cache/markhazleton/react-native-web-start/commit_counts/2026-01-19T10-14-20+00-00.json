@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-22T01:24:40.242096+00:00",
+  "value": {
+    "total": 54,
+    "recent_90d": 1,
+    "recent_180d": 54,
+    "recent_365d": 54,
+    "last_commit_date": "2026-01-14T04:19:15+00:00"
+  },
+  "hash": "c60e68430588af4a1b6fac40add49b36223856890f8c87908d0ead28c32877fe",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "react-native-web-start"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-19T10:14:20+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "react-native-web-start",
+  "week": "2026-01-19T10-14-20+00-00"
+}

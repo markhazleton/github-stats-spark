@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-22T01:24:40.996908+00:00",
+  "value": {
+    "TypeScript": 72131,
+    "JavaScript": 41476,
+    "HTML": 22818,
+    "CSS": 5394,
+    "SCSS": 4666
+  },
+  "hash": "c1db2139ccd0a9e223b2a1183a31471ddb363dde68f2480bfb5efd6ec261a8b0",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "react-native-web-start"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-19T10:14:20+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "react-native-web-start",
+  "week": "2026-01-19T10-14-20+00-00"
+}

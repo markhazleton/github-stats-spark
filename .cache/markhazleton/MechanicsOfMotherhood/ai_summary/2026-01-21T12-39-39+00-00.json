@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-22T01:24:24.547470+00:00",
+  "value": {
+    "ai_summary": "Here's a technical summary of the Mechanics of Motherhood repository:\n\nMechanics of Motherhood is a sophisticated recipe management platform designed specifically for busy working mothers, leveraging modern web technologies to provide a comprehensive culinary solution. The application is built using React 19 with TypeScript, featuring a mobile-first design that offers 108+ curated recipes across 14 categories, with advanced features like smart search, recipe ratings, nutritional information, and offline support. The project demonstrates a robust architectural approach, utilizing Vite for build optimization, TanStack Query for state management, and Tailwind CSS for responsive styling, with a focus on performance (achieving Lighthouse scores of 95+ across categories) and user experience. The platform integrates with RecipeSpark and WebCMS APIs to deliver real-time recipe data, implements progressive web app (PWA) capabilities, and provides automated CI/CD through GitHub Actions, making it a technically sophisticated solution for managing and discovering family-friendly recipes. By combining industrial-themed design, comprehensive data management, and accessibility features, the application addresses the specific needs of time-constrained parents seeking efficient meal planning and recipe management.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-21T19:24:24.547420",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 3023,
+    "confidence_score": 90
+  },
+  "hash": "02352e1ed5a59b3ac681da8f863717dd37c55f710902a8d9cadb6a9776874b80",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MechanicsOfMotherhood"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-21T12:39:39+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "MechanicsOfMotherhood",
+  "week": "2026-01-21T12-39-39+00-00"
+}

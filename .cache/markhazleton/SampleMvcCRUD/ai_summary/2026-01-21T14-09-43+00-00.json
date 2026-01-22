@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-22T01:25:16.431373+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nSampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern ASP.NET Core development. The project showcases versatile UI patterns including traditional MVC, Razor Pages, and Single Page Application (SPA) approaches, with robust features like Bootswatch theme switching, REST API endpoints, and integrated observability through Application Insights. Leveraging a clean architecture with dependency injection, repository patterns, and Entity Framework Core, the application supports multiple deployment scenarios including Windows IIS, Azure App Service, and Docker containerization, while emphasizing best practices in .NET development such as comprehensive unit testing, modular project structure, and extensible design. Key technologies include ASP.NET Core MVC, Swagger/OpenAPI, Bootstrap 5, and custom HttpClient utilities, making it an excellent learning resource for developers seeking to understand contemporary .NET web application development patterns and techniques. The project is particularly valuable for developers looking to explore modern web development approaches, CI/CD pipelines, and practical implementations of enterprise-grade application architectures.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-21T19:25:16.431322",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2198,
+    "confidence_score": 90
+  },
+  "hash": "c7882fee764426a8980bb8d69a7f6f8904c1f60f148ff52ee85d94fce7a9b28f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-21T14:09:43+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026-01-21T14-09-43+00-00"
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-22T01:23:24.906440+00:00",
+  "value": {
+    "total": 31,
+    "recent_90d": 19,
+    "recent_180d": 22,
+    "recent_365d": 22,
+    "last_commit_date": "2026-01-22T00:59:59+00:00"
+  },
+  "hash": "aac6c557cd22b2815026dc08ad0e97be667a78d31b77008a9d449547f7ed4222",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "ConcurrentProcessing"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-22T01:00:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "ConcurrentProcessing",
+  "week": "2026-01-22T01-00-01+00-00"
+}
