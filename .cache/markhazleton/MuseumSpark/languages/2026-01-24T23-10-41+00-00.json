@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-25T00:41:33.960086+00:00",
+  "value": {
+    "Python": 335314,
+    "TypeScript": 178495,
+    "PowerShell": 44192,
+    "JavaScript": 2067,
+    "HTML": 298,
+    "CSS": 55
+  },
+  "hash": "9f6ce8a6965b61b7fa1d8e0f594f59e4d505f6459c0a12e610ee7bd16d29f2c9",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MuseumSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-24T23:10:41+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "MuseumSpark",
+  "week": "2026-01-24T23-10-41+00-00"
+}

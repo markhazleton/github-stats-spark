@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-25T00:42:01.083568+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is a sophisticated, real-time conversational workflow application designed to guide users through interactive, multi-step processes using adaptive, dynamic interfaces. Built with ASP.NET Core and SignalR, the platform enables structured conversations through configurable workflow nodes, supporting complex interaction patterns with features like server-side state management, real-time communication, and optional AI-driven response generation. The application leverages Adaptive Cards for rendering interactive UI elements, uses a thread-safe Concurrent Dictionary for maintaining conversation state, and provides a flexible architecture that allows developers to define custom workflows through JSON configuration. Its core innovation lies in combining workflow management, real-time communication, and potential AI integration into a seamless, extensible platform for creating guided conversational experiences across various domains such as customer support, training, or interactive questionnaires. The project is particularly noteworthy for its modular design, which allows easy workflow customization, persistent conversation tracking, and potential scalability through technologies like Azure SignalR Service.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-25T00:42:01.083462",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2155,
+    "confidence_score": 90
+  },
+  "hash": "16e165f2fb37c3df77175333a3d42ae1fcf2fd512a43bcc439e5c6b37db63d9f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-23T13:55:12+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2026-01-23T13-55-12+00-00"
+}
