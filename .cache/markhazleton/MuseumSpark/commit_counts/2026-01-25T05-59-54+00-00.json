@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-25T06:01:55.225042+00:00",
+  "value": {
+    "total": 58,
+    "recent_90d": 58,
+    "recent_180d": 58,
+    "recent_365d": 58,
+    "last_commit_date": "2026-01-25T05:59:50+00:00"
+  },
+  "hash": "47febb417ef18019fc0acbccbf8e2e692850f3c46fb729d6f347f57c2936be14",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MuseumSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-25T05:59:54+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "MuseumSpark",
+  "week": "2026-01-25T05-59-54+00-00"
+}

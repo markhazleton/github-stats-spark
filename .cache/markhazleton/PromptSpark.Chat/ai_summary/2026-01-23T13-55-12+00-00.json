@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-25T06:02:21.216992+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is an innovative ASP.NET Core web application that enables dynamic, interactive conversational workflows through a real-time chat interface powered by SignalR and Adaptive Cards. The platform allows users to engage in multi-step, guided conversations with flexible branching logic, supporting complex interaction scenarios by dynamically rendering interactive UI elements and managing conversation state using thread-safe server-side storage. Leveraging modern web technologies like C#, SignalR, and optional AI integration, the application provides a robust framework for creating structured, context-aware conversational experiences with built-in persistence and extensibility. The architecture emphasizes modularity, with a clear separation of concerns between workflow management, real-time communication, and user interaction, making it particularly suitable for scenarios requiring guided user experiences such as surveys, onboarding processes, or interactive decision trees. What distinguishes PromptSpark.Chat is its elegant approach to managing conversational complexity through adaptive cards, server-side state management, and a flexible workflow definition mechanism that allows developers to easily configure and extend conversation flows without extensive custom coding.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-25T00:02:21.216929",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2173,
+    "confidence_score": 90
+  },
+  "hash": "ff8dc52af99e44fe725a1de3bf5b04dd5e668e342510c2507d9f6e9a61d535f4",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-23T13:55:12+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2026-01-23T13-55-12+00-00"
+}
