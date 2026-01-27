@@ -72,8 +72,8 @@ class TestCLIAnalyzeCommand:
         ]
 
         with patch("sys.argv", test_args):
-            with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
-                with patch("spark.cli.RepositoryRanker") as mock_ranker_cls:
+            with patch("spark.fetcher.GitHubFetcher") as mock_fetcher_cls:
+                with patch("spark.ranker.RepositoryRanker") as mock_ranker_cls:
                     # Setup mocks
                     mock_fetcher = MagicMock()
                     mock_fetcher.fetch_repositories.return_value = [
@@ -117,7 +117,7 @@ class TestCLIAnalyzeCommand:
             has_readme=False,
         )
 
-        with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+        with patch("spark.fetcher.GitHubFetcher") as mock_fetcher_cls:
             with patch("spark.cli.get_logger") as mock_logger:
                 # Setup mock fetcher
                 mock_fetcher = MagicMock()
@@ -166,7 +166,7 @@ class TestCLIAnalyzeCommand:
         """Test rate limit error handling and user notifications (T096)."""
         from spark.cli import handle_analyze
 
-        with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+        with patch("spark.fetcher.GitHubFetcher") as mock_fetcher_cls:
             with patch("spark.cli.get_logger") as mock_logger:
                 # Setup mock to raise rate limit error
                 mock_fetcher = MagicMock()
@@ -212,9 +212,9 @@ class TestCLIAnalyzeCommand:
             has_readme=True,
         )
 
-        with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
-            with patch("spark.cli.RepositoryRanker") as mock_ranker_cls:
-                with patch("spark.cli.RepositorySummarizer") as mock_summarizer_cls:
+        with patch("spark.fetcher.GitHubFetcher") as mock_fetcher_cls:
+            with patch("spark.ranker.RepositoryRanker") as mock_ranker_cls:
+                with patch("spark.summarizer.RepositorySummarizer") as mock_summarizer_cls:
                     with patch("spark.cli.ReportGenerator") as mock_report_gen_cls:
                         # Setup mocks
                         mock_fetcher = MagicMock()
@@ -289,7 +289,7 @@ class TestCLIAnalyzeCommand:
         """Test error logging provides actionable guidance (T095)."""
         from spark.cli import handle_analyze
 
-        with patch("spark.cli.GitHubFetcher") as mock_fetcher_cls:
+        with patch("spark.fetcher.GitHubFetcher") as mock_fetcher_cls:
             with patch("spark.cli.get_logger") as mock_logger:
                 # Setup mock to raise authentication error
                 mock_fetcher = MagicMock()

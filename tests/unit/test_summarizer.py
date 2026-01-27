@@ -109,7 +109,7 @@ MIT License
 class TestAIIntegration:
     """Test Anthropic Claude API integration."""
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_successful_ai_summary(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test successful AI summary generation."""
         # Mock API response
@@ -141,7 +141,7 @@ class TestAIIntegration:
         # Verify API was called
         mock_client.messages.create.assert_called_once()
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_ai_api_error_fallback(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test fallback to enhanced template on API error."""
         # Mock API to raise error
@@ -164,7 +164,7 @@ class TestAIIntegration:
         assert "Python" in summary.fallback_summary
         assert "1250" in summary.fallback_summary or "stars" in summary.fallback_summary.lower()
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_retry_logic(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test exponential backoff retry logic."""
         mock_client = MagicMock()
@@ -232,7 +232,7 @@ class TestREADMETruncation:
 class TestPromptEngineering:
     """Test prompt engineering for technical summaries."""
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_prompt_includes_repo_metadata(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test that prompt includes repository metadata."""
         mock_client = MagicMock()
@@ -255,7 +255,7 @@ class TestPromptEngineering:
         assert "awesome-project" in prompt_text.lower()
         assert "1250" in prompt_text or "stars" in prompt_text.lower()
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_prompt_includes_commit_analysis(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test that prompt includes commit pattern analysis."""
         mock_client = MagicMock()
@@ -347,7 +347,7 @@ class TestFallbackStrategies:
         assert "JavaScript" in summary.fallback_summary
         assert len(summary.fallback_summary) > 50  # Should have meaningful content
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_no_readme_with_ai_available(self, mock_anthropic, summarizer, sample_repository, sample_commits):
         """Test that AI can generate summary even without README."""
         # Mock successful API response
@@ -375,7 +375,7 @@ class TestFallbackStrategies:
 class TestCostTracking:
     """Test API cost tracking and logging."""
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_token_usage_logging(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test that API token usage is logged."""
         mock_client = MagicMock()
@@ -394,7 +394,7 @@ class TestCostTracking:
             logged_calls = [str(call) for call in mock_logger.call_args_list]
             assert any("token" in str(call).lower() for call in logged_calls)
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_cost_calculation(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test that API cost is calculated correctly."""
         mock_client = MagicMock()
@@ -450,7 +450,7 @@ class TestErrorHandling:
         assert summarizer is not None
         # Fallback functionality is tested through summarize_repository method
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_api_timeout_fallback(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test fallback on API timeout."""
         mock_client = MagicMock()
@@ -474,7 +474,7 @@ class TestErrorHandling:
 class TestSummaryQuality:
     """Test summary content quality."""
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_summary_mentions_key_features(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
         """Test that summary extracts key features from README."""
         mock_client = MagicMock()

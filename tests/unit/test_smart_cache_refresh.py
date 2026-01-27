@@ -4,11 +4,21 @@ import json
 import pytest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from unittest.mock import Mock, patch, mock_open
+from unittest.mock import Mock, patch, mock_open, MagicMock
 
 from spark.cache import APICache
 from spark.unified_data_generator import UnifiedDataGenerator
 from spark.config import SparkConfig
+
+
+@pytest.fixture
+def mock_fetcher():
+    """Create a mock GitHubFetcher that doesn't require a real token."""
+    fetcher = MagicMock()
+    fetcher.fetch_repositories = MagicMock(return_value=[])
+    fetcher.fetch_user_profile = MagicMock(return_value={"login": "testuser"})
+    fetcher.github = MagicMock()
+    return fetcher
 
 
 class TestAPICacheClearRepository:
@@ -70,12 +80,12 @@ class TestDataFreshnessCheck:
     @patch("builtins.open", new_callable=mock_open)
     @patch("pathlib.Path.exists")
     def test_check_data_freshness_returns_none_when_file_missing(
-        self, mock_exists, mock_file
+        self, mock_exists, mock_file, mock_fetcher
     ):
         """Test that _check_data_freshness returns None when file doesn't exist."""
         mock_exists.return_value = False
         
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {"analyzer": {}, "dashboard": {"data_generation": {}}}
             
@@ -90,7 +100,7 @@ class TestDataFreshnessCheck:
 
     @patch("builtins.open", new_callable=mock_open)
     @patch("pathlib.Path.exists")
-    def test_check_data_freshness_parses_timestamp(self, mock_exists, mock_file):
+    def test_check_data_freshness_parses_timestamp(self, mock_exists, mock_file, mock_fetcher):
         """Test that _check_data_freshness correctly parses generation timestamp."""
         mock_exists.return_value = True
         
@@ -105,7 +115,7 @@ class TestDataFreshnessCheck:
         }
         mock_file.return_value.read.return_value = json.dumps(mock_data)
         
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {"analyzer": {}, "dashboard": {"data_generation": {}}}
             
@@ -126,9 +136,9 @@ class TestDataFreshnessCheck:
 class TestSelectiveCacheRefresh:
     """Tests for selective cache refresh logic."""
 
-    def test_selective_cache_refresh_identifies_updated_repos(self):
+    def test_selective_cache_refresh_identifies_updated_repos(self, mock_fetcher):
         """Test that repos with new commits are identified for refresh."""
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {
                 "analyzer": {},
@@ -166,9 +176,9 @@ class TestSelectiveCacheRefresh:
             assert "no-push-date" in repos_to_refresh  # No push date (assume needs refresh)
             assert "old-repo" not in repos_to_refresh  # No new commits
 
-    def test_apply_selective_cache_clear_calls_cache_clear(self):
+    def test_apply_selective_cache_clear_calls_cache_clear(self, mock_fetcher):
         """Test that cache clearing is called for each repository."""
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {"analyzer": {}, "dashboard": {"data_generation": {}}}
             
@@ -198,7 +208,7 @@ class TestGenerateWithSmartRefresh:
     @patch("pathlib.Path.exists")
     @patch("json.load")
     def test_generate_skips_when_data_is_fresh(
-        self, mock_json_load, mock_exists, mock_file
+        self, mock_json_load, mock_exists, mock_file, mock_fetcher
     ):
         """Test that generate() returns existing data when less than 1 week old."""
         mock_exists.return_value = True
@@ -214,7 +224,7 @@ class TestGenerateWithSmartRefresh:
         }
         mock_json_load.return_value = mock_data
         
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {"analyzer": {}, "dashboard": {"data_generation": {}}}
             
@@ -233,7 +243,7 @@ class TestGenerateWithSmartRefresh:
     @patch("builtins.open", new_callable=mock_open)
     @patch("pathlib.Path.exists")
     def test_generate_uses_selective_refresh_when_data_is_old(
-        self, mock_exists, mock_file
+        self, mock_exists, mock_file, mock_fetcher
     ):
         """Test that generate() uses selective cache refresh when data is old."""
         mock_exists.return_value = True
@@ -248,7 +258,7 @@ class TestGenerateWithSmartRefresh:
             "repositories": []
         }
         
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {
                 "analyzer": {},

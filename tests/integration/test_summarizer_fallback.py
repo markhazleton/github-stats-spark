@@ -160,7 +160,7 @@ Apache 2.0
 class TestTier1_AISummary:
     """Test Tier 1: Primary AI summary generation."""
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_ai_summary_success(self, mock_anthropic, summarizer_with_api, complete_repository, active_commits, complete_readme):
         """Test successful AI summary generation (happy path)."""
         # Mock successful API response
@@ -190,7 +190,7 @@ class TestTier1_AISummary:
         assert "scalable" in summary.ai_summary.lower()
         assert len(summary.ai_summary) > 50
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_ai_summary_with_minimal_repo(self, mock_anthropic, summarizer_with_api, minimal_repository, active_commits):
         """Test AI summary with minimal repository (no README)."""
         mock_client = MagicMock()
@@ -219,7 +219,7 @@ class TestTier1_AISummary:
 class TestTier2_EnhancedTemplate:
     """Test Tier 2: Enhanced template fallback (README + metadata)."""
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_enhanced_template_on_api_failure(self, mock_anthropic, summarizer_with_api, complete_repository, active_commits, complete_readme):
         """Test fallback to enhanced template when API fails."""
         # Mock API failure
@@ -335,7 +335,7 @@ class TestTier3_BasicTemplate:
 class TestFallbackChain:
     """Test complete fallback chain integration."""
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_fallback_chain_tier1_to_tier2(self, mock_anthropic, summarizer_with_api, complete_repository, active_commits, complete_readme):
         """Test fallback from AI to enhanced template."""
         # Simulate API failure after retries
@@ -354,7 +354,7 @@ class TestFallbackChain:
         assert summary.ai_summary is None
         assert summary.fallback_summary is not None
 
-    @patch('spark.summarizer.anthropic.Anthropic')
+    @patch('anthropic.Anthropic')
     def test_fallback_chain_tier1_to_tier3(self, mock_anthropic, summarizer_with_api, minimal_repository, active_commits):
         """Test fallback from AI to basic template (no README)."""
         mock_client = MagicMock()

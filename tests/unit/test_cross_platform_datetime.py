@@ -7,12 +7,22 @@ import json
 import tempfile
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from unittest.mock import Mock, patch
+from unittest.mock import Mock, patch, MagicMock
 
 import pytest
 
 from spark.config import SparkConfig
 from spark.unified_data_generator import UnifiedDataGenerator
+
+
+@pytest.fixture
+def mock_fetcher():
+    """Create a mock GitHubFetcher that doesn't require a real token."""
+    fetcher = MagicMock()
+    fetcher.fetch_repositories = MagicMock(return_value=[])
+    fetcher.fetch_user_profile = MagicMock(return_value={"login": "testuser"})
+    fetcher.github = MagicMock()
+    return fetcher
 
 
 class TestCrossPlatformDatetimeHandling:
@@ -23,7 +33,7 @@ class TestCrossPlatformDatetimeHandling:
         "2026-01-01T00:00:00+00:00",  # UTC with offset
         "2026-01-01T00:00:00",  # Naive (should be treated as UTC)
     ])
-    def test_parses_various_timestamp_formats(self, timestamp_format):
+    def test_parses_various_timestamp_formats(self, timestamp_format, mock_fetcher):
         """Test that various ISO timestamp formats are parsed correctly."""
         with tempfile.TemporaryDirectory() as tmpdir:
             output_dir = Path(tmpdir)
@@ -41,7 +51,7 @@ class TestCrossPlatformDatetimeHandling:
             with open(repos_json_path, "w") as f:
                 json.dump(mock_data, f)
             
-            with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+            with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
                 config = Mock(spec=SparkConfig)
                 config.config = {"analyzer": {}, "dashboard": {"data_generation": {}}}
                 
@@ -58,9 +68,9 @@ class TestCrossPlatformDatetimeHandling:
                 assert generated_at.tzinfo is not None  # Must be timezone-aware
                 assert generated_at.tzinfo == timezone.utc  # Must be UTC
 
-    def test_datetime_comparison_with_various_formats(self):
+    def test_datetime_comparison_with_various_formats(self, mock_fetcher):
         """Test that datetime comparisons work regardless of input format."""
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {
                 "analyzer": {},
@@ -119,7 +129,7 @@ class TestCrossPlatformDatetimeHandling:
         # ISO format with timezone should include offset info
         assert '+' in test_timestamp or 'Z' in test_timestamp
 
-    def test_age_calculation_works_across_platforms(self):
+    def test_age_calculation_works_across_platforms(self, mock_fetcher):
         """Test that age calculation produces consistent results."""
         # Create a timestamp 10 days ago
         old_timestamp = (datetime.now(timezone.utc) - timedelta(days=10)).isoformat()
@@ -139,7 +149,7 @@ class TestCrossPlatformDatetimeHandling:
             with open(repos_json_path, "w") as f:
                 json.dump(mock_data, f)
             
-            with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+            with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
                 config = Mock(spec=SparkConfig)
                 config.config = {"analyzer": {}, "dashboard": {"data_generation": {}}}
                 
@@ -158,9 +168,9 @@ class TestCrossPlatformDatetimeHandling:
                 assert 9.9 < age.days < 10.1
                 assert age.total_seconds() > 0  # Should always be positive
 
-    def test_timezone_aware_comparison_never_fails(self):
+    def test_timezone_aware_comparison_never_fails(self, mock_fetcher):
         """Test that timezone-aware comparisons never raise TypeError."""
-        with patch.dict("os.environ", {"GITHUB_TOKEN": "test_token"}):
+        with patch("spark.unified_data_generator.GitHubFetcher", return_value=mock_fetcher):
             config = Mock(spec=SparkConfig)
             config.config = {
                 "analyzer": {},
