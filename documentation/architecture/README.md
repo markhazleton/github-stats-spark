@@ -73,7 +73,7 @@ This directory contains comprehensive architecture and implementation documentat
 
 ---
 
-### 3. **QUICK_REFERENCE.md** (Quick Lookup Guide)
+### 3. **quickstart/QUICK_REFERENCE.md** (Quick Lookup Guide)
 
 **Length**: ~2,000 words
 **Audience**: Developers, DevOps Engineers
@@ -149,10 +149,10 @@ This directory contains comprehensive architecture and implementation documentat
 4. Review: Component design and interfaces
 
 **Developers (Implementing)**:
-1. Review: QUICK_REFERENCE.md for overview
+1. Review: quickstart/QUICK_REFERENCE.md for overview
 2. Follow: IMPLEMENTATION_GUIDE.md for step-by-step tasks
 3. Reference: DASHBOARD_BUILD_PIPELINE.md for detailed specs
-4. Check: QUICK_REFERENCE.md for common issues
+4. Check: quickstart/QUICK_REFERENCE.md for common issues
 
 **DevOps/GitHub Pages**:
 1. Check: GitHub Pages Deployment Strategy section
@@ -169,7 +169,7 @@ This directory contains comprehensive architecture and implementation documentat
 → See: DATA_FLOW_DIAGRAM.txt → Phase 1-4 execution flow
 
 **"What are the key components?"**
-→ See: QUICK_REFERENCE.md → Core Components Quick Map
+→ See: quickstart/QUICK_REFERENCE.md → Core Components Quick Map
 
 **"How do I get started implementing?"**
 → See: IMPLEMENTATION_GUIDE.md → Phase 1
@@ -178,7 +178,7 @@ This directory contains comprehensive architecture and implementation documentat
 → See: DASHBOARD_BUILD_PIPELINE.md → File Organization Strategy
 
 **"What's the GitHub Pages setup?"**
-→ See: QUICK_REFERENCE.md → GitHub Pages Configuration
+→ See: quickstart/QUICK_REFERENCE.md → GitHub Pages Configuration
 
 **"How long will this take?"**
 → See: DASHBOARD_BUILD_PIPELINE.md → Implementation Timeline
@@ -312,15 +312,15 @@ Layer 0: Existing Stats Generation
 ### Questions About Architecture
 1. Review the relevant section in DASHBOARD_BUILD_PIPELINE.md
 2. Check DATA_FLOW_DIAGRAM.txt for visual explanation
-3. Consult QUICK_REFERENCE.md → Common Issues & Solutions
+3. Consult quickstart/QUICK_REFERENCE.md → Common Issues & Solutions
 
 ### Questions About Implementation
 1. Refer to IMPLEMENTATION_GUIDE.md for step-by-step instructions
-2. Check QUICK_REFERENCE.md for code examples and patterns
+2. Check quickstart/QUICK_REFERENCE.md for code examples and patterns
 3. Review Phase-specific sections for detailed guidance
 
 ### Questions About Specific Components
-1. QUICK_REFERENCE.md → Core Components Quick Map
+1. quickstart/QUICK_REFERENCE.md → Core Components Quick Map
 2. DASHBOARD_BUILD_PIPELINE.md → Architecture Design section
 3. IMPLEMENTATION_GUIDE.md → Relevant phase section
 
@@ -343,12 +343,12 @@ These documents should be updated when:
 
 ## Appendix: File Locations
 
-All documentation is located in: `docs/architecture/`
+All documentation is located in: `documentation/`
 
-- `README.md` - This file (index and navigation)
-- `DASHBOARD_BUILD_PIPELINE.md` - Complete architecture design
-- `DATA_FLOW_DIAGRAM.txt` - Visual data flow diagrams
-- `QUICK_REFERENCE.md` - Quick lookup reference
+- `architecture/README.md` - This file (index and navigation)
+- `architecture/DASHBOARD_BUILD_PIPELINE.md` - Complete architecture design
+- `architecture/DATA_FLOW_DIAGRAM.txt` - Visual data flow diagrams
+- `quickstart/QUICK_REFERENCE.md` - Quick lookup reference
 - `IMPLEMENTATION_GUIDE.md` - Step-by-step implementation
 
 ---

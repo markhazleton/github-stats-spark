@@ -50,7 +50,7 @@ Single script to run the complete 4-phase pipeline:
 
 **Created**:
 - [documentation/guides/unified-pipeline.md](documentation/guides/unified-pipeline.md) - Complete pipeline guide
-- [QUICK_REFERENCE.md](QUICK_REFERENCE.md) - One-page command reference
+- [documentation/quickstart/QUICK_REFERENCE.md](../quickstart/QUICK_REFERENCE.md) - One-page command reference
 
 **Updated**:
 - [README.md](README.md) - New quick start section with PowerShell script
@@ -167,8 +167,10 @@ Test-Path output\reports\markhazleton-analysis.md
 ```
 github-stats-spark/
 ├── README.md                           # Project overview + quick start
-├── QUICK_REFERENCE.md                  # One-page command reference
 ├── run-spark.ps1                       # Unified execution script
+├── documentation/
+│   ├── quickstart/
+│   │   └── QUICK_REFERENCE.md         # One-page command reference
 ├── documentation/
 │   ├── guides/
 │   │   ├── unified-pipeline.md        # Complete pipeline guide
@@ -240,7 +242,7 @@ spark unified --user markhazleton --include-ai-summaries
 ### Created
 - `run-spark.ps1` (273 lines)
 - `documentation/guides/unified-pipeline.md` (397 lines)
-- `QUICK_REFERENCE.md` (125 lines)
+- `documentation/quickstart/QUICK_REFERENCE.md` (125 lines)
 - `documentation/development/REFACTOR_PLAN.md` (moved)
 
 ### Modified
