@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-01-27T05:05:57.271551+00:00",
+  "value": {
+    "package.json": "{\n  \"name\": \"tailwindspark-monorepo\",\n  \"version\": \"1.0.18\",\n  \"description\": \"TailwindSpark - A comprehensive Tailwind CSS showcase monorepo with React and TypeScript. Part of the WebSpark portfolio by Mark Hazleton.\",\n  \"keywords\": [\n    \"tailwind\",\n    \"react\",\n    \"typescript\",\n    \"monorepo\",\n    \"design-system\",\n    \"webspark\",\n    \"ui-components\",\n    \"dashboard\"\n  ],\n  \"author\": {\n    \"name\": \"Mark Hazleton\",\n    \"email\": \"mark@markhazleton.com\",\n    \"url\": \"https://markhazleton.com\"\n  },\n  \"homepage\": \"https://markhazleton.github.io/tailwind-demo/\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/markhazleton/tailwind-demo.git\"\n  },\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"preversion\": \"node scripts/increment-version.js\",\n    \"build\": \"npm run preversion && turbo run build\",\n    \"prebuild:deploy\": \"tsx scripts/generate-meta.ts\",\n    \"build:deploy\": \"npm run prebuild:deploy && turbo run build --filter=@tailwindspark/demo-app\",\n    \"rev\": \"node scripts/revision.js\",\n    \"build:ci\": \"npx turbo run build --filter=@tailwindspark/design-tokens && npx turbo run build --filter=@tailwindspark/ui-components && npx turbo run build --filter=@tailwindspark/demo-app\",\n    \"dev\": \"turbo run dev\",\n    \"preview\": \"npm run preview --workspace=@tailwindspark/demo-app\",\n    \"lint\": \"turbo run lint\",\n    \"clean\": \"turbo run clean\",\n    \"type-check\": \"turbo run type-check\",\n    \"format\": \"prettier --write \\\"**/*.{ts,tsx,js,jsx,json,md,css}\\\"\",\n    \"format:check\": \"prettier --check \\\"**/*.{ts,tsx,js,jsx,json,md,css}\\\"\",\n    \"test\": \"turbo run test\",\n    \"test:ui\": \"turbo run test:ui\",\n    \"test:coverage\": \"turbo run test:coverage\",\n    \"performance:test\": \"node scripts/performance-test.mjs\",\n    \"lighthouse:ci\": \"lhci autorun\"\n  },\n  \"devDependencies\": {\n    \"@axe-core/react\": \"^4.11.0\",\n    \"@tailwindcss/forms\": \"^0.5.11\",\n    \"@tailwindcss/postcss\": \"^4.1.18\",\n    \"@tailwindcss/typography\": \"^0.5.19\",\n    \"@testing-library/jest-dom\": \"^6.9.1\",\n    \"@testing-library/react\": \"^16.3.1\",\n    \"@testing-library/user-event\": \"^14.6.1\",\n    \"@types/jest-axe\": \"^3.5.9\",\n    \"@vitest/coverage-v8\": \"^4.0.16\",\n    \"@vitest/ui\": \"^4.0.16\",\n    \"eslint\": \"^9.39.2\",\n    \"eslint-plugin-jsx-a11y\": \"^6.10.2\",\n    \"jest-axe\": \"^10.0.0\",\n    \"jsdom\": \"^27.4.0\",\n    \"prettier\": \"^3.7.4\",\n    \"prettier-plugin-tailwindcss\": \"^0.7.2\",\n    \"rimraf\": \"^6.1.2\",\n    \"tailwindcss\": \"^4.1.18\",\n    \"tsx\": \"^4.21.0\",\n    \"turbo\": \"^2.7.2\",\n    \"typescript\": \"^5.9.3\",\n    \"typescript-eslint\": \"^8.51.0\",\n    \"vitest\": \"^4.0.16\"\n  },\n  \"packageManager\": \"npm@11.7.0\",\n  \"engines\": {\n    \"node\": \">=18\"\n  },\n  \"dependencies\": {\n    \"ajv\": \"^8.17.1\",\n    \"web-vitals\": \"^5.1.0\"\n  }\n}\n"
+  },
+  "hash": "3910395c5271e9ae285f40a662cd44810e1e9d946549f8d7430eca152d8110ab",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "tailwind-demo"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-01-26T15:29:00+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "tailwind-demo",
+  "week": "2026-01-26T15-29-00+00-00"
+}

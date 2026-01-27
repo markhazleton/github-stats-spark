@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-27T05:04:37.683123+00:00",
+  "value": {
+    "TypeScript": 781611,
+    "JavaScript": 9731,
+    "PowerShell": 8070,
+    "Batchfile": 4056,
+    "Shell": 79
+  },
+  "hash": "2aa282e3421b4201c69e0f75f685fd048d387b7146d5e6638694f48f0d27f7d5",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "git-spark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-01-25T16:46:43+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "git-spark",
+  "week": "2026-01-25T16-46-43+00-00"
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-27T05:05:52.001436+00:00",
+  "value": {
+    "total": 91,
+    "recent_90d": 12,
+    "recent_180d": 68,
+    "recent_365d": 91,
+    "last_commit_date": "2026-01-05T03:30:17+00:00"
+  },
+  "hash": "b6c11e408338de7f0f564cc13f7fa2b3c49841525722f81f6cf55216a8aa8ccd",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "tailwind-demo"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-26T15:29:00+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "tailwind-demo",
+  "week": "2026-01-26T15-29-00+00-00"
+}
