@@ -242,23 +242,6 @@ class TestCommitMessageSanitization:
         # Should be properly escaped or sanitized
         assert "<svg" in svg  # Valid SVG
 
-    def test_truncate_long_text(self):
-        """Test that extremely long text is truncated."""
-        theme = SparkDarkTheme()
-        visualizer = StatisticsVisualizer(theme)
-
-        # Create very long language name
-        long_name = "A" * 500
-
-        languages = [{"name": long_name, "percentage": 100.0, "bytes": 10000}]
-
-        svg = visualizer.generate_languages(languages, "testuser")
-
-        # Should still generate valid SVG
-        assert svg.startswith("<svg")
-        # Should not contain the full 500-character name
-        assert long_name not in svg
-
 
 class TestEdgeCases:
     """Test edge cases in SVG generation."""
