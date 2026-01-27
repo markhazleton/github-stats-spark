@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-27T15:37:35.929881+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary for the SampleMvcCRUD repository:\n\nThis is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern ASP.NET Core development practices. The project showcases diverse UI patterns including traditional MVC, Razor Pages, and single-page application (SPA) approaches, with robust features like Bootswatch theme switching, REST API endpoints, and comprehensive observability through Application Insights and health checks. Leveraging advanced .NET technologies such as Entity Framework Core, Swagger/OpenAPI, and dependency injection, the repository provides a sophisticated, modular architecture that demonstrates clean code principles, flexible UI/UX design, and multiple deployment strategies including Docker containerization and Azure App Service hosting. The project is particularly noteworthy for its evolutionary approach, systematically modernizing its codebase across .NET versions while maintaining a focus on showcasing best practices in web application development, making it an excellent learning resource for developers seeking to understand contemporary .NET web development patterns and techniques. Targeted primarily at .NET developers, software architects, and technical educators, this repository serves as both a practical reference implementation and a comprehensive learning tool for building scalable, maintainable web applications.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-27T15:37:35.929787",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2227,
+    "confidence_score": 90
+  },
+  "hash": "3a2c6a57d9588395f75a0b9c6b96eeac95fb24c28143b9457b99395e858604a1",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-27T14:08:11+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026-01-27T14-08-11+00-00"
+}

@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-01-27 05:06:18 UTC
+**Generated**: 2026-01-27 15:37:38 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 35
 **AI Summary Rate**: 100.0%
@@ -37,28 +37,29 @@
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 132 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 135 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 6895 KB | 🚀 44.0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 7215 KB | 🚀 45.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a detailed technical summary of the github-stats-spark repository:
+Based on the detailed README and repository information, here's a comprehensive technical summary:
 
-Stats Spark is an advanced GitHub analytics and visualization platform designed to generate comprehensive insights and beautiful statistical representations of a developer's GitHub activity. The project leverages Python as its primary language, utilizing libraries like PyGithub and requests to interact with GitHub's API, and integrates AI-powered analysis through Claude Haiku for generating intelligent repository summaries. 
+Stats Spark is an advanced GitHub analytics and visualization platform designed to transform GitHub activity data into rich, actionable insights through automated profiling and AI-powered analysis. The project leverages Python as its primary language, utilizing libraries like PyGithub and requests to interact with GitHub's API, and integrating AI technologies (specifically Claude Haiku) to generate intelligent repository summaries and developer insights. The system architecture is modular and enterprise-ready, featuring smart caching mechanisms, rate limit handling, and flexible YAML-based configuration that enables comprehensive GitHub profile statistics generation with SVG visualizations across multiple dimensions like commit patterns, language usage, streaks, and performance metrics.
 
-The system's core architecture is modular and extensible, featuring automated GitHub Actions workflows that trigger daily updates, generating multiple visualization categories including commit heatmaps, language statistics, activity streaks, and a unique "Spark Score" metric. The project implements sophisticated data processing techniques, including intelligent caching mechanisms to optimize API request handling and reduce rate limit constraints.
+Key technical highlights include:
+- Automated daily GitHub Actions workflow for statistics generation
+- AI-powered repository analysis with 97%+ accuracy
+- Interactive mobile-first dashboard with responsive design
+- Comprehensive metrics calculation (Spark Score, repository health ranking)
+- Intelligent caching and API optimization strategies
+- Accessibility-compliant visualizations (WCAG 2.1 AA)
 
-Key technical differentiators include:
-- AI-driven repository analysis with 97%+ summary accuracy
-- Automated SVG visualization generation
-- Enterprise-grade rate limit and error handling
-- Mobile-first interactive dashboard with responsive design
-- Comprehensive performance optimization (< 2s First Contentful Paint)
+The project targets developers, technical leaders, and open-source maintainers seeking sophisticated, automated insights into GitHub activity and repository performance. Its unique value proposition lies in combining granular statistical tracking with intelligent AI-driven analysis, presenting complex GitHub metrics through intuitive, customizable visualizations.
 
-The technology stack combines Python backend processing, JavaScript frontend interactions, and CSS styling, with additional PowerShell and HTML components. The project targets developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub activity and repository performance.
-
-Architecturally, the system demonstrates advanced capabilities in data retrieval, processing, visualization, and AI-assisted analysis, making it a powerful tool for understanding software development patterns and individual/team productivity metrics.
+Technologies: Python 3.11+, PyGithub, Chart.js, SVG Generation, GitHub Actions, AI Integration (Claude Haiku)
+Target Users: Developers, Engineering Managers, Open Source Maintainers
+Unique Selling Points: Automated insights, AI-powered analysis, comprehensive visualization
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 9 total (9 current, 0 outdated)
@@ -166,13 +167,13 @@ MuseumSpark is an innovative data-driven museum discovery and travel planning pl
 
 Stars: 8 | Forks: 4 | Language: HTML | 14 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 29964 KB | 🚀 4.7 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 29967 KB | 🚀 4.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-Technical Summary:
+Here's a comprehensive technical summary for the SampleMvcCRUD repository:
 
-SampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern ASP.NET Core development. The project showcases versatile UI patterns including traditional MVC, Razor Pages, and Single Page Application (SPA) approaches, with robust features like Bootswatch theme switching, REST API endpoints, and integrated observability through Application Insights. Leveraging a clean architecture with dependency injection, repository patterns, and Entity Framework Core, the application supports multiple deployment scenarios including Windows IIS, Azure App Service, and Docker containerization, while emphasizing best practices in .NET development such as comprehensive unit testing, modular project structure, and extensible design. Key technologies include ASP.NET Core MVC, Swagger/OpenAPI, Bootstrap 5, and custom HttpClient utilities, making it an excellent learning resource for developers seeking to understand contemporary .NET web application development patterns and techniques. The project is particularly valuable for developers looking to explore modern web development approaches, CI/CD pipelines, and practical implementations of enterprise-grade application architectures.
+This is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern ASP.NET Core development practices. The project showcases diverse UI patterns including traditional MVC, Razor Pages, and single-page application (SPA) approaches, with robust features like Bootswatch theme switching, REST API endpoints, and comprehensive observability through Application Insights and health checks. Leveraging advanced .NET technologies such as Entity Framework Core, Swagger/OpenAPI, and dependency injection, the repository provides a sophisticated, modular architecture that demonstrates clean code principles, flexible UI/UX design, and multiple deployment strategies including Docker containerization and Azure App Service hosting. The project is particularly noteworthy for its evolutionary approach, systematically modernizing its codebase across .NET versions while maintaining a focus on showcasing best practices in web application development, making it an excellent learning resource for developers seeking to understand contemporary .NET web development patterns and techniques. Targeted primarily at .NET developers, software architects, and technical educators, this repository serves as both a practical reference implementation and a comprehensive learning tool for building scalable, maintainable web applications.
 
 **Created**: 2019-04-25
 **Last Modified**: 2026-01-05
@@ -771,10 +772,10 @@ The project serves as an educational reference implementation for developers see
 
 ## Report Metadata
 
-- **Generation Time**: 1.2 seconds
+- **Generation Time**: 2.1 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 80,957
+- **Total AI Tokens**: 81,027
 - **Success Rate**: 100.0%
 
 ### Data Sources
