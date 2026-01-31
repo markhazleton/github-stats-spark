@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T15:54:30.889272+00:00",
+  "value": {
+    "path": "output\\screenshots\\github-stats-spark.png",
+    "url": "https://markhazleton.github.io/github-stats-spark/",
+    "captured_at": "2026-01-31T15:54:30.889245+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 58.49
+  },
+  "hash": "657f8c8baeae99d3b6fbbd5b6eccf3c2a8467e9efed9877c436cd83f40ff8a7a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "github-stats-spark"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-31T03:36:52+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "github-stats-spark",
+  "week": "2026-01-31T03-36-52+00-00"
+}

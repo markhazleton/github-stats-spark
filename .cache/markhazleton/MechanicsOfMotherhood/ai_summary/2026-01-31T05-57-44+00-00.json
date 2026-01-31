@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-31T15:53:49.516175+00:00",
+  "value": {
+    "ai_summary": "Here's a technical summary of the Mechanics of Motherhood repository:\n\nMechanics of Motherhood is a sophisticated recipe management platform specifically designed for busy working mothers, leveraging modern web technologies to provide a comprehensive culinary organization solution. The application is built using React 19 with TypeScript, featuring a mobile-first responsive design that offers 108+ curated recipes across 14 categories, with advanced features like smart search, recipe filtering, nutritional information, and community ratings. The project showcases a robust technical architecture utilizing Vite for build optimization, TanStack Query for data management, Tailwind CSS for styling, and integrates with RecipeSpark and WebCMS APIs to deliver real-time, high-quality recipe data. Its unique value proposition lies in its industrial-themed design, progressive web app capabilities, offline support, and a focus on creating an intuitive, performance-optimized user experience specifically tailored to the needs of working mothers. The application demonstrates enterprise-grade development practices, including automated CI/CD with GitHub Actions, comprehensive test coverage, SEO optimization, and a modular, type-safe codebase that prioritizes both developer experience and end-user functionality.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-31T09:53:49.516117",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 3037,
+    "confidence_score": 90
+  },
+  "hash": "289c43fa4e08417573a66f03046273bc1b1dc3c5ae0416a69cc71a891a6301d1",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MechanicsOfMotherhood"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-31T05:57:44+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "MechanicsOfMotherhood",
+  "week": "2026-01-31T05-57-44+00-00"
+}

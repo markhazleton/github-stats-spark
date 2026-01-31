@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T16:06:38.182352+00:00",
+  "value": {
+    "path": "output\\screenshots\\reactsparkportfolio.png",
+    "url": "https://reactspark.markhazleton.com/",
+    "captured_at": "2026-01-31T16:06:38.182323+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 69.18
+  },
+  "hash": "b3ece9fc10e42d760d4c6039a888be7382c1103e12b42fdd7f0206b59e3c97f5",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "ReactSparkPortfolio"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-31T02:54:38+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "ReactSparkPortfolio",
+  "week": "2026-01-31T02-54-38+00-00"
+}

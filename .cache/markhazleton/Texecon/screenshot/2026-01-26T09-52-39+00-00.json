@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T16:06:40.552078+00:00",
+  "value": {
+    "path": "output\\screenshots\\texecon.png",
+    "url": "https://markhazleton.github.io/Texecon/",
+    "captured_at": "2026-01-31T16:06:40.552050+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 458.92
+  },
+  "hash": "333fffa5d5025f28e7f1637cb1e8c4b4e8400fb65c614238dac20f48a7b96f6c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Texecon"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-26T09:52:39+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "Texecon",
+  "week": "2026-01-26T09-52-39+00-00"
+}

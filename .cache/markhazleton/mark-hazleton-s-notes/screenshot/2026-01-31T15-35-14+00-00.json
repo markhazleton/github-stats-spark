@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T15:54:33.447622+00:00",
+  "value": {
+    "path": "output\\screenshots\\mark-hazleton-s-notes.png",
+    "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
+    "captured_at": "2026-01-31T15:54:33.447594+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 101.38
+  },
+  "hash": "f31ddebe69daf5cdfc78363311c3797136e3d176b38bd5c1602c4147dc8a2d76",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "mark-hazleton-s-notes"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-31T15:35:14+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "mark-hazleton-s-notes",
+  "week": "2026-01-31T15-35-14+00-00"
+}

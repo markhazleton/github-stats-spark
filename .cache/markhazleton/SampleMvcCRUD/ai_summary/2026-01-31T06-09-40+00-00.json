@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-31T15:54:25.945762+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nSampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as both a reference implementation and educational resource for modern web development techniques. The project showcases diverse architectural approaches including traditional MVC, Razor Pages, and Single Page Application (SPA) styles, with a robust technology stack featuring ASP.NET Core, Entity Framework Core, Swagger/OpenAPI, and Bootswatch theming. Key capabilities include dynamic theme switching, REST API endpoints, in-memory database integration, modal-based CRUD forms, and comprehensive DevOps workflows with GitHub Actions, Docker containerization, and multi-platform deployment strategies. The repository emphasizes clean architecture principles, dependency injection, unit testing, and observability, making it an excellent learning tool for developers seeking to understand contemporary .NET web application design and implementation patterns. Targeted primarily at .NET developers, software architects, and technical learners, the project provides a rich, evolving template for building maintainable, scalable web applications with modern tooling and best practices.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-31T09:54:25.945705",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2196,
+    "confidence_score": 90
+  },
+  "hash": "7e510659dd99e50340156e9f40c7e14e12ff51413eefe3d6ca6b1c2e40f813dd",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-31T06:09:40+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026-01-31T06-09-40+00-00"
+}

@@ -4,22 +4,26 @@
     "total_repositories": 35,
     "total_stars": 17,
     "total_forks": 7,
-    "total_commits": 3255
+    "total_commits": 3292
   },
   "repositories": [
     {
       "name": "github-stats-spark",
       "description": "A GitHub Stats for Profile README.md",
       "summary": {
-        "text": "Here's a comprehensive technical summary of the github-stats-spark repository:\n\nStats Spark is an advanced GitHub analytics platform designed to automate and visualize developer and repository performance metrics through intelligent data processing and AI-powered analysis. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub API interactions, svgwrite for visualization generation, and Claude Haiku for AI-powered repository summarization. It provides a comprehensive suite of features including automated SVG profile statistics, interactive dashboards, and AI-generated technical repository reports, with a modular architecture that supports extensive customization through YAML configuration.\n\nKey technical highlights include:\n- Sophisticated multi-tier repository ranking algorithm combining popularity, activity, and health metrics\n- Automated GitHub Actions workflow for daily statistics updates\n- Intelligent caching mechanism reducing API calls by 80-95%\n- Mobile-first interactive dashboard with responsive design and touch-optimized interactions\n- AI-generated technical summaries with 97%+ accuracy using enterprise-grade language models\n\nThe project's architecture emphasizes performance, accessibility, and extensibility, targeting developers, technical leaders, and open-source maintainers seeking deep insights into their GitHub activity. Its unique \"Spark Score\" metric and comprehensive visualization approach set it apart from traditional GitHub statistics tools, offering a holistic view of coding patterns, technology usage, and contribution dynamics.\n\nThe technology stack demonstrates modern web and data processing practices, utilizing Python 3.11+, JavaScript for frontend interactions, and integrating AI services for intelligent analysis. The project's design prioritizes automated, low-maintenance solutions with robust error handling, rate limit management, and comprehensive configuration options.",
+        "text": "Based on the comprehensive README, here's a detailed technical summary of the GitHub Stats Spark repository:\n\nStats Spark is an advanced GitHub analytics platform designed to automatically generate comprehensive visualizations and insights about a developer's GitHub activity and repository ecosystem. The project leverages Python as its primary language, integrating multiple technologies including PyGithub for GitHub data retrieval, AI models like Claude Haiku for intelligent analysis, and web technologies (JavaScript, CSS) for interactive dashboards and visualizations.\n\nThe core functionality revolves around automated, multi-dimensional GitHub profile analysis, producing SVG-based statistics across five key categories: overview dashboard, commit heatmap, language statistics, contribution streaks, and \"fun stats\". The system employs a sophisticated \"Spark Score\" algorithm that evaluates developer activity through weighted metrics of consistency (40%), volume (35%), and collaboration (25%), providing a holistic performance assessment.\n\nA standout feature is the AI-powered repository analysis, which generates comprehensive markdown reports using an intelligent ranking algorithm. This approach combines community engagement (30%), activity metrics (45%), and project health signals (25%) to create nuanced, context-aware repository evaluations. The system supports extensive customization through YAML configurations and features enterprise-grade capabilities like smart API caching, rate limit handling, and modular architectural design.\n\nThe project is engineered with strong emphasis on performance, accessibility, and user experience. It includes features like mobile-first interactive dashboards, offline support, WCAG 2.1 AA compliance, and the ability to analyze 50+ repositories in under 3 minutes. The automated GitHub Actions workflow ensures daily updates, making it a low-maintenance solution for developers seeking comprehensive GitHub insights.\n\nTechnically remarkable aspects include its use of multiple fallback strategies (e.g., AI summary generation), intelligent caching mechanisms reducing API calls by 80-95%, and a flexible, extensible architecture that supports future enhancements. The project targets developers, technical leaders, and open-source maintainers looking for sophisticated, automated GitHub activity tracking and visualization.\n\nRecommended technical audience: Python developers, DevOps engineers, technical project managers, and open-source maintainers interested in advanced GitHub analytics and visualization tools.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-01-31T03:36:10.879809",
+        "generated_at": "2026-01-31T09:53:06.435365",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2571,
+        "tokens_used": 2687,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/github-stats-spark",
+      "homepage": "https://markhazleton.github.io/github-stats-spark/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/github-stats-spark/",
+      "website_url": "https://markhazleton.github.io/github-stats-spark/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -27,27 +31,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-01-31T03:35:30+00:00",
-      "pushed_at": "2026-01-31T03:35:27+00:00",
-      "total_commits": 138,
-      "recent_commits_90d": 138,
+      "updated_at": "2026-01-31T03:36:55+00:00",
+      "pushed_at": "2026-01-31T03:36:52+00:00",
+      "total_commits": 139,
+      "recent_commits_90d": 139,
       "first_commit_date": "2025-12-28T17:01:51+00:00",
-      "last_commit_date": "2026-01-31T03:35:24+00:00",
+      "last_commit_date": "2026-01-31T03:36:51+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 138,
-        "recent_90d": 138,
-        "recent_180d": 138,
-        "recent_365d": 138,
-        "last_commit_date": "2026-01-31T03:35:24+00:00",
+        "total_commits": 139,
+        "recent_90d": 139,
+        "recent_180d": 139,
+        "recent_365d": 139,
+        "last_commit_date": "2026-01-31T03:36:51+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 46.0,
+        "commit_frequency": 46.33,
         "consistency_score": 0,
-        "activity_rate": 1.533,
+        "activity_rate": 1.544,
         "days_since_last_commit": 0,
         "first_commit_date": "2025-12-28T17:01:51+00:00"
       },
@@ -55,7 +59,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 46.0,
+      "commit_velocity": 46.33,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -154,28 +158,40 @@
       },
       "has_readme": true,
       "language_count": 5,
-      "size_kb": 7244,
+      "size_kb": 7510,
       "is_fork": false,
       "is_private": false,
       "age_days": 33,
       "days_since_last_push": 0,
-      "ai_summary": "Here's a comprehensive technical summary of the github-stats-spark repository:\n\nStats Spark is an advanced GitHub analytics platform designed to automate and visualize developer and repository performance metrics through intelligent data processing and AI-powered analysis. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub API interactions, svgwrite for visualization generation, and Claude Haiku for AI-powered repository summarization. It provides a comprehensive suite of features including automated SVG profile statistics, interactive dashboards, and AI-generated technical repository reports, with a modular architecture that supports extensive customization through YAML configuration.\n\nKey technical highlights include:\n- Sophisticated multi-tier repository ranking algorithm combining popularity, activity, and health metrics\n- Automated GitHub Actions workflow for daily statistics updates\n- Intelligent caching mechanism reducing API calls by 80-95%\n- Mobile-first interactive dashboard with responsive design and touch-optimized interactions\n- AI-generated technical summaries with 97%+ accuracy using enterprise-grade language models\n\nThe project's architecture emphasizes performance, accessibility, and extensibility, targeting developers, technical leaders, and open-source maintainers seeking deep insights into their GitHub activity. Its unique \"Spark Score\" metric and comprehensive visualization approach set it apart from traditional GitHub statistics tools, offering a holistic view of coding patterns, technology usage, and contribution dynamics.\n\nThe technology stack demonstrates modern web and data processing practices, utilizing Python 3.11+, JavaScript for frontend interactions, and integrating AI services for intelligent analysis. The project's design prioritizes automated, low-maintenance solutions with robust error handling, rate limit management, and comprehensive configuration options.",
+      "ai_summary": "Based on the comprehensive README, here's a detailed technical summary of the GitHub Stats Spark repository:\n\nStats Spark is an advanced GitHub analytics platform designed to automatically generate comprehensive visualizations and insights about a developer's GitHub activity and repository ecosystem. The project leverages Python as its primary language, integrating multiple technologies including PyGithub for GitHub data retrieval, AI models like Claude Haiku for intelligent analysis, and web technologies (JavaScript, CSS) for interactive dashboards and visualizations.\n\nThe core functionality revolves around automated, multi-dimensional GitHub profile analysis, producing SVG-based statistics across five key categories: overview dashboard, commit heatmap, language statistics, contribution streaks, and \"fun stats\". The system employs a sophisticated \"Spark Score\" algorithm that evaluates developer activity through weighted metrics of consistency (40%), volume (35%), and collaboration (25%), providing a holistic performance assessment.\n\nA standout feature is the AI-powered repository analysis, which generates comprehensive markdown reports using an intelligent ranking algorithm. This approach combines community engagement (30%), activity metrics (45%), and project health signals (25%) to create nuanced, context-aware repository evaluations. The system supports extensive customization through YAML configurations and features enterprise-grade capabilities like smart API caching, rate limit handling, and modular architectural design.\n\nThe project is engineered with strong emphasis on performance, accessibility, and user experience. It includes features like mobile-first interactive dashboards, offline support, WCAG 2.1 AA compliance, and the ability to analyze 50+ repositories in under 3 minutes. The automated GitHub Actions workflow ensures daily updates, making it a low-maintenance solution for developers seeking comprehensive GitHub insights.\n\nTechnically remarkable aspects include its use of multiple fallback strategies (e.g., AI summary generation), intelligent caching mechanisms reducing API calls by 80-95%, and a flexible, extensible architecture that supports future enhancements. The project targets developers, technical leaders, and open-source maintainers looking for sophisticated, automated GitHub activity tracking and visualization.\n\nRecommended technical audience: Python developers, DevOps engineers, technical project managers, and open-source maintainers interested in advanced GitHub analytics and visualization tools.",
       "rank": 1,
-      "composite_score": 87.96
+      "composite_score": 87.96,
+      "screenshot": {
+        "path": "output\\screenshots\\github-stats-spark.png",
+        "url": "https://markhazleton.github.io/github-stats-spark/",
+        "captured_at": "2026-01-31T15:54:30.889245+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 58.49
+      }
     },
     {
       "name": "mark-hazleton-s-notes",
       "description": "Personal site for Mark Hazleton, a Technical Solutions Architect",
       "summary": {
-        "text": "This repository is a personal technical portfolio and blog site for Mark Hazleton, a Technical Solutions Architect, built as a modern, statically-generated React application with advanced static site generation and SEO optimization capabilities. The site leverages a sophisticated build pipeline using Vite, React 19, and TypeScript, with server-side rendering (SSR) and static prerendering to create a performant, SEO-friendly web experience that dynamically displays blog posts, project portfolios, and live GitHub repository metrics. Key architectural features include automated content generation scripts, image optimization, RSS feed creation with Media RSS extensions, and a modular component structure that separates concerns between data sources, UI components, and build-time transformations. The project demonstrates a sophisticated approach to modern web development, utilizing cutting-edge technologies like Tailwind CSS, Radix UI, and Azure Static Web Apps, with a focus on developer experience, content flexibility, and automated deployment workflows. Unique aspects include its comprehensive SEO strategy, dynamic GitHub activity integration, and a carefully designed content management approach that allows easy updates through JSON metadata and Markdown files. The site is primarily targeted at technical professionals, potential employers, and those interested in cloud architecture, integration patterns, and engineering practices.",
+        "text": "Here's a comprehensive technical summary for the mark-hazleton-s-notes repository:\n\nThis is a sophisticated personal portfolio and technical blog site built as a static site using modern web technologies, designed to showcase Mark Hazleton's professional work and insights as a Technical Solutions Architect. The site leverages a robust React 19 and Vite 7 framework with server-side rendering (SSR) and static prerendering, enabling high-performance content delivery and excellent SEO capabilities. The architecture is meticulously structured, with a comprehensive build pipeline that automatically generates optimized assets, including static HTML routes, responsive image thumbnails, RSS feeds, sitemaps, and metadata, all managed through sophisticated build scripts written in TypeScript. Key technical innovations include dynamic GitHub repository metrics integration, automatic content optimization, and a modular component system using Tailwind CSS, Radix UI, and shadcn/ui for a consistent, responsive design. The project stands out for its advanced static site generation approach, which seamlessly combines content management, performance optimization, and developer experience through automated build processes and carefully designed scripts. Targeted primarily at technical professionals, developers, and potential collaborators, the site serves as both a personal showcase and a technical demonstration of modern web development practices.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-01-30T21:29:34.749429",
+        "generated_at": "2026-01-31T09:53:36.354818",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 1934,
+        "tokens_used": 1938,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/mark-hazleton-s-notes",
+      "homepage": "https://markhazleton.github.io/mark-hazleton-s-notes/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
+      "website_url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -183,27 +199,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2026-01-10T00:55:51+00:00",
-      "updated_at": "2026-01-31T02:33:08+00:00",
-      "pushed_at": "2026-01-31T02:33:04+00:00",
-      "total_commits": 75,
-      "recent_commits_90d": 74,
+      "updated_at": "2026-01-31T15:35:18+00:00",
+      "pushed_at": "2026-01-31T15:35:14+00:00",
+      "total_commits": 79,
+      "recent_commits_90d": 78,
       "first_commit_date": "2026-01-10T00:55:51+00:00",
-      "last_commit_date": "2026-01-31T02:32:59+00:00",
+      "last_commit_date": "2026-01-31T15:35:10+00:00",
       "commit_history": {
         "repository_name": "mark-hazleton-s-notes",
-        "total_commits": 75,
-        "recent_90d": 74,
-        "recent_180d": 74,
-        "recent_365d": 74,
-        "last_commit_date": "2026-01-31T02:32:59+00:00",
+        "total_commits": 79,
+        "recent_90d": 78,
+        "recent_180d": 78,
+        "recent_365d": 78,
+        "last_commit_date": "2026-01-31T15:35:10+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 24.67,
+        "commit_frequency": 26.0,
         "consistency_score": 0,
-        "activity_rate": 0.822,
+        "activity_rate": 0.867,
         "days_since_last_commit": 0,
         "first_commit_date": "2026-01-10T00:55:51+00:00"
       },
@@ -211,7 +227,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 24.67,
+      "commit_velocity": 26.0,
       "tech_stack": {
         "repository_name": "mark-hazleton-s-notes",
         "languages": {},
@@ -219,7 +235,7 @@
         "dependencies": [
           {
             "name": "sharp",
-            "current_version": "0.33.0",
+            "current_version": "0.34.5",
             "latest_version": null,
             "ecosystem": "npm",
             "versions_behind": 0,
@@ -444,7 +460,7 @@
           },
           {
             "name": "react-resizable-panels",
-            "current_version": "4.5.4",
+            "current_version": "4.5.6",
             "latest_version": null,
             "ecosystem": "npm",
             "versions_behind": 0,
@@ -570,7 +586,7 @@
           },
           {
             "name": "autoprefixer",
-            "current_version": "10.4.23",
+            "current_version": "10.4.24",
             "latest_version": null,
             "ecosystem": "npm",
             "versions_behind": 0,
@@ -751,14 +767,22 @@
       },
       "has_readme": true,
       "language_count": 5,
-      "size_kb": 164296,
+      "size_kb": 165884,
       "is_fork": false,
       "is_private": false,
       "age_days": 21,
       "days_since_last_push": 0,
-      "ai_summary": "This repository is a personal technical portfolio and blog site for Mark Hazleton, a Technical Solutions Architect, built as a modern, statically-generated React application with advanced static site generation and SEO optimization capabilities. The site leverages a sophisticated build pipeline using Vite, React 19, and TypeScript, with server-side rendering (SSR) and static prerendering to create a performant, SEO-friendly web experience that dynamically displays blog posts, project portfolios, and live GitHub repository metrics. Key architectural features include automated content generation scripts, image optimization, RSS feed creation with Media RSS extensions, and a modular component structure that separates concerns between data sources, UI components, and build-time transformations. The project demonstrates a sophisticated approach to modern web development, utilizing cutting-edge technologies like Tailwind CSS, Radix UI, and Azure Static Web Apps, with a focus on developer experience, content flexibility, and automated deployment workflows. Unique aspects include its comprehensive SEO strategy, dynamic GitHub activity integration, and a carefully designed content management approach that allows easy updates through JSON metadata and Markdown files. The site is primarily targeted at technical professionals, potential employers, and those interested in cloud architecture, integration patterns, and engineering practices.",
+      "ai_summary": "Here's a comprehensive technical summary for the mark-hazleton-s-notes repository:\n\nThis is a sophisticated personal portfolio and technical blog site built as a static site using modern web technologies, designed to showcase Mark Hazleton's professional work and insights as a Technical Solutions Architect. The site leverages a robust React 19 and Vite 7 framework with server-side rendering (SSR) and static prerendering, enabling high-performance content delivery and excellent SEO capabilities. The architecture is meticulously structured, with a comprehensive build pipeline that automatically generates optimized assets, including static HTML routes, responsive image thumbnails, RSS feeds, sitemaps, and metadata, all managed through sophisticated build scripts written in TypeScript. Key technical innovations include dynamic GitHub repository metrics integration, automatic content optimization, and a modular component system using Tailwind CSS, Radix UI, and shadcn/ui for a consistent, responsive design. The project stands out for its advanced static site generation approach, which seamlessly combines content management, performance optimization, and developer experience through automated build processes and carefully designed scripts. Targeted primarily at technical professionals, developers, and potential collaborators, the site serves as both a personal showcase and a technical demonstration of modern web development practices.",
       "rank": 2,
-      "composite_score": 78.38
+      "composite_score": 80.72,
+      "screenshot": {
+        "path": "output\\screenshots\\mark-hazleton-s-notes.png",
+        "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
+        "captured_at": "2026-01-31T15:54:33.447594+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 101.38
+      }
     },
     {
       "name": "git-spark",
@@ -773,6 +797,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/git-spark",
+      "homepage": "https://markhazleton.github.io/git-spark/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/git-spark/",
+      "website_url": "https://markhazleton.github.io/git-spark/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -999,11 +1027,19 @@
       "size_kb": 1326,
       "is_fork": false,
       "is_private": false,
-      "age_days": 123,
+      "age_days": 124,
       "days_since_last_push": 5,
       "ai_summary": "Based on the repository details, here's a comprehensive technical summary:\n\nGit Spark is a sophisticated TypeScript-based Git repository analytics tool designed to provide deep insights into software development workflows through comprehensive commit history analysis. The project enables developers and engineering managers to generate interactive HTML reports that visualize repository metrics, including contributor activity, code change patterns, daily trends, and file evolution across multiple dimensions. Leveraging modern web technologies and a modular Node.js architecture, Git Spark offers both CLI and programmatic interfaces, supporting advanced features like multi-format export, configurable analysis periods, and enterprise-grade reporting with strong emphasis on data privacy and accessibility. The tool's unique value proposition lies in its ability to transform raw Git commit data into actionable intelligence, featuring security-first design principles, dark mode support, and extensive customization options that make it suitable for teams seeking granular repository insights without external service dependencies.\n\nKey technical highlights include:\n- TypeScript-based implementation\n- Node.js CLI and library architecture\n- Interactive HTML reporting with dynamic charts\n- Comprehensive Git commit data analysis\n- Multiple export formats (HTML, JSON, CSV, Markdown)\n- Configurable analysis parameters\n- Strong focus on privacy and security",
       "rank": 3,
-      "composite_score": 75.57
+      "composite_score": 75.58,
+      "screenshot": {
+        "path": "output\\screenshots\\git-spark.png",
+        "url": "https://markhazleton.github.io/git-spark/",
+        "captured_at": "2026-01-31T15:54:35.187653+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 184.79
+      }
     },
     {
       "name": "WebSpark.HttpClientUtility",
@@ -1018,6 +1054,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/WebSpark.HttpClientUtility",
+      "homepage": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+      "website_url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -1046,7 +1086,7 @@
         "commit_frequency": 23.67,
         "consistency_score": 0,
         "activity_rate": 0.789,
-        "days_since_last_commit": 25,
+        "days_since_last_commit": 26,
         "first_commit_date": "2025-05-03T18:36:10+00:00"
       },
       "commit_metrics": null,
@@ -1061,24 +1101,36 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 272,
-      "days_since_last_push": 25,
+      "days_since_last_push": 26,
       "ai_summary": "Here's a technical summary of the WebSpark.HttpClientUtility repository:\n\nWebSpark.HttpClientUtility is a sophisticated .NET HTTP client utility library designed to simplify and enhance HTTP communication in modern .NET applications (versions 8-10). The library provides a comprehensive, drop-in solution for HTTP interactions, offering enterprise-grade features like Polly-based resilience (retry and circuit breaker patterns), intelligent response caching, structured logging with correlation IDs, and built-in OpenTelemetry tracing—all configurable with a single method call. Leveraging dependency injection and modern .NET patterns, the library abstracts away complex HttpClient setup, reducing boilerplate code from 50+ lines to a single configuration method while providing robust observability, error handling, and performance optimization features.\n\nKey technical highlights include:\n- Integrated Polly resilience policies\n- Configurable in-memory response caching\n- Automatic correlation and tracing\n- Support for .NET 8 LTS, 9, and 10 (Preview)\n- Native AOT and IL trimming compatibility\n- Extensive test coverage (237+ unit tests)\n- Semantic versioning and long-term support\n\nThe library is particularly well-suited for microservices, distributed systems, background workers, and web scraping scenarios where reliable, observable HTTP communication is critical. Its design philosophy emphasizes simplicity, performance, and production-readiness, making it an attractive alternative to manually configured HttpClient setups or more rigid HTTP client libraries.",
       "rank": 4,
-      "composite_score": 71.71
+      "composite_score": 71.71,
+      "screenshot": {
+        "path": "output\\screenshots\\webspark.httpclientutility.png",
+        "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+        "captured_at": "2026-01-31T15:54:37.003250+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 42.24
+      }
     },
     {
       "name": "MuseumSpark",
       "description": "A Museum Trip Planning Application",
       "summary": {
-        "text": "Here's a comprehensive technical summary of the MuseumSpark repository:\n\nMuseumSpark is an innovative data-driven museum discovery and travel planning platform designed to transform the Walker Art Center Reciprocal Program membership list into a sophisticated, intelligent resource for art enthusiasts. The project leverages a multi-phase data enrichment pipeline to systematically collect, validate, and enhance museum metadata across North America, using advanced technologies like Pydantic, JSON Schema, and web scraping techniques to create a comprehensive museum database with nuanced scoring and classification capabilities. The platform architecturally separates data collection (Python-based backend scripts), data validation (JSON Schema), and presentation (React frontend), with a clear roadmap progressing from foundational data gathering to advanced AI-assisted travel recommendations across multiple implementation phases. Unique technical strengths include its rigorous data quality assurance approach, multi-source data integration strategy (combining Wikidata, Wikipedia, and museum websites), and planned machine learning-powered content enrichment that will enable personalized museum recommendations based on artistic collections and user preferences. Targeted primarily at art lovers, cultural tourists, and museum enthusiasts, MuseumSpark aims to transform museum exploration from a passive directory experience to an intelligent, data-driven travel planning tool that helps users discover and prioritize museum visits with unprecedented depth and precision.",
+        "text": "Here's a comprehensive technical summary of the MuseumSpark repository:\n\nMuseumSpark is an innovative data-driven travel planning platform specifically designed for art enthusiasts, focusing on transforming the Walker Art Center Reciprocal Program museum list into a sophisticated, enriched museum discovery and travel optimization system. The project leverages a multi-phase data enrichment pipeline that systematically aggregates and validates museum metadata from diverse sources like Wikidata, Wikipedia, and official museum websites, with the ultimate goal of creating a comprehensive, intelligent museum browsing and travel planning experience. Built using a modern Python-based data pipeline and React frontend, the platform employs advanced techniques like JSON Schema validation, web scraping, and planned AI-assisted content generation to create a rich, dynamically updated museum database with sophisticated features such as priority scoring, collection strength assessment, and potential future personalized travel recommendations. The architecture is modular and extensible, with a clear roadmap progressing through distinct data enrichment and feature expansion phases, ultimately aiming to provide art lovers with a strategic tool for discovering and prioritizing museum visits across North America. Unique aspects include its rigorous data quality approach, multi-source data integration, and the vision to transform a simple museum directory into an intelligent, context-aware travel companion powered by structured data and machine learning techniques. The target users are art enthusiasts, travelers, museum researchers, and cultural tourists seeking a data-driven approach to museum exploration and travel planning.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-01-30T21:30:04.497443",
+        "generated_at": "2026-01-31T09:54:04.706692",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2503,
+        "tokens_used": 2527,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/MuseumSpark",
+      "homepage": "https://markhazleton.github.io/MuseumSpark/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/MuseumSpark/",
+      "website_url": "https://markhazleton.github.io/MuseumSpark/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -1086,27 +1138,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2026-01-15T13:24:02+00:00",
-      "updated_at": "2026-01-31T03:27:38+00:00",
-      "pushed_at": "2026-01-31T03:27:34+00:00",
-      "total_commits": 60,
-      "recent_commits_90d": 60,
+      "updated_at": "2026-01-31T05:26:07+00:00",
+      "pushed_at": "2026-01-31T05:26:03+00:00",
+      "total_commits": 61,
+      "recent_commits_90d": 61,
       "first_commit_date": "2026-01-15T13:24:02+00:00",
-      "last_commit_date": "2026-01-31T03:27:31+00:00",
+      "last_commit_date": "2026-01-31T05:26:00+00:00",
       "commit_history": {
         "repository_name": "MuseumSpark",
-        "total_commits": 60,
-        "recent_90d": 60,
-        "recent_180d": 60,
-        "recent_365d": 60,
-        "last_commit_date": "2026-01-31T03:27:31+00:00",
+        "total_commits": 61,
+        "recent_90d": 61,
+        "recent_180d": 61,
+        "recent_365d": 61,
+        "last_commit_date": "2026-01-31T05:26:00+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 20.0,
+        "commit_frequency": 20.33,
         "consistency_score": 0,
-        "activity_rate": 0.667,
+        "activity_rate": 0.678,
         "days_since_last_commit": 0,
         "first_commit_date": "2026-01-15T13:24:02+00:00"
       },
@@ -1114,32 +1166,44 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 20.0,
+      "commit_velocity": 20.33,
       "tech_stack": null,
       "has_readme": true,
       "language_count": 6,
-      "size_kb": 21002,
+      "size_kb": 21061,
       "is_fork": false,
       "is_private": false,
-      "age_days": 15,
+      "age_days": 16,
       "days_since_last_push": 0,
-      "ai_summary": "Here's a comprehensive technical summary of the MuseumSpark repository:\n\nMuseumSpark is an innovative data-driven museum discovery and travel planning platform designed to transform the Walker Art Center Reciprocal Program membership list into a sophisticated, intelligent resource for art enthusiasts. The project leverages a multi-phase data enrichment pipeline to systematically collect, validate, and enhance museum metadata across North America, using advanced technologies like Pydantic, JSON Schema, and web scraping techniques to create a comprehensive museum database with nuanced scoring and classification capabilities. The platform architecturally separates data collection (Python-based backend scripts), data validation (JSON Schema), and presentation (React frontend), with a clear roadmap progressing from foundational data gathering to advanced AI-assisted travel recommendations across multiple implementation phases. Unique technical strengths include its rigorous data quality assurance approach, multi-source data integration strategy (combining Wikidata, Wikipedia, and museum websites), and planned machine learning-powered content enrichment that will enable personalized museum recommendations based on artistic collections and user preferences. Targeted primarily at art lovers, cultural tourists, and museum enthusiasts, MuseumSpark aims to transform museum exploration from a passive directory experience to an intelligent, data-driven travel planning tool that helps users discover and prioritize museum visits with unprecedented depth and precision.",
+      "ai_summary": "Here's a comprehensive technical summary of the MuseumSpark repository:\n\nMuseumSpark is an innovative data-driven travel planning platform specifically designed for art enthusiasts, focusing on transforming the Walker Art Center Reciprocal Program museum list into a sophisticated, enriched museum discovery and travel optimization system. The project leverages a multi-phase data enrichment pipeline that systematically aggregates and validates museum metadata from diverse sources like Wikidata, Wikipedia, and official museum websites, with the ultimate goal of creating a comprehensive, intelligent museum browsing and travel planning experience. Built using a modern Python-based data pipeline and React frontend, the platform employs advanced techniques like JSON Schema validation, web scraping, and planned AI-assisted content generation to create a rich, dynamically updated museum database with sophisticated features such as priority scoring, collection strength assessment, and potential future personalized travel recommendations. The architecture is modular and extensible, with a clear roadmap progressing through distinct data enrichment and feature expansion phases, ultimately aiming to provide art lovers with a strategic tool for discovering and prioritizing museum visits across North America. Unique aspects include its rigorous data quality approach, multi-source data integration, and the vision to transform a simple museum directory into an intelligent, context-aware travel companion powered by structured data and machine learning techniques. The target users are art enthusiasts, travelers, museum researchers, and cultural tourists seeking a data-driven approach to museum exploration and travel planning.",
       "rank": 5,
-      "composite_score": 70.17
+      "composite_score": 70.76,
+      "screenshot": {
+        "path": "output\\screenshots\\museumspark.png",
+        "url": "https://markhazleton.github.io/MuseumSpark/",
+        "captured_at": "2026-01-31T15:54:38.837466+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 98.35
+      }
     },
     {
       "name": "SampleMvcCRUD",
       "description": "An application to demonstrate multiple ways of implementing simple maintenance (CRUD) and user interface in ASP.Net using latest public versions. ",
       "summary": {
-        "text": "Here's a comprehensive technical summary for the SampleMvcCRUD repository:\n\nThis is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern web development practices. The project showcases architectural diversity by implementing user interfaces across MVC Controllers, Razor Pages, and Single Page Application (SPA) styles, with a focus on clean architecture, dependency injection, and robust testing methodologies. Leveraging ASP.NET Core, Entity Framework Core, and Bootstrap 5, the repository provides a sophisticated example of a full-stack web application with advanced features like Bootswatch theme switching, Swagger/OpenAPI documentation, and comprehensive DevOps integration via GitHub Actions and Azure deployment pipelines. Key technical innovations include dynamic theme rendering, modal-based CRUD interactions, in-memory database context, and extensive observability through application health checks and Application Insights telemetry. The project is particularly valuable for .NET developers seeking a practical, multi-faceted example of modern web application design, demonstrating progressive enhancement techniques, clean code principles, and flexible architectural patterns across different .NET versions. Ideal for software engineers, architects, and students looking to understand contemporary web development approaches in the .NET ecosystem.",
+        "text": "Technical Summary:\n\nSampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as both a reference implementation and educational resource for modern web development techniques. The project showcases diverse architectural approaches including traditional MVC, Razor Pages, and Single Page Application (SPA) styles, with a robust technology stack featuring ASP.NET Core, Entity Framework Core, Swagger/OpenAPI, and Bootswatch theming. Key capabilities include dynamic theme switching, REST API endpoints, in-memory database integration, modal-based CRUD forms, and comprehensive DevOps workflows with GitHub Actions, Docker containerization, and multi-platform deployment strategies. The repository emphasizes clean architecture principles, dependency injection, unit testing, and observability, making it an excellent learning tool for developers seeking to understand contemporary .NET web application design and implementation patterns. Targeted primarily at .NET developers, software architects, and technical learners, the project provides a rich, evolving template for building maintainable, scalable web applications with modern tooling and best practices.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-01-30T21:30:42.236513",
+        "generated_at": "2026-01-31T09:54:25.945705",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2225,
+        "tokens_used": 2196,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/SampleMvcCRUD",
+      "homepage": "",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 8,
       "forks": 4,
       "watchers": 8,
@@ -1147,46 +1211,46 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2019-04-25T18:45:29+00:00",
-      "updated_at": "2026-01-05T15:11:24+00:00",
-      "pushed_at": "2026-01-28T14:09:27+00:00",
-      "total_commits": 587,
-      "recent_commits_90d": 14,
+      "updated_at": "2026-01-31T06:09:44+00:00",
+      "pushed_at": "2026-01-31T06:09:40+00:00",
+      "total_commits": 615,
+      "recent_commits_90d": 42,
       "first_commit_date": "2019-04-25T18:45:29+00:00",
-      "last_commit_date": "2026-01-05T15:11:15+00:00",
+      "last_commit_date": "2026-01-31T06:09:32+00:00",
       "commit_history": {
         "repository_name": "SampleMvcCRUD",
-        "total_commits": 587,
-        "recent_90d": 14,
-        "recent_180d": 15,
-        "recent_365d": 29,
-        "last_commit_date": "2026-01-05T15:11:15+00:00",
+        "total_commits": 615,
+        "recent_90d": 42,
+        "recent_180d": 43,
+        "recent_365d": 57,
+        "last_commit_date": "2026-01-31T06:09:32+00:00",
         "patterns": [
-          "active",
-          "current",
+          "highly_active",
+          "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 4.67,
+        "commit_frequency": 14.0,
         "consistency_score": 0,
-        "activity_rate": 0.156,
-        "days_since_last_commit": 25,
+        "activity_rate": 0.467,
+        "days_since_last_commit": 0,
         "first_commit_date": "2019-04-25T18:45:29+00:00"
       },
       "commit_metrics": null,
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 4.67,
+      "commit_velocity": 14.0,
       "tech_stack": null,
       "has_readme": true,
-      "language_count": 5,
-      "size_kb": 29972,
+      "language_count": 6,
+      "size_kb": 30497,
       "is_fork": false,
       "is_private": false,
       "age_days": 2472,
-      "days_since_last_push": 2,
-      "ai_summary": "Here's a comprehensive technical summary for the SampleMvcCRUD repository:\n\nThis is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern web development practices. The project showcases architectural diversity by implementing user interfaces across MVC Controllers, Razor Pages, and Single Page Application (SPA) styles, with a focus on clean architecture, dependency injection, and robust testing methodologies. Leveraging ASP.NET Core, Entity Framework Core, and Bootstrap 5, the repository provides a sophisticated example of a full-stack web application with advanced features like Bootswatch theme switching, Swagger/OpenAPI documentation, and comprehensive DevOps integration via GitHub Actions and Azure deployment pipelines. Key technical innovations include dynamic theme rendering, modal-based CRUD interactions, in-memory database context, and extensive observability through application health checks and Application Insights telemetry. The project is particularly valuable for .NET developers seeking a practical, multi-faceted example of modern web application design, demonstrating progressive enhancement techniques, clean code principles, and flexible architectural patterns across different .NET versions. Ideal for software engineers, architects, and students looking to understand contemporary web development approaches in the .NET ecosystem.",
+      "days_since_last_push": 0,
+      "ai_summary": "Technical Summary:\n\nSampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as both a reference implementation and educational resource for modern web development techniques. The project showcases diverse architectural approaches including traditional MVC, Razor Pages, and Single Page Application (SPA) styles, with a robust technology stack featuring ASP.NET Core, Entity Framework Core, Swagger/OpenAPI, and Bootswatch theming. Key capabilities include dynamic theme switching, REST API endpoints, in-memory database integration, modal-based CRUD forms, and comprehensive DevOps workflows with GitHub Actions, Docker containerization, and multi-platform deployment strategies. The repository emphasizes clean architecture principles, dependency injection, unit testing, and observability, making it an excellent learning tool for developers seeking to understand contemporary .NET web application design and implementation patterns. Targeted primarily at .NET developers, software architects, and technical learners, the project provides a rich, evolving template for building maintainable, scalable web applications with modern tooling and best practices.",
       "rank": 6,
-      "composite_score": 51.13
+      "composite_score": 60.99
     },
     {
       "name": "WebSpark",
@@ -1201,6 +1265,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/WebSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 1,
       "forks": 0,
       "watchers": 1,
@@ -1244,7 +1312,7 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 750,
-      "days_since_last_push": 1,
+      "days_since_last_push": 2,
       "ai_summary": "Based on the detailed README and repository information, here's a comprehensive technical summary of WebSpark:\n\nWebSpark is an ambitious, modular web application suite built with .NET 9 and Bootstrap 5, focusing on creating specialized web tools across multiple domains including prompt management, recipe tracking, and quiz creation. The project stands out for its rigorous spec-driven development workflow, which implements a comprehensive SpecKit command system that guides feature development through systematic specification, planning, risk assessment, implementation, and review stages. The architecture is designed to be scalable and versatile, spanning seven distinct modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity) with a strong emphasis on modern web technologies and advanced SEO optimization.\n\nKey technical highlights include:\n- Advanced SEO optimization with comprehensive metadata management\n- Structured data implementation using Schema.org\n- Multi-engine webmaster tool integration\n- Performance monitoring with Web Vitals tracking\n- Automated risk assessment through the innovative `/speckit.critic` command\n- Strict branch protection and specification-driven development workflow\n\nThe project's unique selling point is its meticulous approach to feature development, leveraging automated tools to minimize technical debt, identify potential risks early, and ensure high-quality, production-ready code. By implementing a thorough specification and validation process, WebSpark aims to reduce implementation risks and maintain a high standard of software engineering practices.\n\nTechnologies used include:\n- Backend: .NET 9, ASP.NET Core MVC\n- Frontend: Bootstrap 5\n- Languages: C#, HTML, SCSS, JavaScript\n- Development Workflow: Custom SpecKit command system\n- SEO & Performance: Schema.org, Google Analytics 4, Application Insights\n\nThe repository demonstrates a sophisticated approach to web application development, combining modular design, comprehensive SEO strategies, and a robust development workflow that prioritizes quality and risk mitigation.",
       "rank": 7,
       "composite_score": 47.75
@@ -1253,15 +1321,19 @@
       "name": "JsBootSpark",
       "description": "JsBootSpark - A JavaScript Bootstrap Development Environment",
       "summary": {
-        "text": "Technical Project Summary for JsBootSpark:\n\nJsBootSpark is a comprehensive full-stack web application starter kit designed to provide developers with a robust, production-ready framework for building modern, responsive web applications using JavaScript ecosystem technologies. The project leverages Express.js for backend routing, Bootstrap 5 for frontend styling, and incorporates a sophisticated development environment with modern web development best practices, including hot reloading, SASS preprocessing, comprehensive testing, and deployment flexibility.\n\nKey technical highlights include:\n- Full-stack JavaScript solution with Node.js (18+) and Express.js\n- Advanced frontend architecture using Bootstrap 5 and EJS templating\n- Comprehensive developer toolchain with ESLint, Prettier, and Jest\n- Progressive Web App (PWA) features with service worker support\n- Docker containerization and GitHub Pages deployment capabilities\n- Built-in security middleware (Helmet.js, rate limiting, input validation)\n- Automated build and deployment pipelines via GitHub Actions\n\nThe project's unique value proposition lies in its opinionated yet flexible architecture, providing developers with a battle-tested starter template that balances out-of-the-box functionality with customization potential. It's particularly well-suited for developers seeking a modern, performant web application scaffold with enterprise-grade considerations like security, scalability, and developer experience.\n\nArchitectural patterns emphasize modularity, separation of concerns, and leverage contemporary web development best practices. The project serves as both a practical development tool and an educational reference for full-stack JavaScript application development.\n\nTarget users include:\n- Web developers building responsive web applications\n- Startups needing rapid prototype development\n- Teams wanting a standardized project initialization approach\n- Developers learning modern web development techniques\n\nRecommendation Confidence: High (90%)",
+        "text": "Here's a comprehensive technical summary of the JsBootSpark repository:\n\nJsBootSpark is a sophisticated full-stack web application starter kit designed to provide developers with a robust, production-ready framework for building modern, responsive web applications using JavaScript ecosystem technologies. The project leverages a comprehensive tech stack including Express.js, Bootstrap 5, EJS templating, and Node.js 18+, offering a complete development environment with advanced features like hot reloading, SASS compilation, security middleware, and progressive web app capabilities.\n\nKey technical highlights include:\n- A modular, feature-rich architecture supporting rapid web application development\n- Integrated development workflows with automated build, testing, and deployment processes\n- Comprehensive security implementations including Helmet.js, rate limiting, and content security policies\n- Advanced frontend capabilities with Bootstrap 5, responsive design, and dark/light mode support\n- Containerization support via Docker and CI/CD integration with GitHub Actions\n\nThe project distinguishes itself through its holistic approach to web development, providing not just a starter template, but a complete ecosystem with extensive documentation, performance optimization, and scalable design patterns. It targets full-stack JavaScript developers seeking a batteries-included, enterprise-grade starting point for web applications, with particular emphasis on developer experience, security, and modern web standards.\n\nArchitecturally, JsBootSpark demonstrates a microservice-friendly, modular design that supports easy customization, extension, and deployment across various environments. Its comprehensive toolchain and opinionated yet flexible structure make it an excellent foundation for both small projects and complex web applications.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-01-30T21:29:20.848542",
+        "generated_at": "2026-01-31T09:53:22.652967",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2733,
+        "tokens_used": 2691,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/JsBootSpark",
+      "homepage": "https://markhazleton.github.io/JsBootSpark/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/JsBootSpark/",
+      "website_url": "https://markhazleton.github.io/JsBootSpark/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -1269,26 +1341,26 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2022-06-06T13:41:25+00:00",
-      "updated_at": "2026-01-31T03:16:23+00:00",
-      "pushed_at": "2026-01-31T03:17:42+00:00",
-      "total_commits": 109,
-      "recent_commits_90d": 38,
+      "updated_at": "2026-01-31T05:39:43+00:00",
+      "pushed_at": "2026-01-31T05:40:52+00:00",
+      "total_commits": 110,
+      "recent_commits_90d": 39,
       "first_commit_date": "2022-06-06T13:41:25+00:00",
-      "last_commit_date": "2026-01-31T03:16:17+00:00",
+      "last_commit_date": "2026-01-31T05:39:36+00:00",
       "commit_history": {
         "repository_name": "JsBootSpark",
-        "total_commits": 109,
-        "recent_90d": 38,
-        "recent_180d": 56,
-        "recent_365d": 80,
-        "last_commit_date": "2026-01-31T03:16:17+00:00",
+        "total_commits": 110,
+        "recent_90d": 39,
+        "recent_180d": 57,
+        "recent_365d": 81,
+        "last_commit_date": "2026-01-31T05:39:36+00:00",
         "patterns": [
           "highly_active",
           "recently_updated"
         ],
-        "commit_frequency": 12.67,
+        "commit_frequency": 13.0,
         "consistency_score": 0,
-        "activity_rate": 0.422,
+        "activity_rate": 0.433,
         "days_since_last_commit": 0,
         "first_commit_date": "2022-06-06T13:41:25+00:00"
       },
@@ -1296,7 +1368,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 12.67,
+      "commit_velocity": 13.0,
       "tech_stack": {
         "repository_name": "JsBootSpark",
         "languages": {},
@@ -1583,15 +1655,23 @@
         "outdated_percentage": 0.0
       },
       "has_readme": true,
-      "language_count": 5,
-      "size_kb": 3167,
+      "language_count": 6,
+      "size_kb": 3348,
       "is_fork": false,
       "is_private": false,
-      "age_days": 1334,
+      "age_days": 1335,
       "days_since_last_push": 0,
-      "ai_summary": "Technical Project Summary for JsBootSpark:\n\nJsBootSpark is a comprehensive full-stack web application starter kit designed to provide developers with a robust, production-ready framework for building modern, responsive web applications using JavaScript ecosystem technologies. The project leverages Express.js for backend routing, Bootstrap 5 for frontend styling, and incorporates a sophisticated development environment with modern web development best practices, including hot reloading, SASS preprocessing, comprehensive testing, and deployment flexibility.\n\nKey technical highlights include:\n- Full-stack JavaScript solution with Node.js (18+) and Express.js\n- Advanced frontend architecture using Bootstrap 5 and EJS templating\n- Comprehensive developer toolchain with ESLint, Prettier, and Jest\n- Progressive Web App (PWA) features with service worker support\n- Docker containerization and GitHub Pages deployment capabilities\n- Built-in security middleware (Helmet.js, rate limiting, input validation)\n- Automated build and deployment pipelines via GitHub Actions\n\nThe project's unique value proposition lies in its opinionated yet flexible architecture, providing developers with a battle-tested starter template that balances out-of-the-box functionality with customization potential. It's particularly well-suited for developers seeking a modern, performant web application scaffold with enterprise-grade considerations like security, scalability, and developer experience.\n\nArchitectural patterns emphasize modularity, separation of concerns, and leverage contemporary web development best practices. The project serves as both a practical development tool and an educational reference for full-stack JavaScript application development.\n\nTarget users include:\n- Web developers building responsive web applications\n- Startups needing rapid prototype development\n- Teams wanting a standardized project initialization approach\n- Developers learning modern web development techniques\n\nRecommendation Confidence: High (90%)",
+      "ai_summary": "Here's a comprehensive technical summary of the JsBootSpark repository:\n\nJsBootSpark is a sophisticated full-stack web application starter kit designed to provide developers with a robust, production-ready framework for building modern, responsive web applications using JavaScript ecosystem technologies. The project leverages a comprehensive tech stack including Express.js, Bootstrap 5, EJS templating, and Node.js 18+, offering a complete development environment with advanced features like hot reloading, SASS compilation, security middleware, and progressive web app capabilities.\n\nKey technical highlights include:\n- A modular, feature-rich architecture supporting rapid web application development\n- Integrated development workflows with automated build, testing, and deployment processes\n- Comprehensive security implementations including Helmet.js, rate limiting, and content security policies\n- Advanced frontend capabilities with Bootstrap 5, responsive design, and dark/light mode support\n- Containerization support via Docker and CI/CD integration with GitHub Actions\n\nThe project distinguishes itself through its holistic approach to web development, providing not just a starter template, but a complete ecosystem with extensive documentation, performance optimization, and scalable design patterns. It targets full-stack JavaScript developers seeking a batteries-included, enterprise-grade starting point for web applications, with particular emphasis on developer experience, security, and modern web standards.\n\nArchitecturally, JsBootSpark demonstrates a microservice-friendly, modular design that supports easy customization, extension, and deployment across various environments. Its comprehensive toolchain and opinionated yet flexible structure make it an excellent foundation for both small projects and complex web applications.",
       "rank": 8,
-      "composite_score": 45.7
+      "composite_score": 46.05,
+      "screenshot": {
+        "path": "output\\screenshots\\jsbootspark.png",
+        "url": "https://markhazleton.github.io/JsBootSpark/",
+        "captured_at": "2026-01-31T15:54:40.720206+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 48.46
+      }
     },
     {
       "name": "RESTRunner",
@@ -1606,6 +1686,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/RESTRunner",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 2,
       "forks": 1,
       "watchers": 2,
@@ -1634,7 +1718,7 @@
         "commit_frequency": 5.33,
         "consistency_score": 0,
         "activity_rate": 0.178,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2021-09-30T13:38:06+00:00"
       },
       "commit_metrics": null,
@@ -1648,8 +1732,8 @@
       "size_kb": 426,
       "is_fork": false,
       "is_private": false,
-      "age_days": 1583,
-      "days_since_last_push": 18,
+      "age_days": 1584,
+      "days_since_last_push": 19,
       "ai_summary": "RESTRunner is a comprehensive .NET 10 solution designed for automated REST API testing, performance benchmarking, and regression testing, with a primary focus on integrating Postman collections into a robust testing framework. The project offers a multi-faceted approach to API validation, featuring capabilities such as automated test execution, performance analysis, load testing, and detailed reporting through both console and web interfaces. Built using C# and leveraging .NET 10's latest performance improvements, the framework supports cross-platform testing, provides interactive web-based testing via Razor Pages, and includes a sample CRUD API for demonstration purposes. Its architecture emphasizes modularity, performance optimization, and comprehensive test coverage, with notable features like CSV result exports, response time percentile tracking, and built-in performance metrics. RESTRunner is particularly valuable for developers, QA engineers, and API developers seeking a modern, high-performance testing solution that can seamlessly integrate existing Postman collections and provide in-depth insights into API behavior and performance characteristics.",
       "rank": 9,
       "composite_score": 41.25
@@ -1667,6 +1751,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/tailwind-demo",
+      "homepage": "https://markhazleton.github.io/tailwind-demo/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/tailwind-demo/",
+      "website_url": "https://markhazleton.github.io/tailwind-demo/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -1949,10 +2037,18 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 185,
-      "days_since_last_push": 4,
+      "days_since_last_push": 5,
       "ai_summary": "TailwindSpark is a comprehensive React-based design system and component showcase built as a modern monorepo, demonstrating advanced frontend development practices with Tailwind CSS v4, React 19, and TypeScript 5.9. The project serves as a robust template and reference implementation for building scalable, performant web applications with a focus on design system consistency, developer experience, and production-grade architectural patterns. It features a complete UI component library, responsive design, accessibility compliance, and extensive tooling including Vite, Vitest, ESLint, and GitHub Actions for CI/CD, with particular emphasis on type safety, performance optimization, and modular code organization. The repository goes beyond a typical demo by providing a production-ready framework with advanced features like lazy loading, error boundaries, dark mode support, keyboard navigation, and comprehensive testing strategies. Its unique value proposition lies in its holistic approach to frontend development, offering developers a sophisticated starter template that bridges design systems, performance optimization, and modern web technology best practices. The project is particularly valuable for frontend engineers, design system architects, and teams seeking a reference implementation of a contemporary, scalable React application with best-in-class developer tooling and UI/UX considerations.",
       "rank": 10,
-      "composite_score": 37.2
+      "composite_score": 37.2,
+      "screenshot": {
+        "path": "output\\screenshots\\tailwind-demo.png",
+        "url": "https://markhazleton.github.io/tailwind-demo/",
+        "captured_at": "2026-01-31T15:54:42.888685+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 73.37
+      }
     },
     {
       "name": "WebSpark.ArtSpark",
@@ -1967,6 +2063,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/WebSpark.ArtSpark",
+      "homepage": "https://artspark.markhazleton.com ",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": "https://artspark.markhazleton.com ",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -1995,7 +2095,7 @@
         "commit_frequency": 10.33,
         "consistency_score": 0,
         "activity_rate": 0.344,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2023-01-30T15:23:30+00:00"
       },
       "commit_metrics": null,
@@ -2009,11 +2109,512 @@
       "size_kb": 3658,
       "is_fork": false,
       "is_private": false,
-      "age_days": 1096,
-      "days_since_last_push": 18,
+      "age_days": 1097,
+      "days_since_last_push": 19,
       "ai_summary": "Here's a comprehensive technical summary of the WebSpark.ArtSpark repository:\n\nWebSpark.ArtSpark is a sophisticated .NET ecosystem designed to comprehensively interact with the Art Institute of Chicago's public REST API, providing a complete client library, advanced AI chat system, and demonstration applications. The solution leverages modern .NET 10.0 technologies to create a multi-project architecture that includes a strongly-typed API client, an innovative AI-powered conversational agent, a web demo application, and a console utility, with full coverage of 33 API endpoints across six major categories. Utilizing advanced features like async/await programming, System.Text.Json deserialization, and OpenAI integration, the project offers developers and art enthusiasts a powerful toolkit for exploring, searching, and interacting with museum collections through a robust, extensible platform. The repository stands out through its revolutionary AI chat capabilities, which enable contextual conversations with multiple personas (Artwork, Artist, Curator, Historian) and provide intelligent, culturally sensitive interactions with art metadata, making it a unique solution for digital cultural engagement that bridges technological innovation with art education and exploration.\n\nKey technical highlights include:\n- Complete API client with comprehensive endpoint coverage\n- AI-powered conversational system with multiple intelligent personas\n- Modern .NET architecture with minimal external dependencies\n- Advanced features like IIIF image support and Elasticsearch integration\n- Flexible querying, async programming, and error handling\n- OpenAI Vision integration for image analysis\n\nThe project is particularly noteworthy for art technologists, museum researchers, and developers interested in creating intelligent, interactive cultural exploration platforms.",
       "rank": 11,
       "composite_score": 36.9
+    },
+    {
+      "name": "MechanicsOfMotherhood",
+      "description": "MechanicsOfMotherhood",
+      "summary": {
+        "text": "Here's a technical summary of the Mechanics of Motherhood repository:\n\nMechanics of Motherhood is a sophisticated recipe management platform specifically designed for busy working mothers, leveraging modern web technologies to provide a comprehensive culinary organization solution. The application is built using React 19 with TypeScript, featuring a mobile-first responsive design that offers 108+ curated recipes across 14 categories, with advanced features like smart search, recipe filtering, nutritional information, and community ratings. The project showcases a robust technical architecture utilizing Vite for build optimization, TanStack Query for data management, Tailwind CSS for styling, and integrates with RecipeSpark and WebCMS APIs to deliver real-time, high-quality recipe data. Its unique value proposition lies in its industrial-themed design, progressive web app capabilities, offline support, and a focus on creating an intuitive, performance-optimized user experience specifically tailored to the needs of working mothers. The application demonstrates enterprise-grade development practices, including automated CI/CD with GitHub Actions, comprehensive test coverage, SEO optimization, and a modular, type-safe codebase that prioritizes both developer experience and end-user functionality.",
+        "ai_generated": true,
+        "generation_method": "claude-3-5-haiku-20241022",
+        "generated_at": "2026-01-31T09:53:49.516117",
+        "model_used": "claude-3-5-haiku-20241022",
+        "tokens_used": 3037,
+        "confidence_score": 90
+      },
+      "url": "https://github.com/markhazleton/MechanicsOfMotherhood",
+      "homepage": "http://mechanicsofmotherhood.com/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/MechanicsOfMotherhood/",
+      "website_url": "http://mechanicsofmotherhood.com/",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "TypeScript",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2025-09-01T13:10:13+00:00",
+      "updated_at": "2026-01-31T05:57:47+00:00",
+      "pushed_at": "2026-01-31T05:57:44+00:00",
+      "total_commits": 81,
+      "recent_commits_90d": 8,
+      "first_commit_date": "2025-09-01T13:10:13+00:00",
+      "last_commit_date": "2026-01-31T05:57:41+00:00",
+      "commit_history": {
+        "repository_name": "MechanicsOfMotherhood",
+        "total_commits": 81,
+        "recent_90d": 8,
+        "recent_180d": 81,
+        "recent_365d": 81,
+        "last_commit_date": "2026-01-31T05:57:41+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated",
+          "declining"
+        ],
+        "commit_frequency": 2.67,
+        "consistency_score": 0,
+        "activity_rate": 0.089,
+        "days_since_last_commit": 0,
+        "first_commit_date": "2025-09-01T13:10:13+00:00"
+      },
+      "commit_metrics": null,
+      "avg_commit_size": null,
+      "largest_commit": null,
+      "smallest_commit": null,
+      "commit_velocity": 2.67,
+      "tech_stack": {
+        "repository_name": "MechanicsOfMotherhood",
+        "languages": {},
+        "frameworks": [],
+        "dependencies": [
+          {
+            "name": "@radix-ui/react-dialog",
+            "current_version": "1.1.15",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-separator",
+            "current_version": "1.1.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-slot",
+            "current_version": "1.2.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-toast",
+            "current_version": "1.2.15",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-tooltip",
+            "current_version": "1.2.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@tailwindcss/typography",
+            "current_version": "0.5.19",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@tailwindcss/vite",
+            "current_version": "4.1.18",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "class-variance-authority",
+            "current_version": "0.7.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "clsx",
+            "current_version": "2.1.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "dotenv",
+            "current_version": "17.2.3",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "lucide-react",
+            "current_version": "0.563.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react",
+            "current_version": "19.2.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-dom",
+            "current_version": "19.2.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-helmet-async",
+            "current_version": "2.0.5",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-markdown",
+            "current_version": "10.1.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tailwind-merge",
+            "current_version": "3.4.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tailwindcss",
+            "current_version": "4.1.18",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tailwindcss-animate",
+            "current_version": "1.0.7",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "web-vitals",
+            "current_version": "5.1.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "wouter",
+            "current_version": "3.9.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@eslint/js",
+            "current_version": "9.39.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@testing-library/dom",
+            "current_version": "10.4.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@testing-library/jest-dom",
+            "current_version": "6.9.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@testing-library/react",
+            "current_version": "16.3.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@testing-library/user-event",
+            "current_version": "14.6.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/node",
+            "current_version": "25.1.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/react",
+            "current_version": "19.2.10",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/react-dom",
+            "current_version": "19.2.3",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@typescript-eslint/eslint-plugin",
+            "current_version": "8.54.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@typescript-eslint/parser",
+            "current_version": "8.54.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@vitejs/plugin-react",
+            "current_version": "5.1.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@vitest/coverage-v8",
+            "current_version": "4.0.18",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "esbuild-register",
+            "current_version": "3.6.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "eslint",
+            "current_version": "9.39.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "eslint-plugin-react",
+            "current_version": "7.37.5",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "eslint-plugin-react-hooks",
+            "current_version": "7.0.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "eslint-plugin-react-refresh",
+            "current_version": "0.4.26",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "fast-xml-parser",
+            "current_version": "5.3.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "glob",
+            "current_version": "13.0.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "jsdom",
+            "current_version": "27.4.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "rollup-plugin-visualizer",
+            "current_version": "6.0.5",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tsx",
+            "current_version": "4.21.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "typescript",
+            "current_version": "5.9.3",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "typescript-eslint",
+            "current_version": "8.54.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "vite",
+            "current_version": "7.3.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "vitest",
+            "current_version": "4.0.18",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          }
+        ],
+        "version_info": {},
+        "dependency_file_type": "package.json",
+        "currency_score": 50,
+        "outdated_count": 0,
+        "total_dependencies": 46,
+        "primary_language": null,
+        "language_diversity": 0,
+        "outdated_percentage": 0.0
+      },
+      "has_readme": true,
+      "language_count": 5,
+      "size_kb": 5888,
+      "is_fork": false,
+      "is_private": false,
+      "age_days": 152,
+      "days_since_last_push": 0,
+      "ai_summary": "Here's a technical summary of the Mechanics of Motherhood repository:\n\nMechanics of Motherhood is a sophisticated recipe management platform specifically designed for busy working mothers, leveraging modern web technologies to provide a comprehensive culinary organization solution. The application is built using React 19 with TypeScript, featuring a mobile-first responsive design that offers 108+ curated recipes across 14 categories, with advanced features like smart search, recipe filtering, nutritional information, and community ratings. The project showcases a robust technical architecture utilizing Vite for build optimization, TanStack Query for data management, Tailwind CSS for styling, and integrates with RecipeSpark and WebCMS APIs to deliver real-time, high-quality recipe data. Its unique value proposition lies in its industrial-themed design, progressive web app capabilities, offline support, and a focus on creating an intuitive, performance-optimized user experience specifically tailored to the needs of working mothers. The application demonstrates enterprise-grade development practices, including automated CI/CD with GitHub Actions, comprehensive test coverage, SEO optimization, and a modular, type-safe codebase that prioritizes both developer experience and end-user functionality.",
+      "rank": 12,
+      "composite_score": 36.8,
+      "screenshot": {
+        "path": "output\\screenshots\\mechanicsofmotherhood.png",
+        "url": "http://mechanicsofmotherhood.com/",
+        "captured_at": "2026-01-31T16:06:34.852883+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 277.22
+      }
     },
     {
       "name": "FastEndpointApi",
@@ -2028,6 +2629,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/FastEndpointApi",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 2,
       "forks": 1,
       "watchers": 2,
@@ -2056,7 +2661,7 @@
         "commit_frequency": 2.33,
         "consistency_score": 0,
         "activity_rate": 0.078,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2024-04-06T14:56:06+00:00"
       },
       "commit_metrics": null,
@@ -2070,10 +2675,10 @@
       "size_kb": 137,
       "is_fork": false,
       "is_private": false,
-      "age_days": 664,
-      "days_since_last_push": 18,
+      "age_days": 665,
+      "days_since_last_push": 19,
       "ai_summary": "Technical Summary of FastEndpointApi Repository:\n\nFastEndpointApi is a demonstration project showcasing the FastEndpoints framework for building high-performance, minimalistic REST APIs in ASP.NET Core, focusing on a Person Management system that implements CRUD operations with a clean, lightweight architectural approach. The project leverages the REPR (Request-Endpoint-Response) pattern to create streamlined API endpoints with minimal boilerplate code, utilizing technologies like .NET 10.0, Bogus for data generation, and integrated Swagger documentation. By implementing a complete API with features such as in-memory data storage, dependency injection, and HATEOAS-style link generation, the repository serves as both a practical tutorial and a reference implementation for developers looking to adopt a more modern, efficient approach to API development. The project stands out by emphasizing code simplicity, maintainability, and performance, providing a comprehensive example of how FastEndpoints can significantly reduce complexity in ASP.NET Core API design while maintaining robust functionality. It is particularly valuable for .NET developers seeking to modernize their API development practices, offering a real-world template for building clean, efficient web services with minimal overhead.",
-      "rank": 12,
+      "rank": 13,
       "composite_score": 36.25
     },
     {
@@ -2089,6 +2694,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/ReactSparkPortfolio",
+      "homepage": "https://reactspark.markhazleton.com/",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": "https://reactspark.markhazleton.com/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -2465,14 +3074,22 @@
       },
       "has_readme": true,
       "language_count": 5,
-      "size_kb": 44712,
+      "size_kb": 45058,
       "is_fork": false,
       "is_private": false,
       "age_days": 476,
       "days_since_last_push": 0,
       "ai_summary": "Here's a comprehensive technical summary of the ReactSparkPortfolio repository:\n\nReactSparkPortfolio is an advanced, enterprise-grade personal portfolio application built using React 19, TypeScript, and Vite, designed to showcase modern web development practices through a feature-rich, performant, and scalable single-page application. The project demonstrates sophisticated frontend engineering by implementing cutting-edge technologies like SignalR for real-time interactions, comprehensive type safety with TypeScript, responsive design with Bootstrap 5, and a modular architecture that supports lazy loading, code splitting, and dynamic content rendering. Key technical highlights include a multi-platform deployment strategy (Azure Static Web Apps and GitHub Pages), integrated real-time features such as live chat and weather widgets, and a robust CI/CD pipeline configured through GitHub Actions, which enables automated builds, testing, and deployments. The application goes beyond a typical portfolio by incorporating advanced features like accessibility compliance, dark/light theme switching, SEO optimization, and an admin panel for dynamic content management, making it both a personal showcase and a reference implementation for modern web application development. Targeted primarily at developers, technical professionals, and potential employers, this project serves as both a personal branding tool and a comprehensive demonstration of full-stack development expertise, emphasizing performance, security, and user experience through its carefully crafted architectural choices and technology integrations.",
-      "rank": 13,
-      "composite_score": 33.73
+      "rank": 14,
+      "composite_score": 33.73,
+      "screenshot": {
+        "path": "output\\screenshots\\reactsparkportfolio.png",
+        "url": "https://reactspark.markhazleton.com/",
+        "captured_at": "2026-01-31T16:06:38.182323+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 69.18
+      }
     },
     {
       "name": "Texecon",
@@ -2487,6 +3104,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/Texecon",
+      "homepage": "https://markhazleton.github.io/Texecon/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/Texecon/",
+      "website_url": "https://markhazleton.github.io/Texecon/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -2994,10 +3615,18 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 149,
-      "days_since_last_push": 4,
+      "days_since_last_push": 5,
       "ai_summary": "Here's a comprehensive technical summary:\n\nTexEcon is a sophisticated static React application designed for advanced economic analysis and reporting focused specifically on the Texas economic landscape. The project leverages modern web development technologies including React 19, TypeScript, and Vite to create a high-performance, SEO-optimized static site with dynamic content retrieval from a headless CMS (WebSpark). Its architecture emphasizes build-time content management, progressive enhancement, and comprehensive static site generation, enabling efficient content delivery with robust fallback mechanisms and automated deployment to GitHub Pages. The application implements advanced features like dynamic sitemap generation, structured data optimization, and client-side routing with static HTML fallbacks, making it a technically sophisticated platform for economic research and publication. By integrating type-safe development practices, accessibility-focused UI components from Radix UI, and a modular build pipeline, TexEcon represents a cutting-edge approach to creating performant, content-driven web applications with a focus on technical excellence and user experience.",
-      "rank": 14,
-      "composite_score": 33.59
+      "rank": 15,
+      "composite_score": 33.59,
+      "screenshot": {
+        "path": "output\\screenshots\\texecon.png",
+        "url": "https://markhazleton.github.io/Texecon/",
+        "captured_at": "2026-01-31T16:06:40.552050+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 458.92
+      }
     },
     {
       "name": "markhazleton",
@@ -3012,6 +3641,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/markhazleton",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -3054,10 +3687,10 @@
       "size_kb": 6583,
       "is_fork": false,
       "is_private": false,
-      "age_days": 1749,
+      "age_days": 1750,
       "days_since_last_push": 1,
       "ai_summary": "Based on the repository's README and metadata, here's a comprehensive technical summary:\n\nMark Hazleton's GitHub repository serves as a personal technology portfolio and learning platform, showcasing a collection of web development projects and experimental applications that demonstrate his ongoing technical exploration and skill development. The repository features multiple web-based projects like WebSpark (a comprehensive web application hosting demo projects) and ReactSpark (a React application built with Vite and deployed on Azure Static Web Applications), indicating a focus on modern web technologies and cloud deployment strategies. The projects appear to leverage contemporary web frameworks, with a strong emphasis on React, Azure cloud services, and static site generation, reflecting a cloud-native and JavaScript-centric development approach. The repository is not just a code collection but a dynamic learning archive, with blog posts and detailed documentation that provide insights into the author's technical thought processes, software development methodologies, and exploration of emerging technologies like AI and serverless architectures. What makes this repository unique is its transparent documentation of the learning journey, comprehensive GitHub stats visualization, and the author's commitment to showcasing not just code, but the context and reasoning behind technological choices. The target audience seems to be developers, technology enthusiasts, and professionals interested in web development, cloud technologies, and continuous learning in the software engineering ecosystem.",
-      "rank": 15,
+      "rank": 16,
       "composite_score": 33.53
     },
     {
@@ -3073,6 +3706,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/WebSpark.Bootswatch",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -3101,7 +3738,7 @@
         "commit_frequency": 6.33,
         "consistency_score": 0,
         "activity_rate": 0.211,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2022-08-24T18:49:45+00:00"
       },
       "commit_metrics": null,
@@ -3116,9 +3753,9 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 1255,
-      "days_since_last_push": 18,
+      "days_since_last_push": 19,
       "ai_summary": "WebSpark.Bootswatch is a .NET Razor Class Library designed to seamlessly integrate Bootswatch themes into ASP.NET Core applications, providing a robust theming solution built on Bootstrap 5 with advanced capabilities like dynamic theme switching, light/dark mode support, and comprehensive caching mechanisms. The library targets .NET 10.0 exclusively, offering high-performance theme management through features like `StyleCache` service, tag helper support, and responsive design with automatic theme detection and switching. Architecturally, it leverages modern .NET framework features, dependency injection, and extension methods to simplify theme integration, with a focus on providing a production-ready, easily configurable theming system that supports all official Bootswatch themes and custom theme implementations. Its unique value proposition lies in its comprehensive approach to theme management, offering developers a turnkey solution for creating visually dynamic and responsive web applications with minimal configuration overhead. The library is primarily targeted at ASP.NET Core developers seeking a sophisticated, performance-oriented theming solution with extensive customization options and built-in best practices for UI styling and responsiveness.",
-      "rank": 16,
+      "rank": 17,
       "composite_score": 32.93
     },
     {
@@ -3134,6 +3771,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/KeyPressCounter",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 1,
       "forks": 1,
       "watchers": 1,
@@ -3225,11 +3866,11 @@
       "size_kb": 46573,
       "is_fork": false,
       "is_private": false,
-      "age_days": 694,
+      "age_days": 695,
       "days_since_last_push": 54,
       "ai_summary": "Here's a comprehensive technical summary of the KeyPressCounter repository:\n\nKeyPressCounter is a sophisticated Windows utility designed for comprehensive system and user activity monitoring, leveraging .NET 10.0 and low-level system APIs to track keyboard/mouse interactions, system performance metrics, and resource utilization in real-time. The application employs a multi-layered monitoring approach using technologies like SharpHook for global input event tracking, Windows Performance Counters for system metrics, and WMI (Windows Management Instrumentation) for hardware information retrieval, creating a robust system tray application that provides granular insights into user behavior and computational resource consumption. Its architecture emphasizes privacy-conscious tracking, with features like idle time filtering, local data storage, and detailed logging, making it a powerful tool for productivity analysis, system diagnostics, and performance optimization. The project demonstrates advanced Windows system integration techniques, including registry management, single-instance protection, and seamless system tray interaction, with a modular design that allows for extensive customization of monitoring parameters and logging behaviors. Unique strengths include its comprehensive metrics collection, minimal system overhead, and user-friendly graphical interface that transforms complex system data into digestible visualizations and statistics. Ideal for system administrators, developers, researchers, and power users seeking deep insights into computer usage patterns and system performance characteristics.",
-      "rank": 17,
-      "composite_score": 32.04
+      "rank": 18,
+      "composite_score": 32.05
     },
     {
       "name": "sql2csv",
@@ -3244,6 +3885,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/sql2csv",
+      "homepage": "",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -3272,7 +3917,7 @@
         "commit_frequency": 2.0,
         "consistency_score": 0,
         "activity_rate": 0.067,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2017-11-06T16:04:58+00:00"
       },
       "commit_metrics": null,
@@ -3286,500 +3931,11 @@
       "size_kb": 1891,
       "is_fork": false,
       "is_private": false,
-      "age_days": 3007,
-      "days_since_last_push": 18,
+      "age_days": 3008,
+      "days_since_last_push": 19,
       "ai_summary": "Here's a comprehensive technical summary of the sql2csv repository:\n\nSql2Csv is a comprehensive .NET 10 toolkit designed for SQLite database manipulation and analysis, offering robust capabilities for database file discovery, table export, schema introspection, and code generation across both CLI and web interfaces. The project provides multi-modal functionality including command-line and web-based interactions for tasks like exporting database tables to CSV, generating detailed schema reports, and automatically creating C# data transfer objects (DTOs) from database schemas. Built using modern .NET technologies with a modular architecture featuring separate projects for core services, console application, web interface, and testing, the toolkit leverages dependency injection, ASP.NET Core MVC, and supports flexible configuration through appsettings. Its unique value proposition lies in its comprehensive approach to SQLite database exploration, offering developers and data analysts a versatile tool for database metadata extraction, transformation, and code generation with support for various output formats and programmatic interactions. The project is particularly useful for scenarios involving database migration, data analysis, code generation, and rapid prototyping across different development and data engineering workflows.",
-      "rank": 18,
-      "composite_score": 31.65
-    },
-    {
-      "name": "MechanicsOfMotherhood",
-      "description": "MechanicsOfMotherhood",
-      "summary": {
-        "text": "Here's a technical summary of the Mechanics of Motherhood repository:\n\nMechanics of Motherhood is a sophisticated recipe management platform designed specifically for busy working mothers, leveraging modern web technologies to provide a comprehensive culinary solution. The application is built using React 19 with TypeScript, featuring a mobile-first design that offers 108+ curated recipes across 14 categories, with advanced features like smart search, recipe ratings, nutritional information, and offline support. The project demonstrates a robust architectural approach, utilizing Vite for build optimization, TanStack Query for state management, and Tailwind CSS for responsive styling, with a focus on performance (achieving Lighthouse scores of 95+ across categories) and user experience. The platform integrates with RecipeSpark and WebCMS APIs to deliver real-time recipe data, implements progressive web app (PWA) capabilities, and provides automated CI/CD through GitHub Actions, making it a technically sophisticated solution for managing and discovering family-friendly recipes. By combining industrial-themed design, comprehensive data management, and accessibility features, the application addresses the specific needs of time-constrained parents seeking efficient meal planning and recipe management.",
-        "ai_generated": true,
-        "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-01-21T19:24:24.547420",
-        "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 3023,
-        "confidence_score": 90
-      },
-      "url": "https://github.com/markhazleton/MechanicsOfMotherhood",
-      "stars": 0,
-      "forks": 0,
-      "watchers": 0,
-      "language": "TypeScript",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2025-09-01T13:10:13+00:00",
-      "updated_at": "2026-01-21T12:39:45+00:00",
-      "pushed_at": "2026-01-21T12:39:39+00:00",
-      "total_commits": 79,
-      "recent_commits_90d": 6,
-      "first_commit_date": "2025-09-01T13:10:13+00:00",
-      "last_commit_date": "2026-01-21T12:39:36+00:00",
-      "commit_history": {
-        "repository_name": "MechanicsOfMotherhood",
-        "total_commits": 79,
-        "recent_90d": 6,
-        "recent_180d": 79,
-        "recent_365d": 79,
-        "last_commit_date": "2026-01-21T12:39:36+00:00",
-        "patterns": [
-          "maintained",
-          "current",
-          "declining"
-        ],
-        "commit_frequency": 2.0,
-        "consistency_score": 0,
-        "activity_rate": 0.067,
-        "days_since_last_commit": 9,
-        "first_commit_date": "2025-09-01T13:10:13+00:00"
-      },
-      "commit_metrics": null,
-      "avg_commit_size": null,
-      "largest_commit": null,
-      "smallest_commit": null,
-      "commit_velocity": 2.0,
-      "tech_stack": {
-        "repository_name": "MechanicsOfMotherhood",
-        "languages": {},
-        "frameworks": [],
-        "dependencies": [
-          {
-            "name": "@radix-ui/react-dialog",
-            "current_version": "1.1.15",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@radix-ui/react-separator",
-            "current_version": "1.1.8",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@radix-ui/react-slot",
-            "current_version": "1.2.4",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@radix-ui/react-toast",
-            "current_version": "1.2.15",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@radix-ui/react-tooltip",
-            "current_version": "1.2.8",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@tailwindcss/typography",
-            "current_version": "0.5.19",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@tailwindcss/vite",
-            "current_version": "4.1.18",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "class-variance-authority",
-            "current_version": "0.7.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "clsx",
-            "current_version": "2.1.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "dotenv",
-            "current_version": "17.2.3",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "lucide-react",
-            "current_version": "0.562.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "react",
-            "current_version": "19.2.3",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "react-dom",
-            "current_version": "19.2.3",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "react-helmet-async",
-            "current_version": "2.0.5",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "react-markdown",
-            "current_version": "10.1.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "tailwind-merge",
-            "current_version": "3.4.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "tailwindcss",
-            "current_version": "4.1.18",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "tailwindcss-animate",
-            "current_version": "1.0.7",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "web-vitals",
-            "current_version": "5.1.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "wouter",
-            "current_version": "3.9.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@eslint/js",
-            "current_version": "9.39.2",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@testing-library/dom",
-            "current_version": "10.4.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@testing-library/jest-dom",
-            "current_version": "6.9.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@testing-library/react",
-            "current_version": "16.3.2",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@testing-library/user-event",
-            "current_version": "14.6.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@types/node",
-            "current_version": "25.0.9",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@types/react",
-            "current_version": "19.2.9",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@types/react-dom",
-            "current_version": "19.2.3",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@typescript-eslint/eslint-plugin",
-            "current_version": "8.53.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@typescript-eslint/parser",
-            "current_version": "8.53.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@vitejs/plugin-react",
-            "current_version": "5.1.2",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "@vitest/coverage-v8",
-            "current_version": "4.0.17",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "esbuild-register",
-            "current_version": "3.6.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "eslint",
-            "current_version": "9.39.2",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "eslint-plugin-react",
-            "current_version": "7.37.5",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "eslint-plugin-react-hooks",
-            "current_version": "7.0.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "eslint-plugin-react-refresh",
-            "current_version": "0.4.26",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "fast-xml-parser",
-            "current_version": "5.3.3",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "glob",
-            "current_version": "13.0.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "jsdom",
-            "current_version": "27.4.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "rollup-plugin-visualizer",
-            "current_version": "6.0.5",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "tsx",
-            "current_version": "4.21.0",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "typescript",
-            "current_version": "5.9.3",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "typescript-eslint",
-            "current_version": "8.53.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "vite",
-            "current_version": "7.3.1",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          },
-          {
-            "name": "vitest",
-            "current_version": "4.0.17",
-            "latest_version": null,
-            "ecosystem": "npm",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown"
-          }
-        ],
-        "version_info": {},
-        "dependency_file_type": "package.json",
-        "currency_score": 50,
-        "outdated_count": 0,
-        "total_dependencies": 46,
-        "primary_language": null,
-        "language_diversity": 0,
-        "outdated_percentage": 0.0
-      },
-      "has_readme": true,
-      "language_count": 4,
-      "size_kb": 5454,
-      "is_fork": false,
-      "is_private": false,
-      "age_days": 151,
-      "days_since_last_push": 9,
-      "ai_summary": "Here's a technical summary of the Mechanics of Motherhood repository:\n\nMechanics of Motherhood is a sophisticated recipe management platform designed specifically for busy working mothers, leveraging modern web technologies to provide a comprehensive culinary solution. The application is built using React 19 with TypeScript, featuring a mobile-first design that offers 108+ curated recipes across 14 categories, with advanced features like smart search, recipe ratings, nutritional information, and offline support. The project demonstrates a robust architectural approach, utilizing Vite for build optimization, TanStack Query for state management, and Tailwind CSS for responsive styling, with a focus on performance (achieving Lighthouse scores of 95+ across categories) and user experience. The platform integrates with RecipeSpark and WebCMS APIs to deliver real-time recipe data, implements progressive web app (PWA) capabilities, and provides automated CI/CD through GitHub Actions, making it a technically sophisticated solution for managing and discovering family-friendly recipes. By combining industrial-themed design, comprehensive data management, and accessibility features, the application addresses the specific needs of time-constrained parents seeking efficient meal planning and recipe management.",
       "rank": 19,
-      "composite_score": 31.59
+      "composite_score": 31.65
     },
     {
       "name": "ConcurrentProcessing",
@@ -3794,6 +3950,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/ConcurrentProcessing",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -3869,7 +4029,7 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 866,
-      "days_since_last_push": 8,
+      "days_since_last_push": 9,
       "ai_summary": "ConcurrentProcessing is a sophisticated .NET 10 framework for managing high-performance parallel task execution, providing developers with a robust, generic abstract base class (`ConcurrentProcessor<T>`) for implementing complex concurrent processing scenarios with fine-grained control over task parallelism. The library leverages semaphore-based throttling to precisely manage concurrent task limits, offering built-in performance metrics tracking that automatically calculates statistical insights like minimum, maximum, and average task durations, wait times, and throughput. Architecturally, the project implements several design patterns including Template Method, Factory, and Strategy patterns, enabling extensible and type-safe task processing with minimal runtime overhead and excellent scalability across various workloads. Designed as both a production-ready framework and an educational resource, ConcurrentProcessing demonstrates advanced concurrent programming techniques in C#, showcasing best practices for managing parallel execution with comprehensive performance monitoring and analysis capabilities. The framework is particularly valuable for developers working on systems requiring controlled concurrent processing, such as data pipelines, batch job processors, or distributed computing scenarios that demand precise resource management and performance optimization. Its generic, strongly-typed design, combined with built-in metrics and configuration flexibility, makes it a powerful tool for creating efficient, observable concurrent processing solutions across different domains.",
       "rank": 20,
       "composite_score": 31.49
@@ -3887,6 +4047,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/react-native-web-start",
+      "homepage": null,
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/react-native-web-start/",
+      "website_url": "https://markhazleton.github.io/react-native-web-start/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -3915,7 +4079,7 @@
         "commit_frequency": 0.33,
         "consistency_score": 0,
         "activity_rate": 0.011,
-        "days_since_last_commit": 16,
+        "days_since_last_commit": 17,
         "first_commit_date": "2025-07-26T17:21:18+00:00"
       },
       "commit_metrics": null,
@@ -4385,71 +4549,18 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 188,
-      "days_since_last_push": 4,
+      "days_since_last_push": 5,
       "ai_summary": "Based on the detailed README and repository analysis, here's a comprehensive technical summary:\n\nThe react-native-web-start repository is an advanced cross-platform application development starter template designed to enable developers to build production-ready mobile and web applications using a unified TypeScript codebase. Leveraging React Native Web, Vite, and a modern web stack, this template provides a comprehensive solution for creating responsive, high-performance applications that can be deployed seamlessly across web, iOS, and Android platforms. The project implements a sophisticated monorepo architecture with shared components, dedicated web and mobile packages, and a robust development environment featuring type-safe TypeScript, Tailwind CSS for styling, automated build processes, and comprehensive developer tooling including hot module replacement, code splitting, and integrated testing configurations. Key differentiators include its emphasis on enterprise-grade features like performance optimization, security integrations (Dependabot), PWA readiness, and a flexible, scalable project structure that supports true cross-platform development with minimal platform-specific code. The template is particularly valuable for developers and teams seeking a standardized, modern approach to multi-platform application development that prioritizes code reusability, developer experience, and production-ready configurations.",
       "rank": 21,
-      "composite_score": 30.24
-    },
-    {
-      "name": "PromptSpark.Chat",
-      "description": "PromptSpark Chat Workflow: Real-time Conversational Flows with ASP.NET Core and Adaptive Cards",
-      "summary": {
-        "text": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is an innovative ASP.NET Core web application that enables dynamic, interactive conversational workflows through a real-time chat interface powered by SignalR and Adaptive Cards. The platform allows users to engage in multi-step, guided conversations with flexible branching logic, supporting complex interaction scenarios by dynamically rendering interactive UI elements and managing conversation state using thread-safe server-side storage. Leveraging modern web technologies like C#, SignalR, and optional AI integration, the application provides a robust framework for creating structured, context-aware conversational experiences with built-in persistence and extensibility. The architecture emphasizes modularity, with a clear separation of concerns between workflow management, real-time communication, and user interaction, making it particularly suitable for scenarios requiring guided user experiences such as surveys, onboarding processes, or interactive decision trees. What distinguishes PromptSpark.Chat is its elegant approach to managing conversational complexity through adaptive cards, server-side state management, and a flexible workflow definition mechanism that allows developers to easily configure and extend conversation flows without extensive custom coding.",
-        "ai_generated": true,
-        "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-01-25T00:02:21.216929",
-        "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2173,
-        "confidence_score": 90
-      },
-      "url": "https://github.com/markhazleton/PromptSpark.Chat",
-      "stars": 0,
-      "forks": 0,
-      "watchers": 0,
-      "language": "C#",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2024-12-31T04:00:15+00:00",
-      "updated_at": "2026-01-12T05:48:44+00:00",
-      "pushed_at": "2026-01-23T13:55:12+00:00",
-      "total_commits": 25,
-      "recent_commits_90d": 7,
-      "first_commit_date": "2024-12-31T04:00:15+00:00",
-      "last_commit_date": "2026-01-12T05:48:37+00:00",
-      "commit_history": {
-        "repository_name": "PromptSpark.Chat",
-        "total_commits": 25,
-        "recent_90d": 7,
-        "recent_180d": 7,
-        "recent_365d": 8,
-        "last_commit_date": "2026-01-12T05:48:37+00:00",
-        "patterns": [
-          "maintained",
-          "current",
-          "accelerating"
-        ],
-        "commit_frequency": 2.33,
-        "consistency_score": 0,
-        "activity_rate": 0.078,
-        "days_since_last_commit": 18,
-        "first_commit_date": "2024-12-31T04:00:15+00:00"
-      },
-      "commit_metrics": null,
-      "avg_commit_size": null,
-      "largest_commit": null,
-      "smallest_commit": null,
-      "commit_velocity": 2.33,
-      "tech_stack": null,
-      "has_readme": true,
-      "language_count": 5,
-      "size_kb": 19281,
-      "is_fork": false,
-      "is_private": false,
-      "age_days": 395,
-      "days_since_last_push": 7,
-      "ai_summary": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is an innovative ASP.NET Core web application that enables dynamic, interactive conversational workflows through a real-time chat interface powered by SignalR and Adaptive Cards. The platform allows users to engage in multi-step, guided conversations with flexible branching logic, supporting complex interaction scenarios by dynamically rendering interactive UI elements and managing conversation state using thread-safe server-side storage. Leveraging modern web technologies like C#, SignalR, and optional AI integration, the application provides a robust framework for creating structured, context-aware conversational experiences with built-in persistence and extensibility. The architecture emphasizes modularity, with a clear separation of concerns between workflow management, real-time communication, and user interaction, making it particularly suitable for scenarios requiring guided user experiences such as surveys, onboarding processes, or interactive decision trees. What distinguishes PromptSpark.Chat is its elegant approach to managing conversational complexity through adaptive cards, server-side state management, and a flexible workflow definition mechanism that allows developers to easily configure and extend conversation flows without extensive custom coding.",
-      "rank": 22,
-      "composite_score": 29.89
+      "composite_score": 30.24,
+      "screenshot": {
+        "path": "output\\screenshots\\react-native-web-start.png",
+        "url": "https://markhazleton.github.io/react-native-web-start/",
+        "captured_at": "2026-01-31T16:06:42.397642+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 48.8
+      }
     },
     {
       "name": "TaskListProcessor",
@@ -4464,6 +4575,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/TaskListProcessor",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -4491,7 +4606,7 @@
         "commit_frequency": 4.0,
         "consistency_score": 0,
         "activity_rate": 0.133,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2023-11-09T20:25:04+00:00"
       },
       "commit_metrics": null,
@@ -4506,9 +4621,9 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 813,
-      "days_since_last_push": 18,
+      "days_since_last_push": 19,
       "ai_summary": "Here's a comprehensive technical summary of the TaskListProcessor repository:\n\nTaskListProcessor is an advanced .NET 10.0 library designed to solve complex asynchronous task orchestration challenges in enterprise-level applications, providing a robust framework for managing and executing concurrent operations with high reliability and performance. The library implements sophisticated enterprise-grade patterns including circuit breakers, dependency injection, advanced scheduling, and comprehensive telemetry, enabling developers to build resilient, observable, and highly scalable distributed systems with type-safe and configurable task processing capabilities. Key architectural features include parallel task execution with configurable concurrency limits, OpenTelemetry integration for rich observability, native .NET dependency injection support, and intelligent task dependency resolution using topological sorting and priority-based scheduling strategies. The project stands out by offering a holistic approach to async processing, addressing common challenges like fault isolation, performance monitoring, and complex workflow coordination through a clean, strongly-typed interface that follows SOLID design principles. Targeting enterprise developers, microservice architects, and high-throughput system designers, TaskListProcessor provides a comprehensive solution for managing complex asynchronous workloads across various domains such as distributed computing, API orchestration, data processing, and event-driven architectures. The library's design emphasizes developer experience, offering extensive documentation, learning paths, and practical examples to facilitate quick adoption and effective implementation of advanced task processing patterns.",
-      "rank": 23,
+      "rank": 22,
       "composite_score": 29.59
     },
     {
@@ -4524,6 +4639,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/WebProjectMechanics",
+      "homepage": "",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 3,
       "forks": 0,
       "watchers": 3,
@@ -4550,7 +4669,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 338,
+        "days_since_last_commit": 339,
         "first_commit_date": "2017-09-19T20:17:04+00:00"
       },
       "commit_metrics": null,
@@ -4567,7 +4686,7 @@
       "age_days": 3055,
       "days_since_last_push": 75,
       "ai_summary": "Web Project Mechanics is a custom web content management system (CMS) designed to manage multiple websites using a single MS-Access database, developed primarily in Visual Basic .NET and ASP.NET. The system provides a flexible, standalone platform for website management without external dependencies, leveraging caching mechanisms to improve performance and supporting migrations across different web technologies (from ASP to JSP to .NET Framework 4.8). Architecturally, it appears to use a centralized database approach with multi-site support, allowing administrators to manage content across different websites from a unified backend interface. The project's unique characteristics include its long-term development history (spanning over 20 years), minimal external dependencies, and a lightweight approach to web content management that prioritizes simplicity and portability. Targeted primarily at small to medium-sized website owners, developers, and organizations seeking a straightforward, self-contained CMS solution, Web Project Mechanics represents a personal project that has evolved to serve practical web management needs while serving as a technology learning platform for its creator.",
-      "rank": 24,
+      "rank": 23,
       "composite_score": 27.73
     },
     {
@@ -4583,6 +4702,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/markhazleton.github.io",
+      "homepage": "https://markhazleton.github.io/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/markhazleton.github.io/",
+      "website_url": "https://markhazleton.github.io/",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -4611,7 +4734,7 @@
         "commit_frequency": 1.67,
         "consistency_score": 0,
         "activity_rate": 0.056,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2021-04-18T16:34:26+00:00"
       },
       "commit_metrics": null,
@@ -4667,10 +4790,18 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 1748,
-      "days_since_last_push": 18,
+      "days_since_last_push": 19,
       "ai_summary": "Technical Repository Summary:\n\nThis is a personal Jekyll-powered static website repository designed for Mark Hazleton's professional and blogging needs, hosted on GitHub Pages. The site leverages a customized Minima theme with modern web development practices, featuring a responsive design, dark/light mode toggle, and comprehensive content management workflow for technical blogging. Built using Ruby 3.2.2, Jekyll 3.10.0, and SCSS, the repository demonstrates a well-structured static site generator approach with robust development and deployment automation via GitHub Actions. The project emphasizes developer experience through detailed documentation, local development setup instructions, and best practices for content creation, including SEO optimization, post structuring guidelines, and flexible publishing workflows. Its unique strengths include a clean, framework-agnostic implementation, extensive post creation guidelines, and a focus on maintainability and extensibility for personal/professional technical communication.\n\nKey Technical Highlights:\n- Static site generation with Jekyll\n- Custom Minima theme implementation\n- GitHub Pages hosting\n- Automated CI/CD via GitHub Actions\n- Comprehensive development and publishing documentation\n- Dark/light mode support\n- Responsive design\n- SEO-friendly content management",
-      "rank": 25,
-      "composite_score": 27.67
+      "rank": 24,
+      "composite_score": 27.67,
+      "screenshot": {
+        "path": "output\\screenshots\\markhazleton.github.io.png",
+        "url": "https://markhazleton.github.io/",
+        "captured_at": "2026-01-31T16:06:44.164046+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 59.36
+      }
     },
     {
       "name": "AsyncDemo",
@@ -4685,6 +4816,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/AsyncDemo",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -4712,7 +4847,7 @@
         "commit_frequency": 5.0,
         "consistency_score": 0,
         "activity_rate": 0.167,
-        "days_since_last_commit": 57,
+        "days_since_last_commit": 58,
         "first_commit_date": "2022-08-07T16:37:21+00:00"
       },
       "commit_metrics": null,
@@ -4727,9 +4862,9 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 1272,
-      "days_since_last_push": 57,
+      "days_since_last_push": 58,
       "ai_summary": "Here's a comprehensive technical summary of the AsyncDemo repository:\n\nAsyncDemo is an educational C# project demonstrating advanced asynchronous programming techniques and best practices in .NET, focusing on solving common async/await challenges through practical, real-world code examples. The repository provides a comprehensive learning platform for developers, featuring interactive API documentation powered by Scalar, and showcasing critical async patterns such as cancellation token management, concurrency control, resilience with Polly, and cross-cutting concern implementation using the decorator pattern. Built on .NET 10 and integrating with external APIs like OpenWeather, the project offers structured learning modules that explore scenarios like avoiding deadlocks, implementing timeouts, throttling concurrent operations, and handling complex asynchronous workflows through meticulously organized API endpoints. The unique value proposition lies in its combination of hands-on code demonstrations, extensive documentation, and a systematic approach to teaching advanced async programming concepts, making it an invaluable resource for .NET developers seeking to master asynchronous programming techniques. By providing real-world implementations and clear learning objectives, AsyncDemo serves as both a reference implementation and an educational tool for developers looking to improve their understanding of asynchronous programming patterns and best practices.",
-      "rank": 26,
+      "rank": 25,
       "composite_score": 26.6
     },
     {
@@ -4745,6 +4880,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/InquirySpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -4772,7 +4911,7 @@
         "commit_frequency": 6.0,
         "consistency_score": 0,
         "activity_rate": 0.2,
-        "days_since_last_commit": 54,
+        "days_since_last_commit": 55,
         "first_commit_date": "2023-10-24T13:14:08+00:00"
       },
       "commit_metrics": null,
@@ -4786,11 +4925,11 @@
       "size_kb": 9371,
       "is_fork": false,
       "is_private": false,
-      "age_days": 829,
+      "age_days": 830,
       "days_since_last_push": 39,
       "ai_summary": "InquirySpark is a .NET 10-based survey and inquiry management system designed for read-only data interaction, utilizing an MVC architecture with a focus on immutable SQLite databases and strict data access patterns. The solution provides a comprehensive admin interface built with Bootstrap 5 and DataTables, enabling users to interact with survey data through a robust, warning-free implementation that emphasizes type safety, dependency injection, and centralized configuration. Key technologies include Entity Framework Core 10, Microsoft.Data.Sqlite provider, ASP.NET Core Identity, and a modular project structure spanning admin, repository, and common libraries with integrated unit testing via MSTest. The project's unique approach lies in its enforcement of read-only database interactions, elimination of SQL Server dependencies, and a carefully designed persistence layer that prevents schema or data mutations while providing a flexible, scalable framework for survey management. Target users include administrators and organizations seeking a lightweight, secure, and easily deployable survey management solution with minimal infrastructure requirements and strong architectural constraints.",
-      "rank": 27,
-      "composite_score": 26.2
+      "rank": 26,
+      "composite_score": 26.21
     },
     {
       "name": "HttpClientDecoratorPattern",
@@ -4805,6 +4944,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/HttpClientDecoratorPattern",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -4833,7 +4976,7 @@
         "commit_frequency": 0.33,
         "consistency_score": 0,
         "activity_rate": 0.011,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2023-02-09T16:14:08+00:00"
       },
       "commit_metrics": null,
@@ -4848,9 +4991,9 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 1086,
-      "days_since_last_push": 18,
+      "days_since_last_push": 19,
       "ai_summary": "Here's a comprehensive technical summary:\n\nThis repository demonstrates a production-ready implementation of the Decorator Pattern for HttpClient in .NET, providing a sophisticated approach to managing HTTP communication with enhanced resilience, telemetry, and caching capabilities. The project introduces a flexible, composable service architecture that allows dynamically adding cross-cutting concerns like performance monitoring, circuit breaking, and caching without modifying core service implementations. Leveraging .NET 10, dependency injection, and libraries like Polly, the implementation offers a robust solution for enterprise-grade HTTP client management, with strong emphasis on separation of concerns, testability, and observability. The WebSpark.HttpClientUtility package serves as the core implementation, featuring a comprehensive decorator chain that systematically wraps HTTP requests with additional behaviors such as retry policies, correlation tracking, and intelligent caching strategies. By providing a clean, extensible pattern for HTTP communication, the project addresses common challenges in distributed system design, making it particularly valuable for developers building microservices, API-driven applications, or systems requiring sophisticated HTTP interaction management.",
-      "rank": 28,
+      "rank": 27,
       "composite_score": 26.17
     },
     {
@@ -4866,6 +5009,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/Yelp.Api",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -4894,7 +5041,7 @@
         "commit_frequency": 0.33,
         "consistency_score": 0,
         "activity_rate": 0.011,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2022-08-10T16:28:06+00:00"
       },
       "commit_metrics": null,
@@ -4909,10 +5056,75 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 1269,
-      "days_since_last_push": 18,
+      "days_since_last_push": 19,
       "ai_summary": "Here's a comprehensive technical summary for the Yelp.Api repository:\n\nThe Yelp.Api is a C# class library that provides a robust, developer-friendly wrapper for Yelp's v3 Fusion API, enabling .NET developers to easily integrate local business search and review functionality into their applications. Leveraging .NET 6 and designed with a clean, intuitive interface, the library simplifies complex API interactions by offering methods like `SearchBusinessesAllAsync()` that abstract away the underlying HTTP communication and authentication complexities. The library supports comprehensive search capabilities, including geolocation-based queries, filtering by business attributes (such as open now status), and retrieving detailed business information across 32 countries with minimal configuration required. Its design follows a client-centric architectural pattern, where developers can instantiate a `Yelp.Api.Client` with an API key and immediately perform sophisticated local business searches using either simple method signatures or more granular `SearchParameters` objects. Unique strengths include its strong typing, async support, and straightforward usage that reduces the typical boilerplate code associated with external API integrations. The primary target users are .NET developers building location-aware applications such as travel guides, restaurant recommendation systems, local service aggregators, or any software requiring rich, up-to-date local business data.",
-      "rank": 29,
+      "rank": 28,
       "composite_score": 25.73
+    },
+    {
+      "name": "PromptSpark.Chat",
+      "description": "PromptSpark Chat Workflow: Real-time Conversational Flows with ASP.NET Core and Adaptive Cards",
+      "summary": {
+        "text": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is an innovative ASP.NET Core web application that enables dynamic, interactive conversational workflows through a real-time chat interface powered by SignalR and Adaptive Cards. The platform allows users to engage in multi-step, guided conversations with flexible branching logic, supporting complex interaction scenarios by dynamically rendering interactive UI elements and managing conversation state using thread-safe server-side storage. Leveraging modern web technologies like C#, SignalR, and optional AI integration, the application provides a robust framework for creating structured, context-aware conversational experiences with built-in persistence and extensibility. The architecture emphasizes modularity, with a clear separation of concerns between workflow management, real-time communication, and user interaction, making it particularly suitable for scenarios requiring guided user experiences such as surveys, onboarding processes, or interactive decision trees. What distinguishes PromptSpark.Chat is its elegant approach to managing conversational complexity through adaptive cards, server-side state management, and a flexible workflow definition mechanism that allows developers to easily configure and extend conversation flows without extensive custom coding.",
+        "ai_generated": true,
+        "generation_method": "claude-3-5-haiku-20241022",
+        "generated_at": "2026-01-25T00:02:21.216929",
+        "model_used": "claude-3-5-haiku-20241022",
+        "tokens_used": 2173,
+        "confidence_score": 90
+      },
+      "url": "https://github.com/markhazleton/PromptSpark.Chat",
+      "homepage": "",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "C#",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2024-12-31T04:00:15+00:00",
+      "updated_at": "2026-01-12T05:48:44+00:00",
+      "pushed_at": "2026-01-23T13:55:12+00:00",
+      "total_commits": 25,
+      "recent_commits_90d": 7,
+      "first_commit_date": "2024-12-31T04:00:15+00:00",
+      "last_commit_date": "2026-01-12T05:48:37+00:00",
+      "commit_history": {
+        "repository_name": "PromptSpark.Chat",
+        "total_commits": 25,
+        "recent_90d": 7,
+        "recent_180d": 7,
+        "recent_365d": 8,
+        "last_commit_date": "2026-01-12T05:48:37+00:00",
+        "patterns": [
+          "maintained",
+          "current",
+          "accelerating"
+        ],
+        "commit_frequency": 2.33,
+        "consistency_score": 0,
+        "activity_rate": 0.078,
+        "days_since_last_commit": 19,
+        "first_commit_date": "2024-12-31T04:00:15+00:00"
+      },
+      "commit_metrics": null,
+      "avg_commit_size": null,
+      "largest_commit": null,
+      "smallest_commit": null,
+      "commit_velocity": 2.33,
+      "tech_stack": null,
+      "has_readme": true,
+      "language_count": 5,
+      "size_kb": 19281,
+      "is_fork": false,
+      "is_private": false,
+      "age_days": 396,
+      "days_since_last_push": 8,
+      "ai_summary": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is an innovative ASP.NET Core web application that enables dynamic, interactive conversational workflows through a real-time chat interface powered by SignalR and Adaptive Cards. The platform allows users to engage in multi-step, guided conversations with flexible branching logic, supporting complex interaction scenarios by dynamically rendering interactive UI elements and managing conversation state using thread-safe server-side storage. Leveraging modern web technologies like C#, SignalR, and optional AI integration, the application provides a robust framework for creating structured, context-aware conversational experiences with built-in persistence and extensibility. The architecture emphasizes modularity, with a clear separation of concerns between workflow management, real-time communication, and user interaction, making it particularly suitable for scenarios requiring guided user experiences such as surveys, onboarding processes, or interactive decision trees. What distinguishes PromptSpark.Chat is its elegant approach to managing conversational complexity through adaptive cards, server-side state management, and a flexible workflow definition mechanism that allows developers to easily configure and extend conversation flows without extensive custom coding.",
+      "rank": 29,
+      "composite_score": 25.39
     },
     {
       "name": "WebSpark.PrismSpark",
@@ -4927,6 +5139,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/WebSpark.PrismSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -4955,7 +5171,7 @@
         "commit_frequency": 2.0,
         "consistency_score": 0,
         "activity_rate": 0.067,
-        "days_since_last_commit": 25,
+        "days_since_last_commit": 26,
         "first_commit_date": "2025-05-27T15:14:29+00:00"
       },
       "commit_metrics": null,
@@ -4969,8 +5185,8 @@
       "size_kb": 2090,
       "is_fork": false,
       "is_private": false,
-      "age_days": 248,
-      "days_since_last_push": 25,
+      "age_days": 249,
+      "days_since_last_push": 26,
       "ai_summary": "WebSpark.PrismSpark is a sophisticated .NET-based syntax highlighting library inspired by PrismJS, designed to provide advanced code rendering and tokenization capabilities for multiple programming languages. The library offers a comprehensive suite of features including support for 20+ programming languages, a plugin system, theme generation, async processing, and extensible highlighting mechanisms with robust .NET 10.0 LTS compatibility. Architecturally, it implements a modular design with interfaces like `IHighlighter`, `IPlugin`, and `ITheme`, enabling developers to easily customize and extend syntax highlighting through dependency injection, hooks, and context-aware processing. The project distinguishes itself through its performance-oriented approach, supporting advanced options like line number rendering, context-based metadata, and dynamic theme generation, making it particularly valuable for web developers, documentation platforms, and code presentation frameworks targeting .NET ecosystems. By providing a type-safe, performant alternative to traditional syntax highlighting libraries, WebSpark.PrismSpark offers developers a powerful tool for rendering and styling code snippets across various .NET web frameworks like MVC, Razor, and potentially Blazor.",
       "rank": 30,
       "composite_score": 24.68
@@ -4988,6 +5204,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/TeachSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -5016,7 +5236,7 @@
         "commit_frequency": 0.67,
         "consistency_score": 0,
         "activity_rate": 0.022,
-        "days_since_last_commit": 18,
+        "days_since_last_commit": 19,
         "first_commit_date": "2025-06-19T21:15:05+00:00"
       },
       "commit_metrics": null,
@@ -5072,7 +5292,7 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 225,
-      "days_since_last_push": 18,
+      "days_since_last_push": 19,
       "ai_summary": "Technical Summary:\n\nTeachSpark is an advanced, AI-powered educational web platform built using .NET 10 MVC and modern web technologies, designed to create personalized learning experiences through Large Language Model (LLM) integration. The project leverages a clean architecture approach, combining a robust C# backend with a sophisticated frontend built using Webpack, Bootstrap, and modern JavaScript, enabling dynamic, adaptive curriculum delivery with real-time personalization and comprehensive learning analytics. Key technological highlights include intelligent content adaptation, responsive design, comprehensive build tooling with automated quality checks, and a modular architecture that supports scalable, performance-optimized educational experiences. The platform distinguishes itself through its AI-driven personalization, offering customized learning pathways that dynamically adjust content based on individual student interactions and learning patterns. Targeting educators, students, and educational technology professionals, TeachSpark represents a cutting-edge approach to digital learning platforms that emphasizes technological innovation, user experience, and data-driven educational methodology.",
       "rank": 31,
       "composite_score": 23.79
@@ -5090,6 +5310,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/DecisionSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -5150,6 +5374,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/TriviaSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -5177,7 +5405,7 @@
         "commit_frequency": 1.33,
         "consistency_score": 0,
         "activity_rate": 0.044,
-        "days_since_last_commit": 59,
+        "days_since_last_commit": 60,
         "first_commit_date": "2023-02-22T17:10:04+00:00"
       },
       "commit_metrics": null,
@@ -5192,7 +5420,7 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 1073,
-      "days_since_last_push": 59,
+      "days_since_last_push": 60,
       "ai_summary": "Technical Summary for TriviaSpark:\n\nTriviaSpark is an experimental multiplayer web and mobile trivia game application developed with AI assistance, designed to provide an interactive and competitive trivia experience for tech-savvy users aged 18-95. The project is primarily built using C# with a web-based architecture, leveraging public Trivia APIs to dynamically generate question sets and enable real-time multiplayer interactions. Key planned features include user registration, a comprehensive leaderboard system, admin-level question database management, and a customizable user interface that supports both web and mobile platforms. The application appears to follow a modern, component-based development approach with potential use of .NET technologies for backend infrastructure and web frameworks for frontend rendering. What makes TriviaSpark unique is its explicit integration of AI in the development process, as highlighted by its README noting collaborative development with ChatGPT, which suggests an innovative approach to software design and potentially leveraging AI for dynamic content generation and user experience optimization. The project aims to create an engaging, knowledge-testing platform that combines competitive gameplay with accessible, technology-driven design.",
       "rank": 33,
       "composite_score": 22.35
@@ -5210,6 +5438,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/DataAnalysisDemo",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -5500,6 +5732,10 @@
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/PHPDocSpark",
+      "homepage": "https://phpdocspark.azurewebsites.net",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": "https://phpdocspark.azurewebsites.net",
       "stars": 0,
       "forks": 0,
       "watchers": 0,
@@ -5806,7 +6042,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-01-31T03:36:11.553521+00:00",
+    "generated_at": "2026-01-31T16:05:56.258830+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }

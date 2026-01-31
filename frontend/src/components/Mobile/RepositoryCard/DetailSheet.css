@@ -79,6 +79,54 @@
   }
 }
 
+/* Screenshot Preview */
+.detail-screenshot-section {
+  padding: 0;
+  border-bottom: none;
+}
+
+.detail-screenshot-link {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.detail-screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #e5e7eb);
+}
+
+@media (prefers-color-scheme: dark) {
+  .detail-screenshot {
+    border-color: var(--color-border, #374151);
+  }
+}
+
+.detail-screenshot-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 24px 16px 12px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.detail-screenshot-link:hover .detail-screenshot-overlay,
+.detail-screenshot-link:focus .detail-screenshot-overlay {
+  opacity: 1;
+}
+
 /* Stats grid */
 .detail-stats-grid {
   display: grid;

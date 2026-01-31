@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T15:54:42.888711+00:00",
+  "value": {
+    "path": "output\\screenshots\\tailwind-demo.png",
+    "url": "https://markhazleton.github.io/tailwind-demo/",
+    "captured_at": "2026-01-31T15:54:42.888685+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 73.37
+  },
+  "hash": "54aabed1d294f070a9953ca7440a9bf72376ef1ab70f0a3fbc3f8f180abe81b3",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "tailwind-demo"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-26T15:29:00+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "tailwind-demo",
+  "week": "2026-01-26T15-29-00+00-00"
+}

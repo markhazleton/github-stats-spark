@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useGesture } from "@use-gesture/react";
 import styles from "./RepositoryDetail.module.css";
 
@@ -29,6 +29,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
   // T060: Collapsible sections state
   const [expandedSections, setExpandedSections] = useState({
     summary: true, // Summary expanded by default
+    website: true, // Website/screenshot expanded by default
     info: true,
     commits: false,
     languages: false,
@@ -85,6 +86,16 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
     document.addEventListener("keydown", handleKeyboard);
     return () => document.removeEventListener("keydown", handleKeyboard);
   }, [onClose, onNext, onPrevious]);
+
+  /**
+   * Get screenshot URL with base path
+   */
+  const getScreenshotUrl = (screenshotPath) => {
+    if (!screenshotPath) return null;
+    const basePath = import.meta.env.BASE_URL || "/";
+    const normalizedPath = screenshotPath.replace(/\\/g, "/");
+    return `${basePath}${normalizedPath}`;
+  };
 
   /**
    * Format date to readable string
@@ -267,6 +278,65 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
               </section>
             )}
 
+            {/* Website Screenshot Section */}
+            {repository.screenshot && (
+              <section className={styles.section}>
+                <h3
+                  className={`${styles.sectionTitle} ${styles.collapsible}`}
+                  onClick={() => toggleSection("website")}
+                  role="button"
+                  tabIndex={0}
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      toggleSection("website");
+                    }
+                  }}
+                  aria-expanded={expandedSections.website}
+                >
+                  <span>🌐 Website Preview</span>
+                  <span className={styles.chevron}>
+                    {expandedSections.website ? "▲" : "▼"}
+                  </span>
+                </h3>
+                {expandedSections.website && (
+                  <div className={styles.sectionContent}>
+                    <div className={styles.screenshotContainer}>
+                      <a
+                        href={
+                          repository.website_url || repository.screenshot.url
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.screenshotLink}
+                      >
+                        <img
+                          src={getScreenshotUrl(repository.screenshot.path)}
+                          alt={`Screenshot of ${repository.name} website`}
+                          className={styles.screenshot}
+                          loading="lazy"
+                        />
+                        <div className={styles.screenshotOverlay}>
+                          <span>Visit Website →</span>
+                        </div>
+                      </a>
+                    </div>
+                    <div className={styles.screenshotMeta}>
+                      <span className={styles.textMuted}>
+                        Captured {formatDate(repository.screenshot.captured_at)}
+                        {repository.screenshot.file_size_kb && (
+                          <>
+                            {" "}
+                            • {repository.screenshot.file_size_kb.toFixed(1)} KB
+                          </>
+                        )}
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </section>
+            )}
+
             {/* Main Content Grid */}
             <div className={styles.contentGrid}>
               {/* Left Column */}
@@ -354,6 +424,41 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                           </a>
                         </dd>
                       </div>
+                      {repository.website_url && (
+                        <div className={styles.detailItem}>
+                          <dt>Website</dt>
+                          <dd>
+                            <a
+                              href={repository.website_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.link}
+                            >
+                              {repository.homepage
+                                ? "🌐 Homepage"
+                                : "📄 GitHub Pages"}{" "}
+                              →
+                            </a>
+                          </dd>
+                        </div>
+                      )}
+                      {repository.has_pages &&
+                        !repository.homepage &&
+                        repository.pages_url && (
+                          <div className={styles.detailItem}>
+                            <dt>GitHub Pages</dt>
+                            <dd>
+                              <a
+                                href={repository.pages_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.link}
+                              >
+                                📄 View Site →
+                              </a>
+                            </dd>
+                          </div>
+                        )}
                     </dl>
                   )}
                 </section>

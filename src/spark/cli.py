@@ -515,10 +515,10 @@ def handle_unified(args, logger):
                     logger.info("No repositories with website URLs - skipping screenshots")
                     
             except ImportError:
-                logger.warning("Playwright not installed - skipping screenshots")
+                logger.warn("Playwright not installed - skipping screenshots")
                 logger.info("Install with: pip install playwright && playwright install chromium")
             except Exception as e:
-                logger.warning(f"Screenshot capture failed: {e}")
+                logger.warn(f"Screenshot capture failed: {e}")
                 logger.info("Unified data and reports were generated successfully")
 
         # ===================================================================

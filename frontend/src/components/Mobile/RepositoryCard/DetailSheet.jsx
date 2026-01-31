@@ -37,6 +37,9 @@ export function DetailSheet({ isOpen, onClose, repository }) {
     watchers = 0,
     open_issues = 0,
     homepage,
+    website_url,
+    has_pages,
+    screenshot,
     topics = [],
     commit_metrics = {},
     tech_stack = {},
@@ -54,6 +57,16 @@ export function DetailSheet({ isOpen, onClose, repository }) {
     if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
     if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
     return num.toString();
+  };
+
+  /**
+   * Get screenshot URL with base path
+   */
+  const getScreenshotUrl = (screenshotPath) => {
+    if (!screenshotPath) return null;
+    const basePath = import.meta.env.BASE_URL || "/";
+    const normalizedPath = screenshotPath.replace(/\\/g, "/");
+    return `${basePath}${normalizedPath}`;
   };
 
   /**
@@ -129,6 +142,28 @@ export function DetailSheet({ isOpen, onClose, repository }) {
         {description && (
           <section className="detail-section">
             <p className="detail-description">{description}</p>
+          </section>
+        )}
+
+        {/* Website Screenshot */}
+        {screenshot && (
+          <section className="detail-section detail-screenshot-section">
+            <a
+              href={website_url || screenshot.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="detail-screenshot-link"
+            >
+              <img
+                src={getScreenshotUrl(screenshot.path)}
+                alt={`Screenshot of ${name} website`}
+                className="detail-screenshot"
+                loading="lazy"
+              />
+              <div className="detail-screenshot-overlay">
+                <span>Visit Website →</span>
+              </div>
+            </a>
           </section>
         )}
 
@@ -286,6 +321,18 @@ export function DetailSheet({ isOpen, onClose, repository }) {
             >
               <span>Visit Homepage</span>
               <span aria-hidden="true">🔗</span>
+            </a>
+          )}
+
+          {!homepage && website_url && (
+            <a
+              href={website_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="detail-button detail-button-secondary"
+            >
+              <span>{has_pages ? "GitHub Pages" : "Website"}</span>
+              <span aria-hidden="true">📄</span>
             </a>
           )}
 

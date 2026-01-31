@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T15:54:37.003276+00:00",
+  "value": {
+    "path": "output\\screenshots\\webspark.httpclientutility.png",
+    "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+    "captured_at": "2026-01-31T15:54:37.003250+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 42.24
+  },
+  "hash": "f46893848cb643e8609ec7269e1f90f78c5fc73c2fe3d6690e3c21471a3fce46",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.HttpClientUtility"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-05T12:28:55+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "WebSpark.HttpClientUtility",
+  "week": "2026-01-05T12-28-55+00-00"
+}

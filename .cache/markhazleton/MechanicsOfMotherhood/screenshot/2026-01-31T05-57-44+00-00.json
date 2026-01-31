@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T16:06:34.852911+00:00",
+  "value": {
+    "path": "output\\screenshots\\mechanicsofmotherhood.png",
+    "url": "http://mechanicsofmotherhood.com/",
+    "captured_at": "2026-01-31T16:06:34.852883+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 277.22
+  },
+  "hash": "5de7f15c761cb8658aadd78688f17a3c70bb744082c3e8859667fd2257b453f8",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MechanicsOfMotherhood"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-31T05:57:44+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "MechanicsOfMotherhood",
+  "week": "2026-01-31T05-57-44+00-00"
+}

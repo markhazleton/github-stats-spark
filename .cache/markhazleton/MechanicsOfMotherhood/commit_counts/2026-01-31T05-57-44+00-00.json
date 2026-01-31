@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T15:53:37.836076+00:00",
+  "value": {
+    "total": 81,
+    "recent_90d": 8,
+    "recent_180d": 81,
+    "recent_365d": 81,
+    "last_commit_date": "2026-01-31T05:57:41+00:00"
+  },
+  "hash": "72fe352de6cfc69c957b0bf3c4f46c5136c8dcc4fbb594f0aa8e67f38daef59c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MechanicsOfMotherhood"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-01-31T05:57:44+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "MechanicsOfMotherhood",
+  "week": "2026-01-31T05-57-44+00-00"
+}

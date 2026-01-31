@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T15:54:38.837503+00:00",
+  "value": {
+    "path": "output\\screenshots\\museumspark.png",
+    "url": "https://markhazleton.github.io/MuseumSpark/",
+    "captured_at": "2026-01-31T15:54:38.837466+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 98.35
+  },
+  "hash": "a086b9a7d8a3839002a7a0b08876b896c0e0bec217936a201b76a887d9529999",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "MuseumSpark"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-31T05:26:03+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "MuseumSpark",
+  "week": "2026-01-31T05-26-03+00-00"
+}

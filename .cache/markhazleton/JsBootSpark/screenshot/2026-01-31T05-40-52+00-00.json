@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T15:54:40.720241+00:00",
+  "value": {
+    "path": "output\\screenshots\\jsbootspark.png",
+    "url": "https://markhazleton.github.io/JsBootSpark/",
+    "captured_at": "2026-01-31T15:54:40.720206+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 48.46
+  },
+  "hash": "69d6337e5a63344e2dcf3c652d83e6620a2f65d26f4d7ab216312a819423fc6f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "JsBootSpark"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-31T05:40:52+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "JsBootSpark",
+  "week": "2026-01-31T05-40-52+00-00"
+}

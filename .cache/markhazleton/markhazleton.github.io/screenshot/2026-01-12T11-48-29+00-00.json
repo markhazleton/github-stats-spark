@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-01-31T16:06:44.164075+00:00",
+  "value": {
+    "path": "output\\screenshots\\markhazleton.github.io.png",
+    "url": "https://markhazleton.github.io/",
+    "captured_at": "2026-01-31T16:06:44.164046+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 59.36
+  },
+  "hash": "3ca2d474bcd5269bf143e1f11671a674f9d4caf6179004f834d2545424d8bb9f",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton.github.io"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-01-12T11:48:29+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "markhazleton.github.io",
+  "week": "2026-01-12T11-48-29+00-00"
+}

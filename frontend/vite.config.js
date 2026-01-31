@@ -3,17 +3,30 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import fs from 'fs'
 
-// Plugin to serve /data directory in dev mode
+// Plugin to serve /data and /output directories in dev mode
 const serveDataPlugin = () => ({
   name: 'serve-data',
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
       const url = new URL(req.url, 'http://localhost')
+      // Serve data directory
       if (url.pathname.startsWith('/data/')) {
         const filePath = path.resolve(__dirname, '..', url.pathname.slice(1))
         if (fs.existsSync(filePath)) {
           const content = fs.readFileSync(filePath)
           res.setHeader('Content-Type', 'application/json')
+          res.end(content)
+          return
+        }
+      }
+      // Serve output/screenshots directory
+      if (url.pathname.startsWith('/output/')) {
+        const filePath = path.resolve(__dirname, '..', url.pathname.slice(1))
+        if (fs.existsSync(filePath)) {
+          const content = fs.readFileSync(filePath)
+          const ext = path.extname(filePath).toLowerCase()
+          const mimeTypes = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' }
+          res.setHeader('Content-Type', mimeTypes[ext] || 'application/octet-stream')
           res.end(content)
           return
         }
@@ -97,6 +110,12 @@ export default defineConfig({
       // Allow serving files from parent directory (/data)
       allow: ['..']
     }
+  },
+
+  // Optimize deps to prevent React resolution issues
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
+    exclude: []
   },
 
   // CSS Modules configuration
