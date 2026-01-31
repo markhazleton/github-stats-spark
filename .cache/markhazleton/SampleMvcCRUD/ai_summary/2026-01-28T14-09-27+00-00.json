@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-01-31T03:30:42.236576+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary for the SampleMvcCRUD repository:\n\nThis is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern web development practices. The project showcases architectural diversity by implementing user interfaces across MVC Controllers, Razor Pages, and Single Page Application (SPA) styles, with a focus on clean architecture, dependency injection, and robust testing methodologies. Leveraging ASP.NET Core, Entity Framework Core, and Bootstrap 5, the repository provides a sophisticated example of a full-stack web application with advanced features like Bootswatch theme switching, Swagger/OpenAPI documentation, and comprehensive DevOps integration via GitHub Actions and Azure deployment pipelines. Key technical innovations include dynamic theme rendering, modal-based CRUD interactions, in-memory database context, and extensive observability through application health checks and Application Insights telemetry. The project is particularly valuable for .NET developers seeking a practical, multi-faceted example of modern web application design, demonstrating progressive enhancement techniques, clean code principles, and flexible architectural patterns across different .NET versions. Ideal for software engineers, architects, and students looking to understand contemporary web development approaches in the .NET ecosystem.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-01-30T21:30:42.236513",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2225,
+    "confidence_score": 90
+  },
+  "hash": "e0b015d78b1436cf87a2566d9becdfa8107fe675fe3cae2bf2230fe467371d60",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-01-28T14:09:27+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026-01-28T14-09-27+00-00"
+}
