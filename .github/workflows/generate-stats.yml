@@ -21,6 +21,11 @@ on:
           - unified
           - dated
           - both
+      capture_screenshots:
+        description: 'Capture website screenshots'
+        required: false
+        default: false
+        type: boolean
 
   # Trigger on push to main branch (for testing)
   push:
@@ -46,6 +51,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Pull latest changes
+        run: |
+          git fetch origin
+          git pull origin ${{ github.ref_name }} --rebase || true
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -57,6 +67,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install -e .
+
+      - name: Install Playwright for screenshots
+        if: ${{ inputs.capture_screenshots == true }}
+        run: |
+          echo "Installing Playwright browsers for screenshot capture..."
+          playwright install chromium --with-deps
 
       - name: Restore cache from repository
         run: |
@@ -93,7 +109,14 @@ jobs:
           echo "Commit caches: $(ls -1 .cache/commits_*.json 2>/dev/null | wc -l)"
           echo ""
           
-          spark unified --user ${{ github.repository_owner }} --include-ai-summaries --verbose
+          # Build command with optional screenshots
+          SCREENSHOT_FLAG=""
+          if [ "${{ inputs.capture_screenshots }}" == "true" ]; then
+            SCREENSHOT_FLAG="--capture-screenshots"
+            echo "📸 Screenshots enabled"
+          fi
+          
+          spark unified --user ${{ github.repository_owner }} --include-ai-summaries $SCREENSHOT_FLAG --verbose
           
           echo ""
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
@@ -158,6 +181,10 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add output/*.svg output/reports/*.md data/*.json docs/ .cache/
+          # Add screenshots if they exist
+          if [ -d "output/screenshots" ]; then
+            git add output/screenshots/
+          fi
           git diff --staged --quiet || git commit -m "Update GitHub statistics and dashboard [skip ci]"
 
       - name: Push changes

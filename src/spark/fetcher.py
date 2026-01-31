@@ -194,6 +194,8 @@ class GitHubFetcher:
                     "is_fork": repo.fork,
                     "is_private": repo.private,
                     "is_archived": repo.archived,
+                    "homepage": repo.homepage,  # Custom website URL from repo settings
+                    "has_pages": repo.has_pages,  # GitHub Pages enabled
                 })
 
             # Cache writes now handled by CacheManager

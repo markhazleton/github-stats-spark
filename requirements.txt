@@ -27,3 +27,7 @@ packaging>=23.0
 
 # TOML parsing for pyproject.toml (Python <3.11)
 tomli>=2.0.0; python_version < '3.11'
+
+# Screenshot capture for repository websites (optional)
+# Requires: playwright install chromium
+playwright>=1.40.0

@@ -386,6 +386,10 @@ class UnifiedDataGenerator:
                 "description": repo.description,
                 "summary": summary_payload,
                 "url": repo.url,
+                "homepage": repo.homepage,  # Custom website URL from repo settings
+                "has_pages": repo.has_pages,  # GitHub Pages enabled
+                "pages_url": repo.pages_url,  # Constructed GitHub Pages URL
+                "website_url": repo.website_url,  # Best available website (homepage or pages_url)
                 "stars": repo.stars,
                 "forks": repo.forks,
                 "watchers": repo.watchers,

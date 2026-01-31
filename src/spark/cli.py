@@ -88,6 +88,11 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         default=None,
         help="Maximum number of repositories to process (for testing/debugging)",
     )
+    unified_parser.add_argument(
+        "--capture-screenshots",
+        action="store_true",
+        help="Capture screenshots of repository websites (requires playwright)",
+    )
 
     # Analyze command (NEW - Repository analysis)
     analyze_parser = subparsers.add_parser("analyze", help="Analyze repositories and generate report")
@@ -332,6 +337,7 @@ def handle_unified(args, logger):
     logger.info(f"Reports output: output/")
     logger.info(f"AI Summaries: {'Yes' if args.include_ai_summaries else 'No'}")
     logger.info(f"Force Refresh: {'Yes' if args.force_refresh else 'No'}")
+    logger.info(f"Screenshots: {'Yes' if getattr(args, 'capture_screenshots', False) else 'No'}")
 
     # Check for GitHub token
     if not os.getenv("GITHUB_TOKEN"):
@@ -454,6 +460,68 @@ def handle_unified(args, logger):
             logger.info("Unified data generation was successful, but SVG/reports had errors")
 
         # ===================================================================
+        # STEP 4 (Optional): Capture Screenshots
+        # ===================================================================
+        screenshot_results = None
+        if getattr(args, 'capture_screenshots', False):
+            logger.info("")
+            logger.info("=" * 70)
+            logger.info("STEP 4/4: Capturing Website Screenshots")
+            logger.info("=" * 70)
+            
+            try:
+                from spark.screenshot import ScreenshotCapture
+                import json
+                
+                # Load generated repositories.json
+                with open(data_output_path, 'r', encoding='utf-8') as f:
+                    unified_data = json.load(f)
+                
+                repositories = unified_data.get('repositories', [])
+                repos_with_websites = [r for r in repositories if r.get('website_url')]
+                
+                logger.info(f"Found {len(repos_with_websites)} repositories with websites")
+                
+                if repos_with_websites:
+                    screenshot_dir = Path("output/screenshots")
+                    capturer = ScreenshotCapture(
+                        cache=shared_cache,
+                        output_dir=screenshot_dir,
+                    )
+                    
+                    screenshot_results = capturer.capture_batch(
+                        repositories=repos_with_websites,
+                        username=args.user,
+                        force_refresh=args.force_refresh,
+                    )
+                    
+                    captured_count = sum(1 for v in screenshot_results.values() if v is not None)
+                    logger.info(f"Captured {captured_count} screenshots to {screenshot_dir}")
+                    
+                    # Update repositories.json with screenshot paths
+                    if captured_count > 0:
+                        for repo in unified_data.get('repositories', []):
+                            repo_name = repo.get('name')
+                            if repo_name and repo_name in screenshot_results:
+                                screenshot_meta = screenshot_results[repo_name]
+                                if screenshot_meta:
+                                    repo['screenshot'] = screenshot_meta
+                        
+                        # Write updated data back
+                        with open(data_output_path, 'w', encoding='utf-8') as f:
+                            json.dump(unified_data, f, indent=2, ensure_ascii=False)
+                        logger.info(f"Updated {data_output_path} with screenshot metadata")
+                else:
+                    logger.info("No repositories with website URLs - skipping screenshots")
+                    
+            except ImportError:
+                logger.warning("Playwright not installed - skipping screenshots")
+                logger.info("Install with: pip install playwright && playwright install chromium")
+            except Exception as e:
+                logger.warning(f"Screenshot capture failed: {e}")
+                logger.info("Unified data and reports were generated successfully")
+
+        # ===================================================================
         # Summary
         # ===================================================================
         end_time = datetime.now()
@@ -466,6 +534,9 @@ def handle_unified(args, logger):
         logger.info(f"Unified Data: {data_output_path}")
         logger.info(f"SVG Files: output/*.svg")
         logger.info(f"Report: output/reports/{args.user}-analysis.md")
+        if screenshot_results:
+            captured_count = sum(1 for v in screenshot_results.values() if v is not None)
+            logger.info(f"Screenshots: output/screenshots/ ({captured_count} captured)")
         logger.info(f"Total Time: {total_time:.1f}s")
         logger.info("")
         logger.info("All data gathered, LLM summaries generated (if enabled),")

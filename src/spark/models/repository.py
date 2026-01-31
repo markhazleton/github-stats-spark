@@ -40,6 +40,8 @@ class Repository:
         release_count: Total number of releases (Activity Focus)
         latest_release_date: Date of most recent release (Activity Focus)
         commit_velocity: Commits per month trend (Activity Focus)
+        homepage: Custom website URL set in repository settings (optional)
+        has_pages: Whether GitHub Pages is enabled for this repository
     """
 
     name: str
@@ -72,6 +74,9 @@ class Repository:
     release_count: int = 0
     latest_release_date: Optional[datetime] = None
     commit_velocity: Optional[float] = None  # commits per month
+    # Website URLs
+    homepage: Optional[str] = None  # Custom website URL from repo settings
+    has_pages: bool = False  # GitHub Pages enabled
 
     def __post_init__(self):
         """Validate that private repositories are never processed."""
@@ -109,6 +114,34 @@ class Repository:
     def is_empty(self) -> bool:
         """Check if repository appears empty (no commits, minimal size)."""
         return self.pushed_at is None and self.size_kb < 10
+
+    @property
+    def pages_url(self) -> Optional[str]:
+        """Construct GitHub Pages URL if pages are enabled.
+        
+        Returns:
+            GitHub Pages URL in format https://{owner}.github.io/{repo}/ or None
+        """
+        if not self.has_pages:
+            return None
+        # Extract owner from URL: https://github.com/owner/repo
+        if self.url and 'github.com/' in self.url:
+            parts = self.url.split('github.com/')[-1].split('/')
+            if len(parts) >= 2:
+                owner = parts[0]
+                return f"https://{owner}.github.io/{self.name}/"
+        return None
+
+    @property
+    def website_url(self) -> Optional[str]:
+        """Get the best available website URL for the repository.
+        
+        Priority: homepage > pages_url
+        
+        Returns:
+            Website URL or None if no website is available
+        """
+        return self.homepage or self.pages_url
 
     def to_dict(self) -> dict:
         """Serialize repository to dictionary format.
@@ -149,6 +182,11 @@ class Repository:
             "release_count": self.release_count,
             "latest_release_date": self.latest_release_date.isoformat() if self.latest_release_date else None,
             "commit_velocity": self.commit_velocity,
+            # Website URLs
+            "homepage": self.homepage,
+            "has_pages": self.has_pages,
+            "pages_url": self.pages_url,
+            "website_url": self.website_url,
         }
 
     @classmethod
@@ -199,6 +237,8 @@ class Repository:
             release_count=data.get("release_count", 0),
             latest_release_date=None,
             commit_velocity=data.get("commit_velocity"),
+            homepage=data.get("homepage"),
+            has_pages=data.get("has_pages", False),
         )
 
     @classmethod
@@ -320,6 +360,8 @@ class Repository:
             release_count=release_count,
             latest_release_date=latest_release_date,
             commit_velocity=None,  # Will be calculated from commit history
+            homepage=github_repo.homepage,
+            has_pages=github_repo.has_pages,
         )
 
     def to_dashboard_dict(self) -> Dict:
@@ -339,6 +381,10 @@ class Repository:
             "name": self.name,
             "description": self.description,
             "url": self.url,
+            "homepage": self.homepage,
+            "has_pages": self.has_pages,
+            "pages_url": self.pages_url,
+            "website_url": self.website_url,
             "language": self.primary_language or "Unknown",
             "created_at": self.created_at.isoformat() if isinstance(self.created_at, datetime) else self.created_at,
             "updated_at": self.updated_at.isoformat() if isinstance(self.updated_at, datetime) else self.updated_at,
