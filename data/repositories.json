@@ -4,19 +4,19 @@
     "total_repositories": 36,
     "total_stars": 17,
     "total_forks": 7,
-    "total_commits": 3299
+    "total_commits": 3302
   },
   "repositories": [
     {
       "name": "github-stats-spark",
       "description": "A GitHub Stats for Profile README.md",
       "summary": {
-        "text": "Based on the detailed README and repository information, here's a comprehensive technical summary:\n\nStats Spark is an advanced GitHub analytics platform designed to automate and visualize developer productivity and repository insights through intelligent data processing and AI-powered analysis. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude AI for generating intelligent repository summaries. Its architecture enables automated daily updates of GitHub profile statistics, generating comprehensive SVG visualizations across multiple categories including commit heatmaps, language usage, developer streaks, and a unique \"Spark Score\" metric that assesses coding consistency and contribution quality.\n\nKey technical highlights include:\n- Modular, extensible design with YAML-based configuration\n- AI-powered repository analysis using multiple intelligence tiers\n- Automated GitHub Actions workflow for continuous updates\n- Intelligent caching and rate limit management\n- Mobile-first interactive dashboard with responsive design\n- Comprehensive statistical generation across multiple dimensions\n\nThe project stands out through its multi-layered approach to GitHub activity analysis, combining automated visualization, AI-generated insights, and an interactive exploration interface. It targets developers, technical leaders, and open-source maintainers seeking comprehensive, automated insights into their GitHub ecosystem, with a strong emphasis on performance, accessibility, and intelligent data representation.\n\nThe technology stack demonstrates modern web and data processing approaches, utilizing Python for backend processing, JavaScript for interactive frontend components, and integrating machine learning techniques for intelligent analysis. Its enterprise-ready design, with features like exponential backoff, smart caching, and comprehensive error handling, makes it a robust solution for developer analytics.",
+        "text": "Here's a detailed technical summary of the GitHub repository:\n\nStats Spark is a sophisticated GitHub analytics platform designed to automatically generate comprehensive insights and visualizations of a developer's GitHub activity. The project leverages Python as its primary language, with a multi-faceted approach to repository analysis that combines automated SVG generation, AI-powered technical summaries, and an interactive web dashboard. \n\nThe core architecture is built around modular Python scripts that interface with the GitHub API using PyGithub, with intelligent caching and rate limit management. The system generates multiple types of visualizations including commit heatmaps, language usage statistics, and activity streaks, powered by libraries like svgwrite and requests. A unique feature is the \"Spark Score\" - a composite metric that evaluates developer activity across consistency, volume, and collaboration dimensions.\n\nThe AI-powered analysis component integrates Claude Haiku for generating intelligent repository summaries, implementing a sophisticated three-tier fallback mechanism to ensure high-quality technical insights. The interactive dashboard is constructed using a mobile-first JavaScript approach with Chart.js for visualizations, featuring responsive design, touch-optimized interactions, and comprehensive filtering capabilities.\n\nKey technical innovations include:\n- Automated daily GitHub Actions workflow for profile updates\n- Intelligent repository ranking algorithm\n- AI-generated technical summaries with 97%+ accuracy\n- Performance-optimized API request handling\n- WCAG 2.1 AA accessible visualizations\n- Comprehensive developer profiling with technology diversity analysis\n\nThe project is particularly noteworthy for its comprehensive approach to GitHub activity analysis, providing developers, teams, and technical leaders with deep insights into coding patterns, repository health, and individual development trajectories.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-02-01T09:49:06.117576",
+        "generated_at": "2026-02-01T15:54:52.152019",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2569,
+        "tokens_used": 2576,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/github-stats-spark",
@@ -31,27 +31,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-02-01T05:24:41+00:00",
-      "pushed_at": "2026-02-01T05:24:37+00:00",
-      "total_commits": 144,
-      "recent_commits_90d": 144,
+      "updated_at": "2026-02-01T15:54:13+00:00",
+      "pushed_at": "2026-02-01T15:54:09+00:00",
+      "total_commits": 145,
+      "recent_commits_90d": 145,
       "first_commit_date": "2025-12-28T17:01:51+00:00",
-      "last_commit_date": "2026-02-01T05:24:35+00:00",
+      "last_commit_date": "2026-02-01T15:54:06+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 144,
-        "recent_90d": 144,
-        "recent_180d": 144,
-        "recent_365d": 144,
-        "last_commit_date": "2026-02-01T05:24:35+00:00",
+        "total_commits": 145,
+        "recent_90d": 145,
+        "recent_180d": 145,
+        "recent_365d": 145,
+        "last_commit_date": "2026-02-01T15:54:06+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 48.0,
+        "commit_frequency": 48.33,
         "consistency_score": 0,
-        "activity_rate": 1.6,
+        "activity_rate": 1.611,
         "days_since_last_commit": 0,
         "first_commit_date": "2025-12-28T17:01:51+00:00"
       },
@@ -59,7 +59,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 48.0,
+      "commit_velocity": 48.33,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -172,13 +172,13 @@
       "is_private": false,
       "age_days": 34,
       "days_since_last_push": 0,
-      "ai_summary": "Based on the detailed README and repository information, here's a comprehensive technical summary:\n\nStats Spark is an advanced GitHub analytics platform designed to automate and visualize developer productivity and repository insights through intelligent data processing and AI-powered analysis. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude AI for generating intelligent repository summaries. Its architecture enables automated daily updates of GitHub profile statistics, generating comprehensive SVG visualizations across multiple categories including commit heatmaps, language usage, developer streaks, and a unique \"Spark Score\" metric that assesses coding consistency and contribution quality.\n\nKey technical highlights include:\n- Modular, extensible design with YAML-based configuration\n- AI-powered repository analysis using multiple intelligence tiers\n- Automated GitHub Actions workflow for continuous updates\n- Intelligent caching and rate limit management\n- Mobile-first interactive dashboard with responsive design\n- Comprehensive statistical generation across multiple dimensions\n\nThe project stands out through its multi-layered approach to GitHub activity analysis, combining automated visualization, AI-generated insights, and an interactive exploration interface. It targets developers, technical leaders, and open-source maintainers seeking comprehensive, automated insights into their GitHub ecosystem, with a strong emphasis on performance, accessibility, and intelligent data representation.\n\nThe technology stack demonstrates modern web and data processing approaches, utilizing Python for backend processing, JavaScript for interactive frontend components, and integrating machine learning techniques for intelligent analysis. Its enterprise-ready design, with features like exponential backoff, smart caching, and comprehensive error handling, makes it a robust solution for developer analytics.",
+      "ai_summary": "Here's a detailed technical summary of the GitHub repository:\n\nStats Spark is a sophisticated GitHub analytics platform designed to automatically generate comprehensive insights and visualizations of a developer's GitHub activity. The project leverages Python as its primary language, with a multi-faceted approach to repository analysis that combines automated SVG generation, AI-powered technical summaries, and an interactive web dashboard. \n\nThe core architecture is built around modular Python scripts that interface with the GitHub API using PyGithub, with intelligent caching and rate limit management. The system generates multiple types of visualizations including commit heatmaps, language usage statistics, and activity streaks, powered by libraries like svgwrite and requests. A unique feature is the \"Spark Score\" - a composite metric that evaluates developer activity across consistency, volume, and collaboration dimensions.\n\nThe AI-powered analysis component integrates Claude Haiku for generating intelligent repository summaries, implementing a sophisticated three-tier fallback mechanism to ensure high-quality technical insights. The interactive dashboard is constructed using a mobile-first JavaScript approach with Chart.js for visualizations, featuring responsive design, touch-optimized interactions, and comprehensive filtering capabilities.\n\nKey technical innovations include:\n- Automated daily GitHub Actions workflow for profile updates\n- Intelligent repository ranking algorithm\n- AI-generated technical summaries with 97%+ accuracy\n- Performance-optimized API request handling\n- WCAG 2.1 AA accessible visualizations\n- Comprehensive developer profiling with technology diversity analysis\n\nThe project is particularly noteworthy for its comprehensive approach to GitHub activity analysis, providing developers, teams, and technical leaders with deep insights into coding patterns, repository health, and individual development trajectories.",
       "rank": 1,
       "composite_score": 87.98,
       "screenshot": {
         "path": "output/screenshots/github-stats-spark.png",
         "url": "https://markhazleton.github.io/github-stats-spark/",
-        "captured_at": "2026-01-31T15:54:30.888899+00:00",
+        "captured_at": "2026-02-01T15:54:18.171066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 58.49
@@ -787,7 +787,7 @@
       "screenshot": {
         "path": "output/screenshots/mark-hazleton-s-notes.png",
         "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
-        "captured_at": "2026-01-31T15:54:33.447004+00:00",
+        "captured_at": "2026-02-01T15:54:18.171066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 101.38
@@ -1044,7 +1044,7 @@
       "screenshot": {
         "path": "output/screenshots/git-spark.png",
         "url": "https://markhazleton.github.io/git-spark/",
-        "captured_at": "2026-01-31T15:54:35.186402+00:00",
+        "captured_at": "2026-02-01T15:54:18.170066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 184.79
@@ -1117,7 +1117,7 @@
       "screenshot": {
         "path": "output/screenshots/webspark.httpclientutility.png",
         "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-        "captured_at": "2026-01-31T15:54:37.002048+00:00",
+        "captured_at": "2026-02-01T15:54:18.176065+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 42.24
@@ -1190,7 +1190,7 @@
       "screenshot": {
         "path": "output/screenshots/museumspark.png",
         "url": "https://markhazleton.github.io/MuseumSpark/",
-        "captured_at": "2026-01-31T15:54:38.836946+00:00",
+        "captured_at": "2026-02-01T15:54:18.173066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 98.35
@@ -1677,7 +1677,7 @@
       "screenshot": {
         "path": "output/screenshots/jsbootspark.png",
         "url": "https://markhazleton.github.io/JsBootSpark/",
-        "captured_at": "2026-01-31T15:54:40.719385+00:00",
+        "captured_at": "2026-02-01T15:54:18.171066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.46
@@ -2054,7 +2054,7 @@
       "screenshot": {
         "path": "output/screenshots/tailwind-demo.png",
         "url": "https://markhazleton.github.io/tailwind-demo/",
-        "captured_at": "2026-01-31T15:54:42.888336+00:00",
+        "captured_at": "2026-02-01T15:54:18.174066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 73.37
@@ -2620,7 +2620,7 @@
       "screenshot": {
         "path": "output/screenshots/mechanicsofmotherhood.png",
         "url": "http://mechanicsofmotherhood.com/",
-        "captured_at": "2026-01-31T16:06:34.852258+00:00",
+        "captured_at": "2026-02-01T15:54:18.173066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 277.22
@@ -3095,7 +3095,7 @@
       "screenshot": {
         "path": "output/screenshots/reactsparkportfolio.png",
         "url": "https://reactspark.markhazleton.com/",
-        "captured_at": "2026-01-31T16:06:38.181278+00:00",
+        "captured_at": "2026-02-01T15:54:18.174066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 69.18
@@ -3632,7 +3632,7 @@
       "screenshot": {
         "path": "output/screenshots/texecon.png",
         "url": "https://markhazleton.github.io/Texecon/",
-        "captured_at": "2026-01-31T16:06:40.550633+00:00",
+        "captured_at": "2026-02-01T15:54:18.176065+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 458.92
@@ -3697,7 +3697,7 @@
       "size_kb": 6583,
       "is_fork": false,
       "is_private": false,
-      "age_days": 1750,
+      "age_days": 1751,
       "days_since_last_push": 2,
       "ai_summary": "Based on the repository's README and metadata, here's a comprehensive technical summary:\n\nMark Hazleton's GitHub repository serves as a personal technology portfolio and learning platform, showcasing a collection of web development projects and experimental applications that demonstrate his ongoing technical exploration and skill development. The repository features multiple web-based projects like WebSpark (a comprehensive web application hosting demo projects) and ReactSpark (a React application built with Vite and deployed on Azure Static Web Applications), indicating a focus on modern web technologies and cloud deployment strategies. The projects appear to leverage contemporary web frameworks, with a strong emphasis on React, Azure cloud services, and static site generation, reflecting a cloud-native and JavaScript-centric development approach. The repository is not just a code collection but a dynamic learning archive, with blog posts and detailed documentation that provide insights into the author's technical thought processes, software development methodologies, and exploration of emerging technologies like AI and serverless architectures. What makes this repository unique is its transparent documentation of the learning journey, comprehensive GitHub stats visualization, and the author's commitment to showcasing not just code, but the context and reasoning behind technological choices. The target audience seems to be developers, technology enthusiasts, and professionals interested in web development, cloud technologies, and continuous learning in the software engineering ecosystem.",
       "rank": 16,
@@ -4566,7 +4566,7 @@
       "screenshot": {
         "path": "output/screenshots/react-native-web-start.png",
         "url": "https://markhazleton.github.io/react-native-web-start/",
-        "captured_at": "2026-01-31T16:06:42.397261+00:00",
+        "captured_at": "2026-02-01T15:54:18.174066+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.8
@@ -4807,11 +4807,801 @@
       "screenshot": {
         "path": "output/screenshots/markhazleton.github.io.png",
         "url": "https://markhazleton.github.io/",
-        "captured_at": "2026-01-31T16:06:44.163666+00:00",
+        "captured_at": "2026-02-01T15:54:18.172065+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 59.36
       }
+    },
+    {
+      "name": "SupportSpark",
+      "description": null,
+      "summary": {
+        "text": "Here's a comprehensive technical summary of the SupportSpark repository:\n\nSupportSpark is a compassionate, privacy-focused web application designed to help individuals share personal journey updates with a trusted support network during challenging life moments. Built with a modern, type-safe technology stack including React 19, TypeScript, Express, and Tailwind CSS, the platform provides a calm, distraction-free environment for members to create updates and for supporters to engage through threaded conversations with controlled, invitation-only access. The application emphasizes robust type safety through end-to-end TypeScript and Zod validation, implements accessible UI components using Radix primitives, and follows a strict architectural pattern that separates concerns between client, server, and shared code layers. What sets SupportSpark apart is its intentional design focusing on emotional well-being, offering features like role-based access, real-time updates, and a purposefully minimalist interface that prioritizes meaningful, organized communication during sensitive personal experiences. The project is targeted at individuals navigating health challenges, life transitions, or personal journeys who want a structured, private platform to maintain connections with their support circle without the overwhelming noise of traditional social media.",
+        "ai_generated": true,
+        "generation_method": "claude-3-5-haiku-20241022",
+        "generated_at": "2026-02-01T15:55:05.437317",
+        "model_used": "claude-3-5-haiku-20241022",
+        "tokens_used": 2725,
+        "confidence_score": 90
+      },
+      "url": "https://github.com/markhazleton/SupportSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "TypeScript",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2026-02-01T15:22:40+00:00",
+      "updated_at": "2026-02-01T15:53:24+00:00",
+      "pushed_at": "2026-02-01T15:53:21+00:00",
+      "total_commits": 2,
+      "recent_commits_90d": 2,
+      "first_commit_date": "2026-02-01T15:22:40+00:00",
+      "last_commit_date": "2026-02-01T15:53:19+00:00",
+      "commit_history": {
+        "repository_name": "SupportSpark",
+        "total_commits": 2,
+        "recent_90d": 2,
+        "recent_180d": 2,
+        "recent_365d": 2,
+        "last_commit_date": "2026-02-01T15:53:19+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated",
+          "accelerating"
+        ],
+        "commit_frequency": 0.67,
+        "consistency_score": 0,
+        "activity_rate": 0.022,
+        "days_since_last_commit": 0,
+        "first_commit_date": "2026-02-01T15:22:40+00:00"
+      },
+      "commit_metrics": null,
+      "avg_commit_size": null,
+      "largest_commit": null,
+      "smallest_commit": null,
+      "commit_velocity": 0.67,
+      "tech_stack": {
+        "repository_name": "SupportSpark",
+        "languages": {},
+        "frameworks": [],
+        "dependencies": [
+          {
+            "name": "@hookform/resolvers",
+            "current_version": "5.2.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-accordion",
+            "current_version": "1.2.12",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-alert-dialog",
+            "current_version": "1.1.15",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-aspect-ratio",
+            "current_version": "1.1.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-avatar",
+            "current_version": "1.1.11",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-checkbox",
+            "current_version": "1.3.3",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-collapsible",
+            "current_version": "1.1.12",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-context-menu",
+            "current_version": "2.2.16",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-dialog",
+            "current_version": "1.1.15",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-dropdown-menu",
+            "current_version": "2.1.16",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-hover-card",
+            "current_version": "1.1.15",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-label",
+            "current_version": "2.1.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-menubar",
+            "current_version": "1.1.16",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-navigation-menu",
+            "current_version": "1.2.14",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-popover",
+            "current_version": "1.1.15",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-progress",
+            "current_version": "1.1.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-radio-group",
+            "current_version": "1.3.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-scroll-area",
+            "current_version": "1.2.10",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-select",
+            "current_version": "2.2.6",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-separator",
+            "current_version": "1.1.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-slider",
+            "current_version": "1.3.6",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-slot",
+            "current_version": "1.2.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-switch",
+            "current_version": "1.2.6",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-tabs",
+            "current_version": "1.1.13",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-toast",
+            "current_version": "1.2.15",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-toggle",
+            "current_version": "1.1.10",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-toggle-group",
+            "current_version": "1.1.11",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@radix-ui/react-tooltip",
+            "current_version": "1.2.8",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@tanstack/react-query",
+            "current_version": "5.90.20",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/multer",
+            "current_version": "2.0.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "class-variance-authority",
+            "current_version": "0.7.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "clsx",
+            "current_version": "2.1.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "cmdk",
+            "current_version": "1.1.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "cross-env",
+            "current_version": "10.1.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "date-fns",
+            "current_version": "4.1.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "embla-carousel-react",
+            "current_version": "8.6.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "express",
+            "current_version": "5.2.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "express-session",
+            "current_version": "1.19.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "framer-motion",
+            "current_version": "12.29.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "input-otp",
+            "current_version": "1.4.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "lucide-react",
+            "current_version": "0.563.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "memorystore",
+            "current_version": "1.6.7",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "multer",
+            "current_version": "2.0.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "nanoid",
+            "current_version": "5.1.6",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "passport",
+            "current_version": "0.7.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "passport-local",
+            "current_version": "1.0.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react",
+            "current_version": "19.2.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-day-picker",
+            "current_version": "9.13.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-dom",
+            "current_version": "19.2.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-hook-form",
+            "current_version": "7.71.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-markdown",
+            "current_version": "10.1.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "react-resizable-panels",
+            "current_version": "4.5.7",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "recharts",
+            "current_version": "3.7.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tailwind-merge",
+            "current_version": "3.4.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tailwindcss-animate",
+            "current_version": "1.0.7",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "vaul",
+            "current_version": "1.1.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "wouter",
+            "current_version": "3.9.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "zod",
+            "current_version": "4.3.6",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@replit/vite-plugin-cartographer",
+            "current_version": "0.4.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@replit/vite-plugin-dev-banner",
+            "current_version": "0.1.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@replit/vite-plugin-runtime-error-modal",
+            "current_version": "0.0.4",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@tailwindcss/cli",
+            "current_version": "4.1.18",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@tailwindcss/postcss",
+            "current_version": "4.1.18",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@tailwindcss/typography",
+            "current_version": "0.5.19",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/express",
+            "current_version": "5.0.6",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/express-session",
+            "current_version": "1.18.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/node",
+            "current_version": "25.1.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/passport",
+            "current_version": "1.0.17",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/passport-local",
+            "current_version": "1.0.38",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/react",
+            "current_version": "19.2.10",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@types/react-dom",
+            "current_version": "19.2.3",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "@vitejs/plugin-react",
+            "current_version": "5.1.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "autoprefixer",
+            "current_version": "10.4.24",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "esbuild",
+            "current_version": "0.27.2",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "postcss",
+            "current_version": "8.5.6",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tailwindcss",
+            "current_version": "4.1.18",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "tsx",
+            "current_version": "4.21.0",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "typescript",
+            "current_version": "5.9.3",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          },
+          {
+            "name": "vite",
+            "current_version": "7.3.1",
+            "latest_version": null,
+            "ecosystem": "npm",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown"
+          }
+        ],
+        "version_info": {},
+        "dependency_file_type": "package.json",
+        "currency_score": 50,
+        "outdated_count": 0,
+        "total_dependencies": 79,
+        "primary_language": null,
+        "language_diversity": 0,
+        "outdated_percentage": 0.0
+      },
+      "has_readme": true,
+      "language_count": 5,
+      "size_kb": 0,
+      "is_fork": false,
+      "is_private": false,
+      "age_days": 0,
+      "days_since_last_push": 0,
+      "ai_summary": "Here's a comprehensive technical summary of the SupportSpark repository:\n\nSupportSpark is a compassionate, privacy-focused web application designed to help individuals share personal journey updates with a trusted support network during challenging life moments. Built with a modern, type-safe technology stack including React 19, TypeScript, Express, and Tailwind CSS, the platform provides a calm, distraction-free environment for members to create updates and for supporters to engage through threaded conversations with controlled, invitation-only access. The application emphasizes robust type safety through end-to-end TypeScript and Zod validation, implements accessible UI components using Radix primitives, and follows a strict architectural pattern that separates concerns between client, server, and shared code layers. What sets SupportSpark apart is its intentional design focusing on emotional well-being, offering features like role-based access, real-time updates, and a purposefully minimalist interface that prioritizes meaningful, organized communication during sensitive personal experiences. The project is targeted at individuals navigating health challenges, life transitions, or personal journeys who want a structured, private platform to maintain connections with their support circle without the overwhelming noise of traditional social media.",
+      "rank": 25,
+      "composite_score": 26.7
     },
     {
       "name": "AsyncDemo",
@@ -4874,7 +5664,7 @@
       "age_days": 1273,
       "days_since_last_push": 59,
       "ai_summary": "Here's a comprehensive technical summary of the AsyncDemo repository:\n\nAsyncDemo is an educational C# project demonstrating advanced asynchronous programming techniques and best practices in .NET, focusing on solving common async/await challenges through practical, real-world code examples. The repository provides a comprehensive learning platform for developers, featuring interactive API documentation powered by Scalar, and showcasing critical async patterns such as cancellation token management, concurrency control, resilience with Polly, and cross-cutting concern implementation using the decorator pattern. Built on .NET 10 and integrating with external APIs like OpenWeather, the project offers structured learning modules that explore scenarios like avoiding deadlocks, implementing timeouts, throttling concurrent operations, and handling complex asynchronous workflows through meticulously organized API endpoints. The unique value proposition lies in its combination of hands-on code demonstrations, extensive documentation, and a systematic approach to teaching advanced async programming concepts, making it an invaluable resource for .NET developers seeking to master asynchronous programming techniques. By providing real-world implementations and clear learning objectives, AsyncDemo serves as both a reference implementation and an educational tool for developers looking to improve their understanding of asynchronous programming patterns and best practices.",
-      "rank": 25,
+      "rank": 26,
       "composite_score": 26.6
     },
     {
@@ -4938,7 +5728,7 @@
       "age_days": 831,
       "days_since_last_push": 40,
       "ai_summary": "InquirySpark is a .NET 10-based survey and inquiry management system designed for read-only data interaction, utilizing an MVC architecture with a focus on immutable SQLite databases and strict data access patterns. The solution provides a comprehensive admin interface built with Bootstrap 5 and DataTables, enabling users to interact with survey data through a robust, warning-free implementation that emphasizes type safety, dependency injection, and centralized configuration. Key technologies include Entity Framework Core 10, Microsoft.Data.Sqlite provider, ASP.NET Core Identity, and a modular project structure spanning admin, repository, and common libraries with integrated unit testing via MSTest. The project's unique approach lies in its enforcement of read-only database interactions, elimination of SQL Server dependencies, and a carefully designed persistence layer that prevents schema or data mutations while providing a flexible, scalable framework for survey management. Target users include administrators and organizations seeking a lightweight, secure, and easily deployable survey management solution with minimal infrastructure requirements and strong architectural constraints.",
-      "rank": 26,
+      "rank": 27,
       "composite_score": 26.21
     },
     {
@@ -5003,7 +5793,7 @@
       "age_days": 1087,
       "days_since_last_push": 20,
       "ai_summary": "Here's a comprehensive technical summary:\n\nThis repository demonstrates a production-ready implementation of the Decorator Pattern for HttpClient in .NET, providing a sophisticated approach to managing HTTP communication with enhanced resilience, telemetry, and caching capabilities. The project introduces a flexible, composable service architecture that allows dynamically adding cross-cutting concerns like performance monitoring, circuit breaking, and caching without modifying core service implementations. Leveraging .NET 10, dependency injection, and libraries like Polly, the implementation offers a robust solution for enterprise-grade HTTP client management, with strong emphasis on separation of concerns, testability, and observability. The WebSpark.HttpClientUtility package serves as the core implementation, featuring a comprehensive decorator chain that systematically wraps HTTP requests with additional behaviors such as retry policies, correlation tracking, and intelligent caching strategies. By providing a clean, extensible pattern for HTTP communication, the project addresses common challenges in distributed system design, making it particularly valuable for developers building microservices, API-driven applications, or systems requiring sophisticated HTTP interaction management.",
-      "rank": 27,
+      "rank": 28,
       "composite_score": 26.18
     },
     {
@@ -5068,7 +5858,7 @@
       "age_days": 1270,
       "days_since_last_push": 20,
       "ai_summary": "Here's a comprehensive technical summary for the Yelp.Api repository:\n\nThe Yelp.Api is a C# class library that provides a robust, developer-friendly wrapper for Yelp's v3 Fusion API, enabling .NET developers to easily integrate local business search and review functionality into their applications. Leveraging .NET 6 and designed with a clean, intuitive interface, the library simplifies complex API interactions by offering methods like `SearchBusinessesAllAsync()` that abstract away the underlying HTTP communication and authentication complexities. The library supports comprehensive search capabilities, including geolocation-based queries, filtering by business attributes (such as open now status), and retrieving detailed business information across 32 countries with minimal configuration required. Its design follows a client-centric architectural pattern, where developers can instantiate a `Yelp.Api.Client` with an API key and immediately perform sophisticated local business searches using either simple method signatures or more granular `SearchParameters` objects. Unique strengths include its strong typing, async support, and straightforward usage that reduces the typical boilerplate code associated with external API integrations. The primary target users are .NET developers building location-aware applications such as travel guides, restaurant recommendation systems, local service aggregators, or any software requiring rich, up-to-date local business data.",
-      "rank": 28,
+      "rank": 29,
       "composite_score": 25.73
     },
     {
@@ -5133,7 +5923,7 @@
       "age_days": 397,
       "days_since_last_push": 9,
       "ai_summary": "Here's a comprehensive technical summary for the PromptSpark.Chat repository:\n\nPromptSpark.Chat is an innovative ASP.NET Core web application that enables dynamic, interactive conversational workflows through a real-time chat interface powered by SignalR and Adaptive Cards. The platform allows users to engage in multi-step, guided conversations with flexible branching logic, supporting complex interaction scenarios by dynamically rendering interactive UI elements and managing conversation state using thread-safe server-side storage. Leveraging modern web technologies like C#, SignalR, and optional AI integration, the application provides a robust framework for creating structured, context-aware conversational experiences with built-in persistence and extensibility. The architecture emphasizes modularity, with a clear separation of concerns between workflow management, real-time communication, and user interaction, making it particularly suitable for scenarios requiring guided user experiences such as surveys, onboarding processes, or interactive decision trees. What distinguishes PromptSpark.Chat is its elegant approach to managing conversational complexity through adaptive cards, server-side state management, and a flexible workflow definition mechanism that allows developers to easily configure and extend conversation flows without extensive custom coding.",
-      "rank": 29,
+      "rank": 30,
       "composite_score": 25.39
     },
     {
@@ -5198,7 +5988,7 @@
       "age_days": 250,
       "days_since_last_push": 27,
       "ai_summary": "WebSpark.PrismSpark is a sophisticated .NET-based syntax highlighting library inspired by PrismJS, designed to provide advanced code rendering and tokenization capabilities for multiple programming languages. The library offers a comprehensive suite of features including support for 20+ programming languages, a plugin system, theme generation, async processing, and extensible highlighting mechanisms with robust .NET 10.0 LTS compatibility. Architecturally, it implements a modular design with interfaces like `IHighlighter`, `IPlugin`, and `ITheme`, enabling developers to easily customize and extend syntax highlighting through dependency injection, hooks, and context-aware processing. The project distinguishes itself through its performance-oriented approach, supporting advanced options like line number rendering, context-based metadata, and dynamic theme generation, making it particularly valuable for web developers, documentation platforms, and code presentation frameworks targeting .NET ecosystems. By providing a type-safe, performant alternative to traditional syntax highlighting libraries, WebSpark.PrismSpark offers developers a powerful tool for rendering and styling code snippets across various .NET web frameworks like MVC, Razor, and potentially Blazor.",
-      "rank": 30,
+      "rank": 31,
       "composite_score": 24.69
     },
     {
@@ -5304,7 +6094,7 @@
       "age_days": 226,
       "days_since_last_push": 20,
       "ai_summary": "Technical Summary:\n\nTeachSpark is an advanced, AI-powered educational web platform built using .NET 10 MVC and modern web technologies, designed to create personalized learning experiences through Large Language Model (LLM) integration. The project leverages a clean architecture approach, combining a robust C# backend with a sophisticated frontend built using Webpack, Bootstrap, and modern JavaScript, enabling dynamic, adaptive curriculum delivery with real-time personalization and comprehensive learning analytics. Key technological highlights include intelligent content adaptation, responsive design, comprehensive build tooling with automated quality checks, and a modular architecture that supports scalable, performance-optimized educational experiences. The platform distinguishes itself through its AI-driven personalization, offering customized learning pathways that dynamically adjust content based on individual student interactions and learning patterns. Targeting educators, students, and educational technology professionals, TeachSpark represents a cutting-edge approach to digital learning platforms that emphasizes technological innovation, user experience, and data-driven educational methodology.",
-      "rank": 31,
+      "rank": 32,
       "composite_score": 23.79
     },
     {
@@ -5368,7 +6158,7 @@
       "age_days": 95,
       "days_since_last_push": 35,
       "ai_summary": "Here's a comprehensive technical summary of the DecisionSpark repository:\n\nDecisionSpark is an innovative .NET 10 web application that implements a dynamic, conversation-driven decision routing engine designed to guide users through intelligent decision-making processes using minimal, contextually-aware questioning. The system leverages a flexible, config-driven architecture that combines RESTful APIs, Razor Pages web interface, and OpenAI integration to generate intelligent recommendations across various domains by evaluating user responses against configurable rule sets.\n\nThe application's core architecture is modular and service-oriented, featuring key components like a Session Store, Routing Evaluator, Trait Parser, and OpenAI-powered Question Generator that work together to create adaptive, context-sensitive decision workflows. It supports multiple question types (text input, single-select, multi-select) and uses JSON-based configuration files to define decision specifications, allowing users to create complex decision trees without modifying code. The system's unique approach involves dynamically generating questions, parsing user responses, and applying intelligent routing logic to recommend optimal outcomes.\n\nTechnically, the project is built on .NET 10 with a comprehensive technology stack including Razor Pages for the web interface, Swagger/OpenAPI for API documentation, Serilog for structured logging, and optional OpenAI integration for natural language processing. The architecture supports session management, file-based conversation persistence, and a pluggable design that allows easy extension and configuration of decision scenarios.\n\nKey distinguishing features include its conversation-driven API, intelligent question generation, rule-based evaluation with derived traits, and the ability to create complex decision workflows through simple JSON configuration. The system is particularly well-suited for scenarios requiring guided decision-making, such as recommendation engines, interactive planning tools, or adaptive questionnaires across various domains.\n\nWhile currently demonstrated with example use cases like a \"Family Saturday Planner\" and \"Tech Stack Advisor\", the framework is designed to be highly generic and adaptable, enabling developers and domain experts to quickly create sophisticated, intelligent decision support systems with minimal technical overhead.",
-      "rank": 32,
+      "rank": 33,
       "composite_score": 23.66
     },
     {
@@ -5432,7 +6222,7 @@
       "age_days": 1074,
       "days_since_last_push": 61,
       "ai_summary": "Technical Summary for TriviaSpark:\n\nTriviaSpark is an experimental multiplayer web and mobile trivia game application developed with AI assistance, designed to provide an interactive and competitive trivia experience for tech-savvy users aged 18-95. The project is primarily built using C# with a web-based architecture, leveraging public Trivia APIs to dynamically generate question sets and enable real-time multiplayer interactions. Key planned features include user registration, a comprehensive leaderboard system, admin-level question database management, and a customizable user interface that supports both web and mobile platforms. The application appears to follow a modern, component-based development approach with potential use of .NET technologies for backend infrastructure and web frameworks for frontend rendering. What makes TriviaSpark unique is its explicit integration of AI in the development process, as highlighted by its README noting collaborative development with ChatGPT, which suggests an innovative approach to software design and potentially leveraging AI for dynamic content generation and user experience optimization. The project aims to create an engaging, knowledge-testing platform that combines competitive gameplay with accessible, technology-driven design.",
-      "rank": 33,
+      "rank": 34,
       "composite_score": 22.35
     },
     {
@@ -5726,7 +6516,7 @@
       "age_days": 1017,
       "days_since_last_push": 60,
       "ai_summary": "Technical Summary:\n\nDataAnalysisDemo is a sophisticated web-based data analytics platform built using ASP.NET WebForms (VB.NET) that transforms raw CSV data into interactive, visually compelling analytics experiences through advanced processing and visualization techniques. The application offers comprehensive data exploration capabilities, including dynamic charting with D3.js and C3.js, advanced pivot table functionality with drag-and-drop interfaces, and robust data processing using a custom GenericParser library that supports real-time statistical analysis and memory-efficient dataset handling. Leveraging a modern client-side architecture with Webpack, Bootstrap 5, and jQuery, the platform provides a responsive, feature-rich interface that enables users to parse, analyze, visualize, and export complex datasets with intuitive tools like SearchPanes, multiple chart types, and extensible data renderers. The project demonstrates a sophisticated approach to web-based data analysis by integrating server-side .NET processing with cutting-edge client-side technologies, making it particularly valuable for data analysts, researchers, and business intelligence professionals seeking a flexible, user-friendly data exploration tool. Key architectural strengths include its modular design, extensive client-side build pipeline, multiple visualization modes, and comprehensive error handling, which collectively create a robust platform for transforming raw data into meaningful insights across various domains.",
-      "rank": 34,
+      "rank": 35,
       "composite_score": 21.37
     },
     {
@@ -6047,75 +6837,12 @@
       "age_days": 876,
       "days_since_last_push": 167,
       "ai_summary": "Based on the comprehensive README and repository details, here's a technical summary:\n\nPHPDocSpark is an innovative, open-source PHP documentation and data exploration platform that demonstrates modern web application development practices by creating a hybrid server-side and client-side architecture. The project showcases a sophisticated technology stack combining PHP 8.2+, Vite, Bootstrap 5, and modern JavaScript libraries to build a flexible documentation management and data visualization system with robust features like Markdown parsing, full-text search, interactive data tables, and external API integrations. Its unique architectural approach leverages a front controller pattern with a modular design, enabling seamless routing, asset management through a Vite-powered build pipeline, and responsive, dynamic content rendering across different devices and screen sizes.\n\nKey technical highlights include:\n- Hybrid PHP/JavaScript architecture with clean separation of concerns\n- Vite-powered asset bundling with hot module replacement\n- Markdown-based documentation system with automatic navigation generation\n- Interactive data visualization using Chart.js and DataTables\n- SQLite database integration for lightweight data management\n- GitHub API and external service integrations with intelligent caching\n- Responsive, mobile-first design using Bootstrap 5\n\nThe project serves as an educational reference implementation for developers seeking to understand contemporary PHP web development techniques, showcasing best practices in routing, asset management, content parsing, and API integration. It's particularly valuable for full-stack developers, technical writers, and teams looking to modernize their PHP application architecture.",
-      "rank": 35,
-      "composite_score": 16.89
-    },
-    {
-      "name": "SupportSpark",
-      "description": null,
-      "summary": {
-        "text": "SupportSpark repository",
-        "ai_generated": false,
-        "generation_method": "basic-template",
-        "generated_at": "2026-02-01T09:49:44.950478",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 40
-      },
-      "url": "https://github.com/markhazleton/SupportSpark",
-      "homepage": null,
-      "has_pages": false,
-      "pages_url": null,
-      "website_url": null,
-      "stars": 0,
-      "forks": 0,
-      "watchers": 0,
-      "language": null,
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2026-02-01T15:22:40+00:00",
-      "updated_at": "2026-02-01T15:22:40+00:00",
-      "pushed_at": "2026-02-01T15:22:40+00:00",
-      "total_commits": 0,
-      "recent_commits_90d": 0,
-      "first_commit_date": "2026-02-01T15:22:40+00:00",
-      "last_commit_date": "2026-02-01T15:22:40+00:00",
-      "commit_history": {
-        "repository_name": "SupportSpark",
-        "total_commits": 0,
-        "recent_90d": 0,
-        "recent_180d": 0,
-        "recent_365d": 0,
-        "last_commit_date": null,
-        "patterns": [
-          "stale"
-        ],
-        "commit_frequency": 0.0,
-        "consistency_score": 0,
-        "activity_rate": 0.0,
-        "days_since_last_commit": null,
-        "first_commit_date": "2026-02-01T15:22:40+00:00"
-      },
-      "commit_metrics": null,
-      "avg_commit_size": null,
-      "largest_commit": null,
-      "smallest_commit": null,
-      "commit_velocity": 0.0,
-      "tech_stack": null,
-      "has_readme": false,
-      "language_count": 0,
-      "size_kb": 0,
-      "is_fork": false,
-      "is_private": false,
-      "age_days": 0,
-      "days_since_last_push": 0,
-      "ai_summary": null,
       "rank": 36,
-      "composite_score": 16.0
+      "composite_score": 16.89
     }
   ],
   "metadata": {
-    "generated_at": "2026-02-01T15:49:44.950515+00:00",
+    "generated_at": "2026-02-01T15:55:06.018736+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-01T15:54:36.068062+00:00",
+  "value": {
+    "total": 145,
+    "recent_90d": 145,
+    "recent_180d": 145,
+    "recent_365d": 145,
+    "last_commit_date": "2026-02-01T15:54:06+00:00"
+  },
+  "hash": "f254c7ed852116d8911691dfc8c931a646a3ac153e8d0e125dfe25f4482d0380",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "github-stats-spark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-02-01T15:54:09+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "github-stats-spark",
+  "week": "2026-02-01T15-54-09+00-00"
+}
