@@ -498,19 +498,43 @@ def handle_unified(args, logger):
                     captured_count = sum(1 for v in screenshot_results.values() if v is not None)
                     logger.info(f"Captured {captured_count} screenshots to {screenshot_dir}")
                     
-                    # Update repositories.json with screenshot paths
-                    if captured_count > 0:
-                        for repo in unified_data.get('repositories', []):
-                            repo_name = repo.get('name')
-                            if repo_name and repo_name in screenshot_results:
-                                screenshot_meta = screenshot_results[repo_name]
-                                if screenshot_meta:
-                                    repo['screenshot'] = screenshot_meta
-                        
+                    # Update repositories.json with screenshot paths from capture results
+                    updated_count = 0
+                    for repo in unified_data.get('repositories', []):
+                        repo_name = repo.get('name')
+                        if repo_name and repo_name in screenshot_results:
+                            screenshot_meta = screenshot_results[repo_name]
+                            if screenshot_meta:
+                                repo['screenshot'] = screenshot_meta
+                                updated_count += 1
+                    
+                    # Also scan for existing screenshot files that may not be in results
+                    # (e.g., from previous runs without cache entries)
+                    existing_screenshots = {p.stem: p for p in screenshot_dir.glob('*.png')}
+                    for repo in unified_data.get('repositories', []):
+                        if 'screenshot' not in repo:
+                            repo_name = repo.get('name', '')
+                            # Match by lowercase name (screenshot filenames are lowercase)
+                            screenshot_path = existing_screenshots.get(repo_name.lower())
+                            if screenshot_path:
+                                from datetime import timezone
+                                stats = screenshot_path.stat()
+                                repo['screenshot'] = {
+                                    'path': f'output/screenshots/{screenshot_path.name}',
+                                    'url': repo.get('website_url', ''),
+                                    'captured_at': datetime.fromtimestamp(stats.st_mtime, tz=timezone.utc).isoformat(),
+                                    'width': 1280,
+                                    'height': 720,
+                                    'file_size_kb': round(stats.st_size / 1024, 2)
+                                }
+                                updated_count += 1
+                                logger.debug(f"Matched existing screenshot for {repo_name}")
+                    
+                    if updated_count > 0:
                         # Write updated data back
                         with open(data_output_path, 'w', encoding='utf-8') as f:
                             json.dump(unified_data, f, indent=2, ensure_ascii=False)
-                        logger.info(f"Updated {data_output_path} with screenshot metadata")
+                        logger.info(f"Updated {data_output_path} with {updated_count} screenshot metadata entries")
                 else:
                     logger.info("No repositories with website URLs - skipping screenshots")
                     
@@ -520,6 +544,42 @@ def handle_unified(args, logger):
             except Exception as e:
                 logger.warn(f"Screenshot capture failed: {e}")
                 logger.info("Unified data and reports were generated successfully")
+
+        # ===================================================================
+        # STEP 4b: Match Existing Screenshots (when --capture-screenshots not used)
+        # ===================================================================
+        else:
+            # Even without capturing, check for existing screenshots and populate metadata
+            screenshot_dir = Path("output/screenshots")
+            if screenshot_dir.exists():
+                existing_screenshots = {p.stem: p for p in screenshot_dir.glob('*.png')}
+                if existing_screenshots:
+                    import json
+                    with open(data_output_path, 'r', encoding='utf-8') as f:
+                        unified_data = json.load(f)
+                    
+                    updated_count = 0
+                    for repo in unified_data.get('repositories', []):
+                        if 'screenshot' not in repo:
+                            repo_name = repo.get('name', '')
+                            screenshot_path = existing_screenshots.get(repo_name.lower())
+                            if screenshot_path:
+                                from datetime import timezone
+                                stats = screenshot_path.stat()
+                                repo['screenshot'] = {
+                                    'path': f'output/screenshots/{screenshot_path.name}',
+                                    'url': repo.get('website_url', ''),
+                                    'captured_at': datetime.fromtimestamp(stats.st_mtime, tz=timezone.utc).isoformat(),
+                                    'width': 1280,
+                                    'height': 720,
+                                    'file_size_kb': round(stats.st_size / 1024, 2)
+                                }
+                                updated_count += 1
+                    
+                    if updated_count > 0:
+                        with open(data_output_path, 'w', encoding='utf-8') as f:
+                            json.dump(unified_data, f, indent=2, ensure_ascii=False)
+                        logger.info(f"Matched {updated_count} existing screenshots to repositories")
 
         # ===================================================================
         # Summary

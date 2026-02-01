@@ -174,7 +174,15 @@
       "days_since_last_push": 0,
       "ai_summary": "Based on the README and repository details, here's a comprehensive technical summary for github-stats-spark:\n\nStats Spark is an advanced GitHub analytics platform designed to automatically generate comprehensive profile visualizations and repository insights using Python, JavaScript, and AI technologies. The project offers a multi-dimensional analysis tool that transforms GitHub activity data into interactive SVG visualizations, AI-powered technical summaries, and an intelligent dashboard, leveraging technologies like PyGithub, Chart.js, and Claude Haiku for analysis. The system employs a modular, extensible architecture with automated GitHub Actions workflow, intelligent caching mechanisms, and sophisticated algorithms to rank repositories, track developer activity patterns, and generate rich metadata with high performance and reliability.\n\nKey technical highlights include:\n- Automated daily GitHub profile statistics generation\n- AI-powered repository analysis with 97%+ summary accuracy\n- Mobile-first interactive dashboard with responsive design\n- Intelligent caching and rate limit handling\n- Comprehensive visualization across multiple statistical categories\n- Extensible YAML-based configuration system\n- Enterprise-grade performance optimization\n\nThe project targets developers, technical leaders, and open-source maintainers seeking advanced insights into GitHub activity, offering a unique \"Spark Score\" metric and detailed technical profiling. Its architecture emphasizes automation, performance, and comprehensive analysis, making it a powerful tool for understanding software development patterns and repository health.\n\nTechnologies: Python 3.11+, JavaScript, PyGithub, Chart.js, SVG generation, GitHub Actions, AI integration (Claude Haiku)\n\nUnique Value Propositions:\n- Automated, zero-maintenance profile statistics\n- AI-generated technical repository summaries\n- Interactive, mobile-optimized dashboard\n- Comprehensive activity and technology tracking\n\nThe project represents a sophisticated approach to GitHub analytics, combining automation, visualization, and intelligent analysis into a comprehensive developer insights platform.",
       "rank": 1,
-      "composite_score": 87.97
+      "composite_score": 87.97,
+      "screenshot": {
+        "path": "output/screenshots/github-stats-spark.png",
+        "url": "https://markhazleton.github.io/github-stats-spark/",
+        "captured_at": "2026-01-31T15:54:30.888899+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 58.49
+      }
     },
     {
       "name": "mark-hazleton-s-notes",
@@ -775,7 +783,15 @@
       "days_since_last_push": 0,
       "ai_summary": "Here's a comprehensive technical summary for the mark-hazleton-s-notes repository:\n\nThis is a sophisticated personal portfolio and technical blog site built as a static site using modern web technologies, designed to showcase Mark Hazleton's professional work and insights as a Technical Solutions Architect. The site leverages a robust React 19 and Vite 7 framework with server-side rendering (SSR) and static prerendering, enabling high-performance content delivery and excellent SEO capabilities. The architecture is meticulously structured, with a comprehensive build pipeline that automatically generates optimized assets, including static HTML routes, responsive image thumbnails, RSS feeds, sitemaps, and metadata, all managed through sophisticated build scripts written in TypeScript. Key technical innovations include dynamic GitHub repository metrics integration, automatic content optimization, and a modular component system using Tailwind CSS, Radix UI, and shadcn/ui for a consistent, responsive design. The project stands out for its advanced static site generation approach, which seamlessly combines content management, performance optimization, and developer experience through automated build processes and carefully designed scripts. Targeted primarily at technical professionals, developers, and potential collaborators, the site serves as both a personal showcase and a technical demonstration of modern web development practices.",
       "rank": 2,
-      "composite_score": 80.72
+      "composite_score": 80.72,
+      "screenshot": {
+        "path": "output/screenshots/mark-hazleton-s-notes.png",
+        "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
+        "captured_at": "2026-01-31T15:54:33.447004+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 101.38
+      }
     },
     {
       "name": "git-spark",
@@ -1024,7 +1040,15 @@
       "days_since_last_push": 6,
       "ai_summary": "Based on the repository details, here's a comprehensive technical summary:\n\nGit Spark is a sophisticated TypeScript-based Git repository analytics tool designed to provide deep insights into software development workflows through comprehensive commit history analysis. The project enables developers and engineering managers to generate interactive HTML reports that visualize repository metrics, including contributor activity, code change patterns, daily trends, and file evolution across multiple dimensions. Leveraging modern web technologies and a modular Node.js architecture, Git Spark offers both CLI and programmatic interfaces, supporting advanced features like multi-format export, configurable analysis periods, and enterprise-grade reporting with strong emphasis on data privacy and accessibility. The tool's unique value proposition lies in its ability to transform raw Git commit data into actionable intelligence, featuring security-first design principles, dark mode support, and extensive customization options that make it suitable for teams seeking granular repository insights without external service dependencies.\n\nKey technical highlights include:\n- TypeScript-based implementation\n- Node.js CLI and library architecture\n- Interactive HTML reporting with dynamic charts\n- Comprehensive Git commit data analysis\n- Multiple export formats (HTML, JSON, CSV, Markdown)\n- Configurable analysis parameters\n- Strong focus on privacy and security",
       "rank": 3,
-      "composite_score": 75.58
+      "composite_score": 75.58,
+      "screenshot": {
+        "path": "output/screenshots/git-spark.png",
+        "url": "https://markhazleton.github.io/git-spark/",
+        "captured_at": "2026-01-31T15:54:35.186402+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 184.79
+      }
     },
     {
       "name": "WebSpark.HttpClientUtility",
@@ -1089,7 +1113,15 @@
       "days_since_last_push": 26,
       "ai_summary": "Here's a technical summary of the WebSpark.HttpClientUtility repository:\n\nWebSpark.HttpClientUtility is a sophisticated .NET HTTP client utility library designed to simplify and enhance HTTP communication in modern .NET applications (versions 8-10). The library provides a comprehensive, drop-in solution for HTTP interactions, offering enterprise-grade features like Polly-based resilience (retry and circuit breaker patterns), intelligent response caching, structured logging with correlation IDs, and built-in OpenTelemetry tracing—all configurable with a single method call. Leveraging dependency injection and modern .NET patterns, the library abstracts away complex HttpClient setup, reducing boilerplate code from 50+ lines to a single configuration method while providing robust observability, error handling, and performance optimization features.\n\nKey technical highlights include:\n- Integrated Polly resilience policies\n- Configurable in-memory response caching\n- Automatic correlation and tracing\n- Support for .NET 8 LTS, 9, and 10 (Preview)\n- Native AOT and IL trimming compatibility\n- Extensive test coverage (237+ unit tests)\n- Semantic versioning and long-term support\n\nThe library is particularly well-suited for microservices, distributed systems, background workers, and web scraping scenarios where reliable, observable HTTP communication is critical. Its design philosophy emphasizes simplicity, performance, and production-readiness, making it an attractive alternative to manually configured HttpClient setups or more rigid HTTP client libraries.",
       "rank": 4,
-      "composite_score": 71.71
+      "composite_score": 71.71,
+      "screenshot": {
+        "path": "output/screenshots/webspark.httpclientutility.png",
+        "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+        "captured_at": "2026-01-31T15:54:37.002048+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 42.24
+      }
     },
     {
       "name": "MuseumSpark",
@@ -1154,7 +1186,15 @@
       "days_since_last_push": 0,
       "ai_summary": "Here's a comprehensive technical summary of the MuseumSpark repository:\n\nMuseumSpark is an innovative data-driven travel planning platform specifically designed for art enthusiasts, focusing on transforming the Walker Art Center Reciprocal Program museum list into a sophisticated, enriched museum discovery and travel optimization system. The project leverages a multi-phase data enrichment pipeline that systematically aggregates and validates museum metadata from diverse sources like Wikidata, Wikipedia, and official museum websites, with the ultimate goal of creating a comprehensive, intelligent museum browsing and travel planning experience. Built using a modern Python-based data pipeline and React frontend, the platform employs advanced techniques like JSON Schema validation, web scraping, and planned AI-assisted content generation to create a rich, dynamically updated museum database with sophisticated features such as priority scoring, collection strength assessment, and potential future personalized travel recommendations. The architecture is modular and extensible, with a clear roadmap progressing through distinct data enrichment and feature expansion phases, ultimately aiming to provide art lovers with a strategic tool for discovering and prioritizing museum visits across North America. Unique aspects include its rigorous data quality approach, multi-source data integration, and the vision to transform a simple museum directory into an intelligent, context-aware travel companion powered by structured data and machine learning techniques. The target users are art enthusiasts, travelers, museum researchers, and cultural tourists seeking a data-driven approach to museum exploration and travel planning.",
       "rank": 5,
-      "composite_score": 70.76
+      "composite_score": 70.76,
+      "screenshot": {
+        "path": "output/screenshots/museumspark.png",
+        "url": "https://markhazleton.github.io/MuseumSpark/",
+        "captured_at": "2026-01-31T15:54:38.836946+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 98.35
+      }
     },
     {
       "name": "SampleMvcCRUD",
@@ -1632,7 +1672,15 @@
       "days_since_last_push": 0,
       "ai_summary": "Here's a comprehensive technical summary of the JsBootSpark repository:\n\nJsBootSpark is a sophisticated full-stack web application starter kit designed to provide developers with a robust, production-ready framework for building modern, responsive web applications using JavaScript ecosystem technologies. The project leverages a comprehensive tech stack including Express.js, Bootstrap 5, EJS templating, and Node.js 18+, offering a complete development environment with advanced features like hot reloading, SASS compilation, security middleware, and progressive web app capabilities.\n\nKey technical highlights include:\n- A modular, feature-rich architecture supporting rapid web application development\n- Integrated development workflows with automated build, testing, and deployment processes\n- Comprehensive security implementations including Helmet.js, rate limiting, and content security policies\n- Advanced frontend capabilities with Bootstrap 5, responsive design, and dark/light mode support\n- Containerization support via Docker and CI/CD integration with GitHub Actions\n\nThe project distinguishes itself through its holistic approach to web development, providing not just a starter template, but a complete ecosystem with extensive documentation, performance optimization, and scalable design patterns. It targets full-stack JavaScript developers seeking a batteries-included, enterprise-grade starting point for web applications, with particular emphasis on developer experience, security, and modern web standards.\n\nArchitecturally, JsBootSpark demonstrates a microservice-friendly, modular design that supports easy customization, extension, and deployment across various environments. Its comprehensive toolchain and opinionated yet flexible structure make it an excellent foundation for both small projects and complex web applications.",
       "rank": 8,
-      "composite_score": 46.05
+      "composite_score": 46.05,
+      "screenshot": {
+        "path": "output/screenshots/jsbootspark.png",
+        "url": "https://markhazleton.github.io/JsBootSpark/",
+        "captured_at": "2026-01-31T15:54:40.719385+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 48.46
+      }
     },
     {
       "name": "RESTRunner",
@@ -2001,7 +2049,15 @@
       "days_since_last_push": 5,
       "ai_summary": "TailwindSpark is a comprehensive React-based design system and component showcase built as a modern monorepo, demonstrating advanced frontend development practices with Tailwind CSS v4, React 19, and TypeScript 5.9. The project serves as a robust template and reference implementation for building scalable, performant web applications with a focus on design system consistency, developer experience, and production-grade architectural patterns. It features a complete UI component library, responsive design, accessibility compliance, and extensive tooling including Vite, Vitest, ESLint, and GitHub Actions for CI/CD, with particular emphasis on type safety, performance optimization, and modular code organization. The repository goes beyond a typical demo by providing a production-ready framework with advanced features like lazy loading, error boundaries, dark mode support, keyboard navigation, and comprehensive testing strategies. Its unique value proposition lies in its holistic approach to frontend development, offering developers a sophisticated starter template that bridges design systems, performance optimization, and modern web technology best practices. The project is particularly valuable for frontend engineers, design system architects, and teams seeking a reference implementation of a contemporary, scalable React application with best-in-class developer tooling and UI/UX considerations.",
       "rank": 10,
-      "composite_score": 37.21
+      "composite_score": 37.21,
+      "screenshot": {
+        "path": "output/screenshots/tailwind-demo.png",
+        "url": "https://markhazleton.github.io/tailwind-demo/",
+        "captured_at": "2026-01-31T15:54:42.888336+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 73.37
+      }
     },
     {
       "name": "WebSpark.ArtSpark",
@@ -2559,7 +2615,15 @@
       "days_since_last_push": 0,
       "ai_summary": "Here's a technical summary of the Mechanics of Motherhood repository:\n\nMechanics of Motherhood is a sophisticated recipe management platform specifically designed for busy working mothers, leveraging modern web technologies to provide a comprehensive culinary organization solution. The application is built using React 19 with TypeScript, featuring a mobile-first responsive design that offers 108+ curated recipes across 14 categories, with advanced features like smart search, recipe filtering, nutritional information, and community ratings. The project showcases a robust technical architecture utilizing Vite for build optimization, TanStack Query for data management, Tailwind CSS for styling, and integrates with RecipeSpark and WebCMS APIs to deliver real-time, high-quality recipe data. Its unique value proposition lies in its industrial-themed design, progressive web app capabilities, offline support, and a focus on creating an intuitive, performance-optimized user experience specifically tailored to the needs of working mothers. The application demonstrates enterprise-grade development practices, including automated CI/CD with GitHub Actions, comprehensive test coverage, SEO optimization, and a modular, type-safe codebase that prioritizes both developer experience and end-user functionality.",
       "rank": 12,
-      "composite_score": 36.8
+      "composite_score": 36.8,
+      "screenshot": {
+        "path": "output/screenshots/mechanicsofmotherhood.png",
+        "url": "http://mechanicsofmotherhood.com/",
+        "captured_at": "2026-01-31T16:06:34.852258+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 277.22
+      }
     },
     {
       "name": "FastEndpointApi",
@@ -3026,7 +3090,15 @@
       "days_since_last_push": 0,
       "ai_summary": "Here's a comprehensive technical summary of the ReactSparkPortfolio repository:\n\nReactSparkPortfolio is an advanced, enterprise-grade personal portfolio application built using React 19, TypeScript, and Vite, designed to showcase modern web development practices through a feature-rich, performant, and scalable single-page application. The project demonstrates sophisticated frontend engineering by implementing cutting-edge technologies like SignalR for real-time interactions, comprehensive type safety with TypeScript, responsive design with Bootstrap 5, and a modular architecture that supports lazy loading, code splitting, and dynamic content rendering. Key technical highlights include a multi-platform deployment strategy (Azure Static Web Apps and GitHub Pages), integrated real-time features such as live chat and weather widgets, and a robust CI/CD pipeline configured through GitHub Actions, which enables automated builds, testing, and deployments. The application goes beyond a typical portfolio by incorporating advanced features like accessibility compliance, dark/light theme switching, SEO optimization, and an admin panel for dynamic content management, making it both a personal showcase and a reference implementation for modern web application development. Targeted primarily at developers, technical professionals, and potential employers, this project serves as both a personal branding tool and a comprehensive demonstration of full-stack development expertise, emphasizing performance, security, and user experience through its carefully crafted architectural choices and technology integrations.",
       "rank": 14,
-      "composite_score": 33.73
+      "composite_score": 33.73,
+      "screenshot": {
+        "path": "output/screenshots/reactsparkportfolio.png",
+        "url": "https://reactspark.markhazleton.com/",
+        "captured_at": "2026-01-31T16:06:38.181278+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 69.18
+      }
     },
     {
       "name": "Texecon",
@@ -3555,7 +3627,15 @@
       "days_since_last_push": 5,
       "ai_summary": "Here's a comprehensive technical summary:\n\nTexEcon is a sophisticated static React application designed for advanced economic analysis and reporting focused specifically on the Texas economic landscape. The project leverages modern web development technologies including React 19, TypeScript, and Vite to create a high-performance, SEO-optimized static site with dynamic content retrieval from a headless CMS (WebSpark). Its architecture emphasizes build-time content management, progressive enhancement, and comprehensive static site generation, enabling efficient content delivery with robust fallback mechanisms and automated deployment to GitHub Pages. The application implements advanced features like dynamic sitemap generation, structured data optimization, and client-side routing with static HTML fallbacks, making it a technically sophisticated platform for economic research and publication. By integrating type-safe development practices, accessibility-focused UI components from Radix UI, and a modular build pipeline, TexEcon represents a cutting-edge approach to creating performant, content-driven web applications with a focus on technical excellence and user experience.",
       "rank": 15,
-      "composite_score": 33.6
+      "composite_score": 33.6,
+      "screenshot": {
+        "path": "output/screenshots/texecon.png",
+        "url": "https://markhazleton.github.io/Texecon/",
+        "captured_at": "2026-01-31T16:06:40.550633+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 458.92
+      }
     },
     {
       "name": "markhazleton",
@@ -4481,7 +4561,15 @@
       "days_since_last_push": 5,
       "ai_summary": "Based on the detailed README and repository analysis, here's a comprehensive technical summary:\n\nThe react-native-web-start repository is an advanced cross-platform application development starter template designed to enable developers to build production-ready mobile and web applications using a unified TypeScript codebase. Leveraging React Native Web, Vite, and a modern web stack, this template provides a comprehensive solution for creating responsive, high-performance applications that can be deployed seamlessly across web, iOS, and Android platforms. The project implements a sophisticated monorepo architecture with shared components, dedicated web and mobile packages, and a robust development environment featuring type-safe TypeScript, Tailwind CSS for styling, automated build processes, and comprehensive developer tooling including hot module replacement, code splitting, and integrated testing configurations. Key differentiators include its emphasis on enterprise-grade features like performance optimization, security integrations (Dependabot), PWA readiness, and a flexible, scalable project structure that supports true cross-platform development with minimal platform-specific code. The template is particularly valuable for developers and teams seeking a standardized, modern approach to multi-platform application development that prioritizes code reusability, developer experience, and production-ready configurations.",
       "rank": 21,
-      "composite_score": 30.24
+      "composite_score": 30.24,
+      "screenshot": {
+        "path": "output/screenshots/react-native-web-start.png",
+        "url": "https://markhazleton.github.io/react-native-web-start/",
+        "captured_at": "2026-01-31T16:06:42.397261+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 48.8
+      }
     },
     {
       "name": "TaskListProcessor",
@@ -4714,7 +4802,15 @@
       "days_since_last_push": 19,
       "ai_summary": "Technical Repository Summary:\n\nThis is a personal Jekyll-powered static website repository designed for Mark Hazleton's professional and blogging needs, hosted on GitHub Pages. The site leverages a customized Minima theme with modern web development practices, featuring a responsive design, dark/light mode toggle, and comprehensive content management workflow for technical blogging. Built using Ruby 3.2.2, Jekyll 3.10.0, and SCSS, the repository demonstrates a well-structured static site generator approach with robust development and deployment automation via GitHub Actions. The project emphasizes developer experience through detailed documentation, local development setup instructions, and best practices for content creation, including SEO optimization, post structuring guidelines, and flexible publishing workflows. Its unique strengths include a clean, framework-agnostic implementation, extensive post creation guidelines, and a focus on maintainability and extensibility for personal/professional technical communication.\n\nKey Technical Highlights:\n- Static site generation with Jekyll\n- Custom Minima theme implementation\n- GitHub Pages hosting\n- Automated CI/CD via GitHub Actions\n- Comprehensive development and publishing documentation\n- Dark/light mode support\n- Responsive design\n- SEO-friendly content management",
       "rank": 24,
-      "composite_score": 27.67
+      "composite_score": 27.67,
+      "screenshot": {
+        "path": "output/screenshots/markhazleton.github.io.png",
+        "url": "https://markhazleton.github.io/",
+        "captured_at": "2026-01-31T16:06:44.163666+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 59.36
+      }
     },
     {
       "name": "AsyncDemo",

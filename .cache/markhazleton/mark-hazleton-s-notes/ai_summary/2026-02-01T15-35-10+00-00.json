@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-01T15:49:36.323899+00:00",
+  "value": {
+    "ai_summary": "This repository is a personal technical portfolio and blog site for Mark Hazleton, a Technical Solutions Architect, built as a modern, statically-generated React application with comprehensive static site generation and SEO optimization capabilities. The site leverages a sophisticated rendering pipeline using Vite 7 with server-side rendering (SSR) and static prerendering, enabling fast initial page loads and excellent search engine visibility, while utilizing TypeScript, Tailwind CSS, and Radix UI for a robust, responsive user interface. The application features a modular architecture that dynamically pulls content from Markdown files and JSON metadata, with intelligent build scripts that automatically generate SEO assets like sitemaps, RSS feeds, and optimized images, and can pull live GitHub repository metrics to showcase professional projects and activities. Unique architectural highlights include a flexible content management approach that allows easy updates via Markdown and JSON, automated image optimization, and a deployment strategy that directly generates static files for GitHub Pages with Azure Static Web Apps integration. The project serves as both a professional showcase and a technical demonstration of modern web development best practices, targeting technical professionals, potential employers, and developers interested in seeing a comprehensive, well-structured React application with advanced static site generation techniques.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-02-01T09:49:36.323852",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1928,
+    "confidence_score": 90
+  },
+  "hash": "1e1dc9b53b695c1c083ad295aa6a280796e32ce75e030b92881215298bad7d37",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "mark-hazleton-s-notes"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-01T15:35:10+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "mark-hazleton-s-notes",
+  "week": "2026-02-01T15-35-10+00-00"
+}

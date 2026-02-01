@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-01T15:49:08.181445+00:00",
+  "value": {
+    "total": 110,
+    "recent_90d": 24,
+    "recent_180d": 57,
+    "recent_365d": 81,
+    "last_commit_date": "2026-01-31T05:39:36+00:00"
+  },
+  "hash": "cc5279abd4843a46c84c51cfebc0e8759a8aa21c3a01ca5dce4a201928120369",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "JsBootSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-02-01T09:12:21+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "JsBootSpark",
+  "week": "2026-02-01T09-12-21+00-00"
+}
