@@ -4,19 +4,19 @@
     "total_repositories": 36,
     "total_stars": 17,
     "total_forks": 7,
-    "total_commits": 3321
+    "total_commits": 3322
   },
   "repositories": [
     {
       "name": "github-stats-spark",
       "description": "A GitHub Stats for Profile README.md",
       "summary": {
-        "text": "Here's a detailed technical summary of the github-stats-spark repository:\n\nStats Spark is a sophisticated GitHub analytics platform designed to automatically generate comprehensive insights and visualizations for developer profiles and repositories. The project leverages Python as its primary language, integrating advanced technologies like PyGithub for GitHub API interactions, AI language models (Claude Haiku) for intelligent repository analysis, and modern web technologies for creating interactive dashboards and SVG visualizations.\n\nKey Technical Highlights:\n- Automated GitHub profile statistics generation with multi-dimensional analysis\n- AI-powered repository assessment using enterprise-grade language models\n- Modular, extensible architecture supporting complex data processing and visualization\n- Intelligent caching and rate-limit handling for GitHub API interactions\n- Mobile-first, accessibility-compliant interactive dashboard with offline support capabilities\n\nThe system employs a sophisticated analysis approach, combining quantitative metrics like commit frequency, repository activity, and language diversity with qualitative AI-generated insights. It generates comprehensive markdown reports and SVG visualizations across multiple categories: overview dashboard, commit heatmaps, language statistics, developer streaks, and fun achievement metrics.\n\nArchitecturally, the project demonstrates a microservices-like approach with clear separation of concerns: data collection, AI analysis, visualization generation, and dashboard rendering. The technology stack includes Python for backend processing, JavaScript for interactive frontend components, and leverages modern web standards like Chart.js for visualizations and responsive design principles.\n\nUnique aspects include the \"Spark Score\" - a composite 0-100 metric evaluating developer activity, a highly configurable YAML-based setup, and an intelligent caching mechanism that optimizes API request efficiency. The project is particularly valuable for developers, technical leaders, and open-source maintainers seeking comprehensive, automated GitHub activity insights.\n\nThe repository represents a cutting-edge approach to developer analytics, combining automation, artificial intelligence, and user-centric design to transform GitHub activity data into meaningful, visually compelling insights.",
+        "text": "Here's a detailed technical summary of the GitHub repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude Haiku AI for intelligent repository summaries. \n\nThe platform offers a multi-dimensional analysis approach, generating automated SVG visualizations across five key categories (overview, heatmap, languages, streaks, and fun stats) while simultaneously producing AI-powered markdown reports with deep technical insights. Its architecture emphasizes modularity, performance optimization, and enterprise-grade reliability, featuring intelligent caching mechanisms, rate limit handling, and a flexible YAML-based configuration system.\n\nKey technical highlights include:\n- Automated daily GitHub Actions workflow for profile statistics updates\n- AI-generated repository analysis with 97%+ accuracy\n- Mobile-first interactive dashboard with responsive design\n- Comprehensive performance optimization (< 2s First Contentful Paint)\n- Intelligent repository ranking algorithm\n- Extensible, microservice-like modular design\n\nThe project is particularly noteworthy for its innovative \"Spark Score\" metric, which quantitatively assesses developer activity by combining consistency, volume, and collaboration factors. It's designed for developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub performance and technology usage patterns.\n\nThe technology stack demonstrates modern web development practices, incorporating Python for backend processing, JavaScript for interactive frontend components, and leveraging cutting-edge AI technologies for intelligent analysis. Its comprehensive approach to GitHub statistics generation sets it apart from traditional analytics tools by providing both visual representations and contextual, AI-generated insights.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-02-03T14:17:07.367799",
+        "generated_at": "2026-02-03T20:30:42.623161",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2637,
+        "tokens_used": 2596,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/github-stats-spark",
@@ -31,35 +31,35 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-02-01T15:55:52+00:00",
-      "pushed_at": "2026-02-01T15:55:49+00:00",
-      "total_commits": 146,
-      "recent_commits_90d": 146,
+      "updated_at": "2026-02-03T20:30:10+00:00",
+      "pushed_at": "2026-02-03T20:29:56+00:00",
+      "total_commits": 147,
+      "recent_commits_90d": 147,
       "first_commit_date": "2025-12-28T17:01:51+00:00",
-      "last_commit_date": "2026-02-01T15:55:48+00:00",
+      "last_commit_date": "2026-02-03T20:29:52+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 146,
-        "recent_90d": 146,
-        "recent_180d": 146,
-        "recent_365d": 146,
-        "last_commit_date": "2026-02-01T15:55:48+00:00",
+        "total_commits": 147,
+        "recent_90d": 147,
+        "recent_180d": 147,
+        "recent_365d": 147,
+        "last_commit_date": "2026-02-03T20:29:52+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 48.67,
+        "commit_frequency": 49.0,
         "consistency_score": 0,
-        "activity_rate": 1.622,
-        "days_since_last_commit": 2,
+        "activity_rate": 1.633,
+        "days_since_last_commit": 0,
         "first_commit_date": "2025-12-28T17:01:51+00:00"
       },
       "commit_metrics": null,
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 48.67,
+      "commit_velocity": 49.0,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -171,14 +171,14 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 37,
-      "days_since_last_push": 2,
-      "ai_summary": "Here's a detailed technical summary of the github-stats-spark repository:\n\nStats Spark is a sophisticated GitHub analytics platform designed to automatically generate comprehensive insights and visualizations for developer profiles and repositories. The project leverages Python as its primary language, integrating advanced technologies like PyGithub for GitHub API interactions, AI language models (Claude Haiku) for intelligent repository analysis, and modern web technologies for creating interactive dashboards and SVG visualizations.\n\nKey Technical Highlights:\n- Automated GitHub profile statistics generation with multi-dimensional analysis\n- AI-powered repository assessment using enterprise-grade language models\n- Modular, extensible architecture supporting complex data processing and visualization\n- Intelligent caching and rate-limit handling for GitHub API interactions\n- Mobile-first, accessibility-compliant interactive dashboard with offline support capabilities\n\nThe system employs a sophisticated analysis approach, combining quantitative metrics like commit frequency, repository activity, and language diversity with qualitative AI-generated insights. It generates comprehensive markdown reports and SVG visualizations across multiple categories: overview dashboard, commit heatmaps, language statistics, developer streaks, and fun achievement metrics.\n\nArchitecturally, the project demonstrates a microservices-like approach with clear separation of concerns: data collection, AI analysis, visualization generation, and dashboard rendering. The technology stack includes Python for backend processing, JavaScript for interactive frontend components, and leverages modern web standards like Chart.js for visualizations and responsive design principles.\n\nUnique aspects include the \"Spark Score\" - a composite 0-100 metric evaluating developer activity, a highly configurable YAML-based setup, and an intelligent caching mechanism that optimizes API request efficiency. The project is particularly valuable for developers, technical leaders, and open-source maintainers seeking comprehensive, automated GitHub activity insights.\n\nThe repository represents a cutting-edge approach to developer analytics, combining automation, artificial intelligence, and user-centric design to transform GitHub activity data into meaningful, visually compelling insights.",
+      "days_since_last_push": 0,
+      "ai_summary": "Here's a detailed technical summary of the GitHub repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude Haiku AI for intelligent repository summaries. \n\nThe platform offers a multi-dimensional analysis approach, generating automated SVG visualizations across five key categories (overview, heatmap, languages, streaks, and fun stats) while simultaneously producing AI-powered markdown reports with deep technical insights. Its architecture emphasizes modularity, performance optimization, and enterprise-grade reliability, featuring intelligent caching mechanisms, rate limit handling, and a flexible YAML-based configuration system.\n\nKey technical highlights include:\n- Automated daily GitHub Actions workflow for profile statistics updates\n- AI-generated repository analysis with 97%+ accuracy\n- Mobile-first interactive dashboard with responsive design\n- Comprehensive performance optimization (< 2s First Contentful Paint)\n- Intelligent repository ranking algorithm\n- Extensible, microservice-like modular design\n\nThe project is particularly noteworthy for its innovative \"Spark Score\" metric, which quantitatively assesses developer activity by combining consistency, volume, and collaboration factors. It's designed for developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub performance and technology usage patterns.\n\nThe technology stack demonstrates modern web development practices, incorporating Python for backend processing, JavaScript for interactive frontend components, and leveraging cutting-edge AI technologies for intelligent analysis. Its comprehensive approach to GitHub statistics generation sets it apart from traditional analytics tools by providing both visual representations and contextual, AI-generated insights.",
       "rank": 1,
       "composite_score": 87.99,
       "screenshot": {
         "path": "output/screenshots/github-stats-spark.png",
         "url": "https://markhazleton.github.io/github-stats-spark/",
-        "captured_at": "2026-01-31T15:54:30.888899+00:00",
+        "captured_at": "2026-02-03T20:30:06.037122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 58.49
@@ -787,7 +787,7 @@
       "screenshot": {
         "path": "output/screenshots/mark-hazleton-s-notes.png",
         "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
-        "captured_at": "2026-01-31T15:54:33.447004+00:00",
+        "captured_at": "2026-02-03T20:30:06.038122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 101.38
@@ -860,7 +860,7 @@
       "screenshot": {
         "path": "output/screenshots/webspark.httpclientutility.png",
         "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-        "captured_at": "2026-01-31T15:54:37.002048+00:00",
+        "captured_at": "2026-02-03T20:30:06.043122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 42.24
@@ -933,7 +933,7 @@
       "screenshot": {
         "path": "output/screenshots/museumspark.png",
         "url": "https://markhazleton.github.io/MuseumSpark/",
-        "captured_at": "2026-01-31T15:54:38.836946+00:00",
+        "captured_at": "2026-02-03T20:30:06.040123+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 98.35
@@ -1190,7 +1190,7 @@
       "screenshot": {
         "path": "output/screenshots/git-spark.png",
         "url": "https://markhazleton.github.io/git-spark/",
-        "captured_at": "2026-01-31T15:54:35.186402+00:00",
+        "captured_at": "2026-02-03T20:30:06.037122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 184.79
@@ -1677,7 +1677,7 @@
       "screenshot": {
         "path": "output/screenshots/jsbootspark.png",
         "url": "https://markhazleton.github.io/JsBootSpark/",
-        "captured_at": "2026-01-31T15:54:40.719385+00:00",
+        "captured_at": "2026-02-03T20:30:06.038122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.46
@@ -2308,7 +2308,7 @@
       "screenshot": {
         "path": "output/screenshots/mechanicsofmotherhood.png",
         "url": "http://mechanicsofmotherhood.com/",
-        "captured_at": "2026-01-31T16:06:34.852258+00:00",
+        "captured_at": "2026-02-03T20:30:06.040123+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 277.22
@@ -2783,7 +2783,7 @@
       "screenshot": {
         "path": "output/screenshots/reactsparkportfolio.png",
         "url": "https://reactspark.markhazleton.com/",
-        "captured_at": "2026-01-31T16:06:38.181278+00:00",
+        "captured_at": "2026-02-03T20:30:06.041122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 69.18
@@ -3320,7 +3320,7 @@
       "screenshot": {
         "path": "output/screenshots/texecon.png",
         "url": "https://markhazleton.github.io/Texecon/",
-        "captured_at": "2026-01-31T16:06:40.550633+00:00",
+        "captured_at": "2026-02-03T20:30:06.043122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 458.92
@@ -3697,7 +3697,7 @@
       "screenshot": {
         "path": "output/screenshots/tailwind-demo.png",
         "url": "https://markhazleton.github.io/tailwind-demo/",
-        "captured_at": "2026-01-31T15:54:42.888336+00:00",
+        "captured_at": "2026-02-03T20:30:06.041122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 73.37
@@ -5536,7 +5536,7 @@
       "screenshot": {
         "path": "output/screenshots/react-native-web-start.png",
         "url": "https://markhazleton.github.io/react-native-web-start/",
-        "captured_at": "2026-01-31T16:06:42.397261+00:00",
+        "captured_at": "2026-02-03T20:30:06.040123+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.8
@@ -5600,7 +5600,7 @@
       "size_kb": 1070,
       "is_fork": false,
       "is_private": false,
-      "age_days": 816,
+      "age_days": 817,
       "days_since_last_push": 22,
       "ai_summary": "Here's a comprehensive technical summary of the TaskListProcessor repository:\n\nTaskListProcessor is an advanced .NET 10.0 library designed to solve complex asynchronous task orchestration challenges in enterprise-level applications, providing a robust framework for managing and executing concurrent operations with high reliability and performance. The library implements sophisticated enterprise-grade patterns including circuit breakers, dependency injection, advanced scheduling, and comprehensive telemetry, enabling developers to build resilient, observable, and highly scalable distributed systems with type-safe and configurable task processing capabilities. Key architectural features include parallel task execution with configurable concurrency limits, OpenTelemetry integration for rich observability, native .NET dependency injection support, and intelligent task dependency resolution using topological sorting and priority-based scheduling strategies. The project stands out by offering a holistic approach to async processing, addressing common challenges like fault isolation, performance monitoring, and complex workflow coordination through a clean, strongly-typed interface that follows SOLID design principles. Targeting enterprise developers, microservice architects, and high-throughput system designers, TaskListProcessor provides a comprehensive solution for managing complex asynchronous workloads across various domains such as distributed computing, API orchestration, data processing, and event-driven architectures. The library's design emphasizes developer experience, offering extensive documentation, learning paths, and practical examples to facilitate quick adoption and effective implementation of advanced task processing patterns.",
       "rank": 23,
@@ -5777,7 +5777,7 @@
       "screenshot": {
         "path": "output/screenshots/markhazleton.github.io.png",
         "url": "https://markhazleton.github.io/",
-        "captured_at": "2026-01-31T16:06:44.163666+00:00",
+        "captured_at": "2026-02-03T20:30:06.038122+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 59.36
@@ -6336,7 +6336,7 @@
       "is_fork": false,
       "is_private": false,
       "age_days": 97,
-      "days_since_last_push": 37,
+      "days_since_last_push": 38,
       "ai_summary": "Here's a comprehensive technical summary of the DecisionSpark repository:\n\nDecisionSpark is an innovative .NET 10 web application that implements a dynamic, conversation-driven decision routing engine designed to guide users through intelligent decision-making processes using minimal, contextually-aware questioning. The system leverages a flexible, config-driven architecture that combines RESTful APIs, Razor Pages web interface, and OpenAI integration to generate intelligent recommendations across various domains by evaluating user responses against configurable rule sets.\n\nThe application's core architecture is modular and service-oriented, featuring key components like a Session Store, Routing Evaluator, Trait Parser, and OpenAI-powered Question Generator that work together to create adaptive, context-sensitive decision workflows. It supports multiple question types (text input, single-select, multi-select) and uses JSON-based configuration files to define decision specifications, allowing users to create complex decision trees without modifying code. The system's unique approach involves dynamically generating questions, parsing user responses, and applying intelligent routing logic to recommend optimal outcomes.\n\nTechnically, the project is built on .NET 10 with a comprehensive technology stack including Razor Pages for the web interface, Swagger/OpenAPI for API documentation, Serilog for structured logging, and optional OpenAI integration for natural language processing. The architecture supports session management, file-based conversation persistence, and a pluggable design that allows easy extension and configuration of decision scenarios.\n\nKey distinguishing features include its conversation-driven API, intelligent question generation, rule-based evaluation with derived traits, and the ability to create complex decision workflows through simple JSON configuration. The system is particularly well-suited for scenarios requiring guided decision-making, such as recommendation engines, interactive planning tools, or adaptive questionnaires across various domains.\n\nWhile currently demonstrated with example use cases like a \"Family Saturday Planner\" and \"Tech Stack Advisor\", the framework is designed to be highly generic and adaptable, enabling developers and domain experts to quickly create sophisticated, intelligent decision support systems with minimal technical overhead.",
       "rank": 33,
       "composite_score": 23.67
@@ -7022,7 +7022,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-02-03T20:19:00.986099+00:00",
+    "generated_at": "2026-02-03T20:30:43.218443+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }
