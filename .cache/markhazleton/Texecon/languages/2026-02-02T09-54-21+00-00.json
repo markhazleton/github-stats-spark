@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-03T20:18:47.867766+00:00",
+  "value": {
+    "HTML": 902300,
+    "TypeScript": 197669,
+    "JavaScript": 46884,
+    "CSS": 6683
+  },
+  "hash": "54b16430ff70b644c72d186522d6c7afe2ceab7dcbb61e42f46ebd09645b3548",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Texecon"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-02T09:54:21+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "Texecon",
+  "week": "2026-02-02T09-54-21+00-00"
+}

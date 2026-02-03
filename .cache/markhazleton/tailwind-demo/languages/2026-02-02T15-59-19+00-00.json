@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-03T20:18:33.188243+00:00",
+  "value": {
+    "HTML": 1193096,
+    "TypeScript": 507633,
+    "JavaScript": 28776,
+    "CSS": 13024,
+    "Shell": 345,
+    "Batchfile": 308
+  },
+  "hash": "b13f7a0536f8e07bf877a3edb7ff7c716fdf0b994947296fe2e7d85f5ccaffc2",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "tailwind-demo"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-02T15:59:19+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "tailwind-demo",
+  "week": "2026-02-02T15-59-19+00-00"
+}

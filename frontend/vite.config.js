@@ -9,9 +9,15 @@ const serveDataPlugin = () => ({
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
       const url = new URL(req.url, 'http://localhost')
+      // Strip base path for dev server routing
+      const basePath = '/github-stats-spark'
+      let pathname = url.pathname
+      if (pathname.startsWith(basePath)) {
+        pathname = pathname.slice(basePath.length)
+      }
       // Serve data directory
-      if (url.pathname.startsWith('/data/')) {
-        const filePath = path.resolve(__dirname, '..', url.pathname.slice(1))
+      if (pathname.startsWith('/data/')) {
+        const filePath = path.resolve(__dirname, '..', pathname.slice(1))
         if (fs.existsSync(filePath)) {
           const content = fs.readFileSync(filePath)
           res.setHeader('Content-Type', 'application/json')
@@ -20,8 +26,8 @@ const serveDataPlugin = () => ({
         }
       }
       // Serve output/screenshots directory
-      if (url.pathname.startsWith('/output/')) {
-        const filePath = path.resolve(__dirname, '..', url.pathname.slice(1))
+      if (pathname.startsWith('/output/')) {
+        const filePath = path.resolve(__dirname, '..', pathname.slice(1))
         if (fs.existsSync(filePath)) {
           const content = fs.readFileSync(filePath)
           const ext = path.extname(filePath).toLowerCase()

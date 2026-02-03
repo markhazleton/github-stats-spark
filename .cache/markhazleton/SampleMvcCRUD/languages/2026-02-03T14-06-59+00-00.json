@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-03T20:18:04.447223+00:00",
+  "value": {
+    "HTML": 625143,
+    "JavaScript": 396600,
+    "C#": 287821,
+    "PowerShell": 64457,
+    "CSS": 5290,
+    "Dockerfile": 3671
+  },
+  "hash": "ff9cce0e10322436b36b7e15d93688dbd3e00c697d7d4387253c68327406f778",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-03T14:06:59+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026-02-03T14-06-59+00-00"
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-03T20:18:09.016892+00:00",
+  "value": {},
+  "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-02-03T14:06:59+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026-02-03T14-06-59+00-00"
+}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-03T20:18:15.699257+00:00",
+  "value": {
+    "ai_summary": "SampleMvcCRUD is a comprehensive .NET 10 web application demonstrating multiple CRUD (Create, Read, Update, Delete) implementation strategies for employee and department management, serving as an educational reference for modern web development practices. The project showcases diverse UI approaches including traditional MVC, Razor Pages, and Single Page Application (SPA) styles, with robust features like Bootswatch theme switching, REST API endpoints with Swagger/OpenAPI support, and integrated observability through Application Insights. Built using ASP.NET Core, Entity Framework Core, and leveraging modern web technologies like Bootstrap 5, the application provides a flexible, extensible architecture that emphasizes clean code principles, dependency injection, and multi-deployment strategies (IIS, Azure App Service, Docker). The repository is particularly notable for its progressive approach to .NET development, continuously evolving across framework versions and incorporating contemporary web development patterns, making it an excellent learning resource for developers seeking to understand enterprise-grade web application design and implementation. Target users include .NET developers, software architects, and technical professionals looking to explore best practices in web application development, with a focus on maintainability, testability, and modern UI/UX design.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-02-03T14:18:15.699195",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2208,
+    "confidence_score": 90
+  },
+  "hash": "29d8c8dd4c0acdac0e59e01939ec7571643a12fe59d149f92108f01973af9dad",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SampleMvcCRUD"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-03T14:06:59+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SampleMvcCRUD",
+  "week": "2026-02-03T14-06-59+00-00"
+}

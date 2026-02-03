@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-03T20:17:10.075079+00:00",
+  "value": {
+    "TypeScript": 383789,
+    "JavaScript": 87415,
+    "PowerShell": 75202,
+    "CSS": 9076,
+    "HTML": 7103
+  },
+  "hash": "83bd19674ef4c963db4785511b9256903402bb00b07f916fc7a59d51cf93e38d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "mark-hazleton-s-notes"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-02T14:34:01+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "mark-hazleton-s-notes",
+  "week": "2026-02-02T14-34-01+00-00"
+}
