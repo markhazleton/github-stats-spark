@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-08T00:56:15.423915+00:00",
+  "value": {
+    "C#": 476275,
+    "HTML": 457321,
+    "CSS": 411311,
+    "PowerShell": 66981,
+    "JavaScript": 34517,
+    "SCSS": 1860
+  },
+  "hash": "31f44296f541fa9b884df8a3a21572d24a0b9150f8fcebeb36b928327e131db3",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TeachSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-07T15:37:21+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "TeachSpark",
+  "week": "2026-02-07T15-37-21+00-00"
+}

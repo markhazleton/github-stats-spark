@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-08T00:56:13.614277+00:00",
+  "value": {
+    "ai_summary": "Here's a comprehensive technical summary for the sql2csv repository:\n\nSql2Csv is a versatile .NET 10 toolkit designed for comprehensive SQLite database exploration, analysis, and transformation, offering a multi-modal approach to database interaction through CLI, web UI, and core library components. The project enables users to discover SQLite database files, export table contents to CSV, generate schema reports, and automatically create C# data transfer objects (DTOs) from database schemas, providing a robust set of data migration and exploration tools. Built using modern .NET technologies with ASP.NET Core MVC, the solution incorporates a modular architecture featuring separate projects for console application, web interface, core services, testing, and performance benchmarking, which demonstrates a clean separation of concerns and extensible design. Key technologies include .NET 10, SQLite, BenchmarkDotNet, and MSTest, with additional frontend support via Node.js and npm for web asset management. The toolkit is particularly valuable for developers, data analysts, and engineers who need flexible, scriptable utilities for SQLite database introspection, migration, and code generation, offering both command-line and web-based interfaces for enhanced usability across different workflow preferences. What distinguishes sql2csv is its comprehensive approach to database utility, providing not just data export capabilities but also schema analysis, code generation, and a user-friendly web interface, making it a Swiss Army knife for SQLite database manipulation.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-02-08T00:56:13.614187",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 1566,
+    "confidence_score": 90
+  },
+  "hash": "c4963c42ba1f4d9d228019cc2e86673d645f35e7228c2c9d2b5cc523392df130",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "sql2csv"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-07T16:15:15+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "sql2csv",
+  "week": "2026-02-07T16-15-15+00-00"
+}

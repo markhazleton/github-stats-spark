@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-02-08T00:54:54.520349+00:00",
+  "value": {
+    "requirements.txt": "# Stats Spark - Production Dependencies\n# GitHub Profile Statistics Generator\n\n# GitHub API client\nPyGithub>=2.1.1\n\n# Configuration parsing\nPyYAML>=6.0.1\n\n# SVG generation\nsvgwrite>=1.4.3\n\n# HTTP requests with retry logic\nrequests>=2.31.0\n\n# Date and time utilities\npython-dateutil>=2.8.2\n\n# AI Integration for repository summarization\nanthropic>=0.40.0\n\n# Retry logic with exponential backoff\ntenacity>=9.0.0\n\n# Semantic version parsing for dependency analysis\npackaging>=23.0\n\n# TOML parsing for pyproject.toml (Python <3.11)\ntomli>=2.0.0; python_version < '3.11'\n\n# Screenshot capture for repository websites (optional)\n# Requires: playwright install chromium\nplaywright>=1.40.0\n"
+  },
+  "hash": "3741f4cea82637f99ecd98f821754f3d3fd910a20c634af648bb0473ea6ef514",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "github-stats-spark"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-02-03T20:31:31+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "github-stats-spark",
+  "week": "2026-02-03T20-31-31+00-00"
+}
