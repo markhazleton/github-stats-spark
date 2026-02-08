@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-08T19:40:04.100555+00:00",
+  "value": {
+    "ai_summary": "UISampleSpark is a comprehensive .NET 10 web application that serves as an educational reference for exploring and comparing multiple front-end UI technologies and architectural patterns within a single Employee/Department domain. The project demonstrates implementation of user interfaces using diverse approaches including MVC, Razor Pages, React, Vue, htmx, Blazor, and vanilla JavaScript SPAs, with a consistent core domain model and shared CRUD functionality across each implementation. Leveraging ASP.NET Core, Entity Framework Core, and modern web technologies like Bootstrap 5 and Bootswatch, the repository showcases clean architecture principles, dependency injection, unit testing, and advanced UI/UX techniques such as theme switching, modal interactions, and responsive design. Unique features include a dynamic Bootswatch theme switcher, extensive CI/CD pipelines (GitHub Actions, Azure Pipelines), containerization via Docker, and multiple deployment targets including Windows IIS and Linux containers. The project is primarily targeted at .NET developers, web architects, and technology enthusiasts interested in understanding modern web application development strategies, front-end technology comparisons, and best practices in building scalable, maintainable web interfaces.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-02-08T13:40:04.100477",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2293,
+    "confidence_score": 90
+  },
+  "hash": "47bf1b59c98efbb79bb0e26d351b2e089330989ce40fee82a1435c41133cf932",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "UISampleSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-08T12:55:59+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "UISampleSpark",
+  "week": "2026-02-08T12-55-59+00-00"
+}

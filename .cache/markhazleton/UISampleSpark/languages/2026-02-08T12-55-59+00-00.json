@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-08T19:39:52.881923+00:00",
+  "value": {
+    "HTML": 841252,
+    "JavaScript": 396600,
+    "C#": 315909,
+    "PowerShell": 82704,
+    "CSS": 5290,
+    "Dockerfile": 4782
+  },
+  "hash": "796fd29ed478fc3b1170c82be30c81864bd641d979cdffbed85909e594f96059",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "UISampleSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-08T12:55:59+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "UISampleSpark",
+  "week": "2026-02-08T12-55-59+00-00"
+}
