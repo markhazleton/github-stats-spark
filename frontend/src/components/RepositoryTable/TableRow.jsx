@@ -42,41 +42,6 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
   };
 
   /**
-   * Format commit size with proper number formatting
-   */
-  const formatSize = (size) => {
-    if (size == null || isNaN(size)) return "N/A";
-
-    // Show 0 if it's actually 0 (valid data)
-    if (size === 0) return "0.0";
-
-    // Round to 1 decimal place
-    return parseFloat(size).toFixed(1);
-  };
-
-  /**
-   * Format commit metric object (for largest/smallest commits)
-   */
-  const formatCommitMetric = (commitMetric) => {
-    // Check if the object exists first
-    if (!commitMetric) {
-      return { display: "N/A", tooltip: null };
-    }
-
-    // If size is explicitly 0, show it (rather than N/A)
-    const size = commitMetric.size;
-    const display = size != null ? formatSize(size) : "N/A";
-
-    // Only create tooltip if we have meaningful data
-    const hasData = commitMetric.sha || commitMetric.date;
-    const tooltip = hasData
-      ? `${commitMetric.sha?.substring(0, 7) || "Unknown"} • ${formatDate(commitMetric.date)}`
-      : null;
-
-    return { display, tooltip };
-  };
-
-  /**
    * Handle row click (for drill-down)
    */
   const handleRowClick = (e) => {
@@ -94,21 +59,12 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
 
   // Extract commit data from nested structure (unified data format)
   const commitHistory = repository.commit_history || {};
-  const commitMetrics = repository.commit_metrics || {};
   const totalCommits =
     commitHistory.total_commits || repository.commit_count || 0;
   const firstCommitDate =
     commitHistory.first_commit_date || repository.first_commit_date;
   const lastCommitDate =
     commitHistory.last_commit_date || repository.last_commit_date;
-  const avgCommitSize = commitMetrics.avg_size || repository.avg_commit_size;
-
-  const largestCommit = formatCommitMetric(
-    commitMetrics.largest_commit || repository.largest_commit,
-  );
-  const smallestCommit = formatCommitMetric(
-    commitMetrics.smallest_commit || repository.smallest_commit,
-  );
 
   return (
     <tr className={styles.tableRow} onClick={handleRowClick} role="row">
@@ -134,9 +90,6 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
         </span>
       </td>
 
-      {/* Created Date */}
-      <td className={styles.tableCell}>{formatDate(repository.created_at)}</td>
-
       {/* First Commit Date */}
       <td className={styles.tableCell}>{formatDate(firstCommitDate)}</td>
 
@@ -148,39 +101,19 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
         {totalCommits.toLocaleString()}
       </td>
 
-      {/* Average Commit Size */}
-      <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
-        <Tooltip content="Average size = files changed + lines added + lines deleted">
-          {formatSize(avgCommitSize)}
-        </Tooltip>
-      </td>
-
-      {/* Largest Commit */}
-      <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
-        {largestCommit.tooltip ? (
-          <Tooltip content={largestCommit.tooltip}>
-            {largestCommit.display}
-          </Tooltip>
-        ) : (
-          largestCommit.display
-        )}
-      </td>
-
-      {/* Smallest Commit */}
-      <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
-        {smallestCommit.tooltip ? (
-          <Tooltip content={smallestCommit.tooltip}>
-            {smallestCommit.display}
-          </Tooltip>
-        ) : (
-          smallestCommit.display
-        )}
-      </td>
-
       {/* Stars */}
       <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
         <Tooltip content="GitHub stars">
           {repository.stars?.toLocaleString() || 0}
+        </Tooltip>
+      </td>
+
+      {/* Spark Score */}
+      <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
+        <Tooltip content="Composite score: 45% activity, 30% popularity, 25% health">
+          {repository.composite_score != null
+            ? repository.composite_score.toFixed(1)
+            : "N/A"}
         </Tooltip>
       </td>
     </tr>

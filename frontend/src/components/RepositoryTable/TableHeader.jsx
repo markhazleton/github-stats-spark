@@ -27,14 +27,11 @@ export default function TableHeader({ onSort, sortField, sortDirection }) {
   const columns = [
     { key: "name", label: "Repository", sortable: true },
     { key: "language", label: "Language", sortable: true },
-    { key: "created_at", label: "Created", sortable: true },
     { key: "first_commit_date", label: "First Commit", sortable: true },
     { key: "last_commit_date", label: "Last Commit", sortable: true },
     { key: "commit_count", label: "Total Commits", sortable: true },
-    { key: "avg_commit_size", label: "Avg Size", sortable: true },
-    { key: "largest_commit", label: "Largest", sortable: true },
-    { key: "smallest_commit", label: "Smallest", sortable: true },
     { key: "stars", label: "Stars", sortable: true },
+    { key: "composite_score", label: "Spark Score", sortable: true },
   ];
 
   /**

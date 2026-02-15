@@ -10,27 +10,17 @@ import {
   setupBackgroundSync,
   clearCache,
 } from "@/services/dataService";
-import VisualizationControls from "@/components/Visualizations/VisualizationControls";
 import { deferExecution, getConnectionType } from "@/utils/performance";
 import TabBar from "@/components/Mobile/TabBar/TabBar";
 import EmptyState from "@/components/Mobile/EmptyState/EmptyState";
 import { ToastContainer } from "@/components/Mobile/Toast/Toast";
 
-// Lazy load chart components for better performance
-const BarChart = lazy(() => import("@/components/Visualizations/BarChart"));
-const LineGraph = lazy(() => import("@/components/Visualizations/LineGraph"));
-const ScatterPlot = lazy(
-  () => import("@/components/Visualizations/ScatterPlot"),
+const DashboardView = lazy(
+  () => import("@/components/Visualizations/DashboardView"),
 );
 const RepositoryDetail = lazy(
   () => import("@/components/DrillDown/RepositoryDetail"),
 );
-import {
-  transformForBarChart,
-  transformForLineGraph,
-  transformForScatterPlot,
-  getMetricLabel,
-} from "@/services/metricsCalculator";
 
 /**
  * GitHub Stats Spark Dashboard - Root App Component
@@ -110,10 +100,6 @@ function App() {
   const [currentView, setCurrentView] = useState(getInitialView());
   const [detailModalRepo, setDetailModalRepo] = useState(null); // For drill-down
 
-  // Visualization state
-  const [chartType, setChartType] = useState("bar"); // 'bar', 'line', 'scatter'
-  const [selectedMetric, setSelectedMetric] = useState("totalCommits");
-
   // Sync view with URL hash
   useEffect(() => {
     const handleHashChange = () => {
@@ -163,47 +149,12 @@ function App() {
   };
 
   /**
-   * Handle chart data point click for drill-down
-   * @param {Object} data - Chart data point
-   */
-  const handleChartClick = (data) => {
-    if (data?.fullData) {
-      setDetailModalRepo(data.fullData);
-    }
-  };
-
-  /**
    * Get available languages for filter dropdown
    */
   const availableLanguages = useMemo(() => {
     if (!data?.repositories) return [];
     return extractLanguages(data.repositories);
   }, [data]);
-
-  /**
-   * Prepare chart data based on selected chart type and metric
-   */
-  const chartData = useMemo(() => {
-    if (!processedRepositories || processedRepositories.length === 0) return [];
-
-    switch (chartType) {
-      case "bar":
-        return transformForBarChart(processedRepositories, selectedMetric);
-      case "line":
-        return transformForLineGraph(processedRepositories, selectedMetric);
-      case "scatter":
-        return transformForScatterPlot(processedRepositories);
-      default:
-        return [];
-    }
-  }, [processedRepositories, chartType, selectedMetric]);
-
-  /**
-   * Get human-readable metric label
-   */
-  const metricLabel = useMemo(() => {
-    return getMetricLabel(selectedMetric);
-  }, [selectedMetric]);
 
   /**
    * Navigate to next repository in detail view
@@ -394,7 +345,7 @@ function App() {
                       aria-labelledby="visualizations-heading"
                     >
                       <div className="mb-lg">
-                        <h2 id="visualizations-heading">Data Visualizations</h2>
+                        <h2 id="visualizations-heading">Repository Insights</h2>
                         <p
                           className="text-muted"
                           role="status"
@@ -405,7 +356,6 @@ function App() {
                         </p>
                       </div>
 
-                      {/* Filter Controls - synchronize with table view */}
                       {availableLanguages.length > 0 && (
                         <FilterControls
                           languages={availableLanguages}
@@ -415,45 +365,17 @@ function App() {
                         />
                       )}
 
-                      {/* Visualization Controls */}
-                      <VisualizationControls
-                        chartType={chartType}
-                        onChartTypeChange={setChartType}
-                        selectedMetric={selectedMetric}
-                        onMetricChange={setSelectedMetric}
-                      />
-
-                      {/* Chart Rendering */}
-                      <div className="chart-wrapper">
-                        <Suspense
-                          fallback={<LoadingState message="Loading chart..." />}
-                        >
-                          {chartType === "bar" && (
-                            <BarChart
-                              data={chartData}
-                              metricLabel={metricLabel}
-                              onBarClick={handleChartClick}
-                            />
-                          )}
-
-                          {chartType === "line" && (
-                            <LineGraph
-                              data={chartData}
-                              metricLabel={metricLabel}
-                              onPointClick={handleChartClick}
-                            />
-                          )}
-
-                          {chartType === "scatter" && (
-                            <ScatterPlot
-                              data={chartData}
-                              xAxisLabel="Total Commits"
-                              yAxisLabel="Average Commit Size"
-                              onPointClick={handleChartClick}
-                            />
-                          )}
-                        </Suspense>
-                      </div>
+                      <Suspense
+                        fallback={
+                          <LoadingState message="Loading visualizations..." />
+                        }
+                      >
+                        <DashboardView
+                          repositories={processedRepositories}
+                          profile={data?.profile}
+                          onRepoClick={handleRepoClick}
+                        />
+                      </Suspense>
                     </section>
                   )}
                 </>

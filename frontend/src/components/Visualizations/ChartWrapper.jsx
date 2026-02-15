@@ -99,8 +99,14 @@ export const ChartWrapper = ({
     );
   }
 
-  // Show empty state
-  if (!data || !data.labels || data.labels.length === 0) {
+  // Show empty state - check labels for label-based charts, datasets for scatter/bubble
+  const hasData =
+    data &&
+    ((data.labels && data.labels.length > 0) ||
+      (data.datasets &&
+        data.datasets.length > 0 &&
+        data.datasets.some((ds) => ds.data && ds.data.length > 0)));
+  if (!hasData) {
     return (
       <div className={`chart-wrapper ${className}`}>
         {title && <h3 className="chart-title">{title}</h3>}
@@ -149,7 +155,7 @@ export const ChartWrapper = ({
 };
 
 ChartWrapper.propTypes = {
-  type: PropTypes.oneOf(["bar", "line", "pie", "doughnut", "scatter"])
+  type: PropTypes.oneOf(["bar", "line", "pie", "doughnut", "scatter", "bubble"])
     .isRequired,
   data: PropTypes.shape({
     labels: PropTypes.arrayOf(PropTypes.string),
