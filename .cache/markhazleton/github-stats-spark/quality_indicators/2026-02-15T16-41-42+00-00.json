@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:56:47.066234+00:00",
+  "value": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": true,
+    "has_docs": true
+  },
+  "hash": "c4777e5e903597fbb756bd529a130bbf6fc2d292749d0e54fbac32ee0dd945b0",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "github-stats-spark"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2026-02-15T16:41:42+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "github-stats-spark",
+  "week": "2026-02-15T16-41-42+00-00"
+}

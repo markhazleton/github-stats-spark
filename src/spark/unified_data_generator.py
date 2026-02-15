@@ -249,6 +249,15 @@ class UnifiedDataGenerator:
                     cached_summary = self.cache.get(
                         "ai_summary", self.username, repo=repo_name, week=cache_key
                     )
+                    # Read quality indicators from cache
+                    quality_indicators = self.cache.get(
+                        "quality_indicators", self.username, repo=repo_name, week=cache_key
+                    )
+                    if quality_indicators:
+                        repo_data["has_license"] = quality_indicators.get("has_license", False)
+                        repo_data["has_ci_cd"] = quality_indicators.get("has_ci_cd", False)
+                        repo_data["has_tests"] = quality_indicators.get("has_tests", False)
+                        repo_data["has_docs"] = quality_indicators.get("has_docs", False)
 
                 if cached_summary is None:
                     cached_summary = self.cache.get("ai_summary", self.username, repo=repo_name)
@@ -417,10 +426,15 @@ class UnifiedDataGenerator:
                 "commit_velocity": commit_history.commit_frequency if commit_history else None,
                 "tech_stack": tech_stack.to_dict() if tech_stack else None,
                 "has_readme": repo.has_readme,
+                "has_license": repo.has_license,
+                "has_ci_cd": repo.has_ci_cd,
+                "has_tests": repo.has_tests,
+                "has_docs": repo.has_docs,
                 "language_count": repo.language_count,
                 "size_kb": repo.size_kb,
                 "is_fork": repo.is_fork,
                 "is_private": repo.is_private,
+                "is_archived": repo.is_archived,
                 "age_days": repo.age_days,
                 "days_since_last_push": repo.days_since_last_push,
                 "ai_summary": ai_summary_text,

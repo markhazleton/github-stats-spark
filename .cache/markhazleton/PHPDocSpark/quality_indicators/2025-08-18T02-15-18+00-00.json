@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:57:03.593115+00:00",
+  "value": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "hash": "f8bd421a6107f95413c260085e1aab76549f2333c801fbe503cf14be9311b427",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PHPDocSpark"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2025-08-18T02:15:18+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "PHPDocSpark",
+  "week": "2025-08-18T02-15-18+00-00"
+}

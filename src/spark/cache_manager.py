@@ -305,6 +305,107 @@ class CacheManager:
                 error=str(e)
             )
 
+    def refresh_quality_indicators(
+        self,
+        username: str,
+        repo_name: str,
+        pushed_at: datetime
+    ) -> RefreshResult:
+        """Refresh quality indicators cache for a repository.
+        
+        Checks for:
+        - License file (via GitHub API)
+        - CI/CD workflows (.github/workflows/)
+        - Tests directory (test/, tests/, spec/, specs/, __tests__/)
+        - Documentation (docs/, doc/, documentation/, CONTRIBUTING.md, CHANGELOG.md)
+        """
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "quality_indicators"
+
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=True,
+                refreshed=False
+            )
+
+        try:
+            self.api_calls += 1
+            repo = self.github.get_repo(f"{username}/{repo_name}")
+            
+            # Check for license
+            has_license = False
+            try:
+                repo.get_license()
+                has_license = True
+            except GithubException as e:
+                if getattr(e, "status", None) != 404:
+                    raise
+
+            # Check for CI/CD workflows
+            has_ci_cd = False
+            try:
+                workflows = repo.get_workflows()
+                has_ci_cd = workflows.totalCount > 0
+            except GithubException:
+                pass
+
+            # Check root contents for tests and docs directories
+            has_tests = False
+            has_docs = False
+            test_dirs = {"test", "tests", "spec", "specs", "__tests__"}
+            doc_dirs = {"docs", "doc", "documentation"}
+            doc_files = {"contributing.md", "changelog.md"}
+            
+            try:
+                contents = repo.get_contents("")
+                for item in contents:
+                    name_lower = item.name.lower()
+                    if item.type == "dir":
+                        if name_lower in test_dirs:
+                            has_tests = True
+                        if name_lower in doc_dirs:
+                            has_docs = True
+                    elif item.type == "file":
+                        if name_lower in doc_files:
+                            has_docs = True
+            except GithubException:
+                pass
+
+            quality_data = {
+                "has_license": has_license,
+                "has_ci_cd": has_ci_cd,
+                "has_tests": has_tests,
+                "has_docs": has_docs,
+            }
+
+            metadata = {
+                "repository": {"owner": username, "name": repo_name},
+                "category": category,
+                "pushed_at": pushed_at.isoformat(),
+                "ttl_enforced": False,
+            }
+            self.cache.set(category, username, quality_data, repo=repo_name, week=cache_key, metadata=metadata)
+
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=True
+            )
+
+        except Exception as e:
+            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {e}")
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error=str(e)
+            )
+
     def refresh_dependency_files(
         self,
         username: str,
@@ -536,7 +637,7 @@ class CacheManager:
             List of RefreshResult for each category
         """
         if categories is None:
-            categories = {"commit_counts", "languages"}
+            categories = {"commit_counts", "languages", "quality_indicators"}
 
         if include_ai_summaries:
             categories = set(categories) | {"readme", "dependency_files", "ai_summary"}
@@ -548,6 +649,9 @@ class CacheManager:
         
         if "languages" in categories:
             results.append(self.refresh_languages(username, repo_name, pushed_at))
+        
+        if "quality_indicators" in categories:
+            results.append(self.refresh_quality_indicators(username, repo_name, pushed_at))
 
         if "readme" in categories:
             results.append(self.refresh_readme(username, repo_name, pushed_at))
@@ -609,7 +713,7 @@ class CacheManager:
             
             # Check if refresh needed
             if not force_refresh:
-                categories_to_check = {"commit_counts", "languages"}
+                categories_to_check = {"commit_counts", "languages", "quality_indicators"}
                 if include_ai_summaries:
                     categories_to_check |= {"readme", "dependency_files", "ai_summary"}
 

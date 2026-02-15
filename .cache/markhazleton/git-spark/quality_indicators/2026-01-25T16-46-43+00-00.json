@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:56:45.579913+00:00",
+  "value": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": true,
+    "has_docs": true
+  },
+  "hash": "c4777e5e903597fbb756bd529a130bbf6fc2d292749d0e54fbac32ee0dd945b0",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "git-spark"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2026-01-25T16:46:43+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "git-spark",
+  "week": "2026-01-25T16-46-43+00-00"
+}

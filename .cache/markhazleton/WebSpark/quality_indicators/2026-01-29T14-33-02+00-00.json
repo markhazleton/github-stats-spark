@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:57:25.540018+00:00",
+  "value": {
+    "has_license": true,
+    "has_ci_cd": false,
+    "has_tests": true,
+    "has_docs": false
+  },
+  "hash": "08903fecddca6e1e3d011c5dd9187801d7fce87fed426bdc806c0826ad799538",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2026-01-29T14:33:02+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "WebSpark",
+  "week": "2026-01-29T14-33-02+00-00"
+}

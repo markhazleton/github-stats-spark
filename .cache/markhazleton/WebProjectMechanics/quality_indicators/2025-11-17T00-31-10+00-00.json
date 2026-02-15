@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:57:23.954529+00:00",
+  "value": {
+    "has_license": false,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "hash": "33a8325ffe1280113863b7c7372adb19357894401ad8b87380b9da51a917f7d9",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebProjectMechanics"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2025-11-17T00:31:10+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "WebProjectMechanics",
+  "week": "2025-11-17T00-31-10+00-00"
+}

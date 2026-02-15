@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-02-15 00:50:56 UTC
+**Generated**: 2026-02-15 16:57:36 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 36
 **AI Summary Rate**: 100.0%
@@ -37,62 +37,70 @@
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 151 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 153 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 10059 KB | 🚀 50.3 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 10356 KB | 🚀 51.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-Here's a detailed technical summary of the GitHub repository:
+Based on the detailed README and repository overview, here's a comprehensive technical summary:
 
-Stats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance. The project leverages Python as its primary language, integrating multiple technologies including PyGithub for GitHub API interactions, AI-powered natural language processing (likely using Claude Haiku), and modern web technologies like Chart.js for interactive visualizations.
+Stats Spark is an advanced GitHub analytics and visualization platform designed to transform raw GitHub activity data into actionable insights and professional visualizations. The project leverages Python, JavaScript, and AI technologies to generate comprehensive repository analyses, featuring automated SVG profile statistics, AI-powered technical summaries, and an interactive mobile-first dashboard. Key technical innovations include a sophisticated repository ranking algorithm, intelligent caching mechanisms, and integration with Claude Haiku for generating high-quality repository analyses, with a focus on providing developers and technical leaders with deep insights into their GitHub ecosystem.
 
-The core functionality revolves around automated generation of detailed GitHub profile statistics, featuring multiple visualization types including commit heatmaps, language usage breakdowns, and personalized "Spark Score" metrics. The system employs a modular, enterprise-grade architecture with intelligent caching mechanisms, rate limit handling, and configurable YAML-based settings, enabling scalable and flexible repository analysis across multiple GitHub accounts.
+Key Technical Highlights:
+- Language/Framework Ecosystem: Python (primary), JavaScript, CSS
+- Core Technologies: PyGithub, AI summarization, SVG generation
+- Key Features:
+  1. Automated daily GitHub profile statistics generation
+  2. AI-powered repository technical analysis
+  3. Interactive, mobile-optimized visualization dashboard
+  4. Intelligent caching and API rate limit management
 
-Key technical innovations include an AI-powered repository ranking algorithm that combines popularity, activity, and health metrics, and an advanced summary generation process with a three-tier fallback mechanism for creating technical repository descriptions. The project supports comprehensive reporting through GitHub-flavored markdown, embedded SVG visualizations, and an interactive mobile-first dashboard with performance optimizations targeting sub-2-second initial load times.
+Architectural Approach:
+- Modular design with extensible configuration via YAML
+- Microservice-like architecture separating data retrieval, analysis, and visualization
+- Strong emphasis on performance (sub-3 minute analysis for 50+ repositories)
+- Comprehensive error handling and intelligent retry mechanisms
 
-The architecture demonstrates several modern software engineering principles:
-- Microservice-like modular design
-- Intelligent caching and API optimization
-- AI-assisted analysis and reporting
-- Automated GitHub Actions workflow
-- Responsive and accessible web interfaces
-- Comprehensive error handling and retry mechanisms
+Unique Value Propositions:
+- 97%+ accurate AI-generated repository summaries
+- Proprietary "Spark Score" measuring developer activity
+- Enterprise-grade analytics with minimal maintenance overhead
+- Accessibility-focused design (WCAG 2.1 AA compliance)
 
-Unique differentiators include the custom "Spark Score" metric, AI-generated technical summaries, and a holistic approach to developer productivity visualization that goes beyond traditional GitHub statistics. The project targets developers, technical leaders, and open-source maintainers seeking data-driven insights into coding patterns and repository health.
+Target Users:
+- Individual developers showcasing portfolio
+- Technical leaders analyzing team productivity
+- Open-source maintainers tracking project momentum
+- Engineering managers seeking comprehensive GitHub insights
 
-Technology stack highlights:
-- Languages: Python (primary), JavaScript, CSS
-- AI Integration: Claude Haiku
-- Visualization: SVG generation, Chart.js
-- Web: Mobile-first design, responsive layouts
-- DevOps: GitHub Actions, GitHub Pages deployment
-
-The repository represents a sophisticated, forward-looking approach to developer analytics, combining automation, artificial intelligence, and user-centric design to provide unprecedented insights into GitHub activity and performance.
+The project stands out through its comprehensive, automated approach to GitHub analytics, combining cutting-edge AI, performance optimization, and user-centric design to provide unprecedented insights into developer and repository performance.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 10 total (10 current, 0 outdated)
 
 **Created**: 2025-12-28
-**Last Modified**: 2026-02-08
+**Last Modified**: 2026-02-15
 
 ---
 
 ### #2. [mark-hazleton-s-notes](https://github.com/markhazleton/mark-hazleton-s-notes)
 
-Stars: 0 | Forks: 0 | Language: TypeScript | 90 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 91 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 188170 KB | 🚀 30.0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 188170 KB | 🚀 30.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-This repository is a comprehensive personal portfolio and technical blog site for Mark Hazleton, a Technical Solutions Architect, built as a modern, statically generated React application with advanced optimization and SEO features. The site leverages a sophisticated static site generation approach using Vite 7, React 19, and TypeScript, with server-side rendering (SSR) and static prerendering capabilities that automatically generate optimized content, including a dynamic GitHub activity page, project portfolio, and blog with RSS feed support. Key technological innovations include automated image optimization, dynamic repository metrics integration, and a modular architecture that separates content (Markdown/JSON), components, and build scripts, with robust SEO metadata generation and deployment to Azure Static Web Apps via GitHub Actions. The project demonstrates enterprise-grade frontend development practices, featuring a comprehensive build pipeline, type-safe development with TypeScript, utility-first styling with Tailwind CSS, and component libraries like Radix UI and shadcn/ui, making it a sophisticated example of a modern, performance-oriented personal technical showcase. Notably, the repository includes extensive developer documentation, build scripts, and a clear content management approach that makes it easy to add new blog posts, projects, and update site metadata with minimal manual intervention.
+Here's a comprehensive technical summary:
+
+Mark Hazleton's Notes is a sophisticated personal portfolio and technical blogging platform built using modern web development technologies, primarily React 19 and TypeScript. The site leverages server-side rendering (SSR) with Vite, implementing a highly modular architecture that dynamically generates static content, including blog posts, project portfolios, and GitHub repository metrics through intelligent build scripts. Key technologies include Tailwind CSS for styling, Radix UI for accessible components, and custom prerendering mechanisms that generate SEO-optimized assets like sitemaps, RSS feeds, and static HTML pages. The repository demonstrates advanced frontend engineering practices, featuring automated image optimization, comprehensive build pipelines, and a flexible content management approach that allows easy updates through Markdown and JSON configuration files. What makes this project particularly noteworthy is its emphasis on developer experience, with extensive documentation, clear scripting for content updates, and a well-structured monorepo design that separates concerns between UI components, content, and build utilities. The site serves as both a professional showcase for Mark Hazleton's technical expertise and a reference implementation for modern, statically-generated web applications with robust SEO and performance considerations.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 59 total (59 current, 0 outdated)
 
 **Created**: 2026-01-10
-**Last Modified**: 2026-02-09
+**Last Modified**: 2026-02-15
 
 ---
 
@@ -325,24 +333,7 @@ TailwindSpark is a sophisticated React-based design system and component library
 
 ---
 
-### #12. [sql2csv](https://github.com/markhazleton/sql2csv)
-
-Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 1929 KB | 🚀 2.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-Here's a comprehensive technical summary for the sql2csv repository:
-
-Sql2Csv is a versatile .NET 10 toolkit designed for comprehensive SQLite database exploration, analysis, and transformation, offering a multi-modal approach to database interaction through CLI, web UI, and core library components. The project enables users to discover SQLite database files, export table contents to CSV, generate schema reports, and automatically create C# data transfer objects (DTOs) from database schemas, providing a robust set of data migration and exploration tools. Built using modern .NET technologies with ASP.NET Core MVC, the solution incorporates a modular architecture featuring separate projects for console application, web interface, core services, testing, and performance benchmarking, which demonstrates a clean separation of concerns and extensible design. Key technologies include .NET 10, SQLite, BenchmarkDotNet, and MSTest, with additional frontend support via Node.js and npm for web asset management. The toolkit is particularly valuable for developers, data analysts, and engineers who need flexible, scriptable utilities for SQLite database introspection, migration, and code generation, offering both command-line and web-based interfaces for enhanced usability across different workflow preferences. What distinguishes sql2csv is its comprehensive approach to database utility, providing not just data export capabilities but also schema analysis, code generation, and a user-friendly web interface, making it a Swiss Army knife for SQLite database manipulation.
-
-**Created**: 2017-11-06
-**Last Modified**: 2026-01-12
-
----
-
-### #13. [Texecon](https://github.com/markhazleton/Texecon)
+### #12. [Texecon](https://github.com/markhazleton/Texecon)
 
 Stars: 0 | Forks: 0 | Language: HTML | 3 commits (90d)
 
@@ -362,7 +353,7 @@ TexEcon is a sophisticated static React application designed for comprehensive e
 
 ---
 
-### #14. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
+### #13. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
 
 Stars: 0 | Forks: 0 | Language: CSS | 5 commits (90d)
 
@@ -382,7 +373,7 @@ ReactSparkPortfolio is a sophisticated, production-ready developer portfolio app
 
 ---
 
-### #15. [WebSpark.ArtSpark](https://github.com/markhazleton/WebSpark.ArtSpark)
+### #14. [WebSpark.ArtSpark](https://github.com/markhazleton/WebSpark.ArtSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 31 commits (90d)
 
@@ -409,7 +400,7 @@ The project is particularly noteworthy for art technologists, museum researchers
 
 ---
 
-### #16. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
+### #15. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 8 commits (90d)
 
@@ -429,7 +420,7 @@ Mechanics of Motherhood is a sophisticated recipe management platform specifical
 
 ---
 
-### #17. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
+### #16. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
 
 Stars: 1 | Forks: 1 | Language: C# | 13 commits (90d)
 
@@ -449,7 +440,7 @@ KeyPressCounter is a sophisticated Windows utility designed for comprehensive sy
 
 ---
 
-### #18. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
+### #17. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -464,7 +455,7 @@ WebSpark.PrismSpark is a high-performance, extensible C# and .NET library for sy
 
 ---
 
-### #19. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
+### #18. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
 
 Stars: 2 | Forks: 1 | Language: HTML | 7 commits (90d)
 
@@ -481,7 +472,7 @@ FastEndpointApi is a demonstration project showcasing the FastEndpoints framewor
 
 ---
 
-### #20. [SupportSpark](https://github.com/markhazleton/SupportSpark)
+### #19. [SupportSpark](https://github.com/markhazleton/SupportSpark)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 16 commits (90d)
 
@@ -512,7 +503,7 @@ The target users are individuals navigating personal challenges who want a struc
 
 ---
 
-### #21. [ConcurrentProcessing](https://github.com/markhazleton/ConcurrentProcessing)
+### #20. [ConcurrentProcessing](https://github.com/markhazleton/ConcurrentProcessing)
 
 Stars: 0 | Forks: 0 | Language: C# | 19 commits (90d)
 
@@ -530,7 +521,7 @@ ConcurrentProcessing is a sophisticated .NET 10 framework for managing high-perf
 
 ---
 
-### #22. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
+### #21. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
 
 Stars: 0 | Forks: 0 | Language: C# | 10 commits (90d)
 
@@ -547,7 +538,7 @@ PromptSpark.Chat is an innovative web application that enables dynamic, interact
 
 ---
 
-### #23. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
+### #22. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
 
 Stars: 0 | Forks: 0 | Language: SCSS | 1 commits (90d)
 
@@ -572,6 +563,23 @@ Key Technical Highlights:
 **Dependencies**: 3 total (3 current, 0 outdated)
 
 **Created**: 2021-04-18
+**Last Modified**: 2026-01-12
+
+---
+
+### #23. [sql2csv](https://github.com/markhazleton/sql2csv)
+
+Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 1929 KB | 🚀 2.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Here's a comprehensive technical summary for the sql2csv repository:
+
+Sql2Csv is a versatile .NET 10 toolkit designed for comprehensive SQLite database exploration, analysis, and transformation, offering a multi-modal approach to database interaction through CLI, web UI, and core library components. The project enables users to discover SQLite database files, export table contents to CSV, generate schema reports, and automatically create C# data transfer objects (DTOs) from database schemas, providing a robust set of data migration and exploration tools. Built using modern .NET technologies with ASP.NET Core MVC, the solution incorporates a modular architecture featuring separate projects for console application, web interface, core services, testing, and performance benchmarking, which demonstrates a clean separation of concerns and extensible design. Key technologies include .NET 10, SQLite, BenchmarkDotNet, and MSTest, with additional frontend support via Node.js and npm for web asset management. The toolkit is particularly valuable for developers, data analysts, and engineers who need flexible, scriptable utilities for SQLite database introspection, migration, and code generation, offering both command-line and web-based interfaces for enhanced usability across different workflow preferences. What distinguishes sql2csv is its comprehensive approach to database utility, providing not just data export capabilities but also schema analysis, code generation, and a user-friendly web interface, making it a Swiss Army knife for SQLite database manipulation.
+
+**Created**: 2017-11-06
 **Last Modified**: 2026-01-12
 
 ---
@@ -833,10 +841,10 @@ The project serves as an educational reference implementation for developers see
 
 ## Report Metadata
 
-- **Generation Time**: 1.7 seconds
+- **Generation Time**: 1.8 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 84,800
+- **Total AI Tokens**: 84,744
 - **Success Rate**: 100.0%
 
 ### Data Sources

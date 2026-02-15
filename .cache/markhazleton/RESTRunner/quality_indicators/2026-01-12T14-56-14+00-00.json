@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:57:09.949872+00:00",
+  "value": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "hash": "f8bd421a6107f95413c260085e1aab76549f2333c801fbe503cf14be9311b427",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "RESTRunner"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2026-01-12T14:56:14+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "RESTRunner",
+  "week": "2026-01-12T14-56-14+00-00"
+}

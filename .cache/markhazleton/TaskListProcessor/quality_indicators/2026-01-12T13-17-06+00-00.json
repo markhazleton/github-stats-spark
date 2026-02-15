@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:57:16.346669+00:00",
+  "value": {
+    "has_license": true,
+    "has_ci_cd": false,
+    "has_tests": true,
+    "has_docs": true
+  },
+  "hash": "8add542d4d99dfd630acefc2d0867edef4f573b2ae41a91a541ee480fa72c561",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TaskListProcessor"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2026-01-12T13:17:06+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "TaskListProcessor",
+  "week": "2026-01-12T13-17-06+00-00"
+}

@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-15T16:57:13.105598+00:00",
+  "value": {
+    "has_license": false,
+    "has_ci_cd": true,
+    "has_tests": true,
+    "has_docs": false
+  },
+  "hash": "40bdb5d6cb533a862826b3a353c723df521ce8511a571b27f7bb4771f996aec8",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SupportSpark"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2026-02-14T13:14:31+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "SupportSpark",
+  "week": "2026-02-14T13-14-31+00-00"
+}
