@@ -155,6 +155,9 @@ config/local.yml
 config/*.local.yml
 .spark.yml
 
+# Local runner script with embedded tokens (NEVER COMMIT)
+run-spark-local.ps1
+
 # GitHub Personal Access Tokens (NEVER COMMIT)
 .token
 *.token
