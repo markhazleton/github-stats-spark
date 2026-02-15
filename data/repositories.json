@@ -4,19 +4,19 @@
     "total_repositories": 36,
     "total_stars": 17,
     "total_forks": 7,
-    "total_commits": 3392
+    "total_commits": 3393
   },
   "repositories": [
     {
       "name": "github-stats-spark",
       "description": "A GitHub Stats for Profile README.md",
       "summary": {
-        "text": "Based on the detailed README and repository overview, here's a comprehensive technical summary:\n\nStats Spark is an advanced GitHub analytics and visualization platform designed to transform raw GitHub activity data into actionable insights and professional visualizations. The project leverages Python, JavaScript, and AI technologies to generate comprehensive repository analyses, featuring automated SVG profile statistics, AI-powered technical summaries, and an interactive mobile-first dashboard. Key technical innovations include a sophisticated repository ranking algorithm, intelligent caching mechanisms, and integration with Claude Haiku for generating high-quality repository analyses, with a focus on providing developers and technical leaders with deep insights into their GitHub ecosystem.\n\nKey Technical Highlights:\n- Language/Framework Ecosystem: Python (primary), JavaScript, CSS\n- Core Technologies: PyGithub, AI summarization, SVG generation\n- Key Features:\n  1. Automated daily GitHub profile statistics generation\n  2. AI-powered repository technical analysis\n  3. Interactive, mobile-optimized visualization dashboard\n  4. Intelligent caching and API rate limit management\n\nArchitectural Approach:\n- Modular design with extensible configuration via YAML\n- Microservice-like architecture separating data retrieval, analysis, and visualization\n- Strong emphasis on performance (sub-3 minute analysis for 50+ repositories)\n- Comprehensive error handling and intelligent retry mechanisms\n\nUnique Value Propositions:\n- 97%+ accurate AI-generated repository summaries\n- Proprietary \"Spark Score\" measuring developer activity\n- Enterprise-grade analytics with minimal maintenance overhead\n- Accessibility-focused design (WCAG 2.1 AA compliance)\n\nTarget Users:\n- Individual developers showcasing portfolio\n- Technical leaders analyzing team productivity\n- Open-source maintainers tracking project momentum\n- Engineering managers seeking comprehensive GitHub insights\n\nThe project stands out through its comprehensive, automated approach to GitHub analytics, combining cutting-edge AI, performance optimization, and user-centric design to provide unprecedented insights into developer and repository performance.",
+        "text": "Here's a detailed technical summary of the github-stats-spark repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis and interactive reporting. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude Haiku AI for intelligent repository analysis, creating a multi-dimensional statistical and visual representation of GitHub activity.\n\nKey technical highlights include:\n- Advanced data collection and processing pipeline using GitHub API\n- Automated SVG generation for profile statistics across multiple categories\n- AI-powered repository analysis with intelligent ranking algorithms\n- Interactive, mobile-optimized dashboard with responsive design\n- Comprehensive caching and rate limit management strategies\n\nThe architecture emphasizes modularity, performance, and extensibility, with a focus on delivering actionable insights through machine learning-enhanced metadata extraction and visualization. The system generates a unique \"Spark Score\" metric that combines contribution consistency, volume, and collaboration patterns, offering developers and technical leaders a holistic view of coding activities and repository health.\n\nArchitecturally, the project implements several sophisticated design patterns:\n- Modular configuration via YAML\n- Intelligent caching with exponential backoff\n- AI-assisted metadata extraction\n- Comprehensive error handling\n- Automated GitHub Actions workflow for continuous updates\n\nThe repository targets developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub activities, with a strong emphasis on automated, low-maintenance reporting and visualization.\n\nUnique differentiators include the AI-generated technical summaries, the comprehensive \"Spark Score\" metric, and the highly customizable, performance-optimized visualization and reporting system.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-02-15T10:43:38.560481",
+        "generated_at": "2026-02-15T16:59:25.024064",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2644,
+        "tokens_used": 2592,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/github-stats-spark",
@@ -31,27 +31,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-02-15T16:41:45+00:00",
-      "pushed_at": "2026-02-15T16:41:42+00:00",
-      "total_commits": 153,
-      "recent_commits_90d": 153,
+      "updated_at": "2026-02-15T16:58:47+00:00",
+      "pushed_at": "2026-02-15T16:58:43+00:00",
+      "total_commits": 154,
+      "recent_commits_90d": 154,
       "first_commit_date": "2025-12-28T17:01:51+00:00",
-      "last_commit_date": "2026-02-15T16:41:39+00:00",
+      "last_commit_date": "2026-02-15T16:58:40+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 153,
-        "recent_90d": 153,
-        "recent_180d": 153,
-        "recent_365d": 153,
-        "last_commit_date": "2026-02-15T16:41:39+00:00",
+        "total_commits": 154,
+        "recent_90d": 154,
+        "recent_180d": 154,
+        "recent_365d": 154,
+        "last_commit_date": "2026-02-15T16:58:40+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 51.0,
+        "commit_frequency": 51.33,
         "consistency_score": 0,
-        "activity_rate": 1.7,
+        "activity_rate": 1.711,
         "days_since_last_commit": 0,
         "first_commit_date": "2025-12-28T17:01:51+00:00"
       },
@@ -59,7 +59,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 51.0,
+      "commit_velocity": 51.33,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -177,13 +177,13 @@
       "is_archived": false,
       "age_days": 48,
       "days_since_last_push": 0,
-      "ai_summary": "Based on the detailed README and repository overview, here's a comprehensive technical summary:\n\nStats Spark is an advanced GitHub analytics and visualization platform designed to transform raw GitHub activity data into actionable insights and professional visualizations. The project leverages Python, JavaScript, and AI technologies to generate comprehensive repository analyses, featuring automated SVG profile statistics, AI-powered technical summaries, and an interactive mobile-first dashboard. Key technical innovations include a sophisticated repository ranking algorithm, intelligent caching mechanisms, and integration with Claude Haiku for generating high-quality repository analyses, with a focus on providing developers and technical leaders with deep insights into their GitHub ecosystem.\n\nKey Technical Highlights:\n- Language/Framework Ecosystem: Python (primary), JavaScript, CSS\n- Core Technologies: PyGithub, AI summarization, SVG generation\n- Key Features:\n  1. Automated daily GitHub profile statistics generation\n  2. AI-powered repository technical analysis\n  3. Interactive, mobile-optimized visualization dashboard\n  4. Intelligent caching and API rate limit management\n\nArchitectural Approach:\n- Modular design with extensible configuration via YAML\n- Microservice-like architecture separating data retrieval, analysis, and visualization\n- Strong emphasis on performance (sub-3 minute analysis for 50+ repositories)\n- Comprehensive error handling and intelligent retry mechanisms\n\nUnique Value Propositions:\n- 97%+ accurate AI-generated repository summaries\n- Proprietary \"Spark Score\" measuring developer activity\n- Enterprise-grade analytics with minimal maintenance overhead\n- Accessibility-focused design (WCAG 2.1 AA compliance)\n\nTarget Users:\n- Individual developers showcasing portfolio\n- Technical leaders analyzing team productivity\n- Open-source maintainers tracking project momentum\n- Engineering managers seeking comprehensive GitHub insights\n\nThe project stands out through its comprehensive, automated approach to GitHub analytics, combining cutting-edge AI, performance optimization, and user-centric design to provide unprecedented insights into developer and repository performance.",
+      "ai_summary": "Here's a detailed technical summary of the github-stats-spark repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis and interactive reporting. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude Haiku AI for intelligent repository analysis, creating a multi-dimensional statistical and visual representation of GitHub activity.\n\nKey technical highlights include:\n- Advanced data collection and processing pipeline using GitHub API\n- Automated SVG generation for profile statistics across multiple categories\n- AI-powered repository analysis with intelligent ranking algorithms\n- Interactive, mobile-optimized dashboard with responsive design\n- Comprehensive caching and rate limit management strategies\n\nThe architecture emphasizes modularity, performance, and extensibility, with a focus on delivering actionable insights through machine learning-enhanced metadata extraction and visualization. The system generates a unique \"Spark Score\" metric that combines contribution consistency, volume, and collaboration patterns, offering developers and technical leaders a holistic view of coding activities and repository health.\n\nArchitecturally, the project implements several sophisticated design patterns:\n- Modular configuration via YAML\n- Intelligent caching with exponential backoff\n- AI-assisted metadata extraction\n- Comprehensive error handling\n- Automated GitHub Actions workflow for continuous updates\n\nThe repository targets developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub activities, with a strong emphasis on automated, low-maintenance reporting and visualization.\n\nUnique differentiators include the AI-generated technical summaries, the comprehensive \"Spark Score\" metric, and the highly customizable, performance-optimized visualization and reporting system.",
       "rank": 1,
       "composite_score": 88.05,
       "screenshot": {
         "path": "output/screenshots/github-stats-spark.png",
         "url": "https://markhazleton.github.io/github-stats-spark/",
-        "captured_at": "2026-01-31T15:54:30.888899+00:00",
+        "captured_at": "2026-02-15T16:58:51.568555+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 58.49
@@ -806,7 +806,7 @@
       "screenshot": {
         "path": "output/screenshots/mark-hazleton-s-notes.png",
         "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
-        "captured_at": "2026-01-31T15:54:33.447004+00:00",
+        "captured_at": "2026-02-15T16:58:51.568555+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 101.38
@@ -954,7 +954,7 @@
       "screenshot": {
         "path": "output/screenshots/museumspark.png",
         "url": "https://markhazleton.github.io/MuseumSpark/",
-        "captured_at": "2026-01-31T15:54:38.836946+00:00",
+        "captured_at": "2026-02-15T16:58:51.569834+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 98.35
@@ -1216,7 +1216,7 @@
       "screenshot": {
         "path": "output/screenshots/git-spark.png",
         "url": "https://markhazleton.github.io/git-spark/",
-        "captured_at": "2026-01-31T15:54:35.186402+00:00",
+        "captured_at": "2026-02-15T16:58:51.567111+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 184.79
@@ -1293,7 +1293,7 @@
       "screenshot": {
         "path": "output/screenshots/webspark.httpclientutility.png",
         "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-        "captured_at": "2026-01-31T15:54:37.002048+00:00",
+        "captured_at": "2026-02-15T16:58:51.572834+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 42.24
@@ -1725,7 +1725,7 @@
       "screenshot": {
         "path": "output/screenshots/jsbootspark.png",
         "url": "https://markhazleton.github.io/JsBootSpark/",
-        "captured_at": "2026-01-31T15:54:40.719385+00:00",
+        "captured_at": "2026-02-15T16:58:51.568555+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.46
@@ -2713,7 +2713,7 @@
       "screenshot": {
         "path": "output/screenshots/texecon.png",
         "url": "https://markhazleton.github.io/Texecon/",
-        "captured_at": "2026-01-31T16:06:40.550633+00:00",
+        "captured_at": "2026-02-15T16:58:51.572834+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 458.92
@@ -3129,7 +3129,7 @@
       "screenshot": {
         "path": "output/screenshots/reactsparkportfolio.png",
         "url": "https://reactspark.markhazleton.com/",
-        "captured_at": "2026-01-31T16:06:38.181278+00:00",
+        "captured_at": "2026-02-15T16:58:51.570834+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 69.18
@@ -3704,7 +3704,7 @@
       "screenshot": {
         "path": "output/screenshots/mechanicsofmotherhood.png",
         "url": "http://mechanicsofmotherhood.com/",
-        "captured_at": "2026-01-31T16:06:34.852258+00:00",
+        "captured_at": "2026-02-15T16:58:51.569834+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 277.22
@@ -5227,7 +5227,7 @@
       "screenshot": {
         "path": "output/screenshots/markhazleton.github.io.png",
         "url": "https://markhazleton.github.io/",
-        "captured_at": "2026-01-31T16:06:44.163666+00:00",
+        "captured_at": "2026-02-15T16:58:51.568834+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 59.36
@@ -6213,7 +6213,7 @@
       "screenshot": {
         "path": "output/screenshots/react-native-web-start.png",
         "url": "https://markhazleton.github.io/react-native-web-start/",
-        "captured_at": "2026-01-31T16:06:42.397261+00:00",
+        "captured_at": "2026-02-15T16:58:51.570834+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.8
@@ -7190,7 +7190,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-02-15T16:57:34.420038+00:00",
+    "generated_at": "2026-02-15T16:59:25.590050+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }
