@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-15T00:47:21.819063+00:00",
+  "value": {
+    "total": 123,
+    "recent_90d": 15,
+    "recent_180d": 24,
+    "recent_365d": 37,
+    "last_commit_date": "2026-02-10T04:32:26+00:00"
+  },
+  "hash": "f6c3c6015fe6f18c5e4a90519e87d5265a6304b3edc2ade42983c52102ec7d5c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "AsyncSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-02-10T04:32:31+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "AsyncSpark",
+  "week": "2026-02-10T04-32-31+00-00"
+}

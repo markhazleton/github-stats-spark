@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-15T00:49:56.567154+00:00",
+  "value": {
+    "total": 95,
+    "recent_90d": 5,
+    "recent_180d": 54,
+    "recent_365d": 95,
+    "last_commit_date": "2026-02-10T05:52:12+00:00"
+  },
+  "hash": "c6b1c520674a9df4b4bcec4366dc6273c25c82981b094a7d8fdd4bc3e66aeaee",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TailwindSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-02-10T05:52:16+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "TailwindSpark",
+  "week": "2026-02-10T05-52-16+00-00"
+}

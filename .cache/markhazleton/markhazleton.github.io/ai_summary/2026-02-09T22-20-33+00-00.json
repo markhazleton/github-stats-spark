@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-15T00:48:51.117750+00:00",
+  "value": {
+    "ai_summary": "Technical Summary:\n\nThis is a personal Jekyll-powered static website repository designed for Mark Hazleton, serving as a professional blog and portfolio platform hosted on GitHub Pages. The site leverages a customized Minima theme with modern web development practices, featuring sophisticated Jekyll configuration, comprehensive post management guidelines, and a robust development workflow that supports dark/light mode, emoji integration, and responsive design without relying on external frameworks. Technically constructed using Ruby (3.2.2+), Jekyll (3.10.0), and SCSS, the project demonstrates a professional approach to static site generation with extensive documentation covering local development setup, post creation guidelines, SEO optimization strategies, and automated deployment via GitHub Actions. The repository stands out for its meticulous attention to developer experience, offering detailed instructions for setup across multiple operating systems and providing a structured, maintainable approach to content management that emphasizes best practices in web publishing and technical communication.\n\nKey Technical Highlights:\n- Static site generator: Jekyll\n- Primary languages: Ruby, SCSS, HTML\n- Hosting: GitHub Pages\n- Deployment: GitHub Actions\n- Responsive design with custom theming\n- Comprehensive developer documentation\n- SEO and content management best practices",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-02-15T00:48:51.117659",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2870,
+    "confidence_score": 90
+  },
+  "hash": "104324300a3fe876138e51150a6347c468da865d9729905f2bc1058e3a74c925",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton.github.io"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-09T22:20:33+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "markhazleton.github.io",
+  "week": "2026-02-09T22-20-33+00-00"
+}

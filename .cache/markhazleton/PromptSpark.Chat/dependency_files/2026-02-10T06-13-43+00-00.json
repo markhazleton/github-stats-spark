@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-15T00:49:14.997033+00:00",
+  "value": {},
+  "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "PromptSpark.Chat"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-02-10T06:13:43+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "PromptSpark.Chat",
+  "week": "2026-02-10T06-13-43+00-00"
+}

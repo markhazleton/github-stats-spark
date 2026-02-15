@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-15T00:48:06.464745+00:00",
+  "value": {
+    "JavaScript": 438208,
+    "EJS": 138788,
+    "PowerShell": 64457,
+    "SCSS": 12520,
+    "TypeScript": 1367,
+    "Dockerfile": 888
+  },
+  "hash": "6a0348693db3a161b5db1cf3bfeb47f169f71ec495f69818fe3e9cb9e9917501",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "JsBootSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-14T12:49:36+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "JsBootSpark",
+  "week": "2026-02-14T12-49-36+00-00"
+}

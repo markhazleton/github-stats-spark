@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-15T00:49:40.520895+00:00",
+  "value": {
+    "TypeScript": 362058,
+    "PowerShell": 91222,
+    "CSS": 3922,
+    "JavaScript": 2429,
+    "HTML": 1914
+  },
+  "hash": "b0fed43f1f63be03691119d7f6e7ae145fac5c1f33927461c73b082db30c41d6",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SupportSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-14T13:14:31+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "SupportSpark",
+  "week": "2026-02-14T13-14-31+00-00"
+}

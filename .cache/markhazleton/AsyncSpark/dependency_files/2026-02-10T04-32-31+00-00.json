@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-02-15T00:47:28.202512+00:00",
+  "value": {},
+  "hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "AsyncSpark"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-02-10T04:32:31+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "AsyncSpark",
+  "week": "2026-02-10T04-32-31+00-00"
+}

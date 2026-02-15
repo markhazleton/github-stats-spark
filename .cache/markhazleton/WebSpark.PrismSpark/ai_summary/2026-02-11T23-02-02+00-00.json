@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-15T00:50:53.680575+00:00",
+  "value": {
+    "ai_summary": "WebSpark.PrismSpark is a high-performance, extensible C# and .NET library for syntax highlighting, inspired by the popular PrismJS JavaScript library, designed to provide advanced code tokenization and rendering across 24 programming languages. The library offers a comprehensive syntax highlighting solution with a robust plugin system, theme generation, and extensive customization options, leveraging .NET 10.0's capabilities and providing deep integration with ASP.NET Web MVC through dependency injection and service registration. Its architecture emphasizes performance, extensibility, and developer experience, featuring async processing, caching mechanisms, context-aware highlighting, and a flexible hook and plugin system that allows developers to extend and customize syntax highlighting behaviors dynamically. The project stands out by offering a feature-rich, type-safe alternative to JavaScript-based syntax highlighters, with built-in support for line numbering, copy-to-clipboard functionality, theming, and advanced rendering options that cater to developers working in .NET ecosystems who require sophisticated code presentation capabilities. Targeting web developers, documentation authors, and technical content creators, WebSpark.PrismSpark provides a powerful, native .NET solution for transforming raw code into beautifully formatted, semantically highlighted representations across multiple programming languages.",
+    "generation_method": "claude-3-5-haiku-20241022",
+    "generation_timestamp": "2026-02-15T00:50:53.680498",
+    "model_used": "claude-3-5-haiku-20241022",
+    "tokens_used": 2397,
+    "confidence_score": 90
+  },
+  "hash": "1c99addf852eb21f135eccc9136b5049bbcb142a533bb54bbb9cda5c10d30d98",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.PrismSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-11T23:02:02+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebSpark.PrismSpark",
+  "week": "2026-02-11T23-02-02+00-00"
+}

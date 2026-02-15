@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-02-15T00:48:44.106390+00:00",
+  "value": {
+    "Gemfile": "source \"https://rubygems.org\"\nruby RUBY_VERSION\n\n# Use the GitHub Pages gem for compatibility with GitHub Pages\ngem \"github-pages\", group: :jekyll_plugins\ngem \"faraday-retry\"\n\n# Windows-specific gems for better performance\nplatforms :mingw, :x64_mingw, :mswin do\n  gem \"wdm\", \"~> 0.1.1\"\nend\n"
+  },
+  "hash": "687b75c1d90e758ed4b0e3012c001f4417e55ef5544683e7e22e7b779183324e",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton.github.io"
+    },
+    "category": "dependency_files",
+    "pushed_at": "2026-02-09T22:20:33+00:00",
+    "ttl_enforced": false
+  },
+  "category": "dependency_files",
+  "owner": "markhazleton",
+  "repo": "markhazleton.github.io",
+  "week": "2026-02-09T22-20-33+00-00"
+}
