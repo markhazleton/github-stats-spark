@@ -4,19 +4,19 @@
     "total_repositories": 36,
     "total_stars": 17,
     "total_forks": 7,
-    "total_commits": 3393
+    "total_commits": 3395
   },
   "repositories": [
     {
       "name": "github-stats-spark",
       "description": "A GitHub Stats for Profile README.md",
       "summary": {
-        "text": "Here's a detailed technical summary of the github-stats-spark repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis and interactive reporting. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude Haiku AI for intelligent repository analysis, creating a multi-dimensional statistical and visual representation of GitHub activity.\n\nKey technical highlights include:\n- Advanced data collection and processing pipeline using GitHub API\n- Automated SVG generation for profile statistics across multiple categories\n- AI-powered repository analysis with intelligent ranking algorithms\n- Interactive, mobile-optimized dashboard with responsive design\n- Comprehensive caching and rate limit management strategies\n\nThe architecture emphasizes modularity, performance, and extensibility, with a focus on delivering actionable insights through machine learning-enhanced metadata extraction and visualization. The system generates a unique \"Spark Score\" metric that combines contribution consistency, volume, and collaboration patterns, offering developers and technical leaders a holistic view of coding activities and repository health.\n\nArchitecturally, the project implements several sophisticated design patterns:\n- Modular configuration via YAML\n- Intelligent caching with exponential backoff\n- AI-assisted metadata extraction\n- Comprehensive error handling\n- Automated GitHub Actions workflow for continuous updates\n\nThe repository targets developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub activities, with a strong emphasis on automated, low-maintenance reporting and visualization.\n\nUnique differentiators include the AI-generated technical summaries, the comprehensive \"Spark Score\" metric, and the highly customizable, performance-optimized visualization and reporting system.",
+        "text": "Here's a detailed technical summary of the GitHub repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis and interactive visualizations. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for SVG generation, and AI services (Claude Haiku) for intelligent repository analysis. \n\nThe platform offers a multi-dimensional approach to GitHub profile analytics, featuring:\n1. Automated SVG profile statistics generation with a unique \"Spark Score\" metric\n2. AI-powered repository analysis with intelligent ranking algorithms\n3. Interactive, mobile-first dashboard for exploring GitHub activity\n4. Comprehensive markdown reports with technical repository summaries\n\nArchitecturally, the project demonstrates several advanced software engineering principles:\n- Modular design with extensible configuration via YAML\n- Intelligent caching and API rate limit management\n- Performance optimization for large-scale repository analysis\n- Accessibility and responsive design considerations\n\nKey technical innovations include:\n- A composite scoring algorithm for repository ranking\n- Automated daily updates through GitHub Actions\n- Intelligent AI-powered technical summarization\n- Comprehensive visualization of coding patterns and activity\n\nThe project targets developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub performance, making complex repository analytics accessible and visually engaging.\n\nUnique differentiators include the AI-generated summaries, the multi-dimensional \"Spark Score\", and the comprehensive approach to visualizing developer activity across multiple dimensions.",
         "ai_generated": true,
         "generation_method": "claude-3-5-haiku-20241022",
-        "generated_at": "2026-02-15T16:59:25.024064",
+        "generated_at": "2026-02-15T18:26:24.002276",
         "model_used": "claude-3-5-haiku-20241022",
-        "tokens_used": 2592,
+        "tokens_used": 2556,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/github-stats-spark",
@@ -31,27 +31,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-02-15T16:58:47+00:00",
-      "pushed_at": "2026-02-15T16:58:43+00:00",
-      "total_commits": 154,
-      "recent_commits_90d": 154,
+      "updated_at": "2026-02-15T18:25:40+00:00",
+      "pushed_at": "2026-02-15T18:25:37+00:00",
+      "total_commits": 156,
+      "recent_commits_90d": 156,
       "first_commit_date": "2025-12-28T17:01:51+00:00",
-      "last_commit_date": "2026-02-15T16:58:40+00:00",
+      "last_commit_date": "2026-02-15T18:25:33+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 154,
-        "recent_90d": 154,
-        "recent_180d": 154,
-        "recent_365d": 154,
-        "last_commit_date": "2026-02-15T16:58:40+00:00",
+        "total_commits": 156,
+        "recent_90d": 156,
+        "recent_180d": 156,
+        "recent_365d": 156,
+        "last_commit_date": "2026-02-15T18:25:33+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 51.33,
+        "commit_frequency": 52.0,
         "consistency_score": 0,
-        "activity_rate": 1.711,
+        "activity_rate": 1.733,
         "days_since_last_commit": 0,
         "first_commit_date": "2025-12-28T17:01:51+00:00"
       },
@@ -59,7 +59,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 51.33,
+      "commit_velocity": 52.0,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -171,19 +171,19 @@
       "has_tests": true,
       "has_docs": true,
       "language_count": 5,
-      "size_kb": 10356,
+      "size_kb": 10421,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 48,
+      "age_days": 49,
       "days_since_last_push": 0,
-      "ai_summary": "Here's a detailed technical summary of the github-stats-spark repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis and interactive reporting. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for visualization generation, and Claude Haiku AI for intelligent repository analysis, creating a multi-dimensional statistical and visual representation of GitHub activity.\n\nKey technical highlights include:\n- Advanced data collection and processing pipeline using GitHub API\n- Automated SVG generation for profile statistics across multiple categories\n- AI-powered repository analysis with intelligent ranking algorithms\n- Interactive, mobile-optimized dashboard with responsive design\n- Comprehensive caching and rate limit management strategies\n\nThe architecture emphasizes modularity, performance, and extensibility, with a focus on delivering actionable insights through machine learning-enhanced metadata extraction and visualization. The system generates a unique \"Spark Score\" metric that combines contribution consistency, volume, and collaboration patterns, offering developers and technical leaders a holistic view of coding activities and repository health.\n\nArchitecturally, the project implements several sophisticated design patterns:\n- Modular configuration via YAML\n- Intelligent caching with exponential backoff\n- AI-assisted metadata extraction\n- Comprehensive error handling\n- Automated GitHub Actions workflow for continuous updates\n\nThe repository targets developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub activities, with a strong emphasis on automated, low-maintenance reporting and visualization.\n\nUnique differentiators include the AI-generated technical summaries, the comprehensive \"Spark Score\" metric, and the highly customizable, performance-optimized visualization and reporting system.",
+      "ai_summary": "Here's a detailed technical summary of the GitHub repository:\n\nStats Spark is a sophisticated GitHub analytics and visualization platform designed to provide comprehensive insights into developer and repository performance through automated, AI-powered analysis and interactive visualizations. The project leverages Python as its primary language, integrating multiple technologies like PyGithub for GitHub data retrieval, svgwrite for SVG generation, and AI services (Claude Haiku) for intelligent repository analysis. \n\nThe platform offers a multi-dimensional approach to GitHub profile analytics, featuring:\n1. Automated SVG profile statistics generation with a unique \"Spark Score\" metric\n2. AI-powered repository analysis with intelligent ranking algorithms\n3. Interactive, mobile-first dashboard for exploring GitHub activity\n4. Comprehensive markdown reports with technical repository summaries\n\nArchitecturally, the project demonstrates several advanced software engineering principles:\n- Modular design with extensible configuration via YAML\n- Intelligent caching and API rate limit management\n- Performance optimization for large-scale repository analysis\n- Accessibility and responsive design considerations\n\nKey technical innovations include:\n- A composite scoring algorithm for repository ranking\n- Automated daily updates through GitHub Actions\n- Intelligent AI-powered technical summarization\n- Comprehensive visualization of coding patterns and activity\n\nThe project targets developers, technical leaders, and open-source maintainers seeking data-driven insights into GitHub performance, making complex repository analytics accessible and visually engaging.\n\nUnique differentiators include the AI-generated summaries, the multi-dimensional \"Spark Score\", and the comprehensive approach to visualizing developer activity across multiple dimensions.",
       "rank": 1,
-      "composite_score": 88.05,
+      "composite_score": 88.06,
       "screenshot": {
         "path": "output/screenshots/github-stats-spark.png",
         "url": "https://markhazleton.github.io/github-stats-spark/",
-        "captured_at": "2026-02-15T16:58:51.568555+00:00",
+        "captured_at": "2026-02-15T18:25:45.991910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 58.49
@@ -794,7 +794,7 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 5,
-      "size_kb": 188170,
+      "size_kb": 190046,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
@@ -806,7 +806,7 @@
       "screenshot": {
         "path": "output/screenshots/mark-hazleton-s-notes.png",
         "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
-        "captured_at": "2026-02-15T16:58:51.568555+00:00",
+        "captured_at": "2026-02-15T18:25:45.992910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 101.38
@@ -954,7 +954,7 @@
       "screenshot": {
         "path": "output/screenshots/museumspark.png",
         "url": "https://markhazleton.github.io/MuseumSpark/",
-        "captured_at": "2026-02-15T16:58:51.569834+00:00",
+        "captured_at": "2026-02-15T18:25:45.994910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 98.35
@@ -1216,7 +1216,7 @@
       "screenshot": {
         "path": "output/screenshots/git-spark.png",
         "url": "https://markhazleton.github.io/git-spark/",
-        "captured_at": "2026-02-15T16:58:51.567111+00:00",
+        "captured_at": "2026-02-15T18:25:45.991910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 184.79
@@ -1293,7 +1293,7 @@
       "screenshot": {
         "path": "output/screenshots/webspark.httpclientutility.png",
         "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-        "captured_at": "2026-02-15T16:58:51.572834+00:00",
+        "captured_at": "2026-02-15T18:25:45.997910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 42.24
@@ -1363,7 +1363,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 765,
+      "age_days": 766,
       "days_since_last_push": 17,
       "ai_summary": "Based on the detailed README and repository information, here's a comprehensive technical summary of WebSpark:\n\nWebSpark is an ambitious, modular web application suite built with .NET 9 and Bootstrap 5, focusing on creating specialized web tools across multiple domains including prompt management, recipe tracking, and quiz creation. The project stands out for its rigorous spec-driven development workflow, which implements a comprehensive SpecKit command system that guides feature development through systematic specification, planning, risk assessment, implementation, and review stages. The architecture is designed to be scalable and versatile, spanning seven distinct modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity) with a strong emphasis on modern web technologies and advanced SEO optimization.\n\nKey technical highlights include:\n- Advanced SEO optimization with comprehensive metadata management\n- Structured data implementation using Schema.org\n- Multi-engine webmaster tool integration\n- Performance monitoring with Web Vitals tracking\n- Automated risk assessment through the innovative `/speckit.critic` command\n- Strict branch protection and specification-driven development workflow\n\nThe project's unique selling point is its meticulous approach to feature development, leveraging automated tools to minimize technical debt, identify potential risks early, and ensure high-quality, production-ready code. By implementing a thorough specification and validation process, WebSpark aims to reduce implementation risks and maintain a high standard of software engineering practices.\n\nTechnologies used include:\n- Backend: .NET 9, ASP.NET Core MVC\n- Frontend: Bootstrap 5\n- Languages: C#, HTML, SCSS, JavaScript\n- Development Workflow: Custom SpecKit command system\n- SEO & Performance: Schema.org, Google Analytics 4, Application Insights\n\nThe repository demonstrates a sophisticated approach to web application development, combining modular design, comprehensive SEO strategies, and a robust development workflow that prioritizes quality and risk mitigation.",
       "rank": 7,
@@ -1725,7 +1725,7 @@
       "screenshot": {
         "path": "output/screenshots/jsbootspark.png",
         "url": "https://markhazleton.github.io/JsBootSpark/",
-        "captured_at": "2026-02-15T16:58:51.568555+00:00",
+        "captured_at": "2026-02-15T18:25:45.991910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.46
@@ -2222,7 +2222,7 @@
         "commit_frequency": 1.0,
         "consistency_score": 0,
         "activity_rate": 0.033,
-        "days_since_last_commit": 41,
+        "days_since_last_commit": 42,
         "first_commit_date": "2025-09-03T17:53:02+00:00"
       },
       "commit_metrics": null,
@@ -2705,7 +2705,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 164,
+      "age_days": 165,
       "days_since_last_push": 6,
       "ai_summary": "Technical Summary:\n\nTexEcon is a sophisticated static React application designed for comprehensive economic analysis of Texas, leveraging modern web development technologies to deliver high-performance, SEO-optimized content. The project utilizes React 19, TypeScript, and Vite to create a statically generated site with dynamic content fetching from a headless CMS (WebSpark), featuring advanced performance optimizations, progressive enhancement, and automated build pipelines. Its architecture emphasizes build-time content management, with intelligent caching, automatic type generation, and a robust deployment strategy targeting GitHub Pages with custom domain support. The application stands out through its focus on developer experience, using cutting-edge tools like Tailwind CSS, Radix UI, and shadcn/ui to create an accessible, performant web experience that dynamically presents economic insights and data visualizations. Primarily targeted at economists, policy researchers, and data analysts interested in Texas economic trends, the project represents a modern approach to content-driven web applications with a strong emphasis on technical excellence and scalable content delivery.",
       "rank": 12,
@@ -2713,7 +2713,7 @@
       "screenshot": {
         "path": "output/screenshots/texecon.png",
         "url": "https://markhazleton.github.io/Texecon/",
-        "captured_at": "2026-02-15T16:58:51.572834+00:00",
+        "captured_at": "2026-02-15T18:25:45.996910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 458.92
@@ -3129,7 +3129,7 @@
       "screenshot": {
         "path": "output/screenshots/reactsparkportfolio.png",
         "url": "https://reactspark.markhazleton.com/",
-        "captured_at": "2026-02-15T16:58:51.570834+00:00",
+        "captured_at": "2026-02-15T18:25:45.994910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 69.18
@@ -3704,7 +3704,7 @@
       "screenshot": {
         "path": "output/screenshots/mechanicsofmotherhood.png",
         "url": "http://mechanicsofmotherhood.com/",
-        "captured_at": "2026-02-15T16:58:51.569834+00:00",
+        "captured_at": "2026-02-15T18:25:45.993910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 277.22
@@ -5227,7 +5227,7 @@
       "screenshot": {
         "path": "output/screenshots/markhazleton.github.io.png",
         "url": "https://markhazleton.github.io/",
-        "captured_at": "2026-02-15T16:58:51.568834+00:00",
+        "captured_at": "2026-02-15T18:25:45.992910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 59.36
@@ -6205,7 +6205,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 203,
+      "age_days": 204,
       "days_since_last_push": 13,
       "ai_summary": "Here's a comprehensive technical summary for the react-native-web-start repository:\n\nReact Native Web Starter is a sophisticated, enterprise-grade cross-platform application development template designed to enable developers to build high-performance, type-safe applications that seamlessly deploy across web, iOS, and Android platforms using a unified codebase. Leveraging modern web technologies like React Native Web, Vite, and TypeScript, the project provides a comprehensive development ecosystem with robust features including responsive design, API integration, comprehensive testing infrastructure, and optimized build processes. The monorepo architecture supports modular development with dedicated packages for shared components, web, and mobile configurations, while integrating advanced tooling like Tailwind CSS, Sass preprocessing, and automated CI/CD workflows through GitHub Actions. Key differentiators include its strict TypeScript configuration, built-in documentation browser, performance optimization techniques like tree-shaking and code splitting, and comprehensive platform compatibility with responsive design principles. This starter template is particularly valuable for developers and organizations seeking to streamline cross-platform mobile and web application development with a focus on developer experience, code reusability, and scalable architectural patterns.\n\nWould you like me to elaborate on any specific aspect of this technical summary?",
       "rank": 29,
@@ -6213,7 +6213,7 @@
       "screenshot": {
         "path": "output/screenshots/react-native-web-start.png",
         "url": "https://markhazleton.github.io/react-native-web-start/",
-        "captured_at": "2026-02-15T16:58:51.570834+00:00",
+        "captured_at": "2026-02-15T18:25:45.994910+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.8
@@ -6419,7 +6419,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1088,
+      "age_days": 1089,
       "days_since_last_push": 75,
       "ai_summary": "Technical Summary for TriviaSpark:\n\nTriviaSpark is an experimental multiplayer web and mobile trivia game application developed with AI assistance, designed to provide an interactive and competitive trivia experience for tech-savvy users aged 18-95. The project is primarily built using C# with a web-based architecture, leveraging public Trivia APIs to dynamically generate question sets and enable real-time multiplayer interactions. Key planned features include user registration, a comprehensive leaderboard system, admin-level question database management, and a customizable user interface that supports both web and mobile platforms. The application appears to follow a modern, component-based development approach with potential use of .NET technologies for backend infrastructure and web frameworks for frontend rendering. What makes TriviaSpark unique is its explicit integration of AI in the development process, as highlighted by its README noting collaborative development with ChatGPT, which suggests an innovative approach to software design and potentially leveraging AI for dynamic content generation and user experience optimization. The project aims to create an engaging, knowledge-testing platform that combines competitive gameplay with accessible, technology-driven design.",
       "rank": 32,
@@ -7190,7 +7190,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-02-15T16:59:25.590050+00:00",
+    "generated_at": "2026-02-15T18:26:24.687173+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }
