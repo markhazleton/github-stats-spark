@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-22T00:46:14.897938+00:00",
+  "value": {
+    "has_license": false,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": true
+  },
+  "hash": "50ac44df033b70240a8f0e631007fe60ddd08b38fb8c3f1d698483a1c730a0af",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "Texecon"
+    },
+    "category": "quality_indicators",
+    "pushed_at": "2026-02-16T09:30:06+00:00",
+    "ttl_enforced": false
+  },
+  "category": "quality_indicators",
+  "owner": "markhazleton",
+  "repo": "Texecon",
+  "week": "2026-02-16T09-30-06+00-00"
+}

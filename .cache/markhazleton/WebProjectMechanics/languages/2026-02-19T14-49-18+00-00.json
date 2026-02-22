@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-02-22T00:46:40.093962+00:00",
+  "value": {
+    "Visual Basic .NET": 1446764,
+    "JavaScript": 591614,
+    "C#": 456799,
+    "XSLT": 410074,
+    "ASP.NET": 395414,
+    "CSS": 226364,
+    "HTML": 147942,
+    "PowerShell": 81504,
+    "Less": 6310,
+    "PHP": 4366
+  },
+  "hash": "6c81d95d5084837cd17e0dc101d16eb4db234313393f1ec247f122d9950f1f17",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebProjectMechanics"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-19T14:49:18+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "WebProjectMechanics",
+  "week": "2026-02-19T14-49-18+00-00"
+}
