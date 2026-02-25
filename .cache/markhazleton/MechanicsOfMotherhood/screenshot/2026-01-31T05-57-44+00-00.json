@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-01-31T16:06:34.852911+00:00",
+  "timestamp": "2026-02-25T20:17:54.731392+00:00",
   "value": {
     "path": "output\\screenshots\\mechanicsofmotherhood.png",
     "url": "http://mechanicsofmotherhood.com/",
-    "captured_at": "2026-01-31T16:06:34.852883+00:00",
+    "captured_at": "2026-02-25T20:17:54.731366+00:00",
     "width": 1280,
     "height": 720,
     "file_size_kb": 277.22
   },
-  "hash": "5de7f15c761cb8658aadd78688f17a3c70bb744082c3e8859667fd2257b453f8",
+  "hash": "337ae763d5c8d348a86f1e48e20782d04727730aef8115e7822d25a04ee82a6e",
   "metadata": {
     "repository": {
       "owner": "markhazleton",

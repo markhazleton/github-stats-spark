@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-25T20:16:48.417243+00:00",
+  "value": {
+    "Python": 540481,
+    "JavaScript": 272415,
+    "CSS": 129447,
+    "PowerShell": 88868,
+    "HTML": 17840
+  },
+  "hash": "7dfc603bf183f6701beb1e9bb624321055e24e398937a9120f101077dd7a35a5",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "github-stats-spark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-02-25T20:09:48+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "github-stats-spark",
+  "week": "2026-02-25T20-09-48+00-00"
+}

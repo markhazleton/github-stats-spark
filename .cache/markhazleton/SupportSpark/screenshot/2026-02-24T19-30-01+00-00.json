@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-25T20:17:19.500849+00:00",
+  "value": {
+    "path": "output\\screenshots\\supportspark.png",
+    "url": "https://markhazleton.github.io/SupportSpark/",
+    "captured_at": "2026-02-25T20:17:19.500810+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 139.77
+  },
+  "hash": "25926145aaa66e5410fa8e0af63c0cc2d118f3359e419bf33f67299f40c7dd10",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SupportSpark"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-02-24T19:30:01+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "SupportSpark",
+  "week": "2026-02-24T19-30-01+00-00"
+}

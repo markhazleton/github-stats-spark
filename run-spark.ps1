@@ -25,21 +25,39 @@
 .PARAMETER Verbose
     Enable verbose logging
     
+.PARAMETER Screenshots
+    Capture screenshots of repository websites using Playwright/Chromium.
+    Only captures repos that have a homepage or GitHub Pages URL set.
+    Uses cached screenshots when the repo has not changed since last capture.
+
+.PARAMETER MissingOnly
+    When combined with -Screenshots, skips repos that already have a
+    screenshot PNG in output\screenshots\. Useful for filling gaps
+    without re-capturing everything.
+
 .PARAMETER CheckOnly
     Only check environment and configuration (dry run)
-    
+
 .EXAMPLE
     .\run-spark.ps1 -User markhazleton
     Generate complete stats without AI summaries (fast)
-    
+
 .EXAMPLE
     .\run-spark.ps1 -User markhazleton -IncludeAI
     Generate complete stats with AI-powered summaries
-    
+
+.EXAMPLE
+    .\run-spark.ps1 -User markhazleton -Screenshots
+    Generate stats and capture missing/stale screenshots
+
+.EXAMPLE
+    .\run-spark.ps1 -User markhazleton -Screenshots -MissingOnly
+    Only capture screenshots for repos that have no PNG file yet
+
 .EXAMPLE
     .\run-spark.ps1 -User markhazleton -ClearCache -IncludeAI
     Fresh generation from scratch (clears all caches)
-    
+
 .EXAMPLE
     .\run-spark.ps1 -CheckOnly
     Verify environment setup and configuration
@@ -49,16 +67,22 @@
 param(
     [Parameter(Mandatory=$false)]
     [string]$User = "markhazleton",
-    
+
     [Parameter(Mandatory=$false)]
     [switch]$IncludeAI,
-    
+
     [Parameter(Mandatory=$false)]
     [switch]$ForceRefresh,
-    
+
     [Parameter(Mandatory=$false)]
     [switch]$ClearCache,
-    
+
+    [Parameter(Mandatory=$false)]
+    [switch]$Screenshots,
+
+    [Parameter(Mandatory=$false)]
+    [switch]$MissingOnly,
+
     [Parameter(Mandatory=$false)]
     [switch]$CheckOnly
 )
@@ -140,6 +164,38 @@ function Test-Environment {
         $allGood = $false
     }
     
+    # Check Playwright (optional - only needed for screenshots)
+    if ($Screenshots) {
+        Write-Host ""
+        $playwrightInstalled = python -c "import playwright; print('installed')" 2>$null
+        if ($playwrightInstalled -eq "installed") {
+            # Check that Chromium browser binary is present
+            $chromiumCheck = python -c "
+from playwright.sync_api import sync_playwright
+try:
+    p = sync_playwright().start()
+    b = p.chromium.launch(headless=True)
+    b.close()
+    p.stop()
+    print('ok')
+except Exception as e:
+    print('missing')
+" 2>$null
+            if ($chromiumCheck -eq "ok") {
+                Write-Success "Playwright Chromium ready"
+            } else {
+                Write-Warning "Playwright installed but Chromium not found - installing..."
+                playwright install chromium
+                Write-Success "Playwright Chromium installed"
+            }
+        } else {
+            Write-Warning "Playwright not installed - installing..."
+            pip install playwright | Out-Null
+            playwright install chromium
+            Write-Success "Playwright and Chromium installed"
+        }
+    }
+
     # Check ANTHROPIC_API_KEY (optional for AI summaries)
     if ($IncludeAI) {
         if ($env:ANTHROPIC_API_KEY) {
@@ -205,6 +261,10 @@ if ($ForceRefresh) {
     $cmdArgs += "--force-refresh"
 }
 
+if ($Screenshots) {
+    $cmdArgs += "--capture-screenshots"
+}
+
 if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
     $cmdArgs += "--verbose"
 }
@@ -220,10 +280,30 @@ if ($ClearCache) {
 # Execute unified pipeline
 Write-Header "Executing 4-Phase Pipeline"
 Write-Info "User: $User"
-Write-Info "AI Summaries: $(if ($IncludeAI) { 'Enabled' } else { 'Disabled' })"
+Write-Info "AI Summaries:  $(if ($IncludeAI) { 'Enabled' } else { 'Disabled' })"
+Write-Info "Screenshots:   $(if ($Screenshots) { 'Enabled' } else { 'Disabled' })"
+Write-Info "Missing Only:  $(if ($MissingOnly) { 'Yes (skip existing PNGs)' } else { 'No' })"
 Write-Info "Force Refresh: $(if ($ForceRefresh) { 'Yes' } else { 'No' })"
-Write-Info "Verbose Mode: $(if ($PSCmdlet.MyInvocation.BoundParameters['Verbose'].IsPresent) { 'Yes' } else { 'No' })"
+Write-Info "Verbose Mode:  $(if ($PSCmdlet.MyInvocation.BoundParameters['Verbose'].IsPresent) { 'Yes' } else { 'No' })"
 Write-Host ""
+
+# If MissingOnly, temporarily move existing screenshots aside so the pipeline
+# only sees repos without a file. After the run we restore them.
+$hiddenDir = $null
+if ($Screenshots -and $MissingOnly) {
+    $screenshotDir = "output\screenshots"
+    if (Test-Path $screenshotDir) {
+        $existingPngs = Get-ChildItem $screenshotDir -Filter "*.png" -ErrorAction SilentlyContinue
+        if ($existingPngs.Count -gt 0) {
+            $hiddenDir = "$screenshotDir\.missing-only-backup"
+            New-Item -ItemType Directory -Path $hiddenDir -Force | Out-Null
+            $existingPngs | Move-Item -Destination $hiddenDir -Force
+            Write-Info "MissingOnly: temporarily moved $($existingPngs.Count) existing PNGs aside"
+        } else {
+            Write-Info "MissingOnly: no existing PNGs found - will capture all"
+        }
+    }
+}
 
 $startTime = Get-Date
 
@@ -233,6 +313,21 @@ python -m spark.cli @cmdArgs
 $exitCode = $LASTEXITCODE
 $endTime = Get-Date
 $duration = $endTime - $startTime
+
+# Restore previously-existing screenshots (MissingOnly mode)
+if ($null -ne $hiddenDir -and (Test-Path $hiddenDir)) {
+    $backedUp = Get-ChildItem $hiddenDir -Filter "*.png" -ErrorAction SilentlyContinue
+    $screenshotDir = "output\screenshots"
+    foreach ($png in $backedUp) {
+        $dest = Join-Path $screenshotDir $png.Name
+        if (-not (Test-Path $dest)) {
+            # Newly captured file takes priority; only restore if not replaced
+            Move-Item $png.FullName -Destination $dest -Force
+        }
+    }
+    Remove-Item $hiddenDir -Recurse -Force -ErrorAction SilentlyContinue
+    Write-Info "MissingOnly: restored backed-up screenshots"
+}
 
 # Results summary
 Write-Host ""
@@ -268,13 +363,28 @@ if ($exitCode -eq 0) {
             Write-Success "Generated $reportCount markdown reports"
         }
     }
-    
+
+    if ($Screenshots -and (Test-Path "output\screenshots")) {
+        $pngCount   = (Get-ChildItem "output\screenshots" -Filter "*.png" -ErrorAction SilentlyContinue).Count
+        $totalSizeKB = [math]::Round(
+            (Get-ChildItem "output\screenshots" -Filter "*.png" -ErrorAction SilentlyContinue |
+             Measure-Object -Property Length -Sum).Sum / 1KB, 1)
+        Write-Success "Screenshots: $pngCount PNGs in output\screenshots\ ($totalSizeKB KB total)"
+    }
+
     Write-Host ""
     Write-Header "Next Steps"
     Write-Info "1. View data: data\repositories.json"
     Write-Info "2. View reports: output\reports\"
-    Write-Info "3. Build dashboard: cd frontend && npm run build"
-    Write-Info "4. Deploy: Copy docs\ to hosting platform"
+    if ($Screenshots) {
+        Write-Info "3. View screenshots: output\screenshots\"
+        Write-Info "4. Build dashboard: cd frontend && npm run build"
+        Write-Info "5. Deploy: Copy docs\ to hosting platform"
+    } else {
+        Write-Info "3. Capture screenshots: .\run-spark-local.ps1 -Screenshots"
+        Write-Info "4. Build dashboard: cd frontend && npm run build"
+        Write-Info "5. Deploy: Copy docs\ to hosting platform"
+    }
     
 } else {
     Write-Error "Pipeline failed with exit code: $exitCode"

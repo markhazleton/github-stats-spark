@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-25T20:17:11.429598+00:00",
+  "value": {
+    "path": "output\\screenshots\\git-spark.png",
+    "url": "https://markhazleton.github.io/git-spark/",
+    "captured_at": "2026-02-25T20:17:11.429570+00:00",
+    "width": 1280,
+    "height": 720,
+    "file_size_kb": 184.96
+  },
+  "hash": "44f066c680ad548d48082a024d9cf357d2920dff911183d6511d79dd7ad396b2",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "git-spark"
+    },
+    "category": "screenshot",
+    "pushed_at": "2026-02-20T23:15:32+00:00"
+  },
+  "category": "screenshot",
+  "owner": "markhazleton",
+  "repo": "git-spark",
+  "week": "2026-02-20T23-15-32+00-00"
+}
