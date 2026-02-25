@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useMemo } from "react";
+import React, { Suspense, lazy, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import StatCards from "./StatCards";
 import HealthChart from "./HealthChart";
@@ -57,11 +57,14 @@ export default function DashboardView({ repositories, profile, onRepoClick }) {
       }));
   }, [repositories]);
 
-  const handleChartClick = (data) => {
-    if (data?.fullData && onRepoClick) {
-      onRepoClick(data.fullData);
-    }
-  };
+  const handleChartClick = useCallback(
+    (data) => {
+      if (data?.fullData && onRepoClick) {
+        onRepoClick(data.fullData);
+      }
+    },
+    [onRepoClick],
+  );
 
   return (
     <div className="dashboard-panels">

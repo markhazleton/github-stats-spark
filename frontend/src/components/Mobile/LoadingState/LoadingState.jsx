@@ -28,8 +28,8 @@ export function LoadingState({
 
   if (variant === "spinner") {
     return (
-      <div className="loading-spinner-container">
-        <div className="loading-spinner" aria-label="Loading" />
+      <div className="loading-spinner-container" role="status" aria-busy="true" aria-label="Loading">
+        <div className="loading-spinner" />
       </div>
     );
   }
@@ -60,7 +60,7 @@ export function LoadingState({
     </div>
   ));
 
-  return <div className="loading-state-container">{items}</div>;
+  return <div className="loading-state-container" role="status" aria-busy="true" aria-label="Loading">{items}</div>;
 }
 
 LoadingState.propTypes = {

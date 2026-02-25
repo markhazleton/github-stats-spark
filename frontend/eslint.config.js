@@ -5,7 +5,19 @@ import globals from 'globals';
 
 export default [
   {
-    ignores: ['node_modules/', 'dist/', 'build/', 'coverage/', '*.min.js', '../docs/'],
+    ignores: [
+      'node_modules/',
+      'dist/',
+      'build/',
+      'coverage/',
+      '*.min.js',
+      '../docs/',
+      '.vite/',
+      '.vite-cache/',
+      '.eslintcache',
+      'htmlcov/',
+      '*.config.js',
+    ],
   },
   js.configs.recommended,
   {

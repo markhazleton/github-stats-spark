@@ -82,12 +82,27 @@ function App() {
     const cleanup = setupBackgroundSync(() => {
       console.log("[App] Data refreshed after coming online");
       addToast("Data refreshed successfully", "success", 3000);
-
-      // The useRepositoryData hook should handle this automatically
-      // No need to manually update state as the hook will refetch
     });
 
     return cleanup;
+  }, []);
+
+  // Listen for service worker update notifications
+  useEffect(() => {
+    const handleSwUpdate = (event) => {
+      const worker = event.detail?.worker;
+      addToast(
+        "A new version is available. Click to update.",
+        "info",
+        0, // 0 = persistent until dismissed
+      );
+      // Store the worker so the user can trigger the update on demand
+      window.__pendingSwWorker = worker;
+    };
+
+    window.addEventListener("sw-update-available", handleSwUpdate);
+    return () =>
+      window.removeEventListener("sw-update-available", handleSwUpdate);
   }, []);
 
   // View state management - initialize from URL hash or default to table

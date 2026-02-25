@@ -23,6 +23,9 @@ import "@/styles/global.css";
  * Register Service Worker for offline functionality
  */
 if ("serviceWorker" in navigator && !import.meta.env.DEV) {
+  // Guard against double-reload when controllerchange fires after SKIP_WAITING
+  let reloadPending = false;
+
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register(import.meta.env.BASE_URL + "sw.js", {
@@ -52,16 +55,14 @@ if ("serviceWorker" in navigator && !import.meta.env.DEV) {
                 newWorker.state === "installed" &&
                 navigator.serviceWorker.controller
               ) {
-                // New version available
+                // New version available — dispatch event so the UI can notify the user
+                // without blocking the main thread with window.confirm
                 console.log("[Service Worker] New version available");
-
-                // Show update notification
-                if (
-                  window.confirm("New version available! Reload to update?")
-                ) {
-                  newWorker.postMessage({ type: "SKIP_WAITING" });
-                  window.location.reload();
-                }
+                window.dispatchEvent(
+                  new CustomEvent("sw-update-available", {
+                    detail: { worker: newWorker },
+                  }),
+                );
               }
             });
           }
@@ -71,8 +72,10 @@ if ("serviceWorker" in navigator && !import.meta.env.DEV) {
         console.error("[Service Worker] Registration failed:", error);
       });
 
-    // Listen for controller change (SW activated)
+    // Reload once when the new SW takes control (triggered by SKIP_WAITING)
     navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (reloadPending) return; // prevent double-reload
+      reloadPending = true;
       console.log("[Service Worker] Controller changed, reloading page");
       window.location.reload();
     });

@@ -32,6 +32,7 @@ export default function LoadingState({
       style={{ padding: "var(--spacing-xl)", minHeight: "200px" }}
       role="status"
       aria-live="polite"
+      aria-busy="true"
     >
       <div className="loading" style={spinnerStyle} aria-label="Loading"></div>
       {message && (

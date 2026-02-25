@@ -551,7 +551,7 @@ Be informative and technical. Focus on giving readers a clear understanding of t
 
         return metadata
 
-    def get_usage_stats(self) -> Dict[str, any]:
+    def get_usage_stats(self) -> Dict[str, Any]:
         """Get API usage statistics including cache performance.
 
         Returns:

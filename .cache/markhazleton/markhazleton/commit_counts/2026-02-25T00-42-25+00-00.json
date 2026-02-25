@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-25T20:05:54.557558+00:00",
+  "value": {
+    "total": 146,
+    "recent_90d": 8,
+    "recent_180d": 15,
+    "recent_365d": 51,
+    "last_commit_date": "2026-02-25T00:42:25+00:00"
+  },
+  "hash": "3271f118c375f67e453fb84d0a82a38ac665b7de189b21ccea958e776974b9cf",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-02-25T00:42:25+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "markhazleton",
+  "week": "2026-02-25T00-42-25+00-00"
+}

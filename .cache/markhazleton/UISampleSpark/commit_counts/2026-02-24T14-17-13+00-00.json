@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-25T20:06:41.615661+00:00",
+  "value": {
+    "total": 646,
+    "recent_90d": 54,
+    "recent_180d": 74,
+    "recent_365d": 88,
+    "last_commit_date": "2026-02-08T12:55:52+00:00"
+  },
+  "hash": "98329216acff6a7df8e66a2228f573c3f02ee408ffab2ab4ae3b16d980c8d8aa",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "UISampleSpark"
+    },
+    "category": "commit_counts",
+    "pushed_at": "2026-02-24T14:17:13+00:00",
+    "ttl_enforced": false
+  },
+  "category": "commit_counts",
+  "owner": "markhazleton",
+  "repo": "UISampleSpark",
+  "week": "2026-02-24T14-17-13+00-00"
+}

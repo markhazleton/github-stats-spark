@@ -3,6 +3,22 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import fs from 'fs'
 
+// Plugin to stamp sw.js with a build-time cache version so the SW updates on every deploy
+const swVersionPlugin = () => {
+  const buildTimestamp = `v${Date.now()}`;
+  return {
+    name: 'sw-version',
+    writeBundle(options) {
+      const swPath = path.join(options.dir, 'sw.js');
+      if (fs.existsSync(swPath)) {
+        const content = fs.readFileSync(swPath, 'utf-8');
+        fs.writeFileSync(swPath, content.replace(/__SW_CACHE_VERSION__/g, buildTimestamp));
+        console.log(`✓ Service worker cache version stamped: ${buildTimestamp}`);
+      }
+    }
+  };
+};
+
 // Plugin to serve /data and /output directories in dev mode
 const serveDataPlugin = () => ({
   name: 'serve-data',
@@ -46,7 +62,8 @@ const serveDataPlugin = () => ({
 export default defineConfig({
   plugins: [
     react(),
-    serveDataPlugin()
+    serveDataPlugin(),
+    swVersionPlugin()
   ],
 
   // Base URL for GitHub Pages deployment

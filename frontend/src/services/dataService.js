@@ -88,11 +88,18 @@ export async function fetchDashboardData({
   }
 
   // Fetch from network
+  const FETCH_TIMEOUT_MS = 30_000; // 30 second timeout per attempt
   let lastError = null;
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
     try {
-      const response = await fetch(url, { cache: "no-store" });
+      const response = await fetch(url, {
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error(
@@ -132,10 +139,14 @@ export async function fetchDashboardData({
 
       return { ...data, _fromCache: false };
     } catch (error) {
-      lastError = error;
+      clearTimeout(timeoutId);
+      lastError =
+        error.name === "AbortError"
+          ? new Error(`Fetch timed out after ${FETCH_TIMEOUT_MS / 1000}s`)
+          : error;
       console.error(
         `Error fetching dashboard data (attempt ${attempt + 1}/${maxRetries + 1}):`,
-        error,
+        lastError,
       );
 
       // Don't retry on the last attempt

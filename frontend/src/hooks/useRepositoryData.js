@@ -47,7 +47,7 @@ export default function useRepositoryData() {
     } catch (err) {
       console.error("Error in useRepositoryData:", err);
       setError(err);
-      throw err;
+      // Do not re-throw: error state is set above; callers check the error return value
     } finally {
       setLoading(false);
     }

@@ -9,7 +9,7 @@ This module implements the ranking algorithm specified in research.md:
 
 import math
 from datetime import datetime
-from typing import List, Dict, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 from spark.models.repository import Repository
 from spark.models.commit import CommitHistory
@@ -334,7 +334,7 @@ class RepositoryRanker:
 
     def get_ranking_breakdown(
         self, repo: Repository, commit_history: CommitHistory
-    ) -> Dict[str, any]:
+    ) -> Dict[str, Any]:
         """Get detailed scoring breakdown for a repository.
 
         Useful for debugging and transparency.
