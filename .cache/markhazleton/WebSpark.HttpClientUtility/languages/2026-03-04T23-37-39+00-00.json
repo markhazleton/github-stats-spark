@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-07T15:03:59.617644+00:00",
+  "value": {
+    "C#": 576181,
+    "HTML": 132556,
+    "PowerShell": 48352,
+    "CSS": 13306,
+    "JavaScript": 12494,
+    "Nunjucks": 3865
+  },
+  "hash": "b454674e65f5132b7685fea0b3a584402eba43654debb52b42d2d3e5efcf245e",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebSpark.HttpClientUtility"
+    },
+    "category": "languages",
+    "pushed_at": "2026-03-04T23:37:39+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "WebSpark.HttpClientUtility",
+  "week": "2026-03-04T23-37-39+00-00"
+}

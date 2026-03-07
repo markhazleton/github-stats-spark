@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-03-07T15:03:25.599233+00:00",
+  "value": {
+    "HTML": 1058570,
+    "TypeScript": 649492,
+    "PowerShell": 81519,
+    "JavaScript": 31750,
+    "CSS": 13699,
+    "Shell": 345,
+    "Batchfile": 308
+  },
+  "hash": "0c9688f7e5d7c3c5b2695c2707f1a61c1decf06c5972ab3c158aaf60794616a9",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "TailwindSpark"
+    },
+    "category": "languages",
+    "pushed_at": "2026-03-07T14:05:39+00:00",
+    "ttl_enforced": false
+  },
+  "category": "languages",
+  "owner": "markhazleton",
+  "repo": "TailwindSpark",
+  "week": "2026-03-07T14-05-39+00-00"
+}
