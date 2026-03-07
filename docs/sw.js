@@ -6,8 +6,8 @@
 // GitHub Pages base path
 const BASE_PATH = '/github-stats-spark/';
 
-// Service Worker Version - replaced by Vite at build time with v1772898098186
-const CACHE_VERSION = 'v1772898098186';
+// Service Worker Version - replaced by Vite at build time with v1772902564677
+const CACHE_VERSION = 'v1772902564677';
 const CACHE_NAME = `github-stats-spark-${CACHE_VERSION}`;
 
 // Assets to precache on install
@@ -79,7 +79,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
-  if (url.pathname.endsWith('/data/repositories.json')) {
+  if (url.pathname.includes('/data/') && url.pathname.endsWith('/repositories.json')) {
     event.respondWith(fetch(request, { cache: 'no-store' }));
     return;
   }

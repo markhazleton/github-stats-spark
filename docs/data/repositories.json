@@ -4,19 +4,19 @@
     "total_repositories": 36,
     "total_stars": 18,
     "total_forks": 7,
-    "total_commits": 3505
+    "total_commits": 3507
   },
   "repositories": [
     {
       "name": "github-stats-spark",
       "description": "A GitHub Stats for Profile README.md",
       "summary": {
-        "text": "# Technical Summary: github-stats-spark\n\n## Overview\n\nStats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates beautiful SVG-based profile statistics and AI-powered repository analysis reports. The project combines data aggregation from the GitHub API with intelligent summarization capabilities to transform raw GitHub activity into actionable insights and professional visualizations that developers can embed in their profiles or share with teams.\n\n## Key Features & Capabilities\n\nThe platform delivers five distinct categories of visualizations: an overview dashboard with a proprietary \"Spark Score\" (0-100 metric), GitHub-style contribution heatmaps, language distribution analytics, streak tracking, and personality-driven fun stats. Beyond visualization, it leverages Claude Haiku AI for intelligent repository ranking and technical summary generation, employing a weighted algorithm (30% popularity, 45% activity with time-decay windows, 25% health metrics) to analyze 50+ repositories in under 3 minutes. The interactive dashboard features a mobile-first design with responsive layouts (320px-768px viewports), swipe gestures, chart.js visualizations, repository comparison tools, and offline support via IndexedDB caching.\n\n## Technology Stack & Architecture\n\nThe project is built on a modern polyglot foundation: Python (51.4%) handles backend analytics and SVG generation using PyGithub, PyYAML, and svgwrite; JavaScript (25.8%) and CSS (12.3%) power the interactive frontend dashboard; PowerShell (8.9%) manages GitHub Actions workflows; and HTML (1.7%) provides structure. The architecture emphasizes modularity with a three-tier fallback system for AI summaries (Claude → README extraction → basic metadata) and intelligent caching strategies that reduce API calls by 80-95% through smart invalidation logic.\n\n## Enterprise-Ready Design Patterns\n\nThe system demonstrates production-grade reliability features including exponential backoff for rate limit handling, YAML-based configuration for flexibility, local CLI development tools, and GitHub Actions automation for midnight UTC updates. Performance optimization is evident through <2s First Contentful Paint and <5s Time to Interactive metrics on 3G connections, plus WCAG 2.1 AA accessibility compliance with screen reader support and keyboard navigation.\n\n## Target Users & Unique Value\n\nStats Spark serves developers seeking professional GitHub portfolio presentation, technical leaders analyzing team productivity and technology patterns, open-source maintainers tracking project momentum, and organizations evaluating repository health. Its unique differentiator is the combination of automated daily updates via GitHub Actions, AI-generated technical insights with 97%+ success rate, and a completely zero-maintenance deployment model—users configure it once and receive perpetual automatic updates.\n\n## Project Maturity Indicators\n\nDespite zero stars and forks currently, the repository shows strong internal development velocity (166 commits over 90 and 365 days with \"accelerating\" activity patterns) and a reasonable tech stack currency score of 50/100. The comprehensive documentation, production-ready features (GitHub Pages deployment, offline caching, accessibility compliance), and enterprise-focused error handling suggest this is a mature, actively developed tool positioned for rapid adoption.",
+        "text": "# Technical Summary: github-stats-spark\n\n## Overview\nStats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates SVG-based profile statistics and AI-powered repository analysis reports. The project transforms GitHub activity into actionable insights through a multi-component architecture that includes an automated profile statistics generator, intelligent repository ranking system, and an interactive mobile-first dashboard powered by Chart.js visualizations.\n\n## Core Capabilities\nThe platform offers three primary feature sets: (1) **SVG Profile Statistics** with five visual categories (overview dashboard, commit heatmap, language distribution, streaks/consistency, and personality-driven fun stats) featuring a proprietary \"Spark Score\" (0-100 composite metric weighing consistency 40%, volume 35%, and collaboration 25%); (2) **AI-Powered Analysis** integrating Claude Haiku for technical repository summaries with a three-tier fallback mechanism achieving 97%+ success rates, intelligent repository ranking using a 30/45/25 weighted algorithm (popularity/activity/health), and developer profiling based on technology diversity and contribution patterns; and (3) **Interactive Dashboard** with responsive mobile-first design, Chart.js analytics, bottom-sheet navigation, repository comparison functionality, and export capabilities (CSV/JSON).\n\n## Technology Stack & Architecture\nThe project leverages **Python 3.11+** as its primary language (51.4%) with key dependencies including PyGithub (GitHub API integration), PyYAML (configuration management), svgwrite (SVG generation), requests, and python-dateutil. The frontend utilizes **JavaScript (25.8%), CSS (12.2%), and HTML (1.7%)** for the interactive dashboard with Chart.js and responsive design patterns. The architecture emphasizes modularity with YAML-based configuration, intelligent API caching to reduce calls by 80-95%, exponential backoff rate-limit handling, and GitHub Actions automation for daily scheduled updates at midnight UTC.\n\n## Distinctive Features & Design Patterns\nThe project demonstrates enterprise-grade reliability through smart caching with intelligent cache invalidation, real-time progress tracking, and WCAG AA accessibility compliance across both visualizations and interactive components. The Spark Score represents a novel contribution classification metric combining GitHub activity signals, while the three-tier AI fallback system ensures graceful degradation (Claude Haiku → README parsing → basic metadata). The mobile-first dashboard implementation includes sophisticated touch patterns (swipe gestures, 44x44px touch targets, 320-768px viewport optimization) optimized for <2s First Contentful Paint on 3G connections.\n\n## Target Users & Deployment Model\nStats Spark targets developers seeking professional GitHub portfolio enhancement, technical teams analyzing repository health metrics, engineering leaders reviewing productivity patterns, and open-source maintainers tracking project momentum. The platform is deployment-optimized for GitHub Pages with automated updates via GitHub Actions, requiring minimal ongoing maintenance while supporting local development and flexible customization through configuration files.",
         "ai_generated": true,
         "generation_method": "claude-haiku-4-5",
-        "generated_at": "2026-03-07T15:34:32.030867",
+        "generated_at": "2026-03-07T16:55:31.127616",
         "model_used": "claude-haiku-4-5",
-        "tokens_used": 2893,
+        "tokens_used": 2858,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/github-stats-spark",
@@ -31,27 +31,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-03-07T15:32:42+00:00",
-      "pushed_at": "2026-03-07T15:32:38+00:00",
-      "total_commits": 166,
-      "recent_commits_90d": 166,
+      "updated_at": "2026-03-07T16:54:50+00:00",
+      "pushed_at": "2026-03-07T16:54:47+00:00",
+      "total_commits": 168,
+      "recent_commits_90d": 168,
       "first_commit_date": "2025-12-28T17:01:51+00:00",
-      "last_commit_date": "2026-03-07T15:32:33+00:00",
+      "last_commit_date": "2026-03-07T16:54:38+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 166,
-        "recent_90d": 166,
-        "recent_180d": 166,
-        "recent_365d": 166,
-        "last_commit_date": "2026-03-07T15:32:33+00:00",
+        "total_commits": 168,
+        "recent_90d": 168,
+        "recent_180d": 168,
+        "recent_365d": 168,
+        "last_commit_date": "2026-03-07T16:54:38+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 55.33,
+        "commit_frequency": 56.0,
         "consistency_score": 0,
-        "activity_rate": 1.844,
+        "activity_rate": 1.867,
         "days_since_last_commit": 0,
         "first_commit_date": "2025-12-28T17:01:51+00:00"
       },
@@ -59,7 +59,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 55.33,
+      "commit_velocity": 56.0,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -171,19 +171,19 @@
       "has_tests": true,
       "has_docs": true,
       "language_count": 5,
-      "size_kb": 12093,
+      "size_kb": 12703,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
       "age_days": 68,
       "days_since_last_push": 0,
-      "ai_summary": "# Technical Summary: github-stats-spark\n\n## Overview\n\nStats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates beautiful SVG-based profile statistics and AI-powered repository analysis reports. The project combines data aggregation from the GitHub API with intelligent summarization capabilities to transform raw GitHub activity into actionable insights and professional visualizations that developers can embed in their profiles or share with teams.\n\n## Key Features & Capabilities\n\nThe platform delivers five distinct categories of visualizations: an overview dashboard with a proprietary \"Spark Score\" (0-100 metric), GitHub-style contribution heatmaps, language distribution analytics, streak tracking, and personality-driven fun stats. Beyond visualization, it leverages Claude Haiku AI for intelligent repository ranking and technical summary generation, employing a weighted algorithm (30% popularity, 45% activity with time-decay windows, 25% health metrics) to analyze 50+ repositories in under 3 minutes. The interactive dashboard features a mobile-first design with responsive layouts (320px-768px viewports), swipe gestures, chart.js visualizations, repository comparison tools, and offline support via IndexedDB caching.\n\n## Technology Stack & Architecture\n\nThe project is built on a modern polyglot foundation: Python (51.4%) handles backend analytics and SVG generation using PyGithub, PyYAML, and svgwrite; JavaScript (25.8%) and CSS (12.3%) power the interactive frontend dashboard; PowerShell (8.9%) manages GitHub Actions workflows; and HTML (1.7%) provides structure. The architecture emphasizes modularity with a three-tier fallback system for AI summaries (Claude → README extraction → basic metadata) and intelligent caching strategies that reduce API calls by 80-95% through smart invalidation logic.\n\n## Enterprise-Ready Design Patterns\n\nThe system demonstrates production-grade reliability features including exponential backoff for rate limit handling, YAML-based configuration for flexibility, local CLI development tools, and GitHub Actions automation for midnight UTC updates. Performance optimization is evident through <2s First Contentful Paint and <5s Time to Interactive metrics on 3G connections, plus WCAG 2.1 AA accessibility compliance with screen reader support and keyboard navigation.\n\n## Target Users & Unique Value\n\nStats Spark serves developers seeking professional GitHub portfolio presentation, technical leaders analyzing team productivity and technology patterns, open-source maintainers tracking project momentum, and organizations evaluating repository health. Its unique differentiator is the combination of automated daily updates via GitHub Actions, AI-generated technical insights with 97%+ success rate, and a completely zero-maintenance deployment model—users configure it once and receive perpetual automatic updates.\n\n## Project Maturity Indicators\n\nDespite zero stars and forks currently, the repository shows strong internal development velocity (166 commits over 90 and 365 days with \"accelerating\" activity patterns) and a reasonable tech stack currency score of 50/100. The comprehensive documentation, production-ready features (GitHub Pages deployment, offline caching, accessibility compliance), and enterprise-focused error handling suggest this is a mature, actively developed tool positioned for rapid adoption.",
+      "ai_summary": "# Technical Summary: github-stats-spark\n\n## Overview\nStats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates SVG-based profile statistics and AI-powered repository analysis reports. The project transforms GitHub activity into actionable insights through a multi-component architecture that includes an automated profile statistics generator, intelligent repository ranking system, and an interactive mobile-first dashboard powered by Chart.js visualizations.\n\n## Core Capabilities\nThe platform offers three primary feature sets: (1) **SVG Profile Statistics** with five visual categories (overview dashboard, commit heatmap, language distribution, streaks/consistency, and personality-driven fun stats) featuring a proprietary \"Spark Score\" (0-100 composite metric weighing consistency 40%, volume 35%, and collaboration 25%); (2) **AI-Powered Analysis** integrating Claude Haiku for technical repository summaries with a three-tier fallback mechanism achieving 97%+ success rates, intelligent repository ranking using a 30/45/25 weighted algorithm (popularity/activity/health), and developer profiling based on technology diversity and contribution patterns; and (3) **Interactive Dashboard** with responsive mobile-first design, Chart.js analytics, bottom-sheet navigation, repository comparison functionality, and export capabilities (CSV/JSON).\n\n## Technology Stack & Architecture\nThe project leverages **Python 3.11+** as its primary language (51.4%) with key dependencies including PyGithub (GitHub API integration), PyYAML (configuration management), svgwrite (SVG generation), requests, and python-dateutil. The frontend utilizes **JavaScript (25.8%), CSS (12.2%), and HTML (1.7%)** for the interactive dashboard with Chart.js and responsive design patterns. The architecture emphasizes modularity with YAML-based configuration, intelligent API caching to reduce calls by 80-95%, exponential backoff rate-limit handling, and GitHub Actions automation for daily scheduled updates at midnight UTC.\n\n## Distinctive Features & Design Patterns\nThe project demonstrates enterprise-grade reliability through smart caching with intelligent cache invalidation, real-time progress tracking, and WCAG AA accessibility compliance across both visualizations and interactive components. The Spark Score represents a novel contribution classification metric combining GitHub activity signals, while the three-tier AI fallback system ensures graceful degradation (Claude Haiku → README parsing → basic metadata). The mobile-first dashboard implementation includes sophisticated touch patterns (swipe gestures, 44x44px touch targets, 320-768px viewport optimization) optimized for <2s First Contentful Paint on 3G connections.\n\n## Target Users & Deployment Model\nStats Spark targets developers seeking professional GitHub portfolio enhancement, technical teams analyzing repository health metrics, engineering leaders reviewing productivity patterns, and open-source maintainers tracking project momentum. The platform is deployment-optimized for GitHub Pages with automated updates via GitHub Actions, requiring minimal ongoing maintenance while supporting local development and flexible customization through configuration files.",
       "rank": 1,
       "composite_score": 88.15,
       "screenshot": {
         "path": "output/screenshots/github-stats-spark.png",
         "url": "https://markhazleton.github.io/github-stats-spark/",
-        "captured_at": "2026-03-07T15:32:44.945418+00:00",
+        "captured_at": "2026-03-07T16:54:55.959265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 60.72
@@ -806,7 +806,7 @@
       "screenshot": {
         "path": "output/screenshots/mark-hazleton-s-notes.png",
         "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
-        "captured_at": "2026-03-07T15:32:44.945418+00:00",
+        "captured_at": "2026-03-07T16:54:55.960264+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 101.92
@@ -884,7 +884,7 @@
       "screenshot": {
         "path": "output/screenshots/museumspark.png",
         "url": "https://markhazleton.github.io/MuseumSpark/",
-        "captured_at": "2026-03-07T15:32:44.947418+00:00",
+        "captured_at": "2026-03-07T16:54:55.962265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 98.35
@@ -1216,7 +1216,7 @@
       "screenshot": {
         "path": "output/screenshots/git-spark.png",
         "url": "https://markhazleton.github.io/git-spark/",
-        "captured_at": "2026-03-07T15:32:44.944418+00:00",
+        "captured_at": "2026-03-07T16:54:55.958265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 184.96
@@ -1577,7 +1577,7 @@
       "screenshot": {
         "path": "output/screenshots/jsbootspark.png",
         "url": "https://markhazleton.github.io/JsBootSpark/",
-        "captured_at": "2026-03-07T15:32:44.945418+00:00",
+        "captured_at": "2026-03-07T16:54:55.959265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.46
@@ -1891,19 +1891,19 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 7,
-      "size_kb": 3305,
+      "size_kb": 3340,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 220,
+      "age_days": 221,
       "days_since_last_push": 0,
       "ai_summary": "# TailwindSpark - Technical Summary\n\n**TailwindSpark** is a comprehensive, production-ready design system and component showcase built as a modern React TypeScript monorepo, demonstrating best practices in contemporary web development. The project serves as both a educational resource and a functional showcase of Tailwind CSS v4 capabilities, featuring a complete design system with reusable UI components, interactive demonstrations, and real-world implementations including dashboards, e-commerce flows, and marketing pages. Built on a cutting-edge tech stack featuring React 19.1, TypeScript 5.9, Tailwind CSS 4.1.18, Vite 7.1, and Turborepo 2.7, the repository emphasizes developer experience through hot module reloading, strict type safety, and comprehensive tooling (ESLint, Prettier, Vitest). The monorepo architecture leverages shared packages for design tokens and UI components, enabling code reuse and maintainability across the organization while demonstrating scalable project structures. Key highlights include WCAG 2.1 AA accessibility compliance, automated CI/CD pipelines via GitHub Actions, real-time performance monitoring with Web Vitals tracking, dark mode support, and production-optimized features like code splitting, error boundaries, and service worker integration. This project is ideal for developers seeking a reference implementation of modern React development practices, teams building design systems, or organizations looking to understand Tailwind CSS v4 with the @theme directive and CSS custom properties in enterprise contexts.",
       "rank": 7,
-      "composite_score": 41.38,
+      "composite_score": 41.39,
       "screenshot": {
         "path": "output/screenshots/tailwindspark.png",
         "url": "https://markhazleton.github.io/TailwindSpark/",
-        "captured_at": "2026-03-07T15:32:44.949418+00:00",
+        "captured_at": "2026-03-07T16:54:55.963264+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 73.37
@@ -1981,7 +1981,7 @@
       "screenshot": {
         "path": "output/screenshots/webspark.httpclientutility.png",
         "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-        "captured_at": "2026-03-07T15:32:44.951418+00:00",
+        "captured_at": "2026-03-07T16:54:55.965265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 42.3
@@ -2486,7 +2486,7 @@
       "screenshot": {
         "path": "output/screenshots/reactsparkportfolio.png",
         "url": "https://reactspark.markhazleton.com/",
-        "captured_at": "2026-03-07T15:32:44.948418+00:00",
+        "captured_at": "2026-03-07T16:54:55.962265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 69.18
@@ -2795,7 +2795,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1784,
+      "age_days": 1785,
       "days_since_last_push": 6,
       "ai_summary": "# Technical Summary: markhazleton Repository\n\nThis repository serves as Mark Hazleton's personal portfolio and learning archive—a curated collection demonstrating his continuous skill development across modern web technologies and software architecture practices. The primary purpose is to showcase featured projects including **WebSpark** (a comprehensive web application hosting platform for demos) and **ReactSpark** (a React+Vite application deployed on Azure Static Web Applications), alongside a growing body of technical articles covering software development philosophy, DevOps practices, and AI-assisted development methodologies.\n\nThe repository demonstrates expertise across a diverse technology stack including React, Vite, Azure cloud services (Static Web Applications, DevOps), and modern CI/CD automation patterns, with an emphasis on pragmatic software engineering principles such as spec-driven development, fork management automation, and late-stage deployment governance. The architecture reflects a professional approach to full-stack development, with projects deployed on cloud platforms and integrated with industry-standard tools like Postman and Azure DevOps for API testing and project management.\n\nWhat distinguishes this portfolio is its dual focus on both **technical execution** (working code, deployed applications) and **thought leadership** (published articles addressing strategic software development topics like accountability, evolution over revolution, and feature-to-outcome alignment), making it valuable for both practitioners seeking reference implementations and organizations evaluating senior engineering talent with architectural maturity.",
       "rank": 13,
@@ -3828,7 +3828,7 @@
       "screenshot": {
         "path": "output/screenshots/supportspark.png",
         "url": "https://markhazleton.github.io/SupportSpark/",
-        "captured_at": "2026-03-07T15:32:44.949418+00:00",
+        "captured_at": "2026-03-07T16:54:55.963264+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 139.77
@@ -4016,7 +4016,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 3042,
+      "age_days": 3043,
       "days_since_last_push": 2,
       "ai_summary": "# Technical Summary: sql2csv\n\n**sql2csv** is a comprehensive .NET 10 toolkit for SQLite database analysis and data extraction, providing both command-line and web-based interfaces for discovering databases, exporting tables to CSV format, inspecting schemas, and automatically generating C# data transfer objects (DTOs). The solution follows a modular architecture with a shared core library (`Sql2Csv.Core`) serving dual CLI (`sql2csv.console`) and ASP.NET Core MVC web (`sql2csv.web`) frontends, complemented by dedicated projects for testing (MSTest) and performance benchmarking (BenchmarkDotNet). Key capabilities include recursive SQLite file discovery, selective or bulk table export with CSV serialization, multi-format schema reporting (text/JSON/Markdown), and intelligent C# DTO generation with customizable namespacing, enabling developers to rapidly integrate SQLite data into .NET applications. The project demonstrates modern .NET practices including configuration management via `appsettings.json`, comprehensive test coverage with CI/CD integration (GitHub Actions), and a hybrid tech stack combining C# backend logic with HTML/CSS/JavaScript frontend components, making it well-suited for database migration workflows, data integration pipelines, and rapid prototyping scenarios involving SQLite databases.",
       "rank": 17,
@@ -4155,7 +4155,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1307,
+      "age_days": 1308,
       "days_since_last_push": 25,
       "ai_summary": "# AsyncSpark - Technical Summary\n\nAsyncSpark is a production-ready reference implementation demonstrating enterprise-grade async/await patterns in .NET 10, designed to serve as both a learning resource and architectural blueprint for building resilient, scalable distributed systems. The project implements comprehensive async best practices including ConfigureAwait(false) library usage, proper CancellationToken threading, Task.WhenAll parallelization, SemaphoreSlim throttling, and Polly-based resilience policies (retry, timeout, circuit breaker), with each pattern linked to specific code examples and unit tests. Built on ASP.NET Core with 80% code coverage enforcement, the architecture emphasizes dependency injection, the decorator pattern for cross-cutting concerns (telemetry, caching, logging), and clean separation between a core utility library, web API, weather service integration, and comprehensive test suite. The repository uniquely implements \"constitution-driven development,\" a formalized governance model that enforces coding standards and architectural patterns through automated CI/CD audits, constitution compliance checks, and structured PR reviews—demonstrated through audit reports and SpecKit agent workflows. The project includes interactive Scalar-powered API documentation with live testing capabilities, exposing endpoints for cancellation patterns, concurrency comparisons, remote operations, and real OpenWeatherMap API integration, making it valuable for enterprise teams adopting async patterns and organizations seeking to implement automated compliance frameworks. The 9 recent commits and maintained activity level indicate ongoing refinement, with contributions spanning C# (43.1%), HTML (34.1%), PowerShell (18.8%), and supporting configuration files that collectively demonstrate modern .NET development practices with constitutional enforcement mechanisms.",
       "rank": 19,
@@ -4765,7 +4765,7 @@
       "screenshot": {
         "path": "output/screenshots/texecon.png",
         "url": "https://markhazleton.github.io/Texecon/",
-        "captured_at": "2026-03-07T15:32:44.951418+00:00",
+        "captured_at": "2026-03-07T16:54:55.965265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 452.45
@@ -5014,7 +5014,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1783,
+      "age_days": 1784,
       "days_since_last_push": 15,
       "ai_summary": "# Technical Summary: Mark Hazleton's Personal Jekyll Site\n\nThis repository is a personal portfolio and blog website built with **Jekyll**, a static site generator, and hosted on **GitHub Pages** at markhazleton.com. The site leverages a customized Minima theme with bespoke layouts, includes, and styling written in SCSS/CSS, providing a lightweight, performant alternative to heavy frontend frameworks while maintaining modern aesthetics including dark/light mode toggle functionality and emoji support.\n\nThe tech stack consists of **Ruby 3.2.2** with Jekyll 3.10.0 as the core engine, automated deployment via **GitHub Actions** CI/CD pipeline, and three key dependencies (github-pages, faraday-retry, wdm) for dependency management and Windows development support. The codebase is well-structured with clear separation of concerns—markdown-based posts in `_posts/`, reusable Liquid template components in `_includes/`, and modularized SCSS architecture for maintainability.\n\nThe repository demonstrates solid software engineering practices including comprehensive documentation for content creation workflows (with both direct-commit and feature-branch options), local development setup instructions across multiple operating systems, and version-controlled dependency management through Bundler. However, activity metrics reveal a declining maintenance pattern with only one commit in the past 90 days and 16 commits over the past year, coupled with a moderate tech currency score of 50/100, suggesting the project could benefit from dependency updates and more active maintenance, though its static nature means it remains functional despite reduced activity.",
       "rank": 24,
@@ -5022,7 +5022,7 @@
       "screenshot": {
         "path": "output/screenshots/markhazleton.github.io.png",
         "url": "https://markhazleton.github.io/",
-        "captured_at": "2026-03-07T15:32:44.946418+00:00",
+        "captured_at": "2026-03-07T16:54:55.960264+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 59.36
@@ -5844,7 +5844,7 @@
       "screenshot": {
         "path": "output/screenshots/mechanicsofmotherhood.png",
         "url": "http://mechanicsofmotherhood.com/",
-        "captured_at": "2026-03-07T15:32:44.947418+00:00",
+        "captured_at": "2026-03-07T16:54:55.961265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 277.22
@@ -5913,7 +5913,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1121,
+      "age_days": 1122,
       "days_since_last_push": 54,
       "ai_summary": "# Technical Summary: HttpClientDecoratorPattern\n\n## Overview & Purpose\nThis repository is a production-ready implementation and reference guide for the Decorator Design Pattern applied to .NET HttpClient operations, published as the [WebSpark.HttpClientUtility](https://www.nuget.org/packages/WebSpark.HttpClientUtility/) NuGet package. It demonstrates how to elegantly compose cross-cutting concerns (telemetry, caching, resilience) around HTTP requests while maintaining clean architecture, testability, and SOLID principles.\n\n## Key Features & Capabilities\nThe project implements a sophisticated decorator chain architecture that layers multiple concerns: a **Telemetry Decorator** for structured logging and performance metrics; a **Cache Decorator** for smart memory caching with configurable TTL and hit/miss tracking; and a **Polly Decorator** providing circuit breaker and retry policies with exponential backoff. The solution includes a responsive ASP.NET Core demonstration web application with real-world API integrations (NASA, Art Institute, Joke API) and advanced features like domain crawling with SignalR real-time updates, concurrent request throttling via SemaphoreSlim, and 26+ Bootswatch theme integration for modern UI presentation.\n\n## Technology Stack & Architecture\nBuilt on **.NET 10** with **C#**, **HTML/CSS**, and **JavaScript**, the project leverages **ASP.NET Core** for the web interface, **Polly** for resilience policies, **Serilog** for structured logging, **dependency injection** patterns, and **SignalR** for real-time communications. The architecture employs the Decorator Pattern through a composable chain where each decorator wraps `IHttpRequestResultService`, enabling clean separation of concerns and easy addition of new functionality without modifying existing code.\n\n## What Makes It Unique\nUnlike monolithic HttpClient wrapper implementations, this pattern-based approach provides genuine extensibility through composition rather than inheritance, addresses enterprise concerns (correlation IDs for distributed tracing, detailed telemetry, performance optimization), and serves dual purposes as both a production-ready NuGet package and an interactive reference implementation with comprehensive live demonstration pages showcasing real-world scenarios.\n\n## Target Audience & Use Cases\nIdeal for enterprise .NET developers building microservices, distributed systems, or applications requiring robust HTTP communication with built-in observability, resilience, and caching—from financial systems requiring circuit breakers and retry logic to data-heavy applications benefiting from strategic caching and request throttling.",
       "rank": 30,
@@ -5982,7 +5982,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1304,
+      "age_days": 1305,
       "days_since_last_push": 54,
       "ai_summary": "# Technical Summary: Yelp.Api\n\n**Yelp.Api** is a C# class library that provides a .NET wrapper for Yelp's v3 Fusion API, enabling developers to integrate comprehensive local business search and review functionality into .NET 6+ applications. The library abstracts the complexity of direct API calls by offering both simple convenience methods (e.g., `SearchBusinessesAllAsync()`) and advanced query capabilities through a `SearchRequest` object pattern, allowing developers to access business data, reviews, and information across over one million businesses in 32 countries. Built with C# (53.1%) as the primary language and supplemented with CSS, HTML, and a Dockerfile for deployment, the project follows a clean client-wrapper architecture pattern that hides HTTP communication details while exposing intuitive async/await-based methods for seamless integration into modern .NET applications. The codebase demonstrates good practices for API client libraries, including authentication via API key management through secrets files and support for both simple and parameterized search scenarios. While currently showing minimal GitHub visibility (0 stars/forks), the project maintains active development with recent commits and appears designed primarily for .NET developers seeking to leverage Yelp's business intelligence data without managing raw HTTP requests and JSON serialization. This library is particularly valuable for applications requiring location-based business discovery, ratings, and review aggregation features.",
       "rank": 31,
@@ -6514,7 +6514,7 @@
       "screenshot": {
         "path": "output/screenshots/react-native-web-start.png",
         "url": "https://markhazleton.github.io/react-native-web-start/",
-        "captured_at": "2026-03-07T15:32:44.948418+00:00",
+        "captured_at": "2026-03-07T16:54:55.962265+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.8
@@ -6951,11 +6951,11 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1051,
+      "age_days": 1052,
       "days_since_last_push": 94,
       "ai_summary": "# Technical Summary: DataAnalysisDemo\n\n**DataAnalysisDemo (DAWPM)** is a comprehensive ASP.NET WebForms 4.8 web application designed to transform CSV data files into interactive visualizations, pivot tables, and detailed analytics through a modern, responsive interface. The application combines a legacy VB.NET backend (69.8% of codebase) with a contemporary client-side architecture featuring Bootstrap 5.3.8, jQuery 3.7.1, DataTables 2.3.3, and advanced charting libraries (D3.js, C3.js, and Microsoft Chart Controls), demonstrating a pragmatic approach to modernizing enterprise web applications without complete framework migration.\n\nCore functionality includes CSV file processing via a custom GenericParser library with real-time statistical analysis (min/max values, unique counts, data type detection), a drag-and-drop pivot table engine with multiple aggregation functions and export capabilities (Excel, CSV, JSON), and 15+ dynamic chart types with 3D/2D rendering options and PNG export. The architecture employs a modern build pipeline using Webpack 5 and npm for asset bundling, replacing traditional dependency management, while maintaining separation between client-side source files and built production assets, enabling efficient development workflows.\n\nThe project demonstrates advanced data processing patterns including memory-efficient streaming for large datasets, responsive Bootstrap 5 components for enhanced UX, and sophisticated client-side state management through localStorage for pivot configurations. With minimal recent activity (0 commits in 90 days, tech stack currency of 50/100), the codebase appears stable but aging, making it particularly valuable as an educational resource for developers working with legacy ASP.NET systems or those learning data visualization techniques with jQuery and modern JavaScript charting libraries.\n\nTarget users include analysts, data engineers, and business intelligence practitioners who need rapid exploration of CSV datasets without server-side infrastructure, as well as developers building data-driven applications seeking patterns for integrating modern frontend tooling with traditional ASP.NET WebForms backends.",
       "rank": 35,
-      "composite_score": 14.23
+      "composite_score": 14.24
     },
     {
       "name": "PHPDocSpark",
@@ -7276,15 +7276,15 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 910,
+      "age_days": 911,
       "days_since_last_push": 201,
       "ai_summary": "# PHPDocSpark: Technical Summary\n\nPHPDocSpark is an open-source PHP documentation and data exploration platform that demonstrates modern hybrid web development practices by integrating a traditional PHP 8.2+ backend with a contemporary Vite-powered asset pipeline. The project serves as a comprehensive reference implementation showcasing markdown-based documentation management with full-text search, interactive data visualization (CSV analysis, Chart.js integration), SQLite database operations, GitHub API integration, and responsive Bootstrap 5 UI components—all built on a clean architecture pattern that separates server-side logic from client-side asset compilation. Key architectural innovations include its dual-build system (PHP backend + Vite frontend toolchain), content caching mechanisms, API rate-limiting strategies, and Azure Pipeline deployment automation, making it equally valuable as an educational resource for developers learning modern PHP patterns and as a functional documentation platform for technical teams. The tech stack leverages DataTables for interactive grids, Parsedown for markdown parsing, SCSS for advanced styling, and comprehensive DevOps tooling (ESLint, Prettier, Azure hosting), targeting PHP developers, full-stack engineers, and technical writers seeking production-ready reference implementations. With 27 dependencies, minimal recent activity (0 commits in 90 days but 36 in the past year), and moderate tech stack currency (50/100), the project represents a stable, mature implementation that successfully demonstrates bridging traditional server-side PHP development with modern JavaScript tooling ecosystems.",
       "rank": 36,
-      "composite_score": 5.3
+      "composite_score": 5.31
     }
   ],
   "metadata": {
-    "generated_at": "2026-03-07T15:41:01.852954+00:00",
+    "generated_at": "2026-03-07T16:55:31.802863+00:00",
     "schema_version": "2.0.0",
     "generator": "unified_data_generator"
   }
