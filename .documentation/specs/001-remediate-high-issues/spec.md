@@ -27,13 +27,13 @@ As a maintainer, I want generated reports and dashboard data to reflect the conf
 
 As a maintainer, I want the highest-risk workflow areas to meet constitutional quality standards so regressions are caught before they reach published artifacts.
 
-**Why this priority**: The audit found HIGH-severity quality exposure in core visualization coverage and in oversized operational surfaces that are difficult to change safely.
+**Why this priority**: The audit found HIGH-severity quality exposure in core calculation and visualization coverage and in oversized operational surfaces that are difficult to change safely.
 
 **Independent Test**: Can be fully tested by running the project’s quality checks and a follow-up audit to confirm that high-severity findings for core quality gates and module responsibility are cleared.
 
 **Acceptance Scenarios**:
 
-1. **Given** the remediation work is complete, **When** the constitutional quality checks are run, **Then** the core reporting and visualization areas satisfy the required quality thresholds.
+1. **Given** the remediation work is complete, **When** the constitutional quality checks are run, **Then** the core calculation and visualization areas satisfy the required quality thresholds.
 2. **Given** the command workflow and cache lifecycle responsibilities are reviewed after remediation, **When** maintainers inspect and test each area independently, **Then** each area can be validated without requiring unrelated subsystems to change at the same time.
 3. **Given** a follow-up audit is run on the same repository scope, **When** results are compared to the 2026-03-07 baseline, **Then** no HIGH findings remain for module responsibility or test-gate categories.
 
@@ -45,12 +45,12 @@ As a maintainer, I want documentation placement and project scaffolding to align
 
 **Why this priority**: The audit found HIGH-severity documentation-governance drift and stale framework structure guidance, which increase confusion and create repeated process debt.
 
-**Independent Test**: Can be fully tested by reviewing the approved documentation entry points and framework structure after remediation and confirming they match the governing rules adopted by the project.
+**Independent Test**: Can be fully tested by reviewing the approved documentation entry points and feature, audit, and upgrade workflow structure after remediation and confirming they match the governing rules adopted by the project.
 
 **Acceptance Scenarios**:
 
 1. **Given** the repository’s approved documentation policy, **When** a contributor looks for user-facing documentation, **Then** every supported document can be found in the approved location or through an explicitly documented exception.
-2. **Given** the repository’s feature and audit workflows, **When** maintainers use the current project scaffolding, **Then** the workflow references the supported structure rather than outdated legacy paths.
+2. **Given** the repository’s feature, audit, and upgrade workflows, **When** maintainers use the current project scaffolding, **Then** each workflow references the supported structure rather than outdated legacy paths.
 3. **Given** a follow-up audit is run on the same repository scope, **When** documentation and framework alignment are checked, **Then** no HIGH findings remain in documentation standards or version-structure categories.
 
 ### Edge Cases
@@ -67,9 +67,9 @@ As a maintainer, I want documentation placement and project scaffolding to align
 
 - **FR-001**: The system MUST apply the repository’s configured presentation setting during unified output generation whenever a supported presentation option is provided.
 - **FR-002**: The system MUST calculate aggregate profile totals from the same included public repository data used to generate dashboard outputs.
-- **FR-003**: The system MUST prevent placeholder or hard-coded output values from being reported as final user-facing results in areas covered by the six HIGH audit findings.
+- **FR-003**: The system MUST prevent hard-coded defaults or placeholder values from being emitted as final user-facing results for configured theme selection, aggregate profile totals, and related audited output paths affected by the six HIGH findings.
 - **FR-004**: The command interface, cache lifecycle workflow, and report generation workflow MUST each have a clearly bounded responsibility that can be validated independently.
-- **FR-005**: The core reporting and visualization quality gates MUST meet the constitutional threshold required for completion of this remediation feature.
+- **FR-005**: The core calculation and visualization quality gates MUST meet the constitutional threshold required for completion of this remediation feature.
 - **FR-006**: The repository MUST provide automated verification for the highest-risk workflow entry paths affected by this remediation feature.
 - **FR-007**: User-facing documentation MUST reside in the project’s approved documentation location, or any approved exceptions MUST be explicitly documented and discoverable.
 - **FR-008**: Project workflow guidance MUST align with the supported feature, audit, and upgrade structure used by the repository after remediation is complete.
@@ -102,6 +102,6 @@ As a maintainer, I want documentation placement and project scaffolding to align
 
 - **SC-001**: A follow-up full-scope audit reports zero HIGH findings in the categories targeted by this feature.
 - **SC-002**: Generated outputs match configured presentation settings and aggregate repository totals in 100% of defined acceptance checks.
-- **SC-003**: Core quality gates affected by this feature meet or exceed the constitutional threshold before the feature is considered complete.
+- **SC-003**: Core calculation and visualization quality gates affected by this feature meet or exceed the constitutional threshold before the feature is considered complete.
 - **SC-004**: Contributors can find approved user-facing documentation from the primary documentation entry point without relying on undocumented exceptions.
 - **SC-005**: Maintainers can validate command flow, cache lifecycle behavior, and generated output correctness through independent checks rather than one monolithic verification step.
