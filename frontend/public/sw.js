@@ -79,7 +79,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
   
-  if (url.pathname.endsWith('/data/repositories.json')) {
+  if (url.pathname.includes('/data/') && url.pathname.endsWith('/repositories.json')) {
     event.respondWith(fetch(request, { cache: 'no-store' }));
     return;
   }

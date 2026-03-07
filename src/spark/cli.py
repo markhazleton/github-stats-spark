@@ -9,6 +9,46 @@ from spark.config import SparkConfig
 from spark.logger import get_logger
 
 
+def _slugify_username(username: str) -> str:
+    """Create a filesystem-safe username segment for scoped outputs."""
+    safe_chars = []
+    for char in username.strip().lower():
+        if char.isalnum() or char in {"-", "_", "."}:
+            safe_chars.append(char)
+        else:
+            safe_chars.append("-")
+
+    slug = "".join(safe_chars).strip("-")
+    return slug or "user"
+
+
+def _to_posix_path(path: Path) -> str:
+    """Return a repository-relative path string suitable for JSON payloads."""
+    return path.as_posix()
+
+
+def _build_output_layout(username: str, data_output_dir: str, multi_user: bool) -> dict:
+    """Resolve output directories for unified generation.
+
+    Multi-user mode scopes all generated artifacts under a username directory so
+    runs for different users can coexist without overwriting each other.
+    """
+    data_dir = Path(data_output_dir)
+    output_root = Path("output")
+
+    if multi_user:
+        user_slug = _slugify_username(username)
+        data_dir = data_dir / "users" / user_slug
+        output_root = output_root / "users" / user_slug
+
+    return {
+        "data_dir": data_dir,
+        "artifact_root": output_root,
+        "report_dir": output_root / "reports",
+        "screenshot_dir": output_root / "screenshots",
+    }
+
+
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
@@ -93,6 +133,11 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         action="store_true",
         help="Capture screenshots of repository websites (requires playwright)",
     )
+    unified_parser.add_argument(
+        "--multi-user",
+        action="store_true",
+        help="Write outputs to user-scoped directories so multiple users can coexist",
+    )
 
     # Analyze command (NEW - Repository analysis)
     analyze_parser = subparsers.add_parser("analyze", help="Analyze repositories and generate report")
@@ -139,6 +184,11 @@ For more information, visit: https://github.com/markhazleton/github-stats-spark
         "--keep-dated",
         action="store_true",
         help="Also generate dated report when using --unified mode",
+    )
+    analyze_parser.add_argument(
+        "--multi-user",
+        action="store_true",
+        help="Write unified outputs to user-scoped directories so multiple users can coexist",
     )
 
     # Generate command
@@ -332,12 +382,15 @@ def handle_unified(args, logger):
     logger.info("=" * 70)
     logger.info("Stats Spark - ALL-IN-ONE Unified Generation")
     logger.info("=" * 70)
+    output_layout = _build_output_layout(args.user, args.output_dir, args.multi_user)
+    report_path = output_layout["report_dir"] / f"{args.user}-analysis.md"
     logger.info(f"User: {args.user}")
-    logger.info(f"Data output: {args.output_dir}")
-    logger.info(f"Reports output: output/")
+    logger.info(f"Data output: {output_layout['data_dir']}")
+    logger.info(f"Artifacts output: {output_layout['artifact_root']}")
     logger.info(f"AI Summaries: {'Yes' if args.include_ai_summaries else 'No'}")
     logger.info(f"Force Refresh: {'Yes' if args.force_refresh else 'No'}")
     logger.info(f"Screenshots: {'Yes' if getattr(args, 'capture_screenshots', False) else 'No'}")
+    logger.info(f"Multi-user output: {'Yes' if args.multi_user else 'No'}")
 
     # Check for GitHub token
     if not os.getenv("GITHUB_TOKEN"):
@@ -383,7 +436,7 @@ def handle_unified(args, logger):
         generator = UnifiedDataGenerator(
             config=config,
             username=args.user,
-            output_dir=args.output_dir,
+            output_dir=str(output_layout["data_dir"]),
             force_refresh=args.force_refresh,
             max_repos_override=args.max_repos,
             cache=shared_cache,
@@ -411,8 +464,8 @@ def handle_unified(args, logger):
             logger.info("Unified Workflow Complete (No Updates Needed)")
             logger.info("=" * 70)
             logger.info(f"Unified Data: {data_output_path}")
-            logger.info(f"SVG Files: output/*.svg (unchanged)")
-            logger.info(f"Report: output/reports/{args.user}-analysis.md (unchanged)")
+            logger.info(f"SVG Files: {output_layout['artifact_root']}/*.svg (unchanged)")
+            logger.info(f"Report: {report_path} (unchanged)")
             logger.info(f"Total Time: {total_time:.1f}s")
             logger.info("")
             logger.info("All data is current - no regeneration needed!")
@@ -430,7 +483,7 @@ def handle_unified(args, logger):
         workflow = UnifiedReportWorkflow(
             config, 
             shared_cache, 
-            output_dir="output",
+            output_dir=str(output_layout["artifact_root"]),
             max_repos=args.max_repos,
             cache_only=False  # Allow fresh data fetching from GitHub
         )
@@ -447,9 +500,7 @@ def handle_unified(args, logger):
             logger.info("STEP 3/3: Generating Markdown Reports")
             logger.info("=" * 70)
             
-            output_dir = Path("output/reports")
-            output_dir.mkdir(parents=True, exist_ok=True)
-            report_path = output_dir / f"{args.user}-analysis.md"
+            output_layout["report_dir"].mkdir(parents=True, exist_ok=True)
             
             generator_report = UnifiedReportGenerator(config)
             generator_report.generate_report(unified_report, str(report_path))
@@ -483,7 +534,7 @@ def handle_unified(args, logger):
                 logger.info(f"Found {len(repos_with_websites)} repositories with websites")
                 
                 if repos_with_websites:
-                    screenshot_dir = Path("output/screenshots")
+                    screenshot_dir = output_layout["screenshot_dir"]
                     capturer = ScreenshotCapture(
                         cache=shared_cache,
                         output_dir=screenshot_dir,
@@ -520,7 +571,7 @@ def handle_unified(args, logger):
                                 from datetime import timezone
                                 stats = screenshot_path.stat()
                                 repo['screenshot'] = {
-                                    'path': f'output/screenshots/{screenshot_path.name}',
+                                    'path': _to_posix_path(screenshot_path),
                                     'url': repo.get('website_url', ''),
                                     'captured_at': datetime.fromtimestamp(stats.st_mtime, tz=timezone.utc).isoformat(),
                                     'width': 1280,
@@ -550,7 +601,7 @@ def handle_unified(args, logger):
         # ===================================================================
         else:
             # Even without capturing, check for existing screenshots and populate metadata
-            screenshot_dir = Path("output/screenshots")
+            screenshot_dir = output_layout["screenshot_dir"]
             if screenshot_dir.exists():
                 existing_screenshots = {p.stem: p for p in screenshot_dir.glob('*.png')}
                 if existing_screenshots:
@@ -567,7 +618,7 @@ def handle_unified(args, logger):
                                 from datetime import timezone
                                 stats = screenshot_path.stat()
                                 repo['screenshot'] = {
-                                    'path': f'output/screenshots/{screenshot_path.name}',
+                                    'path': _to_posix_path(screenshot_path),
                                     'url': repo.get('website_url', ''),
                                     'captured_at': datetime.fromtimestamp(stats.st_mtime, tz=timezone.utc).isoformat(),
                                     'width': 1280,
@@ -592,11 +643,11 @@ def handle_unified(args, logger):
         logger.info("ALL-IN-ONE Generation Complete!")
         logger.info("=" * 70)
         logger.info(f"Unified Data: {data_output_path}")
-        logger.info(f"SVG Files: output/*.svg")
-        logger.info(f"Report: output/reports/{args.user}-analysis.md")
+        logger.info(f"SVG Files: {output_layout['artifact_root']}/*.svg")
+        logger.info(f"Report: {report_path}")
         if screenshot_results:
             captured_count = sum(1 for v in screenshot_results.values() if v is not None)
-            logger.info(f"Screenshots: output/screenshots/ ({captured_count} captured)")
+            logger.info(f"Screenshots: {output_layout['screenshot_dir']}/ ({captured_count} captured)")
         logger.info(f"Total Time: {total_time:.1f}s")
         logger.info("")
         logger.info("All data gathered, LLM summaries generated (if enabled),")
@@ -647,6 +698,7 @@ def handle_unified_analyze(args, logger):
         # Load config
         config = SparkConfig(args.config)
         config.load()
+        output_layout = _build_output_layout(args.user, "data", args.multi_user)
 
         # Initialize cache (content-addressed by pushed_at timestamps)
         cache_config = config.get("cache", {})
@@ -654,7 +706,12 @@ def handle_unified_analyze(args, logger):
             cache_dir=cache_config.get("directory", ".cache"),
             config=config,
         )
-        workflow = UnifiedReportWorkflow(config, cache, output_dir="output", cache_only=False)
+        workflow = UnifiedReportWorkflow(
+            config,
+            cache,
+            output_dir=str(output_layout["artifact_root"]),
+            cache_only=False,
+        )
 
         # Execute unified workflow
         logger.info("=" * 70)
@@ -664,7 +721,7 @@ def handle_unified_analyze(args, logger):
         unified_report = workflow.execute(args.user)
 
         # Generate unified markdown (non-dated)
-        output_dir = Path(args.output)
+        output_dir = output_layout["report_dir"] if args.multi_user else Path(args.output)
         output_dir.mkdir(parents=True, exist_ok=True)
         unified_path = output_dir / f"{args.user}-analysis.md"
 

@@ -16,6 +16,27 @@ import { offlineStorage } from "./offlineStorage";
 // Cache keys
 const CACHE_KEY_REPOSITORIES = "repositories-data";
 
+const getSelectedUser = (explicitUser) => {
+  if (explicitUser) {
+    return explicitUser.trim().toLowerCase();
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  return params.get("user")?.trim().toLowerCase() || null;
+};
+
+const getRepositoriesPath = (user) => {
+  if (user) {
+    return `users/${user}/repositories.json`;
+  }
+
+  return "repositories.json";
+};
+
+const getRepositoriesCacheKey = (user) => {
+  return user ? `${CACHE_KEY_REPOSITORIES}:${user}` : CACHE_KEY_REPOSITORIES;
+};
+
 /**
  * Get the base URL for data fetching based on environment
  * @returns {string} Base URL for data files
@@ -63,18 +84,21 @@ export async function fetchDashboardData({
   maxRetries = 3,
   retryDelay = 2000,
   cacheBust = true,
+  user,
 } = {}) {
   const baseUrl = getDataBaseUrl();
+  const selectedUser = getSelectedUser(user);
+  const cacheKey = getRepositoriesCacheKey(selectedUser);
   const cacheToken = cacheBust ? `?v=${Date.now()}` : "";
-  const url = `${baseUrl}/repositories.json${cacheToken}`;
+  const url = `${baseUrl}/${getRepositoriesPath(selectedUser)}${cacheToken}`;
   const isOnline = navigator.onLine;
 
   // Try cache first if enabled and not forcing refresh
   if (useCache && !forceRefresh) {
     try {
-      const cachedData = await offlineStorage.get(CACHE_KEY_REPOSITORIES);
+      const cachedData = await offlineStorage.get(cacheKey);
       if (cachedData) {
-        console.log("[DataService] Using cached dashboard data");
+        console.log("[DataService] Using cached dashboard data", selectedUser);
         return { ...cachedData, _fromCache: true };
       }
     } catch (error) {
@@ -123,7 +147,7 @@ export async function fetchDashboardData({
       // Cache the fresh data
       if (useCache) {
         try {
-          await offlineStorage.set(CACHE_KEY_REPOSITORIES, data, "2.0.0");
+          await offlineStorage.set(cacheKey, data, "2.0.0");
           console.log("[DataService] Cached fresh dashboard data");
         } catch (error) {
           console.warn("[DataService] Failed to cache data:", error);
@@ -160,7 +184,7 @@ export async function fetchDashboardData({
   // All retries exhausted - try cache as last resort
   if (useCache) {
     try {
-      const cachedData = await offlineStorage.get(CACHE_KEY_REPOSITORIES);
+      const cachedData = await offlineStorage.get(cacheKey);
       if (cachedData) {
         console.warn("[DataService] Network failed, using stale cached data");
         return { ...cachedData, _fromCache: true, _stale: true };

@@ -227,8 +227,13 @@ class ScreenshotCapture:
                 file_size_kb = screenshot_path.stat().st_size / 1024
                 
                 # Build metadata
+                relative_path = (
+                    screenshot_path.relative_to(Path.cwd())
+                    if screenshot_path.is_absolute()
+                    else screenshot_path
+                )
                 metadata = {
-                    "path": str(screenshot_path.relative_to(Path.cwd()) if screenshot_path.is_absolute() else screenshot_path),
+                    "path": relative_path.as_posix(),
                     "url": url,
                     "captured_at": datetime.now(timezone.utc).isoformat(),
                     "width": self.viewport_width,

@@ -38,6 +38,9 @@
 .PARAMETER CheckOnly
     Only check environment and configuration (dry run)
 
+.PARAMETER MultiUser
+    Write generated files to user-scoped directories so multiple users can be stored side by side.
+
 .EXAMPLE
     .\run-spark.ps1 -User markhazleton
     Generate complete stats without AI summaries (fast)
@@ -61,6 +64,10 @@
 .EXAMPLE
     .\run-spark.ps1 -CheckOnly
     Verify environment setup and configuration
+
+.EXAMPLE
+    .\run-spark.ps1 -User octocat -MultiUser
+    Generate outputs under data\users\octocat and output\users\octocat without overwriting other users
 #>
 
 [CmdletBinding()]
@@ -82,6 +89,9 @@ param(
 
     [Parameter(Mandatory=$false)]
     [switch]$MissingOnly,
+
+    [Parameter(Mandatory=$false)]
+    [switch]$MultiUser,
 
     [Parameter(Mandatory=$false)]
     [switch]$CheckOnly
@@ -250,6 +260,13 @@ if (-not $env:SPARK_CACHE_DIR) {
     $env:SPARK_CACHE_DIR = ".cache/local"
 }
 
+$normalizedUser = $User.ToLower()
+$dataOutputDir = if ($MultiUser) { Join-Path "data\users" $normalizedUser } else { "data" }
+$artifactOutputDir = if ($MultiUser) { Join-Path "output\users" $normalizedUser } else { "output" }
+$reportOutputDir = Join-Path $artifactOutputDir "reports"
+$screenshotOutputDir = Join-Path $artifactOutputDir "screenshots"
+$repositoriesJsonPath = Join-Path $dataOutputDir "repositories.json"
+
 # Build command arguments
 $cmdArgs = @(
     "unified"
@@ -267,6 +284,10 @@ if ($ForceRefresh) {
 
 if ($Screenshots) {
     $cmdArgs += "--capture-screenshots"
+}
+
+if ($MultiUser) {
+    $cmdArgs += "--multi-user"
 }
 
 if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
@@ -287,8 +308,11 @@ Write-Info "User: $User"
 Write-Info "AI Summaries:  $(if ($IncludeAI) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Screenshots:   $(if ($Screenshots) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Missing Only:  $(if ($MissingOnly) { 'Yes (skip existing PNGs)' } else { 'No' })"
+Write-Info "Multi-user:    $(if ($MultiUser) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Force Refresh: $(if ($ForceRefresh) { 'Yes' } else { 'No' })"
 Write-Info "Cache Dir:     $env:SPARK_CACHE_DIR"
+Write-Info "Data Dir:      $dataOutputDir"
+Write-Info "Artifact Dir:  $artifactOutputDir"
 Write-Info "Verbose Mode:  $(if ($PSCmdlet.MyInvocation.BoundParameters['Verbose'].IsPresent) { 'Yes' } else { 'No' })"
 Write-Host ""
 
@@ -296,7 +320,7 @@ Write-Host ""
 # only sees repos without a file. After the run we restore them.
 $hiddenDir = $null
 if ($Screenshots -and $MissingOnly) {
-    $screenshotDir = "output\screenshots"
+    $screenshotDir = $screenshotOutputDir
     if (Test-Path $screenshotDir) {
         $existingPngs = Get-ChildItem $screenshotDir -Filter "*.png" -ErrorAction SilentlyContinue
         if ($existingPngs.Count -gt 0) {
@@ -322,7 +346,7 @@ $duration = $endTime - $startTime
 # Restore previously-existing screenshots (MissingOnly mode)
 if ($null -ne $hiddenDir -and (Test-Path $hiddenDir)) {
     $backedUp = Get-ChildItem $hiddenDir -Filter "*.png" -ErrorAction SilentlyContinue
-    $screenshotDir = "output\screenshots"
+    $screenshotDir = $screenshotOutputDir
     foreach ($png in $backedUp) {
         $dest = Join-Path $screenshotDir $png.Name
         if (-not (Test-Path $dest)) {
@@ -346,12 +370,12 @@ if ($exitCode -eq 0) {
     # Validate outputs
     Write-Info "Verifying outputs..."
     
-    if (Test-Path "data\repositories.json") {
-        $fileSize = [math]::Round((Get-Item "data\repositories.json").Length / 1KB, 2)
+    if (Test-Path $repositoriesJsonPath) {
+        $fileSize = [math]::Round((Get-Item $repositoriesJsonPath).Length / 1KB, 2)
         Write-Success "repositories.json created ($fileSize KB)"
         
         try {
-            $data = Get-Content "data\repositories.json" -Raw | ConvertFrom-Json
+            $data = Get-Content $repositoriesJsonPath -Raw | ConvertFrom-Json
             Write-Info "  Repositories analyzed: $($data.repositories.Count)"
             Write-Info "  Schema version: $($data.metadata.schema_version)"
             Write-Info "  Generated: $($data.metadata.generated_at)"
@@ -362,27 +386,27 @@ if ($exitCode -eq 0) {
         Write-Warning "repositories.json not found"
     }
     
-    if (Test-Path "output\reports") {
-        $reportCount = (Get-ChildItem "output\reports" -Filter "*.md" -ErrorAction SilentlyContinue).Count
+    if (Test-Path $reportOutputDir) {
+        $reportCount = (Get-ChildItem $reportOutputDir -Filter "*.md" -ErrorAction SilentlyContinue).Count
         if ($reportCount -gt 0) {
             Write-Success "Generated $reportCount markdown reports"
         }
     }
 
-    if ($Screenshots -and (Test-Path "output\screenshots")) {
-        $pngCount   = (Get-ChildItem "output\screenshots" -Filter "*.png" -ErrorAction SilentlyContinue).Count
+    if ($Screenshots -and (Test-Path $screenshotOutputDir)) {
+        $pngCount   = (Get-ChildItem $screenshotOutputDir -Filter "*.png" -ErrorAction SilentlyContinue).Count
         $totalSizeKB = [math]::Round(
-            (Get-ChildItem "output\screenshots" -Filter "*.png" -ErrorAction SilentlyContinue |
+            (Get-ChildItem $screenshotOutputDir -Filter "*.png" -ErrorAction SilentlyContinue |
              Measure-Object -Property Length -Sum).Sum / 1KB, 1)
-        Write-Success "Screenshots: $pngCount PNGs in output\screenshots\ ($totalSizeKB KB total)"
+        Write-Success "Screenshots: $pngCount PNGs in $screenshotOutputDir\ ($totalSizeKB KB total)"
     }
 
     Write-Host ""
     Write-Header "Next Steps"
-    Write-Info "1. View data: data\repositories.json"
-    Write-Info "2. View reports: output\reports\"
+    Write-Info "1. View data: $repositoriesJsonPath"
+    Write-Info "2. View reports: $reportOutputDir\"
     if ($Screenshots) {
-        Write-Info "3. View screenshots: output\screenshots\"
+        Write-Info "3. View screenshots: $screenshotOutputDir\"
         Write-Info "4. Build dashboard: cd frontend && npm run build"
         Write-Info "5. Deploy: Copy docs\ to hosting platform"
     } else {

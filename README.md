@@ -176,6 +176,9 @@ The easiest way to run the complete 4-phase pipeline:
 # Windows PowerShell
 .\run-spark.ps1 -User YOUR_USERNAME -IncludeAI -Verbose
 
+# Preserve outputs for multiple users side by side
+.\run-spark.ps1 -User YOUR_USERNAME -MultiUser
+
 # Check environment first
 .\run-spark.ps1 -CheckOnly
 ```
@@ -190,6 +193,7 @@ The easiest way to run the complete 4-phase pipeline:
 **Options:**
 - `-User` - GitHub username (default: markhazleton)
 - `-IncludeAI` - Generate AI summaries
+- `-MultiUser` - Store outputs under per-user folders instead of overwriting shared files
 - `-ClearCache` - Clear all caches before running
 - `-ForceRefresh` - Force refresh all data
 - `-Verbose` - Enable detailed logging
