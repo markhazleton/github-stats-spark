@@ -57,7 +57,7 @@ branding:
 # Cache Configuration
 cache:
   enabled: true               # Enable API response caching
-  directory: .cache           # Cache directory
+  directory: .cache           # Default cache directory (override with SPARK_CACHE_DIR)
 
   # Smart Cache Strategy (commit-driven invalidation):
   # - All repository-scoped caches only refresh when new commits are detected

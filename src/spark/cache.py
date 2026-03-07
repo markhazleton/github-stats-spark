@@ -147,7 +147,8 @@ class APICache:
             cache_dir: Directory to store cache files
             config: SparkConfig instance for configuration
         """
-        self.cache_dir = Path(cache_dir)
+        env_cache_dir = os.getenv("SPARK_CACHE_DIR")
+        self.cache_dir = Path(env_cache_dir or cache_dir)
         self.config = config or SparkConfig()
         # Ensure config is loaded if passed empty
         if not self.config.config and Path("config/spark.yml").exists():

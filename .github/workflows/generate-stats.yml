@@ -46,6 +46,8 @@ jobs:
   generate-stats:
     runs-on: ubuntu-latest
     name: Generate Statistics
+    env:
+      SPARK_CACHE_DIR: .cache/ci
 
     steps:
       - name: Checkout repository
@@ -68,18 +70,27 @@ jobs:
           pip install -r requirements.txt
           pip install -e .
 
+      - name: Restore CI cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.SPARK_CACHE_DIR }}
+          key: ${{ runner.os }}-spark-cache-${{ github.ref_name }}-${{ hashFiles('config/spark.yml', 'requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-spark-cache-${{ github.ref_name }}-
+            ${{ runner.os }}-spark-cache-
+
       - name: Install Playwright for screenshots
         if: ${{ inputs.capture_screenshots == true }}
         run: |
           echo "Installing Playwright browsers for screenshot capture..."
           playwright install chromium --with-deps
 
-      - name: Restore cache from repository
+      - name: Inspect CI cache
         run: |
-          if [ -d ".cache" ]; then
-            echo "✅ Cache directory exists with $(ls -1 .cache | wc -l) files"
-            echo "Cache size: $(du -sh .cache | cut -f1)"
-            ls -lh .cache | head -20
+          if [ -d "$SPARK_CACHE_DIR" ]; then
+            echo "✅ Cache directory exists with $(find "$SPARK_CACHE_DIR" -type f | wc -l) files"
+            echo "Cache size: $(du -sh "$SPARK_CACHE_DIR" | cut -f1)"
+            ls -lh "$SPARK_CACHE_DIR" | head -20
           else
             echo "⚠️  No cache directory found, will build from scratch"
           fi
@@ -103,10 +114,11 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "📊 Cache Status Before Generation"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "Total cache files: $(ls -1 .cache 2>/dev/null | wc -l)"
-          echo "Cache size: $(du -sh .cache 2>/dev/null | cut -f1)"
-          echo "AI summaries: $(ls -1 .cache/ai_summary_*.json 2>/dev/null | wc -l)"
-          echo "Commit caches: $(ls -1 .cache/commits_*.json 2>/dev/null | wc -l)"
+          echo "Cache dir: $SPARK_CACHE_DIR"
+          echo "Total cache files: $(find "$SPARK_CACHE_DIR" -type f 2>/dev/null | wc -l)"
+          echo "Cache size: $(du -sh "$SPARK_CACHE_DIR" 2>/dev/null | cut -f1)"
+          echo "AI summaries: $(find "$SPARK_CACHE_DIR" -path '*/ai_summary/*.json' 2>/dev/null | wc -l)"
+          echo "Commit caches: $(find "$SPARK_CACHE_DIR" -path '*/commit_counts/*.json' 2>/dev/null | wc -l)"
           echo ""
           
           # Build command with optional screenshots
@@ -122,10 +134,9 @@ jobs:
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
           echo "📊 Cache Status After Generation"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-          echo "Total cache files: $(ls -1 .cache 2>/dev/null | wc -l)"
-          echo "Cache size: $(du -sh .cache 2>/dev/null | cut -f1)"
-          echo "AI summaries: $(ls -1 .cache/ai_summary_*.json 2>/dev/null | wc -l)"
-          echo "New files: $(($(ls -1 .cache 2>/dev/null | wc -l) - $(git ls-files .cache | wc -l)))"
+          echo "Total cache files: $(find "$SPARK_CACHE_DIR" -type f 2>/dev/null | wc -l)"
+          echo "Cache size: $(du -sh "$SPARK_CACHE_DIR" 2>/dev/null | cut -f1)"
+          echo "AI summaries: $(find "$SPARK_CACHE_DIR" -path '*/ai_summary/*.json' 2>/dev/null | wc -l)"
           echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 
       - name: Set up Node.js
@@ -186,7 +197,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add output/*.svg output/reports/*.md data/*.json docs/ .cache/
+          git add output/*.svg output/reports/*.md data/*.json docs/
           # Add screenshots if they exist
           if [ -d "output/screenshots" ]; then
             git add output/screenshots/

@@ -246,6 +246,10 @@ if ($CheckOnly) {
     exit 0
 }
 
+if (-not $env:SPARK_CACHE_DIR) {
+    $env:SPARK_CACHE_DIR = ".cache/local"
+}
+
 # Build command arguments
 $cmdArgs = @(
     "unified"
@@ -273,7 +277,7 @@ if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
 if ($ClearCache) {
     Write-Header "Cache Management"
     Write-Info "Clearing all caches..."
-    python -m spark.cli cache --clear --dir .cache
+    python -m spark.cli cache --clear --dir $env:SPARK_CACHE_DIR
     Write-Success "Cache cleared"
 }
 
@@ -284,6 +288,7 @@ Write-Info "AI Summaries:  $(if ($IncludeAI) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Screenshots:   $(if ($Screenshots) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Missing Only:  $(if ($MissingOnly) { 'Yes (skip existing PNGs)' } else { 'No' })"
 Write-Info "Force Refresh: $(if ($ForceRefresh) { 'Yes' } else { 'No' })"
+Write-Info "Cache Dir:     $env:SPARK_CACHE_DIR"
 Write-Info "Verbose Mode:  $(if ($PSCmdlet.MyInvocation.BoundParameters['Verbose'].IsPresent) { 'Yes' } else { 'No' })"
 Write-Host ""
 

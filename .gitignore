@@ -146,6 +146,9 @@ cython_debug/
 # Stats Spark Specific
 # ============================================================================
 
+# Runtime caches are environment-specific and should never be merged via git
+.cache/
+
 # Local test outputs (don't commit test outputs, but DO commit main output/ SVGs)
 test-output/
 temp-output/
