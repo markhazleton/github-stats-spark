@@ -65,13 +65,13 @@
 
 ## Phase 4: User Story 2 - Constitution-Aligned Quality Gates (Priority: P1)
 
-**Goal**: Raise calculation and visualization verification to the constitutional threshold and reduce single-responsibility pressure in the highest-risk backend orchestration paths.
+**Goal**: Raise visualization verification to the constitutional threshold and reduce single-responsibility pressure in the highest-risk backend orchestration paths.
 
-**Independent Test**: Run `pytest tests/unit/test_calculator.py tests/unit/test_visualizer.py tests/unit/test_cli.py tests/unit/test_cache_manager.py`, then run `pytest --cov=spark --cov-report=html` and confirm the calculation and visualization modules clear the constitutional gate while the refactored CLI and cache paths still behave identically.
+**Independent Test**: Run `pytest tests/unit/test_visualizer.py tests/unit/test_cli.py tests/unit/test_cache_manager.py`, then run `pytest --cov=spark --cov-report=html` and confirm the visualization module clears the constitutional gate while the refactored CLI and cache paths still behave identically.
 
 ### Tests for User Story 2
 
-- [X] T017 [US2] Expand constitutional-gate coverage in tests/unit/test_calculator.py and tests/unit/test_visualizer.py
+- [X] T017 [US2] Expand branch and rendering coverage in tests/unit/test_visualizer.py
 - [X] T018 [P] [US2] Add cache-manager delegation regression cases in tests/unit/test_cache_manager.py
 - [X] T019 [P] [US2] Add CLI delegation and dispatch regression cases in tests/unit/test_cli.py
 
@@ -88,9 +88,9 @@
 
 ## Phase 5: User Story 3 - Governance-Aligned Documentation and Tooling (Priority: P2)
 
-**Goal**: Make documentation ownership and feature, audit, and upgrade workflow structure explicit so contributors can follow one supported operating model.
+**Goal**: Make documentation ownership and Speckit workflow structure explicit so contributors can follow one supported operating model.
 
-**Independent Test**: Review the documentation entry points and Speckit guidance files, then verify that contributors can locate feature artifacts under `.documentation/specs/`, user-facing guides under `documentation/`, and upgrade guidance in the supported workflow structure without relying on undocumented exceptions.
+**Independent Test**: Review the documentation entry points and Speckit guidance files, then verify that contributors can locate feature artifacts under `.documentation/specs/` and user-facing guides under `documentation/` without relying on undocumented exceptions.
 
 ### Implementation for User Story 3
 
@@ -100,7 +100,7 @@
 - [X] T027 [P] [US3] Update output/README.md to label generated-output README ownership and exception handling
 - [X] T028 [P] [US3] Update frontend/README.md to clarify whether it is user-facing documentation or an approved exception
 - [X] T029 [US3] Align audit workflow guidance with the supported structure in .github/agents/speckit.site-audit.agent.md
-- [X] T030 [US3] Align upgrade workflow guidance with the supported structure in .github/agents/speckit.upgrade.agent.md
+- [X] T030 [US3] Align release workflow guidance with the supported structure in .github/agents/speckit.release.agent.md
 
 **Checkpoint**: User Story 3 is independently reviewable and resolves the documentation/tooling governance path ambiguity.
 
@@ -125,14 +125,14 @@
 - **Foundational (Phase 2)**: Depends on Setup completion; blocks User Stories 1 and 2.
 - **User Story 1 (Phase 3)**: Depends on Phase 2 completion.
 - **User Story 2 (Phase 4)**: Depends on Phase 2 completion.
-- **User Story 3 (Phase 5)**: Depends on Phase 1 completion so the canonical `.documentation/specs/` feature path and shared scaffolding are in place, and can proceed independently of runtime refactoring once that prerequisite is satisfied.
+- **User Story 3 (Phase 5)**: Depends on Phase 1 completion and can proceed independently of runtime refactoring once shared scaffolding exists.
 - **Polish (Phase 6)**: Depends on all desired user stories being complete.
 
 ### User Story Dependencies
 
 - **User Story 1 (P1)**: No dependency on other user stories after foundational helper extraction is complete.
 - **User Story 2 (P1)**: No dependency on User Story 1, but shares the foundational helper work and verification scaffolding.
-- **User Story 3 (P2)**: No dependency on User Stories 1 or 2 after Phase 1 is complete; it depends on the canonical `.documentation/specs/` feature path and shared scaffolding created during setup.
+- **User Story 3 (P2)**: No dependency on User Stories 1 or 2; only depends on the canonical `.documentation/specs/` feature path being in place.
 
 ### Within Each User Story
 
@@ -193,7 +193,7 @@ Task: "Update frontend/README.md to clarify whether it is user-facing documentat
 
 ### Parallel Team Strategy
 
-1. One developer handles the foundational helper extractions in `src/spark/cli/` and `src/spark/cache/`.
+1. One developer handles the foundational helper extractions in `src/spark/cli_output_layout.py`, `src/spark/cli_argument_builders.py`, `src/spark/cache_repository_filter.py`, and `src/spark/cache_refresh_strategy.py`.
 2. One developer handles User Story 1 runtime fixes and tests.
 3. One developer handles User Story 3 documentation and workflow guidance updates.
 4. User Story 2 consolidation starts once the helper extractions land.
