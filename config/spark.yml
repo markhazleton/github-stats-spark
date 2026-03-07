@@ -84,7 +84,7 @@ analyzer:
   ai_provider: anthropic      # Options: anthropic, openai, disabled
 
   # Model selection (if ai_provider enabled)
-  ai_model: claude-haiku-3.5  # Claude Haiku for cost-effective summaries
+  ai_model: claude-haiku-4-5  # Claude Haiku for cost-effective summaries
 
   # Cache duration for external dependency version checks (days)
   dependency_cache_ttl: 7     # 7 days for package registry API responses

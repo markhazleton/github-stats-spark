@@ -297,7 +297,7 @@ class TestUserProfileGenerator:
         mock_anthropic.messages.create.return_value = mock_response
 
         mock_summarizer.anthropic = mock_anthropic
-        mock_summarizer.model = "claude-3-5-haiku-20241022"
+        mock_summarizer.model = "claude-haiku-4-5"
 
         generator = UserProfileGenerator(mock_summarizer)
         profile = generator.generate_profile(

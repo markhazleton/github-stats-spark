@@ -571,7 +571,7 @@ class UnifiedReportWorkflow:
                 a.summary.tokens_used if a.summary else 0
                 for a in repository_analyses
             ),
-            ai_model="claude-3-5-haiku-20241022",  # TODO: Get from summarizer config
+            ai_model=RepositorySummarizer.DEFAULT_MODEL,
         )
 
         # Validate report structure

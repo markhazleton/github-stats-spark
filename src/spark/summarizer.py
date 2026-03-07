@@ -12,6 +12,11 @@ from datetime import datetime
 from typing import Optional, Dict, List, Any
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
+try:
+    from anthropic import NotFoundError
+except ImportError:
+    NotFoundError = Exception
+
 from spark.models.repository import Repository
 from spark.models.commit import CommitHistory
 from spark.models.summary import RepositorySummary
@@ -27,8 +32,20 @@ class RepositorySummarizer:
     # Maximum README length to send to API (characters)
     MAX_README_LENGTH = 8000
 
-    # Anthropic API model (Claude 3.5 Haiku - latest as of Dec 2024)
-    DEFAULT_MODEL = "claude-3-5-haiku-20241022"
+    # Default to the current Haiku model that is available to this project's
+    # Anthropic account. Keep a small fallback chain for older API access tiers.
+    DEFAULT_MODEL = "claude-haiku-4-5"
+    FALLBACK_MODELS = [
+        "claude-haiku-4-5",
+        "claude-3-haiku-20240307",
+    ]
+
+    MODEL_ALIASES = {
+        "claude-haiku-3.5": DEFAULT_MODEL,
+        "claude-3-5-haiku": DEFAULT_MODEL,
+        "claude-3-5-haiku-latest": DEFAULT_MODEL,
+        "claude-3-5-haiku-20241022": DEFAULT_MODEL,
+    }
 
     def __init__(
         self,
@@ -46,7 +63,8 @@ class RepositorySummarizer:
         """
         self.logger = get_logger()
         self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
-        self.model = model or self.DEFAULT_MODEL
+        configured_model = model or os.getenv("ANTHROPIC_MODEL") or self.DEFAULT_MODEL
+        self.model = self._normalize_model_name(configured_model)
         self.total_tokens_used = 0
         self.total_cost = 0.0
 
@@ -66,6 +84,21 @@ class RepositorySummarizer:
                 self.logger.warn("anthropic package not installed, using fallback summaries only")
             except Exception as e:
                 self.logger.warn(f"Failed to initialize Anthropic client: {e}")
+
+    @classmethod
+    def _normalize_model_name(cls, model: str) -> str:
+        """Map legacy or friendly model names to a supported Anthropic alias."""
+        normalized_model = cls.MODEL_ALIASES.get(model, model)
+        return normalized_model
+
+    def _candidate_models(self) -> List[str]:
+        """Return the configured model followed by supported fallbacks."""
+        models: List[str] = []
+        for candidate in [self.model, *self.FALLBACK_MODELS]:
+            normalized = self._normalize_model_name(candidate)
+            if normalized not in models:
+                models.append(normalized)
+        return models
 
     @retry(
         stop=stop_after_attempt(3),
@@ -184,13 +217,32 @@ class RepositorySummarizer:
                 confidence_score=cached_summary['confidence_score'],
             )
 
-        # Cache miss - call Claude API
+        # Cache miss - call Claude API. Retry across a small model fallback chain
+        # when Anthropic rejects a specific model identifier.
         self.cache_misses += 1
-        response = self.anthropic.messages.create(
-            model=self.model,
-            max_tokens=1500,  # Detailed summary
-            messages=[{"role": "user", "content": prompt}],
-        )
+        response = None
+        active_model = self.model
+        last_not_found_error: Optional[Exception] = None
+        for candidate_model in self._candidate_models():
+            try:
+                response = self.anthropic.messages.create(
+                    model=candidate_model,
+                    max_tokens=1500,  # Detailed summary
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                active_model = candidate_model
+                if candidate_model != self.model:
+                    self.logger.warn(
+                        f"Anthropic model {self.model} unavailable, using fallback model {candidate_model}"
+                    )
+                    self.model = candidate_model
+                break
+            except NotFoundError as exc:
+                last_not_found_error = exc
+                self.logger.warn(f"Anthropic model unavailable: {candidate_model}")
+
+        if response is None and last_not_found_error is not None:
+            raise last_not_found_error
 
         summary_text = response.content[0].text
         tokens_used = response.usage.input_tokens + response.usage.output_tokens
@@ -206,9 +258,9 @@ class RepositorySummarizer:
         summary = RepositorySummary(
             repo_id=repo.name,
             ai_summary=summary_text,
-            generation_method=self.model,
+            generation_method=active_model,
             generation_timestamp=datetime.now(),
-            model_used=self.model,
+            model_used=active_model,
             tokens_used=tokens_used,
             confidence_score=90,
         )

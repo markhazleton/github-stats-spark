@@ -15,7 +15,7 @@ def summarizer():
     """Create a RepositorySummarizer instance for testing."""
     config = {
         "anthropic_api_key": "test-api-key-12345",
-        "model": "claude-3-5-haiku-20241022",
+        "model": "claude-haiku-4-5",
         "max_retries": 3,
         "timeout": 30
     }
@@ -133,7 +133,7 @@ class TestAIIntegration:
         # Assertions
         assert isinstance(summary, RepositorySummary)
         assert summary.repository_name == "awesome-project"
-        assert summary.generation_method == "claude-3-5-haiku-20241022"
+        assert summary.generation_method == "claude-haiku-4-5"
         assert "comprehensive" in summary.ai_summary.lower()
         assert "toolkit" in summary.ai_summary.lower()
         assert summary.fallback_summary is None
@@ -190,7 +190,7 @@ class TestAIIntegration:
         )
 
         # Should succeed after retries
-        assert summary.generation_method == "claude-3-5-haiku-20241022"
+        assert summary.generation_method == "claude-haiku-4-5"
         assert summary.ai_summary == "Success after retries"
 
         # Verify retry happened
@@ -368,7 +368,7 @@ class TestFallbackStrategies:
         )
 
         # Should use AI even without README
-        assert summary.generation_method == "claude-3-5-haiku-20241022"
+        assert summary.generation_method == "claude-haiku-4-5"
         assert "AI-generated" in summary.ai_summary
 
 

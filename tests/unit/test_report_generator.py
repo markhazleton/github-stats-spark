@@ -61,7 +61,7 @@ class TestReportGenerator:
             repo_id="test-repo",
             ai_summary="A comprehensive test repository with excellent documentation.",
             generation_method="ai",
-            model_used="claude-3-5-haiku-20241022",
+            model_used="claude-haiku-4-5",
             tokens_used=150,
         )
 
