@@ -8,41 +8,27 @@ This module provides a clean separation between:
 NO cache writes happen during data reading/assembly.
 """
 
-from dataclasses import dataclass
 from datetime import datetime, timezone
 from typing import Dict, List, Optional, Set, Any
 
-from github import GithubException
-
 from spark.cache import APICache
-from spark.dependencies.analyzer import RepositoryDependencyAnalyzer
+from spark.cache_refresh_executor import CacheRefreshExecutor, RefreshResult
+from spark.cache_refresh_strategy import get_refresh_categories, should_refresh_repository
+from spark.cache_repository_filter import filter_refreshable_repositories, is_excluded_repo
 from spark.time_utils import sanitize_timestamp_for_filename
 from spark.logger import get_logger
-from spark.models.commit import CommitHistory
-from spark.models.repository import Repository
-from spark.models.tech_stack import TechnologyStack, DependencyInfo
 from spark.summarizer import RepositorySummarizer
 
 
-@dataclass
-class RefreshResult:
-    """Result of a cache refresh operation."""
-    repo_name: str
-    category: str  # e.g., "commit_counts", "languages", "readme"
-    was_cached: bool
-    refreshed: bool
-    error: Optional[str] = None
-
-
-@dataclass
 class RefreshSummary:
     """Summary of cache refresh for all repositories."""
-    total_repos: int
-    repos_refreshed: int
-    repos_unchanged: int
-    repos_failed: int
-    results: List[RefreshResult]
-    api_calls_made: int
+    def __init__(self, total_repos: int, repos_refreshed: int, repos_unchanged: int, repos_failed: int, results: List[RefreshResult], api_calls_made: int):
+        self.total_repos = total_repos
+        self.repos_refreshed = repos_refreshed
+        self.repos_unchanged = repos_unchanged
+        self.repos_failed = repos_failed
+        self.results = results
+        self.api_calls_made = api_calls_made
 
 
 class CacheManager:
@@ -64,9 +50,16 @@ class CacheManager:
         self.github = github_client
         self.cache = cache
         self.logger = get_logger()
-        self.api_calls = 0
         self.summarizer = summarizer
-        self.dependency_analyzer = RepositoryDependencyAnalyzer()
+        self.refresh_executor = CacheRefreshExecutor(github_client, cache, summarizer=summarizer)
+
+    @property
+    def api_calls(self) -> int:
+        return self.refresh_executor.api_calls
+
+    @api_calls.setter
+    def api_calls(self, value: int) -> None:
+        self.refresh_executor.api_calls = value
     
     def needs_refresh(
         self,
@@ -103,103 +96,7 @@ class CacheManager:
         repo_name: str,
         pushed_at: datetime
     ) -> RefreshResult:
-        """Refresh commit counts cache for a repository.
-        
-        Args:
-            username: Repository owner
-            repo_name: Repository name
-            pushed_at: Repository's pushed_at timestamp
-            
-        Returns:
-            RefreshResult with status
-        """
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "commit_counts"
-        
-        # Check if already cached
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=True,
-                refreshed=False
-            )
-        
-        try:
-            # Fetch from GitHub
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
-            
-            from datetime import timedelta
-            now = datetime.now(timezone.utc)
-            day_90_ago = now - timedelta(days=90)
-            day_180_ago = now - timedelta(days=180)
-            day_365_ago = now - timedelta(days=365)
-            
-            total_commits = 0
-            commits_90d = 0
-            commits_180d = 0
-            commits_365d = 0
-            last_commit_date = None
-            
-            for commit in repo.get_commits():
-                if total_commits >= 1000:  # Limit for rate limiting
-                    break
-                
-                total_commits += 1
-                
-                try:
-                    commit_date = commit.commit.author.date if commit.commit and commit.commit.author else None
-                except (AttributeError, IndexError):
-                    continue
-                
-                if not commit_date:
-                    continue
-                
-                if not last_commit_date or commit_date > last_commit_date:
-                    last_commit_date = commit_date
-                
-                if commit_date >= day_90_ago:
-                    commits_90d += 1
-                if commit_date >= day_180_ago:
-                    commits_180d += 1
-                if commit_date >= day_365_ago:
-                    commits_365d += 1
-            
-            result = {
-                "total": total_commits,
-                "recent_90d": commits_90d,
-                "recent_180d": commits_180d,
-                "recent_365d": commits_365d,
-                "last_commit_date": last_commit_date.isoformat() if last_commit_date else None,
-            }
-            
-            # Write to cache
-            metadata = {
-                "repository": {"owner": username, "name": repo_name},
-                "category": category,
-                "pushed_at": pushed_at.isoformat(),
-                "ttl_enforced": False,
-            }
-            self.cache.set(category, username, result, repo=repo_name, week=cache_key, metadata=metadata)
-            
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=True
-            )
-            
-        except Exception as e:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {e}")
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error=str(e)
-            )
+        return self.refresh_executor.refresh_commit_counts(username, repo_name, pushed_at)
     
     def refresh_languages(
         self,
@@ -207,48 +104,7 @@ class CacheManager:
         repo_name: str,
         pushed_at: datetime
     ) -> RefreshResult:
-        """Refresh language stats cache for a repository."""
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "languages"
-        
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=True,
-                refreshed=False
-            )
-        
-        try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
-            languages = repo.get_languages()
-            
-            metadata = {
-                "repository": {"owner": username, "name": repo_name},
-                "category": category,
-                "pushed_at": pushed_at.isoformat(),
-                "ttl_enforced": False,
-            }
-            self.cache.set(category, username, languages, repo=repo_name, week=cache_key, metadata=metadata)
-            
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=True
-            )
-            
-        except Exception as e:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {e}")
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error=str(e)
-            )
+        return self.refresh_executor.refresh_languages(username, repo_name, pushed_at)
 
     def refresh_readme(
         self,
@@ -256,54 +112,7 @@ class CacheManager:
         repo_name: str,
         pushed_at: datetime
     ) -> RefreshResult:
-        """Refresh README cache for a repository."""
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "readme"
-
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached is not None:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=True,
-                refreshed=False
-            )
-
-        try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
-            content = ""
-            try:
-                readme = repo.get_readme()
-                content = readme.decoded_content.decode("utf-8")
-            except GithubException as e:
-                if getattr(e, "status", None) != 404:
-                    raise
-
-            metadata = {
-                "repository": {"owner": username, "name": repo_name},
-                "category": category,
-                "pushed_at": pushed_at.isoformat(),
-                "ttl_enforced": False,
-            }
-            self.cache.set(category, username, content, repo=repo_name, week=cache_key, metadata=metadata)
-
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=True
-            )
-
-        except Exception as e:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {e}")
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error=str(e)
-            )
+        return self.refresh_executor.refresh_readme(username, repo_name, pushed_at)
 
     def refresh_quality_indicators(
         self,
@@ -311,100 +120,7 @@ class CacheManager:
         repo_name: str,
         pushed_at: datetime
     ) -> RefreshResult:
-        """Refresh quality indicators cache for a repository.
-        
-        Checks for:
-        - License file (via GitHub API)
-        - CI/CD workflows (.github/workflows/)
-        - Tests directory (test/, tests/, spec/, specs/, __tests__/)
-        - Documentation (docs/, doc/, documentation/, CONTRIBUTING.md, CHANGELOG.md)
-        """
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "quality_indicators"
-
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached is not None:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=True,
-                refreshed=False
-            )
-
-        try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
-            
-            # Check for license
-            has_license = False
-            try:
-                repo.get_license()
-                has_license = True
-            except GithubException as e:
-                if getattr(e, "status", None) != 404:
-                    raise
-
-            # Check for CI/CD workflows
-            has_ci_cd = False
-            try:
-                workflows = repo.get_workflows()
-                has_ci_cd = workflows.totalCount > 0
-            except GithubException:
-                pass
-
-            # Check root contents for tests and docs directories
-            has_tests = False
-            has_docs = False
-            test_dirs = {"test", "tests", "spec", "specs", "__tests__"}
-            doc_dirs = {"docs", "doc", "documentation"}
-            doc_files = {"contributing.md", "changelog.md"}
-            
-            try:
-                contents = repo.get_contents("")
-                for item in contents:
-                    name_lower = item.name.lower()
-                    if item.type == "dir":
-                        if name_lower in test_dirs:
-                            has_tests = True
-                        if name_lower in doc_dirs:
-                            has_docs = True
-                    elif item.type == "file":
-                        if name_lower in doc_files:
-                            has_docs = True
-            except GithubException:
-                pass
-
-            quality_data = {
-                "has_license": has_license,
-                "has_ci_cd": has_ci_cd,
-                "has_tests": has_tests,
-                "has_docs": has_docs,
-            }
-
-            metadata = {
-                "repository": {"owner": username, "name": repo_name},
-                "category": category,
-                "pushed_at": pushed_at.isoformat(),
-                "ttl_enforced": False,
-            }
-            self.cache.set(category, username, quality_data, repo=repo_name, week=cache_key, metadata=metadata)
-
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=True
-            )
-
-        except Exception as e:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {e}")
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error=str(e)
-            )
+        return self.refresh_executor.refresh_quality_indicators(username, repo_name, pushed_at)
 
     def refresh_dependency_files(
         self,
@@ -412,80 +128,7 @@ class CacheManager:
         repo_name: str,
         pushed_at: datetime
     ) -> RefreshResult:
-        """Refresh dependency files cache for a repository."""
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "dependency_files"
-
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached is not None:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=True,
-                refreshed=False
-            )
-
-        dependency_files: Dict[str, str] = {}
-        target_files = [
-            "package.json",
-            "requirements.txt",
-            "pyproject.toml",
-            "Gemfile",
-            "go.mod",
-            "pom.xml",
-            "*.csproj",
-            "Cargo.toml",
-            "composer.json",
-        ]
-
-        try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
-
-            for filename in target_files:
-                try:
-                    if "*" in filename:
-                        contents = repo.get_contents("")
-                        pattern = filename.replace("*", "")
-                        for item in contents:
-                            if item.name.endswith(pattern):
-                                content = item.decoded_content.decode("utf-8")
-                                dependency_files[item.name] = content
-                    else:
-                        file_content = repo.get_contents(filename)
-                        content = file_content.decoded_content.decode("utf-8")
-                        dependency_files[filename] = content
-                except GithubException as e:
-                    if getattr(e, "status", None) == 404:
-                        continue
-                    raise
-                except Exception:
-                    continue
-
-            metadata = {
-                "repository": {"owner": username, "name": repo_name},
-                "category": category,
-                "pushed_at": pushed_at.isoformat(),
-                "ttl_enforced": False,
-            }
-            self.cache.set(category, username, dependency_files, repo=repo_name, week=cache_key, metadata=metadata)
-
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=True
-            )
-
-        except Exception as e:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {e}")
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error=str(e)
-            )
+        return self.refresh_executor.refresh_dependency_files(username, repo_name, pushed_at)
 
     def refresh_ai_summary(
         self,
@@ -493,128 +136,7 @@ class CacheManager:
         repo_data: Dict[str, Any],
         pushed_at: datetime
     ) -> RefreshResult:
-        """Refresh AI summary cache for a repository."""
-        repo_name = repo_data["name"]
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "ai_summary"
-
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=True,
-                refreshed=False
-            )
-
-        if self.summarizer is None:
-            self.summarizer = RepositorySummarizer(cache=self.cache)
-
-        try:
-            # Ensure supporting caches exist
-            commit_data = self.cache.get("commit_counts", username, repo=repo_name, week=cache_key)
-            if commit_data is None:
-                self.refresh_commit_counts(username, repo_name, pushed_at)
-                commit_data = self.cache.get("commit_counts", username, repo=repo_name, week=cache_key) or {}
-
-            language_stats = self.cache.get("languages", username, repo=repo_name, week=cache_key)
-            if language_stats is None:
-                self.refresh_languages(username, repo_name, pushed_at)
-                language_stats = self.cache.get("languages", username, repo=repo_name, week=cache_key) or {}
-
-            readme_content = self.cache.get("readme", username, repo=repo_name, week=cache_key)
-            if readme_content is None:
-                self.refresh_readme(username, repo_name, pushed_at)
-                readme_content = self.cache.get("readme", username, repo=repo_name, week=cache_key) or ""
-
-            dependency_files = self.cache.get("dependency_files", username, repo=repo_name, week=cache_key)
-            if dependency_files is None:
-                self.refresh_dependency_files(username, repo_name, pushed_at)
-                dependency_files = self.cache.get("dependency_files", username, repo=repo_name, week=cache_key) or {}
-
-            tech_stack = None
-            if dependency_files:
-                dep_report = self.dependency_analyzer.analyze_repository(dependency_files)
-                if dep_report.total_dependencies > 0:
-                    tech_stack = TechnologyStack(
-                        repository_name=repo_name,
-                        dependencies=[
-                            DependencyInfo(
-                                name=detail.name,
-                                current_version=detail.current_version,
-                                ecosystem=detail.ecosystem,
-                            )
-                            for detail in dep_report.details
-                        ],
-                    )
-
-            repo = Repository.from_dict(repo_data)
-            repo.language_stats = language_stats or {}
-            repo.language_count = len(repo.language_stats)
-            repo.has_readme = bool(readme_content)
-
-            commit_data["repository_name"] = repo_name
-            commit_history = CommitHistory.from_dict(commit_data) if commit_data else None
-
-            summary = self.summarizer.summarize_repository(
-                repo=repo,
-                readme_content=readme_content or None,
-                commit_history=commit_history,
-                language_stats=language_stats,
-                tech_stack=tech_stack,
-                repository_owner=username,
-                repo_pushed_at=pushed_at,
-                write_cache=False,
-            )
-
-            if summary.ai_summary:
-                cache_payload = {
-                    "ai_summary": summary.ai_summary,
-                    "generation_method": summary.generation_method,
-                    "generation_timestamp": summary.generation_timestamp.isoformat()
-                    if summary.generation_timestamp
-                    else datetime.now().isoformat(),
-                    "model_used": summary.model_used,
-                    "tokens_used": summary.tokens_used,
-                    "confidence_score": summary.confidence_score,
-                }
-                metadata = self.summarizer._build_cache_metadata(
-                    repo_name=repo_name,
-                    repository_owner=username,
-                    cache_date=pushed_at,
-                )
-                self.cache.set(
-                    category,
-                    username,
-                    cache_payload,
-                    repo=repo_name,
-                    week=cache_key,
-                    metadata=metadata,
-                )
-
-                return RefreshResult(
-                    repo_name=repo_name,
-                    category=category,
-                    was_cached=False,
-                    refreshed=True
-                )
-
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False
-            )
-
-        except Exception as e:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {e}")
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error=str(e)
-            )
+        return self.refresh_executor.refresh_ai_summary(username, repo_data, pushed_at)
     
     def refresh_repository(
         self,
@@ -683,9 +205,7 @@ class CacheManager:
         Returns:
             RefreshSummary with results
         """
-        eligible_repos = [
-            repo for repo in repo_list if not self._is_excluded_repo(repo)
-        ]
+        eligible_repos = filter_refreshable_repositories(repo_list)
         self.logger.info(f"Starting cache refresh for {len(eligible_repos)} repositories")
         self.api_calls = 0
         
@@ -713,13 +233,12 @@ class CacheManager:
             
             # Check if refresh needed
             if not force_refresh:
-                categories_to_check = {"commit_counts", "languages", "quality_indicators"}
-                if include_ai_summaries:
-                    categories_to_check |= {"readme", "dependency_files", "ai_summary"}
-
-                needs_update = any(
-                    self.needs_refresh(username, repo_name, category, pushed_at)
-                    for category in categories_to_check
+                needs_update = should_refresh_repository(
+                    self.needs_refresh,
+                    username,
+                    repo_name,
+                    pushed_at,
+                    include_ai_summaries=include_ai_summaries,
                 )
                 if not needs_update:
                     self.logger.debug(f"[{i}/{len(eligible_repos)}] OK {repo_name} - cache valid")
@@ -760,16 +279,4 @@ class CacheManager:
 
     @staticmethod
     def _is_excluded_repo(repo_data: Dict[str, Any]) -> bool:
-        is_private = repo_data.get("is_private")
-        if is_private is None:
-            is_private = repo_data.get("private", False)
-
-        is_fork = repo_data.get("is_fork")
-        if is_fork is None:
-            is_fork = repo_data.get("fork", False)
-
-        is_archived = repo_data.get("is_archived")
-        if is_archived is None:
-            is_archived = repo_data.get("archived", False)
-
-        return bool(is_private) or bool(is_fork) or bool(is_archived)
+        return is_excluded_repo(repo_data)

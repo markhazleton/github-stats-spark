@@ -67,12 +67,12 @@ class SparkConfig:
         # Validate theme
         theme = self.config.get("visualization", {}).get("theme")
         if theme:
-            if theme not in self.BUILT_IN_THEMES and theme != "custom":
-                if "custom_themes" not in self.themes_config:
-                    errors.append(
-                        f"Theme '{theme}' not found. Must be one of: "
-                        f"{', '.join(self.BUILT_IN_THEMES + ['custom'])}"
-                    )
+            custom_themes = self.themes_config.get("custom_themes", {})
+            if theme not in self.BUILT_IN_THEMES and theme not in custom_themes:
+                valid_themes = self.BUILT_IN_THEMES + sorted(custom_themes.keys())
+                errors.append(
+                    f"Theme '{theme}' not found. Must be one of: {', '.join(valid_themes)}"
+                )
 
         return errors
 

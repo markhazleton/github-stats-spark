@@ -249,3 +249,40 @@ class TestReleaseCadence:
         assert cadence["monthly"][-1]["repos"] == 2
         assert cadence["unique_repos"] == 3
         assert cadence["max_weekly"] >= cadence["weekly"][-1]["repos"]
+
+    def test_release_cadence_without_repo_metadata_returns_empty_series(self):
+        """Ensure cadence gracefully handles commits without repo identifiers."""
+        calculator = StatsCalculator({}, [])
+        calculator.add_commits([
+            {"sha": "abc", "date": datetime.now().isoformat(), "message": "missing repo"}
+        ])
+
+        cadence = calculator.calculate_release_cadence(weeks=2, months=2)
+
+        assert [point["repos"] for point in cadence["weekly"]] == [0, 0]
+        assert [point["repos"] for point in cadence["monthly"]] == [0, 0]
+
+
+class TestDashboardCommitMetrics:
+    """Test repository-level commit metric helpers."""
+
+    def test_calculate_repository_commit_metrics_tracks_distribution(self):
+        commits = [
+            {
+                "sha": "small",
+                "commit": {"author": {"date": "2026-03-01T00:00:00Z"}},
+                "stats": {"total": 1, "additions": 2, "deletions": 0},
+            },
+            {
+                "sha": "large",
+                "commit": {"author": {"date": "2026-03-02T00:00:00Z"}},
+                "stats": {"total": 4, "additions": 10, "deletions": 6},
+            },
+        ]
+
+        metrics = StatsCalculator.calculate_repository_commit_metrics(commits)
+
+        assert metrics["total_commits"] == 2
+        assert metrics["largest_commit"]["sha"] == "large"
+        assert metrics["smallest_commit"]["sha"] == "small"
+        assert metrics["commit_size_distribution"]["max"] == 20

@@ -890,7 +890,13 @@ def get_theme(theme_name: str, themes_config: Optional[Dict[str, Any]] = None) -
     elif theme_name == "spark-light":
         return SparkLightTheme()
     else:
-        # Custom theme
         if not themes_config:
-            raise ValueError(f"Custom theme '{theme_name}' requires themes configuration")
+            raise ValueError(f"Theme '{theme_name}' requires a configured themes.yml entry")
+
+        custom_themes = themes_config.get("custom_themes", {})
+        if theme_name not in custom_themes:
+            valid_themes = ["spark-dark", "spark-light", *sorted(custom_themes.keys())]
+            raise ValueError(
+                f"Theme '{theme_name}' not found. Must be one of: {', '.join(valid_themes)}"
+            )
         return CustomTheme.load_from_yaml(themes_config, theme_name)

@@ -17,10 +17,10 @@
 
 **Purpose**: Create the shared verification scaffolding required by multiple stories.
 
-- [ ] T001 Create shared remediation fixtures in tests/unit/conftest.py
-- [ ] T002 [P] Create CLI regression harness in tests/unit/test_cli.py
-- [ ] T003 [P] Create unified workflow regression harness in tests/unit/test_unified_report_workflow.py
-- [ ] T004 [P] Create dashboard generator regression harness in tests/unit/test_dashboard_generator.py
+- [X] T001 Create shared remediation fixtures in tests/unit/conftest.py
+- [X] T002 [P] Create CLI regression harness in tests/unit/test_cli.py
+- [X] T003 [P] Create unified workflow regression harness in tests/unit/test_unified_report_workflow.py
+- [X] T004 [P] Create dashboard generator regression harness in tests/unit/test_dashboard_generator.py
 
 ---
 
@@ -30,12 +30,12 @@
 
 **⚠️ CRITICAL**: User Stories 1 and 2 should not begin until this phase is complete.
 
-- [ ] T005 Create CLI output path helpers in src/spark/cli_output_layout.py
-- [ ] T006 [P] Create CLI parser builder helpers in src/spark/cli_argument_builders.py
-- [ ] T007 [P] Create shared repository filtering helper in src/spark/cache_repository_filter.py
-- [ ] T008 [P] Create cache refresh strategy coordinator in src/spark/cache_refresh_strategy.py
-- [ ] T009 Update src/spark/cli.py to consume src/spark/cli_output_layout.py and src/spark/cli_argument_builders.py
-- [ ] T010 Update src/spark/cache_manager.py to consume src/spark/cache_repository_filter.py and src/spark/cache_refresh_strategy.py
+- [X] T005 Create CLI output path helpers in src/spark/cli_output_layout.py
+- [X] T006 [P] Create CLI parser builder helpers in src/spark/cli_argument_builders.py
+- [X] T007 [P] Create shared repository filtering helper in src/spark/cache_repository_filter.py
+- [X] T008 [P] Create cache refresh strategy coordinator in src/spark/cache_refresh_strategy.py
+- [X] T009 Update src/spark/cli.py to consume src/spark/cli_output_layout.py and src/spark/cli_argument_builders.py
+- [X] T010 Update src/spark/cache_manager.py to consume src/spark/cache_repository_filter.py and src/spark/cache_refresh_strategy.py
 
 **Checkpoint**: Shared helper boundaries exist and regression harnesses are in place.
 
@@ -49,15 +49,15 @@
 
 ### Tests for User Story 1
 
-- [ ] T011 [P] [US1] Add configured theme regression cases in tests/unit/test_config.py
-- [ ] T012 [P] [US1] Add unified workflow theme application cases in tests/unit/test_unified_report_workflow.py
-- [ ] T013 [P] [US1] Add dashboard aggregate total cases in tests/unit/test_dashboard_generator.py
+- [X] T011 [P] [US1] Add configured theme regression cases in tests/unit/test_config.py
+- [X] T012 [P] [US1] Add unified workflow theme application cases in tests/unit/test_unified_report_workflow.py
+- [X] T013 [P] [US1] Add dashboard aggregate total cases in tests/unit/test_dashboard_generator.py
 
 ### Implementation for User Story 1
 
-- [ ] T014 [US1] Update src/spark/unified_report_workflow.py to resolve themes from configuration through shared theme loaders
-- [ ] T015 [US1] Update src/spark/dashboard_generator.py to compute total_stars and total_forks from included repositories
-- [ ] T016 [US1] Update src/spark/visualizer.py to enforce consistent invalid-theme handling for workflow consumers
+- [X] T014 [US1] Update src/spark/unified_report_workflow.py to resolve themes from configuration through shared theme loaders
+- [X] T015 [US1] Update src/spark/dashboard_generator.py to compute total_stars and total_forks from included repositories
+- [X] T016 [US1] Update src/spark/visualizer.py to enforce consistent invalid-theme handling for workflow consumers
 
 **Checkpoint**: User Story 1 is independently testable and delivers configuration-correct, aggregate-correct outputs.
 
@@ -71,16 +71,16 @@
 
 ### Tests for User Story 2
 
-- [ ] T017 [US2] Expand constitutional-gate coverage in tests/unit/test_calculator.py and tests/unit/test_visualizer.py
-- [ ] T018 [P] [US2] Add cache-manager delegation regression cases in tests/unit/test_cache_manager.py
-- [ ] T019 [P] [US2] Add CLI delegation and dispatch regression cases in tests/unit/test_cli.py
+- [X] T017 [US2] Expand constitutional-gate coverage in tests/unit/test_calculator.py and tests/unit/test_visualizer.py
+- [X] T018 [P] [US2] Add cache-manager delegation regression cases in tests/unit/test_cache_manager.py
+- [X] T019 [P] [US2] Add CLI delegation and dispatch regression cases in tests/unit/test_cli.py
 
 ### Implementation for User Story 2
 
-- [ ] T020 [US2] Refactor src/spark/cli.py to delegate parser construction and output layout responsibilities
-- [ ] T021 [US2] Refactor src/spark/cache_manager.py to delegate repository filtering and refresh coordination
-- [ ] T022 [US2] Refine refresh strategy implementations in src/spark/cache_refresh_strategy.py to preserve existing cache contracts
-- [ ] T023 [US2] Simplify component initialization and orchestration boundaries in src/spark/unified_report_workflow.py
+- [X] T020 [US2] Refactor src/spark/cli.py to delegate parser construction and output layout responsibilities
+- [X] T021 [US2] Refactor src/spark/cache_manager.py to delegate repository filtering and refresh coordination
+- [X] T022 [US2] Refine refresh strategy implementations in src/spark/cache_refresh_strategy.py to preserve existing cache contracts
+- [X] T023 [US2] Simplify component initialization and orchestration boundaries in src/spark/unified_report_workflow.py
 
 **Checkpoint**: User Story 2 is independently testable and clears the in-scope architectural and coverage findings.
 
@@ -94,13 +94,13 @@
 
 ### Implementation for User Story 3
 
-- [ ] T024 [P] [US3] Update .github/copilot-instructions.md to align feature artifact paths and documentation ownership rules
-- [ ] T025 [P] [US3] Update documentation/README.md to document user-facing guides versus Speckit artifacts
-- [ ] T026 [P] [US3] Update docs/README.md to label deployment README ownership and exception handling
-- [ ] T027 [P] [US3] Update output/README.md to label generated-output README ownership and exception handling
-- [ ] T028 [P] [US3] Update frontend/README.md to clarify whether it is user-facing documentation or an approved exception
-- [ ] T029 [US3] Align audit workflow guidance with the supported structure in .github/agents/speckit.site-audit.agent.md
-- [ ] T030 [US3] Align upgrade workflow guidance with the supported structure in .github/agents/speckit.upgrade.agent.md
+- [X] T024 [P] [US3] Update .github/copilot-instructions.md to align feature artifact paths and documentation ownership rules
+- [X] T025 [P] [US3] Update documentation/README.md to document user-facing guides versus Speckit artifacts
+- [X] T026 [P] [US3] Update docs/README.md to label deployment README ownership and exception handling
+- [X] T027 [P] [US3] Update output/README.md to label generated-output README ownership and exception handling
+- [X] T028 [P] [US3] Update frontend/README.md to clarify whether it is user-facing documentation or an approved exception
+- [X] T029 [US3] Align audit workflow guidance with the supported structure in .github/agents/speckit.site-audit.agent.md
+- [X] T030 [US3] Align upgrade workflow guidance with the supported structure in .github/agents/speckit.upgrade.agent.md
 
 **Checkpoint**: User Story 3 is independently reviewable and resolves the documentation/tooling governance path ambiguity.
 
@@ -110,10 +110,10 @@
 
 **Purpose**: Run end-to-end validation and capture completion evidence across all stories.
 
-- [ ] T031 [P] Update validation steps and expected outcomes in .documentation/specs/001-remediate-high-issues/quickstart.md
-- [ ] T032 Record post-implementation verification evidence in .documentation/specs/001-remediate-high-issues/research.md
-- [ ] T033 [P] Save a follow-up audit report in .documentation/copilot/audit/2026-03-07_followup.md
-- [ ] T034 Document final completion notes and gate status in .documentation/specs/001-remediate-high-issues/plan.md
+- [X] T031 [P] Update validation steps and expected outcomes in .documentation/specs/001-remediate-high-issues/quickstart.md
+- [X] T032 Record post-implementation verification evidence in .documentation/specs/001-remediate-high-issues/research.md
+- [X] T033 [P] Save a follow-up audit report in .documentation/copilot/audit/2026-03-07_followup-high-findings-remediation-check.md
+- [X] T034 Document final completion notes and gate status in .documentation/specs/001-remediate-high-issues/plan.md
 
 ---
 

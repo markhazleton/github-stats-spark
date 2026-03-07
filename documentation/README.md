@@ -2,6 +2,18 @@
 
 Complete documentation for Stats Spark - GitHub profile statistics and analysis generator.
 
+## Documentation Ownership
+
+Primary user-facing guides live in this `documentation/` tree.
+
+Repository framework and planning artifacts live in `.documentation/`, including the project constitution, feature specs, task plans, and audit history.
+
+Approved README exceptions are linked here so contributors have a single entry point:
+- `frontend/README.md` for frontend contributor workflow details
+- `frontend/public/README.md` for static asset metadata
+- `docs/README.md` for deployed-site output metadata
+- `output/README.md` for generated SVG output metadata
+
 ## 📚 Quick Navigation
 
 ### Getting Started
@@ -18,6 +30,7 @@ Complete documentation for Stats Spark - GitHub profile statistics and analysis 
 - **[Architecture Overview](architecture/README.md)** - System design and data flow
 - **[Changelog](CHANGELOG.md)** - Version history and release notes
 - **[Testing](TESTING.md)** - Test coverage and quality metrics
+- **Framework Artifacts** - See `.documentation/` for constitution, feature specs, task plans, and audit history
 
 ## 🎯 Common Tasks
 
