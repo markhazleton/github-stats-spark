@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-07T15:22:25.316535+00:00",
+  "value": {
+    "ai_summary": "# Technical Summary: markhazleton.github.io\n\nThis is Mark Hazleton's personal portfolio and blog website built with **Jekyll**, a static site generator, and hosted on GitHub Pages with automated deployment via GitHub Actions. The project leverages a customized Minima theme with SCSS-based styling (36.8% of codebase) combined with custom HTML (34.6%) and CSS (27.9%), providing a lightweight, performant alternative to database-driven solutions without external frontend frameworks. Key features include dark/light mode toggle functionality, emoji support, SEO optimization capabilities, and a structured blogging system with support for categories, tags, and featured images through Jekyll's front matter configuration. The tech stack is relatively modern but showing signs of technical debt, with Ruby 3.2.2 and Jekyll 3.10.0, though the repository itself maintains a declining activity pattern (1 commit in 90 days, 16 commits over 365 days) indicating it's primarily a static portfolio rather than an active development project. The project is well-documented with comprehensive guides for local development setup across multiple operating systems (macOS, Windows, Linux), post creation workflows, and both direct-push and feature-branch deployment options, making it accessible for content updates and contributions. This architecture is ideal for developers seeking a low-maintenance, Git-based publishing platform with GitHub Pages integration and automated CI/CD pipelines without requiring traditional web hosting or backend infrastructure.",
+    "generation_method": "claude-haiku-4-5",
+    "generation_timestamp": "2026-03-07T15:22:25.316446",
+    "model_used": "claude-haiku-4-5",
+    "tokens_used": 2925,
+    "confidence_score": 90
+  },
+  "hash": "c3b02e40509aaf977ff8274a8e1fb9024bf2d33e1c049bb1d0da9fd82551355c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton.github.io"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-20T01:16:52+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "markhazleton.github.io",
+  "week": "2026-02-20T01-16-52+00-00"
+}

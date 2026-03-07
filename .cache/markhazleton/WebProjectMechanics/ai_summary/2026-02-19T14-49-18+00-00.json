@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-07T15:23:20.687411+00:00",
+  "value": {
+    "ai_summary": "# Technical Summary: WebProjectMechanics\n\n**WebProjectMechanics** is a multi-tenant, multi-domain content management system undergoing a greenfield rebuild from legacy ASP.NET Web Forms to modern .NET 9, designed to serve 36+ independent websites from a single application instance by publishing pre-rendered static HTML from SQLite databases. The system employs a plugin-based architecture with domain-specific modules (CMS, Mineral Collection, Recipes) and uses physical database file isolation rather than traditional tenant ID columns, eliminating the need for tenant-aware queries throughout the codebase. Built on ASP.NET Core 9 Minimal APIs with Scriban templating, Caddy as a reverse proxy with auto-SSL, and EF Core 9 for data access, the architecture prioritizes simplicity and cost-efficiency by running on a single ~$10/month Azure Linux VM while delegating static file serving and SSL termination to Caddy. The repository includes comprehensive documentation of both the legacy system and implementation roadmap, a data migration tool for transitioning from MS Access, and an organized project structure with shared core libraries, domain-specific implementations, and test coverage via xUnit. This approach is notable for its pragmatic tenant isolation strategy and publish-to-static pattern, which trades runtime flexibility for guaranteed performance, security isolation, and reduced infrastructure complexity\u2014making it well-suited for small-to-medium multi-site operations requiring high availability at minimal operational cost.",
+    "generation_method": "claude-haiku-4-5",
+    "generation_timestamp": "2026-03-07T15:23:20.687336",
+    "model_used": "claude-haiku-4-5",
+    "tokens_used": 1269,
+    "confidence_score": 90
+  },
+  "hash": "373ac1b3b4c9e351563a1d8999ffcdce7b497b5b977162cf785fc8bcb5ad2660",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "WebProjectMechanics"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-02-19T14:49:18+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "WebProjectMechanics",
+  "week": "2026-02-19T14-49-18+00-00"
+}

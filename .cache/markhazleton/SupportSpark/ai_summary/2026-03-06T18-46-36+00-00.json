@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-07T15:22:51.631672+00:00",
+  "value": {
+    "ai_summary": "# SupportSpark - Technical Summary\n\n**SupportSpark** is a compassionate web platform designed to help individuals managing life challenges (health issues, transitions, personal journeys) maintain connection with their support network by sharing updates efficiently. Members create and post journey updates while invited supporters view updates and provide encouragement through organized threaded conversations, eliminating the exhaustion of communicating separately with multiple people.\n\nThe application employs a modern full-stack TypeScript architecture with **React 19 + Vite** on the frontend leveraging **shadcn/ui and Radix** components styled with **Tailwind CSS 4** for an accessible, calming interface, paired with an **Express 5** backend using **Passport.js** for authentication and **Zod** for runtime validation. State management utilizes **TanStack React Query** for server synchronization, **Wouter** for lightweight routing, and **Framer Motion** for smooth animations, with data persisted through a JSON-based storage layer in development.\n\nThe architecture emphasizes role-based access control (members vs. supporters), invitation-only networks for privacy, and type safety throughout the stack with strict TypeScript and shared schemas between client and server. Notable features include a fully client-side demo mode running in localStorage for GitHub Pages preview, comprehensive IIS/Windows Server deployment automation via PowerShell, and responsive design with WCAG compliance.\n\nThe project is particularly distinguished by its intentional, compassionate UX design philosophy\u2014prioritizing a distraction-free, calming aesthetic with teal/sage color schemes appropriate for sensitive moments. With 97 total dependencies, active development momentum (23 commits in 90 days), and production-ready Windows IIS deployment scripts, SupportSpark targets caregivers, patients, and support networks seeking a dignified digital space for maintaining meaningful connection during vulnerable life periods.",
+    "generation_method": "claude-haiku-4-5",
+    "generation_timestamp": "2026-03-07T15:22:51.631588",
+    "model_used": "claude-haiku-4-5",
+    "tokens_used": 2740,
+    "confidence_score": 90
+  },
+  "hash": "1dd210f9d4b3f7cf83262ad73f20884de6e5862eb5702df5b36d6229ea187582",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "SupportSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-03-06T18:46:36+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "SupportSpark",
+  "week": "2026-03-06T18-46-36+00-00"
+}

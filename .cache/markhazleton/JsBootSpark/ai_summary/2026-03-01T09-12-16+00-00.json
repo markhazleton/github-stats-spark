@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-07T15:22:10.518486+00:00",
+  "value": {
+    "ai_summary": "# JsBootSpark: Technical Summary\n\n## Overview\n\nJsBootSpark is a production-ready, full-stack starter kit designed to accelerate development of modern, responsive web applications by combining Express.js backend with Bootstrap 5 frontend. The project serves as a comprehensive boilerplate that eliminates repetitive setup work while maintaining best practices for security, performance, and developer experience.\n\n## Key Features & Capabilities\n\nThe starter kit provides an extensive feature set including hot-reload development environments, dark/light mode theming with system preference detection, and a 2,000+ Bootstrap Icons library. It implements security best practices through Helmet.js integration, rate limiting, and input validation, while offering performance optimization via compression middleware and responsive image handling. Notable capabilities include dynamic page generation from single templates, CSV-to-JSON conversion for data management, automated CI/CD pipelines with GitHub Actions, and Docker containerization for consistent deployment across environments.\n\n## Technology Stack\n\nThe project leverages **Node.js 18+** with **Express.js 5.1.0** for the backend, **Bootstrap 5.3.7** and **SASS** for frontend styling, and **EJS 3.1.10** as the template engine. The tech stack includes testing infrastructure (Jest), code quality tools (ESLint, Prettier), and deployment integrations (GitHub Pages, Docker). The codebase is written primarily in JavaScript (66.8%) with EJS templates (21.1%), PowerShell build scripts (9.8%), and minimal TypeScript/SCSS.\n\n## Architectural Approach\n\nThe project follows a modular, component-driven architecture that emphasizes reusability and maintainability. It implements separation of concerns with dedicated template engines, middleware for cross-cutting concerns (compression, security), and a structured build system supporting both static site generation and dynamic page rendering. The infrastructure-as-code approach via Docker and GitHub Actions enables reproducible deployments and seamless CI/CD integration.\n\n## Unique Characteristics\n\nJsBootSpark stands out through its **dual-mode capability**\u2014supporting both static site generation for performance-critical deployments and dynamic rendering for interactive applications. The automated build system generates 100+ pages from a single template, reducing maintenance overhead, while the CSV-to-JSON conversion simplifies data-driven content. The project includes comprehensive AI-assisted development documentation through Copilot sessions, providing decision context and architectural planning artifacts alongside traditional documentation.\n\n## Target Users & Use Cases\n\nIdeal for teams building SaaS platforms, internal tools, marketing websites, and dashboard applications requiring rapid prototyping without sacrificing production quality. The starter kit particularly benefits full-stack JavaScript developers, small teams lacking DevOps infrastructure, and organizations prioritizing rapid time-to-market while maintaining security and performance standards. Its 90-day activity pattern and consistent 22-commit recent history indicate active maintenance and refinement.",
+    "generation_method": "claude-haiku-4-5",
+    "generation_timestamp": "2026-03-07T15:22:10.518391",
+    "model_used": "claude-haiku-4-5",
+    "tokens_used": 2973,
+    "confidence_score": 90
+  },
+  "hash": "c8a7d24c1f95e17338400a124c02b6544aacef285dce6ae000d45f940982465c",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "JsBootSpark"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-03-01T09:12:16+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "JsBootSpark",
+  "week": "2026-03-01T09-12-16+00-00"
+}

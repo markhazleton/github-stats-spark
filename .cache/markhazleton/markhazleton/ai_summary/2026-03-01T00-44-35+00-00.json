@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-03-07T15:22:20.751896+00:00",
+  "value": {
+    "ai_summary": "# Technical Summary: markhazleton Repository\n\nThis repository serves as Mark Hazleton's personal portfolio and learning archive, functioning as a curated collection of demonstration projects and technical explorations that showcase continuous professional development across multiple technology domains. The primary offering is a hub linking to feature projects including **WebSpark** (a comprehensive web application framework for hosting demo applications) and **ReactSpark** (a modern React application built with Vite and deployed on Azure Static Web Applications), alongside an integrated blog documenting technical insights on software development practices, AI-assisted development, and architectural decision-making. The technology stack demonstrates expertise across web development (React, Vite), cloud platforms (Azure), API design (Postman integration), and DevOps practices (Azure DevOps), with a clear emphasis on modern full-stack development patterns and deployment automation. The repository architecture employs GitHub Actions for dynamic content generation (as evidenced by the stats spark visualizations) and follows a hub-and-spoke model where this repository serves as a central aggregator linking to specialized learning projects rather than containing monolithic application code. What distinguishes this repository is its explicit framing as a **lifelong learning journal**\u2014each project represents a deliberate exploration into specific technologies or architectural patterns, making it valuable for both personal skill documentation and community-oriented knowledge sharing on topics ranging from spec-driven AI development to fork management automation. The project targets intermediate-to-advanced developers and technical leaders interested in pragmatic software development approaches, governance practices, and modern development methodologies.",
+    "generation_method": "claude-haiku-4-5",
+    "generation_timestamp": "2026-03-07T15:22:20.751808",
+    "model_used": "claude-haiku-4-5",
+    "tokens_used": 1572,
+    "confidence_score": 90
+  },
+  "hash": "b04cb9f2ba578ca520bd3d7df7b15df4b46568e1a04d52eee348a341702dbf1d",
+  "metadata": {
+    "repository": {
+      "owner": "markhazleton",
+      "name": "markhazleton"
+    },
+    "category": "ai_summary",
+    "ttl_enforced": false,
+    "pushed_at": "2026-03-01T00:44:35+00:00"
+  },
+  "category": "ai_summary",
+  "owner": "markhazleton",
+  "repo": "markhazleton",
+  "week": "2026-03-01T00-44-35+00-00"
+}
