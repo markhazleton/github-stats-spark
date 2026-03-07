@@ -111,4 +111,4 @@ No constitution violations require justification for this plan.
 - Focused remediation pytest run: passed (`52 passed`)
 - Broader regression and coverage pytest run: passed (`79 passed`)
 - Follow-up site audit: passed with no remaining HIGH findings
-- Bounded unified shell run: not executed because the terminal environment did not provide `GITHUB_TOKEN`
+- Local bounded generation run via `run-spark-local.ps1 -Screenshots -MissingOnly`: passed
