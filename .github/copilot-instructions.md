@@ -187,7 +187,7 @@ spark cache --clear  # Or delete .cache/ directory
 - **Don't** create abstractions without solving real problems (avoid premature optimization)
 - **Don't** hardcode usernames in config (use CLI args or env vars)
 - **Don't** ignore rate limit errors (workflow handles automatically with cache)
-- **NEVER** create markdown documentation files outside `/documentation` folder (constitutional requirement)
+- **Don't** add new primary user guides outside `/documentation`; approved exceptions in this repo are the root `README.md`, `.documentation/` framework artifacts, and metadata READMEs under `frontend/`, `frontend/public/`, `docs/`, and `output/`
 
 ## Key Files Reference
 
@@ -198,7 +198,7 @@ spark cache --clear  # Or delete .cache/ directory
 - [frontend/src/App.jsx](frontend/src/App.jsx) - React app root with routing/state
 - [.github/workflows/generate-stats.yml](.github/workflows/generate-stats.yml) - CI/CD automation
 - [data/repositories.json](data/repositories.json) - Unified data contract between backend/frontend
-- [.specify/memory/constitution.md](.specify/memory/constitution.md) - Project constitution (NON-NEGOTIABLE rules)
+- [.documentation/memory/constitution.md](.documentation/memory/constitution.md) - Project constitution (NON-NEGOTIABLE rules)
 
 ## Constitutional Requirements (MUST Follow)
 
@@ -212,11 +212,11 @@ spark cache --clear  # Or delete .cache/ directory
 8. **Themes**: WCAG AA contrast compliance (4.5:1 for text)
 9. **Demo Account**: Use `markhazleton` for all examples
 10. **Versioning**: Semantic versioning (breaking config = MAJOR, new features = MINOR, fixes = PATCH)
-11. **Documentation Location**: ALL markdown documentation MUST be in `/documentation` folder (except root README.md)
+11. **Documentation Location**: Primary user-facing Markdown documentation MUST live in `/documentation`; approved exceptions are the root README plus explicit metadata/framework surfaces in `.documentation/`, `frontend/README.md`, `frontend/public/README.md`, `docs/README.md`, and `output/README.md`
 
 ## Documentation Locations
 
 - User guides: [documentation/guides/](documentation/guides/)
 - API reference: [documentation/api/api-reference.md](documentation/api/api-reference.md)
-- Feature specs: [documentation/spec/](documentation/spec/)
+- Feature specs and planning artifacts: [.documentation/specs/](.documentation/specs/)
 - Frontend docs: [frontend/README.md](frontend/README.md)

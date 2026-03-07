@@ -1,7 +1,7 @@
 """Unit tests for StatisticsVisualizer and SVG generation."""
 
 import pytest
-from spark.visualizer import StatisticsVisualizer
+from spark.visualizer import StatisticsVisualizer, get_theme
 from spark.themes.spark_dark import SparkDarkTheme
 from spark.themes.spark_light import SparkLightTheme
 
@@ -216,6 +216,33 @@ class TestThemeApplication:
         # Light theme should have light background
         assert theme.background_color.lower() in svg.lower()
 
+    def test_get_theme_loads_named_custom_theme(self):
+        """Test that named custom themes resolve through the shared helper."""
+        theme = get_theme(
+            "ocean",
+            {
+                "custom_themes": {
+                    "ocean": {
+                        "colors": {
+                            "primary": "#06B6D4",
+                            "accent": "#8B5CF6",
+                            "background": "#0C4A6E",
+                            "text": "#E0F2FE",
+                            "border": "#075985",
+                        },
+                        "effects": {"glow": True, "gradient": True, "animations": False},
+                    }
+                }
+            },
+        )
+
+        assert theme.name == "ocean"
+
+    def test_get_theme_rejects_unknown_theme(self):
+        """Test that unknown themes fail with a deterministic error."""
+        with pytest.raises(ValueError):
+            get_theme("missing-theme", {"custom_themes": {"ocean": {"colors": {}, "effects": {}}}})
+
 
 class TestCommitMessageSanitization:
     """Test sanitization of commit messages to prevent SVG injection."""
@@ -294,6 +321,18 @@ class TestEdgeCases:
 
         assert svg.startswith("<svg")
         assert "0" in svg or "No" in svg
+
+    def test_release_cadence_renders_empty_state(self):
+        """Test release cadence handles empty weekly/monthly series."""
+        theme = SparkDarkTheme()
+        visualizer = StatisticsVisualizer(theme)
+
+        svg = visualizer.generate_release_cadence(
+            {"weekly": [], "monthly": [], "max_weekly": 0, "max_monthly": 0, "unique_repos": 0},
+            "testuser",
+        )
+
+        assert "No activity yet" in svg
 
 
 class TestWCAGCompliance:

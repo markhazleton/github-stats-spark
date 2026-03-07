@@ -28,7 +28,7 @@ from spark.models import (
 )
 from spark.exceptions import WorkflowError
 from spark.logger import get_logger
-from spark.themes.spark_dark import SparkDarkTheme
+from spark.visualizer import get_theme
 
 
 class UnifiedReportWorkflow:
@@ -68,13 +68,9 @@ class UnifiedReportWorkflow:
 
         # Initialize components
         self.fetcher = GitHubFetcher(cache=self.cache)
-        self.theme = SparkDarkTheme()  # TODO: Load from config
-        self.visualizer = StatisticsVisualizer(self.theme, enable_effects=True)
-
-        analyzer_config = self.config.get("analyzer", {})
-        self.ranker = RepositoryRanker(config=analyzer_config)
-        self.summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False)
-        self.dependency_analyzer = RepositoryDependencyAnalyzer()
+        self.theme = self._resolve_theme()
+        self.visualizer = self._create_visualizer()
+        self.ranker, self.summarizer, self.dependency_analyzer = self._create_analysis_components()
 
         # Track errors and warnings
         self.errors: List[str] = []
@@ -86,6 +82,22 @@ class UnifiedReportWorkflow:
         self.max_repos = max_repos
         if max_repos is not None:
             self.logger.info(f"WARNING: Testing mode: Limited to {max_repos} repositories for SVG/report generation")
+
+    def _resolve_theme(self):
+        """Resolve the configured theme using shared validation rules."""
+        return get_theme(self.config.get_theme(), self.config.themes_config)
+
+    def _create_visualizer(self) -> StatisticsVisualizer:
+        """Create the SVG visualizer for the resolved theme."""
+        return StatisticsVisualizer(self.theme, enable_effects=True)
+
+    def _create_analysis_components(self):
+        """Create workflow collaborators used during ranking and summarization."""
+        analyzer_config = self.config.get("analyzer", {})
+        ranker = RepositoryRanker(config=analyzer_config)
+        summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False)
+        dependency_analyzer = RepositoryDependencyAnalyzer()
+        return ranker, summarizer, dependency_analyzer
 
     def execute(self, username: str) -> UnifiedReport:
         """Execute unified report workflow with partial failure handling.

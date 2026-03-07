@@ -83,7 +83,8 @@ Each module MUST have one well-defined purpose. Business logic MUST be testable 
 - Invalid configuration MUST fail before any processing begins
 
 ### Documentation Standards
-- Documentation lives in `/documentation` (exception: root `README.md`)
+- Primary user-facing documentation lives in `/documentation`
+- Approved metadata/framework exceptions are limited to the root `README.md`, `.documentation/` artifacts, `frontend/README.md`, `frontend/public/README.md`, `docs/README.md`, and `output/README.md`
 - Generated outputs go to `output/` and `data/`
 - Examples use canonical demo account: `markhazleton`
 
@@ -106,4 +107,4 @@ Before merging code, ask:
 
 ---
 
-*Last Amended: 2026-01-26*
+*Last Amended: 2026-03-07*

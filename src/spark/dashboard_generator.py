@@ -96,7 +96,7 @@ class DashboardGenerator:
         repositories = self.generate_dashboard_data()
 
         # Fetch user profile
-        profile = self.generate_user_profile()
+        profile = self.generate_user_profile(repositories)
 
         # Create metadata
         metadata = DashboardMetadata(
@@ -291,7 +291,7 @@ class DashboardGenerator:
             "smallest_commit": smallest_commit,
         }
 
-    def generate_user_profile(self) -> UserProfile:
+    def generate_user_profile(self, repositories: Optional[List[DashboardRepository]] = None) -> UserProfile:
         """Generate user profile information for dashboard header.
 
         Returns:
@@ -303,16 +303,17 @@ class DashboardGenerator:
         logger.info("Generating user profile...")
         user_data = self.fetcher.get_user()
 
-        # Calculate aggregate statistics
-        total_stars = 0
-        total_forks = 0
-        # TODO: Calculate from repository data in future enhancement
+        repositories = repositories or []
+        total_stars = sum(repo.stars for repo in repositories)
+        total_forks = sum(repo.forks for repo in repositories)
+        total_commits = sum(repo.commit_count for repo in repositories)
 
         return UserProfile(
             username=user_data.get("login", "unknown"),
             avatar_url=user_data.get("avatar_url", ""),
             public_repos_count=user_data.get("public_repos", 0),
             profile_url=user_data.get("html_url", ""),
+            total_commits=total_commits,
             total_stars=total_stars,
             total_forks=total_forks,
         )

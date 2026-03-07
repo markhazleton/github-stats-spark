@@ -77,6 +77,55 @@ class TestSparkConfig:
         theme = config.get_theme()
         assert theme == "spark-dark"
 
+    def test_validate_named_custom_theme(self, tmp_path):
+        """Test validation accepts named themes defined in themes.yml."""
+        config_path = tmp_path / "spark.yml"
+        themes_path = tmp_path / "themes.yml"
+
+        config_path.write_text(
+            yaml.safe_dump(
+                {
+                    "stats": {"enabled": ["overview"]},
+                    "visualization": {"theme": "ocean"},
+                }
+            ),
+            encoding="utf-8",
+        )
+        themes_path.write_text(
+            yaml.safe_dump({"custom_themes": {"ocean": {"colors": {}, "effects": {}}}}),
+            encoding="utf-8",
+        )
+
+        config = SparkConfig(str(config_path))
+        config.load()
+
+        assert config.validate() == []
+
+    def test_validate_unknown_theme_name(self, tmp_path):
+        """Test validation rejects unknown custom theme names."""
+        config_path = tmp_path / "spark.yml"
+        themes_path = tmp_path / "themes.yml"
+
+        config_path.write_text(
+            yaml.safe_dump(
+                {
+                    "stats": {"enabled": ["overview"]},
+                    "visualization": {"theme": "missing-theme"},
+                }
+            ),
+            encoding="utf-8",
+        )
+        themes_path.write_text(
+            yaml.safe_dump({"custom_themes": {"ocean": {"colors": {}, "effects": {}}}}),
+            encoding="utf-8",
+        )
+
+        config = SparkConfig(str(config_path))
+        config.load()
+
+        errors = config.validate()
+        assert any("missing-theme" in error for error in errors)
+
     def test_get_enabled_stats(self, temp_config_file):
         """Test getting enabled statistics categories."""
         config = SparkConfig(temp_config_file)

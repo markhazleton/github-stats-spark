@@ -113,7 +113,7 @@ These come from the Spec Kit Spark release package and should match the latest v
 #### User-owned (NEVER overwritten)
 These are written by the project team and must be preserved:
 
-- `specs/` — all feature specifications, plans, tasks
+- `.documentation/specs/` — all feature specifications, plans, tasks
 - `.documentation/memory/constitution.md` — project constitution
 - `.documentation/copilot/` — session artifacts and audit history
 - `.documentation/decisions/` — ADRs
@@ -130,9 +130,8 @@ Scan for signs that the install is outdated. Flag any of the following:
 | Check | Issue | Severity |
 |-------|-------|----------|
 | `.documentation/SPECKIT_VERSION` absent | No version stamp | HIGH |
-| Agent command files reference old paths (`.documentation/`, `memory/`, `/.documentation/scripts/`) | Pre-migration paths | HIGH |
-| `.documentation/` directory exists | Pre-v1.0 structure | HIGH |
-| Root-level `memory/`, `scripts/`, `templates/` directories exist | Pre-v1.0 structure | HIGH |
+| Agent command files reference unsupported root-level `specs/`, `memory/`, `scripts/`, or `templates/` paths | Pre-migration paths | HIGH |
+| Root-level `memory/`, `scripts/`, `templates/`, or `specs/` directories exist | Pre-migration path layout | HIGH |
 | `SPECKIT_VERSION` present but older than `LATEST_VERSION` | Out of date | MEDIUM |
 | Old `speckit.*-old.md` command files in agent folder | Leftover duplicates | LOW |
 
@@ -192,7 +191,7 @@ uv tool install specify-cli --force \
 
 #### 7c. Handle old structure migration
 
-If stale paths were found in Step 5 (`.documentation/`, root `memory/` etc.):
+If stale paths were found in Step 5 (unsupported root `memory/`, `scripts/`, `templates/`, or `specs/` paths):
 
 ```bash
 # Windows
@@ -210,7 +209,7 @@ After the upgrade completes:
 
 1. **Read `.documentation/SPECKIT_VERSION` again** — confirm version changed to `LATEST_VERSION`
 2. **Check agent command files** — confirm they no longer reference old paths
-3. **Confirm `specs/` is untouched** — user data must be preserved
+3. **Confirm `.documentation/specs/` is preserved** — user data must be preserved
 4. **Confirm `constitution.md` is intact** (or restored from backup)
 
 Report a post-upgrade summary:
@@ -219,7 +218,7 @@ Report a post-upgrade summary:
 Post-Upgrade Verification
   SPECKIT_VERSION : 1.2.0  (was 1.1.0)
   Agent commands  : updated
-  specs/          : unchanged
+  .documentation/specs/ : unchanged
   constitution.md : preserved
 ```
 
@@ -255,7 +254,7 @@ Dry Run — No changes made.
 
 Would upgrade: <INSTALLED_VERSION> -> <LATEST_VERSION>
 Framework files to update: <N>
-User files preserved: specs/, constitution.md, session artifacts
+User files preserved: .documentation/specs/, constitution.md, session artifacts
 
 To apply:
   specify upgrade --ai <INSTALLED_AGENT>
@@ -268,7 +267,7 @@ To apply:
 ### User Data is Sacred
 
 Never modify or delete:
-- `specs/` and all contents
+- `.documentation/specs/` and all contents
 - `constitution.md`
 - `.documentation/copilot/`
 - `.documentation/decisions/`

@@ -116,8 +116,8 @@ Read the most recent `## [X.Y.Z]` entry in `CHANGELOG.md` (repo root) to get
 |-----------|-----------|---------|
 | `.documentation/SPECKIT_VERSION` absent | VER1 | HIGH |
 | Installed version < latest version | VER2 | MEDIUM |
-| Agent command files reference `.documentation/` or root `memory/` paths | VER3 | HIGH |
-| Root-level `memory/`, `scripts/`, or `templates/` directories exist | VER4 | HIGH |
+| Agent command files reference unsupported root-level `specs/`, `memory/`, `scripts/`, or `templates/` paths | VER3 | HIGH |
+| Root-level `memory/`, `scripts/`, `templates/`, or `specs/` directories exist | VER4 | HIGH |
 | Old `speckit.*-old.md` files in agent folder | VER5 | LOW |
 
 Include in the audit report under a **Spec Kit Spark Version** section:
@@ -172,6 +172,7 @@ Based on principle type, scan for violations:
 - Missing docstrings/comments
 - Outdated README references
 - Missing API documentation
+- Missing exception registry entries for README files that intentionally live outside `documentation/`
 
 #### B. Generate Findings
 For each violation found:
