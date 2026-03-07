@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-03-07 16:55:33 UTC
+**Generated**: 2026-03-07 18:25:51 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 36
 **AI Summary Rate**: 100.0%
@@ -37,28 +37,28 @@
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 168 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 170 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 12703 KB | 🚀 56.0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 12922 KB | 🚀 56.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # Technical Summary: github-stats-spark
 
 ## Overview
-Stats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates SVG-based profile statistics and AI-powered repository analysis reports. The project transforms GitHub activity into actionable insights through a multi-component architecture that includes an automated profile statistics generator, intelligent repository ranking system, and an interactive mobile-first dashboard powered by Chart.js visualizations.
+Stats Spark is a comprehensive GitHub analytics automation suite that generates professional SVG visualizations and AI-powered insights from GitHub activity data. The project transforms raw GitHub metrics into actionable intelligence through automated daily updates via GitHub Actions, combining multiple visualization categories with Claude AI-powered repository analysis. It functions as both a personal branding tool for developers and an enterprise-grade analytics platform for teams analyzing developer productivity and technology landscapes.
 
-## Core Capabilities
-The platform offers three primary feature sets: (1) **SVG Profile Statistics** with five visual categories (overview dashboard, commit heatmap, language distribution, streaks/consistency, and personality-driven fun stats) featuring a proprietary "Spark Score" (0-100 composite metric weighing consistency 40%, volume 35%, and collaboration 25%); (2) **AI-Powered Analysis** integrating Claude Haiku for technical repository summaries with a three-tier fallback mechanism achieving 97%+ success rates, intelligent repository ranking using a 30/45/25 weighted algorithm (popularity/activity/health), and developer profiling based on technology diversity and contribution patterns; and (3) **Interactive Dashboard** with responsive mobile-first design, Chart.js analytics, bottom-sheet navigation, repository comparison functionality, and export capabilities (CSV/JSON).
+## Key Capabilities & Architecture
+The platform delivers five distinct visualization modules (overview dashboard, commit heatmap, language statistics, streaks/consistency, and fun stats) alongside intelligent repository ranking using a weighted composite algorithm (30% popularity, 45% activity with time-decay, 25% health signals). The AI component leverages Claude Haiku for technical summary generation with a three-tier fallback system (Claude → README parsing → metadata), achieving 97%+ success rates. An interactive mobile-first dashboard with Chart.js visualizations, swipe gestures, and offline IndexedDB caching provides drill-down repository comparison and export functionality (CSV/JSON).
 
-## Technology Stack & Architecture
-The project leverages **Python 3.11+** as its primary language (51.4%) with key dependencies including PyGithub (GitHub API integration), PyYAML (configuration management), svgwrite (SVG generation), requests, and python-dateutil. The frontend utilizes **JavaScript (25.8%), CSS (12.2%), and HTML (1.7%)** for the interactive dashboard with Chart.js and responsive design patterns. The architecture emphasizes modularity with YAML-based configuration, intelligent API caching to reduce calls by 80-95%, exponential backoff rate-limit handling, and GitHub Actions automation for daily scheduled updates at midnight UTC.
+## Technical Stack & Dependencies
+Built primarily in Python (46.9%) with JavaScript (23.5%), PowerShell (16.8%), and CSS (11.2%) supporting components, the project leverages PyGithub for GitHub API interaction, PyYAML for configuration management, svgwrite for SVG generation, and python-dateutil for temporal analysis. The architecture employs smart caching strategies reducing API calls by 80-95%, implements exponential backoff rate-limit handling, and includes WCAG 2.1 AA accessibility compliance throughout both SVG visualizations and web dashboard.
 
-## Distinctive Features & Design Patterns
-The project demonstrates enterprise-grade reliability through smart caching with intelligent cache invalidation, real-time progress tracking, and WCAG AA accessibility compliance across both visualizations and interactive components. The Spark Score represents a novel contribution classification metric combining GitHub activity signals, while the three-tier AI fallback system ensures graceful degradation (Claude Haiku → README parsing → basic metadata). The mobile-first dashboard implementation includes sophisticated touch patterns (swipe gestures, 44x44px touch targets, 320-768px viewport optimization) optimized for <2s First Contentful Paint on 3G connections.
+## Unique Differentiators
+The "Spark Score" metric (0-100 composite combining consistency 40%, volume 35%, collaboration 25%) provides a novel developer activity measurement beyond simple commit counts. The platform achieves sub-3-minute analysis of 50+ repositories through intelligent refresh logic that only updates repositories with new commits, while the mobile-optimized dashboard with touch-target optimization (44x44px) and responsive 320-768px viewport support demonstrates enterprise UX maturity. The project's 170 commits over 90 days with accelerating activity patterns, combined with modular extensible architecture, positions it as production-ready.
 
-## Target Users & Deployment Model
-Stats Spark targets developers seeking professional GitHub portfolio enhancement, technical teams analyzing repository health metrics, engineering leaders reviewing productivity patterns, and open-source maintainers tracking project momentum. The platform is deployment-optimized for GitHub Pages with automated updates via GitHub Actions, requiring minimal ongoing maintenance while supporting local development and flexible customization through configuration files.
+## Target Applications
+Ideal for individual developers showcasing GitHub portfolios professionally, technical leadership teams tracking developer productivity and technology adoption, open-source maintainers monitoring project momentum, and organizations conducting developer profiling or repository health assessments. The zero-maintenance deployment model (set once, auto-updates via GitHub Actions) and flexible YAML configuration lower operational barriers while the GitHub Pages integration and markdown report generation embed naturally into existing GitHub workflows.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 10 total (10 current, 0 outdated)
@@ -186,9 +186,9 @@ Stars: 0 | Forks: 0 | Language: HTML | 28 commits (90d)
 
 **Quality**: ❌ License | ✅ Docs
 
-# TailwindSpark - Technical Summary
+# TailwindSpark Technical Summary
 
-**TailwindSpark** is a comprehensive, production-ready design system and component showcase built as a modern React TypeScript monorepo, demonstrating best practices in contemporary web development. The project serves as both a educational resource and a functional showcase of Tailwind CSS v4 capabilities, featuring a complete design system with reusable UI components, interactive demonstrations, and real-world implementations including dashboards, e-commerce flows, and marketing pages. Built on a cutting-edge tech stack featuring React 19.1, TypeScript 5.9, Tailwind CSS 4.1.18, Vite 7.1, and Turborepo 2.7, the repository emphasizes developer experience through hot module reloading, strict type safety, and comprehensive tooling (ESLint, Prettier, Vitest). The monorepo architecture leverages shared packages for design tokens and UI components, enabling code reuse and maintainability across the organization while demonstrating scalable project structures. Key highlights include WCAG 2.1 AA accessibility compliance, automated CI/CD pipelines via GitHub Actions, real-time performance monitoring with Web Vitals tracking, dark mode support, and production-optimized features like code splitting, error boundaries, and service worker integration. This project is ideal for developers seeking a reference implementation of modern React development practices, teams building design systems, or organizations looking to understand Tailwind CSS v4 with the @theme directive and CSS custom properties in enterprise contexts.
+**TailwindSpark** is a comprehensive, production-ready design system and component showcase built as a modern React TypeScript monorepo that demonstrates advanced Tailwind CSS v4 capabilities with a complete implementation of design tokens, theming, and reusable UI components. The project leverages a contemporary tech stack including React 19.1, TypeScript 5.9 (strict mode), Tailwind CSS 4.1.18 with @theme directives, Vite 7.1 for fast HMR, and Turborepo 2.7 for monorepo management, delivering optimized builds with code splitting, lazy loading, and real-time performance monitoring via Web Vitals tracking. The architecture employs a modular design with shared packages (design-tokens and ui-components), comprehensive accessibility compliance (WCAG 2.1 AA), automated CI/CD pipelines via GitHub Actions, and production-grade features including error boundaries, dark mode support, keyboard navigation, and service worker offline capabilities. What distinguishes TailwindSpark is its emphasis on developer experience through 100% TypeScript strict typing, integrated testing with Vitest and accessibility audits (jest-axe), enforced code quality via ESLint 9.39 and Prettier, and a fully documented showcase demonstrating interactive components, dashboards, e-commerce flows, and analytics dashboards that serve as both portfolio pieces and educational references. The project targets frontend developers, design system architects, and organizations seeking a modern, well-documented reference implementation for building scalable component libraries with Tailwind CSS, offering practical patterns for monorepo management, accessibility implementation, and performance optimization that extend beyond typical UI component libraries.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 26 total (26 current, 0 outdated)
@@ -801,10 +801,10 @@ PHPDocSpark is an open-source PHP documentation and data exploration platform th
 
 ## Report Metadata
 
-- **Generation Time**: 1.8 seconds
+- **Generation Time**: 1.4 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 88,048
+- **Total AI Tokens**: 88,052
 - **Success Rate**: 100.0%
 
 ### Data Sources
