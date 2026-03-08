@@ -1,6 +1,4 @@
-# Deployment Output Metadata
-
-This README is an approved metadata exception for the published `docs/` output. It documents how the deployed bundle is assembled; primary user-facing guides live under `documentation/`.
+# Frontend Public Assets
 
 This directory contains static assets served directly by Vite during development and copied to the build output.
 

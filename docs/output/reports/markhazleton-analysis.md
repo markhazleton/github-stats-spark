@@ -1,11 +1,11 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-03-07 18:25:51 UTC
+**Generated**: 2026-03-08 00:45:31 UTC
 **Report Version**: 1.0.0
-**Repositories Analyzed**: 36
+**Repositories Analyzed**: 37
 **AI Summary Rate**: 100.0%
 
-> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-36-repositories) | [Metadata](#report-metadata)
+> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-37-repositories) | [Metadata](#report-metadata)
 
 ---
 
@@ -33,32 +33,32 @@
 
 ---
 
-## Top 36 Repositories
+## Top 37 Repositories
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 170 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 173 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 12922 KB | 🚀 56.7 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 10017 KB | 🚀 57.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # Technical Summary: github-stats-spark
 
 ## Overview
-Stats Spark is a comprehensive GitHub analytics automation suite that generates professional SVG visualizations and AI-powered insights from GitHub activity data. The project transforms raw GitHub metrics into actionable intelligence through automated daily updates via GitHub Actions, combining multiple visualization categories with Claude AI-powered repository analysis. It functions as both a personal branding tool for developers and an enterprise-grade analytics platform for teams analyzing developer productivity and technology landscapes.
+Stats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates beautiful SVG statistics and AI-powered repository analysis reports. The project transforms raw GitHub activity data into actionable insights through daily-updating visualizations and intelligent summaries, designed for developers, teams, and open-source maintainers seeking to showcase and understand their development patterns.
 
-## Key Capabilities & Architecture
-The platform delivers five distinct visualization modules (overview dashboard, commit heatmap, language statistics, streaks/consistency, and fun stats) alongside intelligent repository ranking using a weighted composite algorithm (30% popularity, 45% activity with time-decay, 25% health signals). The AI component leverages Claude Haiku for technical summary generation with a three-tier fallback system (Claude → README parsing → metadata), achieving 97%+ success rates. An interactive mobile-first dashboard with Chart.js visualizations, swipe gestures, and offline IndexedDB caching provides drill-down repository comparison and export functionality (CSV/JSON).
+## Core Capabilities
+The platform combines multiple analysis dimensions: SVG-based profile statistics (including a proprietary "Spark Score" algorithm, contribution heatmaps, language breakdowns, and streak tracking), AI-powered repository analysis using Claude Haiku API integration, and an interactive mobile-first dashboard with repository comparison features. It provides intelligent repository ranking using a weighted composite algorithm (30% popularity, 45% activity with time-decay, 25% health metrics), automated daily updates via GitHub Actions, and YAML-based configuration for flexible customization.
 
-## Technical Stack & Dependencies
-Built primarily in Python (46.9%) with JavaScript (23.5%), PowerShell (16.8%), and CSS (11.2%) supporting components, the project leverages PyGithub for GitHub API interaction, PyYAML for configuration management, svgwrite for SVG generation, and python-dateutil for temporal analysis. The architecture employs smart caching strategies reducing API calls by 80-95%, implements exponential backoff rate-limit handling, and includes WCAG 2.1 AA accessibility compliance throughout both SVG visualizations and web dashboard.
+## Technical Architecture & Stack
+Built primarily in Python (47.4%) with JavaScript (23.3%) for frontend interactivity and CSS/HTML for the dashboard UI, the project leverages PyGithub for GitHub API integration, svgwrite for programmatic SVG generation, requests for HTTP operations, and python-dateutil for temporal analysis. The tech stack demonstrates a 50/100 currency score, suggesting some dependencies may need updates. The solution implements smart caching strategies to reduce API calls by 80-95%, exponential backoff for rate limit handling, and supports both local CLI execution and automated CI/CD deployment.
 
 ## Unique Differentiators
-The "Spark Score" metric (0-100 composite combining consistency 40%, volume 35%, collaboration 25%) provides a novel developer activity measurement beyond simple commit counts. The platform achieves sub-3-minute analysis of 50+ repositories through intelligent refresh logic that only updates repositories with new commits, while the mobile-optimized dashboard with touch-target optimization (44x44px) and responsive 320-768px viewport support demonstrates enterprise UX maturity. The project's 170 commits over 90 days with accelerating activity patterns, combined with modular extensible architecture, positions it as production-ready.
+The project stands out through its 0-100 "Spark Score" metric that weighs consistency (40%), volume (35%), and collaboration (25%), a 97%+ success rate on AI-generated summaries via fallback mechanisms (Claude → README extraction → metadata), and comprehensive mobile-first dashboard design with WCAG 2.1 AA accessibility compliance. It achieves <2s First Contentful Paint on 3G connections and includes offline-ready architecture patterns with IndexedDB caching planned for future releases.
 
-## Target Applications
-Ideal for individual developers showcasing GitHub portfolios professionally, technical leadership teams tracking developer productivity and technology adoption, open-source maintainers monitoring project momentum, and organizations conducting developer profiling or repository health assessments. The zero-maintenance deployment model (set once, auto-updates via GitHub Actions) and flexible YAML configuration lower operational barriers while the GitHub Pages integration and markdown report generation embed naturally into existing GitHub workflows.
+## Target Users & Activity
+Designed for developers showcasing GitHub portfolios, technical teams analyzing repository health, engineering leaders reviewing productivity metrics, and open-source maintainers tracking project momentum, the repository demonstrates highly active development patterns (173 commits over both 90-day and 365-day periods with accelerating activity). The project was recently created (2025-12-28) and remains actively maintained with zero external stars or forks, suggesting either very recent publication or private/testing status.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 10 total (10 current, 0 outdated)
@@ -70,15 +70,15 @@ Ideal for individual developers showcasing GitHub portfolios professionally, tec
 
 ### #2. [mark-hazleton-s-notes](https://github.com/markhazleton/mark-hazleton-s-notes)
 
-Stars: 0 | Forks: 0 | Language: TypeScript | 114 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 115 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 278351 KB | 🚀 38.0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 280681 KB | 🚀 38.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # Technical Summary: Mark Hazleton's Notes
 
-This repository is a personal technical blog and portfolio site for Mark Hazleton, a Solutions Architect, built as a modern full-stack React application with static site generation capabilities. The platform combines long-form technical writing on cloud architecture and engineering practices with a dynamic project portfolio and live GitHub activity metrics, delivered through a sophisticated rendering pipeline that combines client-side interactivity with pre-rendered static HTML for optimal SEO and performance. The tech stack leverages React 19, Vite 7 with SSR support, TypeScript, Tailwind CSS, and Radix UI components, with content sourced from Markdown files and JSON metadata that are processed during build time and automatically optimized for distribution, including RSS feed generation with Media RSS namespaces and responsive image variants. The architecture employs a hybrid rendering strategy—using a prerender script to generate static HTML for all routes while maintaining client-side capabilities for features like live repository metrics fetched from external GitHub data, enabling both fast static site performance and dynamic content integration. Notably, the project includes comprehensive build automation (sitemap generation, image optimization, RSS feed creation) and is designed for deployment to Azure Static Web Apps with a well-documented development workflow, making it a reference implementation for technical writing platforms that require SEO optimization, content management, and portfolio showcase capabilities. This codebase would be valuable for developers, architects, or technical writers seeking a modern, production-ready template for a content-driven personal brand site that maintains both editorial control and technical depth.
+This repository is a personal portfolio and blog site for Mark Hazleton, a Technical Solutions Architect, built as a modern full-stack React application with static site generation capabilities. The platform showcases long-form technical content on cloud architecture and engineering practices, integrates live GitHub repository metrics, and provides a project portfolio—all optimized for SEO with RSS feeds, XML sitemaps, and Open Graph metadata. The architecture leverages React 19 with React Router for client-side routing, Vite 7 for build optimization with server-side rendering (SSR) and static prerendering, and a headless CMS approach using Markdown files paired with JSON metadata for articles and projects, enabling content updates without code changes. Key technical features include automated image optimization for responsive delivery and RSS media feeds, dynamic GitHub stats integration via external data sources, and a comprehensive SEO pipeline that generates canonical URLs, structured metadata, and indexed feeds—all deployed as static assets to Azure Static Web Apps for zero-infrastructure hosting. The codebase demonstrates production-grade patterns including TypeScript for type safety, modular component architecture with Radix UI and shadcn/ui primitives, and a separation of concerns between content, rendering, and build-time optimization through dedicated scripts for prerendering, SEO asset generation, and image processing. This project is valuable for technical professionals seeking a modern, maintainable personal brand platform with strong SEO performance and static hosting efficiency, showcasing best practices in modern web development including infrastructure-as-code CI/CD, accessibility-first UI design, and content-driven site architecture.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 59 total (59 current, 0 outdated)
@@ -182,13 +182,13 @@ The repository targets full-stack JavaScript developers, teams building internal
 
 Stars: 0 | Forks: 0 | Language: HTML | 28 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 3340 KB | 🚀 9.3 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 3923 KB | 🚀 9.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # TailwindSpark Technical Summary
 
-**TailwindSpark** is a comprehensive, production-ready design system and component showcase built as a modern React TypeScript monorepo that demonstrates advanced Tailwind CSS v4 capabilities with a complete implementation of design tokens, theming, and reusable UI components. The project leverages a contemporary tech stack including React 19.1, TypeScript 5.9 (strict mode), Tailwind CSS 4.1.18 with @theme directives, Vite 7.1 for fast HMR, and Turborepo 2.7 for monorepo management, delivering optimized builds with code splitting, lazy loading, and real-time performance monitoring via Web Vitals tracking. The architecture employs a modular design with shared packages (design-tokens and ui-components), comprehensive accessibility compliance (WCAG 2.1 AA), automated CI/CD pipelines via GitHub Actions, and production-grade features including error boundaries, dark mode support, keyboard navigation, and service worker offline capabilities. What distinguishes TailwindSpark is its emphasis on developer experience through 100% TypeScript strict typing, integrated testing with Vitest and accessibility audits (jest-axe), enforced code quality via ESLint 9.39 and Prettier, and a fully documented showcase demonstrating interactive components, dashboards, e-commerce flows, and analytics dashboards that serve as both portfolio pieces and educational references. The project targets frontend developers, design system architects, and organizations seeking a modern, well-documented reference implementation for building scalable component libraries with Tailwind CSS, offering practical patterns for monorepo management, accessibility implementation, and performance optimization that extend beyond typical UI component libraries.
+**TailwindSpark** is a comprehensive, production-ready design system and component showcase built as a modern React TypeScript monorepo that demonstrates enterprise-grade UI development practices. The project serves as both a functional component library and educational resource, featuring a complete Tailwind CSS v4 design system with interactive examples spanning dashboards, e-commerce flows, marketing pages, and analytics interfaces. Built with React 19.1, TypeScript 5.9, Tailwind CSS 4.1.18, and Vite 7.1 within a Turborepo monorepo structure, the architecture emphasizes developer experience through hot module reloading, strict type safety, and comprehensive tooling including ESLint 9.39, Prettier 3.7, and Vitest 4.0 with coverage reporting. The project demonstrates production-ready patterns including WCAG 2.1 AA accessibility compliance, automated CI/CD pipelines via GitHub Actions, performance monitoring through Web Vitals tracking, dark mode support, keyboard navigation, and error boundaries with graceful fallbacks. Unique strengths include its focus on real-world UI patterns across multiple domains (e-commerce, analytics, settings management), 100% TypeScript strict mode implementation, automated security scanning via CodeQL, and extensive documentation covering architecture, testing, and deployment strategies. Target users range from developers seeking a modern component reference implementation to teams building design systems, with practical value for both learning contemporary React patterns and serving as a starting template for production applications.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 26 total (26 current, 0 outdated)
@@ -536,7 +536,26 @@ The repository demonstrates solid software engineering practices including compr
 
 ---
 
-### #25. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
+### #25. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
+
+Stars: 0 | Forks: 0 | Language: Unknown | 1 commits (90d)
+
+👥 0 contributors | 🌐 1 languages | 💾 0 KB | 🚀 0.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# Technical Summary: DocSpecSpark
+
+**DocSpecSpark** is a document specification toolkit designed to facilitate the creation, management, and processing of technical documentation and specification documents. The project appears to be a framework or utility kit that leverages Apache Spark for handling large-scale document processing tasks, enabling efficient generation and transformation of specification documents. While specific implementation details are limited in the available metadata, the repository demonstrates active maintenance with recent commits and an accelerating activity pattern, suggesting ongoing development and refinement of its capabilities.
+
+The primary value proposition centers on automating and streamlining documentation workflows through distributed computing capabilities, making it suitable for organizations that need to manage complex, voluminous technical specifications. The toolkit likely targets software development teams, technical writers, and DevOps practitioners who require scalable solutions for documentation generation, validation, or batch processing of specification files. The "Spark" component indicates the project leverages distributed data processing frameworks to handle performance-critical documentation tasks at scale, potentially supporting parallel processing of multiple documents or large-scale specification transformations. Given its early-stage status (0 stars/forks, minimal repository size), DocSpecSpark appears to be an emerging or specialized tool that may be in active development, with the recent commit activity suggesting the maintainers are actively iterating on the project's core functionality.
+
+**Created**: 2026-03-07
+**Last Modified**: 2026-03-07
+
+---
+
+### #26. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
 
 Stars: 0 | Forks: 0 | Language: HTML | 5 commits (90d)
 
@@ -555,7 +574,7 @@ The architecture emphasizes production-readiness with comprehensive error handli
 
 ---
 
-### #26. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
+### #27. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
 
 Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
 
@@ -576,7 +595,7 @@ The codebase is primarily C# (94.4%) with supporting PowerShell and Python tooli
 
 ---
 
-### #27. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+### #28. [TeachSpark](https://github.com/markhazleton/TeachSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
@@ -596,7 +615,7 @@ Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
 ---
 
-### #28. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
+### #29. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -613,7 +632,7 @@ Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #29. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
+### #30. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 7 commits (90d)
 
@@ -633,7 +652,7 @@ Stars: 0 | Forks: 0 | Language: TypeScript | 7 commits (90d)
 
 ---
 
-### #30. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
+### #31. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
 
 Stars: 0 | Forks: 0 | Language: HTML | 1 commits (90d)
 
@@ -663,7 +682,7 @@ Ideal for enterprise .NET developers building microservices, distributed systems
 
 ---
 
-### #31. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
+### #32. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
 
 Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
@@ -680,7 +699,7 @@ Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
 ---
 
-### #32. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
+### #33. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 1 commits (90d)
 
@@ -716,7 +735,7 @@ Ideal for development teams and individual developers building consumer or enter
 
 ---
 
-### #33. [InquirySpark](https://github.com/markhazleton/InquirySpark)
+### #34. [InquirySpark](https://github.com/markhazleton/InquirySpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -733,7 +752,7 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 ---
 
-### #34. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
+### #35. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -750,7 +769,7 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 ---
 
-### #35. [DataAnalysisDemo](https://github.com/markhazleton/DataAnalysisDemo)
+### #36. [DataAnalysisDemo](https://github.com/markhazleton/DataAnalysisDemo)
 
 Stars: 0 | Forks: 0 | Language: Visual Basic .NET | 0 commits (90d)
 
@@ -776,7 +795,7 @@ Target users include analysts, data engineers, and business intelligence practit
 
 ---
 
-### #36. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
+### #37. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
 
 Stars: 0 | Forks: 0 | Language: PHP | 0 commits (90d)
 
@@ -801,10 +820,10 @@ PHPDocSpark is an open-source PHP documentation and data exploration platform th
 
 ## Report Metadata
 
-- **Generation Time**: 1.4 seconds
+- **Generation Time**: 1.6 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 88,052
+- **Total AI Tokens**: 88,500
 - **Success Rate**: 100.0%
 
 ### Data Sources
@@ -822,4 +841,4 @@ PHPDocSpark is an open-source PHP documentation and data exploration platform th
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2026-03-07*
+*Last updated: 2026-03-08*

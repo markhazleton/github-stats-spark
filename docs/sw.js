@@ -6,8 +6,8 @@
 // GitHub Pages base path
 const BASE_PATH = '/github-stats-spark/';
 
-// Service Worker Version - replaced by Vite at build time with v1772907984107
-const CACHE_VERSION = 'v1772907984107';
+// Service Worker Version - replaced by Vite at build time with v1772930764626
+const CACHE_VERSION = 'v1772930764626';
 const CACHE_NAME = `github-stats-spark-${CACHE_VERSION}`;
 
 // Assets to precache on install
