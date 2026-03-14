@@ -6,6 +6,76 @@ This document provides detailed API documentation for the core modules of Stats 
 
 ---
 
+## Unified Repository Contract (Schema 2.1.0)
+
+The unified dataset (`data/repositories.json`) now includes additive enrichment fields on each repository:
+
+- `pull_request_summary`
+- `security_summary`
+
+### `pull_request_summary`
+
+```json
+{
+  "availability": "available",
+  "reason": "none",
+  "has_open_pull_requests": true,
+  "total_open": 4,
+  "draft_count": 1,
+  "review_requested_count": 2,
+  "oldest_open_age_days": 17,
+  "source": "rest.pulls.list"
+}
+```
+
+### `security_summary`
+
+```json
+{
+  "availability": "partial",
+  "reason": "permission_denied",
+  "overall_state": "warning_present",
+  "feature_status": {
+    "advanced_security": "unavailable",
+    "secret_scanning": "unavailable",
+    "secret_scanning_push_protection": "unavailable",
+    "dependency_alerts": "enabled",
+    "automated_security_fixes": "enabled"
+  },
+  "active_alert_counts": {
+    "total_open": 3,
+    "critical": 1,
+    "high": 1,
+    "medium": 1,
+    "low": 0
+  },
+  "sources": ["rest.repos.get", "rest.dependabot.alerts"]
+}
+```
+
+Availability values: `available`, `partial`, `unavailable`.
+Reason values: `none`, `permission_denied`, `api_error`, `not_supported`, `not_requested`, `unknown`.
+
+Consumer guidance: do not treat `availability = "unavailable"` as zero findings.
+
+### Staged GitHub REST API Version Settings
+
+`config/spark.yml` supports explicit API-version rollout settings:
+
+```yaml
+github:
+  api_version:
+    enabled: false
+    version: "2026-03-10"
+    fallback_to_default: true
+```
+
+- `enabled`: send explicit `X-GitHub-Api-Version`
+- `version`: target version header value
+- `fallback_to_default`: retry once without explicit version header on version-related failures
+
+---
+
 ## Core Modules
 
 ### `spark.config.SparkConfig`

@@ -29,13 +29,14 @@ class RefreshResult:
 class CacheRefreshExecutor:
     """Executes per-category cache refresh work for a repository."""
 
-    def __init__(self, github_client, cache, summarizer: Optional[RepositorySummarizer] = None):
+    def __init__(self, github_client, cache, summarizer: Optional[RepositorySummarizer] = None, fetcher=None):
         self.github = github_client
         self.cache = cache
         self.logger = get_logger()
         self.api_calls = 0
         self.summarizer = summarizer
         self.dependency_analyzer = RepositoryDependencyAnalyzer()
+        self.fetcher = fetcher
 
     def refresh_commit_counts(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
         cache_key = sanitize_timestamp_for_filename(pushed_at)
@@ -353,6 +354,78 @@ class CacheRefreshExecutor:
                 return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
 
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False)
+        except Exception as error:
+            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    def refresh_pull_request_summary(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "pull_request_summary"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for pull request enrichment refresh",
+            )
+
+        try:
+            summary = self.fetcher.fetch_pull_request_summary(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+                force_refresh=True,
+            )
+            metadata = {
+                "repository": {"owner": username, "name": repo_name},
+                "category": category,
+                "pushed_at": pushed_at.isoformat(),
+                "ttl_enforced": False,
+            }
+            self.cache.set(category, username, summary, repo=repo_name, week=cache_key, metadata=metadata)
+            self.api_calls += 1
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    def refresh_security_summary(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "security_summary"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for security enrichment refresh",
+            )
+
+        try:
+            summary = self.fetcher.fetch_security_summary(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+                force_refresh=True,
+            )
+            metadata = {
+                "repository": {"owner": username, "name": repo_name},
+                "category": category,
+                "pushed_at": pushed_at.isoformat(),
+                "ttl_enforced": False,
+            }
+            self.cache.set(category, username, summary, repo=repo_name, week=cache_key, metadata=metadata)
+            self.api_calls += 1
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
             self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))

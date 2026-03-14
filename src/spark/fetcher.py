@@ -3,7 +3,9 @@
 import os
 import time
 from typing import List, Dict, Any, Optional
-from datetime import datetime
+from datetime import datetime, timezone
+
+import requests
 
 from github import Github, GithubException, RateLimitExceededException
 from github.Repository import Repository
@@ -23,6 +25,7 @@ class GitHubFetcher:
         cache: Optional[APICache] = None,
         max_repos: int = 500,
         use_cache_status: bool = True,
+        api_version_settings: Optional[Dict[str, Any]] = None,
     ):
         """Initialize the GitHub API fetcher.
 
@@ -42,6 +45,69 @@ class GitHubFetcher:
         self.cache_status_tracker = CacheStatusTracker(cache_dir=self.cache.cache_dir)
         self.max_repos = max_repos
         self.use_cache_status = use_cache_status
+        self.api_version_settings = {
+            "enabled": False,
+            "version": "2026-03-10",
+            "fallback_to_default": True,
+        }
+        if api_version_settings:
+            self.api_version_settings.update(api_version_settings)
+
+    def _build_rest_headers(self, include_version: bool = True) -> Dict[str, str]:
+        """Build headers for direct REST API calls."""
+        headers = {
+            "Authorization": f"Bearer {self.token}",
+            "Accept": "application/vnd.github+json",
+        }
+        if include_version and self.api_version_settings.get("enabled", False):
+            headers["X-GitHub-Api-Version"] = self.api_version_settings.get("version", "2026-03-10")
+        return headers
+
+    def _rest_get(
+        self,
+        path: str,
+        params: Optional[Dict[str, Any]] = None,
+        include_version: bool = True,
+    ) -> requests.Response:
+        """Issue direct REST API GET request with optional version-header fallback."""
+        url = f"https://api.github.com{path}"
+        response = requests.get(url, headers=self._build_rest_headers(include_version=include_version), params=params, timeout=30)
+        if response.status_code < 400:
+            return response
+
+        # Fallback once to default API version when staged version is enabled.
+        if (
+            include_version
+            and self.api_version_settings.get("enabled", False)
+            and self.api_version_settings.get("fallback_to_default", True)
+            and response.status_code in {400, 404, 415, 422}
+        ):
+            self.logger.warn(
+                f"API version request failed for {path} ({response.status_code}); retrying without explicit version header"
+            )
+            fallback = requests.get(url, headers=self._build_rest_headers(include_version=False), params=params, timeout=30)
+            return fallback
+
+        return response
+
+    @staticmethod
+    def _parse_iso_datetime(value: Optional[str]) -> Optional[datetime]:
+        if not value:
+            return None
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError:
+            return None
+
+    @staticmethod
+    def _map_failure_reason(status_code: int) -> str:
+        if status_code in {401, 403}:
+            return "permission_denied"
+        if status_code == 404:
+            return "not_supported"
+        if status_code == 0:
+            return "unknown"
+        return "api_error"
 
     def _build_repo_metadata(
         self,
@@ -596,6 +662,237 @@ class GitHubFetcher:
                 "recent_180d": 0,
                 "recent_365d": 0,
                 "last_commit_date": None,
+            }
+
+    def fetch_pull_request_summary(
+        self,
+        username: str,
+        repo_name: str,
+        repo_pushed_at: Optional[datetime] = None,
+        force_refresh: bool = False,
+    ) -> Dict[str, Any]:
+        """Fetch compact open pull request summary for a repository."""
+        push_key = sanitize_timestamp_for_filename(repo_pushed_at)
+        if not force_refresh:
+            cached = self.cache.get("pull_request_summary", username, repo=repo_name, week=push_key)
+            if cached:
+                return cached
+
+        total_open = 0
+        draft_count = 0
+        review_requested_count = 0
+        oldest_open: Optional[datetime] = None
+        page = 1
+        availability = "available"
+        reason = "none"
+
+        try:
+            while page <= 3:
+                response = self._rest_get(
+                    f"/repos/{username}/{repo_name}/pulls",
+                    params={"state": "open", "per_page": 100, "page": page},
+                    include_version=True,
+                )
+                if response.status_code >= 400:
+                    availability = "unavailable"
+                    reason = self._map_failure_reason(response.status_code)
+                    break
+
+                payload = response.json() or []
+                if not isinstance(payload, list):
+                    availability = "unavailable"
+                    reason = "api_error"
+                    break
+
+                for pr in payload:
+                    total_open += 1
+                    if pr.get("draft"):
+                        draft_count += 1
+                    if pr.get("requested_reviewers") or pr.get("requested_teams"):
+                        review_requested_count += 1
+                    created_at = self._parse_iso_datetime(pr.get("created_at"))
+                    if created_at and (oldest_open is None or created_at < oldest_open):
+                        oldest_open = created_at
+
+                if len(payload) < 100:
+                    break
+
+                page += 1
+
+            if page > 3 and availability == "available":
+                # Runtime protection: capped page scan can undercount very large PR queues.
+                availability = "partial"
+                reason = "not_requested"
+
+            oldest_open_age_days = None
+            if oldest_open is not None:
+                oldest_open_age_days = max(0, (datetime.now(timezone.utc) - oldest_open).days)
+
+            if availability == "unavailable":
+                total_open = 0
+                draft_count = 0
+                review_requested_count = 0
+                oldest_open_age_days = None
+
+            return {
+                "availability": availability,
+                "reason": reason,
+                "has_open_pull_requests": total_open > 0,
+                "total_open": total_open,
+                "draft_count": draft_count,
+                "review_requested_count": review_requested_count,
+                "oldest_open_age_days": oldest_open_age_days,
+                "source": "rest.pulls.list",
+            }
+        except Exception as error:
+            self.logger.warning(f"Failed to fetch pull request summary for {username}/{repo_name}: {error}")
+            return {
+                "availability": "unavailable",
+                "reason": "api_error",
+                "has_open_pull_requests": False,
+                "total_open": 0,
+                "draft_count": 0,
+                "review_requested_count": 0,
+                "oldest_open_age_days": None,
+                "source": "rest.pulls.list",
+            }
+
+    def fetch_security_summary(
+        self,
+        username: str,
+        repo_name: str,
+        repo_pushed_at: Optional[datetime] = None,
+        force_refresh: bool = False,
+    ) -> Dict[str, Any]:
+        """Fetch compact repository security summary from multiple REST sources."""
+        push_key = sanitize_timestamp_for_filename(repo_pushed_at)
+        if not force_refresh:
+            cached = self.cache.get("security_summary", username, repo=repo_name, week=push_key)
+            if cached:
+                return cached
+
+        feature_status = {
+            "advanced_security": "unavailable",
+            "secret_scanning": "unavailable",
+            "secret_scanning_push_protection": "unavailable",
+            "dependency_alerts": "unavailable",
+            "automated_security_fixes": "unavailable",
+        }
+        counts = {"total_open": 0, "critical": 0, "high": 0, "medium": 0, "low": 0}
+        sources = []
+        any_success = False
+        any_failure = False
+        first_reason = "none"
+
+        def mark_failure(status_code: int) -> None:
+            nonlocal any_failure, first_reason
+            any_failure = True
+            mapped = self._map_failure_reason(status_code)
+            if first_reason == "none":
+                first_reason = mapped
+
+        try:
+            repo_response = self._rest_get(f"/repos/{username}/{repo_name}", include_version=True)
+            if repo_response.status_code < 400:
+                any_success = True
+                sources.append("rest.repos.get")
+                repo_payload = repo_response.json() or {}
+                security_and_analysis = repo_payload.get("security_and_analysis") or {}
+                advanced_security = security_and_analysis.get("advanced_security", {}).get("status")
+                secret_scanning = security_and_analysis.get("secret_scanning", {}).get("status")
+                push_protection = security_and_analysis.get("secret_scanning_push_protection", {}).get("status")
+                feature_status["advanced_security"] = advanced_security or "unknown"
+                feature_status["secret_scanning"] = secret_scanning or "unknown"
+                feature_status["secret_scanning_push_protection"] = push_protection or "unknown"
+            else:
+                mark_failure(repo_response.status_code)
+
+            vuln_response = self._rest_get(
+                f"/repos/{username}/{repo_name}/vulnerability-alerts",
+                include_version=True,
+            )
+            if vuln_response.status_code in {200, 204}:
+                any_success = True
+                sources.append("rest.repos.vulnerability-alerts")
+                feature_status["dependency_alerts"] = "enabled"
+            elif vuln_response.status_code == 404:
+                any_success = True
+                sources.append("rest.repos.vulnerability-alerts")
+                feature_status["dependency_alerts"] = "disabled"
+            else:
+                mark_failure(vuln_response.status_code)
+
+            fixes_response = self._rest_get(
+                f"/repos/{username}/{repo_name}/automated-security-fixes",
+                include_version=True,
+            )
+            if fixes_response.status_code in {200, 204}:
+                any_success = True
+                sources.append("rest.repos.automated-security-fixes")
+                feature_status["automated_security_fixes"] = "enabled"
+            elif fixes_response.status_code == 404:
+                any_success = True
+                sources.append("rest.repos.automated-security-fixes")
+                feature_status["automated_security_fixes"] = "disabled"
+            else:
+                mark_failure(fixes_response.status_code)
+
+            alerts_response = self._rest_get(
+                f"/repos/{username}/{repo_name}/dependabot/alerts",
+                params={"state": "open", "per_page": 100},
+                include_version=True,
+            )
+            if alerts_response.status_code < 400:
+                any_success = True
+                sources.append("rest.dependabot.alerts")
+                alerts_payload = alerts_response.json() or []
+                if isinstance(alerts_payload, list):
+                    for alert in alerts_payload:
+                        counts["total_open"] += 1
+                        severity = (
+                            (alert.get("security_vulnerability") or {}).get("severity")
+                            or (alert.get("security_advisory") or {}).get("severity")
+                            or ""
+                        ).lower()
+                        if severity in {"critical", "high", "medium", "low"}:
+                            counts[severity] += 1
+            else:
+                mark_failure(alerts_response.status_code)
+
+            if any_success and any_failure:
+                availability = "partial"
+                reason = first_reason if first_reason != "none" else "unknown"
+            elif any_success:
+                availability = "available"
+                reason = "none"
+            else:
+                availability = "unavailable"
+                reason = first_reason if first_reason != "none" else "unknown"
+
+            if counts["total_open"] > 0:
+                overall_state = "warning_present"
+            elif availability in {"available", "partial"}:
+                overall_state = "clear"
+            else:
+                overall_state = "unavailable"
+
+            return {
+                "availability": availability,
+                "reason": reason,
+                "overall_state": overall_state,
+                "feature_status": feature_status,
+                "active_alert_counts": counts,
+                "sources": sources,
+            }
+        except Exception as error:
+            self.logger.warning(f"Failed to fetch security summary for {username}/{repo_name}: {error}")
+            return {
+                "availability": "unavailable",
+                "reason": "api_error",
+                "overall_state": "unavailable",
+                "feature_status": feature_status,
+                "active_alert_counts": counts,
+                "sources": sources,
             }
 
     def handle_rate_limit(self, max_retries: int = 3) -> None:

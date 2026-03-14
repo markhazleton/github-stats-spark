@@ -83,7 +83,11 @@ class UnifiedDataGenerator:
         
         # Initialize components
         self.cache = cache if cache is not None else APICache()
-        self.fetcher = GitHubFetcher(cache=self.cache, max_repos=self.max_repositories)
+        self.fetcher = GitHubFetcher(
+            cache=self.cache,
+            max_repos=self.max_repositories,
+            api_version_settings=self.config.get_github_api_version_config(),
+        )
         self.ranker = RepositoryRanker(config=config)
         
         logger.info(f"UnifiedDataGenerator initialized for user: {username}")
@@ -91,7 +95,7 @@ class UnifiedDataGenerator:
         logger.info(f"Include AI summaries: {self.include_ai_summaries}")
         
         # Initialize cache manager for Phase 2
-        self.cache_manager = CacheManager(self.fetcher.github, self.cache)
+        self.cache_manager = CacheManager(self.fetcher.github, self.cache, fetcher=self.fetcher)
 
     def generate(self) -> Dict[str, Any]:
         """Generate unified data using clean 4-phase architecture.
@@ -253,11 +257,36 @@ class UnifiedDataGenerator:
                     quality_indicators = self.cache.get(
                         "quality_indicators", self.username, repo=repo_name, week=cache_key
                     )
+                    pull_request_summary = self.cache.get(
+                        "pull_request_summary", self.username, repo=repo_name, week=cache_key
+                    )
+                    security_summary = self.cache.get(
+                        "security_summary", self.username, repo=repo_name, week=cache_key
+                    )
                     if quality_indicators:
                         repo_data["has_license"] = quality_indicators.get("has_license", False)
                         repo_data["has_ci_cd"] = quality_indicators.get("has_ci_cd", False)
                         repo_data["has_tests"] = quality_indicators.get("has_tests", False)
                         repo_data["has_docs"] = quality_indicators.get("has_docs", False)
+                    if pull_request_summary:
+                        repo_data["pull_request_summary"] = pull_request_summary
+                    if security_summary:
+                        repo_data["security_summary"] = security_summary
+
+                if "pull_request_summary" not in repo_data:
+                    repo_data["pull_request_summary"] = self.fetcher.fetch_pull_request_summary(
+                        self.username,
+                        repo_name,
+                        repo_pushed_at=pushed_at,
+                        force_refresh=self.force_refresh,
+                    )
+                if "security_summary" not in repo_data:
+                    repo_data["security_summary"] = self.fetcher.fetch_security_summary(
+                        self.username,
+                        repo_name,
+                        repo_pushed_at=pushed_at,
+                        force_refresh=self.force_refresh,
+                    )
 
                 if cached_summary is None:
                     cached_summary = self.cache.get("ai_summary", self.username, repo=repo_name)
@@ -440,6 +469,8 @@ class UnifiedDataGenerator:
                 "ai_summary": ai_summary_text,
                 "rank": rank,
                 "composite_score": score,
+                "pull_request_summary": repo.pull_request_summary.to_dict(),
+                "security_summary": repo.security_summary.to_dict(),
             }
             unified_repos.append(repo_dict)
         
@@ -455,7 +486,7 @@ class UnifiedDataGenerator:
         # Create metadata
         metadata = {
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "schema_version": "2.0.0",
+            "schema_version": "2.1.0",
             "generator": "unified_data_generator"
         }
         

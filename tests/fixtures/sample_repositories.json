@@ -16,6 +16,40 @@
     "is_fork": false,
     "has_readme": true,
     "size_kb": 2400,
+    "pull_request_summary": {
+      "availability": "available",
+      "reason": "none",
+      "has_open_pull_requests": true,
+      "total_open": 3,
+      "draft_count": 1,
+      "review_requested_count": 2,
+      "oldest_open_age_days": 12,
+      "source": "rest.pulls.list"
+    },
+    "security_summary": {
+      "availability": "partial",
+      "reason": "permission_denied",
+      "overall_state": "warning_present",
+      "feature_status": {
+        "advanced_security": "unavailable",
+        "secret_scanning": "unavailable",
+        "secret_scanning_push_protection": "unavailable",
+        "dependency_alerts": "enabled",
+        "automated_security_fixes": "enabled"
+      },
+      "active_alert_counts": {
+        "total_open": 2,
+        "critical": 1,
+        "high": 1,
+        "medium": 0,
+        "low": 0
+      },
+      "sources": [
+        "rest.repos.vulnerability-alerts",
+        "rest.repos.automated-security-fixes",
+        "rest.dependabot.alerts"
+      ]
+    },
     "total_commits": 450,
     "commits_90d": 45,
     "commits_180d": 85,
@@ -39,6 +73,40 @@
     "is_fork": false,
     "has_readme": true,
     "size_kb": 8500,
+    "pull_request_summary": {
+      "availability": "available",
+      "reason": "none",
+      "has_open_pull_requests": false,
+      "total_open": 0,
+      "draft_count": 0,
+      "review_requested_count": 0,
+      "oldest_open_age_days": null,
+      "source": "rest.pulls.list"
+    },
+    "security_summary": {
+      "availability": "unavailable",
+      "reason": "not_supported",
+      "overall_state": "unavailable",
+      "feature_status": {
+        "advanced_security": "unknown",
+        "secret_scanning": "unknown",
+        "secret_scanning_push_protection": "unknown",
+        "dependency_alerts": "disabled",
+        "automated_security_fixes": "disabled"
+      },
+      "active_alert_counts": {
+        "total_open": 0,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "sources": [
+        "rest.repos.get",
+        "rest.repos.vulnerability-alerts",
+        "rest.repos.automated-security-fixes"
+      ]
+    },
     "total_commits": 1200,
     "commits_90d": 2,
     "commits_180d": 8,

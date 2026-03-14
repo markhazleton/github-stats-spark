@@ -2,6 +2,7 @@
 
 from spark.cache_manager import CacheManager, RefreshResult
 import spark.cache_manager as cache_manager_module
+from spark.cache_refresh_strategy import get_refresh_categories
 
 
 class DummyCache:
@@ -59,3 +60,10 @@ def test_refresh_user_data_uses_refresh_strategy(monkeypatch):
         "include_ai_summaries": True,
     }
     assert summary.repos_refreshed == 1
+
+
+def test_refresh_categories_include_enrichment_summaries():
+    categories = get_refresh_categories(include_ai_summaries=False)
+
+    assert "pull_request_summary" in categories
+    assert "security_summary" in categories

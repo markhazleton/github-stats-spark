@@ -104,6 +104,13 @@ analyzer:
     activity: 0.45            # Recent commits, recency
     health: 0.25              # Documentation, maturity, issues
 
+# Staged GitHub REST API version rollout controls
+github:
+  api_version:
+    enabled: false            # Set true to send explicit version header
+    version: "2026-03-10"    # Target staged API version
+    fallback_to_default: true # Retry once without explicit version header
+
 # Repository Comparison Dashboard Configuration
 dashboard:
   # Enable dashboard generation

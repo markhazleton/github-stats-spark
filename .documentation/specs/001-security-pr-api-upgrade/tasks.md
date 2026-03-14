@@ -17,9 +17,9 @@
 
 **Purpose**: Prepare reusable fixtures and validation inputs for the new repository enrichment work.
 
-- [ ] T001 Extend repository enrichment fixture coverage in `tests/fixtures/sample_repositories.json`
-- [ ] T002 [P] Add staged API-version and partial-access configuration samples in `tests/fixtures/sample_config.yml`
-- [ ] T003 [P] Add schema-consumer adoption notes for PR and security summaries in `documentation/guides/unified-pipeline.md`
+- [X] T001 Extend repository enrichment fixture coverage in `tests/fixtures/sample_repositories.json`
+- [X] T002 [P] Add staged API-version and partial-access configuration samples in `tests/fixtures/sample_config.yml`
+- [X] T003 [P] Add schema-consumer adoption notes for PR and security summaries in `documentation/guides/unified-pipeline.md`
 
 ---
 
@@ -29,11 +29,11 @@
 
 **Critical**: No user story work should start until these tasks are complete.
 
-- [ ] T004 Extend repository enrichment models and serialization helpers in `src/spark/models/repository.py`
-- [ ] T005 [P] Add repository-scoped enrichment cache helpers in `src/spark/cache_manager.py` using `pushed_at`-keyed invalidation, no TTL refresh, and force-refresh bypass support
-- [ ] T006 [P] Add GitHub REST API version request plumbing and shared enrichment helpers in `src/spark/fetcher.py`
-- [ ] T007 Wire schema-version bump support for additive repository fields in `src/spark/unified_data_generator.py`
-- [ ] T008 [P] Create privacy regression coverage proving private repositories never reach PR or security enrichment in `tests/unit/test_fetcher.py`
+- [X] T004 Extend repository enrichment models and serialization helpers in `src/spark/models/repository.py`
+- [X] T005 [P] Add repository-scoped enrichment cache helpers in `src/spark/cache_manager.py` using `pushed_at`-keyed invalidation, no TTL refresh, and force-refresh bypass support
+- [X] T006 [P] Add GitHub REST API version request plumbing and shared enrichment helpers in `src/spark/fetcher.py`
+- [X] T007 Wire schema-version bump support for additive repository fields in `src/spark/unified_data_generator.py`
+- [X] T008 [P] Create privacy regression coverage proving private repositories never reach PR or security enrichment in `tests/unit/test_fetcher.py`
 
 **Checkpoint**: Shared enrichment infrastructure is ready for story-specific implementation.
 
@@ -47,16 +47,16 @@
 
 ### Tests for User Story 1
 
-- [ ] T009 [P] [US1] Create pull request and security enrichment unit coverage in `tests/unit/test_fetcher.py`
-- [ ] T010 [P] [US1] Add unified repository enrichment integration coverage in `tests/integration/test_unified_repository_enrichment.py`
+- [X] T009 [P] [US1] Create pull request and security enrichment unit coverage in `tests/unit/test_fetcher.py`
+- [X] T010 [P] [US1] Add unified repository enrichment integration coverage in `tests/integration/test_unified_repository_enrichment.py`
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Implement compact open pull request summary collection in `src/spark/fetcher.py`
-- [ ] T012 [US1] Implement repository security signal and alert-count collection in `src/spark/fetcher.py`
-- [ ] T013 [P] [US1] Add repository summary serialization for `pull_request_summary` and `security_summary` in `src/spark/models/repository.py`
-- [ ] T014 [US1] Populate repository enrichment summaries during assembly in `src/spark/unified_data_generator.py`
-- [ ] T015 [US1] Preserve additive schema metadata for the new repository fields in `src/spark/unified_data_generator.py`
+- [X] T011 [US1] Implement compact open pull request summary collection in `src/spark/fetcher.py`
+- [X] T012 [US1] Implement repository security signal and alert-count collection in `src/spark/fetcher.py`
+- [X] T013 [P] [US1] Add repository summary serialization for `pull_request_summary` and `security_summary` in `src/spark/models/repository.py`
+- [X] T014 [US1] Populate repository enrichment summaries during assembly in `src/spark/unified_data_generator.py`
+- [X] T015 [US1] Preserve additive schema metadata for the new repository fields in `src/spark/unified_data_generator.py`
 
 **Checkpoint**: User Story 1 is complete when enriched repository data is generated without removing or renaming existing repository fields.
 
@@ -70,15 +70,15 @@
 
 ### Tests for User Story 2
 
-- [ ] T016 [P] [US2] Add availability-state unit coverage for partial and unavailable enrichment in `tests/unit/test_repository_enrichment_status.py` *(requires T004 and T013 for model definitions)*
-- [ ] T017 [P] [US2] Add partial-result integration coverage in `tests/integration/test_unified_repository_partial_enrichment.py` *(requires T004 and T013 for model definitions)*
+- [X] T016 [P] [US2] Add availability-state unit coverage for partial and unavailable enrichment in `tests/unit/test_repository_enrichment_status.py` *(requires T004 and T013 for model definitions)*
+- [X] T017 [P] [US2] Add partial-result integration coverage in `tests/integration/test_unified_repository_partial_enrichment.py` *(requires T004 and T013 for model definitions)*
 
 ### Implementation for User Story 2
 
-- [ ] T018 [US2] Classify permission, unsupported, and API failure outcomes into repository enrichment reasons in `src/spark/fetcher.py`
-- [ ] T019 [US2] Persist explicit partial and unavailable repository summaries during assembly in `src/spark/unified_data_generator.py`
-- [ ] T020 [P] [US2] Surface enrichment warnings and partial-result logging in `src/spark/unified_report_workflow.py`
-- [ ] T021 [P] [US2] Document access requirements, availability semantics, and schema adoption guidance in `documentation/guides/unified-pipeline.md`
+- [X] T018 [US2] Classify permission, unsupported, and API failure outcomes into repository enrichment reasons in `src/spark/fetcher.py`
+- [X] T019 [US2] Persist explicit partial and unavailable repository summaries during assembly in `src/spark/unified_data_generator.py`
+- [X] T020 [P] [US2] Surface enrichment warnings and partial-result logging in `src/spark/unified_report_workflow.py`
+- [X] T021 [P] [US2] Document access requirements, availability semantics, and schema adoption guidance in `documentation/guides/unified-pipeline.md`
 
 **Checkpoint**: User Story 2 is complete when partial data stays trustworthy, observable, and clearly distinguishable from zero findings.
 
@@ -92,15 +92,15 @@
 
 ### Tests for User Story 3
 
-- [ ] T022 [P] [US3] Add GitHub REST API version behavior coverage in `tests/unit/test_fetcher_api_version.py`
+- [X] T022 [P] [US3] Add GitHub REST API version behavior coverage in `tests/unit/test_fetcher_api_version.py`
 
 ### Implementation for User Story 3
 
-- [ ] T023 [P] [US3] Add GitHub REST API version configuration in `config/spark.yml`
-- [ ] T024 [US3] Read staged GitHub REST API version settings in `src/spark/config.py`
-- [ ] T025 [US3] Apply `2026-03-10` request headers and fallback logging in `src/spark/fetcher.py`
-- [ ] T026 [US3] Emit staged API-upgrade assessment conclusions in logs or generation metadata in `src/spark/unified_report_workflow.py`
-- [ ] T027 [P] [US3] Document rollout gates, breaking changes, and fallback decisions in `documentation/api/api-reference.md`
+- [X] T023 [P] [US3] Add GitHub REST API version configuration in `config/spark.yml`
+- [X] T024 [US3] Read staged GitHub REST API version settings in `src/spark/config.py`
+- [X] T025 [US3] Apply `2026-03-10` request headers and fallback logging in `src/spark/fetcher.py`
+- [X] T026 [US3] Emit staged API-upgrade assessment conclusions in logs or generation metadata in `src/spark/unified_report_workflow.py`
+- [X] T027 [P] [US3] Document rollout gates, breaking changes, and fallback decisions in `documentation/api/api-reference.md`
 
 **Checkpoint**: User Story 3 is complete when the staged version path is configurable, validated, and documented without forcing a full cutover.
 
@@ -110,9 +110,9 @@
 
 **Purpose**: Finalize documentation, runtime validation, and release readiness across all stories.
 
-- [ ] T028 [P] Add runtime-budget instrumentation or explicit budget-exceeded reporting for enrichment runs in `src/spark/unified_report_workflow.py`
-- [ ] T029 [P] Update quickstart validation steps for repository enrichment and staged API rollout in `documentation/quickstart/QUICKSTART_UNIFIED.md`
-- [ ] T030 [P] Update release notes for schema version `2.1.0` and enrichment behavior in `documentation/CHANGELOG.md`
+- [X] T028 [P] Add runtime-budget instrumentation or explicit budget-exceeded reporting for enrichment runs in `src/spark/unified_report_workflow.py`
+- [X] T029 [P] Update quickstart validation steps for repository enrichment and staged API rollout in `documentation/quickstart/QUICKSTART_UNIFIED.md`
+- [X] T030 [P] Update release notes for schema version `2.1.0` and enrichment behavior in `documentation/CHANGELOG.md`
 - [ ] T031 Validate runtime, cache reuse, force-refresh behavior, and mitigation reporting against `.documentation/specs/001-security-pr-api-upgrade/quickstart.md`
 - [ ] T032 [P] Verify enrichment code in `src/spark/fetcher.py`, `src/spark/models/repository.py`, and `src/spark/unified_data_generator.py` meets >80% line coverage per constitution quality gates
 

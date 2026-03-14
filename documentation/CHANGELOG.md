@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Repository enrichment payloads in unified output (`schema_version: 2.1.0`):
+  - `pull_request_summary` for compact open PR signals
+  - `security_summary` for repository security posture and alert counts
+  - Explicit availability semantics (`available`, `partial`, `unavailable`) and reason codes
+- Staged GitHub REST API version rollout controls in `config/spark.yml`:
+  - `github.api_version.enabled`
+  - `github.api_version.version` (`2026-03-10`)
+  - `github.api_version.fallback_to_default`
+
+### Changed
+- Unified data assembly now emits additive enrichment objects for every repository record.
+- Unified workflow logs staged API-version decision state and warns when runtime budget exceeds 5 minutes.
+
 ### Removed
 - **Version Checker Module**: Removed out-of-scope version checking functionality
   - Deleted `src/spark/dependencies/version_checker.py` (271 lines)

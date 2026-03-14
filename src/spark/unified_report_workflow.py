@@ -65,9 +65,12 @@ class UnifiedReportWorkflow:
         self.cache = cache or APICache()
         self.output_dir = Path(output_dir)
         self.cache_only = cache_only
+        self.runtime_budget_seconds = 300
 
         # Initialize components
         self.fetcher = GitHubFetcher(cache=self.cache)
+        api_version_config = self.config.get("github.api_version", {}) or {}
+        self.fetcher.api_version_settings.update(api_version_config)
         self.theme = self._resolve_theme()
         self.visualizer = self._create_visualizer()
         self.ranker, self.summarizer, self.dependency_analyzer = self._create_analysis_components()
@@ -82,6 +85,13 @@ class UnifiedReportWorkflow:
         self.max_repos = max_repos
         if max_repos is not None:
             self.logger.info(f"WARNING: Testing mode: Limited to {max_repos} repositories for SVG/report generation")
+
+        self.logger.info(
+            "GitHub REST API version staging: "
+            f"enabled={self.fetcher.api_version_settings.get('enabled', False)} "
+            f"target={self.fetcher.api_version_settings.get('version', '2026-03-10')} "
+            f"fallback_to_default={self.fetcher.api_version_settings.get('fallback_to_default', True)}"
+        )
 
     def _resolve_theme(self):
         """Resolve the configured theme using shared validation rules."""
@@ -154,6 +164,14 @@ class UnifiedReportWorkflow:
         )
 
         generation_time = time.time() - self.start_time
+        if generation_time > self.runtime_budget_seconds:
+            over_budget_by = generation_time - self.runtime_budget_seconds
+            warning = (
+                f"Runtime budget exceeded by {over_budget_by:.1f}s. "
+                "Mitigation: reduce max repos or run with warmed cache/without force refresh."
+            )
+            self.warnings.append(warning)
+            self.logger.warn(warning)
         report.generation_time = generation_time
         report.errors = self.errors
         report.warnings = self.warnings
@@ -215,6 +233,7 @@ class UnifiedReportWorkflow:
                     exclude_forks=exclude_forks,
                     exclude_archived=exclude_archived,
                 )
+            self._log_enrichment_availability(repos_data)
             repositories = [Repository.from_dict(r) for r in repos_data]
             
             # Apply max_repos limit if specified
@@ -275,6 +294,42 @@ class UnifiedReportWorkflow:
                 stage="fetch_github_data",
                 cause=e
             ) from e
+
+    def _log_enrichment_availability(self, repos_data: List[Dict[str, Any]]) -> None:
+        """Log compact availability counters for enrichment status visibility."""
+        if not repos_data:
+            return
+
+        pr_partial = 0
+        pr_unavailable = 0
+        sec_partial = 0
+        sec_unavailable = 0
+
+        for repo in repos_data:
+            pr = repo.get("pull_request_summary") or {}
+            sec = repo.get("security_summary") or {}
+
+            pr_availability = pr.get("availability")
+            sec_availability = sec.get("availability")
+
+            if pr_availability == "partial":
+                pr_partial += 1
+            elif pr_availability == "unavailable":
+                pr_unavailable += 1
+
+            if sec_availability == "partial":
+                sec_partial += 1
+            elif sec_availability == "unavailable":
+                sec_unavailable += 1
+
+        if any([pr_partial, pr_unavailable, sec_partial, sec_unavailable]):
+            self.logger.warn(
+                "Repository enrichment availability summary: "
+                f"pr_partial={pr_partial} "
+                f"pr_unavailable={pr_unavailable} "
+                f"security_partial={sec_partial} "
+                f"security_unavailable={sec_unavailable}"
+            )
 
     def _generate_svgs(
         self, username: str, github_data: GitHubData
