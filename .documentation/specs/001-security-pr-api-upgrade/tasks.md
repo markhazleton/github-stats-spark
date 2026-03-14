@@ -113,8 +113,8 @@
 - [X] T028 [P] Add runtime-budget instrumentation or explicit budget-exceeded reporting for enrichment runs in `src/spark/unified_report_workflow.py`
 - [X] T029 [P] Update quickstart validation steps for repository enrichment and staged API rollout in `documentation/quickstart/QUICKSTART_UNIFIED.md`
 - [X] T030 [P] Update release notes for schema version `2.1.0` and enrichment behavior in `documentation/CHANGELOG.md`
-- [ ] T031 Validate runtime, cache reuse, force-refresh behavior, and mitigation reporting against `.documentation/specs/001-security-pr-api-upgrade/quickstart.md`
-- [ ] T032 [P] Verify enrichment code in `src/spark/fetcher.py`, `src/spark/models/repository.py`, and `src/spark/unified_data_generator.py` meets >80% line coverage per constitution quality gates
+- [X] T031 Validate runtime, cache reuse, force-refresh behavior, and mitigation reporting against `.documentation/specs/001-security-pr-api-upgrade/quickstart.md`
+- [X] T032 [P] Verify enrichment code in `src/spark/fetcher.py`, `src/spark/models/repository.py`, and `src/spark/unified_data_generator.py` meets >80% line coverage per constitution quality gates
 
 ---
 
