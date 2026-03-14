@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 import requests
 
-from github import Github, GithubException, RateLimitExceededException
+from github import Auth, Github, GithubException, RateLimitExceededException
 from github.Repository import Repository
 
 from spark.cache import APICache
@@ -40,7 +40,7 @@ class GitHubFetcher:
         if not self.token:
             raise ValueError("GitHub token required (GITHUB_TOKEN environment variable or token parameter)")
 
-        self.github = Github(self.token)
+        self.github = Github(auth=Auth.Token(self.token))
         self.cache = cache or APICache()
         self.cache_status_tracker = CacheStatusTracker(cache_dir=self.cache.cache_dir)
         self.max_repos = max_repos

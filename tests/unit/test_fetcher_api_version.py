@@ -73,3 +73,23 @@ def test_rest_get_no_fallback_when_disabled(tmp_path, monkeypatch):
     response = fetcher._rest_get("/repos/markhazleton/github-stats-spark")
 
     assert response.status_code == 400
+
+
+def test_fetcher_initializes_github_with_auth_token(tmp_path, monkeypatch):
+    monkeypatch.setenv("GITHUB_TOKEN", "token-from-env")
+    cache = APICache(cache_dir=str(tmp_path / "cache-auth"))
+    captured = {}
+
+    monkeypatch.setattr("spark.fetcher.Auth.Token", lambda token: f"auth:{token}")
+
+    def fake_github(*args, **kwargs):
+        captured["args"] = args
+        captured["kwargs"] = kwargs
+        return SimpleNamespace()
+
+    monkeypatch.setattr("spark.fetcher.Github", fake_github)
+
+    GitHubFetcher(cache=cache)
+
+    assert captured["args"] == ()
+    assert captured["kwargs"]["auth"] == "auth:token-from-env"

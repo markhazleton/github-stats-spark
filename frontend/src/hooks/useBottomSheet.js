@@ -110,24 +110,23 @@ export function useBottomSheet({
 
 /**
  * Hook for managing multiple bottom sheets in the same component
- * Useful when you need filter, sort, and detail sheets in the same view
+ *
+ * This helper intentionally fails fast because creating hooks in dynamic
+ * iteration violates React's Rules of Hooks and must not reach runtime silently.
  *
  * @param {Array<string>} sheetIds - Array of sheet identifiers
- * @returns {Object} Map of sheet IDs to their control interfaces
+ * @returns {never}
  *
  * @example
- * const sheets = useBottomSheets(['filter', 'sort', 'detail']);
- * sheets.filter.open(); // Open the filter sheet
- * sheets.sort.toggle(); // Toggle the sort sheet
+ * // Use individual hook calls instead:
+ * const filterSheet = useBottomSheet();
+ * const sortSheet = useBottomSheet();
+ * const detailSheet = useBottomSheet();
  */
-export function useBottomSheets(sheetIds) {
-  const sheets = {};
-
-  sheetIds.forEach((id) => {
-    sheets[id] = useBottomSheet();
-  });
-
-  return sheets;
+export function useBottomSheets(sheetIds = []) {
+  throw new Error(
+    `useBottomSheets(${sheetIds.length}) is disabled: call useBottomSheet() individually for each sheet to satisfy the Rules of Hooks.`,
+  );
 }
 
 export default useBottomSheet;

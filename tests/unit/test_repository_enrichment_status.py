@@ -69,3 +69,94 @@ def test_repository_from_dict_preserves_enrichment_objects():
     assert repo.pull_request_summary.total_open == 1
     assert repo.security_summary.availability == "partial"
     assert repo.to_dict()["security_summary"]["active_alert_counts"]["critical"] == 1
+
+
+def test_repository_website_url_prefers_homepage_then_pages():
+    now = datetime.now(timezone.utc)
+    repo = Repository(
+        name="sample",
+        description="repo",
+        url="https://github.com/markhazleton/sample",
+        created_at=now,
+        updated_at=now,
+        pushed_at=now,
+        primary_language="Python",
+        homepage="https://example.com",
+        has_pages=True,
+        is_private=False,
+    )
+
+    assert repo.website_url == "https://example.com"
+    assert repo.pages_url == "https://markhazleton.github.io/sample/"
+
+
+def test_repository_from_dict_defaults_and_dashboard_dict():
+    repo = Repository.from_dict({"name": "fallback"})
+
+    dashboard = repo.to_dashboard_dict()
+
+    assert repo.name == "fallback"
+    assert dashboard["name"] == "fallback"
+    assert dashboard["pull_request_summary"]["availability"] == "unavailable"
+
+
+def test_repository_from_github_repo_extracts_quality_and_activity_indicators():
+    now = datetime.now(timezone.utc)
+
+    class FakeContent:
+        def __init__(self, name, item_type):
+            self.name = name
+            self.type = item_type
+
+    class FakeGitHubRepo:
+        name = "sample"
+        description = "repo"
+        html_url = "https://github.com/markhazleton/sample"
+        created_at = now
+        updated_at = now
+        pushed_at = now
+        language = "Python"
+        stargazers_count = 1
+        forks_count = 2
+        watchers_count = 3
+        open_issues_count = 4
+        archived = False
+        fork = True
+        parent = object()
+        size = 5
+        private = False
+        homepage = None
+        has_pages = True
+
+        @staticmethod
+        def get_readme():
+            return object()
+
+        @staticmethod
+        def get_contributors():
+            return type("Contribs", (), {"totalCount": 7})()
+
+        @staticmethod
+        def get_workflows():
+            return type("Workflows", (), {"totalCount": 1})()
+
+        @staticmethod
+        def get_contents(path):
+            return [FakeContent("tests", "dir"), FakeContent("docs", "dir"), FakeContent("CHANGELOG.md", "file")]
+
+        @staticmethod
+        def get_license():
+            return object()
+
+        @staticmethod
+        def get_releases():
+            return type("Releases", (), {"totalCount": 1, "__getitem__": lambda self, idx: type("Release", (), {"created_at": now})()})()
+
+    repo = Repository.from_github_repo(FakeGitHubRepo())
+
+    assert repo.has_readme is True
+    assert repo.has_tests is True
+    assert repo.has_docs is True
+    assert repo.has_license is True
+    assert repo.release_count == 1
+    assert repo.pull_request_summary.availability == "unavailable"
