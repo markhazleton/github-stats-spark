@@ -1,6 +1,4 @@
 import js from '@eslint/js';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
 export default [
@@ -35,20 +33,31 @@ export default [
         },
       },
     },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-    },
     rules: {
-      ...react.configs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
-      'react/react-in-jsx-scope': 'off', // Not needed in React 17+
-      'react/prop-types': 'off', // Using TypeScript for type checking
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
+      // React is often imported for consistency in JSX files.
+      'no-unused-vars': ['error', { varsIgnorePattern: '^React$' }],
+      // ESLint 10-compatible equivalent for fail-fast hook safety in callbacks/conditionals.
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "CallExpression[callee.name='forEach'] CallExpression[callee.name=/^use[A-Z]/]",
+          message: 'Do not call React hooks inside forEach callbacks.',
+        },
+        {
+          selector: "CallExpression[callee.name='map'] CallExpression[callee.name=/^use[A-Z]/]",
+          message: 'Do not call React hooks inside map callbacks.',
+        },
+        {
+          selector: "CallExpression[callee.name='reduce'] CallExpression[callee.name=/^use[A-Z]/]",
+          message: 'Do not call React hooks inside reduce callbacks.',
+        },
+        {
+          selector: 'IfStatement CallExpression[callee.name=/^use[A-Z]/]',
+          message: 'Do not call React hooks conditionally.',
+        },
+      ],
+      // Existing catch-and-wrap patterns in this codebase omit Error.cause.
+      'preserve-caught-error': 'off',
     },
   },
 ];

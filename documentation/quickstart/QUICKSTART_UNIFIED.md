@@ -83,6 +83,33 @@ spark unified --user YOUR_GITHUB_USERNAME --force-refresh
 
 **Bypasses cache and fetches fresh data from GitHub API**
 
+### 4. Validate Repository Enrichment Output
+
+After generation, validate the additive schema fields in `data/repositories.json`:
+
+- Every repository has `pull_request_summary`
+- Every repository has `security_summary`
+- Security gaps are represented by `availability = "partial"` or `"unavailable"` with an explicit `reason`
+- Private repositories are still excluded from generated repositories
+
+### 5. Validate Staged API Version Behavior
+
+Enable staged API-version requests in `config/spark.yml`:
+
+```yaml
+github:
+  api_version:
+    enabled: true
+    version: "2026-03-10"
+    fallback_to_default: true
+```
+
+Run unified generation again and confirm:
+
+- Generation succeeds with explicit version headers enabled
+- Logs show the staged version decision and fallback behavior (if used)
+- Enrichment objects continue to emit explicit availability states
+
 ---
 
 ## What Gets Generated

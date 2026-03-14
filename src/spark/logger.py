@@ -39,13 +39,17 @@ class Logger:
         """
         print(self._format_message("INFO", message), file=sys.stdout)
 
-    def warn(self, message: str) -> None:
+    def warning(self, message: str) -> None:
         """Log a warning message to stderr.
 
         Args:
             message: Warning message
         """
         print(self._format_message("WARN", message), file=sys.stderr)
+
+    def warn(self, message: str) -> None:
+        """Deprecated: use warning() instead."""
+        self.warning(message)
 
     def error(self, message: str, exception: Optional[Exception] = None) -> None:
         """Log an error message to stderr.

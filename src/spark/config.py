@@ -126,3 +126,20 @@ class SparkConfig:
             if value is None:
                 return default
         return value
+
+    def get_github_api_version_config(self) -> Dict[str, Any]:
+        """Get staged GitHub REST API version configuration.
+
+        Returns:
+            Dictionary with staged API-version settings.
+        """
+        defaults = {
+            "enabled": False,
+            "version": "2026-03-10",
+            "fallback_to_default": True,
+        }
+        configured = self.config.get("github", {}).get("api_version", {})
+        if not isinstance(configured, dict):
+            return defaults
+        merged = {**defaults, **configured}
+        return merged

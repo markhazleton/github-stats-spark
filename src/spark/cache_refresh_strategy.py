@@ -5,7 +5,13 @@ from datetime import datetime
 from typing import Set
 
 
-BASE_REFRESH_CATEGORIES = frozenset({"commit_counts", "languages", "quality_indicators"})
+BASE_REFRESH_CATEGORIES = frozenset({
+    "commit_counts",
+    "languages",
+    "quality_indicators",
+    "pull_request_summary",
+    "security_summary",
+})
 AI_REFRESH_CATEGORIES = frozenset({"readme", "dependency_files", "ai_summary"})
 
 

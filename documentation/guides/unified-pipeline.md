@@ -151,14 +151,46 @@ Single source of truth consumed by dashboard and visualizations:
       "commit_history": { ... },
       "tech_stack": { ... },
       "ai_summary": { ... }
+      "pull_request_summary": { ... },
+      "security_summary": { ... },
     }
   ],
   "metadata": {
     "generated_at": "2026-01-18T22:43:37Z",
-    "schema_version": "2.0.0"
+    "schema_version": "2.1.0"
   }
 }
 ```
+
+### Repository Enrichment Availability Semantics
+
+Each repository now always includes compact PR and security summaries:
+
+- `pull_request_summary`
+- `security_summary`
+
+Both objects use:
+
+- `availability`: `available`, `partial`, `unavailable`
+- `reason`: `none`, `permission_denied`, `api_error`, `not_supported`, `not_requested`, `unknown`
+
+Consumer rule: `unavailable` is not the same as zero findings. Always branch on `availability` before interpreting counts.
+
+### Staged REST API Version Rollout
+
+Use `config/spark.yml` to control explicit versioned requests:
+
+```yaml
+github:
+  api_version:
+    enabled: false
+    version: "2026-03-10"
+    fallback_to_default: true
+```
+
+- When enabled, enrichment requests include `X-GitHub-Api-Version`.
+- If configured fallback is enabled, version failures retry once without an explicit version header.
+- Workflow logs include the current staged-version decision for observability.
 
 ### 2. SVG Visualizations (Phase 4)
 

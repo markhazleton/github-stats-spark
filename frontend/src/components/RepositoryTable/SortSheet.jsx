@@ -31,6 +31,8 @@ const SORT_OPTIONS = [
   { value: "name", label: "Name", icon: "🔤" },
   { value: "stars", label: "Stars", icon: "⭐" },
   { value: "commits", label: "Commits", icon: "📝" },
+  { value: "open_pull_requests", label: "Open PRs", icon: "🔀" },
+  { value: "security_alerts", label: "Security Alerts", icon: "🛡️" },
   { value: "updated", label: "Last Updated", icon: "📅" },
   { value: "language", label: "Language", icon: "💻" },
 ];

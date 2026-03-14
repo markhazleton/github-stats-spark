@@ -2,7 +2,111 @@
 
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Dict, Optional, List
+
+
+@dataclass
+class RepositoryPullRequestSummary:
+    """Compact pull request signal for a repository."""
+
+    availability: str = "unavailable"
+    reason: str = "not_requested"
+    has_open_pull_requests: bool = False
+    total_open: int = 0
+    draft_count: int = 0
+    review_requested_count: int = 0
+    oldest_open_age_days: Optional[int] = None
+    source: str = "rest.pulls.list"
+
+    def to_dict(self) -> Dict:
+        return {
+            "availability": self.availability,
+            "reason": self.reason,
+            "has_open_pull_requests": self.has_open_pull_requests,
+            "total_open": self.total_open,
+            "draft_count": self.draft_count,
+            "review_requested_count": self.review_requested_count,
+            "oldest_open_age_days": self.oldest_open_age_days,
+            "source": self.source,
+        }
+
+    @classmethod
+    def from_dict(cls, data: Optional[Dict]) -> "RepositoryPullRequestSummary":
+        payload = data or {}
+        return cls(
+            availability=payload.get("availability", "unavailable"),
+            reason=payload.get("reason", "not_requested"),
+            has_open_pull_requests=payload.get("has_open_pull_requests", False),
+            total_open=payload.get("total_open", 0),
+            draft_count=payload.get("draft_count", 0),
+            review_requested_count=payload.get("review_requested_count", 0),
+            oldest_open_age_days=payload.get("oldest_open_age_days"),
+            source=payload.get("source", "rest.pulls.list"),
+        )
+
+
+@dataclass
+class RepositorySecuritySummary:
+    """Compact security posture and alert summary for a repository."""
+
+    availability: str = "unavailable"
+    reason: str = "not_requested"
+    overall_state: str = "unavailable"
+    feature_status: Dict[str, str] = field(
+        default_factory=lambda: {
+            "advanced_security": "unavailable",
+            "secret_scanning": "unavailable",
+            "secret_scanning_push_protection": "unavailable",
+            "dependency_alerts": "unavailable",
+            "automated_security_fixes": "unavailable",
+        }
+    )
+    active_alert_counts: Dict[str, int] = field(
+        default_factory=lambda: {
+            "total_open": 0,
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0,
+        }
+    )
+    sources: List[str] = field(default_factory=list)
+
+    def to_dict(self) -> Dict:
+        return {
+            "availability": self.availability,
+            "reason": self.reason,
+            "overall_state": self.overall_state,
+            "feature_status": self.feature_status,
+            "active_alert_counts": self.active_alert_counts,
+            "sources": self.sources,
+        }
+
+    @classmethod
+    def from_dict(cls, data: Optional[Dict]) -> "RepositorySecuritySummary":
+        payload = data or {}
+        return cls(
+            availability=payload.get("availability", "unavailable"),
+            reason=payload.get("reason", "not_requested"),
+            overall_state=payload.get("overall_state", "unavailable"),
+            feature_status=payload.get("feature_status")
+            or {
+                "advanced_security": "unavailable",
+                "secret_scanning": "unavailable",
+                "secret_scanning_push_protection": "unavailable",
+                "dependency_alerts": "unavailable",
+                "automated_security_fixes": "unavailable",
+            },
+            active_alert_counts=payload.get("active_alert_counts")
+            or {
+                "total_open": 0,
+                "critical": 0,
+                "high": 0,
+                "medium": 0,
+                "low": 0,
+            },
+            sources=payload.get("sources", []),
+        )
 
 
 @dataclass
@@ -77,6 +181,8 @@ class Repository:
     # Website URLs
     homepage: Optional[str] = None  # Custom website URL from repo settings
     has_pages: bool = False  # GitHub Pages enabled
+    pull_request_summary: RepositoryPullRequestSummary = field(default_factory=RepositoryPullRequestSummary)
+    security_summary: RepositorySecuritySummary = field(default_factory=RepositorySecuritySummary)
 
     def __post_init__(self):
         """Validate that private repositories are never processed."""
@@ -187,6 +293,8 @@ class Repository:
             "has_pages": self.has_pages,
             "pages_url": self.pages_url,
             "website_url": self.website_url,
+            "pull_request_summary": self.pull_request_summary.to_dict(),
+            "security_summary": self.security_summary.to_dict(),
         }
 
     @classmethod
@@ -239,6 +347,8 @@ class Repository:
             commit_velocity=data.get("commit_velocity"),
             homepage=data.get("homepage"),
             has_pages=data.get("has_pages", False),
+            pull_request_summary=RepositoryPullRequestSummary.from_dict(data.get("pull_request_summary")),
+            security_summary=RepositorySecuritySummary.from_dict(data.get("security_summary")),
         )
 
     @classmethod
@@ -362,6 +472,8 @@ class Repository:
             commit_velocity=None,  # Will be calculated from commit history
             homepage=github_repo.homepage,
             has_pages=github_repo.has_pages,
+            pull_request_summary=RepositoryPullRequestSummary(),
+            security_summary=RepositorySecuritySummary(),
         )
 
     def to_dashboard_dict(self) -> Dict:
@@ -405,4 +517,6 @@ class Repository:
                 if self.latest_release_date and isinstance(self.latest_release_date, datetime)
                 else self.latest_release_date
             ),
+            "pull_request_summary": self.pull_request_summary.to_dict(),
+            "security_summary": self.security_summary.to_dict(),
         }

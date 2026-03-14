@@ -264,7 +264,7 @@ class ScreenshotCapture:
                 page.close()
                 
         except Exception as e:
-            logger.warn(f"Failed to capture screenshot for {repo_name} ({url}): {e}")
+            logger.warning(f"Failed to capture screenshot for {repo_name} ({url}): {e}")
             return None
     
     def capture_batch(

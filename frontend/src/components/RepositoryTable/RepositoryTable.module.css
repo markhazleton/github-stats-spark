@@ -131,6 +131,42 @@
   gap: var(--spacing-sm);
 }
 
+.signalGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  flex-wrap: wrap;
+}
+
+.signalPill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+.signalPillSuccess {
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #1f7a33;
+}
+
+.signalPillWarning {
+  background-color: rgba(255, 193, 7, 0.18);
+  color: #8a6d1d;
+}
+
+.signalPillError {
+  background-color: rgba(220, 53, 69, 0.15);
+  color: #a01f2f;
+}
+
+.signalPillMuted {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
 /* Repository Link */
 .repoLink {
   color: var(--color-primary);

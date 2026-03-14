@@ -87,17 +87,23 @@ export default defineConfig({
         entryFileNames: 'assets/site-[hash].js',
         chunkFileNames: 'assets/site-[hash].js',
         assetFileNames: (assetInfo) => {
-          if (assetInfo.name.endsWith('.css')) {
+          const assetName = assetInfo?.name || ''
+          if (assetName.endsWith('.css')) {
             return 'assets/site-[hash].css'
           }
           return 'assets/[name]-[hash][extname]'
         },
 
         // Optimize chunk splitting
-        manualChunks: {
+        manualChunks(id) {
           // Vendor chunks for better caching
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-charts': ['chart.js', 'react-chartjs-2']
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
+            return 'vendor-react'
+          }
+          if (id.includes('node_modules/chart.js') || id.includes('node_modules/react-chartjs-2')) {
+            return 'vendor-charts'
+          }
+          return undefined
         }
       }
     },

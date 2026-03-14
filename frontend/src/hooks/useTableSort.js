@@ -56,6 +56,19 @@ export function useTableSort(
         bVal = b.commit_history?.total_commits || b.commit_count || 0;
       }
 
+      // Mobile sort alias support
+      if (sortKey === "commits") {
+        aVal =
+          a.commit_history?.total_commits || a.commit_count || a.commits || 0;
+        bVal =
+          b.commit_history?.total_commits || b.commit_count || b.commits || 0;
+      }
+
+      if (sortKey === "updated") {
+        aVal = a.updated_at;
+        bVal = b.updated_at;
+      }
+
       // Handle date fields from nested commit_history structure
       if (sortKey === "first_commit_date" || sortKey === "last_commit_date") {
         aVal = a.commit_history?.[sortKey] || a[sortKey];
@@ -72,6 +85,38 @@ export function useTableSort(
       if (sortKey === "largest_commit" || sortKey === "smallest_commit") {
         aVal = a.commit_metrics?.[sortKey]?.size || a[sortKey]?.size || 0;
         bVal = b.commit_metrics?.[sortKey]?.size || b[sortKey]?.size || 0;
+      }
+
+      // Handle enrichment-based signal sorting
+      if (sortKey === "signal_status") {
+        const aPr = a.pull_request_summary || {};
+        const bPr = b.pull_request_summary || {};
+        const aSec = a.security_summary || {};
+        const bSec = b.security_summary || {};
+        const aUnavailable =
+          aPr.availability !== "available" || aSec.availability !== "available";
+        const bUnavailable =
+          bPr.availability !== "available" || bSec.availability !== "available";
+
+        const aRisk =
+          (aSec.active_alert_counts?.total_open || 0) * 100 +
+          (aPr.total_open || 0);
+        const bRisk =
+          (bSec.active_alert_counts?.total_open || 0) * 100 +
+          (bPr.total_open || 0);
+
+        aVal = aUnavailable ? -1 : aRisk;
+        bVal = bUnavailable ? -1 : bRisk;
+      }
+
+      if (sortKey === "open_pull_requests") {
+        aVal = a.pull_request_summary?.total_open || 0;
+        bVal = b.pull_request_summary?.total_open || 0;
+      }
+
+      if (sortKey === "security_alerts") {
+        aVal = a.security_summary?.active_alert_counts?.total_open || 0;
+        bVal = b.security_summary?.active_alert_counts?.total_open || 0;
       }
 
       // Handle null/undefined values
@@ -111,6 +156,10 @@ export function useTableSort(
         "avg_commit_size",
         "largest_commit",
         "smallest_commit",
+        "commits",
+        "signal_status",
+        "open_pull_requests",
+        "security_alerts",
       ];
       if (numericFields.includes(sortKey)) {
         aVal = parseFloat(aVal) || 0;

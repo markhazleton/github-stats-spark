@@ -75,7 +75,7 @@ class RepositoryRanker:
         for repo in repositories:
             # Skip private repositories (privacy filter - constitution requirement)
             if repo.is_private:
-                self.logger.warn(f"Privacy filter: Skipping private repository {repo.name}")
+                self.logger.warning(f"Privacy filter: Skipping private repository {repo.name}")
                 continue
 
             # Skip empty repositories

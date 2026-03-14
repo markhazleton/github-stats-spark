@@ -32,7 +32,7 @@ class UnifiedReportGenerator:
             try:
                 self.config.load()
             except FileNotFoundError:
-                self.logger.warn("Config file not found, using defaults")
+                self.logger.warning("Config file not found, using defaults")
 
         # Reuse existing repository formatter for consistency
         self.legacy_generator = ReportGenerator()

@@ -39,6 +39,7 @@ class CacheManager:
         github_client,
         cache: APICache,
         summarizer: Optional[RepositorySummarizer] = None,
+        fetcher: Optional[Any] = None,
     ):
         """Initialize cache manager.
         
@@ -51,7 +52,7 @@ class CacheManager:
         self.cache = cache
         self.logger = get_logger()
         self.summarizer = summarizer
-        self.refresh_executor = CacheRefreshExecutor(github_client, cache, summarizer=summarizer)
+        self.refresh_executor = CacheRefreshExecutor(github_client, cache, summarizer=summarizer, fetcher=fetcher)
 
     @property
     def api_calls(self) -> int:
@@ -137,6 +138,22 @@ class CacheManager:
         pushed_at: datetime
     ) -> RefreshResult:
         return self.refresh_executor.refresh_ai_summary(username, repo_data, pushed_at)
+
+    def refresh_pull_request_summary(
+        self,
+        username: str,
+        repo_name: str,
+        pushed_at: datetime,
+    ) -> RefreshResult:
+        return self.refresh_executor.refresh_pull_request_summary(username, repo_name, pushed_at)
+
+    def refresh_security_summary(
+        self,
+        username: str,
+        repo_name: str,
+        pushed_at: datetime,
+    ) -> RefreshResult:
+        return self.refresh_executor.refresh_security_summary(username, repo_name, pushed_at)
     
     def refresh_repository(
         self,
@@ -159,7 +176,7 @@ class CacheManager:
             List of RefreshResult for each category
         """
         if categories is None:
-            categories = {"commit_counts", "languages", "quality_indicators"}
+            categories = get_refresh_categories(include_ai_summaries=include_ai_summaries)
 
         if include_ai_summaries:
             categories = set(categories) | {"readme", "dependency_files", "ai_summary"}
@@ -180,6 +197,12 @@ class CacheManager:
 
         if "dependency_files" in categories:
             results.append(self.refresh_dependency_files(username, repo_name, pushed_at))
+
+        if "pull_request_summary" in categories:
+            results.append(self.refresh_pull_request_summary(username, repo_name, pushed_at))
+
+        if "security_summary" in categories:
+            results.append(self.refresh_security_summary(username, repo_name, pushed_at))
 
         if "ai_summary" in categories and repo_data:
             results.append(self.refresh_ai_summary(username, repo_data, pushed_at))
@@ -228,7 +251,7 @@ class CacheManager:
                 if pushed_at.tzinfo is None:
                     pushed_at = pushed_at.replace(tzinfo=timezone.utc)
             except Exception as e:
-                self.logger.warn(f"Failed to parse pushed_at for {repo_name}: {e}")
+                self.logger.warning(f"Failed to parse pushed_at for {repo_name}: {e}")
                 continue
             
             # Check if refresh needed

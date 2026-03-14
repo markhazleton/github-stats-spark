@@ -36,3 +36,17 @@ repositories:
   exclude_private: true
   exclude_forks: true
   exclude_archived: true
+
+github:
+  api_version:
+    enabled: false
+    version: "2026-03-10"
+    fallback_to_default: true
+
+enrichment:
+  pull_requests:
+    enabled: true
+    max_pages: 3
+  security:
+    enabled: true
+    allow_partial: true

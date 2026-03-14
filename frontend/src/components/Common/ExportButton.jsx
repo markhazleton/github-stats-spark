@@ -57,6 +57,36 @@ function ExportButton({
       { key: "has_license", label: "Has License" },
       { key: "has_ci_cd", label: "Has CI/CD" },
       { key: "has_tests", label: "Has Tests" },
+      {
+        key: "pull_request_summary.availability",
+        label: "PR Data Availability",
+      },
+      { key: "pull_request_summary.total_open", label: "Open Pull Requests" },
+      { key: "pull_request_summary.draft_count", label: "Draft Pull Requests" },
+      {
+        key: "pull_request_summary.review_requested_count",
+        label: "PRs Awaiting Review",
+      },
+      {
+        key: "security_summary.availability",
+        label: "Security Data Availability",
+      },
+      {
+        key: "security_summary.overall_state",
+        label: "Security Overall State",
+      },
+      {
+        key: "security_summary.active_alert_counts.total_open",
+        label: "Open Security Alerts",
+      },
+      {
+        key: "security_summary.active_alert_counts.critical",
+        label: "Critical Alerts",
+      },
+      {
+        key: "security_summary.active_alert_counts.high",
+        label: "High Alerts",
+      },
     ];
 
     // Helper to get nested value

@@ -29,19 +29,57 @@ function StatCard({ label, value, sublabel }) {
 }
 
 export default function StatCards({ repositories }) {
+  const getTotalCommits = (repo) =>
+    repo.commit_history?.total_commits || repo.total_commits || 0;
+
+  const getRecent90dCommits = (repo) =>
+    repo.commit_history?.recent_90d || repo.recent_commits_90d || 0;
+
+  const getOpenPullRequests = (repo) =>
+    repo.pull_request_summary?.availability === "available"
+      ? repo.pull_request_summary.total_open || 0
+      : 0;
+
+  const getOpenSecurityAlerts = (repo) =>
+    repo.security_summary?.availability === "available"
+      ? repo.security_summary.active_alert_counts?.total_open || 0
+      : 0;
+
   const totalRepos = repositories.length;
   const totalCommits = repositories.reduce(
-    (sum, r) => sum + (r.total_commits || 0),
+    (sum, r) => sum + getTotalCommits(r),
     0,
   );
   const languages = [
     ...new Set(repositories.map((r) => r.language).filter(Boolean)),
   ];
   const avgScore =
-    repositories.reduce((sum, r) => sum + (r.composite_score || 0), 0) /
-    totalRepos;
+    totalRepos > 0
+      ? repositories.reduce((sum, r) => sum + (r.composite_score || 0), 0) /
+        totalRepos
+      : 0;
   const activeRepos = repositories.filter(
-    (r) => (r.recent_commits_90d || 0) > 0,
+    (r) => getRecent90dCommits(r) > 0,
+  ).length;
+
+  const totalOpenPullRequests = repositories.reduce(
+    (sum, r) => sum + getOpenPullRequests(r),
+    0,
+  );
+  const reposWithOpenPullRequests = repositories.filter(
+    (r) => getOpenPullRequests(r) > 0,
+  ).length;
+
+  const totalSecurityAlerts = repositories.reduce(
+    (sum, r) => sum + getOpenSecurityAlerts(r),
+    0,
+  );
+  const reposWithSecurityAlerts = repositories.filter(
+    (r) => getOpenSecurityAlerts(r) > 0,
+  ).length;
+
+  const unavailableSecurityData = repositories.filter(
+    (r) => r.security_summary?.availability !== "available",
   ).length;
 
   return (
@@ -57,6 +95,20 @@ export default function StatCards({ repositories }) {
         label="Avg Spark Score"
         value={avgScore.toFixed(1)}
         sublabel="out of 100"
+      />
+      <StatCard
+        label="Open Pull Requests"
+        value={totalOpenPullRequests.toLocaleString()}
+        sublabel={`${reposWithOpenPullRequests} repos with open PRs`}
+      />
+      <StatCard
+        label="Security Alerts"
+        value={totalSecurityAlerts.toLocaleString()}
+        sublabel={
+          unavailableSecurityData > 0
+            ? `${reposWithSecurityAlerts} repos with alerts • ${unavailableSecurityData} unavailable`
+            : `${reposWithSecurityAlerts} repos with alerts`
+        }
       />
     </div>
   );
