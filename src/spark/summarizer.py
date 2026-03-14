@@ -81,9 +81,9 @@ class RepositorySummarizer:
                 self.anthropic = anthropic.Anthropic(api_key=self.api_key)
                 self.logger.info(f"Initialized Anthropic client with model {self.model}")
             except ImportError:
-                self.logger.warn("anthropic package not installed, using fallback summaries only")
+                self.logger.warning("anthropic package not installed, using fallback summaries only")
             except Exception as e:
-                self.logger.warn(f"Failed to initialize Anthropic client: {e}")
+                self.logger.warning(f"Failed to initialize Anthropic client: {e}")
 
     @classmethod
     def _normalize_model_name(cls, model: str) -> str:
@@ -150,7 +150,7 @@ class RepositorySummarizer:
                     write_cache,
                 )
             except Exception as e:
-                self.logger.warn(f"AI summary failed for {repo.name}: {e}, using fallback")
+                self.logger.warning(f"AI summary failed for {repo.name}: {e}, using fallback")
 
         # Fallback 1: Enhanced template with README
         if readme_content:
@@ -232,14 +232,14 @@ class RepositorySummarizer:
                 )
                 active_model = candidate_model
                 if candidate_model != self.model:
-                    self.logger.warn(
+                    self.logger.warning(
                         f"Anthropic model {self.model} unavailable, using fallback model {candidate_model}"
                     )
                     self.model = candidate_model
                 break
             except NotFoundError as exc:
                 last_not_found_error = exc
-                self.logger.warn(f"Anthropic model unavailable: {candidate_model}")
+                self.logger.warning(f"Anthropic model unavailable: {candidate_model}")
 
         if response is None and last_not_found_error is not None:
             raise last_not_found_error
@@ -704,7 +704,7 @@ class UserProfileGenerator:
             try:
                 profile.overall_impression = self._generate_ai_impression(profile, repositories)
             except Exception as e:
-                self.logger.warn(f"Failed to generate AI impression: {e}")
+                self.logger.warning(f"Failed to generate AI impression: {e}")
                 profile.overall_impression = self._generate_template_impression(profile)
         else:
             profile.overall_impression = self._generate_template_impression(profile)

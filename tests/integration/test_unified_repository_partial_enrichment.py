@@ -64,16 +64,12 @@ def test_unified_data_generator_preserves_unavailable_states(tmp_path, monkeypat
         "size": 10,
     }
 
-    monkeypatch.setattr(generator, "_fetch_repository_list", lambda: [repo])
-    monkeypatch.setattr(
-        generator.cache_manager,
-        "refresh_user_data",
-        lambda **kwargs: RefreshSummary(total_repos=1, repos_refreshed=1, repos_unchanged=0, repos_failed=0, results=[], api_calls_made=2),
-    )
-    monkeypatch.setattr(
-        generator.fetcher,
-        "fetch_pull_request_summary",
-        lambda *args, **kwargs: {
+    # Pre-populate cache with enrichment data so Phase 3 reads them
+    from spark.time_utils import sanitize_timestamp_for_filename
+
+    push_key = sanitize_timestamp_for_filename(datetime.fromisoformat(now))
+    cache.set(
+        "pull_request_summary", "markhazleton", {
             "availability": "unavailable",
             "reason": "permission_denied",
             "has_open_pull_requests": False,
@@ -82,12 +78,10 @@ def test_unified_data_generator_preserves_unavailable_states(tmp_path, monkeypat
             "review_requested_count": 0,
             "oldest_open_age_days": None,
             "source": "rest.pulls.list",
-        },
+        }, repo="repo-unavailable", week=push_key,
     )
-    monkeypatch.setattr(
-        generator.fetcher,
-        "fetch_security_summary",
-        lambda *args, **kwargs: {
+    cache.set(
+        "security_summary", "markhazleton", {
             "availability": "partial",
             "reason": "api_error",
             "overall_state": "clear",
@@ -100,12 +94,20 @@ def test_unified_data_generator_preserves_unavailable_states(tmp_path, monkeypat
             },
             "active_alert_counts": {"total_open": 0, "critical": 0, "high": 0, "medium": 0, "low": 0},
             "sources": ["rest.repos.get"],
-        },
+        }, repo="repo-unavailable", week=push_key,
+    )
+
+    monkeypatch.setattr(generator, "_fetch_repository_list", lambda: [repo])
+    monkeypatch.setattr(
+        generator.cache_manager,
+        "refresh_user_data",
+        lambda **kwargs: RefreshSummary(total_repos=1, repos_refreshed=1, repos_unchanged=0, repos_failed=0, results=[], api_calls_made=2),
     )
 
     unified = generator.generate()
 
     repo_payload = unified["repositories"][0]
     assert repo_payload["pull_request_summary"]["availability"] == "unavailable"
+    assert repo_payload["pull_request_summary"]["reason"] == "permission_denied"
     assert repo_payload["security_summary"]["availability"] == "partial"
     assert repo_payload["security_summary"]["reason"] == "api_error"

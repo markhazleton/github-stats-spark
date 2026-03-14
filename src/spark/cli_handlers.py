@@ -200,10 +200,10 @@ def handle_unified(args, logger):
                     logger.info("No repositories with website URLs - skipping screenshots")
 
             except ImportError:
-                logger.warn("Playwright not installed - skipping screenshots")
+                logger.warning("Playwright not installed - skipping screenshots")
                 logger.info("Install with: pip install playwright && playwright install chromium")
             except Exception as error:
-                logger.warn(f"Screenshot capture failed: {error}")
+                logger.warning(f"Screenshot capture failed: {error}")
                 logger.info("Unified data and reports were generated successfully")
 
         else:
@@ -439,7 +439,7 @@ def handle_dated_analyze(args, logger):
                     errors.append(f"Rate limit reached at repo {index}/{len(raw_repos)}: {repo_name}")
                     break
 
-                logger.warn(f"FAILED to fetch {repo_name}: {error_msg}")
+                logger.warning(f"FAILED to fetch {repo_name}: {error_msg}")
                 errors.append(f"Failed to fetch {repo_name}: {error_msg}")
 
         logger.info(f"Ranking repositories (top {args.top_n})...")
@@ -513,7 +513,7 @@ def handle_dated_analyze(args, logger):
                     )
                     repository_analyses.append(analysis)
                 else:
-                    logger.warn(f"FAILED to summarize {repo.name}: {error_msg}")
+                    logger.warning(f"FAILED to summarize {repo.name}: {error_msg}")
                     errors.append(f"Failed to summarize {repo.name}: {error_msg}")
 
         logger.info("Generating user profile...")

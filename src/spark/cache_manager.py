@@ -251,7 +251,7 @@ class CacheManager:
                 if pushed_at.tzinfo is None:
                     pushed_at = pushed_at.replace(tzinfo=timezone.utc)
             except Exception as e:
-                self.logger.warn(f"Failed to parse pushed_at for {repo_name}: {e}")
+                self.logger.warning(f"Failed to parse pushed_at for {repo_name}: {e}")
                 continue
             
             # Check if refresh needed

@@ -82,7 +82,7 @@ class GitHubFetcher:
             and self.api_version_settings.get("fallback_to_default", True)
             and response.status_code in {400, 404, 415, 422}
         ):
-            self.logger.warn(
+            self.logger.warning(
                 f"API version request failed for {path} ({response.status_code}); retrying without explicit version header"
             )
             fallback = requests.get(url, headers=self._build_rest_headers(include_version=False), params=params, timeout=30)
@@ -242,7 +242,7 @@ class GitHubFetcher:
 
                 # Stop if we've hit the max
                 if len(repos) >= self.max_repos:
-                    self.logger.warn(f"Reached maximum repository limit ({self.max_repos})")
+                    self.logger.warning(f"Reached maximum repository limit ({self.max_repos})")
                     break
 
                 repos.append({
@@ -913,7 +913,7 @@ class GitHubFetcher:
             reset_time = core_rate.reset
             sleep_time = (reset_time - datetime.now()).total_seconds() + 10
 
-            self.logger.warn(
+            self.logger.warning(
                 f"Rate limit exceeded. Sleeping for {sleep_time:.0f} seconds until reset."
             )
             time.sleep(sleep_time)

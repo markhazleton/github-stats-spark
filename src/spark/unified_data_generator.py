@@ -274,19 +274,39 @@ class UnifiedDataGenerator:
                         repo_data["security_summary"] = security_summary
 
                 if "pull_request_summary" not in repo_data:
-                    repo_data["pull_request_summary"] = self.fetcher.fetch_pull_request_summary(
-                        self.username,
-                        repo_name,
-                        repo_pushed_at=pushed_at,
-                        force_refresh=self.force_refresh,
-                    )
+                    logger.debug(f"No cached pull_request_summary for {repo_name}; using unavailable default")
+                    repo_data["pull_request_summary"] = {
+                        "availability": "unavailable",
+                        "reason": "not_cached",
+                        "has_open_pull_requests": False,
+                        "total_open": 0,
+                        "draft_count": 0,
+                        "review_requested_count": 0,
+                        "oldest_open_age_days": None,
+                        "source": "rest.pulls.list",
+                    }
                 if "security_summary" not in repo_data:
-                    repo_data["security_summary"] = self.fetcher.fetch_security_summary(
-                        self.username,
-                        repo_name,
-                        repo_pushed_at=pushed_at,
-                        force_refresh=self.force_refresh,
-                    )
+                    logger.debug(f"No cached security_summary for {repo_name}; using unavailable default")
+                    repo_data["security_summary"] = {
+                        "availability": "unavailable",
+                        "reason": "not_cached",
+                        "overall_state": "unavailable",
+                        "feature_status": {
+                            "advanced_security": "unavailable",
+                            "secret_scanning": "unavailable",
+                            "secret_scanning_push_protection": "unavailable",
+                            "dependency_alerts": "unavailable",
+                            "automated_security_fixes": "unavailable",
+                        },
+                        "active_alert_counts": {
+                            "total_open": 0,
+                            "critical": 0,
+                            "high": 0,
+                            "medium": 0,
+                            "low": 0,
+                        },
+                        "sources": [],
+                    }
 
                 if cached_summary is None:
                     cached_summary = self.cache.get("ai_summary", self.username, repo=repo_name)

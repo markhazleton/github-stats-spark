@@ -140,7 +140,7 @@ class UnifiedReportWorkflow:
         try:
             available_svgs = self._generate_svgs(username, github_data)
         except Exception as e:
-            self.logger.warn(f"SVG generation failed: {e}")
+            self.logger.warning(f"SVG generation failed: {e}")
             self.warnings.append(f"SVG generation failed: {str(e)}")
             # Continue workflow - report will note missing visualizations
 
@@ -151,7 +151,7 @@ class UnifiedReportWorkflow:
                 username, github_data.repositories, github_data.commit_histories
             )
         except Exception as e:
-            self.logger.warn(f"Repository analysis failed: {e}")
+            self.logger.warning(f"Repository analysis failed: {e}")
             self.warnings.append(f"Repository analysis failed: {str(e)}")
             # Continue workflow - report will show available data only
 
@@ -171,7 +171,7 @@ class UnifiedReportWorkflow:
                 "Mitigation: reduce max repos or run with warmed cache/without force refresh."
             )
             self.warnings.append(warning)
-            self.logger.warn(warning)
+            self.logger.warning(warning)
         report.generation_time = generation_time
         report.errors = self.errors
         report.warnings = self.warnings
@@ -270,7 +270,7 @@ class UnifiedReportWorkflow:
                     commits_data["repository_name"] = repo.name
                     commit_histories[repo.name] = CommitHistory.from_dict(commits_data)
                 except Exception as e:
-                    self.logger.warn(f"Failed to fetch commits for {repo.name}: {e}")
+                    self.logger.warning(f"Failed to fetch commits for {repo.name}: {e}")
                     self.errors.append(f"Commit fetch failed: {repo.name}")
 
             fetch_time = time.time() - fetch_start
@@ -323,7 +323,7 @@ class UnifiedReportWorkflow:
                 sec_unavailable += 1
 
         if any([pr_partial, pr_unavailable, sec_partial, sec_unavailable]):
-            self.logger.warn(
+            self.logger.warning(
                 "Repository enrichment availability summary: "
                 f"pr_partial={pr_partial} "
                 f"pr_unavailable={pr_unavailable} "
@@ -407,7 +407,7 @@ class UnifiedReportWorkflow:
                 self.logger.info(f"Generated {svg_type}.svg")
 
             except Exception as e:
-                self.logger.warn(f"Failed to generate {svg_type}.svg: {e}")
+                self.logger.warning(f"Failed to generate {svg_type}.svg: {e}")
                 self.warnings.append(f"SVG generation failed: {svg_type}")
                 # Continue to next SVG (FR-011: partial failures OK)
 
@@ -599,7 +599,7 @@ class UnifiedReportWorkflow:
                 analyses.append(analysis)
 
             except Exception as e:
-                self.logger.warn(f"Failed to analyze {repo.name}: {e}")
+                self.logger.warning(f"Failed to analyze {repo.name}: {e}")
                 self.errors.append(f"Repository analysis failed: {repo.name}")
                 # Continue to next repository (FR-012: partial results OK)
 
@@ -644,7 +644,7 @@ class UnifiedReportWorkflow:
         # Validate report structure
         validation_errors = report.validate()
         if validation_errors:
-            self.logger.warn(
+            self.logger.warning(
                 f"Report validation warnings: {', '.join(validation_errors)}"
             )
             self.warnings.extend(validation_errors)

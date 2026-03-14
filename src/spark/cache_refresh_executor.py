@@ -94,7 +94,7 @@ class CacheRefreshExecutor:
             self.cache.set(category, username, result, repo=repo_name, week=cache_key, metadata=metadata)
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
     def refresh_languages(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
@@ -117,7 +117,7 @@ class CacheRefreshExecutor:
             self.cache.set(category, username, languages, repo=repo_name, week=cache_key, metadata=metadata)
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
     def refresh_readme(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
@@ -147,7 +147,7 @@ class CacheRefreshExecutor:
             self.cache.set(category, username, content, repo=repo_name, week=cache_key, metadata=metadata)
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
     def refresh_quality_indicators(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
@@ -211,7 +211,7 @@ class CacheRefreshExecutor:
             self.cache.set(category, username, quality_data, repo=repo_name, week=cache_key, metadata=metadata)
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
     def refresh_dependency_files(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
@@ -264,7 +264,7 @@ class CacheRefreshExecutor:
             self.cache.set(category, username, dependency_files, repo=repo_name, week=cache_key, metadata=metadata)
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
     def refresh_ai_summary(self, username: str, repo_data: Dict[str, Any], pushed_at: datetime) -> RefreshResult:
@@ -355,7 +355,7 @@ class CacheRefreshExecutor:
 
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
     def refresh_pull_request_summary(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
@@ -391,7 +391,7 @@ class CacheRefreshExecutor:
             self.api_calls += 1
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
     def refresh_security_summary(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
@@ -427,5 +427,5 @@ class CacheRefreshExecutor:
             self.api_calls += 1
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
-            self.logger.warn(f"Failed to refresh {category} for {repo_name}: {error}")
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
