@@ -124,7 +124,6 @@ export function useBottomSheets(sheetIds) {
   const sheets = {};
 
   sheetIds.forEach((id) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     sheets[id] = useBottomSheet();
   });
 

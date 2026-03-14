@@ -31,6 +31,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
     summary: true, // Summary expanded by default
     website: true, // Website/screenshot expanded by default
     info: true,
+    signals: true,
     commits: false,
     languages: false,
     tech: false,
@@ -155,6 +156,28 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
       0,
     );
     return total > 0 ? ((bytes / total) * 100).toFixed(1) : 0;
+  };
+
+  const pullRequestSummary = repository.pull_request_summary || {};
+  const securitySummary = repository.security_summary || {};
+  const openSecurityAlerts =
+    securitySummary.active_alert_counts?.total_open || 0;
+
+  const formatReason = (reason) => {
+    if (!reason || reason === "none") return null;
+    return reason.replace(/_/g, " ");
+  };
+
+  const getAvailabilityBadgeClass = (availability) => {
+    if (availability === "available") return styles.badgeSuccess;
+    if (availability === "partial") return styles.badgeWarning;
+    return styles.badgeError;
+  };
+
+  const getSecurityStateBadgeClass = (overallState) => {
+    if (overallState === "clear") return styles.badgeSuccess;
+    if (overallState === "alerts_detected") return styles.badgeError;
+    return styles.badgeInfo;
   };
 
   return (
@@ -595,6 +618,166 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
 
               {/* Right Column */}
               <div className={styles.column}>
+                <section className={styles.section}>
+                  <h3
+                    className={`${styles.sectionTitle} ${styles.collapsible}`}
+                    onClick={() => toggleSection("signals")}
+                    role="button"
+                    tabIndex={0}
+                    onKeyPress={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        toggleSection("signals");
+                      }
+                    }}
+                    aria-expanded={expandedSections.signals}
+                  >
+                    <span>Repository Signals</span>
+                    <span className={styles.chevron}>
+                      {expandedSections.signals ? "▲" : "▼"}
+                    </span>
+                  </h3>
+                  {expandedSections.signals && (
+                    <div className={styles.sectionContent}>
+                      <h4 className={styles.subsectionTitle}>Pull Requests</h4>
+                      <dl className={styles.detailList}>
+                        <div className={styles.detailItem}>
+                          <dt>Availability</dt>
+                          <dd>
+                            <span
+                              className={getAvailabilityBadgeClass(
+                                pullRequestSummary.availability,
+                              )}
+                            >
+                              {pullRequestSummary.availability || "unavailable"}
+                            </span>
+                          </dd>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <dt>Open Pull Requests</dt>
+                          <dd>
+                            {formatNumber(pullRequestSummary.total_open || 0)}
+                          </dd>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <dt>Draft / Review Requested</dt>
+                          <dd>
+                            {formatNumber(pullRequestSummary.draft_count || 0)}{" "}
+                            /{" "}
+                            {formatNumber(
+                              pullRequestSummary.review_requested_count || 0,
+                            )}
+                          </dd>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <dt>Oldest Open PR</dt>
+                          <dd>
+                            {pullRequestSummary.oldest_open_age_days != null
+                              ? `${pullRequestSummary.oldest_open_age_days} days`
+                              : "N/A"}
+                          </dd>
+                        </div>
+                        {formatReason(pullRequestSummary.reason) && (
+                          <div className={styles.detailItem}>
+                            <dt>Reason</dt>
+                            <dd className={styles.textMuted}>
+                              {formatReason(pullRequestSummary.reason)}
+                            </dd>
+                          </div>
+                        )}
+                      </dl>
+
+                      <h4 className={styles.subsectionTitle}>Security</h4>
+                      <dl className={styles.detailList}>
+                        <div className={styles.detailItem}>
+                          <dt>Availability</dt>
+                          <dd>
+                            <span
+                              className={getAvailabilityBadgeClass(
+                                securitySummary.availability,
+                              )}
+                            >
+                              {securitySummary.availability || "unavailable"}
+                            </span>
+                          </dd>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <dt>Overall State</dt>
+                          <dd>
+                            <span
+                              className={getSecurityStateBadgeClass(
+                                securitySummary.overall_state,
+                              )}
+                            >
+                              {securitySummary.overall_state
+                                ? securitySummary.overall_state.replace(
+                                    /_/g,
+                                    " ",
+                                  )
+                                : "unknown"}
+                            </span>
+                          </dd>
+                        </div>
+                        <div className={styles.detailItem}>
+                          <dt>Open Alerts</dt>
+                          <dd>
+                            {formatNumber(openSecurityAlerts)}
+                            {securitySummary.active_alert_counts && (
+                              <div className={styles.textMuted}>
+                                C:{" "}
+                                {securitySummary.active_alert_counts.critical ||
+                                  0}{" "}
+                                | H:{" "}
+                                {securitySummary.active_alert_counts.high || 0}{" "}
+                                | M:{" "}
+                                {securitySummary.active_alert_counts.medium ||
+                                  0}{" "}
+                                | L:{" "}
+                                {securitySummary.active_alert_counts.low || 0}
+                              </div>
+                            )}
+                          </dd>
+                        </div>
+                        {formatReason(securitySummary.reason) && (
+                          <div className={styles.detailItem}>
+                            <dt>Reason</dt>
+                            <dd className={styles.textMuted}>
+                              {formatReason(securitySummary.reason)}
+                            </dd>
+                          </div>
+                        )}
+                      </dl>
+
+                      {securitySummary.feature_status && (
+                        <div>
+                          <h4 className={styles.subsectionTitle}>
+                            Feature Status
+                          </h4>
+                          <div className={styles.badgeList}>
+                            {Object.entries(securitySummary.feature_status).map(
+                              ([feature, status]) => (
+                                <span
+                                  key={feature}
+                                  className={
+                                    status === "enabled"
+                                      ? styles.badgeSuccess
+                                      : status === "disabled"
+                                        ? styles.badgeError
+                                        : styles.badgeInfo
+                                  }
+                                  title={feature.replace(/_/g, " ")}
+                                >
+                                  {feature.replace(/_/g, " ")}: {status}
+                                </span>
+                              ),
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </section>
+
                 {/* Commit History */}
                 {repository.commit_history && (
                   <section className={styles.section}>

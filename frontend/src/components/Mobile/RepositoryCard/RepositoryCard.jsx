@@ -104,6 +104,21 @@ export function RepositoryCard({
     .filter(Boolean)
     .join(" ");
 
+  const totalCommits =
+    repository.commit_history?.total_commits || repository.commits || 0;
+  const lastCommitDate =
+    repository.commit_history?.last_commit_date ||
+    repository.lastCommitDate ||
+    repository.updated_at;
+  const openPullRequests =
+    repository.pull_request_summary?.availability === "available"
+      ? repository.pull_request_summary.total_open || 0
+      : null;
+  const openSecurityAlerts =
+    repository.security_summary?.availability === "available"
+      ? repository.security_summary.active_alert_counts?.total_open || 0
+      : null;
+
   return (
     <div className="repository-card-wrapper">
       {/* Delete button (shown on swipe) */}
@@ -166,9 +181,21 @@ export function RepositoryCard({
               </span>
               <span
                 className="repository-card-stat"
-                aria-label={`Last commit ${formatDate(repository.lastCommitDate)}`}
+                aria-label={`Last commit ${formatDate(lastCommitDate)}`}
               >
-                🕒 {formatDate(repository.lastCommitDate)}
+                🕒 {formatDate(lastCommitDate)}
+              </span>
+              <span
+                className="repository-card-stat"
+                aria-label="Open pull requests"
+              >
+                🔀 PR {openPullRequests != null ? openPullRequests : "n/a"}
+              </span>
+              <span
+                className="repository-card-stat"
+                aria-label="Security alerts"
+              >
+                🛡️ SEC {openSecurityAlerts != null ? openSecurityAlerts : "n/a"}
               </span>
             </div>
           </div>
@@ -187,7 +214,7 @@ export function RepositoryCard({
               <div className="repository-card-metric">
                 <span className="repository-card-metric-label">Commits</span>
                 <span className="repository-card-metric-value">
-                  {repository.commits || 0}
+                  {totalCommits}
                 </span>
               </div>
               <div className="repository-card-metric">
@@ -262,12 +289,28 @@ RepositoryCard.propTypes = {
     commits: PropTypes.number,
     contributors: PropTypes.number,
     forks: PropTypes.number,
-    technologies: PropTypes.arrayOf(PropTypes.string),
-    commit_history: PropTypes.arrayOf(
-      PropTypes.shape({
-        date: PropTypes.string,
+    pull_request_summary: PropTypes.shape({
+      availability: PropTypes.string,
+      total_open: PropTypes.number,
+    }),
+    security_summary: PropTypes.shape({
+      availability: PropTypes.string,
+      active_alert_counts: PropTypes.shape({
+        total_open: PropTypes.number,
       }),
-    ),
+    }),
+    technologies: PropTypes.arrayOf(PropTypes.string),
+    commit_history: PropTypes.oneOfType([
+      PropTypes.shape({
+        total_commits: PropTypes.number,
+        last_commit_date: PropTypes.string,
+      }),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          date: PropTypes.string,
+        }),
+      ),
+    ]),
   }).isRequired,
   variant: PropTypes.oneOf(["collapsed", "expanded"]),
   selectable: PropTypes.bool,

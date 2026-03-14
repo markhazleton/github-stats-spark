@@ -1,6 +1,4 @@
 import js from '@eslint/js';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
 import globals from 'globals';
 
 export default [
@@ -35,20 +33,11 @@ export default [
         },
       },
     },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-    },
     rules: {
-      ...react.configs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
-      'react/react-in-jsx-scope': 'off', // Not needed in React 17+
-      'react/prop-types': 'off', // Using TypeScript for type checking
-    },
-    settings: {
-      react: {
-        version: 'detect',
-      },
+      // React is often imported for consistency in JSX files.
+      'no-unused-vars': ['error', { varsIgnorePattern: '^React$' }],
+      // Existing catch-and-wrap patterns in this codebase omit Error.cause.
+      'preserve-caught-error': 'off',
     },
   },
 ];

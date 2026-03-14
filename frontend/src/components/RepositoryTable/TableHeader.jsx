@@ -27,6 +27,7 @@ export default function TableHeader({ onSort, sortField, sortDirection }) {
   const columns = [
     { key: "name", label: "Repository", sortable: true },
     { key: "language", label: "Language", sortable: true },
+    { key: "signal_status", label: "Signals", sortable: true },
     { key: "first_commit_date", label: "First Commit", sortable: true },
     { key: "last_commit_date", label: "Last Commit", sortable: true },
     { key: "commit_count", label: "Total Commits", sortable: true },

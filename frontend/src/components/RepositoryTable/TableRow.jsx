@@ -65,6 +65,23 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
     commitHistory.first_commit_date || repository.first_commit_date;
   const lastCommitDate =
     commitHistory.last_commit_date || repository.last_commit_date;
+  const pullRequestSummary = repository.pull_request_summary || {};
+  const securitySummary = repository.security_summary || {};
+  const securityAlerts = securitySummary.active_alert_counts?.total_open || 0;
+  const openPullRequests = pullRequestSummary.total_open || 0;
+  const signalUnavailable =
+    pullRequestSummary.availability !== "available" ||
+    securitySummary.availability !== "available";
+
+  const pullRequestLabel =
+    pullRequestSummary.availability === "available"
+      ? `PR ${openPullRequests}`
+      : "PR n/a";
+
+  let securityLabel = "SEC n/a";
+  if (securitySummary.availability === "available") {
+    securityLabel = securityAlerts > 0 ? `SEC ${securityAlerts}` : "SEC clear";
+  }
 
   return (
     <tr className={styles.tableRow} onClick={handleRowClick} role="row">
@@ -88,6 +105,36 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
         >
           {language}
         </span>
+      </td>
+
+      {/* Signals */}
+      <td className={styles.tableCell}>
+        <div className={styles.signalGroup}>
+          <span
+            className={`${styles.signalPill} ${
+              pullRequestSummary.availability !== "available"
+                ? styles.signalPillMuted
+                : openPullRequests > 0
+                  ? styles.signalPillWarning
+                  : styles.signalPillSuccess
+            }`}
+            title="Open pull requests"
+          >
+            {pullRequestLabel}
+          </span>
+          <span
+            className={`${styles.signalPill} ${
+              signalUnavailable
+                ? styles.signalPillMuted
+                : securityAlerts > 0
+                  ? styles.signalPillError
+                  : styles.signalPillSuccess
+            }`}
+            title="Open security alerts"
+          >
+            {securityLabel}
+          </span>
+        </div>
       </td>
 
       {/* First Commit Date */}
