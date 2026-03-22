@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-03-15 00:52:42 UTC
+**Generated**: 2026-03-22 00:51:22 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 37
 **AI Summary Rate**: 100.0%
@@ -37,113 +37,150 @@
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 186 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 187 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 10486 KB | 🚀 62.0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 10502 KB | 🚀 62.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # Technical Summary: github-stats-spark
 
 ## Overview
+Stats Spark is a comprehensive GitHub analytics platform that automatically generates professional profile statistics and AI-powered repository analysis through SVG visualizations and markdown reports. The project transforms raw GitHub activity data into actionable insights by combining multiple analysis techniques: a proprietary "Spark Score" algorithm (weighing consistency, volume, and collaboration), AI-powered repository ranking, and Claude Haiku integration for technical summaries.
 
-Stats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates beautiful SVG profile statistics and AI-powered repository analysis reports. The project combines real-time GitHub API data collection with intelligent visualization generation and Claude Haiku AI integration to provide developers, teams, and open-source maintainers with actionable insights into their coding activity, technology usage patterns, and project health metrics.
+## Key Features & Architecture
+The system operates through three primary components: **(1) SVG Statistics Generation** - creates embeddable visualizations including contribution heatmaps, language breakdowns, streak tracking, and personality-based achievement badges; **(2) AI-Powered Analysis** - leverages Claude Haiku with intelligent fallback mechanisms (README extraction, metadata aggregation) to achieve 97%+ summary generation success rates across repositories; **(3) Interactive Dashboard** - a mobile-first JavaScript application with Chart.js visualizations, bottom-sheet navigation patterns, offline IndexedDB caching support, and WCAG 2.1 AA accessibility compliance. The analysis algorithm employs weighted composite scoring (30% popularity, 45% time-decay activity, 25% health signals) to intelligently rank repositories while respecting GitHub API rate limits through smart caching strategies that reduce API calls by 80-95%.
 
-## Core Functionality
-
-The repository implements an end-to-end analytics pipeline featuring five distinct SVG visualization categories (overview dashboard, commit heatmaps, language statistics, streak tracking, and personality-driven fun stats), a proprietary "Spark Score" algorithm that combines consistency (40%), volume (35%), and collaboration metrics (25%), and AI-powered markdown report generation with intelligent repository ranking based on weighted popularity (30%), activity (45%), and health signals (25%). The system includes an interactive mobile-first JavaScript dashboard with Chart.js visualizations, bottom-sheet navigation patterns, and repository comparison functionality, complemented by a Python backend that handles GitHub API interactions, smart caching strategies, and rate-limit management with exponential backoff retry logic.
-
-## Technology Stack & Architecture
-
-The stack spans Python 3.11+ (49.5%) for backend processing using PyGithub, PyYAML, requests, and python-dateutil libraries, JavaScript/HTML/CSS (34.9% combined) for interactive dashboard components, and PowerShell (15.6%) for deployment and CI/CD automation. The architecture follows a modular design with separate concerns for API data collection, SVG rendering via svgwrite, AI integration via Claude API, and frontend visualization, deployed via GitHub Actions for daily automated updates and GitHub Pages for dashboard hosting with IndexedDB caching capabilities.
+## Technology Stack & Implementation
+The backend leverages **Python 3.11+** with PyGithub for API interactions, PyYAML for configuration management, and svgwrite for programmatic SVG generation. The frontend uses **JavaScript/CSS/HTML** with responsive design patterns optimized for 320px-768px mobile viewports, featuring touch-optimized interfaces and <2s First Contentful Paint performance. The architecture is CI/CD integrated with GitHub Actions for automated midnight UTC updates and includes comprehensive error handling with exponential backoff retry logic.
 
 ## Unique Value Propositions
+Stats Spark differentiates itself through its **zero-maintenance operational model** (set once, updates automatically), **visual personality-driven achievements** (8 custom achievement tiers based on coding patterns), and **three-tier AI summary fallback system** ensuring reliability even when primary AI services are unavailable. The project specifically targets developers building professional portfolios, technical leaders assessing productivity, and open-source maintainers tracking project momentum—addressing gaps in existing GitHub analytics tools by combining aesthetic visualizations with substantive technical analysis.
 
-Stats Spark distinguishes itself through its composite "Spark Score" metric uniquely combining consistency and collaboration signals rather than raw volume alone, a 97%+ success-rate AI summarization pipeline with intelligent three-tier fallback mechanisms (Claude → README extraction → metadata), enterprise-grade accessibility compliance (WCAG 2.1 AA), and performance-optimized mobile design achieving sub-2-second First Contentful Paint on 3G connections. The project exemplifies modern DevOps practices with smart API caching reducing calls by 80-95%, progressive web capabilities with offline support via IndexedDB, and seamless GitHub integration through automated daily workflows.
-
-## Target Users & Use Cases
-
-Ideal for individual developers seeking professional GitHub portfolio enhancement, engineering teams analyzing contributor productivity and technology diversity, technical leaders tracking repository health and project momentum, and open-source maintainers measuring community engagement and maintenance patterns. The zero-maintenance automation model (set once, updates forever) and flexible YAML configuration make it accessible to users of varying technical sophistication while retaining extensibility for advanced customization needs.
+## Current Development Status
+The repository shows **highly active, recently accelerated development** with 187 commits in the past 90 days matching the 365-day total, indicating momentum rather than legacy code. The 50/100 tech stack currency score reflects strategic use of stable, proven technologies (PyGithub, requests) balanced with modern tooling (Chart.js, mobile-first CSS patterns). The multi-language codebase (Python 49.5%, JavaScript 23.1%) and comprehensive test coverage indicate enterprise-ready maturity despite zero public stars or forks, suggesting either recent publication or private predecessor use.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 10 total (10 current, 0 outdated)
 
 **Created**: 2025-12-28
-**Last Modified**: 2026-03-14
+**Last Modified**: 2026-03-15
 
 ---
 
 ### #2. [mark-hazleton-s-notes](https://github.com/markhazleton/mark-hazleton-s-notes)
 
-Stars: 0 | Forks: 0 | Language: TypeScript | 124 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 131 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 284650 KB | 🚀 41.3 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 296949 KB | 🚀 43.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: Mark Hazleton's Notes
+# Technical Summary: mark-hazleton-s-notes
 
-This repository is a personal technical portfolio and blog site for Mark Hazleton, a Technical Solutions Architect, built as a modern full-stack web application using React 19, TypeScript, and Vite with server-side rendering (SSR) capabilities. The site combines long-form blog content on cloud architecture and engineering practices, a project portfolio with live GitHub repository metrics, video galleries, and comprehensive SEO assets—all statically prerendered and deployed to Azure Static Web Apps. The architecture employs a sophisticated multi-stage build pipeline that generates metadata from Markdown sources, fetches live GitHub data, optimizes images for RSS feeds (including automatic dimension extraction), and prerenders all routes to static HTML, enabling both dynamic client-side interactions and fast, static delivery. Key technologies include Tailwind CSS, Radix UI, React Markdown with GitHub Flavored Markdown support, and a custom build script ecosystem (generating sitemaps, RSS feeds, video sitemaps, and SEO metadata) that decouples content generation from deployment. The project is notable for its content-driven architecture—separating Markdown blog posts, JSON-based project metadata, and dynamically fetched GitHub statistics—combined with a rigorous build-time optimization strategy for images and search assets that prioritizes performance and discoverability. This is an ideal reference implementation for developers building content-heavy professional portfolios, technical blogs, or portfolio sites that require SEO optimization, RSS feed generation, and integration with external data sources like GitHub APIs.
+This repository is a personal technical portfolio and blog site for Mark Hazleton, built as a modern static-generated React application that combines long-form technical writing, project showcases, and live GitHub metrics integration. The site leverages React 19, Vite 7 with SSR capabilities, and TypeScript to deliver a content-rich experience across blog posts, project portfolios, video galleries, and dynamic GitHub activity feeds, with content sourced from Markdown files and JSON metadata that are pre-rendered into static HTML at build time.
+
+The architecture employs a sophisticated content pipeline using custom build scripts that orchestrate metadata generation, image optimization, RSS feed creation with Media RSS extensions, SEO asset generation (sitemaps, robots.txt, canonical tags), and live repository data fetching from an external GitHub stats service—all culminating in a statically-deployable `docs/` directory suitable for Azure Static Web Apps. The tech stack includes Tailwind CSS, shadcn/ui, and Radix UI for UI composition, React Markdown with remark-gfm for article rendering, and a dual-mode rendering strategy where development uses client-side data fetching while production builds fetch and embed repository metrics at prerender time for optimal performance and SEO.
+
+What distinguishes this project is its production-grade approach to static site generation combined with dynamic data refresh capabilities, comprehensive SEO optimization (including video sitemaps and optimized image thumbnails for RSS), and a well-documented build process that balances developer experience with performance and maintainability. The repository structure includes a dedicated `.documentation/` directory with governance, specifications, and development guides, reflecting professional engineering practices typical of enterprise technical architecture—making this both a portfolio site and a demonstration of mature full-stack development workflows suitable for technical leaders and solutions architects evaluating modern web infrastructure patterns.
 
 **Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 59 total (59 current, 0 outdated)
+**Dependencies**: 60 total (60 current, 0 outdated)
 
 **Created**: 2026-01-10
-**Last Modified**: 2026-03-14
+**Last Modified**: 2026-03-20
 
 ---
 
-### #3. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
+### #3. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
 
-Stars: 0 | Forks: 0 | Language: Python | 67 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 51 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 25019 KB | 🚀 22.3 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 2340 KB | 🚀 17.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# MuseumSpark: Technical Summary
+# Technical Summary: WebSpark.HttpClientUtility
 
-**MuseumSpark** is an intelligent travel planning platform designed to help art enthusiasts discover and optimize museum visits across North America by transforming the Walker Art Center Reciprocal Program membership list into a data-rich, priority-ranked resource. The project features a React 19 + Vite frontend with a comprehensive museum browser (currently tracking 1,269 museums), advanced search/filter capabilities, and a real-time data enrichment dashboard that visualizes progress across a multi-phase data pipeline. The architecture employs a sophisticated multi-source data enrichment strategy (Phases 0–3) leveraging Wikidata, Wikipedia, website scraping, and AI-assisted content extraction, with strict JSON Schema validation and a "never replace known with null" data quality principle to ensure data integrity across the dataset. The tech stack combines Python 3.11+ (Pydantic 2, BeautifulSoup4) for backend data processing with a modern frontend toolchain (React Router, Tailwind CSS 4), currently deployed as a static GitHub Pages site with plans to evolve into a full-featured FastAPI backend with user authentication, itinerary generation, and AI-powered personalization by Q4 2026. What distinguishes MuseumSpark is its commitment to transparency and scalability—the project openly tracks enrichment progress (currently 0.08% complete) while maintaining a clearly documented roadmap from data foundation through AI-assisted expert scoring to an interactive travel companion platform. The repository serves art lovers and frequent museum visitors seeking data-driven recommendations, visit optimization, and strategic trip planning across reciprocal member institutions.
+## Overview
+WebSpark.HttpClientUtility is a production-ready, drop-in HttpClient wrapper library for .NET 8-10 LTS that eliminates boilerplate HTTP setup by providing enterprise-grade resilience, response caching, structured logging with correlation IDs, and OpenTelemetry observability in a single `AddHttpClientUtility()` configuration call. The project is delivered as two focused NuGet packages: the core HTTP utility library (163 KB) and an optional Crawler extension (75 KB) for web scraping scenarios.
+
+## Key Technical Features
+The library integrates **Polly-based resilience patterns** (automatic retries, circuit breakers, timeout policies), **in-memory response caching** with configurable TTL, **distributed tracing support** via OpenTelemetry ActivitySource, and **automatic correlation ID propagation** for request tracking across microservices. It implements a service-based architecture centered around `IHttpRequestResultService` that returns typed `HttpRequestResult<T>` objects, enabling strongly-typed API interactions with built-in error handling. The implementation includes Source Link support for step-through debugging, trimming/AOT readiness with native compilation annotations, and zero-warning builds with strict code quality enforcement.
+
+## Technology Stack & Architecture
+Built entirely in C# targeting .NET 8+ LTS frameworks, the codebase follows dependency injection patterns compatible with Microsoft's DI container, leveraging Polly for resilience, ILogger for structured logging, and OpenTelemetry for observability instrumentation. The architecture separates concerns through focused packages and uses semantic versioning with backward-compatibility guarantees, automated CI/CD validation via GitHub Actions, and comprehensive test coverage across multiple .NET versions.
+
+## Distinctive Characteristics
+Unlike raw HttpClient setup (50+ lines), RestSharp, or Refit, WebSpark uniquely combines **one-line initialization** with **opinionated enterprise defaults** (caching, resilience, telemetry enabled by default) without sacrificing configurability. The project demonstrates strong production readiness through package validation baselines, zero breaking changes within major versions, comprehensive automated test coverage, and clear semantic versioning—making it suitable for risk-averse enterprises and microservice architectures requiring distributed tracing.
+
+## Target Users & Use Cases
+Ideal for teams building **microservices with observability requirements**, **background workers and integration layers** needing retry logic without manual Polly setup, and **web crawlers/scrapers** (via the Crawler package). Best suited for greenfield .NET 8+ projects prioritizing developer experience and operational transparency; not recommended for legacy .NET Framework projects, scenarios requiring maximum control, or teams needing declarative, type-safe API clients (where Refit is preferable).
+
+**Created**: 2025-05-03
+**Last Modified**: 2026-03-17
+
+---
+
+### #4. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
+
+Stars: 0 | Forks: 0 | Language: Python | 67 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 25288 KB | 🚀 22.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# MuseumSpark - Technical Summary
+
+**MuseumSpark** is an active, early-stage travel planning application that transforms the Walker Art Center's reciprocal membership program into an intelligent museum discovery platform for art enthusiasts across North America. The project currently tracks 1,269 museums and is in Phase 1 of a multi-phase data enrichment pipeline, with only 0.08% of records fully enriched but a clear architectural roadmap toward a personalized AI-assisted travel companion by Q4 2026.
+
+The application features a React 19 + Vite frontend with Tailwind CSS styling deployed on GitHub Pages, providing users with comprehensive museum browsing, searching, filtering, and detail pages, alongside a real-time data quality dashboard tracking enrichment progress across states. The backend employs a sophisticated Python-based data pipeline leveraging Pydantic 2 for validation, JSON Schema enforcement, and multi-source enrichment (Wikidata, Wikipedia, museum websites, and structured scraping via BeautifulSoup4), with a clear "never replace known with null" data quality principle and evidence-tracking mechanisms.
+
+The architecture is deliberately modular and phased: Phase 0–1 focuses on foundational data collection and validation; Phase 2 (Q2 2026) will introduce expert-driven priority scoring for art collections; Phase 2.5–3 will integrate LLM-assisted content extraction; and Phase 4 (Q4 2026) will add a FastAPI backend with user authentication, favorites, trip planning, and AI agents. The tech stack thoughtfully balances current needs (static React site for rapid iteration) with future scalability (FastAPI, SQLite, PydanticAI), and the project demonstrates strong engineering discipline with JSON Schema validation, multi-phase data sourcing, and transparent progress tracking.
+
+MuseumSpark is notable for its transparent, data-driven approach to a niche problem—it treats museum curation as a first-class concern requiring structured scoring rather than simple directories—and targets serious art travelers and cultural enthusiasts seeking optimized itineraries. The project's accelerating activity (67 commits in 90 days), clear phasing, and commitment to data quality over feature bloat suggest mature project management, making it well-positioned for scaling toward full personalization features while maintaining data integrity.
 
 **Created**: 2026-01-15
 **Last Modified**: 2026-03-14
 
 ---
 
-### #4. [UISampleSpark](https://github.com/markhazleton/UISampleSpark)
+### #5. [UISampleSpark](https://github.com/markhazleton/UISampleSpark)
 
 Stars: 8 | Forks: 4 | Language: HTML | 69 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 30730 KB | 🚀 23.0 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 30744 KB | 🚀 23.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: UISampleSpark
+# UISampleSpark Technical Summary
 
-**UISampleSpark** is a comprehensive .NET 10 (ASP.NET Core) educational reference application that demonstrates modern web UI architecture by implementing a common Employee/Department CRUD domain across seven distinct front-end technologies: traditional MVC, Razor Pages, React 18 SPA, Vue 3 SPA, htmx, Blazor Server, and vanilla JavaScript—enabling side-by-side comparison of UI patterns, state management, and rendering strategies. The application emphasizes clean architecture through dependency injection, repository/service abstractions, and comprehensive unit testing across domain and data layers, while incorporating production-grade concerns including Application Insights telemetry, health checks, Swagger/OpenAPI documentation, and GitHub Actions CI/CD pipelines with Docker containerization for deployment flexibility. Key technical features include dynamic Bootswatch theme switching with Bootstrap 5 styling, an in-memory Entity Framework Core data layer with mock data generation, REST API endpoints with OpenAPI specs, and advanced UI demonstrations such as PivotTable.js reporting and modal-based forms, all built on a layered project structure (Core, Data, UI, CLI) with active maintenance through five major .NET version migrations (5→10). This repository serves as both an educational resource for developers learning multiple UI frameworks and a reference implementation for enterprise ASP.NET Core applications, particularly valuable for teams evaluating technology choices or seeking best-practice examples of theming, containerization, and modern web application architecture patterns. The accelerating activity pattern (69 commits in 90 days) and recent .NET 10 adoption indicate active ongoing development and relevance to current framework versions.
+**UISampleSpark** is an educational .NET 10 (ASP.NET Core) reference application that provides a comprehensive comparative study of modern web UI technologies by implementing the same Employee/Department domain across seven distinct architectural patterns: traditional MVC, Razor Pages, vanilla JavaScript SPA, React 18, Vue 3, htmx, and Blazor Server. The project demonstrates clean architecture principles through layered separation of concerns (UI, Core domain, Data, and service abstractions), featuring a RESTful API with Swagger/OpenAPI documentation, in-memory EF Core database operations, dependency injection patterns, and unit test coverage across domain and repository layers.
+
+Key capabilities include dynamic Bootswatch theme switching with light/dark mode support, Bootstrap 5-based responsive UI components, modal-based form interactions, advanced data visualization through PivotTable.js reporting, and comprehensive health checks and Application Insights telemetry for observability. The technology stack leverages ASP.NET Core MVC/Razor Pages for server-side rendering, React and Vue for client-side component frameworks, and JavaScript-based HTTP utilities via custom `WebSpark.HttpClientUtility` NuGet packages, all containerized with Docker and deployed via GitHub Actions CI/CD pipelines with support for both Azure App Service and Docker Hub distribution.
+
+The repository is architected using the repository pattern with service abstraction layer (`IEmployeeService`), clean separation between controller/page layer and data layer, and standardized REST client abstractions, making it an ideal reference for developers learning enterprise-grade .NET applications or comparing UI framework trade-offs within a production-like environment. Its rapid evolution from .NET 5 through .NET 10 (69 commits in 90 days, accelerating activity), combined with extensive CI/CD hardening, containerization examples, and real-world deployment demonstrations (Windows IIS VM and Docker deployments), positions this as both an educational tool and a living best-practices showcase for modern ASP.NET Core full-stack development.
 
 **Created**: 2019-04-25
 **Last Modified**: 2026-03-14
 
 ---
 
-### #5. [git-spark](https://github.com/markhazleton/git-spark)
+### #6. [git-spark](https://github.com/markhazleton/git-spark)
 
-Stars: 0 | Forks: 0 | Language: TypeScript | 29 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 26 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 1884 KB | 🚀 9.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 1948 KB | 🚀 8.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # Git Spark - Technical Summary
 
-**Git Spark** is a TypeScript-based Git repository analytics and reporting tool that analyzes commit history to generate interactive insights into contributor activity, code changes, and development patterns. The project provides both a command-line interface and Node.js API for comprehensive Git repository analysis, offering multiple output formats (HTML, JSON, CSV, Markdown) with rich visualization capabilities including timeline charts, contribution heatmaps, risk factor analysis, and governance metrics.
+**Git Spark** is a TypeScript-based Git repository analytics and reporting tool that analyzes commit history to generate interactive insights into contributor activity, code changes, and development patterns. The tool operates as both a CLI application and Node.js library, offering multi-format export capabilities (HTML, JSON, CSV, Markdown) with a sophisticated interactive HTML dashboard featuring timeline visualizations, contribution heatmaps, governance radar charts, and risk factor analysis—all delivered as self-contained, security-hardened artifacts with strict Content Security Policy implementation and no external dependencies for charting.
 
-The core architecture leverages modern CLI tooling (Commander.js for CLI orchestration, Ora for progress indicators, Chalk for terminal styling) paired with a custom analytics engine that processes Git commit data to compute statistics around contributor behavior, file change patterns, and temporal trends. The interactive HTML reports feature security-first design patterns with Content Security Policy (CSP) compliance, native SVG charting (avoiding external dependencies), and client-side data export functionality, making reports self-contained artifacts suitable for air-gapped or sensitive review workflows.
+The architecture employs a modular design stack built on TypeScript with minimal but strategic dependencies (commander for CLI, chalk/ora for terminal UI, boxen for formatting), demonstrating clean separation between data collection, analysis logic, and presentation layers across CLI and programmatic APIs. Key differentiators include privacy-conscious features like email redaction, timezone-aware daily trend analysis, accessible UI patterns (ARIA live regions, keyboard navigation, reduced-motion compliance), and enterprise-grade analytics documentation that transparently explains both capabilities and limitations of Git-based metrics rather than making unfounded claims about developer productivity.
 
-Notable design decisions include email redaction capabilities for privacy-sensitive audits, timezone-aware daily trend calculations, configurable analysis periods via CLI flags or `.git-spark.json` configuration files, and honest metric documentation that explains data limitations inherent to Git-only analysis. The tech stack maintains relatively current dependencies (Node.js ≥20.19.0) with a 50/100 currency score, suggesting some dependencies could benefit from updates, though the core functionality remains solid with active recent development (29 commits in 90 days, though showing declining activity patterns).
-
-**Target users** include development teams seeking governance insights, technical leads conducting code health assessments, and organizations requiring auditable analytics on repository activity—particularly those in regulated environments where self-contained, offline-capable reports are essential. The combination of CLI accessibility and programmatic API makes it suitable for integration into CI/CD pipelines, dashboard systems, or standalone analytics workflows.
+The target audience spans development teams, engineering leaders, and auditors requiring repository health assessments, contributor pattern analysis, and governance compliance reporting—particularly organizations valuing air-gapped workflows and reproducible analysis artifacts. With 142 commits across a year of development, active maintenance through 26 recent commits, and a declining activity pattern, the project is mature enough for production use but represents a niche tool with limited current adoption (0 stars, 0 forks), making it suitable for teams with specific Git analytics needs rather than mainstream adoption.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 19 total (19 current, 0 outdated)
@@ -153,34 +190,69 @@ Notable design decisions include email redaction capabilities for privacy-sensit
 
 ---
 
-### #6. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
+### #7. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
 
-Stars: 0 | Forks: 0 | Language: C# | 38 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 42 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 2364 KB | 🚀 12.7 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 3971 KB | 🚀 14.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: WebSpark.HttpClientUtility
+# TailwindSpark - Technical Summary
 
-## Overview
-WebSpark.HttpClientUtility is a production-ready, enterprise-grade HttpClient wrapper library for .NET 8-10 LTS that dramatically simplifies HTTP client configuration by encapsulating resilience patterns, response caching, structured logging, and OpenTelemetry observability into a single `AddHttpClientUtility()` dependency injection call. Rather than requiring 50+ lines of boilerplate setup with manual Polly integration, correlation ID management, and telemetry configuration, developers can achieve comprehensive HTTP functionality with minimal code.
+**TailwindSpark** is a comprehensive, production-ready Tailwind CSS design system and component showcase built as a modern React TypeScript monorepo. It serves as both a practical reference implementation and a portfolio demonstration of contemporary web development practices, featuring a complete suite of interactive UI components, design tokens, and real-world application examples (dashboard, e-commerce, marketing pages) built on React 19.1, TypeScript 5.9, and Tailwind CSS 4.1.18 with Vite 7.1 for fast development and optimized builds.
 
-## Core Architecture & Key Features
-The library implements a service-oriented architecture built around the `IHttpRequestResultService` interface, providing generic `HttpRequestResult<T>` response objects that unify success/error handling across synchronous and asynchronous operations. Built-in capabilities include Polly-based retry policies with configurable circuit breakers, intelligent in-memory response caching with TTL control, automatic correlation ID propagation for distributed tracing, structured logging with rich contextual metadata (request/response details, timing telemetry), and seamless OpenTelemetry ActivitySource instrumentation for production observability. The v2.0 architecture splits functionality into two modular NuGet packages—the core `WebSpark.HttpClientUtility` (163 KB) for standard HTTP operations and `WebSpark.HttpClientUtility.Crawler` (75 KB) for web scraping with robots.txt parsing and sitemap generation.
+The project leverages a **Turborepo 2.7 monorepo architecture** to manage shared design tokens and reusable UI component packages, enabling code reuse across multiple applications while maintaining strict type safety and performance optimization through code splitting, lazy loading, and route-based chunking. Key technical highlights include 100% TypeScript strict mode, comprehensive accessibility compliance (WCAG 2.1 AA), automated testing with Vitest, real-time Core Web Vitals monitoring, and a fully automated CI/CD pipeline via GitHub Actions with security scanning, performance analytics, and continuous deployment to GitHub Pages.
 
-## Technical Implementation & Quality Standards
-The codebase leverages modern .NET features including Source Link for symbol debugging, trimming and AOT (Ahead-of-Time) compilation readiness with appropriate code annotations, and semantic versioning with zero breaking changes within major versions. The project demonstrates exceptional production quality through 237+ unit tests with 100% pass rate across .NET 8, 9, and 10 frameworks, zero-warning strict builds (`TreatWarningsAsErrors=true`), continuous integration via GitHub Actions, and package validation baselines. The implementation supports multiple authentication patterns (Bearer tokens, API keys, custom headers) and provides middleware-compatible correlation ID injection for microservice environments.
+What distinguishes TailwindSpark is its **dual purpose as both a working design system and an educational showcase**—it demonstrates advanced React patterns (concurrent features, error boundaries, Suspense), modern tooling best practices (ESLint 9, Prettier, TypeScript strict checks), and production-grade considerations like dark mode support, keyboard navigation, service worker integration, SEO optimization, and comprehensive documentation. The project is ideal for developers seeking a template for building scalable component libraries, those learning modern React and TypeScript patterns, teams implementing enterprise design systems, or portfolios demonstrating full-stack frontend excellence with accessibility and performance as first-class concerns.
 
-## Target Use Cases & Differentiation
-WebSpark is purpose-built for microservices architectures, distributed systems requiring automatic tracing correlation, background workers needing resilience without boilerplate, and web crawling scenarios—significantly reducing setup overhead compared to raw HttpClient or manual Polly configuration. Unlike Refit (which prioritizes type-safe declarative clients) or RestSharp (which requires manual resilience configuration), WebSpark prioritizes pragmatic, convention-over-configuration design with battle-tested defaults, making it ideal for teams prioritizing developer velocity and production observability. The project's active development cycle (38 commits over 90 days, 125 over 365 days), comprehensive documentation site, and long-term support commitment (18+ months per major version) position it as a reliable alternative for organizations standardizing on modern .NET LTS versions.
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 27 total (27 current, 0 outdated)
 
-**Created**: 2025-05-03
+**Created**: 2025-07-29
 **Last Modified**: 2026-03-15
 
 ---
 
-### #7. [WebSpark](https://github.com/markhazleton/WebSpark)
+### #8. [RESTRunner](https://github.com/markhazleton/RESTRunner)
+
+Stars: 2 | Forks: 1 | Language: C# | 46 commits (90d)
+
+👥 0 contributors | 🌐 4 languages | 💾 870 KB | 🚀 15.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# RESTRunner - Technical Summary
+
+**RESTRunner** is a comprehensive .NET 10 (LTS) solution for executing, testing, and benchmarking REST APIs, with primary support for importing and running Postman collections. The project provides both a console application and Razor Pages web interface, enabling users to perform automated regression testing, load testing, performance analysis, and detailed statistical reporting with CSV export capabilities.
+
+The solution features native Postman collection integration, configurable load testing parameters, response time percentile analysis, a built-in sample CRUD API for demonstration, and comprehensive test coverage (100% pass rate with 21 tests). The architecture follows a modular design with separate domain, testing, and web presentation layers, leveraging .NET 10's performance improvements (19% faster builds, 25% faster test execution) while maintaining a lean dependency footprint with 93% of packages at latest versions and zero vulnerabilities.
+
+The project targets QA engineers, API developers, and DevOps professionals who need automated API validation and performance monitoring without external SaaS dependencies. Recent activity shows accelerating development with 46 commits in the last 90 days, including a major v10.0.0 release upgrading to .NET 10 LTS with comprehensive package optimization and removal of framework-included dependencies, demonstrating a commitment to modern standards and maintainability.
+
+**Created**: 2021-09-30
+**Last Modified**: 2026-03-20
+
+---
+
+### #9. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
+
+Stars: 3 | Forks: 0 | Language: Visual Basic .NET | 9 commits (90d)
+
+👥 0 contributors | 🌐 10 languages | 💾 52407 KB | 🚀 3.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# Technical Summary: WebProjectMechanics
+
+**WebProjectMechanics** is a greenfield rebuild of a 20+ year legacy multi-tenant content management system, designed to serve 36+ independent websites from a single application instance while dramatically reducing hosting costs to ~$10/month. The system publishes dynamic content to pre-rendered static HTML served by Caddy, eliminating runtime rendering overhead and enabling efficient CDN distribution; it achieves multi-tenancy through physical file isolation using per-site SQLite databases rather than logical tenant columns, providing strong data separation and simplified querying. Built on .NET 9 with ASP.NET Core Minimal APIs, Entity Framework Core, and Scriban templating, the architecture employs a plugin-based domain model supporting specialized content modules (CMS pages, mineral collections, recipes) that can be independently extended and deployed. The project is transitioning from a legacy ASP.NET Web Forms/MS Access stack using a comprehensive one-time data migration tool, with extensive documentation covering both the implementation roadmap and the legacy system's complete specification to facilitate knowledge transfer. Its unique approach combines vertical multi-tenancy (separate databases per domain) with a single application host, containerized deployment via systemd, and automated certificate management through Caddy, making it an exemplary case study in cost-effective legacy system modernization while maintaining backward compatibility and operational continuity.
+
+**Created**: 2017-09-19
+**Last Modified**: 2026-02-19
+
+---
+
+### #10. [WebSpark](https://github.com/markhazleton/WebSpark)
 
 Stars: 1 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -197,84 +269,27 @@ Stars: 1 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #8. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
+### #11. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
 
-Stars: 0 | Forks: 0 | Language: HTML | 32 commits (90d)
+Stars: 0 | Forks: 0 | Language: CSS | 23 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 3268 KB | 🚀 10.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# TailwindSpark - Technical Summary
-
-**TailwindSpark** is a comprehensive, production-ready Tailwind CSS design system and component showcase built as a modern React TypeScript monorepo using Turborepo architecture. The project demonstrates advanced CSS utility-first design patterns with Tailwind CSS v4's @theme directive and design tokens, combined with React 19.1's concurrent features and TypeScript 5.9's strict type safety, all optimized through Vite 7.1 for rapid development and performant builds. The monorepo structure decouples shared design tokens and reusable UI components into separate packages, enabling modular code organization and scalable component distribution across multiple applications. Key features include a fully accessible (WCAG 2.1 AA) interactive component library, real-time Core Web Vitals monitoring, dark mode support, keyboard navigation with command shortcuts (Ctrl/Cmd + K), and multiple showcase applications (dashboard, e-commerce, marketing pages) demonstrating real-world usage patterns. The project prioritizes developer experience through comprehensive tooling including ESLint 9.39 + Prettier formatting, automated Vitest coverage reporting, security scanning via CodeQL, and CI/CD automation through GitHub Actions with Dependabot dependency management. TailwindSpark serves as both a reference implementation for modern web development best practices and a reusable design system foundation for enterprises and developers seeking to build accessible, performant, and maintainable web applications with contemporary web technologies.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 27 total (27 current, 0 outdated)
-
-**Created**: 2025-07-29
-**Last Modified**: 2026-03-08
-
----
-
-### #9. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
-
-Stars: 2 | Forks: 1 | Language: C# | 3 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 46575 KB | 🚀 1.0 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 43594 KB | 🚀 7.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# KeyPressCounter - Technical Summary
+# ReactSparkPortfolio - Technical Summary
 
-**KeyPressCounter** is a lightweight Windows system tray utility built in C# (.NET 10.0) that monitors keyboard and mouse activity alongside real-time system performance metrics, designed to run silently in the background without recording keystroke content or transmitting data. The application provides comprehensive input tracking (keystroke/click counts, peak activity rates, inactivity detection) and performance monitoring (CPU, memory, disk I/O, network throughput) through a three-tab WinForms dashboard with 60-second rolling graphs, hardware information via WMI, and configurable activity logging with daily summaries.
+**ReactSparkPortfolio** is a production-ready, enterprise-grade developer portfolio built with React 19, TypeScript, and Vite that serves as both a personal showcase and a comprehensive reference implementation for modern full-stack web development. The application demonstrates advanced frontend architecture patterns including real-time communication via SignalR, responsive UI with Bootstrap 5 and custom SCSS theming (dark/light mode), lazy-loaded components with code splitting, and integration with multiple external APIs (OpenWeather, JokeAPI, RSS feeds) through a serverless backend proxy layer.
 
-The architecture leverages **SharpHook** for global low-level input event hooking on background threads, **System.Management** for WMI-based hardware enumeration and Windows Performance Counters for real-time system metrics, and implements thread-safe counters with lock-protected increments to handle concurrent input events. Key design patterns include an `ApplicationContext` subclass managing tray integration and lifecycle, GDI+ anti-aliased graph rendering for historical data visualization, P/Invoke wrappers around `GetLastInputInfo` for idle detection, and JSON configuration persistence with Windows Registry synchronization for autostart capabilities.
+The project employs a cloud-native deployment strategy leveraging Azure Static Web Apps with GitHub Actions CI/CD automation, dual-platform hosting (Azure + GitHub Pages), and a TypeScript-strict codebase ensuring type safety across all 46 dependencies including axios, date-fns, Leaflet for interactive mapping, and xml2js for RSS parsing. Architecturally, it separates concerns between the React frontend (React Router navigation, Context API state management), serverless Azure Functions APIs, and external service integrations, with explicit attention to Content Security Policy configuration to balance security with functional requirements.
 
-Notable features include idle-period filtering with configurable thresholds, single-instance enforcement, direct access to Windows system tools (Task Manager, Resource Monitor, Performance Monitor), and comprehensive logging at user-configurable intervals with automatic daily summary generation at midnight. The project targets individual users and productivity analysts seeking passive activity monitoring and system performance awareness without privacy concerns, with declining recent activity (3 commits in 90 days) suggesting maintenance mode rather than active development, though the codebase demonstrates professional separation of concerns and Windows-native integration patterns suitable for production desktop applications.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 3 total (3 current, 0 outdated)
-
-**Created**: 2024-03-07
-**Last Modified**: 2026-03-09
-
----
-
-### #10. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
-
-Stars: 0 | Forks: 0 | Language: CSS | 24 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 43478 KB | 🚀 8.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# Technical Summary: ReactSparkPortfolio
-
-**ReactSparkPortfolio** is a production-ready, enterprise-grade developer portfolio application built with React 19, TypeScript, and Vite that demonstrates modern frontend engineering best practices and cloud-native deployment patterns. The project showcases a comprehensive tech stack including Bootstrap 5 for responsive UI, SCSS for advanced styling, SignalR for real-time functionality, and integrations with external APIs (OpenWeather, JokeAPI, RSS feeds) all orchestrated through a serverless architecture leveraging Azure Static Web Apps and Functions with GitHub Actions CI/CD automation. Key features include real-time chat powered by SignalR, interactive weather widgets with Leaflet maps, dynamic RSS feed integration, dark/light theme switching, and a searchable project showcase—all with full TypeScript type safety, WCAG 2.1 AA accessibility compliance, and optimized performance through code splitting and lazy loading. The architecture employs a frontend-only design that pulls content from external sources (markhazleton.com) with a deliberately permissive Content Security Policy to enable seamless integrations, while maintaining separation of concerns through React Context for state management, service layers for API communication, and component-based organization. This serves as both a personal portfolio and a reference implementation for developers seeking to understand scalable, maintainable web application patterns, making it particularly valuable for those interested in React best practices, TypeScript patterns, serverless architecture, or modern CI/CD workflows. The project's active development (24 commits in 90 days), comprehensive documentation, and dual deployment strategy (Azure + GitHub Pages) make it an exemplary showcase of production-quality frontend engineering suitable for portfolio demonstrations or organizational reference implementations.
+Key differentiators include full WCAG 2.1 AA accessibility compliance with semantic HTML and ARIA support, comprehensive documentation in the `/documentation` directory covering security, deployment, and development patterns, and a modular component structure with dedicated SCSS utilities enabling scalable styling conventions. The project is actively maintained (23 commits in 90 days) with a modern tech stack (50/100 currency score) and serves as an ideal reference for developers seeking to understand enterprise-grade React patterns, TypeScript best practices, and cloud deployment workflows for production web applications.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 46 total (46 current, 0 outdated)
 
 **Created**: 2024-10-11
 **Last Modified**: 2026-03-07
-
----
-
-### #11. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
-
-Stars: 3 | Forks: 0 | Language: Visual Basic .NET | 9 commits (90d)
-
-👥 0 contributors | 🌐 10 languages | 💾 52405 KB | 🚀 3.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# Technical Summary: WebProjectMechanics
-
-**WebProjectMechanics** is a greenfield rebuild of a multi-tenant, multi-domain content management system designed to serve 36+ websites from a single application instance while maintaining physical database isolation and cost-efficient hosting (~$10/month). The system publishes dynamic content as static HTML through a sophisticated plugin-based architecture that supports multiple content domains (CMS pages, Mineral Collection, Recipes) and uses per-site SQLite databases rather than traditional tenant ID columns, eliminating cross-tenant data concerns. Built on modern .NET 9 with ASP.NET Core Minimal APIs, Entity Framework Core 9, and Scriban templating, the architecture decouples content management from delivery by pre-rendering all public content and serving it via Caddy 2 with automatic SSL termination and reverse proxying on Ubuntu Linux. The repository includes comprehensive documentation of both the legacy 20+ year old ASP.NET Web Forms/MS Access system and a detailed implementation roadmap, with dedicated domain projects organized in a clean layered structure (Core, Infrastructure, API, and three domain modules) plus a migration tool for data transition. What distinguishes this project is its pragmatic approach to scaling a legacy system—avoiding expensive refactoring while achieving modern deployment patterns, cost optimization, and maintainability through thoughtful architectural decisions around data isolation and static site generation. Target users are organizations managing multiple related websites with moderate content complexity who need reliable hosting with minimal infrastructure overhead, making this particularly valuable as a case study in legacy system modernization and multi-tenant architecture patterns.
-
-**Created**: 2017-09-19
-**Last Modified**: 2026-02-19
 
 ---
 
@@ -304,40 +319,58 @@ The repository targets full-stack JavaScript developers, teams building internal
 
 ---
 
-### #13. [RESTRunner](https://github.com/markhazleton/RESTRunner)
+### #13. [markhazleton](https://github.com/markhazleton/markhazleton)
 
-Stars: 2 | Forks: 1 | Language: C# | 16 commits (90d)
+Stars: 0 | Forks: 0 | Language: Unknown | 16 commits (90d)
 
-👥 0 contributors | 🌐 3 languages | 💾 426 KB | 🚀 5.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# RESTRunner - Technical Summary
-
-**RESTRunner** is a comprehensive .NET 10 (LTS) solution designed for automated REST API testing, performance benchmarking, and regression testing that imports and executes Postman collections at scale. The application provides dual interfaces—a console application for batch processing and a Razor Pages web application for interactive testing—enabling developers to validate APIs through load testing, performance analysis, and detailed statistical reporting with CSV export capabilities.
-
-The project demonstrates strong engineering practices with a modular architecture spanning multiple layers: a domain model (RESTRunner.Domain) with comprehensive unit test coverage (21/21 tests, 100% pass rate), a web tier (RESTRunner.Web) built on ASP.NET Core Razor Pages, and specialized components for Postman collection parsing, HTTP client utilities, and performance metrics aggregation. Key features include configurable load testing parameters, response time percentile analysis, success rate tracking, a built-in sample CRUD API for demonstration, and integrated statistics generation.
-
-RESTRunner recently underwent a significant upgrade to .NET 10 LTS, achieving notable performance improvements (19% faster builds at 4.1s, 25% faster test execution at 0.6s) while optimizing package dependencies from 17 to 15 packages with 93% at latest stable versions and zero security vulnerabilities. The technology stack leverages MSTest v4 with code quality analyzers, modern C# patterns, and framework-integrated libraries (System.Text.Json, security cryptography) to minimize external dependencies and maximize runtime efficiency.
-
-The project is particularly valuable for QA engineers and API developers who need automated regression testing workflows, DevOps teams requiring performance benchmarking across multiple API instances, and organizations seeking to import existing Postman test collections into a scalable, performant .NET-based testing framework without vendor lock-in. Its active development pattern (16 commits in 90 days, accelerating activity) and comprehensive documentation including upgrade guides suggest ongoing maintenance and future feature expansion.
-
-**Created**: 2021-09-30
-**Last Modified**: 2026-01-12
-
----
-
-### #14. [Texecon](https://github.com/markhazleton/Texecon)
-
-Stars: 0 | Forks: 0 | Language: HTML | 16 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 4170 KB | 🚀 5.3 commits/month
+👥 0 contributors | 🌐 1 languages | 💾 6603 KB | 🚀 5.3 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
-# Technical Summary: Texecon
+# Technical Summary: markhazleton Repository
 
-**Texecon** is a modern static site generator for Texas economic analysis built as a React 19 application deployed to GitHub Pages, combining server-side content management with client-side performance optimization. The project implements a sophisticated build pipeline that fetches fresh content from a WebSpark headless CMS API during compilation, generates SEO-optimized static HTML pages with structured data and dynamic sitemaps, and provides progressive enhancement through Wouter-based client-side routing with HTML fallbacks. The tech stack leverages Vite 7.1 for fast builds, TypeScript for type safety, Tailwind CSS 4.1 for styling, and Radix UI/shadcn/ui component libraries for accessible, customizable interfaces—all optimized for Core Web Vitals and search engine performance. The architecture demonstrates advanced static site generation patterns including build-time API integration with graceful fallback caching, automatic TypeScript type generation from CMS responses, and cache-busting mechanisms for asset versioning. Unique to this project is its hybrid approach of pre-rendering dynamic content at build time while maintaining interactive client-side functionality, making it suitable for content-heavy sites requiring both SEO excellence and modern user experience. The project serves economic analysts, policy researchers, and stakeholders seeking data-driven insights into Texas's economy through a performant, maintainable platform that automatically updates content without requiring manual builds.
+This repository serves as a **personal portfolio and learning archive** for Mark Hazleton, functioning as a curated collection of his professional development projects and technical explorations rather than a traditional single-purpose codebase. The repository showcases multiple featured projects, most notably **Spec-Kit-Spark** (a fork of GitHub's SpecKit for brownfield development) and **ReactSpark** (a React-based web application built with Vite and deployed on Azure Static Web Applications), demonstrating expertise across full-stack development patterns. The technology stack spans modern web frameworks (React, Vite), .NET/NuGet ecosystem development, cloud platforms (Azure), and API development tools (evidenced by projects like RESTRunner for API load testing), indicating proficiency in both frontend and backend technologies. The repository emphasizes pragmatic software development practices through accompanying blog articles covering topics like evolutionary architecture, DevOps governance, and outcome-driven feature development, positioning the owner as someone focused on both technical excellence and engineering leadership. The active commit history (accelerating activity pattern with 55 commits over the past year) and integration with custom GitHub statistics visualization (github-stats-spark) suggest a professionally maintained learning portfolio designed for continuous knowledge documentation and skill demonstration. This repository is primarily valuable for prospective employers, collaborators, or learners seeking examples of modern development practices, architectural patterns, and a developer's technical growth trajectory.
+
+**Created**: 2021-04-17
+**Last Modified**: 2026-03-20
+
+---
+
+### #14. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
+
+Stars: 2 | Forks: 1 | Language: C# | 3 commits (90d)
+
+👥 0 contributors | 🌐 1 languages | 💾 46575 KB | 🚀 1.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# KeyPressCounter - Technical Summary
+
+**KeyPressCounter** is a lightweight Windows system tray utility built in C# (.NET 10.0) that monitors keyboard and mouse activity alongside real-time system performance metrics, designed to run silently in the background without recording keystroke content or transmitting data. The application provides comprehensive input tracking (keystroke/click counts, peak activity rates, inactivity detection) and performance monitoring (CPU, memory, disk I/O, network throughput) through a three-tab WinForms dashboard with 60-second rolling graphs, hardware information via WMI, and configurable activity logging with daily summaries.
+
+The architecture leverages **SharpHook** for global low-level input event hooking on background threads, **System.Management** for WMI-based hardware enumeration and Windows Performance Counters for real-time system metrics, and implements thread-safe counters with lock-protected increments to handle concurrent input events. Key design patterns include an `ApplicationContext` subclass managing tray integration and lifecycle, GDI+ anti-aliased graph rendering for historical data visualization, P/Invoke wrappers around `GetLastInputInfo` for idle detection, and JSON configuration persistence with Windows Registry synchronization for autostart capabilities.
+
+Notable features include idle-period filtering with configurable thresholds, single-instance enforcement, direct access to Windows system tools (Task Manager, Resource Monitor, Performance Monitor), and comprehensive logging at user-configurable intervals with automatic daily summary generation at midnight. The project targets individual users and productivity analysts seeking passive activity monitoring and system performance awareness without privacy concerns, with declining recent activity (3 commits in 90 days) suggesting maintenance mode rather than active development, though the codebase demonstrates professional separation of concerns and Windows-native integration patterns suitable for production desktop applications.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 3 total (3 current, 0 outdated)
+
+**Created**: 2024-03-07
+**Last Modified**: 2026-03-09
+
+---
+
+### #15. [Texecon](https://github.com/markhazleton/Texecon)
+
+Stars: 0 | Forks: 0 | Language: HTML | 16 commits (90d)
+
+👥 0 contributors | 🌐 4 languages | 💾 4491 KB | 🚀 5.3 commits/month
+
+**Quality**: ❌ License | ❌ Docs
+
+# Technical Summary: TexEcon
+
+**TexEcon** is a modern static React application designed to deliver expert economic analysis and commentary on the Texas economy, deployed as a high-performance static site on GitHub Pages. The project leverages React 19, TypeScript, and Vite to implement a sophisticated build-time content management system that fetches fresh data from a WebSpark headless CMS during compilation, with graceful fallback mechanisms ensuring reliability even when the API is unavailable. The architecture employs a multi-stage build pipeline that orchestrates content fetching, sitemap generation, Vite compilation, and static HTML page generation—enabling optimal SEO performance and Core Web Vitals scores through pre-rendered pages while maintaining client-side routing capabilities via Wouter for progressive enhancement. The technology stack combines Tailwind CSS 4.1 for styling, Radix UI primitives with shadcn/ui components for accessible UI construction, and Lucide React for consistent iconography, while TypeScript-first development ensures type safety throughout the application. What distinguishes TexEcon is its sophisticated content pipeline with build-time API integration, automatic type generation from CMS responses, detailed build reporting, and configurable deployment strategies supporting both GitHub Pages subdomains and custom domains (texecon.com)—making it a reference implementation for static site generation with dynamic content integration. This approach is particularly valuable for organizations requiring SEO-optimized, performant web properties that need to serve frequently-updated content while maintaining the simplicity and cost-efficiency of static hosting.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 40 total (40 current, 0 outdated)
@@ -347,7 +380,90 @@ Stars: 0 | Forks: 0 | Language: HTML | 16 commits (90d)
 
 ---
 
-### #15. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
+### #16. [SupportSpark](https://github.com/markhazleton/SupportSpark)
+
+Stars: 0 | Forks: 0 | Language: TypeScript | 23 commits (90d)
+
+👥 0 contributors | 🌐 5 languages | 💾 1954 KB | 🚀 7.7 commits/month
+
+**Quality**: ❌ License | ❌ Docs
+
+# SupportSpark - Technical Summary
+
+**SupportSpark** is a compassionate support network platform built with TypeScript and React that enables members navigating life challenges to post journey updates to a trusted circle of supporters, who can respond with encouragement through threaded conversations. The platform implements a role-based access model where members create and manage updates while supporters have read and reply permissions, solving the problem of exhausting one-to-many communication during difficult periods by providing a single posting mechanism that reaches all invited supporters simultaneously.
+
+The application leverages a modern, type-safe tech stack featuring **React 19 with Vite** for the frontend, **Express 5** for the RESTful API backend, **Tailwind CSS 4** and **shadcn/ui** components for accessible, calming UI design, **TanStack React Query** for server state management, and **Zod** for runtime validation—all written in strict TypeScript for end-to-end type safety. The architecture emphasizes accessibility through Radix UI primitives, smooth animations via Framer Motion, and a distraction-free, thoughtfully designed interface using a sage/teal color palette appropriate for sensitive moments.
+
+Unique features include a fully functional **demo mode** running entirely in-browser with localStorage persistence, allowing users to explore without backend infrastructure, along with **GitHub Pages static deployment** capabilities for alpha previews. The project is production-ready with specialized support for **Windows 11 IIS deployment** via automated PowerShell scripts and iisnode integration, comprehensive API contracts defined through shared schemas, and well-documented architectural principles stored in a "constitution" governance document.
+
+The platform targets individuals managing health challenges, life transitions, or personal journeys who need to keep loved ones informed without the burden of repeated updates, while simultaneously providing supporters with an organized, focused space to offer encouragement—making it ideal for cancer patients, new parents, caregivers, and anyone experiencing significant life events requiring ongoing community support.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 97 total (97 current, 0 outdated)
+
+**Created**: 2026-02-01
+**Last Modified**: 2026-02-25
+
+---
+
+### #17. [ConcurrentProcessing](https://github.com/markhazleton/ConcurrentProcessing)
+
+Stars: 0 | Forks: 0 | Language: C# | 2 commits (90d)
+
+👥 0 contributors | 🌐 1 languages | 💾 145 KB | 🚀 0.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# Technical Summary: ConcurrentProcessing
+
+**ConcurrentProcessing** is a demonstration framework for .NET 10 that provides a production-ready, high-performance concurrent task processing engine built on C# and the Task Parallel Library (TPL). The framework centers on a generic abstract base class (`ConcurrentProcessor<T>`) that enables fine-grained control over parallel task execution through semaphore-based throttling, allowing developers to limit concurrent operations while tracking detailed performance metrics including task duration, wait times, and throughput statistics. Key features include type-safe generic results, automatic performance telemetry collection via `ConcurrentProcessorModel`, and a `MetricCalculator` utility for statistical analysis—all demonstrating contemporary C# patterns such as Template Method, Factory, and Resource Pool patterns. The architecture prioritizes minimal overhead and memory efficiency, with benchmarks showing linear scalability from 100 to 1000+ tasks across configurable concurrency limits, making it suitable for CPU-bound and I/O-bound workloads requiring controlled parallelism. Target users include C# developers seeking to understand advanced concurrent programming concepts, those building batch processing or task scheduling systems, and teams needing extensible frameworks with built-in observability. The project is well-documented with comprehensive guides, CI/CD automation via GitHub Actions, and serves dual purposes as both a production-ready utility and an educational resource for mastering .NET concurrency patterns and performance optimization.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 2 total (2 current, 0 outdated)
+
+**Created**: 2023-09-18
+**Last Modified**: 2026-01-22
+
+---
+
+### #18. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
+
+Stars: 0 | Forks: 0 | Language: SCSS | 1 commits (90d)
+
+👥 0 contributors | 🌐 4 languages | 💾 148 KB | 🚀 0.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# Technical Summary: markhazleton.github.io
+
+This repository hosts Mark Hazleton's personal portfolio website built with **Jekyll**, a static site generator hosted on **GitHub Pages**, with automated CI/CD deployment via **GitHub Actions**. The project implements a customized **Minima theme** using a modern tech stack of SCSS (36.8%), HTML (34.6%), and CSS (27.9%), featuring a dark/light mode toggle, responsive design, and native emoji support without external framework dependencies. The site architecture follows Jekyll's conventional structure with modular components (`_layouts`, `_includes`, `_sass`), facilitating maintainable content management and styling while leveraging GitHub Pages' native Jekyll support for streamlined deployment. Key technical features include live-reload development environment, Ruby 3.2.2+ dependency management via Bundler, comprehensive post metadata handling (categories, tags, excerpts, SEO optimization), and Windows-optimized development setup through the `wdm` gem. The project demonstrates declining but steady maintenance activity (1 commit in 90 days, 16 in 365 days) with moderate tech stack currency (50/100), making it suitable for professionals seeking a lightweight, customizable blogging platform with minimal infrastructure overhead and integrated version control workflows. Target users include developers and technical writers who prefer Jekyll's simplicity over headless CMS solutions and value direct Git-based content publishing with complete design control.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 3 total (3 current, 0 outdated)
+
+**Created**: 2021-04-18
+**Last Modified**: 2026-01-12
+
+---
+
+### #19. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
+
+Stars: 2 | Forks: 1 | Language: HTML | 1 commits (90d)
+
+👥 0 contributors | 🌐 3 languages | 💾 137 KB | 🚀 0.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# Technical Summary: FastEndpointApi
+
+**FastEndpointApi** is a comprehensive demonstration and educational project showcasing the FastEndpoints framework—a lightweight, high-performance REST API framework for ASP.NET Core that implements the REPR (Request-Endpoint-Response) pattern. The repository contains a fully functional Person Management API deployed to Azure, featuring complete CRUD operations, in-memory data persistence, service layer abstraction, and interactive Swagger documentation. Built with .NET 10.0 and FastEndpoints 7.1.1, the project leverages modern technologies including dependency injection, automatic request-response mapping, HATEOAS hypermedia links, and GitHub Actions CI/CD pipelines for automated deployment. The architecture emphasizes clean code principles and minimal boilerplate through endpoint-based organization rather than traditional MVC controllers, with integrated data seeding via Bogus and a Bootstrap 5-based HTML frontend for interactive API testing. This repository serves as both a learning resource and production-ready reference implementation for developers seeking to understand FastEndpoints' capabilities, particularly those looking to streamline ASP.NET Core API development while maintaining separation of concerns and high performance standards. The project is actively maintained with comprehensive documentation, live demo accessibility, and clear examples of advanced patterns like HATEOAS implementation and structured error handling.
+
+**Created**: 2024-04-06
+**Last Modified**: 2026-01-12
+
+---
+
+### #20. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 14 commits (90d)
 
@@ -369,105 +485,6 @@ The project demonstrates production-ready best practices including comprehensive
 
 ---
 
-### #16. [ConcurrentProcessing](https://github.com/markhazleton/ConcurrentProcessing)
-
-Stars: 0 | Forks: 0 | Language: C# | 19 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 145 KB | 🚀 6.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# ConcurrentProcessing - Technical Summary
-
-**ConcurrentProcessing** is a production-ready, high-performance concurrent task processing framework for .NET 10 that provides fine-grained control over parallel task execution through semaphore-based throttling and built-in performance metrics. The framework centers around a generic abstract base class `ConcurrentProcessor<T>` that enables developers to implement custom task processing logic while automatically managing concurrency limits, tracking execution metrics (task duration, wait times, throughput), and performing statistical analysis—supporting use cases from 100 to 1000+ concurrent tasks with configurable parallelism. Built with modern C# 12+ features (primary constructors, pattern matching, nullable references) and leveraging the .NET 10 runtime optimizations, the architecture employs well-established design patterns including Template Method (for extensible processing), Resource Pool Pattern (semaphore management), and Factory Pattern (task ID generation) to maintain both flexibility and efficiency with minimal overhead. The project distinguishes itself as an educational resource that demonstrates best practices in concurrent programming and TPL (Task Parallel Library) usage while maintaining benchmarked performance characteristics showing near-linear scaling—achieving ~250ms total execution time for 100 tasks at 10 concurrent limit versus ~1500ms at single concurrency. Targeted at .NET developers seeking to build scalable, parallelized applications with measurable performance insights, it includes comprehensive documentation, CI/CD pipelines with automated build/test workflows, and includes an accompanying blog article for deeper architectural understanding and real-world application scenarios.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 2 total (2 current, 0 outdated)
-
-**Created**: 2023-09-18
-**Last Modified**: 2026-01-22
-
----
-
-### #17. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
-
-Stars: 0 | Forks: 0 | Language: C# | 10 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 19888 KB | 🚀 3.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# PromptSpark.Chat - Technical Summary
-
-**PromptSpark.Chat** is a real-time conversational workflow engine built with ASP.NET Core and SignalR that enables users to navigate multi-step processes through an interactive chat interface powered by Adaptive Cards. The application provides server-side conversation persistence, allowing users to maintain their workflow progress across browser sessions without data loss, and supports optional AI integration for handling out-of-workflow queries through chat completion services. The architecture leverages a thread-safe ConcurrentDictionary for state management, JSON-based workflow definitions with branching logic, and real-time bidirectional communication via SignalR, demonstrating a lightweight yet scalable approach to guided user interactions and form workflows. The technology stack combines ASP.NET Core backend (31.5% C#) with a modern frontend composed of SCSS (30%), HTML (28.4%), and JavaScript (8.9%), offering both styling flexibility and interactivity across the chat UI. This solution is particularly well-suited for enterprise guidance systems, customer onboarding flows, interactive questionnaires, and decision-tree applications where maintaining context and providing responsive feedback are critical, while its modular workflow definition system allows non-developers to configure new processes without code changes. The project's recent acceleration in commits and active development pattern, combined with its comprehensive documentation and MIT licensing, positions it as a practical template for organizations building conversational AI or workflow automation features within the .NET ecosystem.
-
-**Created**: 2024-12-31
-**Last Modified**: 2026-02-10
-
----
-
-### #18. [markhazleton](https://github.com/markhazleton/markhazleton)
-
-Stars: 0 | Forks: 0 | Language: Unknown | 11 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 6595 KB | 🚀 3.7 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-# Technical Summary: markhazleton Repository
-
-This repository serves as Mark Hazleton's personal portfolio and learning archive—a curated collection demonstrating his continuous skill development across modern web technologies and software architecture practices. The primary purpose is to showcase featured projects including **WebSpark** (a comprehensive web application hosting platform for demos) and **ReactSpark** (a React+Vite application deployed on Azure Static Web Applications), alongside a growing body of technical articles covering software development philosophy, DevOps practices, and AI-assisted development methodologies.
-
-The repository demonstrates expertise across a diverse technology stack including React, Vite, Azure cloud services (Static Web Applications, DevOps), and modern CI/CD automation patterns, with an emphasis on pragmatic software engineering principles such as spec-driven development, fork management automation, and late-stage deployment governance. The architecture reflects a professional approach to full-stack development, with projects deployed on cloud platforms and integrated with industry-standard tools like Postman and Azure DevOps for API testing and project management.
-
-What distinguishes this portfolio is its dual focus on both **technical execution** (working code, deployed applications) and **thought leadership** (published articles addressing strategic software development topics like accountability, evolution over revolution, and feature-to-outcome alignment), making it valuable for both practitioners seeking reference implementations and organizations evaluating senior engineering talent with architectural maturity.
-
-**Created**: 2021-04-17
-**Last Modified**: 2026-03-01
-
----
-
-### #19. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
-
-Stars: 2 | Forks: 1 | Language: HTML | 1 commits (90d)
-
-👥 0 contributors | 🌐 3 languages | 💾 137 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# Technical Summary: FastEndpointApi
-
-**FastEndpointApi** is a comprehensive demonstration and educational project showcasing the FastEndpoints framework—a lightweight, high-performance REST API framework for ASP.NET Core that implements the REPR (Request-Endpoint-Response) pattern. The repository contains a fully functional Person Management API deployed to Azure, featuring complete CRUD operations, in-memory data persistence, service layer abstraction, and interactive Swagger documentation. Built with .NET 10.0 and FastEndpoints 7.1.1, the project leverages modern technologies including dependency injection, automatic request-response mapping, HATEOAS hypermedia links, and GitHub Actions CI/CD pipelines for automated deployment. The architecture emphasizes clean code principles and minimal boilerplate through endpoint-based organization rather than traditional MVC controllers, with integrated data seeding via Bogus and a Bootstrap 5-based HTML frontend for interactive API testing. This repository serves as both a learning resource and production-ready reference implementation for developers seeking to understand FastEndpoints' capabilities, particularly those looking to streamline ASP.NET Core API development while maintaining separation of concerns and high performance standards. The project is actively maintained with comprehensive documentation, live demo accessibility, and clear examples of advanced patterns like HATEOAS implementation and structured error handling.
-
-**Created**: 2024-04-06
-**Last Modified**: 2026-01-12
-
----
-
-### #20. [SupportSpark](https://github.com/markhazleton/SupportSpark)
-
-Stars: 0 | Forks: 0 | Language: TypeScript | 23 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 1856 KB | 🚀 7.7 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-# SupportSpark: Technical Summary
-
-**SupportSpark** is a TypeScript-based support network platform designed to help individuals share life journey updates with trusted circles during challenging times, addressing the burden of repetitive personal updates through a centralized, calming interface. The platform implements a role-based architecture where members create and manage journey conversations while supporters receive invitations to read updates and participate in threaded discussions, with features including invitation-only access control, real-time engagement tracking, and a demo mode for exploration without authentication.
-
-The application employs a modern, full-stack TypeScript architecture with **React 19 + Vite** on the frontend, **Express 5** for the backend API, and **Tailwind CSS 4** with **Radix UI** and **shadcn/ui** components for an accessible, WCAG-compliant interface. State management leverages **TanStack React Query** for server-side caching, **Wouter** for lightweight routing, and **Zod** for end-to-end runtime type validation, while authentication uses **Passport.js** with session-based security and a JSON-based storage layer for data persistence.
-
-What distinguishes SupportSpark is its intentional focus on compassionate UX design—featuring a calming teal/sage color scheme, distraction-free layout, and accessibility-first component primitives—combined with production-ready Windows/IIS deployment automation via PowerShell scripts and iisnode integration. The project maintains a documented governance model (constitution.md), architectural separation between client/server/shared code, and support for both client-side localStorage demo mode (GitHub Pages deployment) and server-backed production environments, making it suitable for healthcare, personal wellness, and community support use cases where sensitive communication infrastructure is required.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 97 total (97 current, 0 outdated)
-
-**Created**: 2026-02-01
-**Last Modified**: 2026-02-25
-
----
-
 ### #21. [sql2csv](https://github.com/markhazleton/sql2csv)
 
 Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
@@ -485,23 +502,20 @@ Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
 
 ---
 
-### #22. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
+### #22. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
 
-Stars: 0 | Forks: 0 | Language: Python | 2 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 10 commits (90d)
 
-👥 0 contributors | 🌐 4 languages | 💾 181 KB | 🚀 0.7 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 19888 KB | 🚀 3.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# DocSpecSpark - Technical Summary
+# PromptSpark.Chat - Technical Summary
 
-DocSpecSpark is a document-first framework and CLI tool that automates the initialization, generation, and publication of company documentation repositories with profile-based templating and static site generation capabilities. The project provides a comprehensive system for bootstrapping documentation infrastructure, including a Python-based CLI package (built with Typer for command structure), a modular framework payload with filesystem-backed templates, and a complete publication pipeline that renders markdown documents, builds static sites, and packages versioned release bundles for distribution. The architecture emphasizes profile-aware customization through YAML-driven configuration (constitution and config files), with concrete starter templates for diverse organizational contexts (nonprofits, startups, small manufacturers, enterprises, healthcare), allowing companies to scaffold documentation repositories tailored to their specific profile and governance needs. Key capabilities include document rendering from reusable templates, local site preview via `docspec serve`, automated GitHub Pages publication workflows, and versioned release snapshots that snapshot documentation states to `.DocSpecSpark/releases/` with corresponding zip distributions. The tech stack is modern and minimal—leveraging markdown-it-py for parsing, PyYAML for configuration management, Rich for CLI output formatting, and Typer for command definition—reflecting a pragmatic approach to documentation infrastructure without heavyweight dependencies. This tool is particularly valuable for organizations needing standardized, scalable documentation practices, offering an opinionated but flexible framework that balances template reusability with organizational customization, positioning it as a bridge between documentation-as-code philosophies and practical enterprise governance needs.
+**PromptSpark.Chat** is a real-time conversational workflow engine built with ASP.NET Core and SignalR that enables users to navigate multi-step processes through an interactive chat interface powered by Adaptive Cards. The application provides server-side conversation persistence, allowing users to maintain their workflow progress across browser sessions without data loss, and supports optional AI integration for handling out-of-workflow queries through chat completion services. The architecture leverages a thread-safe ConcurrentDictionary for state management, JSON-based workflow definitions with branching logic, and real-time bidirectional communication via SignalR, demonstrating a lightweight yet scalable approach to guided user interactions and form workflows. The technology stack combines ASP.NET Core backend (31.5% C#) with a modern frontend composed of SCSS (30%), HTML (28.4%), and JavaScript (8.9%), offering both styling flexibility and interactivity across the chat UI. This solution is particularly well-suited for enterprise guidance systems, customer onboarding flows, interactive questionnaires, and decision-tree applications where maintaining context and providing responsive feedback are critical, while its modular workflow definition system allows non-developers to configure new processes without code changes. The project's recent acceleration in commits and active development pattern, combined with its comprehensive documentation and MIT licensing, positions it as a practical template for organizations building conversational AI or workflow automation features within the .NET ecosystem.
 
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 4 total (4 current, 0 outdated)
-
-**Created**: 2026-03-07
-**Last Modified**: 2026-03-08
+**Created**: 2024-12-31
+**Last Modified**: 2026-02-10
 
 ---
 
@@ -522,31 +536,7 @@ Stars: 0 | Forks: 0 | Language: C# | 7 commits (90d)
 
 ---
 
-### #24. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
-
-Stars: 0 | Forks: 0 | Language: SCSS | 1 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 144 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# Technical Summary: Mark Hazleton's Personal Jekyll Site
-
-This repository is a personal portfolio and blog website built with **Jekyll**, a static site generator, and hosted on **GitHub Pages** at markhazleton.com. The site leverages a customized Minima theme with bespoke layouts, includes, and styling written in SCSS/CSS, providing a lightweight, performant alternative to heavy frontend frameworks while maintaining modern aesthetics including dark/light mode toggle functionality and emoji support.
-
-The tech stack consists of **Ruby 3.2.2** with Jekyll 3.10.0 as the core engine, automated deployment via **GitHub Actions** CI/CD pipeline, and three key dependencies (github-pages, faraday-retry, wdm) for dependency management and Windows development support. The codebase is well-structured with clear separation of concerns—markdown-based posts in `_posts/`, reusable Liquid template components in `_includes/`, and modularized SCSS architecture for maintainability.
-
-The repository demonstrates solid software engineering practices including comprehensive documentation for content creation workflows (with both direct-commit and feature-branch options), local development setup instructions across multiple operating systems, and version-controlled dependency management through Bundler. However, activity metrics reveal a declining maintenance pattern with only one commit in the past 90 days and 16 commits over the past year, coupled with a moderate tech currency score of 50/100, suggesting the project could benefit from dependency updates and more active maintenance, though its static nature means it remains functional despite reduced activity.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 3 total (3 current, 0 outdated)
-
-**Created**: 2021-04-18
-**Last Modified**: 2026-01-12
-
----
-
-### #25. [AsyncSpark](https://github.com/markhazleton/AsyncSpark)
+### #24. [AsyncSpark](https://github.com/markhazleton/AsyncSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 9 commits (90d)
 
@@ -563,7 +553,7 @@ AsyncSpark is a production-ready reference implementation demonstrating enterpri
 
 ---
 
-### #26. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
+### #25. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
 
 Stars: 0 | Forks: 0 | Language: HTML | 5 commits (90d)
 
@@ -582,7 +572,7 @@ The architecture emphasizes production-readiness with comprehensive error handli
 
 ---
 
-### #27. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
+### #26. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
 
 Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
 
@@ -603,27 +593,7 @@ The codebase is primarily C# (94.4%) with supporting PowerShell and Python tooli
 
 ---
 
-### #28. [TeachSpark](https://github.com/markhazleton/TeachSpark)
-
-Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 30771 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# TeachSpark - Technical Summary
-
-**TeachSpark** is an LLM-powered educational platform built on .NET 10 MVC that delivers personalized, adaptive learning experiences through AI-driven content delivery and real-time feedback mechanisms. The application combines a robust C# backend leveraging clean architecture principles with Entity Framework Core with a modern frontend stack featuring Webpack 5, Bootstrap 5, and ES6+ JavaScript, creating a responsive, high-performance learning environment. Key capabilities include AI-powered content adaptation, dynamic curriculum delivery, personalized learning pathways, comprehensive progress analytics, and an optimized build system with hot module replacement for efficient development workflows. The architecture demonstrates strong DevOps practices through automated code quality enforcement via Husky pre-commit hooks, ESLint/Prettier/Stylelint integration, and webpack-based asset optimization with content hashing and code splitting. The project's maturity is evident in its comprehensive documentation, structured project layout, and well-defined contribution guidelines, though the tech stack currency score of 50/100 suggests some dependencies may benefit from updates. TeachSpark targets educators and learning institutions seeking intelligent, personalized educational solutions that leverage Large Language Models to adapt content delivery based on individual student learning patterns and preferences.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 3 total (3 current, 0 outdated)
-
-**Created**: 2025-06-19
-**Last Modified**: 2026-01-12
-
----
-
-### #29. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
+### #27. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -640,7 +610,7 @@ Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #30. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
+### #28. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -657,7 +627,27 @@ Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #31. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
+### #29. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
+
+Stars: 0 | Forks: 0 | Language: Python | 2 commits (90d)
+
+👥 0 contributors | 🌐 4 languages | 💾 181 KB | 🚀 0.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# DocSpecSpark - Technical Summary
+
+DocSpecSpark is a document-first framework and CLI tool that automates the initialization, generation, and publication of company documentation repositories with profile-based templating and static site generation capabilities. The project provides a comprehensive system for bootstrapping documentation infrastructure, including a Python-based CLI package (built with Typer for command structure), a modular framework payload with filesystem-backed templates, and a complete publication pipeline that renders markdown documents, builds static sites, and packages versioned release bundles for distribution. The architecture emphasizes profile-aware customization through YAML-driven configuration (constitution and config files), with concrete starter templates for diverse organizational contexts (nonprofits, startups, small manufacturers, enterprises, healthcare), allowing companies to scaffold documentation repositories tailored to their specific profile and governance needs. Key capabilities include document rendering from reusable templates, local site preview via `docspec serve`, automated GitHub Pages publication workflows, and versioned release snapshots that snapshot documentation states to `.DocSpecSpark/releases/` with corresponding zip distributions. The tech stack is modern and minimal—leveraging markdown-it-py for parsing, PyYAML for configuration management, Rich for CLI output formatting, and Typer for command definition—reflecting a pragmatic approach to documentation infrastructure without heavyweight dependencies. This tool is particularly valuable for organizations needing standardized, scalable documentation practices, offering an opinionated but flexible framework that balances template reusability with organizational customization, positioning it as a bridge between documentation-as-code philosophies and practical enterprise governance needs.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 4 total (4 current, 0 outdated)
+
+**Created**: 2026-03-07
+**Last Modified**: 2026-03-08
+
+---
+
+### #30. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
 
 Stars: 0 | Forks: 0 | Language: HTML | 1 commits (90d)
 
@@ -687,7 +677,7 @@ Ideal for enterprise .NET developers building microservices, distributed systems
 
 ---
 
-### #32. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
+### #31. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
 
 Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
@@ -704,7 +694,7 @@ Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
 ---
 
-### #33. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
+### #32. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 1 commits (90d)
 
@@ -740,7 +730,7 @@ Ideal for development teams and individual developers building consumer or enter
 
 ---
 
-### #34. [InquirySpark](https://github.com/markhazleton/InquirySpark)
+### #33. [InquirySpark](https://github.com/markhazleton/InquirySpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -754,6 +744,26 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 **Created**: 2023-10-24
 **Last Modified**: 2025-12-07
+
+---
+
+### #34. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+
+Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 30771 KB | 🚀 0.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# TeachSpark - Technical Summary
+
+**TeachSpark** is an LLM-powered educational platform built on .NET 10 MVC that delivers personalized, adaptive learning experiences through AI-driven content delivery and real-time feedback mechanisms. The application combines a robust C# backend leveraging clean architecture principles with Entity Framework Core with a modern frontend stack featuring Webpack 5, Bootstrap 5, and ES6+ JavaScript, creating a responsive, high-performance learning environment. Key capabilities include AI-powered content adaptation, dynamic curriculum delivery, personalized learning pathways, comprehensive progress analytics, and an optimized build system with hot module replacement for efficient development workflows. The architecture demonstrates strong DevOps practices through automated code quality enforcement via Husky pre-commit hooks, ESLint/Prettier/Stylelint integration, and webpack-based asset optimization with content hashing and code splitting. The project's maturity is evident in its comprehensive documentation, structured project layout, and well-defined contribution guidelines, though the tech stack currency score of 50/100 suggests some dependencies may benefit from updates. TeachSpark targets educators and learning institutions seeking intelligent, personalized educational solutions that leverage Large Language Models to adapt content delivery based on individual student learning patterns and preferences.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 3 total (3 current, 0 outdated)
+
+**Created**: 2025-06-19
+**Last Modified**: 2026-01-12
 
 ---
 
@@ -825,10 +835,10 @@ PHPDocSpark is an open-source PHP documentation and data exploration platform th
 
 ## Report Metadata
 
-- **Generation Time**: 1.9 seconds
+- **Generation Time**: 2.0 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 90,227
+- **Total AI Tokens**: 90,466
 - **Success Rate**: 100.0%
 
 ### Data Sources
@@ -846,4 +856,4 @@ PHPDocSpark is an open-source PHP documentation and data exploration platform th
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2026-03-15*
+*Last updated: 2026-03-22*
