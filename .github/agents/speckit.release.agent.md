@@ -90,9 +90,9 @@ Confirm this version or provide explicit version:
 
 | Content | Bump Type | Example |
 |---------|-----------|---------|
-| Completed feature specs | Minor | 1.2.0 → 1.3.0 |
-| Quickfixes only | Patch | 1.2.0 → 1.2.1 |
-| Breaking changes in specs | Major | 1.2.0 → 2.0.0 |
+| Completed feature specs | Minor | 1.2.4 → 1.3.0 |
+| Quickfixes only | Patch | 1.2.4 → 1.2.5 |
+| Breaking changes in specs | Major | 1.2.4 → 2.0.0 |
 
 ### 3. Classify Artifacts
 
@@ -473,25 +473,25 @@ To execute this release:
    git commit -m "docs: release v{NEXT_VERSION}"
    ```
 
-4. Tag release:
+1. Tag release:
 
    ```bash
    git tag -a v{NEXT_VERSION} -m "Release v{NEXT_VERSION}"
    ```
 
-5. Push to remote:
+2. Push to remote:
 
    ```bash
    git push origin main --tags
    ```
 
-6. Create GitHub Release (optional):
+3. Create GitHub Release (optional):
 
    ```bash
    gh release create v{NEXT_VERSION} --notes-file .documentation/releases/v{NEXT_VERSION}/release-notes.md
    ```
 
-7. Consumer projects will receive the new version stamp the next time they run:
+4. Consumer projects will receive the new version stamp the next time they run:
 
    ```bash
    specify upgrade
