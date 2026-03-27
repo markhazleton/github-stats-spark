@@ -4,7 +4,7 @@
     "total_repositories": 37,
     "total_stars": 18,
     "total_forks": 7,
-    "total_commits": 3710
+    "total_commits": 3712
   },
   "repositories": [
     {
@@ -31,27 +31,27 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-03-27T15:04:03+00:00",
-      "pushed_at": "2026-03-27T15:03:59+00:00",
-      "total_commits": 189,
-      "recent_commits_90d": 189,
+      "updated_at": "2026-03-27T16:08:49+00:00",
+      "pushed_at": "2026-03-27T16:08:45+00:00",
+      "total_commits": 191,
+      "recent_commits_90d": 191,
       "first_commit_date": "2025-12-28T17:01:51+00:00",
-      "last_commit_date": "2026-03-27T15:02:45+00:00",
+      "last_commit_date": "2026-03-27T16:08:42+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 189,
-        "recent_90d": 189,
-        "recent_180d": 189,
-        "recent_365d": 189,
-        "last_commit_date": "2026-03-27T15:02:45+00:00",
+        "total_commits": 191,
+        "recent_90d": 191,
+        "recent_180d": 191,
+        "recent_365d": 191,
+        "last_commit_date": "2026-03-27T16:08:42+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 63.0,
+        "commit_frequency": 63.67,
         "consistency_score": 0,
-        "activity_rate": 2.1,
+        "activity_rate": 2.122,
         "days_since_last_commit": 0,
         "first_commit_date": "2025-12-28T17:01:51+00:00"
       },
@@ -59,7 +59,7 @@
       "avg_commit_size": null,
       "largest_commit": null,
       "smallest_commit": null,
-      "commit_velocity": 63.0,
+      "commit_velocity": 63.67,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -171,7 +171,7 @@
       "has_tests": true,
       "has_docs": true,
       "language_count": 6,
-      "size_kb": 10773,
+      "size_kb": 10992,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
@@ -179,7 +179,7 @@
       "days_since_last_push": 0,
       "ai_summary": "# Technical Summary: github-stats-spark\n\n**Stats Spark** is a comprehensive GitHub analytics and visualization platform that automatically generates beautiful SVG-based profile statistics and AI-powered repository analysis reports. The project combines multiple technologies to create an end-to-end solution that transforms GitHub activity data into actionable insights, featuring a unique \"Spark Score\" metric (0-100), five categories of visual statistics (overview, heatmap, languages, streaks, fun stats), and AI-generated technical summaries using Claude Haiku integration.\n\nThe architecture leverages **Python** as the core backend (49.5% of codebase) with key dependencies including PyGithub for GitHub API interaction, svgwrite for dynamic SVG generation, PyYAML for configuration management, and requests for HTTP operations. The frontend comprises **JavaScript** (23.1%), **HTML** (1.4%), and **CSS** (10.4%) to deliver a mobile-first interactive dashboard with Chart.js visualizations, responsive design patterns (320-768px viewports), and WCAG 2.1 AA accessibility compliance, while **PowerShell** (15.6%) handles GitHub Actions workflow automation for daily scheduled updates.\n\nKey technical innovations include an intelligent repository ranking algorithm (30% popularity / 45% activity / 25% health weighting), a smart caching system that reduces API calls by 80-95%, exponential backoff retry logic for rate limit handling, and a three-tier fallback mechanism for AI summaries (Claude → README extraction → metadata). The project demonstrates highly active development with 185 commits over 90 days, accelerating activity patterns, and enterprise-ready features such as YAML-based configuration, modular extensible architecture, progress tracking, and local CLI tooling for pre-deployment testing.\n\nThis solution targets developers, teams, open-source maintainers, and technical leaders who need professional GitHub analytics; it uniquely combines automated daily SVG generation with sophisticated AI analysis, eliminating manual maintenance while providing both visual appeal and technical depth through GitHub Pages deployment.",
       "rank": 1,
-      "composite_score": 88.27,
+      "composite_score": 88.28,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -215,7 +215,7 @@
       "screenshot": {
         "path": "output/screenshots/github-stats-spark.png",
         "url": "https://markhazleton.github.io/github-stats-spark/",
-        "captured_at": "2026-03-27T15:04:07.750075+00:00",
+        "captured_at": "2026-03-27T16:08:53.944480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 60.94
@@ -879,7 +879,7 @@
       "screenshot": {
         "path": "output/screenshots/mark-hazleton-s-notes.png",
         "url": "https://markhazleton.github.io/mark-hazleton-s-notes/",
-        "captured_at": "2026-03-27T15:04:07.751075+00:00",
+        "captured_at": "2026-03-27T16:08:53.945480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 101.92
@@ -989,7 +989,7 @@
       "screenshot": {
         "path": "output/screenshots/museumspark.png",
         "url": "https://markhazleton.github.io/MuseumSpark/",
-        "captured_at": "2026-03-27T15:04:07.753075+00:00",
+        "captured_at": "2026-03-27T16:08:53.947479+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 98.35
@@ -1099,7 +1099,7 @@
       "screenshot": {
         "path": "output/screenshots/webspark.httpclientutility.png",
         "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-        "captured_at": "2026-03-27T15:04:07.756075+00:00",
+        "captured_at": "2026-03-27T16:08:53.950480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 42.3
@@ -1496,7 +1496,7 @@
       "screenshot": {
         "path": "output/screenshots/git-spark.png",
         "url": "https://markhazleton.github.io/git-spark/",
-        "captured_at": "2026-03-27T15:04:07.750075+00:00",
+        "captured_at": "2026-03-27T16:08:53.944480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 184.96
@@ -1862,7 +1862,7 @@
       "screenshot": {
         "path": "output/screenshots/tailwindspark.png",
         "url": "https://markhazleton.github.io/TailwindSpark/",
-        "captured_at": "2026-03-27T15:04:07.754075+00:00",
+        "captured_at": "2026-03-27T16:08:53.948480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 70.4
@@ -1902,7 +1902,7 @@
         "repository_name": "RESTRunner",
         "total_commits": 99,
         "recent_90d": 38,
-        "recent_180d": 54,
+        "recent_180d": 53,
         "recent_365d": 63,
         "last_commit_date": "2026-03-26T03:14:17+00:00",
         "patterns": [
@@ -1935,7 +1935,7 @@
       "days_since_last_push": 1,
       "ai_summary": "# RESTRunner - Technical Summary\n\n**RESTRunner** is a comprehensive .NET 10 (LTS) solution designed for automated REST API testing, performance benchmarking, and regression testing that imports and executes Postman collections at scale. The application provides dual interfaces—a console application for batch processing and a Razor Pages web application for interactive testing—enabling developers to validate APIs through load testing, performance analysis, and detailed statistical reporting with CSV export capabilities.\n\nThe project demonstrates strong engineering practices with a modular architecture spanning multiple layers: a domain model (RESTRunner.Domain) with comprehensive unit test coverage (21/21 tests, 100% pass rate), a web tier (RESTRunner.Web) built on ASP.NET Core Razor Pages, and specialized components for Postman collection parsing, HTTP client utilities, and performance metrics aggregation. Key features include configurable load testing parameters, response time percentile analysis, success rate tracking, a built-in sample CRUD API for demonstration, and integrated statistics generation.\n\nRESTRunner recently underwent a significant upgrade to .NET 10 LTS, achieving notable performance improvements (19% faster builds at 4.1s, 25% faster test execution at 0.6s) while optimizing package dependencies from 17 to 15 packages with 93% at latest stable versions and zero security vulnerabilities. The technology stack leverages MSTest v4 with code quality analyzers, modern C# patterns, and framework-integrated libraries (System.Text.Json, security cryptography) to minimize external dependencies and maximize runtime efficiency.\n\nThe project is particularly valuable for QA engineers and API developers who need automated regression testing workflows, DevOps teams requiring performance benchmarking across multiple API instances, and organizations seeking to import existing Postman test collections into a scalable, performant .NET-based testing framework without vendor lock-in. Its active development pattern (16 commits in 90 days, accelerating activity) and comprehensive documentation including upgrade guides suggest ongoing maintenance and future feature expansion.",
       "rank": 8,
-      "composite_score": 54.73,
+      "composite_score": 54.66,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -2701,7 +2701,7 @@
       "screenshot": {
         "path": "output/screenshots/reactsparkportfolio.png",
         "url": "https://reactspark.markhazleton.com/",
-        "captured_at": "2026-03-27T15:04:07.753075+00:00",
+        "captured_at": "2026-03-27T16:08:53.947479+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 69.18
@@ -3094,7 +3094,7 @@
       "screenshot": {
         "path": "output/screenshots/jsbootspark.png",
         "url": "https://markhazleton.github.io/JsBootSpark/",
-        "captured_at": "2026-03-27T15:04:07.750075+00:00",
+        "captured_at": "2026-03-27T16:08:53.944480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.46
@@ -3164,7 +3164,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1804,
+      "age_days": 1805,
       "days_since_last_push": 7,
       "ai_summary": "# Technical Summary: markhazleton Repository\n\nThis repository serves as Mark Hazleton's personal portfolio and learning archive—a curated collection demonstrating his continuous skill development across modern web technologies and software architecture practices. The primary purpose is to showcase featured projects including **WebSpark** (a comprehensive web application hosting platform for demos) and **ReactSpark** (a React+Vite application deployed on Azure Static Web Applications), alongside a growing body of technical articles covering software development philosophy, DevOps practices, and AI-assisted development methodologies.\n\nThe repository demonstrates expertise across a diverse technology stack including React, Vite, Azure cloud services (Static Web Applications, DevOps), and modern CI/CD automation patterns, with an emphasis on pragmatic software engineering principles such as spec-driven development, fork management automation, and late-stage deployment governance. The architecture reflects a professional approach to full-stack development, with projects deployed on cloud platforms and integrated with industry-standard tools like Postman and Azure DevOps for API testing and project management.\n\nWhat distinguishes this portfolio is its dual focus on both **technical execution** (working code, deployed applications) and **thought leadership** (published articles addressing strategic software development topics like accountability, evolution over revolution, and feature-to-outcome alignment), making it valuable for both practitioners seeking reference implementations and organizations evaluating senior engineering talent with architectural maturity.",
       "rank": 13,
@@ -3247,7 +3247,7 @@
         "commit_frequency": 1.0,
         "consistency_score": 0,
         "activity_rate": 0.033,
-        "days_since_last_commit": 17,
+        "days_since_last_commit": 18,
         "first_commit_date": "2024-03-07T13:46:50+00:00"
       },
       "commit_metrics": null,
@@ -3308,7 +3308,7 @@
       "is_private": false,
       "is_archived": false,
       "age_days": 750,
-      "days_since_last_push": 17,
+      "days_since_last_push": 18,
       "ai_summary": "# KeyPressCounter - Technical Summary\n\n**KeyPressCounter** is a lightweight Windows system tray utility built in C# (.NET 10.0) that monitors keyboard and mouse activity alongside real-time system performance metrics, designed to run silently in the background without recording keystroke content or transmitting data. The application provides comprehensive input tracking (keystroke/click counts, peak activity rates, inactivity detection) and performance monitoring (CPU, memory, disk I/O, network throughput) through a three-tab WinForms dashboard with 60-second rolling graphs, hardware information via WMI, and configurable activity logging with daily summaries.\n\nThe architecture leverages **SharpHook** for global low-level input event hooking on background threads, **System.Management** for WMI-based hardware enumeration and Windows Performance Counters for real-time system metrics, and implements thread-safe counters with lock-protected increments to handle concurrent input events. Key design patterns include an `ApplicationContext` subclass managing tray integration and lifecycle, GDI+ anti-aliased graph rendering for historical data visualization, P/Invoke wrappers around `GetLastInputInfo` for idle detection, and JSON configuration persistence with Windows Registry synchronization for autostart capabilities.\n\nNotable features include idle-period filtering with configurable thresholds, single-instance enforcement, direct access to Windows system tools (Task Manager, Resource Monitor, Performance Monitor), and comprehensive logging at user-configurable intervals with automatic daily summary generation at midnight. The project targets individual users and productivity analysts seeking passive activity monitoring and system performance awareness without privacy concerns, with declining recent activity (3 commits in 90 days) suggesting maintenance mode rather than active development, though the codebase demonstrates professional separation of concerns and Windows-native integration patterns suitable for production desktop applications.",
       "rank": 14,
       "composite_score": 36.13,
@@ -3823,7 +3823,7 @@
       "screenshot": {
         "path": "output/screenshots/texecon.png",
         "url": "https://markhazleton.github.io/Texecon/",
-        "captured_at": "2026-03-27T15:04:07.756075+00:00",
+        "captured_at": "2026-03-27T16:08:53.950480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 458.92
@@ -4780,7 +4780,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 53,
+      "age_days": 54,
       "days_since_last_push": 1,
       "ai_summary": "# SupportSpark: Technical Summary\n\n**SupportSpark** is a TypeScript-based support network platform designed to help individuals share life journey updates with trusted circles during challenging times, addressing the burden of repetitive personal updates through a centralized, calming interface. The platform implements a role-based architecture where members create and manage journey conversations while supporters receive invitations to read updates and participate in threaded discussions, with features including invitation-only access control, real-time engagement tracking, and a demo mode for exploration without authentication.\n\nThe application employs a modern, full-stack TypeScript architecture with **React 19 + Vite** on the frontend, **Express 5** for the backend API, and **Tailwind CSS 4** with **Radix UI** and **shadcn/ui** components for an accessible, WCAG-compliant interface. State management leverages **TanStack React Query** for server-side caching, **Wouter** for lightweight routing, and **Zod** for end-to-end runtime type validation, while authentication uses **Passport.js** with session-based security and a JSON-based storage layer for data persistence.\n\nWhat distinguishes SupportSpark is its intentional focus on compassionate UX design—featuring a calming teal/sage color scheme, distraction-free layout, and accessibility-first component primitives—combined with production-ready Windows/IIS deployment automation via PowerShell scripts and iisnode integration. The project maintains a documented governance model (constitution.md), architectural separation between client/server/shared code, and support for both client-side localStorage demo mode (GitHub Pages deployment) and server-backed production environments, making it suitable for healthcare, personal wellness, and community support use cases where sensitive communication infrastructure is required.",
       "rank": 16,
@@ -4820,7 +4820,7 @@
       "screenshot": {
         "path": "output/screenshots/supportspark.png",
         "url": "https://markhazleton.github.io/SupportSpark/",
-        "captured_at": "2026-03-27T15:04:07.754075+00:00",
+        "captured_at": "2026-03-27T16:08:53.948480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 139.77
@@ -4889,7 +4889,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 3062,
+      "age_days": 3063,
       "days_since_last_push": 1,
       "ai_summary": "# Technical Summary: sql2csv\n\n**sql2csv** is a comprehensive .NET 10 toolkit for SQLite database analysis and data extraction, providing both command-line and web-based interfaces for discovering databases, exporting tables to CSV format, inspecting schemas, and automatically generating C# data transfer objects (DTOs). The solution follows a modular architecture with a shared core library (`Sql2Csv.Core`) serving dual CLI (`sql2csv.console`) and ASP.NET Core MVC web (`sql2csv.web`) frontends, complemented by dedicated projects for testing (MSTest) and performance benchmarking (BenchmarkDotNet). Key capabilities include recursive SQLite file discovery, selective or bulk table export with CSV serialization, multi-format schema reporting (text/JSON/Markdown), and intelligent C# DTO generation with customizable namespacing, enabling developers to rapidly integrate SQLite data into .NET applications. The project demonstrates modern .NET practices including configuration management via `appsettings.json`, comprehensive test coverage with CI/CD integration (GitHub Actions), and a hybrid tech stack combining C# backend logic with HTML/CSS/JavaScript frontend components, making it well-suited for database migration workflows, data integration pipelines, and rapid prototyping scenarios involving SQLite databases.",
       "rank": 17,
@@ -5071,7 +5071,7 @@
       "screenshot": {
         "path": "output/screenshots/markhazleton.github.io.png",
         "url": "https://markhazleton.github.io/",
-        "captured_at": "2026-03-27T15:04:07.751075+00:00",
+        "captured_at": "2026-03-27T16:08:53.945480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 59.36
@@ -5673,7 +5673,7 @@
       "screenshot": {
         "path": "output/screenshots/mechanicsofmotherhood.png",
         "url": "http://mechanicsofmotherhood.com/",
-        "captured_at": "2026-03-27T15:04:07.752075+00:00",
+        "captured_at": "2026-03-27T16:08:53.946480+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 277.23
@@ -5976,7 +5976,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1151,
+      "age_days": 1152,
       "days_since_last_push": 74,
       "ai_summary": "# Technical Summary: WebSpark.ArtSpark\n\n**WebSpark.ArtSpark** is a comprehensive .NET 10.0 solution that provides a complete client library and interactive web application for the Art Institute of Chicago's public REST API, implementing all 33 endpoints across 6 major categories with strongly-typed C# models and async/await patterns. The solution's standout feature is its revolutionary AI chat system with multiple personas (Artwork, Artist, Curator, Historian) that leverage OpenAI's Vision and language models to enable conversational interactions with artwork data, complete with persistent chat history, visual analysis capabilities, and externalized prompt management for hot-reloading persona definitions. The architecture comprises four main projects—a reusable Client library, an AI Agent system with configurable prompts and conversation memory, an ASP.NET Core MVC Demo application with user authentication/collections, and a Console utility—demonstrating modern .NET development practices including dependency injection, IIIF image URL construction, Elasticsearch integration, and JSON deserialization using System.Text.Json. Key technical highlights include minimal external dependencies, graceful HTTP error handling, flexible querying with pagination and field selection, responsive Bootstrap 5 UI with 26+ theme support, and SQLite-backed user persistence, all documented with a live demo at artspark.markhazleton.com. The project targets developers and cultural institutions seeking to build intelligent art discovery applications while showcasing best practices in .NET ecosystem development, API client design, and AI integration patterns.",
       "rank": 23,
@@ -6379,7 +6379,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 303,
+      "age_days": 304,
       "days_since_last_push": 43,
       "ai_summary": "# Technical Summary: WebSpark.PrismSpark\n\n**WebSpark.PrismSpark** is a high-performance C#/.NET port of the popular PrismJS syntax highlighting library, providing advanced code tokenization and HTML rendering for 24 programming languages with support for .NET 10.0 LTS. The project implements a sophisticated architecture featuring a grammar-based tokenization engine, extensible plugin and hook systems, and a theme manager that supports both built-in and custom CSS-based themes, enabling developers to integrate professional syntax highlighting into web applications, documentation platforms, and code editors. Built with performance as a core concern, the library offers async processing, caching mechanisms, and flexible options for line highlighting, custom CSS classes, and metadata-driven customization, while maintaining full compatibility with ASP.NET MVC/Razor views through dependency injection integration. The codebase is well-engineered with a comprehensive 52-test MSTest suite covering grammar creation, tokenization, HTML generation, and end-to-end integration workflows, along with interactive demo pages including a live editor and markdown renderer powered by Markdig. What distinguishes this project is its seamless .NET ecosystem integration through service registration patterns, rendering capabilities that go beyond tokenization to produce fully styled HTML output, and a developer-friendly API that balances simplicity for common use cases with deep extensibility for advanced scenarios. This makes it particularly valuable for .NET developers building documentation systems, code review platforms, educational tools, or any application requiring embeddable, themeable syntax highlighting without JavaScript dependencies.",
       "rank": 27,
@@ -7430,7 +7430,7 @@
       "screenshot": {
         "path": "output/screenshots/react-native-web-start.png",
         "url": "https://markhazleton.github.io/react-native-web-start/",
-        "captured_at": "2026-03-27T15:04:07.753075+00:00",
+        "captured_at": "2026-03-27T16:08:53.947479+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 48.8
@@ -8430,7 +8430,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 930,
+      "age_days": 931,
       "days_since_last_push": 221,
       "ai_summary": "# PHPDocSpark: Technical Summary\n\nPHPDocSpark is an open-source PHP documentation and data exploration platform that demonstrates modern hybrid web development practices by integrating a traditional PHP 8.2+ backend with a contemporary Vite-powered asset pipeline. The project serves as a comprehensive reference implementation showcasing markdown-based documentation management with full-text search, interactive data visualization (CSV analysis, Chart.js integration), SQLite database operations, GitHub API integration, and responsive Bootstrap 5 UI components—all built on a clean architecture pattern that separates server-side logic from client-side asset compilation. Key architectural innovations include its dual-build system (PHP backend + Vite frontend toolchain), content caching mechanisms, API rate-limiting strategies, and Azure Pipeline deployment automation, making it equally valuable as an educational resource for developers learning modern PHP patterns and as a functional documentation platform for technical teams. The tech stack leverages DataTables for interactive grids, Parsedown for markdown parsing, SCSS for advanced styling, and comprehensive DevOps tooling (ESLint, Prettier, Azure hosting), targeting PHP developers, full-stack engineers, and technical writers seeking production-ready reference implementations. With 27 dependencies, minimal recent activity (0 commits in 90 days but 36 in the past year), and moderate tech stack currency (50/100), the project represents a stable, mature implementation that successfully demonstrates bridging traditional server-side PHP development with modern JavaScript tooling ecosystems.",
       "rank": 37,
@@ -8470,7 +8470,7 @@
     }
   ],
   "metadata": {
-    "generated_at": "2026-03-27T15:07:11.796055+00:00",
+    "generated_at": "2026-03-27T16:11:52.173514+00:00",
     "schema_version": "2.1.0",
     "generator": "unified_data_generator"
   }
