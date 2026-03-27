@@ -58,6 +58,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - No more `TypeError: can't subtract offset-naive and offset-aware datetimes`
   - Comprehensive cross-platform tests added
 
+### Documented
+- Completed spec `.documentation/specs/001-remediate-high-issues` and recorded closure evidence:
+  - Follow-up audit confirms no remaining HIGH findings for the baseline categories.
+  - Workflow responsibilities were split into narrower modules (`cli`/`cache` orchestration helpers) and regression coverage expanded for high-risk paths.
+- Completed spec `.documentation/specs/001-security-pr-api-upgrade` and recorded rollout outcomes:
+  - Repository records now carry additive `pull_request_summary` and `security_summary` payloads with explicit availability and reason semantics.
+  - GitHub REST API version rollout is staged via config gates with fallback behavior and operational logging.
+
 ### Performance
 - Typical weekly runs: <1 minute (was ~5 minutes) for repositories with few updates
 - API calls reduced by 80-95% when most repositories are unchanged

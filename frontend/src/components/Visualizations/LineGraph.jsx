@@ -80,8 +80,8 @@ export default function LineGraph({
         borderWidth: 3,
         fill: fill,
         tension: 0.4, // Curved lines
-        pointRadius: 6, // T044: Larger touch targets (increased from 4)
-        pointHoverRadius: 10, // T044: Larger hover radius for touch
+        pointRadius: 6, // Larger points improve touch hit targets.
+        pointHoverRadius: 10, // Extra hover radius helps touch interactions.
         pointBackgroundColor: lineColor,
         pointBorderColor: "#ffffff",
         pointBorderWidth: 2,
@@ -109,12 +109,12 @@ export default function LineGraph({
       },
       tooltip: {
         enabled: true,
-        padding: 12, // T044: Larger touch target area
+        padding: 12, // Extra spacing improves tooltip legibility.
         titleFont: {
-          size: 14, // T047: Minimum 14px for mobile readability
+          size: 14, // Keep tooltip text readable on mobile.
         },
         bodyFont: {
-          size: 14, // T047: Minimum 14px for mobile readability
+          size: 14, // Keep tooltip text readable on mobile.
         },
         callbacks: {
           label: (context) => {
@@ -137,8 +137,8 @@ export default function LineGraph({
           display: false,
         },
         ticks: {
-          maxRotation: 45, // T045: Rotate labels for better mobile fit
-          minRotation: 45, // T045: Always rotate on mobile for consistency
+          maxRotation: 45, // Rotate labels to reduce overlap on narrow viewports.
+          minRotation: 45, // Keep a consistent rotated label layout.
           font: {
             size: 12, // Slightly larger for mobile readability
           },

@@ -1,0 +1,111 @@
+SPECS|path|status|notes
+SPEC|.documentation/specs/001-remediate-high-issues|completed-needs-changelog|pr-1.md
+SPEC|.documentation/specs/001-security-pr-api-upgrade|completed-needs-changelog|pr-2.md
+DOCS|path|disposition|category|usefulness
+DOC|.documentation/SPECKIT_VERSION|keep|living_reference|95
+DOC|.documentation/copilot/audit/2026-03-07_followup-high-findings-remediation-check.md|archive|completed_audit|52
+DOC|.documentation/copilot/audit/2026-03-07_followup-high-findings.md|archive|completed_audit|52
+DOC|.documentation/copilot/audit/2026-03-07_results.md|archive|completed_audit|52
+DOC|.documentation/memory/constitution.md|keep|living_reference|95
+DOC|.documentation/scripts/powershell/archive-context.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/check-prerequisites.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/common.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/create-new-feature.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/evolution-context.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/get-pr-context.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/harvest.ps1|rewrite|living_reference|18
+DOC|.documentation/scripts/powershell/migrate-to-documentation.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/quickfix-context.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/release-context.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/setup-plan.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/site-audit.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/sync-upstream.ps1|keep|living_reference|83
+DOC|.documentation/scripts/powershell/update-agent-context.ps1|keep|living_reference|83
+DOC|.documentation/specs/001-remediate-high-issues/data-model.md|keep|living_reference|93
+DOC|.documentation/specs/001-remediate-high-issues/plan.md|keep|living_reference|93
+DOC|.documentation/specs/001-remediate-high-issues/quickstart.md|keep|living_reference|93
+DOC|.documentation/specs/001-remediate-high-issues/research.md|keep|living_reference|93
+DOC|.documentation/specs/001-remediate-high-issues/spec.md|keep|living_reference|93
+DOC|.documentation/specs/001-remediate-high-issues/tasks.md|keep|living_reference|93
+DOC|.documentation/specs/001-remediate-high-issues/checklists/requirements.md|keep|living_reference|93
+DOC|.documentation/specs/001-remediate-high-issues/contracts/remediation-contract.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/data-model.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/plan.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/quickstart.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/research.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/spec.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/tasks.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/checklists/requirements.md|keep|living_reference|93
+DOC|.documentation/specs/001-security-pr-api-upgrade/contracts/repositories-json.md|keep|living_reference|93
+DOC|.documentation/specs/pr-review/pr-1.md|archive|completed_review|52
+DOC|.documentation/specs/pr-review/pr-2.md|archive|completed_review|52
+DOC|.documentation/templates/agent-file-template.md|keep|living_reference|84
+DOC|.documentation/templates/checklist-template.md|keep|living_reference|84
+DOC|.documentation/templates/plan-template.md|keep|living_reference|84
+DOC|.documentation/templates/spec-template.md|keep|living_reference|84
+DOC|.documentation/templates/tasks-template.md|keep|living_reference|84
+DOC|docs/.nojekyll|archive|legacy_root_doc|29
+DOC|docs/404.html|archive|legacy_root_doc|29
+DOC|docs/CNAME|archive|legacy_root_doc|29
+DOC|docs/favicon.svg|archive|legacy_root_doc|29
+DOC|docs/index.html|archive|legacy_root_doc|29
+DOC|docs/manifest.json|archive|legacy_root_doc|29
+DOC|docs/README.md|archive|legacy_root_doc|29
+DOC|docs/robots.txt|archive|legacy_root_doc|29
+DOC|docs/sitemap.xml|archive|legacy_root_doc|29
+DOC|docs/sw.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-B4Pzt7z0.js|archive|legacy_root_doc|27
+DOC|docs/assets/site-BcjzX1h6.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-BNT9ORcn.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-BnYktt8_.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-BSUKqztk.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-CEdDYzEH.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-CgX14xvs.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-CSX4h4Mj.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-DHYqNqw9.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-Jk1gKyRq.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-oa88_ySV.js|archive|legacy_root_doc|29
+DOC|docs/assets/site-qfdZ_fiB.css|archive|legacy_root_doc|27
+DOC|docs/data/repositories.json|archive|legacy_root_doc|29
+DOC|docs/output/.gitkeep|archive|legacy_root_doc|27
+DOC|docs/output/fun.svg|archive|legacy_root_doc|29
+DOC|docs/output/heatmap.svg|archive|legacy_root_doc|29
+DOC|docs/output/languages.svg|archive|legacy_root_doc|29
+DOC|docs/output/overview.svg|archive|legacy_root_doc|29
+DOC|docs/output/README.md|archive|legacy_root_doc|27
+DOC|docs/output/release.svg|archive|legacy_root_doc|27
+DOC|docs/output/streaks.svg|archive|legacy_root_doc|27
+DOC|docs/output/reports/markhazleton-analysis.md|archive|legacy_root_doc|29
+DOC|docs/output/screenshots/git-spark.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/github-stats-spark.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/jsbootspark.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/mark-hazleton-s-notes.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/markhazleton.github.io.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/mechanicsofmotherhood.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/museumspark.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/react-native-web-start.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/reactsparkportfolio.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/supportspark.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/tailwind-demo.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/tailwindspark.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/texecon.png|archive|legacy_root_doc|27
+DOC|docs/output/screenshots/webspark.httpclientutility.png|archive|legacy_root_doc|27
+CHANGELOG_GAPS|spec_or_path|suggested_entry_title
+GAP|001-remediate-high-issues|
+GAP|001-security-pr-api-upgrade|
+CODE_COMMENTS|file|line|snippet
+COMMENT|frontend/src/components/DrillDown/RepositoryDetail.jsx|29|// T060: Collapsible sections state
+COMMENT|frontend/src/components/DrillDown/RepositoryDetail.jsx|41|// T067-T069: Swipe gesture handling
+COMMENT|frontend/src/components/DrillDown/RepositoryDetail.jsx|81|onNext(); // T070: Next repository
+COMMENT|frontend/src/components/DrillDown/RepositoryDetail.jsx|83|onPrevious(); // T070: Previous repository
+COMMENT|frontend/src/components/Visualizations/BarChart.jsx|107|mode: "nearest", // T046: Touch-friendly interaction
+COMMENT|frontend/src/components/Visualizations/BarChart.jsx|124|padding: 12, // T044: Larger touch target area for tooltips
+COMMENT|frontend/src/components/Visualizations/BarChart.jsx|126|size: 14, // T047: Minimum 14px for mobile readability
+COMMENT|frontend/src/components/Visualizations/BarChart.jsx|129|size: 14, // T047: Minimum 14px for mobile readability
+COMMENT|frontend/src/components/Visualizations/LineGraph.jsx|83|pointRadius: 6, // T044: Larger touch targets (increased from 4)
+COMMENT|frontend/src/components/Visualizations/LineGraph.jsx|84|pointHoverRadius: 10, // T044: Larger hover radius for touch
+COMMENT|frontend/src/components/Visualizations/LineGraph.jsx|112|padding: 12, // T044: Larger touch target area
+COMMENT|frontend/src/components/Visualizations/LineGraph.jsx|114|size: 14, // T047: Minimum 14px for mobile readability
+COMMENT|frontend/src/components/Visualizations/LineGraph.jsx|117|size: 14, // T047: Minimum 14px for mobile readability
+COMMENT|frontend/src/components/Visualizations/LineGraph.jsx|140|maxRotation: 45, // T045: Rotate labels for better mobile fit
+COMMENT|frontend/src/components/Visualizations/LineGraph.jsx|141|minRotation: 45, // T045: Always rotate on mobile for consistency

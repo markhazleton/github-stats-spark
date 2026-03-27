@@ -6,6 +6,8 @@
 
 **Core Architecture:** Python 3.11+ backend orchestrates GitHub data fetching → statistical analysis → SVG generation → AI summarization → unified JSON export. React 19 frontend consumes JSON to build interactive visualizations.
 
+**Documentation Boundary:** `docs/` is the GitHub Pages publishing source tree (built site output), not the primary documentation corpus. In all prompts/agents/workflows, treat `docs/` as deployment/source artifacts, not as user-documentation files for archival classification.
+
 ## Critical Workflows
 
 ### Primary Development Command (All-in-One)
@@ -187,6 +189,7 @@ spark cache --clear  # Or delete .cache/ directory
 - **Don't** create abstractions without solving real problems (avoid premature optimization)
 - **Don't** hardcode usernames in config (use CLI args or env vars)
 - **Don't** ignore rate limit errors (workflow handles automatically with cache)
+- **Don't** classify `docs/` as stale documentation in harvest/release/archive prompts; it is a publishing source directory for GitHub Pages
 - **Don't** add new primary user guides outside `/documentation`; approved exceptions in this repo are the root `README.md`, `.documentation/` framework artifacts, and metadata READMEs under `frontend/`, `frontend/public/`, `docs/`, and `output/`
 
 ## Key Files Reference
@@ -220,3 +223,4 @@ spark cache --clear  # Or delete .cache/ directory
 - API reference: [documentation/api/api-reference.md](documentation/api/api-reference.md)
 - Feature specs and planning artifacts: [.documentation/specs/](.documentation/specs/)
 - Frontend docs: [frontend/README.md](frontend/README.md)
+- GitHub Pages publish source (not documentation corpus): [docs/](docs/)

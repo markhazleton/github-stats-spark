@@ -85,6 +85,7 @@ Each module MUST have one well-defined purpose. Business logic MUST be testable 
 ### Documentation Standards
 - Primary user-facing documentation lives in `/documentation`
 - Approved metadata/framework exceptions are limited to the root `README.md`, `.documentation/` artifacts, `frontend/README.md`, `frontend/public/README.md`, `docs/README.md`, and `output/README.md`
+- `/docs` is the GitHub Pages publishing source tree (built site artifacts), not the project documentation corpus; governance and harvest workflows MUST treat it as deployment/source output, not as archival documentation content
 - Generated outputs go to `output/` and `data/`
 - Examples use canonical demo account: `markhazleton`
 

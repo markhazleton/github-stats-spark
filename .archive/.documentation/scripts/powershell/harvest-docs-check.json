@@ -1,0 +1,2597 @@
+{
+    "bak_files":  [
+
+                  ],
+    "harvest_timestamp":  "2026-03-27T11:05:05Z",
+    "harvest_date":  "2026-03-27",
+    "archive_existing":  [
+                             ".archive/.documentation/copilot/audit/2026-03-07_followup-high-findings-remediation-check.md",
+                             ".archive/.documentation/copilot/audit/2026-03-07_followup-high-findings.md",
+                             ".archive/.documentation/copilot/audit/2026-03-07_results.md",
+                             ".archive/.documentation/scripts/powershell/harvest-output.json",
+                             ".archive/.documentation/scripts/powershell/harvest-report.txt",
+                             ".archive/.documentation/specs/001-remediate-high-issues/data-model.md",
+                             ".archive/.documentation/specs/001-remediate-high-issues/plan.md",
+                             ".archive/.documentation/specs/001-remediate-high-issues/quickstart.md",
+                             ".archive/.documentation/specs/001-remediate-high-issues/research.md",
+                             ".archive/.documentation/specs/001-remediate-high-issues/spec.md",
+                             ".archive/.documentation/specs/001-remediate-high-issues/tasks.md",
+                             ".archive/.documentation/specs/001-remediate-high-issues/checklists/requirements.md",
+                             ".archive/.documentation/specs/001-remediate-high-issues/contracts/remediation-contract.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/data-model.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/plan.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/quickstart.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/research.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/spec.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/tasks.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/checklists/requirements.md",
+                             ".archive/.documentation/specs/001-security-pr-api-upgrade/contracts/repositories-json.md",
+                             ".archive/.documentation/specs/pr-review/pr-1.md",
+                             ".archive/.documentation/specs/pr-review/pr-2.md"
+                         ],
+    "summary":  {
+                    "changelog_gaps":  0,
+                    "specs_completed":  0,
+                    "bak_files_found":  0,
+                    "specs_in_progress":  0,
+                    "code_comments_found":  0,
+                    "specs_draft":  0,
+                    "docs_to_archive":  0
+                },
+    "specs":  [
+
+              ],
+    "repo_root":  "C:/GitHub/MarkHazleton/github-stats-spark",
+    "docs":  {
+                 "living_reference":  [
+                                          {
+                                              "size_bytes":  46,
+                                              "path":  ".documentation/SPECKIT_VERSION",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "AUTHORITATIVE_REFERENCE",
+                                              "disposition":  "keep",
+                                              "name":  "SPECKIT_VERSION",
+                                              "score_breakdown":  {
+                                                                      "total":  95,
+                                                                      "authority":  24,
+                                                                      "operational_relevance":  38,
+                                                                      "uniqueness":  18,
+                                                                      "freshness":  15
+                                                                  },
+                                              "usefulness_score":  95,
+                                              "extension":  ""
+                                          },
+                                          {
+                                              "size_bytes":  3331,
+                                              "path":  ".documentation/copilot/harvest-2026-03-27.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "RESEARCH_OR_CONTEXT",
+                                              "disposition":  "consolidate",
+                                              "name":  "harvest-2026-03-27.md",
+                                              "score_breakdown":  {
+                                                                      "total":  48,
+                                                                      "authority":  9,
+                                                                      "operational_relevance":  15,
+                                                                      "uniqueness":  12,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  48,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  4084,
+                                              "path":  ".documentation/memory/constitution.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "AUTHORITATIVE_REFERENCE",
+                                              "disposition":  "keep",
+                                              "name":  "constitution.md",
+                                              "score_breakdown":  {
+                                                                      "total":  95,
+                                                                      "authority":  24,
+                                                                      "operational_relevance":  38,
+                                                                      "uniqueness":  18,
+                                                                      "freshness":  15
+                                                                  },
+                                              "usefulness_score":  95,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  6552,
+                                              "path":  ".documentation/scripts/powershell/archive-context.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "archive-context.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  4933,
+                                              "path":  ".documentation/scripts/powershell/check-prerequisites.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "check-prerequisites.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  3879,
+                                              "path":  ".documentation/scripts/powershell/common.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "common.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  9799,
+                                              "path":  ".documentation/scripts/powershell/create-new-feature.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "create-new-feature.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  6231,
+                                              "path":  ".documentation/scripts/powershell/evolution-context.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "evolution-context.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  7258,
+                                              "path":  ".documentation/scripts/powershell/get-pr-context.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "get-pr-context.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  0,
+                                              "path":  ".documentation/scripts/powershell/harvest-docs-check.json",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "harvest-docs-check.json",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".json"
+                                          },
+                                          {
+                                              "size_bytes":  27731,
+                                              "path":  ".documentation/scripts/powershell/harvest.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "STALE_REFERENCE",
+                                              "disposition":  "rewrite",
+                                              "name":  "harvest.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  18,
+                                                                      "authority":  0,
+                                                                      "operational_relevance":  10,
+                                                                      "uniqueness":  8,
+                                                                      "freshness":  0
+                                                                  },
+                                              "usefulness_score":  18,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  19925,
+                                              "path":  ".documentation/scripts/powershell/migrate-to-documentation.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "migrate-to-documentation.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  4379,
+                                              "path":  ".documentation/scripts/powershell/quickfix-context.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "quickfix-context.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  7441,
+                                              "path":  ".documentation/scripts/powershell/release-context.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "release-context.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  1910,
+                                              "path":  ".documentation/scripts/powershell/setup-plan.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "setup-plan.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  22288,
+                                              "path":  ".documentation/scripts/powershell/site-audit.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "site-audit.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  36202,
+                                              "path":  ".documentation/scripts/powershell/sync-upstream.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "sync-upstream.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  21094,
+                                              "path":  ".documentation/scripts/powershell/update-agent-context.ps1",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "OPERATIONS_RUNBOOK",
+                                              "disposition":  "keep",
+                                              "name":  "update-agent-context.ps1",
+                                              "score_breakdown":  {
+                                                                      "total":  83,
+                                                                      "authority":  20,
+                                                                      "operational_relevance":  34,
+                                                                      "uniqueness":  15,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  83,
+                                              "extension":  ".ps1"
+                                          },
+                                          {
+                                              "size_bytes":  464,
+                                              "path":  ".documentation/templates/agent-file-template.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "ENGINEERING_PATTERN",
+                                              "disposition":  "keep",
+                                              "name":  "agent-file-template.md",
+                                              "score_breakdown":  {
+                                                                      "total":  84,
+                                                                      "authority":  22,
+                                                                      "operational_relevance":  31,
+                                                                      "uniqueness":  16,
+                                                                      "freshness":  15
+                                                                  },
+                                              "usefulness_score":  84,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  1312,
+                                              "path":  ".documentation/templates/checklist-template.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "ENGINEERING_PATTERN",
+                                              "disposition":  "keep",
+                                              "name":  "checklist-template.md",
+                                              "score_breakdown":  {
+                                                                      "total":  84,
+                                                                      "authority":  22,
+                                                                      "operational_relevance":  31,
+                                                                      "uniqueness":  16,
+                                                                      "freshness":  15
+                                                                  },
+                                              "usefulness_score":  84,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  3744,
+                                              "path":  ".documentation/templates/plan-template.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "ENGINEERING_PATTERN",
+                                              "disposition":  "keep",
+                                              "name":  "plan-template.md",
+                                              "score_breakdown":  {
+                                                                      "total":  84,
+                                                                      "authority":  22,
+                                                                      "operational_relevance":  31,
+                                                                      "uniqueness":  16,
+                                                                      "freshness":  15
+                                                                  },
+                                              "usefulness_score":  84,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  3960,
+                                              "path":  ".documentation/templates/spec-template.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "ENGINEERING_PATTERN",
+                                              "disposition":  "keep",
+                                              "name":  "spec-template.md",
+                                              "score_breakdown":  {
+                                                                      "total":  84,
+                                                                      "authority":  22,
+                                                                      "operational_relevance":  31,
+                                                                      "uniqueness":  16,
+                                                                      "freshness":  15
+                                                                  },
+                                              "usefulness_score":  84,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  9202,
+                                              "path":  ".documentation/templates/tasks-template.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "living_reference",
+                                              "taxon":  "ENGINEERING_PATTERN",
+                                              "disposition":  "keep",
+                                              "name":  "tasks-template.md",
+                                              "score_breakdown":  {
+                                                                      "total":  84,
+                                                                      "authority":  22,
+                                                                      "operational_relevance":  31,
+                                                                      "uniqueness":  16,
+                                                                      "freshness":  15
+                                                                  },
+                                              "usefulness_score":  84,
+                                              "extension":  ".md"
+                                          }
+                                      ],
+                 "all":  [
+                             {
+                                 "size_bytes":  46,
+                                 "path":  ".documentation/SPECKIT_VERSION",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "AUTHORITATIVE_REFERENCE",
+                                 "disposition":  "keep",
+                                 "name":  "SPECKIT_VERSION",
+                                 "score_breakdown":  {
+                                                         "total":  95,
+                                                         "authority":  24,
+                                                         "operational_relevance":  38,
+                                                         "uniqueness":  18,
+                                                         "freshness":  15
+                                                     },
+                                 "usefulness_score":  95,
+                                 "extension":  ""
+                             },
+                             {
+                                 "size_bytes":  3331,
+                                 "path":  ".documentation/copilot/harvest-2026-03-27.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "RESEARCH_OR_CONTEXT",
+                                 "disposition":  "consolidate",
+                                 "name":  "harvest-2026-03-27.md",
+                                 "score_breakdown":  {
+                                                         "total":  48,
+                                                         "authority":  9,
+                                                         "operational_relevance":  15,
+                                                         "uniqueness":  12,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  48,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  4084,
+                                 "path":  ".documentation/memory/constitution.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "AUTHORITATIVE_REFERENCE",
+                                 "disposition":  "keep",
+                                 "name":  "constitution.md",
+                                 "score_breakdown":  {
+                                                         "total":  95,
+                                                         "authority":  24,
+                                                         "operational_relevance":  38,
+                                                         "uniqueness":  18,
+                                                         "freshness":  15
+                                                     },
+                                 "usefulness_score":  95,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  6552,
+                                 "path":  ".documentation/scripts/powershell/archive-context.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "archive-context.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  4933,
+                                 "path":  ".documentation/scripts/powershell/check-prerequisites.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "check-prerequisites.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  3879,
+                                 "path":  ".documentation/scripts/powershell/common.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "common.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  9799,
+                                 "path":  ".documentation/scripts/powershell/create-new-feature.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "create-new-feature.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  6231,
+                                 "path":  ".documentation/scripts/powershell/evolution-context.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "evolution-context.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  7258,
+                                 "path":  ".documentation/scripts/powershell/get-pr-context.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "get-pr-context.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  0,
+                                 "path":  ".documentation/scripts/powershell/harvest-docs-check.json",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "harvest-docs-check.json",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".json"
+                             },
+                             {
+                                 "size_bytes":  27731,
+                                 "path":  ".documentation/scripts/powershell/harvest.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "STALE_REFERENCE",
+                                 "disposition":  "rewrite",
+                                 "name":  "harvest.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  18,
+                                                         "authority":  0,
+                                                         "operational_relevance":  10,
+                                                         "uniqueness":  8,
+                                                         "freshness":  0
+                                                     },
+                                 "usefulness_score":  18,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  19925,
+                                 "path":  ".documentation/scripts/powershell/migrate-to-documentation.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "migrate-to-documentation.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  4379,
+                                 "path":  ".documentation/scripts/powershell/quickfix-context.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "quickfix-context.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  7441,
+                                 "path":  ".documentation/scripts/powershell/release-context.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "release-context.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  1910,
+                                 "path":  ".documentation/scripts/powershell/setup-plan.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "setup-plan.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  22288,
+                                 "path":  ".documentation/scripts/powershell/site-audit.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "site-audit.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  36202,
+                                 "path":  ".documentation/scripts/powershell/sync-upstream.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "sync-upstream.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  21094,
+                                 "path":  ".documentation/scripts/powershell/update-agent-context.ps1",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "OPERATIONS_RUNBOOK",
+                                 "disposition":  "keep",
+                                 "name":  "update-agent-context.ps1",
+                                 "score_breakdown":  {
+                                                         "total":  83,
+                                                         "authority":  20,
+                                                         "operational_relevance":  34,
+                                                         "uniqueness":  15,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  83,
+                                 "extension":  ".ps1"
+                             },
+                             {
+                                 "size_bytes":  464,
+                                 "path":  ".documentation/templates/agent-file-template.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "ENGINEERING_PATTERN",
+                                 "disposition":  "keep",
+                                 "name":  "agent-file-template.md",
+                                 "score_breakdown":  {
+                                                         "total":  84,
+                                                         "authority":  22,
+                                                         "operational_relevance":  31,
+                                                         "uniqueness":  16,
+                                                         "freshness":  15
+                                                     },
+                                 "usefulness_score":  84,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  1312,
+                                 "path":  ".documentation/templates/checklist-template.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "ENGINEERING_PATTERN",
+                                 "disposition":  "keep",
+                                 "name":  "checklist-template.md",
+                                 "score_breakdown":  {
+                                                         "total":  84,
+                                                         "authority":  22,
+                                                         "operational_relevance":  31,
+                                                         "uniqueness":  16,
+                                                         "freshness":  15
+                                                     },
+                                 "usefulness_score":  84,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  3744,
+                                 "path":  ".documentation/templates/plan-template.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "ENGINEERING_PATTERN",
+                                 "disposition":  "keep",
+                                 "name":  "plan-template.md",
+                                 "score_breakdown":  {
+                                                         "total":  84,
+                                                         "authority":  22,
+                                                         "operational_relevance":  31,
+                                                         "uniqueness":  16,
+                                                         "freshness":  15
+                                                     },
+                                 "usefulness_score":  84,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  3960,
+                                 "path":  ".documentation/templates/spec-template.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "ENGINEERING_PATTERN",
+                                 "disposition":  "keep",
+                                 "name":  "spec-template.md",
+                                 "score_breakdown":  {
+                                                         "total":  84,
+                                                         "authority":  22,
+                                                         "operational_relevance":  31,
+                                                         "uniqueness":  16,
+                                                         "freshness":  15
+                                                     },
+                                 "usefulness_score":  84,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  9202,
+                                 "path":  ".documentation/templates/tasks-template.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "living_reference",
+                                 "taxon":  "ENGINEERING_PATTERN",
+                                 "disposition":  "keep",
+                                 "name":  "tasks-template.md",
+                                 "score_breakdown":  {
+                                                         "total":  84,
+                                                         "authority":  22,
+                                                         "operational_relevance":  31,
+                                                         "uniqueness":  16,
+                                                         "freshness":  15
+                                                     },
+                                 "usefulness_score":  84,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  0,
+                                 "path":  "docs/.nojekyll",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  ".nojekyll",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".nojekyll"
+                             },
+                             {
+                                 "size_bytes":  2098,
+                                 "path":  "docs/404.html",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "404.html",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".html"
+                             },
+                             {
+                                 "size_bytes":  80,
+                                 "path":  "docs/CNAME",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "CNAME",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ""
+                             },
+                             {
+                                 "size_bytes":  335,
+                                 "path":  "docs/favicon.svg",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "favicon.svg",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".svg"
+                             },
+                             {
+                                 "size_bytes":  4357,
+                                 "path":  "docs/index.html",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "index.html",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".html"
+                             },
+                             {
+                                 "size_bytes":  698,
+                                 "path":  "docs/manifest.json",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "manifest.json",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".json"
+                             },
+                             {
+                                 "size_bytes":  2017,
+                                 "path":  "docs/README.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "README.md",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  165,
+                                 "path":  "docs/robots.txt",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "robots.txt",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".txt"
+                             },
+                             {
+                                 "size_bytes":  301,
+                                 "path":  "docs/sitemap.xml",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "sitemap.xml",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".xml"
+                             },
+                             {
+                                 "size_bytes":  5452,
+                                 "path":  "docs/sw.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "sw.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  810,
+                                 "path":  "docs/assets/site-B4Pzt7z0.js",
+                                 "last_modified":  "2026-03-14",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-B4Pzt7z0.js",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  6463,
+                                 "path":  "docs/assets/site-BcjzX1h6.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-BcjzX1h6.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  7508,
+                                 "path":  "docs/assets/site-BNT9ORcn.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-BNT9ORcn.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  342729,
+                                 "path":  "docs/assets/site-BnYktt8_.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-BnYktt8_.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  1727,
+                                 "path":  "docs/assets/site-BSUKqztk.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-BSUKqztk.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  2198,
+                                 "path":  "docs/assets/site-CEdDYzEH.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-CEdDYzEH.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  20954,
+                                 "path":  "docs/assets/site-CgX14xvs.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-CgX14xvs.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  204190,
+                                 "path":  "docs/assets/site-CSX4h4Mj.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-CSX4h4Mj.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  180355,
+                                 "path":  "docs/assets/site-DHYqNqw9.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-DHYqNqw9.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  2038,
+                                 "path":  "docs/assets/site-Jk1gKyRq.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-Jk1gKyRq.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  2445,
+                                 "path":  "docs/assets/site-oa88_ySV.js",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-oa88_ySV.js",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".js"
+                             },
+                             {
+                                 "size_bytes":  75571,
+                                 "path":  "docs/assets/site-qfdZ_fiB.css",
+                                 "last_modified":  "2026-03-14",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "site-qfdZ_fiB.css",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".css"
+                             },
+                             {
+                                 "size_bytes":  405134,
+                                 "path":  "docs/data/repositories.json",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "repositories.json",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".json"
+                             },
+                             {
+                                 "size_bytes":  0,
+                                 "path":  "docs/output/.gitkeep",
+                                 "last_modified":  "2025-12-28",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  ".gitkeep",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".gitkeep"
+                             },
+                             {
+                                 "size_bytes":  1613,
+                                 "path":  "docs/output/fun.svg",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "fun.svg",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".svg"
+                             },
+                             {
+                                 "size_bytes":  31729,
+                                 "path":  "docs/output/heatmap.svg",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "heatmap.svg",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".svg"
+                             },
+                             {
+                                 "size_bytes":  3234,
+                                 "path":  "docs/output/languages.svg",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "languages.svg",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".svg"
+                             },
+                             {
+                                 "size_bytes":  3097,
+                                 "path":  "docs/output/overview.svg",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "overview.svg",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".svg"
+                             },
+                             {
+                                 "size_bytes":  1372,
+                                 "path":  "docs/output/README.md",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "README.md",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  5692,
+                                 "path":  "docs/output/release.svg",
+                                 "last_modified":  "2026-03-14",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "release.svg",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".svg"
+                             },
+                             {
+                                 "size_bytes":  1036,
+                                 "path":  "docs/output/streaks.svg",
+                                 "last_modified":  "2026-03-14",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "streaks.svg",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".svg"
+                             },
+                             {
+                                 "size_bytes":  59913,
+                                 "path":  "docs/output/reports/markhazleton-analysis.md",
+                                 "last_modified":  "2026-03-27",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "markhazleton-analysis.md",
+                                 "score_breakdown":  {
+                                                         "total":  71,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  14
+                                                     },
+                                 "usefulness_score":  71,
+                                 "extension":  ".md"
+                             },
+                             {
+                                 "size_bytes":  189394,
+                                 "path":  "docs/output/screenshots/git-spark.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "git-spark.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  62400,
+                                 "path":  "docs/output/screenshots/github-stats-spark.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "github-stats-spark.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  49626,
+                                 "path":  "docs/output/screenshots/jsbootspark.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "jsbootspark.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  104369,
+                                 "path":  "docs/output/screenshots/mark-hazleton-s-notes.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "mark-hazleton-s-notes.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  60781,
+                                 "path":  "docs/output/screenshots/markhazleton.github.io.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "markhazleton.github.io.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  283883,
+                                 "path":  "docs/output/screenshots/mechanicsofmotherhood.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "mechanicsofmotherhood.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  100715,
+                                 "path":  "docs/output/screenshots/museumspark.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "museumspark.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  49968,
+                                 "path":  "docs/output/screenshots/react-native-web-start.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "react-native-web-start.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  70838,
+                                 "path":  "docs/output/screenshots/reactsparkportfolio.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "reactsparkportfolio.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  143121,
+                                 "path":  "docs/output/screenshots/supportspark.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "supportspark.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  75126,
+                                 "path":  "docs/output/screenshots/tailwind-demo.png",
+                                 "last_modified":  "2026-01-31",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "tailwind-demo.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  72090,
+                                 "path":  "docs/output/screenshots/tailwindspark.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "tailwindspark.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  469933,
+                                 "path":  "docs/output/screenshots/texecon.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "texecon.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             },
+                             {
+                                 "size_bytes":  43318,
+                                 "path":  "docs/output/screenshots/webspark.httpclientutility.png",
+                                 "last_modified":  "2026-03-07",
+                                 "category":  "site_output",
+                                 "taxon":  "ANALYTICS_ASSET",
+                                 "disposition":  "keep",
+                                 "name":  "webspark.httpclientutility.png",
+                                 "score_breakdown":  {
+                                                         "total":  69,
+                                                         "authority":  15,
+                                                         "operational_relevance":  28,
+                                                         "uniqueness":  14,
+                                                         "freshness":  12
+                                                     },
+                                 "usefulness_score":  69,
+                                 "extension":  ".png"
+                             }
+                         ],
+                 "completed_audits":  [
+
+                                      ],
+                 "disposition_counts":  {
+                                            "consolidate":  1,
+                                            "rewrite":  1,
+                                            "keep":  67
+                                        },
+                 "site_output_docs":  [
+                                          {
+                                              "size_bytes":  0,
+                                              "path":  "docs/.nojekyll",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  ".nojekyll",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".nojekyll"
+                                          },
+                                          {
+                                              "size_bytes":  2098,
+                                              "path":  "docs/404.html",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "404.html",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".html"
+                                          },
+                                          {
+                                              "size_bytes":  80,
+                                              "path":  "docs/CNAME",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "CNAME",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ""
+                                          },
+                                          {
+                                              "size_bytes":  335,
+                                              "path":  "docs/favicon.svg",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "favicon.svg",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".svg"
+                                          },
+                                          {
+                                              "size_bytes":  4357,
+                                              "path":  "docs/index.html",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "index.html",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".html"
+                                          },
+                                          {
+                                              "size_bytes":  698,
+                                              "path":  "docs/manifest.json",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "manifest.json",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".json"
+                                          },
+                                          {
+                                              "size_bytes":  2017,
+                                              "path":  "docs/README.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "README.md",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  165,
+                                              "path":  "docs/robots.txt",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "robots.txt",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".txt"
+                                          },
+                                          {
+                                              "size_bytes":  301,
+                                              "path":  "docs/sitemap.xml",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "sitemap.xml",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".xml"
+                                          },
+                                          {
+                                              "size_bytes":  5452,
+                                              "path":  "docs/sw.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "sw.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  810,
+                                              "path":  "docs/assets/site-B4Pzt7z0.js",
+                                              "last_modified":  "2026-03-14",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-B4Pzt7z0.js",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  6463,
+                                              "path":  "docs/assets/site-BcjzX1h6.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-BcjzX1h6.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  7508,
+                                              "path":  "docs/assets/site-BNT9ORcn.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-BNT9ORcn.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  342729,
+                                              "path":  "docs/assets/site-BnYktt8_.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-BnYktt8_.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  1727,
+                                              "path":  "docs/assets/site-BSUKqztk.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-BSUKqztk.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  2198,
+                                              "path":  "docs/assets/site-CEdDYzEH.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-CEdDYzEH.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  20954,
+                                              "path":  "docs/assets/site-CgX14xvs.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-CgX14xvs.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  204190,
+                                              "path":  "docs/assets/site-CSX4h4Mj.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-CSX4h4Mj.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  180355,
+                                              "path":  "docs/assets/site-DHYqNqw9.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-DHYqNqw9.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  2038,
+                                              "path":  "docs/assets/site-Jk1gKyRq.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-Jk1gKyRq.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  2445,
+                                              "path":  "docs/assets/site-oa88_ySV.js",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-oa88_ySV.js",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".js"
+                                          },
+                                          {
+                                              "size_bytes":  75571,
+                                              "path":  "docs/assets/site-qfdZ_fiB.css",
+                                              "last_modified":  "2026-03-14",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "site-qfdZ_fiB.css",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".css"
+                                          },
+                                          {
+                                              "size_bytes":  405134,
+                                              "path":  "docs/data/repositories.json",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "repositories.json",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".json"
+                                          },
+                                          {
+                                              "size_bytes":  0,
+                                              "path":  "docs/output/.gitkeep",
+                                              "last_modified":  "2025-12-28",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  ".gitkeep",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".gitkeep"
+                                          },
+                                          {
+                                              "size_bytes":  1613,
+                                              "path":  "docs/output/fun.svg",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "fun.svg",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".svg"
+                                          },
+                                          {
+                                              "size_bytes":  31729,
+                                              "path":  "docs/output/heatmap.svg",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "heatmap.svg",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".svg"
+                                          },
+                                          {
+                                              "size_bytes":  3234,
+                                              "path":  "docs/output/languages.svg",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "languages.svg",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".svg"
+                                          },
+                                          {
+                                              "size_bytes":  3097,
+                                              "path":  "docs/output/overview.svg",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "overview.svg",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".svg"
+                                          },
+                                          {
+                                              "size_bytes":  1372,
+                                              "path":  "docs/output/README.md",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "README.md",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  5692,
+                                              "path":  "docs/output/release.svg",
+                                              "last_modified":  "2026-03-14",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "release.svg",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".svg"
+                                          },
+                                          {
+                                              "size_bytes":  1036,
+                                              "path":  "docs/output/streaks.svg",
+                                              "last_modified":  "2026-03-14",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "streaks.svg",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".svg"
+                                          },
+                                          {
+                                              "size_bytes":  59913,
+                                              "path":  "docs/output/reports/markhazleton-analysis.md",
+                                              "last_modified":  "2026-03-27",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "markhazleton-analysis.md",
+                                              "score_breakdown":  {
+                                                                      "total":  71,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  14
+                                                                  },
+                                              "usefulness_score":  71,
+                                              "extension":  ".md"
+                                          },
+                                          {
+                                              "size_bytes":  189394,
+                                              "path":  "docs/output/screenshots/git-spark.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "git-spark.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  62400,
+                                              "path":  "docs/output/screenshots/github-stats-spark.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "github-stats-spark.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  49626,
+                                              "path":  "docs/output/screenshots/jsbootspark.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "jsbootspark.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  104369,
+                                              "path":  "docs/output/screenshots/mark-hazleton-s-notes.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "mark-hazleton-s-notes.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  60781,
+                                              "path":  "docs/output/screenshots/markhazleton.github.io.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "markhazleton.github.io.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  283883,
+                                              "path":  "docs/output/screenshots/mechanicsofmotherhood.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "mechanicsofmotherhood.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  100715,
+                                              "path":  "docs/output/screenshots/museumspark.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "museumspark.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  49968,
+                                              "path":  "docs/output/screenshots/react-native-web-start.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "react-native-web-start.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  70838,
+                                              "path":  "docs/output/screenshots/reactsparkportfolio.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "reactsparkportfolio.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  143121,
+                                              "path":  "docs/output/screenshots/supportspark.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "supportspark.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  75126,
+                                              "path":  "docs/output/screenshots/tailwind-demo.png",
+                                              "last_modified":  "2026-01-31",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "tailwind-demo.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  72090,
+                                              "path":  "docs/output/screenshots/tailwindspark.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "tailwindspark.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  469933,
+                                              "path":  "docs/output/screenshots/texecon.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "texecon.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          },
+                                          {
+                                              "size_bytes":  43318,
+                                              "path":  "docs/output/screenshots/webspark.httpclientutility.png",
+                                              "last_modified":  "2026-03-07",
+                                              "category":  "site_output",
+                                              "taxon":  "ANALYTICS_ASSET",
+                                              "disposition":  "keep",
+                                              "name":  "webspark.httpclientutility.png",
+                                              "score_breakdown":  {
+                                                                      "total":  69,
+                                                                      "authority":  15,
+                                                                      "operational_relevance":  28,
+                                                                      "uniqueness":  14,
+                                                                      "freshness":  12
+                                                                  },
+                                              "usefulness_score":  69,
+                                              "extension":  ".png"
+                                          }
+                                      ],
+                 "completed_reviews":  [
+
+                                       ],
+                 "stale_drafts":  [
+
+                                  ],
+                 "legacy_root_docs":  [
+
+                                      ],
+                 "release_docs":  [
+
+                                  ],
+                 "quickfix_records":  [
+
+                                      ],
+                 "impl_plans":  [
+
+                                ],
+                 "backup_files":  [
+
+                                  ],
+                 "taxonomy_counts":  {
+                                         "ENGINEERING_PATTERN":  5,
+                                         "STALE_REFERENCE":  1,
+                                         "ANALYTICS_ASSET":  46,
+                                         "AUTHORITATIVE_REFERENCE":  2,
+                                         "RESEARCH_OR_CONTEXT":  1,
+                                         "OPERATIONS_RUNBOOK":  14
+                                     },
+                 "session_notes":  [
+
+                                   ],
+                 "orphaned_files":  [
+
+                                    ]
+             },
+    "scope":  "docs",
+    "report_path":  ".documentation/copilot/harvest-2026-03-27.md",
+    "changelog_entries":  [
+
+                          ],
+    "changelog_gaps":  [
+
+                       ],
+    "path_roots":  {
+                       "canonical_documentation":  ".documentation/",
+                       "legacy_roots":  [
+
+                                        ]
+                   },
+    "code_comments":  [
+
+                      ]
+}

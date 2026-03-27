@@ -26,7 +26,7 @@ import styles from "./RepositoryDetail.module.css";
 function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
   const modalRef = useRef(null);
 
-  // T060: Collapsible sections state
+  // Track expanded/collapsed state for each modal section.
   const [expandedSections, setExpandedSections] = useState({
     summary: true, // Summary expanded by default
     website: true, // Website/screenshot expanded by default
@@ -38,7 +38,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
     quality: false,
   });
 
-  // T067-T069: Swipe gesture handling
+  // Support swipe gestures for close and previous/next repository navigation.
   const bind = useGesture({
     onDrag: ({
       down,
@@ -78,9 +78,9 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
       if (e.key === "Escape") {
         onClose();
       } else if (e.key === "ArrowRight" && onNext) {
-        onNext(); // T070: Next repository
+        onNext();
       } else if (e.key === "ArrowLeft" && onPrevious) {
-        onPrevious(); // T070: Previous repository
+        onPrevious();
       }
     };
 

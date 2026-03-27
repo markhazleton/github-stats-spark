@@ -104,7 +104,7 @@ export default function BarChart({
     responsive: true,
     maintainAspectRatio: false,
     interaction: {
-      mode: "nearest", // T046: Touch-friendly interaction
+      mode: "nearest", // Keeps hover behavior usable on touch and mouse input.
       intersect: false,
       axis: horizontal ? "y" : "x",
     },
@@ -121,12 +121,12 @@ export default function BarChart({
       },
       tooltip: {
         enabled: true,
-        padding: 12, // T044: Larger touch target area for tooltips
+        padding: 12, // Extra padding improves touch readability.
         titleFont: {
-          size: 14, // T047: Minimum 14px for mobile readability
+          size: 14, // Maintain readable tooltip text on small screens.
         },
         bodyFont: {
-          size: 14, // T047: Minimum 14px for mobile readability
+          size: 14, // Maintain readable tooltip text on small screens.
         },
         callbacks: {
           label: (context) => {
