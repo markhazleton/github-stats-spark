@@ -157,7 +157,7 @@ Single source of truth consumed by dashboard and visualizations:
   ],
   "metadata": {
     "generated_at": "2026-01-18T22:43:37Z",
-    "schema_version": "2.1.0"
+    "schema_version": "2.2.0"
   }
 }
 ```

@@ -107,6 +107,14 @@ class CacheManager:
     ) -> RefreshResult:
         return self.refresh_executor.refresh_languages(username, repo_name, pushed_at)
 
+    def refresh_commits_stats(
+        self,
+        username: str,
+        repo_name: str,
+        pushed_at: datetime
+    ) -> RefreshResult:
+        return self.refresh_executor.refresh_commits_stats(username, repo_name, pushed_at)
+
     def refresh_readme(
         self,
         username: str,
@@ -185,6 +193,9 @@ class CacheManager:
         
         if "commit_counts" in categories:
             results.append(self.refresh_commit_counts(username, repo_name, pushed_at))
+
+        if "commits_stats" in categories:
+            results.append(self.refresh_commits_stats(username, repo_name, pushed_at))
         
         if "languages" in categories:
             results.append(self.refresh_languages(username, repo_name, pushed_at))

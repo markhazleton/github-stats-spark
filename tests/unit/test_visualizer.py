@@ -334,6 +334,25 @@ class TestEdgeCases:
 
         assert "No activity yet" in svg
 
+    def test_release_cadence_renders_estimation_note(self):
+        """Test release cadence shows a note when using fallback activity data."""
+        theme = SparkDarkTheme()
+        visualizer = StatisticsVisualizer(theme)
+
+        svg = visualizer.generate_release_cadence(
+            {
+                "weekly": [{"label": "W06", "repos": 1, "start": "2025-02-03", "range_label": "Feb 03 - Feb 09"}],
+                "monthly": [{"label": "Feb", "repos": 1, "start": "2025-02-01", "range_label": "Feb 2025"}],
+                "max_weekly": 1,
+                "max_monthly": 1,
+                "unique_repos": 1,
+                "is_estimated": True,
+            },
+            "testuser",
+        )
+
+        assert "latest known repository activity" in svg
+
 
 class TestWCAGCompliance:
     """Test WCAG AA contrast compliance."""

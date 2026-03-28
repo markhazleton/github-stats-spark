@@ -18,6 +18,7 @@ import { ToastContainer } from "@/components/Mobile/Toast/Toast";
 const DashboardView = lazy(
   () => import("@/components/Visualizations/DashboardView"),
 );
+const AttentionView = lazy(() => import("@/components/Attention/AttentionView"));
 const RepositoryDetail = lazy(
   () => import("@/components/DrillDown/RepositoryDetail"),
 );
@@ -26,7 +27,7 @@ const RepositoryDetail = lazy(
  * GitHub Stats Spark Dashboard - Root App Component
  *
  * This is the main application component that orchestrates the dashboard layout,
- * state management, and routing between 2 views: Dashboard (table) and Visualizations (charts).
+ * state management, and routing between dashboard, visualizations, and attention views.
  *
  * Features:
  * - Data fetching via useRepositoryData custom hook
@@ -109,6 +110,7 @@ function App() {
   const getInitialView = () => {
     const hash = window.location.hash.slice(1); // Remove the # character
     if (hash === "visualizations") return "visualizations";
+    if (hash === "attention") return "attention";
     return "table"; // Default to table/dashboard view
   };
 
@@ -121,6 +123,8 @@ function App() {
       const hash = window.location.hash.slice(1);
       if (hash === "visualizations") {
         setCurrentView("visualizations");
+      } else if (hash === "attention") {
+        setCurrentView("attention");
       } else if (hash === "table" || hash === "dashboard" || hash === "") {
         setCurrentView("table");
       }
@@ -134,7 +138,15 @@ function App() {
   // Update URL hash when view changes
   const handleViewChange = (view) => {
     setCurrentView(view);
-    window.location.hash = view === "visualizations" ? "visualizations" : "";
+    if (view === "visualizations") {
+      window.location.hash = "visualizations";
+      return;
+    }
+    if (view === "attention") {
+      window.location.hash = "attention";
+      return;
+    }
+    window.location.hash = "";
   };
 
   // Table sorting and filtering using useTableSort hook
@@ -252,6 +264,14 @@ function App() {
                   aria-label="Switch to visualizations view"
                 >
                   Visualizations
+                </button>
+                <button
+                  className={`nav-menu-item ${currentView === "attention" ? "nav-menu-item--active" : ""}`}
+                  onClick={() => handleViewChange("attention")}
+                  aria-current={currentView === "attention" ? "page" : undefined}
+                  aria-label="Switch to repositories needing attention"
+                >
+                  Needs Attention
                 </button>
               </nav>
             </div>
@@ -388,6 +408,45 @@ function App() {
                         <DashboardView
                           repositories={processedRepositories}
                           profile={data?.profile}
+                          onRepoClick={handleRepoClick}
+                        />
+                      </Suspense>
+                    </section>
+                  )}
+
+                  {currentView === "attention" && (
+                    <section
+                      className="view-transition"
+                      aria-labelledby="attention-heading"
+                    >
+                      <div className="mb-lg">
+                        <h2 id="attention-heading">Repositories Needing Attention</h2>
+                        <p
+                          className="text-muted"
+                          role="status"
+                          aria-live="polite"
+                        >
+                          Ranked by pull request pressure, security findings,
+                          staleness, and dependency health
+                        </p>
+                      </div>
+
+                      {availableLanguages.length > 0 && (
+                        <FilterControls
+                          languages={availableLanguages}
+                          selectedLanguage={filterLanguage}
+                          onFilterChange={handleFilterChange}
+                          onClearFilter={clearFilter}
+                        />
+                      )}
+
+                      <Suspense
+                        fallback={
+                          <LoadingState message="Loading attention view..." />
+                        }
+                      >
+                        <AttentionView
+                          repositories={processedRepositories}
                           onRepoClick={handleRepoClick}
                         />
                       </Suspense>

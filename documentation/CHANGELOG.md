@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Added schema 2.2.0 repository attention ranking fields: `attention_score`, `attention_rank`, and `attention_metrics`.
+- Added dependency version coverage metadata to `tech_stack`, including known-version and registry-resolution coverage.
 - Repository enrichment payloads in unified output (`schema_version: 2.1.0`):
   - `pull_request_summary` for compact open PR signals
   - `security_summary` for repository security posture and alert counts

@@ -10,7 +10,7 @@ class DependencyInfo:
 
     Attributes:
         name: Package/gem/module name
-        current_version: Version currently specified
+        current_version: Version currently specified or resolved from the manifest
         latest_version: Latest available version from registry
         ecosystem: Package ecosystem (npm, pypi, rubygems, go, maven)
         versions_behind: Number of major versions behind
@@ -25,6 +25,11 @@ class DependencyInfo:
     versions_behind: int = 0
     is_outdated: bool = False
     status: str = "unknown"  # current, minor_outdated, major_outdated, unknown
+    version_requirement: Optional[str] = None
+    current_version_known: bool = True
+    latest_version_status: str = "not_requested"
+    latest_version_source: Optional[str] = None
+    source_file: Optional[str] = None
 
     def to_dict(self) -> dict:
         """Serialize dependency to dictionary."""
@@ -36,6 +41,11 @@ class DependencyInfo:
             "versions_behind": self.versions_behind,
             "is_outdated": self.is_outdated,
             "status": self.status,
+            "version_requirement": self.version_requirement,
+            "current_version_known": self.current_version_known,
+            "latest_version_status": self.latest_version_status,
+            "latest_version_source": self.latest_version_source,
+            "source_file": self.source_file,
         }
 
 
@@ -67,11 +77,21 @@ class TechnologyStack:
     currency_score: int = 0
     outdated_count: int = 0
     total_dependencies: int = 0
+    known_versions_count: int = 0
+    resolved_latest_versions_count: int = 0
+    unknown_versions_count: int = 0
 
     def __post_init__(self):
         """Calculate derived metrics after initialization."""
         self.total_dependencies = len(self.dependencies)
         self.outdated_count = sum(1 for dep in self.dependencies if dep.is_outdated)
+        self.known_versions_count = sum(
+            1 for dep in self.dependencies if dep.current_version_known
+        )
+        self.resolved_latest_versions_count = sum(
+            1 for dep in self.dependencies if dep.latest_version_status == "resolved"
+        )
+        self.unknown_versions_count = self.total_dependencies - self.known_versions_count
         self.currency_score = self._calculate_currency_score()
 
     def _calculate_currency_score(self) -> int:
@@ -133,6 +153,23 @@ class TechnologyStack:
             return 0.0
         return round((self.outdated_count / self.total_dependencies) * 100, 1)
 
+    @property
+    def version_coverage_percentage(self) -> float:
+        """Percentage of dependencies with a concrete current version."""
+        if self.total_dependencies == 0:
+            return 100.0
+        return round((self.known_versions_count / self.total_dependencies) * 100, 1)
+
+    @property
+    def latest_version_coverage_percentage(self) -> float:
+        """Percentage of dependencies with registry-backed latest version data."""
+        if self.total_dependencies == 0:
+            return 100.0
+        return round(
+            (self.resolved_latest_versions_count / self.total_dependencies) * 100,
+            1,
+        )
+
     def add_dependency(self, dependency: DependencyInfo) -> None:
         """Add a dependency to the stack.
 
@@ -142,6 +179,13 @@ class TechnologyStack:
         self.dependencies.append(dependency)
         self.total_dependencies = len(self.dependencies)
         self.outdated_count = sum(1 for dep in self.dependencies if dep.is_outdated)
+        self.known_versions_count = sum(
+            1 for dep in self.dependencies if dep.current_version_known
+        )
+        self.resolved_latest_versions_count = sum(
+            1 for dep in self.dependencies if dep.latest_version_status == "resolved"
+        )
+        self.unknown_versions_count = self.total_dependencies - self.known_versions_count
         self.currency_score = self._calculate_currency_score()
 
     def to_dict(self) -> dict:
@@ -160,7 +204,12 @@ class TechnologyStack:
             "currency_score": self.currency_score,
             "outdated_count": self.outdated_count,
             "total_dependencies": self.total_dependencies,
+            "known_versions_count": self.known_versions_count,
+            "resolved_latest_versions_count": self.resolved_latest_versions_count,
+            "unknown_versions_count": self.unknown_versions_count,
             "primary_language": self.primary_language,
             "language_diversity": self.language_diversity,
             "outdated_percentage": self.outdated_percentage,
+            "version_coverage_percentage": self.version_coverage_percentage,
+            "latest_version_coverage_percentage": self.latest_version_coverage_percentage,
         }

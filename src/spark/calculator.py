@@ -1,6 +1,6 @@
 """Statistics calculation for GitHub activity data."""
 
-from typing import Dict, List, Any, Tuple
+from typing import Dict, List, Any, Tuple, Optional
 from datetime import datetime, timedelta, date
 from collections import defaultdict, Counter
 import math
@@ -50,12 +50,16 @@ class StatsCalculator:
         languages_data = self.aggregate_languages()
         streaks_data = self.calculate_streaks()
         release_cadence_data = self.calculate_release_cadence()
+        fun_stats_data = self.calculate_fun_stats(
+            time_pattern=time_pattern_data,
+            languages=languages_data,
+        )
 
         # Group commits by day for heatmap
         commits_by_day = {}
         for commit in self.commits:
-            if commit.get("date"):
-                date = datetime.fromisoformat(commit["date"].replace("Z", "+00:00"))
+            date = self._extract_commit_datetime(commit)
+            if date:
                 date_key = date.strftime("%Y-%m-%d")
                 commits_by_day[date_key] = commits_by_day.get(date_key, 0) + 1
 
@@ -65,6 +69,7 @@ class StatsCalculator:
             "languages": languages_data,
             "streaks": streaks_data,
             "release_cadence": release_cadence_data,
+            "fun_stats": fun_stats_data,
             "total_commits": len(self.commits),
             "total_repositories": len(self.repositories),
             "commits_by_day": commits_by_day,
@@ -115,8 +120,8 @@ class StatsCalculator:
         # Group commits by week
         week_commits = defaultdict(int)
         for commit in self.commits:
-            if commit.get("date"):
-                date = datetime.fromisoformat(commit["date"].replace("Z", "+00:00"))
+            date = self._extract_commit_datetime(commit)
+            if date:
                 week_key = date.strftime("%Y-W%U")
                 week_commits[week_key] += 1
 
@@ -138,8 +143,11 @@ class StatsCalculator:
         
         # Calculate activity rate (weeks with commits / total weeks in period)
         if self.commits:
-            dates = [datetime.fromisoformat(c["date"].replace("Z", "+00:00")) 
-                    for c in self.commits if c.get("date")]
+            dates = [
+                commit_dt
+                for commit_dt in (self._extract_commit_datetime(commit) for commit in self.commits)
+                if commit_dt
+            ]
             if dates:
                 oldest = min(dates)
                 newest = max(dates)
@@ -232,8 +240,8 @@ class StatsCalculator:
         # Count commits by hour
         hour_counts = defaultdict(int)
         for commit in self.commits:
-            if commit.get("date"):
-                date = datetime.fromisoformat(commit["date"].replace("Z", "+00:00"))
+            date = self._extract_commit_datetime(commit)
+            if date:
                 hour_counts[date.hour] += 1
 
         total_commits = sum(hour_counts.values())
@@ -322,8 +330,8 @@ class StatsCalculator:
         # Extract commit dates
         commit_dates = []
         for commit in self.commits:
-            if commit.get("date"):
-                date = datetime.fromisoformat(commit["date"].replace("Z", "+00:00"))
+            date = self._extract_commit_datetime(commit)
+            if date:
                 commit_dates.append(date.date())
 
         # Sort and deduplicate
@@ -378,6 +386,45 @@ class StatsCalculator:
             "longest_learning_streak": longest_learning_streak,
         }
 
+    def calculate_fun_stats(
+        self,
+        time_pattern: Optional[Dict[str, Any]] = None,
+        languages: Optional[List[Dict[str, Any]]] = None,
+    ) -> Dict[str, Any]:
+        """Calculate the summary values displayed in the Lightning Round SVG."""
+        time_pattern = time_pattern or self.analyze_time_patterns()
+        languages = languages if languages is not None else self.aggregate_languages()
+
+        commit_datetimes = [
+            commit_dt
+            for commit_dt in (self._extract_commit_datetime(commit) for commit in self.commits)
+            if commit_dt
+        ]
+
+        account_age_days = self._calculate_account_age_days(commit_datetimes)
+
+        if commit_datetimes:
+            oldest_commit = min(commit_datetimes)
+            newest_commit = max(commit_datetimes)
+            commit_span_days = max(1, (newest_commit.date() - oldest_commit.date()).days + 1)
+            avg_commits_per_day = round(len(commit_datetimes) / commit_span_days, 1)
+        else:
+            avg_commits_per_day = 0.0
+
+        total_stars = sum(repo.get("stars", 0) for repo in self.repositories)
+
+        return {
+            "most_active_hour": time_pattern.get("most_active_hour") or 0,
+            "pattern": time_pattern.get("category", "unknown"),
+            "coding_pattern": time_pattern.get("category", "unknown"),
+            "total_repos": len(self.repositories),
+            "account_age_days": account_age_days,
+            "total_commits": len(commit_datetimes),
+            "languages_count": len(languages),
+            "total_stars": total_stars,
+            "avg_commits_per_day": avg_commits_per_day,
+        }
+
     def calculate_release_cadence(self, weeks: int = 12, months: int = 12) -> Dict[str, Any]:
         """Calculate unique repository cadence for weekly and monthly periods.
 
@@ -392,39 +439,169 @@ class StatsCalculator:
         months = max(1, months)
 
         commit_records: List[Tuple[date, str]] = []
-        unique_repos = set()
+        commit_records = [
+            record
+            for commit in self.commits
+            for record in [self._extract_commit_cadence_record(commit)]
+            if record
+        ]
 
-        for commit in self.commits:
-            repo_name = commit.get("repo")
-            date_str = commit.get("date")
-            if not repo_name or not date_str:
-                continue
+        if commit_records:
+            return self._build_release_cadence_series(
+                activity_records=commit_records,
+                weeks=weeks,
+                months=months,
+                source="commit_timeline",
+                is_estimated=False,
+            )
 
-            try:
-                commit_dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
-            except ValueError:
-                continue
+        repository_activity_records = [
+            record
+            for repository in self.repositories
+            for record in [self._extract_repository_activity_record(repository)]
+            if record
+        ]
 
-            commit_records.append((commit_dt.date(), repo_name))
-            unique_repos.add(repo_name)
+        if repository_activity_records:
+            return self._build_release_cadence_series(
+                activity_records=repository_activity_records,
+                weeks=weeks,
+                months=months,
+                source="latest_repository_activity",
+                is_estimated=True,
+            )
 
-        if not commit_records:
-            return {
-                "weekly": [{"label": f"W{str(i + 1).zfill(2)}", "repos": 0, "start": None, "range_label": ""}
-                            for i in range(weeks)],
-                "monthly": [{"label": "", "repos": 0, "start": None, "range_label": ""}
-                             for _ in range(months)],
-                "max_weekly": 0,
-                "max_monthly": 0,
-                "unique_repos": 0,
-            }
+        return self._empty_release_cadence(
+            weeks=weeks,
+            months=months,
+            source="empty",
+            is_estimated=False,
+        )
 
-        latest_date = max(record[0] for record in commit_records)
+    @staticmethod
+    def _parse_iso_datetime(value: Optional[str]) -> Optional[datetime]:
+        """Parse an ISO 8601 datetime string, accepting GitHub's Z suffix."""
+        if not value:
+            return None
+
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except ValueError:
+            return None
+
+    def _calculate_account_age_days(self, commit_datetimes: List[datetime]) -> int:
+        """Estimate account age from profile or repository history."""
+        now = datetime.now()
+        age_sources: List[datetime] = []
+
+        profile_created = self._parse_iso_datetime(self.profile.get("created_at"))
+        if profile_created:
+            age_sources.append(profile_created)
+
+        for repository in self.repositories:
+            for key in ("created_at", "first_commit_date"):
+                repository_dt = self._parse_iso_datetime(repository.get(key))
+                if repository_dt:
+                    age_sources.append(repository_dt)
+
+            commit_history = repository.get("commit_history") or {}
+            first_commit_dt = self._parse_iso_datetime(commit_history.get("first_commit_date"))
+            if first_commit_dt:
+                age_sources.append(first_commit_dt)
+
+        age_sources.extend(commit_datetimes)
+
+        if not age_sources:
+            return 0
+
+        oldest_activity = min(age_sources)
+        return max(0, (now.date() - oldest_activity.date()).days)
+
+    def _extract_commit_datetime(self, commit: Dict[str, Any]) -> Optional[datetime]:
+        """Extract a commit timestamp from supported commit payload shapes."""
+        date_str = commit.get("date") or commit.get("commit", {}).get("author", {}).get("date")
+        return self._parse_iso_datetime(date_str)
+
+    def _extract_commit_cadence_record(self, commit: Dict[str, Any]) -> Optional[Tuple[date, str]]:
+        """Normalize commit payloads into cadence records."""
+        repo_name = commit.get("repo") or commit.get("repository_name")
+        repository = commit.get("repository")
+        if not repo_name and isinstance(repository, dict):
+            repo_name = repository.get("name") or repository.get("full_name")
+
+        commit_dt = self._extract_commit_datetime(commit)
+        if not repo_name or not commit_dt:
+            return None
+
+        return (commit_dt.date(), repo_name)
+
+    def _extract_repository_activity_record(
+        self,
+        repository: Dict[str, Any],
+    ) -> Optional[Tuple[date, str]]:
+        """Fallback cadence record from repository-level activity snapshots."""
+        repo_name = repository.get("name") or repository.get("repository_name")
+        if not repo_name:
+            return None
+
+        commit_history = repository.get("commit_history") or {}
+        activity_candidates = [
+            commit_history.get("last_commit_date"),
+            repository.get("last_commit_date"),
+            repository.get("pushed_at"),
+            repository.get("updated_at"),
+        ]
+
+        for candidate in activity_candidates:
+            activity_dt = self._parse_iso_datetime(candidate)
+            if activity_dt:
+                return (activity_dt.date(), repo_name)
+
+        return None
+
+    def _empty_release_cadence(
+        self,
+        weeks: int,
+        months: int,
+        source: str,
+        is_estimated: bool,
+    ) -> Dict[str, Any]:
+        """Return an empty cadence payload with consistent metadata."""
+        return {
+            "weekly": [
+                {"label": f"W{str(i + 1).zfill(2)}", "repos": 0, "start": None, "range_label": ""}
+                for i in range(weeks)
+            ],
+            "monthly": [
+                {"label": "", "repos": 0, "start": None, "range_label": ""}
+                for _ in range(months)
+            ],
+            "max_weekly": 0,
+            "max_monthly": 0,
+            "unique_repos": 0,
+            "source": source,
+            "is_estimated": is_estimated,
+        }
+
+    def _build_release_cadence_series(
+        self,
+        activity_records: List[Tuple[date, str]],
+        weeks: int,
+        months: int,
+        source: str,
+        is_estimated: bool,
+    ) -> Dict[str, Any]:
+        """Build weekly and monthly cadence series from normalized activity records."""
+        if not activity_records:
+            return self._empty_release_cadence(weeks, months, source, is_estimated)
+
+        unique_repos = {repo_name for _, repo_name in activity_records}
+        latest_date = max(record[0] for record in activity_records)
 
         week_sets: Dict[date, set] = defaultdict(set)
         month_sets: Dict[date, set] = defaultdict(set)
 
-        for commit_date, repo_name in commit_records:
+        for commit_date, repo_name in activity_records:
             week_start = commit_date - timedelta(days=commit_date.weekday())
             week_sets[week_start].add(repo_name)
 
@@ -474,15 +651,14 @@ class StatsCalculator:
                 "range_label": long_label,
             })
 
-        max_weekly = max((point["repos"] for point in weekly_series), default=0)
-        max_monthly = max((point["repos"] for point in monthly_series), default=0)
-
         return {
             "weekly": weekly_series,
             "monthly": monthly_series,
-            "max_weekly": max_weekly,
-            "max_monthly": max_monthly,
+            "max_weekly": max((point["repos"] for point in weekly_series), default=0),
+            "max_monthly": max((point["repos"] for point in monthly_series), default=0),
             "unique_repos": len(unique_repos),
+            "source": source,
+            "is_estimated": is_estimated,
         }
 
     # Dashboard-specific commit metrics calculation methods

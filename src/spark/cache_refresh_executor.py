@@ -97,6 +97,44 @@ class CacheRefreshExecutor:
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
+    def refresh_commits_stats(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "commits_stats"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for commit stats refresh",
+            )
+
+        try:
+            self.fetcher.fetch_commits_with_stats(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+                force_refresh=True,
+            )
+            refreshed_cache = self.cache.get(category, username, repo=repo_name, week=cache_key)
+            if refreshed_cache is None:
+                return RefreshResult(
+                    repo_name=repo_name,
+                    category=category,
+                    was_cached=False,
+                    refreshed=False,
+                    error="Commit stats were not written to cache",
+                )
+
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
     def refresh_languages(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
         cache_key = sanitize_timestamp_for_filename(pushed_at)
         category = "languages"
@@ -303,16 +341,9 @@ class CacheRefreshExecutor:
             if dependency_files:
                 dep_report = self.dependency_analyzer.analyze_repository(dependency_files)
                 if dep_report.total_dependencies > 0:
-                    tech_stack = TechnologyStack(
+                    tech_stack = self.dependency_analyzer.build_technology_stack(
                         repository_name=repo_name,
-                        dependencies=[
-                            DependencyInfo(
-                                name=detail.name,
-                                current_version=detail.current_version,
-                                ecosystem=detail.ecosystem,
-                            )
-                            for detail in dep_report.details
-                        ],
+                        report=dep_report,
                     )
 
             repo = Repository.from_dict(repo_data)

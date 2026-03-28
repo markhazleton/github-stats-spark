@@ -3,9 +3,10 @@ import "./TabBar.css";
 /**
  * TabBar - Fixed bottom navigation for mobile devices
  *
- * Provides primary section navigation with 2 tabs:
+ * Provides primary section navigation with 3 tabs:
  * - Dashboard: Repository browsing and filtering
  * - Visualizations: Charts and data visualizations
+ * - Attention: Repositories that need maintainer focus
  *
  * Features:
  * - Fixed at bottom with safe area insets
@@ -49,6 +50,24 @@ const TabBar = ({ activeTab = "table", onTabChange }) => {
           <line x1="18" y1="20" x2="18" y2="10" />
           <line x1="12" y1="20" x2="12" y2="4" />
           <line x1="6" y1="20" x2="6" y2="14" />
+        </svg>
+      ),
+    },
+    {
+      id: "attention",
+      label: "Attention",
+      icon: (
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+          <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
         </svg>
       ),
     },

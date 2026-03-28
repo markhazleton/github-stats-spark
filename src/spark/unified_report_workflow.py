@@ -352,7 +352,15 @@ class UnifiedReportWorkflow:
 
         # Initialize calculator with fetched data
         profile_dict = github_data.profile.to_dict() if github_data.profile else {}
-        repos_dict = [r.to_dict() for r in github_data.repositories]
+        repos_dict = []
+        for repo in github_data.repositories:
+            repo_dict = repo.to_dict()
+            commit_history = github_data.commit_histories.get(repo.name)
+            if commit_history:
+                repo_dict["commit_history"] = commit_history.to_dict()
+                if commit_history.last_commit_date:
+                    repo_dict["last_commit_date"] = commit_history.last_commit_date.isoformat()
+            repos_dict.append(repo_dict)
         calculator = StatsCalculator(profile_dict, repos_dict)
 
         # Pre-fetch data for all repositories once
@@ -371,6 +379,15 @@ class UnifiedReportWorkflow:
                 )
                 if commits:
                     calculator.add_commits(commits)
+                else:
+                    commit_stats = self.cache.get(
+                        "commits_stats",
+                        username,
+                        repo=repo.name,
+                        week=cache_key,
+                    )
+                    if commit_stats:
+                        calculator.add_commits(commit_stats)
                 
                 # Read language statistics from cache only
                 languages = self.cache.get(
@@ -537,17 +554,9 @@ class UnifiedReportWorkflow:
                         dep_report = self.dependency_analyzer.analyze_repository(dependency_files)
                         
                         # Convert to TechnologyStack model (if needed)
-                        from spark.models.tech_stack import TechnologyStack, DependencyInfo
-                        tech_stack = TechnologyStack(
+                        tech_stack = self.dependency_analyzer.build_technology_stack(
                             repository_name=repo.name,
-                            dependencies=[
-                                DependencyInfo(
-                                    name=detail.name,
-                                    current_version=detail.current_version,
-                                    ecosystem=detail.ecosystem,
-                                )
-                                for detail in dep_report.details
-                            ],
+                            report=dep_report,
                         )
                 except Exception as e:
                     self.logger.debug(

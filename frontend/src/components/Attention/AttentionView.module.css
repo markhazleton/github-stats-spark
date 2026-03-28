@@ -1,0 +1,182 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.summaryCard,
+.tableCard,
+.explainerCard,
+.emptyState {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.summaryCard {
+  padding: var(--spacing-md);
+}
+
+.summaryLabel {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.summaryValue {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  color: var(--color-text);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.3fr) minmax(280px, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.tableCard,
+.explainerCard,
+.emptyState {
+  padding: var(--spacing-lg);
+}
+
+.tableHeader h3,
+.explainerCard h3,
+.emptyState h3 {
+  margin: 0;
+}
+
+.tableHeader p,
+.emptyState p {
+  margin: 0.5rem 0 0;
+  color: var(--color-text-muted);
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin-top: var(--spacing-md);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.9rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.table th {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.row {
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.row:hover {
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.repoCell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.repoCell span {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.tierBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.tierCritical {
+  background: rgba(220, 38, 38, 0.16);
+  color: #ef4444;
+}
+
+.tierElevated {
+  background: rgba(245, 158, 11, 0.18);
+  color: #d97706;
+}
+
+.tierWatch {
+  background: rgba(59, 130, 246, 0.16);
+  color: #2563eb;
+}
+
+.tierHealthy {
+  background: rgba(34, 197, 94, 0.16);
+  color: #16a34a;
+}
+
+.explainerCard h4 {
+  margin: 1.25rem 0 0.75rem;
+}
+
+.explainerList {
+  margin: 0.75rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--color-text-muted);
+}
+
+.topList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.topListItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-background);
+  color: var(--color-text);
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+}
+
+.topListItem small {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 980px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}

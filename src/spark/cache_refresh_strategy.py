@@ -7,6 +7,7 @@ from typing import Set
 
 BASE_REFRESH_CATEGORIES = frozenset({
     "commit_counts",
+    "commits_stats",
     "languages",
     "quality_indicators",
     "pull_request_summary",

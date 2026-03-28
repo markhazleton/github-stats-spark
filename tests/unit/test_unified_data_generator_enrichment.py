@@ -161,7 +161,7 @@ def test_save_writes_output_and_uses_generate_when_input_missing(generator, monk
     payload = {
         "profile": {"username": "markhazleton", "total_repositories": 0, "total_stars": 0, "total_forks": 0, "total_commits": 0},
         "repositories": [],
-        "metadata": {"generated_at": now, "schema_version": "2.1.0", "generator": "test"},
+        "metadata": {"generated_at": now, "schema_version": "2.2.0", "generator": "test"},
     }
     monkeypatch.setattr(generator, "generate", lambda: payload)
 
@@ -176,7 +176,7 @@ def test_save_raises_if_write_fails(generator, monkeypatch):
     payload = {
         "profile": {"username": "markhazleton", "total_repositories": 0, "total_stars": 0, "total_forks": 0, "total_commits": 0},
         "repositories": [],
-        "metadata": {"generated_at": datetime.now(timezone.utc).isoformat(), "schema_version": "2.1.0", "generator": "test"},
+        "metadata": {"generated_at": datetime.now(timezone.utc).isoformat(), "schema_version": "2.2.0", "generator": "test"},
     }
 
     def fail_open(*args, **kwargs):

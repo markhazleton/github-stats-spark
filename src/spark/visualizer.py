@@ -475,10 +475,21 @@ class StatisticsVisualizer:
             fill=self.theme.border_color,
         ))
 
+        start_y = 100
+        if cadence.get("is_estimated"):
+            dwg.add(dwg.text(
+                "Using latest known repository activity because detailed commit timelines were unavailable",
+                insert=(width // 2, 90),
+                text_anchor="middle",
+                font_size="12px",
+                font_family="Arial, sans-serif",
+                fill=self.theme.border_color,
+            ))
+            start_y = 115
+
         panel_width = 360
         panel_height = 220
         start_x = 40
-        start_y = 100
         gutter = 80
 
         sections = [

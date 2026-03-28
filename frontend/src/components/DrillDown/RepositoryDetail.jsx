@@ -180,6 +180,31 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
     return styles.badgeInfo;
   };
 
+  const dependencyStatusPriority = {
+    major_outdated: 0,
+    minor_outdated: 1,
+    unknown: 2,
+    current: 3,
+  };
+
+  const getDependencyBadgeClass = (status) => {
+    if (status === "major_outdated") return styles.badgeError;
+    if (status === "minor_outdated") return styles.badgeWarning;
+    if (status === "current") return styles.badgeSuccess;
+    return styles.badgeInfo;
+  };
+
+  const topDependencies = [...(repository.tech_stack?.dependencies || [])]
+    .sort((a, b) => {
+      const aPriority = dependencyStatusPriority[a.status] ?? 99;
+      const bPriority = dependencyStatusPriority[b.status] ?? 99;
+      if (aPriority !== bPriority) {
+        return aPriority - bPriority;
+      }
+      return a.name.localeCompare(b.name);
+    })
+    .slice(0, 8);
+
   return (
     <div className={styles.backdrop} onClick={onClose}>
       <div
@@ -1092,7 +1117,77 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                               </span>
                             </dd>
                           </div>
+                          <div className={styles.detailItem}>
+                            <dt>Known Versions</dt>
+                            <dd>
+                              {formatNumber(
+                                repository.tech_stack.known_versions_count,
+                              )}
+                              /{formatNumber(
+                                repository.tech_stack.total_dependencies,
+                              )}
+                              ({repository.tech_stack.version_coverage_percentage}
+                              %)
+                            </dd>
+                          </div>
+                          <div className={styles.detailItem}>
+                            <dt>Registry Coverage</dt>
+                            <dd>
+                              {formatNumber(
+                                repository.tech_stack.resolved_latest_versions_count,
+                              )}
+                              /{formatNumber(
+                                repository.tech_stack.total_dependencies,
+                              )}
+                              (
+                              {
+                                repository.tech_stack
+                                  .latest_version_coverage_percentage
+                              }
+                              %)
+                            </dd>
+                          </div>
                         </dl>
+
+                        {topDependencies.length > 0 && (
+                          <div className={styles.dependencySection}>
+                            <h5 className={styles.dependencyHeading}>
+                              Dependency Snapshot
+                            </h5>
+                            <div className={styles.dependencyList}>
+                              {topDependencies.map((dependency) => (
+                                <div
+                                  key={`${dependency.name}-${dependency.ecosystem}`}
+                                  className={styles.dependencyRow}
+                                >
+                                  <div>
+                                    <div className={styles.dependencyNameRow}>
+                                      <span className={styles.dependencyName}>
+                                        {dependency.name}
+                                      </span>
+                                      <span
+                                        className={getDependencyBadgeClass(
+                                          dependency.status,
+                                        )}
+                                      >
+                                        {dependency.status.replace(/_/g, " ")}
+                                      </span>
+                                    </div>
+                                    <div className={styles.dependencyMeta}>
+                                      {dependency.current_version_known
+                                        ? `${dependency.current_version}${dependency.latest_version ? ` -> ${dependency.latest_version}` : ""}`
+                                        : dependency.version_requirement ||
+                                          dependency.current_version}
+                                    </div>
+                                  </div>
+                                  <div className={styles.dependencyAux}>
+                                    {dependency.source_file || dependency.ecosystem}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>

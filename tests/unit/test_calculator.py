@@ -67,6 +67,72 @@ class TestLightningRating:
         assert calculator.calculate_lightning_rating(10) == 1
 
 
+class TestStatisticsAggregation:
+    """Test aggregate statistics across supported commit payload shapes."""
+
+    def test_calculate_statistics_accepts_commit_stats_shape(self):
+        """Ensure heatmap and time analysis work with nested commit dates."""
+        calculator = StatsCalculator({}, [])
+        calculator.add_commits([
+            {
+                "sha": "a",
+                "repo": "repo-a",
+                "commit": {"author": {"date": "2025-02-03T23:00:00+00:00"}},
+                "stats": {"total": 1, "additions": 1, "deletions": 0},
+            },
+            {
+                "sha": "b",
+                "repo": "repo-a",
+                "commit": {"author": {"date": "2025-02-03T10:00:00+00:00"}},
+                "stats": {"total": 1, "additions": 1, "deletions": 0},
+            },
+            {
+                "sha": "c",
+                "repo": "repo-b",
+                "commit": {"author": {"date": "2025-02-04T23:30:00+00:00"}},
+                "stats": {"total": 1, "additions": 1, "deletions": 0},
+            },
+        ])
+
+        stats = calculator.calculate_statistics()
+
+        assert stats["commits_by_day"] == {
+            "2025-02-03": 2,
+            "2025-02-04": 1,
+        }
+        assert stats["time_pattern"]["most_active_hour"] == 23
+        assert stats["streaks"]["longest_streak"] == 2
+        assert stats["fun_stats"]["total_commits"] == 3
+        assert stats["fun_stats"]["total_repos"] == 0
+
+    def test_calculate_statistics_populates_fun_stats(self):
+        """Ensure Lightning Round stats are derived from repo and commit inputs."""
+        calculator = StatsCalculator(
+            {"username": "testuser", "created_at": "2024-01-01T00:00:00+00:00"},
+            [
+                {"name": "repo-a", "stars": 5, "created_at": "2024-01-10T00:00:00+00:00"},
+                {"name": "repo-b", "stars": 7, "created_at": "2024-02-01T00:00:00+00:00"},
+            ],
+        )
+        calculator.add_languages({"Python": 1000, "JavaScript": 500})
+        calculator.add_commits([
+            {"sha": "a", "date": "2025-02-03T23:00:00+00:00", "repo": "repo-a"},
+            {"sha": "b", "date": "2025-02-04T23:30:00+00:00", "repo": "repo-b"},
+        ])
+
+        stats = calculator.calculate_statistics()
+        fun_stats = stats["fun_stats"]
+
+        assert fun_stats["most_active_hour"] == 23
+        assert fun_stats["pattern"] == "night_owl"
+        assert fun_stats["total_repos"] == 2
+        assert fun_stats["languages_count"] == 2
+        assert fun_stats["total_stars"] == 12
+        assert fun_stats["total_commits"] == 2
+        assert fun_stats["account_age_days"] > 0
+        assert fun_stats["avg_commits_per_day"] > 0
+
+
 class TestTimePatterns:
     """Test time pattern analysis."""
 
@@ -261,6 +327,57 @@ class TestReleaseCadence:
 
         assert [point["repos"] for point in cadence["weekly"]] == [0, 0]
         assert [point["repos"] for point in cadence["monthly"]] == [0, 0]
+
+    def test_release_cadence_accepts_commit_stats_shape(self):
+        """Ensure cadence handles commits_stats cache payloads."""
+        calculator = StatsCalculator({}, [])
+        calculator.add_commits([
+            {
+                "sha": "abc",
+                "repo": "repo-a",
+                "commit": {
+                    "author": {"date": "2025-02-03T00:00:00+00:00"},
+                    "message": "test",
+                },
+                "stats": {"total": 1, "additions": 1, "deletions": 0},
+            }
+        ])
+
+        cadence = calculator.calculate_release_cadence(weeks=1, months=1)
+
+        assert cadence["weekly"][0]["repos"] == 1
+        assert cadence["monthly"][0]["repos"] == 1
+        assert cadence["source"] == "commit_timeline"
+        assert cadence["is_estimated"] is False
+
+    def test_release_cadence_falls_back_to_repository_activity(self):
+        """Ensure cadence uses repository last-activity snapshots when commits are unavailable."""
+        calculator = StatsCalculator(
+            {},
+            [
+                {
+                    "name": "repo-a",
+                    "commit_history": {
+                        "last_commit_date": "2025-02-03T00:00:00+00:00",
+                    },
+                    "pushed_at": "2025-02-03T00:00:00+00:00",
+                    "updated_at": "2025-02-03T00:00:00+00:00",
+                },
+                {
+                    "name": "repo-b",
+                    "last_commit_date": "2025-02-10T00:00:00+00:00",
+                    "updated_at": "2025-02-10T00:00:00+00:00",
+                },
+            ],
+        )
+
+        cadence = calculator.calculate_release_cadence(weeks=2, months=1)
+
+        assert [point["repos"] for point in cadence["weekly"]] == [1, 1]
+        assert cadence["monthly"][0]["repos"] == 2
+        assert cadence["unique_repos"] == 2
+        assert cadence["source"] == "latest_repository_activity"
+        assert cadence["is_estimated"] is True
 
 
 class TestDashboardCommitMetrics:

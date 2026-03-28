@@ -6,12 +6,16 @@ This document provides detailed API documentation for the core modules of Stats 
 
 ---
 
-## Unified Repository Contract (Schema 2.1.0)
+## Unified Repository Contract (Schema 2.2.0)
 
 The unified dataset (`data/repositories.json`) now includes additive enrichment fields on each repository:
 
 - `pull_request_summary`
 - `security_summary`
+- `attention_score`
+- `attention_rank`
+- `attention_metrics`
+- richer `tech_stack` dependency version coverage fields
 
 ### `pull_request_summary`
 
@@ -57,6 +61,73 @@ Availability values: `available`, `partial`, `unavailable`.
 Reason values: `none`, `permission_denied`, `api_error`, `not_supported`, `not_requested`, `unknown`.
 
 Consumer guidance: do not treat `availability = "unavailable"` as zero findings.
+
+### `attention_metrics`
+
+```json
+{
+  "score": 61.4,
+  "tier": "elevated",
+  "needs_attention": true,
+  "reasons": ["security", "pull_requests", "dependencies"],
+  "components": {
+    "pull_requests": {
+      "score": 34.0,
+      "availability": "available",
+      "total_open": 2,
+      "draft_count": 1,
+      "review_requested_count": 1,
+      "oldest_open_age_days": 7
+    },
+    "security": {
+      "score": 55.0,
+      "availability": "partial",
+      "overall_state": "warning_present",
+      "active_alert_counts": {
+        "total_open": 1,
+        "critical": 1,
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      }
+    },
+    "staleness": {
+      "score": 35.0,
+      "days_since_last_push": 42,
+      "recent_commits_90d": 3,
+      "open_issues": 0
+    },
+    "dependencies": {
+      "score": 18.5,
+      "total_dependencies": 12,
+      "outdated_count": 3,
+      "outdated_percentage": 25.0,
+      "currency_score": 74,
+      "version_coverage_percentage": 83.3,
+      "latest_version_coverage_percentage": 66.7,
+      "unknown_versions_count": 2
+    }
+  }
+}
+```
+
+### `tech_stack.dependencies[]`
+
+Each dependency entry now includes additional version-discovery metadata:
+
+- `version_requirement`
+- `current_version_known`
+- `latest_version_status`
+- `latest_version_source`
+- `source_file`
+
+At the aggregate tech-stack level, the unified contract also includes:
+
+- `known_versions_count`
+- `resolved_latest_versions_count`
+- `unknown_versions_count`
+- `version_coverage_percentage`
+- `latest_version_coverage_percentage`
 
 ### Staged GitHub REST API Version Settings
 

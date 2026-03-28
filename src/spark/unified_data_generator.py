@@ -97,6 +97,170 @@ class UnifiedDataGenerator:
         # Initialize cache manager for Phase 2
         self.cache_manager = CacheManager(self.fetcher.github, self.cache, fetcher=self.fetcher)
 
+    @staticmethod
+    def _calculate_staleness_score(days_since_last_push: Optional[int]) -> float:
+        if days_since_last_push is None:
+            return 60.0
+        if days_since_last_push <= 14:
+            return 0.0
+        if days_since_last_push <= 30:
+            return 12.0
+        if days_since_last_push <= 90:
+            return 35.0
+        if days_since_last_push <= 180:
+            return 65.0
+        if days_since_last_push <= 365:
+            return 85.0
+        return 100.0
+
+    @staticmethod
+    def _calculate_pull_request_pressure(repo: Repository) -> Dict[str, Any]:
+        summary = repo.pull_request_summary
+        if summary.availability != "available":
+            return {
+                "score": 0.0,
+                "availability": summary.availability,
+                "reason": summary.reason,
+                "total_open": summary.total_open,
+                "draft_count": summary.draft_count,
+                "review_requested_count": summary.review_requested_count,
+                "oldest_open_age_days": summary.oldest_open_age_days,
+            }
+
+        oldest_open_age_days = summary.oldest_open_age_days or 0
+        score = min(
+            100.0,
+            summary.total_open * 12.0
+            + summary.draft_count * 4.0
+            + summary.review_requested_count * 8.0
+            + min(oldest_open_age_days, 180) * 0.35,
+        )
+        return {
+            "score": round(score, 1),
+            "availability": summary.availability,
+            "reason": summary.reason,
+            "total_open": summary.total_open,
+            "draft_count": summary.draft_count,
+            "review_requested_count": summary.review_requested_count,
+            "oldest_open_age_days": summary.oldest_open_age_days,
+        }
+
+    @staticmethod
+    def _calculate_security_attention(repo: Repository) -> Dict[str, Any]:
+        summary = repo.security_summary
+        alert_counts = summary.active_alert_counts or {}
+        weighted_alerts = (
+            alert_counts.get("critical", 0) * 45
+            + alert_counts.get("high", 0) * 30
+            + alert_counts.get("medium", 0) * 15
+            + alert_counts.get("low", 0) * 8
+        )
+        availability_penalty = 0
+        if summary.availability == "partial":
+            availability_penalty = 10
+        elif summary.availability != "available":
+            availability_penalty = 20
+
+        score = min(100.0, float(weighted_alerts + availability_penalty))
+        return {
+            "score": round(score, 1),
+            "availability": summary.availability,
+            "reason": summary.reason,
+            "overall_state": summary.overall_state,
+            "active_alert_counts": alert_counts,
+        }
+
+    @staticmethod
+    def _calculate_dependency_attention(tech_stack: Optional[TechnologyStack]) -> Dict[str, Any]:
+        if not tech_stack:
+            return {
+                "score": 0.0,
+                "total_dependencies": 0,
+                "outdated_count": 0,
+                "outdated_percentage": 0.0,
+                "currency_score": 100,
+                "version_coverage_percentage": 100.0,
+                "latest_version_coverage_percentage": 100.0,
+                "unknown_versions_count": 0,
+            }
+
+        unknown_pressure = max(0.0, 100.0 - tech_stack.version_coverage_percentage)
+        currency_pressure = max(0.0, 100.0 - float(tech_stack.currency_score))
+        score = min(
+            100.0,
+            currency_pressure * 0.65 + unknown_pressure * 0.35,
+        )
+        return {
+            "score": round(score, 1),
+            "total_dependencies": tech_stack.total_dependencies,
+            "outdated_count": tech_stack.outdated_count,
+            "outdated_percentage": tech_stack.outdated_percentage,
+            "currency_score": tech_stack.currency_score,
+            "version_coverage_percentage": tech_stack.version_coverage_percentage,
+            "latest_version_coverage_percentage": tech_stack.latest_version_coverage_percentage,
+            "unknown_versions_count": tech_stack.unknown_versions_count,
+        }
+
+    def _build_attention_metrics(
+        self,
+        repo: Repository,
+        tech_stack: Optional[TechnologyStack],
+        recent_commits_90d: int,
+    ) -> Dict[str, Any]:
+        pull_requests = self._calculate_pull_request_pressure(repo)
+        security = self._calculate_security_attention(repo)
+        dependency_health = self._calculate_dependency_attention(tech_stack)
+        staleness_score = self._calculate_staleness_score(repo.days_since_last_push)
+        if repo.open_issues > 0 and recent_commits_90d == 0:
+            staleness_score = min(100.0, staleness_score + 10.0)
+
+        components = {
+            "pull_requests": pull_requests,
+            "security": security,
+            "staleness": {
+                "score": round(staleness_score, 1),
+                "days_since_last_push": repo.days_since_last_push,
+                "recent_commits_90d": recent_commits_90d,
+                "open_issues": repo.open_issues,
+            },
+            "dependencies": dependency_health,
+        }
+
+        score = round(
+            pull_requests["score"] * 0.25
+            + security["score"] * 0.35
+            + staleness_score * 0.25
+            + dependency_health["score"] * 0.15,
+            1,
+        )
+
+        if score >= 70:
+            tier = "critical"
+        elif score >= 45:
+            tier = "elevated"
+        elif score >= 20:
+            tier = "watch"
+        else:
+            tier = "healthy"
+
+        reasons = []
+        if security["score"] >= 20:
+            reasons.append("security")
+        if pull_requests["score"] >= 20:
+            reasons.append("pull_requests")
+        if staleness_score >= 35:
+            reasons.append("staleness")
+        if dependency_health["score"] >= 20:
+            reasons.append("dependencies")
+
+        return {
+            "score": score,
+            "tier": tier,
+            "needs_attention": score >= 20,
+            "reasons": reasons,
+            "components": components,
+        }
+
     def generate(self) -> Dict[str, Any]:
         """Generate unified data using clean 4-phase architecture.
         
@@ -187,7 +351,9 @@ class UnifiedDataGenerator:
         repositories = []
         commit_histories = {}
         repo_cache = {}
-        dependency_analyzer = RepositoryDependencyAnalyzer()
+        dependency_analyzer = RepositoryDependencyAnalyzer(
+            config=self.config.config.get("analyzer", {})
+        )
         summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False)
         
         for i, repo_data in enumerate(raw_repos[:self.max_repositories], 1):
@@ -382,19 +548,18 @@ class UnifiedDataGenerator:
             if dependency_files:
                 dep_report = dependency_analyzer.analyze_repository(dependency_files)
                 if dep_report.total_dependencies > 0:
-                    tech_stack = TechnologyStack(
+                    tech_stack = dependency_analyzer.build_technology_stack(
                         repository_name=repo.name,
-                        dependencies=[
-                            DependencyInfo(
-                                name=detail.name,
-                                current_version=detail.current_version,
-                                ecosystem=detail.ecosystem,
-                            )
-                            for detail in dep_report.details
-                        ],
+                        report=dep_report,
                         dependency_file_type=next(iter(dependency_files.keys()), None),
                         languages=repo.language_stats or {},
                     )
+
+            attention_metrics = self._build_attention_metrics(
+                repo,
+                tech_stack,
+                commit_history.recent_90d if commit_history else 0,
+            )
 
             summary_payload = None
             if cached_summary and cached_summary.get("ai_summary"):
@@ -487,12 +652,22 @@ class UnifiedDataGenerator:
                 "age_days": repo.age_days,
                 "days_since_last_push": repo.days_since_last_push,
                 "ai_summary": ai_summary_text,
+                "attention_score": attention_metrics["score"],
+                "attention_metrics": attention_metrics,
                 "rank": rank,
                 "composite_score": score,
                 "pull_request_summary": repo.pull_request_summary.to_dict(),
                 "security_summary": repo.security_summary.to_dict(),
             }
             unified_repos.append(repo_dict)
+
+        attention_sorted = sorted(
+            unified_repos,
+            key=lambda item: item.get("attention_score", 0),
+            reverse=True,
+        )
+        for attention_rank, repo_dict in enumerate(attention_sorted, 1):
+            repo_dict["attention_rank"] = attention_rank
         
         # Create user profile
         profile = {
@@ -506,8 +681,13 @@ class UnifiedDataGenerator:
         # Create metadata
         metadata = {
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "schema_version": "2.1.0",
-            "generator": "unified_data_generator"
+            "schema_version": "2.2.0",
+            "generator": "unified_data_generator",
+            "schema_features": [
+                "attention_metrics",
+                "dependency_version_coverage",
+            ],
+            "attention_formula_version": "1.0"
         }
         
         return {

@@ -1,5 +1,7 @@
 """Regression coverage for cache manager delegation boundaries."""
 
+from datetime import datetime, timezone
+
 from spark.cache_manager import CacheManager, RefreshResult
 import spark.cache_manager as cache_manager_module
 from spark.cache_refresh_strategy import get_refresh_categories
@@ -65,5 +67,38 @@ def test_refresh_user_data_uses_refresh_strategy(monkeypatch):
 def test_refresh_categories_include_enrichment_summaries():
     categories = get_refresh_categories(include_ai_summaries=False)
 
+    assert "commits_stats" in categories
     assert "pull_request_summary" in categories
     assert "security_summary" in categories
+
+
+def test_refresh_repository_includes_commit_stats(monkeypatch):
+    manager = CacheManager(github_client=object(), cache=DummyCache(), fetcher=object())
+    calls = []
+
+    pushed_at = datetime(2026, 3, 1, 12, 0, tzinfo=timezone.utc)
+
+    monkeypatch.setattr(
+        manager,
+        "refresh_commit_counts",
+        lambda username, repo_name, pushed_at: calls.append("commit_counts") or RefreshResult(repo_name, "commit_counts", False, True),
+    )
+    monkeypatch.setattr(
+        manager,
+        "refresh_commits_stats",
+        lambda username, repo_name, pushed_at: calls.append("commits_stats") or RefreshResult(repo_name, "commits_stats", False, True),
+    )
+    monkeypatch.setattr(
+        manager,
+        "refresh_languages",
+        lambda username, repo_name, pushed_at: calls.append("languages") or RefreshResult(repo_name, "languages", False, True),
+    )
+
+    manager.refresh_repository(
+        username="markhazleton",
+        repo_name="repo-one",
+        pushed_at=pushed_at,
+        categories={"commit_counts", "commits_stats", "languages"},
+    )
+
+    assert calls == ["commit_counts", "commits_stats", "languages"]
