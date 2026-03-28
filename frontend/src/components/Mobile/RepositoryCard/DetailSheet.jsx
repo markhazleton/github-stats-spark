@@ -23,6 +23,7 @@
 
 import React from "react";
 import BottomSheet from "../BottomSheet/BottomSheet";
+import MarkdownContent from "@/components/Common/MarkdownContent";
 import "./DetailSheet.css";
 
 export function DetailSheet({ isOpen, onClose, repository }) {
@@ -263,7 +264,7 @@ export function DetailSheet({ isOpen, onClose, repository }) {
         {ai_summary && (
           <section className="detail-section">
             <h3 className="detail-section-title">Summary</h3>
-            <p className="detail-summary">{ai_summary}</p>
+            <MarkdownContent content={ai_summary} className="detail-summary" />
           </section>
         )}
 

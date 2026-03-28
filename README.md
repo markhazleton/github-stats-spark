@@ -26,7 +26,7 @@ Stats Spark is a comprehensive GitHub analytics suite that transforms your GitHu
 ### Beautiful Profile Statistics
 
 - **Automated Daily Updates**: GitHub Actions workflow runs at midnight UTC
-- **5 Visual Categories**: Overview, heatmap, languages, streaks, and fun stats
+- **6 Visual Categories**: Overview, heatmap, languages, streaks, fun stats, and release cadence
 - **Unique Spark Score**: 0-100 metric combining consistency, volume, and collaboration
 - **Theme Customization**: Dark, light, and custom themes with WCAG AA accessibility
 - **Zero Maintenance**: Set it once, updates automatically forever
@@ -39,14 +39,15 @@ Stats Spark is a comprehensive GitHub analytics suite that transforms your GitHu
 - **Comprehensive Reports**: GitHub-flavored markdown with embedded visualizations
 - **Performance Optimized**: Analyze 50+ repositories in under 3 minutes
 
-### Interactive Dashboard (NEW!)
+### Interactive Dashboard
 
 - **Mobile-First Design**: Touch-optimized interface with 44x44px touch targets and responsive layouts (320px-768px viewports)
 - **Bottom Sheet Navigation**: Native mobile patterns for filters, sort controls, and detailed views
 - **Swipe Gestures**: Touch-friendly interactions including swipe-to-delete and horizontal navigation
 - **Repository Comparison**: Side-by-side comparison of up to 5 repositories with color-coded metrics
+- **Needs Attention View**: Ranks repositories by combined security alerts, PR backlog, dependency drift, and staleness
 - **Visual Analytics**: Interactive Chart.js visualizations optimized for mobile with touch tooltips
-- **Drill-Down Details**: Comprehensive repository analysis with commit history and tech stack
+- **Drill-Down Details**: Comprehensive repository analysis with commit history, enriched dependency coverage, and rendered markdown summaries
 - **Export Functionality**: Download filtered data as CSV or JSON
 - **Performance Optimized**: <2s First Contentful Paint, <5s Time to Interactive on 3G connections
 - **Offline Support**: IndexedDB caching for offline access (coming soon)
@@ -110,7 +111,7 @@ Generate beautiful, embeddable SVG visualizations that update automatically:
 #### Release Cadence
 
 - 📊 **Sparklines**: Weekly and monthly repository diversity
-- 🚀 **Activity Breadth**: Highlight breadth of work across projects
+- 🚀 **Activity Breadth**: Highlights how many unique repositories were touched in each period, not raw commit volume
 - 📈 **Trend Visualization**: Track activity patterns over time
 
 ### 🤖 AI-Powered Repository Analysis
@@ -123,6 +124,13 @@ Generate comprehensive markdown reports with intelligent insights:
 - **45% Activity Weight**: Recent commits with time-decay (90d/180d/365d windows)
 - **25% Health Weight**: Documentation, licensing, and maintenance signals
 - **Smart Algorithm**: Balances established projects with active development
+
+#### Attention Ranking and Dependency Insights
+
+- **Schema 2.2.0**: Unified repository records now include `attention_score`, `attention_rank`, and `attention_metrics`
+- **Dependency Coverage**: `tech_stack` now tracks known versions, registry resolution coverage, and unknown-version gaps
+- **Maintenance Signals**: Attention scoring blends PR pressure, security findings, staleness, and dependency health
+- **Markdown-Aware UI**: AI summaries are rendered as GitHub-flavored markdown in both desktop and mobile drill-down views
 
 #### AI-Generated Technical Summaries
 
@@ -224,6 +232,11 @@ spark unified --user YOUR_GITHUB_USERNAME --include-ai-summaries
 - ✅ `/output/*.svg` - All 6 visual analytics (overview, heatmap, languages, streaks, fun, release)
 - ✅ `/output/reports/*.md` - Comprehensive markdown analysis report
 - ✅ AI summaries for each repository (if API key provided)
+
+**Notable unified data additions in schema 2.2.0:**
+- ✅ Attention ranking fields for maintenance triage
+- ✅ Pull request and security summary payloads with explicit availability semantics
+- ✅ Enriched dependency version coverage and latest-version resolution metrics
 
 **Benefits:**
 - 🚀 ~60% faster than separate commands

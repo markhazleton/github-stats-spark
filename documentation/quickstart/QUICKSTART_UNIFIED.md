@@ -48,6 +48,7 @@ spark unified --user YOUR_GITHUB_USERNAME
 - Calculate commit statistics (avg size, largest, smallest)
 - Analyze technology stacks and dependencies
 - Rank repositories by composite score
+- Compute maintenance attention ranking from PRs, security posture, dependency drift, and staleness
 - Generate SVG visualizations
 - Create markdown analysis report
 - Save unified JSON to `/data/repositories.json`
@@ -139,6 +140,13 @@ Complete dataset with all attributes:
         "frameworks": ["Flask", "React"],
         "dependencies": [...]
       },
+      "attention_score": 61.4,
+      "attention_rank": 3,
+      "attention_metrics": {
+        "tier": "elevated",
+        "needs_attention": true,
+        "reasons": ["security", "pull_requests"]
+      },
       "summary": {
         "text": "AI-generated summary...",
         "ai_generated": true
@@ -151,6 +159,8 @@ Complete dataset with all attributes:
   "metadata": {...}
 }
 ```
+
+The release cadence SVG uses repository diversity, defined as the number of unique repositories touched in each weekly or monthly bucket.
 
 ### 2. SVG Visualizations (`/output/*.svg`)
 
@@ -231,7 +241,9 @@ npm run build  # Production build to /docs
 **Dashboard Features:**
 - Repository table with sorting and filtering
 - Interactive visualizations (bar charts, line graphs, scatter plots)
+- Needs Attention page for maintenance triage
 - Drill-down into individual repository details
+- Markdown-rendered AI summaries in desktop and mobile views
 - Side-by-side comparison (up to 5 repos)
 
 ---

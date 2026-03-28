@@ -18,7 +18,9 @@ import { ToastContainer } from "@/components/Mobile/Toast/Toast";
 const DashboardView = lazy(
   () => import("@/components/Visualizations/DashboardView"),
 );
-const AttentionView = lazy(() => import("@/components/Attention/AttentionView"));
+const AttentionView = lazy(
+  () => import("@/components/Attention/AttentionView"),
+);
 const RepositoryDetail = lazy(
   () => import("@/components/DrillDown/RepositoryDetail"),
 );
@@ -268,7 +270,9 @@ function App() {
                 <button
                   className={`nav-menu-item ${currentView === "attention" ? "nav-menu-item--active" : ""}`}
                   onClick={() => handleViewChange("attention")}
-                  aria-current={currentView === "attention" ? "page" : undefined}
+                  aria-current={
+                    currentView === "attention" ? "page" : undefined
+                  }
                   aria-label="Switch to repositories needing attention"
                 >
                   Needs Attention
@@ -420,7 +424,9 @@ function App() {
                       aria-labelledby="attention-heading"
                     >
                       <div className="mb-lg">
-                        <h2 id="attention-heading">Repositories Needing Attention</h2>
+                        <h2 id="attention-heading">
+                          Repositories Needing Attention
+                        </h2>
                         <p
                           className="text-muted"
                           role="status"

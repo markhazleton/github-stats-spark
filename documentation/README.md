@@ -24,6 +24,7 @@ Approved README exceptions are linked here so contributors have a single entry p
 ### User Guides
 - **[Analyze Command Guide](guides/analyze-command.md)** - AI-powered repository analysis
 - **[Embedding Guide](guides/embedding-guide.md)** - How to embed SVGs in your profile
+- **[Unified Pipeline Guide](guides/unified-pipeline.md)** - Schema 2.2.0 output contract and generation flow
 
 ### Reference
 - **[API Reference](api/api-reference.md)** - Developer documentation for core modules
@@ -62,8 +63,10 @@ The React dashboard automatically builds from your generated data:
 
 1. Run `spark unified --user YOUR_USERNAME` to generate `data/repositories.json`
 2. Dashboard automatically updates on GitHub Pages: `https://YOUR_USERNAME.github.io/github-stats-spark/`
-3. Mobile-first responsive design with touch-optimized interactions
-4. See [Dashboard Build Pipeline](architecture/DASHBOARD_BUILD_PIPELINE.md) for technical details
+3. Mobile-first responsive design with touch-optimized interactions and markdown-rendered repository summaries
+4. Includes a dedicated Needs Attention view powered by `attention_score`, `attention_rank`, and `attention_metrics`
+5. Dependency coverage and latest-version visibility come directly from enriched `tech_stack` fields
+6. See [Dashboard Build Pipeline](architecture/DASHBOARD_BUILD_PIPELINE.md) for technical details
 
 ## 🔧 For Developers
 
@@ -95,6 +98,7 @@ See [TESTING.md](TESTING.md) for:
 - **Change-Based**: Only updates repositories with new commits
 - **Metadata Refresh**: Updates stars/forks in 2.1s when no changes
 - **400x Faster**: Typical daily checks with no updates
+- **Commit-Safe Visuals**: Release cadence, heatmap, streaks, and fun stats now fall back cleanly across cached commit shapes instead of rendering empty states
 - See [Changelog](CHANGELOG.md) for implementation details
 
 ### AI Integration
@@ -106,6 +110,7 @@ See [TESTING.md](TESTING.md) for:
 - **6 SVG Categories**: Overview, heatmap, languages, streaks, fun stats, release cadence
 - **Themes**: Dark, light, and custom with WCAG AA accessibility
 - **Embed Anywhere**: Use in profile READMEs, project documentation, websites
+- **Release Cadence Semantics**: Weekly and monthly diversity represent unique repositories touched per period
 
 ## 📖 Documentation Standards
 

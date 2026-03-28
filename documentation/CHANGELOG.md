@@ -8,9 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Added dashboard markdown rendering for AI-generated repository summaries in desktop and mobile drill-down views using `react-markdown` and `remark-gfm`.
+- Added a dedicated frontend Needs Attention page backed by repository `attention_score`, `attention_rank`, and `attention_metrics`.
 - Added schema 2.2.0 repository attention ranking fields: `attention_score`, `attention_rank`, and `attention_metrics`.
 - Added dependency version coverage metadata to `tech_stack`, including known-version and registry-resolution coverage.
-- Repository enrichment payloads in unified output (`schema_version: 2.1.0`):
+- Added repository enrichment payloads in unified output (`schema_version: 2.2.0`):
   - `pull_request_summary` for compact open PR signals
   - `security_summary` for repository security posture and alert counts
   - Explicit availability semantics (`available`, `partial`, `unavailable`) and reason codes
@@ -22,15 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Unified data assembly now emits additive enrichment objects for every repository record.
 - Unified workflow logs staged API-version decision state and warns when runtime budget exceeds 5 minutes.
-
-### Removed
-- **Version Checker Module**: Removed out-of-scope version checking functionality
-  - Deleted `src/spark/dependencies/version_checker.py` (271 lines)
-  - Deleted `tests/unit/test_version_checker.py` (entire test suite)
-  - Simplified `RepositoryDependencyAnalyzer` to only parse dependencies without checking versions
-  - Removed fields from `DependencyStatus`: `latest_version`, `versions_behind`, `is_current`, `status`
-  - Removed fields from `RepositoryDependencyReport`: `analyzed_dependencies`, `current_dependencies`, `outdated_dependencies`, `unknown_dependencies`, `currency_score`
-  - Rationale: Version checking is out of scope for a repository reporting tool; better tools exist (Dependabot, Renovate, etc.)
+- Frontend detail views now render GitHub-flavored markdown summaries instead of displaying raw markdown text.
+- Frontend repository detail views now surface dependency version coverage and registry-resolution visibility from the enriched `tech_stack` contract.
 
 ### Added
 - **Change-Based Smart Caching**: Revolutionary caching system that eliminates time-based expiration
@@ -52,6 +47,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All datetime operations use timezone-aware UTC timestamps for cross-platform compatibility
 
 ### Fixed
+- Release cadence and weekly repository diversity charts now handle nested and cached commit-history shapes correctly instead of rendering empty series.
+- Commit activity heatmap, streak calculations, time-pattern analysis, and Lightning Round stats now share the same normalized commit timestamp extraction path.
+- Cache refresh now treats `commits_stats` as a first-class refresh category so live runs populate SVG and dashboard analytics consistently.
 - **Cross-Platform DateTime**: Fixed timezone handling to work on both Windows CLI and GitHub Actions (Linux)
 - **Stale Repository List**: Repository list cache now cleared before freshness checks
 - **Duplicate Processing**: Eliminated redundant commit fetching and tech stack analysis
@@ -59,6 +57,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Handles multiple ISO 8601 timestamp formats (Z suffix, +00:00, naive)
   - No more `TypeError: can't subtract offset-naive and offset-aware datetimes`
   - Comprehensive cross-platform tests added
+
+### Removed
+- **Version Checker Module**: Removed out-of-scope version checking functionality
+  - Deleted `src/spark/dependencies/version_checker.py` (271 lines)
+  - Deleted `tests/unit/test_version_checker.py` (entire test suite)
+  - Simplified `RepositoryDependencyAnalyzer` to only parse dependencies without checking versions
+  - Removed fields from `DependencyStatus`: `latest_version`, `versions_behind`, `is_current`, `status`
+  - Removed fields from `RepositoryDependencyReport`: `analyzed_dependencies`, `current_dependencies`, `outdated_dependencies`, `unknown_dependencies`, `currency_score`
+  - Rationale: Version checking is out of scope for a repository reporting tool; better tools exist (Dependabot, Renovate, etc.)
 
 ### Documented
 - Completed spec `.documentation/specs/001-remediate-high-issues` and recorded closure evidence:

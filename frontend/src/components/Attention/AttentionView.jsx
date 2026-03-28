@@ -133,10 +133,8 @@ function AttentionView({ repositories, onRepoClick }) {
                       <td>{formatScore(repo.attention_score)}</td>
                       <td>{components.pull_requests.total_open}</td>
                       <td>
-                        {
-                          components.security.active_alert_counts?.total_open ||
-                          0
-                        }
+                        {components.security.active_alert_counts?.total_open ||
+                          0}
                       </td>
                       <td>{repo.days_since_last_push ?? "n/a"}</td>
                       <td>
@@ -154,10 +152,18 @@ function AttentionView({ repositories, onRepoClick }) {
         <aside className={styles.explainerCard}>
           <h3>What drives the score</h3>
           <ul className={styles.explainerList}>
-            <li>Security contributes 35% with weighted critical and high alerts.</li>
-            <li>Pull requests contribute 25% based on backlog, age, and review load.</li>
+            <li>
+              Security contributes 35% with weighted critical and high alerts.
+            </li>
+            <li>
+              Pull requests contribute 25% based on backlog, age, and review
+              load.
+            </li>
             <li>Staleness contributes 25% from days since the last push.</li>
-            <li>Dependencies contribute 15% from outdated packages and version coverage gaps.</li>
+            <li>
+              Dependencies contribute 15% from outdated packages and version
+              coverage gaps.
+            </li>
           </ul>
 
           <h4>Quick triage</h4>

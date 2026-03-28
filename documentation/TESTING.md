@@ -90,7 +90,7 @@ cat > docs/data/repositories.json << 'EOF'
   },
   "metadata": {
     "generated_at": "2024-12-15T12:00:00Z",
-    "schema_version": "1.0.0",
+      "schema_version": "2.2.0",
     "repository_count": 2,
     "data_source": "GitHub API"
   }
@@ -116,6 +116,8 @@ You should see:
 - ✅ Sortable columns
 - ✅ Language filter dropdown
 - ✅ Clickable repository names
+- ✅ A Needs Attention view if enrichment fields are present
+- ✅ Markdown-formatted summaries rendering as headings, lists, and links instead of raw markdown text
 
 ---
 

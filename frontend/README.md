@@ -8,8 +8,9 @@ Interactive React dashboard for visualizing and comparing GitHub repository stat
 
 - **Repository Table**: Sortable, filterable table with comprehensive metrics
 - **Interactive Visualizations**: Bar charts, line graphs, and scatter plots using Recharts
+- **Needs Attention View**: Maintenance ranking using security alerts, PR backlog, dependency health, and staleness
 - **Repository Comparison**: Side-by-side comparison of up to 5 repositories with color-coded differences
-- **Drill-Down Details**: Comprehensive repository analysis with commit history and tech stack
+- **Drill-Down Details**: Comprehensive repository analysis with commit history, dependency coverage, and markdown-rendered summaries
 - **Export Functionality**: Export data to CSV or JSON format
 - **Responsive Design**: Mobile-friendly with CSS Modules and custom properties
 
@@ -52,7 +53,8 @@ npm run build
 frontend/
 ├── src/
 │   ├── components/
-│   │   ├── Common/           # Reusable components (LoadingState, Tooltip, FilterControls, ExportButton, ErrorBoundary)
+│   │   ├── Common/           # Reusable components (LoadingState, Tooltip, FilterControls, ExportButton, ErrorBoundary, MarkdownContent)
+│   │   ├── Attention/        # Maintenance triage views and styles
 │   │   ├── RepositoryTable/  # Table components (Table, Header, Row)
 │   │   ├── Visualizations/   # Chart components (Bar, Line, Scatter, Controls)
 │   │   ├── Comparison/       # Comparison components (Selector, View)
@@ -76,10 +78,16 @@ frontend/
 
 ### App.jsx
 Root component managing:
-- View state (table, visualizations, comparison)
+- View state (summary, visualizations, attention)
 - Repository selection for comparison
 - Modal state for drill-down details
 - Data fetching and processing
+
+### AttentionView
+Maintenance triage surface showing:
+- Attention ranking ordered by `attention_score`
+- Security, PR, staleness, and dependency component breakdowns
+- Quick triage list for the highest-priority repositories
 
 ### RepositoryTable
 Displays repository data with:
@@ -104,8 +112,8 @@ Side-by-side comparison showing:
 Comprehensive repository analysis:
 - Commit history timeline (90d, 180d, 365d)
 - Language breakdown
-- Technology stack and dependencies
-- AI-generated summaries (when available)
+- Technology stack, dependency coverage, and latest-version visibility
+- AI-generated summaries rendered as GitHub-flavored markdown
 - Next/Previous navigation
 
 ## 🔧 Configuration
@@ -124,7 +132,7 @@ Comprehensive repository analysis:
 
 ## 📊 Data Format
 
-The dashboard expects `data/repositories.json` with schema version 2.0.0:
+The dashboard expects `data/repositories.json` with schema version 2.2.0:
 
 ```json
 {
@@ -133,20 +141,26 @@ The dashboard expects `data/repositories.json` with schema version 2.0.0:
       "name": "repo-name",
       "language": "JavaScript",
       "stars": 42,
+      "attention_score": 61.4,
+      "attention_rank": 2,
+      "attention_metrics": {
+        "tier": "elevated",
+        "needs_attention": true
+      },
       "commit_history": {
         "total_commits": 150,
         "first_commit_date": "2024-01-01T00:00:00Z",
         "last_commit_date": "2024-12-31T23:59:59Z"
       },
-      "commit_metrics": {
-        "avg_size": 123.5,
-        "largest_commit": { "size": 500, "sha": "abc123" },
-        "smallest_commit": { "size": 10, "sha": "def456" }
+      "tech_stack": {
+        "version_coverage_percentage": 83.3,
+        "latest_version_coverage_percentage": 66.7,
+        "dependencies": []
       }
     }
   ],
   "profile": { "username": "...", "total_commits": 1000 },
-  "metadata": { "generated_at": "...", "schema_version": "2.0.0" }
+  "metadata": { "generated_at": "...", "schema_version": "2.2.0" }
 }
 ```
 
@@ -154,7 +168,6 @@ The dashboard expects `data/repositories.json` with schema version 2.0.0:
 
 - React.memo for table rows (efficient re-renders)
 - useMemo for expensive computations (chart data transformations)
-- useCallback for event handlers
 - Code splitting with React.lazy (charts loaded on demand)
 - CSS Modules for scoped styling (prevents style conflicts)
 - Vite build optimizations (tree-shaking, minification)

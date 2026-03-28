@@ -49,13 +49,15 @@ The system will auto-detect your username from the repository, but you can custo
 
 1. Check the **Actions** tab for workflow status
 2. Once complete, navigate to `output/` directory
-3. You should see 5 SVG files:
+3. You should see 6 SVG files:
    - `overview.svg` - Comprehensive dashboard
    - `heatmap.svg` - Commit activity calendar
    - `languages.svg` - Programming language breakdown
-   - `release.svg` - Release cadence sparklines (weekly/monthly repo diversity)
+   - `release.svg` - Release cadence sparklines showing weekly/monthly unique repositories touched
    - `fun.svg` - Fun facts and stats
    - `streaks.svg` - Coding streaks
+
+4. You should also see `data/repositories.json` with schema `2.2.0`, including maintenance-oriented enrichment fields used by the dashboard.
 
 ### Step 6: Embed in Your Profile
 

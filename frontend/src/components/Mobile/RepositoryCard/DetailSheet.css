@@ -276,7 +276,6 @@
   line-height: 1.6;
   color: var(--color-text-secondary, #4b5563);
   margin: 0;
-  font-style: italic;
 }
 
 @media (prefers-color-scheme: dark) {
