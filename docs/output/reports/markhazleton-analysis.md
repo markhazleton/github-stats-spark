@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-03-28 15:13:06 UTC
+**Generated**: 2026-03-29 02:10:59 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 37
 **AI Summary Rate**: 56.8%
@@ -37,16 +37,19 @@
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 196 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 182 commits (90d)
 
-👥 0 contributors | 🌐 1 languages | 💾 11644 KB | 🚀 65.3 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 11919 KB | 🚀 60.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-A GitHub Stats for Profile README.md Written in Python. 196 commits in the last 90 days.
+> Automated GitHub profile statistics generator with beautiful SVG visualizations and AI-powered repository analysis Built with Python. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 69/100
+**Dependencies**: 10 total (1 current, 9 outdated)
 
 **Created**: 2025-12-28
-**Last Modified**: 2026-03-28
+**Last Modified**: 2026-03-29
 
 ---
 
@@ -85,24 +88,24 @@ Stars: 0 | Forks: 0 | Language: Python | 74 commits (90d)
 
 ### #4. [UISampleSpark](https://github.com/markhazleton/UISampleSpark)
 
-Stars: 8 | Forks: 4 | Language: HTML | 83 commits (90d)
+Stars: 8 | Forks: 4 | Language: HTML | 86 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 30837 KB | 🚀 27.7 commits/month
+👥 0 contributors | 🌐 1 languages | 💾 30843 KB | 🚀 28.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-A .NET 10 (ASP.NET Core) application exploring multiple front-end technologies for building modern web user interfaces. This repository is an educational reference that compares UI patterns — MVC, Razor Pages, React, Vue, htmx, Blazor, and vanilla JavaScript SPA — using a common Employee/Department  Built with HTML. Actively maintained with regular updates.
+An application to demonstrate multiple ways of implementing simple maintenance (CRUD) and user interface in ASP.Net using latest public versions.  Written in HTML. 8 stars, 4 forks. 86 commits in the last 90 days.
 
 **Created**: 2019-04-25
-**Last Modified**: 2026-03-28
+**Last Modified**: 2026-03-29
 
 ---
 
 ### #5. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
 
-Stars: 0 | Forks: 0 | Language: C# | 51 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 49 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 2405 KB | 🚀 17.0 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 2405 KB | 🚀 16.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -113,25 +116,7 @@ Stars: 0 | Forks: 0 | Language: C# | 51 commits (90d)
 
 ---
 
-### #6. [git-spark](https://github.com/markhazleton/git-spark)
-
-Stars: 0 | Forks: 0 | Language: TypeScript | 28 commits (90d)
-
-👥 0 contributors | 🌐 7 languages | 💾 2012 KB | 🚀 9.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-**Analyze commit patterns and contributor activity with interactive reports** Built with TypeScript. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 90/100
-**Dependencies**: 19 total (14 current, 5 outdated)
-
-**Created**: 2025-09-29
-**Last Modified**: 2026-03-26
-
----
-
-### #7. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
+### #6. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 47 commits (90d)
 
@@ -145,6 +130,24 @@ Stars: 0 | Forks: 0 | Language: TypeScript | 47 commits (90d)
 **Dependencies**: 27 total (27 current, 0 outdated)
 
 **Created**: 2025-07-29
+**Last Modified**: 2026-03-26
+
+---
+
+### #7. [git-spark](https://github.com/markhazleton/git-spark)
+
+Stars: 0 | Forks: 0 | Language: TypeScript | 28 commits (90d)
+
+👥 0 contributors | 🌐 7 languages | 💾 2012 KB | 🚀 9.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+**Analyze commit patterns and contributor activity with interactive reports** Built with TypeScript. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 90/100
+**Dependencies**: 19 total (14 current, 5 outdated)
+
+**Created**: 2025-09-29
 **Last Modified**: 2026-03-26
 
 ---
@@ -185,14 +188,11 @@ Stars: 1 | Forks: 0 | Language: C# | 14 commits (90d)
 
 Stars: 0 | Forks: 0 | Language: CSS | 23 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 43711 KB | 🚀 7.7 commits/month
+👥 0 contributors | 🌐 1 languages | 💾 43711 KB | 🚀 7.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/markhazleton/ReactSparkPortfolio?tab=MIT-1-ov-file) [![GitHub stars](https://img.shields.io/github/stars/markhazleton/ReactSparkPortfolio)](https://github.com/markhazleton/ReactSparkPortfolio/stargazers) [![Git Built with CSS. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 46 total (46 current, 0 outdated)
+ReactSparkPortfolio is a production-ready, enterprise-grade developer portfolio built with React 19, TypeScript, and Vite.  Written in CSS. 23 commits in the last 90 days.
 
 **Created**: 2024-10-11
 **Last Modified**: 2026-03-07
@@ -286,7 +286,7 @@ Notable features include idle-period filtering with configurable thresholds, sin
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 23 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 2052 KB | 🚀 7.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 2150 KB | 🚀 7.7 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
@@ -317,9 +317,9 @@ Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
 
 ### #17. [markhazleton](https://github.com/markhazleton/markhazleton)
 
-Stars: 0 | Forks: 0 | Language: Unknown | 16 commits (90d)
+Stars: 0 | Forks: 0 | Language: Unknown | 15 commits (90d)
 
-👥 0 contributors | 🌐 1 languages | 💾 6603 KB | 🚀 5.3 commits/month
+👥 0 contributors | 🌐 1 languages | 💾 6603 KB | 🚀 5.0 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
@@ -513,24 +513,7 @@ Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #28. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
-
-Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 519 KB | 🚀 4.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# DecisionSpark - Technical Summary
-
-**DecisionSpark** is a .NET 10-based decision routing engine that implements an intelligent conversation system to guide users through minimal questioning and recommend optimal outcomes using a config-driven architecture. The system combines a RESTful API with an interactive Razor Pages web interface, leveraging OpenAI integration for natural language question generation and answer parsing while maintaining conversation state through file-based session persistence. The architecture features modular service components including a RoutingEvaluator for rule-based decision logic, TraitParser for structured data extraction, and DecisionSpecLoader for JSON-based configuration management, enabling domain-specific decision flows without code modifications. Key capabilities include support for multiple question types (text, single-select, multi-select), Swagger/OpenAPI documentation, structured logging via Serilog, and intelligent rule evaluation with derived traits and tie-breaking mechanisms for complex decision scenarios. The project targets practical use cases such as activity planning (e.g., "Family Saturday Planner") and technical decision-making (e.g., "Tech Stack Advisor"), making it suitable for applications requiring interactive guidance systems, recommendation engines, or conversational decision support. Despite having zero stars and contributors at launch (created October 2025), the repository shows active development momentum with 14 commits over 90 days and 18 over the past year, indicating ongoing refinement and feature acceleration.
-
-**Created**: 2025-10-29
-**Last Modified**: 2025-12-27
-
----
-
-### #29. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
+### #28. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
 
 Stars: 0 | Forks: 0 | Language: Python | 2 commits (90d)
 
@@ -550,7 +533,7 @@ DocSpecSpark is a document-first framework and CLI tool that automates the initi
 
 ---
 
-### #30. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
+### #29. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
 
 Stars: 0 | Forks: 0 | Language: HTML | 1 commits (90d)
 
@@ -580,7 +563,7 @@ Ideal for enterprise .NET developers building microservices, distributed systems
 
 ---
 
-### #31. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
+### #30. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
 
 Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
@@ -597,7 +580,7 @@ Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
 ---
 
-### #32. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
+### #31. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 1 commits (90d)
 
@@ -633,7 +616,7 @@ Ideal for development teams and individual developers building consumer or enter
 
 ---
 
-### #33. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+### #32. [TeachSpark](https://github.com/markhazleton/TeachSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
@@ -650,6 +633,23 @@ Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
 
 **Created**: 2025-06-19
 **Last Modified**: 2026-01-12
+
+---
+
+### #33. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
+
+Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
+
+👥 0 contributors | 🌐 4 languages | 💾 519 KB | 🚀 4.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+# DecisionSpark - Technical Summary
+
+**DecisionSpark** is a .NET 10-based decision routing engine that implements an intelligent conversation system to guide users through minimal questioning and recommend optimal outcomes using a config-driven architecture. The system combines a RESTful API with an interactive Razor Pages web interface, leveraging OpenAI integration for natural language question generation and answer parsing while maintaining conversation state through file-based session persistence. The architecture features modular service components including a RoutingEvaluator for rule-based decision logic, TraitParser for structured data extraction, and DecisionSpecLoader for JSON-based configuration management, enabling domain-specific decision flows without code modifications. Key capabilities include support for multiple question types (text, single-select, multi-select), Swagger/OpenAPI documentation, structured logging via Serilog, and intelligent rule evaluation with derived traits and tie-breaking mechanisms for complex decision scenarios. The project targets practical use cases such as activity planning (e.g., "Family Saturday Planner") and technical decision-making (e.g., "Tech Stack Advisor"), making it suitable for applications requiring interactive guidance systems, recommendation engines, or conversational decision support. Despite having zero stars and contributors at launch (created October 2025), the repository shows active development momentum with 14 commits over 90 days and 18 over the past year, indicating ongoing refinement and feature acceleration.
+
+**Created**: 2025-10-29
+**Last Modified**: 2025-12-27
 
 ---
 
@@ -738,7 +738,7 @@ PHPDocSpark is an open-source PHP documentation and data exploration platform th
 
 ## Report Metadata
 
-- **Generation Time**: 7.8 seconds
+- **Generation Time**: 16.1 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
 - **Total AI Tokens**: 51,187
@@ -759,4 +759,4 @@ PHPDocSpark is an open-source PHP documentation and data exploration platform th
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2026-03-28*
+*Last updated: 2026-03-29*
