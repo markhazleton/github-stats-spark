@@ -129,6 +129,44 @@ class GitHubFetcher:
             "ttl_enforced": False,
         }
 
+    @staticmethod
+    def _should_include_repository(
+        repo: Repository,
+        exclude_private: bool,
+        exclude_forks: bool,
+        exclude_archived: bool,
+    ) -> bool:
+        """Apply repository include/exclude policy checks."""
+        if exclude_private and repo.private:
+            return False
+        if exclude_forks and repo.fork:
+            return False
+        if exclude_archived and repo.archived:
+            return False
+        return True
+
+    @staticmethod
+    def _serialize_repository(repo: Repository) -> Dict[str, Any]:
+        """Normalize PyGithub repository object into cache-friendly dictionary."""
+        return {
+            "name": repo.name,
+            "full_name": repo.full_name,
+            "description": repo.description,
+            "language": repo.language,
+            "stars": repo.stargazers_count,
+            "forks": repo.forks_count,
+            "watchers": repo.watchers_count,
+            "size": repo.size,
+            "created_at": repo.created_at.isoformat() if repo.created_at else None,
+            "updated_at": repo.updated_at.isoformat() if repo.updated_at else None,
+            "pushed_at": repo.pushed_at.isoformat() if repo.pushed_at else None,
+            "is_fork": repo.fork,
+            "is_private": repo.private,
+            "is_archived": repo.archived,
+            "homepage": repo.homepage,
+            "has_pages": repo.has_pages,
+        }
+
     def get_user(self, username: Optional[str] = None) -> Dict[str, Any]:
         """Get GitHub user information (alias for fetch_user_profile for backwards compatibility).
 
@@ -232,12 +270,12 @@ class GitHubFetcher:
             repos = []
 
             for repo in user.get_repos():
-                # Apply filters
-                if exclude_private and repo.private:
-                    continue
-                if exclude_forks and repo.fork:
-                    continue
-                if exclude_archived and repo.archived:
+                if not self._should_include_repository(
+                    repo,
+                    exclude_private=exclude_private,
+                    exclude_forks=exclude_forks,
+                    exclude_archived=exclude_archived,
+                ):
                     continue
 
                 # Stop if we've hit the max
@@ -245,24 +283,7 @@ class GitHubFetcher:
                     self.logger.warning(f"Reached maximum repository limit ({self.max_repos})")
                     break
 
-                repos.append({
-                    "name": repo.name,
-                    "full_name": repo.full_name,
-                    "description": repo.description,
-                    "language": repo.language,
-                    "stars": repo.stargazers_count,
-                    "forks": repo.forks_count,
-                    "watchers": repo.watchers_count,
-                    "size": repo.size,
-                    "created_at": repo.created_at.isoformat() if repo.created_at else None,
-                    "updated_at": repo.updated_at.isoformat() if repo.updated_at else None,
-                    "pushed_at": repo.pushed_at.isoformat() if repo.pushed_at else None,
-                    "is_fork": repo.fork,
-                    "is_private": repo.private,
-                    "is_archived": repo.archived,
-                    "homepage": repo.homepage,  # Custom website URL from repo settings
-                    "has_pages": repo.has_pages,  # GitHub Pages enabled
-                })
+                repos.append(self._serialize_repository(repo))
 
             # Cache writes now handled by CacheManager
             self.logger.info(f"Fetched {len(repos)} repositories")

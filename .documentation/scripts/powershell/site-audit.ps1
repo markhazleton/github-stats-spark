@@ -134,7 +134,7 @@ function Get-FileCategories {
     # Exclusion patterns
     $excludeDirs = @('node_modules', 'venv', '.venv', '__pycache__', '.git', '.vs', '.idea',
                      'dist', 'build', 'bin', 'obj', '.next', 'coverage', '.pytest_cache',
-                     '.mypy_cache', '.tox', 'eggs', '.egg-info', '.genreleases', '.archive')
+                     '.mypy_cache', '.tox', 'eggs', '.egg-info', '.genreleases', '.archive', 'htmlcov')
     
     $excludePattern = '(^|[/\\])(' + (($excludeDirs | ForEach-Object { [regex]::Escape($_) }) -join '|') + ')([/\\]|$)'
     
@@ -146,10 +146,22 @@ function Get-FileCategories {
         $relativePath = $file.FullName.Substring($RepoRoot.Length + 1).Replace('\', '/')
         $ext = $file.Extension.ToLower()
         $name = $file.Name.ToLower()
+
+        # Skip generated publish artifacts from source/security scans.
+        if ($relativePath -match '^(docs/(assets|data|output)/|htmlcov/)') { continue }
         
         # Skip minified files
         if ($name -match '\.min\.(js|css)$' -or $ext -eq '.map') { continue }
         
+        # Check build files before config so workflow YAML doesn't get misclassified.
+        if ($relativePath -match '\.github/workflows/' -or
+            $name -match '^dockerfile' -or
+            $name -eq 'makefile' -or
+            $ext -in @('.gradle', '.maven')) {
+            $categories.build += $relativePath
+            continue
+        }
+
         # Categorize by tests first (check path patterns)
         if ($relativePath -match '(^|/)tests?/' -or 
             $name -match '(_test|\.test|_spec|\.spec)\.' -or
@@ -182,13 +194,7 @@ function Get-FileCategories {
             continue
         }
         
-        # Check build files
-        if ($relativePath -match '\.github/workflows/' -or
-            $name -match '^dockerfile' -or
-            $name -eq 'makefile' -or
-            $ext -in @('.gradle', '.maven')) {
-            $categories.build += $relativePath
-        }
+        # Uncategorized files are intentionally ignored.
     }
     
     return $categories
@@ -201,6 +207,7 @@ function Get-PackageInfo {
         manager = $null
         manifest = $null
         lockfile = $null
+        npm_manifests = @()
         dependencies = @{
             direct = @()
             dev = @()
@@ -257,31 +264,71 @@ function Get-PackageInfo {
         $packages.dependencies.direct = @($deps | Where-Object { $_ })
     }
     
-    # Detect Node.js
-    $packageJsonPath = Join-Path $RepoRoot 'package.json'
-    if (Test-Path $packageJsonPath) {
-        $packages.manager = 'npm'
-        $packages.manifest = 'package.json'
-        
+    # Detect Node.js (root + known workspace paths)
+    $knownPackageJsonPaths = @(
+        (Join-Path $RepoRoot 'package.json'),
+        (Join-Path $RepoRoot 'frontend/package.json')
+    )
+    $packageJsonPaths = @($knownPackageJsonPaths | Where-Object { Test-Path $_ })
+
+    if ($packageJsonPaths.Count -gt 0) {
+        if ($packages.manager -and $packages.manager -ne 'npm') {
+            $packages.manager = 'multi'
+        } else {
+            $packages.manager = 'npm'
+        }
+
+        $packages.manifest = $packageJsonPaths[0].Substring($RepoRoot.Length + 1).Replace('\\', '/')
+        $packages.npm_manifests = @($packageJsonPaths | ForEach-Object { $_.Substring($RepoRoot.Length + 1).Replace('\\', '/') })
+
+        $directSet = @{}
+        $devSet = @{}
+        foreach ($pkg in $packages.dependencies.direct) {
+            if ($pkg) { $directSet[$pkg] = $true }
+        }
+        foreach ($pkg in $packages.dependencies.dev) {
+            if ($pkg) { $devSet[$pkg] = $true }
+        }
+
         $lockFiles = @('package-lock.json', 'yarn.lock', 'pnpm-lock.yaml')
-        foreach ($lock in $lockFiles) {
-            if (Test-Path (Join-Path $RepoRoot $lock)) {
-                $packages.lockfile = $lock
-                break
+        $lockCandidates = @()
+
+        foreach ($packageJsonPath in $packageJsonPaths) {
+            $manifestDir = Split-Path $packageJsonPath -Parent
+
+            foreach ($lock in $lockFiles) {
+                $lockPath = Join-Path $manifestDir $lock
+                if (Test-Path $lockPath) {
+                    $relativeLockPath = $lockPath.Substring($RepoRoot.Length + 1).Replace('\\', '/')
+                    if ($lockCandidates -notcontains $relativeLockPath) {
+                        $lockCandidates += $relativeLockPath
+                    }
+                }
+            }
+
+            try {
+                $packageJson = Get-Content $packageJsonPath -Raw | ConvertFrom-Json
+                if ($packageJson.dependencies) {
+                    foreach ($dep in $packageJson.dependencies.PSObject.Properties.Name) {
+                        $directSet[$dep] = $true
+                    }
+                }
+                if ($packageJson.devDependencies) {
+                    foreach ($dep in $packageJson.devDependencies.PSObject.Properties.Name) {
+                        $devSet[$dep] = $true
+                    }
+                }
+            } catch {
+                # JSON parsing failed
             }
         }
-        
-        try {
-            $packageJson = Get-Content $packageJsonPath -Raw | ConvertFrom-Json
-            if ($packageJson.dependencies) {
-                $packages.dependencies.direct = @($packageJson.dependencies.PSObject.Properties.Name)
-            }
-            if ($packageJson.devDependencies) {
-                $packages.dependencies.dev = @($packageJson.devDependencies.PSObject.Properties.Name)
-            }
-        } catch {
-            # JSON parsing failed
+
+        if ($lockCandidates.Count -gt 0) {
+            $packages.lockfile = $lockCandidates[0]
         }
+
+        $packages.dependencies.direct = @($directSet.Keys | Sort-Object)
+        $packages.dependencies.dev = @($devSet.Keys | Sort-Object)
     }
     
     # Detect Go
@@ -640,3 +687,4 @@ if ($OutputFormat -eq 'json') {
         Write-Output "  TODO/FIXME comments: $($result.patterns.quality.todo_comments.Count)"
     }
 }
+

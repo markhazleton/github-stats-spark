@@ -240,6 +240,31 @@ class TestStreaks:
         assert streaks["current_streak"] == 0
         assert streaks["longest_streak"] == 0
 
+    def test_learning_streak_tracks_new_languages(self):
+        """Learning streak should reflect consecutive days introducing new languages."""
+        profile = {"username": "testuser"}
+        repositories = [
+            {"name": "repo-py", "language": "Python"},
+            {"name": "repo-js", "language": "JavaScript"},
+            {"name": "repo-go", "language": "Go"},
+        ]
+        calculator = StatsCalculator(profile, repositories)
+
+        now = datetime.now()
+        commits = [
+            {"sha": "a", "date": (now - timedelta(days=2)).isoformat(), "repo": "repo-py"},
+            {"sha": "b", "date": (now - timedelta(days=1)).isoformat(), "repo": "repo-js"},
+            {"sha": "c", "date": now.isoformat(), "repo": "repo-go"},
+            # Existing language on same day should not create a new introduction.
+            {"sha": "d", "date": now.isoformat(), "repo": "repo-go"},
+        ]
+        calculator.add_commits(commits)
+
+        streaks = calculator.calculate_streaks()
+
+        assert streaks["longest_learning_streak"] >= 3
+        assert streaks["current_learning_streak"] >= 3
+
 
 class TestLanguages:
     """Test language aggregation."""

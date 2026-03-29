@@ -1,0 +1,307 @@
+{
+  "patterns": {
+    "quality": {
+      "todo_comments_total": 2,
+      "todo_comments": [
+        {
+          "type": "BUG",
+          "file": "src/spark/logger.py",
+          "line": 67,
+          "text": "message to stdout (only if verbose enabled)."
+        },
+        {
+          "type": "BUG",
+          "file": "src/spark/logger.py",
+          "line": 70,
+          "text": "message"
+        }
+      ],
+      "long_functions": [],
+      "deep_nesting": []
+    },
+    "security": {
+      "insecure_patterns_total": 0,
+      "insecure_patterns": null,
+      "hardcoded_secrets_total": 0,
+      "hardcoded_secrets": null
+    },
+    "unused": {
+      "potential_dead_code": []
+    }
+  },
+  "metrics": {
+    "total_files": 103,
+    "large_files_total": 8,
+    "files_by_extension": {
+      ".py": 45,
+      ".jsx": 42,
+      ".js": 16
+    },
+    "lines_by_extension": {
+      ".py": 11300,
+      ".jsx": 6531,
+      ".js": 2960
+    },
+    "max_lines": 1195,
+    "large_files": [
+      {
+        "lines": 1195,
+        "file": "frontend/src/components/DrillDown/RepositoryDetail.jsx"
+      },
+      {
+        "lines": 737,
+        "file": "src/spark/calculator.py"
+      },
+      {
+        "lines": 767,
+        "file": "src/spark/cli_handlers.py"
+      },
+      {
+        "lines": 812,
+        "file": "src/spark/fetcher.py"
+      },
+      {
+        "lines": 714,
+        "file": "src/spark/summarizer.py"
+      },
+      {
+        "lines": 693,
+        "file": "src/spark/unified_data_generator.py"
+      },
+      {
+        "lines": 592,
+        "file": "src/spark/unified_report_workflow.py"
+      },
+      {
+        "lines": 801,
+        "file": "src/spark/visualizer.py"
+      }
+    ],
+    "max_lines_file": "frontend/src/components/DrillDown/RepositoryDetail.jsx",
+    "total_lines": 20791,
+    "avg_lines_per_file": 201.9
+  },
+  "pre_scan_limits": {
+    "large_file_limit": 20,
+    "sample_limit": 25,
+    "include_full_inventory": false,
+    "pattern_sample_limit": 25
+  },
+  "scope": "full",
+  "repo_root": "C:/GitHub/MarkHazleton/github-stats-spark",
+  "packages": {
+    "npm_manifests": [
+      "frontend\\package.json"
+    ],
+    "manager": "multi",
+    "dependencies": {
+      "direct": [
+        "@use-gesture/react",
+        "anthropic",
+        "chart.js",
+        "dexie",
+        "packaging",
+        "playwright",
+        "prop-types",
+        "PyGithub",
+        "python-dateutil",
+        "PyYAML",
+        "react",
+        "react-chartjs-2",
+        "react-dom",
+        "react-markdown",
+        "react-modal-sheet",
+        "remark-gfm",
+        "requests",
+        "svgwrite",
+        "tenacity",
+        "tomli",
+        "web-vitals",
+        "workbox-window"
+      ],
+      "dev": [
+        "@eslint/js",
+        "@lhci/cli",
+        "@types/react",
+        "@types/react-dom",
+        "@vitejs/plugin-react",
+        "eslint",
+        "globals",
+        "prettier",
+        "terser",
+        "vite",
+        "vitest"
+      ]
+    },
+    "lockfile": "frontend\\package-lock.json",
+    "manifest": "frontend\\package.json",
+    "analysis": {
+      "outdated": [],
+      "unused": [],
+      "vulnerable": []
+    }
+  },
+  "audit_dir": ".documentation/copilot/audit",
+  "constitution": {
+    "exists": true,
+    "path": ".documentation/memory/constitution.md",
+    "principles": [
+      "I. Single Responsibility",
+      "II. Data Privacy (NON-NEGOTIABLE)",
+      "III. Fail Fast, Fail Loud",
+      "IV. Change-Driven Caching",
+      "V. Accessibility First",
+      "What We Process",
+      "What We Never Do",
+      "Dependency Decisions",
+      "Configuration Philosophy",
+      "Documentation Standards",
+      "Versioning"
+    ],
+    "version": null
+  },
+  "timestamp": "2026-03-28T20:35:32Z",
+  "files": {
+    "config": [
+      ".cache/index.json",
+      ".cache/local/index.json",
+      ".cache/local/markhazleton/AsyncSpark/ai_summary/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/commits_stats/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/commit_counts/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/dependency_files/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/languages/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/pull_request_summary/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/quality_indicators/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/readme/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/AsyncSpark/security_summary/2026-02-10T04-32-31+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/ai_summary/2026-03-02T09-42-34+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/ai_summary/2026-03-16T09-30-55+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/commits_stats/2026-03-16T09-30-55+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/commit_counts/2026-03-02T09-42-34+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/commit_counts/2026-03-16T09-30-55+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/dependency_files/2026-03-02T09-42-34+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/dependency_files/2026-03-16T09-30-55+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/languages/2026-03-02T09-42-34+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/languages/2026-03-16T09-30-55+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/pull_request_summary/2026-03-02T09-42-34+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/pull_request_summary/2026-03-16T09-30-55+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/quality_indicators/2026-03-02T09-42-34+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/quality_indicators/2026-03-16T09-30-55+00-00.json",
+      ".cache/local/markhazleton/ConcurrentProcessing/readme/2026-03-02T09-42-34+00-00.json"
+    ],
+    "documentation": [
+      "CHANGELOG.md",
+      "README.md",
+      "requirements-dev.txt",
+      "requirements.txt",
+      ".claude/commands/speckit.analyze.md",
+      ".claude/commands/speckit.checklist.md",
+      ".claude/commands/speckit.clarify.md",
+      ".claude/commands/speckit.constitution.md",
+      ".claude/commands/speckit.implement.md",
+      ".claude/commands/speckit.plan.md",
+      ".claude/commands/speckit.specify.md",
+      ".claude/commands/speckit.tasks.md",
+      ".claude/commands/speckit.taskstoissues.md",
+      ".documentation/copilot/harvest-2026-03-27.md",
+      ".documentation/copilot/audit/2026-03-28_results.md",
+      ".documentation/memory/constitution.md",
+      ".documentation/repo-story/repo-story-2026-03-28.md",
+      ".documentation/templates/agent-file-template.md",
+      ".documentation/templates/checklist-template.md",
+      ".documentation/templates/plan-template.md",
+      ".documentation/templates/spec-template.md",
+      ".documentation/templates/tasks-template.md",
+      ".github/copilot-instructions.md",
+      ".github/agents/copilot-instructions.md",
+      ".github/agents/speckit.analyze.agent.md"
+    ],
+    "counts": {
+      "config": 1761,
+      "documentation": 97,
+      "build": 1,
+      "tests": 35,
+      "scripts": 22,
+      "source": 103
+    },
+    "build": ".github/workflows/generate-stats.yml",
+    "tests": [
+      "tests/__init__.py",
+      "tests/fixtures/ranking_scenarios.json",
+      "tests/fixtures/sample_config.yml",
+      "tests/fixtures/sample_repositories.json",
+      "tests/fixtures/sample_user_data.json",
+      "tests/fixtures/sample_dependency_files/Gemfile",
+      "tests/fixtures/sample_dependency_files/go.mod",
+      "tests/fixtures/sample_dependency_files/package.json",
+      "tests/fixtures/sample_dependency_files/pyproject.toml",
+      "tests/fixtures/sample_dependency_files/requirements.txt",
+      "tests/fixtures/sample_readmes/javascript-project-readme.md",
+      "tests/fixtures/sample_readmes/python-project-readme.md",
+      "tests/integration/test_dependency_analysis.py",
+      "tests/integration/test_unified_repository_enrichment.py",
+      "tests/integration/test_unified_repository_partial_enrichment.py",
+      "tests/unit/__init__.py",
+      "tests/unit/conftest.py",
+      "tests/unit/test_cache_manager.py",
+      "tests/unit/test_cache.py",
+      "tests/unit/test_calculator.py",
+      "tests/unit/test_cli.py",
+      "tests/unit/test_config.py",
+      "tests/unit/test_dashboard_generator.py",
+      "tests/unit/test_dependency_parser.py",
+      "tests/unit/test_fetcher_api_version.py"
+    ],
+    "scripts": [
+      "run-spark-local.ps1",
+      "run-spark.ps1",
+      ".documentation/scripts/powershell/archive-context.ps1",
+      ".documentation/scripts/powershell/check-prerequisites.ps1",
+      ".documentation/scripts/powershell/common.ps1",
+      ".documentation/scripts/powershell/create-new-feature.ps1",
+      ".documentation/scripts/powershell/evolution-context.ps1",
+      ".documentation/scripts/powershell/get-pr-context.ps1",
+      ".documentation/scripts/powershell/harvest.ps1",
+      ".documentation/scripts/powershell/migrate-to-documentation.ps1",
+      ".documentation/scripts/powershell/quickfix-context.ps1",
+      ".documentation/scripts/powershell/release-context.ps1",
+      ".documentation/scripts/powershell/repo-story-context.ps1",
+      ".documentation/scripts/powershell/setup-plan.ps1",
+      ".documentation/scripts/powershell/site-audit.ps1",
+      ".documentation/scripts/powershell/sync-upstream.ps1",
+      ".documentation/scripts/powershell/update-agent-context.ps1",
+      "frontend/.specify/scripts/powershell/check-prerequisites.ps1",
+      "frontend/.specify/scripts/powershell/common.ps1",
+      "frontend/.specify/scripts/powershell/create-new-feature.ps1",
+      "frontend/.specify/scripts/powershell/setup-plan.ps1",
+      "frontend/.specify/scripts/powershell/update-agent-context.ps1"
+    ],
+    "source": [
+      "setup.py",
+      "docs/sw.js",
+      "frontend/eslint.config.js",
+      "frontend/vite.config.js",
+      "frontend/public/sw.js",
+      "frontend/src/App.jsx",
+      "frontend/src/main.jsx",
+      "frontend/src/components/Attention/AttentionView.jsx",
+      "frontend/src/components/Common/ExportButton.jsx",
+      "frontend/src/components/Common/FilterControls.jsx",
+      "frontend/src/components/Common/LoadingState.jsx",
+      "frontend/src/components/Common/MarkdownContent.jsx",
+      "frontend/src/components/Common/Tooltip.jsx",
+      "frontend/src/components/DrillDown/RepositoryDetail.jsx",
+      "frontend/src/components/ErrorBoundary/ErrorBoundary.jsx",
+      "frontend/src/components/Layout/Container/Container.jsx",
+      "frontend/src/components/Layout/SafeArea/SafeArea.jsx",
+      "frontend/src/components/Layout/SkipLink/SkipLink.jsx",
+      "frontend/src/components/Layout/Stack/Stack.jsx",
+      "frontend/src/components/Mobile/BottomSheet/BottomSheet.jsx",
+      "frontend/src/components/Mobile/EmptyState/EmptyState.jsx",
+      "frontend/src/components/Mobile/GestureHandler/GestureHandler.jsx",
+      "frontend/src/components/Mobile/LoadingState/LoadingState.jsx",
+      "frontend/src/components/Mobile/OfflineIndicator/OfflineIndicator.jsx",
+      "frontend/src/components/Mobile/RepositoryCard/DetailSheet.jsx"
+    ]
+  }
+}

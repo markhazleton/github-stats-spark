@@ -204,6 +204,7 @@ class UnifiedReportWorkflow:
         fetch_start = time.time()
 
         try:
+            cache_hit_count = 0
             # Fetch user profile (cache-only when enabled)
             profile_data = self.cache.get("user_profile", username)
             if not profile_data:
@@ -213,6 +214,8 @@ class UnifiedReportWorkflow:
                         stage="fetch_github_data",
                     )
                 profile_data = self.fetcher.fetch_user_profile(username)
+            else:
+                cache_hit_count += 1
             user_profile = UserProfile.from_dict(profile_data)
 
             # Fetch repositories (public only, cache-only when enabled)
@@ -233,6 +236,8 @@ class UnifiedReportWorkflow:
                     exclude_forks=exclude_forks,
                     exclude_archived=exclude_archived,
                 )
+            else:
+                cache_hit_count += 1
             self._log_enrichment_availability(repos_data)
             repositories = [Repository.from_dict(r) for r in repos_data]
             
@@ -267,6 +272,8 @@ class UnifiedReportWorkflow:
                                 repo.name,
                                 repo_pushed_at=repo.pushed_at,
                             )
+                    else:
+                        cache_hit_count += 1
                     commits_data["repository_name"] = repo.name
                     commit_histories[repo.name] = CommitHistory.from_dict(commits_data)
                 except Exception as e:
@@ -285,7 +292,7 @@ class UnifiedReportWorkflow:
                 commit_histories=commit_histories,
                 fetch_timestamp=datetime.utcnow(),
                 api_call_count=self.api_calls,
-                cache_hit_count=0,  # TODO: Track from cache
+                cache_hit_count=cache_hit_count,
             )
 
         except Exception as e:

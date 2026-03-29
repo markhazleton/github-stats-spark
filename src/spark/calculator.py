@@ -374,10 +374,8 @@ class StatsCalculator:
                     else:
                         break
 
-        # Learning streaks (new languages over time)
-        # TODO: Implement learning streak detection based on language diversity
-        current_learning_streak = 0
-        longest_learning_streak = 0
+        # Learning streaks track consecutive days where new languages appear.
+        current_learning_streak, longest_learning_streak = self._calculate_learning_streaks()
 
         return {
             "current_streak": current_streak,
@@ -385,6 +383,98 @@ class StatsCalculator:
             "current_learning_streak": current_learning_streak,
             "longest_learning_streak": longest_learning_streak,
         }
+
+    def _calculate_learning_streaks(self) -> Tuple[int, int]:
+        """Calculate streaks for introducing new languages over time."""
+        introduction_dates = self._extract_language_introduction_dates()
+        if not introduction_dates:
+            return 0, 0
+
+        unique_intro_dates = sorted(set(introduction_dates))
+        longest_learning_streak = 1
+        streak = 1
+
+        for i in range(1, len(unique_intro_dates)):
+            if (unique_intro_dates[i] - unique_intro_dates[i - 1]).days == 1:
+                streak += 1
+            else:
+                longest_learning_streak = max(longest_learning_streak, streak)
+                streak = 1
+
+        longest_learning_streak = max(longest_learning_streak, streak)
+
+        current_learning_streak = 0
+        last_intro_date = unique_intro_dates[-1]
+        days_since = (datetime.now().date() - last_intro_date).days
+        if days_since in (0, 1):
+            current_learning_streak = 1
+            for i in range(len(unique_intro_dates) - 2, -1, -1):
+                if (unique_intro_dates[i + 1] - unique_intro_dates[i]).days == 1:
+                    current_learning_streak += 1
+                else:
+                    break
+
+        return current_learning_streak, longest_learning_streak
+
+    def _extract_language_introduction_dates(self) -> List[date]:
+        """Collect first-seen dates for languages from commit and repository metadata."""
+        repo_language_map = self._build_repo_language_map()
+        first_seen_by_language: Dict[str, date] = {}
+
+        dated_commits: List[Tuple[datetime, Dict[str, Any]]] = []
+        for commit in self.commits:
+            commit_dt = self._extract_commit_datetime(commit)
+            if commit_dt:
+                dated_commits.append((commit_dt, commit))
+
+        for commit_dt, commit in sorted(dated_commits, key=lambda item: item[0]):
+            language = self._extract_commit_language(commit, repo_language_map)
+            if not language:
+                continue
+
+            normalized = language.strip().lower()
+            if normalized and normalized not in first_seen_by_language:
+                first_seen_by_language[normalized] = commit_dt.date()
+
+        return list(first_seen_by_language.values())
+
+    def _build_repo_language_map(self) -> Dict[str, str]:
+        """Build lookup from repository identifiers to known primary language."""
+        language_map: Dict[str, str] = {}
+
+        for repo in self.repositories:
+            language = repo.get("language") or repo.get("primary_language")
+            if not language:
+                continue
+
+            names = [repo.get("name"), repo.get("repository_name"), repo.get("full_name")]
+            for name in names:
+                if name:
+                    language_map[name] = language
+                    language_map[name.lower()] = language
+
+        return language_map
+
+    def _extract_commit_language(self, commit: Dict[str, Any], repo_language_map: Dict[str, str]) -> Optional[str]:
+        """Resolve language from commit payload with repository fallback."""
+        direct_language = commit.get("language") or commit.get("primary_language") or commit.get("repo_language")
+        if direct_language:
+            return direct_language
+
+        repository = commit.get("repository")
+        if isinstance(repository, dict):
+            repo_language = repository.get("language") or repository.get("primary_language")
+            if repo_language:
+                return repo_language
+
+        repo_name = commit.get("repo") or commit.get("repository_name")
+        if not repo_name and isinstance(repository, dict):
+            repo_name = repository.get("name") or repository.get("full_name")
+
+        if repo_name:
+            return repo_language_map.get(repo_name) or repo_language_map.get(str(repo_name).lower())
+
+        return None
 
     def calculate_fun_stats(
         self,
