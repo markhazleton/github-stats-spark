@@ -68,6 +68,7 @@ function Get-DocTaxon {
     $deprecatedPattern = 'pydantic_agent|AGENT_REGISTRY|REPO_MODE_AGENTS|data_field|function_name|display_card_id'
 
     if (
+        $normalizedPath -match '^docs/' -or
         ($normalizedPath -match '^\.documentation/' -and $Content -match $deprecatedPattern)
     ) {
         return 'STALE_REFERENCE'
@@ -82,7 +83,6 @@ function Get-DocTaxon {
         '^\.documentation/quickfixes/' { return 'HISTORICAL_RECORD' }
         '^\.documentation/specs/pr-review/' { return 'HISTORICAL_RECORD' }
         '^\.documentation/copilot/audit/' { return 'HISTORICAL_RECORD' }
-        '^docs/' { return 'ANALYTICS_ASSET' }
         '^\.documentation/copilot/' { return 'RESEARCH_OR_CONTEXT' }
         '^\.documentation/reference-data/' { return 'REFERENCE_DATA' }
         '^\.documentation/templates/' { return 'ENGINEERING_PATTERN' }
@@ -174,10 +174,6 @@ function Get-DocDisposition {
         return 'archive'
     }
 
-    if ($Category -eq 'site_output') {
-        return 'keep'
-    }
-
     if ($Taxon -eq 'STALE_REFERENCE') {
         return 'rewrite'
     }
@@ -223,7 +219,6 @@ $result = @{
         release_docs      = @()
         quickfix_records  = @()
         legacy_root_docs  = @()
-        site_output_docs  = @()
         taxonomy_counts   = @{}
         disposition_counts = @{}
     }
@@ -414,7 +409,8 @@ if ($Scope -in @('full', 'docs', 'scan', 'changelog')) {
     }
 
     if (Test-Path $legacyDocsDir) {
-        $docRoots += @{ path = $legacyDocsDir; mode = 'site_output' }
+        $docRoots += @{ path = $legacyDocsDir; mode = 'legacy' }
+        $result.path_roots.legacy_roots += 'docs/'
     }
 
     foreach ($docRoot in $docRoots) {
@@ -435,8 +431,8 @@ if ($Scope -in @('full', 'docs', 'scan', 'changelog')) {
                 $category = 'backup'
                 $result.bak_files += $relativePath
                 $result.summary.bak_files_found++
-            } elseif ($docRoot.mode -eq 'site_output') {
-                $category = 'site_output'
+            } elseif ($docRoot.mode -eq 'legacy') {
+                $category = 'legacy_root_doc'
             } elseif ($relativePath -match '\.documentation/specs/pr-review/') {
                 $category = 'completed_review'
             } elseif ($relativePath -match '\.documentation/copilot/audit/') {
@@ -499,7 +495,6 @@ if ($Scope -in @('full', 'docs', 'scan', 'changelog')) {
                 'release_doc'      { $result.docs.release_docs += $docEntry;      $result.summary.docs_to_archive++ }
                 'quickfix_record'  { $result.docs.quickfix_records += $docEntry;  $result.summary.docs_to_archive++ }
                 'legacy_root_doc'  { $result.docs.legacy_root_docs += $docEntry;  $result.summary.docs_to_archive++ }
-                'site_output'      { $result.docs.site_output_docs += $docEntry }
                 default            { $result.docs.living_reference += $docEntry }
             }
         }
