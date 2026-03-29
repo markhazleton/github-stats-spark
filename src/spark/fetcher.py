@@ -40,7 +40,7 @@ class GitHubFetcher:
         if not self.token:
             raise ValueError("GitHub token required (GITHUB_TOKEN environment variable or token parameter)")
 
-        self.github = Github(auth=Auth.Token(self.token))
+        self.github = Github(auth=Auth.Token(self.token), timeout=30)
         self.cache = cache or APICache()
         self.cache_status_tracker = CacheStatusTracker(cache_dir=self.cache.cache_dir)
         self.max_repos = max_repos
@@ -416,11 +416,14 @@ class GitHubFetcher:
                     additions = 0
                     deletions = 0
                     
-                    if hasattr(commit, 'stats') and commit.stats:
-                        additions = commit.stats.additions
-                        deletions = commit.stats.deletions
-                        # Files count is the sum of changed files
-                        files_count = commit.stats.total if hasattr(commit.stats, 'total') else 0
+                    try:
+                        if hasattr(commit, 'stats') and commit.stats:
+                            additions = commit.stats.additions
+                            deletions = commit.stats.deletions
+                            # Files count is the sum of changed files
+                            files_count = commit.stats.total if hasattr(commit.stats, 'total') else 0
+                    except Exception as stats_err:
+                        self.logger.debug(f"Could not fetch stats for commit {commit.sha}: {stats_err}")
 
                     commit_data = {
                         "sha": commit.sha,
