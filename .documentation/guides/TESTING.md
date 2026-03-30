@@ -13,6 +13,7 @@ This guide explains how to test the Repository Comparison Dashboard locally and 
 ### Option 1: Test with Mock Data (Fastest)
 
 1. **Create sample data file**:
+
 ```bash
 # Create the data directory
 mkdir -p docs/data
@@ -98,20 +99,23 @@ cat > docs/data/repositories.json << 'EOF'
 EOF
 ```
 
-2. **Install frontend dependencies**:
+1. **Install frontend dependencies**:
+
 ```bash
 cd frontend
 npm install
 ```
 
-3. **Start development server**:
+1. **Start development server**:
+
 ```bash
 npm run dev
 ```
 
-4. **Open browser**: Navigate to `http://localhost:5173`
+1. **Open browser**: Navigate to `http://localhost:5173`
 
 You should see:
+
 - ✅ A table with 2 repositories
 - ✅ Sortable columns
 - ✅ Language filter dropdown
@@ -126,6 +130,7 @@ You should see:
 #### Step 1: Generate Real Dashboard Data
 
 1. **Set GitHub token**:
+
 ```bash
 # Windows (PowerShell)
 $env:GITHUB_TOKEN="your_github_token_here"
@@ -137,23 +142,27 @@ set GITHUB_TOKEN=your_github_token_here
 export GITHUB_TOKEN=your_github_token_here
 ```
 
-2. **Install Python dependencies**:
+1. **Install Python dependencies**:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Generate dashboard data**:
+1. **Generate dashboard data**:
+
 ```bash
 python -m spark.cli generate --user YOUR_GITHUB_USERNAME --dashboard --verbose
 ```
 
 This will:
+
 - Fetch your public repositories from GitHub
 - Calculate commit metrics
 - Generate `docs/data/repositories.json`
 
 **Example output**:
-```
+
+```text
 ======================================================================
 Dashboard Data Generation
 ======================================================================
@@ -274,6 +283,7 @@ python -m spark.cli generate --help
 ### Frontend won't start
 
 **Error**: `Cannot find module 'vite'`
+
 ```bash
 cd frontend
 rm -rf node_modules package-lock.json
@@ -283,6 +293,7 @@ npm install
 ### Data file not found
 
 **Error**: `Failed to fetch dashboard data: 404`
+
 - Check `docs/data/repositories.json` exists
 - Run backend generation first
 - Verify file is valid JSON: `cat docs/data/repositories.json | python -m json.tool`
@@ -290,6 +301,7 @@ npm install
 ### GitHub API Rate Limit
 
 **Error**: `Rate limit exceeded`
+
 - Use authenticated token (5000 requests/hour)
 - Wait for rate limit reset
 - Check status: `curl https://api.github.com/rate_limit`
@@ -297,6 +309,7 @@ npm install
 ### CORS Errors in Development
 
 If you see CORS errors:
+
 1. Check `vite.config.js` proxy configuration
 2. Ensure `docs/data/` is accessible
 3. Try `npm run preview` instead of `npm run dev`
@@ -324,6 +337,7 @@ After deploying to GitHub Pages:
 ## Performance Testing
 
 ### Load Time
+
 - Open DevTools → Network tab
 - Hard refresh (Ctrl+Shift+R)
 - Check:
@@ -332,11 +346,13 @@ After deploying to GitHub Pages:
   - Total page size: <600KB
 
 ### Interaction Speed
+
 - Sort column: Should be instant (<100ms)
 - Filter by language: Should be instant (<100ms)
 - Row hover: Smooth, no lag
 
 ### Lighthouse Audit
+
 ```bash
 # Install Lighthouse
 npm install -g lighthouse
@@ -348,6 +364,7 @@ lighthouse http://localhost:5173 --view
 ```
 
 Target scores:
+
 - Performance: >90
 - Accessibility: >90
 - Best Practices: >90
@@ -360,19 +377,20 @@ Target scores:
 Once everything works:
 
 1. **Commit your changes**:
+
 ```bash
 git add .
 git commit -m "feat: Complete MVP - Repository comparison dashboard with table view"
 git push origin 001-repo-comparison-dashboard
 ```
 
-2. **Create Pull Request** (if working with branches)
+1. **Create Pull Request** (if working with branches)
 
-3. **Deploy to GitHub Pages**:
+2. **Deploy to GitHub Pages**:
    - Push to `main` branch
    - GitHub Actions will auto-deploy
 
-4. **Continue development**:
+3. **Continue development**:
    - User Story 2: Enhanced sorting/filtering
    - User Story 4: Repository comparison
    - User Story 5: Drill-down details
@@ -382,6 +400,7 @@ git push origin 001-repo-comparison-dashboard
 ## Questions or Issues?
 
 If you encounter problems:
+
 1. Check browser console (F12) for errors
 2. Review this testing guide
 3. Verify all prerequisites are met

@@ -37,6 +37,7 @@ This directory contains comprehensive architecture and implementation documentat
 **Purpose**: Complete architecture design with research, rationale, and detailed specifications
 
 **Contents**:
+
 - Executive summary
 - Research findings (Jinja2 vs. Mako vs. Chameleon)
 - Architecture design with component diagrams
@@ -61,6 +62,7 @@ This directory contains comprehensive architecture and implementation documentat
 **Purpose**: Visual representation of data transformations and execution flow
 
 **Contents**:
+
 - Phase 1: GitHub Actions workflow execution
 - Phase 2: Dashboard generation pipeline
 - Phase 3: GitHub Pages deployment
@@ -80,6 +82,7 @@ This directory contains comprehensive architecture and implementation documentat
 **Purpose**: Quick lookup reference for implementation and operations
 
 **Contents**:
+
 - At-a-glance summary table
 - Component quick map
 - Workflow integration points
@@ -105,6 +108,7 @@ This directory contains comprehensive architecture and implementation documentat
 **Purpose**: Detailed step-by-step instructions for implementation
 
 **Contents**:
+
 - Overview and goal
 - Phase 1: Foundation (weeks 1-2)
   - Update dependencies
@@ -137,24 +141,28 @@ This directory contains comprehensive architecture and implementation documentat
 ### By Role
 
 **Architects/Decision Makers**:
+
 1. Read: Executive Summary in DASHBOARD_BUILD_PIPELINE.md
 2. Review: Research Findings section
 3. Check: Risk Mitigation section
 4. Decide: Approve architecture and timeline
 
 **Technical Leads**:
+
 1. Start: DASHBOARD_BUILD_PIPELINE.md (full document)
 2. Reference: DATA_FLOW_DIAGRAM.txt for visual understanding
 3. Plan: Implementation timeline and phases
 4. Review: Component design and interfaces
 
 **Developers (Implementing)**:
+
 1. Review: quickstart/QUICK_REFERENCE.md for overview
 2. Follow: IMPLEMENTATION_GUIDE.md for step-by-step tasks
 3. Reference: DASHBOARD_BUILD_PIPELINE.md for detailed specs
 4. Check: quickstart/QUICK_REFERENCE.md for common issues
 
 **DevOps/GitHub Pages**:
+
 1. Check: GitHub Pages Deployment Strategy section
 2. Review: GitHub Actions Workflow Integration section
 3. Configure: Directory structure and settings
@@ -203,7 +211,7 @@ This directory contains comprehensive architecture and implementation documentat
 
 ## Architecture Layers
 
-```
+```text
 Layer 4: Static HTML (GitHub Pages)
          └─ index.html, repos.html, assets/
 
@@ -227,6 +235,7 @@ Layer 0: Existing Stats Generation
 ## Technology Stack
 
 ### Production Dependencies
+
 - **Python 3.11+**: Runtime environment
 - **Jinja2 3.0+**: Template engine
 - **PyGithub 2.1.1+**: GitHub API (existing)
@@ -234,12 +243,14 @@ Layer 0: Existing Stats Generation
 - **svgwrite 1.4.3+**: SVG generation (existing)
 
 ### Development Dependencies
+
 - **pytest 7.0+**: Testing framework
 - **pytest-cov 4.0+**: Code coverage
 - **cssmin 0.2.0** (optional): CSS minification
 - **jsmin 3.0.0** (optional): JavaScript minification
 
 ### Infrastructure
+
 - **GitHub Pages**: Static site hosting
 - **GitHub Actions**: CI/CD automation
 - **Git**: Version control
@@ -261,23 +272,27 @@ Layer 0: Existing Stats Generation
 ## Success Criteria
 
 ### Functionality
+
 - ✓ Dashboard generates without errors
 - ✓ SVGs and JSON data properly embedded
 - ✓ Repository listings display correctly
 - ✓ Navigation works across pages
 
 ### Performance
+
 - ✓ Dashboard loads in < 2 seconds
 - ✓ Dashboard file size < 500KB
 - ✓ Workflow completes in < 5 minutes
 
 ### User Experience
+
 - ✓ Responsive on mobile, tablet, desktop
 - ✓ WCAG AA accessibility compliant
 - ✓ Dark/light theme support
 - ✓ SVGs display inline properly
 
 ### Reliability
+
 - ✓ Zero broken links
 - ✓ GitHub Pages 100% deployment success
 - ✓ Graceful fallback when data missing
@@ -287,18 +302,21 @@ Layer 0: Existing Stats Generation
 ## Next Steps
 
 ### 1. Review & Approval
+
 - [ ] Architecture review with team
 - [ ] Decision on timeline and priorities
 - [ ] Resource allocation
 - [ ] Create GitHub issues from implementation guide
 
 ### 2. Phase 1 Kick-off
+
 - [ ] Set up development environment
 - [ ] Install dependencies
 - [ ] Create required directories
 - [ ] Begin implementing serializers
 
 ### 3. Ongoing
+
 - [ ] Follow implementation guide phases
 - [ ] Complete weekly milestones
 - [ ] Test continuously
@@ -310,16 +328,19 @@ Layer 0: Existing Stats Generation
 ## Getting Help
 
 ### Questions About Architecture
+
 1. Review the relevant section in DASHBOARD_BUILD_PIPELINE.md
 2. Check DATA_FLOW_DIAGRAM.txt for visual explanation
 3. Consult quickstart/QUICK_REFERENCE.md → Common Issues & Solutions
 
 ### Questions About Implementation
+
 1. Refer to IMPLEMENTATION_GUIDE.md for step-by-step instructions
 2. Check quickstart/QUICK_REFERENCE.md for code examples and patterns
 3. Review Phase-specific sections for detailed guidance
 
 ### Questions About Specific Components
+
 1. quickstart/QUICK_REFERENCE.md → Core Components Quick Map
 2. DASHBOARD_BUILD_PIPELINE.md → Architecture Design section
 3. IMPLEMENTATION_GUIDE.md → Relevant phase section
@@ -329,6 +350,7 @@ Layer 0: Existing Stats Generation
 ## Document Maintenance
 
 These documents should be updated when:
+
 - Architecture decisions change
 - New phases are added/removed
 - Component interfaces change
@@ -356,12 +378,14 @@ All documentation is located in: `.documentation/`
 ## Related Documentation
 
 **Existing Stats Spark Docs**:
+
 - `docs/guides/getting-started.md` - Setup instructions
 - `docs/guides/configuration.md` - Configuration options
 - `docs/spec/001-unified-profile-report/` - Feature specification
 - `CLAUDE.md` - Development guidelines
 
 **External Resources**:
+
 - [Jinja2 Documentation](https://jinja.palletsprojects.com/)
 - [GitHub Pages Docs](https://docs.github.com/en/pages)
 - [GitHub Actions Docs](https://docs.github.com/en/actions)

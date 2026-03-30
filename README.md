@@ -191,6 +191,7 @@ The easiest way to run the complete 4-phase pipeline:
 ```
 
 **Script handles:**
+
 - ✅ Environment validation (virtual env, tokens, config)
 - ✅ Python package installation
 - ✅ Cache management
@@ -198,6 +199,7 @@ The easiest way to run the complete 4-phase pipeline:
 - ✅ Output verification and summary
 
 **Options:**
+
 - `-User` - GitHub username (default: markhazleton)
 - `-IncludeAI` - Generate AI summaries
 - `-MultiUser` - Store outputs under per-user folders instead of overwriting shared files
@@ -229,17 +231,20 @@ spark unified --user YOUR_GITHUB_USERNAME --include-ai-summaries
 ```
 
 **This single command generates:**
+
 - ✅ `/data/repositories.json` - Complete unified dataset for frontend
 - ✅ `/output/*.svg` - All 6 visual analytics (overview, heatmap, languages, streaks, fun, release)
 - ✅ `/output/reports/*.md` - Comprehensive markdown analysis report
 - ✅ AI summaries for each repository (if API key provided)
 
 **Notable unified data additions in schema 2.2.0:**
+
 - ✅ Attention ranking fields for maintenance triage
 - ✅ Pull request and security summary payloads with explicit availability semantics
 - ✅ Enriched dependency version coverage and latest-version resolution metrics
 
 **Benefits:**
+
 - 🚀 ~60% faster than separate commands
 - 💾 Single API pass (fewer rate limit issues)
 - 🎯 Consistent data snapshot across all outputs
@@ -745,7 +750,7 @@ open htmlcov/index.html   # macOS
 
 ### Test Organization
 
-```
+```text
 tests/
 ├── unit/              # Unit tests for individual modules
 │   ├── test_cache.py

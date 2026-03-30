@@ -1,0 +1,35 @@
+# markdownlint configuration
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+# MD013 - Line length: disabled for documentation with tables, links, and code
+MD013: false
+
+# MD033 - Inline HTML: allow common HTML in markdown
+MD033:
+  allowed_elements:
+    - div
+    - br
+    - img
+    - details
+    - summary
+    - sub
+    - sup
+
+# MD024 - Multiple headings with same content: disabled (changelogs repeat headings)
+MD024: false
+
+# MD036 - Emphasis used instead of heading: common in changelogs
+MD036: false
+
+# MD041 - First line should be heading: agent files use YAML frontmatter
+MD041: false
+
+# MD029 - Ordered list item prefix: allow ordered numbering
+MD029:
+  style: ordered
+
+# MD034 - Bare URL: sometimes intentional
+MD034: false
+
+# MD060 - Table column style: disabled (compact pipe style used throughout)
+MD060: false

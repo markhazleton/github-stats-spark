@@ -1,0 +1,17 @@
+# markdownlint-cli2 configuration
+# Ignore patterns for files that should not be linted
+ignores:
+  - ".github/agents/**"
+  - ".github/prompts/**"
+  - ".claude/**"
+  - "frontend/.specify/**"
+  - ".archive/**"
+  - "docs/**"
+  - "preview/**"
+  - "htmlcov/**"
+  - "node_modules/**"
+  - "**/node_modules/**"
+  - ".venv/**"
+  - ".cache/**"
+  - "tests/fixtures/sample_readmes/**"
+  - "output/reports/**"

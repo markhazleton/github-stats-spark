@@ -11,6 +11,7 @@
 ## Critical Workflows
 
 ### Primary Development Command (All-in-One)
+
 ```bash
 # Single command generates everything: data/repositories.json + SVGs + markdown reports
 spark unified --user USERNAME --include-ai-summaries --verbose
@@ -23,6 +24,7 @@ spark unified --user USERNAME --include-ai-summaries --verbose
 **Why unified?** ~60% faster than separate commands, single API pass, consistent data snapshot. This is the ONLY command users should run for complete generation. Constitution requires <5 minute execution time for <500 repositories.
 
 ### Environment Setup
+
 ```bash
 # Python backend (required first)
 pip install -r requirements.txt
@@ -33,6 +35,7 @@ cd frontend && npm install
 ```
 
 ### Testing & Quality
+
 ```bash
 # Python tests (52% overall coverage, 80%+ core modules per constitution)
 pytest --cov=spark --cov-report=html
@@ -48,6 +51,7 @@ spark config --validate
 ```
 
 ### Deployment Flow
+
 1. Python generates `data/repositories.json` (unified data source)
 2. Frontend builds to `docs/` directory (GitHub Pages serves from here)
 3. GitHub Actions workflow runs weekly, commits generated files
@@ -57,7 +61,8 @@ spark config --validate
 ### Python Backend (`src/spark/`)
 
 **Data Flow Pipeline:**
-```
+
+```bash
 GitHubFetcher → StatsCalculator → StatisticsVisualizer
      ↓              ↓                    ↓
   APICache    RepositoryRanker    SVG outputs
@@ -66,6 +71,7 @@ RepositorySummarizer (AI)    UnifiedReportWorkflow (orchestrator)
 ```
 
 **Core Modules:**
+
 - **`fetcher.py`**: PyGithub wrapper with smart caching and rate limit handling
 - **`calculator.py`**: Spark Score formula (40% consistency + 35% volume + 25% collaboration), streak detection, time patterns
 - **`visualizer.py`**: SVG generation with `svgwrite` (overview/heatmap/languages/streaks/fun/release)
@@ -78,6 +84,7 @@ RepositorySummarizer (AI)    UnifiedReportWorkflow (orchestrator)
 Dataclasses for Repository, CommitHistory, TechnologyStack, RepositorySummary, UserProfile, UnifiedReport, GitHubData. All models use type hints.
 
 **Configuration (`config/spark.yml`):**
+
 - Repository exclusions (private repos MUST be excluded - constitutional requirement)
 - Theme selection (spark-dark default, spark-light) - all themes MUST meet WCAG AA contrast (4.5:1)
 - Analyzer settings: top_n repositories (default 50, max 500), ranking weights, AI provider
@@ -86,7 +93,8 @@ Dataclasses for Repository, CommitHistory, TechnologyStack, RepositorySummary, U
 ### React Frontend (`frontend/src/`)
 
 **Component Structure:**
-```
+
+```bash
 App.jsx (routing + state)
 ├── RepositoryTable/ (sortable table with selection)
 ├── Visualizations/ (Recharts: Bar/Line/Scatter)
@@ -97,6 +105,7 @@ App.jsx (routing + state)
 
 **Data Contract:**
 Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
+
 - `repositories[]`: Array with `name`, `language`, `stars`, `commit_history`, `commit_metrics`, `tech_stack`, `ai_summary`
 - `profile`: User metadata (`username`, `total_commits`)
 - `metadata`: Generation info (`generated_at`, `schema_version`)
@@ -106,12 +115,14 @@ Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
 ## Project-Specific Conventions
 
 ### Naming Patterns
+
 - Python modules: lowercase_underscore (`unified_report_workflow.py`)
 - Python classes: PascalCase with descriptive suffixes (`GitHubFetcher`, `StatsCalculator`)
 - React components: PascalCase, one component per file (`RepositoryTable.jsx`)
 - Config files: kebab-case YAML (`spark.yml`, `themes.yml`)
 
 ### Error Handling
+
 - **Python**: Custom exceptions in `exceptions.py` (`WorkflowError`, `ConfigurationError`)
 - **Retry logic**: Use `@retry` from tenacity for API calls (exponential backoff: 1s, 2s, 4s, 8s per constitution)
 - **Logging**: All operations MUST log to stdout/stderr for GitHub Actions debugging (constitutional requirement)
@@ -119,6 +130,7 @@ Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
 - **Frontend**: React ErrorBoundary wraps all major sections
 
 ### Testing Conventions
+
 - **Python**: `tests/unit/test_*.py` for modules, `tests/integration/` for workflows
 - Coverage targets: Core modules >80% (constitutional requirement), overall >50%
 - Use fixtures from `tests/fixtures/` (sample_user_data.json, sample_config.yml)
@@ -126,6 +138,7 @@ Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
 - **Privacy**: ALL tests must verify private repositories are filtered out (constitutional requirement)
 
 ### Configuration Precedence
+
 1. CLI arguments (highest priority)
 2. Environment variables (`GITHUB_TOKEN`, `ANTHROPIC_API_KEY`)
 3. `config/spark.yml` defaults
@@ -134,17 +147,20 @@ Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
 ## Integration Points
 
 ### GitHub API Rate Limits
+
 - Authenticated: 5000 requests/hour
 - **Smart caching** in `cache.py` reduces calls by 80% (content-addressed by pushed_at)
 - Workflow handles `RateLimitExceededException` with automatic retry
 
 ### AI Summarization (Optional)
+
 - **Provider**: Anthropic Claude Haiku 3.5 (cost-effective, fast)
 - **Fallback chain**: Claude → README parsing → basic metadata
 - **Success rate**: 97%+ in production
 - Skip with `--no-ai` flag for faster analysis without summaries
 
 ### GitHub Actions Workflow
+
 - **Trigger**: Weekly on Sundays 00:00 UTC, manual dispatch, push to main
 - **Secrets required**: `GITHUB_TOKEN` (auto-provided), `ANTHROPIC_API_KEY` (optional)
 - **Artifacts**: Commits generated files (output/, data/, docs/) with `[skip ci]` message
@@ -152,22 +168,27 @@ Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
 ## Common Tasks
 
 ### Adding a New SVG Category
+
 1. Add category name to `config/spark.yml` → `stats.enabled`
 2. Implement generation in `visualizer.py` → `generate_*_svg()` method
 3. Update `StatsCalculator` if new metrics needed
 4. Add to CLI help text in `cli.py`
 
 ### Modifying Ranking Algorithm
+
 Edit `ranker.py` → `RepositoryRanker.calculate_composite_score()`:
+
 - Adjust weights in `config/spark.yml` → `analyzer.ranking_weights`
 - Three components: popularity (stars/forks), activity (commits with time decay), health (docs/license)
 
 ### Customizing Frontend Dashboard
+
 - Edit chart configurations in `frontend/src/components/Visualizations/`
 - Use Recharts components (ResponsiveContainer, BarChart, LineChart, ScatterChart)
 - Update metric formatters in `frontend/src/services/metricsCalculator.js`
 
 ### Debugging API Issues
+
 ```bash
 # Enable verbose logging
 spark unified --user USERNAME --verbose

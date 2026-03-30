@@ -19,15 +19,19 @@ This directory contains static assets served directly by Vite during development
 The `data` directory is a symlink to `../../data` that provides access to `repositories.json` during builds.
 
 ### GitHub Actions (Linux)
+
 The workflow automatically creates the symlink:
+
 ```bash
 ln -s ../../data frontend/public/data
 ```
 
 ### Local Development (Windows)
+
 For local testing, you don't need the symlink. The Vite dev server serves data from the root directory via the `serveDataPlugin` in `vite.config.js`.
 
 If you encounter build issues on Windows, you can manually create a directory junction:
+
 ```powershell
 # Remove existing file/link
 Remove-Item frontend\public\data -Force -ErrorAction SilentlyContinue
@@ -37,11 +41,13 @@ New-Item -ItemType Junction -Path frontend\public\data -Target ..\..\data
 ```
 
 Or use mklink (requires admin):
+
 ```cmd
 mklink /J frontend\public\data ..\..\data
 ```
 
 ### Local Development (macOS/Linux)
+
 ```bash
 ln -s ../../data frontend/public/data
 ```
@@ -49,6 +55,7 @@ ln -s ../../data frontend/public/data
 ## Build Process
 
 During the build:
+
 1. Vite copies public assets to `docs/` (build output)
 2. The workflow copies `data/repositories.json` to `docs/data/`
 3. GitHub Pages serves from `docs/`

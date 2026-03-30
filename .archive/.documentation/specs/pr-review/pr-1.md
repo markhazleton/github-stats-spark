@@ -72,10 +72,12 @@ Notes: No new external dependencies were introduced in this PR. The changed code
 ## Code Quality Assessment
 
 ### Strengths
+
 - The CLI and cache refresh refactors meaningfully reduce single-responsibility pressure without changing the public command surface.
 - The remediation work is backed by focused regression tests for config, visualizer, dashboard, unified workflow, CLI dispatch, and cache delegation.
 
 ### Areas for Improvement
+
 - Keep running at least one token-backed end-to-end unified smoke test during release validation because this review primarily validated the refactor through targeted tests plus the successful local wrapper run.
 - Continue monitoring generated artifact churn in PRs so code review remains focused on source changes first and regenerated outputs second.
 
@@ -84,6 +86,7 @@ Notes: No new external dependencies were introduced in this PR. The changed code
 **Status**: ADEQUATE
 
 Evidence reviewed:
+
 - Focused remediation regression suite passed.
 - Broader regression and coverage run passed per feature artifacts.
 - Local bounded generation run via run-spark-local.ps1 completed successfully.

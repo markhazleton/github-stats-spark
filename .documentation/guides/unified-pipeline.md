@@ -10,7 +10,7 @@ The Stats Spark unified pipeline is a streamlined 4-phase architecture that gene
 
 The pipeline follows a strict separation of concerns:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Phase 1: FETCH                           │
 │  Get current repository list from GitHub API (1 API call)  │
@@ -395,4 +395,4 @@ GitHub Pages serves from `docs/` directory.
 
 - **Issues**: https://github.com/markhazleton/github-stats-spark/issues
 - **Discussions**: https://github.com/markhazleton/github-stats-spark/discussions
-- **Contributing**: See [CONTRIBUTING.md](../../CONTRIBUTING.md)
+- **Contributing**: See the Contributing section in the main [README](../../README.md#-contributing)

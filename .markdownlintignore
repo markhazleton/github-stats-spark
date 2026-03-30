@@ -1,0 +1,23 @@
+# Spec Kit framework files (managed upstream)
+.github/agents/**
+.github/prompts/**
+.claude/**
+frontend/.specify/**
+
+# Archived documentation
+.archive/
+
+# Generated/vendored output
+docs/**
+preview/**
+htmlcov/**
+node_modules/**
+**/node_modules/**
+.venv/**
+.cache/**
+
+# Test fixtures
+tests/fixtures/sample_readmes/**
+
+# Generated reports (may have long lines from data)
+output/reports/**

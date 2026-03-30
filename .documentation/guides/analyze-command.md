@@ -67,6 +67,7 @@ export GITHUB_TOKEN=ghp_your_token_here
 ```
 
 **Creating a GitHub token**:
+
 1. Go to GitHub Settings → Developer settings → Personal access tokens
 2. Generate new token (classic)
 3. Select scopes: `repo`, `read:user`
@@ -82,6 +83,7 @@ export ANTHROPIC_API_KEY=sk-ant-your_key_here
 ```
 
 **Getting an Anthropic API key**:
+
 1. Sign up at [console.anthropic.com](https://console.anthropic.com)
 2. Navigate to API Keys section
 3. Create new API key
@@ -111,25 +113,29 @@ analyzer:
     popularity: 0.30          # Stars, forks, watchers
     activity: 0.45            # Recent commits, recency
     health: 0.25              # Documentation, maturity, issues
-```
+```e
 
 ## Report Structure
 
 Generated reports include:
 
 ### 1. Header Section
+
 - Generation timestamp
 - User profile link
 - Report metadata
 
 ### 2. Overall Developer Profile
+
 - Technology diversity analysis
 - Activity patterns (commit frequency, consistency, trends)
 - Contribution classification (active maintainer, hobbyist, specialist)
 - AI-powered overall impression
 
 ### 3. Top Repositories Listing
+
 For each repository (sorted by composite score):
+
 - **Repository name and description**
 - **Statistics**: Stars, forks, issues, creation date
 - **Primary language** with language distribution
@@ -141,6 +147,7 @@ For each repository (sorted by composite score):
 - **Technology stack** (if dependency files present)
 
 ### 4. Failure Notes (if any)
+
 - Repositories that couldn't be analyzed
 - API errors or rate limiting notices
 - Recommendations for resolution
@@ -152,11 +159,13 @@ Repositories are ranked using a composite score:
 **Formula**: `Score = 30% Popularity + 45% Activity + 25% Health`
 
 ### Popularity Component (30%)
+
 - Logarithmic scaling for stars, forks, watchers
 - Prevents mega-repos from dominating
 - Range: 0-100
 
 ### Activity Component (45%)
+
 - Multi-window time decay:
   - 50% weight: Last 90 days
   - 30% weight: Last 180 days
@@ -166,6 +175,7 @@ Repositories are ranked using a composite score:
 - Range: 0-100
 
 ### Health Component (25%)
+
 - Documentation quality (README presence and length)
 - Repository maturity (age, size)
 - Issue management (open vs closed ratio)
@@ -206,6 +216,7 @@ Repositories are ranked using a composite score:
 ### Prompt Engineering
 
 The AI prompt is optimized for technical repositories:
+
 - Focus on technical purpose and architecture
 - Identify key technologies and patterns
 - Highlight unique features or approaches
@@ -277,6 +288,7 @@ jobs:
 ```
 
 **Required secrets**:
+
 - `GITHUB_TOKEN`: Automatically provided by GitHub Actions
 - `ANTHROPIC_API_KEY`: Add to repository secrets (Settings → Secrets → Actions)
 
@@ -287,6 +299,7 @@ jobs:
 **Cause**: GitHub API rate limit (5,000 requests/hour for authenticated)
 
 **Solution**:
+
 - Enable caching (content-addressed by pushed_at timestamps)
 - Wait for rate limit reset
 - Run during off-peak hours
@@ -296,6 +309,7 @@ jobs:
 **Cause**: Invalid API key, quota exceeded, or network issue
 
 **Solution**:
+
 - Verify API key is correct
 - Check Anthropic console for quota/billing
 - Command automatically falls back to templates
@@ -305,6 +319,7 @@ jobs:
 **Cause**: User has no public repositories or token lacks permissions
 
 **Solution**:
+
 - Verify username is correct
 - Check token has `repo` and `read:user` scopes
 - Use `--include-private` if analyzing private repos (not recommended per constitution)
@@ -314,6 +329,7 @@ jobs:
 **Cause**: Network latency, large number of dependencies
 
 **Solution**:
+
 - Reduce `--top-n` value (e.g., 25 instead of 50)
 - Check network connection
 - Use `--no-ai` for faster generation
@@ -337,7 +353,8 @@ spark analyze --user markhazleton --list-only
 ```
 
 Output:
-```
+
+```text
 Fetching repositories for user: markhazleton
 Found 127 public repositories
 

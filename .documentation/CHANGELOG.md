@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+
 - Added dashboard markdown rendering for AI-generated repository summaries in desktop and mobile drill-down views using `react-markdown` and `remark-gfm`.
 - Added a dedicated frontend Needs Attention page backed by repository `attention_score`, `attention_rank`, and `attention_metrics`.
 - Added schema 2.2.0 repository attention ranking fields: `attention_score`, `attention_rank`, and `attention_metrics`.
@@ -22,12 +23,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `github.api_version.fallback_to_default`
 
 ### Changed
+
 - Unified data assembly now emits additive enrichment objects for every repository record.
 - Unified workflow logs staged API-version decision state and warns when runtime budget exceeds 5 minutes.
 - Frontend detail views now render GitHub-flavored markdown summaries instead of displaying raw markdown text.
 - Frontend repository detail views now surface dependency version coverage and registry-resolution visibility from the enriched `tech_stack` contract.
 
 ### Added
+
 - **Change-Based Smart Caching**: Revolutionary caching system that eliminates time-based expiration
   - Compares repository `pushed_at` timestamps with cache timestamps
   - Only updates repositories when actual commits are detected
@@ -40,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Example: `spark unified --user USERNAME --max-repos 2`
 
 ### Changed
+
 - **Content-Addressed Caching**: Cache uses repository pushed_at timestamps as keys, automatically invalidating when repository is updated (no time-based TTL)
 - **Intelligent Metadata Updates**: Lightweight metadata (stars, forks, pushed_at) updated separately from expensive processing
 - Cache key format uses ISO week (`YYYYWWW`) for organizational purposes only (not expiration)
@@ -47,6 +51,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All datetime operations use timezone-aware UTC timestamps for cross-platform compatibility
 
 ### Fixed
+
 - Release cadence and weekly repository diversity charts now handle nested and cached commit-history shapes correctly instead of rendering empty series.
 - Commit activity heatmap, streak calculations, time-pattern analysis, and Lightning Round stats now share the same normalized commit timestamp extraction path.
 - Cache refresh now treats `commits_stats` as a first-class refresh category so live runs populate SVG and dashboard analytics consistently.
@@ -59,6 +64,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Comprehensive cross-platform tests added
 
 ### Removed
+
 - **Version Checker Module**: Removed out-of-scope version checking functionality
   - Deleted `src/spark/dependencies/version_checker.py` (271 lines)
   - Deleted `tests/unit/test_version_checker.py` (entire test suite)
@@ -68,6 +74,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Rationale: Version checking is out of scope for a repository reporting tool; better tools exist (Dependabot, Renovate, etc.)
 
 ### Documented
+
 - Completed spec `.documentation/specs/001-remediate-high-issues` and recorded closure evidence:
   - Follow-up audit confirms no remaining HIGH findings for the baseline categories.
   - Workflow responsibilities were split into narrower modules (`cli`/`cache` orchestration helpers) and regression coverage expanded for high-risk paths.
@@ -76,6 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - GitHub REST API version rollout is staged via config gates with fallback behavior and operational logging.
 
 ### Performance
+
 - Typical weekly runs: <1 minute (was ~5 minutes) for repositories with few updates
 - API calls reduced by 80-95% when most repositories are unchanged
 - Cache hit rate improved from ~50% to ~95% for stable repositories
@@ -85,6 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added - Interactive Dashboard
 
 #### Frontend Features
+
 - **Repository Comparison View**: Side-by-side comparison of up to 5 repositories with color-coded metric highlighting
   - Green highlighting for highest values
   - Red highlighting for lowest values
@@ -120,6 +129,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Breakpoints for mobile, tablet, desktop
 
 #### Backend Features
+
 - **Unified Data Generator** (`src/spark/unified_data_generator.py`):
   - Combines generate, analyze, and dashboard commands into single workflow
   - Generates comprehensive `repositories.json` (schema 2.0.0)
@@ -139,6 +149,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Error recovery with partial results
 
 #### Build & Deployment
+
 - **GitHub Actions Workflow**: Automated build and deployment
   - Python data generation step
   - Node.js setup and npm install
@@ -153,6 +164,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Postbuild script to copy data files
 
 #### Developer Experience
+
 - **Component Architecture**: 11 React components organized by feature
   - Common: LoadingState, Tooltip, FilterControls, ExportButton, ErrorBoundary
   - RepositoryTable: Table, Header, Row
@@ -173,16 +185,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Focus management in modals
 
 ### Changed
+
 - Updated GitHub Actions workflow to include frontend build steps
 - Enhanced caching strategy for faster CI/CD
 - Improved error messages with context for debugging
 
 ### Fixed
+
 - Duplicate imports in ComparisonView component
 - CSS nesting issues in component modules
 - ESLint configuration for React 19 compatibility
 
 ### Performance
+
 - React.memo optimization for table rows (100+ rows)
 - useMemo for expensive chart transformations
 - useCallback for event handlers
@@ -190,6 +205,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Optimized bundle sizes (tree-shaking, minification)
 
 ### Documentation
+
 - Added `frontend/README.md` with setup instructions
 - Updated main README.md with dashboard feature overview
 - Added JSDoc comments to all React components
@@ -198,6 +214,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - Previous Release
 
 ### Added
+
 - **.NET/NuGet Support**: Added dependency analysis for .NET projects
   - Parses `.csproj` files (SDK-style projects for .NET Core/.NET 5+)
   - Detects .NET SDK version from `TargetFramework`
@@ -217,6 +234,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added - AI-Powered Repository Analysis
 
 #### Core Features
+
 - **Repository Analysis Command**: New `spark analyze` command for generating comprehensive repository analysis reports
 - **Intelligent Ranking Algorithm**: Composite scoring system (30% popularity, 45% activity, 25% health) for ranking repositories
 - **AI-Powered Summaries**: Integration with Anthropic Claude Haiku for generating technical repository summaries
@@ -226,6 +244,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **GitHub-Flavored Markdown Reports**: Professional markdown reports with embedded statistics
 
 #### Data Models
+
 - `Repository` model with comprehensive statistics tracking
 - `CommitHistory` model with time-windowed commit analysis
 - `TechnologyStack` model for dependency tracking
@@ -234,6 +253,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Report` model for complete report generation
 
 #### New Modules
+
 - `src/spark/ranker.py`: Repository ranking with composite scoring algorithm
 - `src/spark/summarizer.py`: AI-powered summary generation with fallbacks
 - `src/spark/report_generator.py`: Markdown report generation
@@ -241,6 +261,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `src/spark/dependencies/analyzer.py`: Dependency ecosystem identification
 
 #### CLI Enhancements
+
 - `spark analyze --user <username>`: Generate full analysis report
 - `spark analyze --list-only`: Dry-run mode to preview top repositories
 - `spark analyze --top-n <N>`: Customize number of repositories analyzed
@@ -249,6 +270,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Graceful error handling with actionable guidance
 
 #### Testing
+
 - 17 comprehensive integration tests covering all user stories
 - Unit tests for ranking algorithm, dependency parsing
 - Edge case validation (no repos, unrecognized languages, unparseable dependencies, archived repos)
@@ -256,23 +278,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accuracy metrics validation (90% AI summary accuracy, 95% tech identification)
 
 #### Documentation
+
 - Comprehensive [analyze command guide](guides/analyze-command.md)
 - Updated [README.md](../README.md) with feature overview
 - [Getting started guide](guides/getting-started.md) with API key setup instructions
 - Sample report in `output/reports/markhazleton-analysis-20251229.md`
 
 #### Configuration
+
 - New `analyzer` section in `config/spark.yml`
 - Configurable ranking weights, AI provider, dependency ecosystems
 - Hybrid caching strategy (file-based + in-memory)
 
 #### Dependencies Added
+
 - `anthropic>=0.40.0`: Claude API client for AI summaries
 - `tenacity>=9.0.0`: Retry logic with exponential backoff
 - `packaging>=23.0`: Semantic version comparison
 - `tomli>=2.0.0`: TOML parsing for Python dependency files
 
 ### Enhanced
+
 - **Fun Stats Visualization**: Now includes 8 creative measurements with personality-driven achievements
   - Coding Time Personality (Night Owl, Early Bird, Daytime Coder)
   - Commit Velocity classifications
@@ -287,16 +313,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Performance**: Optimized caching and API rate limit handling
 
 ### Fixed
+
 - Improved error handling for GitHub API rate limits
 - Enhanced fallback strategies for missing data
 - Better handling of archived and forked repositories
 
 ### Performance
+
 - Repository analysis completes in <3 minutes for 50 repositories
 - Intelligent parallel processing for AI summaries
 - Optimized GitHub API usage with content-addressed caching (replaced with pushed_at-based strategy in v2.1.0)
 
 ### Constitution Compliance
+
 - ✅ Python-First: All modules independently importable
 - ✅ CLI Interface: Full CLI access for local testing
 - ✅ Data Privacy: Explicit public-only repository filter
@@ -308,6 +337,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-12-28
 
 ### Added - Initial Release
+
 - **SVG Visualizations**: 6 beautiful SVG categories (overview, heatmap, languages, fun, streaks, release)
 - **Spark Score**: Unique 0-100 metric combining consistency, volume, and collaboration
 - **GitHub Actions Integration**: Fully automated daily generation at midnight UTC
@@ -319,6 +349,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Configuration System**: YAML-based configuration with sensible defaults
 
 ### Documentation
+
 - Getting started guide
 - Configuration guide
 - Embedding guide

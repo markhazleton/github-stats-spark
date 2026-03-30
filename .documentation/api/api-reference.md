@@ -160,9 +160,11 @@ SparkConfig(config_path: str = "config/spark.yml")
 ```
 
 **Parameters:**
+
 - `config_path` (str): Path to YAML configuration file. Defaults to `config/spark.yml`.
 
 **Raises:**
+
 - `FileNotFoundError`: If configuration file doesn't exist
 - `ValueError`: If configuration is invalid or missing required fields
 
@@ -173,9 +175,11 @@ SparkConfig(config_path: str = "config/spark.yml")
 Load and parse configuration from YAML file.
 
 **Returns:**
+
 - `Dict[str, Any]`: Parsed configuration dictionary
 
 **Example:**
+
 ```python
 config = SparkConfig("config/spark.yml")
 settings = config.load()
@@ -187,9 +191,11 @@ print(settings["user"])  # "auto" or username
 Validate configuration structure and values.
 
 **Returns:**
+
 - `bool`: True if valid, raises ValueError otherwise
 
 **Validation checks:**
+
 - Required fields present (user, stats, visualization, cache, repositories)
 - Theme exists (built-in or in themes.yml)
 - Enabled statistics are valid categories
@@ -197,6 +203,7 @@ Validate configuration structure and values.
 - Cache directory is valid path
 
 **Example:**
+
 ```python
 config = SparkConfig()
 if config.validate():
@@ -208,9 +215,11 @@ if config.validate():
 Get theme instance based on configuration.
 
 **Returns:**
+
 - `Theme`: Instance of SparkDarkTheme, SparkLightTheme, or CustomTheme
 
 **Example:**
+
 ```python
 config = SparkConfig()
 theme = config.get_theme()
@@ -222,13 +231,16 @@ print(theme.primary_color)  # "#0EA5E9" for spark-dark
 Get configuration value by dotted key path.
 
 **Parameters:**
+
 - `key` (str): Dotted path to config value (e.g., "stats.enabled")
 - `default` (Any): Default value if key not found
 
 **Returns:**
+
 - `Any`: Configuration value or default
 
 **Example:**
+
 ```python
 config = SparkConfig()
 enabled_stats = config.get("stats.enabled", [])
@@ -248,6 +260,7 @@ StatsCalculator(profile: Dict[str, Any], repositories: List[Dict[str, Any]])
 ```
 
 **Parameters:**
+
 - `profile` (Dict): User profile data from GitHub API
   - `username` (str): GitHub username
   - `public_repos` (int): Number of public repositories
@@ -256,6 +269,7 @@ StatsCalculator(profile: Dict[str, Any], repositories: List[Dict[str, Any]])
   - Each repo contains: `name`, `stars`, `forks`, `watchers`
 
 **Example:**
+
 ```python
 profile = {
     "username": "markhazleton",
@@ -275,12 +289,14 @@ calculator = StatsCalculator(profile, repositories)
 Add commit data for analysis.
 
 **Parameters:**
+
 - `commits` (List[Dict]): Commit data with fields:
   - `sha` (str): Commit hash
   - `date` (str): ISO format timestamp
   - `message` (str): Commit message
 
 **Example:**
+
 ```python
 commits = [
     {"sha": "abc123", "date": "2025-12-28T10:00:00Z", "message": "Fix bug"}
@@ -293,9 +309,11 @@ calculator.add_commits(commits)
 Add language statistics from repositories.
 
 **Parameters:**
+
 - `languages` (Dict[str, int]): Language names to byte counts
 
 **Example:**
+
 ```python
 calculator.add_languages({"Python": 5000, "JavaScript": 3000})
 ```
@@ -305,11 +323,13 @@ calculator.add_languages({"Python": 5000, "JavaScript": 3000})
 Calculate overall Spark Score (0-100 scale).
 
 **Formula:**
+
 - 40% Consistency (commit regularity)
 - 35% Volume (commit count with logarithmic scaling)
 - 25% Collaboration (stars, forks, followers, watchers)
 
 **Returns:**
+
 - `Dict[str, Any]` with fields:
   - `total_score` (float): Overall score (0-100)
   - `consistency_score` (float): Consistency component (0-100)
@@ -318,6 +338,7 @@ Calculate overall Spark Score (0-100 scale).
   - `lightning_rating` (int): Rating as lightning bolts (1-5)
 
 **Example:**
+
 ```python
 score = calculator.calculate_spark_score()
 print(f"Score: {score['total_score']}")  # e.g., 78.5
@@ -329,12 +350,15 @@ print(f"Rating: {'⚡' * score['lightning_rating']}")  # ⚡⚡⚡⚡
 Map score to lightning bolt rating.
 
 **Parameters:**
+
 - `score` (float): Score value (0-100)
 
 **Returns:**
+
 - `int`: Lightning bolts (1-5)
 
 **Thresholds:**
+
 - 5 bolts: score >= 80
 - 4 bolts: score >= 60
 - 3 bolts: score >= 40
@@ -342,6 +366,7 @@ Map score to lightning bolt rating.
 - 1 bolt: score < 20
 
 **Example:**
+
 ```python
 rating = calculator.calculate_lightning_rating(85)  # 5
 ```
@@ -351,17 +376,20 @@ rating = calculator.calculate_lightning_rating(85)  # 5
 Analyze commit time distribution and categorize coding pattern.
 
 **Returns:**
+
 - `Dict[str, Any]` with fields:
   - `hour_distribution` (Dict[int, int]): Commits per hour (0-23)
   - `category` (str): "night_owl", "early_bird", or "balanced"
   - `most_active_hour` (int): Hour with most commits
 
 **Categories:**
+
 - **Night Owl**: Majority of commits between 22:00-4:00
 - **Early Bird**: Majority of commits between 5:00-9:00
 - **Balanced**: Even distribution throughout day
 
 **Example:**
+
 ```python
 patterns = calculator.analyze_time_patterns()
 print(patterns["category"])  # "night_owl"
@@ -373,17 +401,20 @@ print(patterns["most_active_hour"])  # 23
 Calculate language percentages and group into top 10 + "Other".
 
 **Returns:**
+
 - `List[Dict[str, Any]]`: Sorted by percentage descending
   - `name` (str): Language name
   - `bytes` (int): Total bytes
   - `percentage` (float): Percentage of total
 
 **Features:**
+
 - Groups languages beyond top 9 into "Other"
 - Sorts by bytes (highest first)
 - Percentages sum to 100%
 
 **Example:**
+
 ```python
 languages = calculator.aggregate_languages()
 for lang in languages[:3]:
@@ -398,12 +429,14 @@ for lang in languages[:3]:
 Calculate coding streaks and learning patterns.
 
 **Returns:**
+
 - `Dict[str, Any]` with fields:
   - `current_streak` (int): Consecutive days with commits (from today backwards)
   - `longest_streak` (int): Longest streak in history
   - `learning_streak` (int): Days working with new languages
 
 **Example:**
+
 ```python
 streaks = calculator.calculate_streaks()
 print(f"Current streak: {streaks['current_streak']} days")
@@ -415,10 +448,12 @@ print(f"Longest streak: {streaks['longest_streak']} days")
 Compute weekly and monthly unique repository touchpoints for cadence sparklines.
 
 **Parameters:**
+
 - `weeks` (int): Number of trailing weeks to summarize
 - `months` (int): Number of trailing months to summarize
 
 **Returns:**
+
 - `Dict[str, Any]` with fields:
   - `weekly` (List[Dict]): Ordered list of week labels and repo counts
   - `monthly` (List[Dict]): Ordered list of month labels and repo counts
@@ -426,6 +461,7 @@ Compute weekly and monthly unique repository touchpoints for cadence sparklines.
   - `unique_repos` (int): Unique repositories touched in the sampled periods
 
 **Example:**
+
 ```python
 cadence = calculator.calculate_release_cadence()
 print(cadence["weekly"][-1])  # {'label': 'W08', 'repos': 5, ...}
@@ -444,10 +480,12 @@ StatisticsVisualizer(theme: Theme, enable_effects: bool = True)
 ```
 
 **Parameters:**
+
 - `theme` (Theme): Theme instance (SparkDarkTheme, SparkLightTheme, CustomTheme)
 - `enable_effects` (bool): Enable visual effects (glow, gradients). Defaults to True.
 
 **Example:**
+
 ```python
 from spark.themes.spark_dark import SparkDarkTheme
 
@@ -462,6 +500,7 @@ visualizer = StatisticsVisualizer(theme, enable_effects=True)
 Generate overview SVG with Spark Score and key metrics.
 
 **Parameters:**
+
 - `username` (str): GitHub username
 - `spark_score` (Dict): Spark Score data from calculator
 - `total_commits` (int): Total commit count
@@ -469,11 +508,13 @@ Generate overview SVG with Spark Score and key metrics.
 - `time_pattern` (Dict): Time pattern analysis
 
 **Returns:**
+
 - `str`: SVG content as XML string
 
 **Dimensions:** 800×400 pixels
 
 **Layout:**
+
 - Spark Score circle with lightning bolts
 - Component scores (consistency, volume, collaboration)
 - Top 4 languages with horizontal bars
@@ -481,6 +522,7 @@ Generate overview SVG with Spark Score and key metrics.
 - "Powered by Stats Spark" footer
 
 **Example:**
+
 ```python
 svg = visualizer.generate_overview(
     username="markhazleton",
@@ -498,21 +540,25 @@ with open("output/overview.svg", "w") as f:
 Generate commit frequency heatmap (GitHub-style calendar).
 
 **Parameters:**
+
 - `username` (str): GitHub username
 - `commits_by_date` (Dict[str, int]): Date (YYYY-MM-DD) to commit count
 
 **Returns:**
+
 - `str`: SVG content
 
 **Dimensions:** 900×200 pixels
 
 **Features:**
+
 - 52 weeks × 7 days grid
 - Color intensity based on commit frequency
 - Month labels
 - Tooltips with date and count
 
 **Example:**
+
 ```python
 commits_by_date = {
     "2025-12-28": 5,
@@ -527,21 +573,25 @@ svg = visualizer.generate_heatmap("markhazleton", commits_by_date)
 Generate language breakdown bar chart.
 
 **Parameters:**
+
 - `username` (str): GitHub username
 - `languages` (List[Dict]): Language data with name, bytes, percentage
 
 **Returns:**
+
 - `str`: SVG content
 
 **Dimensions:** 600×400 pixels
 
 **Features:**
+
 - Top 10 languages as horizontal bars
 - Percentage labels
 - Color-coded bars from theme
 - "Other" grouping for remaining languages
 
 **Example:**
+
 ```python
 svg = visualizer.generate_languages("markhazleton", languages)
 ```
@@ -551,18 +601,22 @@ svg = visualizer.generate_languages("markhazleton", languages)
 Generate paired weekly/monthly repo diversity sparklines.
 
 **Parameters:**
+
 - `username` (str): GitHub username label
 - `cadence` (Dict[str, Any]): Output from `calculate_release_cadence`
 
 **Returns:**
+
 - `str`: SVG content (900×420 pixels)
 
 **Features:**
+
 - Two side-by-side panels (weekly + monthly)
 - Sparkline with area fill and peak indicators
 - Tooltips describing repo count per period
 
 **Example:**
+
 ```python
 cadence = calculator.calculate_release_cadence()
 svg = visualizer.generate_release_cadence(cadence, "markhazleton")
@@ -573,6 +627,7 @@ svg = visualizer.generate_release_cadence(cadence, "markhazleton")
 Generate "Lightning Round Stats" one-liners.
 
 **Parameters:**
+
 - `username` (str): GitHub username
 - `stats` (Dict[str, Any]): Fun statistics
   - `most_active_hour` (int)
@@ -581,11 +636,13 @@ Generate "Lightning Round Stats" one-liners.
   - `account_age_days` (int)
 
 **Returns:**
+
 - `str`: SVG content
 
 **Dimensions:** 600×300 pixels
 
 **Example:**
+
 ```python
 fun_stats = {
     "most_active_hour": 23,
@@ -601,16 +658,19 @@ svg = visualizer.generate_fun_stats("markhazleton", fun_stats)
 Generate coding streaks visualization.
 
 **Parameters:**
+
 - `username` (str): GitHub username
 - `current_streak` (int): Current streak in days
 - `longest_streak` (int): Longest streak in days
 
 **Returns:**
+
 - `str`: SVG content
 
 **Dimensions:** 600×250 pixels
 
 **Example:**
+
 ```python
 svg = visualizer.generate_streaks(
     username="markhazleton",
@@ -632,13 +692,16 @@ GitHubFetcher(token: str, cache: Optional[APICache] = None)
 ```
 
 **Parameters:**
+
 - `token` (str): GitHub Personal Access Token
 - `cache` (Optional[APICache]): Cache instance for API responses
 
 **Raises:**
+
 - `ValueError`: If token is empty or invalid
 
 **Example:**
+
 ```python
 from spark.fetcher import GitHubFetcher
 from spark.cache import APICache
@@ -654,14 +717,17 @@ fetcher = GitHubFetcher(token=os.environ["GITHUB_TOKEN"], cache=cache)
 Fetch user profile data.
 
 **Parameters:**
+
 - `username` (str): GitHub username
 
 **Returns:**
+
 - `Dict[str, Any]`: User profile with public_repos, followers, created_at, etc.
 
 **Caching:** Content-addressed by repository pushed_at timestamps
 
 **Example:**
+
 ```python
 profile = fetcher.fetch_user_profile("markhazleton")
 print(profile["public_repos"])
@@ -672,18 +738,22 @@ print(profile["public_repos"])
 Fetch user repositories with pagination.
 
 **Parameters:**
+
 - `username` (str): GitHub username
 - `max_count` (int): Maximum repositories to fetch. Defaults to 500.
 
 **Returns:**
+
 - `List[Dict[str, Any]]`: Repository data with name, stars, forks, watchers
 
 **Features:**
+
 - Automatic pagination
 - Rate limiting with exponential backoff
 - Excludes private repos (per privacy requirements)
 
 **Example:**
+
 ```python
 repos = fetcher.fetch_repositories("markhazleton", max_count=100)
 for repo in repos[:5]:
@@ -695,14 +765,17 @@ for repo in repos[:5]:
 Fetch commits for a repository.
 
 **Parameters:**
+
 - `repo_name` (str): Repository name
 - `username` (str): Repository owner
 - `max_count` (int): Maximum commits to fetch. Defaults to 100.
 
 **Returns:**
+
 - `List[Dict[str, Any]]`: Commit data with sha, date, message
 
 **Example:**
+
 ```python
 commits = fetcher.fetch_commits("stats-spark", "markhazleton")
 ```
@@ -712,13 +785,16 @@ commits = fetcher.fetch_commits("stats-spark", "markhazleton")
 Fetch language statistics for a repository.
 
 **Parameters:**
+
 - `repo_name` (str): Repository name
 - `username` (str): Repository owner
 
 **Returns:**
+
 - `Dict[str, int]`: Language names to byte counts
 
 **Example:**
+
 ```python
 languages = fetcher.fetch_languages("stats-spark", "markhazleton")
 print(languages)  # {"Python": 5000, "HTML": 300}
@@ -737,12 +813,14 @@ APICache(cache_dir: str = ".cache", config: SparkConfig = None)
 ```
 
 **Parameters:**
+
 - `cache_dir` (str): Directory for cache files. Defaults to `.cache`.
 - `config` (SparkConfig): Configuration instance for cache settings.
 
 **Cache Strategy:** Content-addressed by repository `pushed_at` timestamps. Cache entries remain valid until the repository is updated (new `pushed_at` value).
 
 **Example:**
+
 ```python
 cache = APICache(cache_dir=".cache", config=config)
 ```
@@ -754,12 +832,15 @@ cache = APICache(cache_dir=".cache", config=config)
 Retrieve cached value if not expired.
 
 **Parameters:**
+
 - `key` (str): Cache key
 
 **Returns:**
+
 - `Optional[Any]`: Cached value or None if expired/missing
 
 **Example:**
+
 ```python
 data = cache.get("user:markhazleton:profile")
 ```
@@ -769,10 +850,12 @@ data = cache.get("user:markhazleton:profile")
 Store value in cache with current timestamp.
 
 **Parameters:**
+
 - `key` (str): Cache key
 - `value` (Any): Data to cache (must be JSON-serializable)
 
 **Example:**
+
 ```python
 cache.set("user:markhazleton:profile", profile_data)
 ```
@@ -782,12 +865,15 @@ cache.set("user:markhazleton:profile", profile_data)
 **Deprecated**: Always returns `False`. Cache validation now uses change-based logic (comparing `pushed_at` timestamps) instead of time-based expiration. Kept for backward compatibility only.
 
 **Parameters:**
+
 - `key` (str): Cache key
 
 **Returns:**
+
 - `bool`: True if expired or doesn't exist
 
 **Example:**
+
 ```python
 if cache.is_expired("user:markhazleton:profile"):
     # Fetch fresh data
@@ -798,6 +884,7 @@ if cache.is_expired("user:markhazleton:profile"):
 Clear all cached data.
 
 **Example:**
+
 ```python
 cache.clear()
 ```
@@ -872,6 +959,7 @@ spark generate --user USERNAME [options]
 ```
 
 **Options:**
+
 - `--user USERNAME`: GitHub username (required)
 - `--output-dir DIR`: Output directory (default: `output/`)
 - `--config FILE`: Config file path (default: `config/spark.yml`)
@@ -879,6 +967,7 @@ spark generate --user USERNAME [options]
 - `--verbose`: Enable verbose logging
 
 **Example:**
+
 ```bash
 export GITHUB_TOKEN=ghp_xxxx
 spark generate --user markhazleton --verbose
@@ -893,10 +982,12 @@ spark preview --theme THEME [options]
 ```
 
 **Options:**
+
 - `--theme THEME`: Theme name (default: `spark-dark`)
 - `--output-dir DIR`: Preview output directory (default: `preview/`)
 
 **Example:**
+
 ```bash
 spark preview --theme ocean
 ```
@@ -910,11 +1001,13 @@ spark config [options]
 ```
 
 **Options:**
+
 - `--validate`: Validate configuration
 - `--show`: Display current configuration
 - `--file FILE`: Config file path
 
 **Example:**
+
 ```bash
 spark config --validate --file config/spark.yml
 ```
@@ -928,11 +1021,13 @@ spark cache [options]
 ```
 
 **Options:**
+
 - `--clear`: Clear all cached data
 - `--info`: Show cache information
 - `--dir DIR`: Cache directory
 
 **Example:**
+
 ```bash
 spark cache --clear
 spark cache --info --dir .cache
@@ -1022,7 +1117,7 @@ Sample test data is available in `tests/fixtures/`:
 
 ## License
 
-MIT License - see [LICENSE](../LICENSE) file for details.
+MIT License - see [LICENSE](../../LICENSE) file for details.
 
 ---
 

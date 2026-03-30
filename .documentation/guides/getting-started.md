@@ -36,10 +36,12 @@ The system will auto-detect your username from the repository, but you can custo
 ### Step 4: Trigger the Workflow
 
 #### Option A: Wait for Automatic Run
+
 - The workflow runs automatically at midnight UTC daily
 - Check back tomorrow to see your stats!
 
 #### Option B: Manual Trigger (Recommended for First Run)
+
 1. Go to **Actions** tab in your repository
 2. Select "Generate GitHub Statistics" workflow
 3. Click "Run workflow" → "Run workflow"
@@ -80,6 +82,7 @@ Add these lines to your profile README (`username/username/README.md`):
 ### Workflow Fails with "Authentication Failed"
 
 The `GITHUB_TOKEN` is automatically provided by GitHub Actions. If you see authentication errors:
+
 - Check that GitHub Actions is enabled in your repository settings
 - Ensure you haven't modified the workflow file to remove the token
 
@@ -99,6 +102,7 @@ The `GITHUB_TOKEN` is automatically provided by GitHub Actions. If you see authe
 ### Rate Limiting Issues
 
 If you have many repositories (>100):
+
 - The workflow automatically handles rate limiting with retries
 - You may need to wait a few minutes between runs
 - Check the workflow logs for "Rate limit exceeded" messages
@@ -112,17 +116,20 @@ Stats Spark includes an optional AI-powered repository analysis feature that gen
 To use the `spark analyze` command locally:
 
 1. **Install dependencies**:
+
    ```bash
    pip install -r requirements.txt
    pip install -e .
    ```
 
 2. **Set up GitHub token**:
+
    ```bash
    export GITHUB_TOKEN=ghp_your_token_here
    ```
 
 3. **(Optional) Set up Anthropic API key** for AI summaries:
+
    ```bash
    export ANTHROPIC_API_KEY=sk-ant-your_key_here
    ```
@@ -137,6 +144,7 @@ To use the `spark analyze` command locally:
    **Without API key**: The command automatically uses template-based summaries.
 
 4. **Run the analyze command**:
+
    ```bash
    spark analyze --user YOUR_USERNAME
    ```
@@ -154,6 +162,7 @@ To enable AI summaries in your automated workflow:
    - Click "Add secret"
 
 2. **Update workflow file** (`.github/workflows/generate-stats.yml`):
+
    ```yaml
    env:
      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -161,6 +170,7 @@ To enable AI summaries in your automated workflow:
    ```
 
 3. **Add analyze step to workflow**:
+
    ```yaml
    - name: Generate repository analysis
      env:
@@ -182,7 +192,7 @@ For detailed usage, see [Repository Analysis Documentation](analyze-command.md).
 
 - **Issues**: Report bugs at [GitHub Issues](https://github.com/markhazleton/github-stats-spark/issues)
 - **Documentation**: Full docs at [Documentation Index](../README.md)
-- **Examples**: See [assets/examples/markhazleton/](../assets/examples/markhazleton/)
+- **Examples**: See [assets/examples/markhazleton/](../../assets/examples/markhazleton/)
 
 ---
 

@@ -72,6 +72,7 @@ None found.
 - [ ] Dependencies reviewed for vulnerabilities
 
 Notes:
+
 - No credential leaks detected in reviewed source deltas.
 - Frontend `package.json` has dependency version changes; no explicit audit evidence provided but versions appear standard.
 - Security enrichment data itself only exposes public repository metadata (feature status, alert counts) — no sensitive data leakage.
@@ -79,6 +80,7 @@ Notes:
 ## Code Quality Assessment
 
 ### Strengths
+
 - **Phase 3 read-only semantics**: Assembly phase now uses default unavailable payloads instead of live API calls, maintaining clean 4-phase architecture.
 - **Logger modernization**: Project-wide migration from deprecated `warn()` to `warning()` with backward-compatible shim for safety.
 - **Well-structured data models**: `RepositoryPullRequestSummary` and `RepositorySecuritySummary` are clean dataclasses with proper `to_dict()`/`from_dict()` round-trip serialization.
@@ -90,6 +92,7 @@ Notes:
 - **Updated integration tests**: Partial enrichment test now pre-populates cache directly instead of monkeypatching fetcher, validating the read-only Phase 3 contract.
 
 ### Areas for Improvement
+
 - One remaining `logger.warn()` call at `unified_data_generator.py:328` (L1).
 - Fetcher coverage at 79%, 1% below the quality gate (L2).
 
@@ -98,6 +101,7 @@ Notes:
 **Status**: ADEQUATE
 
 Test suite results (42 enrichment-focused tests, all passing):
+
 - `tests/unit/test_fetcher.py` — 21 tests covering PR summary, security summary, repo fetching, caching, rate limits, auth, page cap
 - `tests/unit/test_fetcher_api_version.py` — 5 tests covering API version header behavior and fallback
 - `tests/unit/test_repository_enrichment_status.py` — 6 tests covering model serialization and round-trip
@@ -107,6 +111,7 @@ Test suite results (42 enrichment-focused tests, all passing):
 - `tests/unit/test_cache_manager.py` — 3 tests including refresh category validation
 
 Coverage evidence (collected during this review at commit 050f424):
+
 - `spark.fetcher`: **79%** ⚠️ (1% below gate)
 - `spark.models.repository`: **89%** ✅
 - `spark.unified_data_generator`: **97%** ✅
@@ -203,6 +208,7 @@ No immediate blocking actions required.
 
 **Reasoning**:
 All critical, high-priority, and medium-priority issues from prior reviews have been fully remediated:
+
 - **M1 prior (Phase 3 live API calls)**: ✅ Fixed in commit 050f424 — Phase 3 now returns default unavailable payloads instead of live-fetching
 - **L1 prior (deprecated logger.warn)**: ✅ Fixed in commit 050f424 — project-wide migration to `logger.warning()` with backward-compatible shim; one residual call remains (non-blocking)
 - **C1 R1 (Coverage)**: ✅ Fixed — enrichment modules at 79%/89%/97% (fetcher 1% below gate, non-blocking)
@@ -230,10 +236,12 @@ The PR delivers substantial new functionality (PR/security enrichment, staged AP
 **Recommendation**: ✅ APPROVE
 
 **Issues found**:
+
 - M1 (MEDIUM): Phase 3 assembly falls back to live API calls when enrichment data is not cached
 - L1 (LOW): Deprecated `logger.warn()` usage in fetcher.py
 
 **Remediation in commits c806505 and 050f424**:
+
 - Phase 3 now uses default unavailable payloads instead of live API calls (M1 resolved)
 - All `logger.warn()` calls migrated to `logger.warning()` across all modules (L1 mostly resolved — one residual call at `unified_data_generator.py:328`)
 - Integration test updated to validate read-only Phase 3 by pre-populating cache
@@ -246,11 +254,13 @@ The PR delivers substantial new functionality (PR/security enrichment, staged AP
 **Recommendation**: ⚠️ REQUEST CHANGES
 
 **Issues found**:
+
 - C1 (CRITICAL): T032 marked complete but enrichment module coverage below 80% gate (fetcher 46%, repository 60%, unified_data_generator 77%)
 - H1 (HIGH): React/react-hooks ESLint plugin rules removed; `useBottomSheets` called hooks inside forEach iteration
 - M1 (MEDIUM): Deprecated PyGithub auth constructor `Github(self.token)` in use
 
 **Remediation executed in commit 25e28b70**:
+
 - Added 39 targeted tests raising coverage to 80%/89%/94%
 - Restored hook safety via ESLint `no-restricted-syntax` rules
 - Reworked `useBottomSheets` to throw immediately (fail-fast)

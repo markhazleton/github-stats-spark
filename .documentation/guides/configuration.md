@@ -18,6 +18,7 @@ user: auto
 ```
 
 **Options**:
+
 - `auto`: Auto-detect from repository name (recommended for GitHub Actions)
 - `your-username`: Specific GitHub username
 
@@ -44,6 +45,7 @@ stats:
 ```
 
 **Available Categories**:
+
 - `overview`: Main dashboard with Spark Score, commits, languages, time pattern
 - `heatmap`: GitHub-style contribution heatmap
 - `languages`: Bar chart of programming languages
@@ -71,6 +73,7 @@ visualization:
 ```
 
 **Built-in Themes**:
+
 - `spark-dark`: Dark theme with electric blue primary and gold accents (default)
 - `spark-light`: Light theme with WCAG AA compliant colors
 
@@ -140,10 +143,12 @@ custom_themes:
 Ensure your custom themes meet WCAG AA contrast ratio (4.5:1 minimum) between text and background:
 
 **Good Examples**:
+
 - Dark background `#0D1117` + Light text `#C9D1D9` ✅
 - Light background `#FFFFFF` + Dark text `#1F2937` ✅
 
 **Bad Examples**:
+
 - Light background `#FFFFFF` + Light text `#D1D5DB` ❌
 - Dark background `#000000` + Dark text `#333333` ❌
 
@@ -154,6 +159,7 @@ Ensure your custom themes meet WCAG AA contrast ratio (4.5:1 minimum) between te
 3. Run generation to apply
 
 Example:
+
 ```yaml
 # In spark.yml
 visualization:
@@ -252,4 +258,4 @@ python -c "from spark.config import SparkConfig; c = SparkConfig(); c.load(); pr
 
 - [Getting Started Guide](getting-started.md)
 - [Embedding Guide](embedding-guide.md)
-- [Theme Examples](../config/themes.yml)
+- [Theme Examples](../../config/themes.yml)

@@ -9,26 +9,31 @@
 ## Common Commands
 
 ### Environment Check
+
 ```powershell
 .\run-spark.ps1 -CheckOnly
 ```
 
 ### Basic Run (No AI)
+
 ```powershell
 .\run-spark.ps1 -User YOUR_USERNAME
 ```
 
 ### Complete Run (With AI)
+
 ```powershell
 .\run-spark.ps1 -User YOUR_USERNAME -IncludeAI
 ```
 
 ### Fresh Start
+
 ```powershell
 .\run-spark.ps1 -User YOUR_USERNAME -ClearCache -IncludeAI
 ```
 
 ### Force Refresh
+
 ```powershell
 .\run-spark.ps1 -User YOUR_USERNAME -ForceRefresh
 ```

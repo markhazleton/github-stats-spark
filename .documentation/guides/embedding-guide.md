@@ -184,6 +184,7 @@ Here's how [markhazleton](https://github.com/markhazleton) embeds Stats Spark:
 ### SVGs Look Blurry
 
 GitHub may cache old versions:
+
 1. Add a cache-busting parameter: `?v=2`
 2. Wait 5-10 minutes for GitHub's cache to update
 3. Clear your browser cache
@@ -191,6 +192,7 @@ GitHub may cache old versions:
 ### SVGs Don't Update
 
 The workflow runs daily at midnight UTC:
+
 1. Manually trigger from Actions tab for immediate update
 2. Check workflow logs for errors
 3. Verify the workflow committed new SVGs
@@ -251,7 +253,7 @@ The workflow runs daily at midnight UTC:
 
 - [Configuration Guide](configuration.md) - Customize themes and settings
 - [Getting Started](getting-started.md) - Initial setup
-- [Example Outputs](../assets/examples/markhazleton/) - See real examples
+- [Example Outputs](../../assets/examples/markhazleton/) - See real examples
 
 ---
 

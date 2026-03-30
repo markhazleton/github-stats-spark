@@ -569,6 +569,7 @@ export async function fetchDashboardData({
 - Returns `_fromCache: true` and `_stale: true` flags for UI indicators.
 
 **Environment-based URLs:**
+
 - Development: `/data/repositories.json`
 - Production (GitHub Pages): `/github-stats-spark/data/repositories.json`
 
@@ -762,6 +763,7 @@ const totalSecurityAlerts = repositories.reduce(
 ```
 
 Cards displayed:
+
 1. **Repositories** — total count
 2. **Total Commits** — sum with "N active in 90d" sublabel
 3. **Languages** — unique language count
@@ -885,6 +887,7 @@ function MarkdownContent({ content, className = "" }) {
 ```
 
 **Features:**
+
 - GitHub Flavored Markdown (tables, strikethrough, autolinks, task lists)
 - External links open in new tab with `noopener noreferrer`
 - Styled via CSS module `MarkdownContent.module.css`
@@ -1078,6 +1081,7 @@ const getAlerts = (repo) =>
 ### RepositoryDetail Breakdown
 
 The Signals section renders:
+
 - **PR availability badge** (green/yellow/red)
 - **Open PR count**, draft count, review-requested count
 - **Oldest open PR age** in days
@@ -1176,6 +1180,7 @@ useEffect(() => {
 ```
 
 **Direct links:**
+
 - `https://example.com/` → Dashboard table
 - `https://example.com/#visualizations` → Charts
 - `https://example.com/#attention` → Needs attention
@@ -1205,6 +1210,7 @@ npm run build
 ```
 
 Vite config (`vite.config.js`):
+
 - Base path: `/github-stats-spark/` (for GitHub Pages)
 - Output: `../docs/`
 - Path alias: `@` → `./src`

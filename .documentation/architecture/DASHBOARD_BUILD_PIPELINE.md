@@ -25,6 +25,7 @@
 This document outlines the complete architecture for evolving the existing Stats Spark pipeline to generate an interactive HTML dashboard alongside current SVG and markdown outputs. The solution preserves all existing functionality while adding modern web-based visualization capabilities suitable for deployment to GitHub Pages.
 
 **Key Decisions**:
+
 - **Template Engine**: Jinja2 (recommended for Python integration)
 - **Deployment Strategy**: Use `/docs` folder (simpler than gh-pages branch)
 - **Data Flow**: SVG/Markdown → JSON → HTML Dashboard
@@ -37,6 +38,7 @@ This document outlines the complete architecture for evolving the existing Stats
 ### 1. Python Template Engine Evaluation
 
 #### Candidates Evaluated
+
 - **Jinja2** (Recommended)
 - **Mako**
 - **Chameleon**
@@ -85,11 +87,13 @@ This document outlines the complete architecture for evolving the existing Stats
    - Good tooling for minification and asset management
 
 **Why Not Mako?**
+
 - Designed for embedded Python code - unnecessary complexity for stats dashboard
 - Steeper learning curve for HTML generation context
 - Smaller community, fewer resources
 
 **Why Not Chameleon?**
+
 - Better for XML/XHTML but not optimal for HTML5
 - Smaller ecosystem than Jinja2
 - No significant advantage over Jinja2 for this use case
@@ -100,7 +104,7 @@ This document outlines the complete architecture for evolving the existing Stats
 
 #### Current Stats Spark Output Pipeline
 
-```
+```text
 GitHub API + Anthropic API
          ↓
     Python Processing
@@ -118,7 +122,7 @@ GitHub API + Anthropic API
 
 #### Proposed Enhanced Pipeline
 
-```
+```text
 GitHub API + Anthropic API
          ↓
     Python Processing
@@ -272,6 +276,7 @@ html = template.render(**context)
 #### Option A: `/docs` Folder (Recommended)
 
 **Advantages**:
+
 - ✅ Single branch configuration (main)
 - ✅ All assets version-controlled with code
 - ✅ Easier for Git history/blame/rollback
@@ -281,11 +286,13 @@ html = template.render(**context)
 - ✅ No branch merges between gh-pages and main
 
 **Disadvantages**:
+
 - ❌ Repository size grows with generated HTML
 - ❌ Less suitable if HTML is very large (stats dashboards are small)
 
 **File Structure**:
-```
+
+```text
 github-stats-spark/
 ├─ src/                    # Source code (unchanged)
 ├─ tests/                  # Tests (unchanged)
@@ -321,6 +328,7 @@ github-stats-spark/
 ```
 
 **GitHub Pages Settings**:
+
 1. Go to repo Settings → Pages
 2. Source: Deploy from a branch
 3. Branch: main
@@ -329,11 +337,13 @@ github-stats-spark/
 #### Option B: `gh-pages` Branch (Alternative)
 
 **Advantages**:
+
 - ✅ Keeps generated content separate from source
 - ✅ Smaller main branch size
 - ✅ Traditional GitHub Pages setup
 
 **Disadvantages**:
+
 - ❌ Requires branch management complexity
 - ❌ Harder to correlate dashboard version with code version
 - ❌ Additional git operations in workflow
@@ -348,6 +358,7 @@ github-stats-spark/
 ### System Components
 
 #### Component 1: Data Serialization Module
+
 **Location**: `/src/spark/serializers/`
 
 ```python
@@ -397,6 +408,7 @@ class DashboardDataExporter:
 ```
 
 #### Component 2: Template Rendering Module
+
 **Location**: `/src/spark/renderers/`
 
 ```python
@@ -453,6 +465,7 @@ class DashboardRenderer:
 ```
 
 #### Component 3: Dashboard Build Orchestrator
+
 **Location**: `/src/spark/orchestrators/`
 
 ```python
@@ -522,7 +535,7 @@ class DashboardBuilder:
 
 ### Execution Flow Diagram
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │            GitHub Actions Workflow (generate-stats.yml)         │
 └─────────────────────────────────────────────────────────────────┘
@@ -723,7 +736,7 @@ context = {
 
 ### Directory Structure
 
-```
+```text
 github-stats-spark/
 │
 ├─ docs/                              ← GitHub Pages Root
@@ -799,7 +812,7 @@ Access:
 
 ### URL Structure
 
-```
+```text
 Base URL: https://markhazleton.github.io/github-stats-spark/
 
 Routes:
@@ -821,6 +834,7 @@ Routes:
    - Copy/optimize assets (new)
 
 2. **Commit phase**:
+
    ```bash
    git add output/ docs/
    git commit -m "Update GitHub stats and dashboard"
@@ -1001,7 +1015,7 @@ The workflow supports three modes via `report_mode` input:
 
 ### Source Code Organization
 
-```
+```text
 src/spark/
 │
 ├─ __init__.py
@@ -1060,7 +1074,7 @@ src/spark/
 
 ### Output Directory Organization
 
-```
+```text
 project-root/
 │
 ├─ output/                         ← Existing outputs
@@ -1111,7 +1125,7 @@ project-root/
 
 ### Template File Organization
 
-```
+```bash
 src/spark/templates/
 │
 ├─ base.html                       ← Base layout
@@ -1162,12 +1176,14 @@ src/spark/templates/
 ### Phase 1: Foundation (Weeks 1-2)
 
 **Deliverables**:
+
 - [ ] Jinja2 template engine integration
 - [ ] JSON serialization layer
 - [ ] Base template structure
 - [ ] Dashboard builder orchestrator
 
 **Tasks**:
+
 1. Add `jinja2` to `requirements.txt`
 2. Create `serializers/json_exporter.py`
 3. Create `renderers/dashboard_renderer.py`
@@ -1181,12 +1197,14 @@ src/spark/templates/
 ### Phase 2: Template Development (Weeks 2-3)
 
 **Deliverables**:
+
 - [ ] Dashboard main page template
 - [ ] Repository list/detail templates
 - [ ] Component templates
 - [ ] CSS styling (responsive, theme support)
 
 **Tasks**:
+
 1. Implement dashboard.html template
 2. Implement repository.html template
 3. Implement component templates (header, footer, metrics)
@@ -1200,12 +1218,14 @@ src/spark/templates/
 ### Phase 3: Integration (Weeks 3-4)
 
 **Deliverables**:
+
 - [ ] Updated CLI with dashboard command
 - [ ] GitHub Actions workflow modifications
 - [ ] Documentation updates
 - [ ] Integration tests
 
 **Tasks**:
+
 1. Add dashboard command to CLI
 2. Update generate-stats.yml workflow
 3. Test complete pipeline end-to-end
@@ -1219,12 +1239,14 @@ src/spark/templates/
 ### Phase 4: Optimization & Polish (Week 4+)
 
 **Deliverables**:
+
 - [ ] Asset optimization (SVG, CSS, JS minification)
 - [ ] Performance tuning
 - [ ] Accessibility improvements
 - [ ] Browser compatibility testing
 
 **Tasks**:
+
 1. Minify CSS and JavaScript
 2. Optimize SVG files
 3. Test on multiple browsers
@@ -1243,7 +1265,7 @@ src/spark/templates/
 
 ### Production Dependencies
 
-```
+```text
 # Current
 PyGithub>=2.1.1
 PyYAML>=6.0.1
@@ -1267,7 +1289,7 @@ svgcleaner>=0.10.0     # SVG optimization
 
 ### Development Dependencies
 
-```
+```text
 # Testing
 pytest>=7.0.0
 pytest-cov>=4.0.0

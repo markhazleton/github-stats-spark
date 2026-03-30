@@ -49,7 +49,7 @@ npm run build
 
 ## 📂 Project Structure
 
-```
+```text
 frontend/
 ├── src/
 │   ├── components/
@@ -77,39 +77,51 @@ frontend/
 ## 🎨 Component Documentation
 
 ### App.jsx
+
 Root component managing:
+
 - View state (summary, visualizations, attention)
 - Repository selection for comparison
 - Modal state for drill-down details
 - Data fetching and processing
 
 ### AttentionView
+
 Maintenance triage surface showing:
+
 - Attention ranking ordered by `attention_score`
 - Security, PR, staleness, and dependency component breakdowns
 - Quick triage list for the highest-priority repositories
 
 ### RepositoryTable
+
 Displays repository data with:
+
 - Sortable columns (click header to sort)
 - Checkbox selection for comparison
 - Row click for drill-down details
 - Export functionality
 
 ### Visualizations
+
 Three chart types:
+
 - **BarChart**: Top N repositories by selected metric
 - **LineGraph**: Temporal trends
 - **ScatterPlot**: Commits vs. commit size correlation
 
 ### ComparisonView
+
 Side-by-side comparison showing:
+
 - Color-coded metric highlighting (green=highest, red=lowest)
 - Percentage differences from maximum value
 - Remove repository functionality
 
 ### RepositoryDetail
+
 Comprehensive repository analysis:
+
 - Commit history timeline (90d, 180d, 365d)
 - Language breakdown
 - Technology stack, dependency coverage, and latest-version visibility
@@ -119,12 +131,14 @@ Comprehensive repository analysis:
 ## 🔧 Configuration
 
 ### Vite Config (`vite.config.js`)
+
 - Base path: `/github-stats-spark/` (for GitHub Pages)
 - Output directory: `../docs`
 - Path aliases: `@/` → `src/`
 - Custom middleware for `/data` serving in development
 
 ### Build Scripts
+
 - `npm run dev` - Development server with HMR
 - `npm run build` - Production build
 - `npm run preview` - Preview production build locally
@@ -192,6 +206,7 @@ The dashboard is designed for GitHub Pages deployment:
 ## 🤝 Contributing
 
 When adding new components:
+
 1. Use functional components with hooks
 2. Add PropTypes for type checking
 3. Use CSS Modules for styling

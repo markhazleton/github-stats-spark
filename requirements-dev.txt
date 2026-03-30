@@ -15,5 +15,8 @@ flake8-docstrings>=1.7.0
 # Type checking
 mypy>=1.5.0
 
+# Security scanning
+pip-audit>=2.7.0
+
 # Include production dependencies
 -r requirements.txt

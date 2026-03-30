@@ -56,12 +56,14 @@ Each module MUST have one well-defined purpose. Business logic MUST be testable 
 ## Boundaries
 
 ### What We Process
+
 - Public repositories only
 - Repositories owned by or contributed to by the specified user
 - Maximum 500 repositories per run (configurable)
 - Maximum 365 days of commit history for heatmaps
 
 ### What We Never Do
+
 - Process private repository data
 - Store API tokens or credentials in output
 - Fail silently without logging
@@ -73,23 +75,27 @@ Each module MUST have one well-defined purpose. Business logic MUST be testable 
 ## Governance
 
 ### Dependency Decisions
+
 - New dependencies MUST replace significant custom code OR provide critical functionality
 - Prefer standard library solutions over external packages
 - Abstractions MUST solve demonstrated problems (no premature optimization)
 
 ### Configuration Philosophy
+
 - Configuration options MUST have clear, documented use cases
 - Defaults MUST work for 90% of users without modification
 - Invalid configuration MUST fail before any processing begins
 
 ### Documentation Standards
-- Primary user-facing documentation lives in `/documentation`
-- Approved metadata/framework exceptions are limited to the root `README.md`, `.documentation/` artifacts, `frontend/README.md`, `frontend/public/README.md`, `docs/README.md`, and `output/README.md`
+
+- Primary user-facing documentation lives in `/.documentation`
+- Approved metadata/framework exceptions are limited to the root `README.md`, `frontend/README.md`, `frontend/public/README.md`, `docs/README.md`, and `output/README.md`
 - `/docs` is the GitHub Pages publishing source tree (built site artifacts), not the project documentation corpus; governance and harvest workflows MUST treat it as deployment/source output, not as archival documentation content
 - Generated outputs go to `output/` and `data/`
 - Examples use canonical demo account: `markhazleton`
 
 ### Versioning
+
 - **MAJOR**: Breaking configuration or output format changes
 - **MINOR**: New features, new statistics categories
 - **PATCH**: Bug fixes, performance improvements
@@ -108,4 +114,4 @@ Before merging code, ask:
 
 ---
 
-*Last Amended: 2026-03-07*
+*Last Amended: 2026-03-29*
