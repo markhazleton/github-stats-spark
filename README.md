@@ -25,11 +25,11 @@ Stats Spark is a comprehensive GitHub analytics suite that transforms your GitHu
 
 ### Beautiful Profile Statistics
 
-- **Automated Daily Updates**: GitHub Actions workflow runs at midnight UTC
+- **Automated Weekly Updates**: GitHub Actions workflow runs at midnight UTC on Sundays
 - **6 Visual Categories**: Overview, heatmap, languages, streaks, fun stats, and release cadence
 - **Unique Spark Score**: 0-100 metric combining consistency, volume, and collaboration
 - **Theme Customization**: Dark, light, and custom themes with WCAG AA accessibility
-- **Zero Maintenance**: Set it once, updates automatically forever
+- **Zero Maintenance**: Set it once, updates automatically every week
 
 ### AI-Powered Analysis
 
@@ -37,20 +37,19 @@ Stats Spark is a comprehensive GitHub analytics suite that transforms your GitHu
 - **AI-Generated Summaries**: Claude Haiku creates technical summaries with 97%+ success rate
 - **Developer Profiling**: Technology diversity, activity patterns, contribution classification
 - **Comprehensive Reports**: GitHub-flavored markdown with embedded visualizations
-- **Performance Optimized**: Analyze 50+ repositories in under 3 minutes
+- **Performance Optimized**: Under 5 minutes for up to 500 repositories with smart caching
 
 ### Interactive Dashboard
 
 - **Mobile-First Design**: Touch-optimized interface with 44x44px touch targets and responsive layouts (320px-768px viewports)
 - **Bottom Sheet Navigation**: Native mobile patterns for filters, sort controls, and detailed views
 - **Swipe Gestures**: Touch-friendly interactions including swipe-to-delete and horizontal navigation
-- **Repository Comparison**: Side-by-side comparison of up to 5 repositories with color-coded metrics
 - **Needs Attention View**: Ranks repositories by combined security alerts, PR backlog, dependency drift, and staleness
-- **Visual Analytics**: Interactive Chart.js visualizations optimized for mobile with touch tooltips
+- **Visual Analytics**: Interactive Chart.js + react-chartjs-2 visualizations optimized for mobile with touch tooltips
 - **Drill-Down Details**: Comprehensive repository analysis with commit history, enriched dependency coverage, and rendered markdown summaries
 - **Export Functionality**: Download filtered data as CSV or JSON
-- **Performance Optimized**: <2s First Contentful Paint, <5s Time to Interactive on 3G connections
-- **Offline Support**: IndexedDB caching for offline access (coming soon)
+- **Performance Optimized**: Lighthouse CI configured targeting <2s First Contentful Paint with 0.9+ performance score
+- **Offline Support**: IndexedDB caching with Dexie for offline access and 7-day retention
 - **Accessibility**: WCAG 2.1 AA compliant with screen reader support and keyboard navigation
 - **GitHub Pages Deployment**: Automatically updates with your latest statistics
 
@@ -156,8 +155,8 @@ Generate comprehensive markdown reports with intelligent insights:
 
 #### Performance & Reliability
 
-- ⚡ **Fast**: <1 minute for typical weekly updates (with smart cache refresh)
-- 🔄 **Smart Caching**: Reduces API calls by 80-95% through intelligent cache invalidation
+- ⚡ **Fast**: Under 5 minutes for up to 500 repositories
+- 🔄 **Smart Caching**: Reduces API calls by 80%+ through content-addressed cache invalidation (keyed by `pushed_at` timestamp)
 - 🧠 **Intelligent Refresh**: Only updates repositories with new commits
 - 🛡️ **Rate Limit Safe**: Automatic handling and retry logic
 - 📊 **Progress Tracking**: Real-time feedback during generation
@@ -168,10 +167,10 @@ Generate comprehensive markdown reports with intelligent insights:
 - **🎯 Selective Output**: Choose which statistics and reports to generate
 - **🖥️ Local CLI**: Full command-line interface for testing and development
 - **📝 YAML Configuration**: Centralized configuration for themes, options, and behavior
-- **🚀 GitHub Actions**: Pre-configured workflow for automated daily updates
+- **🚀 GitHub Actions**: Pre-configured workflow for automated weekly updates
 - **🎨 Custom Themes**: Define your own color schemes and styles
 - **📦 Modular Architecture**: Clean separation of concerns for easy extension
-- **🧪 Comprehensive Tests**: 52% overall coverage (80%+ on core modules)
+- **🧪 Comprehensive Tests**: 19+ Python test modules (target: 80%+ core module coverage)
 - **📚 Full Documentation**: Detailed guides, API reference, and examples
 
 ## 🚀 Quick Start
@@ -204,6 +203,8 @@ The easiest way to run the complete 4-phase pipeline:
 - `-MultiUser` - Store outputs under per-user folders instead of overwriting shared files
 - `-ClearCache` - Clear all caches before running
 - `-ForceRefresh` - Force refresh all data
+- `-Screenshots` - Capture repository website screenshots (requires Playwright)
+- `-MissingOnly` - Only capture screenshots where PNG doesn't exist yet
 - `-Verbose` - Enable detailed logging
 - `-CheckOnly` - Validate environment only
 
@@ -263,7 +264,7 @@ See [QUICKSTART_UNIFIED.md](documentation/QUICKSTART_UNIFIED.md) for detailed in
 
 ### GitHub Actions Automation
 
-**Or** set up automatic daily updates:
+**Or** set up automatic weekly updates:
 
 ### 1. Fork This Repository
 
@@ -296,7 +297,7 @@ Full instructions: [Getting Started Guide](documentation/guides/getting-started.
 
 ## 📊 Statistics Categories
 
-Stats Spark generates 5 SVG categories for your GitHub profile:
+Stats Spark generates 6 SVG categories for your GitHub profile:
 
 | Category | Description | Output File | Sample |
 |----------|-------------|-------------|--------|
@@ -357,7 +358,7 @@ Stats Spark's AI-powered analysis feature generates comprehensive markdown repor
 
 The sample report demonstrates:
 
-- ✅ 48 repositories analyzed with 97.9% AI summary success rate
+- ✅ 37 repositories analyzed with AI-powered summaries
 - ✅ Detailed technical summaries for each major project
 - ✅ Complete activity visualizations and metrics
 - ✅ Professional GitHub-flavored markdown formatting
@@ -412,14 +413,14 @@ Create beautiful visualizations for your GitHub profile:
 # Generate all statistics
 spark generate --user YOUR_USERNAME
 
-# Generate specific categories
-spark generate --user YOUR_USERNAME --categories overview,heatmap,languages
+# Use custom theme (via config file)
+spark generate --user YOUR_USERNAME --output-dir ./my-stats
 
-# Use custom theme
-spark generate --user YOUR_USERNAME --theme spark-dark
+# Force refresh all data (bypass cache)
+spark generate --user YOUR_USERNAME --force-refresh
 
-# Specify output directory
-spark generate --user YOUR_USERNAME --output ./my-stats
+# Generate dashboard JSON data
+spark generate --user YOUR_USERNAME --dashboard
 
 # Preview theme without generating
 spark preview --theme spark-dark
@@ -442,8 +443,14 @@ spark analyze --user YOUR_USERNAME --list-only
 # Customize analysis
 spark analyze --user YOUR_USERNAME --top-n 25 --output output/reports
 
-# Analyze without AI summaries (faster, uses README extraction)
-spark analyze --user YOUR_USERNAME --no-ai
+# Generate unified report (SVGs + analysis in one pass)
+spark analyze --user YOUR_USERNAME --unified
+
+# Also keep a dated copy alongside the unified report
+spark analyze --user YOUR_USERNAME --unified --keep-dated
+
+# Store outputs under per-user folders
+spark analyze --user YOUR_USERNAME --multi-user
 
 # Verbose output for debugging
 spark analyze --user YOUR_USERNAME --verbose
@@ -456,8 +463,7 @@ spark analyze --user YOUR_USERNAME --verbose
 - 📈 Multi-window activity analysis (90d/180d/365d)
 - 👤 Developer profile generation with observable patterns
 - 📝 GitHub-flavored markdown output with embedded visualizations
-- ⚡ High performance: <3 minutes for 50 repositories
-- 🔄 Smart caching to minimize API calls
+- ⚡ High performance with smart caching to minimize API calls
 
 **Options**:
 
@@ -465,10 +471,42 @@ spark analyze --user YOUR_USERNAME --verbose
 - `--top-n N`: Number of top repositories to include (default: 50)
 - `--output DIR`: Output directory for reports (default: output/reports)
 - `--list-only`: List top repositories without generating report
-- `--no-ai`: Skip AI summaries, use README extraction only
+- `--unified`: Generate unified report (SVGs + analysis) instead of dated report
+- `--keep-dated`: Also generate dated report when using --unified mode
+- `--multi-user`: Write to user-scoped directories
 - `--verbose`: Enable detailed logging
 
 See [Analyze Command Guide](documentation/guides/analyze-command.md) for detailed documentation.
+
+### 🔄 Cache & Refresh Commands
+
+Manage cached data and perform incremental updates:
+
+```bash
+# Show cache information
+spark cache --info
+
+# Show per-repository cache status
+spark cache --status --user YOUR_USERNAME
+
+# List repositories needing cache refresh
+spark cache --list-refresh-needed --user YOUR_USERNAME
+
+# Clear all cached data
+spark cache --clear
+
+# Prune old cache entries (keep last 2 weeks)
+spark cache --prune
+
+# Smart incremental refresh (updates only changed repos)
+spark refresh --user YOUR_USERNAME
+
+# Refresh and regenerate AI summaries for changed repos
+spark refresh --user YOUR_USERNAME --include-ai-summaries
+
+# Clear AI summaries to force regeneration
+spark refresh --user YOUR_USERNAME --clear-summaries
+```
 
 ## 📚 Documentation
 
@@ -488,7 +526,7 @@ Comprehensive guides and references for all features:
 
 ### Examples
 
-- **[Sample Analysis Report](output/reports/markhazleton-analysis.md)** - Real-world output with 48 repositories
+- **[Sample Analysis Report](output/reports/markhazleton-analysis.md)** - Real-world output with AI-powered insights
 - **[Theme Gallery](config/themes.yml)** - Available themes and customization options
 
 ### Support
@@ -650,16 +688,18 @@ xdg-open htmlcov/index.html  # Linux
 - ✅ Write descriptive commit messages
 - ✅ Add docstrings to public functions/classes
 - ✅ Include type hints where appropriate
-- ✅ Maintain or improve test coverage (current: 52%, core: 80%+)
+- ✅ Maintain or improve test coverage (target: 80%+ core modules)
 - ✅ Update relevant documentation
 
 ### Architecture Overview
 
 For contributors, see [API Reference](documentation/api/api-reference.md) for detailed module documentation including:
 
-- Core modules: `fetcher`, `calculator`, `visualizer`, `summarizer`
-- Analysis modules: `ranker`, `report_generator`, `unified_report_workflow`
-- Utilities: `cache`, `config`, `logger`
+- Core modules: `fetcher`, `calculator`, `visualizer`, `summarizer`, `config`
+- Analysis modules: `ranker`, `report_generator`, `unified_report_workflow`, `unified_data_generator`
+- Cache modules: `cache`, `cache_manager`, `cache_status`, `cache_refresh_strategy`
+- Utilities: `logger`, `time_utils`, `screenshot`
+- CLI: `cli`, `cli_argument_builders`, `cli_output_layout`
 
 ## 🧪 Testing
 
@@ -692,33 +732,51 @@ open htmlcov/index.html   # macOS
 
 | Module | Coverage | Status |
 |--------|----------|--------|
-| **calculator.py** | 92% | ✅ Excellent |
-| **fetcher.py** | 85% | ✅ Excellent |
-| **cache.py** | 80% | ✅ Good |
-| **visualizer.py** | 78% | ✅ Good |
-| **ranker.py** | 75% | ✅ Good |
-| **Overall** | 52% | 🔶 Improving |
+| **visualizer.py** | 91% | ✅ Excellent |
+| **config.py** | 88% | ✅ Excellent |
+| **calculator.py** | 87% | ✅ Excellent |
+| **cache.py** | 63% | 🔶 Improving |
+| **ranker.py** | 26% | ⚠️ Needs work |
+| **summarizer.py** | 19% | ⚠️ Needs work |
+| **fetcher.py** | 13% | ⚠️ Needs work |
+| **Overall** | 34% | 🔶 Improving |
 
-**Target**: 80%+ coverage for all core modules
+**Target**: 80%+ coverage for all core modules. A coverage remediation suite is in progress.
 
 ### Test Organization
 
 ```
 tests/
 ├── unit/              # Unit tests for individual modules
+│   ├── test_cache.py
+│   ├── test_cache_manager.py
 │   ├── test_calculator.py
+│   ├── test_cli.py
+│   ├── test_config.py
+│   ├── test_dashboard_generator.py
+│   ├── test_dependency_parser.py
 │   ├── test_fetcher.py
+│   ├── test_fetcher_api_version.py
+│   ├── test_profile_generator.py
 │   ├── test_ranker.py
+│   ├── test_report_generator.py
+│   ├── test_summarizer.py
+│   ├── test_unified_data_generator_enrichment.py
+│   ├── test_unified_report_workflow.py
+│   ├── test_visualizer.py
+│   ├── test_wcag.py
 │   └── ...
 ├── integration/       # Integration tests
-│   ├── test_cli_analyze.py
-│   ├── test_end_to_end.py
+│   ├── test_dependency_analysis.py
+│   ├── test_unified_repository_enrichment.py
 │   └── ...
 └── fixtures/          # Test data and configurations
     ├── sample_config.yml
     ├── sample_repositories.json
     └── ...
 ```
+
+> **Note:** Frontend tests (Vitest) are configured in `frontend/package.json` but test files have not yet been written.
 
 ## 📄 License
 
@@ -792,7 +850,7 @@ Check out my [detailed GitHub analysis](output/reports/YOUR_USERNAME-analysis.md
 
 ![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/overview.svg)
 
-*Updated daily via [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
+*Updated weekly via [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
 ```
 
 ### Custom Sections

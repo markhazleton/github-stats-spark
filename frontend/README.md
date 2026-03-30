@@ -7,7 +7,7 @@ Interactive React dashboard for visualizing and comparing GitHub repository stat
 ## 🚀 Features
 
 - **Repository Table**: Sortable, filterable table with comprehensive metrics
-- **Interactive Visualizations**: Bar charts, line graphs, and scatter plots using Recharts
+- **Interactive Visualizations**: Bar charts, line graphs, and scatter plots using Chart.js + react-chartjs-2
 - **Needs Attention View**: Maintenance ranking using security alerts, PR backlog, dependency health, and staleness
 - **Repository Comparison**: Side-by-side comparison of up to 5 repositories with color-coded differences
 - **Drill-Down Details**: Comprehensive repository analysis with commit history, dependency coverage, and markdown-rendered summaries

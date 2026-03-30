@@ -25,7 +25,7 @@ Replace `YOUR_USERNAME` with your actual GitHub username.
 
 ## Regeneration
 
-SVGs are automatically regenerated daily at midnight UTC via GitHub Actions. You can also manually trigger the workflow from the Actions tab.
+SVGs are automatically regenerated weekly at midnight UTC on Sundays via GitHub Actions. You can also manually trigger the workflow from the Actions tab.
 
 ## Local Generation
 

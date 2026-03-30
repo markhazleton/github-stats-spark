@@ -90,5 +90,62 @@ Not directly verifiable from commit metadata alone:
 
 Overall alignment: medium. Architectural and delivery behavior generally supports constitutional direction, while release governance and commit-process discipline are the main gaps.
 
+## Value Proposition: The Developer Portfolio Problem
+
+### The Pain Point
+
+A working developer accumulates repositories the way a workshop accumulates projects — prototypes, experiments, client work, side ideas, abandoned starts, and genuine portfolio pieces all live side by side. GitHub profiles surface none of this context. A visitor sees a flat list of repository names sorted by last push date, and the developer themselves loses track of which projects are stale, which have open security alerts, and which ones actually represent their best work.
+
+Existing tools don't solve this. **github-readme-stats** (the most popular alternative) generates static SVG badges showing star counts, commit totals, and top languages — vanity metrics that tell a viewer nothing about what a developer actually built or whether any of it is maintained. Profile README generators are one-time cosmetic templates. External platforms like CodersRank or GitRoll require surrendering data to third-party services and offer no self-hosted, embeddable output.
+
+The gap is clear: no existing tool transforms a GitHub account into an **intelligible, self-maintaining portfolio** that a developer can use to understand their own work and present it to others.
+
+### How Stats Spark Solves It
+
+Stats Spark treats a GitHub profile as a body of work that deserves curation — and then automates that curation entirely.
+
+**1. AI-Generated Project Summaries That Explain What You Built**
+
+Every repository gets a technical summary written by Claude Haiku, drawing from the README, commit patterns, language distribution, and dependency graph. A three-tier fallback chain (AI → README extraction → metadata template) ensures 97%+ coverage even for repos with no documentation. The result: a visitor (or the developer themselves) can understand what each project does without reading source code.
+
+This matters most for the developer with 30-50+ repositories. Those dormant-but-interesting projects — the CLI tool from two years ago, the prototype API, the experiment with a new framework — become discoverable again because each one has a clear, generated description of its purpose and technical approach.
+
+**2. Maintenance Triage That Surfaces What Needs Attention**
+
+The "Needs Attention" dashboard ranks every repository by a composite maintenance score (35% security alerts, 25% open PR backlog, 25% staleness, 15% dependency drift) and assigns a tier: Critical, Elevated, Watch, or Healthy. Summary cards show total critical repos, security backlog, and stale project counts at a glance.
+
+For a developer managing many repositories, this is the difference between "I should probably check on things" and a prioritized action list. The staleness signal alone (days since last push, recent 90-day commit count) prevents projects from silently rotting.
+
+**3. Composite Ranking That Tells Your Story**
+
+The repository ranker uses a weighted algorithm (30% popularity + 45% activity with multi-window time decay + 25% health signals) to surface a developer's most significant active work. Time-decay windows ensure that a project with 5 commits this month ranks above a project with 500 commits two years ago. Archived repos and forks are automatically penalized so the ranking reflects original, maintained work.
+
+Combined with the Spark Score (40% consistency + 35% volume + 25% collaboration), a viewer gets a genuine signal about a developer's working patterns — not just "this person made 3,000 commits" but "this person contributes consistently, maintains their projects, and works across multiple technologies."
+
+**4. Zero-Maintenance, Self-Hosted, Free**
+
+The entire pipeline runs on a weekly GitHub Actions schedule. No external service, no subscription, no manual updates. Generated artifacts (SVGs, JSON data, interactive dashboard) deploy to GitHub Pages automatically. A developer sets it up once and gets a living, always-current portfolio that costs nothing to operate.
+
+### Unique Differentiators vs. Existing Tools
+
+| Capability | Stats Spark | github-readme-stats | CodersRank / GitRoll | Manual Portfolio |
+|---|---|---|---|---|
+| AI-generated project summaries | ✅ Claude Haiku with 3-tier fallback | ❌ | ❌ | ❌ (manual writing) |
+| Maintenance triage (security, staleness, PRs) | ✅ Tiered scoring system | ❌ | Partial | ❌ |
+| Time-decay activity ranking | ✅ Multi-window (90d/180d/365d) | ❌ (all-time totals only) | Partial | ❌ |
+| Interactive drill-down dashboard | ✅ Mobile-first, WCAG AA | ❌ (static SVGs only) | ✅ (third-party hosted) | ❌ |
+| Repository comparison (up to 5) | ✅ Side-by-side with diff visualization | ❌ | Partial | ❌ |
+| Self-hosted on GitHub Pages | ✅ Zero cost | N/A (embed only) | ❌ (external platform) | ✅ (manual effort) |
+| Automated weekly refresh | ✅ GitHub Actions | ✅ (on-demand embed) | ✅ | ❌ |
+| Deterministic scoring algorithm | ✅ Spark Score (open formula) | ❌ | ❌ (proprietary) | N/A |
+| Dependency health tracking | ✅ Currency score + outdated count | ❌ | ❌ | ❌ |
+| Technology diversity analysis | ✅ Polyglot tracking across repos | ✅ (top languages only) | ✅ | ❌ |
+
+### The Core Value
+
+Stats Spark's unique position is that it is the only tool that combines **AI-powered content understanding** (what did you build?), **maintenance intelligence** (what needs your attention?), and **activity-weighted ranking** (what represents your best current work?) into a single, free, self-hosted pipeline. It turns a GitHub account from a flat list of repository names into a curated, always-current developer portfolio with genuine analytical depth.
+
+For the developer with dozens of repositories and various ideas they want to keep current, Stats Spark answers the three questions that no other tool addresses together: *What have I built? What's falling behind? What should I showcase?*
+
 ---
 *Generated by /speckit.repo-story | Spec Kit Spark - Adaptive System Life Cycle Development*
