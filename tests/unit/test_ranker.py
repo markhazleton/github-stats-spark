@@ -443,3 +443,268 @@ class TestErrorHandling:
 
         # Should return all available repos
         assert len(ranked) <= len(repos)
+
+
+# ---------------------------------------------------------------------------
+# Individual scoring method tests (targeting >80% coverage)
+# ---------------------------------------------------------------------------
+
+def _make_repo(**kwargs):
+    """Helper to create Repository instances with sensible defaults."""
+    now = datetime.now()
+    defaults = dict(
+        name="test-repo",
+        description="Test repo",
+        url="https://github.com/user/test-repo",
+        created_at=now - timedelta(days=365),
+        updated_at=now - timedelta(days=1),
+        pushed_at=now - timedelta(days=1),
+        primary_language="Python",
+        language_stats={"Python": 10000},
+        stars=10,
+        forks=2,
+        watchers=5,
+        open_issues=0,
+        is_archived=False,
+        is_fork=False,
+        is_private=False,
+        size_kb=1000,
+        has_readme=True,
+    )
+    defaults.update(kwargs)
+    return Repository(**defaults)
+
+
+def _make_commit_history(**kwargs):
+    """Helper to create CommitHistory with sensible defaults."""
+    defaults = dict(
+        repository_name="test-repo",
+        total_commits=100,
+        recent_90d=20,
+        recent_180d=40,
+        recent_365d=80,
+        last_commit_date=datetime.now() - timedelta(days=1),
+    )
+    defaults.update(kwargs)
+    return CommitHistory(**defaults)
+
+
+class TestPopularityScore:
+    """Test _calculate_popularity_score in isolation."""
+
+    def test_zero_stars(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(stars=0, forks=0, watchers=0)
+        assert ranker._calculate_popularity_score(repo) == 0.0
+
+    def test_moderate_stars(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(stars=100, forks=20, watchers=50)
+        score = ranker._calculate_popularity_score(repo)
+        assert 50 < score < 80
+
+    def test_mega_repo(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(stars=50000, forks=10000, watchers=20000)
+        score = ranker._calculate_popularity_score(repo)
+        assert score == 100.0  # capped
+
+    def test_log_scaling_prevents_dominance(self):
+        ranker = RepositoryRanker()
+        repo_10 = _make_repo(stars=10, forks=0, watchers=0)
+        repo_10000 = _make_repo(stars=10000, forks=0, watchers=0)
+        score_10 = ranker._calculate_popularity_score(repo_10)
+        score_10000 = ranker._calculate_popularity_score(repo_10000)
+        # 10000 stars should NOT be 1000x the score of 10 stars
+        assert score_10000 / max(score_10, 0.01) < 4
+
+
+class TestActivityScore:
+    """Test _calculate_activity_score in isolation."""
+
+    def test_zero_commits(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(pushed_at=None)
+        history = _make_commit_history(
+            recent_90d=0, recent_180d=0, recent_365d=0,
+            last_commit_date=None,
+        )
+        score = ranker._calculate_activity_score(repo, history)
+        # No commits and no pushed_at means no recency bonus (0)
+        assert score == 0.0
+
+    def test_high_activity(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(pushed_at=datetime.now() - timedelta(days=1))
+        history = _make_commit_history(
+            recent_90d=90, recent_180d=180, recent_365d=365,
+        )
+        score = ranker._calculate_activity_score(repo, history)
+        assert score == 100.0  # capped at 100
+
+    def test_recency_bonus_applied(self):
+        ranker = RepositoryRanker()
+        recent_repo = _make_repo(pushed_at=datetime.now() - timedelta(days=1))
+        old_repo = _make_repo(pushed_at=datetime.now() - timedelta(days=400))
+        history = _make_commit_history(recent_90d=0, recent_180d=0, recent_365d=0)
+
+        recent_score = ranker._calculate_activity_score(recent_repo, history)
+        old_score = ranker._calculate_activity_score(old_repo, history)
+        assert recent_score > old_score
+
+
+class TestRecencyBonus:
+    """Test _calculate_recency_bonus at boundary values."""
+
+    @pytest.mark.parametrize(
+        "days_since, expected",
+        [
+            (None, 0.0),
+            (1, 30.0),
+            (7, 30.0),      # threshold: RECENCY_EXCELLENT
+            (8, 20.0),
+            (30, 20.0),     # threshold: RECENCY_GOOD
+            (31, 10.0),
+            (90, 10.0),     # threshold: RECENCY_FAIR
+            (91, 0.0),
+            (180, 0.0),
+            (181, -20.0),
+            (365, -20.0),
+            (366, -50.0),
+            (1000, -50.0),
+        ],
+    )
+    def test_boundaries(self, days_since, expected):
+        ranker = RepositoryRanker()
+        if days_since is None:
+            repo = _make_repo(pushed_at=None)
+        else:
+            repo = _make_repo(pushed_at=datetime.now() - timedelta(days=days_since))
+        assert ranker._calculate_recency_bonus(repo) == expected
+
+
+class TestHealthScore:
+    """Test _calculate_health_score in isolation."""
+
+    def test_perfect_health(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(
+            has_readme=True,
+            stars=10,
+            forks=2,
+            open_issues=0,
+            created_at=datetime.now() - timedelta(days=1500),
+        )
+        history = _make_commit_history(total_commits=200, recent_90d=30)
+        score = ranker._calculate_health_score(repo, history)
+        assert score >= 70
+
+    def test_no_readme_penalty(self):
+        ranker = RepositoryRanker()
+        with_readme = _make_repo(has_readme=True)
+        without_readme = _make_repo(has_readme=False)
+        history = _make_commit_history()
+        assert ranker._calculate_health_score(with_readme, history) > \
+               ranker._calculate_health_score(without_readme, history)
+
+    def test_high_issue_ratio_penalty(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(open_issues=100)
+        history = _make_commit_history(recent_90d=5)
+        score = ranker._calculate_health_score(repo, history)
+        # Issue ratio = 100/5 = 20, penalty = 20 * 5 = 100, issue_score = max(0, 20-100) = 0
+        assert score < 60
+
+    def test_zero_stars_community(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(stars=0, forks=0)
+        history = _make_commit_history()
+        score = ranker._calculate_health_score(repo, history)
+        # community component = 0 when no stars and no forks
+        assert score >= 0
+
+    def test_no_recent_activity_with_issues(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(open_issues=5)
+        history = _make_commit_history(recent_90d=0)
+        score = ranker._calculate_health_score(repo, history)
+        # No recent activity + issues = 0 issue points
+        assert score >= 0
+
+    def test_no_recent_activity_no_issues(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(open_issues=0)
+        history = _make_commit_history(recent_90d=0)
+        score = ranker._calculate_health_score(repo, history)
+        # No recent activity + no issues = 10 issue points
+        assert score >= 10
+
+
+class TestEdgeCasePenalties:
+    """Test _apply_edge_case_penalties."""
+
+    def test_archived_low_stars(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(is_archived=True, stars=50)
+        result = ranker._apply_edge_case_penalties(repo, composite=80.0, activity=50.0, popularity=40.0)
+        assert result == pytest.approx(8.0)  # 80 * 0.1
+
+    def test_archived_high_stars(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(is_archived=True, stars=2000)
+        result = ranker._apply_edge_case_penalties(repo, composite=80.0, activity=50.0, popularity=40.0)
+        assert result == pytest.approx(40.0)  # 80 * 0.5
+
+    def test_active_fork(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(is_fork=True)
+        repo.fork_info = {"commits_ahead": 20, "commits_behind": 5}
+        result = ranker._apply_edge_case_penalties(repo, composite=80.0, activity=50.0, popularity=40.0)
+        assert result == pytest.approx(56.0)  # 80 * 0.7
+
+    def test_inactive_fork(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(is_fork=True)
+        repo.fork_info = {"commits_ahead": 0, "commits_behind": 50}
+        result = ranker._apply_edge_case_penalties(repo, composite=80.0, activity=50.0, popularity=40.0)
+        assert result == pytest.approx(24.0)  # 80 * 0.3
+
+    def test_zero_star_active_boost(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(stars=0, is_fork=False, is_archived=False)
+        result = ranker._apply_edge_case_penalties(repo, composite=20.0, activity=80.0, popularity=0.0)
+        # boost = (80-0) * 0.3 = 24
+        assert result == pytest.approx(44.0)
+
+    def test_non_archived_non_fork_no_penalty(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo(stars=10)
+        result = ranker._apply_edge_case_penalties(repo, composite=50.0, activity=40.0, popularity=30.0)
+        assert result == 50.0
+
+
+class TestGetRankingBreakdown:
+    """Test get_ranking_breakdown method."""
+
+    def test_returns_expected_keys(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo()
+        history = _make_commit_history()
+        breakdown = ranker.get_ranking_breakdown(repo, history)
+        expected_keys = {
+            "repository", "composite_score", "popularity_score",
+            "activity_score", "health_score", "popularity_weight",
+            "activity_weight", "health_weight", "weighted_popularity",
+            "weighted_activity", "weighted_health", "is_archived",
+            "is_fork", "stars", "recent_90d_commits", "days_since_push",
+        }
+        assert set(breakdown.keys()) == expected_keys
+
+    def test_scores_in_range(self):
+        ranker = RepositoryRanker()
+        repo = _make_repo()
+        history = _make_commit_history()
+        breakdown = ranker.get_ranking_breakdown(repo, history)
+        assert 0 <= breakdown["composite_score"] <= 100
+        assert 0 <= breakdown["popularity_score"] <= 100
+        assert 0 <= breakdown["health_score"] <= 100

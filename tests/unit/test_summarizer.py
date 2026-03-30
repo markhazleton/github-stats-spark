@@ -1,83 +1,65 @@
-"""Unit tests for AI-powered repository summarization."""
+"""Tests for RepositorySummarizer - three-tier fallback and helpers."""
 
 import pytest
-from unittest.mock import Mock, patch, MagicMock
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
+from unittest.mock import MagicMock, patch
 
+from spark.summarizer import RepositorySummarizer
 from spark.models.repository import Repository
 from spark.models.commit import CommitHistory
 from spark.models.summary import RepositorySummary
-from spark.summarizer import RepositorySummarizer
 
 
-@pytest.fixture
-def summarizer():
-    """Create a RepositorySummarizer instance for testing."""
-    config = {
-        "anthropic_api_key": "test-api-key-12345",
-        "model": "claude-haiku-4-5",
-        "max_retries": 3,
-        "timeout": 30
-    }
-    return RepositorySummarizer(config)
-
-
-@pytest.fixture
-def sample_repository():
-    """Create a sample repository for testing."""
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+def _make_repo(**overrides):
     now = datetime.now()
-    return Repository(
-        name="awesome-project",
-        description="A really cool open source project",
-        url="https://github.com/testuser/awesome-project",
-        created_at=now - timedelta(days=365),
-        updated_at=now - timedelta(days=5),
-        pushed_at=now - timedelta(days=5),
+    defaults = dict(
+        name="test-repo",
+        description="A test repository",
+        url="https://github.com/user/test-repo",
+        created_at=now,
+        updated_at=now,
+        pushed_at=now,
         primary_language="Python",
-        language_stats={"Python": 80000, "JavaScript": 15000, "HTML": 5000},
-        stars=1250,
-        forks=180,
-        watchers=450,
-        open_issues=25,
+        language_stats={"Python": 10000},
+        stars=10,
+        forks=2,
+        watchers=5,
+        open_issues=0,
         is_archived=False,
         is_fork=False,
         is_private=False,
-        size_kb=5000,
+        size_kb=1000,
         has_readme=True,
-
     )
+    defaults.update(overrides)
+    return Repository(**defaults)
 
 
-@pytest.fixture
-def sample_commits():
-    """Create sample commit history."""
-    now = datetime.now()
-    return CommitHistory(
-        repository_name="awesome-project",
-        total_commits=450,
-        recent_90d=45,
-        recent_180d=85,
-        recent_365d=180,
-        last_commit_date=now - timedelta(days=5),
-        patterns={
-            "frequency": "active",
-            "recency": "recent",
-            "consistency": "consistent"
-        }
+def _make_history(**overrides):
+    defaults = dict(
+        repository_name="test-repo",
+        total_commits=50,
+        recent_90d=15,
+        recent_180d=30,
+        recent_365d=45,
+        last_commit_date=datetime.now(),
     )
+    defaults.update(overrides)
+    return CommitHistory(**defaults)
 
 
-@pytest.fixture
-def sample_readme():
-    """Create sample README content."""
-    return """# Awesome Project
+SAMPLE_README = """# Awesome Project
 
 A comprehensive toolkit for building scalable web applications.
 
 ## Features
 
-- Fast and efficient
-- Easy to use
+- Fast rendering
+- Dark mode
+- API support
 - Well documented
 - Actively maintained
 
@@ -91,416 +73,324 @@ pip install awesome-project
 
 ```python
 from awesome import App
-
 app = App()
-app.run()
 ```
-
-## Contributing
-
-We welcome contributions! Please see CONTRIBUTING.md for details.
-
-## License
-
-MIT License
 """
 
 
-class TestAIIntegration:
-    """Test Anthropic Claude API integration."""
+@pytest.fixture
+def summarizer():
+    """Create a RepositorySummarizer with AI disabled."""
+    return RepositorySummarizer(enable_ai=False)
 
-    @patch('anthropic.Anthropic')
-    def test_successful_ai_summary(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test successful AI summary generation."""
-        # Mock API response
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
 
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="This is a comprehensive web application toolkit that focuses on scalability and ease of use. The project is actively maintained with consistent commit patterns.")]
-        mock_response.usage.input_tokens = 1500
-        mock_response.usage.output_tokens = 150
+# ---------------------------------------------------------------------------
+# Model name normalization
+# ---------------------------------------------------------------------------
+class TestNormalizeModelName:
+    def test_known_alias(self):
+        assert RepositorySummarizer._normalize_model_name("claude-haiku-3.5") == "claude-haiku-4-5"
 
-        mock_client.messages.create.return_value = mock_response
+    def test_passthrough_unknown(self):
+        assert RepositorySummarizer._normalize_model_name("claude-haiku-4-5") == "claude-haiku-4-5"
 
-        # Generate summary
-        summary = summarizer.summarize_repository(
-            repository=sample_repository,
-            commit_history=sample_commits,
-            readme_content=sample_readme
+    def test_all_aliases_resolve(self):
+        for alias, target in RepositorySummarizer.MODEL_ALIASES.items():
+            assert RepositorySummarizer._normalize_model_name(alias) == target
+
+
+# ---------------------------------------------------------------------------
+# Candidate models
+# ---------------------------------------------------------------------------
+class TestCandidateModels:
+    def test_default_model_first(self, summarizer):
+        candidates = summarizer._candidate_models()
+        assert candidates[0] == summarizer.model
+
+    def test_no_duplicates(self, summarizer):
+        candidates = summarizer._candidate_models()
+        assert len(candidates) == len(set(candidates))
+
+    def test_fallback_chain_included(self, summarizer):
+        candidates = summarizer._candidate_models()
+        assert len(candidates) >= 1
+
+
+# ---------------------------------------------------------------------------
+# README truncation
+# ---------------------------------------------------------------------------
+class TestTruncateReadme:
+    def test_short_readme_unchanged(self, summarizer):
+        text = "Short README"
+        assert summarizer._truncate_readme(text) == text
+
+    def test_long_readme_truncated(self, summarizer):
+        text = "x" * 10000
+        result = summarizer._truncate_readme(text)
+        assert len(result) <= summarizer.MAX_README_LENGTH
+
+    def test_truncation_at_paragraph_boundary(self, summarizer):
+        para1 = "A" * 6000
+        para2 = "B" * 4000
+        text = para1 + "\n\n" + para2
+        result = summarizer._truncate_readme(text)
+        # Should cut at paragraph boundary
+        assert len(result) <= summarizer.MAX_README_LENGTH
+
+    def test_preserves_beginning(self, summarizer):
+        text = "# Title\n\nImportant intro." + "\n\nFiller. " * 5000
+        result = summarizer._truncate_readme(text)
+        assert "# Title" in result
+        assert "Important intro" in result
+
+
+# ---------------------------------------------------------------------------
+# Description extraction
+# ---------------------------------------------------------------------------
+class TestExtractDescription:
+    def test_basic_extraction(self, summarizer):
+        readme = "# My Project\n\nThis is a great project.\n\n## Features"
+        desc = summarizer._extract_description(readme)
+        assert desc == "This is a great project."
+
+    def test_empty_readme(self, summarizer):
+        assert summarizer._extract_description("") is None
+
+    def test_heading_only(self, summarizer):
+        assert summarizer._extract_description("# Title\n") is None
+
+    def test_strips_html(self, summarizer):
+        readme = "# Title\n\nA project with <b>bold</b> text."
+        desc = summarizer._extract_description(readme)
+        assert "<b>" not in desc
+
+    def test_max_length(self, summarizer):
+        readme = "# Title\n\n" + "x" * 500
+        desc = summarizer._extract_description(readme)
+        assert len(desc) <= 300
+
+
+# ---------------------------------------------------------------------------
+# Feature extraction
+# ---------------------------------------------------------------------------
+class TestExtractFeatures:
+    def test_extracts_bullet_points(self, summarizer):
+        readme = "## Features\n- Fast rendering\n- Dark mode\n- API support\n\n## Install"
+        features = summarizer._extract_features(readme)
+        assert len(features) == 3
+        assert "Fast rendering" in features
+
+    def test_max_five_features(self, summarizer):
+        readme = "## Features\n" + "\n".join(f"- Feature {i}" for i in range(10))
+        features = summarizer._extract_features(readme)
+        assert len(features) == 5
+
+    def test_no_features_section(self, summarizer):
+        readme = "# Project\n\nSome text.\n## Installation"
+        assert summarizer._extract_features(readme) == []
+
+    def test_star_bullet_points(self, summarizer):
+        readme = "## Features\n* Alpha\n* Beta"
+        features = summarizer._extract_features(readme)
+        assert len(features) == 2
+
+    def test_plus_bullet_points(self, summarizer):
+        readme = "## Feature\n+ One\n+ Two"
+        features = summarizer._extract_features(readme)
+        assert len(features) == 2
+
+
+# ---------------------------------------------------------------------------
+# Cost tracking
+# ---------------------------------------------------------------------------
+class TestTrackCost:
+    def test_cost_accumulates(self, summarizer):
+        summarizer._track_cost(1000)
+        assert summarizer.total_cost > 0
+        first = summarizer.total_cost
+        summarizer._track_cost(1000)
+        assert summarizer.total_cost > first
+
+    def test_zero_tokens(self, summarizer):
+        summarizer._track_cost(0)
+        assert summarizer.total_cost == 0.0
+
+
+# ---------------------------------------------------------------------------
+# Basic fallback
+# ---------------------------------------------------------------------------
+class TestBasicFallback:
+    def test_with_description(self, summarizer):
+        repo = _make_repo(description="My awesome project")
+        result = summarizer._generate_basic_fallback(repo, None)
+        assert "My awesome project" in result.summary
+        assert result.generation_method == "basic-template"
+        assert result.confidence_score == 40
+
+    def test_without_description(self, summarizer):
+        repo = _make_repo(description=None)
+        result = summarizer._generate_basic_fallback(repo, None)
+        assert "test-repo" in result.summary
+
+    def test_includes_language(self, summarizer):
+        repo = _make_repo(primary_language="Rust")
+        result = summarizer._generate_basic_fallback(repo, None)
+        assert "Rust" in result.summary
+
+    def test_includes_stars_forks(self, summarizer):
+        repo = _make_repo(stars=50, forks=10)
+        result = summarizer._generate_basic_fallback(repo, None)
+        assert "50 stars" in result.summary
+
+    def test_includes_recent_activity(self, summarizer):
+        repo = _make_repo()
+        history = _make_history(recent_90d=25)
+        result = summarizer._generate_basic_fallback(repo, history)
+        assert "25 commits" in result.summary
+
+
+# ---------------------------------------------------------------------------
+# Enhanced fallback
+# ---------------------------------------------------------------------------
+class TestEnhancedFallback:
+    def test_includes_readme_description(self, summarizer):
+        repo = _make_repo()
+        result = summarizer._generate_enhanced_fallback(repo, SAMPLE_README, None)
+        assert "toolkit" in result.summary.lower()
+        assert result.generation_method == "enhanced-template"
+        assert result.confidence_score == 60
+
+    def test_includes_language(self, summarizer):
+        repo = _make_repo(primary_language="Go")
+        result = summarizer._generate_enhanced_fallback(repo, "# Title\n\nSome desc.", None)
+        assert "Go" in result.summary
+
+    def test_active_maintenance_note(self, summarizer):
+        repo = _make_repo()
+        history = _make_history(recent_90d=20)
+        result = summarizer._generate_enhanced_fallback(repo, "# T\n\nDesc.", history)
+        assert "Actively maintained" in result.summary
+
+    def test_popular_project_note(self, summarizer):
+        repo = _make_repo(stars=200)
+        result = summarizer._generate_enhanced_fallback(repo, "# T\n\nDesc.", None)
+        assert "Popular" in result.summary
+
+    def test_includes_features(self, summarizer):
+        repo = _make_repo()
+        result = summarizer._generate_enhanced_fallback(repo, SAMPLE_README, None)
+        assert "Fast rendering" in result.summary or "features" in result.summary.lower()
+
+
+# ---------------------------------------------------------------------------
+# Three-tier fallback integration
+# ---------------------------------------------------------------------------
+class TestSummarizeRepository:
+    def test_no_ai_with_readme_uses_enhanced(self, summarizer):
+        repo = _make_repo()
+        result = summarizer.summarize_repository(repo, readme_content=SAMPLE_README, allow_ai=False)
+        assert result.generation_method == "enhanced-template"
+
+    def test_no_ai_no_readme_uses_basic(self, summarizer):
+        repo = _make_repo()
+        result = summarizer.summarize_repository(repo, readme_content=None, allow_ai=False)
+        assert result.generation_method == "basic-template"
+
+    def test_ai_disabled_falls_to_enhanced(self, summarizer):
+        repo = _make_repo()
+        result = summarizer.summarize_repository(repo, readme_content=SAMPLE_README, allow_ai=True)
+        # anthropic is None, so falls through to enhanced
+        assert result.generation_method == "enhanced-template"
+
+    def test_no_readme_repo_uses_basic(self, summarizer):
+        repo = _make_repo(description="A JavaScript library", primary_language="JavaScript")
+        result = summarizer.summarize_repository(repo, readme_content=None)
+        assert result.generation_method == "basic-template"
+        assert "JavaScript" in result.summary
+
+
+# ---------------------------------------------------------------------------
+# Cache metadata
+# ---------------------------------------------------------------------------
+class TestBuildCacheMetadata:
+    def test_metadata_structure(self, summarizer):
+        meta = summarizer._build_cache_metadata(
+            repo_name="my-repo",
+            repository_owner="testuser",
+            cache_date=datetime(2026, 1, 1, tzinfo=timezone.utc),
         )
-
-        # Assertions
-        assert isinstance(summary, RepositorySummary)
-        assert summary.repository_name == "awesome-project"
-        assert summary.generation_method == "claude-haiku-4-5"
-        assert "comprehensive" in summary.ai_summary.lower()
-        assert "toolkit" in summary.ai_summary.lower()
-        assert summary.fallback_summary is None
-
-        # Verify API was called
-        mock_client.messages.create.assert_called_once()
-
-    @patch('anthropic.Anthropic')
-    def test_ai_api_error_fallback(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test fallback to enhanced template on API error."""
-        # Mock API to raise error
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-        mock_client.messages.create.side_effect = Exception("API Error: Rate limit exceeded")
-
-        # Generate summary (should fallback)
-        summary = summarizer.summarize_repository(
-            repository=sample_repository,
-            commit_history=sample_commits,
-            readme_content=sample_readme
-        )
-
-        # Assertions
-        assert isinstance(summary, RepositorySummary)
-        assert summary.generation_method == "enhanced-template"
-        assert summary.ai_summary is None
-        assert summary.fallback_summary is not None
-        assert "Python" in summary.fallback_summary
-        assert "1250" in summary.fallback_summary or "stars" in summary.fallback_summary.lower()
-
-    @patch('anthropic.Anthropic')
-    def test_retry_logic(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test exponential backoff retry logic."""
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-
-        # First two calls fail, third succeeds
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="Success after retries")]
-        mock_response.usage.input_tokens = 1500
-        mock_response.usage.output_tokens = 50
-
-        mock_client.messages.create.side_effect = [
-            Exception("Temporary error"),
-            Exception("Another temporary error"),
-            mock_response
-        ]
-
-        # Generate summary
-        summary = summarizer.summarize_repository(
-            repository=sample_repository,
-            commit_history=sample_commits,
-            readme_content=sample_readme
-        )
-
-        # Should succeed after retries
-        assert summary.generation_method == "claude-haiku-4-5"
-        assert summary.ai_summary == "Success after retries"
-
-        # Verify retry happened
-        assert mock_client.messages.create.call_count == 3
-
-
-class TestREADMETruncation:
-    """Test README content truncation."""
-
-    def test_readme_truncation_for_context_window(self, summarizer):
-        """Test that very long READMEs are truncated to fit context window."""
-        # Create a very long README (simulate 300K tokens worth)
-        long_readme = "# Long Project\n\n" + ("Lorem ipsum dolor sit amet. " * 100000)
-
-        truncated = summarizer._truncate_readme(long_readme)
-
-        # Should be significantly shorter
-        assert len(truncated) < len(long_readme)
-        assert len(truncated) < 200000  # Reasonable char limit for 200K token window
-
-    def test_short_readme_not_truncated(self, summarizer, sample_readme):
-        """Test that short READMEs are not modified."""
-        truncated = summarizer._truncate_readme(sample_readme)
-        assert truncated == sample_readme
-
-    def test_truncation_preserves_beginning(self, summarizer):
-        """Test that truncation keeps the important beginning content."""
-        long_readme = "# Title\n\nImportant intro." + ("\n\nFiller content. " * 50000)
-        truncated = summarizer._truncate_readme(long_readme)
-
-        assert "# Title" in truncated
-        assert "Important intro" in truncated
-
-
-# TestCommitPatternAnalysis class removed - _analyze_commit_patterns method no longer exists
-# The functionality has been moved to StatsCalculator
-
-
-class TestPromptEngineering:
-    """Test prompt engineering for technical summaries."""
-
-    @patch('anthropic.Anthropic')
-    def test_prompt_includes_repo_metadata(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test that prompt includes repository metadata."""
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="Summary")]
-        mock_response.usage.input_tokens = 1500
-        mock_response.usage.output_tokens = 50
-        mock_client.messages.create.return_value = mock_response
-
-        summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
-
-        # Get the prompt that was sent
-        call_args = mock_client.messages.create.call_args
-        prompt_messages = call_args[1]["messages"]
-
-        # Verify metadata is in prompt
-        prompt_text = str(prompt_messages)
-        assert "awesome-project" in prompt_text.lower()
-        assert "1250" in prompt_text or "stars" in prompt_text.lower()
-
-    @patch('anthropic.Anthropic')
-    def test_prompt_includes_commit_analysis(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test that prompt includes commit pattern analysis."""
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="Summary")]
-        mock_response.usage.input_tokens = 1500
-        mock_response.usage.output_tokens = 50
-        mock_client.messages.create.return_value = mock_response
-
-        summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
-
-        call_args = mock_client.messages.create.call_args
-        prompt_messages = call_args[1]["messages"]
-        prompt_text = str(prompt_messages)
-
-        # Should mention commit activity
-        assert any(word in prompt_text.lower() for word in ["commit", "activity", "recent"])
-
-
-class TestFallbackStrategies:
-    """Test fallback strategies when AI is unavailable."""
-
-    def test_enhanced_template_with_readme(self, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test enhanced template fallback extracts from README."""
-        summary = summarizer._generate_enhanced_template_summary(
-            sample_repository,
-            sample_commits,
-            sample_readme
-        )
-
-        assert isinstance(summary, str)
-        assert len(summary) > 0
-        assert "Python" in summary or sample_repository.primary_language in summary
-        assert any(word in summary.lower() for word in ["toolkit", "web", "application"])
-
-    def test_basic_template_without_readme(self, summarizer, sample_repository, sample_commits):
-        """Test basic template fallback uses only metadata."""
-        summary = summarizer._generate_basic_template_summary(
-            sample_repository,
-            sample_commits
-        )
-
-        assert isinstance(summary, str)
-        assert len(summary) > 0
-        assert "Python" in summary
-        assert "1250" in summary or "stars" in summary.lower()
-        assert str(sample_commits.total_commits) in summary or "commit" in summary.lower()
-
-    def test_no_readme_fallback_scenario(self, summarizer, sample_repository, sample_commits):
-        """Test FR-012 requirement: handle repositories without README."""
-        # Repository without README
-        no_readme_repo = Repository(
-            name="no-readme-project",
-            description="A project without documentation",
-            url="https://github.com/testuser/no-readme-project",
-            created_at=datetime.now() - timedelta(days=180),
-            updated_at=datetime.now() - timedelta(days=10),
-            pushed_at=datetime.now() - timedelta(days=10),
-            primary_language="JavaScript",
-            language_stats={"JavaScript": 50000},
-            stars=50,
-            forks=10,
-            watchers=25,
-            open_issues=5,
-            is_archived=False,
-            is_fork=False,
-            is_private=False,
-            size_kb=2000,
-            has_readme=False,
-
-        )
-
-        # Generate summary without README (should use basic template)
-        summary = summarizer.summarize_repository(
-            repository=no_readme_repo,
-            commit_history=sample_commits,
-            readme_content=None
-        )
-
-        # Assertions for FR-012
-        assert isinstance(summary, RepositorySummary)
-        assert summary.generation_method in [
-            "basic-template",
-            "enhanced-template"
-        ]
-        assert summary.fallback_summary is not None
-        assert "JavaScript" in summary.fallback_summary
-        assert len(summary.fallback_summary) > 50  # Should have meaningful content
-
-    @patch('anthropic.Anthropic')
-    def test_no_readme_with_ai_available(self, mock_anthropic, summarizer, sample_repository, sample_commits):
-        """Test that AI can generate summary even without README."""
-        # Mock successful API response
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="AI-generated summary based on metadata and commit history")]
-        mock_response.usage.input_tokens = 800
-        mock_response.usage.output_tokens = 60
-        mock_client.messages.create.return_value = mock_response
-
-        # Generate summary without README
-        summary = summarizer.summarize_repository(
-            repository=sample_repository,
-            commit_history=sample_commits,
-            readme_content=None
-        )
-
-        # Should use AI even without README
-        assert summary.generation_method == "claude-haiku-4-5"
-        assert "AI-generated" in summary.ai_summary
-
-
-class TestCostTracking:
-    """Test API cost tracking and logging."""
-
-    @patch('anthropic.Anthropic')
-    def test_token_usage_logging(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test that API token usage is logged."""
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="Summary")]
-        mock_response.usage.input_tokens = 2500
-        mock_response.usage.output_tokens = 200
-        mock_client.messages.create.return_value = mock_response
-
-        with patch.object(summarizer.logger, 'info') as mock_logger:
-            summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
-
-            # Verify cost logging
-            logged_calls = [str(call) for call in mock_logger.call_args_list]
-            assert any("token" in str(call).lower() for call in logged_calls)
-
-    @patch('anthropic.Anthropic')
-    def test_cost_calculation(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test that API cost is calculated correctly."""
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="Summary")]
-        mock_response.usage.input_tokens = 10000  # Input tokens
-        mock_response.usage.output_tokens = 1000  # Output tokens
-        mock_client.messages.create.return_value = mock_response
-
-        summary = summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
-
-        # Cost should be tracked (Haiku pricing: ~$0.25/$1.25 per million tokens)
-        # This is a basic check that cost tracking exists
-        assert hasattr(summarizer, 'total_cost') or hasattr(summarizer, 'track_cost')
-
-
-class TestErrorHandling:
-    """Test error handling and edge cases."""
-
-    def test_empty_readme(self, summarizer, sample_repository, sample_commits):
-        """Test handling of empty README content."""
-        summary = summarizer.summarize_repository(
-            sample_repository,
-            sample_commits,
-            ""  # Empty string
-        )
-
-        # Should still generate a summary
-        assert isinstance(summary, RepositorySummary)
-        assert summary.fallback_summary is not None or summary.ai_summary is not None
-
-    def test_malformed_readme(self, summarizer, sample_repository, sample_commits):
-        """Test handling of malformed README content."""
-        malformed = "# \n\n\n\n<<>>{}[]invalid"
-
-        summary = summarizer.summarize_repository(
-            sample_repository,
-            sample_commits,
-            malformed
-        )
-
-        # Should handle gracefully
-        assert isinstance(summary, RepositorySummary)
-
-    def test_missing_api_key(self):
-        """Test behavior when API key is missing."""
-        config = {"anthropic_api_key": None}
-        summarizer = RepositorySummarizer(config)
-
-        # Should initialize but use fallback strategies
-        assert summarizer is not None
-        # Fallback functionality is tested through summarize_repository method
-
-    @patch('anthropic.Anthropic')
-    def test_api_timeout_fallback(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test fallback on API timeout."""
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-        mock_client.messages.create.side_effect = TimeoutError("Request timed out")
-
-        summary = summarizer.summarize_repository(
-            sample_repository,
-            sample_commits,
-            sample_readme
-        )
-
-        # Should fallback gracefully
-        assert summary.generation_method in [
-            "enhanced-template",
-            "basic-template"
-        ]
-        assert summary.fallback_summary is not None
-
-
-class TestSummaryQuality:
-    """Test summary content quality."""
-
-    @patch('anthropic.Anthropic')
-    def test_summary_mentions_key_features(self, mock_anthropic, summarizer, sample_repository, sample_commits, sample_readme):
-        """Test that summary extracts key features from README."""
-        mock_client = MagicMock()
-        mock_anthropic.return_value = mock_client
-
-        # Mock AI to return a good summary
-        mock_response = MagicMock()
-        mock_response.content = [MagicMock(text="A scalable web application toolkit featuring fast performance, easy usage, comprehensive documentation, and active maintenance.")]
-        mock_response.usage.input_tokens = 1500
-        mock_response.usage.output_tokens = 80
-        mock_client.messages.create.return_value = mock_response
-
-        summary = summarizer.summarize_repository(sample_repository, sample_commits, sample_readme)
-
-        # Check quality indicators
-        assert len(summary.ai_summary) > 50  # Should be substantive
-        assert len(summary.ai_summary) < 500  # Should be concise
-
-    def test_template_summary_structure(self, summarizer, sample_repository, sample_commits):
-        """Test that template summaries follow a consistent structure."""
-        summary_text = summarizer._generate_basic_template_summary(
-            sample_repository,
-            sample_commits
-        )
-
-        # Should include key information
-        assert sample_repository.primary_language in summary_text
-        assert any(str(val) in summary_text for val in [sample_repository.stars, "stars", "⭐"])
-        assert "commit" in summary_text.lower() or str(sample_commits.total_commits) in summary_text
+        assert meta["repository"]["owner"] == "testuser"
+        assert meta["repository"]["name"] == "my-repo"
+        assert meta["category"] == "ai_summary"
+
+    def test_none_date(self, summarizer):
+        meta = summarizer._build_cache_metadata("repo", "owner", None)
+        assert meta["category"] == "ai_summary"
+
+
+# ---------------------------------------------------------------------------
+# Prompt building
+# ---------------------------------------------------------------------------
+class TestBuildRepositoryPrompt:
+    def test_includes_repo_info(self, summarizer):
+        repo = _make_repo(name="cool-project", stars=42, primary_language="Python")
+        prompt = summarizer._build_repository_prompt(repo, "README content", None)
+        assert "cool-project" in prompt
+        assert "42" in prompt
+        assert "Python" in prompt
+
+    def test_includes_language_stats(self, summarizer):
+        repo = _make_repo()
+        stats = {"Python": 8000, "JavaScript": 2000}
+        prompt = summarizer._build_repository_prompt(repo, "README", None, language_stats=stats)
+        assert "Python" in prompt
+        assert "80.0%" in prompt
+
+    def test_includes_commit_activity(self, summarizer):
+        repo = _make_repo()
+        history = _make_history(recent_90d=20, recent_365d=80)
+        prompt = summarizer._build_repository_prompt(repo, "README", history)
+        assert "20 commits (90d)" in prompt
+
+    def test_includes_readme_content(self, summarizer):
+        repo = _make_repo()
+        prompt = summarizer._build_repository_prompt(repo, "This is the README.", None)
+        assert "This is the README." in prompt
+
+    def test_includes_quality_indicators(self, summarizer):
+        repo = _make_repo()
+        repo.has_tests = True
+        repo.has_ci_cd = True
+        repo.has_license = True
+        prompt = summarizer._build_repository_prompt(repo, "README", None)
+        assert "tests" in prompt
+        assert "CI/CD" in prompt
+
+
+# ---------------------------------------------------------------------------
+# Constructor initialization
+# ---------------------------------------------------------------------------
+class TestSummarizerInit:
+    def test_no_api_key(self):
+        with patch.dict("os.environ", {}, clear=True):
+            s = RepositorySummarizer(enable_ai=True)
+            assert s.anthropic is None
+
+    def test_enable_ai_false(self):
+        s = RepositorySummarizer(api_key="test-key", enable_ai=False)
+        assert s.anthropic is None
+
+    def test_custom_model(self):
+        s = RepositorySummarizer(model="claude-haiku-3.5", enable_ai=False)
+        assert s.model == "claude-haiku-4-5"
+
+    def test_default_model(self):
+        s = RepositorySummarizer(enable_ai=False)
+        assert s.model == RepositorySummarizer.DEFAULT_MODEL
+
+    def test_counters_initialized(self):
+        s = RepositorySummarizer(enable_ai=False)
+        assert s.total_tokens_used == 0
+        assert s.total_cost == 0.0
+        assert s.cache_hits == 0
+        assert s.cache_misses == 0

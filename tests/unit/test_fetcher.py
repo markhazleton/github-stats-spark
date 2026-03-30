@@ -417,3 +417,363 @@ def test_fetch_pull_request_summary_marks_partial_after_page_cap(fetcher, monkey
 
     assert summary["availability"] == "partial"
     assert summary["reason"] == "not_requested"
+
+
+# ---------------------------------------------------------------------------
+# Static helper method tests
+# ---------------------------------------------------------------------------
+
+class TestParseIsoDatetime:
+    """Test GitHubFetcher._parse_iso_datetime."""
+
+    def test_valid_iso(self):
+        result = GitHubFetcher._parse_iso_datetime("2026-03-15T12:00:00+00:00")
+        assert result.year == 2026
+
+    def test_github_z_suffix(self):
+        result = GitHubFetcher._parse_iso_datetime("2026-01-01T00:00:00Z")
+        assert result is not None
+        assert result.year == 2026
+
+    def test_none_input(self):
+        assert GitHubFetcher._parse_iso_datetime(None) is None
+
+    def test_empty_string(self):
+        assert GitHubFetcher._parse_iso_datetime("") is None
+
+    def test_invalid_string(self):
+        assert GitHubFetcher._parse_iso_datetime("not-a-date") is None
+
+
+class TestMapFailureReason:
+    """Test GitHubFetcher._map_failure_reason."""
+
+    def test_401(self):
+        assert GitHubFetcher._map_failure_reason(401) == "permission_denied"
+
+    def test_403(self):
+        assert GitHubFetcher._map_failure_reason(403) == "permission_denied"
+
+    def test_404(self):
+        assert GitHubFetcher._map_failure_reason(404) == "not_supported"
+
+    def test_zero(self):
+        assert GitHubFetcher._map_failure_reason(0) == "unknown"
+
+    def test_500(self):
+        assert GitHubFetcher._map_failure_reason(500) == "api_error"
+
+
+class TestShouldIncludeRepository:
+    """Test GitHubFetcher._should_include_repository."""
+
+    def _repo(self, private=False, fork=False, archived=False):
+        return SimpleNamespace(private=private, fork=fork, archived=archived)
+
+    def test_public_active_original(self):
+        assert GitHubFetcher._should_include_repository(self._repo(), True, True, True) is True
+
+    def test_exclude_private(self):
+        assert GitHubFetcher._should_include_repository(self._repo(private=True), True, False, False) is False
+
+    def test_include_private_when_not_excluded(self):
+        assert GitHubFetcher._should_include_repository(self._repo(private=True), False, False, False) is True
+
+    def test_exclude_fork(self):
+        assert GitHubFetcher._should_include_repository(self._repo(fork=True), False, True, False) is False
+
+    def test_exclude_archived(self):
+        assert GitHubFetcher._should_include_repository(self._repo(archived=True), False, False, True) is False
+
+    def test_all_flags_false_includes_everything(self):
+        r = self._repo(private=True, fork=True, archived=True)
+        assert GitHubFetcher._should_include_repository(r, False, False, False) is True
+
+
+class TestBuildRestHeaders:
+    """Test _build_rest_headers version-header logic."""
+
+    def test_version_enabled(self, fetcher):
+        headers = fetcher._build_rest_headers(include_version=True)
+        assert "X-GitHub-Api-Version" in headers
+        assert headers["X-GitHub-Api-Version"] == "2026-03-10"
+
+    def test_version_disabled(self, fetcher):
+        headers = fetcher._build_rest_headers(include_version=False)
+        assert "X-GitHub-Api-Version" not in headers
+
+    def test_version_setting_off(self, fetcher):
+        fetcher.api_version_settings["enabled"] = False
+        headers = fetcher._build_rest_headers(include_version=True)
+        assert "X-GitHub-Api-Version" not in headers
+
+
+class TestBuildRepoMetadata:
+    """Test _build_repo_metadata helper."""
+
+    def test_with_pushed_at(self, fetcher):
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        meta = fetcher._build_repo_metadata("user", "repo", pushed, "commits")
+        assert meta["repository"] == {"owner": "user", "name": "repo"}
+        assert meta["category"] == "commits"
+        assert meta["pushed_at"] is not None
+
+    def test_without_pushed_at(self, fetcher):
+        meta = fetcher._build_repo_metadata("user", "repo", None, "readme")
+        assert meta["pushed_at"] is None
+
+
+# ---------------------------------------------------------------------------
+# Error path tests
+# ---------------------------------------------------------------------------
+
+class TestFetcherErrorPaths:
+    """Test error handling across fetcher methods."""
+
+    @pytest.fixture
+    def fetcher(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        cache = APICache(cache_dir=str(tmp_path / "cache"))
+        return GitHubFetcher(cache=cache)
+
+    def test_fetch_commits_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        repo = SimpleNamespace(get_commits=lambda author=None: (_ for _ in ()).throw(GithubException(403, "forbidden", None)))
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        result = fetcher.fetch_commits("user", "repo")
+        assert result == []
+
+    def test_fetch_languages_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        repo = SimpleNamespace(get_languages=lambda: (_ for _ in ()).throw(GithubException(403, "forbidden", None)))
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        result = fetcher.fetch_languages("user", "repo")
+        assert result == {}
+
+    def test_fetch_readme_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        repo = SimpleNamespace(get_readme=lambda: (_ for _ in ()).throw(GithubException(404, "not found", None)))
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        result = fetcher.fetch_readme("user", "repo")
+        assert result is None
+
+    def test_fetch_readme_decode_error(self, fetcher, monkeypatch):
+        readme = SimpleNamespace(decoded_content=b"\x80\x81\x82")
+        # Force decode to fail by mocking
+        repo = SimpleNamespace(get_readme=lambda: SimpleNamespace(decoded_content=None))
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        result = fetcher.fetch_readme("user", "repo")
+        assert result is None
+
+    def test_fetch_user_profile_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        monkeypatch.setattr(fetcher.github, "get_user", lambda username: (_ for _ in ()).throw(GithubException(404, "not found", None)))
+
+        with pytest.raises(GithubException):
+            fetcher.fetch_user_profile("nobody")
+
+    def test_fetch_repositories_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        class FailUser:
+            @staticmethod
+            def get_repos():
+                raise GithubException(500, "server error", None)
+        monkeypatch.setattr(fetcher.github, "get_user", lambda username: FailUser())
+
+        with pytest.raises(GithubException):
+            fetcher.fetch_repositories("user")
+
+    def test_fetch_commit_counts_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full: (_ for _ in ()).throw(GithubException(403, "denied", None)))
+
+        result = fetcher.fetch_commit_counts("user", "repo")
+        assert result["total"] == 0
+        assert result["last_commit_date"] is None
+
+    def test_fetch_commits_with_stats_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full: (_ for _ in ()).throw(GithubException(500, "err", None)))
+        fetcher.use_cache_status = False
+
+        result = fetcher.fetch_commits_with_stats("user", "repo", force_refresh=True)
+        assert result == []
+
+    def test_fetch_dependency_files_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full: (_ for _ in ()).throw(GithubException(404, "missing", None)))
+
+        result = fetcher.fetch_dependency_files("user", "repo")
+        assert result == {}
+
+    def test_pr_summary_exception_returns_unavailable(self, fetcher, monkeypatch):
+        monkeypatch.setattr(fetcher, "_rest_get", lambda *a, **kw: (_ for _ in ()).throw(RuntimeError("network")))
+
+        result = fetcher.fetch_pull_request_summary("user", "repo", force_refresh=True)
+        assert result["availability"] == "unavailable"
+        assert result["reason"] == "api_error"
+
+    def test_security_summary_exception_returns_unavailable(self, fetcher, monkeypatch):
+        monkeypatch.setattr(fetcher, "_rest_get", lambda *a, **kw: (_ for _ in ()).throw(RuntimeError("network")))
+
+        result = fetcher.fetch_security_summary("user", "repo", force_refresh=True)
+        assert result["availability"] == "unavailable"
+        assert result["reason"] == "api_error"
+
+
+# ---------------------------------------------------------------------------
+# Cache-hit path tests
+# ---------------------------------------------------------------------------
+
+class TestFetcherCacheHits:
+    """Test that cache hits skip API calls."""
+
+    @pytest.fixture
+    def fetcher(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        cache = APICache(cache_dir=str(tmp_path / "cache"))
+        return GitHubFetcher(cache=cache)
+
+    def test_fetch_commits_cache_hit(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        fetcher.cache.set("commits", "user", [{"sha": "cached"}], repo="my-repo", week=key)
+
+        result = fetcher.fetch_commits("user", "my-repo", repo_pushed_at=pushed)
+        assert result == [{"sha": "cached"}]
+
+    def test_fetch_languages_cache_hit(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        fetcher.cache.set("languages", "user", {"Go": 999}, repo="my-repo", week=key)
+
+        result = fetcher.fetch_languages("user", "my-repo", repo_pushed_at=pushed)
+        assert result == {"Go": 999}
+
+    def test_fetch_readme_cache_hit(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        fetcher.cache.set("readme", "user", "# Cached", repo="my-repo", week=key)
+
+        result = fetcher.fetch_readme("user", "my-repo", repo_pushed_at=pushed)
+        assert result == "# Cached"
+
+    def test_fetch_commit_counts_cache_hit(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        fetcher.cache.set("commit_counts", "user", {"total": 42}, repo="my-repo", week=key)
+
+        result = fetcher.fetch_commit_counts("user", "my-repo", repo_pushed_at=pushed)
+        assert result == {"total": 42}
+
+    def test_fetch_dependency_files_cache_hit(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        fetcher.cache.set("dependency_files", "user", {"package.json": "{}"}, repo="my-repo", week=key)
+
+        result = fetcher.fetch_dependency_files("user", "my-repo", repo_pushed_at=pushed)
+        assert result == {"package.json": "{}"}
+
+    def test_fetch_repositories_cache_hit(self, fetcher):
+        variant = "list_True_True_True"
+        fetcher.cache.set("repositories", "user", [{"name": "cached-repo"}], repo=variant)
+
+        result = fetcher.fetch_repositories("user")
+        assert result == [{"name": "cached-repo"}]
+
+    def test_pr_summary_cache_hit(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        cached = {"availability": "available", "total_open": 5}
+        fetcher.cache.set("pull_request_summary", "user", cached, repo="my-repo", week=key)
+
+        result = fetcher.fetch_pull_request_summary("user", "my-repo", repo_pushed_at=pushed)
+        assert result == cached
+
+    def test_security_summary_cache_hit(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        cached = {"availability": "available", "overall_state": "clear"}
+        fetcher.cache.set("security_summary", "user", cached, repo="my-repo", week=key)
+
+        result = fetcher.fetch_security_summary("user", "my-repo", repo_pushed_at=pushed)
+        assert result == cached
+
+
+class TestRestGetFallback:
+    """Test _rest_get API version fallback behavior."""
+
+    @pytest.fixture
+    def fetcher(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        cache = APICache(cache_dir=str(tmp_path / "cache"))
+        return GitHubFetcher(cache=cache, api_version_settings={"enabled": True, "version": "2026-03-10"})
+
+    def test_fallback_on_415(self, fetcher, monkeypatch):
+        calls = []
+
+        def fake_get(url, headers=None, params=None, timeout=None):
+            calls.append(headers.get("X-GitHub-Api-Version"))
+            if "X-GitHub-Api-Version" in headers:
+                return FakeResponse(415)
+            return FakeResponse(200, {"ok": True})
+
+        monkeypatch.setattr("spark.fetcher.requests.get", fake_get)
+
+        resp = fetcher._rest_get("/test")
+        assert resp.status_code == 200
+        assert len(calls) == 2  # initial versioned + fallback
+
+    def test_no_fallback_on_success(self, fetcher, monkeypatch):
+        calls = []
+
+        def fake_get(url, headers=None, params=None, timeout=None):
+            calls.append(1)
+            return FakeResponse(200, {"ok": True})
+
+        monkeypatch.setattr("spark.fetcher.requests.get", fake_get)
+
+        resp = fetcher._rest_get("/test")
+        assert resp.status_code == 200
+        assert len(calls) == 1
+
+
+class TestSecuritySummaryAllSuccess:
+    """Test security summary when all endpoints succeed."""
+
+    @pytest.fixture
+    def fetcher(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        cache = APICache(cache_dir=str(tmp_path / "cache"))
+        return GitHubFetcher(cache=cache, api_version_settings={"enabled": True, "version": "2026-03-10"})
+
+    def test_all_clear(self, fetcher, monkeypatch):
+        responses = {
+            "/repos/user/repo": FakeResponse(200, {
+                "security_and_analysis": {
+                    "advanced_security": {"status": "enabled"},
+                    "secret_scanning": {"status": "enabled"},
+                    "secret_scanning_push_protection": {"status": "enabled"},
+                }
+            }),
+            "/repos/user/repo/vulnerability-alerts": FakeResponse(200, None),
+            "/repos/user/repo/automated-security-fixes": FakeResponse(200, None),
+            "/repos/user/repo/dependabot/alerts": FakeResponse(200, []),
+        }
+        monkeypatch.setattr(fetcher, "_rest_get", lambda path, **kw: responses[path])
+
+        result = fetcher.fetch_security_summary("user", "repo", force_refresh=True)
+        assert result["availability"] == "available"
+        assert result["overall_state"] == "clear"
+        assert result["active_alert_counts"]["total_open"] == 0

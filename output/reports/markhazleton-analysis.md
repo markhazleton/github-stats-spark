@@ -1,9 +1,9 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-03-30 04:59:38 UTC
+**Generated**: 2026-03-30 10:32:04 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 37
-**AI Summary Rate**: 100.0%
+**AI Summary Rate**: 97.3%
 
 > 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-37-repositories) | [Metadata](#report-metadata)
 
@@ -37,96 +37,47 @@
 
 ### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 184 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 185 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 12140 KB | 🚀 61.3 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 12210 KB | 🚀 61.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Stats Spark ⚡ - Technical Analysis
+# Technical Summary: github-stats-spark
 
-## Executive Summary
+## Overview
 
-Stats Spark is a sophisticated GitHub analytics and visualization platform that transforms raw GitHub activity into professionally-rendered SVG dashboards and AI-powered repository insights. The project combines automated data collection via the GitHub API with intelligent analysis and interactive web-based visualization to provide developers, teams, and open-source maintainers with actionable intelligence about coding patterns, repository health, and technology usage trends.
+**Stats Spark** is a comprehensive GitHub analytics and visualization platform that automatically generates beautiful SVG profile statistics and AI-powered repository analysis reports. The project combines Python backend services with a modern JavaScript/React frontend to create an automated weekly analytics pipeline that transforms raw GitHub activity data into actionable insights and professional visualizations.
 
-## Architecture & Technical Approach
+## Architecture & Core Functionality
 
-### Core Components
+The system operates as a multi-layered analytics suite:
 
-**Python Backend Stack (49.1%)**
-- **PyGithub**: Primary GitHub API client for automated data collection
-- **PyYAML**: Configuration management system supporting flexible YAML-based settings
-- **svgwrite**: Programmatic SVG generation for embeddable profile statistics
-- **requests + python-dateutil**: HTTP requests and temporal data handling for historical analysis
-- Modular design with CLI support for local development and testing before CI/CD deployment
+1. **Python Backend** (49.1% of codebase) - PyGithub-based data collection and SVG generation engine using svgwrite for programmatic vector graphics creation
+2. **JavaScript Frontend** (21.9%) - Interactive React dashboard with Chart.js visualizations, mobile-first design, and offline support via IndexedDB/Dexie
+3. **Automation Layer** - GitHub Actions workflow triggering weekly updates at midnight UTC
+4. **Configuration System** - YAML-based settings management for flexible deployment across environments
+5. **AI Integration** - Anthropic Claude Haiku API for generating technical repository summaries with fallback to README extraction
 
-**Frontend Technologies (31.9%)**
-- **JavaScript (21.9%)**: Interactive dashboard functionality
-- **HTML/CSS (11.0%)**: Responsive mobile-first UI (320px-768px viewport optimization)
-- **Chart.js + react-chartjs-2**: Interactive visualizations with touch-optimized tooltips
-- **Dexie/IndexedDB**: Offline-capable caching with 7-day data retention
+The platform generates six distinct SVG visualizations: overview dashboard (with proprietary "Spark Score" metric), GitHub-style commit heatmaps, language distribution charts, streak tracking, personalized achievement badges, and release cadence sparklines. The intelligent repository ranking algorithm weights popularity (30%), activity with time-decay (45%), and health signals (25%) to surface meaningful repositories.
 
-**Infrastructure & Automation (18.0%)**
-- **PowerShell (18.0%)**: GitHub Actions workflow orchestration
-- **GitHub Pages**: Automatic deployment pipeline with Lighthouse CI performance monitoring
-- **Scheduled Automation**: Midnight UTC Sunday execution for weekly updates
+## Key Technologies & Design Patterns
 
-## Key Features & Capabilities
+**Tech Stack**: Python 3.11+, PyGithub, PyYAML, requests, python-dateutil (backend); React, Chart.js, Dexie.js, Lighthouse CI (frontend); PowerShell for automation scripting. The codebase demonstrates strong software engineering practices including rate-limit handling with exponential backoff, smart API caching, modular architecture for extensibility, and WCAG 2.1 AA accessibility compliance.
 
-### 1. **Dual Visualization Strategy**
+**Notable Design Decisions**: 
+- Mobile-first responsive design with bottom-sheet navigation patterns optimized for 320-768px viewports
+- Three-tier fallback system for AI summaries ensuring 97%+ success rate without hard dependencies on API availability
+- Offline-first architecture with 7-day IndexedDB retention for dashboard functionality without network connectivity
+- Schema versioning (current 2.2.0) for unified repository records including attention scoring and dependency coverage metrics
 
-**SVG Profile Statistics** (6 embeddable categories):
-- **Spark Score Algorithm**: Proprietary 0-100 metric (40% consistency + 35% volume + 25% collaboration)
-- **Contribution Heatmap**: GitHub-style calendar with intensity visualization
-- **Language Distribution**: Technology stack breakdown with diversity metrics
-- **Streak Tracking**: Current/longest consecutive contribution streaks
-- **Fun Stats Module**: 8 personality-driven achievements with time-based coding patterns
-- **Release Cadence**: Sparkline trends showing activity breadth across repositories
+## Target Use Cases & Market Positioning
 
-**Interactive Dashboard**:
-- Mobile-native bottom sheet navigation and swipe gestures
-- Drill-down repository analysis with commit history and dependency tracking
-- "Needs Attention" ranking combining security alerts, PR backlog, dependency drift, and staleness
-- CSV/JSON export functionality for external analysis
+Stats Spark targets multiple personas: individual developers showcasing GitHub portfolios professionally, engineering teams analyzing contribution patterns and technology diversity, technical leaders evaluating developer productivity, and open-source maintainers tracking project momentum. The zero-maintenance automated updates and enterprise-ready features (flexible configuration, local CLI testing, intelligent rate-limiting) position it for both individual and organizational adoption.
 
-### 2. **AI-Powered Intelligence Layer**
+## Current Status & Activity
 
-- **Claude Haiku Integration**: Automated technical summaries with 97%+ success rate
-- **Three-Tier Fallback Strategy**: Claude → README extraction → basic metadata ensures coverage
-- **Composite Repository Ranking**: Weighted algorithm (30% popularity/45% activity/25% health) balances established projects with active development
-- **Dependency Insights**: Schema 2.2.0 tracks version coverage, registry resolution, and maintenance signals
-
-### 3. **Enterprise-Grade Reliability**
-
-- **Smart API Caching**: Intelligent GitHub API optimization reducing rate-limit pressure
-- **Exponential Backoff Retry Logic**: Graceful handling of 403/429 responses
-- **Performance Optimization**: Sub-5-minute analysis for 500+ repositories with Lighthouse CI targeting <2s First Contentful Paint
-- **WCAG 2.1 AA Compliance**: Full accessibility support with keyboard navigation and screen reader compatibility
-
-## Activity & Development Velocity
-
-- **Recent Commits**: 184 (90d) and 203 (365d) indicate consistent, accelerating development
-- **Repository Size**: 12.1 MB with balanced language distribution suggests well-organized codebase
-- **Tech Stack Currency**: 69/100 score reflects modern Python, JavaScript, and CI/CD practices
-- **Creation Date**: December 2025 indicates recent launch with immediate community-scale ambitions
-
-## Target Use Cases
-
-1. **Developer Portfolio Enhancement**: Automatically updated profile README with professional statistics
-2. **Team Analytics**: Repository health monitoring and productivity pattern analysis
-3. **Open Source Maintainability**: Community engagement tracking and release cadence visualization
-4. **Technical Leadership**: Developer profiling with technology diversity and contribution classification insights
-
-## Notable Implementation Decisions
-
-- **YAML Configuration**: Flexible, version-control-friendly configuration approach
-- **SVG Over Raster**: Resolution-independent embeddable graphics supporting theme customization
-- **Offline-First Dashboard**: IndexedDB caching enables functionality without continuous API connectivity
-- **Modular Architecture**: Extensible design allowing custom analysis and visualization components
-
-## Conclusion
-
-Stats Spark represents a production-ready analytics solution that bridges GitHub's raw data with meaningful visualizations and AI-driven insights. Its combination of automated weekly updates, enterprise-grade reliability patterns, mobile-optimized dashboard, and intelligent repository ranking makes it particularly valuable for open-source maintainers and technical leaders seeking to understand development patterns at scale. The project demonstrates strong engineering practices through comprehensive error handling, accessibility compliance, and performance optimization.
+With 185 commits in 90 days and 204 in 365 days showing accelerating development velocity, the project demonstrates active maintenance despite zero current stars/forks—suggesting recent launch or internal-focus development. The 69/100 tech stack currency score reflects primarily stable dependencies (PyGithub, requests) balanced against newer frontend tooling. The comprehensive feature set, polished documentation with real-world sample outputs, and professional dashboard implementation indicate production-ready software positioned for growth.
 
 **Technology Stack Currency**: ✅ 69/100
 **Dependencies**: 10 total (1 current, 9 outdated)
@@ -372,7 +323,27 @@ Stars: 0 | Forks: 0 | Language: JavaScript | 22 commits (90d)
 
 ---
 
-### #13. [WebSpark](https://github.com/markhazleton/WebSpark)
+### #13. [Texecon](https://github.com/markhazleton/Texecon)
+
+Stars: 0 | Forks: 0 | Language: HTML | 29 commits (90d)
+
+👥 0 contributors | 🌐 4 languages | 💾 3225 KB | 🚀 9.7 commits/month
+
+**Quality**: ❌ License | ❌ Docs
+
+# TexEcon - Technical Summary
+
+**TexEcon** is a modern static React application designed to deliver expert analysis and commentary on the Texas economy, deployed as a high-performance static site on GitHub Pages. Built with React 19, TypeScript, and Vite, the application implements a sophisticated build-time content management system that fetches fresh economic data from a WebSpark headless CMS API during compilation, with graceful fallback mechanisms to cached content. The architecture leverages static site generation (SSG) principles combined with client-side routing through Wouter, enabling optimal SEO performance through pre-rendered HTML files, structured data, dynamic XML sitemaps, and Core Web Vitals optimization, while maintaining progressive enhancement for rich interactivity. Key technical features include automated content pipeline orchestration (fetch → transform → generate sitemap → build → create static pages), type-safe API integration with automatic TypeScript interface generation, and configurable deployment supporting both custom domains and GitHub Pages hosting. The UI layer utilizes Radix UI primitives and shadcn/ui components styled with Tailwind CSS 4.1, complemented by Lucide React icons for a cohesive design system. This approach uniquely combines the benefits of dynamic CMS-driven content with the performance guarantees and cost-efficiency of static hosting, making it ideal for content-rich economic analysis platforms that require SEO excellence and reliable performance without backend infrastructure dependencies.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 37 total (37 current, 0 outdated)
+
+**Created**: 2025-09-03
+**Last Modified**: 2026-03-30
+
+---
+
+### #14. [WebSpark](https://github.com/markhazleton/WebSpark)
 
 Stars: 1 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -389,7 +360,7 @@ Stars: 1 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #14. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
+### #15. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
 
 Stars: 3 | Forks: 0 | Language: Visual Basic .NET | 9 commits (90d)
 
@@ -408,7 +379,7 @@ The architecture emphasizes clean separation of concerns through layered modules
 
 ---
 
-### #15. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
+### #16. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
 
 Stars: 0 | Forks: 0 | Language: C# | 29 commits (90d)
 
@@ -425,53 +396,42 @@ Stars: 0 | Forks: 0 | Language: C# | 29 commits (90d)
 
 ---
 
-### #16. [Texecon](https://github.com/markhazleton/Texecon)
-
-Stars: 0 | Forks: 0 | Language: HTML | 23 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 2983 KB | 🚀 7.7 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-# Technical Summary: TexEcon
-
-**TexEcon** is a modern static React application designed to deliver expert economic analysis and commentary on the Texas economy, deployed as a performant GitHub Pages site with a sophisticated build pipeline that integrates headless CMS content management. The project implements a hybrid architecture combining static site generation (SSG) with client-side routing, enabling SEO-optimized pre-rendered pages alongside progressive enhancement through Wouter-based navigation, while maintaining content freshness through automated build-time API integration with WebSpark CMS and fallback caching mechanisms. Built with React 19, TypeScript, Vite 7.1, and Tailwind CSS 4.1, the stack emphasizes type safety, development velocity, and performance optimization through tree-shaking, code splitting, and Core Web Vitals focus. The architecture employs a comprehensive build pipeline featuring content fetching, dynamic sitemap generation, static page rendering, and build ID-based cache busting to handle dynamic routes (team profiles, economic analyses) within GitHub Pages' static constraints. Notable design patterns include build-time content management with graceful degradation, structured data implementation for SEO, and environment-agnostic configuration supporting both custom domains and GitHub Pages base paths. This solution targets economic analysts, policymakers, and stakeholders seeking Texas economic insights who benefit from fast load times, excellent SEO ranking potential, and reliable content availability through intelligent fallback systems.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 37 total (37 current, 0 outdated)
-
-**Created**: 2025-09-03
-**Last Modified**: 2026-03-28
-
----
-
 ### #17. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
 
-Stars: 0 | Forks: 0 | Language: PowerShell | 14 commits (90d)
+Stars: 0 | Forks: 0 | Language: PowerShell | 18 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 2054 KB | 🚀 4.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 2067 KB | 🚀 6.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # Technical Summary: react-native-web-start
 
-This is a **production-ready, enterprise-grade starter template** for building cross-platform applications that run on Web, iOS, and Android from a single TypeScript/React codebase using React Native Web, Vite, and modern tooling. The project leverages a monorepo structure (`packages/shared`, `packages/web`, `packages/mobile`) to maximize code reuse across platforms while providing platform-specific optimizations, with the shared layer containing all core components, services, and business logic that compile differently for web (via React Native Web) and native mobile (via React Native/Metro).
-
-**Key capabilities** include Vite-powered HMR development for lightning-fast iteration, strict TypeScript configuration for type safety, Tailwind CSS with Sass preprocessing for responsive adaptive UI, in-app markdown documentation browser, built-in HTTP client with error handling, GitHub Pages CI/CD automation, and comprehensive build scripts for asset management and bundle optimization. The architecture uses Metro bundler for mobile, standard Vite for web, and implements code splitting, tree-shaking, and PWA-ready features for production deployments.
-
-**Tech stack** centers on React 19.2.3, React Native 0.83.1, React Native Web 0.21.2, Vite 7.3.1, TypeScript 5.9.3, Tailwind CSS 4.1.18, and the Marked library for markdown rendering, demonstrating a modern, actively maintained technology choice (50/100 currency score indicates some dependencies could be fresher). The primary language is PowerShell (57.4%) reflecting build automation scripts, with TypeScript (20.8%), JavaScript (12.1%), HTML, and CSS comprising the application code.
-
-Ideal for teams and developers seeking a **"write once, deploy everywhere" solution** who need to maintain consistent UI/UX across web and mobile platforms while minimizing code duplication, maintaining enterprise-grade code quality through TypeScript and linting, and rapidly iterating with Vite's development experience—particularly valuable for startups, agencies, and enterprises building cross-platform consumer applications or internal tools.
+**react-native-web-start** is a production-ready, enterprise-grade starter template designed to enable cross-platform application development using React Native Web, Vite, and TypeScript, allowing developers to write code once and deploy across web (modern browsers), iOS, and Android platforms. The project leverages a monorepo structure with shared components and platform-specific configurations, combining React Native 0.83.1 with React Native Web 0.21.2 for web compatibility, Vite 7.3.1 for lightning-fast development with HMR, and TypeScript 5.9.3 for strict type safety, complemented by Tailwind CSS 4.1.18 and Sass for modern responsive styling. Key architectural features include a well-organized packages directory separating shared logic from platform-specific code, automated build pipelines with asset management and documentation synchronization, Jest testing configuration, and integrated markdown documentation browsing capabilities within the application itself. The template emphasizes developer experience through modern tooling, code quality enforcement via ESLint and Prettier, GitHub Pages deployment automation with CI/CD workflows, and comprehensive in-app documentation—positioning it as an ideal foundation for teams building scalable, maintainable cross-platform applications. With 49 dependencies carefully curated, recent activity showing consistent commits over 365 days, and features like PWA capabilities and bundle analysis, this starter addresses the significant complexity of managing multi-platform codebases while maintaining code reuse and deployment efficiency. The project is particularly valuable for organizations seeking to maximize development velocity and minimize code duplication across web and native mobile platforms.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 49 total (49 current, 0 outdated)
 
 **Created**: 2025-07-26
-**Last Modified**: 2026-03-29
+**Last Modified**: 2026-03-30
 
 ---
 
-### #18. [sql2csv](https://github.com/markhazleton/sql2csv)
+### #18. [InquirySpark](https://github.com/markhazleton/InquirySpark)
+
+Stars: 0 | Forks: 0 | Language: C# | 9 commits (90d)
+
+👥 0 contributors | 🌐 1 languages | 💾 9653 KB | 🚀 3.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Spark Your Inquiry, Ignite Insights. Written in C#. 9 commits in the last 90 days.
+
+**Created**: 2023-10-24
+**Last Modified**: 2026-03-30
+
+---
+
+### #19. [sql2csv](https://github.com/markhazleton/sql2csv)
 
 Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
 
@@ -485,23 +445,6 @@ Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
 
 **Created**: 2017-11-06
 **Last Modified**: 2026-01-12
-
----
-
-### #19. [InquirySpark](https://github.com/markhazleton/InquirySpark)
-
-Stars: 0 | Forks: 0 | Language: C# | 4 commits (90d)
-
-👥 0 contributors | 🌐 7 languages | 💾 9653 KB | 🚀 1.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# InquirySpark - Technical Summary
-
-**InquirySpark** is a modern .NET 10 survey and inquiry management system that combines a Bootstrap 5-based MVC admin interface with Entity Framework Core 10 persistence using read-only SQLite databases, eliminating the need for SQL Server infrastructure. The solution is architecturally composed of modular layers—including an admin UI project, a repository/data access layer with EF Core abstractions, shared domain models, and a comprehensive MSTest unit test suite—all enforced with nullable reference types and XML documentation for type safety and maintainability. Its unique value proposition lies in its immutable, file-based SQLite approach with strict read-only mode enforcement, making it ideal for distributed survey applications where data integrity and portability are paramount without requiring heavyweight database servers. The tech stack spans C#, HTML, T-SQL, PowerShell, and TypeScript, with automated npm asset pipelines and DataTables integration providing a polished, responsive user interface without CDN dependencies. The project targets developers and organizations seeking lightweight, self-contained survey/inquiry platforms that can be deployed across multiple environments with minimal infrastructure overhead, particularly in scenarios where offline or distributed data persistence is beneficial. Though showing declining activity (4 commits in 90 days, 0 stars/forks), the codebase demonstrates mature engineering practices with comprehensive documentation, clear contribution guidelines, and well-organized specification tracking for ongoing feature development.
-
-**Created**: 2023-10-24
-**Last Modified**: 2026-03-30
 
 ---
 
@@ -893,10 +836,10 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 ## Report Metadata
 
-- **Generation Time**: 6.6 seconds
+- **Generation Time**: 8.6 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 90,944
+- **Total AI Tokens**: 88,879
 - **Success Rate**: 100.0%
 
 ### Data Sources
