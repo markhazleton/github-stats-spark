@@ -4,9 +4,7 @@ Complete documentation for Stats Spark - GitHub profile statistics and analysis 
 
 ## Documentation Ownership
 
-Primary user-facing guides live in this `documentation/` tree.
-
-Repository framework and planning artifacts live in `.documentation/`, including the project constitution, feature specs, task plans, and audit history.
+All project documentation lives in this `.documentation/` tree, consolidating user-facing guides, API reference, and framework planning artifacts.
 
 Approved README exceptions are linked here so contributors have a single entry point:
 - `frontend/README.md` for frontend contributor workflow details
@@ -30,8 +28,9 @@ Approved README exceptions are linked here so contributors have a single entry p
 - **[API Reference](api/api-reference.md)** - Developer documentation for core modules
 - **[Architecture Overview](architecture/README.md)** - System design and data flow
 - **[Changelog](CHANGELOG.md)** - Version history and release notes
-- **[Testing](TESTING.md)** - Test coverage and quality metrics
-- **Framework Artifacts** - See `.documentation/` for constitution, feature specs, task plans, and audit history
+- **[Testing](guides/TESTING.md)** - Test coverage and quality metrics
+- **[Constitution](memory/constitution.md)** - Non-negotiable project principles
+- **[Feature Specs](specs/)** - Feature specifications and task plans
 
 ## 🎯 Common Tasks
 

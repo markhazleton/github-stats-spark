@@ -46,11 +46,11 @@ Single script to run the complete 4-phase pipeline:
 ### 3. Reorganized Documentation ✅
 
 **Moved**:
-- `REFACTOR_PLAN.md` → [documentation/development/REFACTOR_PLAN.md](documentation/development/REFACTOR_PLAN.md)
+- `REFACTOR_PLAN.md` → [.documentation/development/REFACTOR_PLAN.md](REFACTOR_PLAN.md)
 
 **Created**:
-- [documentation/guides/unified-pipeline.md](documentation/guides/unified-pipeline.md) - Complete pipeline guide
-- [documentation/quickstart/QUICK_REFERENCE.md](../quickstart/QUICK_REFERENCE.md) - One-page command reference
+- [.documentation/guides/unified-pipeline.md](../guides/unified-pipeline.md) - Complete pipeline guide
+- [.documentation/quickstart/QUICK_REFERENCE.md](../quickstart/QUICK_REFERENCE.md) - One-page command reference
 
 **Updated**:
 - [README.md](README.md) - New quick start section with PowerShell script
@@ -168,10 +168,9 @@ Test-Path output\reports\markhazleton-analysis.md
 github-stats-spark/
 ├── README.md                           # Project overview + quick start
 ├── run-spark.ps1                       # Unified execution script
-├── documentation/
+├── .documentation/
 │   ├── quickstart/
 │   │   └── QUICK_REFERENCE.md         # One-page command reference
-├── documentation/
 │   ├── guides/
 │   │   ├── unified-pipeline.md        # Complete pipeline guide
 │   │   ├── getting-started.md         # First-time setup
@@ -231,7 +230,7 @@ spark unified --user markhazleton --include-ai-summaries
 
 ### For Developers
 
-1. Review [unified-pipeline.md](documentation/guides/unified-pipeline.md)
+1. Review [unified-pipeline.md](../guides/unified-pipeline.md)
 2. Test with verbose logging to understand flow
 3. Customize `config/spark.yml` for your needs
 4. Add new visualizations or metrics as needed
@@ -241,9 +240,9 @@ spark unified --user markhazleton --include-ai-summaries
 
 ### Created
 - `run-spark.ps1` (273 lines)
-- `documentation/guides/unified-pipeline.md` (397 lines)
-- `documentation/quickstart/QUICK_REFERENCE.md` (125 lines)
-- `documentation/development/REFACTOR_PLAN.md` (moved)
+- `.documentation/guides/unified-pipeline.md` (397 lines)
+- `.documentation/quickstart/QUICK_REFERENCE.md` (125 lines)
+- `.documentation/development/REFACTOR_PLAN.md` (moved)
 
 ### Modified
 - `README.md` (updated Quick Start section)
@@ -264,7 +263,7 @@ All changes comply with project constitution:
 ✅ **Observable**: Enhanced logging throughout  
 ✅ **Performance**: <5 min for <500 repos  
 ✅ **Accuracy**: <1% discrepancy vs GitHub  
-✅ **Documentation**: All docs in `/documentation`  
+✅ **Documentation**: All docs in `/.documentation`  
 ✅ **Demo Account**: Uses `markhazleton` examples  
 ✅ **Versioning**: Semantic versioning maintained  
 
@@ -272,4 +271,4 @@ All changes comply with project constitution:
 
 - **Issues**: https://github.com/markhazleton/github-stats-spark/issues
 - **Discussions**: https://github.com/markhazleton/github-stats-spark/discussions
-- **Documentation**: [documentation/README.md](documentation/README.md)
+- **Documentation**: [.documentation/README.md](../README.md)

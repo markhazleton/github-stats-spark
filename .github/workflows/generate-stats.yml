@@ -35,7 +35,7 @@ on:
     paths-ignore:
       - '**.md'
       - 'docs/**'
-      - 'documentation/**'
+      - '.documentation/**'
       - '.gitignore'
       - 'LICENSE'
 

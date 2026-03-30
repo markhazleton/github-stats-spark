@@ -127,10 +127,10 @@ dashboard:
 
 ## Documentation
 
-- **Full Guide**: [documentation/guides/unified-pipeline.md](documentation/guides/unified-pipeline.md)
-- **Getting Started**: [documentation/guides/getting-started.md](documentation/guides/getting-started.md)
-- **Configuration**: [documentation/guides/configuration.md](documentation/guides/configuration.md)
-- **API Reference**: [documentation/api/api-reference.md](documentation/api/api-reference.md)
+- **Full Guide**: [unified-pipeline.md](../guides/unified-pipeline.md)
+- **Getting Started**: [getting-started.md](../guides/getting-started.md)
+- **Configuration**: [configuration.md](../guides/configuration.md)
+- **API Reference**: [api-reference.md](../api/api-reference.md)
 
 ## Support
 

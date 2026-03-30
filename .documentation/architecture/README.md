@@ -343,7 +343,7 @@ These documents should be updated when:
 
 ## Appendix: File Locations
 
-All documentation is located in: `documentation/`
+All documentation is located in: `.documentation/`
 
 - `architecture/README.md` - This file (index and navigation)
 - `architecture/DASHBOARD_BUILD_PIPELINE.md` - Complete architecture design

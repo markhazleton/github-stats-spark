@@ -1,6 +1,6 @@
 # Generated Output Metadata
 
-This README is an approved metadata exception for generated `output/` artifacts. It describes the SVG output surface; primary user-facing guides live under `documentation/`.
+This README is an approved metadata exception for generated `output/` artifacts. It describes the SVG output surface; primary user-facing guides live under `.documentation/`.
 
 This directory contains the automatically generated SVG statistics visualizations.
 

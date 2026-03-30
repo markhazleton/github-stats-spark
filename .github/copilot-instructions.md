@@ -190,7 +190,7 @@ spark cache --clear  # Or delete .cache/ directory
 - **Don't** hardcode usernames in config (use CLI args or env vars)
 - **Don't** ignore rate limit errors (workflow handles automatically with cache)
 - **Don't** classify `docs/` as stale documentation in harvest/release/archive prompts; it is a publishing source directory for GitHub Pages
-- **Don't** add new primary user guides outside `/documentation`; approved exceptions in this repo are the root `README.md`, `.documentation/` framework artifacts, and metadata READMEs under `frontend/`, `frontend/public/`, `docs/`, and `output/`
+- **Don't** add new primary user guides outside `/.documentation`; approved exceptions in this repo are the root `README.md` and metadata READMEs under `frontend/`, `frontend/public/`, `docs/`, and `output/`
 
 ## Key Files Reference
 
@@ -215,12 +215,12 @@ spark cache --clear  # Or delete .cache/ directory
 8. **Themes**: WCAG AA contrast compliance (4.5:1 for text)
 9. **Demo Account**: Use `markhazleton` for all examples
 10. **Versioning**: Semantic versioning (breaking config = MAJOR, new features = MINOR, fixes = PATCH)
-11. **Documentation Location**: Primary user-facing Markdown documentation MUST live in `/documentation`; approved exceptions are the root README plus explicit metadata/framework surfaces in `.documentation/`, `frontend/README.md`, `frontend/public/README.md`, `docs/README.md`, and `output/README.md`
+11. **Documentation Location**: Primary user-facing Markdown documentation MUST live in `/.documentation`; approved exceptions are the root README plus metadata READMEs under `frontend/`, `frontend/public/`, `docs/`, and `output/`
 
 ## Documentation Locations
 
-- User guides: [documentation/guides/](documentation/guides/)
-- API reference: [documentation/api/api-reference.md](documentation/api/api-reference.md)
+- User guides: [.documentation/guides/](.documentation/guides/)
+- API reference: [.documentation/api/api-reference.md](.documentation/api/api-reference.md)
 - Feature specs and planning artifacts: [.documentation/specs/](.documentation/specs/)
 - Frontend docs: [frontend/README.md](frontend/README.md)
 - GitHub Pages publish source (not documentation corpus): [docs/](docs/)

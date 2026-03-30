@@ -1,6 +1,6 @@
 # GitHub Stats Spark - Dashboard Frontend
 
-This README is an approved contributor-focused exception to the primary `documentation/` tree. Use `documentation/README.md` for the main project documentation index, and use this file for frontend workspace setup and build details.
+This README is an approved contributor-focused exception to the primary `.documentation/` tree. Use `.documentation/README.md` for the main project documentation index, and use this file for frontend workspace setup and build details.
 
 Interactive React dashboard for visualizing and comparing GitHub repository statistics.
 
