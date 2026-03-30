@@ -76,7 +76,7 @@ jobs:
         run: |
           pip-audit --strict --desc || echo "⚠️ pip-audit found vulnerabilities (non-blocking)"
 
-        - name: Enforce Core Module Coverage Gate
+      - name: Enforce Core Module Coverage Gate
         if: ${{ github.event_name == 'push' }}
         run: |
           pytest --cov=spark --cov-report=json:coverage.json --cov-report=term-missing:skip-covered -q
