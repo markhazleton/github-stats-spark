@@ -27,18 +27,6 @@ on:
         default: false
         type: boolean
 
-  # Trigger on push to main branch (for testing)
-  push:
-    branches:
-      - main
-      - 001-stats-spark
-    paths-ignore:
-      - '**.md'
-      - 'docs/**'
-      - '.documentation/**'
-      - '.gitignore'
-      - 'LICENSE'
-
 permissions:
   contents: write  # Required to commit generated SVGs
 
@@ -68,56 +56,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install -r requirements-dev.txt
           pip install -e .
-
-      - name: Security audit (Python dependencies)
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          pip-audit --strict --desc || echo "⚠️ pip-audit found vulnerabilities (non-blocking)"
-
-      - name: Enforce Core Module Coverage Gate
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          pytest --cov=spark --cov-report=json:coverage.json --cov-report=term-missing:skip-covered -q
-          python - <<'PY'
-          import json
-          import sys
-
-          threshold = 80.0
-          targets = [
-            "src/spark/calculator.py",
-            "src/spark/visualizer.py",
-            "src/spark/fetcher.py",
-            "src/spark/cache.py",
-            "src/spark/summarizer.py",
-            "src/spark/unified_report_workflow.py",
-            "src/spark/ranker.py",
-          ]
-
-          with open("coverage.json", "r", encoding="utf-8") as fh:
-            payload = json.load(fh)
-
-          files = payload.get("files", {})
-          failures = []
-
-          for path in targets:
-            metrics = files.get(path)
-            if not metrics:
-              failures.append((path, "missing"))
-              continue
-            percent = float(metrics.get("summary", {}).get("percent_covered", 0.0))
-            if percent < threshold:
-              failures.append((path, f"{percent:.1f}%"))
-
-          if failures:
-            print("Core coverage gate failed (<80%):")
-            for path, value in failures:
-              print(f" - {path}: {value}")
-            sys.exit(1)
-
-          print("Core coverage gate passed for all target modules.")
-          PY
 
       - name: Restore CI cache
         uses: actions/cache@v4
