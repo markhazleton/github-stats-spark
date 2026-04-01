@@ -1,11 +1,11 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-03-30 11:25:11 UTC
+**Generated**: 2026-04-01 04:57:56 UTC
 **Report Version**: 1.0.0
-**Repositories Analyzed**: 37
-**AI Summary Rate**: 35.1%
+**Repositories Analyzed**: 32
+**AI Summary Rate**: 31.2%
 
-> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-37-repositories) | [Metadata](#report-metadata)
+> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-32-repositories) | [Metadata](#report-metadata)
 
 ---
 
@@ -33,13 +33,28 @@
 
 ---
 
-## Top 37 Repositories
+## Top 32 Repositories
 
-### #1. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
+### #1. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
 
-Stars: 0 | Forks: 0 | Language: Python | 188 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 75 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 12317 KB | 🚀 62.7 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 2672 KB | 🚀 25.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+**Drop-in HttpClient wrapper with Polly resilience, response caching, and OpenTelemetry for .NET 8-10 LTS APIs—configured in one line** Built with C#. Actively maintained with regular updates.
+
+**Created**: 2025-05-03
+**Last Modified**: 2026-03-31
+
+---
+
+### #2. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
+
+Stars: 0 | Forks: 0 | Language: Python | 175 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 14085 KB | 🚀 58.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -53,7 +68,7 @@ Stars: 0 | Forks: 0 | Language: Python | 188 commits (90d)
 
 ---
 
-### #2. [mark-hazleton-s-notes](https://github.com/markhazleton/mark-hazleton-s-notes)
+### #3. [mark-hazleton-s-notes](https://github.com/markhazleton/mark-hazleton-s-notes)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 137 commits (90d)
 
@@ -71,7 +86,7 @@ Personal site for Mark Hazleton, a Technical Solutions Architect. The site combi
 
 ---
 
-### #3. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
+### #4. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
 
 Stars: 0 | Forks: 0 | Language: Python | 77 commits (90d)
 
@@ -86,7 +101,7 @@ Stars: 0 | Forks: 0 | Language: Python | 77 commits (90d)
 
 ---
 
-### #4. [UISampleSpark](https://github.com/markhazleton/UISampleSpark)
+### #5. [UISampleSpark](https://github.com/markhazleton/UISampleSpark)
 
 Stars: 8 | Forks: 4 | Language: HTML | 86 commits (90d)
 
@@ -101,26 +116,29 @@ A .NET 10 (ASP.NET Core) application exploring multiple front-end technologies f
 
 ---
 
-### #5. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
+### #6. [git-spark](https://github.com/markhazleton/git-spark)
 
-Stars: 0 | Forks: 0 | Language: C# | 49 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 37 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 2405 KB | 🚀 16.3 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 1256 KB | 🚀 12.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-**Drop-in HttpClient wrapper with Polly resilience, response caching, and OpenTelemetry for .NET 8-10 LTS APIs—configured in one line** Built with C#. Actively maintained with regular updates.
+**Analyze commit patterns and contributor activity with interactive reports** Built with TypeScript. Actively maintained with regular updates.
 
-**Created**: 2025-05-03
-**Last Modified**: 2026-03-17
+**Technology Stack Currency**: ✅ 96/100
+**Dependencies**: 19 total (17 current, 2 outdated)
+
+**Created**: 2025-09-29
+**Last Modified**: 2026-03-30
 
 ---
 
-### #6. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
+### #7. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 47 commits (90d)
 
-👥 0 contributors | 🌐 8 languages | 💾 4687 KB | 🚀 15.7 commits/month
+👥 0 contributors | 🌐 8 languages | 💾 4933 KB | 🚀 15.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -134,41 +152,26 @@ Stars: 0 | Forks: 0 | Language: TypeScript | 47 commits (90d)
 
 ---
 
-### #7. [git-spark](https://github.com/markhazleton/git-spark)
+### #8. [RequestSpark](https://github.com/markhazleton/RequestSpark)
 
-Stars: 0 | Forks: 0 | Language: TypeScript | 30 commits (90d)
+Stars: 2 | Forks: 1 | Language: C# | 46 commits (90d)
 
-👥 0 contributors | 🌐 1 languages | 💾 2012 KB | 🚀 10.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-A Git Reporting tool  Written in TypeScript. 30 commits in the last 90 days.
-
-**Created**: 2025-09-29
-**Last Modified**: 2026-03-30
-
----
-
-### #8. [RESTRunner](https://github.com/markhazleton/RESTRunner)
-
-Stars: 2 | Forks: 1 | Language: C# | 38 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 1031 KB | 🚀 12.7 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 947 KB | 🚀 15.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![License](https://img.shields.io/github/license/markhazleton/RESTRunner)](https://github.com/markhazleton/RESTRunner/blob/main/LICENSE) [![GitHub Issues](https://img.shields.io/github/issu Built with C#. Actively maintained with regular updates.
+[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![License](https://img.shields.io/github/license/markhazleton/RequestSpark)](https://github.com/markhazleton/RequestSpark/blob/main/LICENSE) [![GitHub Issues](https://img.shields.io/github/ Built with C#. Key features: **Postman Collection Integration**: Import and execute existing Postman collections, **Automated Regression Testing**: Run comprehensive API test suites automatically, **Performance Analysis**: Compare response times across multiple API instances. Actively maintained with regular updates.
 
 **Created**: 2021-09-30
-**Last Modified**: 2026-03-26
+**Last Modified**: 2026-03-31
 
 ---
 
 ### #9. [ReactSparkPortfolio](https://github.com/markhazleton/ReactSparkPortfolio)
 
-Stars: 0 | Forks: 0 | Language: CSS | 31 commits (90d)
+Stars: 0 | Forks: 0 | Language: CSS | 33 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 44427 KB | 🚀 10.3 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 42270 KB | 🚀 11.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -301,7 +304,22 @@ Stars: 0 | Forks: 0 | Language: C# | 29 commits (90d)
 
 ---
 
-### #17. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
+### #17. [DataSpark](https://github.com/markhazleton/DataSpark)
+
+Stars: 0 | Forks: 0 | Language: HTML | 19 commits (90d)
+
+👥 0 contributors | 🌐 5 languages | 💾 2075 KB | 🚀 6.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build](https://img.shields.io/github/actions/workflow/status/markhazleton/DataSpark/ci.yml?branch=main)](https://github.com/markhazleton/DataSpark/actions) [![Coverage](https://img.shield Built with HTML. Key features: Discover SQLite database files in a directory., Export all tables or a filtered list to CSV., Generate schema reports (text, JSON, Markdown).. Actively maintained with regular updates.
+
+**Created**: 2017-11-06
+**Last Modified**: 2026-04-01
+
+---
+
+### #18. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
 
 Stars: 0 | Forks: 0 | Language: PowerShell | 18 commits (90d)
 
@@ -315,11 +333,11 @@ Stars: 0 | Forks: 0 | Language: PowerShell | 18 commits (90d)
 **Dependencies**: 49 total (49 current, 0 outdated)
 
 **Created**: 2025-07-26
-**Last Modified**: 2026-03-30
+**Last Modified**: 2026-03-31
 
 ---
 
-### #18. [InquirySpark](https://github.com/markhazleton/InquirySpark)
+### #19. [InquirySpark](https://github.com/markhazleton/InquirySpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 9 commits (90d)
 
@@ -334,22 +352,25 @@ Spark Your Inquiry, Ignite Insights. Built with C#. Maintained project with peri
 
 ---
 
-### #19. [sql2csv](https://github.com/markhazleton/sql2csv)
+### #20. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
 
-Stars: 0 | Forks: 0 | Language: C# | 6 commits (90d)
+Stars: 0 | Forks: 0 | Language: SCSS | 7 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 2078 KB | 🚀 2.0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 156 KB | 🚀 2.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build](https://img.shields.io/github/actions/workflow/status/markhazleton/sql2csv/ci.yml?branch=main)](https://github.com/markhazleton/sql2csv/actions) [![Coverage](https://img.shields.io Built with C#. Key features: Discover SQLite database files in a directory., Export all tables or a filtered list to CSV., Generate schema reports (text, JSON, Markdown).. Maintained project with periodic updates.
+[![Deploy Jekyll site to Pages](https://github.com/markhazleton/markhazleton.github.io/actions/workflows/jekyll.yml/badge.svg)](https://github.com/markhazleton/markhazleton.github.io/actions/workflows/jekyll.yml) [![Ruby](https://img.shields.io/badge/Ruby-3.2.2-red.svg)](https://www.ruby-lang.org/)  Built with SCSS. Maintained project with periodic updates.
 
-**Created**: 2017-11-06
-**Last Modified**: 2026-01-12
+**Technology Stack Currency**: ✅ 56/100
+**Dependencies**: 3 total (2 current, 1 outdated)
+
+**Created**: 2021-04-18
+**Last Modified**: 2026-04-01
 
 ---
 
-### #20. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
+### #21. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
 
 Stars: 0 | Forks: 0 | Language: PHP | 6 commits (90d)
 
@@ -367,7 +388,7 @@ Stars: 0 | Forks: 0 | Language: PHP | 6 commits (90d)
 
 ---
 
-### #21. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+### #22. [TeachSpark](https://github.com/markhazleton/TeachSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 13 commits (90d)
 
@@ -385,7 +406,7 @@ Stars: 0 | Forks: 0 | Language: C# | 13 commits (90d)
 
 ---
 
-### #22. [markhazleton](https://github.com/markhazleton/markhazleton)
+### #23. [markhazleton](https://github.com/markhazleton/markhazleton)
 
 Stars: 0 | Forks: 0 | Language: Unknown | 15 commits (90d)
 
@@ -397,24 +418,6 @@ Stars: 0 | Forks: 0 | Language: Unknown | 15 commits (90d)
 
 **Created**: 2021-04-17
 **Last Modified**: 2026-03-20
-
----
-
-### #23. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
-
-Stars: 0 | Forks: 0 | Language: SCSS | 1 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 152 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![Deploy Jekyll site to Pages](https://github.com/markhazleton/markhazleton.github.io/actions/workflows/jekyll.yml/badge.svg)](https://github.com/markhazleton/markhazleton.github.io/actions/workflows/jekyll.yml) [![Ruby](https://img.shields.io/badge/Ruby-3.2.2-red.svg)](https://www.ruby-lang.org/)  Built with SCSS. Maintained project with periodic updates.
-
-**Technology Stack Currency**: ✅ 56/100
-**Dependencies**: 3 total (2 current, 1 outdated)
-
-**Created**: 2021-04-18
-**Last Modified**: 2026-01-12
 
 ---
 
@@ -431,7 +434,7 @@ Stars: 2 | Forks: 1 | Language: HTML | 1 commits (90d)
 **FastEndpointApi** is a comprehensive demonstration and educational project showcasing the FastEndpoints framework—a lightweight, high-performance REST API framework for ASP.NET Core that implements the REPR (Request-Endpoint-Response) pattern. The repository contains a fully functional Person Management API deployed to Azure, featuring complete CRUD operations, in-memory data persistence, service layer abstraction, and interactive Swagger documentation. Built with .NET 10.0 and FastEndpoints 7.1.1, the project leverages modern technologies including dependency injection, automatic request-response mapping, HATEOAS hypermedia links, and GitHub Actions CI/CD pipelines for automated deployment. The architecture emphasizes clean code principles and minimal boilerplate through endpoint-based organization rather than traditional MVC controllers, with integrated data seeding via Bogus and a Bootstrap 5-based HTML frontend for interactive API testing. This repository serves as both a learning resource and production-ready reference implementation for developers seeking to understand FastEndpoints' capabilities, particularly those looking to streamline ASP.NET Core API development while maintaining separation of concerns and high performance standards. The project is actively maintained with comprehensive documentation, live demo accessibility, and clear examples of advanced patterns like HATEOAS implementation and structured error handling.
 
 **Created**: 2024-04-06
-**Last Modified**: 2026-01-12
+**Last Modified**: 2026-03-30
 
 ---
 
@@ -457,43 +460,7 @@ The project demonstrates production-ready best practices including comprehensive
 
 ---
 
-### #26. [DataAnalysisDemo](https://github.com/markhazleton/DataAnalysisDemo)
-
-Stars: 0 | Forks: 0 | Language: Visual Basic .NET | 0 commits (90d)
-
-👥 0 contributors | 🌐 8 languages | 💾 12992 KB | 🚀 0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.NET Framework](https://img.shields.io/badge/.NET%20Framework-4.8-blue.svg)](https://dotnet.microsoft.com/download/dotnet-framework) [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3 Built with Visual Basic .NET. Maintained project with periodic updates.
-
-**Technology Stack Currency**: ✅ 77/100
-**Dependencies**: 24 total (10 current, 14 outdated)
-
-**Created**: 2023-04-20
-**Last Modified**: 2025-12-03
-
----
-
-### #27. [ConcurrentProcessing](https://github.com/markhazleton/ConcurrentProcessing)
-
-Stars: 0 | Forks: 0 | Language: C# | 2 commits (90d)
-
-👥 0 contributors | 🌐 2 languages | 💾 145 KB | 🚀 0.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![.NET Build and Test](https://github.com/markhazleton/ConcurrentProcessing/actions/workflows/dotnet.yml/badge.svg)](https://github.com/markhazleton/ConcurrentProcessing/actions/workflows/dotnet.yml) [![Release](https://github.com/markhazleton/ConcurrentProcessing/actions/workflows/release.yml/badg Built with C#. Maintained project with periodic updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 2 total (2 current, 0 outdated)
-
-**Created**: 2023-09-18
-**Last Modified**: 2026-01-22
-
----
-
-### #28. [WebSpark.ArtSpark](https://github.com/markhazleton/WebSpark.ArtSpark)
+### #26. [WebSpark.ArtSpark](https://github.com/markhazleton/WebSpark.ArtSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 7 commits (90d)
 
@@ -510,7 +477,7 @@ Stars: 0 | Forks: 0 | Language: C# | 7 commits (90d)
 
 ---
 
-### #29. [AsyncSpark](https://github.com/markhazleton/AsyncSpark)
+### #27. [AsyncSpark](https://github.com/markhazleton/AsyncSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 9 commits (90d)
 
@@ -527,7 +494,7 @@ AsyncSpark is a production-ready reference implementation demonstrating enterpri
 
 ---
 
-### #30. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
+### #28. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
 
 Stars: 0 | Forks: 0 | Language: HTML | 5 commits (90d)
 
@@ -546,28 +513,7 @@ The architecture emphasizes production-readiness with comprehensive error handli
 
 ---
 
-### #31. [TaskListProcessor](https://github.com/markhazleton/TaskListProcessor)
-
-Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
-
-👥 0 contributors | 🌐 3 languages | 💾 1070 KB | 🚀 4.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# TaskListProcessor - Technical Summary
-
-**TaskListProcessor** is an enterprise-grade .NET 10.0 library designed for orchestrating complex asynchronous operations with production-ready resilience, observability, and scheduling capabilities. The library provides a comprehensive framework for coordinating concurrent tasks—such as API calls, database queries, and microservice interactions—while maintaining fault isolation through circuit breaker patterns, comprehensive telemetry via OpenTelemetry integration, and advanced scheduling with dependency resolution and priority-based execution.
-
-The project implements sophisticated architectural patterns including dependency injection integration with .NET's native DI container, the decorator pattern for pluggable cross-cutting concerns, interface segregation following SOLID principles, and thread-safe concurrent processing with configurable concurrency limits and load balancing. Key capabilities encompass type-safe result handling with categorized error management, task dependency resolution with topological sorting, streaming results via async enumerables, timeout/cancellation support, and health check monitoring—all backed by rich telemetry for metrics, tracing, and structured logging compatible with Serilog and Microsoft.Extensions.Logging.
-
-The codebase is primarily C# (94.4%) with supporting PowerShell and Python tooling, demonstrates active development with 31 commits over the past year and accelerating momentum, and is positioned as a pre-release NuGet package targeting developers building high-throughput, fault-tolerant systems in microservices, data processing pipelines, and distributed applications. The project differentiates itself through enterprise-grade patterns, comprehensive documentation across multiple learning paths (beginner to advanced), practical examples including an interactive web demo, and production-focused guidance on performance tuning, memory optimization, and battle-tested architectural strategies.
-
-**Created**: 2023-11-09
-**Last Modified**: 2026-01-12
-
----
-
-### #32. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
+### #29. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -584,7 +530,7 @@ Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #33. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
+### #30. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
 
 Stars: 0 | Forks: 0 | Language: Python | 2 commits (90d)
 
@@ -604,54 +550,7 @@ DocSpecSpark is a document-first framework and CLI tool that automates the initi
 
 ---
 
-### #34. [HttpClientDecoratorPattern](https://github.com/markhazleton/HttpClientDecoratorPattern)
-
-Stars: 0 | Forks: 0 | Language: HTML | 1 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 2675 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-# Technical Summary: HttpClientDecoratorPattern
-
-## Overview & Purpose
-This repository is a production-ready implementation and reference guide for the Decorator Design Pattern applied to .NET HttpClient operations, published as the [WebSpark.HttpClientUtility](https://www.nuget.org/packages/WebSpark.HttpClientUtility/) NuGet package. It demonstrates how to elegantly compose cross-cutting concerns (telemetry, caching, resilience) around HTTP requests while maintaining clean architecture, testability, and SOLID principles.
-
-## Key Features & Capabilities
-The project implements a sophisticated decorator chain architecture that layers multiple concerns: a **Telemetry Decorator** for structured logging and performance metrics; a **Cache Decorator** for smart memory caching with configurable TTL and hit/miss tracking; and a **Polly Decorator** providing circuit breaker and retry policies with exponential backoff. The solution includes a responsive ASP.NET Core demonstration web application with real-world API integrations (NASA, Art Institute, Joke API) and advanced features like domain crawling with SignalR real-time updates, concurrent request throttling via SemaphoreSlim, and 26+ Bootswatch theme integration for modern UI presentation.
-
-## Technology Stack & Architecture
-Built on **.NET 10** with **C#**, **HTML/CSS**, and **JavaScript**, the project leverages **ASP.NET Core** for the web interface, **Polly** for resilience policies, **Serilog** for structured logging, **dependency injection** patterns, and **SignalR** for real-time communications. The architecture employs the Decorator Pattern through a composable chain where each decorator wraps `IHttpRequestResultService`, enabling clean separation of concerns and easy addition of new functionality without modifying existing code.
-
-## What Makes It Unique
-Unlike monolithic HttpClient wrapper implementations, this pattern-based approach provides genuine extensibility through composition rather than inheritance, addresses enterprise concerns (correlation IDs for distributed tracing, detailed telemetry, performance optimization), and serves dual purposes as both a production-ready NuGet package and an interactive reference implementation with comprehensive live demonstration pages showcasing real-world scenarios.
-
-## Target Audience & Use Cases
-Ideal for enterprise .NET developers building microservices, distributed systems, or applications requiring robust HTTP communication with built-in observability, resilience, and caching—from financial systems requiring circuit breakers and retry logic to data-heavy applications benefiting from strategic caching and request throttling.
-
-**Created**: 2023-02-09
-**Last Modified**: 2026-01-12
-
----
-
-### #35. [Yelp.Api](https://github.com/markhazleton/Yelp.Api)
-
-Stars: 0 | Forks: 0 | Language: C# | 1 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 462 KB | 🚀 0.3 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-# Technical Summary: Yelp.Api
-
-**Yelp.Api** is a C# class library that provides a .NET wrapper for Yelp's v3 Fusion API, enabling developers to integrate comprehensive local business search and review functionality into .NET 6+ applications. The library abstracts the complexity of direct API calls by offering both simple convenience methods (e.g., `SearchBusinessesAllAsync()`) and advanced query capabilities through a `SearchRequest` object pattern, allowing developers to access business data, reviews, and information across over one million businesses in 32 countries. Built with C# (53.1%) as the primary language and supplemented with CSS, HTML, and a Dockerfile for deployment, the project follows a clean client-wrapper architecture pattern that hides HTTP communication details while exposing intuitive async/await-based methods for seamless integration into modern .NET applications. The codebase demonstrates good practices for API client libraries, including authentication via API key management through secrets files and support for both simple and parameterized search scenarios. While currently showing minimal GitHub visibility (0 stars/forks), the project maintains active development with recent commits and appears designed primarily for .NET developers seeking to leverage Yelp's business intelligence data without managing raw HTTP requests and JSON serialization. This library is particularly valuable for applications requiring location-based business discovery, ratings, and review aggregation features.
-
-**Created**: 2022-08-10
-**Last Modified**: 2026-01-12
-
----
-
-### #36. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
+### #31. [DecisionSpark](https://github.com/markhazleton/DecisionSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
@@ -668,7 +567,7 @@ Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
 
 ---
 
-### #37. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
+### #32. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
@@ -690,10 +589,10 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 ## Report Metadata
 
-- **Generation Time**: 7.2 seconds
+- **Generation Time**: 5.1 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 30,297
+- **Total AI Tokens**: 23,749
 - **Success Rate**: 100.0%
 
 ### Data Sources
@@ -711,4 +610,4 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2026-03-30*
+*Last updated: 2026-04-01*
