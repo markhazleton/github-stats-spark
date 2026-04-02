@@ -304,6 +304,18 @@ class UnifiedDataGenerator:
                    f"Unchanged: {refresh_summary.repos_unchanged}, "
                    f"API calls: {refresh_summary.api_calls_made} ({phase2_time:.2f}s)")
         
+        # PHASE 2b: Cache garbage collection — remove orphaned entries
+        try:
+            active_names = [r.get("name") for r in raw_repos if r.get("name")]
+            gc_result = self.cache.collect_garbage(self.username, active_names)
+            if gc_result["removed_repos"]:
+                logger.info(
+                    f"Cache GC: removed {len(gc_result['removed_repos'])} orphaned repos: "
+                    f"{', '.join(gc_result['removed_repos'])}"
+                )
+        except Exception as e:
+            logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
+
         # PHASE 3: Assemble data from cache
         logger.info("\n[Phase 3] Assembling Data from Cache")
         phase3_start = time()

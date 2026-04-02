@@ -243,3 +243,71 @@ class TestAPICacheOwnerOnly:
         cache = APICache(cache_dir=temp_cache_dir)
         # Should not raise
         cache.clear()
+
+
+class TestAPICacheCollectGarbage:
+    """Test collect_garbage() removes orphaned repository caches."""
+
+    @pytest.fixture
+    def temp_cache_dir(self):
+        temp_dir = tempfile.mkdtemp()
+        yield temp_dir
+        shutil.rmtree(temp_dir)
+
+    def test_removes_orphaned_repo(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("commits", "user", "data1", repo="active-repo", week="2026W01")
+        cache.set("commits", "user", "data2", repo="deleted-repo", week="2026W01")
+
+        result = cache.collect_garbage("user", ["active-repo"])
+
+        assert "deleted-repo" in result["removed_repos"]
+        assert result["removed_files"] >= 1
+        assert cache.get("commits", "user", repo="active-repo", week="2026W01") == "data1"
+        assert cache.get("commits", "user", repo="deleted-repo", week="2026W01") is None
+
+    def test_preserves_global_cache(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("profile", "user", {"name": "test"})
+        cache.set("commits", "user", "data", repo="my-repo", week="2026W01")
+
+        result = cache.collect_garbage("user", ["my-repo"])
+
+        assert result["removed_repos"] == []
+        assert cache.get("profile", "user") == {"name": "test"}
+
+    def test_removes_renamed_repo(self, temp_cache_dir):
+        """Simulates RESTRunner -> RequestSpark rename."""
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("commits", "user", "old", repo="RESTRunner", week="2026W01")
+        cache.set("commits", "user", "new", repo="RequestSpark", week="2026W01")
+
+        result = cache.collect_garbage("user", ["RequestSpark"])
+
+        assert "RESTRunner" in result["removed_repos"]
+        assert cache.get("commits", "user", repo="RequestSpark", week="2026W01") == "new"
+        assert cache.get("commits", "user", repo="RESTRunner", week="2026W01") is None
+
+    def test_no_orphans(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("commits", "user", "data", repo="repo1", week="2026W01")
+
+        result = cache.collect_garbage("user", ["repo1"])
+
+        assert result["removed_repos"] == []
+        assert result["removed_files"] == 0
+
+    def test_empty_cache(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        result = cache.collect_garbage("user", ["repo1"])
+        assert result["removed_repos"] == []
+
+    def test_cleans_manifest_entries(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("commits", "user", "data", repo="gone-repo", week="2026W01")
+        cache.set("readme", "user", "text", repo="gone-repo", week="2026W01")
+
+        cache.collect_garbage("user", [])
+
+        assert cache.get_entry_info("commits", "user", repo="gone-repo") is None
+        assert cache.get_entry_info("readme", "user", repo="gone-repo") is None

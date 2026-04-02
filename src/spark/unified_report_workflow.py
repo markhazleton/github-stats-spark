@@ -135,6 +135,27 @@ class UnifiedReportWorkflow:
                 cause=e
             ) from e
 
+        # Stage 1b: Cache garbage collection — remove orphaned entries
+        try:
+            active_names = [r.name for r in github_data.repositories]
+            gc_result = self.cache.collect_garbage(username, active_names)
+            if gc_result["removed_repos"]:
+                self.logger.info(
+                    f"Cache GC removed {len(gc_result['removed_repos'])} orphaned repos: "
+                    f"{', '.join(gc_result['removed_repos'])}"
+                )
+            # Clean orphaned screenshot files
+            screenshots_dir = self.output_dir / "screenshots"
+            if screenshots_dir.exists():
+                active_set = set(active_names)
+                for png in screenshots_dir.glob("*.png"):
+                    repo_name = png.stem
+                    if repo_name not in active_set:
+                        png.unlink()
+                        self.logger.info(f"Cache GC: removed orphaned screenshot '{png.name}'")
+        except Exception as e:
+            self.logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
+
         # Stage 2: Generate SVGs (OPTIONAL - FR-011)
         available_svgs = []
         try:

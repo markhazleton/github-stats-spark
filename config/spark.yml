@@ -138,8 +138,11 @@ dashboard:
     # Include AI-generated summaries (from unified report)
     include_ai_summaries: true
 
+    # Max commits to fetch per repository
+    max_commits_per_repo: 500
+
     # Max repositories to include in dashboard
-    max_repositories: 200
+    max_repositories: 50
 
   # Performance optimization settings
   performance:
