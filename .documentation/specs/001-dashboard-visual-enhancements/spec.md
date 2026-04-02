@@ -118,11 +118,11 @@ A visitor evaluating repository health wants to see a "bus factor" metric that i
 
 ### Functional Requirements
 
-- **FR-001**: Dashboard MUST render an interactive 52-week contribution heatmap calendar from existing commit timestamp data in `repositories.json`.
+- **FR-001**: Dashboard MUST render an interactive trailing-365-day contribution heatmap calendar (7 rows × up to 53 columns) from existing commit timestamp data in `repositories.json`.
 - **FR-002**: Dashboard MUST display a multi-series timeline chart showing weekly commit counts and active repository counts, with toggleable datasets.
 - **FR-003**: Dashboard MUST include a persistent dark/light mode toggle that respects system preference as default and stores choice in localStorage.
 - **FR-004**: Dashboard MUST provide one-click export of repository data in both JSON and CSV formats, respecting any active filters.
-- **FR-005**: Python backend MUST gather per-repository commit stats (total additions, total deletions) from the GitHub API when available, with graceful fallback when rate-limited.
+- **FR-005**: Python backend MUST gather per-repository commit stats (total additions, total deletions) from the GitHub API when available, using timestamped logging, exponential backoff, and graceful fallback when rate-limited.
 - **FR-006**: Dashboard MUST display commit volume metrics (lines added, lines deleted, net change) per repository and in aggregate.
 - **FR-007**: Python backend MUST calculate a bus factor metric (minimum contributors for 50% of commits) per repository from available contributor/commit data.
 - **FR-008**: Dashboard MUST display bus factor with color-coded health indicators (red/orange/green).
@@ -158,6 +158,7 @@ A visitor evaluating repository health wants to see a "bus factor" metric that i
 - The `commits_by_day` dictionary (mapping `"YYYY-MM-DD"` → count) is already computed by `calculator.py` from per-repo commit lists and used for SVG heatmap generation. It will be persisted to `repositories.json` as `activity_calendar` to power both the interactive heatmap and timeline charts without additional API calls.
 - The GitHub API `GET /repos/{owner}/{repo}/stats/contributors` endpoint provides per-contributor weekly commit data, enabling bus factor calculation with 1 API call per repository.
 - Commit stats (additions/deletions) can be gathered via GitHub stats endpoints or sampled from recent commits, staying within rate limits by leveraging the existing pushed_at-based cache strategy.
+- The interactive heatmap uses a trailing 365-day dataset rendered as a 7-row grid with up to 53 week columns, matching the existing acceptance scenarios and JSON entity definitions.
 - The contribution heatmap will be implemented as a custom CSS Grid component (~100 lines JSX), avoiding any new frontend dependency. This aligns with the constitution's preference for standard solutions over external packages.
 - Users primarily view the dashboard on desktop browsers; mobile responsiveness is desirable but not a primary target for this iteration.
 - The existing `data/repositories.json` schema version can be incremented from 2.2.0 to 2.3.0 (minor, backward-compatible) to accommodate new optional fields.

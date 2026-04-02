@@ -5,7 +5,7 @@
 
 ## Summary
 
-Enhance the React dashboard with interactive visualizations (contribution heatmap calendar, multi-series activity timeline), a manual dark mode toggle, commit volume metrics, and bus factor indicators — all supplementing existing SVG outputs. The key architectural insight is that `commits_by_day` is already calculated in the Python backend but not persisted in the JSON export; exposing it (plus a few new fields) unlocks the highest-value frontend features with minimal backend changes.
+Enhance the React dashboard with interactive visualizations (trailing-365-day contribution heatmap calendar, multi-series activity timeline), a manual dark mode toggle, commit volume metrics, and bus factor indicators — all supplementing existing SVG outputs. The key architectural insight is that `commits_by_day` is already calculated in the Python backend but not persisted in the JSON export; exposing it (plus a few new fields) unlocks the highest-value frontend features with minimal backend changes.
 
 ## Technical Context
 
@@ -27,13 +27,13 @@ Enhance the React dashboard with interactive visualizations (contribution heatma
 |-----------|--------|-------|
 | **I. Single Responsibility** | PASS | New metrics added to calculator.py; new components are independent React files |
 | **II. Data Privacy** | PASS | Only public repos; no new data sources beyond public GitHub API |
-| **III. Fail Fast, Fail Loud** | PASS | Graceful degradation for missing stats; no silent failures |
+| **III. Fail Fast, Fail Loud** | PASS | Contributor/code-frequency fetches require timestamped degradation logs and explicit 1s/2s/4s/8s backoff before fallback |
 | **IV. Change-Driven Caching** | PASS | New API calls (contributor stats) cached via existing pushed_at strategy |
 | **V. Accessibility First** | PASS | Dark mode must meet WCAG AA; FR-012 explicitly requires 4.5:1 contrast |
 
 | Quality Gate | Status | Notes |
 |--------------|--------|-------|
-| Test Coverage >80% core | PASS | New calculator methods need tests; new components need Vitest tests |
+| Test Coverage >80% core | PASS | New calculator methods need tests; new components need explicit Vitest coverage tasks |
 | Execution <5 min | PASS | SC-010 limits additional time to 10%; contributor stats are 1 call/repo, cached |
 | Accuracy <1% | PASS | Bus factor is deterministic from contributor data |
 | Determinism | PASS | Same input → same output for all new metrics |
@@ -97,6 +97,12 @@ frontend/tests/
 ```
 
 **Structure Decision**: Dual-stack with backend modifications in `src/spark/` and frontend additions in `frontend/src/components/`. No new top-level directories needed.
+
+## Verification Focus
+
+- Frontend test coverage includes explicit Vitest tasks for `ContributionHeatmap`, `ActivityTimeline`, and `ThemeToggle`.
+- Dashboard verification includes heatmap load timing, theme-switch latency and layout stability, filtered export compatibility with spreadsheet tools, and representative manual bus-factor spot checks.
+- Backend verification confirms degraded API paths log clearly while preserving the existing unified-command runtime budget.
 
 ## Complexity Tracking
 
