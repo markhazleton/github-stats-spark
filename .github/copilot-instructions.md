@@ -13,7 +13,7 @@
 ### Primary Development Command (All-in-One)
 
 ```bash
-# Single command generates everything: data/repositories.json + SVGs + markdown reports
+# Single command generates everything: data/users/{username}/repositories.json + SVGs + markdown reports
 spark unified --user USERNAME --include-ai-summaries --verbose
 
 # Test locally before deployment
@@ -52,7 +52,7 @@ spark config --validate
 
 ### Deployment Flow
 
-1. Python generates `data/repositories.json` (unified data source)
+1. Python generates `data/users/{username}/repositories.json` (unified data source)
 2. Frontend builds to `docs/` directory (GitHub Pages serves from here)
 3. GitHub Actions workflow runs weekly, commits generated files
 
@@ -104,7 +104,7 @@ App.jsx (routing + state)
 ```
 
 **Data Contract:**
-Frontend expects `data/repositories.json` with schema version 2.0.0. Key fields:
+Frontend expects `data/users/{username}/repositories.json` with schema version 2.0.0. Key fields:
 
 - `repositories[]`: Array with `name`, `language`, `stars`, `commit_history`, `commit_metrics`, `tech_stack`, `ai_summary`
 - `profile`: User metadata (`username`, `total_commits`)
@@ -221,7 +221,7 @@ spark cache --clear  # Or delete .cache/ directory
 - [config/themes.yml](config/themes.yml) - Theme definitions (WCAG AA compliance required)
 - [frontend/src/App.jsx](frontend/src/App.jsx) - React app root with routing/state
 - [.github/workflows/generate-stats.yml](.github/workflows/generate-stats.yml) - CI/CD automation
-- [data/repositories.json](data/repositories.json) - Unified data contract between backend/frontend
+- [data/users/markhazleton/repositories.json](data/users/markhazleton/repositories.json) - Unified data contract between backend/frontend
 - [.documentation/memory/constitution.md](.documentation/memory/constitution.md) - Project constitution (NON-NEGOTIABLE rules)
 
 ## Constitutional Requirements (MUST Follow)

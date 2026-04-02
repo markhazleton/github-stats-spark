@@ -20,4 +20,4 @@ node_modules/**
 tests/fixtures/sample_readmes/**
 
 # Generated reports (may have long lines from data)
-output/reports/**
+output/users/**/reports/**
