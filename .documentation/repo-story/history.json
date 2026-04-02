@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-03-29T01:18:13.2271703+00:00",
+  "generated_at": "2026-04-02T22:07:56.6686836+00:00",
   "audit_parameters": {
     "months": 12,
     "scope": "full",
-    "compare_baseline": "2025-03",
-    "since_date": "2025-03-28",
-    "start_month": "2025-03",
-    "end_month": "2026-03"
+    "compare_baseline": "2025-04",
+    "since_date": "2025-04-02",
+    "start_month": "2025-04",
+    "end_month": "2026-04"
   },
   "repo": {
     "name": "github-stats-spark",
@@ -15,11 +15,11 @@
     "default_branch": "main"
   },
   "summary": {
-    "total_commits": 201,
-    "total_commits_in_window": 201,
+    "total_commits": 225,
+    "total_commits_in_window": 225,
     "total_contributors": 2,
     "total_tags": 0,
-    "history_span_days": 90
+    "history_span_days": 95
   },
   "timeline": {
     "first_commit": {
@@ -29,50 +29,55 @@
       "subject": "feat: Complete specification analysis and remediation for Stats Spark"
     },
     "latest_commit": {
-      "sha": "c374f3fa6782921d7c0ffdb7dc3adcb8cdddcd78",
-      "date": "2026-03-28T20:17:24-05:00",
+      "sha": "75be7c71d1ad4ecccedac422129a6a981a024703",
+      "date": "2026-04-02T17:02:03-05:00",
       "role": "Lead Architect",
-      "subject": "feat: Update SPECKIT_VERSION to 1.5.1 and adjust installation date; enhance harvest.ps1 for improved documentation classification; add repo-story context script and associated markdown files for comprehensive repository analysis"
+      "subject": "devspark.harvest results"
     },
     "commits_by_year": {
-      "2026": 168,
+      "2026": 192,
       "2025": 33
     },
     "commits_by_month": {
-      "2025-12": 33,
       "2026-01": 113,
       "2026-02": 18,
-      "2026-03": 37
+      "2026-03": 47,
+      "2025-12": 33,
+      "2026-04": 14
     }
   },
   "contributors": {
     "top": [
       {
         "role": "Lead Architect",
-        "commits": 144
+        "commits": 165
       },
       {
         "role": "Developer A",
-        "commits": 57
+        "commits": 60
       }
     ],
     "all_count": 2,
     "monthly_by_role": {
-      "2025-12": {
-        "Developer A": 12,
-        "Lead Architect": 21
-      },
       "2026-01": {
         "Developer A": 23,
         "Lead Architect": 90
+      },
+      "2025-12": {
+        "Developer A": 12,
+        "Lead Architect": 21
       },
       "2026-02": {
         "Developer A": 9,
         "Lead Architect": 9
       },
       "2026-03": {
-        "Developer A": 13,
-        "Lead Architect": 24
+        "Developer A": 15,
+        "Lead Architect": 32
+      },
+      "2026-04": {
+        "Developer A": 1,
+        "Lead Architect": 13
       }
     }
   },
@@ -80,83 +85,84 @@
     "role_assignments": [
       {
         "role": "Lead Architect",
-        "commits": 144
+        "commits": 165
       },
       {
         "role": "Developer A",
-        "commits": 57
+        "commits": 60
       }
     ]
   },
   "volume_metrics": {
-    "total_commits": 201,
+    "total_commits": 225,
     "monthly_commit_distribution": {
-      "2025-12": 33,
       "2026-01": 113,
       "2026-02": 18,
-      "2026-03": 37
+      "2026-03": 47,
+      "2025-12": 33,
+      "2026-04": 14
     },
     "merged_pr_count": 1,
     "file_types_top": [
       {
         "extension": "json",
-        "touched_files": 6120
+        "touched_files": 6146
       },
       {
         "extension": "md",
-        "touched_files": 746
+        "touched_files": 974
       },
       {
         "extension": "js",
-        "touched_files": 613
+        "touched_files": 668
       },
       {
         "extension": "svg",
-        "touched_files": 365
+        "touched_files": 464
       },
       {
         "extension": "py",
-        "touched_files": 333
+        "touched_files": 380
       },
       {
         "extension": "jsx",
-        "touched_files": 163
-      },
-      {
-        "extension": "html",
-        "touched_files": 113
-      },
-      {
-        "extension": "css",
-        "touched_files": 99
-      },
-      {
-        "extension": "ps1",
-        "touched_files": 68
+        "touched_files": 182
       },
       {
         "extension": "png",
-        "touched_files": 65
+        "touched_files": 153
+      },
+      {
+        "extension": "html",
+        "touched_files": 119
+      },
+      {
+        "extension": "css",
+        "touched_files": 118
+      },
+      {
+        "extension": "ps1",
+        "touched_files": 86
       },
       {
         "extension": "txt",
-        "touched_files": 55
+        "touched_files": 59
       },
       {
         "extension": "(no-ext)",
-        "touched_files": 47
+        "touched_files": 51
       },
       {
         "extension": "yml",
-        "touched_files": 40
-      },
-      {
-        "extension": "nojekyll",
-        "touched_files": 38
+        "touched_files": 50
       },
       {
         "extension": "xml",
-        "touched_files": 38
+        "touched_files": 41
+      },
+      {
+        "extension": "nojekyll",
+        "touched_files": 40
       },
       {
         "extension": "ts",
@@ -164,18 +170,18 @@
       },
       {
         "extension": "gitignore",
-        "touched_files": 10
+        "touched_files": 12
       },
       {
         "extension": "sh",
         "touched_files": 8
       },
       {
-        "extension": "eslintignore",
+        "extension": "lock",
         "touched_files": 2
       },
       {
-        "extension": "lock",
+        "extension": "yaml",
         "touched_files": 2
       }
     ],
@@ -203,6 +209,14 @@
         "additions": 11954,
         "deletions": 6301,
         "total_lines": 18255
+      },
+      {
+        "sha": "b1d3a815ed09186c9147ee755177bbe551c6bca3",
+        "subject": "feat: merge 001-dashboard-visual-enhancements into main",
+        "files_changed": 165,
+        "additions": 11640,
+        "deletions": 4414,
+        "total_lines": 16054
       },
       {
         "sha": "e13b09583357509d110bc660f80c8b299ab5ecaf",
@@ -251,40 +265,62 @@
         "additions": 59,
         "deletions": 26,
         "total_lines": 85
-      },
-      {
-        "sha": "5209d393e7919f2685e26282670acc5f98ef3782",
-        "subject": "Merge remote changes while preserving local cache",
-        "files_changed": 5,
-        "additions": 20,
-        "deletions": 0,
-        "total_lines": 20
       }
     ]
   },
   "commit_message_metrics": {
-    "conventional_commit_count": 50,
+    "conventional_commit_count": 65,
     "informal_commit_count": 1,
     "spec_reference_commit_count": 6
   },
   "test_metrics": {
-    "test_file_count": 630,
-    "test_related_commit_count": 22
+    "test_file_count": 644,
+    "test_related_commit_count": 26
   },
   "governance_maturity": {
     "constitution_path": "C:\\GitHub\\MarkHazleton\\github-stats-spark\\.documentation\\memory\\constitution.md",
     "constitution_exists": true,
     "constitution_version": "",
-    "constitution_amendment_count": 0,
-    "active_spec_count": 0,
-    "archived_spec_directory_count": 7,
-    "governance_artifact_count": 3
+    "constitution_amendment_count": 2,
+    "active_spec_count": 1,
+    "archived_spec_directory_count": 10,
+    "governance_artifact_count": 4
   },
   "milestones": {
     "tags": [],
     "readme_evolution": {
-      "total_readme_commits": 14,
+      "total_readme_commits": 19,
       "commits": [
+        {
+          "sha": "28f5958d8f5ec0658f3669ecf9531584fed89dfc",
+          "date": "2026-04-02T12:38:19-05:00",
+          "role": "Lead Architect",
+          "subject": "chore(ci): update workflow, docs and lint config for user-scoped paths"
+        },
+        {
+          "sha": "4159189f9eb44e1aaf661b50f4c190240dea7db8",
+          "date": "2026-04-02T09:40:05-05:00",
+          "role": "Lead Architect",
+          "subject": "feat: Add weekly activity tracking and visualization components"
+        },
+        {
+          "sha": "a3a81ef2e4d8b6c583dba99af07fed5a6ef286d6",
+          "date": "2026-03-30T05:09:38-05:00",
+          "role": "Lead Architect",
+          "subject": "Update SVG output, enhance development dependencies, and conduct comprehensive codebase audit"
+        },
+        {
+          "sha": "c119ce3de11b47ce88dae98bcc39222d2b238c66",
+          "date": "2026-03-29T23:44:12-05:00",
+          "role": "Lead Architect",
+          "subject": "Add comprehensive documentation for Stats Spark setup and unified pipeline"
+        },
+        {
+          "sha": "f1f84f509ff50c3d2781719824dc27751080597d",
+          "date": "2026-03-29T23:35:08-05:00",
+          "role": "Lead Architect",
+          "subject": "feat: Update regeneration frequency to weekly for SVG outputs and documentation"
+        },
         {
           "sha": "dd685c706c608fce4ccf459e969a46133588924f",
           "date": "2026-03-28T09:10:23-05:00",
@@ -374,50 +410,54 @@
   },
   "change_patterns": {
     "subject_type_estimates": {
+      "ci_build": 65,
+      "features": 87,
+      "refactor": 16,
+      "chore": 1,
+      "other": 27,
       "tests": 4,
-      "refactor": 14,
-      "features": 76,
-      "fixes": 13,
-      "other": 25,
-      "docs": 9,
-      "chore": 0,
-      "ci_build": 60
+      "fixes": 15,
+      "docs": 10
     },
     "hotspots": [
       {
-        "path": "output/fun.svg",
-        "changes": 85
+        "path": "output/reports/markhazleton-analysis.md",
+        "changes": 92
       },
       {
-        "path": "output/reports/markhazleton-analysis.md",
-        "changes": 84
+        "path": "output/fun.svg",
+        "changes": 92
       },
       {
         "path": "data/repositories.json",
-        "changes": 80
+        "changes": 87
       },
       {
         "path": "docs/data/repositories.json",
-        "changes": 68
-      },
-      {
-        "path": "docs/index.html",
-        "changes": 62
+        "changes": 73
       },
       {
         "path": "output/heatmap.svg",
-        "changes": 59
+        "changes": 67
+      },
+      {
+        "path": "docs/index.html",
+        "changes": 66
       },
       {
         "path": "output/overview.svg",
-        "changes": 52
+        "changes": 60
       },
       {
         "path": "docs/sw.js",
-        "changes": 47
+        "changes": 51
       },
       {
         "path": "output/languages.svg",
+        "changes": 50
+      },
+      {
+        "path": "docs/README.md",
         "changes": 42
       },
       {
@@ -425,91 +465,103 @@
         "changes": 42
       },
       {
-        "path": "docs/README.md",
-        "changes": 40
-      },
-      {
-        "path": "docs/robots.txt",
-        "changes": 37
-      },
-      {
         "path": "docs/404.html",
-        "changes": 37
-      },
-      {
-        "path": "docs/CNAME",
-        "changes": 37
+        "changes": 39
       },
       {
         "path": "docs/sitemap.xml",
-        "changes": 37
-      },
-      {
-        "path": "docs/favicon.svg",
-        "changes": 37
+        "changes": 39
       },
       {
         "path": "docs/.nojekyll",
-        "changes": 37
+        "changes": 39
+      },
+      {
+        "path": "docs/CNAME",
+        "changes": 39
+      },
+      {
+        "path": "docs/favicon.svg",
+        "changes": 39
       },
       {
         "path": "docs/manifest.json",
-        "changes": 37
+        "changes": 39
       },
       {
-        "path": "src/spark/unified_data_generator.py",
-        "changes": 25
+        "path": "docs/robots.txt",
+        "changes": 39
       },
       {
         "path": "output/release.svg",
-        "changes": 25
+        "changes": 33
+      },
+      {
+        "path": "src/spark/unified_data_generator.py",
+        "changes": 28
+      },
+      {
+        "path": ".github/workflows/generate-stats.yml",
+        "changes": 26
+      },
+      {
+        "path": "src/spark/fetcher.py",
+        "changes": 26
       },
       {
         "path": "src/spark/cli.py",
         "changes": 25
       },
       {
-        "path": "src/spark/fetcher.py",
-        "changes": 22
-      },
-      {
-        "path": ".github/workflows/generate-stats.yml",
+        "path": "src/spark/unified_report_workflow.py",
         "changes": 20
       },
       {
-        "path": "src/spark/unified_report_workflow.py",
-        "changes": 17
+        "path": "docs/output/reports/markhazleton-analysis.md",
+        "changes": 20
+      },
+      {
+        "path": "README.md",
+        "changes": 19
       },
       {
         "path": "frontend/src/App.jsx",
-        "changes": 17
-      },
-      {
-        "path": "frontend/package.json",
-        "changes": 17
+        "changes": 19
       },
       {
         "path": "output/streaks.svg",
-        "changes": 15
+        "changes": 19
       },
       {
         "path": "config/spark.yml",
-        "changes": 15
+        "changes": 18
+      },
+      {
+        "path": "frontend/package.json",
+        "changes": 18
+      },
+      {
+        "path": "docs/output/fun.svg",
+        "changes": 17
       },
       {
         "path": ".claude/settings.local.json",
         "changes": 15
       },
       {
+        "path": "docs/output/overview.svg",
+        "changes": 14
+      },
+      {
         "path": "src/spark/summarizer.py",
         "changes": 14
       },
       {
-        "path": "README.md",
+        "path": "docs/output/languages.svg",
         "changes": 14
       },
       {
-        "path": "docs/output/reports/markhazleton-analysis.md",
+        "path": "docs/output/heatmap.svg",
         "changes": 13
       },
       {
@@ -517,19 +569,27 @@
         "changes": 13
       },
       {
-        "path": "docs/output/fun.svg",
+        "path": ".gitignore",
         "changes": 12
+      },
+      {
+        "path": "frontend/src/components/DrillDown/RepositoryDetail.jsx",
+        "changes": 11
+      },
+      {
+        "path": "src/spark/cache.py",
+        "changes": 11
       },
       {
         "path": "docs/assets/site-DY8k1ES-.js",
         "changes": 11
       },
       {
-        "path": "documentation/CHANGELOG.md",
+        "path": "docs/assets/site-BiYgNJqb.js",
         "changes": 11
       },
       {
-        "path": "docs/assets/site-BiYgNJqb.js",
+        "path": "documentation/CHANGELOG.md",
         "changes": 11
       },
       {
@@ -549,40 +609,16 @@
         "changes": 10
       },
       {
-        "path": ".gitignore",
-        "changes": 10
-      },
-      {
-        "path": "src/spark/cache.py",
-        "changes": 10
-      },
-      {
-        "path": "docs/assets/site-BLxK5II-.js",
+        "path": "frontend/src/components/RepositoryTable/RepositoryTable.module.css",
         "changes": 9
       },
       {
-        "path": "frontend/src/components/DrillDown/RepositoryDetail.jsx",
+        "path": "frontend/src/components/RepositoryTable/TableRow.jsx",
         "changes": 9
       },
       {
-        "path": "frontend/src/main.jsx",
-        "changes": 8
-      },
-      {
-        "path": ".specify/memory/constitution.md",
-        "changes": 8
-      },
-      {
-        "path": "docs/assets/site-6stpequd.js",
-        "changes": 8
-      },
-      {
-        "path": "docs/assets/site-C0YcKVll.js",
-        "changes": 8
-      },
-      {
-        "path": "docs/assets/site-CrlEuPbb.js",
-        "changes": 8
+        "path": "docs/output/release.svg",
+        "changes": 9
       }
     ]
   },
@@ -602,6 +638,150 @@
   },
   "recent": {
     "commits": [
+      {
+        "sha": "75be7c71d1ad4ecccedac422129a6a981a024703",
+        "date": "2026-04-02T17:02:03-05:00",
+        "role": "Lead Architect",
+        "subject": "devspark.harvest results"
+      },
+      {
+        "sha": "4ba2e997c3eb5bcdb8400213b6dd8934156a35ac",
+        "date": "2026-04-02T16:52:50-05:00",
+        "role": "Lead Architect",
+        "subject": "devspark setup"
+      },
+      {
+        "sha": "b1d3a815ed09186c9147ee755177bbe551c6bca3",
+        "date": "2026-04-02T16:06:51-05:00",
+        "role": "Lead Architect",
+        "subject": "feat: merge 001-dashboard-visual-enhancements into main"
+      },
+      {
+        "sha": "1d701e7dfe3bae8c0ace2fea68b6d01df4db88d4",
+        "date": "2026-04-02T16:01:28-05:00",
+        "role": "Lead Architect",
+        "subject": "chore(data): regenerate markhazleton artifacts with updated pipeline"
+      },
+      {
+        "sha": "31bb5f680f8fb28ee61632a9afdd5549c91b5d08",
+        "date": "2026-04-02T12:38:43-05:00",
+        "role": "Lead Architect",
+        "subject": "chore(data): migrate artifacts to user-scoped directory structure"
+      },
+      {
+        "sha": "fb8aad5873fdf3d3b1811e00651601cb88123689",
+        "date": "2026-04-02T12:38:32-05:00",
+        "role": "Lead Architect",
+        "subject": "test: update fixtures and tests for required-config API"
+      },
+      {
+        "sha": "28f5958d8f5ec0658f3669ecf9531584fed89dfc",
+        "date": "2026-04-02T12:38:19-05:00",
+        "role": "Lead Architect",
+        "subject": "chore(ci): update workflow, docs and lint config for user-scoped paths"
+      },
+      {
+        "sha": "12c102ddda33378673739f2c64481ac9a6125ba5",
+        "date": "2026-04-02T12:38:07-05:00",
+        "role": "Lead Architect",
+        "subject": "feat(frontend): ContributionHeatmap, ActivityTimeline, dark-mode theme toggle"
+      },
+      {
+        "sha": "59f3ea551cdeb4c753b23c85d82cf0416b8e0328",
+        "date": "2026-04-02T12:37:55-05:00",
+        "role": "Lead Architect",
+        "subject": "feat(config): spark.yml as single source of truth, no silent fallbacks"
+      },
+      {
+        "sha": "a3c7825eb21e2226d598a0e556467fd0b4d60699",
+        "date": "2026-04-02T12:37:40-05:00",
+        "role": "Lead Architect",
+        "subject": "feat(pipeline): always-on multi-user with user-scoped output paths"
+      },
+      {
+        "sha": "4159189f9eb44e1aaf661b50f4c190240dea7db8",
+        "date": "2026-04-02T09:40:05-05:00",
+        "role": "Lead Architect",
+        "subject": "feat: Add weekly activity tracking and visualization components"
+      },
+      {
+        "sha": "ccd21d31673b47e59d26931aa1ab5886ab7c4654",
+        "date": "2026-04-02T08:23:47-05:00",
+        "role": "Lead Architect",
+        "subject": "feat(dashboard): enhance dashboard specifications and tasks for interactive visualizations, including trailing-365-day heatmap and improved API handling"
+      },
+      {
+        "sha": "81cef44642bab13fae1062a8bd07746ee185f9fe",
+        "date": "2026-04-02T07:57:34-05:00",
+        "role": "Lead Architect",
+        "subject": "feat(dashboard): implement visual enhancements including contribution heatmap, activity timeline, dark mode toggle, commit metrics, and bus factor indicators"
+      },
+      {
+        "sha": "e1e596d4b7f1d952cc13c61d55d1527cfd9007d5",
+        "date": "2026-04-01T05:00:03Z",
+        "role": "Developer A",
+        "subject": "Update GitHub statistics and dashboard [skip ci]"
+      },
+      {
+        "sha": "b873b0cef43c7a010853ab7b8c1e45ac47aea1de",
+        "date": "2026-03-30T11:27:14Z",
+        "role": "Developer A",
+        "subject": "Update GitHub statistics and dashboard [skip ci]"
+      },
+      {
+        "sha": "1ec52cfeb1e5179e93f079de189007dd263c00c2",
+        "date": "2026-03-30T05:42:49-05:00",
+        "role": "Lead Architect",
+        "subject": "refactor: Remove push trigger and related steps from generate-stats workflow"
+      },
+      {
+        "sha": "58db7787e6c2e16365c3f4f2b8d5134d3f026b95",
+        "date": "2026-03-30T05:39:57-05:00",
+        "role": "Lead Architect",
+        "subject": "fix: Correct indentation for Enforce Core Module Coverage Gate step in workflow"
+      },
+      {
+        "sha": "3df667daaabd886841a4651c3ae27a05f6ac6aab",
+        "date": "2026-03-30T05:37:45-05:00",
+        "role": "Lead Architect",
+        "subject": "Add post-remediation audit report and unit tests for UnifiedDataGenerator"
+      },
+      {
+        "sha": "a3a81ef2e4d8b6c583dba99af07fed5a6ef286d6",
+        "date": "2026-03-30T05:09:38-05:00",
+        "role": "Lead Architect",
+        "subject": "Update SVG output, enhance development dependencies, and conduct comprehensive codebase audit"
+      },
+      {
+        "sha": "c119ce3de11b47ce88dae98bcc39222d2b238c66",
+        "date": "2026-03-29T23:44:12-05:00",
+        "role": "Lead Architect",
+        "subject": "Add comprehensive documentation for Stats Spark setup and unified pipeline"
+      },
+      {
+        "sha": "f1f84f509ff50c3d2781719824dc27751080597d",
+        "date": "2026-03-29T23:35:08-05:00",
+        "role": "Lead Architect",
+        "subject": "feat: Update regeneration frequency to weekly for SVG outputs and documentation"
+      },
+      {
+        "sha": "697d31c1fdfb48e8c4c73eb9893cbec7cdea17cd",
+        "date": "2026-03-29T10:06:28-05:00",
+        "role": "Lead Architect",
+        "subject": "Refactor code structure for improved readability and maintainability"
+      },
+      {
+        "sha": "9a6a16323f29f969ac58914bcdcae87775fdadf6",
+        "date": "2026-03-29T08:04:36-05:00",
+        "role": "Lead Architect",
+        "subject": "feat: Add repository story documentation for comprehensive analysis and insights"
+      },
+      {
+        "sha": "00b5fbcaea7caa3763ef6865962a201c127769a6",
+        "date": "2026-03-29T02:11:35Z",
+        "role": "Developer A",
+        "subject": "Update GitHub statistics and dashboard [skip ci]"
+      },
       {
         "sha": "c374f3fa6782921d7c0ffdb7dc3adcb8cdddcd78",
         "date": "2026-03-28T20:17:24-05:00",
@@ -697,150 +877,6 @@
         "date": "2026-03-14T13:29:53-05:00",
         "role": "Lead Architect",
         "subject": "fix: replace deprecated logger.warn with logger.warning for improved logging consistency"
-      },
-      {
-        "sha": "c806505da6952044bbdc7a29bd8dca4b3963427b",
-        "date": "2026-03-14T13:23:17-05:00",
-        "role": "Lead Architect",
-        "subject": "fix: update PR review details and enhance validation task completion for spec 001"
-      },
-      {
-        "sha": "25e28b70bab1b0cf324955771bdc5ee4ac1caae0",
-        "date": "2026-03-14T13:03:35-05:00",
-        "role": "Lead Architect",
-        "subject": "feat: implement remediation plan and enhance validation tasks for spec 001"
-      },
-      {
-        "sha": "9423cb0eee676e3e93015d77cf03535fbdea1959",
-        "date": "2026-03-14T12:41:03-05:00",
-        "role": "Lead Architect",
-        "subject": "docs(spec): add PR review for spec 001 repository PR/security enrichment and validation sign-off"
-      },
-      {
-        "sha": "526b85c2ddc5df2604c457761026e85d62f278d5",
-        "date": "2026-03-14T12:35:40-05:00",
-        "role": "Lead Architect",
-        "subject": "related updates to front ennd npm packages"
-      },
-      {
-        "sha": "2f6baa35ef4dea5b6fcdbf0cc4b5fdbd217e5142",
-        "date": "2026-03-14T12:34:50-05:00",
-        "role": "Lead Architect",
-        "subject": "feat(frontend): include current frontend updates"
-      },
-      {
-        "sha": "dc8282887bf5790d3b5fd56f7fea8470492da6bd",
-        "date": "2026-03-14T12:33:31-05:00",
-        "role": "Lead Architect",
-        "subject": "docs(spec): mark spec 001 validation tasks complete"
-      },
-      {
-        "sha": "2aa625a9c49f84d9fec22725532f1773c55ab3c5",
-        "date": "2026-03-14T11:55:26-05:00",
-        "role": "Lead Architect",
-        "subject": "Implement repository PR/security enrichment and staged API version rollout"
-      },
-      {
-        "sha": "a6843c7434f8cf2b5a189a351f769a8b3f18a37d",
-        "date": "2026-03-14T11:37:59-05:00",
-        "role": "Lead Architect",
-        "subject": "feat: Add repository security and pull request enrichment to unified dataset"
-      },
-      {
-        "sha": "af58cee543a4dfeaf74324628725ca0dba4e9693",
-        "date": "2026-03-08T00:46:13Z",
-        "role": "Developer A",
-        "subject": "Update GitHub statistics and dashboard [skip ci]"
-      },
-      {
-        "sha": "72c5e319544e15c7ef0b9dec083c844f34d48497",
-        "date": "2026-03-07T16:08:08-06:00",
-        "role": "Lead Architect",
-        "subject": "feat: Add pull request review documentation for high audit findings remediation"
-      },
-      {
-        "sha": "2ec416d3db20077041effd6eb83fcb900c83d5f8",
-        "date": "2026-03-07T16:07:31-06:00",
-        "role": "Lead Architect",
-        "subject": "Remediate high audit findings and close spec 001"
-      },
-      {
-        "sha": "7f83e41bc3097119cb7e0b0cc2cf1f1adfd1aaec",
-        "date": "2026-03-07T18:26:33Z",
-        "role": "Developer A",
-        "subject": "Update GitHub statistics and dashboard [skip ci]"
-      },
-      {
-        "sha": "8ae959a9bca2fb3dda3085b0c948073aa5a1a714",
-        "date": "2026-03-07T12:23:37-06:00",
-        "role": "Lead Architect",
-        "subject": "feat: Add site audit and upgrade agents with comprehensive documentation"
-      },
-      {
-        "sha": "bb040f1647fc6b0476730f032d8a9f84fce0dada",
-        "date": "2026-03-07T16:56:13Z",
-        "role": "Developer A",
-        "subject": "Update GitHub statistics and dashboard [skip ci]"
-      },
-      {
-        "sha": "ce8b38dc81c7337c7b77fbf7e4f615d118c98bb0",
-        "date": "2026-03-07T10:54:38-06:00",
-        "role": "Lead Architect",
-        "subject": "Add multi-user support for output directories and enhance data handling"
-      },
-      {
-        "sha": "70fad3f42e00b18a02bf2340b84a81d87426b1d0",
-        "date": "2026-03-07T15:41:46Z",
-        "role": "Developer A",
-        "subject": "Update GitHub statistics and dashboard [skip ci]"
-      },
-      {
-        "sha": "3968208c9ea303106b30fd0b4994b5aba742293f",
-        "date": "2026-03-07T09:32:33-06:00",
-        "role": "Lead Architect",
-        "subject": "Stop tracking runtime cache and move CI cache to actions cache"
-      },
-      {
-        "sha": "a646f22d47fcb9e3be83b50d49a453e377d39751",
-        "date": "2026-03-07T15:24:11Z",
-        "role": "Developer A",
-        "subject": "Update GitHub statistics and dashboard [skip ci]"
-      },
-      {
-        "sha": "1cc76ea4a187ab78c0e8afb0aeefdb63b60d69d9",
-        "date": "2026-03-07T09:21:07-06:00",
-        "role": "Lead Architect",
-        "subject": "Fix Anthropic model selection and fallbacks"
-      },
-      {
-        "sha": "82008d21b37238e0689c38621a88b0e4a4387edb",
-        "date": "2026-03-07T15:04:49Z",
-        "role": "Developer A",
-        "subject": "Update GitHub statistics and dashboard [skip ci]"
-      },
-      {
-        "sha": "9e793c7fa3b0a5c0dbf1423e6328a68544bffe38",
-        "date": "2026-03-07T09:01:19-06:00",
-        "role": "Lead Architect",
-        "subject": "Add robots.txt, sitemap.xml, and service worker for improved SEO and offline support"
-      },
-      {
-        "sha": "f1dad84fbb2c06d9dce04480f821b539e02b5f7c",
-        "date": "2026-02-25T14:43:18-06:00",
-        "role": "Lead Architect",
-        "subject": "Remove unused files and assets from the GitHub Stats Spark documentation, including favicon, index.html, manifest.json, screenshots, robots.txt, sitemap.xml, and service worker."
-      },
-      {
-        "sha": "28b9ff18b8df83ca088d2cac417638680e6b58fd",
-        "date": "2026-02-25T14:19:54-06:00",
-        "role": "Lead Architect",
-        "subject": "Refactor code structure for improved readability and maintainability"
-      },
-      {
-        "sha": "781e2b0d37942a80046ef258f4fb62a294be412b",
-        "date": "2026-02-25T14:09:44-06:00",
-        "role": "Lead Architect",
-        "subject": "Add weekly data snapshots for repository metrics and project details"
       }
     ]
   }
