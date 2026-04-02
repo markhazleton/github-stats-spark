@@ -1,18 +1,18 @@
 {
   "profile": {
     "username": "markhazleton",
-    "total_repositories": 32,
+    "total_repositories": 33,
     "total_stars": 18,
     "total_forks": 7,
-    "total_commits": 3644,
+    "total_commits": 4269,
     "activity_calendar": {
       "2026-02-10": 21,
-      "2026-02-09": 4,
-      "2025-12-04": 13,
+      "2026-02-09": 5,
+      "2025-12-04": 18,
       "2025-12-03": 17,
       "2025-11-12": 29,
       "2025-10-24": 3,
-      "2025-07-03": 9,
+      "2025-07-03": 10,
       "2025-05-13": 2,
       "2025-04-27": 2,
       "2025-04-25": 1,
@@ -24,11 +24,11 @@
       "2024-09-03": 4,
       "2024-08-14": 1,
       "2024-08-10": 2,
-      "2024-08-05": 3,
-      "2024-06-08": 1,
-      "2024-05-29": 14,
+      "2024-08-05": 4,
+      "2024-06-08": 2,
+      "2024-05-29": 15,
       "2024-05-14": 2,
-      "2024-04-09": 8,
+      "2024-04-09": 11,
       "2024-03-26": 2,
       "2024-01-21": 1,
       "2024-01-20": 2,
@@ -62,10 +62,10 @@
       "2022-08-23": 2,
       "2022-08-18": 4,
       "2022-08-07": 4,
-      "2026-04-01": 9,
-      "2026-03-31": 33,
-      "2026-03-30": 77,
-      "2026-01-12": 33,
+      "2026-04-01": 15,
+      "2026-03-31": 36,
+      "2026-03-30": 83,
+      "2026-01-12": 34,
       "2025-09-15": 4,
       "2025-09-08": 3,
       "2025-09-07": 31,
@@ -74,7 +74,7 @@
       "2025-08-12": 13,
       "2025-08-11": 29,
       "2025-08-05": 9,
-      "2024-09-21": 10,
+      "2024-09-21": 12,
       "2024-09-20": 4,
       "2024-06-09": 1,
       "2024-04-05": 2,
@@ -92,10 +92,57 @@
       "2015-09-04": 3,
       "2015-09-03": 1,
       "2015-09-02": 1,
-      "2026-03-26": 10,
+      "2025-12-27": 8,
+      "2025-12-26": 7,
+      "2025-12-25": 5,
+      "2025-10-29": 4,
+      "2026-04-02": 19,
+      "2026-03-29": 63,
+      "2026-03-28": 26,
+      "2026-03-26": 18,
+      "2026-03-25": 5,
+      "2026-03-20": 26,
+      "2026-03-19": 7,
+      "2026-03-17": 20,
+      "2026-03-07": 25,
+      "2026-03-02": 22,
+      "2026-02-21": 7,
+      "2026-02-20": 10,
+      "2026-02-08": 19,
+      "2026-02-06": 13,
+      "2026-02-03": 20,
+      "2026-02-02": 14,
+      "2026-01-31": 41,
+      "2026-01-29": 9,
+      "2026-01-27": 8,
+      "2026-01-26": 5,
+      "2025-12-02": 9,
+      "2025-12-01": 8,
+      "2025-11-26": 4,
+      "2025-11-25": 3,
+      "2025-11-23": 6,
+      "2025-11-19": 1,
+      "2025-11-18": 4,
+      "2025-11-17": 15,
+      "2025-11-15": 9,
+      "2025-11-14": 4,
+      "2025-11-07": 11,
+      "2025-11-06": 5,
+      "2025-11-05": 7,
+      "2025-11-03": 40,
+      "2025-10-27": 2,
+      "2025-10-25": 2,
+      "2025-10-23": 15,
+      "2025-10-22": 14,
+      "2025-10-21": 24,
+      "2026-03-08": 33,
+      "2025-11-16": 36,
+      "2025-05-20": 9,
+      "2025-05-19": 14,
+      "2024-04-08": 3,
+      "2024-04-06": 10,
       "2026-03-14": 50,
       "2026-03-01": 19,
-      "2026-02-20": 6,
       "2026-01-25": 14,
       "2025-12-29": 8,
       "2025-12-15": 5,
@@ -113,21 +160,13 @@
       "2025-10-01": 3,
       "2025-09-30": 17,
       "2025-09-29": 20,
-      "2026-03-29": 61,
-      "2026-03-28": 24,
       "2026-03-27": 13,
       "2026-03-22": 1,
       "2026-03-15": 32,
-      "2026-03-08": 32,
-      "2026-03-07": 16,
       "2026-02-25": 6,
       "2026-02-22": 2,
       "2026-02-15": 9,
-      "2026-02-08": 17,
-      "2026-02-03": 14,
       "2026-02-01": 16,
-      "2026-01-31": 39,
-      "2026-01-27": 7,
       "2026-01-22": 10,
       "2026-01-19": 9,
       "2026-01-18": 7,
@@ -147,7 +186,6 @@
       "2025-12-18": 2,
       "2025-12-07": 14,
       "2025-12-06": 2,
-      "2025-12-02": 5,
       "2024-03-25": 1,
       "2024-03-11": 1,
       "2024-01-18": 1,
@@ -157,7 +195,6 @@
       "2023-10-24": 2,
       "2026-01-30": 19,
       "2026-01-28": 12,
-      "2025-11-03": 35,
       "2025-10-07": 3,
       "2025-10-04": 5,
       "2025-09-27": 10,
@@ -189,22 +226,13 @@
       "2026-03-09": 5,
       "2025-05-03": 15,
       "2024-03-07": 5,
-      "2026-04-02": 3,
-      "2026-03-20": 25,
-      "2026-03-19": 6,
-      "2026-03-17": 17,
       "2026-03-16": 3,
       "2026-03-06": 5,
       "2026-02-28": 5,
       "2026-02-27": 5,
       "2026-02-26": 7,
       "2026-02-24": 12,
-      "2026-02-21": 1,
       "2026-02-19": 5,
-      "2026-02-06": 10,
-      "2026-02-02": 7,
-      "2026-01-29": 5,
-      "2026-01-26": 2,
       "2026-01-21": 16,
       "2026-01-20": 5,
       "2026-01-14": 4,
@@ -278,7 +306,6 @@
       "2025-07-25": 4,
       "2024-12-24": 2,
       "2022-08-03": 2,
-      "2025-11-16": 30,
       "2025-09-28": 9,
       "2025-09-06": 28,
       "2025-09-04": 16,
@@ -315,11 +342,9 @@
       "2025-01-09": 5,
       "2025-01-04": 1,
       "2024-12-31": 13,
-      "2025-10-21": 7,
       "2025-10-14": 15,
       "2025-08-06": 2,
       "2025-07-27": 13,
-      "2026-03-02": 21,
       "2025-10-20": 1,
       "2025-10-05": 4,
       "2025-07-20": 2,
@@ -338,8 +363,6 @@
       "2024-10-19": 1,
       "2024-10-15": 5,
       "2024-10-14": 8,
-      "2026-03-25": 4,
-      "2025-05-20": 7,
       "2023-10-07": 1,
       "2023-07-07": 1,
       "2023-01-25": 1,
@@ -368,8 +391,6 @@
       "2025-06-21": 3,
       "2025-06-20": 18,
       "2025-06-19": 7,
-      "2025-10-23": 11,
-      "2025-10-22": 1,
       "2025-09-03": 21,
       "2025-09-01": 15,
       "2025-02-26": 3,
@@ -405,7 +426,6 @@
       "2026-03-24": 1,
       "2026-02-05": 4,
       "2025-12-24": 2,
-      "2025-11-25": 1,
       "2025-11-24": 5,
       "2025-05-25": 1,
       "2025-05-24": 4,
@@ -481,13 +501,8 @@
       "2008-09-04": 1,
       "2008-08-30": 2,
       "2008-08-29": 1,
-      "2025-12-27": 6,
-      "2025-12-01": 1,
       "2025-11-27": 4,
-      "2025-11-15": 3,
-      "2025-10-27": 1,
       "2025-10-26": 2,
-      "2025-10-25": 1,
       "2025-08-20": 1,
       "2025-08-08": 1,
       "2025-08-07": 1,
@@ -545,7 +560,6 @@
       "2024-06-23": 4,
       "2024-06-22": 1,
       "2024-06-19": 5,
-      "2025-11-17": 14,
       "2025-07-08": 1,
       "2025-07-07": 1,
       "2025-06-26": 2,
@@ -566,10 +580,8 @@
       "2022-08-24": 3,
       "2026-03-10": 1,
       "2026-03-04": 1,
-      "2025-11-05": 5,
       "2025-11-01": 8,
       "2025-10-06": 1,
-      "2025-05-19": 5,
       "2026-02-11": 1,
       "2025-05-27": 6
     },
@@ -619,7 +631,7 @@
       {
         "week": "2025-W21",
         "label": "May 19",
-        "commits": 20,
+        "commits": 31,
         "active_repos": 5
       },
       {
@@ -655,7 +667,7 @@
       {
         "week": "2025-W27",
         "label": "Jun 30",
-        "commits": 23,
+        "commits": 24,
         "active_repos": 5
       },
       {
@@ -751,43 +763,43 @@
       {
         "week": "2025-W43",
         "label": "Oct 20",
-        "commits": 26,
+        "commits": 61,
         "active_repos": 7
       },
       {
         "week": "2025-W44",
         "label": "Oct 27",
-        "commits": 25,
-        "active_repos": 3
+        "commits": 30,
+        "active_repos": 4
       },
       {
         "week": "2025-W45",
         "label": "Nov 3",
-        "commits": 41,
-        "active_repos": 3
+        "commits": 64,
+        "active_repos": 5
       },
       {
         "week": "2025-W46",
         "label": "Nov 10",
-        "commits": 75,
-        "active_repos": 4
+        "commits": 91,
+        "active_repos": 5
       },
       {
         "week": "2025-W47",
         "label": "Nov 17",
-        "commits": 49,
-        "active_repos": 4
+        "commits": 61,
+        "active_repos": 7
       },
       {
         "week": "2025-W48",
         "label": "Nov 24",
-        "commits": 10,
-        "active_repos": 3
+        "commits": 16,
+        "active_repos": 4
       },
       {
         "week": "2025-W49",
         "label": "Dec 1",
-        "commits": 52,
+        "commits": 68,
         "active_repos": 6
       },
       {
@@ -805,8 +817,8 @@
       {
         "week": "2025-W52",
         "label": "Dec 22",
-        "commits": 32,
-        "active_repos": 4
+        "commits": 46,
+        "active_repos": 6
       },
       {
         "week": "2026-W01",
@@ -823,7 +835,7 @@
       {
         "week": "2026-W03",
         "label": "Jan 12",
-        "commits": 95,
+        "commits": 96,
         "active_repos": 7
       },
       {
@@ -835,25 +847,25 @@
       {
         "week": "2026-W05",
         "label": "Jan 26",
-        "commits": 100,
+        "commits": 110,
         "active_repos": 7
       },
       {
         "week": "2026-W06",
         "label": "Feb 2",
-        "commits": 53,
+        "commits": 71,
         "active_repos": 6
       },
       {
         "week": "2026-W07",
         "label": "Feb 9",
-        "commits": 35,
+        "commits": 36,
         "active_repos": 4
       },
       {
         "week": "2026-W08",
         "label": "Feb 16",
-        "commits": 23,
+        "commits": 33,
         "active_repos": 6
       },
       {
@@ -865,7 +877,7 @@
       {
         "week": "2026-W10",
         "label": "Mar 2",
-        "commits": 81,
+        "commits": 92,
         "active_repos": 7
       },
       {
@@ -877,24 +889,330 @@
       {
         "week": "2026-W12",
         "label": "Mar 16",
-        "commits": 53,
+        "commits": 58,
         "active_repos": 6
       },
       {
         "week": "2026-W13",
         "label": "Mar 23",
-        "commits": 113,
+        "commits": 126,
         "active_repos": 6
       },
       {
         "week": "2026-W14",
         "label": "Mar 30",
-        "commits": 122,
+        "commits": 153,
         "active_repos": 4
       }
     ]
   },
   "repositories": [
+    {
+      "name": "devspark",
+      "description": "Spec-driven development process for AI coding assistants. 21 prompt files, 17+ agents, no install required.",
+      "summary": {
+        "text": "# DevSpark Technical Summary\n\n**DevSpark** is a framework that provides structured AI-assisted development workflows through a collection of 21 markdown-based prompt templates and optional CLI tooling, enabling developers to use any supported AI coding assistant (Claude Code, Cursor, GitHub Copilot, Gemini, and 13+ others) with a standardized process from requirements specification through release management. The core product comprises slash-command prompts organized into core workflows (constitution, specification, planning, task decomposition, implementation) and supplementary commands for PR review, codebase auditing, bug fixes, and adversarial analysis, all without requiring installation—users can simply copy markdown files into their project or use the optional Python/uv-based CLI for automated setup. The architecture implements a clean 3-tier prompt resolution system that separates user work (`.documentation/`) from the DevSpark installation (`.devspark/`), enabling safe upgrades and team/personal customization while maintaining composability across different AI agents through thin agent-specific shims that redirect to canonical shared prompts. Built with PowerShell (45.2%), Shell (35.2%), and Python (19.5%), the project includes context-gathering scripts and leverages minimal dependencies (click, truststore), achieving high tech stack currency (85/100) with recent activity showing 97 commits over 90 days. Its key innovation lies in being agent-agnostic middleware that abstracts away AI platform differences while enforcing a repeatable, constitution-based development methodology that spans requirements documentation, technical planning, implementation execution, and quality assurance—making it valuable for teams seeking structured AI-pair-programming workflows without vendor lock-in or complex toolchain setup.",
+        "ai_generated": true,
+        "generation_method": "claude-haiku-4-5",
+        "generated_at": "2026-04-02T15:40:25.417233",
+        "model_used": "claude-haiku-4-5",
+        "tokens_used": 3076,
+        "confidence_score": 90
+      },
+      "url": "https://github.com/markhazleton/devspark",
+      "homepage": "https://markhazleton.github.io/devspark/",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": "https://markhazleton.github.io/devspark/",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "PowerShell",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2026-04-02T18:38:24+00:00",
+      "updated_at": "2026-04-02T20:08:21+00:00",
+      "pushed_at": "2026-04-02T20:08:17+00:00",
+      "total_commits": 625,
+      "recent_commits_90d": 97,
+      "first_commit_date": "2025-10-21T21:44:17+00:00",
+      "last_commit_date": "2026-04-02T20:08:12+00:00",
+      "commit_history": {
+        "repository_name": "devspark",
+        "total_commits": 625,
+        "recent_90d": 97,
+        "recent_180d": 332,
+        "recent_365d": 625,
+        "last_commit_date": "2026-04-02T20:08:12+00:00",
+        "patterns": [
+          "highly_active",
+          "recently_updated"
+        ],
+        "commit_frequency": 32.33,
+        "consistency_score": 0,
+        "activity_rate": 1.078,
+        "days_since_last_commit": 0,
+        "first_commit_date": "2025-10-21T21:44:17+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 1118.66,
+        "largest_commit": {
+          "sha": "e60572c64575914e63cbd1df8392c6f8ebb7cdae",
+          "date": "2026-04-02T18:38:50+00:00",
+          "size": 39566,
+          "files_changed": 19783,
+          "lines_added": 1864,
+          "lines_deleted": 17919
+        },
+        "smallest_commit": {
+          "sha": "16d0ef4f78c80b5c3501b9fa485cc08efecf8234",
+          "date": "2026-04-02T19:36:24+00:00",
+          "size": 2,
+          "files_changed": 1,
+          "lines_added": 0,
+          "lines_deleted": 1
+        },
+        "total_commits": 200,
+        "commit_size_distribution": {
+          "min": 0,
+          "q1": 9,
+          "median": 72,
+          "q3": 406,
+          "max": 39566
+        }
+      },
+      "avg_commit_size": 1118.66,
+      "largest_commit": {
+        "sha": "e60572c64575914e63cbd1df8392c6f8ebb7cdae",
+        "date": "2026-04-02T18:38:50+00:00",
+        "size": 39566,
+        "files_changed": 19783,
+        "lines_added": 1864,
+        "lines_deleted": 17919
+      },
+      "smallest_commit": {
+        "sha": "16d0ef4f78c80b5c3501b9fa485cc08efecf8234",
+        "date": "2026-04-02T19:36:24+00:00",
+        "size": 2,
+        "files_changed": 1,
+        "lines_added": 0,
+        "lines_deleted": 1
+      },
+      "commit_velocity": 32.33,
+      "tech_stack": {
+        "repository_name": "devspark",
+        "languages": {},
+        "frameworks": [],
+        "dependencies": [
+          {
+            "name": "click",
+            "current_version": "8.1",
+            "latest_version": "8.3.1",
+            "ecosystem": "pypi",
+            "versions_behind": 0,
+            "is_outdated": true,
+            "status": "minor_outdated",
+            "version_requirement": "8.1",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "pypi",
+            "source_file": "pyproject.toml"
+          },
+          {
+            "name": "truststore",
+            "current_version": "0.10.4",
+            "latest_version": "0.10.4",
+            "ecosystem": "pypi",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "current",
+            "version_requirement": "0.10.4",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "pypi",
+            "source_file": "pyproject.toml"
+          }
+        ],
+        "version_info": {},
+        "dependency_file_type": "pyproject.toml",
+        "currency_score": 85,
+        "outdated_count": 1,
+        "total_dependencies": 2,
+        "known_versions_count": 2,
+        "resolved_latest_versions_count": 2,
+        "unknown_versions_count": 0,
+        "primary_language": null,
+        "language_diversity": 0,
+        "outdated_percentage": 50.0,
+        "version_coverage_percentage": 100.0,
+        "latest_version_coverage_percentage": 100.0
+      },
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": false,
+      "has_docs": true,
+      "language_count": 3,
+      "size_kb": 5521,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 0,
+      "days_since_last_push": 0,
+      "ai_summary": "# DevSpark Technical Summary\n\n**DevSpark** is a framework that provides structured AI-assisted development workflows through a collection of 21 markdown-based prompt templates and optional CLI tooling, enabling developers to use any supported AI coding assistant (Claude Code, Cursor, GitHub Copilot, Gemini, and 13+ others) with a standardized process from requirements specification through release management. The core product comprises slash-command prompts organized into core workflows (constitution, specification, planning, task decomposition, implementation) and supplementary commands for PR review, codebase auditing, bug fixes, and adversarial analysis, all without requiring installation—users can simply copy markdown files into their project or use the optional Python/uv-based CLI for automated setup. The architecture implements a clean 3-tier prompt resolution system that separates user work (`.documentation/`) from the DevSpark installation (`.devspark/`), enabling safe upgrades and team/personal customization while maintaining composability across different AI agents through thin agent-specific shims that redirect to canonical shared prompts. Built with PowerShell (45.2%), Shell (35.2%), and Python (19.5%), the project includes context-gathering scripts and leverages minimal dependencies (click, truststore), achieving high tech stack currency (85/100) with recent activity showing 97 commits over 90 days. Its key innovation lies in being agent-agnostic middleware that abstracts away AI platform differences while enforcing a repeatable, constitution-based development methodology that spans requirements documentation, technical planning, implementation execution, and quality assurance—making it valuable for teams seeking structured AI-pair-programming workflows without vendor lock-in or complex toolchain setup.",
+      "attention_score": 5.0,
+      "attention_metrics": {
+        "score": 5.0,
+        "tier": "healthy",
+        "needs_attention": false,
+        "reasons": [],
+        "components": {
+          "pull_requests": {
+            "score": 0.0,
+            "availability": "available",
+            "reason": "none",
+            "total_open": 0,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": null
+          },
+          "security": {
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
+            "active_alert_counts": {
+              "total_open": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 0.0,
+            "days_since_last_push": 0,
+            "recent_commits_90d": 97,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 9.8,
+            "total_dependencies": 2,
+            "outdated_count": 1,
+            "outdated_percentage": 50.0,
+            "currency_score": 85,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 100.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 1,
+      "composite_score": 89.06,
+      "pull_request_summary": {
+        "availability": "available",
+        "reason": "none",
+        "has_open_pull_requests": false,
+        "total_open": 0,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": null,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get",
+          "rest.dependabot.alerts"
+        ]
+      },
+      "total_additions": 85003,
+      "total_deletions": 57850,
+      "code_churn": 142853,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "localden",
+          "commits": 216,
+          "additions": 13418,
+          "deletions": 5114
+        },
+        {
+          "login": "markhazleton",
+          "commits": 88,
+          "additions": 67665,
+          "deletions": 51208
+        },
+        {
+          "login": "claude",
+          "commits": 10,
+          "additions": 1301,
+          "deletions": 89
+        },
+        {
+          "login": "tinesoft",
+          "commits": 9,
+          "additions": 291,
+          "deletions": 46
+        },
+        {
+          "login": "isdaniel",
+          "commits": 8,
+          "additions": 112,
+          "deletions": 25
+        },
+        {
+          "login": "tennc",
+          "commits": 7,
+          "additions": 11,
+          "deletions": 10
+        },
+        {
+          "login": "honjo-hiroaki-gtt",
+          "commits": 7,
+          "additions": 517,
+          "deletions": 108
+        },
+        {
+          "login": "anchildress1",
+          "commits": 7,
+          "additions": 1007,
+          "deletions": 527
+        },
+        {
+          "login": "Mearman",
+          "commits": 6,
+          "additions": 30,
+          "deletions": 82
+        }
+      ],
+      "attention_rank": 24,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/devspark.png",
+        "url": "https://markhazleton.github.io/devspark/",
+        "captured_at": "2026-04-02T20:48:10.036771+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 31.27
+      }
+    },
     {
       "name": "WebSpark.HttpClientUtility",
       "description": "HttpClientUtility for management .Net HttpClient",
@@ -940,7 +1258,7 @@
         "commit_frequency": 25.0,
         "consistency_score": 0,
         "activity_rate": 0.833,
-        "days_since_last_commit": 1,
+        "days_since_last_commit": 2,
         "first_commit_date": "2025-05-03T18:36:10+00:00"
       },
       "commit_metrics": {
@@ -999,8 +1317,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 333,
-      "days_since_last_push": 1,
+      "age_days": 334,
+      "days_since_last_push": 2,
       "ai_summary": "# Technical Summary: WebSpark.HttpClientUtility\n\n## Overview & Purpose\n\nWebSpark.HttpClientUtility is a production-ready .NET library that provides a drop-in HttpClient wrapper designed to eliminate boilerplate HTTP setup code in .NET 8-10 LTS applications. It abstracts away complex infrastructure concerns—resilience patterns, caching, logging, and distributed tracing—into a single `AddHttpClientUtility()` configuration call, enabling developers to implement enterprise-grade HTTP communication with minimal code complexity.\n\n## Core Features & Capabilities\n\nThe library integrates **Polly-based resilience patterns** (retry policies and circuit breakers), **in-memory response caching** with configurable TTLs, **automatic correlation ID generation** for distributed request tracing, and **built-in OpenTelemetry instrumentation** for structured observability. It provides an `IHttpRequestResultService` abstraction that handles typed HTTP responses, error management, and request/response metadata tracking. The ecosystem includes two focused NuGet packages: the core utility (163 KB) and an optional Crawler extension (75 KB) for web scraping with robots.txt parsing and sitemap generation capabilities.\n\n## Technology Stack & Architecture\n\nBuilt entirely in C# with PowerShell build automation, the project targets modern .NET with explicit support for .NET 8, 9, and 10 LTS frameworks. It leverages Microsoft's dependency injection container, ILogger abstractions, and ActivitySource for OpenTelemetry compliance. The design follows the **service-based pattern** with fluent configuration options, enabling both minimal one-line setup and granular control for advanced scenarios. The codebase demonstrates production-grade practices including Source Link support, Native AOT/IL trimming annotations, and zero-warning strict compilation.\n\n## What Makes It Unique\n\nUnlike raw HttpClient (requires 50+ lines of manual setup), Refit (declarative but opinionated), or RestSharp (lower-level abstraction), WebSpark fills the \"configured resilience out-of-the-box\" niche with zero boilerplate. Its commitment to semantic versioning, backward compatibility within major versions, and comprehensive automated test coverage across .NET versions signals production maturity. The integrated crawler package adds differentiation for teams building data aggregation or web intelligence solutions.\n\n## Target Users & Use Cases\n\nIdeal for microservice architectures requiring distributed tracing, background worker jobs needing resilience without manual Polly configuration, and web scraping applications. Not suited for projects requiring declarative type-safe API clients (use Refit instead), legacy .NET Framework support, or maximum low-level control. The project's 75 commits in 90 days and consistent activity pattern indicate active maintenance and community investment.",
       "attention_score": 3.5,
       "attention_metrics": {
@@ -1033,7 +1351,7 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 1,
+            "days_since_last_push": 2,
             "recent_commits_90d": 75,
             "open_issues": 0
           },
@@ -1049,7 +1367,7 @@
           }
         }
       },
-      "rank": 1,
+      "rank": 2,
       "composite_score": 89.05,
       "pull_request_summary": {
         "availability": "available",
@@ -1115,18 +1433,26 @@
           "deletions": 2042
         }
       ],
-      "attention_rank": 25
+      "attention_rank": 27,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/webspark.httpclientutility.png",
+        "url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+        "captured_at": "2026-04-02T20:48:11.898965+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 46.62
+      }
     },
     {
       "name": "github-stats-spark",
       "description": "A GitHub Stats for Profile README.md",
       "summary": {
-        "text": "# Technical Summary: github-stats-spark\n\n## Project Overview\n\n**Stats Spark** is a comprehensive GitHub analytics and visualization platform that automatically generates SVG-based profile statistics and AI-powered repository analysis reports. The project transforms raw GitHub activity data into actionable insights through intelligent algorithms and beautiful visualizations, designed for developers, teams, and open-source maintainers to showcase and analyze development patterns.\n\n## Core Architecture & Components\n\nThe repository employs a **modular, multi-tier architecture**:\n\n1. **Backend Analytics Engine (Python 3.11+)**\n   - PyGithub integration for GitHub API access with smart rate-limit handling and exponential backoff\n   - PyYAML-based configuration system for flexible, environment-specific settings\n   - Multi-algorithm ranking system (30% popularity, 45% activity with time-decay, 25% health metrics)\n   - Claude Haiku AI integration for generating technical summaries with 97%+ success rate and three-tier fallback logic\n\n2. **SVG Visualization Generator (Python + svgwrite)**\n   - Automated generation of 6 visual categories: overview dashboard, commit heatmap, language statistics, streak tracking, personality-driven fun stats, and release cadence\n   - Dynamic Spark Score calculation (0-100 metric: 40% consistency, 35% volume, 25% collaboration)\n   - Theme customization (dark/light/custom) with WCAG AA accessibility compliance\n   - Weekly automation via GitHub Actions at UTC midnight on Sundays\n\n3. **Interactive Frontend Dashboard (JavaScript/React)**\n   - Mobile-first responsive design optimized for 320px-768px viewports with 44x44px touch targets\n   - Chart.js + react-chartjs-2 for interactive data visualization\n   - IndexedDB caching with Dexie library for 7-day offline access and performance optimization\n   - Bottom-sheet navigation patterns, swipe gestures, and drill-down repository details\n   - Lighthouse CI configuration targeting <2s First Contentful Paint with 0.9+ performance scores\n\n4. **Reporting System (Markdown Generation)**\n   - GitHub-flavored markdown output with embedded visualizations\n   - Composite intelligent ranking blending popularity, activity recency, and health signals\n   - Attention scoring combining PR backlog, security alerts, staleness, and dependency drift\n   - Dependency coverage tracking with version resolution and unknown-gap identification\n\n## Key Technical Features\n\n**Smart Data Processing:**\n- Efficient API optimization with caching strategies handling up to 500 repositories in under 5 minutes\n- Pattern recognition algorithms for identifying coding time preferences (night owl, early bird, daytime coder)\n- Time-decay weighted activity analysis across 90d/180d/365d windows\n- Streak calculation and consistency tracking\n\n**Developer Profiling:**\n- Technology stack diversity metrics and specialization classification\n- Contribution pattern analysis (creator, contributor, maintainer classification)\n- Account longevity tracking with experience-based badges\n- Observable trend extraction for long-term development focus\n\n**Enterprise Capabilities:**\n- YAML-based extensible configuration system\n- Local CLI development environment for pre-deployment testing\n- Flexible GitHub Pages automated deployment pipeline\n- Modular architecture enabling easy customization\n\n## Technology Stack & Currency Score\n\n**Primary Stack:** Python (50.6%), JavaScript (21.3%), PowerShell (17.5%), CSS (9.5%), HTML (1.2%)\n\n**Key Dependencies:** PyGithub, PyYAML, svgwrite, requests, python-dateutil, Chart.js, react-chartjs-2, Dexie\n\n**Tech Currency: 69/100** - Modern Python/JavaScript stack with current libraries; some opportunities for dependency updates to cutting-edge versions.\n\n## Activity & Maturity Profile\n\n- **Highly Active & Accelerating:** 171 commits in 90 days, 209 commits in 365 days indicating rapid development velocity\n- **Recently Updated:** Continuous improvements and feature additions\n- **Zero External Visibility:** 0 stars/forks/contributors suggests this is either a newly launched project or private portfolio tool\n- **Substantial Codebase:** 14.8 MB repository size indicates comprehensive implementation\n\n## Target Use Cases & Value Proposition\n\nStats Spark addresses distinct personas: individual developers showcasing GitHub portfolios, technical leaders analyzing team productivity metrics, open-source maintainers tracking project momentum, and organizations conducting repository health assessments. The combination of automated weekly updates, AI-powered insights, mobile-optimized dashboards, and enterprise-grade architecture creates a unique value proposition for GitHub-centric development workflows.",
+        "text": "# Technical Summary: github-stats-spark\n\n## Overview\n\nStats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates professional profile statistics and AI-powered repository analysis. The project combines Python backend services with a modern JavaScript/React frontend to transform raw GitHub activity data into actionable insights, beautiful SVG visualizations, and interactive dashboards.\n\n## Core Functionality\n\nThe platform operates as an integrated suite with three primary components:\n\n1. **SVG Profile Statistics Generator**: Automated Python-based system that creates embeddable visualizations including commit heatmaps, language distributions, streak tracking, and a proprietary \"Spark Score\" metric (0-100 composite scoring algorithm weighing consistency 40%, volume 35%, and collaboration 25%)\n\n2. **AI-Powered Repository Analysis Engine**: Leverages Claude Haiku API integration to generate technical summaries with 97%+ success rate, implements intelligent repository ranking using a weighted algorithm (30% popularity, 45% activity with time-decay, 25% health signals), and provides comprehensive developer profiling\n\n3. **Interactive Mobile-First Dashboard**: React-based single-page application with responsive design (320px-768px viewport optimization), bottom-sheet navigation patterns, Chart.js visualizations, IndexedDB caching for offline support, and drill-down repository analysis with markdown rendering\n\n## Technology Stack & Architecture\n\nThe project employs a polyglot architecture: **Python (50.6%)** backend using PyGithub, PyYAML, svgwrite, and requests libraries for GitHub API orchestration and SVG generation; **JavaScript (21.3%)** with React for the frontend dashboard; **PowerShell (17.5%)** and **CSS (9.5%)** for deployment automation and styling; and **HTML (1.2%)** templating. The tech stack scores 69/100 currency with Python 3.11+ baseline and modern web development practices including Lighthouse CI performance targeting (<2s FCP, 0.9+ performance score), WCAG 2.1 AA accessibility compliance, and GitHub Pages deployment automation.\n\n## Distinctive Features & Design Patterns\n\nStats Spark differentiates itself through several architectural innovations: a sophisticated composite scoring system (Spark Score) combining multiple behavioral metrics; intelligent caching strategies with exponential backoff for rate limit handling; three-tier fallback mechanisms for AI summarization (Claude → README extraction → metadata); attention scoring that blends PR pressure, security findings, staleness, and dependency health; and dependency coverage tracking with version resolution insights. The platform employs GitHub Actions for weekly automated updates, implements smart algorithmic repository weighting that balances established projects with active development, and provides extensible YAML-based configuration for customization.\n\n## Target Users & Use Cases\n\nThe platform serves developers seeking professional GitHub portfolio showcasing, technical teams analyzing repository health and contribution patterns, engineering leaders tracking productivity metrics and technology adoption, and open-source maintainers monitoring project momentum. The zero-maintenance GitHub Actions workflow approach with mobile-optimized interactive dashboards makes it particularly valuable for distributed teams and contributors wanting to visualize development ecosystems without manual intervention.\n\n## Development Velocity & Project Maturity\n\nDespite 0 stars/forks, the repository demonstrates strong internal activity with 165 commits over 90 days and 209 over 365 days in an accelerating pattern, indicating active development iteration. The comprehensive README documentation, enterprise-ready features (rate limiting, caching, error handling), performance optimization focus, and accessibility compliance suggest a mature, production-oriented codebase designed for scalability and reliability in analyzing repositories at scale (targeting 500+ repositories under 5 minutes execution time).",
         "ai_generated": true,
         "generation_method": "claude-haiku-4-5",
-        "generated_at": "2026-04-02T09:51:41.539226",
+        "generated_at": "2026-04-02T15:43:37.151870",
         "model_used": "claude-haiku-4-5",
-        "tokens_used": 3203,
+        "tokens_used": 2964,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/github-stats-spark",
@@ -1142,15 +1468,15 @@
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
       "updated_at": "2026-04-01T05:00:08+00:00",
-      "pushed_at": "2026-04-02T14:40:09+00:00",
+      "pushed_at": "2026-04-02T20:22:18+00:00",
       "total_commits": 209,
-      "recent_commits_90d": 171,
+      "recent_commits_90d": 165,
       "first_commit_date": "2025-12-28T21:04:29+00:00",
       "last_commit_date": "2026-04-01T05:00:03+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
         "total_commits": 209,
-        "recent_90d": 171,
+        "recent_90d": 165,
         "recent_180d": 209,
         "recent_365d": 209,
         "last_commit_date": "2026-04-01T05:00:03+00:00",
@@ -1159,9 +1485,9 @@
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 57.0,
+        "commit_frequency": 55.0,
         "consistency_score": 0,
-        "activity_rate": 1.9,
+        "activity_rate": 1.833,
         "days_since_last_commit": 1,
         "first_commit_date": "2025-12-28T21:04:29+00:00"
       },
@@ -1209,7 +1535,7 @@
         "lines_added": 1,
         "lines_deleted": 0
       },
-      "commit_velocity": 57.0,
+      "commit_velocity": 55.0,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -1376,13 +1702,13 @@
       "has_tests": true,
       "has_docs": true,
       "language_count": 5,
-      "size_kb": 14815,
+      "size_kb": 14902,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 94,
+      "age_days": 95,
       "days_since_last_push": 0,
-      "ai_summary": "# Technical Summary: github-stats-spark\n\n## Project Overview\n\n**Stats Spark** is a comprehensive GitHub analytics and visualization platform that automatically generates SVG-based profile statistics and AI-powered repository analysis reports. The project transforms raw GitHub activity data into actionable insights through intelligent algorithms and beautiful visualizations, designed for developers, teams, and open-source maintainers to showcase and analyze development patterns.\n\n## Core Architecture & Components\n\nThe repository employs a **modular, multi-tier architecture**:\n\n1. **Backend Analytics Engine (Python 3.11+)**\n   - PyGithub integration for GitHub API access with smart rate-limit handling and exponential backoff\n   - PyYAML-based configuration system for flexible, environment-specific settings\n   - Multi-algorithm ranking system (30% popularity, 45% activity with time-decay, 25% health metrics)\n   - Claude Haiku AI integration for generating technical summaries with 97%+ success rate and three-tier fallback logic\n\n2. **SVG Visualization Generator (Python + svgwrite)**\n   - Automated generation of 6 visual categories: overview dashboard, commit heatmap, language statistics, streak tracking, personality-driven fun stats, and release cadence\n   - Dynamic Spark Score calculation (0-100 metric: 40% consistency, 35% volume, 25% collaboration)\n   - Theme customization (dark/light/custom) with WCAG AA accessibility compliance\n   - Weekly automation via GitHub Actions at UTC midnight on Sundays\n\n3. **Interactive Frontend Dashboard (JavaScript/React)**\n   - Mobile-first responsive design optimized for 320px-768px viewports with 44x44px touch targets\n   - Chart.js + react-chartjs-2 for interactive data visualization\n   - IndexedDB caching with Dexie library for 7-day offline access and performance optimization\n   - Bottom-sheet navigation patterns, swipe gestures, and drill-down repository details\n   - Lighthouse CI configuration targeting <2s First Contentful Paint with 0.9+ performance scores\n\n4. **Reporting System (Markdown Generation)**\n   - GitHub-flavored markdown output with embedded visualizations\n   - Composite intelligent ranking blending popularity, activity recency, and health signals\n   - Attention scoring combining PR backlog, security alerts, staleness, and dependency drift\n   - Dependency coverage tracking with version resolution and unknown-gap identification\n\n## Key Technical Features\n\n**Smart Data Processing:**\n- Efficient API optimization with caching strategies handling up to 500 repositories in under 5 minutes\n- Pattern recognition algorithms for identifying coding time preferences (night owl, early bird, daytime coder)\n- Time-decay weighted activity analysis across 90d/180d/365d windows\n- Streak calculation and consistency tracking\n\n**Developer Profiling:**\n- Technology stack diversity metrics and specialization classification\n- Contribution pattern analysis (creator, contributor, maintainer classification)\n- Account longevity tracking with experience-based badges\n- Observable trend extraction for long-term development focus\n\n**Enterprise Capabilities:**\n- YAML-based extensible configuration system\n- Local CLI development environment for pre-deployment testing\n- Flexible GitHub Pages automated deployment pipeline\n- Modular architecture enabling easy customization\n\n## Technology Stack & Currency Score\n\n**Primary Stack:** Python (50.6%), JavaScript (21.3%), PowerShell (17.5%), CSS (9.5%), HTML (1.2%)\n\n**Key Dependencies:** PyGithub, PyYAML, svgwrite, requests, python-dateutil, Chart.js, react-chartjs-2, Dexie\n\n**Tech Currency: 69/100** - Modern Python/JavaScript stack with current libraries; some opportunities for dependency updates to cutting-edge versions.\n\n## Activity & Maturity Profile\n\n- **Highly Active & Accelerating:** 171 commits in 90 days, 209 commits in 365 days indicating rapid development velocity\n- **Recently Updated:** Continuous improvements and feature additions\n- **Zero External Visibility:** 0 stars/forks/contributors suggests this is either a newly launched project or private portfolio tool\n- **Substantial Codebase:** 14.8 MB repository size indicates comprehensive implementation\n\n## Target Use Cases & Value Proposition\n\nStats Spark addresses distinct personas: individual developers showcasing GitHub portfolios, technical leaders analyzing team productivity metrics, open-source maintainers tracking project momentum, and organizations conducting repository health assessments. The combination of automated weekly updates, AI-powered insights, mobile-optimized dashboards, and enterprise-grade architecture creates a unique value proposition for GitHub-centric development workflows.",
+      "ai_summary": "# Technical Summary: github-stats-spark\n\n## Overview\n\nStats Spark is a comprehensive GitHub analytics and visualization platform that automatically generates professional profile statistics and AI-powered repository analysis. The project combines Python backend services with a modern JavaScript/React frontend to transform raw GitHub activity data into actionable insights, beautiful SVG visualizations, and interactive dashboards.\n\n## Core Functionality\n\nThe platform operates as an integrated suite with three primary components:\n\n1. **SVG Profile Statistics Generator**: Automated Python-based system that creates embeddable visualizations including commit heatmaps, language distributions, streak tracking, and a proprietary \"Spark Score\" metric (0-100 composite scoring algorithm weighing consistency 40%, volume 35%, and collaboration 25%)\n\n2. **AI-Powered Repository Analysis Engine**: Leverages Claude Haiku API integration to generate technical summaries with 97%+ success rate, implements intelligent repository ranking using a weighted algorithm (30% popularity, 45% activity with time-decay, 25% health signals), and provides comprehensive developer profiling\n\n3. **Interactive Mobile-First Dashboard**: React-based single-page application with responsive design (320px-768px viewport optimization), bottom-sheet navigation patterns, Chart.js visualizations, IndexedDB caching for offline support, and drill-down repository analysis with markdown rendering\n\n## Technology Stack & Architecture\n\nThe project employs a polyglot architecture: **Python (50.6%)** backend using PyGithub, PyYAML, svgwrite, and requests libraries for GitHub API orchestration and SVG generation; **JavaScript (21.3%)** with React for the frontend dashboard; **PowerShell (17.5%)** and **CSS (9.5%)** for deployment automation and styling; and **HTML (1.2%)** templating. The tech stack scores 69/100 currency with Python 3.11+ baseline and modern web development practices including Lighthouse CI performance targeting (<2s FCP, 0.9+ performance score), WCAG 2.1 AA accessibility compliance, and GitHub Pages deployment automation.\n\n## Distinctive Features & Design Patterns\n\nStats Spark differentiates itself through several architectural innovations: a sophisticated composite scoring system (Spark Score) combining multiple behavioral metrics; intelligent caching strategies with exponential backoff for rate limit handling; three-tier fallback mechanisms for AI summarization (Claude → README extraction → metadata); attention scoring that blends PR pressure, security findings, staleness, and dependency health; and dependency coverage tracking with version resolution insights. The platform employs GitHub Actions for weekly automated updates, implements smart algorithmic repository weighting that balances established projects with active development, and provides extensible YAML-based configuration for customization.\n\n## Target Users & Use Cases\n\nThe platform serves developers seeking professional GitHub portfolio showcasing, technical teams analyzing repository health and contribution patterns, engineering leaders tracking productivity metrics and technology adoption, and open-source maintainers monitoring project momentum. The zero-maintenance GitHub Actions workflow approach with mobile-optimized interactive dashboards makes it particularly valuable for distributed teams and contributors wanting to visualize development ecosystems without manual intervention.\n\n## Development Velocity & Project Maturity\n\nDespite 0 stars/forks, the repository demonstrates strong internal activity with 165 commits over 90 days and 209 over 365 days in an accelerating pattern, indicating active development iteration. The comprehensive README documentation, enterprise-ready features (rate limiting, caching, error handling), performance optimization focus, and accessibility compliance suggest a mature, production-oriented codebase designed for scalability and reliability in analyzing repositories at scale (targeting 500+ repositories under 5 minutes execution time).",
       "attention_score": 6.5,
       "attention_metrics": {
         "score": 6.5,
@@ -1417,7 +1743,7 @@
           "staleness": {
             "score": 0.0,
             "days_since_last_push": 0,
-            "recent_commits_90d": 171,
+            "recent_commits_90d": 165,
             "open_issues": 0
           },
           "dependencies": {
@@ -1432,8 +1758,8 @@
           }
         }
       },
-      "rank": 2,
-      "composite_score": 88.34,
+      "rank": 3,
+      "composite_score": 88.35,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -1492,7 +1818,15 @@
           "deletions": 12092
         }
       ],
-      "attention_rank": 22
+      "attention_rank": 23,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/github-stats-spark.png",
+        "url": "https://markhazleton.github.io/github-stats-spark/",
+        "captured_at": "2026-04-02T20:48:14.069387+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 65.28
+      }
     },
     {
       "name": "mark-hazleton-s-notes",
@@ -2523,7 +2857,7 @@
           }
         }
       },
-      "rank": 3,
+      "rank": 4,
       "composite_score": 88.14,
       "pull_request_summary": {
         "availability": "available",
@@ -2589,18 +2923,18 @@
           "deletions": 256
         }
       ],
-      "attention_rank": 16
+      "attention_rank": 17
     },
     {
       "name": "MuseumSpark",
       "description": "A Museum Trip Planning Application",
       "summary": {
-        "text": "# MuseumSpark - Technical Summary\n\n## Overview\n**MuseumSpark** is an intelligent museum discovery and travel planning platform designed to transform the Walker Art Center Reciprocal Program membership directory into a data-rich, personalized travel companion for art enthusiasts across North America. The project currently tracks 1,269 museums and is in active Phase 1 development, with an ambitious roadmap extending through Q4 2026 to include AI-powered personalization, trip planning, and user account management.\n\n## Key Features & Architecture\nThe platform combines a modern **React 19 + Vite frontend** (deployed via GitHub Pages) with a sophisticated **Python-based data enrichment pipeline** that ingests and validates museum data through multiple phases. Core capabilities include: comprehensive museum browsing with state/province filtering and full-text search, detailed museum profiles with contact information and collection metadata, real-time data quality dashboards tracking enrichment progress (currently 0.08% complete), and multi-phase JSON Schema validation ensuring data integrity. The data pipeline orchestrates content from Wikidata, Wikipedia, museum websites, and specialized CSV lookups through nine enrichment phases, with planned integration of Claude/OpenAI agents (Phase 2.5–3) for AI-assisted collection analysis and scoring.\n\n## Technology & Design Patterns\nThe tech stack leverages **Python 3.11+ with Pydantic 2** for rigorous data validation, **BeautifulSoup4** for web scraping, **TypeScript** for type-safe scripting, and **Tailwind CSS 4** for responsive UI styling. The architecture follows a **multi-phase enrichment pattern** with clear data quality rules (notably \"Never Replace Known With Null\"), JSON Schema validation checkpoints, and evidence tracking to ensure provenance and auditability. Future phases (Phase 4) will introduce a **FastAPI backend with SQLite persistence** and PydanticAI for structured LLM interactions.\n\n## Unique Aspects & Use Cases\nWhat distinguishes MuseumSpark is its **specialized focus on art museum curation and strategic travel optimization**—rather than a generic directory, it prioritizes museums by collection strength (Impressionist, Modern, Contemporary), historical significance, and reputation while providing visit duration estimates and nearby clustering. The project is designed for art enthusiasts planning anything from 2-hour layover visits to multi-day museum tours, making it invaluable for travelers seeking to maximize cultural experiences within time and geographic constraints. The transparent, publicly tracked enrichment dashboard and commitment to data quality assurance also serve as a community resource showing real-time progress toward a comprehensive North American art museum database.",
+        "text": "# MuseumSpark - Technical Summary\n\n**MuseumSpark** is an intelligent travel planning platform that transforms the Walker Art Center's reciprocal museum membership list (1,269 museums across North America) into a curated, data-enriched resource for art enthusiasts. The project implements a sophisticated multi-phase data enrichment pipeline that aggregates museum information from Wikidata, Wikipedia, official websites, and structured metadata to enable smart prioritization and personalized itinerary planning based on collection strength, location, and visit duration.\n\nThe platform features a **React 19 + Vite frontend** with Tailwind CSS styling deployed via GitHub Pages, offering comprehensive museum browsing, searching, and filtering capabilities alongside a real-time data quality dashboard tracking enrichment progress across all 1,269 museums. Behind the scenes, a **Python 3.11+ data pipeline** leveraging Pydantic 2 for validation, BeautifulSoup4 for web scraping, and JSON Schema enforcement orchestrates multi-stage data collection and quality assurance—currently at 0.08% full enrichment completion with systematic progression through nine distinct phases.\n\nThe architecture demonstrates strong separation of concerns with a static frontend consuming enriched JSON datasets built by offline Python scripts, prioritizing data quality through \"never replace known with null\" principles and comprehensive schema validation. The project roadmap progresses from foundational data enrichment (Phase 0–1, currently active) through expert scoring and AI-assisted analysis (Phases 2–3, planned Q2-Q3 2026) toward a full-featured Phase 4 platform featuring FastAPI backend, user authentication, favorite tracking, and AI-powered travel agent functionality targeting Q4 2026.\n\nThis makes MuseumSpark particularly noteworthy for its **deliberate, quality-first approach to data curation** rather than rapid feature shipping—employing LLM-assisted content extraction with human expert validation, heuristic fallbacks for missing data, and transparent progress tracking to build a trustworthy resource for art lovers planning multi-museum trips across North America.",
         "ai_generated": true,
         "generation_method": "claude-haiku-4-5",
-        "generated_at": "2026-04-02T10:01:49.490674",
+        "generated_at": "2026-04-02T15:44:47.139511",
         "model_used": "claude-haiku-4-5",
-        "tokens_used": 2798,
+        "tokens_used": 2673,
         "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/MuseumSpark",
@@ -2616,7 +2950,7 @@
       "languages": {},
       "created_at": "2026-01-15T13:24:02+00:00",
       "updated_at": "2026-03-29T20:23:03+00:00",
-      "pushed_at": "2026-03-29T20:22:59+00:00",
+      "pushed_at": "2026-04-02T19:36:54+00:00",
       "total_commits": 77,
       "recent_commits_90d": 77,
       "first_commit_date": "2026-01-15T13:24:02+00:00",
@@ -2636,7 +2970,7 @@
         "commit_frequency": 25.67,
         "consistency_score": 0,
         "activity_rate": 0.856,
-        "days_since_last_commit": 3,
+        "days_since_last_commit": 4,
         "first_commit_date": "2026-01-15T13:24:02+00:00"
       },
       "commit_metrics": {
@@ -2691,28 +3025,30 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 6,
-      "size_kb": 23795,
+      "size_kb": 23828,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
       "age_days": 77,
-      "days_since_last_push": 3,
-      "ai_summary": "# MuseumSpark - Technical Summary\n\n## Overview\n**MuseumSpark** is an intelligent museum discovery and travel planning platform designed to transform the Walker Art Center Reciprocal Program membership directory into a data-rich, personalized travel companion for art enthusiasts across North America. The project currently tracks 1,269 museums and is in active Phase 1 development, with an ambitious roadmap extending through Q4 2026 to include AI-powered personalization, trip planning, and user account management.\n\n## Key Features & Architecture\nThe platform combines a modern **React 19 + Vite frontend** (deployed via GitHub Pages) with a sophisticated **Python-based data enrichment pipeline** that ingests and validates museum data through multiple phases. Core capabilities include: comprehensive museum browsing with state/province filtering and full-text search, detailed museum profiles with contact information and collection metadata, real-time data quality dashboards tracking enrichment progress (currently 0.08% complete), and multi-phase JSON Schema validation ensuring data integrity. The data pipeline orchestrates content from Wikidata, Wikipedia, museum websites, and specialized CSV lookups through nine enrichment phases, with planned integration of Claude/OpenAI agents (Phase 2.5–3) for AI-assisted collection analysis and scoring.\n\n## Technology & Design Patterns\nThe tech stack leverages **Python 3.11+ with Pydantic 2** for rigorous data validation, **BeautifulSoup4** for web scraping, **TypeScript** for type-safe scripting, and **Tailwind CSS 4** for responsive UI styling. The architecture follows a **multi-phase enrichment pattern** with clear data quality rules (notably \"Never Replace Known With Null\"), JSON Schema validation checkpoints, and evidence tracking to ensure provenance and auditability. Future phases (Phase 4) will introduce a **FastAPI backend with SQLite persistence** and PydanticAI for structured LLM interactions.\n\n## Unique Aspects & Use Cases\nWhat distinguishes MuseumSpark is its **specialized focus on art museum curation and strategic travel optimization**—rather than a generic directory, it prioritizes museums by collection strength (Impressionist, Modern, Contemporary), historical significance, and reputation while providing visit duration estimates and nearby clustering. The project is designed for art enthusiasts planning anything from 2-hour layover visits to multi-day museum tours, making it invaluable for travelers seeking to maximize cultural experiences within time and geographic constraints. The transparent, publicly tracked enrichment dashboard and commitment to data quality assurance also serve as a community resource showing real-time progress toward a comprehensive North American art museum database.",
-      "attention_score": 3.5,
+      "days_since_last_push": 0,
+      "ai_summary": "# MuseumSpark - Technical Summary\n\n**MuseumSpark** is an intelligent travel planning platform that transforms the Walker Art Center's reciprocal museum membership list (1,269 museums across North America) into a curated, data-enriched resource for art enthusiasts. The project implements a sophisticated multi-phase data enrichment pipeline that aggregates museum information from Wikidata, Wikipedia, official websites, and structured metadata to enable smart prioritization and personalized itinerary planning based on collection strength, location, and visit duration.\n\nThe platform features a **React 19 + Vite frontend** with Tailwind CSS styling deployed via GitHub Pages, offering comprehensive museum browsing, searching, and filtering capabilities alongside a real-time data quality dashboard tracking enrichment progress across all 1,269 museums. Behind the scenes, a **Python 3.11+ data pipeline** leveraging Pydantic 2 for validation, BeautifulSoup4 for web scraping, and JSON Schema enforcement orchestrates multi-stage data collection and quality assurance—currently at 0.08% full enrichment completion with systematic progression through nine distinct phases.\n\nThe architecture demonstrates strong separation of concerns with a static frontend consuming enriched JSON datasets built by offline Python scripts, prioritizing data quality through \"never replace known with null\" principles and comprehensive schema validation. The project roadmap progresses from foundational data enrichment (Phase 0–1, currently active) through expert scoring and AI-assisted analysis (Phases 2–3, planned Q2-Q3 2026) toward a full-featured Phase 4 platform featuring FastAPI backend, user authentication, favorite tracking, and AI-powered travel agent functionality targeting Q4 2026.\n\nThis makes MuseumSpark particularly noteworthy for its **deliberate, quality-first approach to data curation** rather than rapid feature shipping—employing LLM-assisted content extraction with human expert validation, heuristic fallbacks for missing data, and transparent progress tracking to build a trustworthy resource for art lovers planning multi-museum trips across North America.",
+      "attention_score": 9.5,
       "attention_metrics": {
-        "score": 3.5,
+        "score": 9.5,
         "tier": "healthy",
         "needs_attention": false,
-        "reasons": [],
+        "reasons": [
+          "pull_requests"
+        ],
         "components": {
           "pull_requests": {
-            "score": 0.0,
+            "score": 24.0,
             "availability": "available",
             "reason": "none",
-            "total_open": 0,
+            "total_open": 2,
             "draft_count": 0,
             "review_requested_count": 0,
-            "oldest_open_age_days": null
+            "oldest_open_age_days": 0
           },
           "security": {
             "score": 10.0,
@@ -2729,7 +3065,7 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 3,
+            "days_since_last_push": 0,
             "recent_commits_90d": 77,
             "open_issues": 0
           },
@@ -2745,16 +3081,16 @@
           }
         }
       },
-      "rank": 4,
+      "rank": 5,
       "composite_score": 80.33,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
-        "has_open_pull_requests": false,
-        "total_open": 0,
+        "has_open_pull_requests": true,
+        "total_open": 2,
         "draft_count": 0,
         "review_requested_count": 0,
-        "oldest_open_age_days": null,
+        "oldest_open_age_days": 0,
         "source": "rest.pulls.list"
       },
       "security_summary": {
@@ -2805,7 +3141,15 @@
           "deletions": 1491
         }
       ],
-      "attention_rank": 26
+      "attention_rank": 15,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/museumspark.png",
+        "url": "https://markhazleton.github.io/MuseumSpark/",
+        "captured_at": "2026-04-02T20:48:46.007443+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 98.35
+      }
     },
     {
       "name": "UISampleSpark",
@@ -2911,7 +3255,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 2533,
+      "age_days": 2534,
       "days_since_last_push": 4,
       "ai_summary": "# Technical Summary: UISampleSpark\n\n**UISampleSpark** is a comprehensive educational reference application built on .NET 10 and ASP.NET Core that demonstrates multiple modern web UI architectural patterns and technologies using a common Employee/Department domain model. The repository implements seven distinct UI approaches—MVC with AJAX, Razor Pages, vanilla JavaScript SPA, React 18, Vue 3, htmx, and Blazor Server—allowing developers to compare implementation patterns, performance characteristics, and developer experience across different front-end paradigms. The application features a robust backend with REST/OpenAPI endpoints, Entity Framework Core data access, dependency injection, unit testing infrastructure, dynamic Bootswatch theming with real-time theme switching, and comprehensive CI/CD automation via GitHub Actions with Docker containerization and Azure deployment support. Architecturally, the project employs clean separation of concerns through layered projects (UI, Core, Data, Tests), repository patterns, service abstractions, and health checks with Application Insights observability. The codebase is actively maintained with accelerating activity (86 commits in 90 days), represents five years of evolution from .NET Core through .NET 10, and is uniquely valuable as both a learning resource for comparing UI technologies and a reference implementation demonstrating modern ASP.NET Core best practices including API key security, pagination, validation, and containerized deployment. Primary audiences include .NET developers evaluating front-end frameworks, architects designing polyglot UI solutions, and teams establishing CI/CD and cloud deployment patterns for web applications.",
       "attention_score": 3.5,
@@ -2961,7 +3305,7 @@
           }
         }
       },
-      "rank": 5,
+      "rank": 6,
       "composite_score": 77.52,
       "pull_request_summary": {
         "availability": "available",
@@ -3021,7 +3365,7 @@
           "deletions": 48357
         }
       ],
-      "attention_rank": 27
+      "attention_rank": 28
     },
     {
       "name": "git-spark",
@@ -3461,7 +3805,7 @@
           }
         }
       },
-      "rank": 6,
+      "rank": 7,
       "composite_score": 70.98,
       "pull_request_summary": {
         "availability": "available",
@@ -3527,7 +3871,15 @@
           "deletions": 58
         }
       ],
-      "attention_rank": 24
+      "attention_rank": 26,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/git-spark.png",
+        "url": "https://markhazleton.github.io/git-spark/",
+        "captured_at": "2026-04-02T20:48:47.835277+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 185.38
+      }
     },
     {
       "name": "TailwindSpark",
@@ -4029,7 +4381,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 246,
+      "age_days": 247,
       "days_since_last_push": 0,
       "ai_summary": "# TailwindSpark - Technical Summary\n\n**TailwindSpark** is a comprehensive Tailwind CSS design system and component showcase built as a modern React TypeScript monorepo, serving as both a production-ready UI framework and an educational reference for modern web development practices. The project demonstrates a complete design system implementation using Tailwind CSS v4 with @theme directives and CSS custom properties, featuring a rich library of interactive components (buttons, forms, cards, modals, dashboards, e-commerce flows) alongside a showcase application with analytics, user management, and performance monitoring capabilities.\n\nThe technical stack is modern and cutting-edge, leveraging React 19.1 with concurrent features, TypeScript 5.9 in strict mode, Vite 7.1 for HMR and optimized builds, and Turborepo 2.7 for monorepo package management, complemented by Vitest for testing, React Router 7.9 for routing, and Lucide React for a consistent icon system. The architecture employs a well-structured monorepo pattern with shared packages (design-tokens and ui-components) consumed by the main demo application, enabling code reuse, consistent theming, and scalable component development across the organization.\n\nWhat distinguishes TailwindSpark is its commitment to production-grade quality and developer experience: it includes automated CI/CD pipelines via GitHub Actions, comprehensive accessibility compliance (WCAG 2.1 AA), real-time Web Vitals monitoring, security scanning with CodeQL and Dependabot, type-safe component development, and dark mode support with CSS variable theming. The project targets frontend developers, design system teams, and organizations seeking a reference implementation for building scalable, accessible, and performant React applications with Tailwind CSS, while also serving as Mark Hazleton's portfolio piece demonstrating full-stack modern web development expertise.",
       "attention_score": 64.9,
@@ -4083,8 +4435,8 @@
           }
         }
       },
-      "rank": 7,
-      "composite_score": 70.27,
+      "rank": 8,
+      "composite_score": 70.28,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -4137,7 +4489,15 @@
           "deletions": 4387
         }
       ],
-      "attention_rank": 1
+      "attention_rank": 1,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/tailwindspark.png",
+        "url": "https://markhazleton.github.io/TailwindSpark/",
+        "captured_at": "2026-04-02T20:48:50.924052+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 76.38
+      }
     },
     {
       "name": "RequestSpark",
@@ -4293,7 +4653,7 @@
           }
         }
       },
-      "rank": 8,
+      "rank": 9,
       "composite_score": 57.48,
       "pull_request_summary": {
         "availability": "available",
@@ -4347,7 +4707,211 @@
           "deletions": 34
         }
       ],
-      "attention_rank": 28
+      "attention_rank": 29
+    },
+    {
+      "name": "WebSpark",
+      "description": null,
+      "summary": {
+        "text": "# WebSpark Technical Summary\n\nWebSpark is a modular .NET 9 web application suite comprising three primary tools—PromptSpark (LLM prompt optimization), RecipeSpark (recipe management), and TriviaSpark (quiz creation)—built with ASP.NET Core MVC, Bootstrap 5, and organized across seven scalable architectural areas. The project emphasizes production-grade quality through comprehensive SEO optimization capabilities including dynamic meta tags, JSON-LD schema markup, XML sitemaps, Google Analytics 4 integration, and Core Web Vitals monitoring, supported by extensive test coverage (47 passing SEO tests). A distinctive feature is its spec-driven development workflow powered by SpecKit commands (`/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `/speckit.critic`, `/speckit.implement`, `/speckit.review`) that enforce rigorous specifications, implementation planning, and adversarial risk assessment before code execution, specifically designed to catch ASP.NET Core anti-patterns, security vulnerabilities, performance issues, and operational blindspots. The architecture balances flexibility through modular component design with governance through branch protection rules, branch naming conventions, and a documented constitution of architectural principles. While early-stage (1 star, created January 2024), the project demonstrates sophisticated engineering discipline targeting developers and organizations seeking to build scalable, SEO-aware web applications with built-in risk mitigation and quality gates throughout the development lifecycle.",
+        "ai_generated": true,
+        "generation_method": "claude-haiku-4-5",
+        "generated_at": "2026-04-02T15:47:01.502367",
+        "model_used": "claude-haiku-4-5",
+        "tokens_used": 2675,
+        "confidence_score": 90
+      },
+      "url": "https://github.com/markhazleton/WebSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 1,
+      "forks": 0,
+      "watchers": 1,
+      "language": "C#",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2024-01-11T17:25:12+00:00",
+      "updated_at": "2026-01-29T02:51:50+00:00",
+      "pushed_at": "2026-04-02T17:59:14+00:00",
+      "total_commits": 264,
+      "recent_commits_90d": 12,
+      "first_commit_date": "2024-06-19T17:21:12+00:00",
+      "last_commit_date": "2026-01-29T02:51:42+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark",
+        "total_commits": 264,
+        "recent_90d": 12,
+        "recent_180d": 31,
+        "recent_365d": 73,
+        "last_commit_date": "2026-01-29T02:51:42+00:00",
+        "patterns": [
+          "active"
+        ],
+        "commit_frequency": 4.0,
+        "consistency_score": 0,
+        "activity_rate": 0.133,
+        "days_since_last_commit": 63,
+        "first_commit_date": "2024-06-19T17:21:12+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 25263.72,
+        "largest_commit": {
+          "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
+          "date": "2025-04-28T12:12:26+00:00",
+          "size": 1266514,
+          "files_changed": 633257,
+          "lines_added": 246074,
+          "lines_deleted": 387183
+        },
+        "smallest_commit": {
+          "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
+          "date": "2024-12-02T20:51:03+00:00",
+          "size": 2,
+          "files_changed": 1,
+          "lines_added": 0,
+          "lines_deleted": 1
+        },
+        "total_commits": 200,
+        "commit_size_distribution": {
+          "min": 0,
+          "q1": 306,
+          "median": 1455,
+          "q3": 5214,
+          "max": 1266514
+        }
+      },
+      "avg_commit_size": 25263.72,
+      "largest_commit": {
+        "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
+        "date": "2025-04-28T12:12:26+00:00",
+        "size": 1266514,
+        "files_changed": 633257,
+        "lines_added": 246074,
+        "lines_deleted": 387183
+      },
+      "smallest_commit": {
+        "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
+        "date": "2024-12-02T20:51:03+00:00",
+        "size": 2,
+        "files_changed": 1,
+        "lines_added": 0,
+        "lines_deleted": 1
+      },
+      "commit_velocity": 4.0,
+      "tech_stack": null,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": true,
+      "has_docs": false,
+      "language_count": 7,
+      "size_kb": 69144,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 812,
+      "days_since_last_push": 0,
+      "ai_summary": "# WebSpark Technical Summary\n\nWebSpark is a modular .NET 9 web application suite comprising three primary tools—PromptSpark (LLM prompt optimization), RecipeSpark (recipe management), and TriviaSpark (quiz creation)—built with ASP.NET Core MVC, Bootstrap 5, and organized across seven scalable architectural areas. The project emphasizes production-grade quality through comprehensive SEO optimization capabilities including dynamic meta tags, JSON-LD schema markup, XML sitemaps, Google Analytics 4 integration, and Core Web Vitals monitoring, supported by extensive test coverage (47 passing SEO tests). A distinctive feature is its spec-driven development workflow powered by SpecKit commands (`/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `/speckit.critic`, `/speckit.implement`, `/speckit.review`) that enforce rigorous specifications, implementation planning, and adversarial risk assessment before code execution, specifically designed to catch ASP.NET Core anti-patterns, security vulnerabilities, performance issues, and operational blindspots. The architecture balances flexibility through modular component design with governance through branch protection rules, branch naming conventions, and a documented constitution of architectural principles. While early-stage (1 star, created January 2024), the project demonstrates sophisticated engineering discipline targeting developers and organizations seeking to build scalable, SEO-aware web applications with built-in risk mitigation and quality gates throughout the development lifecycle.",
+      "attention_score": 38.0,
+      "attention_metrics": {
+        "score": 38.0,
+        "tier": "watch",
+        "needs_attention": true,
+        "reasons": [
+          "security"
+        ],
+        "components": {
+          "pull_requests": {
+            "score": 12.0,
+            "availability": "available",
+            "reason": "none",
+            "total_open": 1,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": 0
+          },
+          "security": {
+            "score": 100.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "warning_present",
+            "active_alert_counts": {
+              "total_open": 11,
+              "critical": 0,
+              "high": 5,
+              "medium": 6,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 0.0,
+            "days_since_last_push": 0,
+            "recent_commits_90d": 12,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 0.0,
+            "total_dependencies": 0,
+            "outdated_count": 0,
+            "outdated_percentage": 0.0,
+            "currency_score": 100,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 100.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 10,
+      "composite_score": 42.54,
+      "pull_request_summary": {
+        "availability": "available",
+        "reason": "none",
+        "has_open_pull_requests": true,
+        "total_open": 1,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": 0,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "warning_present",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 11,
+          "critical": 0,
+          "high": 5,
+          "medium": 6,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get",
+          "rest.dependabot.alerts"
+        ]
+      },
+      "total_additions": 2251329,
+      "total_deletions": 1985580,
+      "code_churn": 4236909,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "markhazleton",
+          "commits": 26,
+          "additions": 87059,
+          "deletions": 7007
+        }
+      ],
+      "attention_rank": 4
     },
     {
       "name": "ReactSparkPortfolio",
@@ -5167,7 +5731,7 @@
           }
         }
       },
-      "rank": 9,
+      "rank": 11,
       "composite_score": 42.45,
       "pull_request_summary": {
         "availability": "available",
@@ -5221,7 +5785,15 @@
           "deletions": 91
         }
       ],
-      "attention_rank": 15
+      "attention_rank": 16,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/reactsparkportfolio.png",
+        "url": "https://reactspark.markhazleton.com/",
+        "captured_at": "2026-04-02T20:48:53.820530+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 69.18
+      }
     },
     {
       "name": "KeyPressCounter",
@@ -5453,7 +6025,7 @@
           }
         }
       },
-      "rank": 10,
+      "rank": 12,
       "composite_score": 41.71,
       "pull_request_summary": {
         "availability": "available",
@@ -5501,7 +6073,7 @@
           "deletions": 790
         }
       ],
-      "attention_rank": 21
+      "attention_rank": 22
     },
     {
       "name": "SupportSpark",
@@ -7050,7 +7622,7 @@
           }
         }
       },
-      "rank": 11,
+      "rank": 13,
       "composite_score": 41.35,
       "pull_request_summary": {
         "availability": "available",
@@ -7104,7 +7676,15 @@
           "deletions": 157
         }
       ],
-      "attention_rank": 17
+      "attention_rank": 18,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/supportspark.png",
+        "url": "https://markhazleton.github.io/SupportSpark/",
+        "captured_at": "2026-04-02T20:48:55.832748+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 139.77
+      }
     },
     {
       "name": "JsBootSpark",
@@ -7702,7 +8282,7 @@
           }
         }
       },
-      "rank": 12,
+      "rank": 14,
       "composite_score": 40.87,
       "pull_request_summary": {
         "availability": "available",
@@ -7750,7 +8330,15 @@
           "deletions": 41669
         }
       ],
-      "attention_rank": 2
+      "attention_rank": 2,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/jsbootspark.png",
+        "url": "https://markhazleton.github.io/JsBootSpark/",
+        "captured_at": "2026-04-02T20:48:57.781152+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 48.46
+      }
     },
     {
       "name": "Texecon",
@@ -8392,7 +8980,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 210,
+      "age_days": 211,
       "days_since_last_push": 3,
       "ai_summary": "# TexEcon Technical Summary\n\n**TexEcon** is a modern static React application designed to deliver expert economic analysis and commentary on the Texas economy, optimized for deployment on GitHub Pages with a focus on SEO performance and content freshness. The project implements a sophisticated build-time content management system that fetches dynamic content from a WebSpark headless CMS API during compilation, with intelligent fallback mechanisms to cached data, enabling static site generation with pre-rendered pages while maintaining content currency without runtime API calls. Built on React 19, TypeScript, Vite 7.1, and Tailwind CSS, the application leverages Radix UI and shadcn/ui for accessible component primitives, Wouter for lightweight client-side routing, and implements advanced SEO capabilities including structured data, dynamic sitemap generation, and Core Web Vitals optimization. The architecture demonstrates a hybrid static-dynamic approach through its multi-stage build pipeline (content fetch → sitemap generation → Vite compilation → static page generation) that achieves the performance benefits of static sites while supporting dynamic content routes and progressive enhancement with HTML fallbacks. This design pattern is particularly noteworthy for balancing the need for fresh, CMS-driven content with the deployment simplicity, security, and performance characteristics of GitHub Pages, making it an excellent reference implementation for content-heavy applications requiring both scalability and search engine optimization without traditional server infrastructure.",
       "attention_score": 8.4,
@@ -8444,8 +9032,8 @@
           }
         }
       },
-      "rank": 13,
-      "composite_score": 39.43,
+      "rank": 15,
+      "composite_score": 39.44,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -8498,211 +9086,15 @@
           "deletions": 1569
         }
       ],
-      "attention_rank": 18
-    },
-    {
-      "name": "WebSpark",
-      "description": null,
-      "summary": {
-        "text": "# WebSpark Technical Summary\n\n**WebSpark** is a comprehensive .NET 9-based web application suite comprising three specialized tools: PromptSpark (LLM prompt optimization), RecipeSpark (recipe management), and TriviaSpark (quiz creation platform). Built on ASP.NET Core MVC with Bootstrap 5, the project features a modular seven-area architecture (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity) designed for scalability and versatility across multiple business domains. The repository uniquely emphasizes **spec-driven development** with an automated SpecKit workflow that includes rigorous adversarial risk assessment (`/speckit.critic` command) to identify showstoppers, security vulnerabilities, performance issues, and operational gaps before implementation—enforcing quality gates and reducing production risk. Additional notable capabilities include comprehensive SEO optimization features (dynamic meta tags, JSON-LD structured data, XML sitemaps, Google Analytics 4 integration, Core Web Vitals monitoring, and SEO audit logging via Application Insights) with 47 passing tests validating implementation quality. The codebase is actively maintained with modern web standards, organized through feature-branch-based specifications, and represents an enterprise-grade approach to managing complexity across multiple interconnected web applications while maintaining strict architectural governance.",
-        "ai_generated": true,
-        "generation_method": "claude-haiku-4-5",
-        "generated_at": "2026-04-02T10:21:15.170401",
-        "model_used": "claude-haiku-4-5",
-        "tokens_used": 2652,
-        "confidence_score": 90
-      },
-      "url": "https://github.com/markhazleton/WebSpark",
-      "homepage": null,
-      "has_pages": false,
-      "pages_url": null,
-      "website_url": null,
-      "stars": 1,
-      "forks": 0,
-      "watchers": 1,
-      "language": "C#",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2024-01-11T17:25:12+00:00",
-      "updated_at": "2026-01-29T02:51:50+00:00",
-      "pushed_at": "2026-03-08T23:16:30+00:00",
-      "total_commits": 264,
-      "recent_commits_90d": 12,
-      "first_commit_date": "2024-06-19T17:21:12+00:00",
-      "last_commit_date": "2026-01-29T02:51:42+00:00",
-      "commit_history": {
-        "repository_name": "WebSpark",
-        "total_commits": 264,
-        "recent_90d": 12,
-        "recent_180d": 31,
-        "recent_365d": 73,
-        "last_commit_date": "2026-01-29T02:51:42+00:00",
-        "patterns": [
-          "active"
-        ],
-        "commit_frequency": 4.0,
-        "consistency_score": 0,
-        "activity_rate": 0.133,
-        "days_since_last_commit": 63,
-        "first_commit_date": "2024-06-19T17:21:12+00:00"
-      },
-      "commit_metrics": {
-        "avg_size": 25263.72,
-        "largest_commit": {
-          "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
-          "date": "2025-04-28T12:12:26+00:00",
-          "size": 1266514,
-          "files_changed": 633257,
-          "lines_added": 246074,
-          "lines_deleted": 387183
-        },
-        "smallest_commit": {
-          "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
-          "date": "2024-12-02T20:51:03+00:00",
-          "size": 2,
-          "files_changed": 1,
-          "lines_added": 0,
-          "lines_deleted": 1
-        },
-        "total_commits": 200,
-        "commit_size_distribution": {
-          "min": 0,
-          "q1": 306,
-          "median": 1455,
-          "q3": 5214,
-          "max": 1266514
-        }
-      },
-      "avg_commit_size": 25263.72,
-      "largest_commit": {
-        "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
-        "date": "2025-04-28T12:12:26+00:00",
-        "size": 1266514,
-        "files_changed": 633257,
-        "lines_added": 246074,
-        "lines_deleted": 387183
-      },
-      "smallest_commit": {
-        "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
-        "date": "2024-12-02T20:51:03+00:00",
-        "size": 2,
-        "files_changed": 1,
-        "lines_added": 0,
-        "lines_deleted": 1
-      },
-      "commit_velocity": 4.0,
-      "tech_stack": null,
-      "has_readme": true,
-      "has_license": true,
-      "has_ci_cd": false,
-      "has_tests": true,
-      "has_docs": false,
-      "language_count": 7,
-      "size_kb": 69023,
-      "is_fork": false,
-      "is_private": false,
-      "is_archived": false,
-      "age_days": 811,
-      "days_since_last_push": 24,
-      "ai_summary": "# WebSpark Technical Summary\n\n**WebSpark** is a comprehensive .NET 9-based web application suite comprising three specialized tools: PromptSpark (LLM prompt optimization), RecipeSpark (recipe management), and TriviaSpark (quiz creation platform). Built on ASP.NET Core MVC with Bootstrap 5, the project features a modular seven-area architecture (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity) designed for scalability and versatility across multiple business domains. The repository uniquely emphasizes **spec-driven development** with an automated SpecKit workflow that includes rigorous adversarial risk assessment (`/speckit.critic` command) to identify showstoppers, security vulnerabilities, performance issues, and operational gaps before implementation—enforcing quality gates and reducing production risk. Additional notable capabilities include comprehensive SEO optimization features (dynamic meta tags, JSON-LD structured data, XML sitemaps, Google Analytics 4 integration, Core Web Vitals monitoring, and SEO audit logging via Application Insights) with 47 passing tests validating implementation quality. The codebase is actively maintained with modern web standards, organized through feature-branch-based specifications, and represents an enterprise-grade approach to managing complexity across multiple interconnected web applications while maintaining strict architectural governance.",
-      "attention_score": 38.0,
-      "attention_metrics": {
-        "score": 38.0,
-        "tier": "watch",
-        "needs_attention": true,
-        "reasons": [
-          "security"
-        ],
-        "components": {
-          "pull_requests": {
-            "score": 0.0,
-            "availability": "available",
-            "reason": "none",
-            "total_open": 0,
-            "draft_count": 0,
-            "review_requested_count": 0,
-            "oldest_open_age_days": null
-          },
-          "security": {
-            "score": 100.0,
-            "availability": "partial",
-            "reason": "permission_denied",
-            "overall_state": "warning_present",
-            "active_alert_counts": {
-              "total_open": 10,
-              "critical": 0,
-              "high": 5,
-              "medium": 5,
-              "low": 0
-            }
-          },
-          "staleness": {
-            "score": 12.0,
-            "days_since_last_push": 24,
-            "recent_commits_90d": 12,
-            "open_issues": 0
-          },
-          "dependencies": {
-            "score": 0.0,
-            "total_dependencies": 0,
-            "outdated_count": 0,
-            "outdated_percentage": 0.0,
-            "currency_score": 100,
-            "version_coverage_percentage": 100.0,
-            "latest_version_coverage_percentage": 100.0,
-            "unknown_versions_count": 0
-          }
-        }
-      },
-      "rank": 14,
-      "composite_score": 38.03,
-      "pull_request_summary": {
-        "availability": "available",
-        "reason": "none",
-        "has_open_pull_requests": false,
-        "total_open": 0,
-        "draft_count": 0,
-        "review_requested_count": 0,
-        "oldest_open_age_days": null,
-        "source": "rest.pulls.list"
-      },
-      "security_summary": {
-        "availability": "partial",
-        "reason": "permission_denied",
-        "overall_state": "warning_present",
-        "feature_status": {
-          "advanced_security": "unknown",
-          "secret_scanning": "unknown",
-          "secret_scanning_push_protection": "unknown",
-          "dependency_alerts": "unavailable",
-          "automated_security_fixes": "unavailable"
-        },
-        "active_alert_counts": {
-          "total_open": 10,
-          "critical": 0,
-          "high": 5,
-          "medium": 5,
-          "low": 0
-        },
-        "sources": [
-          "rest.repos.get",
-          "rest.dependabot.alerts"
-        ]
-      },
-      "total_additions": 2251329,
-      "total_deletions": 1985580,
-      "code_churn": 4236909,
-      "bus_factor": 1,
-      "bus_factor_health": "critical",
-      "contributor_stats": [
-        {
-          "login": "markhazleton",
-          "commits": 26,
-          "additions": 87059,
-          "deletions": 7007
-        }
-      ],
-      "attention_rank": 4
+      "attention_rank": 19,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/texecon.png",
+        "url": "https://markhazleton.github.io/Texecon/",
+        "captured_at": "2026-04-02T20:49:00.256759+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 469.63
+      }
     },
     {
       "name": "WebProjectMechanics",
@@ -8807,7 +9199,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 3116,
+      "age_days": 3117,
       "days_since_last_push": 13,
       "ai_summary": "# Technical Summary: WebProjectMechanics\n\n**WebProjectMechanics** is a greenfield rebuild of a 20+ year legacy multi-tenant content management system, designed to serve 36+ domains from a single application instance while maintaining cost efficiency (~$10/month on Azure Linux). The system uses a plugin-based architecture with isolated SQLite databases per tenant and a publish-to-static model that pre-renders all public content as HTML served by Caddy, eliminating database queries for end users and maximizing performance and availability.\n\nThe project is built on modern .NET 9 with ASP.NET Core Minimal APIs and Entity Framework Core, featuring a clean modular structure with domain-specific plugins (CMS, Mineral Collection, Recipes) and a shared infrastructure layer. Architecture patterns include physical data isolation (per-site SQLite files rather than multi-tenant columns), a clear separation between API and static content delivery, and infrastructure-as-code deployment using Caddy for reverse proxying and automatic SSL termination on Linux.\n\nWhat distinguishes this project is its pragmatic approach to supporting legacy complexity: it documents the complete legacy system specification while systematically migrating to cloud-native patterns, combines multiple language support (VB.NET, C#, JavaScript, XSLT, ASP.NET), and demonstrates cost-conscious hosting decisions suitable for small-to-medium multi-tenant SaaS platforms. The target audience includes web hosting providers, content publishers, and organizations managing multiple domain properties, while the implementation plan and comprehensive documentation make it valuable as a reference architecture for legacy system modernization projects.",
       "attention_score": 39.1,
@@ -8859,7 +9251,7 @@
           }
         }
       },
-      "rank": 15,
+      "rank": 16,
       "composite_score": 37.9,
       "pull_request_summary": {
         "availability": "available",
@@ -9069,7 +9461,7 @@
           }
         }
       },
-      "rank": 16,
+      "rank": 17,
       "composite_score": 37.85,
       "pull_request_summary": {
         "availability": "available",
@@ -9123,7 +9515,7 @@
           "deletions": 52
         }
       ],
-      "attention_rank": 29
+      "attention_rank": 30
     },
     {
       "name": "DataSpark",
@@ -9229,7 +9621,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 3068,
+      "age_days": 3069,
       "days_since_last_push": 1,
       "ai_summary": "# DataSpark Technical Summary\n\nDataSpark is a comprehensive .NET 10 toolkit designed for SQLite database analysis and code generation, offering both command-line and web-based interfaces for developers and data analysts. The project provides core functionality for discovering SQLite files, exporting tables to CSV, generating schema reports in multiple formats (text, JSON, Markdown), and automatically generating C# Data Transfer Objects (DTOs) from database schemas. Built with a modular architecture, it consists of a reusable core library (DataSpark.Core) shared between a CLI application (DataSpark.Console) and an ASP.NET Core MVC web UI (DataSpark.Web), complemented by comprehensive MSTest unit tests and BenchmarkDotNet performance benchmarks. The web interface adds user-friendly functionality including file upload capabilities, interactive table analysis, CSV export workflows, and persistent file management, while the CLI caters to automation and scripting scenarios. The project demonstrates solid engineering practices with continuous integration via GitHub Actions, code coverage tracking, semantic versioning support for .NET 10, and clear separation of concerns across projects. This toolkit targets developers who need to quickly integrate legacy SQLite databases into modern .NET applications or require batch processing capabilities for database schema extraction and data export tasks.",
       "attention_score": 3.5,
@@ -9279,7 +9671,7 @@
           }
         }
       },
-      "rank": 17,
+      "rank": 18,
       "composite_score": 37.65,
       "pull_request_summary": {
         "availability": "available",
@@ -9339,7 +9731,7 @@
           "deletions": 177
         }
       ],
-      "attention_rank": 30
+      "attention_rank": 31
     },
     {
       "name": "markhazleton",
@@ -9445,7 +9837,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1810,
+      "age_days": 1811,
       "days_since_last_push": 0,
       "ai_summary": "# Technical Summary: markhazleton Repository\n\nThis repository serves as Mark Hazleton's personal portfolio and learning archive, functioning as a curated collection of technical projects and professional development work rather than a single monolithic application. The repository showcases multiple featured projects including **Spec-Kit-Spark** (a modernized fork of GitHub SpecKit for brownfield development) and **ReactSpark** (a React/Vite-based web application hosted on Azure Static Web Applications), alongside integration with a personal blog platform documenting architectural decisions and software development methodology. The tech stack spans full-stack development with emphasis on .NET/C# backend work (evidenced by NuGet package development and Azure DevOps integration), React/TypeScript frontend frameworks, and cloud-native deployment on Azure, complemented by API testing and load testing tools like RESTRunner. The repository demonstrates a pragmatic, evolution-focused development philosophy centered on outcomes over features, with automated GitHub statistics visualization and CI/CD practices that reflect enterprise-grade development patterns. This project is particularly noteworthy for its transparent documentation of learning progression, architectural evolution, and multi-user collaboration patterns, making it valuable for developers seeking insights into professional software architecture, team-based development practices, and continuous improvement methodologies. The target audience includes software architects, senior developers, and technical leads interested in brownfield modernization, API development practices, and sustainable software engineering approaches.",
       "attention_score": 3.5,
@@ -9495,7 +9887,7 @@
           }
         }
       },
-      "rank": 18,
+      "rank": 19,
       "composite_score": 37.07,
       "pull_request_summary": {
         "availability": "available",
@@ -9549,7 +9941,7 @@
           "deletions": 73
         }
       ],
-      "attention_rank": 31
+      "attention_rank": 32
     },
     {
       "name": "react-native-web-start",
@@ -10360,7 +10752,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 249,
+      "age_days": 250,
       "days_since_last_push": 3,
       "ai_summary": "# Technical Summary: react-native-web-start\n\n## Overview\n**react-native-web-start** is a production-ready, enterprise-grade starter template that enables developers to build truly cross-platform applications (Web, iOS, Android) from a single TypeScript codebase using React Native Web and Vite. The project provides a comprehensive monorepo structure with shared components, automated build pipelines, and modern tooling that eliminates the traditional friction of maintaining separate web and mobile codebases while maintaining platform-specific optimizations.\n\n## Key Features & Capabilities\nThe template emphasizes developer experience with lightning-fast Vite-powered development cycles featuring Hot Module Replacement, full TypeScript strict mode support, and sophisticated asset management through custom build scripts. It includes production-ready utilities such as a built-in markdown documentation browser, API integration patterns, responsive design systems powered by Tailwind CSS 4.1.18, and comprehensive GitHub Pages deployment automation with CI/CD workflows. The architecture implements a clean monorepo pattern (`packages/shared`, `packages/web`, `packages/mobile`) that enforces single-source-of-truth principles while supporting platform-specific customizations through Metro bundler configuration for mobile and Vite's plugin system for web.\n\n## Technology Stack & Architecture\nThe project leverages a modern, well-curated tech stack: React 19.2.3 with React Native 0.83.1 for cross-platform compatibility, Vite 7.3.1 as the primary build orchestrator, TypeScript 5.9.3 for type safety, Metro 0.83.1 for mobile bundling, and Tailwind CSS 4.1.18 with Sass 1.97.2 for styling. The codebase demonstrates sophisticated build automation through custom Node.js scripts (build.js, copy-docs.js, generate-build-info.js) that manage asset pipelines, documentation synchronization, and dynamic build metadata generation, reflecting enterprise-level DevOps considerations.\n\n## Unique Value Proposition\nWhat distinguishes this template is its maturity and production-readiness—it's not merely a proof-of-concept but includes features like security integration (Dependabot), performance monitoring capabilities, PWA support, SEO optimization, comprehensive in-app documentation infrastructure, and proven GitHub Pages deployment automation. The 49-dependency ecosystem is carefully balanced for minimal bloat while maintaining sufficient abstraction for real-world applications, and the consistent development activity (18 commits in 90 days, 71 in 365 days) indicates active maintenance and community responsiveness.\n\n## Target Users & Use Cases\nThis template is ideal for teams seeking to maximize code reuse across web and mobile platforms without sacrificing platform-specific optimizations, particularly organizations prioritizing TypeScript-first development, fast iteration cycles, and modern DevOps practices. It serves startups building MVP products requiring multi-platform presence, enterprises standardizing on React Native Web for internal tools, and developers transitioning from traditional web stacks to cross-platform development.",
       "attention_score": 8.4,
@@ -10412,7 +10804,7 @@
           }
         }
       },
-      "rank": 19,
+      "rank": 20,
       "composite_score": 36.13,
       "pull_request_summary": {
         "availability": "available",
@@ -10466,7 +10858,15 @@
           "deletions": 468
         }
       ],
-      "attention_rank": 19
+      "attention_rank": 20,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/react-native-web-start.png",
+        "url": "https://markhazleton.github.io/react-native-web-start/",
+        "captured_at": "2026-04-02T20:49:02.116098+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 48.8
+      }
     },
     {
       "name": "InquirySpark",
@@ -10621,7 +11021,7 @@
           }
         }
       },
-      "rank": 20,
+      "rank": 21,
       "composite_score": 34.39,
       "pull_request_summary": {
         "availability": "available",
@@ -10675,7 +11075,7 @@
           "deletions": 78
         }
       ],
-      "attention_rank": 32
+      "attention_rank": 33
     },
     {
       "name": "markhazleton.github.io",
@@ -10721,7 +11121,7 @@
         "commit_frequency": 2.67,
         "consistency_score": 0,
         "activity_rate": 0.089,
-        "days_since_last_commit": 0,
+        "days_since_last_commit": 1,
         "first_commit_date": "2021-04-18T17:11:48+00:00"
       },
       "commit_metrics": {
@@ -10841,8 +11241,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1809,
-      "days_since_last_push": 0,
+      "age_days": 1810,
+      "days_since_last_push": 1,
       "ai_summary": "# Technical Summary: markhazleton.github.io\n\nThis repository is Mark Hazleton's personal website built with **Jekyll 3.10.0** and hosted on **GitHub Pages**, serving as a customizable blogging platform and portfolio site. The project utilizes a modified Minima theme with custom SCSS styling (39.4%), HTML layouts (30.1%), and CSS (29.8%), enabling responsive design and dark/light mode toggle functionality without relying on external CSS frameworks. The tech stack includes Ruby 3.2.2 for runtime, Bundler for dependency management, and GitHub Actions for automated CI/CD deployment triggered on pushes to the `sources` branch, with three core dependencies (github-pages, faraday-retry, wdm) optimized for cross-platform development. The site architecture follows Jekyll conventions with organized directories for posts, layouts, includes, and assets, supporting SEO optimization through proper front matter (title, date, categories, tags, excerpts) and markdown-based content management with built-in syntax highlighting for code snippets. The project demonstrates active maintenance (8 commits in 90 days, 23 in the past year) and provides comprehensive developer documentation for local setup across macOS, Windows, and Linux, as well as standardized workflows for creating and publishing blog posts via direct commits or feature branches. This implementation serves as a practical example of a modern static site generator setup, ideal for technical writers, developers, and professionals seeking a lightweight, Git-based blogging platform with full version control and automated deployment capabilities.",
       "attention_score": 11.3,
       "attention_metrics": {
@@ -10877,7 +11277,7 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 0,
+            "days_since_last_push": 1,
             "recent_commits_90d": 8,
             "open_issues": 0
           },
@@ -10893,7 +11293,7 @@
           }
         }
       },
-      "rank": 21,
+      "rank": 22,
       "composite_score": 33.34,
       "pull_request_summary": {
         "availability": "available",
@@ -10947,7 +11347,15 @@
           "deletions": 11
         }
       ],
-      "attention_rank": 13
+      "attention_rank": 14,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/markhazleton.github.io.png",
+        "url": "https://markhazleton.github.io/",
+        "captured_at": "2026-04-02T20:49:04.017299+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 68.29
+      }
     },
     {
       "name": "PHPDocSpark",
@@ -11450,7 +11858,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 936,
+      "age_days": 937,
       "days_since_last_push": 3,
       "ai_summary": "# PHPDocSpark - Technical Summary\n\n**PHPDocSpark** is a modern, open-source PHP documentation and data exploration platform that demonstrates contemporary full-stack web development practices by combining traditional server-side PHP with a modern Vite-based asset pipeline. The project serves as both a functional tool for managing markdown-based documentation with full-text search capabilities and an educational reference implementation showcasing hybrid architecture patterns, featuring interactive data visualization (Chart.js), CSV analysis tools, SQLite integration, GitHub API integration, and responsive Bootstrap 5 UI design. Built on PHP 8.2+ with Node.js tooling, it leverages Vite for hot module replacement during development, SCSS preprocessing, ESLint/Prettier for code quality, and Azure Pipelines for CI/CD deployment, demonstrating best practices in DevOps and modern PHP development workflows. The architecture employs a clean front-controller pattern with feature-based organization, output buffering for template composition, and intelligent caching strategies for API calls and file operations, making it equally valuable as a portfolio project, internal documentation platform, or learning resource for developers exploring modern PHP development alongside contemporary JavaScript tooling. Maintained with accelerating activity (42 commits in 365 days), it represents a mature, actively developed project targeting PHP developers, full-stack engineers, technical writers, and students seeking reference implementations for building scalable, maintainable web applications with professional-grade development infrastructure.",
       "attention_score": 8.4,
@@ -11502,8 +11910,8 @@
           }
         }
       },
-      "rank": 22,
-      "composite_score": 32.5,
+      "rank": 23,
+      "composite_score": 32.51,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -11556,7 +11964,7 @@
           "deletions": 15
         }
       ],
-      "attention_rank": 20
+      "attention_rank": 21
     },
     {
       "name": "TeachSpark",
@@ -11773,7 +12181,7 @@
           }
         }
       },
-      "rank": 23,
+      "rank": 24,
       "composite_score": 32.47,
       "pull_request_summary": {
         "availability": "available",
@@ -11827,7 +12235,212 @@
           "deletions": 111
         }
       ],
-      "attention_rank": 23
+      "attention_rank": 25
+    },
+    {
+      "name": "FastEndpointApi",
+      "description": "Demo of FastEndpoints Nuget Packages",
+      "summary": {
+        "text": "# Technical Summary: FastEndpointApi Repository\n\nThis repository is a comprehensive educational demo and reference implementation of the **FastEndpoints framework**, a lightweight REST API framework for ASP.NET Core that implements the REPR (Request-Endpoint-Response) pattern. The project showcases a complete Person Management API built with .NET 10.0 and FastEndpoints 7.1.1, demonstrating modern API development practices including CRUD operations, dependency injection, smart data mapping, HATEOAS implementation, and OpenAPI/Swagger integration for interactive documentation.\n\nThe technology stack combines FastEndpoints as the core framework with complementary tools including FastEndpoints.Swagger for API documentation, Bogus for test data generation, and Bootstrap 5.3.3 for the frontend UI, while leveraging GitHub Actions for CI/CD automation and Azure Web Apps for cloud deployment. The codebase is structured around clean architectural principles with clear separation of concerns, featuring service layers, reusable base endpoint classes, and request/response DTOs that minimize boilerplate code while maintaining high performance and maintainability.\n\nThis project serves as both a working demo application (live on Azure) and an educational resource for developers looking to adopt FastEndpoints as an alternative to Minimal APIs or MVC controllers, providing hands-on examples of how to build scalable, well-documented REST APIs with reduced complexity. The repository includes static HTML pages for interactive testing, comprehensive documentation with a detailed article walkthrough, and a fully functional API with endpoints accessible through both Swagger UI and custom web interfaces, making it ideal for developers seeking practical patterns and best practices in modern ASP.NET Core API development.",
+        "ai_generated": true,
+        "generation_method": "claude-haiku-4-5",
+        "generated_at": "2026-04-02T15:41:17.370856",
+        "model_used": "claude-haiku-4-5",
+        "tokens_used": 2643,
+        "confidence_score": 90
+      },
+      "url": "https://github.com/markhazleton/FastEndpointApi",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 2,
+      "forks": 1,
+      "watchers": 2,
+      "language": "HTML",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2024-04-06T14:56:06+00:00",
+      "updated_at": "2026-03-30T15:48:56+00:00",
+      "pushed_at": "2026-01-12T12:00:37+00:00",
+      "total_commits": 40,
+      "recent_commits_90d": 1,
+      "first_commit_date": "2024-04-06T14:56:03+00:00",
+      "last_commit_date": "2026-01-12T12:00:32+00:00",
+      "commit_history": {
+        "repository_name": "FastEndpointApi",
+        "total_commits": 40,
+        "recent_90d": 1,
+        "recent_180d": 7,
+        "recent_365d": 19,
+        "last_commit_date": "2026-01-12T12:00:32+00:00",
+        "patterns": [
+          "maintained",
+          "declining"
+        ],
+        "commit_frequency": 0.33,
+        "consistency_score": 0,
+        "activity_rate": 0.011,
+        "days_since_last_commit": 80,
+        "first_commit_date": "2024-04-06T14:56:03+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 427.95,
+        "largest_commit": {
+          "sha": "826e6f4d74ce0cda7227cfbc60dce3658090c7ed",
+          "date": "2025-11-16T23:01:43+00:00",
+          "size": 2322,
+          "files_changed": 1161,
+          "lines_added": 1130,
+          "lines_deleted": 31
+        },
+        "smallest_commit": {
+          "sha": "10e2de5893c76e96c740a63fee81705ac1cd04a8",
+          "date": "2024-04-06T19:39:29+00:00",
+          "size": 6,
+          "files_changed": 3,
+          "lines_added": 3,
+          "lines_deleted": 0
+        },
+        "total_commits": 40,
+        "commit_size_distribution": {
+          "min": 6,
+          "q1": 69,
+          "median": 172,
+          "q3": 786,
+          "max": 2322
+        }
+      },
+      "avg_commit_size": 427.95,
+      "largest_commit": {
+        "sha": "826e6f4d74ce0cda7227cfbc60dce3658090c7ed",
+        "date": "2025-11-16T23:01:43+00:00",
+        "size": 2322,
+        "files_changed": 1161,
+        "lines_added": 1130,
+        "lines_deleted": 31
+      },
+      "smallest_commit": {
+        "sha": "10e2de5893c76e96c740a63fee81705ac1cd04a8",
+        "date": "2024-04-06T19:39:29+00:00",
+        "size": 6,
+        "files_changed": 3,
+        "lines_added": 3,
+        "lines_deleted": 0
+      },
+      "commit_velocity": 0.33,
+      "tech_stack": null,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": false,
+      "has_docs": false,
+      "language_count": 3,
+      "size_kb": 137,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 726,
+      "days_since_last_push": 80,
+      "ai_summary": "# Technical Summary: FastEndpointApi Repository\n\nThis repository is a comprehensive educational demo and reference implementation of the **FastEndpoints framework**, a lightweight REST API framework for ASP.NET Core that implements the REPR (Request-Endpoint-Response) pattern. The project showcases a complete Person Management API built with .NET 10.0 and FastEndpoints 7.1.1, demonstrating modern API development practices including CRUD operations, dependency injection, smart data mapping, HATEOAS implementation, and OpenAPI/Swagger integration for interactive documentation.\n\nThe technology stack combines FastEndpoints as the core framework with complementary tools including FastEndpoints.Swagger for API documentation, Bogus for test data generation, and Bootstrap 5.3.3 for the frontend UI, while leveraging GitHub Actions for CI/CD automation and Azure Web Apps for cloud deployment. The codebase is structured around clean architectural principles with clear separation of concerns, featuring service layers, reusable base endpoint classes, and request/response DTOs that minimize boilerplate code while maintaining high performance and maintainability.\n\nThis project serves as both a working demo application (live on Azure) and an educational resource for developers looking to adopt FastEndpoints as an alternative to Minimal APIs or MVC controllers, providing hands-on examples of how to build scalable, well-documented REST APIs with reduced complexity. The repository includes static HTML pages for interactive testing, comprehensive documentation with a detailed article walkthrough, and a fully functional API with endpoints accessible through both Swagger UI and custom web interfaces, making it ideal for developers seeking practical patterns and best practices in modern ASP.NET Core API development.",
+      "attention_score": 12.2,
+      "attention_metrics": {
+        "score": 12.2,
+        "tier": "healthy",
+        "needs_attention": false,
+        "reasons": [
+          "staleness"
+        ],
+        "components": {
+          "pull_requests": {
+            "score": 0.0,
+            "availability": "unavailable",
+            "reason": "not_supported",
+            "total_open": 0,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": null
+          },
+          "security": {
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
+            "active_alert_counts": {
+              "total_open": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 35.0,
+            "days_since_last_push": 80,
+            "recent_commits_90d": 1,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 0.0,
+            "total_dependencies": 0,
+            "outdated_count": 0,
+            "outdated_percentage": 0.0,
+            "currency_score": 100,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 100.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 25,
+      "composite_score": 30.46,
+      "pull_request_summary": {
+        "availability": "unavailable",
+        "reason": "not_supported",
+        "has_open_pull_requests": false,
+        "total_open": 0,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": null,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get",
+          "rest.dependabot.alerts"
+        ]
+      },
+      "total_additions": 6263,
+      "total_deletions": 1415,
+      "code_churn": 7678,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "markhazleton",
+          "commits": 6,
+          "additions": 1579,
+          "deletions": 105
+        }
+      ],
+      "attention_rank": 9
     },
     {
       "name": "MechanicsOfMotherhood",
@@ -11874,7 +12487,7 @@
         "commit_frequency": 4.67,
         "consistency_score": 0,
         "activity_rate": 0.156,
-        "days_since_last_commit": 23,
+        "days_since_last_commit": 24,
         "first_commit_date": "2025-08-11T21:38:59+00:00"
       },
       "commit_metrics": {
@@ -12541,7 +13154,7 @@
       "is_private": false,
       "is_archived": false,
       "age_days": 213,
-      "days_since_last_push": 23,
+      "days_since_last_push": 24,
       "ai_summary": "# Technical Summary: Mechanics of Motherhood\n\n**Mechanics of Motherhood** is a modern, production-ready recipe management web application specifically designed for busy working mothers, featuring 108+ curated recipes with smart search, filtering, and categorization capabilities. Built with React 19 and TypeScript, the application implements a sophisticated frontend architecture leveraging Vite for optimized builds, TanStack Query for server state management, Tailwind CSS with Shadcn/ui component library for industrial-themed UI design, and Wouter for lightweight client-side routing. The platform integrates with real-world APIs (RecipeSpark and WebCMS) for live recipe and content data while maintaining offline PWA capabilities through intelligent caching strategies, achieving Lighthouse scores above 95 and bundle sizes around 130KB gzipped. The project demonstrates strong software engineering practices with automated CI/CD pipelines via GitHub Actions, data quality validation systems, comprehensive SEO optimization including structured data and dynamic sitemaps, and a mobile-first responsive design optimized for 3G networks across all device types. This repository showcases contemporary full-stack development patterns including TypeScript for type safety, automated deployment workflows, real-time API integration with graceful fallbacks, and performance-first optimization—making it exemplary of professional production-grade web application development while addressing the specific niche of recipe management for time-constrained users.",
       "attention_score": 11.4,
       "attention_metrics": {
@@ -12576,7 +13189,7 @@
           },
           "staleness": {
             "score": 12.0,
-            "days_since_last_push": 23,
+            "days_since_last_push": 24,
             "recent_commits_90d": 14,
             "open_issues": 0
           },
@@ -12592,7 +13205,7 @@
           }
         }
       },
-      "rank": 24,
+      "rank": 26,
       "composite_score": 29.24,
       "pull_request_summary": {
         "availability": "available",
@@ -12640,7 +13253,15 @@
           "deletions": 32782
         }
       ],
-      "attention_rank": 12
+      "attention_rank": 13,
+      "screenshot": {
+        "path": "output/users/markhazleton/screenshots/mechanicsofmotherhood.png",
+        "url": "http://mechanicsofmotherhood.com/",
+        "captured_at": "2026-04-02T20:49:06.451387+00:00",
+        "width": 1280,
+        "height": 720,
+        "file_size_kb": 275.21
+      }
     },
     {
       "name": "AsyncSpark",
@@ -12744,7 +13365,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1333,
+      "age_days": 1334,
       "days_since_last_push": 51,
       "ai_summary": "# AsyncSpark: Technical Summary\n\n**AsyncSpark** is a production-ready reference implementation demonstrating enterprise-grade asynchronous programming patterns in .NET 10, built on a novel \"constitution-driven development\" methodology that formalizes coding standards and enforces them through automated compliance auditing. The project serves as both an educational resource and a working example of modern async/await best practices, featuring 80% mandatory code coverage enforcement, comprehensive resilience patterns via Polly integration, and clean architecture principles including dependency injection and decorator-based cross-cutting concerns. The technology stack leverages ASP.NET Core with interactive Scalar-powered API documentation, MSTest + Moq for unit testing, and structured logging, while demonstrating eight core async patterns: ConfigureAwait(false) usage in libraries, CancellationToken threading, Task.WhenAll parallelization, SemaphoreSlim throttling, fire-and-forget safety, and avoidance of blocking calls—each with corresponding test coverage and interactive API endpoints for experimentation. What distinguishes AsyncSpark is its formalized constitution (.NET 10 standards, async best practices, 80% test coverage, interface-based architecture, and resilience requirements) coupled with automated enforcement mechanisms including CI/CD validation, GitHub Actions-based audits, and SpecKit-powered compliance reporting that monitors adherence across the codebase. The project targets .NET developers seeking enterprise patterns, architects designing async-heavy systems, and teams adopting constitution-driven development workflows, offering both a live Azure-hosted demo and comprehensive documentation guiding learners through complex concurrency scenarios via working code examples and API integration tests.",
       "attention_score": 33.6,
@@ -12797,7 +13418,7 @@
           }
         }
       },
-      "rank": 25,
+      "rank": 27,
       "composite_score": 26.02,
       "pull_request_summary": {
         "availability": "available",
@@ -13008,7 +13629,7 @@
           }
         }
       },
-      "rank": 26,
+      "rank": 28,
       "composite_score": 24.9,
       "pull_request_summary": {
         "availability": "available",
@@ -13056,7 +13677,7 @@
           "deletions": 1012
         }
       ],
-      "attention_rank": 9
+      "attention_rank": 10
     },
     {
       "name": "WebSpark.Bootswatch",
@@ -13160,7 +13781,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1316,
+      "age_days": 1317,
       "days_since_last_push": 80,
       "ai_summary": "# WebSpark.Bootswatch - Technical Summary\n\n**WebSpark.Bootswatch** is a .NET Razor Class Library that provides seamless integration of Bootswatch themes into ASP.NET Core applications, built on Bootstrap 5 to enable modern, responsive UI theming with dynamic switching and light/dark mode support. The library is architected as a production-ready component leveraging .NET 10 exclusively (version 2.0+), implementing caching mechanisms through the `StyleCache` service and providing Tag Helper support for simplified UI integration. Key technologies include C# (28.6%), HTML (63.8%), and JavaScript (2.6%), with dependencies on `WebSpark.HttpClientUtility` for HTTP operations and modern `Microsoft.Extensions.*` packages version 10.0.1+. The library employs a service-oriented pattern with extension methods for dependency injection, comprehensive error handling, fallback mechanisms, and full IntelliSense/XML documentation support for developer experience. Unique to this project is its strategic decision to target only .NET 10, prioritizing access to latest security patches and modern dependencies over broad framework compatibility, with a clear migration path provided for users on .NET 8/9 through version 1.34.0. This library targets ASP.NET Core developers building enterprise applications who require flexible, maintainable theming solutions with built-in performance optimization and the ability to dynamically switch between multiple professional Bootswatch themes without page reloads.",
       "attention_score": 12.2,
@@ -13212,7 +13833,7 @@
           }
         }
       },
-      "rank": 27,
+      "rank": 29,
       "composite_score": 24.63,
       "pull_request_summary": {
         "availability": "available",
@@ -13260,7 +13881,7 @@
           "deletions": 4122
         }
       ],
-      "attention_rank": 10
+      "attention_rank": 11
     },
     {
       "name": "WebSpark.PrismSpark",
@@ -13417,7 +14038,7 @@
           }
         }
       },
-      "rank": 28,
+      "rank": 30,
       "composite_score": 23.21,
       "pull_request_summary": {
         "availability": "available",
@@ -13471,182 +14092,19 @@
           "deletions": 6
         }
       ],
-      "attention_rank": 11
-    },
-    {
-      "name": "FastEndpointApi",
-      "description": "Demo of FastEndpoints Nuget Packages",
-      "summary": {
-        "text": "Demo of FastEndpoints Nuget Packages Written in HTML. 2 stars, 1 forks. 1 commits in the last 90 days.",
-        "ai_generated": false,
-        "generation_method": "basic-template",
-        "generated_at": "2026-04-02T10:47:20.864786",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 40
-      },
-      "url": "https://github.com/markhazleton/FastEndpointApi",
-      "homepage": null,
-      "has_pages": false,
-      "pages_url": null,
-      "website_url": null,
-      "stars": 2,
-      "forks": 1,
-      "watchers": 2,
-      "language": "HTML",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2024-04-06T14:56:06+00:00",
-      "updated_at": "2026-03-30T15:48:56+00:00",
-      "pushed_at": "2026-01-12T12:00:37+00:00",
-      "total_commits": 40,
-      "recent_commits_90d": 1,
-      "first_commit_date": "2024-04-06T14:56:06+00:00",
-      "last_commit_date": "2026-01-12T12:00:32+00:00",
-      "commit_history": {
-        "repository_name": "FastEndpointApi",
-        "total_commits": 40,
-        "recent_90d": 1,
-        "recent_180d": 7,
-        "recent_365d": 19,
-        "last_commit_date": "2026-01-12T12:00:32+00:00",
-        "patterns": [
-          "maintained",
-          "declining"
-        ],
-        "commit_frequency": 0.33,
-        "consistency_score": 0,
-        "activity_rate": 0.011,
-        "days_since_last_commit": 80,
-        "first_commit_date": "2024-04-06T14:56:06+00:00"
-      },
-      "commit_metrics": null,
-      "avg_commit_size": null,
-      "largest_commit": null,
-      "smallest_commit": null,
-      "commit_velocity": 0.33,
-      "tech_stack": null,
-      "has_readme": false,
-      "has_license": false,
-      "has_ci_cd": false,
-      "has_tests": false,
-      "has_docs": false,
-      "language_count": 3,
-      "size_kb": 137,
-      "is_fork": false,
-      "is_private": false,
-      "is_archived": false,
-      "age_days": 726,
-      "days_since_last_push": 80,
-      "ai_summary": null,
-      "attention_score": 15.8,
-      "attention_metrics": {
-        "score": 15.8,
-        "tier": "healthy",
-        "needs_attention": false,
-        "reasons": [
-          "security",
-          "staleness"
-        ],
-        "components": {
-          "pull_requests": {
-            "score": 0.0,
-            "availability": "unavailable",
-            "reason": "not_cached",
-            "total_open": 0,
-            "draft_count": 0,
-            "review_requested_count": 0,
-            "oldest_open_age_days": null
-          },
-          "security": {
-            "score": 20.0,
-            "availability": "unavailable",
-            "reason": "not_cached",
-            "overall_state": "unavailable",
-            "active_alert_counts": {
-              "total_open": 0,
-              "critical": 0,
-              "high": 0,
-              "medium": 0,
-              "low": 0
-            }
-          },
-          "staleness": {
-            "score": 35.0,
-            "days_since_last_push": 80,
-            "recent_commits_90d": 1,
-            "open_issues": 0
-          },
-          "dependencies": {
-            "score": 0.0,
-            "total_dependencies": 0,
-            "outdated_count": 0,
-            "outdated_percentage": 0.0,
-            "currency_score": 100,
-            "version_coverage_percentage": 100.0,
-            "latest_version_coverage_percentage": 100.0,
-            "unknown_versions_count": 0
-          }
-        }
-      },
-      "rank": 29,
-      "composite_score": 22.96,
-      "pull_request_summary": {
-        "availability": "unavailable",
-        "reason": "not_cached",
-        "has_open_pull_requests": false,
-        "total_open": 0,
-        "draft_count": 0,
-        "review_requested_count": 0,
-        "oldest_open_age_days": null,
-        "source": "rest.pulls.list"
-      },
-      "security_summary": {
-        "availability": "unavailable",
-        "reason": "not_cached",
-        "overall_state": "unavailable",
-        "feature_status": {
-          "advanced_security": "unavailable",
-          "secret_scanning": "unavailable",
-          "secret_scanning_push_protection": "unavailable",
-          "dependency_alerts": "unavailable",
-          "automated_security_fixes": "unavailable"
-        },
-        "active_alert_counts": {
-          "total_open": 0,
-          "critical": 0,
-          "high": 0,
-          "medium": 0,
-          "low": 0
-        },
-        "sources": []
-      },
-      "total_additions": 6263,
-      "total_deletions": 1415,
-      "code_churn": 7678,
-      "bus_factor": 1,
-      "bus_factor_health": "critical",
-      "contributor_stats": [
-        {
-          "login": "markhazleton",
-          "commits": 6,
-          "additions": 1579,
-          "deletions": 105
-        }
-      ],
-      "attention_rank": 8
+      "attention_rank": 12
     },
     {
       "name": "DocSpecSpark",
       "description": "Document Spec Kit Spark",
       "summary": {
-        "text": "Document Spec Kit Spark Written in Python. 2 commits in the last 90 days.",
-        "ai_generated": false,
-        "generation_method": "basic-template",
-        "generated_at": "2026-04-02T10:47:20.864847",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 40
+        "text": "# DocSpecSpark - Technical Summary\n\nDocSpecSpark is a document-first framework and CLI tool designed to bootstrap, generate, and publish standardized company documentation repositories at scale. The project provides a profile-based templating system that scaffolds documentation structures tailored to different organization types (nonprofit, startup, manufacturing, enterprise, healthcare, etc.), generating markdown documents from reusable templates and rendering them into static sites with versioned release bundles. Built in Python with a modern CLI interface using Typer, the framework leverages markdown-it-py for document processing, PyYAML for configuration management, and Rich for enhanced terminal output, establishing a complete pipeline that encompasses initialization (`docspec init`), document creation (`docspec create`), static site generation (`docspec build`), local preview (`docspec serve`), and publication workflows (`docspec publish`) with GitHub Pages integration. The architecture employs a filesystem-backed template catalog stored in `.DocSpecSpark/` alongside a source CLI package in `src/docspec_cli/`, supporting both source repository operations and target workspace generation with profile-specific constitution tokens and configuration files. The framework is particularly noteworthy for its declarative, template-driven approach to documentation standardization—enabling companies to initialize comprehensive, structured documentation repositories from a single command while maintaining flexibility through profile selection and customizable YAML-based constitutions. This solution targets organizations seeking to establish consistent, maintainable documentation practices without manual scaffolding, making it valuable for enterprises managing multiple documentation repositories, regulated industries requiring standardized templates, and teams prioritizing documentation-first development workflows.",
+        "ai_generated": true,
+        "generation_method": "claude-haiku-4-5",
+        "generated_at": "2026-04-02T15:40:42.205615",
+        "model_used": "claude-haiku-4-5",
+        "tokens_used": 1257,
+        "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/DocSpecSpark",
       "homepage": null,
@@ -13684,16 +14142,131 @@
         "days_since_last_commit": 25,
         "first_commit_date": "2026-03-07T21:19:22+00:00"
       },
-      "commit_metrics": null,
-      "avg_commit_size": null,
-      "largest_commit": null,
-      "smallest_commit": null,
+      "commit_metrics": {
+        "avg_size": 22108.0,
+        "largest_commit": {
+          "sha": "cb01c80ea6306e726ec83e11fb2f560f2a3a7381",
+          "date": "2026-03-08T13:34:52+00:00",
+          "size": 44212,
+          "files_changed": 22106,
+          "lines_added": 22105,
+          "lines_deleted": 1
+        },
+        "smallest_commit": {
+          "sha": "a84de08f8d15bd5ee00842d8161fafcda35675fb",
+          "date": "2026-03-07T21:19:22+00:00",
+          "size": 4,
+          "files_changed": 2,
+          "lines_added": 2,
+          "lines_deleted": 0
+        },
+        "total_commits": 2,
+        "commit_size_distribution": {
+          "min": 4,
+          "q1": 11056,
+          "median": 22108,
+          "q3": 33160,
+          "max": 44212
+        }
+      },
+      "avg_commit_size": 22108.0,
+      "largest_commit": {
+        "sha": "cb01c80ea6306e726ec83e11fb2f560f2a3a7381",
+        "date": "2026-03-08T13:34:52+00:00",
+        "size": 44212,
+        "files_changed": 22106,
+        "lines_added": 22105,
+        "lines_deleted": 1
+      },
+      "smallest_commit": {
+        "sha": "a84de08f8d15bd5ee00842d8161fafcda35675fb",
+        "date": "2026-03-07T21:19:22+00:00",
+        "size": 4,
+        "files_changed": 2,
+        "lines_added": 2,
+        "lines_deleted": 0
+      },
       "commit_velocity": 0.67,
-      "tech_stack": null,
-      "has_readme": false,
+      "tech_stack": {
+        "repository_name": "DocSpecSpark",
+        "languages": {},
+        "frameworks": [],
+        "dependencies": [
+          {
+            "name": "markdown-it-py",
+            "current_version": "4.0",
+            "latest_version": "4.0.0",
+            "ecosystem": "pypi",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "current",
+            "version_requirement": "4.0,<5",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "pypi",
+            "source_file": "pyproject.toml"
+          },
+          {
+            "name": "pyyaml",
+            "current_version": "6.0",
+            "latest_version": "6.0.3",
+            "ecosystem": "pypi",
+            "versions_behind": 0,
+            "is_outdated": true,
+            "status": "minor_outdated",
+            "version_requirement": "6.0",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "pypi",
+            "source_file": "pyproject.toml"
+          },
+          {
+            "name": "rich",
+            "current_version": "13.7.0",
+            "latest_version": "14.3.3",
+            "ecosystem": "pypi",
+            "versions_behind": 1,
+            "is_outdated": true,
+            "status": "major_outdated",
+            "version_requirement": "13.7.0",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "pypi",
+            "source_file": "pyproject.toml"
+          },
+          {
+            "name": "typer",
+            "current_version": "0.16.0",
+            "latest_version": "0.24.1",
+            "ecosystem": "pypi",
+            "versions_behind": 0,
+            "is_outdated": true,
+            "status": "minor_outdated",
+            "version_requirement": "0.16.0",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "pypi",
+            "source_file": "pyproject.toml"
+          }
+        ],
+        "version_info": {},
+        "dependency_file_type": "pyproject.toml",
+        "currency_score": 67,
+        "outdated_count": 3,
+        "total_dependencies": 4,
+        "known_versions_count": 4,
+        "resolved_latest_versions_count": 4,
+        "unknown_versions_count": 0,
+        "primary_language": null,
+        "language_diversity": 0,
+        "outdated_percentage": 75.0,
+        "version_coverage_percentage": 100.0,
+        "latest_version_coverage_percentage": 100.0
+      },
+      "has_readme": true,
       "has_license": false,
-      "has_ci_cd": false,
-      "has_tests": false,
+      "has_ci_cd": true,
+      "has_tests": true,
       "has_docs": false,
       "language_count": 4,
       "size_kb": 181,
@@ -13702,36 +14275,36 @@
       "is_archived": false,
       "age_days": 25,
       "days_since_last_push": 25,
-      "ai_summary": null,
-      "attention_score": 10.0,
+      "ai_summary": "# DocSpecSpark - Technical Summary\n\nDocSpecSpark is a document-first framework and CLI tool designed to bootstrap, generate, and publish standardized company documentation repositories at scale. The project provides a profile-based templating system that scaffolds documentation structures tailored to different organization types (nonprofit, startup, manufacturing, enterprise, healthcare, etc.), generating markdown documents from reusable templates and rendering them into static sites with versioned release bundles. Built in Python with a modern CLI interface using Typer, the framework leverages markdown-it-py for document processing, PyYAML for configuration management, and Rich for enhanced terminal output, establishing a complete pipeline that encompasses initialization (`docspec init`), document creation (`docspec create`), static site generation (`docspec build`), local preview (`docspec serve`), and publication workflows (`docspec publish`) with GitHub Pages integration. The architecture employs a filesystem-backed template catalog stored in `.DocSpecSpark/` alongside a source CLI package in `src/docspec_cli/`, supporting both source repository operations and target workspace generation with profile-specific constitution tokens and configuration files. The framework is particularly noteworthy for its declarative, template-driven approach to documentation standardization—enabling companies to initialize comprehensive, structured documentation repositories from a single command while maintaining flexibility through profile selection and customizable YAML-based constitutions. This solution targets organizations seeking to establish consistent, maintainable documentation practices without manual scaffolding, making it valuable for enterprises managing multiple documentation repositories, regulated industries requiring standardized templates, and teams prioritizing documentation-first development workflows.",
+      "attention_score": 12.5,
       "attention_metrics": {
-        "score": 10.0,
+        "score": 12.5,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [
-          "security"
+          "dependencies"
         ],
         "components": {
           "pull_requests": {
             "score": 0.0,
-            "availability": "unavailable",
-            "reason": "not_cached",
+            "availability": "available",
+            "reason": "none",
             "total_open": 0,
             "draft_count": 0,
             "review_requested_count": 0,
             "oldest_open_age_days": null
           },
           "security": {
-            "score": 20.0,
-            "availability": "unavailable",
-            "reason": "not_cached",
-            "overall_state": "unavailable",
+            "score": 18.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "warning_present",
             "active_alert_counts": {
-              "total_open": 0,
+              "total_open": 1,
               "critical": 0,
               "high": 0,
               "medium": 0,
-              "low": 0
+              "low": 1
             }
           },
           "staleness": {
@@ -13741,22 +14314,22 @@
             "open_issues": 0
           },
           "dependencies": {
-            "score": 0.0,
-            "total_dependencies": 0,
-            "outdated_count": 0,
-            "outdated_percentage": 0.0,
-            "currency_score": 100,
+            "score": 21.4,
+            "total_dependencies": 4,
+            "outdated_count": 3,
+            "outdated_percentage": 75.0,
+            "currency_score": 67,
             "version_coverage_percentage": 100.0,
             "latest_version_coverage_percentage": 100.0,
             "unknown_versions_count": 0
           }
         }
       },
-      "rank": 30,
-      "composite_score": 14.79,
+      "rank": 31,
+      "composite_score": 22.29,
       "pull_request_summary": {
-        "availability": "unavailable",
-        "reason": "not_cached",
+        "availability": "available",
+        "reason": "none",
         "has_open_pull_requests": false,
         "total_open": 0,
         "draft_count": 0,
@@ -13765,24 +14338,27 @@
         "source": "rest.pulls.list"
       },
       "security_summary": {
-        "availability": "unavailable",
-        "reason": "not_cached",
-        "overall_state": "unavailable",
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "warning_present",
         "feature_status": {
-          "advanced_security": "unavailable",
-          "secret_scanning": "unavailable",
-          "secret_scanning_push_protection": "unavailable",
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
           "dependency_alerts": "unavailable",
           "automated_security_fixes": "unavailable"
         },
         "active_alert_counts": {
-          "total_open": 0,
+          "total_open": 1,
           "critical": 0,
           "high": 0,
           "medium": 0,
-          "low": 0
+          "low": 1
         },
-        "sources": []
+        "sources": [
+          "rest.repos.get",
+          "rest.dependabot.alerts"
+        ]
       },
       "total_additions": 22107,
       "total_deletions": 1,
@@ -13797,7 +14373,7 @@
           "deletions": 1
         }
       ],
-      "attention_rank": 14
+      "attention_rank": 8
     },
     {
       "name": "TriviaSpark",
@@ -13902,7 +14478,7 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1134,
+      "age_days": 1135,
       "days_since_last_push": 121,
       "ai_summary": "# TriviaSpark - Technical Summary\n\n**TriviaSpark** is a multiplayer trivia game application developed as an experiment in AI-assisted development using Chat GPT, designed to fetch questions from public Trivia APIs and deliver an interactive competitive gaming experience. The project is built primarily with C# backend logic (61.1%) alongside HTML (26.5%) and CSS (12.3%) for frontend presentation, suggesting an ASP.NET web application architecture with potential cross-platform capabilities targeting both web and mobile environments. Key features include user registration and authentication, a leaderboard system for competitive ranking, an admin interface for question database management, and a customizable UI to enhance user engagement—all designed to deliver real-time multiplayer trivia gameplay with an upbeat, modern, and competitive tone. The application leverages RESTful API integration with external trivia data sources, demonstrating separation of concerns between client-side interactivity and server-side business logic, though the minimal commit history (4 commits over 365 days, 0 in the last 90 days) indicates the project is in an exploratory or inactive state. The repository's primary value lies in its documentation of AI-assisted development practices and serves as a case study for building interactive gaming applications, targeting tech-savvy individuals aged 18-95 seeking competitive trivia entertainment. The project's relatively large codebase (27.2 MB) combined with declining activity suggests it represents a proof-of-concept or learning exercise that may have reached completion or been abandoned during development.",
       "attention_score": 19.8,
@@ -13954,7 +14530,7 @@
           }
         }
       },
-      "rank": 31,
+      "rank": 32,
       "composite_score": 14.4,
       "pull_request_summary": {
         "availability": "available",
@@ -14008,19 +14584,19 @@
           "deletions": 132
         }
       ],
-      "attention_rank": 7
+      "attention_rank": 6
     },
     {
       "name": "DecisionSpark",
       "description": "Configuration-driven decision routing engine for conversational experiences",
       "summary": {
-        "text": "Configuration-driven decision routing engine for conversational experiences Written in C#.",
-        "ai_generated": false,
-        "generation_method": "basic-template",
-        "generated_at": "2026-04-02T10:47:20.865016",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 40
+        "text": "# DecisionSpark - Technical Summary\n\n**DecisionSpark** is a .NET 10 web application that implements a sophisticated, configuration-driven decision routing engine designed to guide users through intelligent conversational flows with minimal questioning. The engine combines a RESTful API with an interactive Razor Pages web interface to collect user inputs, evaluate responses against JSON-based rule configurations, and recommend optimal outcomes—making it well-suited for recommendation systems, decision support tools, and guided workflows across domains like technology stack selection, activity planning, and diagnostic flows.\n\nThe system features a modular architecture built on several core services: a **DecisionSpecLoader** that manages JSON-based decision specifications without requiring code changes, a **RoutingEvaluator** that applies rule-based logic to determine outcomes, a **TraitParser** for extracting structured data from user responses, and an **OpenAIQuestionGenerator** that leverages OpenAI/Azure OpenAI integration to generate natural language questions dynamically. Session management is handled through a file-based persistence layer, while the API layer provides comprehensive Swagger/OpenAPI documentation for interactive testing and third-party integration.\n\nKey technical differentiators include its **conversation-driven design** with multiple question types (text input, single-select, multi-select), **intelligent rule evaluation** supporting derived traits and tie-breaking mechanisms, and **graceful degradation** with OpenAI fallback capabilities for question generation. The project demonstrates strong engineering practices with Serilog structured logging (console and rolling file outputs), API key authentication via custom headers, and a clean separation of concerns across service layers.\n\nHowever, the repository shows **minimal activity** with zero commits in the last 90 days and only 18 commits over the past year, suggesting this is either an early-stage project, a proof-of-concept, or potentially abandoned. With zero stars, forks, and contributors, it lacks community engagement, and the declining activity pattern indicates the project may not be actively maintained—making it suitable primarily for educational purposes, internal organizational use, or as a foundation for custom development rather than relying on ongoing support.",
+        "ai_generated": true,
+        "generation_method": "claude-haiku-4-5",
+        "generated_at": "2026-04-02T15:38:14.081717",
+        "model_used": "claude-haiku-4-5",
+        "tokens_used": 2947,
+        "confidence_score": 90
       },
       "url": "https://github.com/markhazleton/DecisionSpark",
       "homepage": null,
@@ -14057,49 +14633,88 @@
         "days_since_last_commit": 96,
         "first_commit_date": "2025-10-29T00:44:37+00:00"
       },
-      "commit_metrics": null,
-      "avg_commit_size": null,
-      "largest_commit": null,
-      "smallest_commit": null,
+      "commit_metrics": {
+        "avg_size": 4025.89,
+        "largest_commit": {
+          "sha": "77b21de09f8c4d29675a61a248916494f0da999c",
+          "date": "2025-12-26T16:30:42+00:00",
+          "size": 11770,
+          "files_changed": 5885,
+          "lines_added": 5776,
+          "lines_deleted": 109
+        },
+        "smallest_commit": {
+          "sha": "14ab4d96cdd37a9ab0290efa645746fc9c4e4849",
+          "date": "2025-12-27T02:40:56+00:00",
+          "size": 302,
+          "files_changed": 151,
+          "lines_added": 92,
+          "lines_deleted": 59
+        },
+        "total_commits": 18,
+        "commit_size_distribution": {
+          "min": 302,
+          "q1": 1398,
+          "median": 2482,
+          "q3": 5876,
+          "max": 11770
+        }
+      },
+      "avg_commit_size": 4025.89,
+      "largest_commit": {
+        "sha": "77b21de09f8c4d29675a61a248916494f0da999c",
+        "date": "2025-12-26T16:30:42+00:00",
+        "size": 11770,
+        "files_changed": 5885,
+        "lines_added": 5776,
+        "lines_deleted": 109
+      },
+      "smallest_commit": {
+        "sha": "14ab4d96cdd37a9ab0290efa645746fc9c4e4849",
+        "date": "2025-12-27T02:40:56+00:00",
+        "size": 302,
+        "files_changed": 151,
+        "lines_added": 92,
+        "lines_deleted": 59
+      },
       "commit_velocity": 0.0,
       "tech_stack": null,
-      "has_readme": false,
-      "has_license": false,
+      "has_readme": true,
+      "has_license": true,
       "has_ci_cd": false,
-      "has_tests": false,
-      "has_docs": false,
+      "has_tests": true,
+      "has_docs": true,
       "language_count": 4,
       "size_kb": 519,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
       "age_days": 155,
-      "days_since_last_push": 95,
-      "ai_summary": null,
-      "attention_score": 23.2,
+      "days_since_last_push": 96,
+      "ai_summary": "# DecisionSpark - Technical Summary\n\n**DecisionSpark** is a .NET 10 web application that implements a sophisticated, configuration-driven decision routing engine designed to guide users through intelligent conversational flows with minimal questioning. The engine combines a RESTful API with an interactive Razor Pages web interface to collect user inputs, evaluate responses against JSON-based rule configurations, and recommend optimal outcomes—making it well-suited for recommendation systems, decision support tools, and guided workflows across domains like technology stack selection, activity planning, and diagnostic flows.\n\nThe system features a modular architecture built on several core services: a **DecisionSpecLoader** that manages JSON-based decision specifications without requiring code changes, a **RoutingEvaluator** that applies rule-based logic to determine outcomes, a **TraitParser** for extracting structured data from user responses, and an **OpenAIQuestionGenerator** that leverages OpenAI/Azure OpenAI integration to generate natural language questions dynamically. Session management is handled through a file-based persistence layer, while the API layer provides comprehensive Swagger/OpenAPI documentation for interactive testing and third-party integration.\n\nKey technical differentiators include its **conversation-driven design** with multiple question types (text input, single-select, multi-select), **intelligent rule evaluation** supporting derived traits and tie-breaking mechanisms, and **graceful degradation** with OpenAI fallback capabilities for question generation. The project demonstrates strong engineering practices with Serilog structured logging (console and rolling file outputs), API key authentication via custom headers, and a clean separation of concerns across service layers.\n\nHowever, the repository shows **minimal activity** with zero commits in the last 90 days and only 18 commits over the past year, suggesting this is either an early-stage project, a proof-of-concept, or potentially abandoned. With zero stars, forks, and contributors, it lacks community engagement, and the declining activity pattern indicates the project may not be actively maintained—making it suitable primarily for educational purposes, internal organizational use, or as a foundation for custom development rather than relying on ongoing support.",
+      "attention_score": 19.8,
       "attention_metrics": {
-        "score": 23.2,
-        "tier": "watch",
-        "needs_attention": true,
+        "score": 19.8,
+        "tier": "healthy",
+        "needs_attention": false,
         "reasons": [
-          "security",
           "staleness"
         ],
         "components": {
           "pull_requests": {
             "score": 0.0,
-            "availability": "unavailable",
-            "reason": "not_cached",
+            "availability": "available",
+            "reason": "none",
             "total_open": 0,
             "draft_count": 0,
             "review_requested_count": 0,
             "oldest_open_age_days": null
           },
           "security": {
-            "score": 20.0,
-            "availability": "unavailable",
-            "reason": "not_cached",
-            "overall_state": "unavailable",
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
             "active_alert_counts": {
               "total_open": 0,
               "critical": 0,
@@ -14110,7 +14725,7 @@
           },
           "staleness": {
             "score": 65.0,
-            "days_since_last_push": 95,
+            "days_since_last_push": 96,
             "recent_commits_90d": 0,
             "open_issues": 0
           },
@@ -14126,11 +14741,11 @@
           }
         }
       },
-      "rank": 32,
-      "composite_score": 4.87,
+      "rank": 33,
+      "composite_score": 12.37,
       "pull_request_summary": {
-        "availability": "unavailable",
-        "reason": "not_cached",
+        "availability": "available",
+        "reason": "none",
         "has_open_pull_requests": false,
         "total_open": 0,
         "draft_count": 0,
@@ -14139,13 +14754,13 @@
         "source": "rest.pulls.list"
       },
       "security_summary": {
-        "availability": "unavailable",
-        "reason": "not_cached",
-        "overall_state": "unavailable",
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
         "feature_status": {
-          "advanced_security": "unavailable",
-          "secret_scanning": "unavailable",
-          "secret_scanning_push_protection": "unavailable",
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
           "dependency_alerts": "unavailable",
           "automated_security_fixes": "unavailable"
         },
@@ -14156,7 +14771,10 @@
           "medium": 0,
           "low": 0
         },
-        "sources": []
+        "sources": [
+          "rest.repos.get",
+          "rest.dependabot.alerts"
+        ]
       },
       "total_additions": 35970,
       "total_deletions": 15674,
@@ -14171,11 +14789,11 @@
           "deletions": 15674
         }
       ],
-      "attention_rank": 6
+      "attention_rank": 7
     }
   ],
   "metadata": {
-    "generated_at": "2026-04-02T15:47:20.867039+00:00",
+    "generated_at": "2026-04-02T20:47:58.293064+00:00",
     "schema_version": "2.3.0",
     "generator": "unified_data_generator",
     "schema_features": [
