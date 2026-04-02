@@ -11,6 +11,7 @@ import math
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
+from spark.exceptions import ConfigurationError
 from spark.models.repository import Repository
 from spark.models.commit import CommitHistory
 from spark.logger import get_logger
@@ -43,15 +44,29 @@ class RepositoryRanker:
         """Initialize repository ranker.
 
         Args:
-            config: Optional configuration with custom weights
+            config: Ranking weights dict with keys: popularity, activity, health.
+                    Must be provided — raises ConfigurationError if missing or incomplete.
         """
         self.logger = get_logger()
-        self.config = config or {}
 
-        # Allow weight customization from config
-        self.weight_popularity = self.config.get("popularity", self.WEIGHT_POPULARITY)
-        self.weight_activity = self.config.get("activity", self.WEIGHT_ACTIVITY)
-        self.weight_health = self.config.get("health", self.WEIGHT_HEALTH)
+        if not config:
+            raise ConfigurationError(
+                "RepositoryRanker requires ranking weights config "
+                "(analyzer.ranking_weights in spark.yml)",
+                field="analyzer.ranking_weights",
+            )
+
+        # Each weight must be explicitly in config — no silent fallback to class constants
+        for key in ("popularity", "activity", "health"):
+            if config.get(key) is None:
+                raise ConfigurationError(
+                    f"Missing required ranking weight 'analyzer.ranking_weights.{key}' in spark.yml",
+                    field=f"analyzer.ranking_weights.{key}",
+                )
+
+        self.weight_popularity = config["popularity"]
+        self.weight_activity = config["activity"]
+        self.weight_health = config["health"]
 
     def rank_repositories(
         self,

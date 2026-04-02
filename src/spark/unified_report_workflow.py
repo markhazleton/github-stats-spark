@@ -49,7 +49,6 @@ class UnifiedReportWorkflow:
         config: SparkConfig,
         cache: Optional[APICache] = None,
         output_dir: str = "output",
-        max_repos: Optional[int] = None,
         cache_only: bool = True,
     ):
         """Initialize unified report workflow.
@@ -58,7 +57,6 @@ class UnifiedReportWorkflow:
             config: Spark configuration instance
             cache: API cache instance (creates new if not provided)
             output_dir: Base output directory for SVGs and reports
-            max_repos: Optional limit on number of repositories to process
         """
         self.logger = get_logger()
         self.config = config
@@ -68,9 +66,11 @@ class UnifiedReportWorkflow:
         self.runtime_budget_seconds = 300
 
         # Initialize components
-        self.fetcher = GitHubFetcher(cache=self.cache)
-        api_version_config = self.config.get("github.api_version", {}) or {}
-        self.fetcher.api_version_settings.update(api_version_config)
+        api_version_config = self.config.get_github_api_version_config()
+        self.fetcher = GitHubFetcher(
+            cache=self.cache,
+            api_version_settings=api_version_config,
+        )
         self.theme = self._resolve_theme()
         self.visualizer = self._create_visualizer()
         self.ranker, self.summarizer, self.dependency_analyzer = self._create_analysis_components()
@@ -80,17 +80,15 @@ class UnifiedReportWorkflow:
         self.warnings: List[str] = []
         self.start_time: float = 0.0
         self.api_calls: int = 0
-        
-        # Store max_repos limit
-        self.max_repos = max_repos
-        if max_repos is not None:
-            self.logger.info(f"WARNING: Testing mode: Limited to {max_repos} repositories for SVG/report generation")
+
+        # Read max_repositories from config (single source of truth — no fallback)
+        self.max_repos = self.config.require("dashboard.data_generation.max_repositories")
 
         self.logger.info(
             "GitHub REST API version staging: "
-            f"enabled={self.fetcher.api_version_settings.get('enabled', False)} "
-            f"target={self.fetcher.api_version_settings.get('version', '2026-03-10')} "
-            f"fallback_to_default={self.fetcher.api_version_settings.get('fallback_to_default', True)}"
+            f"enabled={api_version_config.get('enabled')} "
+            f"target={api_version_config.get('version')} "
+            f"fallback_to_default={api_version_config.get('fallback_to_default')}"
         )
 
     def _resolve_theme(self):
@@ -103,9 +101,12 @@ class UnifiedReportWorkflow:
 
     def _create_analysis_components(self):
         """Create workflow collaborators used during ranking and summarization."""
-        analyzer_config = self.config.get("analyzer", {})
-        ranker = RepositoryRanker(config=analyzer_config)
-        summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False)
+        ranker = RepositoryRanker(config=self.config.get_ranking_weights())
+        summarizer = RepositorySummarizer(
+            cache=self.cache,
+            enable_ai=False,
+            model=self.config.get_ai_model(),
+        )
         dependency_analyzer = RepositoryDependencyAnalyzer()
         return ranker, summarizer, dependency_analyzer
 
@@ -262,8 +263,8 @@ class UnifiedReportWorkflow:
             self._log_enrichment_availability(repos_data)
             repositories = [Repository.from_dict(r) for r in repos_data]
             
-            # Apply max_repos limit if specified
-            if self.max_repos is not None and len(repositories) > self.max_repos:
+            # Apply max_repos limit from config
+            if len(repositories) > self.max_repos:
                 self.logger.info(f"Limiting to first {self.max_repos} of {len(repositories)} repositories")
                 repositories = repositories[:self.max_repos]
 
@@ -389,7 +390,11 @@ class UnifiedReportWorkflow:
                 if commit_history.last_commit_date:
                     repo_dict["last_commit_date"] = commit_history.last_commit_date.isoformat()
             repos_dict.append(repo_dict)
-        calculator = StatsCalculator(profile_dict, repos_dict)
+        calculator = StatsCalculator(
+            profile_dict,
+            repos_dict,
+            thresholds=self.config.require("stats.thresholds"),
+        )
 
         # Pre-fetch data for all repositories once
         self.logger.info(f"[generate_svgs] Pre-fetching detailed stats for {len(github_data.repositories)} repositories")

@@ -54,7 +54,6 @@ class UnifiedDataGenerator:
         config: SparkConfig,
         output_dir: Path,
         force_refresh: bool = False,
-        max_repos_override: Optional[int] = None,
         cache: Optional[APICache] = None,
         include_ai_summaries: bool = False,
     ):
@@ -65,7 +64,6 @@ class UnifiedDataGenerator:
             config: SparkConfig instance
             output_dir: Directory for output files
             force_refresh: Force refresh all caches
-            max_repos_override: Override max repositories from config
             cache: Optional shared cache instance
             include_ai_summaries: Whether to generate AI summaries
         """
@@ -74,28 +72,31 @@ class UnifiedDataGenerator:
         self.output_dir = Path(output_dir)
         self.force_refresh = force_refresh
         
-        # Get max_repositories from config or override
-        dashboard_config = config.config.get("dashboard", {})
-        data_gen_config = dashboard_config.get("data_generation", {})
-        self.max_repositories = max_repos_override or data_gen_config.get("max_repositories", 50)
-        self.top_n_repos = data_gen_config.get("top_n_repos", 50)
-        self.include_ai_summaries = include_ai_summaries or data_gen_config.get("include_ai_summaries", False)
+        # All values come from config (no fallbacks — raise if missing)
+        self.max_repositories = config.require("dashboard.data_generation.max_repositories")
+        self.top_n_repos = config.require("analyzer.top_n")
+        self.include_ai_summaries = include_ai_summaries or config.require("dashboard.data_generation.include_ai_summaries")
         
         # Initialize components
-        self.cache = cache if cache is not None else APICache()
+        self.cache = cache if cache is not None else APICache(cache_dir=config.get_cache_dir())
         self.fetcher = GitHubFetcher(
             cache=self.cache,
             max_repos=self.max_repositories,
             api_version_settings=self.config.get_github_api_version_config(),
         )
-        self.ranker = RepositoryRanker(config=config)
+        self.ranker = RepositoryRanker(config=config.get_ranking_weights())
         
         logger.info(f"UnifiedDataGenerator initialized for user: {username}")
         logger.info(f"Max repositories: {self.max_repositories}")
         logger.info(f"Include AI summaries: {self.include_ai_summaries}")
         
-        # Initialize cache manager for Phase 2
-        self.cache_manager = CacheManager(self.fetcher.github, self.cache, fetcher=self.fetcher)
+        # Initialize cache manager for Phase 2 (pass ai_model for lazy summarizer creation)
+        self.cache_manager = CacheManager(
+            self.fetcher.github,
+            self.cache,
+            fetcher=self.fetcher,
+            ai_model=config.get_ai_model(),
+        )
 
     @staticmethod
     def _derive_weekly_activity(activity_calendar: Dict[str, int]) -> List[Dict[str, Any]]:
@@ -402,7 +403,7 @@ class UnifiedDataGenerator:
         dependency_analyzer = RepositoryDependencyAnalyzer(
             config=self.config.config.get("analyzer", {})
         )
-        summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False)
+        summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False, model=self.config.get_ai_model())
         
         for i, repo_data in enumerate(raw_repos[:self.max_repositories], 1):
             repo_name = repo_data["name"]

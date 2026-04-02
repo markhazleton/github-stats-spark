@@ -9,17 +9,33 @@ import math
 class StatsCalculator:
     """Calculates comprehensive statistics from GitHub activity data."""
 
-    def __init__(self, profile: Dict[str, Any], repositories: List[Dict[str, Any]]):
+    def __init__(self, profile: Dict[str, Any], repositories: List[Dict[str, Any]], thresholds: Optional[Dict[str, Any]] = None):
         """Initialize calculator with user data.
 
         Args:
             profile: User profile data
             repositories: List of repository data
+            thresholds: stats.thresholds section from spark.yml (must contain night_owl_hours
+                        and early_bird_hours). Raises ConfigurationError if not provided.
         """
+        if thresholds is None:
+            from spark.exceptions import ConfigurationError
+            raise ConfigurationError(
+                "StatsCalculator requires 'thresholds' from config (stats.thresholds in spark.yml)",
+                field="stats.thresholds",
+            )
+        for key in ("night_owl_hours", "early_bird_hours"):
+            if thresholds.get(key) is None:
+                from spark.exceptions import ConfigurationError
+                raise ConfigurationError(
+                    f"Missing required threshold 'stats.thresholds.{key}' in spark.yml",
+                    field=f"stats.thresholds.{key}",
+                )
         self.profile = profile
         self.repositories = repositories
         self.commits: List[Dict[str, Any]] = []
         self.languages: Dict[str, int] = {}
+        self.thresholds = thresholds
 
     def add_commits(self, commits: List[Dict[str, Any]]) -> None:
         """Add commits data for analysis.
@@ -246,12 +262,12 @@ class StatsCalculator:
 
         total_commits = sum(hour_counts.values())
 
-        # Night owl: majority commits between 22:00-4:00
-        night_hours = list(range(22, 24)) + list(range(0, 5))
+        # Night owl: majority commits between configured night hours
+        night_hours = self.thresholds["night_owl_hours"]
         night_commits = sum(hour_counts[h] for h in night_hours)
 
-        # Early bird: majority commits between 5:00-9:00
-        early_hours = list(range(5, 10))
+        # Early bird: majority commits between configured early hours
+        early_hours = self.thresholds["early_bird_hours"]
         early_commits = sum(hour_counts[h] for h in early_hours)
 
         # Categorize
