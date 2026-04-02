@@ -135,7 +135,7 @@ jobs:
       - name: Check if data changed
         id: data-check
         run: |
-          if git diff --quiet data/repositories.json; then
+          if git diff --quiet data/users/${{ github.repository_owner }}/repositories.json; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
             echo "changed=true" >> $GITHUB_OUTPUT
@@ -162,17 +162,17 @@ jobs:
       - name: Copy data to docs
         if: steps.data-check.outputs.changed == 'true'
         run: |
-          echo "Copying data directory to docs..."
-          mkdir -p docs/data
-          cp -r data/repositories.json docs/data/
-          ls -la docs/data/
+          echo "Copying user data to docs..."
+          mkdir -p docs/data/users/${{ github.repository_owner }}
+          cp -r data/users/${{ github.repository_owner }}/repositories.json docs/data/users/${{ github.repository_owner }}/
+          ls -la docs/data/users/${{ github.repository_owner }}/
 
       - name: Verify build output
         run: |
           echo "Checking build output..."
           ls -la docs/
           ls -la docs/assets/
-          ls -la docs/data/
+          ls -la docs/data/users/${{ github.repository_owner }}/
           if [ -d "docs/output/screenshots" ]; then
             echo "Screenshots copied successfully:"
             ls -la docs/output/screenshots/
@@ -185,10 +185,10 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add output/*.svg output/reports/*.md data/*.json docs/
+          git add output/users/ data/users/ docs/
           # Add screenshots if they exist
-          if [ -d "output/screenshots" ]; then
-            git add output/screenshots/
+          if [ -d "output/users/${{ github.repository_owner }}/screenshots" ]; then
+            git add output/users/${{ github.repository_owner }}/screenshots/
           fi
           git diff --staged --quiet || git commit -m "Update GitHub statistics and dashboard [skip ci]"
 

@@ -455,4 +455,91 @@ export default {
   getMetricLabel,
   calculatePercentageDifference,
   rankRepositories,
+  computeHeatmapData,
+  computeTimelineData,
 };
+
+/**
+ * Compute heatmap cell data from activity_calendar for trailing 365 days.
+ *
+ * @param {Object} activityCalendar - Map of "YYYY-MM-DD" → commit count
+ * @returns {Array<{date: string, count: number, intensity: number}>}
+ *   intensity 0–4 based on quartile distribution of non-zero days
+ */
+export function computeHeatmapData(activityCalendar) {
+  if (!activityCalendar || typeof activityCalendar !== "object") return [];
+
+  const today = new Date();
+  const start = new Date(today);
+  start.setFullYear(start.getFullYear() - 1);
+  start.setDate(start.getDate() + 1); // trailing 365 days (not 366)
+
+  // Collect all counts for non-zero days to compute quartiles
+  const nonZeroCounts = Object.values(activityCalendar).filter((c) => c > 0);
+  nonZeroCounts.sort((a, b) => a - b);
+
+  const q1 = nonZeroCounts.length
+    ? nonZeroCounts[Math.floor(nonZeroCounts.length * 0.25)]
+    : 1;
+  const q2 = nonZeroCounts.length
+    ? nonZeroCounts[Math.floor(nonZeroCounts.length * 0.5)]
+    : 2;
+  const q3 = nonZeroCounts.length
+    ? nonZeroCounts[Math.floor(nonZeroCounts.length * 0.75)]
+    : 3;
+
+  const getIntensity = (count) => {
+    if (!count || count === 0) return 0;
+    if (count <= q1) return 1;
+    if (count <= q2) return 2;
+    if (count <= q3) return 3;
+    return 4;
+  };
+
+  const result = [];
+  const cursor = new Date(start);
+  while (cursor <= today) {
+    const dateStr = cursor.toISOString().slice(0, 10);
+    const count = activityCalendar[dateStr] ?? 0;
+    result.push({ date: dateStr, count, intensity: getIntensity(count) });
+    cursor.setDate(cursor.getDate() + 1);
+  }
+  return result;
+}
+
+/**
+ * Compute Chart.js-compatible timeline dataset from weekly_activity array.
+ *
+ * @param {Array<{week: string, label: string, commits: number, active_repos: number}>} weeklyActivity
+ * @returns {{ labels: string[], datasets: Array<{label: string, data: number[], ...}> }}
+ */
+export function computeTimelineData(weeklyActivity) {
+  if (!Array.isArray(weeklyActivity) || weeklyActivity.length === 0) {
+    return { labels: [], datasets: [] };
+  }
+
+  const labels = weeklyActivity.map((w) => w.label ?? w.week);
+  return {
+    labels,
+    datasets: [
+      {
+        label: "Commits",
+        data: weeklyActivity.map((w) => w.commits ?? 0),
+        borderColor: "var(--chart-primary, #2563eb)",
+        backgroundColor: "var(--chart-primary-bg, rgba(37,99,235,0.15))",
+        tension: 0.3,
+        fill: true,
+        yAxisID: "yCommits",
+      },
+      {
+        label: "Active Repos",
+        data: weeklyActivity.map((w) => w.active_repos ?? 0),
+        borderColor: "var(--chart-secondary, #16a34a)",
+        backgroundColor: "var(--chart-secondary-bg, rgba(22,163,74,0.15))",
+        tension: 0.3,
+        fill: false,
+        yAxisID: "yRepos",
+      },
+    ],
+  };
+}

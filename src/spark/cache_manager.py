@@ -40,19 +40,23 @@ class CacheManager:
         cache: APICache,
         summarizer: Optional[RepositorySummarizer] = None,
         fetcher: Optional[Any] = None,
+        ai_model: Optional[str] = None,
     ):
         """Initialize cache manager.
         
         Args:
             github_client: PyGithub client instance
             cache: APICache instance
-            summarizer: Optional RepositorySummarizer for AI summary refresh
+            summarizer: Optional pre-initialized RepositorySummarizer for AI summary refresh
+            ai_model: AI model name from config (used when summarizer is not pre-provided)
         """
         self.github = github_client
         self.cache = cache
         self.logger = get_logger()
         self.summarizer = summarizer
-        self.refresh_executor = CacheRefreshExecutor(github_client, cache, summarizer=summarizer, fetcher=fetcher)
+        self.refresh_executor = CacheRefreshExecutor(
+            github_client, cache, summarizer=summarizer, fetcher=fetcher, ai_model=ai_model
+        )
 
     @property
     def api_calls(self) -> int:

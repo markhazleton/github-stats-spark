@@ -286,16 +286,17 @@ class TestUnifiedDataGeneratorInit:
              patch("spark.unified_data_generator.CacheManager"), \
              patch("spark.unified_data_generator.RepositoryRanker"):
             config = MagicMock()
-            config.config = {
-                "dashboard": {
-                    "data_generation": {
-                        "max_repositories": 100,
-                        "top_n_repos": 25,
-                        "include_ai_summaries": True,
-                    }
-                }
-            }
+            # require() returns the expected values for each call
+            config.require.side_effect = lambda key: {
+                "dashboard.data_generation.max_repositories": 100,
+                "analyzer.top_n": 25,
+                "dashboard.data_generation.include_ai_summaries": True,
+                "stats.thresholds": {},
+            }.get(key, MagicMock())
             config.get_github_api_version_config.return_value = {}
+            config.get_ranking_weights.return_value = {"popularity": 0.30, "activity": 0.45, "health": 0.25}
+            config.get_ai_model.return_value = "claude-haiku-4-5"
+            config.get_cache_dir.return_value = "/tmp/.cache"
             gen = UnifiedDataGenerator(
                 username="testuser",
                 config=config,
@@ -307,35 +308,41 @@ class TestUnifiedDataGeneratorInit:
             assert gen.include_ai_summaries is True
 
     def test_max_repos_override(self):
+        """max_repos_override removed — max_repositories is controlled solely by spark.yml."""
         with patch("spark.unified_data_generator.GitHubFetcher"), \
              patch("spark.unified_data_generator.CacheManager"), \
              patch("spark.unified_data_generator.RepositoryRanker"):
             config = MagicMock()
-            config.config = {
-                "dashboard": {
-                    "data_generation": {"max_repositories": 100}
-                }
-            }
+            config.require.side_effect = lambda key: {
+                "dashboard.data_generation.max_repositories": 5,
+                "analyzer.top_n": 50,
+                "dashboard.data_generation.include_ai_summaries": False,
+            }.get(key, MagicMock())
             config.get_github_api_version_config.return_value = {}
+            config.get_ranking_weights.return_value = {"popularity": 0.30, "activity": 0.45, "health": 0.25}
+            config.get_ai_model.return_value = "claude-haiku-4-5"
+            config.get_cache_dir.return_value = "/tmp/.cache"
             gen = UnifiedDataGenerator(
                 username="testuser",
                 config=config,
                 output_dir=Path("/tmp/out"),
-                max_repos_override=5,
             )
             assert gen.max_repositories == 5
 
     def test_defaults_without_config(self):
+        """When config keys are missing, require() raises ConfigurationError."""
+        from spark.exceptions import ConfigurationError
         with patch("spark.unified_data_generator.GitHubFetcher"), \
              patch("spark.unified_data_generator.CacheManager"), \
              patch("spark.unified_data_generator.RepositoryRanker"):
             config = MagicMock()
-            config.config = {}
+            config.require.side_effect = ConfigurationError("Missing key", field="dashboard.data_generation.max_repositories")
             config.get_github_api_version_config.return_value = {}
-            gen = UnifiedDataGenerator(
-                username="testuser",
-                config=config,
-                output_dir=Path("/tmp/out"),
-            )
-            assert gen.max_repositories == 50
-            assert gen.include_ai_summaries is False
+            config.get_ranking_weights.return_value = {"popularity": 0.30, "activity": 0.45, "health": 0.25}
+            config.get_cache_dir.return_value = "/tmp/.cache"
+            with pytest.raises(ConfigurationError):
+                UnifiedDataGenerator(
+                    username="testuser",
+                    config=config,
+                    output_dir=Path("/tmp/out"),
+                )

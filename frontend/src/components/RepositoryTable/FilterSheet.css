@@ -26,7 +26,7 @@
   display: block;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .filter-label {
     color: var(--color-text, #d1d5db);
   }
@@ -53,7 +53,7 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .filter-select {
     background-color: var(--color-background, #1f2937);
     color: var(--color-text, #f9fafb);
@@ -86,7 +86,7 @@
   border-radius: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .filter-range::-webkit-slider-track {
     background: var(--color-border, #4b5563);
   }
@@ -136,7 +136,7 @@
   margin-top: -8px;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .filter-range-labels {
     color: var(--color-text-secondary, #9ca3af);
   }
@@ -151,7 +151,7 @@
   flex-wrap: wrap;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .filter-actions {
     border-top-color: var(--color-border, #374151);
   }
@@ -208,7 +208,7 @@
   background: var(--color-background-hover, #e5e7eb);
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .filter-button-secondary {
     background: var(--color-background-secondary, #374151);
     color: var(--color-text, #f9fafb);
@@ -231,7 +231,7 @@
   background: var(--color-background-hover, #f3f4f6);
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .filter-button-text {
     color: var(--color-text, #d1d5db);
   }

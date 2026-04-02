@@ -31,15 +31,15 @@ def to_posix_path(path: Path) -> str:
     return path.as_posix()
 
 
-def build_output_layout(username: str, data_output_dir: str, multi_user: bool) -> OutputLayout:
-    """Resolve output directories for unified generation."""
-    data_dir = Path(data_output_dir)
-    output_root = Path("output")
+def build_output_layout(username: str, data_output_dir: str) -> OutputLayout:
+    """Resolve output directories for unified generation.
 
-    if multi_user:
-        user_slug = slugify_username(username)
-        data_dir = data_dir / "users" / user_slug
-        output_root = output_root / "users" / user_slug
+    Outputs are always scoped to the username so that multiple users can
+    coexist on the same filesystem and the same GitHub Pages deployment.
+    """
+    user_slug = slugify_username(username)
+    data_dir = Path(data_output_dir) / "users" / user_slug
+    output_root = Path("output") / "users" / user_slug
 
     return {
         "data_dir": data_dir,

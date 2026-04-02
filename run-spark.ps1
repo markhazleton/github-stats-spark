@@ -38,9 +38,6 @@
 .PARAMETER CheckOnly
     Only check environment and configuration (dry run)
 
-.PARAMETER MultiUser
-    Write generated files to user-scoped directories so multiple users can be stored side by side.
-
 .EXAMPLE
     .\run-spark.ps1 -User markhazleton
     Generate complete stats without AI summaries (fast)
@@ -64,16 +61,12 @@
 .EXAMPLE
     .\run-spark.ps1 -CheckOnly
     Verify environment setup and configuration
-
-.EXAMPLE
-    .\run-spark.ps1 -User octocat -MultiUser
-    Generate outputs under data\users\octocat and output\users\octocat without overwriting other users
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory=$false)]
-    [string]$User = "markhazleton",
+    [string]$User = "",   # Leave empty to process all users from config/spark.yml
 
     [Parameter(Mandatory=$false)]
     [switch]$IncludeAI,
@@ -89,9 +82,6 @@ param(
 
     [Parameter(Mandatory=$false)]
     [switch]$MissingOnly,
-
-    [Parameter(Mandatory=$false)]
-    [switch]$MultiUser,
 
     [Parameter(Mandatory=$false)]
     [switch]$CheckOnly
@@ -260,41 +250,159 @@ if (-not $env:SPARK_CACHE_DIR) {
     $env:SPARK_CACHE_DIR = ".cache/local"
 }
 
-$normalizedUser = $User.ToLower()
-$dataOutputDir = if ($MultiUser) { Join-Path "data\users" $normalizedUser } else { "data" }
-$artifactOutputDir = if ($MultiUser) { Join-Path "output\users" $normalizedUser } else { "output" }
-$reportOutputDir = Join-Path $artifactOutputDir "reports"
-$screenshotOutputDir = Join-Path $artifactOutputDir "screenshots"
-$repositoriesJsonPath = Join-Path $dataOutputDir "repositories.json"
+# ---------------------------------------------------------------------------
+# Per-user pipeline runner
+# ---------------------------------------------------------------------------
+function Invoke-SparkPipeline {
+    param([string]$UserName)
 
-# Build command arguments
-$cmdArgs = @(
-    "unified"
-    "--user", $User
-    "--output-dir", "data"
-)
+    $normalizedUser = $UserName.ToLower()
+    $dataOutputDir = Join-Path "data\users" $normalizedUser
+    $artifactOutputDir = Join-Path "output\users" $normalizedUser
+    $reportOutputDir = Join-Path $artifactOutputDir "reports"
+    $screenshotOutputDir = Join-Path $artifactOutputDir "screenshots"
+    $repositoriesJsonPath = Join-Path $dataOutputDir "repositories.json"
 
-if ($IncludeAI) {
-    $cmdArgs += "--include-ai-summaries"
+    # Build command arguments
+    $cmdArgs = @(
+        "unified"
+        "--user", $UserName
+        "--output-dir", "data"
+    )
+
+    if ($IncludeAI) {
+        $cmdArgs += "--include-ai-summaries"
+    }
+
+    if ($ForceRefresh) {
+        $cmdArgs += "--force-refresh"
+    }
+
+    if ($Screenshots) {
+        $cmdArgs += "--capture-screenshots"
+    }
+
+    if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
+        $cmdArgs += "--verbose"
+    }
+
+    # Execute unified pipeline
+    Write-Header "Executing 4-Phase Pipeline  [user: $UserName]"
+    Write-Info "AI Summaries:  $(if ($IncludeAI) { 'Enabled' } else { 'Disabled' })"
+    Write-Info "Screenshots:   $(if ($Screenshots) { 'Enabled' } else { 'Disabled' })"
+    Write-Info "Missing Only:  $(if ($MissingOnly) { 'Yes (skip existing PNGs)' } else { 'No' })"
+    Write-Info "Force Refresh: $(if ($ForceRefresh) { 'Yes' } else { 'No' })"
+    Write-Info "Cache Dir:     $env:SPARK_CACHE_DIR"
+    Write-Info "Data Dir:      $dataOutputDir"
+    Write-Info "Artifact Dir:  $artifactOutputDir"
+    Write-Info "Verbose Mode:  $(if ($PSCmdlet.MyInvocation.BoundParameters['Verbose'].IsPresent) { 'Yes' } else { 'No' })"
+    Write-Host ""
+
+    # If MissingOnly, temporarily move existing screenshots aside so the pipeline
+    # only sees repos without a file. After the run we restore them.
+    $hiddenDir = $null
+    if ($Screenshots -and $MissingOnly) {
+        if (Test-Path $screenshotOutputDir) {
+            $existingPngs = Get-ChildItem $screenshotOutputDir -Filter "*.png" -ErrorAction SilentlyContinue
+            if ($existingPngs.Count -gt 0) {
+                $hiddenDir = "$screenshotOutputDir\.missing-only-backup"
+                New-Item -ItemType Directory -Path $hiddenDir -Force | Out-Null
+                $existingPngs | Move-Item -Destination $hiddenDir -Force
+                Write-Info "MissingOnly: temporarily moved $($existingPngs.Count) existing PNGs aside"
+            } else {
+                Write-Info "MissingOnly: no existing PNGs found - will capture all"
+            }
+        }
+    }
+
+    $startTime = Get-Date
+
+    # Run the unified command
+    python -m spark.cli @cmdArgs
+
+    $exitCode = $LASTEXITCODE
+    $endTime = Get-Date
+    $duration = $endTime - $startTime
+
+    # Restore previously-existing screenshots (MissingOnly mode)
+    if ($null -ne $hiddenDir -and (Test-Path $hiddenDir)) {
+        $backedUp = Get-ChildItem $hiddenDir -Filter "*.png" -ErrorAction SilentlyContinue
+        foreach ($png in $backedUp) {
+            $dest = Join-Path $screenshotOutputDir $png.Name
+            if (-not (Test-Path $dest)) {
+                Move-Item $png.FullName -Destination $dest -Force
+            }
+        }
+        Remove-Item $hiddenDir -Recurse -Force -ErrorAction SilentlyContinue
+        Write-Info "MissingOnly: restored backed-up screenshots"
+    }
+
+    # Results summary
+    Write-Host ""
+    Write-Header "Pipeline Results  [user: $UserName]"
+
+    if ($exitCode -eq 0) {
+        Write-Success "Pipeline completed successfully!"
+        Write-Info "Duration: $($duration.ToString('mm\:ss'))"
+        Write-Host ""
+
+        # Validate outputs
+        Write-Info "Verifying outputs..."
+
+        if (Test-Path $repositoriesJsonPath) {
+            $fileSize = [math]::Round((Get-Item $repositoriesJsonPath).Length / 1KB, 2)
+            Write-Success "repositories.json created ($fileSize KB)"
+
+            try {
+                $data = Get-Content $repositoriesJsonPath -Raw | ConvertFrom-Json
+                Write-Info "  Repositories analyzed: $($data.repositories.Count)"
+                Write-Info "  Schema version: $($data.metadata.schema_version)"
+                Write-Info "  Generated: $($data.metadata.generated_at)"
+            } catch {
+                Write-Warning "Could not parse JSON output"
+            }
+        } else {
+            Write-Warning "repositories.json not found"
+        }
+
+        if (Test-Path $reportOutputDir) {
+            $reportCount = (Get-ChildItem $reportOutputDir -Filter "*.md" -ErrorAction SilentlyContinue).Count
+            if ($reportCount -gt 0) {
+                Write-Success "Generated $reportCount markdown reports"
+            }
+        }
+
+        if ($Screenshots -and (Test-Path $screenshotOutputDir)) {
+            $pngCount    = (Get-ChildItem $screenshotOutputDir -Filter "*.png" -ErrorAction SilentlyContinue).Count
+            $totalSizeKB = [math]::Round(
+                (Get-ChildItem $screenshotOutputDir -Filter "*.png" -ErrorAction SilentlyContinue |
+                 Measure-Object -Property Length -Sum).Sum / 1KB, 1)
+            Write-Success "Screenshots: $pngCount PNGs in $screenshotOutputDir\ ($totalSizeKB KB total)"
+        }
+
+        Write-Host ""
+        Write-Info "Data:    $repositoriesJsonPath"
+        Write-Info "Reports: $reportOutputDir\"
+        if ($Screenshots) {
+            Write-Info "PNGs:    $screenshotOutputDir\"
+        }
+    } else {
+        Write-Error "Pipeline failed with exit code: $exitCode"
+        Write-Info "Review the log output above for details"
+        Write-Host ""
+        Write-Info "Common issues:"
+        Write-Info "  - Rate limit exceeded: Wait or check cache"
+        Write-Info "  - Invalid token: Verify GITHUB_TOKEN"
+        Write-Info "  - Network issues: Check internet connection"
+        return $exitCode
+    }
+
+    return 0
 }
 
-if ($ForceRefresh) {
-    $cmdArgs += "--force-refresh"
-}
-
-if ($Screenshots) {
-    $cmdArgs += "--capture-screenshots"
-}
-
-if ($MultiUser) {
-    $cmdArgs += "--multi-user"
-}
-
-if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
-    $cmdArgs += "--verbose"
-}
-
-# Clear cache if requested
+# ---------------------------------------------------------------------------
+# Clear cache (once, before any per-user run)
+# ---------------------------------------------------------------------------
 if ($ClearCache) {
     Write-Header "Cache Management"
     Write-Info "Clearing all caches..."
@@ -302,128 +410,52 @@ if ($ClearCache) {
     Write-Success "Cache cleared"
 }
 
-# Execute unified pipeline
-Write-Header "Executing 4-Phase Pipeline"
-Write-Info "User: $User"
-Write-Info "AI Summaries:  $(if ($IncludeAI) { 'Enabled' } else { 'Disabled' })"
-Write-Info "Screenshots:   $(if ($Screenshots) { 'Enabled' } else { 'Disabled' })"
-Write-Info "Missing Only:  $(if ($MissingOnly) { 'Yes (skip existing PNGs)' } else { 'No' })"
-Write-Info "Multi-user:    $(if ($MultiUser) { 'Enabled' } else { 'Disabled' })"
-Write-Info "Force Refresh: $(if ($ForceRefresh) { 'Yes' } else { 'No' })"
-Write-Info "Cache Dir:     $env:SPARK_CACHE_DIR"
-Write-Info "Data Dir:      $dataOutputDir"
-Write-Info "Artifact Dir:  $artifactOutputDir"
-Write-Info "Verbose Mode:  $(if ($PSCmdlet.MyInvocation.BoundParameters['Verbose'].IsPresent) { 'Yes' } else { 'No' })"
-Write-Host ""
-
-# If MissingOnly, temporarily move existing screenshots aside so the pipeline
-# only sees repos without a file. After the run we restore them.
-$hiddenDir = $null
-if ($Screenshots -and $MissingOnly) {
-    $screenshotDir = $screenshotOutputDir
-    if (Test-Path $screenshotDir) {
-        $existingPngs = Get-ChildItem $screenshotDir -Filter "*.png" -ErrorAction SilentlyContinue
-        if ($existingPngs.Count -gt 0) {
-            $hiddenDir = "$screenshotDir\.missing-only-backup"
-            New-Item -ItemType Directory -Path $hiddenDir -Force | Out-Null
-            $existingPngs | Move-Item -Destination $hiddenDir -Force
-            Write-Info "MissingOnly: temporarily moved $($existingPngs.Count) existing PNGs aside"
-        } else {
-            Write-Info "MissingOnly: no existing PNGs found - will capture all"
-        }
-    }
-}
-
-$startTime = Get-Date
-
-# Run the unified command
-python -m spark.cli @cmdArgs
-
-$exitCode = $LASTEXITCODE
-$endTime = Get-Date
-$duration = $endTime - $startTime
-
-# Restore previously-existing screenshots (MissingOnly mode)
-if ($null -ne $hiddenDir -and (Test-Path $hiddenDir)) {
-    $backedUp = Get-ChildItem $hiddenDir -Filter "*.png" -ErrorAction SilentlyContinue
-    $screenshotDir = $screenshotOutputDir
-    foreach ($png in $backedUp) {
-        $dest = Join-Path $screenshotDir $png.Name
-        if (-not (Test-Path $dest)) {
-            # Newly captured file takes priority; only restore if not replaced
-            Move-Item $png.FullName -Destination $dest -Force
-        }
-    }
-    Remove-Item $hiddenDir -Recurse -Force -ErrorAction SilentlyContinue
-    Write-Info "MissingOnly: restored backed-up screenshots"
-}
-
-# Results summary
-Write-Host ""
-Write-Header "Pipeline Results"
-
-if ($exitCode -eq 0) {
-    Write-Success "Pipeline completed successfully!"
-    Write-Info "Duration: $($duration.ToString('mm\:ss'))"
-    Write-Host ""
-    
-    # Validate outputs
-    Write-Info "Verifying outputs..."
-    
-    if (Test-Path $repositoriesJsonPath) {
-        $fileSize = [math]::Round((Get-Item $repositoriesJsonPath).Length / 1KB, 2)
-        Write-Success "repositories.json created ($fileSize KB)"
-        
-        try {
-            $data = Get-Content $repositoriesJsonPath -Raw | ConvertFrom-Json
-            Write-Info "  Repositories analyzed: $($data.repositories.Count)"
-            Write-Info "  Schema version: $($data.metadata.schema_version)"
-            Write-Info "  Generated: $($data.metadata.generated_at)"
-        } catch {
-            Write-Warning "Could not parse JSON output"
-        }
-    } else {
-        Write-Warning "repositories.json not found"
-    }
-    
-    if (Test-Path $reportOutputDir) {
-        $reportCount = (Get-ChildItem $reportOutputDir -Filter "*.md" -ErrorAction SilentlyContinue).Count
-        if ($reportCount -gt 0) {
-            Write-Success "Generated $reportCount markdown reports"
-        }
-    }
-
-    if ($Screenshots -and (Test-Path $screenshotOutputDir)) {
-        $pngCount   = (Get-ChildItem $screenshotOutputDir -Filter "*.png" -ErrorAction SilentlyContinue).Count
-        $totalSizeKB = [math]::Round(
-            (Get-ChildItem $screenshotOutputDir -Filter "*.png" -ErrorAction SilentlyContinue |
-             Measure-Object -Property Length -Sum).Sum / 1KB, 1)
-        Write-Success "Screenshots: $pngCount PNGs in $screenshotOutputDir\ ($totalSizeKB KB total)"
-    }
-
-    Write-Host ""
-    Write-Header "Next Steps"
-    Write-Info "1. View data: $repositoriesJsonPath"
-    Write-Info "2. View reports: $reportOutputDir\"
-    if ($Screenshots) {
-        Write-Info "3. View screenshots: $screenshotOutputDir\"
-        Write-Info "4. Build dashboard: cd frontend && npm run build"
-        Write-Info "5. Deploy: Copy docs\ to hosting platform"
-    } else {
-        Write-Info "3. Capture screenshots: .\run-spark-local.ps1 -Screenshots"
-        Write-Info "4. Build dashboard: cd frontend && npm run build"
-        Write-Info "5. Deploy: Copy docs\ to hosting platform"
-    }
-    
+# ---------------------------------------------------------------------------
+# Resolve user list
+# ---------------------------------------------------------------------------
+if ($User -ne "") {
+    $usersToProcess = @($User)
 } else {
-    Write-Error "Pipeline failed with exit code: $exitCode"
-    Write-Info "Review the log output above for details"
-    Write-Host ""
-    Write-Info "Common issues:"
-    Write-Info "  - Rate limit exceeded: Wait or check cache"
-    Write-Info "  - Invalid token: Verify GITHUB_TOKEN"
-    Write-Info "  - Network issues: Check internet connection"
-    exit $exitCode
+    # Read users list from config/spark.yml
+    $configUsers = python -c @"
+try:
+    from spark.config import SparkConfig
+    c = SparkConfig('config/spark.yml')
+    c.load()
+    users = c.get_users()
+    print('\n'.join(users) if users else 'markhazleton')
+except Exception as e:
+    print('markhazleton')
+"@ 2>$null
+    $usersToProcess = @($configUsers -split "`n" | Where-Object { $_ -match '\S' } | ForEach-Object { $_.Trim() })
+    if (-not $usersToProcess -or $usersToProcess.Count -eq 0) {
+        $usersToProcess = @("markhazleton")
+    }
 }
 
+Write-Info "Users to process: $($usersToProcess -join ', ')"
+
+# ---------------------------------------------------------------------------
+# Run pipeline for each user
+# ---------------------------------------------------------------------------
+$overallExit = 0
+foreach ($currentUser in $usersToProcess) {
+    $result = Invoke-SparkPipeline -UserName $currentUser
+    if ($result -ne 0) {
+        $overallExit = $result
+    }
+}
+
+# Final next-steps hint (shown once after all users)
 Write-Host ""
+Write-Header "Next Steps"
+Write-Info "1. Build dashboard: cd frontend && npm run build"
+Write-Info "2. Deploy: Copy docs\ to hosting platform"
+if (-not $Screenshots) {
+    Write-Info "3. Capture screenshots: .\run-spark-local.ps1 -Screenshots"
+}
+Write-Host ""
+
+if ($overallExit -ne 0) {
+    exit $overallExit
+}

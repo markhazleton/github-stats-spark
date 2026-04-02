@@ -14,4 +14,4 @@ ignores:
   - ".venv/**"
   - ".cache/**"
   - "tests/fixtures/sample_readmes/**"
-  - "output/reports/**"
+  - "output/users/**/reports/**"

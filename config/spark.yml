@@ -1,9 +1,11 @@
 # Stats Spark Configuration
 # GitHub Profile Statistics Generator
 
-# GitHub username to analyze
-# Use "auto" to detect from GITHUB_REPOSITORY environment variable
-user: markhazleton
+# GitHub usernames to analyze.
+# The first entry is the default user for the dashboard and single-user runs.
+# Add more entries to process multiple users in one pipeline run.
+users:
+  - markhazleton
 
 # Statistics Configuration
 stats:
@@ -138,8 +140,11 @@ dashboard:
     # Include AI-generated summaries (from unified report)
     include_ai_summaries: true
 
+    # Max commits to fetch per repository
+    max_commits_per_repo: 500
+
     # Max repositories to include in dashboard
-    max_repositories: 200
+    max_repositories: 50   # Max repositories to include in dashboard
 
   # Performance optimization settings
   performance:

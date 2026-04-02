@@ -16,25 +16,25 @@ import { offlineStorage } from "./offlineStorage";
 // Cache keys
 const CACHE_KEY_REPOSITORIES = "repositories-data";
 
+// Default user when no ?user= query param is provided.
+// Must match the 'user' key in config/spark.yml.
+const DEFAULT_USER = "markhazleton";
+
 const getSelectedUser = (explicitUser) => {
   if (explicitUser) {
     return explicitUser.trim().toLowerCase();
   }
 
   const params = new URLSearchParams(window.location.search);
-  return params.get("user")?.trim().toLowerCase() || null;
+  return params.get("user")?.trim().toLowerCase() || DEFAULT_USER;
 };
 
 const getRepositoriesPath = (user) => {
-  if (user) {
-    return `users/${user}/repositories.json`;
-  }
-
-  return "repositories.json";
+  return `users/${user}/repositories.json`;
 };
 
 const getRepositoriesCacheKey = (user) => {
-  return user ? `${CACHE_KEY_REPOSITORIES}:${user}` : CACHE_KEY_REPOSITORIES;
+  return `${CACHE_KEY_REPOSITORIES}:${user}`;
 };
 
 /**

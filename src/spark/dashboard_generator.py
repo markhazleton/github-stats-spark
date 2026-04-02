@@ -39,11 +39,11 @@ class DashboardGenerator:
         output_dir: Directory path for JSON output files
     """
 
-    def __init__(self, config: Dict[str, Any], username: str):
+    def __init__(self, config: SparkConfig, username: str):
         """Initialize the DashboardGenerator.
 
         Args:
-            config: Configuration dictionary containing dashboard settings
+            config: SparkConfig instance (all values read from spark.yml)
             username: GitHub username to analyze
         """
         self.config = config
@@ -51,23 +51,20 @@ class DashboardGenerator:
 
         # Initialize fetcher with token from environment
         token = os.getenv("GITHUB_TOKEN")
-        dashboard_config = config.get("dashboard", {})
-        max_repos = dashboard_config.get("data_generation", {}).get("max_repositories", 200)
+        max_repos = config.require("dashboard.data_generation.max_repositories")
 
         self.fetcher = GitHubFetcher(token=token, max_repos=max_repos)
 
-        # Get dashboard configuration
-        dashboard_config = config.get("dashboard", {})
-        self.output_dir = Path(dashboard_config.get("output_dir", "data"))
+        # Get dashboard configuration (all required — raise if missing)
+        self.output_dir = Path(config.require("dashboard.output_dir"))
         self.data_dir = self.output_dir
 
         # Dashboard feature flags
-        self.enabled = dashboard_config.get("enabled", True)
-        data_gen = dashboard_config.get("data_generation", {})
-        self.include_commit_metrics = data_gen.get("include_commit_metrics", True)
-        self.include_language_stats = data_gen.get("include_language_stats", True)
-        self.include_ai_summaries = data_gen.get("include_ai_summaries", False)
-        self.max_repositories = data_gen.get("max_repositories", 200)
+        self.enabled = config.require("dashboard.enabled")
+        self.include_commit_metrics = config.require("dashboard.data_generation.include_commit_metrics")
+        self.include_language_stats = config.require("dashboard.data_generation.include_language_stats")
+        self.include_ai_summaries = config.require("dashboard.data_generation.include_ai_summaries")
+        self.max_repositories = max_repos
 
         logger.info(
             f"DashboardGenerator initialized (output: {self.data_dir}, "

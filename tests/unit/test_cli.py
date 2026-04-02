@@ -12,15 +12,14 @@ from spark.cli_output_layout import build_output_layout, slugify_username
 def test_build_main_parser_supports_unified_command():
     parser = build_main_parser()
 
-    args = parser.parse_args(["unified", "--user", "markhazleton", "--multi-user"])
+    args = parser.parse_args(["unified", "--user", "markhazleton"])
 
     assert args.command == "unified"
     assert args.user == "markhazleton"
-    assert args.multi_user is True
 
 
-def test_build_output_layout_scopes_multi_user_paths():
-    layout = build_output_layout("Mark Hazleton", "data", True)
+def test_build_output_layout_scopes_to_user_paths():
+    layout = build_output_layout("Mark Hazleton", "data")
 
     assert slugify_username("Mark Hazleton") == "mark-hazleton"
     assert layout["data_dir"].as_posix() == "data/users/mark-hazleton"

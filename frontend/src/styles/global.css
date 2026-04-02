@@ -111,9 +111,10 @@
   --z-index-tooltip: 600;
 }
 
-/* Dark Mode Theme (optional - can be implemented later) */
+/* Dark Mode Theme — triggered by data-theme="dark" attribute on <html> (ThemeContext) */
+/* System-preference fallback also keeps @media rule so default "system" mode works before JS */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --color-background: #0d1117;
     --color-surface: #161b22;
     --color-surface-alt: #21262d;
@@ -122,6 +123,26 @@
     --color-text-secondary: #8b949e;
     --color-text-muted: #6e7681;
   }
+}
+
+[data-theme="dark"] {
+  --color-background: #0d1117;
+  --color-surface: #161b22;
+  --color-surface-alt: #21262d;
+  --color-border: #30363d;
+  --color-text: #c9d1d9;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #6e7681;
+}
+
+[data-theme="light"] {
+  --color-background: #ffffff;
+  --color-surface: #f6f8fa;
+  --color-surface-alt: #e1e4e8;
+  --color-border: #d1d5da;
+  --color-text: #24292e;
+  --color-text-secondary: #586069;
+  --color-text-muted: #6a737d;
 }
 
 /* =========================================

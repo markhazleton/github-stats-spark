@@ -76,35 +76,135 @@ class SparkConfig:
 
         return errors
 
+    def require(self, key: str) -> Any:
+        """Get a required configuration value, raising an error if missing.
+
+        Args:
+            key: Configuration key (supports dot notation, e.g., 'cache.directory')
+
+        Returns:
+            Configuration value (never None)
+
+        Raises:
+            ConfigurationError: If the key is absent or its value is None
+        """
+        from spark.exceptions import ConfigurationError
+
+        keys = key.split(".")
+        value = self.config
+        for k in keys:
+            if isinstance(value, dict):
+                value = value.get(k)
+            else:
+                value = None
+            if value is None:
+                raise ConfigurationError(
+                    f"Required configuration key '{key}' is missing or null. "
+                    f"Add it to config/spark.yml.",
+                    field=key,
+                )
+        return value
+
     def get_theme(self) -> str:
         """Get the configured theme name.
 
         Returns:
-            Theme name (default: spark-dark)
+            Theme name from visualization.theme
+
+        Raises:
+            ConfigurationError: If visualization.theme is not set in config
         """
-        return self.config.get("visualization", {}).get("theme", "spark-dark")
+        return self.require("visualization.theme")
 
     def get_enabled_stats(self) -> List[str]:
         """Get list of enabled statistics categories.
 
         Returns:
-            List of enabled category names
-        """
-        return self.config.get("stats", {}).get("enabled", self.VALID_STATS_CATEGORIES)
+            List of enabled category names from stats.enabled
 
-    def get_user(self) -> str:
-        """Get the configured username.
+        Raises:
+            ConfigurationError: If stats.enabled is not set in config
+        """
+        return self.require("stats.enabled")
+
+    def get_cache_dir(self) -> str:
+        """Get the configured cache directory.
 
         Returns:
-            Username or 'auto' to detect from environment
+            Cache directory path from cache.directory
+
+        Raises:
+            ConfigurationError: If cache.directory is not set in config
         """
+        return self.require("cache.directory")
+
+    def get_ai_model(self) -> str:
+        """Get the configured AI model name.
+
+        Returns:
+            AI model name from analyzer.ai_model
+
+        Raises:
+            ConfigurationError: If analyzer.ai_model is not set in config
+        """
+        return self.require("analyzer.ai_model")
+
+    def get_ranking_weights(self) -> dict:
+        """Get the configured repository ranking weights.
+
+        Returns:
+            Dict with keys: popularity, activity, health
+
+        Raises:
+            ConfigurationError: If any ranking weight key is missing
+        """
+        return {
+            "popularity": self.require("analyzer.ranking_weights.popularity"),
+            "activity": self.require("analyzer.ranking_weights.activity"),
+            "health": self.require("analyzer.ranking_weights.health"),
+        }
+
+    def get_top_n(self) -> int:
+        """Get the configured top-N repositories limit.
+
+        Returns:
+            Integer from analyzer.top_n
+
+        Raises:
+            ConfigurationError: If analyzer.top_n is not set in config
+        """
+        return self.require("analyzer.top_n")
+
+    def get_users(self) -> list:
+        """Get the list of configured usernames.
+
+        Supports both ``users: [list]`` (new) and ``user: string`` (legacy).
+        Falls back to auto-detecting from the GITHUB_REPOSITORY env var.
+
+        Returns:
+            Non-empty list of usernames.
+        """
+        # New list form
+        users = self.config.get("users")
+        if users and isinstance(users, list):
+            return [u for u in users if u]
+
+        # Legacy scalar form
         user = self.config.get("user", "auto")
         if user == "auto":
-            # Auto-detect from GITHUB_REPOSITORY environment variable
             repo = os.getenv("GITHUB_REPOSITORY", "")
             if repo:
-                return repo.split("/")[0]
-        return user
+                user = repo.split("/")[0]
+        return [user] if user and user != "auto" else []
+
+    def get_user(self) -> str:
+        """Get the primary (first) configured username.
+
+        Returns:
+            First username from the users list, or 'auto' if none configured.
+        """
+        users = self.get_users()
+        return users[0] if users else "auto"
 
     def get(self, key: str, default: Any = None) -> Any:
         """Get a configuration value by key.
@@ -131,15 +231,13 @@ class SparkConfig:
         """Get staged GitHub REST API version configuration.
 
         Returns:
-            Dictionary with staged API-version settings.
+            Dictionary with staged API-version settings from github.api_version.
+
+        Raises:
+            ConfigurationError: If any github.api_version key is missing
         """
-        defaults = {
-            "enabled": False,
-            "version": "2026-03-10",
-            "fallback_to_default": True,
+        return {
+            "enabled": self.require("github.api_version.enabled"),
+            "version": self.require("github.api_version.version"),
+            "fallback_to_default": self.require("github.api_version.fallback_to_default"),
         }
-        configured = self.config.get("github", {}).get("api_version", {})
-        if not isinstance(configured, dict):
-            return defaults
-        merged = {**defaults, **configured}
-        return merged

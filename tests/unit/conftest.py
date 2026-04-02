@@ -64,10 +64,49 @@ def spark_config_factory(tmp_path):
         themes_path = tmp_path / "themes.yml"
 
         config_data = {
-            "stats": {"enabled": ["overview", "heatmap", "languages", "fun", "streaks", "release"]},
-            "visualization": {"theme": theme, "effects": {"glow": True}},
-            "repositories": {"exclude_forks": True, "exclude_archived": True},
-            "analyzer": {},
+            "users": ["testuser"],
+            "stats": {
+                "enabled": ["overview", "heatmap", "languages", "fun", "streaks", "release"],
+                "thresholds": {
+                    "graveyard_months": 6,
+                    "starter_commits": 50,
+                    "power_user_commits": 1000,
+                    "night_owl_hours": [22, 23, 0, 1, 2, 3, 4],
+                    "early_bird_hours": [5, 6, 7, 8, 9],
+                },
+            },
+            "visualization": {"theme": theme, "effects": {"glow": True, "gradient": True}},
+            "cache": {"enabled": True, "directory": str(tmp_path / ".cache")},
+            "repositories": {
+                "max_count": 500,
+                "exclude_private": True,
+                "exclude_forks": True,
+                "exclude_archived": True,
+            },
+            "analyzer": {
+                "top_n": 50,
+                "ai_provider": "anthropic",
+                "ai_model": "claude-haiku-4-5",
+                "ranking_weights": {"popularity": 0.30, "activity": 0.45, "health": 0.25},
+            },
+            "github": {
+                "api_version": {
+                    "enabled": False,
+                    "version": "2026-03-10",
+                    "fallback_to_default": True,
+                }
+            },
+            "dashboard": {
+                "enabled": True,
+                "output_dir": str(tmp_path / "data"),
+                "data_generation": {
+                    "include_commit_metrics": True,
+                    "include_language_stats": True,
+                    "include_ai_summaries": False,
+                    "max_commits_per_repo": 500,
+                    "max_repositories": 50,
+                },
+            },
         }
         themes_data = {"custom_themes": custom_themes or {}}
 

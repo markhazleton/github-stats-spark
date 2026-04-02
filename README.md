@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
-**📊 [View Sample Analysis Report](output/reports/markhazleton-analysis.md)** - See real-world output with AI-powered insights
+**📊 [View Sample Analysis Report](output/users/markhazleton/reports/markhazleton-analysis.md)** - See real-world output with AI-powered insights
 **🎨 [View Interactive Dashboard](https://markhazleton.github.io/github-stats-spark/)** - Explore repositories with live visualizations
 
 ---
@@ -233,8 +233,8 @@ spark unified --user YOUR_GITHUB_USERNAME --include-ai-summaries
 **This single command generates:**
 
 - ✅ `/data/repositories.json` - Complete unified dataset for frontend
-- ✅ `/output/*.svg` - All 6 visual analytics (overview, heatmap, languages, streaks, fun, release)
-- ✅ `/output/reports/*.md` - Comprehensive markdown analysis report
+- ✅ `/output/users/{username}/*.svg` - All 6 visual analytics (overview, heatmap, languages, streaks, fun, release)
+- ✅ `/output/users/{username}/reports/*.md` - Comprehensive markdown analysis report
 - ✅ AI summaries for each repository (if API key provided)
 
 **Notable unified data additions in schema 2.2.0:**
@@ -293,7 +293,7 @@ Click the "Fork" button in the top right to create your own copy.
 Add to your profile README (`username/username/README.md`):
 
 ```markdown
-![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/overview.svg)
+![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/users/YOUR_USERNAME/overview.svg)
 ```
 
 **Replace `YOUR_USERNAME`** with your GitHub username!
@@ -306,12 +306,12 @@ Stats Spark generates 6 SVG categories for your GitHub profile:
 
 | Category | Description | Output File | Sample |
 |----------|-------------|-------------|--------|
-| **Overview** | Spark Score, commits, languages, time pattern | `overview.svg` | ![Overview](output/overview.svg) |
-| **Heatmap** | Commit frequency calendar | `heatmap.svg` | ![Heatmap](output/heatmap.svg) |
-| **Languages** | Programming language breakdown | `languages.svg` | ![Languages](output/languages.svg) |
-| **Streaks** | Current and longest coding streaks | `streaks.svg` | ![Streaks](output/streaks.svg) |
-| **Fun Stats** ⚡ | 8 personality-driven achievements | `fun.svg` | ![Fun Stats](output/fun.svg) |
-| **Release Cadence** | Weekly + monthly repo diversity sparklines | `release.svg` | ![Release](output/release.svg) |
+| **Overview** | Spark Score, commits, languages, time pattern | `overview.svg` | ![Overview](output/users/markhazleton/overview.svg) |
+| **Heatmap** | Commit frequency calendar | `heatmap.svg` | ![Heatmap](output/users/markhazleton/heatmap.svg) |
+| **Languages** | Programming language breakdown | `languages.svg` | ![Languages](output/users/markhazleton/languages.svg) |
+| **Streaks** | Current and longest coding streaks | `streaks.svg` | ![Streaks](output/users/markhazleton/streaks.svg) |
+| **Fun Stats** ⚡ | 8 personality-driven achievements | `fun.svg` | ![Fun Stats](output/users/markhazleton/fun.svg) |
+| **Release Cadence** | Weekly + monthly repo diversity sparklines | `release.svg` | ![Release](output/users/markhazleton/release.svg) |
 
 ### ⚡ Enhanced Fun Stats (New!)
 
@@ -359,7 +359,7 @@ Stats Spark's AI-powered analysis feature generates comprehensive markdown repor
 
 ### Sample Output
 
-**📊 [View Full Sample Report](output/reports/markhazleton-analysis.md)**
+**📊 [View Full Sample Report](output/users/markhazleton/reports/markhazleton-analysis.md)**
 
 The sample report demonstrates:
 
@@ -455,7 +455,7 @@ spark analyze --user YOUR_USERNAME --unified
 spark analyze --user YOUR_USERNAME --unified --keep-dated
 
 # Store outputs under per-user folders
-spark analyze --user YOUR_USERNAME --multi-user
+spark analyze --user YOUR_USERNAME --unified
 
 # Verbose output for debugging
 spark analyze --user YOUR_USERNAME --verbose
@@ -478,7 +478,6 @@ spark analyze --user YOUR_USERNAME --verbose
 - `--list-only`: List top repositories without generating report
 - `--unified`: Generate unified report (SVGs + analysis) instead of dated report
 - `--keep-dated`: Also generate dated report when using --unified mode
-- `--multi-user`: Write to user-scoped directories
 - `--verbose`: Enable detailed logging
 
 See [Analyze Command Guide](.documentation/guides/analyze-command.md) for detailed documentation.
@@ -531,7 +530,7 @@ Comprehensive guides and references for all features:
 
 ### Examples
 
-- **[Sample Analysis Report](output/reports/markhazleton-analysis.md)** - Real-world output with AI-powered insights
+- **[Sample Analysis Report](output/users/markhazleton/reports/markhazleton-analysis.md)** - Real-world output with AI-powered insights
 - **[Theme Gallery](config/themes.yml)** - Available themes and customization options
 
 ### Support
@@ -561,7 +560,7 @@ Comprehensive guides and references for all features:
 **Solutions**:
 
 1. Verify URLs use your correct username
-2. Check files exist in `output/` directory
+2. Check files exist in `output/users/{username}/` directory
 3. Ensure branch name is correct (usually `main`)
 4. Try accessing the raw image URL directly
 5. Clear browser cache and refresh
@@ -569,7 +568,7 @@ Comprehensive guides and references for all features:
 Example correct URL:
 
 ```markdown
-![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/overview.svg)
+![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/users/YOUR_USERNAME/overview.svg)
 ```
 
 #### Rate Limiting Issues
@@ -833,19 +832,19 @@ It helps others discover the project and motivates continued development.
 ```markdown
 # Your Name
 
-![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/overview.svg)
+![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/users/YOUR_USERNAME/overview.svg)
 
 ## Activity
 
-![Commit Heatmap](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/heatmap.svg)
+![Commit Heatmap](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/users/YOUR_USERNAME/heatmap.svg)
 
 ## Languages
 
-![Language Distribution](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/languages.svg)
+![Language Distribution](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/users/YOUR_USERNAME/languages.svg)
 
 ## Analysis
 
-Check out my [detailed GitHub analysis](output/reports/YOUR_USERNAME-analysis.md) with AI-powered insights!
+Check out my [detailed GitHub analysis](output/users/YOUR_USERNAME/reports/YOUR_USERNAME-analysis.md) with AI-powered insights!
 ```
 
 ### In Project README

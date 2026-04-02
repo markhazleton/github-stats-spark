@@ -2,9 +2,11 @@
 
 This README is an approved metadata exception for generated `output/` artifacts. It describes the SVG output surface; primary user-facing guides live under `.documentation/`.
 
-This directory contains the automatically generated SVG statistics visualizations.
+This directory contains the automatically generated SVG statistics visualizations, organized by user under `users/{username}/`.
 
 ## SVG Categories
+
+SVGs are generated at `output/users/{username}/`:
 
 - **overview.svg**: Comprehensive dashboard with Spark Score, commits, languages, and time patterns
 - **heatmap.svg**: Commit frequency calendar visualization
@@ -18,7 +20,7 @@ This directory contains the automatically generated SVG statistics visualization
 Embed these SVGs in your GitHub profile README using markdown:
 
 ```markdown
-![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/overview.svg)
+![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/users/YOUR_USERNAME/overview.svg)
 ```
 
 Replace `YOUR_USERNAME` with your actual GitHub username.

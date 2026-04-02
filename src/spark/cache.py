@@ -396,6 +396,79 @@ class APICache:
                     
         return count
 
+    def collect_garbage(self, owner: str, active_repo_names: List[str]) -> Dict[str, Any]:
+        """Remove cache entries for repositories that no longer exist.
+
+        Compares cached repository directories against the current list of
+        active repositories from the GitHub API. Removes orphaned cache
+        directories (e.g., from renamed or deleted repos) and their manifest
+        entries.
+
+        Args:
+            owner: Repository owner/username
+            active_repo_names: List of current repository names from GitHub API
+
+        Returns:
+            Dict with 'removed_repos' list and 'removed_files' count
+        """
+        active_set = set(active_repo_names)
+        owner_dir = self.cache_dir / owner
+        result: Dict[str, Any] = {"removed_repos": [], "removed_files": 0}
+
+        if not owner_dir.exists():
+            return result
+
+        with self._acquire_lock():
+            self.manifest.load()
+
+            for repo_dir in sorted(owner_dir.iterdir()):
+                if not repo_dir.is_dir():
+                    continue
+                repo_name = repo_dir.name
+                # Skip the _global_ pseudo-directory (user-level caches)
+                if repo_name == "_global_":
+                    continue
+                if repo_name not in active_set:
+                    # Count files before removal
+                    file_count = sum(1 for _ in repo_dir.rglob("*.json"))
+                    try:
+                        shutil.rmtree(repo_dir)
+                        self.logger.info(
+                            f"Cache GC: removed orphaned cache for '{repo_name}' "
+                            f"({file_count} files)"
+                        )
+                        result["removed_repos"].append(repo_name)
+                        result["removed_files"] += file_count
+                    except OSError as e:
+                        self.logger.warning(
+                            f"Cache GC: failed to remove '{repo_name}': {e}"
+                        )
+                        continue
+
+                    # Clean manifest entries for this repo
+                    prefix = f"{owner}/{repo_name}/"
+                    keys_to_remove = [
+                        k for k in self.manifest.data["entries"]
+                        if k.startswith(prefix)
+                    ]
+                    for key in keys_to_remove:
+                        del self.manifest.data["entries"][key]
+                    if keys_to_remove:
+                        self.manifest._dirty = True
+
+            if self.manifest._dirty:
+                self.manifest.save()
+
+        if result["removed_repos"]:
+            self.logger.info(
+                f"Cache GC complete: removed {len(result['removed_repos'])} orphaned repos, "
+                f"{result['removed_files']} files"
+            )
+        else:
+            self.logger.info("Cache GC: no orphaned repositories found")
+
+        return result
+
     def migrate_ai_summary_cache_keys(self) -> Dict[str, int]:
         """Migrate ai_summary cache keys from timestamp_hash to timestamp-only."""
         results = {

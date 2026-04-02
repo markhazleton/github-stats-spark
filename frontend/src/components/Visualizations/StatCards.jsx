@@ -82,6 +82,23 @@ export default function StatCards({ repositories }) {
     (r) => r.security_summary?.availability !== "available",
   ).length;
 
+  // v2.3.0 commit volume aggregates
+  const totalAdditions = repositories.reduce(
+    (sum, r) => sum + (r.total_additions ?? 0),
+    0,
+  );
+  const totalDeletions = repositories.reduce(
+    (sum, r) => sum + (r.total_deletions ?? 0),
+    0,
+  );
+  const reposWithVolumeData = repositories.filter(
+    (r) => r.total_additions != null,
+  ).length;
+  const totalChurn = totalAdditions + totalDeletions;
+
+  const formatKLines = (n) =>
+    n >= 1000 ? `${(n / 1000).toFixed(1)}K` : String(n);
+
   return (
     <div className="stat-cards-grid">
       <StatCard label="Repositories" value={totalRepos} />
@@ -110,6 +127,13 @@ export default function StatCards({ repositories }) {
             : `${reposWithSecurityAlerts} repos with alerts`
         }
       />
+      {reposWithVolumeData > 0 && (
+        <StatCard
+          label="Code Churn"
+          value={formatKLines(totalChurn)}
+          sublabel={`+${formatKLines(totalAdditions)} / -${formatKLines(totalDeletions)} lines`}
+        />
+      )}
     </div>
   );
 }

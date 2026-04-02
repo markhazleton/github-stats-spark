@@ -163,6 +163,40 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
             : "N/A"}
         </Tooltip>
       </td>
+
+      {/* Bus Factor (T029) */}
+      <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
+        <Tooltip content="Minimum contributors for 50% of commits. Low = higher risk.">
+          {repository.bus_factor != null ? (
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "4px",
+              }}
+            >
+              {repository.bus_factor}
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  background:
+                    repository.bus_factor_health === "critical"
+                      ? "#dc2626"
+                      : repository.bus_factor_health === "warning"
+                        ? "#d97706"
+                        : "#16a34a",
+                }}
+                aria-label={repository.bus_factor_health ?? "unknown"}
+              />
+            </span>
+          ) : (
+            "N/A"
+          )}
+        </Tooltip>
+      </td>
     </tr>
   );
 });

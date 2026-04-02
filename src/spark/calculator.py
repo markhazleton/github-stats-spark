@@ -9,17 +9,33 @@ import math
 class StatsCalculator:
     """Calculates comprehensive statistics from GitHub activity data."""
 
-    def __init__(self, profile: Dict[str, Any], repositories: List[Dict[str, Any]]):
+    def __init__(self, profile: Dict[str, Any], repositories: List[Dict[str, Any]], thresholds: Optional[Dict[str, Any]] = None):
         """Initialize calculator with user data.
 
         Args:
             profile: User profile data
             repositories: List of repository data
+            thresholds: stats.thresholds section from spark.yml (must contain night_owl_hours
+                        and early_bird_hours). Raises ConfigurationError if not provided.
         """
+        if thresholds is None:
+            from spark.exceptions import ConfigurationError
+            raise ConfigurationError(
+                "StatsCalculator requires 'thresholds' from config (stats.thresholds in spark.yml)",
+                field="stats.thresholds",
+            )
+        for key in ("night_owl_hours", "early_bird_hours"):
+            if thresholds.get(key) is None:
+                from spark.exceptions import ConfigurationError
+                raise ConfigurationError(
+                    f"Missing required threshold 'stats.thresholds.{key}' in spark.yml",
+                    field=f"stats.thresholds.{key}",
+                )
         self.profile = profile
         self.repositories = repositories
         self.commits: List[Dict[str, Any]] = []
         self.languages: Dict[str, int] = {}
+        self.thresholds = thresholds
 
     def add_commits(self, commits: List[Dict[str, Any]]) -> None:
         """Add commits data for analysis.
@@ -246,12 +262,12 @@ class StatsCalculator:
 
         total_commits = sum(hour_counts.values())
 
-        # Night owl: majority commits between 22:00-4:00
-        night_hours = list(range(22, 24)) + list(range(0, 5))
+        # Night owl: majority commits between configured night hours
+        night_hours = self.thresholds["night_owl_hours"]
         night_commits = sum(hour_counts[h] for h in night_hours)
 
-        # Early bird: majority commits between 5:00-9:00
-        early_hours = list(range(5, 10))
+        # Early bird: majority commits between configured early hours
+        early_hours = self.thresholds["early_bird_hours"]
         early_commits = sum(hour_counts[h] for h in early_hours)
 
         # Categorize
@@ -881,3 +897,42 @@ class StatsCalculator:
             "total_commits": len(commits),
             "commit_size_distribution": distribution,
         }
+
+    @staticmethod
+    def calculate_bus_factor(contributor_commit_counts: Optional[List[int]]) -> Dict[str, Any]:
+        """Calculate bus factor from contributor commit counts.
+
+        The bus factor is the minimum number of contributors whose combined commits
+        account for ≥50% of all commits.  A lower value indicates higher risk.
+
+        Args:
+            contributor_commit_counts: List of commit counts per contributor,
+                sorted descending.  None or empty → returns None result.
+
+        Returns:
+            Dict with:
+            - bus_factor: int (minimum contributors for 50% of commits), or None
+            - bus_factor_health: "critical" (1) | "warning" (2) | "healthy" (3+) | None
+        """
+        if not contributor_commit_counts:
+            return {"bus_factor": None, "bus_factor_health": None}
+
+        total = sum(contributor_commit_counts)
+        if total == 0:
+            return {"bus_factor": None, "bus_factor_health": None}
+
+        sorted_counts = sorted(contributor_commit_counts, reverse=True)
+        cumulative = 0
+        for i, count in enumerate(sorted_counts, start=1):
+            cumulative += count
+            if cumulative >= total * 0.5:
+                bus_factor = i
+                if bus_factor == 1:
+                    health = "critical"
+                elif bus_factor == 2:
+                    health = "warning"
+                else:
+                    health = "healthy"
+                return {"bus_factor": bus_factor, "bus_factor_health": health}
+
+        return {"bus_factor": len(sorted_counts), "bus_factor_health": "healthy"}

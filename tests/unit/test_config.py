@@ -144,6 +144,57 @@ class TestSparkConfig:
         user = config.get_user()
         assert user == "testuser"
 
+    def test_get_users_legacy_scalar(self, temp_config_file):
+        """get_users() returns a single-item list when config uses legacy user: scalar."""
+        config = SparkConfig(temp_config_file)
+        config.load()
+
+        users = config.get_users()
+        assert users == ["testuser"]
+
+    def test_get_users_list(self):
+        """get_users() returns all items when config uses users: list."""
+        config_data = {
+            "users": ["alice", "bob", "carol"],
+            "stats": {"enabled": ["overview"]},
+            "visualization": {"theme": "spark-dark"},
+        }
+        import tempfile, yaml
+        from pathlib import Path
+
+        tmp = tempfile.NamedTemporaryFile(mode="w", suffix=".yml", delete=False)
+        yaml.dump(config_data, tmp)
+        tmp.close()
+        try:
+            cfg = SparkConfig(tmp.name)
+            cfg.load()
+            assert cfg.get_users() == ["alice", "bob", "carol"]
+            assert cfg.get_user() == "alice"
+        finally:
+            Path(tmp.name).unlink()
+
+    def test_get_users_list_preferred_over_scalar(self):
+        """When both users: list and user: scalar exist, users: list wins."""
+        config_data = {
+            "user": "legacy",
+            "users": ["primary", "secondary"],
+            "stats": {"enabled": ["overview"]},
+            "visualization": {"theme": "spark-dark"},
+        }
+        import tempfile, yaml
+        from pathlib import Path
+
+        tmp = tempfile.NamedTemporaryFile(mode="w", suffix=".yml", delete=False)
+        yaml.dump(config_data, tmp)
+        tmp.close()
+        try:
+            cfg = SparkConfig(tmp.name)
+            cfg.load()
+            assert cfg.get_users() == ["primary", "secondary"]
+            assert cfg.get_user() == "primary"
+        finally:
+            Path(tmp.name).unlink()
+
     def test_get_nested_value(self, temp_config_file):
         """Test getting nested configuration values."""
         config = SparkConfig(temp_config_file)

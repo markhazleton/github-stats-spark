@@ -29,12 +29,13 @@ class RefreshResult:
 class CacheRefreshExecutor:
     """Executes per-category cache refresh work for a repository."""
 
-    def __init__(self, github_client, cache, summarizer: Optional[RepositorySummarizer] = None, fetcher=None):
+    def __init__(self, github_client, cache, summarizer: Optional[RepositorySummarizer] = None, fetcher=None, ai_model: Optional[str] = None):
         self.github = github_client
         self.cache = cache
         self.logger = get_logger()
         self.api_calls = 0
         self.summarizer = summarizer
+        self.ai_model = ai_model
         self.dependency_analyzer = RepositoryDependencyAnalyzer()
         self.fetcher = fetcher
 
@@ -314,7 +315,14 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         if self.summarizer is None:
-            self.summarizer = RepositorySummarizer(cache=self.cache)
+            if self.ai_model is None:
+                from spark.exceptions import ConfigurationError
+                raise ConfigurationError(
+                    "CacheRefreshExecutor requires ai_model for AI summary generation. "
+                    "Set analyzer.ai_model in spark.yml.",
+                    field="analyzer.ai_model",
+                )
+            self.summarizer = RepositorySummarizer(cache=self.cache, model=self.ai_model)
 
         try:
             commit_data = self.cache.get("commit_counts", username, repo=repo_name, week=cache_key)

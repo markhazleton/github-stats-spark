@@ -16,7 +16,7 @@
 }
 
 /* Dark theme support */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .react-modal-sheet-container {
     background-color: var(--color-background, #1a1a1a) !important;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
@@ -42,7 +42,7 @@
   transition: background-color 0.2s ease;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .bottom-sheet-drag-indicator {
     background-color: var(--color-border, #4b5563);
   }
@@ -58,7 +58,7 @@
   text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .bottom-sheet-title {
     color: var(--color-text, #f9fafb);
   }
@@ -82,7 +82,7 @@
   transition: opacity 0.2s ease !important;
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .react-modal-sheet-backdrop {
     background-color: rgba(0, 0, 0, 0.6) !important;
   }

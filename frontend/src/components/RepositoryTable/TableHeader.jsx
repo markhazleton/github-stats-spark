@@ -33,6 +33,7 @@ export default function TableHeader({ onSort, sortField, sortDirection }) {
     { key: "commit_count", label: "Total Commits", sortable: true },
     { key: "stars", label: "Stars", sortable: true },
     { key: "composite_score", label: "Spark Score", sortable: true },
+    { key: "bus_factor", label: "Bus Factor", sortable: true },
   ];
 
   /**

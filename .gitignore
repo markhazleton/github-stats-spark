@@ -387,3 +387,5 @@ frontend/.prettiercache
 
 # Speckit working files (keep specs tracked, but ignore temp analysis files)
 .specify/temp/
+
+MagicMock/

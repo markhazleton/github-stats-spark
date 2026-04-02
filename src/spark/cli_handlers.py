@@ -21,7 +21,7 @@ def handle_unified(args, logger):
     logger.info("=" * 70)
     logger.info("Stats Spark - ALL-IN-ONE Unified Generation")
     logger.info("=" * 70)
-    output_layout = build_output_layout(args.user, args.output_dir, args.multi_user)
+    output_layout = build_output_layout(args.user, args.output_dir)
     report_path = output_layout["report_dir"] / f"{args.user}-analysis.md"
     logger.info(f"User: {args.user}")
     logger.info(f"Data output: {output_layout['data_dir']}")
@@ -29,7 +29,6 @@ def handle_unified(args, logger):
     logger.info(f"AI Summaries: {'Yes' if args.include_ai_summaries else 'No'}")
     logger.info(f"Force Refresh: {'Yes' if args.force_refresh else 'No'}")
     logger.info(f"Screenshots: {'Yes' if getattr(args, 'capture_screenshots', False) else 'No'}")
-    logger.info(f"Multi-user output: {'Yes' if args.multi_user else 'No'}")
 
     if not os.getenv("GITHUB_TOKEN"):
         logger.error("GITHUB_TOKEN environment variable not set")
@@ -57,9 +56,8 @@ def handle_unified(args, logger):
                 dashboard_config["data_generation"] = {}
             dashboard_config["data_generation"]["include_ai_summaries"] = True
 
-        cache_config = config.config.get("cache", {})
         shared_cache = APICache(
-            cache_dir=cache_config.get("directory", ".cache"),
+            cache_dir=config.get_cache_dir(),
             config=config,
         )
 
@@ -68,7 +66,6 @@ def handle_unified(args, logger):
             username=args.user,
             output_dir=str(output_layout["data_dir"]),
             force_refresh=args.force_refresh,
-            max_repos_override=args.max_repos,
             cache=shared_cache,
         )
 
@@ -108,7 +105,6 @@ def handle_unified(args, logger):
             config,
             shared_cache,
             output_dir=str(output_layout["artifact_root"]),
-            max_repos=args.max_repos,
             cache_only=False,
         )
 
@@ -298,10 +294,9 @@ def handle_unified_analyze(args, logger):
     try:
         config = SparkConfig(args.config)
         config.load()
-        output_layout = build_output_layout(args.user, "data", args.multi_user)
+        output_layout = build_output_layout(args.user, "data")
 
-        cache_config = config.get("cache", {})
-        cache = APICache(cache_dir=cache_config.get("directory", ".cache"), config=config)
+        cache = APICache(cache_dir=config.get_cache_dir(), config=config)
         workflow = UnifiedReportWorkflow(
             config,
             cache,
@@ -315,7 +310,7 @@ def handle_unified_analyze(args, logger):
 
         unified_report = workflow.execute(args.user)
 
-        output_dir = output_layout["report_dir"] if args.multi_user else Path(args.output)
+        output_dir = output_layout["report_dir"]
         output_dir.mkdir(parents=True, exist_ok=True)
         unified_path = output_dir / f"{args.user}-analysis.md"
 
@@ -375,12 +370,11 @@ def handle_dated_analyze(args, logger):
         config = SparkConfig(args.config)
         config.load()
 
-        cache_config = config.config.get("cache", {})
-        cache = APICache(cache_dir=cache_config.get("directory", ".cache"), config=config)
+        cache = APICache(cache_dir=config.get_cache_dir(), config=config)
 
         fetcher = GitHubFetcher(cache=cache)
-        ranker = RepositoryRanker(config=config.config.get("analyzer", {}).get("ranking_weights"))
-        summarizer = RepositorySummarizer(cache=cache)
+        ranker = RepositoryRanker(config=config.get_ranking_weights())
+        summarizer = RepositorySummarizer(cache=cache, model=config.get_ai_model())
         profile_generator = UserProfileGenerator(summarizer)
         report_generator = ReportGenerator()
         dependency_analyzer = RepositoryDependencyAnalyzer(config=config.config.get("analyzer", {}))
@@ -596,8 +590,7 @@ def handle_generate(args, logger):
         config.config["user"] = args.user
 
         if args.force_refresh:
-            cache_config = config.config.get("cache", {})
-            cache = APICache(cache_dir=cache_config.get("directory", ".cache"), config=config)
+            cache = APICache(cache_dir=config.get_cache_dir(), config=config)
             cache.clear()
             logger.info("Cache cleared for fresh data")
 
@@ -625,7 +618,7 @@ def handle_dashboard_generation(args, logger, config):
         logger.info(f"Username: {args.user}")
         logger.info(f"Config: {args.config}")
 
-        generator = DashboardGenerator(config=config.config, username=args.user)
+        generator = DashboardGenerator(config=config, username=args.user)
 
         logger.info("")
         logger.info("Generating dashboard data...")

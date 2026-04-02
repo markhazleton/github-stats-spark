@@ -152,7 +152,7 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .toast {
     background-color: var(--toast-bg-dark, #2d2d2d);
     color: var(--toast-text-dark, #fff);
