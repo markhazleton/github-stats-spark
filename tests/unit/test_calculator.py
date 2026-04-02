@@ -21,7 +21,7 @@ class TestSparkScore:
             {"name": "repo2", "stars": 50, "forks": 10, "watchers": 15},
         ]
 
-        calculator = StatsCalculator(profile, repositories)
+        calculator = StatsCalculator(profile, repositories, thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         # Add some commits
         commits = [
@@ -46,7 +46,7 @@ class TestSparkScore:
         profile = {"username": "testuser", "public_repos": 0, "followers": 0}
         repositories = []
 
-        calculator = StatsCalculator(profile, repositories)
+        calculator = StatsCalculator(profile, repositories, thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
         spark_score = calculator.calculate_spark_score()
 
         assert spark_score["total_score"] >= 0
@@ -58,7 +58,7 @@ class TestLightningRating:
 
     def test_lightning_rating_levels(self):
         """Test all lightning rating thresholds."""
-        calculator = StatsCalculator({}, [])
+        calculator = StatsCalculator({}, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         assert calculator.calculate_lightning_rating(90) == 5
         assert calculator.calculate_lightning_rating(70) == 4
@@ -72,7 +72,7 @@ class TestStatisticsAggregation:
 
     def test_calculate_statistics_accepts_commit_stats_shape(self):
         """Ensure heatmap and time analysis work with nested commit dates."""
-        calculator = StatsCalculator({}, [])
+        calculator = StatsCalculator({}, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
         calculator.add_commits([
             {
                 "sha": "a",
@@ -113,6 +113,7 @@ class TestStatisticsAggregation:
                 {"name": "repo-a", "stars": 5, "created_at": "2024-01-10T00:00:00+00:00"},
                 {"name": "repo-b", "stars": 7, "created_at": "2024-02-01T00:00:00+00:00"},
             ],
+            thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]},
         )
         calculator.add_languages({"Python": 1000, "JavaScript": 500})
         calculator.add_commits([
@@ -139,7 +140,7 @@ class TestTimePatterns:
     def test_night_owl_detection(self):
         """Test night owl pattern detection."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         # Add commits during night hours (22:00-4:00)
         night_commits = []
@@ -162,7 +163,7 @@ class TestTimePatterns:
     def test_early_bird_detection(self):
         """Test early bird pattern detection."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         # Add commits during morning hours (6:00-9:00)
         morning_commits = []
@@ -184,7 +185,7 @@ class TestTimePatterns:
     def test_balanced_pattern(self):
         """Test balanced coding pattern."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         # Add commits throughout the day
         commits = []
@@ -211,7 +212,7 @@ class TestStreaks:
     def test_consecutive_streak(self):
         """Test calculation of consecutive coding streak."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         # Add commits for consecutive 10 days
         commits = []
@@ -233,7 +234,7 @@ class TestStreaks:
     def test_no_streak(self):
         """Test streak calculation with no commits."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         streaks = calculator.calculate_streaks()
 
@@ -248,7 +249,7 @@ class TestStreaks:
             {"name": "repo-js", "language": "JavaScript"},
             {"name": "repo-go", "language": "Go"},
         ]
-        calculator = StatsCalculator(profile, repositories)
+        calculator = StatsCalculator(profile, repositories, thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         now = datetime.now()
         commits = [
@@ -272,7 +273,7 @@ class TestLanguages:
     def test_aggregate_languages(self):
         """Test language percentage calculation."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         # Add language data
         calculator.add_languages({"Python": 1000, "JavaScript": 500, "HTML": 300})
@@ -290,7 +291,7 @@ class TestLanguages:
     def test_aggregate_languages_grouping(self):
         """Test 'Other' grouping for many languages."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         # Add 15 languages
         languages_data = {f"Lang{i}": 100 - i * 5 for i in range(15)}
@@ -310,7 +311,7 @@ class TestReleaseCadence:
     def test_release_cadence_counts_unique_repos(self):
         """Ensure weekly/monthly cadence counts unique repositories."""
         profile = {"username": "testuser"}
-        calculator = StatsCalculator(profile, [])
+        calculator = StatsCalculator(profile, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
 
         base_week_start = datetime(2025, 2, 3)  # Monday anchor
         schedule = [
@@ -343,7 +344,7 @@ class TestReleaseCadence:
 
     def test_release_cadence_without_repo_metadata_returns_empty_series(self):
         """Ensure cadence gracefully handles commits without repo identifiers."""
-        calculator = StatsCalculator({}, [])
+        calculator = StatsCalculator({}, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
         calculator.add_commits([
             {"sha": "abc", "date": datetime.now().isoformat(), "message": "missing repo"}
         ])
@@ -355,7 +356,7 @@ class TestReleaseCadence:
 
     def test_release_cadence_accepts_commit_stats_shape(self):
         """Ensure cadence handles commits_stats cache payloads."""
-        calculator = StatsCalculator({}, [])
+        calculator = StatsCalculator({}, [], thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]})
         calculator.add_commits([
             {
                 "sha": "abc",
@@ -394,6 +395,7 @@ class TestReleaseCadence:
                     "updated_at": "2025-02-10T00:00:00+00:00",
                 },
             ],
+            thresholds={"night_owl_hours": [22, 23, 0, 1, 2, 3, 4], "early_bird_hours": [5, 6, 7, 8, 9]},
         )
 
         cadence = calculator.calculate_release_cadence(weeks=2, months=1)
@@ -478,3 +480,5 @@ class TestCalculateBusFactor:
         result = StatsCalculator.calculate_bus_factor([0, 0, 0])
         assert result["bus_factor"] is None
         assert result["bus_factor_health"] is None
+
+
