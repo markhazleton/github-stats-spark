@@ -80,12 +80,6 @@ def _add_unified_parser(subparsers: argparse._SubParsersAction) -> None:
     )
     parser.add_argument("--verbose", action="store_true", help="Enable verbose logging")
     parser.add_argument(
-        "--max-repos",
-        type=int,
-        default=None,
-        help="Maximum number of repositories to process (for testing/debugging)",
-    )
-    parser.add_argument(
         "--capture-screenshots",
         action="store_true",
         help="Capture screenshots of repository websites (requires playwright)",

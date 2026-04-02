@@ -45,7 +45,7 @@ class SmartRefresh:
         self.logger.info(f"Found {len(fresh_repos)} accessible repositories")
 
         # Step 2: Load existing data
-        existing_data = self._load_existing_data()
+        existing_data = self._load_existing_data(username)
         existing_repos = {r["name"]: r for r in existing_data.get("repositories", [])}
         self.logger.info(f"Loaded {len(existing_repos)} repositories from existing data")
 
@@ -139,8 +139,10 @@ class SmartRefresh:
             }
         }
 
-        output_file = Path("data/repositories.json")
-        output_file.parent.mkdir(exist_ok=True)
+        from spark.cli_output_layout import build_output_layout
+        output_layout = build_output_layout(username, "data")
+        output_file = output_layout["data_dir"] / "repositories.json"
+        output_file.parent.mkdir(parents=True, exist_ok=True)
         with open(output_file, "w", encoding="utf-8") as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
 
@@ -175,9 +177,14 @@ class SmartRefresh:
             exclude_archived=exclude_archived,
         )
 
-    def _load_existing_data(self) -> Dict[str, Any]:
-        """Load existing data/repositories.json."""
-        data_file = Path("data/repositories.json")
+    def _load_existing_data(self, username: str = "") -> Dict[str, Any]:
+        """Load existing user-scoped repositories.json."""
+        from spark.cli_output_layout import build_output_layout
+        if username:
+            layout = build_output_layout(username, "data")
+            data_file = layout["data_dir"] / "repositories.json"
+        else:
+            data_file = Path("data/repositories.json")  # fallback for legacy callers
         if not data_file.exists():
             return {"repositories": [], "profile": {}}
 

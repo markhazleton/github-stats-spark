@@ -56,9 +56,8 @@ def handle_unified(args, logger):
                 dashboard_config["data_generation"] = {}
             dashboard_config["data_generation"]["include_ai_summaries"] = True
 
-        cache_config = config.config.get("cache", {})
         shared_cache = APICache(
-            cache_dir=cache_config.get("directory", ".cache"),
+            cache_dir=config.get_cache_dir(),
             config=config,
         )
 
@@ -67,7 +66,6 @@ def handle_unified(args, logger):
             username=args.user,
             output_dir=str(output_layout["data_dir"]),
             force_refresh=args.force_refresh,
-            max_repos_override=args.max_repos,
             cache=shared_cache,
         )
 
@@ -107,7 +105,6 @@ def handle_unified(args, logger):
             config,
             shared_cache,
             output_dir=str(output_layout["artifact_root"]),
-            max_repos=args.max_repos,
             cache_only=False,
         )
 
@@ -299,8 +296,7 @@ def handle_unified_analyze(args, logger):
         config.load()
         output_layout = build_output_layout(args.user, "data")
 
-        cache_config = config.get("cache", {})
-        cache = APICache(cache_dir=cache_config.get("directory", ".cache"), config=config)
+        cache = APICache(cache_dir=config.get_cache_dir(), config=config)
         workflow = UnifiedReportWorkflow(
             config,
             cache,
@@ -374,12 +370,11 @@ def handle_dated_analyze(args, logger):
         config = SparkConfig(args.config)
         config.load()
 
-        cache_config = config.config.get("cache", {})
-        cache = APICache(cache_dir=cache_config.get("directory", ".cache"), config=config)
+        cache = APICache(cache_dir=config.get_cache_dir(), config=config)
 
         fetcher = GitHubFetcher(cache=cache)
-        ranker = RepositoryRanker(config=config.config.get("analyzer", {}).get("ranking_weights"))
-        summarizer = RepositorySummarizer(cache=cache)
+        ranker = RepositoryRanker(config=config.get_ranking_weights())
+        summarizer = RepositorySummarizer(cache=cache, model=config.get_ai_model())
         profile_generator = UserProfileGenerator(summarizer)
         report_generator = ReportGenerator()
         dependency_analyzer = RepositoryDependencyAnalyzer(config=config.config.get("analyzer", {}))
@@ -595,8 +590,7 @@ def handle_generate(args, logger):
         config.config["user"] = args.user
 
         if args.force_refresh:
-            cache_config = config.config.get("cache", {})
-            cache = APICache(cache_dir=cache_config.get("directory", ".cache"), config=config)
+            cache = APICache(cache_dir=config.get_cache_dir(), config=config)
             cache.clear()
             logger.info("Cache cleared for fresh data")
 
@@ -624,7 +618,7 @@ def handle_dashboard_generation(args, logger, config):
         logger.info(f"Username: {args.user}")
         logger.info(f"Config: {args.config}")
 
-        generator = DashboardGenerator(config=config.config, username=args.user)
+        generator = DashboardGenerator(config=config, username=args.user)
 
         logger.info("")
         logger.info("Generating dashboard data...")
