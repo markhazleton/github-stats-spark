@@ -15,7 +15,9 @@
   color: var(--color-text, #24292e);
   font-size: 0.875rem;
   line-height: 1;
-  transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+  transition:
+    background-color 150ms ease-in-out,
+    color 150ms ease-in-out;
   white-space: nowrap;
 }
 

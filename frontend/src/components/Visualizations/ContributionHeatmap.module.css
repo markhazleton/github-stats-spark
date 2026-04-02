@@ -96,11 +96,21 @@
   /* invisible placeholder */
 }
 
-.intensity0 { background-color: var(--intensity-0); }
-.intensity1 { background-color: var(--intensity-1); }
-.intensity2 { background-color: var(--intensity-2); }
-.intensity3 { background-color: var(--intensity-3); }
-.intensity4 { background-color: var(--intensity-4); }
+.intensity0 {
+  background-color: var(--intensity-0);
+}
+.intensity1 {
+  background-color: var(--intensity-1);
+}
+.intensity2 {
+  background-color: var(--intensity-2);
+}
+.intensity3 {
+  background-color: var(--intensity-3);
+}
+.intensity4 {
+  background-color: var(--intensity-4);
+}
 
 /* Legend */
 .legend {

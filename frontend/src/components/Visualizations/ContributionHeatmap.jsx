@@ -4,8 +4,18 @@ import { computeHeatmapData } from "../../services/metricsCalculator";
 import styles from "./ContributionHeatmap.module.css";
 
 const MONTH_LABELS = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
 const DAY_LABELS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -79,7 +89,11 @@ export default function ContributionHeatmap({ activityCalendar, className }) {
         {/* Day-of-week labels */}
         <div className={styles.dayLabels}>
           {DAY_LABELS.map((d, i) => (
-            <span key={d} className={styles.dayLabel} style={{ gridRow: i + 1 }}>
+            <span
+              key={d}
+              className={styles.dayLabel}
+              style={{ gridRow: i + 1 }}
+            >
               {i % 2 === 1 ? d : ""}
             </span>
           ))}
@@ -90,7 +104,9 @@ export default function ContributionHeatmap({ activityCalendar, className }) {
           {/* Month labels row */}
           <div
             className={styles.monthRow}
-            style={{ gridTemplateColumns: `repeat(${columns.length}, var(--cell-size))` }}
+            style={{
+              gridTemplateColumns: `repeat(${columns.length}, var(--cell-size))`,
+            }}
           >
             {columns.map((col, idx) => {
               const mo = monthOffsets.find((m) => m.colIdx === idx);
@@ -154,7 +170,9 @@ export default function ContributionHeatmap({ activityCalendar, className }) {
           style={{ left: tooltip.x + 12, top: tooltip.y - 36 }}
           role="tooltip"
         >
-          <strong>{tooltip.count} commit{tooltip.count !== 1 ? "s" : ""}</strong>
+          <strong>
+            {tooltip.count} commit{tooltip.count !== 1 ? "s" : ""}
+          </strong>
           {" on "}
           {tooltip.date}
         </div>

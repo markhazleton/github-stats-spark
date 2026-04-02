@@ -38,7 +38,7 @@ ChartJS.register(
  * @param {string} [props.className]   - Extra CSS class
  */
 export default function ActivityTimeline({ weeklyActivity, className }) {
-  const [hiddenDatasets, setHiddenDatasets] = useState({});
+  const [, setHiddenDatasets] = useState({});
 
   const chartData = useMemo(
     () => computeTimelineData(weeklyActivity),
@@ -79,7 +79,10 @@ export default function ActivityTimeline({ weeklyActivity, className }) {
             ci.show(idx);
             legendItem.hidden = false;
           }
-          setHiddenDatasets((prev) => ({ ...prev, [idx]: !ci.isDatasetVisible(idx) }));
+          setHiddenDatasets((prev) => ({
+            ...prev,
+            [idx]: !ci.isDatasetVisible(idx),
+          }));
         },
       },
       tooltip: {
@@ -101,7 +104,11 @@ export default function ActivityTimeline({ weeklyActivity, className }) {
         type: "linear",
         display: true,
         position: "left",
-        title: { display: true, text: "Commits", color: "var(--chart-primary, #2563eb)" },
+        title: {
+          display: true,
+          text: "Commits",
+          color: "var(--chart-primary, #2563eb)",
+        },
         ticks: { color: "var(--color-fg-muted, #666)" },
         grid: { color: "var(--color-border-muted, rgba(0,0,0,0.08))" },
       },
@@ -109,7 +116,11 @@ export default function ActivityTimeline({ weeklyActivity, className }) {
         type: "linear",
         display: true,
         position: "right",
-        title: { display: true, text: "Active Repos", color: "var(--chart-secondary, #16a34a)" },
+        title: {
+          display: true,
+          text: "Active Repos",
+          color: "var(--chart-secondary, #16a34a)",
+        },
         ticks: { color: "var(--color-fg-muted, #666)" },
         grid: { display: false },
       },

@@ -82,7 +82,9 @@ export default function ThemeToggle() {
       title={LABELS[theme]}
     >
       <span className={styles.icon}>{ICONS[theme]}</span>
-      <span className={styles.label}>{theme.charAt(0).toUpperCase() + theme.slice(1)}</span>
+      <span className={styles.label}>
+        {theme.charAt(0).toUpperCase() + theme.slice(1)}
+      </span>
     </button>
   );
 }

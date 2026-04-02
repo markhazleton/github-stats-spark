@@ -1004,27 +1004,38 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                     )}
 
                     {/* v2.3.0 Commit Volume (T027) */}
-                    {(repository.total_additions != null || repository.total_deletions != null) ? (
+                    {repository.total_additions != null ||
+                    repository.total_deletions != null ? (
                       <>
                         <div className={styles.detailItem}>
                           <dt>Lines Added</dt>
-                          <dd>+{(repository.total_additions ?? 0).toLocaleString()}</dd>
+                          <dd>
+                            +
+                            {(repository.total_additions ?? 0).toLocaleString()}
+                          </dd>
                         </div>
                         <div className={styles.detailItem}>
                           <dt>Lines Deleted</dt>
-                          <dd>-{(repository.total_deletions ?? 0).toLocaleString()}</dd>
+                          <dd>
+                            -
+                            {(repository.total_deletions ?? 0).toLocaleString()}
+                          </dd>
                         </div>
                         {repository.code_churn != null && (
                           <div className={styles.detailItem}>
                             <dt>Code Churn</dt>
-                            <dd>{repository.code_churn.toLocaleString()} lines</dd>
+                            <dd>
+                              {repository.code_churn.toLocaleString()} lines
+                            </dd>
                           </div>
                         )}
                       </>
                     ) : (
                       <div className={styles.detailItem}>
                         <dt>Commit Volume</dt>
-                        <dd className={styles.textMuted}>Stats not available</dd>
+                        <dd className={styles.textMuted}>
+                          Stats not available
+                        </dd>
                       </div>
                     )}
 
@@ -1034,8 +1045,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                       <dd>
                         {repository.bus_factor != null ? (
                           <span>
-                            {repository.bus_factor}
-                            {" "}
+                            {repository.bus_factor}{" "}
                             <span
                               style={{
                                 display: "inline-block",

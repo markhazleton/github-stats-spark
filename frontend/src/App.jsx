@@ -234,324 +234,331 @@ function App() {
 
   return (
     <ThemeProvider>
-    <ViewportProvider>
-      <div className="app">
-        {/* Header */}
-        <header className="header" role="banner">
-          <div className="container">
-            <div
-              className="flex items-center justify-between"
-              style={{ height: "var(--header-height)" }}
-            >
-              <h1 style={{ marginBottom: 0 }}>
-                <span className="header-title-line1">GitHub</span>
-                <span className="header-title-line2">StatsSpark</span>
-              </h1>
-
-              {/* Navigation Menu */}
-              <nav
-                className="nav-menu"
-                id="navigation"
-                aria-label="Main navigation"
+      <ViewportProvider>
+        <div className="app">
+          {/* Header */}
+          <header className="header" role="banner">
+            <div className="container">
+              <div
+                className="flex items-center justify-between"
+                style={{ height: "var(--header-height)" }}
               >
-                <button
-                  className={`nav-menu-item ${currentView === "table" ? "nav-menu-item--active" : ""}`}
-                  onClick={() => handleViewChange("table")}
-                  aria-current={currentView === "table" ? "page" : undefined}
-                  aria-label="Switch to dashboard view"
-                >
-                  Dashboard
-                </button>
-                <button
-                  className={`nav-menu-item ${currentView === "visualizations" ? "nav-menu-item--active" : ""}`}
-                  onClick={() => handleViewChange("visualizations")}
-                  aria-current={
-                    currentView === "visualizations" ? "page" : undefined
-                  }
-                  aria-label="Switch to visualizations view"
-                >
-                  Visualizations
-                </button>
-                <button
-                  className={`nav-menu-item ${currentView === "attention" ? "nav-menu-item--active" : ""}`}
-                  onClick={() => handleViewChange("attention")}
-                  aria-current={
-                    currentView === "attention" ? "page" : undefined
-                  }
-                  aria-label="Switch to repositories needing attention"
-                >
-                  Needs Attention
-                </button>
-                <ThemeToggle />
-              </nav>
-            </div>
-          </div>
-        </header>
+                <h1 style={{ marginBottom: 0 }}>
+                  <span className="header-title-line1">GitHub</span>
+                  <span className="header-title-line2">StatsSpark</span>
+                </h1>
 
-        {/* Main Content */}
-        <main
-          className="main"
-          id="main-content"
-          role="main"
-          aria-label="Main content"
-        >
-          <div className="container">
-            <div className="mt-xl mb-xl">
-              {/* Loading State */}
-              {loading && (
-                <LoadingState
-                  message="Loading repository data..."
-                  size="large"
-                />
-              )}
-
-              {/* Error State */}
-              {error && !loading && (
-                <div
-                  className="card"
-                  style={{
-                    backgroundColor: "var(--color-error)",
-                    color: "white",
-                  }}
+                {/* Navigation Menu */}
+                <nav
+                  className="nav-menu"
+                  id="navigation"
+                  aria-label="Main navigation"
                 >
-                  <h3>Error Loading Data</h3>
-                  <p>{error.message || "Failed to load repository data"}</p>
-                  <p className="text-sm">
-                    {navigator.onLine
-                      ? "Please check your network connection and try again."
-                      : "You are offline. Cached data may be available when you reconnect."}
-                  </p>
                   <button
-                    className="btn btn-primary mt-md"
-                    onClick={() => window.location.reload()}
+                    className={`nav-menu-item ${currentView === "table" ? "nav-menu-item--active" : ""}`}
+                    onClick={() => handleViewChange("table")}
+                    aria-current={currentView === "table" ? "page" : undefined}
+                    aria-label="Switch to dashboard view"
                   >
-                    Retry
+                    Dashboard
                   </button>
-                </div>
-              )}
-
-              {/* Data Loaded - Render Current View */}
-              {!loading && !error && data && (
-                <>
-                  {currentView === "table" && (
-                    <section aria-labelledby="repository-overview-heading">
-                      <div className="mb-lg">
-                        <h2 id="repository-overview-heading">
-                          {data?.profile?.username || "User"} Repositories
-                        </h2>
-                        <p
-                          className="text-muted"
-                          role="status"
-                          aria-live="polite"
-                        >
-                          Showing {processedRepositories.length} of{" "}
-                          {data.repositories?.length || 0} repositories
-                        </p>
-                      </div>
-
-                      {/* Filter Controls */}
-                      {availableLanguages.length > 0 && (
-                        <FilterControls
-                          languages={availableLanguages}
-                          selectedLanguage={filterLanguage}
-                          onFilterChange={handleFilterChange}
-                          onClearFilter={clearFilter}
-                        />
-                      )}
-
-                      {/* Contribution Heatmap (T013) */}
-                      {data?.profile?.activity_calendar && (
-                        <div className="mb-lg">
-                          <h3 className="text-sm text-muted" style={{ marginBottom: "0.5rem" }}>
-                            Contribution Activity (trailing 365 days)
-                          </h3>
-                          <ContributionHeatmap
-                            activityCalendar={data.profile.activity_calendar}
-                          />
-                        </div>
-                      )}
-
-                      {/* Repository Table */}
-                      {processedRepositories.length === 0 ? (
-                        <EmptyState
-                          icon="🔍"
-                          title="No repositories found"
-                          description={
-                            filterLanguage
-                              ? `No repositories match the selected language filter: ${filterLanguage}`
-                              : "No repositories available"
-                          }
-                          actionLabel={filterLanguage ? "Clear filters" : ""}
-                          onAction={filterLanguage ? clearFilter : null}
-                        />
-                      ) : (
-                        <RepositoryTable
-                          repositories={processedRepositories}
-                          onSort={handleSort}
-                          onRowClick={handleRepoClick}
-                          sortField={sortKey}
-                          sortDirection={sortOrder}
-                        />
-                      )}
-                    </section>
-                  )}
-
-                  {currentView === "visualizations" && (
-                    <section
-                      className="view-transition"
-                      aria-labelledby="visualizations-heading"
-                    >
-                      <div className="mb-lg">
-                        <h2 id="visualizations-heading">Repository Insights</h2>
-                        <p
-                          className="text-muted"
-                          role="status"
-                          aria-live="polite"
-                        >
-                          Showing {processedRepositories.length} repositories
-                          {filterLanguage && ` filtered by ${filterLanguage}`}
-                        </p>
-                      </div>
-
-                      {availableLanguages.length > 0 && (
-                        <FilterControls
-                          languages={availableLanguages}
-                          selectedLanguage={filterLanguage}
-                          onFilterChange={handleFilterChange}
-                          onClearFilter={clearFilter}
-                        />
-                      )}
-
-                      <Suspense
-                        fallback={
-                          <LoadingState message="Loading visualizations..." />
-                        }
-                      >
-                        <DashboardView
-                          repositories={processedRepositories}
-                          profile={data?.profile}
-                          onRepoClick={handleRepoClick}
-                        />
-                      </Suspense>
-
-                      {/* Activity Timeline (T017) */}
-                      {data?.profile?.weekly_activity?.length > 0 && (
-                        <div className="card mt-lg">
-                          <h3 style={{ marginBottom: "0.75rem" }}>Weekly Activity Timeline</h3>
-                          <ActivityTimeline
-                            weeklyActivity={data.profile.weekly_activity}
-                          />
-                        </div>
-                      )}
-                    </section>
-                  )}
-
-                  {currentView === "attention" && (
-                    <section
-                      className="view-transition"
-                      aria-labelledby="attention-heading"
-                    >
-                      <div className="mb-lg">
-                        <h2 id="attention-heading">
-                          Repositories Needing Attention
-                        </h2>
-                        <p
-                          className="text-muted"
-                          role="status"
-                          aria-live="polite"
-                        >
-                          Ranked by pull request pressure, security findings,
-                          staleness, and dependency health
-                        </p>
-                      </div>
-
-                      {availableLanguages.length > 0 && (
-                        <FilterControls
-                          languages={availableLanguages}
-                          selectedLanguage={filterLanguage}
-                          onFilterChange={handleFilterChange}
-                          onClearFilter={clearFilter}
-                        />
-                      )}
-
-                      <Suspense
-                        fallback={
-                          <LoadingState message="Loading attention view..." />
-                        }
-                      >
-                        <AttentionView
-                          repositories={processedRepositories}
-                          onRepoClick={handleRepoClick}
-                        />
-                      </Suspense>
-                    </section>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-        </main>
-
-        {/* Mobile TabBar Navigation */}
-        <TabBar activeTab={currentView} onTabChange={handleViewChange} />
-
-        {/* Footer */}
-        <footer
-          className="footer"
-          style={{
-            borderTop: "1px solid var(--color-border)",
-            padding: "var(--spacing-lg) 0",
-          }}
-        >
-          <div className="container">
-            <div className="flex justify-between items-center">
-              <p className="text-sm text-muted">
-                Generated with{" "}
-                <a
-                  href="https://github.com/markhazleton/github-stats-spark"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub Stats Spark
-                </a>
-              </p>
-              <div className="flex items-center gap-md">
-                {data?.metadata && (
-                  <p className="text-xs text-muted">
-                    repositories.json:{" "}
-                    {formatGeneratedAt(data.metadata.generated_at)} {" | "}
-                    Schema v{data.metadata.schema_version}
-                  </p>
-                )}
-                <button
-                  className="btn btn-secondary"
-                  onClick={handleForceRefresh}
-                  disabled={loading}
-                  aria-label="Force refresh repositories data"
-                >
-                  {loading ? "Refreshing..." : "Force Refresh"}
-                </button>
+                  <button
+                    className={`nav-menu-item ${currentView === "visualizations" ? "nav-menu-item--active" : ""}`}
+                    onClick={() => handleViewChange("visualizations")}
+                    aria-current={
+                      currentView === "visualizations" ? "page" : undefined
+                    }
+                    aria-label="Switch to visualizations view"
+                  >
+                    Visualizations
+                  </button>
+                  <button
+                    className={`nav-menu-item ${currentView === "attention" ? "nav-menu-item--active" : ""}`}
+                    onClick={() => handleViewChange("attention")}
+                    aria-current={
+                      currentView === "attention" ? "page" : undefined
+                    }
+                    aria-label="Switch to repositories needing attention"
+                  >
+                    Needs Attention
+                  </button>
+                  <ThemeToggle />
+                </nav>
               </div>
             </div>
-          </div>
-        </footer>
+          </header>
 
-        {/* Detail Modal (for drill-down) */}
-        {detailModalRepo && (
-          <Suspense fallback={<LoadingState message="Loading details..." />}>
-            <RepositoryDetail
-              repository={detailModalRepo}
-              onClose={closeDetailModal}
-              onNext={handleNextRepo}
-              onPrevious={handlePreviousRepo}
-            />
-          </Suspense>
-        )}
+          {/* Main Content */}
+          <main
+            className="main"
+            id="main-content"
+            role="main"
+            aria-label="Main content"
+          >
+            <div className="container">
+              <div className="mt-xl mb-xl">
+                {/* Loading State */}
+                {loading && (
+                  <LoadingState
+                    message="Loading repository data..."
+                    size="large"
+                  />
+                )}
 
-        {/* Toast Notifications */}
-        <ToastContainer toasts={toasts} onRemove={removeToast} />
-      </div>
-    </ViewportProvider>
+                {/* Error State */}
+                {error && !loading && (
+                  <div
+                    className="card"
+                    style={{
+                      backgroundColor: "var(--color-error)",
+                      color: "white",
+                    }}
+                  >
+                    <h3>Error Loading Data</h3>
+                    <p>{error.message || "Failed to load repository data"}</p>
+                    <p className="text-sm">
+                      {navigator.onLine
+                        ? "Please check your network connection and try again."
+                        : "You are offline. Cached data may be available when you reconnect."}
+                    </p>
+                    <button
+                      className="btn btn-primary mt-md"
+                      onClick={() => window.location.reload()}
+                    >
+                      Retry
+                    </button>
+                  </div>
+                )}
+
+                {/* Data Loaded - Render Current View */}
+                {!loading && !error && data && (
+                  <>
+                    {currentView === "table" && (
+                      <section aria-labelledby="repository-overview-heading">
+                        <div className="mb-lg">
+                          <h2 id="repository-overview-heading">
+                            {data?.profile?.username || "User"} Repositories
+                          </h2>
+                          <p
+                            className="text-muted"
+                            role="status"
+                            aria-live="polite"
+                          >
+                            Showing {processedRepositories.length} of{" "}
+                            {data.repositories?.length || 0} repositories
+                          </p>
+                        </div>
+
+                        {/* Filter Controls */}
+                        {availableLanguages.length > 0 && (
+                          <FilterControls
+                            languages={availableLanguages}
+                            selectedLanguage={filterLanguage}
+                            onFilterChange={handleFilterChange}
+                            onClearFilter={clearFilter}
+                          />
+                        )}
+
+                        {/* Contribution Heatmap (T013) */}
+                        {data?.profile?.activity_calendar && (
+                          <div className="mb-lg">
+                            <h3
+                              className="text-sm text-muted"
+                              style={{ marginBottom: "0.5rem" }}
+                            >
+                              Contribution Activity (trailing 365 days)
+                            </h3>
+                            <ContributionHeatmap
+                              activityCalendar={data.profile.activity_calendar}
+                            />
+                          </div>
+                        )}
+
+                        {/* Repository Table */}
+                        {processedRepositories.length === 0 ? (
+                          <EmptyState
+                            icon="🔍"
+                            title="No repositories found"
+                            description={
+                              filterLanguage
+                                ? `No repositories match the selected language filter: ${filterLanguage}`
+                                : "No repositories available"
+                            }
+                            actionLabel={filterLanguage ? "Clear filters" : ""}
+                            onAction={filterLanguage ? clearFilter : null}
+                          />
+                        ) : (
+                          <RepositoryTable
+                            repositories={processedRepositories}
+                            onSort={handleSort}
+                            onRowClick={handleRepoClick}
+                            sortField={sortKey}
+                            sortDirection={sortOrder}
+                          />
+                        )}
+                      </section>
+                    )}
+
+                    {currentView === "visualizations" && (
+                      <section
+                        className="view-transition"
+                        aria-labelledby="visualizations-heading"
+                      >
+                        <div className="mb-lg">
+                          <h2 id="visualizations-heading">
+                            Repository Insights
+                          </h2>
+                          <p
+                            className="text-muted"
+                            role="status"
+                            aria-live="polite"
+                          >
+                            Showing {processedRepositories.length} repositories
+                            {filterLanguage && ` filtered by ${filterLanguage}`}
+                          </p>
+                        </div>
+
+                        {availableLanguages.length > 0 && (
+                          <FilterControls
+                            languages={availableLanguages}
+                            selectedLanguage={filterLanguage}
+                            onFilterChange={handleFilterChange}
+                            onClearFilter={clearFilter}
+                          />
+                        )}
+
+                        <Suspense
+                          fallback={
+                            <LoadingState message="Loading visualizations..." />
+                          }
+                        >
+                          <DashboardView
+                            repositories={processedRepositories}
+                            profile={data?.profile}
+                            onRepoClick={handleRepoClick}
+                          />
+                        </Suspense>
+
+                        {/* Activity Timeline (T017) */}
+                        {data?.profile?.weekly_activity?.length > 0 && (
+                          <div className="card mt-lg">
+                            <h3 style={{ marginBottom: "0.75rem" }}>
+                              Weekly Activity Timeline
+                            </h3>
+                            <ActivityTimeline
+                              weeklyActivity={data.profile.weekly_activity}
+                            />
+                          </div>
+                        )}
+                      </section>
+                    )}
+
+                    {currentView === "attention" && (
+                      <section
+                        className="view-transition"
+                        aria-labelledby="attention-heading"
+                      >
+                        <div className="mb-lg">
+                          <h2 id="attention-heading">
+                            Repositories Needing Attention
+                          </h2>
+                          <p
+                            className="text-muted"
+                            role="status"
+                            aria-live="polite"
+                          >
+                            Ranked by pull request pressure, security findings,
+                            staleness, and dependency health
+                          </p>
+                        </div>
+
+                        {availableLanguages.length > 0 && (
+                          <FilterControls
+                            languages={availableLanguages}
+                            selectedLanguage={filterLanguage}
+                            onFilterChange={handleFilterChange}
+                            onClearFilter={clearFilter}
+                          />
+                        )}
+
+                        <Suspense
+                          fallback={
+                            <LoadingState message="Loading attention view..." />
+                          }
+                        >
+                          <AttentionView
+                            repositories={processedRepositories}
+                            onRepoClick={handleRepoClick}
+                          />
+                        </Suspense>
+                      </section>
+                    )}
+                  </>
+                )}
+              </div>
+            </div>
+          </main>
+
+          {/* Mobile TabBar Navigation */}
+          <TabBar activeTab={currentView} onTabChange={handleViewChange} />
+
+          {/* Footer */}
+          <footer
+            className="footer"
+            style={{
+              borderTop: "1px solid var(--color-border)",
+              padding: "var(--spacing-lg) 0",
+            }}
+          >
+            <div className="container">
+              <div className="flex justify-between items-center">
+                <p className="text-sm text-muted">
+                  Generated with{" "}
+                  <a
+                    href="https://github.com/markhazleton/github-stats-spark"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub Stats Spark
+                  </a>
+                </p>
+                <div className="flex items-center gap-md">
+                  {data?.metadata && (
+                    <p className="text-xs text-muted">
+                      repositories.json:{" "}
+                      {formatGeneratedAt(data.metadata.generated_at)} {" | "}
+                      Schema v{data.metadata.schema_version}
+                    </p>
+                  )}
+                  <button
+                    className="btn btn-secondary"
+                    onClick={handleForceRefresh}
+                    disabled={loading}
+                    aria-label="Force refresh repositories data"
+                  >
+                    {loading ? "Refreshing..." : "Force Refresh"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+          {/* Detail Modal (for drill-down) */}
+          {detailModalRepo && (
+            <Suspense fallback={<LoadingState message="Loading details..." />}>
+              <RepositoryDetail
+                repository={detailModalRepo}
+                onClose={closeDetailModal}
+                onNext={handleNextRepo}
+                onPrevious={handlePreviousRepo}
+              />
+            </Suspense>
+          )}
+
+          {/* Toast Notifications */}
+          <ToastContainer toasts={toasts} onRemove={removeToast} />
+        </div>
+      </ViewportProvider>
     </ThemeProvider>
   );
 }
