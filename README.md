@@ -455,7 +455,7 @@ spark analyze --user YOUR_USERNAME --unified
 spark analyze --user YOUR_USERNAME --unified --keep-dated
 
 # Store outputs under per-user folders
-spark analyze --user YOUR_USERNAME --multi-user
+spark analyze --user YOUR_USERNAME --unified
 
 # Verbose output for debugging
 spark analyze --user YOUR_USERNAME --verbose
@@ -478,7 +478,6 @@ spark analyze --user YOUR_USERNAME --verbose
 - `--list-only`: List top repositories without generating report
 - `--unified`: Generate unified report (SVGs + analysis) instead of dated report
 - `--keep-dated`: Also generate dated report when using --unified mode
-- `--multi-user`: Write to user-scoped directories
 - `--verbose`: Enable detailed logging
 
 See [Analyze Command Guide](.documentation/guides/analyze-command.md) for detailed documentation.

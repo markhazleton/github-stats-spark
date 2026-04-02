@@ -881,3 +881,42 @@ class StatsCalculator:
             "total_commits": len(commits),
             "commit_size_distribution": distribution,
         }
+
+    @staticmethod
+    def calculate_bus_factor(contributor_commit_counts: Optional[List[int]]) -> Dict[str, Any]:
+        """Calculate bus factor from contributor commit counts.
+
+        The bus factor is the minimum number of contributors whose combined commits
+        account for ≥50% of all commits.  A lower value indicates higher risk.
+
+        Args:
+            contributor_commit_counts: List of commit counts per contributor,
+                sorted descending.  None or empty → returns None result.
+
+        Returns:
+            Dict with:
+            - bus_factor: int (minimum contributors for 50% of commits), or None
+            - bus_factor_health: "critical" (1) | "warning" (2) | "healthy" (3+) | None
+        """
+        if not contributor_commit_counts:
+            return {"bus_factor": None, "bus_factor_health": None}
+
+        total = sum(contributor_commit_counts)
+        if total == 0:
+            return {"bus_factor": None, "bus_factor_health": None}
+
+        sorted_counts = sorted(contributor_commit_counts, reverse=True)
+        cumulative = 0
+        for i, count in enumerate(sorted_counts, start=1):
+            cumulative += count
+            if cumulative >= total * 0.5:
+                bus_factor = i
+                if bus_factor == 1:
+                    health = "critical"
+                elif bus_factor == 2:
+                    health = "warning"
+                else:
+                    health = "healthy"
+                return {"bus_factor": bus_factor, "bus_factor_health": health}
+
+        return {"bus_factor": len(sorted_counts), "bus_factor_health": "healthy"}

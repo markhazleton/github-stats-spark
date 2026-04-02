@@ -90,11 +90,6 @@ def _add_unified_parser(subparsers: argparse._SubParsersAction) -> None:
         action="store_true",
         help="Capture screenshots of repository websites (requires playwright)",
     )
-    parser.add_argument(
-        "--multi-user",
-        action="store_true",
-        help="Write outputs to user-scoped directories so multiple users can coexist",
-    )
 
 
 def _add_analyze_parser(subparsers: argparse._SubParsersAction) -> None:
@@ -133,11 +128,6 @@ def _add_analyze_parser(subparsers: argparse._SubParsersAction) -> None:
         "--keep-dated",
         action="store_true",
         help="Also generate dated report when using --unified mode",
-    )
-    parser.add_argument(
-        "--multi-user",
-        action="store_true",
-        help="Write unified outputs to user-scoped directories so multiple users can coexist",
     )
 
 

@@ -380,7 +380,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .mobileHeader {
     background-color: var(--color-background);
   }

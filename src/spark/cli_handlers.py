@@ -21,7 +21,7 @@ def handle_unified(args, logger):
     logger.info("=" * 70)
     logger.info("Stats Spark - ALL-IN-ONE Unified Generation")
     logger.info("=" * 70)
-    output_layout = build_output_layout(args.user, args.output_dir, args.multi_user)
+    output_layout = build_output_layout(args.user, args.output_dir)
     report_path = output_layout["report_dir"] / f"{args.user}-analysis.md"
     logger.info(f"User: {args.user}")
     logger.info(f"Data output: {output_layout['data_dir']}")
@@ -29,7 +29,6 @@ def handle_unified(args, logger):
     logger.info(f"AI Summaries: {'Yes' if args.include_ai_summaries else 'No'}")
     logger.info(f"Force Refresh: {'Yes' if args.force_refresh else 'No'}")
     logger.info(f"Screenshots: {'Yes' if getattr(args, 'capture_screenshots', False) else 'No'}")
-    logger.info(f"Multi-user output: {'Yes' if args.multi_user else 'No'}")
 
     if not os.getenv("GITHUB_TOKEN"):
         logger.error("GITHUB_TOKEN environment variable not set")
@@ -298,7 +297,7 @@ def handle_unified_analyze(args, logger):
     try:
         config = SparkConfig(args.config)
         config.load()
-        output_layout = build_output_layout(args.user, "data", args.multi_user)
+        output_layout = build_output_layout(args.user, "data")
 
         cache_config = config.get("cache", {})
         cache = APICache(cache_dir=cache_config.get("directory", ".cache"), config=config)
@@ -315,7 +314,7 @@ def handle_unified_analyze(args, logger):
 
         unified_report = workflow.execute(args.user)
 
-        output_dir = output_layout["report_dir"] if args.multi_user else Path(args.output)
+        output_dir = output_layout["report_dir"]
         output_dir.mkdir(parents=True, exist_ok=True)
         unified_path = output_dir / f"{args.user}-analysis.md"
 

@@ -1,9 +1,13 @@
 import React, { useState, useMemo, Suspense, lazy, useEffect } from "react";
 import { ViewportProvider } from "@/contexts/ViewportContext";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 import useRepositoryData from "@/hooks/useRepositoryData";
 import RepositoryTable from "@/components/RepositoryTable/RepositoryTable";
 import LoadingState from "@/components/Common/LoadingState";
 import FilterControls from "@/components/Common/FilterControls";
+import ThemeToggle from "@/components/Common/ThemeToggle";
+import ContributionHeatmap from "@/components/Visualizations/ContributionHeatmap";
+import ActivityTimeline from "@/components/Visualizations/ActivityTimeline";
 import { useTableSort } from "@/hooks/useTableSort";
 import {
   extractLanguages,
@@ -229,6 +233,7 @@ function App() {
   };
 
   return (
+    <ThemeProvider>
     <ViewportProvider>
       <div className="app">
         {/* Header */}
@@ -277,6 +282,7 @@ function App() {
                 >
                   Needs Attention
                 </button>
+                <ThemeToggle />
               </nav>
             </div>
           </div>
@@ -353,6 +359,18 @@ function App() {
                         />
                       )}
 
+                      {/* Contribution Heatmap (T013) */}
+                      {data?.profile?.activity_calendar && (
+                        <div className="mb-lg">
+                          <h3 className="text-sm text-muted" style={{ marginBottom: "0.5rem" }}>
+                            Contribution Activity (trailing 365 days)
+                          </h3>
+                          <ContributionHeatmap
+                            activityCalendar={data.profile.activity_calendar}
+                          />
+                        </div>
+                      )}
+
                       {/* Repository Table */}
                       {processedRepositories.length === 0 ? (
                         <EmptyState
@@ -415,6 +433,16 @@ function App() {
                           onRepoClick={handleRepoClick}
                         />
                       </Suspense>
+
+                      {/* Activity Timeline (T017) */}
+                      {data?.profile?.weekly_activity?.length > 0 && (
+                        <div className="card mt-lg">
+                          <h3 style={{ marginBottom: "0.75rem" }}>Weekly Activity Timeline</h3>
+                          <ActivityTimeline
+                            weeklyActivity={data.profile.weekly_activity}
+                          />
+                        </div>
+                      )}
                     </section>
                   )}
 
@@ -524,6 +552,7 @@ function App() {
         <ToastContainer toasts={toasts} onRemove={removeToast} />
       </div>
     </ViewportProvider>
+    </ThemeProvider>
   );
 }
 

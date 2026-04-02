@@ -119,7 +119,7 @@ def test_unified_data_generator_emits_enrichment_fields(tmp_path, monkeypatch):
 
     unified = generator.generate()
 
-    assert unified["metadata"]["schema_version"] == "2.2.0"
+    assert unified["metadata"]["schema_version"] == "2.3.0"
     assert unified["metadata"]["attention_formula_version"] == "1.0"
     assert "pull_request_summary" in unified["repositories"][0]
     assert "security_summary" in unified["repositories"][0]

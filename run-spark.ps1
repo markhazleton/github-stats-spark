@@ -91,9 +91,6 @@ param(
     [switch]$MissingOnly,
 
     [Parameter(Mandatory=$false)]
-    [switch]$MultiUser,
-
-    [Parameter(Mandatory=$false)]
     [switch]$CheckOnly
 )
 
@@ -261,8 +258,8 @@ if (-not $env:SPARK_CACHE_DIR) {
 }
 
 $normalizedUser = $User.ToLower()
-$dataOutputDir = if ($MultiUser) { Join-Path "data\users" $normalizedUser } else { "data" }
-$artifactOutputDir = if ($MultiUser) { Join-Path "output\users" $normalizedUser } else { "output" }
+$dataOutputDir = Join-Path "data\users" $normalizedUser
+$artifactOutputDir = Join-Path "output\users" $normalizedUser
 $reportOutputDir = Join-Path $artifactOutputDir "reports"
 $screenshotOutputDir = Join-Path $artifactOutputDir "screenshots"
 $repositoriesJsonPath = Join-Path $dataOutputDir "repositories.json"
@@ -286,10 +283,6 @@ if ($Screenshots) {
     $cmdArgs += "--capture-screenshots"
 }
 
-if ($MultiUser) {
-    $cmdArgs += "--multi-user"
-}
-
 if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent) {
     $cmdArgs += "--verbose"
 }
@@ -308,7 +301,6 @@ Write-Info "User: $User"
 Write-Info "AI Summaries:  $(if ($IncludeAI) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Screenshots:   $(if ($Screenshots) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Missing Only:  $(if ($MissingOnly) { 'Yes (skip existing PNGs)' } else { 'No' })"
-Write-Info "Multi-user:    $(if ($MultiUser) { 'Enabled' } else { 'Disabled' })"
 Write-Info "Force Refresh: $(if ($ForceRefresh) { 'Yes' } else { 'No' })"
 Write-Info "Cache Dir:     $env:SPARK_CACHE_DIR"
 Write-Info "Data Dir:      $dataOutputDir"

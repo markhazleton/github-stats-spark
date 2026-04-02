@@ -98,6 +98,42 @@ class UnifiedDataGenerator:
         self.cache_manager = CacheManager(self.fetcher.github, self.cache, fetcher=self.fetcher)
 
     @staticmethod
+    def _derive_weekly_activity(activity_calendar: Dict[str, int]) -> List[Dict[str, Any]]:
+        """Derive weekly_activity array from activity_calendar for trailing 52 weeks."""
+        from datetime import timedelta, date as date_type
+        today = datetime.now(timezone.utc).date()
+        # Start from Monday of 52 weeks ago
+        start = today - timedelta(weeks=52)
+        start = start - timedelta(days=start.weekday())  # align to Monday
+
+        weeks: Dict[str, Dict[str, Any]] = {}
+        current = start
+        while current <= today:
+            iso_year, iso_week, _ = current.isocalendar()
+            week_key = f"{iso_year}-W{iso_week:02d}"
+            if week_key not in weeks:
+                # Cross-platform label: "Jan 6" (no leading zero, no %-d dependency)
+                label = current.strftime("%b") + " " + str(current.day)
+                weeks[week_key] = {"week": week_key, "label": label, "commits": 0, "active_repos": 0}
+            current += timedelta(days=1)
+
+        for day_str, count in activity_calendar.items():
+            try:
+                d = date_type.fromisoformat(day_str)
+            except (ValueError, TypeError):
+                continue
+            if d < start or d > today:
+                continue
+            iso_year, iso_week, _ = d.isocalendar()
+            week_key = f"{iso_year}-W{iso_week:02d}"
+            if week_key in weeks:
+                weeks[week_key]["commits"] += count
+                if count > 0:
+                    weeks[week_key]["active_repos"] += 1  # approximation: 1 active repo per day with commits
+
+        return sorted(weeks.values(), key=lambda w: w["week"])
+
+    @staticmethod
     def _calculate_staleness_score(days_since_last_push: Optional[int]) -> float:
         if days_since_last_push is None:
             return 60.0
@@ -417,6 +453,16 @@ class UnifiedDataGenerator:
                 dependency_files = {}
                 commit_stats = None
                 cached_summary = None
+                contributor_stats = None
+                code_frequency = None
+
+                # Fetch (or read from cache) contributor stats and code frequency (T007)
+                contributor_stats = self.fetcher.fetch_contributor_stats(
+                    self.username, repo_name, repo_pushed_at=pushed_at
+                )
+                code_frequency = self.fetcher.fetch_code_frequency(
+                    self.username, repo_name, repo_pushed_at=pushed_at
+                )
 
                 if cache_key:
                     readme_content = self.cache.get(
@@ -500,6 +546,8 @@ class UnifiedDataGenerator:
                     "dependency_files": dependency_files,
                     "commit_stats": commit_stats,
                     "cached_summary": cached_summary,
+                    "contributor_stats": contributor_stats,
+                    "code_frequency": code_frequency,
                 }
 
             except Exception as e:
@@ -519,6 +567,8 @@ class UnifiedDataGenerator:
             dependency_files = repo_extras.get("dependency_files", {})
             commit_stats = repo_extras.get("commit_stats")
             cached_summary = repo_extras.get("cached_summary")
+            contributor_stats_data = repo_extras.get("contributor_stats")
+            code_frequency_data = repo_extras.get("code_frequency")
             commit_history_dict = commit_history.to_dict() if commit_history else None
             commit_metrics = None
             avg_commit_size = None
@@ -670,6 +720,18 @@ class UnifiedDataGenerator:
                 "composite_score": score,
                 "pull_request_summary": repo.pull_request_summary.to_dict(),
                 "security_summary": repo.security_summary.to_dict(),
+                # v2.3.0 commit volume fields (T008)
+                "total_additions": code_frequency_data.get("total_additions") if code_frequency_data else None,
+                "total_deletions": code_frequency_data.get("total_deletions") if code_frequency_data else None,
+                "code_churn": (
+                    code_frequency_data["total_additions"] + abs(code_frequency_data["total_deletions"])
+                    if code_frequency_data else None
+                ),
+                # v2.3.0 bus factor fields (T008)
+                **StatsCalculator.calculate_bus_factor(
+                    [c["commits"] for c in contributor_stats_data] if contributor_stats_data else None
+                ),
+                "contributor_stats": contributor_stats_data,
             }
             unified_repos.append(repo_dict)
 
@@ -681,6 +743,21 @@ class UnifiedDataGenerator:
         for attention_rank, repo_dict in enumerate(attention_sorted, 1):
             repo_dict["attention_rank"] = attention_rank
         
+        # Build activity_calendar (T002): aggregate commits_by_day across all repos
+        activity_calendar: Dict[str, int] = {}
+        for repo_name, extras in repo_cache.items():
+            for commit in (extras.get("commit_stats") or []):
+                date_str = commit.get("commit", {}).get("author", {}).get("date")
+                if date_str:
+                    try:
+                        day_key = date_str[:10]  # "YYYY-MM-DD"
+                        activity_calendar[day_key] = activity_calendar.get(day_key, 0) + 1
+                    except Exception:
+                        pass
+
+        # Derive weekly_activity (T003) from activity_calendar for trailing 52 weeks
+        weekly_activity = self._derive_weekly_activity(activity_calendar)
+
         # Create user profile
         profile = {
             "username": self.username,
@@ -688,16 +765,21 @@ class UnifiedDataGenerator:
             "total_stars": sum(r.stars for r in repositories),
             "total_forks": sum(r.forks for r in repositories),
             "total_commits": sum(ch.total_commits for ch in commit_histories.values()),
+            "activity_calendar": activity_calendar,
+            "weekly_activity": weekly_activity,
         }
         
         # Create metadata
         metadata = {
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "schema_version": "2.2.0",
+            "schema_version": "2.3.0",
             "generator": "unified_data_generator",
             "schema_features": [
                 "attention_metrics",
                 "dependency_version_coverage",
+                "activity_calendar",
+                "commit_volume_stats",
+                "bus_factor",
             ],
             "attention_formula_version": "1.0"
         }

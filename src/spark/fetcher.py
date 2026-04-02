@@ -919,6 +919,161 @@ class GitHubFetcher:
                 "sources": sources,
             }
 
+    def fetch_contributor_stats(
+        self,
+        username: str,
+        repo_name: str,
+        repo_pushed_at: Optional[datetime] = None,
+    ) -> Optional[List[Dict[str, Any]]]:
+        """Fetch contributor commit statistics for a repository.
+
+        Calls repo.get_stats_contributors() and handles 202 (stats not ready)
+        with explicit 1s/2s/4s/8s exponential backoff.  Returns top-10 contributors
+        sorted by commit count, or None after logged fallback.
+
+        Args:
+            username: Repository owner username
+            repo_name: Repository name
+            repo_pushed_at: Last push date (for cache invalidation)
+
+        Returns:
+            List of contributor dicts {login, commits, additions, deletions} or None
+        """
+        push_key = sanitize_timestamp_for_filename(repo_pushed_at)
+        cached = self.cache.get("contributor_stats", username, repo=repo_name, week=push_key)
+        if cached is not None:
+            return cached  # cached None is stored as empty list marker
+
+        backoff_seconds = [1, 2, 4, 8]
+        for attempt, wait in enumerate(backoff_seconds, start=1):
+            try:
+                repo = self.github.get_repo(f"{username}/{repo_name}")
+                stats = repo.get_stats_contributors()
+
+                if stats is None:
+                    # GitHub returns None when stats are being computed (202 state)
+                    timestamp = datetime.now(timezone.utc).isoformat()
+                    self.logger.warning(
+                        f"[{timestamp}] contributor_stats for {repo_name} not ready (attempt {attempt}/{len(backoff_seconds)}); "
+                        f"retrying in {wait}s"
+                    )
+                    time.sleep(wait)
+                    continue
+
+                contributors = []
+                for c in sorted(stats, key=lambda s: s.total, reverse=True)[:10]:
+                    if c.author:
+                        contributors.append({
+                            "login": c.author.login,
+                            "commits": c.total,
+                            "additions": sum(w.a for w in c.weeks),
+                            "deletions": sum(w.d for w in c.weeks),
+                        })
+
+                metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "contributor_stats")
+                self.cache.set("contributor_stats", username, contributors, repo=repo_name, week=push_key, metadata=metadata)
+                return contributors
+
+            except RateLimitExceededException:
+                timestamp = datetime.now(timezone.utc).isoformat()
+                self.logger.warning(
+                    f"[{timestamp}] Rate limit hit fetching contributor_stats for {repo_name} (attempt {attempt}); "
+                    f"retrying in {wait}s"
+                )
+                time.sleep(wait)
+            except GithubException as exc:
+                timestamp = datetime.now(timezone.utc).isoformat()
+                self.logger.warning(
+                    f"[{timestamp}] GithubException fetching contributor_stats for {repo_name}: {exc}"
+                )
+                break
+            except Exception as exc:
+                timestamp = datetime.now(timezone.utc).isoformat()
+                self.logger.warning(
+                    f"[{timestamp}] Unexpected error fetching contributor_stats for {repo_name}: {exc}"
+                )
+                break
+
+        timestamp = datetime.now(timezone.utc).isoformat()
+        self.logger.warning(
+            f"[{timestamp}] contributor_stats for {repo_name} unavailable after retries; returning None"
+        )
+        return None
+
+    def fetch_code_frequency(
+        self,
+        username: str,
+        repo_name: str,
+        repo_pushed_at: Optional[datetime] = None,
+    ) -> Optional[Dict[str, int]]:
+        """Fetch aggregated code frequency (additions + deletions) for a repository.
+
+        Calls repo.get_stats_code_frequency() and handles 202 (stats not ready)
+        with explicit 1s/2s/4s/8s exponential backoff.  Returns total_additions and
+        total_deletions, or None after logged fallback.
+
+        Args:
+            username: Repository owner username
+            repo_name: Repository name
+            repo_pushed_at: Last push date (for cache invalidation)
+
+        Returns:
+            Dict {total_additions: int, total_deletions: int} or None
+        """
+        push_key = sanitize_timestamp_for_filename(repo_pushed_at)
+        cached = self.cache.get("code_frequency", username, repo=repo_name, week=push_key)
+        if cached is not None:
+            return cached
+
+        backoff_seconds = [1, 2, 4, 8]
+        for attempt, wait in enumerate(backoff_seconds, start=1):
+            try:
+                repo = self.github.get_repo(f"{username}/{repo_name}")
+                stats = repo.get_stats_code_frequency()
+
+                if stats is None:
+                    timestamp = datetime.now(timezone.utc).isoformat()
+                    self.logger.warning(
+                        f"[{timestamp}] code_frequency for {repo_name} not ready (attempt {attempt}/{len(backoff_seconds)}); "
+                        f"retrying in {wait}s"
+                    )
+                    time.sleep(wait)
+                    continue
+
+                total_additions = sum(max(0, w.additions) for w in stats)
+                total_deletions = sum(abs(w.deletions) for w in stats)
+                result = {"total_additions": total_additions, "total_deletions": total_deletions}
+
+                metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "code_frequency")
+                self.cache.set("code_frequency", username, result, repo=repo_name, week=push_key, metadata=metadata)
+                return result
+
+            except RateLimitExceededException:
+                timestamp = datetime.now(timezone.utc).isoformat()
+                self.logger.warning(
+                    f"[{timestamp}] Rate limit hit fetching code_frequency for {repo_name} (attempt {attempt}); "
+                    f"retrying in {wait}s"
+                )
+                time.sleep(wait)
+            except GithubException as exc:
+                timestamp = datetime.now(timezone.utc).isoformat()
+                self.logger.warning(
+                    f"[{timestamp}] GithubException fetching code_frequency for {repo_name}: {exc}"
+                )
+                break
+            except Exception as exc:
+                timestamp = datetime.now(timezone.utc).isoformat()
+                self.logger.warning(
+                    f"[{timestamp}] Unexpected error fetching code_frequency for {repo_name}: {exc}"
+                )
+                break
+
+        timestamp = datetime.now(timezone.utc).isoformat()
+        self.logger.warning(
+            f"[{timestamp}] code_frequency for {repo_name} unavailable after retries; returning None"
+        )
+        return None
+
     def handle_rate_limit(self, max_retries: int = 3) -> None:
         """Handle rate limiting with exponential backoff.
 

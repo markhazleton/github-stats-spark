@@ -25,7 +25,7 @@
 }
 
 /* Ensure skip link is always readable */
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .skip-link {
     background-color: var(--color-primary-dark, #0056b3);
   }
