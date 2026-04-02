@@ -254,6 +254,34 @@ python -c "from spark.config import SparkConfig; c = SparkConfig(); c.load(); pr
 4. **Caching**: Cache automatically invalidates when repositories are updated (pushed_at based)
 5. **Selective Output**: Disable unused categories to speed up generation
 
+## Scan Configuration (Principle VI)
+
+Controls which paths are excluded from source-code quality and security scans. Maintained in `config/spark.yml` as the single source of truth per [constitution](../memory/constitution.md).
+
+```yaml
+scan:
+  exclude_paths:
+    - docs/assets/        # Built Vite/JS bundles (GitHub Pages output)
+    - docs/data/          # Generated JSON data artifacts
+    - docs/output/        # Generated SVG/report output
+    - htmlcov/            # Python coverage report HTML artifacts
+    - output/             # Generated reports and SVGs
+    - MagicMock/          # Test mock artifacts
+    - preview/            # Local preview build output
+  exclude_patterns:
+    - "*.min.js"          # Minified JavaScript bundles
+    - "*.map"             # Source map files
+  source_paths:           # Only these trees are scanned for source analysis
+    - src/
+    - frontend/src/
+    - config/
+    - .github/
+```
+
+**When to update**: Add any new generated output directory to `scan.exclude_paths` before the first audit scan runs (Constitution Test question 7).
+
+---
+
 ## Next Steps
 
 - [Getting Started Guide](getting-started.md)

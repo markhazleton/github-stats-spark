@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Schema 2.3.0 — Dashboard Visual Enhancements** (`001-dashboard-visual-enhancements`):
+  - Interactive contribution heatmap calendar (GitHub-style trailing-365-day grid) sourced from new `profile.activity_calendar` field.
+  - Multi-series activity timeline chart (weekly commits + active repositories over 52 weeks) sourced from new `profile.weekly_activity` field.
+  - Dark mode toggle with light/dark/system modes, `localStorage` persistence, and OS `prefers-color-scheme` fallback via `ThemeContext`.
+  - Commit volume metrics per repository: `total_additions`, `total_deletions`, `code_churn` displayed in profile summary and detail views.
+  - Bus factor indicator per repository: `bus_factor` integer with color-coded health badge (`critical`/`warning`/`healthy`) in detail view and table.
+  - Export enhancements: `ExportButton` CSV/JSON now includes all new schema 2.3.0 fields.
+  - New backend methods: `fetch_contributor_stats()`, `fetch_code_frequency()` in `fetcher.py`; `calculate_bus_factor()` in `calculator.py`.
+  - Backward compatibility: pre-2.3.0 `repositories.json` loads without errors; new fields render as empty states when absent.
+
 - Added dashboard markdown rendering for AI-generated repository summaries in desktop and mobile drill-down views using `react-markdown` and `remark-gfm`.
 - Added a dedicated frontend Needs Attention page backed by repository `attention_score`, `attention_rank`, and `attention_metrics`.
 - Added schema 2.2.0 repository attention ranking fields: `attention_score`, `attention_rank`, and `attention_metrics`.

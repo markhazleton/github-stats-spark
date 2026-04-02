@@ -2,8 +2,8 @@
 
 **Project**: Stats Spark GitHub Statistics Generator
 **Feature**: Interactive HTML Dashboard Generation
-**Status**: Architecture Design Complete
-**Last Updated**: 2025-01-01
+**Status**: Implemented — dashboard built with React 19 + Vite (not Jinja2; see `frontend/`)
+**Last Updated**: 2026-04-02
 
 ---
 

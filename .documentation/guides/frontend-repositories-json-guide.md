@@ -1,6 +1,6 @@
 # Front-End Guide to Consuming `repositories.json`
 
-**Schema Version:** 2.2.0  
+**Schema Version:** 2.3.0  
 **Generator:** `unified_data_generator` (via `spark unified`)  
 **Stack:** React 19 + Vite 8 + Chart.js 4 + Dexie (IndexedDB)
 
@@ -108,9 +108,9 @@ if (!Array.isArray(data.repositories)) {
 {
   "metadata": {
     "generated_at": "2026-03-29T14:59:19.515118+00:00",
-    "schema_version": "2.2.0",
+    "schema_version": "2.3.0",
     "generator": "unified_data_generator",
-    "schema_features": ["attention_metrics", "dependency_version_coverage"],
+    "schema_features": ["attention_metrics", "dependency_version_coverage", "activity_calendar", "bus_factor"],
     "attention_formula_version": "1.0"
   }
 }
@@ -123,6 +123,16 @@ if (!Array.isArray(data.repositories)) {
 | `generator` | `string` | Name of the generator module |
 | `schema_features` | `string[]` | Feature flags indicating which enrichments are present |
 | `attention_formula_version` | `string` | Version of the attention scoring algorithm |
+
+**Schema 2.3.0 additions** (new fields added by `001-dashboard-visual-enhancements`):
+
+| New Feature | Location | Fields |
+|---|---|---|
+| Activity calendar | `profile.activity_calendar` | `{ "YYYY-MM-DD": N }` — daily commit counts across all repos |
+| Weekly activity | `profile.weekly_activity` | Array of `{ week, commits, active_repos }` for trailing 52 weeks |
+| Commit volume | per-repository | `total_additions`, `total_deletions`, `code_churn` |
+| Bus factor | per-repository | `bus_factor` (int), `bus_factor_health` (`critical`/`warning`/`healthy`) |
+| Contributor stats | per-repository | `contributor_stats` array — `{ login, commits, additions, deletions }` |
 
 **Frontend usage:** `generated_at` is displayed in the footer via `App.jsx`:
 

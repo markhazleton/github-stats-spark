@@ -2,8 +2,9 @@
 
 **Document Version**: 1.0
 **Created**: 2025-01-01
-**Status**: Design Document
-**Scope**: Static HTML dashboard generation from Python stats via GitHub Actions
+**Status**: Superseded — implemented as React 19 + Vite dashboard (see `frontend/`); Jinja2 was not used
+**Last Reviewed**: 2026-04-02
+**Scope**: Original design research; retained as decision record
 
 ---
 

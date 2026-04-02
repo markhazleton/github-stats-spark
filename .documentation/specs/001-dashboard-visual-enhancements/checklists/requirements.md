@@ -34,4 +34,4 @@
 - Spec deliberately scopes out file-level analysis (hotspots, coupling, per-file churn) due to GitHub API rate limit constraints — documented in Constraints section.
 - One mention of `react-calendar-heatmap` in Assumptions as a potential dependency option — this is acceptable context for planners, not an implementation mandate.
 - FR-011 references Recharts and React 19 as existing architecture context, not new implementation choices — this is boundary-setting, not specification of implementation.
-- All items pass. Spec is ready for `/speckit.clarify` or `/speckit.plan`.
+- All items pass. Spec is ready for `/devspark.clarify` or `/devspark.plan`.
