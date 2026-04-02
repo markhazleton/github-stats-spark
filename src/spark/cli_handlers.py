@@ -1,4 +1,11 @@
-"""CLI command handlers for Stats Spark."""
+"""CLI command handlers for Stats Spark.
+
+# SIZE JUSTIFICATION (Constitution I — ~767 LOC as of 2026-04-02):
+# All CLI entry-point handlers (unified, generate, analyze, cache, preview,
+# screenshots) live here to keep the Click wiring in one discoverable place
+# while the business logic lives in separate modules.  Planned split: one
+# handler module per CLI command — tracked in CAP-2026-001.
+"""
 
 import argparse
 import os

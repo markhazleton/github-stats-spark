@@ -157,3 +157,24 @@ dashboard:
 
     # Lazy load visualization components
     lazy_load_charts: true
+
+# Scan Configuration (Principle VI: Generated Artifact Boundary)
+# Paths excluded from ALL source-level security and quality scans.
+# Maintained here as the single source of truth per constitution.
+scan:
+  exclude_paths:
+    - docs/assets/        # Built Vite/JS bundles (GitHub Pages output)
+    - docs/data/          # Generated JSON data artifacts
+    - docs/output/        # Generated SVG/report output
+    - htmlcov/            # Python coverage report HTML artifacts
+    - output/             # Generated reports and SVGs
+    - MagicMock/          # Test mock artifacts
+    - preview/            # Local preview build output
+  exclude_patterns:
+    - "*.min.js"          # Minified JavaScript bundles
+    - "*.map"             # Source map files
+  source_paths:           # Only these trees are scanned for source analysis
+    - src/
+    - frontend/src/
+    - config/
+    - .github/

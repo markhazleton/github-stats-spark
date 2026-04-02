@@ -12,6 +12,11 @@ This constitution defines **architectural principles and non-negotiable boundari
 
 Each module MUST have one well-defined purpose. Business logic MUST be testable independently of infrastructure (GitHub Actions, CLI, caching). When a module does "too much," split it.
 
+**Size Guidance:**
+- Python modules and React components SHOULD stay under 500 lines of code (LOC).
+- Modules exceeding 500 LOC MUST carry an inline comment at the top explaining why the size is justified (e.g., large enum table, generated code, proven-stable utility).
+- Modules exceeding 800 LOC are presumed to violate single responsibility and MUST be split before additional feature work is merged — unless a Constitution Check in the plan explicitly justifies the exception.
+
 ### II. Data Privacy (NON-NEGOTIABLE)
 
 - System MUST ONLY process **public repositories**
@@ -38,6 +43,16 @@ Each module MUST have one well-defined purpose. Business logic MUST be testable 
 - All visual output MUST meet WCAG AA contrast compliance (4.5:1 for text)
 - Themes MUST validate color requirements before generation
 - No accessibility regressions allowed
+
+### VI. Generated Artifact Boundary
+
+Repository build outputs and coverage artifacts are **not source code** and MUST be excluded from source-code quality gates.
+
+- The following paths MUST be excluded from all source-level security and quality scans: `docs/assets/`, `docs/data/`, `docs/output/`, `htmlcov/`, `output/`, `MagicMock/`, `preview/`, and any path matching `*.min.js` or `*.map`.
+- CI security scanners (pip-audit, npm audit, pattern-based secret detection) MUST target only maintained source trees: `src/`, `frontend/src/`, `config/`, `.github/`.
+- Audit reports that surface findings exclusively from generated paths MUST label those findings as `NOISE - generated artifact` rather than code violations.
+- Maintain an explicit exclusion list in `config/spark.yml` under a `scan.exclude_paths` key so tooling and humans share a single source of truth.
+- When adding new generated output directories, update the exclusion list before the first scan run.
 
 ---
 
@@ -111,7 +126,23 @@ Before merging code, ask:
 3. **Observability**: Does failure produce actionable error messages? → If no, improve
 4. **Efficiency**: Does this avoid unnecessary API calls? → If no, add caching
 5. **Accessibility**: Does visual output meet WCAG AA? → If no, fix colors
+6. **Size**: Does a modified module exceed 800 LOC? → If yes, split before merging
+7. **Generated Output**: Does this add a new generated output directory? → If yes, add it to `scan.exclude_paths` in `config/spark.yml`
 
 ---
 
-*Last Amended: 2026-03-29*
+<!-- SYNC IMPACT REPORT
+Version change: 1.0.0 → 1.1.0
+Modified principles: I. Single Responsibility (added size thresholds: SHOULD <500 LOC, MUST justify 500-799, MUST split ≥800)
+Added sections: VI. Generated Artifact Boundary
+Removed sections: none
+Templates requiring updates:
+  - plan-template.md: Constitution Check updated with Principle I size gate and Principle VI output gate ✅
+  - tasks-template.md: No changes required ✅
+Follow-up TODOs:
+  - Add justification comments to src/spark/fetcher.py and src/spark/cli_handlers.py ✅
+  - Add scan.exclude_paths to config/spark.yml ✅
+  - Update site-audit.ps1 to enforce LOC threshold and respect exclude_paths ✅
+-->
+
+*Last Amended: 2026-04-02 (v1.1.0 — CAP-2026-001, CAP-2026-002)*

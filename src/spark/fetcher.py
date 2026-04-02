@@ -1,4 +1,12 @@
-"""GitHub API data fetching with rate limiting and caching."""
+"""GitHub API data fetching with rate limiting and caching.
+
+# SIZE JUSTIFICATION (Constitution I — ~834 LOC as of 2026-04-02):
+# This module consolidates REST fallback logic, caching integration, rate-limit
+# handling, and all fetch paths (commits, languages, PRs, security, dependencies)
+# in one place to keep the GitHub interaction surface unified and testable as a
+# single unit.  Planned split: fetch_commits.py, fetch_security.py,
+# fetch_pull_requests.py — tracked in CAP-2026-001.
+"""
 
 import os
 import time

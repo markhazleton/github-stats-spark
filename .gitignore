@@ -389,3 +389,7 @@ frontend/.prettiercache
 .specify/temp/
 
 MagicMock/
+
+# DevSpark - personal overrides (never commit)
+.documentation/*/commands/
+
