@@ -1,5 +1,14 @@
 """AI-powered repository and user profile summarization.
 
+# SIZE JUSTIFICATION (Constitution I — ~857 LOC as of 2026-04-02):
+# The three-tier fallback chain (Claude API → enhanced template with README
+# extraction → basic metadata template) must share prompt-engineering helpers,
+# token-budget guards, and retry logic in a single unit so that all fallback
+# paths remain testable together and produce consistent output format.
+# Splitting by tier would scatter the shared context-builder logic.
+# Planned split: ai_summarizer.py + template_summarizer.py — tracked in
+# CAP-2026-003.
+
 This module implements three-tier fallback strategy:
 1. Primary: Anthropic Claude Haiku API
 2. Fallback 1: Enhanced template (README extraction + metadata)

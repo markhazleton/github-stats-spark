@@ -777,3 +777,226 @@ class TestSecuritySummaryAllSuccess:
         assert result["availability"] == "available"
         assert result["overall_state"] == "clear"
         assert result["active_alert_counts"]["total_open"] == 0
+
+
+# ---------------------------------------------------------------------------
+# _serialize_repository tests
+# ---------------------------------------------------------------------------
+
+class TestSerializeRepository:
+    """Test GitHubFetcher._serialize_repository."""
+
+    def _make_repo(self, **overrides):
+        now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        defaults = dict(
+            name="my-repo",
+            full_name="user/my-repo",
+            description="A repo",
+            language="Python",
+            stargazers_count=5,
+            forks_count=2,
+            watchers_count=3,
+            size=100,
+            created_at=now,
+            updated_at=now,
+            pushed_at=now,
+            fork=False,
+            private=False,
+            archived=False,
+            homepage="https://example.com",
+            has_pages=True,
+        )
+        defaults.update(overrides)
+        return SimpleNamespace(**defaults)
+
+    def test_all_fields_present(self):
+        repo = self._make_repo()
+        result = GitHubFetcher._serialize_repository(repo)
+        assert result["name"] == "my-repo"
+        assert result["full_name"] == "user/my-repo"
+        assert result["language"] == "Python"
+        assert result["stars"] == 5
+        assert result["forks"] == 2
+        assert result["watchers"] == 3
+        assert result["size"] == 100
+        assert result["is_fork"] is False
+        assert result["is_private"] is False
+        assert result["is_archived"] is False
+        assert result["has_pages"] is True
+        assert result["homepage"] == "https://example.com"
+        assert result["pushed_at"] is not None
+
+    def test_none_timestamps_produce_none(self):
+        repo = self._make_repo(created_at=None, updated_at=None, pushed_at=None)
+        result = GitHubFetcher._serialize_repository(repo)
+        assert result["created_at"] is None
+        assert result["updated_at"] is None
+        assert result["pushed_at"] is None
+
+    def test_private_repo_serializes_correctly(self):
+        repo = self._make_repo(private=True)
+        result = GitHubFetcher._serialize_repository(repo)
+        assert result["is_private"] is True
+
+    def test_fork_repo_serializes_correctly(self):
+        repo = self._make_repo(fork=True)
+        result = GitHubFetcher._serialize_repository(repo)
+        assert result["is_fork"] is True
+
+
+# ---------------------------------------------------------------------------
+# fetch_contributor_stats tests
+# ---------------------------------------------------------------------------
+
+class TestFetchContributorStats:
+    """Tests for GitHubFetcher.fetch_contributor_stats."""
+
+    @pytest.fixture
+    def fetcher(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        cache = APICache(cache_dir=str(tmp_path / "cache"))
+        return GitHubFetcher(cache=cache)
+
+    def test_returns_top_contributors(self, fetcher, monkeypatch):
+        week = SimpleNamespace(a=10, d=5, c=1)
+        contributor = SimpleNamespace(
+            total=15,
+            author=SimpleNamespace(login="alice"),
+            weeks=[week],
+        )
+        repo = SimpleNamespace(get_stats_contributors=lambda: [contributor])
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        # Use a unique push timestamp so the cache is cold for this test
+        unique_push = datetime(2025, 1, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_contributor_stats("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is not None
+        assert len(result) == 1
+        assert result[0]["login"] == "alice"
+        assert result[0]["commits"] == 15
+        assert result[0]["additions"] == 10
+        assert result[0]["deletions"] == 5
+
+    def test_returns_none_when_stats_permanently_unavailable(self, fetcher, monkeypatch):
+        # stats returns None every time (GitHub 202 — not ready, all retries exhausted)
+        repo = SimpleNamespace(get_stats_contributors=lambda: None)
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+        monkeypatch.setattr("spark.fetcher.time.sleep", lambda s: None)
+
+        unique_push = datetime(2025, 2, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_contributor_stats("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is None
+
+    def test_returns_none_on_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        repo = SimpleNamespace(
+            get_stats_contributors=lambda: (_ for _ in ()).throw(GithubException(403, "denied", None))
+        )
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        unique_push = datetime(2025, 3, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_contributor_stats("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is None
+
+    def test_cache_hit_skips_api(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        cached = [{"login": "cached-user", "commits": 99, "additions": 0, "deletions": 0}]
+        fetcher.cache.set("contributor_stats", "user", cached, repo="my-repo", week=key)
+
+        result = fetcher.fetch_contributor_stats("user", "my-repo", repo_pushed_at=pushed)
+
+        assert result == cached
+
+    def test_contributors_with_null_author_skipped(self, fetcher, monkeypatch):
+        week = SimpleNamespace(a=5, d=2, c=1)
+        contributors = [
+            SimpleNamespace(total=10, author=None, weeks=[week]),
+            SimpleNamespace(total=5, author=SimpleNamespace(login="bob"), weeks=[week]),
+        ]
+        repo = SimpleNamespace(get_stats_contributors=lambda: contributors)
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        unique_push = datetime(2025, 4, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_contributor_stats("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is not None
+        assert len(result) == 1
+        assert result[0]["login"] == "bob"
+
+
+# ---------------------------------------------------------------------------
+# fetch_code_frequency tests
+# ---------------------------------------------------------------------------
+
+class TestFetchCodeFrequency:
+    """Tests for GitHubFetcher.fetch_code_frequency."""
+
+    @pytest.fixture
+    def fetcher(self, tmp_path, monkeypatch):
+        monkeypatch.setenv("GITHUB_TOKEN", "test-token")
+        cache = APICache(cache_dir=str(tmp_path / "cache"))
+        return GitHubFetcher(cache=cache)
+
+    def test_returns_totals(self, fetcher, monkeypatch):
+        week1 = SimpleNamespace(additions=100, deletions=-40)
+        week2 = SimpleNamespace(additions=50, deletions=-10)
+        repo = SimpleNamespace(get_stats_code_frequency=lambda: [week1, week2])
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        unique_push = datetime(2025, 5, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_code_frequency("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is not None
+        assert result["total_additions"] == 150
+        assert result["total_deletions"] == 50
+
+    def test_returns_none_when_stats_not_ready(self, fetcher, monkeypatch):
+        repo = SimpleNamespace(get_stats_code_frequency=lambda: None)
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+        monkeypatch.setattr("spark.fetcher.time.sleep", lambda s: None)
+
+        unique_push = datetime(2025, 6, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_code_frequency("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is None
+
+    def test_returns_none_on_github_exception(self, fetcher, monkeypatch):
+        from github import GithubException
+        repo = SimpleNamespace(
+            get_stats_code_frequency=lambda: (_ for _ in ()).throw(GithubException(403, "denied", None))
+        )
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        unique_push = datetime(2025, 7, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_code_frequency("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is None
+
+    def test_cache_hit_skips_api(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        cached = {"total_additions": 500, "total_deletions": 200}
+        fetcher.cache.set("code_frequency", "user", cached, repo="my-repo", week=key)
+
+        result = fetcher.fetch_code_frequency("user", "my-repo", repo_pushed_at=pushed)
+
+        assert result == cached
+
+    def test_negative_additions_clamped_to_zero(self, fetcher, monkeypatch):
+        # GitHub stats can occasionally have negative addition values; verify max(0, ...) clamping
+        week = SimpleNamespace(additions=-5, deletions=-3)
+        repo = SimpleNamespace(get_stats_code_frequency=lambda: [week])
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        unique_push = datetime(2025, 8, 1, tzinfo=timezone.utc)
+        result = fetcher.fetch_code_frequency("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is not None
+        assert result["total_additions"] == 0  # clamped
+        assert result["total_deletions"] == 3

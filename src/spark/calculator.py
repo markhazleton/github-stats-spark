@@ -1,4 +1,14 @@
-"""Statistics calculation for GitHub activity data."""
+"""Statistics calculation for GitHub activity data.
+
+# SIZE JUSTIFICATION (Constitution I — ~938 LOC as of 2026-04-02):
+# This module owns every statistical computation: Spark Score formula (40%
+# consistency + 35% volume + 25% collaboration), commit-streak detection,
+# time-pattern analysis (night owl / early bird), and diversity/quality
+# metrics.  All calculation families must share the same commit-histogram
+# and date-normalization helpers to guarantee deterministic output across
+# command runs (Constitution §IV accuracy guarantee).  Planned split:
+# spark_score_calculator.py + streak_calculator.py — tracked in CAP-2026-003.
+"""
 
 from typing import Dict, List, Any, Tuple, Optional
 from datetime import datetime, timedelta, date

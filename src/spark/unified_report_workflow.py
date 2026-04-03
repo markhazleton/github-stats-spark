@@ -1,4 +1,13 @@
-"""Unified report workflow orchestration."""
+"""Unified report workflow orchestration.
+
+# SIZE JUSTIFICATION (Constitution I — ~694 LOC as of 2026-04-02):
+# This module is the top-level pipeline orchestrator: it coordinates the
+# fetcher, cache manager, data generator, SVG visualizer, and report
+# generator with partial-failure isolation and structured logging.  Keeping
+# all orchestration in one place minimises cross-cutting concerns (retry
+# policy, progress reporting, error context) and makes end-to-end tracing
+# straightforward for GitHub Actions debugging (§III Fail Fast, Fail Loud).
+"""
 
 import time
 from datetime import datetime

@@ -1,4 +1,13 @@
-"""SVG visualization generation for GitHub statistics."""
+"""SVG visualization generation for GitHub statistics.
+
+# SIZE JUSTIFICATION (Constitution I — ~913 LOC as of 2026-04-02):
+# Every SVG category (overview, heatmap, languages, streaks, fun, release)
+# shares core drawing helpers (coordinate math, color resolution, glow
+# effects, WCAG-compliant theme application) that would be duplicated if
+# split across files.  The single-module design keeps WCAG AA validation
+# applied uniformly to all outputs (Constitution §V).  Planned split into
+# per-category modules once helpers are extracted — tracked in CAP-2026-003.
+"""
 
 from typing import Dict, List, Any, Optional, Tuple
 import svgwrite

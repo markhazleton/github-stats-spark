@@ -1,4 +1,13 @@
-"""API response caching with hierarchical storage and smart invalidation."""
+"""API response caching with hierarchical storage and smart invalidation.
+
+# SIZE JUSTIFICATION (Constitution I — ~528 LOC as of 2026-04-02):
+# Content-addressed cache storage, directory hierarchy management, read/write
+# helpers, and the pushed_at-based invalidation logic share internal path
+# constants and serialization helpers that would require duplication or a
+# shared internal package if split.  The module is a proven-stable utility
+# with no recent growth trend; splitting is deferred until a clear boundary
+# emerges.
+"""
 
 from __future__ import annotations
 

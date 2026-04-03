@@ -1,4 +1,13 @@
-"""Repository entity model for GitHub repository analysis."""
+"""Repository entity model for GitHub repository analysis.
+
+# SIZE JUSTIFICATION (Constitution I — ~522 LOC as of 2026-04-02):
+# The Repository dataclass accumulates schema 2.x enrichment fields
+# (attention metrics, security summary, pull request summary, bus factor,
+# tech stack) in one model to keep the data contract between the backend
+# pipeline and the frontend JSON schema in a single, diffable location.
+# Each schema version bump adds new optional fields here; splitting would
+# scatter the schema contract across files.
+"""
 
 from dataclasses import dataclass, field
 from datetime import datetime

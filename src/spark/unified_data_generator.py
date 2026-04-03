@@ -1,6 +1,15 @@
 """
 Unified Data Generator - Clean 4-Phase Architecture
 
+# SIZE JUSTIFICATION (Constitution I — ~831 LOC as of 2026-04-02):
+# The 4-phase pipeline (fetch → refresh → assemble → output) must live in a
+# single module to enforce the constitutional rule that cache reads are
+# strictly separated from API writes (§IV Change-Driven Caching).  Splitting
+# phases into separate modules would require complex inter-module state
+# threading and risk violating the zero-API-call guarantee on second runs.
+# Planned refactor into phase-specific helpers once boundary contracts are
+# stabilized — tracked in CAP-2026-003.
+
 Phase 1: Fetch repository list from GitHub
 Phase 2: Validate & refresh caches (via CacheManager)
 Phase 3: Assemble data from cache (read-only)
