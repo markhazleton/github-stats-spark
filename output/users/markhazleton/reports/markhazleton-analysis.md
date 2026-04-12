@@ -1,9 +1,9 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-04-12 06:02:19 UTC
+**Generated**: 2026-04-12 06:09:51 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 33
-**AI Summary Rate**: 100.0%
+**AI Summary Rate**: 97.0%
 
 > 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-33-repositories) | [Metadata](#report-metadata)
 
@@ -37,22 +37,13 @@
 
 ### #1. [devspark](https://github.com/markhazleton/devspark)
 
-Stars: 0 | Forks: 0 | Language: PowerShell | 179 commits (90d)
+Stars: 0 | Forks: 0 | Language: PowerShell | 180 commits (90d)
 
-👥 0 contributors | 🌐 3 languages | 💾 6534 KB | 🚀 59.7 commits/month
+👥 0 contributors | 🌐 1 languages | 💾 6534 KB | 🚀 60.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# DevSpark Technical Summary
-
-**DevSpark** is a structured development workflow framework delivered as a collection of 25 markdown-based prompt templates designed to guide AI coding assistants (Claude, Copilot, Cursor, Gemini, and 13+ others) through a complete software development lifecycle—from requirements specification through release. Rather than being installed software, DevSpark operates as a "copy-paste" system of prompt files that establish repeatable processes without external dependencies, making it immediately usable in any project by simply placing markdown files into the repository.
-
-The framework implements a multi-layered command architecture organized around core workflows (`/devspark.specify`, `/devspark.plan`, `/devspark.implement`, `/devspark.create-pr`) augmented by constitution-powered utilities for code review, auditing, refactoring, and release management. It features a sophisticated 3-tier prompt resolution system that cleanly separates stock templates (`.devspark/`), organizational customizations (`.documentation/`), and personal overrides, enabling safe upgrades and team-wide consistency without risk of configuration loss. The codebase combines PowerShell (38.1%), Shell (33.0%), and Python (28.9%) for cross-platform context-gathering scripts and an optional CLI tool built with Click and Pydantic for automated setup and repository management.
-
-A distinctive feature is its optional **multi-app monorepo support**, which allows complex repositories with different platforms or governance requirements to maintain application-specific constitutions and rules through a registry system (`devspark.json`), while single-app projects require no additional configuration. The project maintains strong momentum (179 commits in 90 days, 707 in 365 days) with a modern tech stack score of 80/100, positioning it as a production-ready solution for teams seeking AI-assisted development with human-controlled governance and audit trails through markdown-first documentation rather than code-level abstractions.
-
-**Technology Stack Currency**: ✅ 80/100
-**Dependencies**: 3 total (1 current, 2 outdated)
+Build high-quality software faster with AI-driven lifecycle management. Written in PowerShell. 180 commits in the last 90 days.
 
 **Created**: 2026-04-02
 **Last Modified**: 2026-04-12
@@ -83,48 +74,41 @@ The repository is distinguished by its formal governance structure (documented c
 
 ### #3. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 115 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 116 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 16167 KB | 🚀 38.3 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 17555 KB | 🚀 38.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 # Technical Summary: github-stats-spark
 
-## Repository Overview
+## Overview
 
-**Stats Spark** is a comprehensive GitHub analytics platform that automatically generates beautiful SVG visualizations and AI-powered insights from GitHub activity data. The project serves as an automated profile statistics generator that transforms raw GitHub metrics into actionable intelligence through both visual dashboards and detailed markdown reports. It's designed for developers, teams, and open-source maintainers who want to showcase their GitHub activity professionally while gaining deeper insights into contribution patterns and repository health.
+Stats Spark is a sophisticated GitHub analytics and visualization platform that automatically generates beautiful SVG dashboards and AI-powered repository analysis reports. The project transforms raw GitHub activity data into actionable insights through a multi-layered architecture combining Python backend processing, JavaScript/React frontend interfaces, and GitHub Actions automation.
 
 ## Core Functionality
 
-The system operates across three primary components:
+The system operates as an automated analytics suite with three primary components:
 
-1. **SVG Profile Statistics Generator**: Automatically creates embeddable visualizations including a Spark Score (0-100 composite metric), commit heatmaps, language breakdowns, streak tracking, and release cadence charts. Uses a weighted algorithm (40% consistency, 35% volume, 25% collaboration) to calculate the unique Spark Score metric.
+1. **SVG Profile Statistics Generator** - Creates embeddable, theme-customizable visualizations including contribution heatmaps, language breakdowns, commit streaks, and a proprietary "Spark Score" (0-100 metric combining consistency, volume, and collaboration signals)
 
-2. **AI-Powered Repository Analysis**: Integrates Claude Haiku for intelligent repository summaries with a three-tier fallback system (AI generation → README extraction → metadata fallback), achieving 97%+ success rates. Implements composite ranking algorithms weighing popularity (30%), activity with time-decay windows (45%), and health signals (25%).
+2. **AI-Powered Repository Analysis Engine** - Leverages Claude Haiku API with intelligent three-tier fallback logic to generate technical summaries for repositories, implementing a weighted ranking algorithm (30% popularity, 45% activity with time-decay windows, 25% health signals) that balances established projects with active development
 
-3. **Interactive Mobile-First Dashboard**: A React-based web application with touch-optimized interactions, bottom-sheet navigation, Chart.js visualizations, and offline support via IndexedDB/Dexie caching. Features a "Needs Attention" view that ranks repositories by security alerts, PR backlog, dependency drift, and staleness metrics.
+3. **Interactive Mobile-First Dashboard** - React-based frontend with Chart.js visualizations, Dexie/IndexedDB offline caching, swipe gesture support, and WCAG 2.1 AA accessibility compliance, optimized for sub-2-second First Contentful Paint metrics
 
 ## Technical Architecture
 
-**Backend Stack**: Python 3.11+ with PyGithub for API interactions, PyYAML for configuration management, svgwrite for SVG generation, and python-dateutil for temporal analysis. The system implements smart caching, rate-limit handling with exponential backoff, and processes up to 500 repositories in under 5 minutes.
+**Backend Stack**: PyGithub for GitHub API integration, PyYAML for configuration management, svgwrite for vector graphic generation, and requests/python-dateutil for HTTP handling and temporal calculations. The system implements intelligent rate-limit handling with exponential backoff and caching strategies to support analysis of 500+ repositories in under 5 minutes.
 
-**Frontend Stack**: JavaScript/React with Chart.js for analytics visualizations, Dexie for offline-first IndexedDB caching, and CSS for WCAG 2.1 AA compliant theming (dark, light, and custom variants). Lighthouse CI targets <2s First Contentful Paint with 0.9+ performance scores.
+**Frontend Stack**: JavaScript/React architecture with responsive design patterns (320px-768px viewport optimization), Touch API integration for mobile interactions, and Chart.js for visual analytics rendering. Deployment targets GitHub Pages with automated updates via GitHub Actions workflows.
 
-**Deployment & Automation**: GitHub Actions workflow executes weekly at midnight UTC on Sundays for automated updates. Output includes SVG artifacts stored in GitHub Pages for profile README embedding, and comprehensive markdown reports with embedded visualizations. Supports flexible YAML-based configuration for customization and CLI tools for local development/testing.
+**Automation**: CI/CD pipeline executing weekly at midnight UTC on Sundays, with smart dependency caching and schema-versioned repository records tracking attention scores, dependency coverage metrics, and maintenance signals.
 
-## Distinctive Features
+## Distinguishing Features
 
-- **Spark Score Algorithm**: Proprietary weighted composite metric combining consistency, volume, and collaboration signals
-- **Three-Tier AI Fallback**: Ensures summary generation even when primary AI service unavailable
-- **Schema 2.2.0 Standardization**: Unified repository records tracking attention metrics, dependency coverage, and maintenance signals
-- **Mobile-Native UX Patterns**: Swipe gestures, touch-optimized targets (44×44px), and responsive layouts (320-768px viewports)
-- **Zero-Maintenance Setup**: Automated weekly updates via GitHub Actions with configurable parameters
-- **Offline-First Architecture**: IndexedDB caching with 7-day retention for dashboard access without internet
+The project uniquely combines real-time GitHub API data orchestration with enterprise-grade AI analysis, implementing sophisticated composite scoring algorithms that weight temporal decay patterns and multi-signal health metrics. The mobile-first design philosophy extends beyond responsive layouts to native touch patterns (bottom sheets, swipe gestures, 44x44px targets), while the fallback architecture ensures 97%+ successful summary generation even when AI APIs are unavailable. The technology stack achieves a currency score of 69/100, reflecting judicious choices around Python 3.11+ modernization balanced against production stability requirements.
 
-## Project Health Metrics
-
-The repository shows strong momentum with 115 commits over 90 days and 228 commits annually, demonstrating consistent development activity. With a tech stack currency score of 69/100, the project maintains modern dependencies while utilizing established libraries. The multilingual codebase (49.6% Python, 21.5% JavaScript, 18.9% PowerShell) reflects a full-stack development approach encompassing backend analytics, frontend visualization, and automation scripting. Despite zero stars/forks currently (likely due to recent creation on 2025-12-28), the project exhibits enterprise-ready patterns including comprehensive error handling, intelligent API optimization, and extensible modular architecture suitable for integration into larger GitHub analytics platforms.
+**Target Users**: Individual developers building professional GitHub profiles, engineering teams evaluating repository health, technical leadership assessing developer productivity patterns, and open-source maintainers tracking project momentum and community engagement signals.
 
 **Technology Stack Currency**: ✅ 69/100
 **Dependencies**: 10 total (1 current, 9 outdated)
@@ -756,10 +740,10 @@ However, the repository shows **minimal activity** with zero commits in the last
 
 ## Report Metadata
 
-- **Generation Time**: 5.8 seconds
+- **Generation Time**: 18.5 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 79,975
+- **Total AI Tokens**: 76,798
 - **Success Rate**: 100.0%
 
 ### Data Sources
