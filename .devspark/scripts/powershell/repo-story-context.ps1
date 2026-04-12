@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-# Build repository history context for /speckit.repo-story
+# Build repository history context for /devspark.repo-story
 # Usage:
 #   .\repo-story-context.ps1 [-Output <path>] [-Months 12] [-Scope full] [-CompareBaseline YYYY-MM] [-Stdout]
 
@@ -37,6 +37,11 @@ Options:
 }
 
 $ErrorActionPreference = 'Stop'
+
+# Multi-app support (T088)
+if (-not (Get-Command Detect-DevSparkMode -ErrorAction SilentlyContinue)) {
+    . "$PSScriptRoot/common.ps1"
+}
 
 if ($Months -lt 1) {
         Write-Error "Months must be >= 1"

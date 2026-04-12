@@ -9,9 +9,6 @@ handoffs:
     agent: devspark.tasks
     prompt: Regenerate tasks with missing operational items
     send: true
-scripts:
-  sh: .documentation/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks
-  ps: .documentation/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks
 ---
 
 ## User Input
@@ -33,7 +30,9 @@ Act as a skeptical technical expert identifying risks, architectural flaws, impl
 
 ## Operating Constraints
 
-**STRICTLY READ-ONLY**: Do **not** modify any files. Output a structured risk assessment with severity-ranked findings.
+The risk review itself is non-destructive. Do **not** edit `spec.md`, `plan.md`, `tasks.md`, or source files. The only file write allowed is refreshing the persisted gate artifact at `FEATURE_DIR/gates/critic.md` with the final report from this command.
+
+Read the YAML frontmatter in `spec.md` before evaluating risk. Treat `classification`, `risk_level`, and `required_gates` as authoritative metadata.
 
 **Critical Mindset**: Assume the team has **limited experience** with the proposed stack, **optimistic estimates**, and **incomplete understanding** of edge cases. Your job is to identify where the plan will fail in production.
 
@@ -43,7 +42,7 @@ Act as a skeptical technical expert identifying risks, architectural flaws, impl
 
 ### 1. Initialize Analysis Context
 
-Run `{SCRIPT}` once from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS. Derive absolute paths:
+Run `.devspark/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks` once from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS. Derive absolute paths:
 
 - SPEC = FEATURE_DIR/spec.md
 - PLAN = FEATURE_DIR/plan.md
@@ -131,6 +130,16 @@ Analyze across these critical dimensions, applying stack-specific knowledge:
 - Circular dependencies
 - Missing proper dependency injection for testability
 - Hard-coded configuration values
+
+#### F. Rationale & Traceability Risks
+
+**RATIONALE COMPLETENESS:**
+
+- Missing or incomplete Rationale Summary in spec.md → HIGH
+- Missing or incomplete Rationale Summary in plan.md → HIGH
+- Missing or incomplete Rationale Summary in tasks.md → HIGH
+- Rationale drift between spec and plan (Core Problem mismatch) → CRITICAL
+- Tradeoffs not documented for major architecture decisions → HIGH
 
 #### B. Security & Compliance Risks
 
@@ -229,6 +238,16 @@ Analyze across these critical dimensions, applying stack-specific knowledge:
 
 ### 5. Framework-Specific Risk Checklists
 
+Start the output with a gate result block:
+
+```yaml
+gate: critic
+status: pass | warn | fail
+blocking: true | false
+severity: info | warning | error | showstopper
+summary: "<concise outcome>"
+```
+
 Based on detected stack, apply relevant checklist:
 
 **Python + FastAPI/Django:**
@@ -315,6 +334,15 @@ Output Markdown report with this structure:
 
 | ID | Category | Location | Risk Description | Likely Impact | Recommended Action |
 |----|----------|----------|------------------|---------------|--------------------|
+
+### 8. Persist Gate Artifact
+
+After producing the report:
+
+- Ensure `FEATURE_DIR/gates/` exists
+- Save the report as `FEATURE_DIR/gates/critic.md`
+- Treat the YAML gate block as authoritative for downstream commands such as `/devspark.tasks`, `/devspark.implement`, `/devspark.create-pr`, and `/devspark.pr-review`
+- When rerun, replace the previous `critic.md` artifact instead of appending duplicate reports
 
 ### High-Priority Concerns
 
@@ -459,4 +487,4 @@ This command produces a **"pre-mortem"** analysis - imagining the project has fa
 
 ## Context
 
-{ARGS}
+$ARGUMENTS

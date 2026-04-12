@@ -152,6 +152,11 @@ Set-Location $repoRoot
 $specsDir = Join-Path $repoRoot '.documentation' 'specs'
 New-Item -ItemType Directory -Path $specsDir -Force | Out-Null
 
+# Multi-app support (T032)
+if (-not (Get-Command Detect-DevSparkMode -ErrorAction SilentlyContinue)) {
+    . "$PSScriptRoot/common.ps1"
+}
+
 # Function to generate branch name with stop word filtering and length filtering
 function Get-BranchName {
     param([string]$Description)
@@ -236,9 +241,9 @@ if ($branchName.Length -gt $maxBranchLength) {
     $originalBranchName = $branchName
     $branchName = "$featureNum-$truncatedSuffix"
     
-    Write-Warning "[specify] Branch name exceeded GitHub's 244-byte limit"
-    Write-Warning "[specify] Original: $originalBranchName ($($originalBranchName.Length) bytes)"
-    Write-Warning "[specify] Truncated to: $branchName ($($branchName.Length) bytes)"
+    Write-Warning "[devspark] Branch name exceeded GitHub's 244-byte limit"
+    Write-Warning "[devspark] Original: $originalBranchName ($($originalBranchName.Length) bytes)"
+    Write-Warning "[devspark] Truncated to: $branchName ($($branchName.Length) bytes)"
 }
 
 if ($hasGit) {
@@ -248,7 +253,7 @@ if ($hasGit) {
         Write-Warning "Failed to create git branch: $branchName"
     }
 } else {
-    Write-Warning "[specify] Warning: Git repository not detected; skipped branch creation for $branchName"
+    Write-Warning "[devspark] Warning: Git repository not detected; skipped branch creation for $branchName"
 }
 
 $featureDir = Join-Path $specsDir $branchName
@@ -262,8 +267,8 @@ if (Test-Path $template) {
     New-Item -ItemType File -Path $specFile | Out-Null 
 }
 
-# Set the SPECIFY_FEATURE environment variable for the current session
-$env:SPECIFY_FEATURE = $branchName
+# Set the DEVSPARK_FEATURE environment variable for the current session
+$env:DEVSPARK_FEATURE = $branchName
 
 if ($Json) {
     $obj = [PSCustomObject]@{ 
@@ -278,6 +283,6 @@ if ($Json) {
     Write-Output "SPEC_FILE: $specFile"
     Write-Output "FEATURE_NUM: $featureNum"
     Write-Output "HAS_GIT: $hasGit"
-    Write-Output "SPECIFY_FEATURE environment variable set to: $branchName"
+    Write-Output "DEVSPARK_FEATURE environment variable set to: $branchName"
 }
 

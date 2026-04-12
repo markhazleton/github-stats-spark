@@ -15,7 +15,6 @@ You **MUST** consider the user input before proceeding (if not empty). Supported
 | Option | Description |
 |--------|-------------|
 | `--dry-run` | Show what would change without modifying files |
-| `--backup` | Backup `constitution.md` before upgrading |
 | `--force` | Skip confirmations |
 
 ---
@@ -25,12 +24,27 @@ You **MUST** consider the user input before proceeding (if not empty). Supported
 This command checks whether the consumer project's installed DevSpark matches the
 latest available version and guides you through a safe upgrade. It:
 
-1. Reads `.documentation/DEVSPARK_VERSION` to find the installed version
+1. Reads `.devspark/VERSION` to find the installed version (fallback: legacy `.documentation/DEVSPARK_VERSION`)
 2. Detects the latest version from `CHANGELOG.md` or `pyproject.toml`
 3. Classifies files under `.documentation/` as framework-owned vs. user-owned
 4. Identifies stale or missing framework files
 5. Runs `devspark upgrade` (or `devspark init --here --force`) to apply updates
 6. Verifies the stamp file was updated after the upgrade
+
+### Execution Modes
+
+Use this command in one of two ways:
+
+1. **Basic (recommended) — Remote prompt execution (no CLI required)**
+
+- Run this prompt directly from your AI agent using:
+  `https://raw.githubusercontent.com/markhazleton/devspark/main/templates/commands/upgrade.md`
+- The agent performs the upgrade by refreshing stock files in `.devspark/` and preserving `.documentation/`.
+
+1. **Advanced (optional) — CLI-assisted execution**
+
+- Use `devspark upgrade` when you want terminal-driven automation.
+- Use CLI install/update commands only if your workflow prefers local tooling.
 
 ---
 
@@ -38,13 +52,22 @@ latest available version and guides you through a safe upgrade. It:
 
 ### 1. Read Installed Version
 
-Check for `.documentation/DEVSPARK_VERSION`:
+Check for `.devspark/VERSION` first:
 
 ```text
-.documentation/DEVSPARK_VERSION
+.devspark/VERSION
 ```
 
-Expected format (three lines):
+Expected format (preferred key-value):
+
+```
+version: <X.Y.Z>
+installed: <YYYY-MM-DD>
+method: <install-method>
+migrated-from: <source>
+```
+
+Legacy fallback format (still supported):
 
 ```
 <version>
@@ -54,15 +77,15 @@ agent: <agent-key>
 
 **If the file is missing:**
 
-- Report: `DEVSPARK_VERSION not found — version unknown`
-- The project was installed before v1.2.4 or the stamp was not written
+- Check legacy `.documentation/DEVSPARK_VERSION`
+- If both are missing, report: `VERSION stamp not found — version unknown`
 - Proceed to Step 2 to determine what version is actually present
 
 **If the file exists**, extract:
 
-- `INSTALLED_VERSION` — e.g., `1.1.0`
+- `INSTALLED_VERSION` — e.g., `1.1.0` (must be semver `X.Y.Z`; otherwise treat as unknown)
 - `INSTALL_DATE` — e.g., `2026-02-08`
-- `INSTALLED_AGENT` — e.g., `copilot`
+- `INSTALL_METHOD` — e.g., `copilot-quickstart` or `devspark-cli`
 
 ### 2. Detect Latest Available Version
 
@@ -79,12 +102,12 @@ Fallback: read `pyproject.toml` `version = "..."` if CHANGELOG is absent.
 |-----------|--------|
 | `INSTALLED_VERSION == LATEST_VERSION` | Up to date |
 | `INSTALLED_VERSION < LATEST_VERSION` | Upgrade available |
-| `DEVSPARK_VERSION` absent | Unknown — treat as upgrade needed |
+| VERSION stamp absent or non-semver | Unknown — treat as upgrade needed |
 
 Display the comparison result clearly:
 
 ```
-Installed : 1.1.0  (2026-02-08, agent: copilot)
+Installed : 1.1.0  (2026-02-08, method: copilot-quickstart)
 Latest    : 1.2.4
 Status    : UPGRADE AVAILABLE
 ```
@@ -119,7 +142,7 @@ what changed and selectively merge improvements they want.
 These are written to `.devspark/` and should match the latest version:
 
 - `.devspark/defaults/commands/devspark.*.md` — stock prompt templates
-- `.devspark/defaults/templates/` — stock helper templates
+- `.devspark/templates/` — stock helper templates
 - `.devspark/scripts/bash/*.sh`
 - `.devspark/scripts/powershell/*.ps1`
 - `.devspark/VERSION`
@@ -137,8 +160,10 @@ These are written by the project team and must be preserved:
 
 - `.documentation/commands/` — team-customized command prompts (the working copies)
 - `.documentation/{git-user}/commands/` — per-user personalized prompts
+- `.documentation/scripts/` — team-customized script overrides (see Script Resolution below)
 - `.documentation/specs/` — all feature specifications, plans, and tasks
 - `.documentation/memory/constitution.md` — project constitution
+- `.documentation/devspark.json` — platform configuration (github/azdo/gitlab)
 - `.documentation/copilot/` — session artifacts and audit history
 - `.documentation/decisions/` — ADRs
 - `.documentation/releases/` — release archives
@@ -146,17 +171,39 @@ These are written by the project team and must be preserved:
 - `CHANGELOG.md` (repo root)
 - Any file not listed in the framework-owned category
 
+#### Script Resolution Order
+
+Scripts use a **2-tier override system**. When a command runs a script, it resolves
+the script in this order (first match wins):
+
+```text
+1. .documentation/scripts/{bash|powershell}/   ← Team overrides (yours to edit freely)
+2. .devspark/scripts/{bash|powershell}/        ← Stock scripts (upgrade overwrites ONLY this)
+```
+
+**Key principle: upgrades NEVER touch `.documentation/scripts/`.** They only write
+to `.devspark/scripts/`. Your team's script customizations in
+`.documentation/scripts/` always take priority and are never lost.
+
+Common reasons to override a script:
+
+- Platform adaptation (Azure DevOps instead of GitHub)
+- Custom CI/CD integration
+- Organization-specific authentication or tooling
+
 ### 5. Identify Stale Files
 
 Check for signs that the install needs updating:
 
 | Check | Issue | Severity |
 |-------|-------|----------|
-| `.documentation/DEVSPARK_VERSION` absent | No version stamp | HIGH |
-| `DEVSPARK_VERSION` present but older than `LATEST_VERSION` | Out of date | MEDIUM |
+| `.devspark/VERSION` absent (and legacy stamp absent) | No version stamp | HIGH |
+| VERSION stamp present but older than `LATEST_VERSION` | Out of date | MEDIUM |
 | Old `devspark.*-old.md` command files in agent folder | Leftover duplicates | LOW |
 
 Report findings before proceeding.
+
+Also check for `.documentation/commands/` overrides that shadow commands with structural contract changes, especially `/devspark.specify`, `/devspark.plan`, `/devspark.tasks`, `/devspark.implement`, and `/devspark.create-pr`. Warn the user explicitly when an override may mask a stock routing, frontmatter, or lifecycle change and recommend a manual diff/merge.
 
 ### 6. Verify Framework Files (even if up to date)
 
@@ -166,7 +213,7 @@ List any that are **missing** from the expected locations.
 Missing framework files should be reported as:
 
 ```
-MISSING: .documentation/scripts/powershell/setup-plan.ps1
+MISSING: .devspark/scripts/powershell/setup-plan.ps1
 MISSING: .github/agents/devspark.specify.agent.md
 ```
 
@@ -176,66 +223,81 @@ MISSING: .github/agents/devspark.specify.agent.md
 
 **Otherwise:**
 
-#### 7a. Backup constitution (if `--backup` or constitution has been customized)
+#### 7a. Update stock defaults
 
-If `constitution.md` has been edited by the team, recommend backing up:
+Write the latest DevSpark prompt templates to `.devspark/defaults/commands/`
+and stock scripts to `.devspark/scripts/`.
+These directories are framework-owned and safe to overwrite completely.
 
-```bash
-cp .documentation/memory/constitution.md \
-   .documentation/memory/constitution.md.YYYYMMDD.bak
-```
+**Important**: Do NOT write to `.documentation/commands/` or `.documentation/scripts/`.
+Those directories belong to the team. Only `.devspark/defaults/commands/` and
+`.devspark/scripts/` are updated.
 
-#### 7b. Update stock defaults
-
-Write the latest DevSpark prompt templates to `.devspark/defaults/commands/`.
-This directory is framework-owned and safe to overwrite completely.
-
-**Important**: Do NOT write to `.documentation/commands/`. That directory belongs
-to the team. Only `.devspark/defaults/commands/` is updated.
-
-If the CLI is available:
+If using the advanced CLI path:
 
 ```bash
-devspark upgrade --ai <INSTALLED_AGENT>
+devspark upgrade
 ```
 
-If not installed:
+If CLI is not installed and you still want the advanced CLI path:
 
 ```bash
 uv tool install devspark-cli --force \
   --from git+https://github.com/markhazleton/devspark.git
 ```
 
-#### 7c. Show what changed
+#### 7b. Show what changed
 
-After updating `defaults/commands/`, compare against the team's working copies:
+After updating `defaults/commands/` and `.devspark/scripts/`, compare against the
+team's working copies:
 
 ```
 Changed prompts (defaults/ vs commands/):
   devspark.specify.md   — 12 lines differ
   devspark.release.md   — new prompt (not in commands/ yet)
   devspark.critic.md    — identical (no action needed)
+
+Changed scripts (.devspark/scripts/ vs .documentation/scripts/):
+  get-pr-context.ps1    — 8 lines differ (team has custom override)
+  platform.ps1          — new script (not in team overrides)
+  common.ps1            — no team override (stock version used)
 ```
 
 Offer to show diffs for any changed files so the team can decide what to merge.
+
+**Script merge guidance:**
+
+- If the team has overridden a script that changed upstream, show the diff
+  and let the team decide whether to merge the upstream improvements
+- If a new stock script was added, inform the team — no action needed unless
+  they want to customize it
+- Never silently overwrite `.documentation/scripts/`
+
+**Legacy migration collision guidance:**
+
+- If legacy `.documentation/`, root `scripts/`, root `templates/`, or root `specs/` content is migrated and an equivalent file already exists under `.documentation/`, keep the existing `.documentation/` file.
+- Report the skipped legacy file and preserve it in the corresponding `.old/` backup for manual review.
+- Never silently replace active `.documentation/` overrides with legacy content during upgrade.
 
 ### 8. Post-Upgrade Verification
 
 After the upgrade completes:
 
-1. **Read `.documentation/DEVSPARK_VERSION` again** — confirm version updated
+1. **Read `.devspark/VERSION` again** — confirm version updated
 2. **Verify `.devspark/defaults/commands/` has latest prompts**
 3. **Confirm `.documentation/commands/` is untouched** — team customizations preserved
-4. **Confirm `constitution.md` is intact** (or restored from backup)
+4. **Confirm `constitution.md` is intact** (never touched by upgrades)
 
 Report a post-upgrade summary:
 
 ```
 Post-Upgrade Verification
-  DEVSPARK_VERSION   : 1.2.4  (was 1.1.0)
-  defaults/commands/ : updated (21 prompts)
+  VERSION stamp      : 1.2.4  (was 1.1.0)
+  defaults/commands/ : updated (25 prompts)
   commands/          : unchanged (team customizations preserved)
-  constitution.md    : preserved
+  stock scripts/     : updated (15 scripts)
+  team scripts/      : unchanged (overrides preserved)
+  constitution.md    : untouched (never modified by upgrades)
 ```
 
 ### 9. Output Final Summary
@@ -246,18 +308,21 @@ Post-Upgrade Verification
 DevSpark Upgrade Summary
   Previous Version : <INSTALLED_VERSION>
   New Version      : <LATEST_VERSION>
-  Agent            : <INSTALLED_AGENT>
+  Install Method   : <INSTALL_METHOD>
   Date             : <TODAY>
 
 Stock prompts updated in .devspark/defaults/commands/.
-Team customizations in .documentation/commands/ are untouched.
+Stock scripts updated in .devspark/scripts/.
+Team customizations in .documentation/commands/ and .documentation/scripts/ are untouched.
 
 To merge specific improvements into your team prompts:
   Compare .devspark/defaults/commands/ vs .documentation/commands/
+To merge script improvements:
+  Compare .devspark/scripts/ vs .documentation/scripts/
 
 Next steps:
   1. Review changes: git diff
-  2. Test: run /devspark.constitution in your AI assistant
+  2. Test: run a slash command in your AI assistant (e.g., /devspark.specify)
   3. Commit: git add -A && git commit -m "chore: upgrade devspark to vX.Y.Z"
 ```
 
@@ -266,7 +331,7 @@ Next steps:
 ```
 DevSpark is up to date.
   Version : <INSTALLED_VERSION>
-  Agent   : <INSTALLED_AGENT>
+  Method  : <INSTALL_METHOD>
   Date    : <INSTALL_DATE>
 ```
 
@@ -280,7 +345,7 @@ Framework files to update: <N>
 User files preserved: .documentation/specs/, constitution.md, session artifacts
 
 To apply:
-  devspark upgrade --ai <INSTALLED_AGENT>
+  devspark upgrade
 ```
 
 ---
@@ -293,12 +358,14 @@ Never modify or delete:
 
 - `.documentation/commands/` — team-customized prompts
 - `.documentation/{git-user}/commands/` — per-user personalized prompts
+- `.documentation/scripts/` — team-customized script overrides
 - `.documentation/specs/` and all contents
+- `.documentation/devspark.json` — platform configuration
 - `constitution.md`
 - `.documentation/copilot/`
 - `.documentation/decisions/`
 - `.documentation/releases/`
-- Any file the user created that is not in `.devspark/defaults/`
+- Any file the user created that is not in `.devspark/`
 
 ### Non-Destructive by Default
 
@@ -307,15 +374,16 @@ produce only the plan — never modify files.
 
 ### Version Stamp is Authoritative
 
-`.documentation/DEVSPARK_VERSION` is the single source of truth for the installed
-version in a consumer project. After any successful upgrade, verify the stamp was
-updated. If the stamp is absent after an upgrade, warn the user and suggest
-re-running `devspark upgrade`.
+`.devspark/VERSION` is the primary source of truth for the installed version in a
+consumer project. Legacy `.documentation/DEVSPARK_VERSION` may appear in older
+installs and should be read only as a fallback. After any successful upgrade,
+verify `.devspark/VERSION` was updated. If the stamp is absent after an upgrade,
+warn the user and suggest re-running `devspark upgrade`.
 
-### Constitution Backup Recommendation
+### Constitution is Never Touched
 
-If `constitution.md` has been customized (differs from the template default), always
-recommend a backup before upgrading — even if `--backup` was not specified.
+The constitution (`constitution.md`) is user-owned and NEVER modified by upgrades.
+No backup is needed because the upgrade process does not touch it.
 
 ## Context
 

@@ -7,9 +7,6 @@ handoffs:
   - label: Run Documentation Audit
     agent: devspark.site-audit
     prompt: Audit documentation quality and stale references before harvest
-scripts:
-  sh: .documentation/scripts/bash/harvest.sh $ARGUMENTS --json
-  ps: .documentation/scripts/powershell/harvest.ps1 $ARGUMENTS -Json
 ---
 
 ## User Input
@@ -57,9 +54,11 @@ Multiple scopes may be combined: `--scope=specs,comments`
 
 ## Outline
 
+**Multi-app support**: If this repository uses multi-app mode (`.documentation/devspark.json` exists with `mode: "multi-app"`), check for `--app <id>` in the user input to scope this workflow to a specific application. When app context is provided, resolve artifacts from `{app.path}/.documentation/` instead of the repository root `.documentation/`. Print the resolved scope (app name, doc root) at the start of output.
+
 ### 1. Initialize Harvest Context
 
-Run `{SCRIPT}` and parse its JSON output.
+Run `.devspark/scripts/powershell/harvest.ps1 $ARGUMENTS -Json` and parse its JSON output.
 
 Expected fields include:
 
@@ -101,10 +100,12 @@ Treat spec folders under `/.documentation/specs/` as:
 
 | Status | Criteria | Action |
 |--------|----------|--------|
-| `completed` | Tasks complete and reflected in CHANGELOG or review evidence | Harvest then archive |
-| `completed-needs-changelog` | Tasks complete but no CHANGELOG entry found | Harvest then add CHANGELOG entry |
-| `in-progress` | Some tasks incomplete | Keep active |
-| `draft` | Planning exists but implementation is incomplete or absent | Keep active |
+| `completed` | `**Status**: Complete` in spec.md AND tasks complete AND reflected in CHANGELOG or review evidence | Harvest then archive |
+| `completed-needs-changelog` | `**Status**: Complete` AND tasks complete but no CHANGELOG entry found | Harvest then add CHANGELOG entry |
+| `in-progress` | `**Status**: In Progress` OR some tasks incomplete | Keep active |
+| `draft` | `**Status**: Draft` OR planning exists but implementation is incomplete or absent | Keep active |
+
+**Lifecycle consistency check**: If the `**Status**:` field in spec.md disagrees with the task completion state (e.g., all tasks checked but status is `Draft`), flag the inconsistency and recommend running `/devspark.implement` to reconcile the status before harvesting.
 
 #### Documentation
 

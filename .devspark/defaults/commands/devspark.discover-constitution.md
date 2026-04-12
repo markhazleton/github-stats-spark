@@ -15,7 +15,7 @@ handoffs:
 $ARGUMENTS
 ```
 
-You **MUST** consider the user input before proceeding (if not empty). User may specify focus areas (e.g., "focus on security and testing") or specific directories to analyze.
+You **MUST** consider the user input before proceeding (if not empty). User may provide focus areas (e.g., "focus on security and testing") or specific directories to analyze.
 
 ## Goal
 
@@ -235,7 +235,7 @@ After questions complete (or user terminates early), generate a draft constituti
 - Constitution amendments require [user input or default: team discussion]
 - Reviews should occur [user input or default: quarterly]
 
-**Version**: 0.1.0-draft | **Generated**: YYYY-MM-DD
+**Version**: 1.4.0-draft | **Generated**: YYYY-MM-DD
 ```
 
 ### 6. Gap Analysis
@@ -379,4 +379,4 @@ If user says "done" before any questions:
 
 ## Context
 
-{ARGS}
+$ARGUMENTS

@@ -1,8 +1,5 @@
 ---
 description: Generate a custom checklist for the current feature based on user requirements.
-scripts:
-  sh: .documentation/scripts/bash/check-prerequisites.sh --json
-  ps: .documentation/scripts/powershell/check-prerequisites.ps1 -Json
 ---
 
 ## Checklist Purpose: "Unit Tests for English"
@@ -36,7 +33,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Execution Steps
 
-1. **Setup**: Run `{SCRIPT}` from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS list.
+1. **Setup**: Run `.devspark/scripts/powershell/check-prerequisites.ps1 -Json` from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS list.
    - All file paths must be absolute.
    - For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
 
@@ -91,6 +88,7 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 5. **Generate checklist** - Create "Unit Tests for Requirements":
    - Create `FEATURE_DIR/checklists/` directory if it doesn't exist
+   - Create or update `FEATURE_DIR/gates/checklist.md` with a concise checklist gate summary after writing the checklist file
    - Generate unique checklist filename:
      - Use short, descriptive name based on domain (e.g., `ux.md`, `api.md`, `security.md`)
      - Format: `[domain].md`
@@ -213,6 +211,18 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Depth level
    - Actor/timing
    - Any explicit user-specified must-have items incorporated
+
+   Also refresh `FEATURE_DIR/gates/checklist.md` with:
+
+   ```yaml
+   gate: checklist
+   status: pass | warn | fail
+   blocking: true | false
+   severity: info | warning | error | showstopper
+   summary: "<concise outcome>"
+   ```
+
+   Below the gate block, summarize all current checklist files under `FEATURE_DIR/checklists/` with total items, completed items, incomplete items, and the checklist purpose. Replace the prior gate summary instead of appending duplicates.
 
 **Important**: Each `/devspark.checklist` command invocation creates a checklist file using short, descriptive names unless file already exists. This allows:
 

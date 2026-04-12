@@ -1,4 +1,4 @@
-version: quickstart
-installed: 2026-04-02
-method: copilot-quickstart
-migrated-from: speckit-1.5.1
+version: 1.5.0
+installed: 2026-04-12
+agent: copilot
+method: copilot-upgrade

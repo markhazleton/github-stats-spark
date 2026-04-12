@@ -1,8 +1,5 @@
 ---
 description: Create a personalized copy of any DevSpark command prompt for the current git user.
-scripts:
-  sh: .documentation/scripts/bash/check-prerequisites.sh --json
-  ps: .documentation/scripts/powershell/check-prerequisites.ps1 -Json
 ---
 
 ## User Input
@@ -25,6 +22,8 @@ the prompt is resolved in this order (first match wins):
 ```
 
 Upgrades only write to `defaults/commands/`. Team and user customizations are never touched.
+
+This command only personalizes repository-owned overrides under `.documentation/`. It never edits stock prompts under `.devspark/defaults/commands/`.
 
 ## Outline
 
@@ -49,7 +48,7 @@ over both team customizations and stock defaults.
 2. **Parse the command name from user input** (`$ARGUMENTS`):
 
    The argument should be a command name, with or without the `devspark.` prefix.
-   Examples: `specify`, `devspark.plan`, `implement`
+   Examples: `constitution`, `devspark.plan`, `implement`
 
    If no argument is given, list all available commands from `.documentation/commands/`
    (or `.devspark/defaults/commands/` if `commands/` is empty) and ask the user

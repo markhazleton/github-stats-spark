@@ -4,9 +4,6 @@ handoffs:
   - label: View Review History
     agent: devspark.pr-review
     prompt: Show me previous PR reviews in .documentation/specs/pr-review/
-scripts:
-  sh: .documentation/scripts/bash/get-pr-context.sh $ARGUMENTS --json
-  ps: .documentation/scripts/powershell/get-pr-context.ps1 $ARGUMENTS -Json
 ---
 
 ## User Input
@@ -23,17 +20,22 @@ This command reviews GitHub Pull Requests against the project constitution. It w
 
 **IMPORTANT**: This command **only provides suggestions** - it does not make any code changes.
 
+Reviews are advisory. The agent must explain constitution or lifecycle issues, recommend a disposition, and let the human decide the next action.
+
+`/devspark.create-pr` is the preferred predecessor for spec-driven work because it collects task, checklist, and gate context before review. If the PR was created manually, continue with review but call out any missing lifecycle context.
+
 ## Prerequisites
 
 - Project constitution at `/.documentation/memory/constitution.md` (REQUIRED)
 - GitHub repository with PR context
 - GitHub CLI (`gh`) installed and authenticated (required)
+- **HARD RULE — Branch Sync**: The source (head) branch **MUST** be fully in sync with the target (base) branch. Do **NOT** proceed with review or approval if the source branch is behind the target. Instruct the user to rebase or merge the target branch into the source branch first.
 
 ## Outline
 
 ### 1. Initialize Review Context
 
-Run `{SCRIPT}` to extract PR context and parse JSON output for:
+Run `.devspark/scripts/powershell/get-pr-context.ps1 $ARGUMENTS -Json` to extract PR context and parse JSON output for:
 
 - `PR_CONTEXT`: PR metadata (number, title, branches, commit SHA, files, diff)
 - `CONSTITUTION_PATH`: Path to constitution file
@@ -68,6 +70,9 @@ If the script fails:
 - **GitHub CLI not installed**: Provide installation instructions
 - **PR not found**: Ask user to verify PR number and `gh auth status`
 - **No PR number**: Ask user to provide PR number explicitly
+- **Branch out of sync** (`is_behind_target: true`): **STOP immediately.** Do not review or approve. Inform the user:
+  > "BLOCKED: The source branch `{source_branch}` is behind target branch `{target_branch}`. Sync it first before this PR can be reviewed or approved."
+  > Suggested fix: `gh pr update-branch {PR_NUMBER}` or `git fetch origin && git rebase origin/{target_branch}`
 
 For single quotes in args like "I'm reviewing", use escape syntax: e.g 'I'\''m reviewing' (or double-quote if possible: "I'm reviewing").
 
@@ -121,6 +126,16 @@ Parse the full diff to:
 - Look for breaking change indicators
 
 ### 4. Perform Constitution-Based Review
+
+Start the review with a gate result block:
+
+```yaml
+gate: pr-review
+status: pass | warn | fail
+blocking: true | false
+severity: info | warning | error | showstopper
+summary: "<concise outcome>"
+```
 
 For **each principle** in the constitution:
 
@@ -209,19 +224,77 @@ If constitution requires documentation:
 - Confirm API documentation updated
 - Check if CHANGELOG updated
 
-### 6. Check for Feature Context (Optional)
+### 6. Spec Lifecycle Validation (Required for Feature Branches)
 
-Try to determine if this PR maps to a feature spec:
+Determine if this PR maps to a feature spec and validate spec lifecycle status:
 
-- Extract feature number from branch name pattern (e.g., `001-feature-name`)
-- Check if `/.documentation/specs/{feature}/spec.md` exists
-- If spec exists, optionally cross-reference:
+1. **Detect feature spec**: Extract feature identifier from the source branch name pattern (e.g., `001-feature-name`). Check if `/.documentation/specs/{feature}/spec.md` exists. Also check `SPEC_STATUS` from the PR context script output (if available).
 
-  - Does implementation match spec requirements?
-  - Are acceptance criteria being addressed?
-  - Is scope appropriate for the spec?
+2. **If spec exists**, validate lifecycle completeness:
 
-**Note**: This is optional - PR review works without any spec.
+   a. **Spec Status Check**: Read the `**Status**:` field in spec.md. Valid values are: `Draft`, `In Progress`, `Complete`.
+      - If status is `Draft` or `In Progress`: **flag as CRITICAL finding** — spec must be `Complete` before merge.
+
+   b. **Task Completion Check**: Read `/.documentation/specs/{feature}/tasks.md` (if it exists).
+      - Count total tasks (lines matching `- [ ]` or `- [x]` or `- [X]`)
+      - Count completed tasks (lines matching `- [x]` or `- [X]`)
+      - If any tasks are incomplete (`- [ ]`): **flag as CRITICAL finding** — all tasks must be checked off before merge.
+      - If tasks.md does not exist but spec.md does: **flag as HIGH finding** — tasks should be generated.
+
+   c. **Cross-reference implementation**:
+      - Does implementation match spec requirements?
+      - Are acceptance criteria being addressed?
+      - Is scope appropriate for the spec?
+
+3. **If no spec exists** for a feature branch (branch name matches `\d+-.*` pattern):
+   - **Flag as CRITICAL finding**: Constitution requires features to be spec-driven (Constitution §Development Workflow: "Features must be spec-driven: specify first, plan second, implement third").
+   - Block APPROVE recommendation.
+
+4. **If branch is NOT a feature branch** (e.g., hotfix, chore, docs-only): Spec validation is not required. Note this in the review.
+
+5. **Include Spec Lifecycle Summary** in the Executive Summary section:
+   - **Spec Status**: [Complete | In Progress | Draft | Missing]
+   - **Task Completion**: [X/Y tasks complete | No tasks file | N/A]
+   - If spec is not `Complete` or tasks are incomplete, the **Approval Recommendation MUST be ⚠️ REQUEST CHANGES or ❌ REJECT** — never ✅ APPROVE.
+
+### 6b. PR Scope Validation (Multi-App Mode)
+
+If the repository operates in multi-app mode (`.documentation/devspark.json` exists with `mode: "multi-app"`), perform scope validation on the PR:
+
+#### A. Check for Scope Declaration
+
+Look for a PR scope declaration in the PR description or in `.documentation/specs/` artifacts. A scope declaration specifies:
+
+- **mode**: `single-app`, `cross-app`, or `repo-scope`
+- **primary_app**: The primary application being changed
+- **affected_apps**: All applications intentionally touched by this PR
+
+If no scope declaration is present, infer scope from the changed files:
+
+- If all changed files belong to a single app (plus approved shared paths), infer `single-app` mode.
+- If changed files span multiple apps, infer `cross-app` mode.
+- If changes are purely in shared/repo-level paths, infer `repo-scope`.
+
+#### B. Validate Scope Against Changed Paths
+
+Using the PR's changed file list and the registry from `.documentation/devspark.json`:
+
+1. Map each changed file to its owning application (by matching `app.path` prefixes).
+2. Identify shared paths (`.documentation/`, `.github/`, `.devspark/`, root-level config files).
+3. Validate that the changed paths are consistent with the declared (or inferred) scope:
+   - **single-app**: Only the declared app's path and approved shared paths should be touched. Flag files in other apps as scope mismatches.
+   - **cross-app**: All touched app paths must be listed in `affected_apps`. Flag undeclared app paths.
+   - **repo-scope**: All paths are allowed.
+
+#### C. Report Scope Findings
+
+Include scope validation results in the review output:
+
+- If scope is valid, note it in the Executive Summary as a passing check.
+- If scope mismatches are detected, report them as **HIGH** severity findings:
+  - List which files violate the declared scope.
+  - Recommend updating the scope declaration or splitting the PR.
+- Add a row to the Constitution Alignment Details table for scope compliance.
 
 ### 7. Generate Review Report
 
@@ -254,7 +327,7 @@ Use this exact format:
 
 - **PR Number**: #[NUMBER]
 - **Source Branch**: [HEAD_BRANCH]
-- **Target Branch**: [BASE_BRANCH]  
+- **Target Branch**: [BASE_BRANCH]
 - **Review Date**: [YYYY-MM-DD HH:MM:SS UTC]
 - **Last Updated**: [YYYY-MM-DD HH:MM:SS UTC]
 - **Reviewed Commit**: [COMMIT_SHA]
@@ -273,6 +346,8 @@ Use this exact format:
 ## Executive Summary
 
 - ✅ **Constitution Compliance**: [PASS/FAIL] ([X]/[Y] principles checked)
+- 📋 **Spec Lifecycle**: [Complete | In Progress | Draft | Missing | N/A (not a feature branch)]
+- 📝 **Task Completion**: [X/Y tasks complete | No tasks file | N/A]
 - 🔒 **Security**: [X] issues found
 - 📊 **Code Quality**: [X] recommendations
 - 🧪 **Testing**: [PASS/FAIL/N/A]
@@ -281,6 +356,7 @@ Use this exact format:
 **Overall Assessment**: [1-2 sentence summary]
 
 **Approval Recommendation**: [✅ APPROVE | ⚠️ REQUEST CHANGES | ❌ REJECT]
+*Note: APPROVE is blocked if Spec Lifecycle is not Complete or tasks are incomplete for feature branches.*
 
 ## Critical Issues (Blocking)
 
@@ -419,8 +495,8 @@ No immediate blocking actions required.
 
 ---
 
-*Review generated by devspark.pr-review v1.0*  
-*Constitution-driven code review for [PROJECT_NAME]*  
+*Review generated by devspark.pr-review v1.0*
+*Constitution-driven code review for [PROJECT_NAME]*
 *To update this review after changes: `/devspark.pr-review #[PR_NUMBER]`*
 
 ---
@@ -510,7 +586,7 @@ Every issue must include:
 - **Constitution reference**: Which principle is violated and why
 - **Actionable recommendation**: Specific fix with example if possible
 
-**Bad example**: "Code has issues with naming"  
+**Bad example**: "Code has issues with naming"
 **Good example**: "src/api.ts:45 - Variable `x` violates naming principle 'Use descriptive names'. Rename to `userApiKey`."
 
 ### Review Objectivity

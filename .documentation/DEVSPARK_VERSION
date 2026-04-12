@@ -1,5 +1,4 @@
-version: 1.5.1
-installed: 2026-04-02
+version: 1.5.0
+installed: 2026-04-12
 agent: copilot
-method: copilot-quickstart
-migrated-from: speckit-1.5.1
+method: copilot-upgrade

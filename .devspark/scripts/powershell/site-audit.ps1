@@ -6,7 +6,7 @@
 
 .DESCRIPTION
     Pre-scans the repository to collect file listings, dependency information,
-    code metrics, and pattern detection results for the speckit.site-audit command.
+    code metrics, and pattern detection results for the devspark.site-audit command.
 
 .PARAMETER Scope
     Audit scope: full, constitution, packages, quality, unused, duplicate
@@ -65,63 +65,15 @@ param(
 # Import common functions
 . (Join-Path $PSScriptRoot 'common.ps1')
 
+# Multi-app support (T090)
+if (-not (Get-Command Detect-DevSparkMode -ErrorAction SilentlyContinue)) {
+    . "$PSScriptRoot/common.ps1"
+}
+
 # Override OutputFormat if -Json switch is used
 if ($Json) {
     $OutputFormat = 'json'
 }
-
-# Load scan exclusion config from config/spark.yml (Principle VI: Generated Artifact Boundary).
-# Falls back to hardcoded defaults if config is unavailable.
-function Get-ScanExcludePaths {
-    param([string]$RepoRoot)
-    $defaults = @(
-        'docs/assets/', 'docs/data/', 'docs/output/', 'htmlcov/',
-        'output/', 'MagicMock/', 'preview/'
-    )
-    $defaultPatterns = @('*.min.js', '*.map')
-
-    $configPath = Join-Path $RepoRoot 'config/spark.yml'
-    if (-not (Test-Path $configPath)) {
-        return @{ paths = $defaults; patterns = $defaultPatterns }
-    }
-
-    $content = Get-Content $configPath -Raw -ErrorAction SilentlyContinue
-    # Simple YAML list extraction — no external YAML parser dependency.
-    $inScanSection = $false
-    $inExcludePaths = $false
-    $inExcludePatterns = $false
-    $paths = @()
-    $patterns = @()
-
-    foreach ($line in ($content -split '[\r\n]+')) {
-        if ($line -match '^scan\s*:') { $inScanSection = $true; continue }
-        if ($inScanSection -and $line -match '^\S' -and $line -notmatch '^scan\s*:') {
-            $inScanSection = $false
-        }
-        if ($inScanSection -and $line -match '^\s+exclude_paths\s*:') {
-            $inExcludePaths = $true; $inExcludePatterns = $false; continue
-        }
-        if ($inScanSection -and $line -match '^\s+exclude_patterns\s*:') {
-            $inExcludePatterns = $true; $inExcludePaths = $false; continue
-        }
-        if ($inScanSection -and $line -match '^\s+\w' -and
-            $line -notmatch 'exclude_paths' -and $line -notmatch 'exclude_patterns') {
-            $inExcludePaths = $false; $inExcludePatterns = $false
-        }
-        if ($inExcludePaths -and $line -match '^\s+-\s+(.+)$') {
-            $paths += $matches[1].Trim().TrimEnd('/')
-        }
-        if ($inExcludePatterns -and $line -match '^\s+-\s+["'']?(.+?)["'']?\s*(#.*)?$') {
-            $patterns += $matches[1].Trim()
-        }
-    }
-
-    if ($paths.Count -eq 0) { $paths = $defaults }
-    if ($patterns.Count -eq 0) { $patterns = $defaultPatterns }
-    return @{ paths = $paths; patterns = $patterns }
-}
-
-$script:scanConfig = Get-ScanExcludePaths -RepoRoot (Split-Path $PSScriptRoot -Parent | Split-Path -Parent)
 
 # Parse scope from various input formats
 # Handle --scope=value format if passed directly to $Scope parameter
@@ -187,45 +139,22 @@ function Get-FileCategories {
     # Exclusion patterns
     $excludeDirs = @('node_modules', 'venv', '.venv', '__pycache__', '.git', '.vs', '.idea',
                      'dist', 'build', 'bin', 'obj', '.next', 'coverage', '.pytest_cache',
-                     '.mypy_cache', '.tox', 'eggs', '.egg-info', '.genreleases', '.archive', 'htmlcov')
+                     '.mypy_cache', '.tox', 'eggs', '.egg-info', '.genreleases', '.archive')
     
     $excludePattern = '(^|[/\\])(' + (($excludeDirs | ForEach-Object { [regex]::Escape($_) }) -join '|') + ')([/\\]|$)'
     
     # Get all files, excluding common directories
-    $allFiles = Get-ChildItem -Path $RepoRoot -Recurse -File -ErrorAction SilentlyContinue | 
+    $allFiles = Get-ChildItem -Path $RepoRoot -Recurse -File -Force -ErrorAction SilentlyContinue | 
         Where-Object { $_.FullName -notmatch $excludePattern }
     
     foreach ($file in $allFiles) {
         $relativePath = $file.FullName.Substring($RepoRoot.Length + 1).Replace('\', '/')
         $ext = $file.Extension.ToLower()
         $name = $file.Name.ToLower()
-
-        # Skip generated artifact paths per Principle VI (scan.exclude_paths in config/spark.yml).
-        $isExcluded = $false
-        foreach ($excludePath in $script:scanConfig.paths) {
-            $normalised = $excludePath.TrimEnd('/')
-            if ($relativePath -match "^$([regex]::Escape($normalised))(/|$)") {
-                $isExcluded = $true; break
-            }
-        }
-        if ($isExcluded) { continue }
-
-        # Skip files matching exclude_patterns (e.g. *.min.js, *.map).
-        foreach ($pattern in $script:scanConfig.patterns) {
-            $regexPattern = '^' + [regex]::Escape($pattern).Replace('\*', '.*') + '$'
-            if ($name -match $regexPattern) { $isExcluded = $true; break }
-        }
-        if ($isExcluded) { continue }
         
-        # Check build files before config so workflow YAML doesn't get misclassified.
-        if ($relativePath -match '\.github/workflows/' -or
-            $name -match '^dockerfile' -or
-            $name -eq 'makefile' -or
-            $ext -in @('.gradle', '.maven')) {
-            $categories.build += $relativePath
-            continue
-        }
-
+        # Skip minified files
+        if ($name -match '\.min\.(js|css)$' -or $ext -eq '.map') { continue }
+        
         # Categorize by tests first (check path patterns)
         if ($relativePath -match '(^|/)tests?/' -or 
             $name -match '(_test|\.test|_spec|\.spec)\.' -or
@@ -240,6 +169,16 @@ function Get-FileCategories {
             continue
         }
         
+        # Check build files by path/name first so that workflow .yml files are not
+        # claimed by the config extension check below.
+        if ($relativePath -match '(^|[/\\])\.github[/\\]workflows[/\\]' -or
+            $name -match '^dockerfile' -or
+            $name -eq 'makefile' -or
+            $ext -in @('.gradle', '.maven')) {
+            $categories.build += $relativePath
+            continue
+        }
+
         # Check config by extension or env files
         if ($ext -in $configExtensions -or $name -match '^\.env' -or $name -match 'rc$') {
             $categories.config += $relativePath
@@ -257,8 +196,6 @@ function Get-FileCategories {
             $categories.scripts += $relativePath
             continue
         }
-        
-        # Uncategorized files are intentionally ignored.
     }
     
     return $categories
@@ -271,7 +208,6 @@ function Get-PackageInfo {
         manager = $null
         manifest = $null
         lockfile = $null
-        npm_manifests = @()
         dependencies = @{
             direct = @()
             dev = @()
@@ -328,71 +264,31 @@ function Get-PackageInfo {
         $packages.dependencies.direct = @($deps | Where-Object { $_ })
     }
     
-    # Detect Node.js (root + known workspace paths)
-    $knownPackageJsonPaths = @(
-        (Join-Path $RepoRoot 'package.json'),
-        (Join-Path $RepoRoot 'frontend/package.json')
-    )
-    $packageJsonPaths = @($knownPackageJsonPaths | Where-Object { Test-Path $_ })
-
-    if ($packageJsonPaths.Count -gt 0) {
-        if ($packages.manager -and $packages.manager -ne 'npm') {
-            $packages.manager = 'multi'
-        } else {
-            $packages.manager = 'npm'
-        }
-
-        $packages.manifest = $packageJsonPaths[0].Substring($RepoRoot.Length + 1).Replace('\\', '/')
-        $packages.npm_manifests = @($packageJsonPaths | ForEach-Object { $_.Substring($RepoRoot.Length + 1).Replace('\\', '/') })
-
-        $directSet = @{}
-        $devSet = @{}
-        foreach ($pkg in $packages.dependencies.direct) {
-            if ($pkg) { $directSet[$pkg] = $true }
-        }
-        foreach ($pkg in $packages.dependencies.dev) {
-            if ($pkg) { $devSet[$pkg] = $true }
-        }
-
+    # Detect Node.js
+    $packageJsonPath = Join-Path $RepoRoot 'package.json'
+    if (Test-Path $packageJsonPath) {
+        $packages.manager = 'npm'
+        $packages.manifest = 'package.json'
+        
         $lockFiles = @('package-lock.json', 'yarn.lock', 'pnpm-lock.yaml')
-        $lockCandidates = @()
-
-        foreach ($packageJsonPath in $packageJsonPaths) {
-            $manifestDir = Split-Path $packageJsonPath -Parent
-
-            foreach ($lock in $lockFiles) {
-                $lockPath = Join-Path $manifestDir $lock
-                if (Test-Path $lockPath) {
-                    $relativeLockPath = $lockPath.Substring($RepoRoot.Length + 1).Replace('\\', '/')
-                    if ($lockCandidates -notcontains $relativeLockPath) {
-                        $lockCandidates += $relativeLockPath
-                    }
-                }
-            }
-
-            try {
-                $packageJson = Get-Content $packageJsonPath -Raw | ConvertFrom-Json
-                if ($packageJson.dependencies) {
-                    foreach ($dep in $packageJson.dependencies.PSObject.Properties.Name) {
-                        $directSet[$dep] = $true
-                    }
-                }
-                if ($packageJson.devDependencies) {
-                    foreach ($dep in $packageJson.devDependencies.PSObject.Properties.Name) {
-                        $devSet[$dep] = $true
-                    }
-                }
-            } catch {
-                # JSON parsing failed
+        foreach ($lock in $lockFiles) {
+            if (Test-Path (Join-Path $RepoRoot $lock)) {
+                $packages.lockfile = $lock
+                break
             }
         }
-
-        if ($lockCandidates.Count -gt 0) {
-            $packages.lockfile = $lockCandidates[0]
+        
+        try {
+            $packageJson = Get-Content $packageJsonPath -Raw | ConvertFrom-Json
+            if ($packageJson.dependencies) {
+                $packages.dependencies.direct = @($packageJson.dependencies.PSObject.Properties.Name)
+            }
+            if ($packageJson.devDependencies) {
+                $packages.dependencies.dev = @($packageJson.devDependencies.PSObject.Properties.Name)
+            }
+        } catch {
+            # JSON parsing failed
         }
-
-        $packages.dependencies.direct = @($directSet.Keys | Sort-Object)
-        $packages.dependencies.dev = @($devSet.Keys | Sort-Object)
     }
     
     # Detect Go
@@ -459,24 +355,16 @@ function Get-CodeMetrics {
             $metrics.max_lines_file = $relPath
         }
         
-        # Principle I size thresholds: flag files >=500 LOC with compliance tier.
-        if ($lineCount -ge 500) {
-            $tier = if ($lineCount -ge 800) { 'MUST_SPLIT' } else { 'MUST_JUSTIFY' }
+        if ($lineCount -gt 500) {
             $metrics.large_files += @{
-                file  = $relPath
+                file = $relPath
                 lines = $lineCount
-                loc_tier = $tier  # MUST_SPLIT (>=800, hard gate) | MUST_JUSTIFY (500-799, needs comment)
             }
         }
     }
     
     if ($SourceFiles.Count -gt 0) {
         $metrics.avg_lines_per_file = [math]::Round($metrics.total_lines / $SourceFiles.Count, 1)
-    }
-
-    $metrics.loc_violations = @{
-        must_split  = @($metrics.large_files | Where-Object { $_.loc_tier -eq 'MUST_SPLIT' })
-        must_justify = @($metrics.large_files | Where-Object { $_.loc_tier -eq 'MUST_JUSTIFY' })
     }
     
     return $metrics
@@ -587,6 +475,52 @@ function Get-PatternDetection {
     return $patterns
 }
 
+function Get-DevSparkVersion {
+    param([string]$RepoRoot)
+    
+    $stampPath = Join-Path $RepoRoot '.devspark/VERSION'
+    $legacyStampPath = Join-Path $RepoRoot '.documentation/DEVSPARK_VERSION'
+    $info = @{
+        stamp_exists = $false
+        installed_version = $null
+        installed_date = $null
+        method = $null
+    }
+    
+    if (Test-Path $stampPath) {
+        $info.stamp_exists = $true
+        try {
+            $lines = @(Get-Content $stampPath -ErrorAction SilentlyContinue)
+            foreach ($line in $lines) {
+                if ($line -match '^version:\s*(.+)$') {
+                    $info.installed_version = $matches[1].Trim()
+                } elseif ($line -match '^installed:\s*(.+)$') {
+                    $info.installed_date = $matches[1].Trim()
+                } elseif ($line -match '^method:\s*(.+)$') {
+                    $info.method = $matches[1].Trim()
+                }
+            }
+        } catch { }
+    } elseif (Test-Path $legacyStampPath) {
+        $info.stamp_exists = $true
+        try {
+            $lines = @(Get-Content $legacyStampPath -ErrorAction SilentlyContinue)
+            if ($lines.Count -gt 0) {
+                $info.installed_version = $lines[0].Trim()
+            }
+            foreach ($line in $lines) {
+                if ($line -match '^installed:\s*(.+)$') {
+                    $info.installed_date = $matches[1].Trim()
+                } elseif ($line -match '^agent:\s*(.+)$') {
+                    $info.method = $matches[1].Trim()
+                }
+            }
+        } catch { }
+    }
+    
+    return $info
+}
+
 function Get-ConstitutionInfo {
     param([string]$RepoRoot)
     
@@ -632,9 +566,8 @@ function Get-SampledItems {
 
 # Main execution
 $repoRoot = Get-RepoRoot
-# Re-resolve scan config relative to actual repo root (in case PSScriptRoot heuristic was off)
-$script:scanConfig = Get-ScanExcludePaths -RepoRoot $repoRoot
 $constitutionInfo = Get-ConstitutionInfo -RepoRoot $repoRoot
+$devsparkVersion = Get-DevSparkVersion -RepoRoot $repoRoot
 
 # Build result object
 $result = @{
@@ -642,12 +575,8 @@ $result = @{
     scope = $Scope
     repo_root = $repoRoot
     constitution = $constitutionInfo
+    devspark = $devsparkVersion
     audit_dir = '.documentation/copilot/audit'
-    scan_config = @{
-        exclude_paths    = $script:scanConfig.paths
-        exclude_patterns = $script:scanConfig.patterns
-        note             = 'Principle VI: Generated Artifact Boundary. Source: config/spark.yml scan.exclude_paths'
-    }
 }
 
 # Get file categories (always needed for context)
@@ -733,6 +662,7 @@ if ($OutputFormat -eq 'json') {
     Write-Output "Repository: $repoRoot"
     Write-Output "Scope: $Scope"
     Write-Output "Constitution: $(if ($constitutionInfo.exists) { 'Found' } else { 'MISSING' })"
+    Write-Output "DevSpark Version: $(if ($devsparkVersion.stamp_exists) { $devsparkVersion.installed_version } else { 'absent' })"
     Write-Output ""
     Write-Output "File Counts:"
     Write-Output "  Source files: $($fileCategories.source.Count)"
@@ -755,15 +685,14 @@ if ($OutputFormat -eq 'json') {
         Write-Output "Code Metrics:"
         Write-Output "  Total lines: $($result.metrics.total_lines)"
         Write-Output "  Avg lines/file: $($result.metrics.avg_lines_per_file)"
-        Write-Output "  Large files (>500 lines): $($result.metrics.large_files.Count)"
+        Write-Output "  Large files (>500 lines): $($result.metrics.large_files_total)"
     }
     
     if ($result.patterns) {
         Write-Output ""
         Write-Output "Pattern Detection:"
-        Write-Output "  Potential secrets: $($result.patterns.security.hardcoded_secrets.Count)"
-        Write-Output "  Insecure patterns: $($result.patterns.security.insecure_patterns.Count)"
-        Write-Output "  TODO/FIXME comments: $($result.patterns.quality.todo_comments.Count)"
+        Write-Output "  Potential secrets: $($result.patterns.security.hardcoded_secrets_total)"
+        Write-Output "  Insecure patterns: $($result.patterns.security.insecure_patterns_total)"
+        Write-Output "  TODO/FIXME comments: $($result.patterns.quality.todo_comments_total)"
     }
 }
-

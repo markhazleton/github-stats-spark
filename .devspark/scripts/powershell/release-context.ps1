@@ -11,6 +11,11 @@ param(
 
 . (Join-Path $PSScriptRoot 'common.ps1')
 
+# Multi-app support (T086)
+if (-not (Get-Command Detect-DevSparkMode -ErrorAction SilentlyContinue)) {
+    . "$PSScriptRoot/common.ps1"
+}
+
 # Parse arguments
 $versionArg = ""
 foreach ($arg in $Arguments) {
@@ -162,12 +167,17 @@ if (Test-HasGit) {
 $timestamp = (Get-Date).ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ")
 $releaseDate = Get-Date -Format "yyyy-MM-dd"
 
-# Spec Kit Spark version stamp info
-$specKitVersionPath = Join-Path $repoRoot ".documentation/SPECKIT_VERSION"
+# DevSpark version stamp info
+$versionStampPath = Join-Path $repoRoot ".devspark/VERSION"
+$legacyVersionStampPath = Join-Path $repoRoot ".documentation/DEVSPARK_VERSION"
 $installedVersion = ""
-if (Test-Path $specKitVersionPath) {
+if (Test-Path $versionStampPath) {
     try {
-        $installedVersion = (Get-Content $specKitVersionPath -TotalCount 1 -ErrorAction SilentlyContinue).Trim()
+        $installedVersion = ((Get-Content $versionStampPath -ErrorAction SilentlyContinue) | Select-String '^version:\s*(.+)$' | Select-Object -First 1).Matches.Groups[1].Value.Trim()
+    } catch { }
+} elseif (Test-Path $legacyVersionStampPath) {
+    try {
+        $installedVersion = (Get-Content $legacyVersionStampPath -TotalCount 1 -ErrorAction SilentlyContinue).Trim()
     } catch { }
 }
 
@@ -194,7 +204,8 @@ if ($Json) {
         TIMESTAMP              = $timestamp
         RELEASE_DATE           = $releaseDate
         DRY_RUN                = [bool]$DryRun
-        SPECKIT_VERSION_PATH   = $specKitVersionPath
+        DEVSPARK_VERSION_PATH   = $versionStampPath
+        LEGACY_DEVSPARK_VERSION_PATH = $legacyVersionStampPath
         INSTALLED_VERSION      = $installedVersion
     } | ConvertTo-Json
 }
@@ -213,9 +224,9 @@ else {
     Write-Output "Contributors: $($contributors.Count)"
     Write-Output ""
     if ($installedVersion) {
-        Write-Output "Installed Spec Kit Version: $installedVersion"
+        Write-Output "Installed DevSpark Version: $installedVersion"
     } else {
-        Write-Output "Installed Spec Kit Version: (SPECKIT_VERSION not found)"
+        Write-Output "Installed DevSpark Version: (VERSION stamp not found)"
     }
     if ($DryRun) {
         Write-Output ""
