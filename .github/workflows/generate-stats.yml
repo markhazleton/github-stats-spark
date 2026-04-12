@@ -135,10 +135,19 @@ jobs:
       - name: Check if data changed
         id: data-check
         run: |
-          if git diff --quiet data/users/${{ github.repository_owner }}/repositories.json; then
-            echo "changed=false" >> $GITHUB_OUTPUT
-          else
+          DATA_CHANGED=false
+          if ! git diff --quiet data/users/${{ github.repository_owner }}/repositories.json; then
+            DATA_CHANGED=true
+          fi
+          # Also rebuild if docs/ is missing or empty (e.g. after accidental deletion)
+          DOCS_MISSING=false
+          if [ ! -d "docs" ] || [ -z "$(ls -A docs 2>/dev/null)" ]; then
+            DOCS_MISSING=true
+          fi
+          if [ "$DATA_CHANGED" = "true" ] || [ "$DOCS_MISSING" = "true" ]; then
             echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Prepare frontend data directory
