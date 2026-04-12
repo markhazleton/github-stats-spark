@@ -30,20 +30,24 @@ def main():
     logger = get_logger("spark-cli", verbose=getattr(args, "verbose", False))
 
     # Execute commands
+    result = None
     if args.command == "unified":
-        handle_unified(args, logger)
+        result = handle_unified(args, logger)
     elif args.command == "analyze":
-        handle_analyze(args, logger)
+        result = handle_analyze(args, logger)
     elif args.command == "generate":
-        handle_generate(args, logger)
+        result = handle_generate(args, logger)
     elif args.command == "preview":
-        handle_preview(args, logger)
+        result = handle_preview(args, logger)
     elif args.command == "config":
-        handle_config(args, logger)
+        result = handle_config(args, logger)
     elif args.command == "cache":
-        handle_cache(args, logger)
+        result = handle_cache(args, logger)
     elif args.command == "refresh":
-        handle_refresh(args, logger)
+        result = handle_refresh(args, logger)
+
+    if isinstance(result, int) and result != 0:
+        sys.exit(result)
 
 
 if __name__ == "__main__":

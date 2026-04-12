@@ -250,6 +250,9 @@ if (-not $env:SPARK_CACHE_DIR) {
     $env:SPARK_CACHE_DIR = ".cache/local"
 }
 
+# Ensure Python stdout is not buffered (visible even when piped/redirected)
+$env:PYTHONUNBUFFERED = "1"
+
 # ---------------------------------------------------------------------------
 # Per-user pipeline runner
 # ---------------------------------------------------------------------------
