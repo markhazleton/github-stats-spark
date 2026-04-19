@@ -1,5 +1,8 @@
 ---
 description: Create a personalized copy of any DevSpark command prompt for the current git user.
+scripts:
+  sh: .devspark/scripts/bash/check-prerequisites.sh --json
+  ps: .devspark/scripts/powershell/check-prerequisites.ps1 -Json
 ---
 
 ## User Input
@@ -108,3 +111,4 @@ over both team customizations and stock defaults.
    ```
 
 8. **Open the file** for editing so the user can customize it immediately.
+

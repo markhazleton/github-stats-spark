@@ -561,3 +561,4 @@ if ($Stdout) {
 }
 
 Write-Output "history.json written to: $outputPath"
+

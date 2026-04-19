@@ -8,6 +8,8 @@ description: Validate the multi-app registry schema, references, cycles, path ex
 $ARGUMENTS
 ```
 
+You **MUST** consider the user input before proceeding (if not empty).
+
 ## Outline
 
 Run comprehensive validation on the DevSpark multi-app registry. This is a **read-only** command — no files are modified.
@@ -68,3 +70,4 @@ Status: PASS / FAIL
 
 - This command is read-only — no files may be created or modified
 - Usable in CI pipelines as a pre-merge check
+

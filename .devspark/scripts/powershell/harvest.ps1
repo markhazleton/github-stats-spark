@@ -40,7 +40,7 @@ param(
 # Import common functions
 . (Join-Path $PSScriptRoot 'common.ps1')
 
-# Multi-app support (T094)
+# Load optional app-scoped context before scanning harvest candidates.
 if (-not (Get-Command Detect-DevSparkMode -ErrorAction SilentlyContinue)) {
     . "$PSScriptRoot/common.ps1"
 }
@@ -612,3 +612,4 @@ if (-not $Json) {
 }
 
 $result | ConvertTo-Json -Depth 10
+
