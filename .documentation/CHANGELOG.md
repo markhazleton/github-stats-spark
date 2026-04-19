@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2026-04-19
+
 ### Added
 
 - **Schema 2.3.0 — Dashboard Visual Enhancements** (`001-dashboard-visual-enhancements`):

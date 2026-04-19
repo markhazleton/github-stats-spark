@@ -1,0 +1,28 @@
+{
+  "version": "2.1.0",
+  "releaseDate": "2026-04-19",
+  "release": {
+    "from": "2025-12-29",
+    "to": "2026-04-19"
+  },
+  "previousVersion": "2.0.0",
+  "features": {
+    "completed": 0,
+    "deferred": 1
+  },
+  "quickfixes": 0,
+  "pullRequests": {
+    "merged": 1,
+    "numbers": [2],
+    "filesChanged": 0,
+    "testsAdded": 0,
+    "breakingChanges": 0,
+    "resolvedHighFindings": 0
+  },
+  "adrs": 0,
+  "commits": 235,
+  "contributors": 2,
+  "specs": [],
+  "deferredSpecs": ["001-dashboard-visual-enhancements"],
+  "timestamp": "2026-04-19T23:07:29Z"
+}
