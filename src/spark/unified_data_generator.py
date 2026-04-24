@@ -85,6 +85,10 @@ class UnifiedDataGenerator:
         
         # All values come from config (no fallbacks — raise if missing)
         self.max_repositories = config.require("dashboard.data_generation.max_repositories")
+        self.max_commits_per_repo = config.require("dashboard.data_generation.max_commits_per_repo")
+        self.include_commit_metrics = config.require("dashboard.data_generation.include_commit_metrics")
+        self.include_repo_insights = config.get("dashboard", {}).get("data_generation", {}).get("include_repo_insights", True)
+        self.commit_count_scan_limit = config.get("dashboard", {}).get("data_generation", {}).get("commit_count_scan_limit", 200)
         self.top_n_repos = config.require("analyzer.top_n")
         self.include_ai_summaries = include_ai_summaries or config.require("dashboard.data_generation.include_ai_summaries")
         
@@ -99,6 +103,8 @@ class UnifiedDataGenerator:
         
         logger.info(f"UnifiedDataGenerator initialized for user: {username}")
         logger.info(f"Max repositories: {self.max_repositories}")
+        logger.info(f"Commit size metrics: {self.include_commit_metrics}")
+        logger.info(f"Repo insight metrics: {self.include_repo_insights}")
         logger.info(f"Include AI summaries: {self.include_ai_summaries}")
         
         # Initialize cache manager for Phase 2 (pass ai_model for lazy summarizer creation)
@@ -107,6 +113,8 @@ class UnifiedDataGenerator:
             self.cache,
             fetcher=self.fetcher,
             ai_model=config.get_ai_model(),
+            max_commits_per_repo=self.max_commits_per_repo,
+            commit_count_scan_limit=self.commit_count_scan_limit,
         )
 
     @staticmethod
@@ -327,6 +335,8 @@ class UnifiedDataGenerator:
         logger.info("="*70)
         logger.info(f"Force refresh mode: {self.force_refresh}")
         logger.info(f"AI summaries: {self.include_ai_summaries}")
+        logger.info(f"Commit size metrics: {self.include_commit_metrics}")
+        logger.info(f"Repo insight metrics: {self.include_repo_insights}")
         logger.info(f"Max repositories: {self.max_repositories}")
         
         total_start = time()
@@ -346,6 +356,8 @@ class UnifiedDataGenerator:
             repo_list=raw_repos,
             force_refresh=self.force_refresh,
             include_ai_summaries=self.include_ai_summaries,
+            include_commit_metrics=self.include_commit_metrics,
+            include_repo_insights=self.include_repo_insights,
         )
         phase2_time = time() - phase2_start
         logger.info(f"Refreshed: {refresh_summary.repos_refreshed}, " 
@@ -435,12 +447,12 @@ class UnifiedDataGenerator:
                 
                 cache_key = sanitize_timestamp_for_filename(pushed_at) if pushed_at else None
 
-                # Read commit counts from cache
-                commit_data = self.fetcher.fetch_commit_counts(
-                    self.username,
-                    repo_name,
-                    repo_pushed_at=pushed_at
-                )
+                # Phase 3 is cache-only: never hit GitHub APIs here.
+                commit_data = (
+                    self.cache.get("commit_counts", self.username, repo=repo_name, week=cache_key)
+                    if cache_key
+                    else None
+                ) or {}
                 
                 if commit_data:
                     commit_histories[repo_name] = CommitHistory(
@@ -456,14 +468,14 @@ class UnifiedDataGenerator:
                         ),
                     )
                 
-                # Read language stats from cache
-                language_stats = self.fetcher.fetch_languages(
-                    self.username,
-                    repo_name,
-                    repo_pushed_at=pushed_at
+                # Read language stats from cache only
+                language_stats = (
+                    self.cache.get("languages", self.username, repo=repo_name, week=cache_key)
+                    if cache_key
+                    else None
                 ) or {}
 
-                # Read cached AI summary, README, dependency files, and commit stats
+                # Read cached AI summary, README, dependency files, and optional commit stats
                 readme_content = ""
                 dependency_files = {}
                 commit_stats = None
@@ -471,12 +483,16 @@ class UnifiedDataGenerator:
                 contributor_stats = None
                 code_frequency = None
 
-                # Fetch (or read from cache) contributor stats and code frequency (T007)
-                contributor_stats = self.fetcher.fetch_contributor_stats(
-                    self.username, repo_name, repo_pushed_at=pushed_at
+                # Read optional enrichment from cache only.
+                contributor_stats = (
+                    self.cache.get("contributor_stats", self.username, repo=repo_name, week=cache_key)
+                    if cache_key
+                    else None
                 )
-                code_frequency = self.fetcher.fetch_code_frequency(
-                    self.username, repo_name, repo_pushed_at=pushed_at
+                code_frequency = (
+                    self.cache.get("code_frequency", self.username, repo=repo_name, week=cache_key)
+                    if cache_key
+                    else None
                 )
 
                 if cache_key:
@@ -486,9 +502,10 @@ class UnifiedDataGenerator:
                     dependency_files = self.cache.get(
                         "dependency_files", self.username, repo=repo_name, week=cache_key
                     ) or {}
-                    commit_stats = self.cache.get(
-                        "commits_stats", self.username, repo=repo_name, week=cache_key
-                    )
+                    if self.include_commit_metrics:
+                        commit_stats = self.cache.get(
+                            "commits_stats", self.username, repo=repo_name, week=cache_key
+                        )
                     cached_summary = self.cache.get(
                         "ai_summary", self.username, repo=repo_name, week=cache_key
                     )
@@ -585,13 +602,19 @@ class UnifiedDataGenerator:
             contributor_stats_data = repo_extras.get("contributor_stats")
             code_frequency_data = repo_extras.get("code_frequency")
             commit_history_dict = commit_history.to_dict() if commit_history else None
-            commit_metrics = None
+            commit_metrics = {
+                "avg_size": None,
+                "largest_commit": None,
+                "smallest_commit": None,
+                "total_commits": commit_history.total_commits if commit_history else 0,
+                "commit_size_distribution": None,
+            }
             avg_commit_size = None
             largest_commit = None
             smallest_commit = None
             first_commit_date = repo.created_at
 
-            if commit_stats:
+            if self.include_commit_metrics and commit_stats:
                 metrics = StatsCalculator.calculate_repository_commit_metrics(commit_stats)
                 commit_metrics = {
                     "avg_size": metrics.get("avg_commit_size", 0.0),
@@ -667,6 +690,8 @@ class UnifiedDataGenerator:
                     commit_history=commit_history,
                     language_stats=repo.language_stats,
                     tech_stack=tech_stack,
+                    pull_request_summary=repo.pull_request_summary.to_dict(),
+                    security_summary=repo.security_summary.to_dict(),
                     repository_owner=self.username,
                     repo_pushed_at=repo.pushed_at,
                     write_cache=False,

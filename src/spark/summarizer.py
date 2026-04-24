@@ -121,6 +121,8 @@ class RepositorySummarizer:
         commit_history: Optional[CommitHistory] = None,
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
+        pull_request_summary: Optional[Dict[str, Any]] = None,
+        security_summary: Optional[Dict[str, Any]] = None,
         repository_owner: Optional[str] = None,
         repo_pushed_at: Optional[datetime] = None,
         write_cache: bool = True,
@@ -146,7 +148,15 @@ class RepositorySummarizer:
         self.logger.debug(f"Generating summary for {repo.name}")
 
         # Try AI summary first
-        if allow_ai and self.anthropic and readme_content:
+        has_enough_context = any([
+            readme_content,
+            commit_history is not None,
+            bool(language_stats),
+            tech_stack is not None,
+            bool(pull_request_summary),
+            bool(security_summary),
+        ])
+        if allow_ai and self.anthropic and has_enough_context:
             try:
                 return self._generate_ai_summary(
                     repo,
@@ -154,6 +164,8 @@ class RepositorySummarizer:
                     commit_history,
                     language_stats,
                     tech_stack,
+                    pull_request_summary,
+                    security_summary,
                     repository_owner,
                     repo_pushed_at,
                     write_cache,
@@ -163,18 +175,31 @@ class RepositorySummarizer:
 
         # Fallback 1: Enhanced template with README
         if readme_content:
-            return self._generate_enhanced_fallback(repo, readme_content, commit_history)
+            return self._generate_enhanced_fallback(
+                repo,
+                readme_content,
+                commit_history,
+                pull_request_summary,
+                security_summary,
+            )
 
         # Fallback 2: Basic template (metadata only)
-        return self._generate_basic_fallback(repo, commit_history)
+        return self._generate_basic_fallback(
+            repo,
+            commit_history,
+            pull_request_summary,
+            security_summary,
+        )
 
     def _generate_ai_summary(
         self,
         repo: Repository,
-        readme_content: str,
+        readme_content: Optional[str],
         commit_history: Optional[CommitHistory],
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
+        pull_request_summary: Optional[Dict[str, Any]] = None,
+        security_summary: Optional[Dict[str, Any]] = None,
         repository_owner: Optional[str] = None,
         repo_pushed_at: Optional[datetime] = None,
         write_cache: bool = True,
@@ -192,11 +217,17 @@ class RepositorySummarizer:
             RepositorySummary with AI-generated content
         """
         # Truncate README if too long
-        truncated_readme = self._truncate_readme(readme_content)
+        truncated_readme = self._truncate_readme(readme_content or "")
 
         # Build prompt with all available stats
         prompt = self._build_repository_prompt(
-            repo, truncated_readme, commit_history, language_stats, tech_stack
+            repo,
+            truncated_readme,
+            commit_history,
+            language_stats,
+            tech_stack,
+            pull_request_summary,
+            security_summary,
         )
 
         # Create cache key from repository push date (invalidate ONLY when repo changes)
@@ -305,6 +336,8 @@ class RepositorySummarizer:
         repo: Repository,
         readme_content: str,
         commit_history: Optional[CommitHistory],
+        pull_request_summary: Optional[Dict[str, Any]] = None,
+        security_summary: Optional[Dict[str, Any]] = None,
     ) -> RepositorySummary:
         """Generate enhanced template summary from README extraction.
 
@@ -343,6 +376,18 @@ class RepositorySummarizer:
         if repo.stars > 100:
             summary_parts.append(f"Popular project with {repo.stars} stars.")
 
+        if pull_request_summary and pull_request_summary.get("availability") in {"available", "partial"}:
+            open_prs = pull_request_summary.get("total_open", 0)
+            if open_prs > 0:
+                summary_parts.append(f"Current delivery queue includes {open_prs} open pull requests.")
+
+        if security_summary:
+            overall_state = security_summary.get("overall_state")
+            if overall_state == "warning_present":
+                summary_parts.append("Security alerts are currently open and need attention.")
+            elif overall_state == "clear":
+                summary_parts.append("No active security alerts were detected in recent checks.")
+
         summary_text = " ".join(summary_parts) if summary_parts else repo.description or "No description available."
 
         return RepositorySummary(
@@ -357,6 +402,8 @@ class RepositorySummarizer:
         self,
         repo: Repository,
         commit_history: Optional[CommitHistory],
+        pull_request_summary: Optional[Dict[str, Any]] = None,
+        security_summary: Optional[Dict[str, Any]] = None,
     ) -> RepositorySummary:
         """Generate basic template summary from metadata only.
 
@@ -387,6 +434,12 @@ class RepositorySummarizer:
         if commit_history and commit_history.recent_90d > 0:
             summary_parts.append(f"{commit_history.recent_90d} commits in the last 90 days.")
 
+        if pull_request_summary and pull_request_summary.get("availability") in {"available", "partial"}:
+            summary_parts.append(f"{pull_request_summary.get('total_open', 0)} open pull requests.")
+
+        if security_summary and security_summary.get("overall_state") == "warning_present":
+            summary_parts.append("Active security alerts are present.")
+
         summary_text = " ".join(summary_parts)
 
         return RepositorySummary(
@@ -404,6 +457,8 @@ class RepositorySummarizer:
         commit_history: Optional[CommitHistory],
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
+        pull_request_summary: Optional[Dict[str, Any]] = None,
+        security_summary: Optional[Dict[str, Any]] = None,
     ) -> str:
         """Build portfolio intelligence prompt for Claude API.
 
@@ -455,6 +510,24 @@ class RepositorySummarizer:
                 )
             if tech_stack.currency_score is not None:
                 context += f"Tech Stack Currency: {tech_stack.currency_score}/100\n"
+
+        if pull_request_summary and pull_request_summary.get("availability") in {"available", "partial"}:
+            context += (
+                "Delivery Signals: "
+                f"open_prs={pull_request_summary.get('total_open', 0)}, "
+                f"draft_prs={pull_request_summary.get('draft_count', 0)}, "
+                f"review_requested={pull_request_summary.get('review_requested_count', 0)}\n"
+            )
+
+        if security_summary:
+            counts = security_summary.get("active_alert_counts", {})
+            context += (
+                "Security Signals: "
+                f"state={security_summary.get('overall_state', 'unknown')}, "
+                f"open_alerts={counts.get('total_open', 0)}, "
+                f"critical={counts.get('critical', 0)}, "
+                f"high={counts.get('high', 0)}\n"
+            )
 
         return f"""You are analyzing a GitHub repository as part of a portfolio intelligence system.
 

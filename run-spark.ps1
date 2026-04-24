@@ -320,10 +320,61 @@ function Invoke-SparkPipeline {
 
     $startTime = Get-Date
 
-    # Run the unified command
-    python -m spark.cli @cmdArgs
+    # Run the unified command with periodic heartbeat messages so long quiet
+    # periods (API/cache work) still show visible progress.
+    $heartbeatIntervalSeconds = 20
+    $heartbeatDeadline = (Get-Date).AddSeconds($heartbeatIntervalSeconds)
+    $exitCode = 1
 
-    $exitCode = $LASTEXITCODE
+    $sparkJob = Start-Job -ScriptBlock {
+        param([string]$repoRoot, [string[]]$cliArgs)
+        Set-Location $repoRoot
+        python -m spark.cli @cliArgs
+        [pscustomobject]@{ __sparkExitCode = $LASTEXITCODE }
+    } -ArgumentList $PSScriptRoot, $cmdArgs
+
+    Write-Info "Pipeline process started (heartbeat every $heartbeatIntervalSeconds seconds during quiet periods)"
+
+    while ($true) {
+        $completed = Wait-Job -Job $sparkJob -Timeout 1
+        $jobOutput = Receive-Job -Job $sparkJob -ErrorAction SilentlyContinue
+
+        if ($jobOutput) {
+            foreach ($item in $jobOutput) {
+                if ($item -and $item.PSObject -and ($item.PSObject.Properties.Name -contains '__sparkExitCode')) {
+                    $exitCode = [int]$item.__sparkExitCode
+                } elseif ($null -ne $item) {
+                    Write-Host $item
+                }
+            }
+            $heartbeatDeadline = (Get-Date).AddSeconds($heartbeatIntervalSeconds)
+        }
+
+        if (-not $completed -and (Get-Date) -ge $heartbeatDeadline) {
+            $elapsed = (Get-Date) - $startTime
+            $elapsedLabel = '{0:hh\:mm\:ss}' -f $elapsed
+            Write-Info "Still working... elapsed $elapsedLabel"
+            $heartbeatDeadline = (Get-Date).AddSeconds($heartbeatIntervalSeconds)
+        }
+
+        if ($completed) {
+            break
+        }
+    }
+
+    $remainingOutput = Receive-Job -Job $sparkJob -ErrorAction SilentlyContinue
+    if ($remainingOutput) {
+        foreach ($item in $remainingOutput) {
+            if ($item -and $item.PSObject -and ($item.PSObject.Properties.Name -contains '__sparkExitCode')) {
+                $exitCode = [int]$item.__sparkExitCode
+            } elseif ($null -ne $item) {
+                Write-Host $item
+            }
+        }
+    }
+
+    Remove-Job -Job $sparkJob -Force -ErrorAction SilentlyContinue
+
     $endTime = Get-Date
     $duration = $endTime - $startTime
 

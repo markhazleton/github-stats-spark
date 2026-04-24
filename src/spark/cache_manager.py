@@ -41,6 +41,8 @@ class CacheManager:
         summarizer: Optional[RepositorySummarizer] = None,
         fetcher: Optional[Any] = None,
         ai_model: Optional[str] = None,
+        max_commits_per_repo: int = 200,
+        commit_count_scan_limit: int = 1000,
     ):
         """Initialize cache manager.
         
@@ -55,7 +57,13 @@ class CacheManager:
         self.logger = get_logger()
         self.summarizer = summarizer
         self.refresh_executor = CacheRefreshExecutor(
-            github_client, cache, summarizer=summarizer, fetcher=fetcher, ai_model=ai_model
+            github_client,
+            cache,
+            summarizer=summarizer,
+            fetcher=fetcher,
+            ai_model=ai_model,
+            max_commits_per_repo=max_commits_per_repo,
+            commit_count_scan_limit=commit_count_scan_limit,
         )
 
     @property
@@ -166,6 +174,22 @@ class CacheManager:
         pushed_at: datetime,
     ) -> RefreshResult:
         return self.refresh_executor.refresh_security_summary(username, repo_name, pushed_at)
+
+    def refresh_contributor_stats(
+        self,
+        username: str,
+        repo_name: str,
+        pushed_at: datetime,
+    ) -> RefreshResult:
+        return self.refresh_executor.refresh_contributor_stats(username, repo_name, pushed_at)
+
+    def refresh_code_frequency(
+        self,
+        username: str,
+        repo_name: str,
+        pushed_at: datetime,
+    ) -> RefreshResult:
+        return self.refresh_executor.refresh_code_frequency(username, repo_name, pushed_at)
     
     def refresh_repository(
         self,
@@ -175,6 +199,8 @@ class CacheManager:
         categories: Optional[Set[str]] = None,
         repo_data: Optional[Dict[str, Any]] = None,
         include_ai_summaries: bool = False,
+        include_commit_metrics: bool = False,
+        include_repo_insights: bool = False,
     ) -> List[RefreshResult]:
         """Refresh all cache categories for a repository.
         
@@ -188,7 +214,11 @@ class CacheManager:
             List of RefreshResult for each category
         """
         if categories is None:
-            categories = get_refresh_categories(include_ai_summaries=include_ai_summaries)
+            categories = get_refresh_categories(
+                include_ai_summaries=include_ai_summaries,
+                include_commit_metrics=include_commit_metrics,
+                include_repo_insights=include_repo_insights,
+            )
 
         if include_ai_summaries:
             categories = set(categories) | {"readme", "dependency_files", "ai_summary"}
@@ -219,6 +249,12 @@ class CacheManager:
         if "security_summary" in categories:
             results.append(self.refresh_security_summary(username, repo_name, pushed_at))
 
+        if "contributor_stats" in categories:
+            results.append(self.refresh_contributor_stats(username, repo_name, pushed_at))
+
+        if "code_frequency" in categories:
+            results.append(self.refresh_code_frequency(username, repo_name, pushed_at))
+
         if "ai_summary" in categories and repo_data:
             results.append(self.refresh_ai_summary(username, repo_data, pushed_at))
         
@@ -230,6 +266,8 @@ class CacheManager:
         repo_list: List[Dict],
         force_refresh: bool = False,
         include_ai_summaries: bool = False,
+        include_commit_metrics: bool = False,
+        include_repo_insights: bool = False,
     ) -> RefreshSummary:
         """Refresh cache for all repositories of a user.
         
@@ -277,6 +315,8 @@ class CacheManager:
                     repo_name,
                     pushed_at,
                     include_ai_summaries=include_ai_summaries,
+                    include_commit_metrics=include_commit_metrics,
+                    include_repo_insights=include_repo_insights,
                 )
                 if not needs_update:
                     self.logger.debug(f"[{i}/{len(eligible_repos)}] OK {repo_name} - cache valid")
@@ -291,6 +331,8 @@ class CacheManager:
                 pushed_at,
                 repo_data=repo_data,
                 include_ai_summaries=include_ai_summaries,
+                include_commit_metrics=include_commit_metrics,
+                include_repo_insights=include_repo_insights,
             )
             all_results.extend(repo_results)
             

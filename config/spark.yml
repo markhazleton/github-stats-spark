@@ -131,17 +131,26 @@ dashboard:
 
   # Dashboard data generation settings
   data_generation:
-    # Include commit metrics (avg, min, max commit sizes)
-    include_commit_metrics: true
+    # Include commit size metrics (avg/largest/smallest) from per-commit stats API calls.
+    # Disabled by default to reduce API volume and focus on summary-relevant signals.
+    include_commit_metrics: false
 
     # Include language statistics
     include_language_stats: true
 
+    # Include repository insight metrics (contributor_stats, code_frequency).
+    # Uses repository-level stats endpoints and caches negative results to reduce repeat calls.
+    include_repo_insights: true
+
     # Include AI-generated summaries (from unified report)
     include_ai_summaries: true
 
-    # Max commits to fetch per repository
-    max_commits_per_repo: 500
+    # Max commits to fetch per repository (lower value reduces API calls/rate-limit pressure)
+    max_commits_per_repo: 10
+
+    # Max commits scanned when building commit count windows (90/180/365d)
+    # Keep this higher than max_commits_per_repo for better trend quality.
+    commit_count_scan_limit: 200
 
     # Max repositories to include in dashboard
     max_repositories: 50   # Max repositories to include in dashboard

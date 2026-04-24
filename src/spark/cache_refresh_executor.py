@@ -29,7 +29,16 @@ class RefreshResult:
 class CacheRefreshExecutor:
     """Executes per-category cache refresh work for a repository."""
 
-    def __init__(self, github_client, cache, summarizer: Optional[RepositorySummarizer] = None, fetcher=None, ai_model: Optional[str] = None):
+    def __init__(
+        self,
+        github_client,
+        cache,
+        summarizer: Optional[RepositorySummarizer] = None,
+        fetcher=None,
+        ai_model: Optional[str] = None,
+        max_commits_per_repo: int = 200,
+        commit_count_scan_limit: int = 1000,
+    ):
         self.github = github_client
         self.cache = cache
         self.logger = get_logger()
@@ -38,6 +47,21 @@ class CacheRefreshExecutor:
         self.ai_model = ai_model
         self.dependency_analyzer = RepositoryDependencyAnalyzer()
         self.fetcher = fetcher
+        self.max_commits_per_repo = max(1, int(max_commits_per_repo))
+        self.commit_count_scan_limit = max(10, int(commit_count_scan_limit))
+        self._repo_cache: Dict[str, Any] = {}
+
+    def _get_repo(self, username: str, repo_name: str):
+        """Return a memoized PyGithub repository object for this refresh run."""
+        key = f"{username}/{repo_name}"
+        repo = self._repo_cache.get(key)
+        if repo is not None:
+            return repo
+
+        self.api_calls += 1
+        repo = self.github.get_repo(key)
+        self._repo_cache[key] = repo
+        return repo
 
     def refresh_commit_counts(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
         cache_key = sanitize_timestamp_for_filename(pushed_at)
@@ -47,8 +71,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
+            repo = self._get_repo(username, repo_name)
             now = datetime.now(timezone.utc)
             day_90_ago = now - timedelta(days=90)
             day_180_ago = now - timedelta(days=180)
@@ -61,7 +84,7 @@ class CacheRefreshExecutor:
             last_commit_date = None
 
             for commit in repo.get_commits():
-                if total_commits >= 1000:
+                if total_commits >= self.commit_count_scan_limit:
                     break
                 total_commits += 1
                 try:
@@ -120,6 +143,7 @@ class CacheRefreshExecutor:
                 repo_name=repo_name,
                 repo_pushed_at=pushed_at,
                 force_refresh=True,
+                max_commits=self.max_commits_per_repo,
             )
             refreshed_cache = self.cache.get(category, username, repo=repo_name, week=cache_key)
             if refreshed_cache is None:
@@ -144,8 +168,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
+            repo = self._get_repo(username, repo_name)
             languages = repo.get_languages()
             metadata = {
                 "repository": {"owner": username, "name": repo_name},
@@ -167,8 +190,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
+            repo = self._get_repo(username, repo_name)
             content = ""
             try:
                 readme = repo.get_readme()
@@ -197,8 +219,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
+            repo = self._get_repo(username, repo_name)
 
             has_license = False
             try:
@@ -274,8 +295,7 @@ class CacheRefreshExecutor:
         ]
 
         try:
-            self.api_calls += 1
-            repo = self.github.get_repo(f"{username}/{repo_name}")
+            repo = self._get_repo(username, repo_name)
             for filename in target_files:
                 try:
                     if "*" in filename:
@@ -345,6 +365,16 @@ class CacheRefreshExecutor:
                 self.refresh_dependency_files(username, repo_name, pushed_at)
                 dependency_files = self.cache.get("dependency_files", username, repo=repo_name, week=cache_key) or {}
 
+            pull_request_summary = self.cache.get("pull_request_summary", username, repo=repo_name, week=cache_key)
+            if pull_request_summary is None:
+                self.refresh_pull_request_summary(username, repo_name, pushed_at)
+                pull_request_summary = self.cache.get("pull_request_summary", username, repo=repo_name, week=cache_key) or {}
+
+            security_summary = self.cache.get("security_summary", username, repo=repo_name, week=cache_key)
+            if security_summary is None:
+                self.refresh_security_summary(username, repo_name, pushed_at)
+                security_summary = self.cache.get("security_summary", username, repo=repo_name, week=cache_key) or {}
+
             tech_stack = None
             if dependency_files:
                 dep_report = self.dependency_analyzer.analyze_repository(dependency_files)
@@ -368,6 +398,8 @@ class CacheRefreshExecutor:
                 commit_history=commit_history,
                 language_stats=language_stats,
                 tech_stack=tech_stack,
+                pull_request_summary=pull_request_summary,
+                security_summary=security_summary,
                 repository_owner=username,
                 repo_pushed_at=pushed_at,
                 write_cache=False,
@@ -464,6 +496,104 @@ class CacheRefreshExecutor:
             }
             self.cache.set(category, username, summary, repo=repo_name, week=cache_key, metadata=metadata)
             self.api_calls += 1
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    def refresh_contributor_stats(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "contributor_stats"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for contributor_stats refresh",
+            )
+
+        try:
+            result = self.fetcher.fetch_contributor_stats(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+            )
+            self.api_calls += 1
+
+            # Cache negative result to avoid repeated retries for unavailable stats.
+            if result is None:
+                metadata = {
+                    "repository": {"owner": username, "name": repo_name},
+                    "category": category,
+                    "pushed_at": pushed_at.isoformat(),
+                    "ttl_enforced": False,
+                }
+                self.cache.set(category, username, [], repo=repo_name, week=cache_key, metadata=metadata)
+
+            refreshed_cache = self.cache.get(category, username, repo=repo_name, week=cache_key)
+            if refreshed_cache is None:
+                return RefreshResult(
+                    repo_name=repo_name,
+                    category=category,
+                    was_cached=False,
+                    refreshed=False,
+                    error="Contributor stats were not written to cache",
+                )
+
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    def refresh_code_frequency(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "code_frequency"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for code_frequency refresh",
+            )
+
+        try:
+            result = self.fetcher.fetch_code_frequency(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+            )
+            self.api_calls += 1
+
+            # Cache negative result to avoid repeated retries for unavailable stats.
+            if result is None:
+                metadata = {
+                    "repository": {"owner": username, "name": repo_name},
+                    "category": category,
+                    "pushed_at": pushed_at.isoformat(),
+                    "ttl_enforced": False,
+                }
+                self.cache.set(category, username, {}, repo=repo_name, week=cache_key, metadata=metadata)
+
+            refreshed_cache = self.cache.get(category, username, repo=repo_name, week=cache_key)
+            if refreshed_cache is None:
+                return RefreshResult(
+                    repo_name=repo_name,
+                    category=category,
+                    was_cached=False,
+                    refreshed=False,
+                    error="Code frequency was not written to cache",
+                )
+
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")

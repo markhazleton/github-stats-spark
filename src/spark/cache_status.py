@@ -47,7 +47,9 @@ class CacheStatusTracker:
             "ai_summary",
         ]
         
-        essential_types = ["commits_stats", "commit_counts", "languages"]
+        # commit_counts and languages are required for core ranking/summaries.
+        # commits_stats is optional and only needed for detailed commit-size metrics.
+        essential_types = ["commit_counts", "languages"]
         
         cache_files = {}
         oldest_timestamp = None

@@ -1,0 +1,262 @@
+...F.......F..F......F.F................................................ [ 16%]
+..........................................F........................F.... [ 33%]
+........................................................................ [ 50%]
+........................................................................ [ 66%]
+........................................................................ [ 83%]
+.......................................................................  [100%]
+================================== FAILURES ===================================
+___________________ TestAPICache.test_hierarchical_storage ____________________
+
+self = <tests.unit.test_cache.TestAPICache object at 0x00000278833AE780>
+temp_cache_dir = 'C:\\Users\\markh\\AppData\\Local\\Temp\\tmpf6cijv56'
+
+    def test_hierarchical_storage(self, temp_cache_dir):
+        """Test that cache uses hierarchical storage."""
+        cache = APICache(cache_dir=temp_cache_dir)
+    
+        cache.set("category", "owner", "value", repo="repo", week="2026W01")
+    
+        expected_path = Path(temp_cache_dir) / "owner" / "repo" / "category" / "2026W01.json"
+>       assert expected_path.exists()
+E       AssertionError: assert False
+E        +  where False = exists()
+E        +    where exists = WindowsPath('C:/Users/markh/AppData/Local/Temp/tmpf6cijv56/owner/repo/category/2026W01.json').exists
+
+tests\unit\test_cache.py:59: AssertionError
+________________ TestAPICacheGetEntryInfo.test_multiple_weeks _________________
+
+self = <tests.unit.test_cache.TestAPICacheGetEntryInfo object at 0x00000278833AED70>
+temp_cache_dir = 'C:\\Users\\markh\\AppData\\Local\\Temp\\tmpgqkp23ks'
+
+    def test_multiple_weeks(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("cat", "owner", "v1", repo="repo", week="2026W01")
+        cache.set("cat", "owner", "v2", repo="repo", week="2026W02")
+        info = cache.get_entry_info("cat", "owner", repo="repo")
+>       assert len(info["weeks"]) == 2
+E       AssertionError: assert 3 == 2
+E        +  where 3 = len(['2026W03', '2026W02', '2026W01'])
+
+tests\unit\test_cache.py:142: AssertionError
+_______________ TestAPICacheLatestWeek.test_get_returns_latest ________________
+
+self = <tests.unit.test_cache.TestAPICacheLatestWeek object at 0x0000027883455310>
+temp_cache_dir = 'C:\\Users\\markh\\AppData\\Local\\Temp\\tmpn_4_dgn3'
+
+    def test_get_returns_latest(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("cat", "owner", "old", repo="repo", week="2026W01")
+        cache.set("cat", "owner", "new", repo="repo", week="2026W02")
+        result = cache.get("cat", "owner", repo="repo")
+>       assert result == "new"
+E       AssertionError: assert 'v3' == 'new'
+E         
+E         - new
+E         + v3
+
+tests\unit\test_cache.py:191: AssertionError
+___________ TestAPICacheCollectGarbage.test_preserves_global_cache ____________
+
+self = <tests.unit.test_cache.TestAPICacheCollectGarbage object at 0x0000027883455A90>
+temp_cache_dir = 'C:\\Users\\markh\\AppData\\Local\\Temp\\tmp4mv30d49'
+
+    def test_preserves_global_cache(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("profile", "user", {"name": "test"})
+        cache.set("commits", "user", "data", repo="my-repo", week="2026W01")
+    
+        result = cache.collect_garbage("user", ["my-repo"])
+    
+>       assert result["removed_repos"] == []
+E       AssertionError: assert ['active-repo'] == []
+E         
+E         Left contains one more item: 'active-repo'
+E         Use -v to get more diff
+
+tests\unit\test_cache.py:276: AssertionError
+_________________ TestAPICacheCollectGarbage.test_no_orphans __________________
+
+self = <tests.unit.test_cache.TestAPICacheCollectGarbage object at 0x00000278833AF100>
+temp_cache_dir = 'C:\\Users\\markh\\AppData\\Local\\Temp\\tmp6iittqm_'
+
+    def test_no_orphans(self, temp_cache_dir):
+        cache = APICache(cache_dir=temp_cache_dir)
+        cache.set("commits", "user", "data", repo="repo1", week="2026W01")
+    
+        result = cache.collect_garbage("user", ["repo1"])
+    
+>       assert result["removed_repos"] == []
+E       AssertionError: assert ['RequestSpark'] == []
+E         
+E         Left contains one more item: 'RequestSpark'
+E         Use -v to get more diff
+
+tests\unit\test_cache.py:297: AssertionError
+______________ test_summarizer_ai_generation_and_model_fallback _______________
+
+tmp_path = WindowsPath('C:/Users/markh/AppData/Local/Temp/pytest-of-markh/pytest-18/test_summarizer_ai_generation_0')
+sample_repo = Repository(name='repo-one', description='Repository for tests', url='https://github.com/markhazleton/repo-one', create...': 'unavailable'}, active_alert_counts={'total_open': 0, 'critical': 0, 'high': 0, 'medium': 0, 'low': 0}, sources=[]))
+sample_commit_history = CommitHistory(repository_name='repo-one', total_commits=20, recent_90d=10, recent_180d=15, recent_365d=18, last_commit...54, tzinfo=datetime.timezone.utc), patterns=['active', 'recently_updated'], commit_frequency=3.33, consistency_score=0)
+
+    def test_summarizer_ai_generation_and_model_fallback(tmp_path, sample_repo, sample_commit_history):
+        cache = APICache(cache_dir=str(tmp_path / "cache"))
+        summarizer = RepositorySummarizer(cache=cache, enable_ai=False)
+    
+        class _NotFound(Exception):
+            pass
+    
+        class _Usage:
+            input_tokens = 100
+            output_tokens = 40
+    
+        class _Response:
+            content = [SimpleNamespace(text="ai summary")]
+            usage = _Usage()
+    
+        class _Messages:
+            def __init__(self):
+                self.calls = 0
+    
+            def create(self, model, max_tokens, messages):
+                self.calls += 1
+                if self.calls == 1:
+                    raise _NotFound("model not found")
+                return _Response()
+    
+        summarizer.anthropic = SimpleNamespace(messages=_Messages())
+        from spark import summarizer as summarizer_module
+    
+        original_not_found = summarizer_module.NotFoundError
+        summarizer_module.NotFoundError = _NotFound
+        try:
+            summary = summarizer._generate_ai_summary(
+                sample_repo,
+                "# README\ncontent",
+                sample_commit_history,
+                repository_owner="markhazleton",
+                repo_pushed_at=sample_repo.pushed_at,
+            )
+        finally:
+            summarizer_module.NotFoundError = original_not_found
+    
+>       assert summary.ai_summary == "ai summary"
+E       AssertionError: assert 'cached summary' == 'ai summary'
+E         
+E         - ai summary
+E         ?  ^
+E         + cached summary
+E         ? + ^^^^
+
+tests\unit\test_coverage_remediation.py:301: AssertionError
+_____________________ test_fetch_user_profile_from_github _____________________
+
+fetcher = <spark.fetcher.GitHubFetcher object at 0x0000027886B77290>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000027886C86AC0>
+
+    def test_fetch_user_profile_from_github(fetcher, monkeypatch):
+        now = datetime.now(timezone.utc)
+        user = SimpleNamespace(
+            login="markhazleton",
+            name=None,
+            bio="bio",
+            company="company",
+            location="location",
+            email="email@example.com",
+            avatar_url="https://example/avatar.png",
+            html_url="https://github.com/markhazleton",
+            public_repos=3,
+            followers=1,
+            following=2,
+            created_at=now,
+            updated_at=now,
+        )
+        monkeypatch.setattr(fetcher.github, "get_user", lambda username: user)
+    
+        profile = fetcher.fetch_user_profile("markhazleton")
+    
+>       assert profile["username"] == "markhazleton"
+E       AssertionError: assert 'cached' == 'markhazleton'
+E         
+E         - markhazleton
+E         + cached
+
+tests\unit\test_fetcher.py:211: AssertionError
+============================== warnings summary ===============================
+tests/unit/test_coverage_remediation.py::test_unified_workflow_fetch_generate_report_paths
+tests/unit/test_unified_report_workflow.py::test_workflow_tracks_cache_hit_count
+  C:\GitHub\MarkHazleton\github-stats-spark\src\spark\unified_report_workflow.py:324: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    fetch_timestamp=datetime.utcnow(),
+
+tests/unit/test_coverage_remediation.py::test_unified_workflow_fetch_generate_report_paths
+  C:\GitHub\MarkHazleton\github-stats-spark\src\spark\unified_report_workflow.py:691: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    timestamp=datetime.utcnow(),
+
+tests/unit/test_coverage_remediation.py::test_unified_workflow_execute_and_internal_branches
+  C:\GitHub\MarkHazleton\github-stats-spark\tests\unit\test_coverage_remediation.py:521: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    fetch_timestamp=datetime.utcnow(),
+
+tests/unit/test_coverage_remediation.py::test_unified_workflow_execute_and_internal_branches
+  C:\GitHub\MarkHazleton\github-stats-spark\tests\unit\test_coverage_remediation.py:532: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    timestamp=datetime.utcnow(),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.14.2-final-0 _______________
+
+Name                                    Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------
+src\spark\__init__.py                       5      0   100%
+src\spark\cache.py                        330     57    83%   43-45, 50, 57-65, 89-91, 101-102, 145-146, 225-231, 239-244, 316-320, 344-346, 354-355, 372-373, 428, 435, 451-455, 499, 507, 510, 517-519, 523-526, 532-533
+src\spark\cache_manager.py                121     30    75%   87-96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 191, 194, 208, 211, 214, 217, 220, 223, 260-261, 267-270, 299, 320
+src\spark\cache_refresh_executor.py       286    253    12%   43-99, 102-137, 140-160, 163-190, 193-254, 257-307, 310-398, 401-434, 437-470
+src\spark\cache_refresh_strategy.py        12      2    83%   23, 35
+src\spark\cache_repository_filter.py       14     11    21%   8-20, 25
+src\spark\cache_status.py                 111     97    13%   32-108, 140-198, 211-222, 235-258, 274-286
+src\spark\calculator.py                   420     40    90%   32-33, 39-40, 155, 164, 183-185, 260, 313, 375-376, 393, 396-401, 427-428, 441, 488, 492-494, 498, 528, 605-606, 626, 631, 646, 661, 676, 712, 802, 830, 885, 890, 948
+src\spark\classifier.py                    66      0   100%
+src\spark\cli.py                           31     14    55%   36-47, 50, 54
+src\spark\cli_argument_builders.py         67      0   100%
+src\spark\cli_handlers.py                 617    601     3%   21-271, 276-285, 290-354, 359-575, 580-613, 618-655, 660-705, 710-735, 740-896, 901-928
+src\spark\cli_output_layout.py             18      1    94%   31
+src\spark\config.py                       112     30    73%   50-51, 56, 99, 101, 139, 176, 195-197, 225, 248-280
+src\spark\dashboard_generator.py          128     81    37%   87-88, 124-194, 214-283, 332-352, 364-369
+src\spark\dependencies\__init__.py          3      0   100%
+src\spark\dependencies\analyzer.py        188    152    19%   55-57, 65-85, 93-142, 150-168, 177-201, 225-255, 270-294, 304-306, 338-402
+src\spark\dependencies\parser.py          166     50    70%   22-23, 37, 68-72, 91-95, 170-175, 180-182, 246-296
+src\spark\exceptions.py                    20      9    55%   43-45, 74-77, 85-86
+src\spark\fetcher.py                      508     47    91%   201-203, 226-244, 339, 406-407, 418, 433-434, 456-460, 583-584, 587, 598-600, 653, 664, 735-737, 851-853, 866-868, 986-991, 998-1003, 1060-1065, 1072-1077, 1097
+src\spark\logger.py                        29      1    97%   73
+src\spark\models\__init__.py                8      0   100%
+src\spark\models\commit.py                 73      0   100%
+src\spark\models\dashboard_data.py         64     16    75%   31, 88, 150, 173, 211, 226, 235-236, 248-258, 274-275, 287-288
+src\spark\models\github_data.py            19      4    79%   46-47, 56, 64
+src\spark\models\profile.py                64      8    88%   25, 92, 113, 117, 121, 125, 129, 183
+src\spark\models\report.py                102     17    83%   38, 98-100, 108-109, 119, 131, 150, 239-244, 256, 260, 266, 273, 277, 287, 315
+src\spark\models\repository.py            167     19    89%   203, 212, 252, 385-386, 399-400, 407-408, 418-419, 426-427, 438-441, 452-453
+src\spark\models\summary.py                49     13    73%   42, 45-46, 62, 66-69, 87, 91-108
+src\spark\models\tech_stack.py             77     22    71%   36, 132-134, 143, 152-154, 159-161, 166-168, 179-189, 197
+src\spark\ranker.py                       130      4    97%   62, 93-94, 294
+src\spark\refresh.py                      112    112     0%   3-237
+src\spark\report_generator.py             168     31    82%   169, 171, 173-177, 179, 181-182, 187, 189, 191, 193, 195-196, 200-214, 240, 242
+src\spark\screenshot.py                   132    132     0%   7-358
+src\spark\summarizer.py                   275     51    81%   26-27, 88-95, 150-162, 231-301, 450-457, 549, 558, 805, 890
+src\spark\themes\__init__.py               33      8    76%   14, 20, 26, 32, 38, 44, 53, 65
+src\spark\themes\custom.py                 35      5    86%   32, 37, 42, 47, 74
+src\spark\themes\spark_dark.py             23      1    96%   12
+src\spark\themes\spark_light.py            23      1    96%   12
+src\spark\time_utils.py                     8      0   100%
+src\spark\unified_data_generator.py       344     21    94%   138, 302, 364-365, 432, 506-509, 511, 513, 611, 626-628, 648-650, 802-803, 867
+src\spark\unified_report_generator.py     152    152     0%   3-342
+src\spark\unified_report_workflow.py      274     61    78%   140-142, 153, 160-167, 199-205, 242-247, 259-264, 277-278, 292-301, 310-312, 329-330, 339, 354, 356, 359, 361, 364, 425-432, 444-445, 452-453, 468-470, 529-534, 610-611, 637, 659-661, 705-708
+src\spark\visualizer.py                   335     66    80%   676-679, 683, 685, 687, 693, 695, 699, 703, 705, 707, 713, 715, 717, 724, 726, 730, 734, 736, 738, 740, 753, 909-951, 963-1008, 1022, 1027
+---------------------------------------------------------------------
+TOTAL                                    5919   2220    62%
+=========================== short test summary info ===========================
+FAILED tests/unit/test_cache.py::TestAPICache::test_hierarchical_storage - As...
+FAILED tests/unit/test_cache.py::TestAPICacheGetEntryInfo::test_multiple_weeks
+FAILED tests/unit/test_cache.py::TestAPICacheLatestWeek::test_get_returns_latest
+FAILED tests/unit/test_cache.py::TestAPICacheCollectGarbage::test_preserves_global_cache
+FAILED tests/unit/test_cache.py::TestAPICacheCollectGarbage::test_no_orphans
+FAILED tests/unit/test_coverage_remediation.py::test_summarizer_ai_generation_and_model_fallback
+FAILED tests/unit/test_fetcher.py::test_fetch_user_profile_from_github - Asse...
+7 failed, 424 passed, 5 warnings in 10.44s
