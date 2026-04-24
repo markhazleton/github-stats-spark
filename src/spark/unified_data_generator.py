@@ -22,6 +22,7 @@ Constitutional Requirements:
 - Zero API calls on second run if no repos changed
 """
 
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -635,14 +636,25 @@ class UnifiedDataGenerator:
 
             summary_payload = None
             if cached_summary and cached_summary.get("ai_summary"):
+                raw_ai = cached_summary.get("ai_summary")
+                pi_data = None
+                display_text = raw_ai
+                try:
+                    parsed = json.loads(raw_ai)
+                    if isinstance(parsed, dict) and "role" in parsed:
+                        pi_data = parsed
+                        display_text = parsed.get("positioning") or parsed.get("what") or raw_ai
+                except (json.JSONDecodeError, ValueError):
+                    pass
                 summary_payload = {
-                    "text": cached_summary.get("ai_summary"),
+                    "text": display_text,
                     "ai_generated": True,
                     "generation_method": cached_summary.get("generation_method"),
                     "generated_at": cached_summary.get("generation_timestamp"),
                     "model_used": cached_summary.get("model_used"),
                     "tokens_used": cached_summary.get("tokens_used"),
                     "confidence_score": cached_summary.get("confidence_score"),
+                    "portfolio_intelligence": pi_data,
                 }
             else:
                 fallback_summary = summarizer.summarize_repository(
@@ -676,10 +688,16 @@ class UnifiedDataGenerator:
                 else None
             )
 
+            _pi = summary_payload.get("portfolio_intelligence") if summary_payload else None
+
             repo_dict = {
                 "name": repo.name,
                 "description": repo.description,
                 "summary": summary_payload,
+                "portfolio_role": _pi.get("role") if _pi else None,
+                "portfolio_signal": _pi.get("signal") if _pi else None,
+                "portfolio_action": _pi.get("action") if _pi else None,
+                "portfolio_positioning": _pi.get("positioning") if _pi else None,
                 "url": repo.url,
                 "homepage": repo.homepage,  # Custom website URL from repo settings
                 "has_pages": repo.has_pages,  # GitHub Pages enabled

@@ -236,7 +236,7 @@ class RepositorySummarizer:
             try:
                 response = self.anthropic.messages.create(
                     model=candidate_model,
-                    max_tokens=1500,  # Detailed summary
+                    max_tokens=600,  # Structured JSON response
                     messages=[{"role": "user", "content": prompt}],
                 )
                 active_model = candidate_model
@@ -405,73 +405,101 @@ class RepositorySummarizer:
         language_stats: Optional[Dict[str, int]] = None,
         tech_stack: Optional["TechnologyStack"] = None,
     ) -> str:
-        """Build prompt for Claude API with comprehensive repository statistics.
+        """Build portfolio intelligence prompt for Claude API.
 
-        Args:
-            repo: Repository object
-            readme: README content
-            commit_history: CommitHistory object
-            language_stats: Language statistics dict
-            tech_stack: TechnologyStack with dependency info
-
-        Returns:
-            Prompt string
+        Returns structured JSON evaluating the repository's role and signal
+        in the engineer's portfolio rather than a plain descriptive summary.
         """
-        prompt = f"""Analyze this GitHub repository and provide a detailed technical summary.
+        context = (
+            f"Repository: {repo.name}\n"
+            f"Primary Language: {repo.primary_language or 'Unknown'}\n"
+            f"Stars: {repo.stars} | Forks: {repo.forks} | Contributors: {repo.contributors_count}\n"
+            f"Size: {repo.size_kb} KB | Created: {repo.created_at.strftime('%Y-%m-%d') if repo.created_at else 'Unknown'}\n"
+        )
 
-Repository: {repo.name}
-Primary Language: {repo.primary_language or 'Unknown'}
-Stars: {repo.stars} | Forks: {repo.forks} | Contributors: {repo.contributors_count}
-Size: {repo.size_kb} KB | Created: {repo.created_at.strftime('%Y-%m-%d') if repo.created_at else 'Unknown'}
-"""
-
-        # Add language breakdown
         if language_stats:
             total_bytes = sum(language_stats.values())
             top_langs = sorted(language_stats.items(), key=lambda x: x[1], reverse=True)[:5]
-            lang_breakdown = ", ".join([f"{lang} ({bytes/total_bytes*100:.1f}%)" for lang, bytes in top_langs])
-            prompt += f"Languages: {lang_breakdown}\n"
+            lang_breakdown = ", ".join(
+                [f"{lang} ({b / total_bytes * 100:.1f}%)" for lang, b in top_langs]
+            )
+            context += f"Languages: {lang_breakdown}\n"
 
-        # Add commit activity patterns
         if commit_history:
-            prompt += f"Recent Activity: {commit_history.recent_90d} commits (90d), {commit_history.recent_365d} commits (365d)\n"
+            context += (
+                f"Recent Activity: {commit_history.recent_90d} commits (90d), "
+                f"{commit_history.recent_365d} commits (365d)\n"
+            )
             if commit_history.patterns:
-                prompt += f"Activity Patterns: {', '.join(commit_history.patterns)}\n"
+                context += f"Activity Patterns: {', '.join(commit_history.patterns)}\n"
 
-        # Add quality indicators
-        quality_indicators = []
-        if repo.has_tests:
-            quality_indicators.append("tests")
-        if repo.has_ci_cd:
-            quality_indicators.append("CI/CD")
-        if repo.has_license:
-            quality_indicators.append("license")
-        if repo.has_docs:
-            quality_indicators.append("documentation")
+        quality_indicators = [
+            label
+            for flag, label in [
+                (repo.has_tests, "tests"),
+                (repo.has_ci_cd, "CI/CD"),
+                (repo.has_license, "license"),
+                (repo.has_docs, "documentation"),
+            ]
+            if flag
+        ]
         if quality_indicators:
-            prompt += f"Quality Indicators: {', '.join(quality_indicators)}\n"
+            context += f"Quality Indicators: {', '.join(quality_indicators)}\n"
 
-        # Add dependency/tech stack info
         if tech_stack and tech_stack.dependencies:
-            dep_count = len(tech_stack.dependencies)
             frameworks = [dep.name for dep in tech_stack.dependencies][:5]
             if frameworks:
-                prompt += f"Key Dependencies ({dep_count} total): {', '.join(frameworks)}\n"
+                context += (
+                    f"Key Dependencies ({len(tech_stack.dependencies)} total): "
+                    f"{', '.join(frameworks)}\n"
+                )
             if tech_stack.currency_score is not None:
-                prompt += f"Tech Stack Currency: {tech_stack.currency_score}/100\n"
+                context += f"Tech Stack Currency: {tech_stack.currency_score}/100\n"
 
-        prompt += f"\nREADME:\n{readme}\n\n"
-        prompt += """Provide a comprehensive technical summary (4-6 sentences) that:
-1. Explains what the repository does and its main purpose
-2. Describes key features, capabilities, or functionality
-3. Mentions technologies, frameworks, languages, or tools used
-4. Notes architectural patterns or design approaches if evident
-5. Highlights what makes it unique or noteworthy
-6. Mentions target users or use cases if applicable
+        return f"""You are analyzing a GitHub repository as part of a portfolio intelligence system.
 
-Be informative and technical. Focus on giving readers a clear understanding of the project's scope and value."""
+Your goal is NOT to simply describe the repository.
+Your goal is to evaluate how this repository contributes to an engineer's professional signal.
 
-        return prompt
+Context about the engineer:
+- Focuses on spec-driven development, AI-integrated systems, and real-world application architecture
+- Portfolio contains many repositories accumulated over time
+- Goal is to distinguish signal (meaningful, current work) from noise (outdated or low-value artifacts)
+
+Repository data:
+{context}
+README:
+{readme}
+
+Analyze using this framework and respond with ONLY valid JSON — no explanation, no markdown fences:
+
+{{
+  "what": "Concise 1-2 sentence description of what this repository is",
+  "why": "The purpose beyond functionality — what idea, concept, or pattern does it explore",
+  "role": "CORE | SUPPORTING | ARCHIVE",
+  "signal": "HIGH | MEDIUM | LOW",
+  "relevance": "How this repository supports spec-driven development, AI-integrated systems, or real-world application architecture",
+  "action": "FEATURE | KEEP | ARCHIVE | CONSIDER_PRIVATE",
+  "positioning": "A single sentence suitable for a README that explains this repo's role in the portfolio"
+}}
+
+Role definitions:
+- CORE: central to current positioning, actively relevant, represents primary expertise
+- SUPPORTING: demonstrates a useful concept but not central to positioning
+- ARCHIVE: outdated, experimental, or no longer aligned with current direction
+
+Signal definitions:
+- HIGH: recent activity, deep system work, directly relevant to current focus
+- MEDIUM: moderately recent or relevant, demonstrates real competence
+- LOW: older, simple demo, or tangential to main focus
+
+Action definitions:
+- FEATURE: should be highlighted in portfolio
+- KEEP: keep public but not emphasized
+- ARCHIVE: label as archived or de-emphasize
+- CONSIDER_PRIVATE: actively detracts from positioning
+
+Respond with ONLY the JSON object. No markdown, no explanation."""
 
     def _truncate_readme(self, readme: str) -> str:
         """Truncate README to fit within token limits.
