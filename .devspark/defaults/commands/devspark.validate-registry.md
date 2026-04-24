@@ -70,4 +70,3 @@ Status: PASS / FAIL
 
 - This command is read-only — no files may be created or modified
 - Usable in CI pipelines as a pre-merge check
-

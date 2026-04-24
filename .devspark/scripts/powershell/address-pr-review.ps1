@@ -130,4 +130,3 @@ else {
         Write-Output "- $($finding.id) (line $($finding.line_number))"
     }
 }
-

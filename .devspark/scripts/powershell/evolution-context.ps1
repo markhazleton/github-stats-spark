@@ -169,4 +169,3 @@ else {
     Write-Output "Action: $action"
     Write-Output "Next Proposal ID: $nextCapId"
 }
-

@@ -541,4 +541,3 @@ if (-not $DryRun) {
     Write-Host ""
     Write-ColorOutput "Need help? See .documentation\upgrade.md" "Cyan"
 }
-

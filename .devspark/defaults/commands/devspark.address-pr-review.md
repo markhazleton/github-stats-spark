@@ -4,9 +4,6 @@ handoffs:
   - label: Re-Review Updated PR
     agent: devspark.pr-review
     prompt: Run /devspark.pr-review UPDATE for this PR after fixes are committed
-scripts:
-  sh: pwsh -File .devspark/scripts/powershell/address-pr-review.ps1 -PrId $ARGUMENTS -Json
-  ps: .devspark/scripts/powershell/address-pr-review.ps1 -PrId $ARGUMENTS -Json
 ---
 
 ## User Input
@@ -36,9 +33,9 @@ This command is the **author-side companion** to `/devspark.pr-review`. It helps
 
 ### Phase 0 — Load context
 
-> **Script Resolution**: Before running `{SCRIPT}`, apply the 2-tier override check for PowerShell only — if `.documentation/scripts/powershell/address-pr-review.ps1` exists on disk, run that file instead, preserving all arguments. Team override in `.documentation/scripts/powershell/` takes priority over `.devspark/scripts/powershell/`.
+> **Script Resolution**: Before running `.devspark/scripts/powershell/address-pr-review.ps1 -PrId $ARGUMENTS -Json`, apply the 2-tier override check for PowerShell only — if `.documentation/scripts/powershell/address-pr-review.ps1` exists on disk, run that file instead, preserving all arguments. Team override in `.documentation/scripts/powershell/` takes priority over `.devspark/scripts/powershell/`.
 
-1. Run `{SCRIPT}` with `-PrId {PR_ID} -Json`.
+1. Run `.devspark/scripts/powershell/address-pr-review.ps1 -PrId $ARGUMENTS -Json` with `-PrId {PR_ID} -Json`.
 2. Fail fast if `/.documentation/specs/pr-review/pr-{PR_ID}.md` is missing.
 3. Parse open findings from checklist lines matching:
    - `- [ ] **C-##**`
@@ -172,4 +169,3 @@ findings:
 ```
 
 inding_id MUST be stable across re-runs when the underlying issue is unchanged. xecution_mode MUST be one of: `auto` (safe to apply automatically), `selective` (apply with reviewer approval), `manual` (requires human implementation). The `status` and `outcome` fields are written by `/devspark.address-pr-review` (FR-028).
-

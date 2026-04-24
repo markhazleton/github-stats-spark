@@ -98,4 +98,3 @@ if ($Check) {
 
 Write-Host "Generated/updated $generated atomic-prompt shim(s) under templates/prompts/atomic/."
 exit 0
-

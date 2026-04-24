@@ -64,4 +64,3 @@ if ($Json) {
     Write-Output "BRANCH: $($paths.CURRENT_BRANCH)"
     Write-Output "HAS_GIT: $($paths.HAS_GIT)"
 }
-

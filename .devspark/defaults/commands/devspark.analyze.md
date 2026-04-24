@@ -7,9 +7,6 @@ handoffs:
   - label: Revise Plan
     agent: devspark.plan
     prompt: Revise plan to address analysis findings
-scripts:
-  sh: .devspark/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks
-  ps: .devspark/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks
 ---
 
 ## User Input
@@ -38,9 +35,9 @@ Read the YAML frontmatter in `spec.md` before analyzing. Treat `classification`,
 
 ### 1. Initialize Analysis Context
 
-> **Script Resolution**: Before running `{SCRIPT}`, apply the 2-tier override check — if `.documentation/scripts/powershell/<filename>` (PowerShell) or `.documentation/scripts/bash/<filename>` (Bash) exists on disk, run that file instead, preserving all arguments. Team overrides in `.documentation/scripts/` always take priority over `.devspark/scripts/`.
+> **Script Resolution**: Before running `.devspark/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks`, apply the 2-tier override check — if `.documentation/scripts/powershell/<filename>` (PowerShell) or `.documentation/scripts/bash/<filename>` (Bash) exists on disk, run that file instead, preserving all arguments. Team overrides in `.documentation/scripts/` always take priority over `.devspark/scripts/`.
 
-Run `{SCRIPT}` once from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS. Derive absolute paths:
+Run `.devspark/scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks` once from repo root and parse JSON for FEATURE_DIR and AVAILABLE_DOCS. Derive absolute paths:
 
 - SPEC = FEATURE_DIR/spec.md
 - PLAN = FEATURE_DIR/plan.md
@@ -214,7 +211,7 @@ After producing the report:
 
 ## Context
 
-{ARGS}
+$ARGUMENTS
 
 ## Shared Review Resolution Contract Output
 
@@ -232,4 +229,3 @@ findings:
 ```
 
 inding_id MUST be stable across re-runs when the underlying issue is unchanged. xecution_mode MUST be one of: `auto` (safe to apply automatically), `selective` (apply with reviewer approval), `manual` (requires human implementation). The `status` and `outcome` fields are written by `/devspark.address-pr-review` (FR-028).
-

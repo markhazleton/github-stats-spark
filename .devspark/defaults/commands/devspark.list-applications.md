@@ -38,4 +38,3 @@ Read and display the DevSpark multi-app registry. This is a **read-only** comman
 
 - This command is read-only — no files may be created or modified
 - If no registry exists, say so and exit cleanly
-

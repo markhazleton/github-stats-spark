@@ -435,4 +435,3 @@ if ($Json) {
     }
     Write-Output "Review will be saved to: $reviewDir\pr-$prNumber_int.md"
 }
-

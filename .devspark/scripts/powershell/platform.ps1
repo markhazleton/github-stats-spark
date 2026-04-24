@@ -144,4 +144,3 @@ function Resolve-DevSparkScript {
 
     return $null
 }
-

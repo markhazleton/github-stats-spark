@@ -1,5 +1,9 @@
 ---
 description: Draft or update a spec-aware pull request with task, checklist, and gate visibility before review.
+handoffs:
+  - label: Review Pull Request
+    agent: devspark.pr-review
+    prompt: Review the pull request for constitution compliance
 ---
 
 ## Prompt Resolution
