@@ -1,12 +1,100 @@
-# Stats Spark ⚡
+# GitHub Stats Spark ⚡
 
-> Automated GitHub profile statistics generator with beautiful SVG visualizations and AI-powered repository analysis
+> Portfolio Intelligence System — analyze, classify, and curate the engineering signal in your GitHub profile
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
-**📊 [View Sample Analysis Report](output/users/markhazleton/reports/markhazleton-analysis.md)** - See real-world output with AI-powered insights
-**🎨 [View Interactive Dashboard](https://markhazleton.github.io/github-stats-spark/)** - Explore repositories with live visualizations
+**📊 [View Sample Analysis Report](output/users/markhazleton/reports/markhazleton-analysis.md)** · **🎨 [View Interactive Dashboard](https://markhazleton.github.io/github-stats-spark/)**
+
+---
+
+## What This Is
+
+GitHub Stats Spark is a **portfolio intelligence system** that classifies your public GitHub repositories into three tiers — Core, Supporting, and Archive — based on commit activity, recency, and quality signals. It computes a signal score (0–100) for each repository and exports enriched data that can be embedded anywhere without additional transformation.
+
+Most GitHub profiles accumulate over time, creating noise that obscures real expertise. This system applies structured analysis to identify core systems, highlight meaningful work, and de-emphasize outdated experiments.
+
+> Your GitHub profile is not a history of what you've built. It is a system that communicates how you think.
+
+---
+
+## Why It Exists
+
+Generic GitHub stats tools report activity. This system interprets it. The goal is not to track how much you've committed — it's to help you understand what your repository portfolio communicates to recruiters, collaborators, and future employers.
+
+---
+
+## Core Idea
+
+A GitHub profile is a communication system, not an archive. Every repository either strengthens or weakens the signal of your expertise. This system makes that signal explicit:
+
+- **Core**: Actively maintained, high-quality systems that represent your current capabilities
+- **Supporting**: Complementary projects that demonstrate breadth without being central
+- **Archive**: Historical work and experiments that provide context but should not dominate perception
+
+---
+
+## How It Works
+
+```text
+GitHub API (public repos only)
+        ↓
+Repository Filter (non-forked, public)
+        ↓
+Classification Engine (rule-based thresholds)
+  ├── config/portfolio.yml overrides (manual)
+  └── Automated rules: recency + commit volume + quality indicators
+        ↓
+Signal Score Formula (0–100)
+  └── Equal weight: recency (33%) + 90-day commits (33%) + tier score (34%)
+        ↓
+Enriched JSON Output + SVG Visualizations
+```
+
+---
+
+## Output
+
+Each repository in `data/repositories.json` receives four new fields:
+
+| Field | Type | Description |
+|---|---|---|
+| `classification` | string | `core` / `supporting` / `archive` |
+| `signal_score` | integer | 0–100 portfolio signal strength |
+| `relevance` | string | `high` / `medium` / `low` |
+| `notes` | string | Context phrase from config or auto-generated |
+
+Two new SVG visualizations are generated:
+- **Portfolio Breakdown** — Core/Supporting/Archive distribution chart
+- **Signal Distribution** — Repositories ranked by signal score
+
+---
+
+## Classifying Your Portfolio
+
+Edit `config/portfolio.yml` to override the automated classification for any repository:
+
+```yaml
+repos:
+  devspark: core
+  TailwindSpark: core
+  BootstrapSpark: supporting
+  "*": archive    # default for all others
+```
+
+The system applies your overrides first, then falls back to automated rules. Missing or malformed config logs a warning and proceeds — it never fails.
+
+---
+
+## Relationship to DevSpark Ecosystem
+
+| Project | Role |
+|---|---|
+| DevSpark | Build systems with spec-driven development |
+| DocSpecSpark | Define systems with structured specifications |
+| RepoSpark | Curate systems across repositories |
+| **GitHub Stats Spark** | **Analyze systems — portfolio intelligence** |
 
 ---
 

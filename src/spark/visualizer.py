@@ -1,9 +1,9 @@
 """SVG visualization generation for GitHub statistics.
 
-# SIZE JUSTIFICATION (Constitution I — ~913 LOC as of 2026-04-02):
-# Every SVG category (overview, heatmap, languages, streaks, fun, release)
-# shares core drawing helpers (coordinate math, color resolution, glow
-# effects, WCAG-compliant theme application) that would be duplicated if
+# SIZE JUSTIFICATION (Constitution I — ~913 LOC as of 2026-04-02, ~870 as of 2026-04-24):
+# Every SVG category (overview, heatmap, languages, streaks, fun, release,
+# portfolio) shares core drawing helpers (coordinate math, color resolution,
+# glow effects, WCAG-compliant theme application) that would be duplicated if
 # split across files.  The single-module design keeps WCAG AA validation
 # applied uniformly to all outputs (Constitution §V).  Planned split into
 # per-category modules once helpers are extracted — tracked in CAP-2026-003.
@@ -892,6 +892,119 @@ class StatisticsVisualizer:
             opacity=0.7,
         ))
 
+        return dwg.tostring()
+
+    def generate_portfolio_breakdown(self, repos: List[Dict[str, Any]]) -> str:
+        """Generate portfolio breakdown SVG (Core/Supporting/Archive counts).
+
+        Uses theme.accent/secondary/border colors — all WCAG AA compliant per
+        theme validation enforced at theme load time (Constitution §V).
+
+        Args:
+            repos: List of repo dicts containing a 'classification' field.
+
+        Returns:
+            SVG string.
+        """
+        width, height = 600, 200
+        dwg = svgwrite.Drawing(size=(f"{width}px", f"{height}px"))
+        dwg.add(dwg.rect(insert=(0, 0), size=(f"{width}px", f"{height}px"),
+                         fill=self.theme.background_color))
+
+        counts = {"core": 0, "supporting": 0, "archive": 0}
+        for r in repos:
+            tier = (r.get("classification") or "archive").lower()
+            if tier in counts:
+                counts[tier] += 1
+        total = sum(counts.values()) or 1
+
+        tier_colors = {
+            "core": self.theme.accent_color if hasattr(self.theme, "accent_color") else "#0366d6",
+            "supporting": self.theme.secondary_color if hasattr(self.theme, "secondary_color") else "#28a745",
+            "archive": self.theme.border_color,
+        }
+        tier_labels = {"core": "Core", "supporting": "Supporting", "archive": "Archive"}
+
+        dwg.add(dwg.text("Portfolio Signal Tiers", insert=(width / 2, 28),
+                         text_anchor="middle", font_size="16px",
+                         font_family="Arial, sans-serif",
+                         fill=self.theme.primary_color, font_weight="bold"))
+
+        bar_top, bar_height = 50, 40
+        x = 30
+        for tier in ("core", "supporting", "archive"):
+            bar_w = max(1, (counts[tier] / total) * (width - 60))
+            dwg.add(dwg.rect(insert=(x, bar_top), size=(bar_w, bar_height),
+                             fill=tier_colors[tier], rx=4))
+            dwg.add(dwg.text(
+                f"{tier_labels[tier]}: {counts[tier]} ({counts[tier] / total * 100:.0f}%)",
+                insert=(x + 6, bar_top + bar_height + 18),
+                font_size="12px", font_family="Arial, sans-serif",
+                fill=self.theme.primary_color,
+            ))
+            x += bar_w
+
+        dwg.add(dwg.text("⚡ Generated with Stats Spark",
+                         insert=(width - 10, height - 8), text_anchor="end",
+                         font_size="10px", font_family="Arial, sans-serif",
+                         fill=self.theme.border_color, opacity=0.7))
+        return dwg.tostring()
+
+    def generate_signal_distribution(self, repos: List[Dict[str, Any]], top_n: int = 20) -> str:
+        """Generate signal distribution SVG (repos ranked by signal_score).
+
+        Args:
+            repos: List of repo dicts with 'signal_score' and 'classification'.
+            top_n: Maximum repos to display (default 20).
+
+        Returns:
+            SVG string.
+        """
+        ranked = sorted(
+            [r for r in repos if r.get("signal_score") is not None],
+            key=lambda r: r.get("signal_score", 0),
+            reverse=True,
+        )[:top_n]
+
+        row_h = 22
+        width = 600
+        height = len(ranked) * row_h + 60
+        dwg = svgwrite.Drawing(size=(f"{width}px", f"{height}px"))
+        dwg.add(dwg.rect(insert=(0, 0), size=(f"{width}px", f"{height}px"),
+                         fill=self.theme.background_color))
+
+        tier_colors = {
+            "core": self.theme.accent_color if hasattr(self.theme, "accent_color") else "#0366d6",
+            "supporting": self.theme.secondary_color if hasattr(self.theme, "secondary_color") else "#28a745",
+            "archive": self.theme.border_color,
+        }
+
+        dwg.add(dwg.text("Signal Distribution", insert=(width / 2, 22),
+                         text_anchor="middle", font_size="15px",
+                         font_family="Arial, sans-serif",
+                         fill=self.theme.primary_color, font_weight="bold"))
+
+        bar_x, name_x, max_bar = 150, 10, width - 170
+        for i, repo in enumerate(ranked):
+            y = 36 + i * row_h
+            score = repo.get("signal_score", 0)
+            tier = (repo.get("classification") or "archive").lower()
+            color = tier_colors.get(tier, self.theme.border_color)
+            bar_w = max(2, int(score / 100 * max_bar))
+
+            dwg.add(dwg.text(repo.get("name", "")[:22], insert=(name_x, y + 14),
+                             font_size="11px", font_family="Arial, sans-serif",
+                             fill=self.theme.primary_color))
+            dwg.add(dwg.rect(insert=(bar_x, y + 2), size=(bar_w, row_h - 6),
+                             fill=color, rx=3))
+            dwg.add(dwg.text(str(score), insert=(bar_x + bar_w + 4, y + 14),
+                             font_size="10px", font_family="Arial, sans-serif",
+                             fill=self.theme.primary_color))
+
+        dwg.add(dwg.text("⚡ Generated with Stats Spark",
+                         insert=(width - 10, height - 4), text_anchor="end",
+                         font_size="10px", font_family="Arial, sans-serif",
+                         fill=self.theme.border_color, opacity=0.7))
         return dwg.tostring()
 
 

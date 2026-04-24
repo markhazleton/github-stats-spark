@@ -19,9 +19,9 @@
 
 **Purpose**: Create `config/portfolio.yml` and wire it into the config system. No other phase can use classification overrides until this is complete.
 
-- [ ] T001 Create `config/portfolio.yml` with default wildcard (`"*": archive`) and four documented example overrides using the repos named in the spec: `devspark: core`, `TailwindSpark: core`, `PromptSpark.Chat: core`, `BootstrapSpark: supporting`
-- [ ] T002 Add `get_portfolio_config()` method to `SparkConfig` in `src/spark/config.py` — returns override dict; logs warning and returns `{}` on missing/malformed file
-- [ ] T003 Register `"portfolio"` as a valid stats category in `SparkConfig.VALID_STATS_CATEGORIES` in `src/spark/config.py`
+- [x] T001 Create `config/portfolio.yml` with default wildcard (`"*": archive`) and four documented example overrides using the repos named in the spec: `devspark: core`, `TailwindSpark: core`, `PromptSpark.Chat: core`, `BootstrapSpark: supporting`
+- [x] T002 Add `get_portfolio_config()` method to `SparkConfig` in `src/spark/config.py` — returns override dict; logs warning and returns `{}` on missing/malformed file
+- [x] T003 Register `"portfolio"` as a valid stats category in `SparkConfig.VALID_STATS_CATEGORIES` in `src/spark/config.py`
 
 ---
 
@@ -33,12 +33,12 @@
 
 > **FR-011 & FR-013 note**: Private repo exclusion (FR-011) and fork filtering (FR-013) are satisfied by pre-existing `exclude_private: true` / `exclude_forks: true` in `config/spark.yml`. No new tasks required for these requirements.
 
-- [ ] T004 Create `src/spark/classifier.py` — define `ClassificationResult` dataclass (fields: classification, signal_score, relevance, notes) and `RepositoryClassifier` class shell with `__init__(self, overrides: dict)` signature
-- [ ] T005 [P] Implement `RepositoryClassifier.classify(repo_dict, commits_90d, days_since_push, has_tests, has_ci_cd) -> ClassificationResult` using three-factor priority-ordered rules from spec FR-001 in `src/spark/classifier.py`
-- [ ] T006 [P] Implement `RepositoryClassifier.compute_signal_score(days_since_push, commits_90d, classification) -> int` using equal-weight formula (recency 33%, volume 33%, tier 34%) from spec FR-004 in `src/spark/classifier.py`
-- [ ] T007 [P] Implement `RepositoryClassifier.generate_notes(classification, commits_90d, override_notes) -> str` using tier-based phrase templates from data-model.md in `src/spark/classifier.py`
-- [ ] T008 [P] Add SIZE JUSTIFICATION comment to `src/spark/models/repository.py` (will cross 500 LOC after Phase 3 additions — document this proactively)
-- [ ] T009 Write unit tests in `tests/unit/test_classifier.py`: Core threshold boundary (pushed=89d, commits=5, has_ci_cd=True), Supporting boundary (pushed=364d, commits=0), Archive fallback, config override priority over rules, wildcard `"*"` default, signal score formula with known inputs, notes phrase for each tier
+- [x] T004 Create `src/spark/classifier.py` — define `ClassificationResult` dataclass (fields: classification, signal_score, relevance, notes) and `RepositoryClassifier` class shell with `__init__(self, overrides: dict)` signature
+- [x] T005 [P] Implement `RepositoryClassifier.classify(repo_dict, commits_90d, days_since_push, has_tests, has_ci_cd) -> ClassificationResult` using three-factor priority-ordered rules from spec FR-001 in `src/spark/classifier.py`
+- [x] T006 [P] Implement `RepositoryClassifier.compute_signal_score(days_since_push, commits_90d, classification) -> int` using equal-weight formula (recency 33%, volume 33%, tier 34%) from spec FR-004 in `src/spark/classifier.py`
+- [x] T007 [P] Implement `RepositoryClassifier.generate_notes(classification, commits_90d, override_notes) -> str` using tier-based phrase templates from data-model.md in `src/spark/classifier.py`
+- [x] T008 [P] Add SIZE JUSTIFICATION comment to `src/spark/models/repository.py` (will cross 500 LOC after Phase 3 additions — document this proactively)
+- [x] T009 Write unit tests in `tests/unit/test_classifier.py`: Core threshold boundary (pushed=89d, commits=5, has_ci_cd=True), Supporting boundary (pushed=364d, commits=0), Archive fallback, config override priority over rules, wildcard `"*"` default, signal score formula with known inputs, notes phrase for each tier
 
 **Checkpoint**: `RepositoryClassifier` is fully tested and deterministic. Integration into the data pipeline can begin.
 
@@ -52,12 +52,12 @@
 
 **Independent Test**: Load generated `data/repositories.json` — verify every non-forked public repo entry contains all four classification fields. Load dashboard — verify repos are grouped under Core, Supporting, Archive headers with visible signal scores.
 
-- [ ] T010 [US1] Extend `unified_data_generator.py` assembly phase: instantiate `RepositoryClassifier` with `SparkConfig.get_portfolio_config()` overrides; call `classifier.classify()` for each repo in the assembly loop
-- [ ] T011 [US1] Inject `classification`, `signal_score`, `relevance`, `notes` into each `repo_dict` in `unified_data_generator.py` (alongside existing `portfolio_role` AI fields); assert both `classification` (rule-based) and `portfolio_role` (AI, may be null) are present in a sample output entry to satisfy FR-001a
-- [ ] T012 [US1] Update SIZE JUSTIFICATION comment in `unified_data_generator.py` to reflect the additional ~30 LOC from T010–T011
-- [ ] T013 [P] [US1] Create `frontend/src/components/PortfolioBreakdown/` — Chart.js doughnut/bar showing Core/Supporting/Archive counts; compute counts client-side by grouping on the `classification` field per data-model.md `PortfolioBreakdown` shape (`{ core: { count, percentage }, supporting: { count, percentage }, archive: { count, percentage } }`)
-- [ ] T014 [P] [US1] Create `frontend/src/components/SignalDistribution/` — Chart.js horizontal bar chart ordered by `signal_score` descending; consumes `signal_score` and `classification` fields
-- [ ] T015 [US1] Add `PortfolioBreakdown` and `SignalDistribution` to `frontend/src/components/DashboardView/DashboardView.jsx`
+- [x] T010 [US1] Extend `unified_data_generator.py` assembly phase: instantiate `RepositoryClassifier` with `SparkConfig.get_portfolio_config()` overrides; call `classifier.classify()` for each repo in the assembly loop
+- [x] T011 [US1] Inject `classification`, `signal_score`, `relevance`, `notes` into each `repo_dict` in `unified_data_generator.py` (alongside existing `portfolio_role` AI fields); assert both `classification` (rule-based) and `portfolio_role` (AI, may be null) are present in a sample output entry to satisfy FR-001a
+- [x] T012 [US1] Update SIZE JUSTIFICATION comment in `unified_data_generator.py` to reflect the additional ~30 LOC from T010–T011
+- [x] T013 [P] [US1] Create `frontend/src/components/PortfolioBreakdown/` — Chart.js doughnut/bar showing Core/Supporting/Archive counts; compute counts client-side by grouping on the `classification` field per data-model.md `PortfolioBreakdown` shape (`{ core: { count, percentage }, supporting: { count, percentage }, archive: { count, percentage } }`)
+- [x] T014 [P] [US1] Create `frontend/src/components/SignalDistribution/` — Chart.js horizontal bar chart ordered by `signal_score` descending; consumes `signal_score` and `classification` fields
+- [x] T015 [US1] Add `PortfolioBreakdown` and `SignalDistribution` to `frontend/src/components/DashboardView/DashboardView.jsx`
 
 **Checkpoint**: User Story 1 fully functional — every repo classified, dashboard shows tier groups and signal scores.
 
@@ -69,9 +69,9 @@
 
 **Independent Test**: Edit `config/portfolio.yml` to set one repo as `core`, one as `archive`. Regenerate data. Verify `classification` fields match config regardless of automated rule result.
 
-- [ ] T016 [US2] Annotate `config/portfolio.yml` with inline YAML comments documenting all valid tier values (`core`, `supporting`, `archive`), wildcard `"*"` usage, and case-insensitivity note
-- [ ] T017 [US2] Verify the malformed-config warning path in `src/spark/classifier.py` and `src/spark/config.py` emits a message including the file path `config/portfolio.yml` (grep for the warning log call; add path if missing)
-- [ ] T018 [US2] Add acceptance scenario to `tests/unit/test_classifier.py`: given override `{"devspark": "core"}` + repo that would otherwise be Archive, assert `classification == "core"` and `relevance == "high"`
+- [x] T016 [US2] Annotate `config/portfolio.yml` with inline YAML comments documenting all valid tier values (`core`, `supporting`, `archive`), wildcard `"*"` usage, and case-insensitivity note
+- [x] T017 [US2] Verify the malformed-config warning path in `src/spark/classifier.py` and `src/spark/config.py` emits a message including the file path `config/portfolio.yml` (grep for the warning log call; add path if missing)
+- [x] T018 [US2] Add acceptance scenario to `tests/unit/test_classifier.py`: given override `{"devspark": "core"}` + repo that would otherwise be Archive, assert `classification == "core"` and `relevance == "high"`
 
 **Checkpoint**: User Story 2 complete — config overrides are respected and the graceful-degradation path is exercised.
 
@@ -83,11 +83,11 @@
 
 **Independent Test**: Open generated dashboard without prior context — verify narrative section appears above the fold, PortfolioBreakdown chart is visible without scrolling, and a Core repo shows a notes field explaining its significance.
 
-- [ ] T019 [US3] Add `portfolio_breakdown_svg(repos, theme)` method to `src/spark/visualizer.py` — bar/pie chart of Core/Supporting/Archive counts; use `theme["colors"]["accent"]` for Core, `theme["colors"]["secondary"]` for Supporting, `theme["colors"]["muted"]` for Archive (all from `config/themes.yml`; verify each passes WCAG AA 4.5:1 against the theme background)
-- [ ] T020 [US3] Add `signal_distribution_svg(repos, theme, top_n=20)` method to `src/spark/visualizer.py` — horizontal bar chart of top repos sorted by `signal_score` descending; apply the same `theme["colors"]` tier mapping from T019 for bar colors
-- [ ] T021 [US3] Check `visualizer.py` LOC after T019–T020 (depends on T019 and T020); if >500, add SIZE JUSTIFICATION comment explaining the single-class dispatch pattern
-- [ ] T022 [US3] Wire both SVG methods to generation pipeline in `src/spark/cli_handlers.py` under the `portfolio` stats category (follow existing `overview`/`heatmap` dispatch pattern)
-- [ ] T023 [US3] Add narrative section to dashboard frontend (hardcoded content per FR-010): "Most GitHub profiles accumulate over time…" positioning statement visible in first viewport section in `frontend/src/`
+- [x] T019 [US3] Add `portfolio_breakdown_svg(repos, theme)` method to `src/spark/visualizer.py` — bar/pie chart of Core/Supporting/Archive counts; use `theme["colors"]["accent"]` for Core, `theme["colors"]["secondary"]` for Supporting, `theme["colors"]["muted"]` for Archive (all from `config/themes.yml`; verify each passes WCAG AA 4.5:1 against the theme background)
+- [x] T020 [US3] Add `signal_distribution_svg(repos, theme, top_n=20)` method to `src/spark/visualizer.py` — horizontal bar chart of top repos sorted by `signal_score` descending; apply the same `theme["colors"]` tier mapping from T019 for bar colors
+- [x] T021 [US3] Check `visualizer.py` LOC after T019–T020 (depends on T019 and T020); if >500, add SIZE JUSTIFICATION comment explaining the single-class dispatch pattern
+- [x] T022 [US3] Wire both SVG methods to generation pipeline in `src/spark/cli_handlers.py` under the `portfolio` stats category (follow existing `overview`/`heatmap` dispatch pattern)
+- [x] T023 [US3] Add narrative section to dashboard frontend (hardcoded content per FR-010): "Most GitHub profiles accumulate over time…" positioning statement visible in first viewport section in `frontend/src/`
 
 **Checkpoint**: User Story 3 complete — visitor can understand portfolio positioning at a glance without scrolling.
 
@@ -99,9 +99,9 @@
 
 **Independent Test**: Read `data/repositories.json` directly — every repo entry has `classification` (string), `signal_score` (integer 0–100), `relevance` (string), `notes` (non-empty string). No transformation needed to render a classification summary.
 
-- [ ] T024 [P] [US4] Update `frontend/src/services/dataService.js` to surface `classification`, `signal_score`, `relevance`, `notes` fields alongside existing repo data
-- [ ] T025 [P] [US4] Add schema validation helper or assertion in the generation pipeline to verify 100% of non-forked public repos have all four classification fields (SC-003)
-- [ ] T026 [US4] Update `contracts/portfolio-json-schema.md` with final observed field types and any deviation from draft schema
+- [x] T024 [P] [US4] Update `frontend/src/services/dataService.js` to surface `classification`, `signal_score`, `relevance`, `notes` fields alongside existing repo data
+- [x] T025 [P] [US4] Add schema validation helper or assertion in the generation pipeline to verify 100% of non-forked public repos have all four classification fields (SC-003)
+- [x] T026 [US4] Update `contracts/portfolio-json-schema.md` with final observed field types and any deviation from draft schema
 
 **Checkpoint**: User Story 4 complete — JSON output is consumable without transformation.
 
@@ -109,9 +109,9 @@
 
 ## Phase 7: Polish & Cross-Cutting Concerns
 
-- [ ] T027 [P] Rewrite `README.md` per FR-014: sections = What This Is, Why It Exists, Core Idea, How It Works, Output, Relationship to DevSpark Ecosystem
-- [ ] T028 Verify `config/spark.yml` `scan.exclude_paths` covers all new generated output paths; update if any new directories were introduced
-- [ ] T029 [P] Run full generation pipeline end-to-end with `markhazleton` as test user; validate `data/repositories.json` contains classification fields for all repos; log and assert total elapsed time is under 5 minutes to satisfy SC-007
+- [x] T027 [P] Rewrite `README.md` per FR-014: sections = What This Is, Why It Exists, Core Idea, How It Works, Output, Relationship to DevSpark Ecosystem
+- [x] T028 Verify `config/spark.yml` `scan.exclude_paths` covers all new generated output paths; update if any new directories were introduced
+- [x] T029 [P] Run full generation pipeline end-to-end with `markhazleton` as test user; validate `data/repositories.json` contains classification fields for all repos; log and assert total elapsed time is under 5 minutes to satisfy SC-007
 
 ---
 

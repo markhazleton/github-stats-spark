@@ -10,7 +10,7 @@ import yaml
 class SparkConfig:
     """Manages Stats Spark configuration from YAML files."""
 
-    VALID_STATS_CATEGORIES = ["overview", "heatmap", "languages", "fun", "streaks", "release"]
+    VALID_STATS_CATEGORIES = ["overview", "heatmap", "languages", "fun", "streaks", "release", "portfolio"]
     BUILT_IN_THEMES = ["spark-dark", "spark-light"]
 
     def __init__(self, config_path: str = "config/spark.yml"):
@@ -226,6 +226,58 @@ class SparkConfig:
             if value is None:
                 return default
         return value
+
+    def get_portfolio_config(self) -> Dict[str, str]:
+        """Load classification overrides from config/portfolio.yml.
+
+        Returns:
+            Dict mapping repo name to tier ('core'/'supporting'/'archive').
+            Returns empty dict if file is missing or malformed.
+        """
+        import logging
+        logger = logging.getLogger(__name__)
+
+        portfolio_path = self.config_path.parent / "portfolio.yml"
+        if not portfolio_path.exists():
+            logger.warning(
+                "Portfolio config not found at %s — using automated classification only",
+                portfolio_path,
+            )
+            return {}
+
+        try:
+            with open(portfolio_path, "r", encoding="utf-8") as f:
+                raw = yaml.safe_load(f)
+        except Exception as exc:
+            logger.warning(
+                "Failed to parse %s (%s) — using automated classification only",
+                portfolio_path,
+                exc,
+            )
+            return {}
+
+        if not isinstance(raw, dict):
+            logger.warning(
+                "Portfolio config at %s is not a mapping — using automated classification only",
+                portfolio_path,
+            )
+            return {}
+
+        valid_tiers = {"core", "supporting", "archive"}
+        overrides: Dict[str, str] = {}
+        repos = raw.get("repos", {}) or {}
+        for name, tier in repos.items():
+            tier_lower = str(tier).lower().strip()
+            if tier_lower not in valid_tiers:
+                logger.warning(
+                    "Invalid tier '%s' for repo '%s' in %s — skipping entry",
+                    tier,
+                    name,
+                    portfolio_path,
+                )
+                continue
+            overrides[str(name)] = tier_lower
+        return overrides
 
     def get_github_api_version_config(self) -> Dict[str, Any]:
         """Get staged GitHub REST API version configuration.

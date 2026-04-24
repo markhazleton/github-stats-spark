@@ -1,12 +1,16 @@
 """Repository entity model for GitHub repository analysis.
 
-# SIZE JUSTIFICATION (Constitution I — ~522 LOC as of 2026-04-02):
+# SIZE JUSTIFICATION (Constitution I — ~522 LOC as of 2026-04-02, ~522 as of 2026-04-24):
 # The Repository dataclass accumulates schema 2.x enrichment fields
 # (attention metrics, security summary, pull request summary, bus factor,
 # tech stack) in one model to keep the data contract between the backend
 # pipeline and the frontend JSON schema in a single, diffable location.
 # Each schema version bump adds new optional fields here; splitting would
 # scatter the schema contract across files.
+# Note: portfolio intelligence classification fields (classification,
+# signal_score, relevance, notes) are computed properties injected into
+# repo_dict at generation time — they are NOT stored on this dataclass,
+# keeping this file under the 800 LOC hard limit.
 """
 
 from dataclasses import dataclass, field

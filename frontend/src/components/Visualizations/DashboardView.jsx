@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import StatCards from "./StatCards";
 import HealthChart from "./HealthChart";
 import LoadingState from "@/components/Common/LoadingState";
+import PortfolioBreakdown from "@/components/PortfolioBreakdown/PortfolioBreakdown";
+import SignalDistribution from "@/components/SignalDistribution/SignalDistribution";
 
 const BarChart = lazy(() => import("./BarChart"));
 const PieChart = lazy(() => import("./PieChart"));
@@ -68,6 +70,30 @@ export default function DashboardView({ repositories, profile, onRepoClick }) {
 
   return (
     <div className="dashboard-panels">
+      <section className="portfolio-intelligence-section">
+        <div className="portfolio-narrative">
+          <h2>Portfolio Intelligence</h2>
+          <p>
+            Most GitHub profiles accumulate over time, creating noise that
+            obscures real expertise. This system applies structured analysis to
+            identify core systems, highlight meaningful work, and de-emphasize
+            outdated experiments.
+          </p>
+          <blockquote>
+            Your GitHub profile is not a history of what you&apos;ve built.
+            It is a system that communicates how you think.
+          </blockquote>
+        </div>
+        <div className="portfolio-charts-row">
+          <div className="dashboard-panel">
+            <PortfolioBreakdown repositories={repositories} />
+          </div>
+          <div className="dashboard-panel dashboard-panel--wide">
+            <SignalDistribution repositories={repositories} onRepoClick={onRepoClick} />
+          </div>
+        </div>
+      </section>
+
       <StatCards repositories={repositories} profile={profile} />
 
       <div className="dashboard-grid">

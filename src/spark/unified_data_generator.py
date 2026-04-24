@@ -1,7 +1,7 @@
 """
 Unified Data Generator - Clean 4-Phase Architecture
 
-# SIZE JUSTIFICATION (Constitution I — ~831 LOC as of 2026-04-02):
+# SIZE JUSTIFICATION (Constitution I — ~831 LOC as of 2026-04-02, ~865 as of 2026-04-24):
 # The 4-phase pipeline (fetch → refresh → assemble → output) must live in a
 # single module to enforce the constitutional rule that cache reads are
 # strictly separated from API writes (§IV Change-Driven Caching).  Splitting
@@ -40,6 +40,7 @@ from spark.models import (
     UserProfile,
 )
 from spark.models.tech_stack import TechnologyStack, DependencyInfo
+from spark.classifier import RepositoryClassifier
 from spark.ranker import RepositoryRanker
 from spark.summarizer import RepositorySummarizer
 from spark.time_utils import sanitize_timestamp_for_filename
@@ -414,6 +415,9 @@ class UnifiedDataGenerator:
             config=self.config.config.get("analyzer", {})
         )
         summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False, model=self.config.get_ai_model())
+        # Load portfolio classification overrides once for the whole assembly run
+        _portfolio_overrides = self.config.get_portfolio_config()
+        classifier = RepositoryClassifier(overrides=_portfolio_overrides)
         
         for i, repo_data in enumerate(raw_repos[:self.max_repositories], 1):
             repo_name = repo_data["name"]
@@ -690,10 +694,25 @@ class UnifiedDataGenerator:
 
             _pi = summary_payload.get("portfolio_intelligence") if summary_payload else None
 
+            # Rule-based portfolio classification (deterministic, no AI required)
+            _clf_result = classifier.classify_repo_dict({
+                "name": repo.name,
+                "recent_commits_90d": commit_history.recent_90d if commit_history else 0,
+                "days_since_last_push": repo.days_since_last_push or 0,
+                "has_tests": repo.has_tests,
+                "has_ci_cd": repo.has_ci_cd,
+            })
+
             repo_dict = {
                 "name": repo.name,
                 "description": repo.description,
                 "summary": summary_payload,
+                # Rule-based classification fields (FR-001, FR-004–FR-006, FR-007)
+                "classification": _clf_result.classification,
+                "signal_score": _clf_result.signal_score,
+                "relevance": _clf_result.relevance,
+                "notes": _clf_result.notes,
+                # AI informational fields (FR-001a) — may be null
                 "portfolio_role": _pi.get("role") if _pi else None,
                 "portfolio_signal": _pi.get("signal") if _pi else None,
                 "portfolio_action": _pi.get("action") if _pi else None,
@@ -836,6 +855,22 @@ class UnifiedDataGenerator:
         # Ensure output directory exists
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
+        # SC-003: Validate 100% classification coverage before writing
+        _repos_out = unified_data.get("repositories", [])
+        _clf_fields = ("classification", "signal_score", "relevance", "notes")
+        _missing = [
+            r.get("name", "?")
+            for r in _repos_out
+            if any(r.get(f) is None for f in _clf_fields)
+        ]
+        if _missing:
+            logger.warning(
+                f"Classification fields missing for {len(_missing)} repo(s): "
+                f"{', '.join(_missing[:10])}"
+            )
+        else:
+            logger.info(f"Classification coverage: 100% ({len(_repos_out)} repos)")
+
         # Write JSON file
         output_path = self.output_dir / "repositories.json"
         logger.info(f"Writing unified data to {output_path}...")

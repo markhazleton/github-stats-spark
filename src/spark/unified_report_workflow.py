@@ -525,6 +525,13 @@ class UnifiedReportWorkflow:
                 stats=stats.get("fun_stats", {}),
                 username=username,
             )
+        elif svg_type == "portfolio":
+            repos = stats.get("repositories", [])
+            breakdown_svg = self.visualizer.generate_portfolio_breakdown(repos)
+            signal_svg = self.visualizer.generate_signal_distribution(repos)
+            # Return breakdown as primary; signal distribution saved separately via caller
+            stats["_portfolio_signal_svg"] = signal_svg
+            return breakdown_svg
         else:
             raise ValueError(f"Unknown SVG type: {svg_type}")
 

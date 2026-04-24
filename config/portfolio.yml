@@ -1,0 +1,24 @@
+# Portfolio Intelligence Classification Configuration
+# Maps repository names to explicit classification tiers.
+#
+# Valid tier values (case-insensitive): core, supporting, archive
+#
+# Rules:
+#   - Named entries override automated classification rules
+#   - Wildcard "*" sets the default for all unspecified repositories
+#   - If no wildcard is set, unspecified repos use automated rules
+#   - A repo no longer in GitHub is silently ignored (warning logged)
+
+repos:
+  # Core systems — central to current positioning, actively relevant
+  devspark: core
+  TailwindSpark: core
+  PromptSpark.Chat: core
+  DocSpecSpark: core
+
+  # Supporting — demonstrates a useful concept but not central
+  BootstrapSpark: supporting
+
+  # Default: classify all other repos using automated rules
+  # Remove or change to "archive" to force-archive all unlisted repos
+  # "*": archive
