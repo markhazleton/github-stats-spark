@@ -1,11 +1,11 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-04-19 01:02:20 UTC
+**Generated**: 2026-04-26 01:26:22 UTC
 **Report Version**: 1.0.0
-**Repositories Analyzed**: 31
-**AI Summary Rate**: 22.6%
+**Repositories Analyzed**: 30
+**AI Summary Rate**: 0.0%
 
-> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-31-repositories) | [Metadata](#report-metadata)
+> 💡 **Navigation**: [Profile Overview](#profile-overview) | [Top Repositories](#top-30-repositories) | [Metadata](#report-metadata)
 
 ---
 
@@ -33,13 +33,13 @@
 
 ---
 
-## Top 31 Repositories
+## Top 30 Repositories
 
 ### #1. [devspark](https://github.com/markhazleton/devspark)
 
-Stars: 0 | Forks: 0 | Language: Python | 263 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 267 commits (90d)
 
-👥 0 contributors | 🌐 4 languages | 💾 6338 KB | 🚀 87.7 commits/month
+👥 0 contributors | 🌐 4 languages | 💾 6376 KB | 🚀 89.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -49,15 +49,30 @@ Built with Python. Actively maintained with regular updates.
 **Dependencies**: 5 total (1 current, 4 outdated)
 
 **Created**: 2026-04-02
-**Last Modified**: 2026-04-18
+**Last Modified**: 2026-04-24
 
 ---
 
-### #2. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
+### #2. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
+
+Stars: 0 | Forks: 0 | Language: C# | 71 commits (90d)
+
+👥 0 contributors | 🌐 7 languages | 💾 2991 KB | 🚀 23.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+**Drop-in HttpClient wrapper with Polly resilience, response caching, and OpenTelemetry for .NET 8-10 LTS APIs—configured in one line** Built with C#. Actively maintained with regular updates.
+
+**Created**: 2025-05-03
+**Last Modified**: 2026-04-23
+
+---
+
+### #3. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
 
 Stars: 0 | Forks: 0 | Language: TypeScript | 98 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 3681 KB | 🚀 32.7 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 3928 KB | 🚀 32.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -71,11 +86,11 @@ Stars: 0 | Forks: 0 | Language: TypeScript | 98 commits (90d)
 
 ---
 
-### #3. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
+### #4. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
 
-Stars: 0 | Forks: 0 | Language: Python | 117 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 106 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 18765 KB | 🚀 39.0 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 19124 KB | 🚀 35.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -85,30 +100,15 @@ Stars: 0 | Forks: 0 | Language: Python | 117 commits (90d)
 **Dependencies**: 10 total (1 current, 9 outdated)
 
 **Created**: 2025-12-28
-**Last Modified**: 2026-04-14
-
----
-
-### #4. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
-
-Stars: 0 | Forks: 0 | Language: C# | 65 commits (90d)
-
-👥 0 contributors | 🌐 7 languages | 💾 2736 KB | 🚀 21.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-**Drop-in HttpClient wrapper with Polly resilience, response caching, and OpenTelemetry for .NET 8-10 LTS APIs—configured in one line** Built with C#. Actively maintained with regular updates.
-
-**Created**: 2025-05-03
-**Last Modified**: 2026-03-31
+**Last Modified**: 2026-04-24
 
 ---
 
 ### #5. [UISampleSpark](https://github.com/markhazleton/UISampleSpark)
 
-Stars: 8 | Forks: 4 | Language: HTML | 88 commits (90d)
+Stars: 8 | Forks: 4 | Language: HTML | 87 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 31065 KB | 🚀 29.3 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 31088 KB | 🚀 29.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -134,7 +134,73 @@ Spark Your Inquiry, Ignite Insights. Built with C#. Actively maintained with reg
 
 ---
 
-### #7. [SupportSpark](https://github.com/markhazleton/SupportSpark)
+### #7. [git-spark](https://github.com/markhazleton/git-spark)
+
+Stars: 0 | Forks: 0 | Language: PowerShell | 44 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 1818 KB | 🚀 14.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+**Analyze commit patterns and contributor activity with interactive reports** Built with PowerShell. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 92/100
+**Dependencies**: 22 total (18 current, 4 outdated)
+
+**Created**: 2025-09-29
+**Last Modified**: 2026-04-19
+
+---
+
+### #8. [RequestSpark](https://github.com/markhazleton/RequestSpark)
+
+Stars: 2 | Forks: 1 | Language: C# | 45 commits (90d)
+
+👥 0 contributors | 🌐 5 languages | 💾 947 KB | 🚀 15.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![License](https://img.shields.io/github/license/markhazleton/RequestSpark)](https://github.com/markhazleton/RequestSpark/blob/main/LICENSE) [![GitHub Issues](https://img.shields.io/github/ Built with C#. Key features: **Postman Collection Integration**: Import and execute existing Postman collections, **Automated Regression Testing**: Run comprehensive API test suites automatically, **Performance Analysis**: Compare response times across multiple API instances. Actively maintained with regular updates.
+
+**Created**: 2021-09-30
+**Last Modified**: 2026-03-31
+
+---
+
+### #9. [BootstrapSpark](https://github.com/markhazleton/BootstrapSpark)
+
+Stars: 0 | Forks: 0 | Language: TypeScript | 43 commits (90d)
+
+👥 0 contributors | 🌐 8 languages | 💾 37661 KB | 🚀 14.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/markhazleton/BootstrapSpark?tab=MIT-1-ov-file) [![GitHub stars](https://img.shields.io/github/stars/markhazleton/BootstrapSpark)](https://github.com/markhazleton/BootstrapSpark/stargazers) [![GitHub issues](htt Built with TypeScript. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 47 total (47 current, 0 outdated)
+
+**Created**: 2024-10-11
+**Last Modified**: 2026-04-19
+
+---
+
+### #10. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
+
+Stars: 0 | Forks: 0 | Language: Python | 24 commits (90d)
+
+👥 0 contributors | 🌐 7 languages | 💾 24113 KB | 🚀 8.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+> **The strategic travel planner for art lovers.** > Curate, prioritize, and optimize your museum visits across North America. Built with Python. Actively maintained with regular updates.
+
+**Created**: 2026-01-15
+**Last Modified**: 2026-04-12
+
+---
+
+### #11. [SupportSpark](https://github.com/markhazleton/SupportSpark)
 
 Stars: 0 | Forks: 0 | Language: PowerShell | 52 commits (90d)
 
@@ -152,76 +218,40 @@ Stars: 0 | Forks: 0 | Language: PowerShell | 52 commits (90d)
 
 ---
 
-### #8. [mark-hazleton-s-notes](https://github.com/markhazleton/mark-hazleton-s-notes)
+### #12. [markhazleton](https://github.com/markhazleton/markhazleton)
 
-Stars: 1 | Forks: 0 | Language: TypeScript | 150 commits (90d)
+Stars: 0 | Forks: 0 | Language: Unknown | 25 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 304557 KB | 🚀 50.0 commits/month
+👥 0 contributors | 🌐 1 languages | 💾 6618 KB | 🚀 8.3 commits/month
 
-**Quality**: ❌ License | ✅ Docs
+**Quality**: ❌ License | ❌ Docs
 
-Personal site for Mark Hazleton, a Technical Solutions Architect. The site combines long-form writing, a project portfolio, and a /github page that highlights recent GitHub activity. Built with TypeScript. Actively maintained with regular updates.
+--- Actively maintained with regular updates.
+
+**Created**: 2021-04-17
+**Last Modified**: 2026-04-23
+
+---
+
+### #13. [Texecon](https://github.com/markhazleton/Texecon)
+
+Stars: 0 | Forks: 0 | Language: HTML | 32 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 3917 KB | 🚀 10.7 commits/month
+
+**Quality**: ❌ License | ❌ Docs
+
+A modern static React application providing expert analysis and commentary on the Texas economy. Built with React 19, TypeScript, and Tailwind CSS for optimal performance and SEO on GitHub Pages. Built with HTML. Key features: **Build-time Content Management**: Fresh content from WebSpark API with cached fallbacks, **Static Site Generation**: Pre-rendered pages for optimal SEO and performance, **Progressive Enhancement**: Client-side routing with static HTML fallbacks. Actively maintained with regular updates.
 
 **Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 68 total (68 current, 0 outdated)
+**Dependencies**: 37 total (37 current, 0 outdated)
 
-**Created**: 2026-01-10
-**Last Modified**: 2026-04-18
-
----
-
-### #9. [RequestSpark](https://github.com/markhazleton/RequestSpark)
-
-Stars: 2 | Forks: 1 | Language: C# | 46 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 947 KB | 🚀 15.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![License](https://img.shields.io/github/license/markhazleton/RequestSpark)](https://github.com/markhazleton/RequestSpark/blob/main/LICENSE) [![GitHub Issues](https://img.shields.io/github/ Built with C#. Key features: **Postman Collection Integration**: Import and execute existing Postman collections, **Automated Regression Testing**: Run comprehensive API test suites automatically, **Performance Analysis**: Compare response times across multiple API instances. Actively maintained with regular updates.
-
-**Created**: 2021-09-30
-**Last Modified**: 2026-03-31
+**Created**: 2025-09-03
+**Last Modified**: 2026-04-19
 
 ---
 
-### #10. [git-spark](https://github.com/markhazleton/git-spark)
-
-Stars: 0 | Forks: 0 | Language: TypeScript | 44 commits (90d)
-
-👥 0 contributors | 🌐 7 languages | 💾 1539 KB | 🚀 14.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-**Analyze commit patterns and contributor activity with interactive reports** Built with TypeScript. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 87/100
-**Dependencies**: 19 total (11 current, 8 outdated)
-
-**Created**: 2025-09-29
-**Last Modified**: 2026-04-06
-
----
-
-### #11. [BootstrapSpark](https://github.com/markhazleton/BootstrapSpark)
-
-Stars: 0 | Forks: 0 | Language: TypeScript | 42 commits (90d)
-
-👥 0 contributors | 🌐 8 languages | 💾 36264 KB | 🚀 14.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/markhazleton/BootstrapSpark?tab=MIT-1-ov-file) [![GitHub stars](https://img.shields.io/github/stars/markhazleton/BootstrapSpark)](https://github.com/markhazleton/BootstrapSpark/stargazers) [![GitHub issues](htt Built with TypeScript. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 47 total (47 current, 0 outdated)
-
-**Created**: 2024-10-11
-**Last Modified**: 2026-04-18
-
----
-
-### #12. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
+### #14. [WebProjectMechanics](https://github.com/markhazleton/WebProjectMechanics)
 
 Stars: 3 | Forks: 0 | Language: Visual Basic .NET | 11 commits (90d)
 
@@ -236,59 +266,11 @@ A multi-tenant, multi-domain content management system that publishes static HTM
 
 ---
 
-### #13. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
+### #15. [WebSpark](https://github.com/markhazleton/WebSpark)
 
-Stars: 0 | Forks: 0 | Language: Python | 33 commits (90d)
+Stars: 1 | Forks: 0 | Language: C# | 11 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 24110 KB | 🚀 11.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-> **The strategic travel planner for art lovers.** > Curate, prioritize, and optimize your museum visits across North America. Built with Python. Actively maintained with regular updates.
-
-**Created**: 2026-01-15
-**Last Modified**: 2026-04-12
-
----
-
-### #14. [Texecon](https://github.com/markhazleton/Texecon)
-
-Stars: 0 | Forks: 0 | Language: HTML | 30 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 3679 KB | 🚀 10.0 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-A modern static React application providing expert analysis and commentary on the Texas economy. Built with React 19, TypeScript, and Tailwind CSS for optimal performance and SEO on GitHub Pages. Built with HTML. Key features: **Build-time Content Management**: Fresh content from WebSpark API with cached fallbacks, **Static Site Generation**: Pre-rendered pages for optimal SEO and performance, **Progressive Enhancement**: Client-side routing with static HTML fallbacks. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 37 total (37 current, 0 outdated)
-
-**Created**: 2025-09-03
-**Last Modified**: 2026-04-12
-
----
-
-### #15. [markhazleton](https://github.com/markhazleton/markhazleton)
-
-Stars: 0 | Forks: 0 | Language: Unknown | 22 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 6613 KB | 🚀 7.3 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
-> My repositories serve as a dynamic archive of my learning journey, each one a milestone in my continuous pursuit of knowledge and mastery in technology. From structured explorations in new (to me) technologies to experimental projects that push the boundaries of my understanding, these collections Actively maintained with regular updates.
-
-**Created**: 2021-04-17
-**Last Modified**: 2026-04-18
-
----
-
-### #16. [WebSpark](https://github.com/markhazleton/WebSpark)
-
-Stars: 1 | Forks: 0 | Language: C# | 12 commits (90d)
-
-👥 0 contributors | 🌐 8 languages | 💾 69144 KB | 🚀 4.0 commits/month
+👥 0 contributors | 🌐 8 languages | 💾 69144 KB | 🚀 3.7 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
@@ -299,7 +281,7 @@ WebSpark is a suite of web applications built with .NET 9 and Bootstrap 5, desig
 
 ---
 
-### #17. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
+### #16. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
 
 Stars: 2 | Forks: 1 | Language: C# | 6 commits (90d)
 
@@ -317,11 +299,11 @@ Stars: 2 | Forks: 1 | Language: C# | 6 commits (90d)
 
 ---
 
-### #18. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
+### #17. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
 
 Stars: 0 | Forks: 0 | Language: PowerShell | 22 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 2770 KB | 🚀 7.3 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 3104 KB | 🚀 7.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -335,11 +317,11 @@ Stars: 0 | Forks: 0 | Language: PowerShell | 22 commits (90d)
 
 ---
 
-### #19. [DataSpark](https://github.com/markhazleton/DataSpark)
+### #18. [DataSpark](https://github.com/markhazleton/DataSpark)
 
-Stars: 0 | Forks: 0 | Language: HTML | 19 commits (90d)
+Stars: 0 | Forks: 0 | Language: HTML | 13 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 2075 KB | 🚀 6.3 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 2075 KB | 🚀 4.3 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -350,29 +332,11 @@ Stars: 0 | Forks: 0 | Language: HTML | 19 commits (90d)
 
 ---
 
-### #20. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+### #19. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
 
-Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 21 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 29927 KB | 🚀 4.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/) [![Bui Built with C#. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 90/100
-**Dependencies**: 3 total (2 current, 1 outdated)
-
-**Created**: 2025-06-19
-**Last Modified**: 2026-03-29
-
----
-
-### #21. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
-
-Stars: 0 | Forks: 0 | Language: C# | 22 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 19307 KB | 🚀 7.3 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 19307 KB | 🚀 7.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -383,7 +347,7 @@ Stars: 0 | Forks: 0 | Language: C# | 22 commits (90d)
 
 ---
 
-### #22. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
+### #20. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
 
 Stars: 0 | Forks: 0 | Language: SCSS | 7 commits (90d)
 
@@ -401,25 +365,7 @@ Stars: 0 | Forks: 0 | Language: SCSS | 7 commits (90d)
 
 ---
 
-### #23. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
-
-Stars: 0 | Forks: 0 | Language: Python | 6 commits (90d)
-
-👥 0 contributors | 🌐 4 languages | 💾 216 KB | 🚀 2.0 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-DocSpark is a document AI tool derived from DevSpark. Built with Python. Maintained project with periodic updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 2 total (0 current, 2 outdated)
-
-**Created**: 2026-03-07
-**Last Modified**: 2026-04-03
-
----
-
-### #24. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
+### #21. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
 
 Stars: 0 | Forks: 0 | Language: PHP | 6 commits (90d)
 
@@ -437,53 +383,81 @@ Stars: 0 | Forks: 0 | Language: PHP | 6 commits (90d)
 
 ---
 
-### #25. [AsyncSpark](https://github.com/markhazleton/AsyncSpark)
+### #22. [TeachSpark](https://github.com/markhazleton/TeachSpark)
 
-Stars: 0 | Forks: 0 | Language: C# | 9 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 1925 KB | 🚀 3.0 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 29927 KB | 🚀 4.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# AsyncSpark - Technical Summary
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/) [![Bui Built with C#. Actively maintained with regular updates.
 
-AsyncSpark is a production-ready reference implementation demonstrating enterprise-grade async/await patterns in .NET 10, designed to serve as both a learning resource and architectural blueprint for building resilient, scalable distributed systems. The project implements comprehensive async best practices including ConfigureAwait(false) library usage, proper CancellationToken threading, Task.WhenAll parallelization, SemaphoreSlim throttling, and Polly-based resilience policies (retry, timeout, circuit breaker), with each pattern linked to specific code examples and unit tests. Built on ASP.NET Core with 80% code coverage enforcement, the architecture emphasizes dependency injection, the decorator pattern for cross-cutting concerns (telemetry, caching, logging), and clean separation between a core utility library, web API, weather service integration, and comprehensive test suite. The repository uniquely implements "constitution-driven development," a formalized governance model that enforces coding standards and architectural patterns through automated CI/CD audits, constitution compliance checks, and structured PR reviews—demonstrated through audit reports and SpecKit agent workflows. The project includes interactive Scalar-powered API documentation with live testing capabilities, exposing endpoints for cancellation patterns, concurrency comparisons, remote operations, and real OpenWeatherMap API integration, making it valuable for enterprise teams adopting async patterns and organizations seeking to implement automated compliance frameworks. The 9 recent commits and maintained activity level indicate ongoing refinement, with contributions spanning C# (43.1%), HTML (34.1%), PowerShell (18.8%), and supporting configuration files that collectively demonstrate modern .NET development practices with constitutional enforcement mechanisms.
+**Technology Stack Currency**: ✅ 90/100
+**Dependencies**: 3 total (2 current, 1 outdated)
+
+**Created**: 2025-06-19
+**Last Modified**: 2026-03-29
+
+---
+
+### #23. [AsyncSpark](https://github.com/markhazleton/AsyncSpark)
+
+Stars: 0 | Forks: 0 | Language: C# | 9 commits (90d)
+
+👥 0 contributors | 🌐 7 languages | 💾 1925 KB | 🚀 3.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+Production-ready reference implementation for async/await patterns in .NET 10 with constitution-driven development practices. Built with C#. Maintained project with periodic updates.
 
 **Created**: 2022-08-07
 **Last Modified**: 2026-02-10
 
 ---
 
-### #26. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
+### #24. [FastEndpointApi](https://github.com/markhazleton/FastEndpointApi)
 
-Stars: 2 | Forks: 1 | Language: HTML | 1 commits (90d)
+Stars: 3 | Forks: 1 | Language: HTML | 0 commits (90d)
 
-👥 0 contributors | 🌐 3 languages | 💾 137 KB | 🚀 0.3 commits/month
+👥 0 contributors | 🌐 4 languages | 💾 137 KB | 🚀 0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: FastEndpointApi
-
-**FastEndpointApi** is a comprehensive demonstration and educational project showcasing the FastEndpoints framework—a lightweight, high-performance REST API framework for ASP.NET Core that implements the REPR (Request-Endpoint-Response) pattern. The repository contains a fully functional Person Management API deployed to Azure, featuring complete CRUD operations, in-memory data persistence, service layer abstraction, and interactive Swagger documentation. Built with .NET 10.0 and FastEndpoints 7.1.1, the project leverages modern technologies including dependency injection, automatic request-response mapping, HATEOAS hypermedia links, and GitHub Actions CI/CD pipelines for automated deployment. The architecture emphasizes clean code principles and minimal boilerplate through endpoint-based organization rather than traditional MVC controllers, with integrated data seeding via Bogus and a Bootstrap 5-based HTML frontend for interactive API testing. This repository serves as both a learning resource and production-ready reference implementation for developers seeking to understand FastEndpoints' capabilities, particularly those looking to streamline ASP.NET Core API development while maintaining separation of concerns and high performance standards. The project is actively maintained with comprehensive documentation, live demo accessibility, and clear examples of advanced patterns like HATEOAS implementation and structured error handling.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.NET Version](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build and Deploy](https://github.com/markhazleton/FastEndpoin Built with HTML. Maintained project with periodic updates.
 
 **Created**: 2024-04-06
-**Last Modified**: 2026-03-30
+**Last Modified**: 2026-04-23
 
 ---
 
-### #27. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
+### #25. [DocSpecSpark](https://github.com/markhazleton/DocSpecSpark)
 
-Stars: 0 | Forks: 0 | Language: TypeScript | 14 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 6 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 6719 KB | 🚀 4.7 commits/month
+👥 0 contributors | 🌐 4 languages | 💾 216 KB | 🚀 2.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: Mechanics of Motherhood
+DocSpark is a document AI tool derived from DevSpark. Built with Python. Maintained project with periodic updates.
 
-**Mechanics of Motherhood** is a modern recipe management platform built as a React 19 + TypeScript single-page application (SPA) designed specifically for busy working mothers seeking organized meal planning solutions. The platform features 108+ curated recipes with smart categorization, advanced search and filtering capabilities, and a mobile-first responsive design powered by Vite, Tailwind CSS, and Shadcn/ui component library. The architecture leverages TanStack React Query for efficient server state management and data caching, integrates with real-time APIs (RecipeSpark and WebCMS) for dynamic recipe content, and implements automated CI/CD pipelines via GitHub Actions for seamless deployment to a custom domain with GitHub Pages CDN distribution.
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 2 total (0 current, 2 outdated)
 
-The project demonstrates production-ready best practices including comprehensive TypeScript type safety, WCAG accessibility compliance, PWA capabilities with offline support, automated data quality validation, SEO optimization with structured data and sitemaps, and Lighthouse performance scores exceeding 95 across all metrics. Key technical differentiators include a lightweight routing solution with Wouter, industrial-themed UI aesthetics, ~130KB gzipped bundle size with code splitting, and robust error handling with API fallback mechanisms to mock data. The codebase is well-structured with clear separation of concerns across components, pages, data layers, and utilities, making it maintainable and extensible for future enhancements or community contributions focused on recipe discovery, meal planning, and nutritional information management for its target demographic of time-constrained parents.
+**Created**: 2026-03-07
+**Last Modified**: 2026-04-03
+
+---
+
+### #26. [MechanicsOfMotherhood](https://github.com/markhazleton/MechanicsOfMotherhood)
+
+Stars: 0 | Forks: 0 | Language: TypeScript | 9 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 6719 KB | 🚀 3.0 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+**A modern recipe management platform designed for busy working mothers** Built with TypeScript. Maintained project with periodic updates.
 
 **Technology Stack Currency**: ✅ 50/100
 **Dependencies**: 42 total (42 current, 0 outdated)
@@ -493,70 +467,60 @@ The project demonstrates production-ready best practices including comprehensive
 
 ---
 
-### #28. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
+### #27. [WebSpark.PrismSpark](https://github.com/markhazleton/WebSpark.PrismSpark)
 
-Stars: 0 | Forks: 0 | Language: C# | 14 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 8 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 2272 KB | 🚀 4.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 2272 KB | 🚀 2.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: WebSpark.PrismSpark
-
-**WebSpark.PrismSpark** is a high-performance C#/.NET port of the popular PrismJS syntax highlighting library, providing advanced code tokenization and HTML rendering for 24 programming languages with support for .NET 10.0 LTS. The project implements a sophisticated architecture featuring a grammar-based tokenization engine, extensible plugin and hook systems, and a theme manager that supports both built-in and custom CSS-based themes, enabling developers to integrate professional syntax highlighting into web applications, documentation platforms, and code editors. Built with performance as a core concern, the library offers async processing, caching mechanisms, and flexible options for line highlighting, custom CSS classes, and metadata-driven customization, while maintaining full compatibility with ASP.NET MVC/Razor views through dependency injection integration. The codebase is well-engineered with a comprehensive 52-test MSTest suite covering grammar creation, tokenization, HTML generation, and end-to-end integration workflows, along with interactive demo pages including a live editor and markdown renderer powered by Markdig. What distinguishes this project is its seamless .NET ecosystem integration through service registration patterns, rendering capabilities that go beyond tokenization to produce fully styled HTML output, and a developer-friendly API that balances simplicity for common use cases with deep extensibility for advanced scenarios. This makes it particularly valuable for .NET developers building documentation systems, code review platforms, educational tools, or any application requiring embeddable, themeable syntax highlighting without JavaScript dependencies.
+A modern, high-performance C#/.NET port of [PrismJS](https://github.com/PrismJS/prism) for advanced syntax highlighting, theming, and extensibility. Built with C#. Key features: **Tokenization & Highlighting** for 24 languages (C#, JavaScript, Python, Markdown, Pug, and more), **Plugin System**: Line numbers, copy-to-clipboard, toolbar, and more, **Theme System**: Built-in and custom themes, CSS generation. Maintained project with periodic updates.
 
 **Created**: 2025-05-27
 **Last Modified**: 2026-02-11
 
 ---
 
-### #29. [WebSpark.ArtSpark](https://github.com/markhazleton/WebSpark.ArtSpark)
+### #28. [WebSpark.ArtSpark](https://github.com/markhazleton/WebSpark.ArtSpark)
 
-Stars: 0 | Forks: 0 | Language: C# | 7 commits (90d)
+Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 3658 KB | 🚀 2.3 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 3658 KB | 🚀 0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: WebSpark.ArtSpark
-
-**WebSpark.ArtSpark** is a comprehensive .NET 10.0 solution that provides a complete client library and interactive web application for the Art Institute of Chicago's public REST API, implementing all 33 endpoints across 6 major categories with strongly-typed C# models and async/await patterns. The solution's standout feature is its revolutionary AI chat system with multiple personas (Artwork, Artist, Curator, Historian) that leverage OpenAI's Vision and language models to enable conversational interactions with artwork data, complete with persistent chat history, visual analysis capabilities, and externalized prompt management for hot-reloading persona definitions. The architecture comprises four main projects—a reusable Client library, an AI Agent system with configurable prompts and conversation memory, an ASP.NET Core MVC Demo application with user authentication/collections, and a Console utility—demonstrating modern .NET development practices including dependency injection, IIIF image URL construction, Elasticsearch integration, and JSON deserialization using System.Text.Json. Key technical highlights include minimal external dependencies, graceful HTTP error handling, flexible querying with pagination and field selection, responsive Bootstrap 5 UI with 26+ theme support, and SQLite-backed user persistence, all documented with a live demo at artspark.markhazleton.com. The project targets developers and cultural institutions seeking to build intelligent art discovery applications while showcasing best practices in .NET ecosystem development, API client design, and AI integration patterns.
+**A comprehensive .NET solution for the Art Institute of Chicago's public API, featuring a complete client library, revolutionary AI chat system with multiple personas, and demo applications showcasing modern .NET development practices.** Built with C#. Key features: ✅ **Complete API Coverage**: All 33 endpoints across 6 categories, ✅ **Strongly Typed Models**: Comprehensive C# models for all resource types, ✅ **Async/Await Support**: Modern asynchronous programming patterns. Maintained project with periodic updates.
 
 **Created**: 2023-01-30
 **Last Modified**: 2026-01-12
 
 ---
 
-### #30. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
+### #29. [WebSpark.Bootswatch](https://github.com/markhazleton/WebSpark.Bootswatch)
 
-Stars: 0 | Forks: 0 | Language: HTML | 5 commits (90d)
+Stars: 0 | Forks: 0 | Language: HTML | 0 commits (90d)
 
-👥 0 contributors | 🌐 5 languages | 💾 7124 KB | 🚀 1.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 7124 KB | 🚀 0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# Technical Summary: WebSpark.Bootswatch
-
-**WebSpark.Bootswatch** is a .NET 10-exclusive Razor Class Library that provides seamless integration of Bootswatch themes into ASP.NET Core applications, enabling developers to quickly implement modern, responsive UI theming with Bootstrap 5 as the foundation. The library offers comprehensive theming capabilities including dynamic theme switching, light/dark mode support, and built-in caching mechanisms through the `StyleCache` service, while providing convenient abstractions via extension methods and custom tag helpers like `<bootswatch-theme-switcher />` for straightforward UI implementation. Built primarily with HTML (63.8%), C# (28.6%), and JavaScript (2.6%), the project leverages the Microsoft.Extensions ecosystem and the external `WebSpark.HttpClientUtility` package to handle HTTP operations and dependency injection patterns within the ASP.NET Core middleware pipeline.
-
-The architecture emphasizes production-readiness with comprehensive error handling, fallback mechanisms, and full XML documentation support for IntelliSense integration, while the recent major version 2.0 release represents a strategic decision to prioritize latest package versions and .NET 10 performance improvements over broad framework compatibility—a trade-off that simplifies maintenance and reduces testing complexity. The library targets ASP.NET Core developers seeking an opinionated, batteries-included solution for theme management rather than implementing theming from scratch, with particular utility for multi-tenant applications or projects requiring flexible visual branding and accessibility support through light/dark mode variants. While currently showing declining activity (5 commits in 90 days), the project maintains active curation with clear versioning strategy and documented migration paths, making it suitable for enterprise applications that prioritize modern .NET versions and staying current with framework releases.
+A .NET Razor Class Library that provides seamless integration of [Bootswatch](https://bootswatch.com/) themes into ASP.NET Core applications. Built on Bootstrap 5, this library offers modern, responsive theming with dynamic theme switching, light/dark mode support, and comprehensive caching mechanis Built with HTML. Maintained project with periodic updates.
 
 **Created**: 2022-08-24
 **Last Modified**: 2026-01-12
 
 ---
 
-### #31. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
+### #30. [TriviaSpark](https://github.com/markhazleton/TriviaSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
-👥 0 contributors | 🌐 4 languages | 💾 27238 KB | 🚀 0 commits/month
+👥 0 contributors | 🌐 5 languages | 💾 27238 KB | 🚀 0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
-# TriviaSpark - Technical Summary
-
-**TriviaSpark** is a multiplayer trivia game application developed as an experimental proof-of-concept using ChatGPT assistance, designed to integrate public Trivia APIs with web and mobile platforms. The application's core functionality encompasses user registration systems, real-time trivia gameplay with multiple-choice questions, competitive leaderboards, and admin-level question database management capabilities with customizable UI options. The tech stack is built primarily on **C# (61.1%)** for backend logic, complemented by **HTML (26.5%)**, **CSS (12.3%)**, and minimal **JavaScript (0.1%)**, suggesting an ASP.NET-based web application architecture with potential Xamarin or similar framework support for mobile deployment. The application follows a traditional three-tier architecture pattern with API integration layers for third-party trivia data sources, user management systems, and competitive ranking algorithms. Notably, this project serves as a documented case study in AI-assisted software development, with extensive external documentation chronicling the ChatGPT-driven development process, making it valuable as both a functional trivia platform and an educational resource. The target demographic spans tech-savvy users aged 18-95 seeking competitive, engaging trivia experiences, though the project currently shows minimal maintenance activity (0 commits in 90 days) and declining engagement patterns, indicating it may be in an archived or demonstration phase rather than active production use.
+**This application was developed with the assistance of Chat GPT** Built with C#. Key features: User Registration, Question Database Review (Admin), Leaderboard. Maintained project with periodic updates.
 
 **Created**: 2023-02-22
 **Last Modified**: 2025-12-02
@@ -568,10 +532,10 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 ## Report Metadata
 
-- **Generation Time**: 5.8 seconds
+- **Generation Time**: 6.1 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
-- **Total AI Tokens**: 17,016
+- **Total AI Tokens**: 0
 - **Success Rate**: 100.0%
 
 ### Data Sources
@@ -589,4 +553,4 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2026-04-19*
+*Last updated: 2026-04-26*
