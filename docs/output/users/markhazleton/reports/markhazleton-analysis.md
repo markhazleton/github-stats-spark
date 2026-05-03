@@ -1,6 +1,6 @@
 # GitHub Profile: markhazleton
 
-**Generated**: 2026-04-26 01:26:22 UTC
+**Generated**: 2026-05-03 00:56:11 UTC
 **Report Version**: 1.0.0
 **Repositories Analyzed**: 30
 **AI Summary Rate**: 0.0%
@@ -37,9 +37,9 @@
 
 ### #1. [devspark](https://github.com/markhazleton/devspark)
 
-Stars: 0 | Forks: 0 | Language: Python | 267 commits (90d)
+Stars: 0 | Forks: 0 | Language: Python | 278 commits (90d)
 
-👥 0 contributors | 🌐 4 languages | 💾 6376 KB | 🚀 89.0 commits/month
+👥 0 contributors | 🌐 4 languages | 💾 6540 KB | 🚀 92.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -49,11 +49,47 @@ Built with Python. Actively maintained with regular updates.
 **Dependencies**: 5 total (1 current, 4 outdated)
 
 **Created**: 2026-04-02
-**Last Modified**: 2026-04-24
+**Last Modified**: 2026-05-01
 
 ---
 
-### #2. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
+### #2. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
+
+Stars: 0 | Forks: 0 | Language: TypeScript | 98 commits (90d)
+
+👥 0 contributors | 🌐 7 languages | 💾 4310 KB | 🚀 32.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+[![Version](https://img.shields.io/badge/version-1.0.18-blue.svg)](https://github.com/markhazleton/TailwindSpark) [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![React](https://img.shields.io/badge/React-19.1.1-61dafb.svg)](https://reactjs.org/) [![TypeScript](https://im Built with TypeScript. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 27 total (27 current, 0 outdated)
+
+**Created**: 2025-07-29
+**Last Modified**: 2026-04-16
+
+---
+
+### #3. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
+
+Stars: 0 | Forks: 0 | Language: Python | 92 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 19309 KB | 🚀 30.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+> Automated GitHub profile statistics generator with beautiful SVG visualizations and AI-powered repository analysis Built with Python. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 69/100
+**Dependencies**: 10 total (1 current, 9 outdated)
+
+**Created**: 2025-12-28
+**Last Modified**: 2026-04-26
+
+---
+
+### #4. [WebSpark.HttpClientUtility](https://github.com/markhazleton/WebSpark.HttpClientUtility)
 
 Stars: 0 | Forks: 0 | Language: C# | 71 commits (90d)
 
@@ -68,47 +104,11 @@ Stars: 0 | Forks: 0 | Language: C# | 71 commits (90d)
 
 ---
 
-### #3. [TailwindSpark](https://github.com/markhazleton/TailwindSpark)
-
-Stars: 0 | Forks: 0 | Language: TypeScript | 98 commits (90d)
-
-👥 0 contributors | 🌐 7 languages | 💾 3928 KB | 🚀 32.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![Version](https://img.shields.io/badge/version-1.0.18-blue.svg)](https://github.com/markhazleton/TailwindSpark) [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![React](https://img.shields.io/badge/React-19.1.1-61dafb.svg)](https://reactjs.org/) [![TypeScript](https://im Built with TypeScript. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 27 total (27 current, 0 outdated)
-
-**Created**: 2025-07-29
-**Last Modified**: 2026-04-16
-
----
-
-### #4. [github-stats-spark](https://github.com/markhazleton/github-stats-spark)
-
-Stars: 0 | Forks: 0 | Language: Python | 106 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 19124 KB | 🚀 35.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-> Automated GitHub profile statistics generator with beautiful SVG visualizations and AI-powered repository analysis Built with Python. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 69/100
-**Dependencies**: 10 total (1 current, 9 outdated)
-
-**Created**: 2025-12-28
-**Last Modified**: 2026-04-24
-
----
-
 ### #5. [UISampleSpark](https://github.com/markhazleton/UISampleSpark)
 
-Stars: 8 | Forks: 4 | Language: HTML | 87 commits (90d)
+Stars: 8 | Forks: 4 | Language: HTML | 68 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 31088 KB | 🚀 29.0 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 31058 KB | 🚀 22.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -134,25 +134,7 @@ Spark Your Inquiry, Ignite Insights. Built with C#. Actively maintained with reg
 
 ---
 
-### #7. [git-spark](https://github.com/markhazleton/git-spark)
-
-Stars: 0 | Forks: 0 | Language: PowerShell | 44 commits (90d)
-
-👥 0 contributors | 🌐 6 languages | 💾 1818 KB | 🚀 14.7 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-**Analyze commit patterns and contributor activity with interactive reports** Built with PowerShell. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 92/100
-**Dependencies**: 22 total (18 current, 4 outdated)
-
-**Created**: 2025-09-29
-**Last Modified**: 2026-04-19
-
----
-
-### #8. [RequestSpark](https://github.com/markhazleton/RequestSpark)
+### #7. [RequestSpark](https://github.com/markhazleton/RequestSpark)
 
 Stars: 2 | Forks: 1 | Language: C# | 45 commits (90d)
 
@@ -167,11 +149,29 @@ Stars: 2 | Forks: 1 | Language: C# | 45 commits (90d)
 
 ---
 
+### #8. [git-spark](https://github.com/markhazleton/git-spark)
+
+Stars: 0 | Forks: 0 | Language: PowerShell | 44 commits (90d)
+
+👥 0 contributors | 🌐 6 languages | 💾 1818 KB | 🚀 14.7 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+**Analyze commit patterns and contributor activity with interactive reports** Built with PowerShell. Actively maintained with regular updates.
+
+**Technology Stack Currency**: ✅ 91/100
+**Dependencies**: 22 total (17 current, 5 outdated)
+
+**Created**: 2025-09-29
+**Last Modified**: 2026-04-19
+
+---
+
 ### #9. [BootstrapSpark](https://github.com/markhazleton/BootstrapSpark)
 
-Stars: 0 | Forks: 0 | Language: TypeScript | 43 commits (90d)
+Stars: 0 | Forks: 0 | Language: TypeScript | 41 commits (90d)
 
-👥 0 contributors | 🌐 8 languages | 💾 37661 KB | 🚀 14.3 commits/month
+👥 0 contributors | 🌐 8 languages | 💾 37778 KB | 🚀 13.7 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
@@ -185,22 +185,37 @@ Stars: 0 | Forks: 0 | Language: TypeScript | 43 commits (90d)
 
 ---
 
-### #10. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
+### #10. [WebSpark](https://github.com/markhazleton/WebSpark)
+
+Stars: 1 | Forks: 0 | Language: C# | 9 commits (90d)
+
+👥 0 contributors | 🌐 8 languages | 💾 69565 KB | 🚀 3.0 commits/month
+
+**Quality**: ❌ License | ❌ Docs
+
+WebSpark is a suite of web applications built with .NET 9 and Bootstrap 5, designed to optimize LLM prompts, manage recipes, and create quizzes. This repository includes: Built with C#. Key features: **Modern web technologies**: .NET 9, Bootstrap 5, ASP.NET Core MVC, **Scalable and versatile architecture**: 7 modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity), **Spec-driven development workflow**: Automated risk assessment with SpecKit commands. Maintained project with periodic updates.
+
+**Created**: 2024-01-11
+**Last Modified**: 2026-05-01
+
+---
+
+### #11. [MuseumSpark](https://github.com/markhazleton/MuseumSpark)
 
 Stars: 0 | Forks: 0 | Language: Python | 24 commits (90d)
 
-👥 0 contributors | 🌐 7 languages | 💾 24113 KB | 🚀 8.0 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 24199 KB | 🚀 8.0 commits/month
 
 **Quality**: ❌ License | ✅ Docs
 
 > **The strategic travel planner for art lovers.** > Curate, prioritize, and optimize your museum visits across North America. Built with Python. Actively maintained with regular updates.
 
 **Created**: 2026-01-15
-**Last Modified**: 2026-04-12
+**Last Modified**: 2026-04-29
 
 ---
 
-### #11. [SupportSpark](https://github.com/markhazleton/SupportSpark)
+### #12. [SupportSpark](https://github.com/markhazleton/SupportSpark)
 
 Stars: 0 | Forks: 0 | Language: PowerShell | 52 commits (90d)
 
@@ -218,26 +233,11 @@ Stars: 0 | Forks: 0 | Language: PowerShell | 52 commits (90d)
 
 ---
 
-### #12. [markhazleton](https://github.com/markhazleton/markhazleton)
-
-Stars: 0 | Forks: 0 | Language: Unknown | 25 commits (90d)
-
-👥 0 contributors | 🌐 1 languages | 💾 6618 KB | 🚀 8.3 commits/month
-
-**Quality**: ❌ License | ❌ Docs
-
---- Actively maintained with regular updates.
-
-**Created**: 2021-04-17
-**Last Modified**: 2026-04-23
-
----
-
 ### #13. [Texecon](https://github.com/markhazleton/Texecon)
 
 Stars: 0 | Forks: 0 | Language: HTML | 32 commits (90d)
 
-👥 0 contributors | 🌐 6 languages | 💾 3917 KB | 🚀 10.7 commits/month
+👥 0 contributors | 🌐 6 languages | 💾 3918 KB | 🚀 10.7 commits/month
 
 **Quality**: ❌ License | ❌ Docs
 
@@ -266,22 +266,40 @@ A multi-tenant, multi-domain content management system that publishes static HTM
 
 ---
 
-### #15. [WebSpark](https://github.com/markhazleton/WebSpark)
+### #15. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
 
-Stars: 1 | Forks: 0 | Language: C# | 11 commits (90d)
+Stars: 0 | Forks: 0 | Language: PowerShell | 22 commits (90d)
 
-👥 0 contributors | 🌐 8 languages | 💾 69144 KB | 🚀 3.7 commits/month
+👥 0 contributors | 🌐 7 languages | 💾 1692 KB | 🚀 7.3 commits/month
 
-**Quality**: ❌ License | ❌ Docs
+**Quality**: ❌ License | ✅ Docs
 
-WebSpark is a suite of web applications built with .NET 9 and Bootstrap 5, designed to optimize LLM prompts, manage recipes, and create quizzes. This repository includes: Built with C#. Key features: **Modern web technologies**: .NET 9, Bootstrap 5, ASP.NET Core MVC, **Scalable and versatile architecture**: 7 modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity), **Spec-driven development workflow**: Automated risk assessment with SpecKit commands. Actively maintained with regular updates.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![TypeScript](https://img.shields.io/badge/TypeScript-6.0.2-blue.svg)](https://www.typescriptlang.org/) [![React Native](https://img.shields.io/badge/React%20Native-0.85.0-blue.svg)](https:// Built with PowerShell. Actively maintained with regular updates.
 
-**Created**: 2024-01-11
-**Last Modified**: 2026-01-29
+**Technology Stack Currency**: ✅ 50/100
+**Dependencies**: 50 total (50 current, 0 outdated)
+
+**Created**: 2025-07-26
+**Last Modified**: 2026-04-12
 
 ---
 
-### #16. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
+### #16. [markhazleton](https://github.com/markhazleton/markhazleton)
+
+Stars: 0 | Forks: 0 | Language: Unknown | 25 commits (90d)
+
+👥 0 contributors | 🌐 1 languages | 💾 6618 KB | 🚀 8.3 commits/month
+
+**Quality**: ❌ License | ❌ Docs
+
+--- Actively maintained with regular updates.
+
+**Created**: 2021-04-17
+**Last Modified**: 2026-04-23
+
+---
+
+### #17. [KeyPressCounter](https://github.com/markhazleton/KeyPressCounter)
 
 Stars: 2 | Forks: 1 | Language: C# | 6 commits (90d)
 
@@ -299,40 +317,7 @@ Stars: 2 | Forks: 1 | Language: C# | 6 commits (90d)
 
 ---
 
-### #17. [react-native-web-start](https://github.com/markhazleton/react-native-web-start)
-
-Stars: 0 | Forks: 0 | Language: PowerShell | 22 commits (90d)
-
-👥 0 contributors | 🌐 7 languages | 💾 3104 KB | 🚀 7.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![TypeScript](https://img.shields.io/badge/TypeScript-6.0.2-blue.svg)](https://www.typescriptlang.org/) [![React Native](https://img.shields.io/badge/React%20Native-0.85.0-blue.svg)](https:// Built with PowerShell. Actively maintained with regular updates.
-
-**Technology Stack Currency**: ✅ 50/100
-**Dependencies**: 50 total (50 current, 0 outdated)
-
-**Created**: 2025-07-26
-**Last Modified**: 2026-04-12
-
----
-
-### #18. [DataSpark](https://github.com/markhazleton/DataSpark)
-
-Stars: 0 | Forks: 0 | Language: HTML | 13 commits (90d)
-
-👥 0 contributors | 🌐 5 languages | 💾 2075 KB | 🚀 4.3 commits/month
-
-**Quality**: ❌ License | ✅ Docs
-
-[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build](https://img.shields.io/github/actions/workflow/status/markhazleton/DataSpark/ci.yml?branch=main)](https://github.com/markhazleton/DataSpark/actions) [![Coverage](https://img.shield Built with HTML. Key features: Discover SQLite database files in a directory., Export all tables or a filtered list to CSV., Generate schema reports (text, JSON, Markdown).. Actively maintained with regular updates.
-
-**Created**: 2017-11-06
-**Last Modified**: 2026-04-01
-
----
-
-### #19. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
+### #18. [PromptSpark.Chat](https://github.com/markhazleton/PromptSpark.Chat)
 
 Stars: 0 | Forks: 0 | Language: C# | 21 commits (90d)
 
@@ -347,7 +332,7 @@ Stars: 0 | Forks: 0 | Language: C# | 21 commits (90d)
 
 ---
 
-### #20. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
+### #19. [markhazleton.github.io](https://github.com/markhazleton/markhazleton.github.io)
 
 Stars: 0 | Forks: 0 | Language: SCSS | 7 commits (90d)
 
@@ -365,7 +350,7 @@ Stars: 0 | Forks: 0 | Language: SCSS | 7 commits (90d)
 
 ---
 
-### #21. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
+### #20. [PHPDocSpark](https://github.com/markhazleton/PHPDocSpark)
 
 Stars: 0 | Forks: 0 | Language: PHP | 6 commits (90d)
 
@@ -383,7 +368,7 @@ Stars: 0 | Forks: 0 | Language: PHP | 6 commits (90d)
 
 ---
 
-### #22. [TeachSpark](https://github.com/markhazleton/TeachSpark)
+### #21. [TeachSpark](https://github.com/markhazleton/TeachSpark)
 
 Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
 
@@ -398,6 +383,21 @@ Stars: 0 | Forks: 0 | Language: C# | 12 commits (90d)
 
 **Created**: 2025-06-19
 **Last Modified**: 2026-03-29
+
+---
+
+### #22. [DataSpark](https://github.com/markhazleton/DataSpark)
+
+Stars: 0 | Forks: 0 | Language: HTML | 13 commits (90d)
+
+👥 0 contributors | 🌐 5 languages | 💾 2075 KB | 🚀 4.3 commits/month
+
+**Quality**: ❌ License | ✅ Docs
+
+[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build](https://img.shields.io/github/actions/workflow/status/markhazleton/DataSpark/ci.yml?branch=main)](https://github.com/markhazleton/DataSpark/actions) [![Coverage](https://img.shield Built with HTML. Key features: Discover SQLite database files in a directory., Export all tables or a filtered list to CSV., Generate schema reports (text, JSON, Markdown).. Actively maintained with regular updates.
+
+**Created**: 2017-11-06
+**Last Modified**: 2026-04-01
 
 ---
 
@@ -532,7 +532,7 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 
 ## Report Metadata
 
-- **Generation Time**: 6.1 seconds
+- **Generation Time**: 4.1 seconds
 - **SVGs Generated**: 6/6
 - **Total API Calls**: 0
 - **Total AI Tokens**: 0
@@ -553,4 +553,4 @@ Stars: 0 | Forks: 0 | Language: C# | 0 commits (90d)
 ---
 
 *Generated by [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
-*Last updated: 2026-04-26*
+*Last updated: 2026-05-03*

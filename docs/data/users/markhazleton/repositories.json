@@ -4,7 +4,7 @@
     "total_repositories": 30,
     "total_stars": 19,
     "total_forks": 7,
-    "total_commits": 4368,
+    "total_commits": 4402,
     "activity_calendar": {
       "2026-02-10": 21,
       "2026-02-09": 3,
@@ -62,7 +62,7 @@
       "2022-08-23": 2,
       "2022-08-18": 4,
       "2022-08-07": 4,
-      "2026-04-19": 9,
+      "2026-04-19": 12,
       "2026-04-18": 33,
       "2026-04-17": 13,
       "2026-04-16": 21,
@@ -110,9 +110,9 @@
       "2024-10-13": 5,
       "2024-10-12": 4,
       "2024-10-11": 5,
-      "2026-04-01": 13,
-      "2026-03-31": 36,
-      "2026-03-30": 78,
+      "2026-04-01": 7,
+      "2026-03-31": 33,
+      "2026-03-30": 73,
       "2026-01-12": 30,
       "2025-09-08": 3,
       "2025-08-30": 1,
@@ -137,6 +137,9 @@
       "2015-09-04": 3,
       "2015-09-03": 1,
       "2015-09-02": 1,
+      "2026-05-01": 15,
+      "2026-04-30": 9,
+      "2026-04-29": 5,
       "2026-04-24": 5,
       "2026-04-15": 13,
       "2026-04-12": 55,
@@ -147,7 +150,7 @@
       "2026-04-05": 11,
       "2026-04-04": 20,
       "2026-04-03": 13,
-      "2026-04-02": 39,
+      "2026-04-02": 32,
       "2026-03-08": 25,
       "2025-05-20": 9,
       "2025-05-19": 14,
@@ -171,6 +174,7 @@
       "2025-10-01": 3,
       "2025-09-30": 17,
       "2025-09-29": 20,
+      "2026-04-26": 1,
       "2026-04-10": 9,
       "2026-03-29": 50,
       "2026-03-28": 24,
@@ -194,7 +198,7 @@
       "2026-01-07": 5,
       "2026-01-04": 10,
       "2026-01-03": 26,
-      "2026-01-02": 19,
+      "2026-01-02": 18,
       "2025-12-23": 16,
       "2025-12-18": 2,
       "2025-12-07": 14,
@@ -293,6 +297,7 @@
       "2025-08-22": 1,
       "2025-08-17": 11,
       "2025-08-16": 19,
+      "2026-04-28": 1,
       "2026-01-26": 1,
       "2026-01-24": 3,
       "2026-01-17": 9,
@@ -546,9 +551,7 @@
       "2024-06-29": 2,
       "2024-06-25": 1,
       "2024-06-24": 2,
-      "2024-06-23": 4,
-      "2024-06-22": 1,
-      "2024-06-19": 5,
+      "2024-06-23": 1,
       "2025-11-17": 14,
       "2025-07-08": 1,
       "2025-07-07": 1,
@@ -577,12 +580,6 @@
       "2025-05-27": 6
     },
     "weekly_activity": [
-      {
-        "week": "2025-W17",
-        "label": "Apr 21",
-        "commits": 10,
-        "active_repos": 3
-      },
       {
         "week": "2025-W18",
         "label": "Apr 28",
@@ -796,7 +793,7 @@
       {
         "week": "2026-W01",
         "label": "Dec 29",
-        "commits": 60,
+        "commits": 59,
         "active_repos": 4
       },
       {
@@ -874,7 +871,7 @@
       {
         "week": "2026-W14",
         "label": "Mar 30",
-        "commits": 210,
+        "commits": 189,
         "active_repos": 7
       },
       {
@@ -886,13 +883,19 @@
       {
         "week": "2026-W16",
         "label": "Apr 13",
-        "commits": 133,
+        "commits": 136,
         "active_repos": 7
       },
       {
         "week": "2026-W17",
         "label": "Apr 20",
-        "commits": 14,
+        "commits": 15,
+        "active_repos": 5
+      },
+      {
+        "week": "2026-W18",
+        "label": "Apr 27",
+        "commits": 30,
         "active_repos": 4
       }
     ]
@@ -905,7 +908,7 @@
         "text": "Built with Python. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:12.670622",
+        "generated_at": "2026-05-03T00:56:03.728467",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -922,39 +925,39 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2026-04-02T18:38:24+00:00",
-      "updated_at": "2026-04-24T20:00:08+00:00",
-      "pushed_at": "2026-04-24T20:00:06+00:00",
-      "total_commits": 795,
-      "recent_commits_90d": 267,
-      "first_commit_date": "2026-03-30T13:22:01+00:00",
-      "last_commit_date": "2026-04-24T20:00:02+00:00",
+      "updated_at": "2026-05-01T03:04:26+00:00",
+      "pushed_at": "2026-05-01T03:04:22+00:00",
+      "total_commits": 816,
+      "recent_commits_90d": 278,
+      "first_commit_date": "2026-04-02T19:32:30+00:00",
+      "last_commit_date": "2026-05-01T03:04:21+00:00",
       "commit_history": {
         "repository_name": "devspark",
-        "total_commits": 795,
-        "recent_90d": 267,
-        "recent_180d": 334,
-        "recent_365d": 795,
-        "last_commit_date": "2026-04-24T20:00:02+00:00",
+        "total_commits": 816,
+        "recent_90d": 278,
+        "recent_180d": 350,
+        "recent_365d": 816,
+        "last_commit_date": "2026-05-01T03:04:21+00:00",
         "patterns": [
           "highly_active",
           "recently_updated",
           "accelerating"
         ],
-        "commit_frequency": 89.0,
+        "commit_frequency": 92.67,
         "consistency_score": 0,
-        "activity_rate": 2.967,
+        "activity_rate": 3.089,
         "days_since_last_commit": 1,
-        "first_commit_date": "2026-03-30T13:22:01+00:00"
+        "first_commit_date": "2026-04-02T19:32:30+00:00"
       },
       "commit_metrics": {
-        "avg_size": 1195.52,
+        "avg_size": 1097.91,
         "largest_commit": {
-          "sha": "e60572c64575914e63cbd1df8392c6f8ebb7cdae",
-          "date": "2026-04-02T18:38:50+00:00",
-          "size": 39566,
-          "files_changed": 19783,
-          "lines_added": 1864,
-          "lines_deleted": 17919
+          "sha": "b13fe4faad5f6629f89c6bba29d1ec5969441477",
+          "date": "2026-04-18T21:02:43+00:00",
+          "size": 16144,
+          "files_changed": 8072,
+          "lines_added": 7928,
+          "lines_deleted": 144
         },
         "smallest_commit": {
           "sha": "1a40ed7e6012fc27a515c9327bfd17b123b2c1f5",
@@ -967,20 +970,20 @@
         "total_commits": 200,
         "commit_size_distribution": {
           "min": 0,
-          "q1": 25,
-          "median": 153,
-          "q3": 700,
-          "max": 39566
+          "q1": 28,
+          "median": 200,
+          "q3": 762,
+          "max": 16144
         }
       },
-      "avg_commit_size": 1195.52,
+      "avg_commit_size": 1097.91,
       "largest_commit": {
-        "sha": "e60572c64575914e63cbd1df8392c6f8ebb7cdae",
-        "date": "2026-04-02T18:38:50+00:00",
-        "size": 39566,
-        "files_changed": 19783,
-        "lines_added": 1864,
-        "lines_deleted": 17919
+        "sha": "b13fe4faad5f6629f89c6bba29d1ec5969441477",
+        "date": "2026-04-18T21:02:43+00:00",
+        "size": 16144,
+        "files_changed": 8072,
+        "lines_added": 7928,
+        "lines_deleted": 144
       },
       "smallest_commit": {
         "sha": "1a40ed7e6012fc27a515c9327bfd17b123b2c1f5",
@@ -990,7 +993,7 @@
         "lines_added": 1,
         "lines_deleted": 0
       },
-      "commit_velocity": 89.0,
+      "commit_velocity": 92.67,
       "tech_stack": {
         "repository_name": "devspark",
         "languages": {},
@@ -1087,11 +1090,11 @@
       "has_tests": true,
       "has_docs": true,
       "language_count": 4,
-      "size_kb": 6376,
+      "size_kb": 6540,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 23,
+      "age_days": 30,
       "days_since_last_push": 1,
       "ai_summary": null,
       "attention_score": 5.8,
@@ -1126,7 +1129,7 @@
           "staleness": {
             "score": 0.0,
             "days_since_last_push": 1,
-            "recent_commits_90d": 267,
+            "recent_commits_90d": 278,
             "open_issues": 0
           },
           "dependencies": {
@@ -1142,7 +1145,7 @@
         }
       },
       "rank": 1,
-      "composite_score": 89.57,
+      "composite_score": 89.64,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -1175,9 +1178,9 @@
           "rest.repos.get"
         ]
       },
-      "total_additions": 138275,
-      "total_deletions": 73146,
-      "code_churn": 211421,
+      "total_additions": 147550,
+      "total_deletions": 77723,
+      "code_churn": 225273,
       "bus_factor": 1,
       "bus_factor_health": "critical",
       "contributor_stats": [
@@ -1230,236 +1233,15 @@
           "deletions": 527
         }
       ],
-      "attention_rank": 26,
+      "attention_rank": 27,
       "screenshot": {
         "path": "output/users/markhazleton/screenshots/devspark.png",
         "url": "https://markhazleton.github.io/devspark/",
-        "captured_at": "2026-04-26T00:32:21.832799+00:00",
+        "captured_at": "2026-05-03T00:36:18.186096+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 306.46
       }
-    },
-    {
-      "name": "WebSpark.HttpClientUtility",
-      "description": "HttpClientUtility for management .Net HttpClient",
-      "summary": {
-        "text": "**Drop-in HttpClient wrapper with Polly resilience, response caching, and OpenTelemetry for .NET 8-10 LTS APIs—configured in one line** Built with C#. Actively maintained with regular updates.",
-        "ai_generated": false,
-        "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:12.671013",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 60
-      },
-      "url": "https://github.com/markhazleton/WebSpark.HttpClientUtility",
-      "homepage": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-      "has_pages": true,
-      "pages_url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-      "website_url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
-      "stars": 0,
-      "forks": 0,
-      "watchers": 0,
-      "language": "C#",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2025-05-03T18:36:10+00:00",
-      "updated_at": "2026-04-23T09:32:16+00:00",
-      "pushed_at": "2026-04-23T09:32:12+00:00",
-      "total_commits": 170,
-      "recent_commits_90d": 71,
-      "first_commit_date": "2025-05-03T18:36:10+00:00",
-      "last_commit_date": "2026-04-23T09:32:07+00:00",
-      "commit_history": {
-        "repository_name": "WebSpark.HttpClientUtility",
-        "total_commits": 170,
-        "recent_90d": 71,
-        "recent_180d": 142,
-        "recent_365d": 170,
-        "last_commit_date": "2026-04-23T09:32:07+00:00",
-        "patterns": [
-          "highly_active",
-          "recently_updated",
-          "consistent"
-        ],
-        "commit_frequency": 23.67,
-        "consistency_score": 0,
-        "activity_rate": 0.789,
-        "days_since_last_commit": 2,
-        "first_commit_date": "2025-05-03T18:36:10+00:00"
-      },
-      "commit_metrics": {
-        "avg_size": 3835.99,
-        "largest_commit": {
-          "sha": "1c83bac21c2ea3dde64cff87b6818763e99c951b",
-          "date": "2025-11-01T22:19:19+00:00",
-          "size": 177298,
-          "files_changed": 88649,
-          "lines_added": 88367,
-          "lines_deleted": 282
-        },
-        "smallest_commit": {
-          "sha": "cb18310448173e6f0e717409cfead7a773925375",
-          "date": "2025-05-19T18:30:18+00:00",
-          "size": 2,
-          "files_changed": 1,
-          "lines_added": 1,
-          "lines_deleted": 0
-        },
-        "total_commits": 170,
-        "commit_size_distribution": {
-          "min": 0,
-          "q1": 40,
-          "median": 296,
-          "q3": 1291,
-          "max": 177298
-        }
-      },
-      "avg_commit_size": 3835.99,
-      "largest_commit": {
-        "sha": "1c83bac21c2ea3dde64cff87b6818763e99c951b",
-        "date": "2025-11-01T22:19:19+00:00",
-        "size": 177298,
-        "files_changed": 88649,
-        "lines_added": 88367,
-        "lines_deleted": 282
-      },
-      "smallest_commit": {
-        "sha": "cb18310448173e6f0e717409cfead7a773925375",
-        "date": "2025-05-19T18:30:18+00:00",
-        "size": 2,
-        "files_changed": 1,
-        "lines_added": 1,
-        "lines_deleted": 0
-      },
-      "commit_velocity": 23.67,
-      "tech_stack": null,
-      "has_readme": true,
-      "has_license": true,
-      "has_ci_cd": true,
-      "has_tests": false,
-      "has_docs": true,
-      "language_count": 7,
-      "size_kb": 2991,
-      "is_fork": false,
-      "is_private": false,
-      "is_archived": false,
-      "age_days": 357,
-      "days_since_last_push": 2,
-      "ai_summary": null,
-      "attention_score": 8.0,
-      "attention_metrics": {
-        "score": 8.0,
-        "tier": "healthy",
-        "needs_attention": false,
-        "reasons": [],
-        "components": {
-          "pull_requests": {
-            "score": 17.9,
-            "availability": "available",
-            "reason": "none",
-            "total_open": 1,
-            "draft_count": 0,
-            "review_requested_count": 0,
-            "oldest_open_age_days": 17
-          },
-          "security": {
-            "score": 10.0,
-            "availability": "partial",
-            "reason": "permission_denied",
-            "overall_state": "clear",
-            "active_alert_counts": {
-              "total_open": 0,
-              "critical": 0,
-              "high": 0,
-              "medium": 0,
-              "low": 0
-            }
-          },
-          "staleness": {
-            "score": 0.0,
-            "days_since_last_push": 2,
-            "recent_commits_90d": 71,
-            "open_issues": 0
-          },
-          "dependencies": {
-            "score": 0.0,
-            "total_dependencies": 0,
-            "outdated_count": 0,
-            "outdated_percentage": 0.0,
-            "currency_score": 100,
-            "version_coverage_percentage": 100.0,
-            "latest_version_coverage_percentage": 100.0,
-            "unknown_versions_count": 0
-          }
-        }
-      },
-      "rank": 2,
-      "composite_score": 89.15,
-      "pull_request_summary": {
-        "availability": "available",
-        "reason": "none",
-        "has_open_pull_requests": true,
-        "total_open": 1,
-        "draft_count": 0,
-        "review_requested_count": 0,
-        "oldest_open_age_days": 17,
-        "source": "rest.pulls.list"
-      },
-      "security_summary": {
-        "availability": "partial",
-        "reason": "permission_denied",
-        "overall_state": "clear",
-        "feature_status": {
-          "advanced_security": "unknown",
-          "secret_scanning": "unknown",
-          "secret_scanning_push_protection": "unknown",
-          "dependency_alerts": "unavailable",
-          "automated_security_fixes": "unavailable"
-        },
-        "active_alert_counts": {
-          "total_open": 0,
-          "critical": 0,
-          "high": 0,
-          "medium": 0,
-          "low": 0
-        },
-        "sources": [
-          "rest.repos.get"
-        ]
-      },
-      "total_additions": 355176,
-      "total_deletions": 140827,
-      "code_churn": 496003,
-      "bus_factor": 1,
-      "bus_factor_health": "critical",
-      "contributor_stats": [
-        {
-          "login": "markhazleton",
-          "commits": 111,
-          "additions": 339031,
-          "deletions": 139032
-        },
-        {
-          "login": "actions-user",
-          "commits": 12,
-          "additions": 348,
-          "deletions": 753
-        },
-        {
-          "login": "dependabot[bot]",
-          "commits": 9,
-          "additions": 221,
-          "deletions": 224
-        },
-        {
-          "login": "claude",
-          "commits": 5,
-          "additions": 1459,
-          "deletions": 2042
-        }
-      ],
-      "attention_rank": 22
     },
     {
       "name": "TailwindSpark",
@@ -1468,7 +1250,7 @@
         "text": "[![Version](https://img.shields.io/badge/version-1.0.18-blue.svg)](https://github.com/markhazleton/TailwindSpark) [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE) [![React](https://img.shields.io/badge/React-19.1.1-61dafb.svg)](https://reactjs.org/) [![TypeScript](https://im Built with TypeScript. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:12.671650",
+        "generated_at": "2026-05-03T00:56:03.729267",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -1486,7 +1268,7 @@
       "languages": {},
       "created_at": "2025-07-29T16:30:33+00:00",
       "updated_at": "2026-04-16T19:23:47+00:00",
-      "pushed_at": "2026-04-20T15:13:48+00:00",
+      "pushed_at": "2026-05-01T12:35:27+00:00",
       "total_commits": 189,
       "recent_commits_90d": 98,
       "first_commit_date": "2025-07-29T16:30:33+00:00",
@@ -1495,7 +1277,7 @@
         "repository_name": "TailwindSpark",
         "total_commits": 189,
         "recent_90d": 98,
-        "recent_180d": 110,
+        "recent_180d": 99,
         "recent_365d": 189,
         "last_commit_date": "2026-04-16T18:16:52+00:00",
         "patterns": [
@@ -1506,7 +1288,7 @@
         "commit_frequency": 32.67,
         "consistency_score": 0,
         "activity_rate": 1.089,
-        "days_since_last_commit": 9,
+        "days_since_last_commit": 16,
         "first_commit_date": "2025-07-29T16:30:33+00:00"
       },
       "commit_metrics": {
@@ -1958,28 +1740,28 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 7,
-      "size_kb": 3928,
+      "size_kb": 4310,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 270,
-      "days_since_last_push": 5,
+      "age_days": 277,
+      "days_since_last_push": 1,
       "ai_summary": null,
-      "attention_score": 14.8,
+      "attention_score": 32.8,
       "attention_metrics": {
-        "score": 14.8,
-        "tier": "healthy",
-        "needs_attention": false,
+        "score": 32.8,
+        "tier": "watch",
+        "needs_attention": true,
         "reasons": [
           "pull_requests",
           "dependencies"
         ],
         "components": {
           "pull_requests": {
-            "score": 25.8,
+            "score": 97.8,
             "availability": "available",
             "reason": "none",
-            "total_open": 2,
+            "total_open": 8,
             "draft_count": 0,
             "review_requested_count": 0,
             "oldest_open_age_days": 5
@@ -1999,7 +1781,7 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 5,
+            "days_since_last_push": 1,
             "recent_commits_90d": 98,
             "open_issues": 0
           },
@@ -2015,13 +1797,13 @@
           }
         }
       },
-      "rank": 3,
-      "composite_score": 88.9,
+      "rank": 2,
+      "composite_score": 88.92,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
         "has_open_pull_requests": true,
-        "total_open": 2,
+        "total_open": 8,
         "draft_count": 0,
         "review_requested_count": 0,
         "oldest_open_age_days": 5,
@@ -2074,7 +1856,7 @@
           "deletions": 257
         }
       ],
-      "attention_rank": 12
+      "attention_rank": 1
     },
     {
       "name": "github-stats-spark",
@@ -2083,7 +1865,7 @@
         "text": "> Automated GitHub profile statistics generator with beautiful SVG visualizations and AI-powered repository analysis Built with Python. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:12.835241",
+        "generated_at": "2026-05-03T00:56:03.848035",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -2100,32 +1882,31 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2025-12-28T17:01:51+00:00",
-      "updated_at": "2026-04-24T18:06:47+00:00",
-      "pushed_at": "2026-04-24T23:25:03+00:00",
-      "total_commits": 237,
-      "recent_commits_90d": 106,
-      "first_commit_date": "2026-01-02T13:32:53+00:00",
-      "last_commit_date": "2026-04-24T18:06:39+00:00",
+      "updated_at": "2026-04-26T01:27:12+00:00",
+      "pushed_at": "2026-04-26T01:27:08+00:00",
+      "total_commits": 238,
+      "recent_commits_90d": 92,
+      "first_commit_date": "2026-01-02T14:51:34+00:00",
+      "last_commit_date": "2026-04-26T01:27:07+00:00",
       "commit_history": {
         "repository_name": "github-stats-spark",
-        "total_commits": 237,
-        "recent_90d": 106,
-        "recent_180d": 237,
-        "recent_365d": 237,
-        "last_commit_date": "2026-04-24T18:06:39+00:00",
+        "total_commits": 238,
+        "recent_90d": 92,
+        "recent_180d": 238,
+        "recent_365d": 238,
+        "last_commit_date": "2026-04-26T01:27:07+00:00",
         "patterns": [
           "highly_active",
-          "recently_updated",
-          "consistent"
+          "recently_updated"
         ],
-        "commit_frequency": 35.33,
+        "commit_frequency": 30.67,
         "consistency_score": 0,
-        "activity_rate": 1.178,
-        "days_since_last_commit": 1,
-        "first_commit_date": "2026-01-02T13:32:53+00:00"
+        "activity_rate": 1.022,
+        "days_since_last_commit": 6,
+        "first_commit_date": "2026-01-02T14:51:34+00:00"
       },
       "commit_metrics": {
-        "avg_size": 13844.75,
+        "avg_size": 14021.77,
         "largest_commit": {
           "sha": "5a6925327ce7ce259e7a133c62353f59c599f5a6",
           "date": "2026-01-04T14:38:58+00:00",
@@ -2146,12 +1927,12 @@
         "commit_size_distribution": {
           "min": 2,
           "q1": 536,
-          "median": 2744,
-          "q3": 14361,
+          "median": 2872,
+          "q3": 14697,
           "max": 282812
         }
       },
-      "avg_commit_size": 13844.75,
+      "avg_commit_size": 14021.77,
       "largest_commit": {
         "sha": "5a6925327ce7ce259e7a133c62353f59c599f5a6",
         "date": "2026-01-04T14:38:58+00:00",
@@ -2168,7 +1949,7 @@
         "lines_added": 1,
         "lines_deleted": 0
       },
-      "commit_velocity": 35.33,
+      "commit_velocity": 30.67,
       "tech_stack": {
         "repository_name": "github-stats-spark",
         "languages": {},
@@ -2303,7 +2084,7 @@
           {
             "name": "playwright",
             "current_version": "1.40.0",
-            "latest_version": "1.58.0",
+            "latest_version": "1.59.0",
             "ecosystem": "pypi",
             "versions_behind": 0,
             "is_outdated": true,
@@ -2335,12 +2116,12 @@
       "has_tests": true,
       "has_docs": true,
       "language_count": 6,
-      "size_kb": 19124,
+      "size_kb": 19309,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 118,
-      "days_since_last_push": 1,
+      "age_days": 125,
+      "days_since_last_push": 6,
       "ai_summary": null,
       "attention_score": 6.5,
       "attention_metrics": {
@@ -2375,8 +2156,8 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 1,
-            "recent_commits_90d": 106,
+            "days_since_last_push": 6,
+            "recent_commits_90d": 92,
             "open_issues": 0
           },
           "dependencies": {
@@ -2391,8 +2172,8 @@
           }
         }
       },
-      "rank": 4,
-      "composite_score": 88.5,
+      "rank": 3,
+      "composite_score": 88.52,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -2425,9 +2206,9 @@
           "rest.repos.get"
         ]
       },
-      "total_additions": 931410,
-      "total_deletions": 816498,
-      "code_churn": 1747908,
+      "total_additions": 939644,
+      "total_deletions": 827102,
+      "code_churn": 1766746,
       "bus_factor": 1,
       "bus_factor_health": "critical",
       "contributor_stats": [
@@ -2439,9 +2220,9 @@
         },
         {
           "login": "github-actions[bot]",
-          "commits": 65,
-          "additions": 127601,
-          "deletions": 105772
+          "commits": 66,
+          "additions": 135835,
+          "deletions": 116376
         },
         {
           "login": "claude",
@@ -2450,15 +2231,236 @@
           "deletions": 12092
         }
       ],
-      "attention_rank": 23,
+      "attention_rank": 25,
       "screenshot": {
         "path": "output/users/markhazleton/screenshots/github-stats-spark.png",
         "url": "https://markhazleton.github.io/github-stats-spark/",
-        "captured_at": "2026-04-26T00:32:21.833799+00:00",
+        "captured_at": "2026-05-03T00:36:18.187096+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 76.75
       }
+    },
+    {
+      "name": "WebSpark.HttpClientUtility",
+      "description": "HttpClientUtility for management .Net HttpClient",
+      "summary": {
+        "text": "**Drop-in HttpClient wrapper with Polly resilience, response caching, and OpenTelemetry for .NET 8-10 LTS APIs—configured in one line** Built with C#. Actively maintained with regular updates.",
+        "ai_generated": false,
+        "generation_method": "enhanced-template",
+        "generated_at": "2026-05-03T00:56:03.848471",
+        "model_used": null,
+        "tokens_used": 0,
+        "confidence_score": 60
+      },
+      "url": "https://github.com/markhazleton/WebSpark.HttpClientUtility",
+      "homepage": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+      "has_pages": true,
+      "pages_url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+      "website_url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "C#",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2025-05-03T18:36:10+00:00",
+      "updated_at": "2026-04-23T09:32:16+00:00",
+      "pushed_at": "2026-04-23T09:32:12+00:00",
+      "total_commits": 170,
+      "recent_commits_90d": 71,
+      "first_commit_date": "2025-05-03T18:36:10+00:00",
+      "last_commit_date": "2026-04-23T09:32:07+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark.HttpClientUtility",
+        "total_commits": 170,
+        "recent_90d": 71,
+        "recent_180d": 142,
+        "recent_365d": 170,
+        "last_commit_date": "2026-04-23T09:32:07+00:00",
+        "patterns": [
+          "highly_active",
+          "current",
+          "consistent"
+        ],
+        "commit_frequency": 23.67,
+        "consistency_score": 0,
+        "activity_rate": 0.789,
+        "days_since_last_commit": 9,
+        "first_commit_date": "2025-05-03T18:36:10+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 3835.99,
+        "largest_commit": {
+          "sha": "1c83bac21c2ea3dde64cff87b6818763e99c951b",
+          "date": "2025-11-01T22:19:19+00:00",
+          "size": 177298,
+          "files_changed": 88649,
+          "lines_added": 88367,
+          "lines_deleted": 282
+        },
+        "smallest_commit": {
+          "sha": "cb18310448173e6f0e717409cfead7a773925375",
+          "date": "2025-05-19T18:30:18+00:00",
+          "size": 2,
+          "files_changed": 1,
+          "lines_added": 1,
+          "lines_deleted": 0
+        },
+        "total_commits": 170,
+        "commit_size_distribution": {
+          "min": 0,
+          "q1": 40,
+          "median": 296,
+          "q3": 1291,
+          "max": 177298
+        }
+      },
+      "avg_commit_size": 3835.99,
+      "largest_commit": {
+        "sha": "1c83bac21c2ea3dde64cff87b6818763e99c951b",
+        "date": "2025-11-01T22:19:19+00:00",
+        "size": 177298,
+        "files_changed": 88649,
+        "lines_added": 88367,
+        "lines_deleted": 282
+      },
+      "smallest_commit": {
+        "sha": "cb18310448173e6f0e717409cfead7a773925375",
+        "date": "2025-05-19T18:30:18+00:00",
+        "size": 2,
+        "files_changed": 1,
+        "lines_added": 1,
+        "lines_deleted": 0
+      },
+      "commit_velocity": 23.67,
+      "tech_stack": null,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": false,
+      "has_docs": true,
+      "language_count": 7,
+      "size_kb": 2991,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 364,
+      "days_since_last_push": 9,
+      "ai_summary": null,
+      "attention_score": 8.0,
+      "attention_metrics": {
+        "score": 8.0,
+        "tier": "healthy",
+        "needs_attention": false,
+        "reasons": [],
+        "components": {
+          "pull_requests": {
+            "score": 17.9,
+            "availability": "available",
+            "reason": "none",
+            "total_open": 1,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": 17
+          },
+          "security": {
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
+            "active_alert_counts": {
+              "total_open": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 0.0,
+            "days_since_last_push": 9,
+            "recent_commits_90d": 71,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 0.0,
+            "total_dependencies": 0,
+            "outdated_count": 0,
+            "outdated_percentage": 0.0,
+            "currency_score": 100,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 100.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 4,
+      "composite_score": 83.49,
+      "pull_request_summary": {
+        "availability": "available",
+        "reason": "none",
+        "has_open_pull_requests": true,
+        "total_open": 1,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": 17,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get"
+        ]
+      },
+      "total_additions": 355176,
+      "total_deletions": 140827,
+      "code_churn": 496003,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "markhazleton",
+          "commits": 111,
+          "additions": 339031,
+          "deletions": 139032
+        },
+        {
+          "login": "actions-user",
+          "commits": 12,
+          "additions": 348,
+          "deletions": 753
+        },
+        {
+          "login": "dependabot[bot]",
+          "commits": 9,
+          "additions": 221,
+          "deletions": 224
+        },
+        {
+          "login": "claude",
+          "commits": 5,
+          "additions": 1459,
+          "deletions": 2042
+        }
+      ],
+      "attention_rank": 23
     },
     {
       "name": "UISampleSpark",
@@ -2467,7 +2469,7 @@
         "text": "A .NET 10 (ASP.NET Core) application exploring multiple front-end technologies for building modern web user interfaces. This repository is an educational reference that compares UI patterns — MVC, Razor Pages, React, Vue, htmx, Blazor, and vanilla JavaScript SPA — using a common Employee/Department  Built with HTML. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:12.835639",
+        "generated_at": "2026-05-03T00:56:03.848872",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -2485,27 +2487,26 @@
       "languages": {},
       "created_at": "2019-04-25T18:45:29+00:00",
       "updated_at": "2026-04-11T22:57:19+00:00",
-      "pushed_at": "2026-04-21T13:15:30+00:00",
+      "pushed_at": "2026-04-29T13:13:36+00:00",
       "total_commits": 683,
-      "recent_commits_90d": 87,
+      "recent_commits_90d": 68,
       "first_commit_date": "2023-10-10T01:27:14+00:00",
       "last_commit_date": "2026-04-11T22:57:13+00:00",
       "commit_history": {
         "repository_name": "UISampleSpark",
         "total_commits": 683,
-        "recent_90d": 87,
+        "recent_90d": 68,
         "recent_180d": 110,
         "recent_365d": 122,
         "last_commit_date": "2026-04-11T22:57:13+00:00",
         "patterns": [
           "highly_active",
-          "current",
-          "accelerating"
+          "current"
         ],
-        "commit_frequency": 29.0,
+        "commit_frequency": 22.67,
         "consistency_score": 0,
-        "activity_rate": 0.967,
-        "days_since_last_commit": 14,
+        "activity_rate": 0.756,
+        "days_since_last_commit": 21,
         "first_commit_date": "2023-10-10T01:27:14+00:00"
       },
       "commit_metrics": {
@@ -2552,7 +2553,7 @@
         "lines_added": 0,
         "lines_deleted": 1
       },
-      "commit_velocity": 29.0,
+      "commit_velocity": 22.67,
       "tech_stack": null,
       "has_readme": true,
       "has_license": true,
@@ -2560,12 +2561,12 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 7,
-      "size_kb": 31088,
+      "size_kb": 31058,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 2557,
-      "days_since_last_push": 4,
+      "age_days": 2564,
+      "days_since_last_push": 3,
       "ai_summary": null,
       "attention_score": 28.5,
       "attention_metrics": {
@@ -2580,10 +2581,10 @@
             "score": 100.0,
             "availability": "available",
             "reason": "none",
-            "total_open": 8,
+            "total_open": 11,
             "draft_count": 0,
             "review_requested_count": 0,
-            "oldest_open_age_days": 12
+            "oldest_open_age_days": 19
           },
           "security": {
             "score": 10.0,
@@ -2600,8 +2601,8 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 4,
-            "recent_commits_90d": 87,
+            "days_since_last_push": 3,
+            "recent_commits_90d": 68,
             "open_issues": 0
           },
           "dependencies": {
@@ -2617,15 +2618,15 @@
         }
       },
       "rank": 5,
-      "composite_score": 77.53,
+      "composite_score": 74.29,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
         "has_open_pull_requests": true,
-        "total_open": 8,
+        "total_open": 11,
         "draft_count": 0,
         "review_requested_count": 0,
-        "oldest_open_age_days": 12,
+        "oldest_open_age_days": 19,
         "source": "rest.pulls.list"
       },
       "security_summary": {
@@ -2675,7 +2676,7 @@
           "deletions": 48357
         }
       ],
-      "attention_rank": 1
+      "attention_rank": 3
     },
     {
       "name": "InquirySpark",
@@ -2684,7 +2685,7 @@
         "text": "Spark Your Inquiry, Ignite Insights. Built with C#. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:12.835862",
+        "generated_at": "2026-05-03T00:56:03.849112",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -2716,12 +2717,12 @@
         "last_commit_date": "2026-04-18T22:41:58+00:00",
         "patterns": [
           "highly_active",
-          "recently_updated"
+          "current"
         ],
         "commit_frequency": 20.33,
         "consistency_score": 0,
         "activity_rate": 0.678,
-        "days_since_last_commit": 7,
+        "days_since_last_commit": 14,
         "first_commit_date": "2023-10-24T13:14:09+00:00"
       },
       "commit_metrics": {
@@ -2780,8 +2781,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 914,
-      "days_since_last_push": 7,
+      "age_days": 921,
+      "days_since_last_push": 14,
       "ai_summary": null,
       "attention_score": 3.5,
       "attention_metrics": {
@@ -2814,7 +2815,7 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 7,
+            "days_since_last_push": 14,
             "recent_commits_90d": 61,
             "open_issues": 0
           },
@@ -2831,7 +2832,7 @@
         }
       },
       "rank": 6,
-      "composite_score": 77.4,
+      "composite_score": 69.92,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -2889,7 +2890,216 @@
           "deletions": 78
         }
       ],
-      "attention_rank": 28
+      "attention_rank": 29
+    },
+    {
+      "name": "RequestSpark",
+      "description": "A small console application to run REST requests",
+      "summary": {
+        "text": "[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![License](https://img.shields.io/github/license/markhazleton/RequestSpark)](https://github.com/markhazleton/RequestSpark/blob/main/LICENSE) [![GitHub Issues](https://img.shields.io/github/ Built with C#. Key features: **Postman Collection Integration**: Import and execute existing Postman collections, **Automated Regression Testing**: Run comprehensive API test suites automatically, **Performance Analysis**: Compare response times across multiple API instances. Actively maintained with regular updates.",
+        "ai_generated": false,
+        "generation_method": "enhanced-template",
+        "generated_at": "2026-05-03T00:56:03.849383",
+        "model_used": null,
+        "tokens_used": 0,
+        "confidence_score": 60
+      },
+      "url": "https://github.com/markhazleton/RequestSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 2,
+      "forks": 1,
+      "watchers": 2,
+      "language": "C#",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2021-09-30T13:38:06+00:00",
+      "updated_at": "2026-03-31T01:31:26+00:00",
+      "pushed_at": "2026-03-31T01:31:21+00:00",
+      "total_commits": 107,
+      "recent_commits_90d": 45,
+      "first_commit_date": "2021-09-30T13:38:07+00:00",
+      "last_commit_date": "2026-03-31T01:31:06+00:00",
+      "commit_history": {
+        "repository_name": "RequestSpark",
+        "total_commits": 107,
+        "recent_90d": 45,
+        "recent_180d": 61,
+        "recent_365d": 71,
+        "last_commit_date": "2026-03-31T01:31:06+00:00",
+        "patterns": [
+          "highly_active"
+        ],
+        "commit_frequency": 15.0,
+        "consistency_score": 0,
+        "activity_rate": 0.5,
+        "days_since_last_commit": 32,
+        "first_commit_date": "2021-09-30T13:38:07+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 1981.63,
+        "largest_commit": {
+          "sha": "cd2812643e26f6aa48004d9457345186e513531f",
+          "date": "2026-03-15T20:33:03+00:00",
+          "size": 40536,
+          "files_changed": 20268,
+          "lines_added": 19902,
+          "lines_deleted": 366
+        },
+        "smallest_commit": {
+          "sha": "0a5b5dbf48b993bcad55e1f0b6e6c7ff4e9989be",
+          "date": "2026-03-20T15:09:35+00:00",
+          "size": 6,
+          "files_changed": 3,
+          "lines_added": 2,
+          "lines_deleted": 1
+        },
+        "total_commits": 107,
+        "commit_size_distribution": {
+          "min": 0,
+          "q1": 44,
+          "median": 408,
+          "q3": 1334,
+          "max": 40536
+        }
+      },
+      "avg_commit_size": 1981.63,
+      "largest_commit": {
+        "sha": "cd2812643e26f6aa48004d9457345186e513531f",
+        "date": "2026-03-15T20:33:03+00:00",
+        "size": 40536,
+        "files_changed": 20268,
+        "lines_added": 19902,
+        "lines_deleted": 366
+      },
+      "smallest_commit": {
+        "sha": "0a5b5dbf48b993bcad55e1f0b6e6c7ff4e9989be",
+        "date": "2026-03-20T15:09:35+00:00",
+        "size": 6,
+        "files_changed": 3,
+        "lines_added": 2,
+        "lines_deleted": 1
+      },
+      "commit_velocity": 15.0,
+      "tech_stack": null,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": false,
+      "has_docs": true,
+      "language_count": 5,
+      "size_kb": 947,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 1675,
+      "days_since_last_push": 32,
+      "ai_summary": null,
+      "attention_score": 12.2,
+      "attention_metrics": {
+        "score": 12.2,
+        "tier": "healthy",
+        "needs_attention": false,
+        "reasons": [
+          "staleness"
+        ],
+        "components": {
+          "pull_requests": {
+            "score": 0.0,
+            "availability": "available",
+            "reason": "none",
+            "total_open": 0,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": null
+          },
+          "security": {
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
+            "active_alert_counts": {
+              "total_open": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 35.0,
+            "days_since_last_push": 32,
+            "recent_commits_90d": 45,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 0.0,
+            "total_dependencies": 0,
+            "outdated_count": 0,
+            "outdated_percentage": 0.0,
+            "currency_score": 100,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 100.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 7,
+      "composite_score": 48.23,
+      "pull_request_summary": {
+        "availability": "available",
+        "reason": "none",
+        "has_open_pull_requests": false,
+        "total_open": 0,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": null,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get"
+        ]
+      },
+      "total_additions": 110537,
+      "total_deletions": 48221,
+      "code_churn": 158758,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "markhazleton",
+          "commits": 94,
+          "additions": 110503,
+          "deletions": 48187
+        },
+        {
+          "login": "dependabot[bot]",
+          "commits": 2,
+          "additions": 34,
+          "deletions": 34
+        }
+      ],
+      "attention_rank": 15
     },
     {
       "name": "git-spark",
@@ -2898,7 +3108,7 @@
         "text": "**Analyze commit patterns and contributor activity with interactive reports** Built with PowerShell. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.809821",
+        "generated_at": "2026-05-03T00:56:06.811621",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -2930,13 +3140,13 @@
         "last_commit_date": "2026-04-19T20:21:01+00:00",
         "patterns": [
           "highly_active",
-          "recently_updated",
+          "current",
           "consistent"
         ],
         "commit_frequency": 14.67,
         "consistency_score": 0,
         "activity_rate": 0.489,
-        "days_since_last_commit": 6,
+        "days_since_last_commit": 13,
         "first_commit_date": "2025-09-29T14:12:08+00:00"
       },
       "commit_metrics": {
@@ -3132,7 +3342,7 @@
           {
             "name": "@typescript-eslint/eslint-plugin",
             "current_version": "8.58.2",
-            "latest_version": "8.59.0",
+            "latest_version": "8.59.1",
             "ecosystem": "npm",
             "versions_behind": 0,
             "is_outdated": true,
@@ -3146,7 +3356,7 @@
           {
             "name": "@typescript-eslint/parser",
             "current_version": "8.58.2",
-            "latest_version": "8.59.0",
+            "latest_version": "8.59.1",
             "ecosystem": "npm",
             "versions_behind": 0,
             "is_outdated": true,
@@ -3174,11 +3384,11 @@
           {
             "name": "eslint",
             "current_version": "10.2.1",
-            "latest_version": "10.2.1",
+            "latest_version": "10.3.0",
             "ecosystem": "npm",
             "versions_behind": 0,
-            "is_outdated": false,
-            "status": "current",
+            "is_outdated": true,
+            "status": "minor_outdated",
             "version_requirement": "10.2.1",
             "current_version_known": true,
             "latest_version_status": "resolved",
@@ -3216,7 +3426,7 @@
           {
             "name": "npm-check-updates",
             "current_version": "21.0.2",
-            "latest_version": "22.0.1",
+            "latest_version": "22.1.0",
             "ecosystem": "npm",
             "versions_behind": 1,
             "is_outdated": true,
@@ -3300,15 +3510,15 @@
         ],
         "version_info": {},
         "dependency_file_type": "package.json",
-        "currency_score": 92,
-        "outdated_count": 4,
+        "currency_score": 91,
+        "outdated_count": 5,
         "total_dependencies": 22,
         "known_versions_count": 22,
         "resolved_latest_versions_count": 22,
         "unknown_versions_count": 0,
         "primary_language": null,
         "language_diversity": 0,
-        "outdated_percentage": 18.2,
+        "outdated_percentage": 22.7,
         "version_coverage_percentage": 100.0,
         "latest_version_coverage_percentage": 100.0
       },
@@ -3322,12 +3532,12 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 208,
-      "days_since_last_push": 6,
+      "age_days": 215,
+      "days_since_last_push": 13,
       "ai_summary": null,
-      "attention_score": 4.3,
+      "attention_score": 4.4,
       "attention_metrics": {
-        "score": 4.3,
+        "score": 4.4,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [],
@@ -3356,24 +3566,24 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 6,
+            "days_since_last_push": 13,
             "recent_commits_90d": 44,
             "open_issues": 0
           },
           "dependencies": {
-            "score": 5.2,
+            "score": 5.9,
             "total_dependencies": 22,
-            "outdated_count": 4,
-            "outdated_percentage": 18.2,
-            "currency_score": 92,
+            "outdated_count": 5,
+            "outdated_percentage": 22.7,
+            "currency_score": 91,
             "version_coverage_percentage": 100.0,
             "latest_version_coverage_percentage": 100.0,
             "unknown_versions_count": 0
           }
         }
       },
-      "rank": 7,
-      "composite_score": 72.66,
+      "rank": 8,
+      "composite_score": 44.57,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -3437,223 +3647,15 @@
           "deletions": 58
         }
       ],
-      "attention_rank": 27,
+      "attention_rank": 28,
       "screenshot": {
         "path": "output/users/markhazleton/screenshots/git-spark.png",
         "url": "https://markhazleton.github.io/git-spark/",
-        "captured_at": "2026-04-26T00:32:21.833799+00:00",
+        "captured_at": "2026-05-03T00:36:18.187096+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 235.63
       }
-    },
-    {
-      "name": "RequestSpark",
-      "description": "A small console application to run REST requests",
-      "summary": {
-        "text": "[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![License](https://img.shields.io/github/license/markhazleton/RequestSpark)](https://github.com/markhazleton/RequestSpark/blob/main/LICENSE) [![GitHub Issues](https://img.shields.io/github/ Built with C#. Key features: **Postman Collection Integration**: Import and execute existing Postman collections, **Automated Regression Testing**: Run comprehensive API test suites automatically, **Performance Analysis**: Compare response times across multiple API instances. Actively maintained with regular updates.",
-        "ai_generated": false,
-        "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.810205",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 60
-      },
-      "url": "https://github.com/markhazleton/RequestSpark",
-      "homepage": null,
-      "has_pages": false,
-      "pages_url": null,
-      "website_url": null,
-      "stars": 2,
-      "forks": 1,
-      "watchers": 2,
-      "language": "C#",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2021-09-30T13:38:06+00:00",
-      "updated_at": "2026-03-31T01:31:26+00:00",
-      "pushed_at": "2026-03-31T01:31:21+00:00",
-      "total_commits": 107,
-      "recent_commits_90d": 45,
-      "first_commit_date": "2021-09-30T13:38:07+00:00",
-      "last_commit_date": "2026-03-31T01:31:06+00:00",
-      "commit_history": {
-        "repository_name": "RequestSpark",
-        "total_commits": 107,
-        "recent_90d": 45,
-        "recent_180d": 61,
-        "recent_365d": 71,
-        "last_commit_date": "2026-03-31T01:31:06+00:00",
-        "patterns": [
-          "highly_active",
-          "current"
-        ],
-        "commit_frequency": 15.0,
-        "consistency_score": 0,
-        "activity_rate": 0.5,
-        "days_since_last_commit": 25,
-        "first_commit_date": "2021-09-30T13:38:07+00:00"
-      },
-      "commit_metrics": {
-        "avg_size": 1981.63,
-        "largest_commit": {
-          "sha": "cd2812643e26f6aa48004d9457345186e513531f",
-          "date": "2026-03-15T20:33:03+00:00",
-          "size": 40536,
-          "files_changed": 20268,
-          "lines_added": 19902,
-          "lines_deleted": 366
-        },
-        "smallest_commit": {
-          "sha": "0a5b5dbf48b993bcad55e1f0b6e6c7ff4e9989be",
-          "date": "2026-03-20T15:09:35+00:00",
-          "size": 6,
-          "files_changed": 3,
-          "lines_added": 2,
-          "lines_deleted": 1
-        },
-        "total_commits": 107,
-        "commit_size_distribution": {
-          "min": 0,
-          "q1": 44,
-          "median": 408,
-          "q3": 1334,
-          "max": 40536
-        }
-      },
-      "avg_commit_size": 1981.63,
-      "largest_commit": {
-        "sha": "cd2812643e26f6aa48004d9457345186e513531f",
-        "date": "2026-03-15T20:33:03+00:00",
-        "size": 40536,
-        "files_changed": 20268,
-        "lines_added": 19902,
-        "lines_deleted": 366
-      },
-      "smallest_commit": {
-        "sha": "0a5b5dbf48b993bcad55e1f0b6e6c7ff4e9989be",
-        "date": "2026-03-20T15:09:35+00:00",
-        "size": 6,
-        "files_changed": 3,
-        "lines_added": 2,
-        "lines_deleted": 1
-      },
-      "commit_velocity": 15.0,
-      "tech_stack": null,
-      "has_readme": true,
-      "has_license": true,
-      "has_ci_cd": true,
-      "has_tests": false,
-      "has_docs": true,
-      "language_count": 5,
-      "size_kb": 947,
-      "is_fork": false,
-      "is_private": false,
-      "is_archived": false,
-      "age_days": 1668,
-      "days_since_last_push": 25,
-      "ai_summary": null,
-      "attention_score": 6.5,
-      "attention_metrics": {
-        "score": 6.5,
-        "tier": "healthy",
-        "needs_attention": false,
-        "reasons": [],
-        "components": {
-          "pull_requests": {
-            "score": 0.0,
-            "availability": "available",
-            "reason": "none",
-            "total_open": 0,
-            "draft_count": 0,
-            "review_requested_count": 0,
-            "oldest_open_age_days": null
-          },
-          "security": {
-            "score": 10.0,
-            "availability": "partial",
-            "reason": "permission_denied",
-            "overall_state": "clear",
-            "active_alert_counts": {
-              "total_open": 0,
-              "critical": 0,
-              "high": 0,
-              "medium": 0,
-              "low": 0
-            }
-          },
-          "staleness": {
-            "score": 12.0,
-            "days_since_last_push": 25,
-            "recent_commits_90d": 45,
-            "open_issues": 0
-          },
-          "dependencies": {
-            "score": 0.0,
-            "total_dependencies": 0,
-            "outdated_count": 0,
-            "outdated_percentage": 0.0,
-            "currency_score": 100,
-            "version_coverage_percentage": 100.0,
-            "latest_version_coverage_percentage": 100.0,
-            "unknown_versions_count": 0
-          }
-        }
-      },
-      "rank": 8,
-      "composite_score": 52.73,
-      "pull_request_summary": {
-        "availability": "available",
-        "reason": "none",
-        "has_open_pull_requests": false,
-        "total_open": 0,
-        "draft_count": 0,
-        "review_requested_count": 0,
-        "oldest_open_age_days": null,
-        "source": "rest.pulls.list"
-      },
-      "security_summary": {
-        "availability": "partial",
-        "reason": "permission_denied",
-        "overall_state": "clear",
-        "feature_status": {
-          "advanced_security": "unknown",
-          "secret_scanning": "unknown",
-          "secret_scanning_push_protection": "unknown",
-          "dependency_alerts": "unavailable",
-          "automated_security_fixes": "unavailable"
-        },
-        "active_alert_counts": {
-          "total_open": 0,
-          "critical": 0,
-          "high": 0,
-          "medium": 0,
-          "low": 0
-        },
-        "sources": [
-          "rest.repos.get"
-        ]
-      },
-      "total_additions": 110537,
-      "total_deletions": 48221,
-      "code_churn": 158758,
-      "bus_factor": 1,
-      "bus_factor_health": "critical",
-      "contributor_stats": [
-        {
-          "login": "markhazleton",
-          "commits": 94,
-          "additions": 110503,
-          "deletions": 48187
-        },
-        {
-          "login": "dependabot[bot]",
-          "commits": 2,
-          "additions": 34,
-          "deletions": 34
-        }
-      ],
-      "attention_rank": 24
     },
     {
       "name": "BootstrapSpark",
@@ -3662,7 +3664,7 @@
         "text": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/markhazleton/BootstrapSpark?tab=MIT-1-ov-file) [![GitHub stars](https://img.shields.io/github/stars/markhazleton/BootstrapSpark)](https://github.com/markhazleton/BootstrapSpark/stargazers) [![GitHub issues](htt Built with TypeScript. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.811155",
+        "generated_at": "2026-05-03T00:56:06.812673",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -3680,27 +3682,27 @@
       "languages": {},
       "created_at": "2024-10-11T23:31:56+00:00",
       "updated_at": "2026-04-19T20:13:05+00:00",
-      "pushed_at": "2026-04-19T20:13:00+00:00",
+      "pushed_at": "2026-05-01T23:30:39+00:00",
       "total_commits": 159,
-      "recent_commits_90d": 43,
+      "recent_commits_90d": 41,
       "first_commit_date": "2024-10-11T23:31:56+00:00",
       "last_commit_date": "2026-04-19T20:11:20+00:00",
       "commit_history": {
         "repository_name": "BootstrapSpark",
         "total_commits": 159,
-        "recent_90d": 43,
+        "recent_90d": 41,
         "recent_180d": 48,
         "recent_365d": 69,
         "last_commit_date": "2026-04-19T20:11:20+00:00",
         "patterns": [
           "highly_active",
-          "recently_updated",
+          "current",
           "accelerating"
         ],
-        "commit_frequency": 14.33,
+        "commit_frequency": 13.67,
         "consistency_score": 0,
-        "activity_rate": 0.478,
-        "days_since_last_commit": 6,
+        "activity_rate": 0.456,
+        "days_since_last_commit": 13,
         "first_commit_date": "2024-10-11T23:31:56+00:00"
       },
       "commit_metrics": {
@@ -3747,7 +3749,7 @@
         "lines_added": 1,
         "lines_deleted": 0
       },
-      "commit_velocity": 14.33,
+      "commit_velocity": 13.67,
       "tech_stack": {
         "repository_name": "BootstrapSpark",
         "languages": {},
@@ -4432,16 +4434,16 @@
       "has_tests": true,
       "has_docs": true,
       "language_count": 8,
-      "size_kb": 37661,
+      "size_kb": 37778,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 561,
-      "days_since_last_push": 6,
+      "age_days": 568,
+      "days_since_last_push": 1,
       "ai_summary": null,
-      "attention_score": 8.5,
+      "attention_score": 11.6,
       "attention_metrics": {
-        "score": 8.5,
+        "score": 11.6,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [
@@ -4449,13 +4451,13 @@
         ],
         "components": {
           "pull_requests": {
-            "score": 0.0,
+            "score": 12.3,
             "availability": "available",
             "reason": "none",
-            "total_open": 0,
+            "total_open": 1,
             "draft_count": 0,
             "review_requested_count": 0,
-            "oldest_open_age_days": null
+            "oldest_open_age_days": 1
           },
           "security": {
             "score": 10.0,
@@ -4472,8 +4474,8 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 6,
-            "recent_commits_90d": 43,
+            "days_since_last_push": 1,
+            "recent_commits_90d": 41,
             "open_issues": 0
           },
           "dependencies": {
@@ -4489,15 +4491,15 @@
         }
       },
       "rank": 9,
-      "composite_score": 44.37,
+      "composite_score": 43.89,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
-        "has_open_pull_requests": false,
-        "total_open": 0,
+        "has_open_pull_requests": true,
+        "total_open": 1,
         "draft_count": 0,
         "review_requested_count": 0,
-        "oldest_open_age_days": null,
+        "oldest_open_age_days": 1,
         "source": "rest.pulls.list"
       },
       "security_summary": {
@@ -4550,13 +4552,227 @@
       "attention_rank": 19
     },
     {
+      "name": "WebSpark",
+      "description": null,
+      "summary": {
+        "text": "WebSpark is a suite of web applications built with .NET 9 and Bootstrap 5, designed to optimize LLM prompts, manage recipes, and create quizzes. This repository includes: Built with C#. Key features: **Modern web technologies**: .NET 9, Bootstrap 5, ASP.NET Core MVC, **Scalable and versatile architecture**: 7 modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity), **Spec-driven development workflow**: Automated risk assessment with SpecKit commands. Maintained project with periodic updates.",
+        "ai_generated": false,
+        "generation_method": "enhanced-template",
+        "generated_at": "2026-05-03T00:56:06.813165",
+        "model_used": null,
+        "tokens_used": 0,
+        "confidence_score": 60
+      },
+      "url": "https://github.com/markhazleton/WebSpark",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 1,
+      "forks": 0,
+      "watchers": 1,
+      "language": "C#",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2024-01-11T17:25:12+00:00",
+      "updated_at": "2026-05-01T01:10:17+00:00",
+      "pushed_at": "2026-05-01T21:59:54+00:00",
+      "total_commits": 273,
+      "recent_commits_90d": 9,
+      "first_commit_date": "2024-06-23T21:08:36+00:00",
+      "last_commit_date": "2026-05-01T00:59:11+00:00",
+      "commit_history": {
+        "repository_name": "WebSpark",
+        "total_commits": 273,
+        "recent_90d": 9,
+        "recent_180d": 34,
+        "recent_365d": 78,
+        "last_commit_date": "2026-05-01T00:59:11+00:00",
+        "patterns": [
+          "maintained",
+          "recently_updated"
+        ],
+        "commit_frequency": 3.0,
+        "consistency_score": 0,
+        "activity_rate": 0.1,
+        "days_since_last_commit": 1,
+        "first_commit_date": "2024-06-23T21:08:36+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 26287.78,
+        "largest_commit": {
+          "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
+          "date": "2025-04-28T12:12:26+00:00",
+          "size": 1266514,
+          "files_changed": 633257,
+          "lines_added": 246074,
+          "lines_deleted": 387183
+        },
+        "smallest_commit": {
+          "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
+          "date": "2024-12-02T20:51:03+00:00",
+          "size": 2,
+          "files_changed": 1,
+          "lines_added": 0,
+          "lines_deleted": 1
+        },
+        "total_commits": 200,
+        "commit_size_distribution": {
+          "min": 0,
+          "q1": 271,
+          "median": 1413,
+          "q3": 5056,
+          "max": 1266514
+        }
+      },
+      "avg_commit_size": 26287.78,
+      "largest_commit": {
+        "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
+        "date": "2025-04-28T12:12:26+00:00",
+        "size": 1266514,
+        "files_changed": 633257,
+        "lines_added": 246074,
+        "lines_deleted": 387183
+      },
+      "smallest_commit": {
+        "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
+        "date": "2024-12-02T20:51:03+00:00",
+        "size": 2,
+        "files_changed": 1,
+        "lines_added": 0,
+        "lines_deleted": 1
+      },
+      "commit_velocity": 3.0,
+      "tech_stack": null,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": true,
+      "has_docs": false,
+      "language_count": 8,
+      "size_kb": 69565,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 842,
+      "days_since_last_push": 1,
+      "ai_summary": null,
+      "attention_score": 6.6,
+      "attention_metrics": {
+        "score": 6.6,
+        "tier": "healthy",
+        "needs_attention": false,
+        "reasons": [],
+        "components": {
+          "pull_requests": {
+            "score": 12.3,
+            "availability": "available",
+            "reason": "none",
+            "total_open": 1,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": 1
+          },
+          "security": {
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
+            "active_alert_counts": {
+              "total_open": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 0.0,
+            "days_since_last_push": 1,
+            "recent_commits_90d": 9,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 0.0,
+            "total_dependencies": 0,
+            "outdated_count": 0,
+            "outdated_percentage": 0.0,
+            "currency_score": 100,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 100.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 10,
+      "composite_score": 42.26,
+      "pull_request_summary": {
+        "availability": "available",
+        "reason": "none",
+        "has_open_pull_requests": true,
+        "total_open": 1,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": 1,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get"
+        ]
+      },
+      "total_additions": 2467470,
+      "total_deletions": 2077406,
+      "code_churn": 4544876,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "markhazleton",
+          "commits": 34,
+          "additions": 302810,
+          "deletions": 98476
+        },
+        {
+          "login": "claude",
+          "commits": 8,
+          "additions": 215751,
+          "deletions": 91469
+        },
+        {
+          "login": "dependabot[bot]",
+          "commits": 1,
+          "additions": 390,
+          "deletions": 357
+        }
+      ],
+      "attention_rank": 24
+    },
+    {
       "name": "MuseumSpark",
       "description": "A Museum Trip Planning Application",
       "summary": {
         "text": "> **The strategic travel planner for art lovers.** > Curate, prioritize, and optimize your museum visits across North America. Built with Python. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.811471",
+        "generated_at": "2026-05-03T00:56:06.813478",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -4573,31 +4789,31 @@
       "language_stats": {},
       "languages": {},
       "created_at": "2026-01-15T13:24:02+00:00",
-      "updated_at": "2026-04-12T23:23:01+00:00",
-      "pushed_at": "2026-04-23T19:38:36+00:00",
-      "total_commits": 82,
+      "updated_at": "2026-04-29T01:36:12+00:00",
+      "pushed_at": "2026-04-30T19:38:49+00:00",
+      "total_commits": 85,
       "recent_commits_90d": 24,
       "first_commit_date": "2026-01-15T13:24:02+00:00",
-      "last_commit_date": "2026-04-12T23:22:52+00:00",
+      "last_commit_date": "2026-04-29T01:35:25+00:00",
       "commit_history": {
         "repository_name": "MuseumSpark",
-        "total_commits": 82,
+        "total_commits": 85,
         "recent_90d": 24,
-        "recent_180d": 82,
-        "recent_365d": 82,
-        "last_commit_date": "2026-04-12T23:22:52+00:00",
+        "recent_180d": 85,
+        "recent_365d": 85,
+        "last_commit_date": "2026-04-29T01:35:25+00:00",
         "patterns": [
           "active",
-          "current"
+          "recently_updated"
         ],
         "commit_frequency": 8.0,
         "consistency_score": 0,
         "activity_rate": 0.267,
-        "days_since_last_commit": 13,
+        "days_since_last_commit": 3,
         "first_commit_date": "2026-01-15T13:24:02+00:00"
       },
       "commit_metrics": {
-        "avg_size": 39494.41,
+        "avg_size": 38354.0,
         "largest_commit": {
           "sha": "6cf949db26a1d78a44b8f8dd8c57fad8cd1e1c64",
           "date": "2026-01-16T20:19:57+00:00",
@@ -4614,16 +4830,16 @@
           "lines_added": 1,
           "lines_deleted": 1
         },
-        "total_commits": 82,
+        "total_commits": 85,
         "commit_size_distribution": {
           "min": 4,
-          "q1": 407,
-          "median": 4162,
-          "q3": 18811,
+          "q1": 406,
+          "median": 4174,
+          "q3": 17868,
           "max": 644534
         }
       },
-      "avg_commit_size": 39494.41,
+      "avg_commit_size": 38354.0,
       "largest_commit": {
         "sha": "6cf949db26a1d78a44b8f8dd8c57fad8cd1e1c64",
         "date": "2026-01-16T20:19:57+00:00",
@@ -4648,16 +4864,16 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 7,
-      "size_kb": 24113,
+      "size_kb": 24199,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 100,
+      "age_days": 107,
       "days_since_last_push": 2,
       "ai_summary": null,
-      "attention_score": 16.3,
+      "attention_score": 16.9,
       "attention_metrics": {
-        "score": 16.3,
+        "score": 16.9,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [
@@ -4665,13 +4881,13 @@
         ],
         "components": {
           "pull_requests": {
-            "score": 51.1,
+            "score": 53.6,
             "availability": "available",
             "reason": "none",
             "total_open": 4,
             "draft_count": 0,
             "review_requested_count": 0,
-            "oldest_open_age_days": 9
+            "oldest_open_age_days": 16
           },
           "security": {
             "score": 10.0,
@@ -4704,8 +4920,8 @@
           }
         }
       },
-      "rank": 10,
-      "composite_score": 40.72,
+      "rank": 11,
+      "composite_score": 41.05,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -4713,7 +4929,7 @@
         "total_open": 4,
         "draft_count": 0,
         "review_requested_count": 0,
-        "oldest_open_age_days": 9,
+        "oldest_open_age_days": 16,
         "source": "rest.pulls.list"
       },
       "security_summary": {
@@ -4738,17 +4954,17 @@
           "rest.repos.get"
         ]
       },
-      "total_additions": 1259691,
-      "total_deletions": 276343,
-      "code_churn": 1536034,
+      "total_additions": 1267028,
+      "total_deletions": 279780,
+      "code_churn": 1546808,
       "bus_factor": 1,
       "bus_factor_health": "critical",
       "contributor_stats": [
         {
           "login": "markhazleton",
-          "commits": 72,
-          "additions": 1258980,
-          "deletions": 275753
+          "commits": 75,
+          "additions": 1266317,
+          "deletions": 279190
         },
         {
           "login": "dependabot[bot]",
@@ -4763,7 +4979,7 @@
           "deletions": 1491
         }
       ],
-      "attention_rank": 10
+      "attention_rank": 11
     },
     {
       "name": "SupportSpark",
@@ -4772,7 +4988,7 @@
         "text": "> A compassionate support network platform helping people share updates with their trusted circle during life's challenging moments. Built with PowerShell. Key features: Create and manage journey conversations, Post updates with text and images, Invite trusted supporters via email. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.812601",
+        "generated_at": "2026-05-03T00:56:06.814898",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -4810,7 +5026,7 @@
         "commit_frequency": 17.33,
         "consistency_score": 0,
         "activity_rate": 0.578,
-        "days_since_last_commit": 13,
+        "days_since_last_commit": 20,
         "first_commit_date": "2026-02-01T15:50:00+00:00"
       },
       "commit_metrics": {
@@ -6246,12 +6462,12 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 83,
-      "days_since_last_push": 13,
+      "age_days": 90,
+      "days_since_last_push": 20,
       "ai_summary": null,
-      "attention_score": 8.4,
+      "attention_score": 11.4,
       "attention_metrics": {
-        "score": 8.4,
+        "score": 11.4,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [
@@ -6281,8 +6497,8 @@
             }
           },
           "staleness": {
-            "score": 0.0,
-            "days_since_last_push": 13,
+            "score": 12.0,
+            "days_since_last_push": 20,
             "recent_commits_90d": 52,
             "open_issues": 0
           },
@@ -6298,8 +6514,8 @@
           }
         }
       },
-      "rank": 11,
-      "composite_score": 40.1,
+      "rank": 12,
+      "composite_score": 40.12,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -6354,222 +6570,13 @@
       "attention_rank": 20
     },
     {
-      "name": "markhazleton",
-      "description": null,
-      "summary": {
-        "text": "--- Actively maintained with regular updates.",
-        "ai_generated": false,
-        "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.812947",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 60
-      },
-      "url": "https://github.com/markhazleton/markhazleton",
-      "homepage": null,
-      "has_pages": false,
-      "pages_url": null,
-      "website_url": null,
-      "stars": 0,
-      "forks": 0,
-      "watchers": 0,
-      "language": null,
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2021-04-17T15:50:07+00:00",
-      "updated_at": "2026-04-23T00:51:23+00:00",
-      "pushed_at": "2026-04-23T00:51:20+00:00",
-      "total_commits": 164,
-      "recent_commits_90d": 25,
-      "first_commit_date": "2021-04-17T15:50:08+00:00",
-      "last_commit_date": "2026-04-23T00:51:19+00:00",
-      "commit_history": {
-        "repository_name": "markhazleton",
-        "total_commits": 164,
-        "recent_90d": 25,
-        "recent_180d": 29,
-        "recent_365d": 59,
-        "last_commit_date": "2026-04-23T00:51:19+00:00",
-        "patterns": [
-          "active",
-          "recently_updated",
-          "accelerating"
-        ],
-        "commit_frequency": 8.33,
-        "consistency_score": 0,
-        "activity_rate": 0.278,
-        "days_since_last_commit": 3,
-        "first_commit_date": "2021-04-17T15:50:08+00:00"
-      },
-      "commit_metrics": {
-        "avg_size": 26.88,
-        "largest_commit": {
-          "sha": "439e8bfc1c47fe19869e988576646a8493e2aede",
-          "date": "2021-04-17T17:52:25+00:00",
-          "size": 526,
-          "files_changed": 263,
-          "lines_added": 0,
-          "lines_deleted": 263
-        },
-        "smallest_commit": {
-          "sha": "9a01b0898a774952645d219bdba1561a412ba602",
-          "date": "2023-01-31T14:26:07+00:00",
-          "size": 2,
-          "files_changed": 1,
-          "lines_added": 0,
-          "lines_deleted": 1
-        },
-        "total_commits": 164,
-        "commit_size_distribution": {
-          "min": 0,
-          "q1": 4,
-          "median": 5,
-          "q3": 16,
-          "max": 526
-        }
-      },
-      "avg_commit_size": 26.88,
-      "largest_commit": {
-        "sha": "439e8bfc1c47fe19869e988576646a8493e2aede",
-        "date": "2021-04-17T17:52:25+00:00",
-        "size": 526,
-        "files_changed": 263,
-        "lines_added": 0,
-        "lines_deleted": 263
-      },
-      "smallest_commit": {
-        "sha": "9a01b0898a774952645d219bdba1561a412ba602",
-        "date": "2023-01-31T14:26:07+00:00",
-        "size": 2,
-        "files_changed": 1,
-        "lines_added": 0,
-        "lines_deleted": 1
-      },
-      "commit_velocity": 8.33,
-      "tech_stack": null,
-      "has_readme": true,
-      "has_license": false,
-      "has_ci_cd": true,
-      "has_tests": false,
-      "has_docs": false,
-      "language_count": 1,
-      "size_kb": 6618,
-      "is_fork": false,
-      "is_private": false,
-      "is_archived": false,
-      "age_days": 1834,
-      "days_since_last_push": 3,
-      "ai_summary": null,
-      "attention_score": 3.5,
-      "attention_metrics": {
-        "score": 3.5,
-        "tier": "healthy",
-        "needs_attention": false,
-        "reasons": [],
-        "components": {
-          "pull_requests": {
-            "score": 0.0,
-            "availability": "available",
-            "reason": "none",
-            "total_open": 0,
-            "draft_count": 0,
-            "review_requested_count": 0,
-            "oldest_open_age_days": null
-          },
-          "security": {
-            "score": 10.0,
-            "availability": "partial",
-            "reason": "permission_denied",
-            "overall_state": "clear",
-            "active_alert_counts": {
-              "total_open": 0,
-              "critical": 0,
-              "high": 0,
-              "medium": 0,
-              "low": 0
-            }
-          },
-          "staleness": {
-            "score": 0.0,
-            "days_since_last_push": 3,
-            "recent_commits_90d": 25,
-            "open_issues": 0
-          },
-          "dependencies": {
-            "score": 0.0,
-            "total_dependencies": 0,
-            "outdated_count": 0,
-            "outdated_percentage": 0.0,
-            "currency_score": 100,
-            "version_coverage_percentage": 100.0,
-            "latest_version_coverage_percentage": 100.0,
-            "unknown_versions_count": 0
-          }
-        }
-      },
-      "rank": 12,
-      "composite_score": 40.04,
-      "pull_request_summary": {
-        "availability": "available",
-        "reason": "none",
-        "has_open_pull_requests": false,
-        "total_open": 0,
-        "draft_count": 0,
-        "review_requested_count": 0,
-        "oldest_open_age_days": null,
-        "source": "rest.pulls.list"
-      },
-      "security_summary": {
-        "availability": "partial",
-        "reason": "permission_denied",
-        "overall_state": "clear",
-        "feature_status": {
-          "advanced_security": "unknown",
-          "secret_scanning": "unknown",
-          "secret_scanning_push_protection": "unknown",
-          "dependency_alerts": "unavailable",
-          "automated_security_fixes": "unavailable"
-        },
-        "active_alert_counts": {
-          "total_open": 0,
-          "critical": 0,
-          "high": 0,
-          "medium": 0,
-          "low": 0
-        },
-        "sources": [
-          "rest.repos.get"
-        ]
-      },
-      "total_additions": 1544,
-      "total_deletions": 1162,
-      "code_churn": 2706,
-      "bus_factor": 1,
-      "bus_factor_health": "critical",
-      "contributor_stats": [
-        {
-          "login": "markhazleton",
-          "commits": 75,
-          "additions": 1085,
-          "deletions": 855
-        },
-        {
-          "login": "github-actions[bot]",
-          "commits": 34,
-          "additions": 81,
-          "deletions": 73
-        }
-      ],
-      "attention_rank": 29
-    },
-    {
       "name": "Texecon",
       "description": null,
       "summary": {
         "text": "A modern static React application providing expert analysis and commentary on the Texas economy. Built with React 19, TypeScript, and Tailwind CSS for optimal performance and SEO on GitHub Pages. Built with HTML. Key features: **Build-time Content Management**: Fresh content from WebSpark API with cached fallbacks, **Static Site Generation**: Pre-rendered pages for optimal SEO and performance, **Progressive Enhancement**: Client-side routing with static HTML fallbacks. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.813526",
+        "generated_at": "2026-05-03T00:56:06.815614",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -6587,7 +6594,7 @@
       "languages": {},
       "created_at": "2025-09-03T17:53:02+00:00",
       "updated_at": "2026-04-19T20:38:14+00:00",
-      "pushed_at": "2026-04-20T10:03:54+00:00",
+      "pushed_at": "2026-04-27T10:19:58+00:00",
       "total_commits": 94,
       "recent_commits_90d": 32,
       "first_commit_date": "2025-09-01T13:54:03+00:00",
@@ -6601,13 +6608,13 @@
         "last_commit_date": "2026-04-19T20:38:09+00:00",
         "patterns": [
           "highly_active",
-          "recently_updated",
+          "current",
           "accelerating"
         ],
         "commit_frequency": 10.67,
         "consistency_score": 0,
         "activity_rate": 0.356,
-        "days_since_last_commit": 6,
+        "days_since_last_commit": 13,
         "first_commit_date": "2025-09-01T13:54:03+00:00"
       },
       "commit_metrics": {
@@ -7199,16 +7206,16 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 6,
-      "size_kb": 3917,
+      "size_kb": 3918,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 234,
+      "age_days": 241,
       "days_since_last_push": 5,
       "ai_summary": null,
-      "attention_score": 20.8,
+      "attention_score": 21.4,
       "attention_metrics": {
-        "score": 20.8,
+        "score": 21.4,
         "tier": "watch",
         "needs_attention": true,
         "reasons": [
@@ -7217,13 +7224,13 @@
         ],
         "components": {
           "pull_requests": {
-            "score": 49.8,
+            "score": 52.2,
             "availability": "available",
             "reason": "none",
             "total_open": 4,
             "draft_count": 0,
             "review_requested_count": 0,
-            "oldest_open_age_days": 5
+            "oldest_open_age_days": 12
           },
           "security": {
             "score": 10.0,
@@ -7257,7 +7264,7 @@
         }
       },
       "rank": 13,
-      "composite_score": 39.98,
+      "composite_score": 40.0,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -7265,7 +7272,7 @@
         "total_open": 4,
         "draft_count": 0,
         "review_requested_count": 0,
-        "oldest_open_age_days": 5,
+        "oldest_open_age_days": 12,
         "source": "rest.pulls.list"
       },
       "security_summary": {
@@ -7309,7 +7316,7 @@
           "deletions": 1570
         }
       ],
-      "attention_rank": 3
+      "attention_rank": 4
     },
     {
       "name": "WebProjectMechanics",
@@ -7318,7 +7325,7 @@
         "text": "A multi-tenant, multi-domain content management system that publishes static HTML websites from SQLite databases. Built with Visual Basic .NET. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.813801",
+        "generated_at": "2026-05-03T00:56:06.815957",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -7356,7 +7363,7 @@
         "commit_frequency": 3.67,
         "consistency_score": 0,
         "activity_rate": 0.122,
-        "days_since_last_commit": 12,
+        "days_since_last_commit": 19,
         "first_commit_date": "2008-08-29T14:18:52+00:00"
       },
       "commit_metrics": {
@@ -7415,12 +7422,12 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 3140,
-      "days_since_last_push": 12,
+      "age_days": 3147,
+      "days_since_last_push": 19,
       "ai_summary": null,
-      "attention_score": 3.5,
+      "attention_score": 6.5,
       "attention_metrics": {
-        "score": 3.5,
+        "score": 6.5,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [],
@@ -7448,8 +7455,8 @@
             }
           },
           "staleness": {
-            "score": 0.0,
-            "days_since_last_push": 12,
+            "score": 12.0,
+            "days_since_last_push": 19,
             "recent_commits_90d": 11,
             "open_issues": 0
           },
@@ -7524,490 +7531,7 @@
           "deletions": 19
         }
       ],
-      "attention_rank": 30
-    },
-    {
-      "name": "WebSpark",
-      "description": null,
-      "summary": {
-        "text": "WebSpark is a suite of web applications built with .NET 9 and Bootstrap 5, designed to optimize LLM prompts, manage recipes, and create quizzes. This repository includes: Built with C#. Key features: **Modern web technologies**: .NET 9, Bootstrap 5, ASP.NET Core MVC, **Scalable and versatile architecture**: 7 modular areas (PromptSpark, RecipeSpark, TriviaSpark, WebCMS, AsyncSpark, Admin, Identity), **Spec-driven development workflow**: Automated risk assessment with SpecKit commands. Actively maintained with regular updates.",
-        "ai_generated": false,
-        "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.814140",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 60
-      },
-      "url": "https://github.com/markhazleton/WebSpark",
-      "homepage": null,
-      "has_pages": false,
-      "pages_url": null,
-      "website_url": null,
-      "stars": 1,
-      "forks": 0,
-      "watchers": 1,
-      "language": "C#",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2024-01-11T17:25:12+00:00",
-      "updated_at": "2026-01-29T02:51:50+00:00",
-      "pushed_at": "2026-04-02T17:59:14+00:00",
-      "total_commits": 264,
-      "recent_commits_90d": 11,
-      "first_commit_date": "2024-06-19T17:21:12+00:00",
-      "last_commit_date": "2026-01-29T02:51:42+00:00",
-      "commit_history": {
-        "repository_name": "WebSpark",
-        "total_commits": 264,
-        "recent_90d": 11,
-        "recent_180d": 25,
-        "recent_365d": 73,
-        "last_commit_date": "2026-01-29T02:51:42+00:00",
-        "patterns": [
-          "active",
-          "consistent"
-        ],
-        "commit_frequency": 3.67,
-        "consistency_score": 0,
-        "activity_rate": 0.122,
-        "days_since_last_commit": 86,
-        "first_commit_date": "2024-06-19T17:21:12+00:00"
-      },
-      "commit_metrics": {
-        "avg_size": 25263.72,
-        "largest_commit": {
-          "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
-          "date": "2025-04-28T12:12:26+00:00",
-          "size": 1266514,
-          "files_changed": 633257,
-          "lines_added": 246074,
-          "lines_deleted": 387183
-        },
-        "smallest_commit": {
-          "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
-          "date": "2024-12-02T20:51:03+00:00",
-          "size": 2,
-          "files_changed": 1,
-          "lines_added": 0,
-          "lines_deleted": 1
-        },
-        "total_commits": 200,
-        "commit_size_distribution": {
-          "min": 0,
-          "q1": 306,
-          "median": 1455,
-          "q3": 5214,
-          "max": 1266514
-        }
-      },
-      "avg_commit_size": 25263.72,
-      "largest_commit": {
-        "sha": "d13612755dda29dea3adc4eb0bdb094cff0e260d",
-        "date": "2025-04-28T12:12:26+00:00",
-        "size": 1266514,
-        "files_changed": 633257,
-        "lines_added": 246074,
-        "lines_deleted": 387183
-      },
-      "smallest_commit": {
-        "sha": "ed552fe34461556af753774d51a8d81629ed3afc",
-        "date": "2024-12-02T20:51:03+00:00",
-        "size": 2,
-        "files_changed": 1,
-        "lines_added": 0,
-        "lines_deleted": 1
-      },
-      "commit_velocity": 3.67,
-      "tech_stack": null,
-      "has_readme": true,
-      "has_license": true,
-      "has_ci_cd": true,
-      "has_tests": true,
-      "has_docs": false,
-      "language_count": 8,
-      "size_kb": 69144,
-      "is_fork": false,
-      "is_private": false,
-      "is_archived": false,
-      "age_days": 835,
-      "days_since_last_push": 23,
-      "ai_summary": null,
-      "attention_score": 11.5,
-      "attention_metrics": {
-        "score": 11.5,
-        "tier": "healthy",
-        "needs_attention": false,
-        "reasons": [
-          "pull_requests"
-        ],
-        "components": {
-          "pull_requests": {
-            "score": 20.0,
-            "availability": "available",
-            "reason": "none",
-            "total_open": 1,
-            "draft_count": 0,
-            "review_requested_count": 0,
-            "oldest_open_age_days": 23
-          },
-          "security": {
-            "score": 10.0,
-            "availability": "partial",
-            "reason": "permission_denied",
-            "overall_state": "clear",
-            "active_alert_counts": {
-              "total_open": 0,
-              "critical": 0,
-              "high": 0,
-              "medium": 0,
-              "low": 0
-            }
-          },
-          "staleness": {
-            "score": 12.0,
-            "days_since_last_push": 23,
-            "recent_commits_90d": 11,
-            "open_issues": 0
-          },
-          "dependencies": {
-            "score": 0.0,
-            "total_dependencies": 0,
-            "outdated_count": 0,
-            "outdated_percentage": 0.0,
-            "currency_score": 100,
-            "version_coverage_percentage": 100.0,
-            "latest_version_coverage_percentage": 100.0,
-            "unknown_versions_count": 0
-          }
-        }
-      },
-      "rank": 15,
-      "composite_score": 37.42,
-      "pull_request_summary": {
-        "availability": "available",
-        "reason": "none",
-        "has_open_pull_requests": true,
-        "total_open": 1,
-        "draft_count": 0,
-        "review_requested_count": 0,
-        "oldest_open_age_days": 23,
-        "source": "rest.pulls.list"
-      },
-      "security_summary": {
-        "availability": "partial",
-        "reason": "permission_denied",
-        "overall_state": "clear",
-        "feature_status": {
-          "advanced_security": "unknown",
-          "secret_scanning": "unknown",
-          "secret_scanning_push_protection": "unknown",
-          "dependency_alerts": "unavailable",
-          "automated_security_fixes": "unavailable"
-        },
-        "active_alert_counts": {
-          "total_open": 0,
-          "critical": 0,
-          "high": 0,
-          "medium": 0,
-          "low": 0
-        },
-        "sources": [
-          "rest.repos.get"
-        ]
-      },
-      "total_additions": 2251329,
-      "total_deletions": 1985580,
-      "code_churn": 4236909,
-      "bus_factor": 1,
-      "bus_factor_health": "critical",
-      "contributor_stats": [
-        {
-          "login": "markhazleton",
-          "commits": 26,
-          "additions": 87059,
-          "deletions": 7007
-        }
-      ],
-      "attention_rank": 16
-    },
-    {
-      "name": "KeyPressCounter",
-      "description": "A very simple key press counter and logger for windows",
-      "summary": {
-        "text": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4) ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey) ![C#](https://img.shields.io/badge/C%23-13-239120) Built with C#. Key features: **Keystroke & Mouse Click Tracking** — counts total inputs since last reset, **Peak Activity Metrics** — tracks maximum keystrokes and clicks per minute, **Inactivity Detection** — measures longest continuous idle period in minutes. Maintained project with periodic updates.",
-        "ai_generated": false,
-        "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.899770",
-        "model_used": null,
-        "tokens_used": 0,
-        "confidence_score": 60
-      },
-      "url": "https://github.com/markhazleton/KeyPressCounter",
-      "homepage": null,
-      "has_pages": false,
-      "pages_url": null,
-      "website_url": null,
-      "stars": 2,
-      "forks": 1,
-      "watchers": 2,
-      "language": "C#",
-      "language_stats": {},
-      "languages": {},
-      "created_at": "2024-03-07T13:46:50+00:00",
-      "updated_at": "2026-03-30T02:12:08+00:00",
-      "pushed_at": "2026-03-30T02:12:05+00:00",
-      "total_commits": 27,
-      "recent_commits_90d": 6,
-      "first_commit_date": "2024-03-07T13:46:51+00:00",
-      "last_commit_date": "2026-03-30T02:12:03+00:00",
-      "commit_history": {
-        "repository_name": "KeyPressCounter",
-        "total_commits": 27,
-        "recent_90d": 6,
-        "recent_180d": 19,
-        "recent_365d": 20,
-        "last_commit_date": "2026-03-30T02:12:03+00:00",
-        "patterns": [
-          "maintained",
-          "current"
-        ],
-        "commit_frequency": 2.0,
-        "consistency_score": 0,
-        "activity_rate": 0.067,
-        "days_since_last_commit": 26,
-        "first_commit_date": "2024-03-07T13:46:51+00:00"
-      },
-      "commit_metrics": {
-        "avg_size": 959.78,
-        "largest_commit": {
-          "sha": "11ffd1467e2fe444607162055f447effe1789d81",
-          "date": "2025-05-03T01:37:54+00:00",
-          "size": 4370,
-          "files_changed": 2185,
-          "lines_added": 2098,
-          "lines_deleted": 87
-        },
-        "smallest_commit": {
-          "sha": "6c70a8da55475847f73afbe6810e475889530a45",
-          "date": "2025-12-07T23:43:18+00:00",
-          "size": 8,
-          "files_changed": 4,
-          "lines_added": 0,
-          "lines_deleted": 4
-        },
-        "total_commits": 27,
-        "commit_size_distribution": {
-          "min": 8,
-          "q1": 64,
-          "median": 704,
-          "q3": 1293,
-          "max": 4370
-        }
-      },
-      "avg_commit_size": 959.78,
-      "largest_commit": {
-        "sha": "11ffd1467e2fe444607162055f447effe1789d81",
-        "date": "2025-05-03T01:37:54+00:00",
-        "size": 4370,
-        "files_changed": 2185,
-        "lines_added": 2098,
-        "lines_deleted": 87
-      },
-      "smallest_commit": {
-        "sha": "6c70a8da55475847f73afbe6810e475889530a45",
-        "date": "2025-12-07T23:43:18+00:00",
-        "size": 8,
-        "files_changed": 4,
-        "lines_added": 0,
-        "lines_deleted": 4
-      },
-      "commit_velocity": 2.0,
-      "tech_stack": {
-        "repository_name": "KeyPressCounter",
-        "languages": {},
-        "frameworks": [],
-        "dependencies": [
-          {
-            "name": ".NET SDK",
-            "current_version": "10.0",
-            "latest_version": null,
-            "ecosystem": "nuget",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown",
-            "version_requirement": "10.0",
-            "current_version_known": true,
-            "latest_version_status": "not_found",
-            "latest_version_source": null,
-            "source_file": "MWH.KeyPressCounter.csproj"
-          },
-          {
-            "name": "MinVer",
-            "current_version": "7.0.0",
-            "latest_version": "8.0.0-alpha.1",
-            "ecosystem": "nuget",
-            "versions_behind": 1,
-            "is_outdated": true,
-            "status": "major_outdated",
-            "version_requirement": "7.0.0",
-            "current_version_known": true,
-            "latest_version_status": "resolved",
-            "latest_version_source": "nuget",
-            "source_file": "MWH.KeyPressCounter.csproj"
-          },
-          {
-            "name": "SharpHook",
-            "current_version": "7.1.1",
-            "latest_version": "7.1.1",
-            "ecosystem": "nuget",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "current",
-            "version_requirement": "7.1.1",
-            "current_version_known": true,
-            "latest_version_status": "resolved",
-            "latest_version_source": "nuget",
-            "source_file": "MWH.KeyPressCounter.csproj"
-          },
-          {
-            "name": "System.Management",
-            "current_version": "10.0.5",
-            "latest_version": "11.0.0-preview.3.26207.106",
-            "ecosystem": "nuget",
-            "versions_behind": 0,
-            "is_outdated": false,
-            "status": "unknown",
-            "version_requirement": "10.0.5",
-            "current_version_known": true,
-            "latest_version_status": "resolved",
-            "latest_version_source": "nuget",
-            "source_file": "MWH.KeyPressCounter.csproj"
-          }
-        ],
-        "version_info": {},
-        "dependency_file_type": "MWH.KeyPressCounter.csproj",
-        "currency_score": 57,
-        "outdated_count": 1,
-        "total_dependencies": 4,
-        "known_versions_count": 4,
-        "resolved_latest_versions_count": 3,
-        "unknown_versions_count": 0,
-        "primary_language": null,
-        "language_diversity": 0,
-        "outdated_percentage": 25.0,
-        "version_coverage_percentage": 100.0,
-        "latest_version_coverage_percentage": 75.0
-      },
-      "has_readme": true,
-      "has_license": true,
-      "has_ci_cd": true,
-      "has_tests": true,
-      "has_docs": true,
-      "language_count": 2,
-      "size_kb": 46596,
-      "is_fork": false,
-      "is_private": false,
-      "is_archived": false,
-      "age_days": 779,
-      "days_since_last_push": 26,
-      "ai_summary": null,
-      "attention_score": 10.7,
-      "attention_metrics": {
-        "score": 10.7,
-        "tier": "healthy",
-        "needs_attention": false,
-        "reasons": [
-          "dependencies"
-        ],
-        "components": {
-          "pull_requests": {
-            "score": 0.0,
-            "availability": "available",
-            "reason": "none",
-            "total_open": 0,
-            "draft_count": 0,
-            "review_requested_count": 0,
-            "oldest_open_age_days": null
-          },
-          "security": {
-            "score": 10.0,
-            "availability": "partial",
-            "reason": "permission_denied",
-            "overall_state": "clear",
-            "active_alert_counts": {
-              "total_open": 0,
-              "critical": 0,
-              "high": 0,
-              "medium": 0,
-              "low": 0
-            }
-          },
-          "staleness": {
-            "score": 12.0,
-            "days_since_last_push": 26,
-            "recent_commits_90d": 6,
-            "open_issues": 0
-          },
-          "dependencies": {
-            "score": 27.9,
-            "total_dependencies": 4,
-            "outdated_count": 1,
-            "outdated_percentage": 25.0,
-            "currency_score": 57,
-            "version_coverage_percentage": 100.0,
-            "latest_version_coverage_percentage": 75.0,
-            "unknown_versions_count": 0
-          }
-        }
-      },
-      "rank": 16,
-      "composite_score": 37.29,
-      "pull_request_summary": {
-        "availability": "available",
-        "reason": "none",
-        "has_open_pull_requests": false,
-        "total_open": 0,
-        "draft_count": 0,
-        "review_requested_count": 0,
-        "oldest_open_age_days": null,
-        "source": "rest.pulls.list"
-      },
-      "security_summary": {
-        "availability": "partial",
-        "reason": "permission_denied",
-        "overall_state": "clear",
-        "feature_status": {
-          "advanced_security": "unknown",
-          "secret_scanning": "unknown",
-          "secret_scanning_push_protection": "unknown",
-          "dependency_alerts": "unavailable",
-          "automated_security_fixes": "unavailable"
-        },
-        "active_alert_counts": {
-          "total_open": 0,
-          "critical": 0,
-          "high": 0,
-          "medium": 0,
-          "low": 0
-        },
-        "sources": [
-          "rest.repos.get"
-        ]
-      },
-      "total_additions": 11809,
-      "total_deletions": 1278,
-      "code_churn": 13087,
-      "bus_factor": 1,
-      "bus_factor_health": "critical",
-      "contributor_stats": [
-        {
-          "login": "markhazleton",
-          "commits": 19,
-          "additions": 8629,
-          "deletions": 790
-        }
-      ],
-      "attention_rank": 18
+      "attention_rank": 26
     },
     {
       "name": "react-native-web-start",
@@ -8016,7 +7540,7 @@
         "text": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![TypeScript](https://img.shields.io/badge/TypeScript-6.0.2-blue.svg)](https://www.typescriptlang.org/) [![React Native](https://img.shields.io/badge/React%20Native-0.85.0-blue.svg)](https:// Built with PowerShell. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.900694",
+        "generated_at": "2026-05-03T00:56:06.816772",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -8034,7 +7558,7 @@
       "languages": {},
       "created_at": "2025-07-26T17:21:18+00:00",
       "updated_at": "2026-04-12T04:57:26+00:00",
-      "pushed_at": "2026-04-23T06:44:08+00:00",
+      "pushed_at": "2026-04-29T22:13:58+00:00",
       "total_commits": 76,
       "recent_commits_90d": 22,
       "first_commit_date": "2025-07-26T17:21:18+00:00",
@@ -8054,7 +7578,7 @@
         "commit_frequency": 7.33,
         "consistency_score": 0,
         "activity_rate": 0.244,
-        "days_since_last_commit": 13,
+        "days_since_last_commit": 20,
         "first_commit_date": "2025-07-26T17:21:18+00:00"
       },
       "commit_metrics": {
@@ -8828,16 +8352,16 @@
       "has_tests": false,
       "has_docs": true,
       "language_count": 7,
-      "size_kb": 3104,
+      "size_kb": 1692,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 273,
-      "days_since_last_push": 2,
+      "age_days": 280,
+      "days_since_last_push": 3,
       "ai_summary": null,
-      "attention_score": 23.8,
+      "attention_score": 29.4,
       "attention_metrics": {
-        "score": 23.8,
+        "score": 29.4,
         "tier": "watch",
         "needs_attention": true,
         "reasons": [
@@ -8846,13 +8370,13 @@
         ],
         "components": {
           "pull_requests": {
-            "score": 61.8,
+            "score": 84.2,
             "availability": "available",
             "reason": "none",
-            "total_open": 3,
+            "total_open": 4,
             "draft_count": 0,
-            "review_requested_count": 3,
-            "oldest_open_age_days": 5
+            "review_requested_count": 4,
+            "oldest_open_age_days": 12
           },
           "security": {
             "score": 10.0,
@@ -8869,7 +8393,7 @@
           },
           "staleness": {
             "score": 0.0,
-            "days_since_last_push": 2,
+            "days_since_last_push": 3,
             "recent_commits_90d": 22,
             "open_issues": 0
           },
@@ -8885,16 +8409,16 @@
           }
         }
       },
-      "rank": 17,
-      "composite_score": 36.22,
+      "rank": 15,
+      "composite_score": 36.25,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
         "has_open_pull_requests": true,
-        "total_open": 3,
+        "total_open": 4,
         "draft_count": 0,
-        "review_requested_count": 3,
-        "oldest_open_age_days": 5,
+        "review_requested_count": 4,
+        "oldest_open_age_days": 12,
         "source": "rest.pulls.list"
       },
       "security_summary": {
@@ -8942,121 +8466,122 @@
       "screenshot": {
         "path": "output/users/markhazleton/screenshots/react-native-web-start.png",
         "url": "https://markhazleton.github.io/react-native-web-start/",
-        "captured_at": "2026-04-26T00:32:21.834799+00:00",
+        "captured_at": "2026-05-03T00:36:18.188096+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 64.61
       }
     },
     {
-      "name": "DataSpark",
-      "description": "A .NET 10 toolkit for working with SQLite databases: discover files, export tables to CSV, inspect schema, and generate C# DTOs. The solution includes a CLI, a web UI, a core library, tests, and benchmarks.",
+      "name": "markhazleton",
+      "description": null,
       "summary": {
-        "text": "[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build](https://img.shields.io/github/actions/workflow/status/markhazleton/DataSpark/ci.yml?branch=main)](https://github.com/markhazleton/DataSpark/actions) [![Coverage](https://img.shield Built with HTML. Key features: Discover SQLite database files in a directory., Export all tables or a filtered list to CSV., Generate schema reports (text, JSON, Markdown).. Actively maintained with regular updates.",
+        "text": "--- Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.900971",
+        "generated_at": "2026-05-03T00:56:06.817121",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
       },
-      "url": "https://github.com/markhazleton/DataSpark",
-      "homepage": "",
+      "url": "https://github.com/markhazleton/markhazleton",
+      "homepage": null,
       "has_pages": false,
       "pages_url": null,
       "website_url": null,
       "stars": 0,
       "forks": 0,
       "watchers": 0,
-      "language": "HTML",
+      "language": null,
       "language_stats": {},
       "languages": {},
-      "created_at": "2017-11-06T16:04:58+00:00",
-      "updated_at": "2026-04-01T01:06:30+00:00",
-      "pushed_at": "2026-04-01T01:06:27+00:00",
-      "total_commits": 100,
-      "recent_commits_90d": 13,
-      "first_commit_date": "2015-09-02T21:40:54+00:00",
-      "last_commit_date": "2026-04-01T01:06:21+00:00",
+      "created_at": "2021-04-17T15:50:07+00:00",
+      "updated_at": "2026-04-23T00:51:23+00:00",
+      "pushed_at": "2026-04-23T00:51:20+00:00",
+      "total_commits": 164,
+      "recent_commits_90d": 25,
+      "first_commit_date": "2021-04-17T15:50:08+00:00",
+      "last_commit_date": "2026-04-23T00:51:19+00:00",
       "commit_history": {
-        "repository_name": "DataSpark",
-        "total_commits": 100,
-        "recent_90d": 13,
-        "recent_180d": 19,
-        "recent_365d": 60,
-        "last_commit_date": "2026-04-01T01:06:21+00:00",
+        "repository_name": "markhazleton",
+        "total_commits": 164,
+        "recent_90d": 25,
+        "recent_180d": 29,
+        "recent_365d": 59,
+        "last_commit_date": "2026-04-23T00:51:19+00:00",
         "patterns": [
           "active",
-          "current"
+          "current",
+          "accelerating"
         ],
-        "commit_frequency": 4.33,
+        "commit_frequency": 8.33,
         "consistency_score": 0,
-        "activity_rate": 0.144,
-        "days_since_last_commit": 25,
-        "first_commit_date": "2015-09-02T21:40:54+00:00"
+        "activity_rate": 0.278,
+        "days_since_last_commit": 10,
+        "first_commit_date": "2021-04-17T15:50:08+00:00"
       },
       "commit_metrics": {
-        "avg_size": 4103.46,
+        "avg_size": 26.88,
         "largest_commit": {
-          "sha": "97f55607615e88d2a5fd820bfa42e5b9d377c295",
-          "date": "2025-09-07T14:55:53+00:00",
-          "size": 198988,
-          "files_changed": 99494,
-          "lines_added": 99429,
-          "lines_deleted": 65
+          "sha": "439e8bfc1c47fe19869e988576646a8493e2aede",
+          "date": "2021-04-17T17:52:25+00:00",
+          "size": 526,
+          "files_changed": 263,
+          "lines_added": 0,
+          "lines_deleted": 263
         },
         "smallest_commit": {
-          "sha": "9748dded19ab33c363c09307edd3297c2a08e4c8",
-          "date": "2025-08-11T17:02:49+00:00",
+          "sha": "9a01b0898a774952645d219bdba1561a412ba602",
+          "date": "2023-01-31T14:26:07+00:00",
           "size": 2,
           "files_changed": 1,
           "lines_added": 0,
           "lines_deleted": 1
         },
-        "total_commits": 100,
+        "total_commits": 164,
         "commit_size_distribution": {
           "min": 0,
-          "q1": 11,
-          "median": 159,
-          "q3": 1378,
-          "max": 198988
+          "q1": 4,
+          "median": 5,
+          "q3": 16,
+          "max": 526
         }
       },
-      "avg_commit_size": 4103.46,
+      "avg_commit_size": 26.88,
       "largest_commit": {
-        "sha": "97f55607615e88d2a5fd820bfa42e5b9d377c295",
-        "date": "2025-09-07T14:55:53+00:00",
-        "size": 198988,
-        "files_changed": 99494,
-        "lines_added": 99429,
-        "lines_deleted": 65
+        "sha": "439e8bfc1c47fe19869e988576646a8493e2aede",
+        "date": "2021-04-17T17:52:25+00:00",
+        "size": 526,
+        "files_changed": 263,
+        "lines_added": 0,
+        "lines_deleted": 263
       },
       "smallest_commit": {
-        "sha": "9748dded19ab33c363c09307edd3297c2a08e4c8",
-        "date": "2025-08-11T17:02:49+00:00",
+        "sha": "9a01b0898a774952645d219bdba1561a412ba602",
+        "date": "2023-01-31T14:26:07+00:00",
         "size": 2,
         "files_changed": 1,
         "lines_added": 0,
         "lines_deleted": 1
       },
-      "commit_velocity": 4.33,
+      "commit_velocity": 8.33,
       "tech_stack": null,
       "has_readme": true,
-      "has_license": true,
+      "has_license": false,
       "has_ci_cd": true,
       "has_tests": false,
-      "has_docs": true,
-      "language_count": 5,
-      "size_kb": 2075,
+      "has_docs": false,
+      "language_count": 1,
+      "size_kb": 6618,
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 3092,
-      "days_since_last_push": 25,
+      "age_days": 1841,
+      "days_since_last_push": 10,
       "ai_summary": null,
-      "attention_score": 6.5,
+      "attention_score": 3.5,
       "attention_metrics": {
-        "score": 6.5,
+        "score": 3.5,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [],
@@ -9084,9 +8609,9 @@
             }
           },
           "staleness": {
-            "score": 12.0,
-            "days_since_last_push": 25,
-            "recent_commits_90d": 13,
+            "score": 0.0,
+            "days_since_last_push": 10,
+            "recent_commits_90d": 25,
             "open_issues": 0
           },
           "dependencies": {
@@ -9101,8 +8626,8 @@
           }
         }
       },
-      "rank": 18,
-      "composite_score": 31.65,
+      "rank": 16,
+      "composite_score": 35.54,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -9135,32 +8660,305 @@
           "rest.repos.get"
         ]
       },
-      "total_additions": 183925,
-      "total_deletions": 53122,
-      "code_churn": 237047,
+      "total_additions": 1544,
+      "total_deletions": 1162,
+      "code_churn": 2706,
       "bus_factor": 1,
       "bus_factor_health": "critical",
       "contributor_stats": [
         {
           "login": "markhazleton",
-          "commits": 88,
-          "additions": 183785,
-          "deletions": 52935
+          "commits": 75,
+          "additions": 1085,
+          "deletions": 855
         },
         {
-          "login": "actions-user",
-          "commits": 5,
-          "additions": 5,
-          "deletions": 10
-        },
-        {
-          "login": "dependabot[bot]",
-          "commits": 4,
-          "additions": 135,
-          "deletions": 177
+          "login": "github-actions[bot]",
+          "commits": 34,
+          "additions": 81,
+          "deletions": 73
         }
       ],
-      "attention_rank": 25
+      "attention_rank": 30
+    },
+    {
+      "name": "KeyPressCounter",
+      "description": "A very simple key press counter and logger for windows",
+      "summary": {
+        "text": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4) ![Platform](https://img.shields.io/badge/platform-Windows-lightgrey) ![C#](https://img.shields.io/badge/C%23-13-239120) Built with C#. Key features: **Keystroke & Mouse Click Tracking** — counts total inputs since last reset, **Peak Activity Metrics** — tracks maximum keystrokes and clicks per minute, **Inactivity Detection** — measures longest continuous idle period in minutes. Maintained project with periodic updates.",
+        "ai_generated": false,
+        "generation_method": "enhanced-template",
+        "generated_at": "2026-05-03T00:56:06.984586",
+        "model_used": null,
+        "tokens_used": 0,
+        "confidence_score": 60
+      },
+      "url": "https://github.com/markhazleton/KeyPressCounter",
+      "homepage": null,
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 2,
+      "forks": 1,
+      "watchers": 2,
+      "language": "C#",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2024-03-07T13:46:50+00:00",
+      "updated_at": "2026-03-30T02:12:08+00:00",
+      "pushed_at": "2026-03-30T02:12:05+00:00",
+      "total_commits": 27,
+      "recent_commits_90d": 6,
+      "first_commit_date": "2024-03-07T13:46:51+00:00",
+      "last_commit_date": "2026-03-30T02:12:03+00:00",
+      "commit_history": {
+        "repository_name": "KeyPressCounter",
+        "total_commits": 27,
+        "recent_90d": 6,
+        "recent_180d": 19,
+        "recent_365d": 20,
+        "last_commit_date": "2026-03-30T02:12:03+00:00",
+        "patterns": [
+          "maintained"
+        ],
+        "commit_frequency": 2.0,
+        "consistency_score": 0,
+        "activity_rate": 0.067,
+        "days_since_last_commit": 33,
+        "first_commit_date": "2024-03-07T13:46:51+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 959.78,
+        "largest_commit": {
+          "sha": "11ffd1467e2fe444607162055f447effe1789d81",
+          "date": "2025-05-03T01:37:54+00:00",
+          "size": 4370,
+          "files_changed": 2185,
+          "lines_added": 2098,
+          "lines_deleted": 87
+        },
+        "smallest_commit": {
+          "sha": "6c70a8da55475847f73afbe6810e475889530a45",
+          "date": "2025-12-07T23:43:18+00:00",
+          "size": 8,
+          "files_changed": 4,
+          "lines_added": 0,
+          "lines_deleted": 4
+        },
+        "total_commits": 27,
+        "commit_size_distribution": {
+          "min": 8,
+          "q1": 64,
+          "median": 704,
+          "q3": 1293,
+          "max": 4370
+        }
+      },
+      "avg_commit_size": 959.78,
+      "largest_commit": {
+        "sha": "11ffd1467e2fe444607162055f447effe1789d81",
+        "date": "2025-05-03T01:37:54+00:00",
+        "size": 4370,
+        "files_changed": 2185,
+        "lines_added": 2098,
+        "lines_deleted": 87
+      },
+      "smallest_commit": {
+        "sha": "6c70a8da55475847f73afbe6810e475889530a45",
+        "date": "2025-12-07T23:43:18+00:00",
+        "size": 8,
+        "files_changed": 4,
+        "lines_added": 0,
+        "lines_deleted": 4
+      },
+      "commit_velocity": 2.0,
+      "tech_stack": {
+        "repository_name": "KeyPressCounter",
+        "languages": {},
+        "frameworks": [],
+        "dependencies": [
+          {
+            "name": ".NET SDK",
+            "current_version": "10.0",
+            "latest_version": null,
+            "ecosystem": "nuget",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown",
+            "version_requirement": "10.0",
+            "current_version_known": true,
+            "latest_version_status": "not_found",
+            "latest_version_source": null,
+            "source_file": "MWH.KeyPressCounter.csproj"
+          },
+          {
+            "name": "MinVer",
+            "current_version": "7.0.0",
+            "latest_version": "8.0.0-alpha.1",
+            "ecosystem": "nuget",
+            "versions_behind": 1,
+            "is_outdated": true,
+            "status": "major_outdated",
+            "version_requirement": "7.0.0",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "nuget",
+            "source_file": "MWH.KeyPressCounter.csproj"
+          },
+          {
+            "name": "SharpHook",
+            "current_version": "7.1.1",
+            "latest_version": "7.1.1",
+            "ecosystem": "nuget",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "current",
+            "version_requirement": "7.1.1",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "nuget",
+            "source_file": "MWH.KeyPressCounter.csproj"
+          },
+          {
+            "name": "System.Management",
+            "current_version": "10.0.5",
+            "latest_version": "11.0.0-preview.3.26207.106",
+            "ecosystem": "nuget",
+            "versions_behind": 0,
+            "is_outdated": false,
+            "status": "unknown",
+            "version_requirement": "10.0.5",
+            "current_version_known": true,
+            "latest_version_status": "resolved",
+            "latest_version_source": "nuget",
+            "source_file": "MWH.KeyPressCounter.csproj"
+          }
+        ],
+        "version_info": {},
+        "dependency_file_type": "MWH.KeyPressCounter.csproj",
+        "currency_score": 57,
+        "outdated_count": 1,
+        "total_dependencies": 4,
+        "known_versions_count": 4,
+        "resolved_latest_versions_count": 3,
+        "unknown_versions_count": 0,
+        "primary_language": null,
+        "language_diversity": 0,
+        "outdated_percentage": 25.0,
+        "version_coverage_percentage": 100.0,
+        "latest_version_coverage_percentage": 75.0
+      },
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": true,
+      "has_docs": true,
+      "language_count": 2,
+      "size_kb": 46596,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 786,
+      "days_since_last_push": 33,
+      "ai_summary": null,
+      "attention_score": 16.4,
+      "attention_metrics": {
+        "score": 16.4,
+        "tier": "healthy",
+        "needs_attention": false,
+        "reasons": [
+          "staleness",
+          "dependencies"
+        ],
+        "components": {
+          "pull_requests": {
+            "score": 0.0,
+            "availability": "available",
+            "reason": "none",
+            "total_open": 0,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": null
+          },
+          "security": {
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
+            "active_alert_counts": {
+              "total_open": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 35.0,
+            "days_since_last_push": 33,
+            "recent_commits_90d": 6,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 27.9,
+            "total_dependencies": 4,
+            "outdated_count": 1,
+            "outdated_percentage": 25.0,
+            "currency_score": 57,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 75.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 17,
+      "composite_score": 32.81,
+      "pull_request_summary": {
+        "availability": "available",
+        "reason": "none",
+        "has_open_pull_requests": false,
+        "total_open": 0,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": null,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get"
+        ]
+      },
+      "total_additions": 11809,
+      "total_deletions": 1278,
+      "code_churn": 13087,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "markhazleton",
+          "commits": 19,
+          "additions": 8629,
+          "deletions": 790
+        }
+      ],
+      "attention_rank": 12
     },
     {
       "name": "PromptSpark.Chat",
@@ -9169,7 +8967,7 @@
         "text": "**A real-time, conversational workflow application built with ASP.NET Core, SignalR, and Adaptive Cards. It demonstrates how to guide users through multi-step processes, present interactive UI elements, and optionally integrate AI-driven responses—all while providing flexible workflow logic, simple  Built with C#. Key features: **Adaptive Cards** for interactive input, **Real-time Communication** with SignalR, **Workflow Persistence** in memory using a thread-safe store. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:15.901159",
+        "generated_at": "2026-05-03T00:56:06.984898",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -9200,13 +8998,12 @@
         "recent_365d": 30,
         "last_commit_date": "2026-03-30T01:50:19+00:00",
         "patterns": [
-          "active",
-          "current"
+          "active"
         ],
         "commit_frequency": 7.0,
         "consistency_score": 0,
         "activity_rate": 0.233,
-        "days_since_last_commit": 26,
+        "days_since_last_commit": 33,
         "first_commit_date": "2024-12-31T04:00:15+00:00"
       },
       "commit_metrics": {
@@ -9265,8 +9062,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 480,
-      "days_since_last_push": 15,
+      "age_days": 487,
+      "days_since_last_push": 22,
       "ai_summary": null,
       "attention_score": 10.8,
       "attention_metrics": {
@@ -9299,7 +9096,7 @@
           },
           "staleness": {
             "score": 12.0,
-            "days_since_last_push": 15,
+            "days_since_last_push": 22,
             "recent_commits_90d": 21,
             "open_issues": 0
           },
@@ -9315,8 +9112,8 @@
           }
         }
       },
-      "rank": 19,
-      "composite_score": 31.43,
+      "rank": 18,
+      "composite_score": 31.45,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -9368,7 +9165,7 @@
           "deletions": 52
         }
       ],
-      "attention_rank": 17
+      "attention_rank": 22
     },
     {
       "name": "markhazleton.github.io",
@@ -9377,7 +9174,7 @@
         "text": "[![Deploy Jekyll site to Pages](https://github.com/markhazleton/markhazleton.github.io/actions/workflows/jekyll.yml/badge.svg)](https://github.com/markhazleton/markhazleton.github.io/actions/workflows/jekyll.yml) [![Ruby](https://img.shields.io/badge/Ruby-3.2.2-red.svg)](https://www.ruby-lang.org/)  Built with SCSS. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.292830",
+        "generated_at": "2026-05-03T00:56:07.070514",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -9409,13 +9206,12 @@
         "last_commit_date": "2026-04-01T16:48:21+00:00",
         "patterns": [
           "maintained",
-          "current",
           "consistent"
         ],
         "commit_frequency": 2.33,
         "consistency_score": 0,
         "activity_rate": 0.078,
-        "days_since_last_commit": 24,
+        "days_since_last_commit": 31,
         "first_commit_date": "2021-04-18T17:11:48+00:00"
       },
       "commit_metrics": {
@@ -9535,8 +9331,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1833,
-      "days_since_last_push": 17,
+      "age_days": 1840,
+      "days_since_last_push": 24,
       "ai_summary": null,
       "attention_score": 18.8,
       "attention_metrics": {
@@ -9571,7 +9367,7 @@
           },
           "staleness": {
             "score": 12.0,
-            "days_since_last_push": 17,
+            "days_since_last_push": 24,
             "recent_commits_90d": 7,
             "open_issues": 0
           },
@@ -9587,7 +9383,7 @@
           }
         }
       },
-      "rank": 20,
+      "rank": 19,
       "composite_score": 28.42,
       "pull_request_summary": {
         "availability": "available",
@@ -9640,11 +9436,11 @@
           "deletions": 11
         }
       ],
-      "attention_rank": 8,
+      "attention_rank": 9,
       "screenshot": {
         "path": "output/users/markhazleton/screenshots/markhazleton.github.io.png",
         "url": "https://markhazleton.github.io/",
-        "captured_at": "2026-04-26T00:32:21.834799+00:00",
+        "captured_at": "2026-05-03T00:36:18.187096+00:00",
         "width": 1280,
         "height": 720,
         "file_size_kb": 86.61
@@ -9657,7 +9453,7 @@
         "text": "[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-phpdocspark.azurewebsites.net-blue?style=for-the-badge)](https://phpdocspark.azurewebsites.net/) [![Canonical](https://img.shields.io/badge/Canonical-phpdocspark.markhazleton.com-orange?style=for-the-badge)](https://phpdocspark.markhazleton.com) Built with PHP. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.293707",
+        "generated_at": "2026-05-03T00:56:07.071624",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -9689,13 +9485,12 @@
         "last_commit_date": "2026-03-30T02:29:26+00:00",
         "patterns": [
           "maintained",
-          "current",
           "accelerating"
         ],
         "commit_frequency": 2.0,
         "consistency_score": 0,
         "activity_rate": 0.067,
-        "days_since_last_commit": 26,
+        "days_since_last_commit": 33,
         "first_commit_date": "2023-09-08T16:08:13+00:00"
       },
       "commit_metrics": {
@@ -10151,8 +9946,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 960,
-      "days_since_last_push": 19,
+      "age_days": 967,
+      "days_since_last_push": 26,
       "ai_summary": null,
       "attention_score": 16.0,
       "attention_metrics": {
@@ -10187,7 +9982,7 @@
           },
           "staleness": {
             "score": 12.0,
-            "days_since_last_push": 19,
+            "days_since_last_push": 26,
             "recent_commits_90d": 6,
             "open_issues": 0
           },
@@ -10203,8 +9998,8 @@
           }
         }
       },
-      "rank": 21,
-      "composite_score": 28.09,
+      "rank": 20,
+      "composite_score": 28.11,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -10256,7 +10051,7 @@
           "deletions": 15
         }
       ],
-      "attention_rank": 11
+      "attention_rank": 13
     },
     {
       "name": "TeachSpark",
@@ -10265,7 +10060,7 @@
         "text": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download) [![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/) [![Bui Built with C#. Actively maintained with regular updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.456965",
+        "generated_at": "2026-05-03T00:56:07.269252",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -10297,13 +10092,12 @@
         "last_commit_date": "2026-03-29T14:37:02+00:00",
         "patterns": [
           "active",
-          "current",
           "accelerating"
         ],
         "commit_frequency": 4.0,
         "consistency_score": 0,
         "activity_rate": 0.133,
-        "days_since_last_commit": 27,
+        "days_since_last_commit": 34,
         "first_commit_date": "2025-06-19T21:15:06+00:00"
       },
       "commit_metrics": {
@@ -10423,12 +10217,12 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 310,
-      "days_since_last_push": 10,
+      "age_days": 317,
+      "days_since_last_push": 17,
       "ai_summary": null,
-      "attention_score": 8.3,
+      "attention_score": 11.3,
       "attention_metrics": {
-        "score": 8.3,
+        "score": 11.3,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [],
@@ -10456,8 +10250,8 @@
             }
           },
           "staleness": {
-            "score": 0.0,
-            "days_since_last_push": 10,
+            "score": 12.0,
+            "days_since_last_push": 17,
             "recent_commits_90d": 12,
             "open_issues": 0
           },
@@ -10473,8 +10267,8 @@
           }
         }
       },
-      "rank": 22,
-      "composite_score": 27.81,
+      "rank": 21,
+      "composite_score": 27.83,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -10529,13 +10323,228 @@
       "attention_rank": 21
     },
     {
+      "name": "DataSpark",
+      "description": "A .NET 10 toolkit for working with SQLite databases: discover files, export tables to CSV, inspect schema, and generate C# DTOs. The solution includes a CLI, a web UI, a core library, tests, and benchmarks.",
+      "summary": {
+        "text": "[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build](https://img.shields.io/github/actions/workflow/status/markhazleton/DataSpark/ci.yml?branch=main)](https://github.com/markhazleton/DataSpark/actions) [![Coverage](https://img.shield Built with HTML. Key features: Discover SQLite database files in a directory., Export all tables or a filtered list to CSV., Generate schema reports (text, JSON, Markdown).. Actively maintained with regular updates.",
+        "ai_generated": false,
+        "generation_method": "enhanced-template",
+        "generated_at": "2026-05-03T00:56:07.269576",
+        "model_used": null,
+        "tokens_used": 0,
+        "confidence_score": 60
+      },
+      "url": "https://github.com/markhazleton/DataSpark",
+      "homepage": "",
+      "has_pages": false,
+      "pages_url": null,
+      "website_url": null,
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "HTML",
+      "language_stats": {},
+      "languages": {},
+      "created_at": "2017-11-06T16:04:58+00:00",
+      "updated_at": "2026-04-01T01:06:30+00:00",
+      "pushed_at": "2026-04-01T01:06:27+00:00",
+      "total_commits": 100,
+      "recent_commits_90d": 13,
+      "first_commit_date": "2015-09-02T21:40:54+00:00",
+      "last_commit_date": "2026-04-01T01:06:21+00:00",
+      "commit_history": {
+        "repository_name": "DataSpark",
+        "total_commits": 100,
+        "recent_90d": 13,
+        "recent_180d": 19,
+        "recent_365d": 60,
+        "last_commit_date": "2026-04-01T01:06:21+00:00",
+        "patterns": [
+          "active"
+        ],
+        "commit_frequency": 4.33,
+        "consistency_score": 0,
+        "activity_rate": 0.144,
+        "days_since_last_commit": 31,
+        "first_commit_date": "2015-09-02T21:40:54+00:00"
+      },
+      "commit_metrics": {
+        "avg_size": 4103.46,
+        "largest_commit": {
+          "sha": "97f55607615e88d2a5fd820bfa42e5b9d377c295",
+          "date": "2025-09-07T14:55:53+00:00",
+          "size": 198988,
+          "files_changed": 99494,
+          "lines_added": 99429,
+          "lines_deleted": 65
+        },
+        "smallest_commit": {
+          "sha": "9748dded19ab33c363c09307edd3297c2a08e4c8",
+          "date": "2025-08-11T17:02:49+00:00",
+          "size": 2,
+          "files_changed": 1,
+          "lines_added": 0,
+          "lines_deleted": 1
+        },
+        "total_commits": 100,
+        "commit_size_distribution": {
+          "min": 0,
+          "q1": 11,
+          "median": 159,
+          "q3": 1378,
+          "max": 198988
+        }
+      },
+      "avg_commit_size": 4103.46,
+      "largest_commit": {
+        "sha": "97f55607615e88d2a5fd820bfa42e5b9d377c295",
+        "date": "2025-09-07T14:55:53+00:00",
+        "size": 198988,
+        "files_changed": 99494,
+        "lines_added": 99429,
+        "lines_deleted": 65
+      },
+      "smallest_commit": {
+        "sha": "9748dded19ab33c363c09307edd3297c2a08e4c8",
+        "date": "2025-08-11T17:02:49+00:00",
+        "size": 2,
+        "files_changed": 1,
+        "lines_added": 0,
+        "lines_deleted": 1
+      },
+      "commit_velocity": 4.33,
+      "tech_stack": null,
+      "has_readme": true,
+      "has_license": true,
+      "has_ci_cd": true,
+      "has_tests": false,
+      "has_docs": true,
+      "language_count": 5,
+      "size_kb": 2075,
+      "is_fork": false,
+      "is_private": false,
+      "is_archived": false,
+      "age_days": 3099,
+      "days_since_last_push": 31,
+      "ai_summary": null,
+      "attention_score": 12.2,
+      "attention_metrics": {
+        "score": 12.2,
+        "tier": "healthy",
+        "needs_attention": false,
+        "reasons": [
+          "staleness"
+        ],
+        "components": {
+          "pull_requests": {
+            "score": 0.0,
+            "availability": "available",
+            "reason": "none",
+            "total_open": 0,
+            "draft_count": 0,
+            "review_requested_count": 0,
+            "oldest_open_age_days": null
+          },
+          "security": {
+            "score": 10.0,
+            "availability": "partial",
+            "reason": "permission_denied",
+            "overall_state": "clear",
+            "active_alert_counts": {
+              "total_open": 0,
+              "critical": 0,
+              "high": 0,
+              "medium": 0,
+              "low": 0
+            }
+          },
+          "staleness": {
+            "score": 35.0,
+            "days_since_last_push": 31,
+            "recent_commits_90d": 13,
+            "open_issues": 0
+          },
+          "dependencies": {
+            "score": 0.0,
+            "total_dependencies": 0,
+            "outdated_count": 0,
+            "outdated_percentage": 0.0,
+            "currency_score": 100,
+            "version_coverage_percentage": 100.0,
+            "latest_version_coverage_percentage": 100.0,
+            "unknown_versions_count": 0
+          }
+        }
+      },
+      "rank": 22,
+      "composite_score": 27.15,
+      "pull_request_summary": {
+        "availability": "available",
+        "reason": "none",
+        "has_open_pull_requests": false,
+        "total_open": 0,
+        "draft_count": 0,
+        "review_requested_count": 0,
+        "oldest_open_age_days": null,
+        "source": "rest.pulls.list"
+      },
+      "security_summary": {
+        "availability": "partial",
+        "reason": "permission_denied",
+        "overall_state": "clear",
+        "feature_status": {
+          "advanced_security": "unknown",
+          "secret_scanning": "unknown",
+          "secret_scanning_push_protection": "unknown",
+          "dependency_alerts": "unavailable",
+          "automated_security_fixes": "unavailable"
+        },
+        "active_alert_counts": {
+          "total_open": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        },
+        "sources": [
+          "rest.repos.get"
+        ]
+      },
+      "total_additions": 183925,
+      "total_deletions": 53122,
+      "code_churn": 237047,
+      "bus_factor": 1,
+      "bus_factor_health": "critical",
+      "contributor_stats": [
+        {
+          "login": "markhazleton",
+          "commits": 88,
+          "additions": 183785,
+          "deletions": 52935
+        },
+        {
+          "login": "actions-user",
+          "commits": 5,
+          "additions": 5,
+          "deletions": 10
+        },
+        {
+          "login": "dependabot[bot]",
+          "commits": 4,
+          "additions": 135,
+          "deletions": 177
+        }
+      ],
+      "attention_rank": 16
+    },
+    {
       "name": "AsyncSpark",
       "description": "Demonstration of some Async Methods",
       "summary": {
         "text": "Production-ready reference implementation for async/await patterns in .NET 10 with constitution-driven development practices. Built with C#. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.457298",
+        "generated_at": "2026-05-03T00:56:07.269919",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -10572,7 +10581,7 @@
         "commit_frequency": 3.0,
         "consistency_score": 0,
         "activity_rate": 0.1,
-        "days_since_last_commit": 74,
+        "days_since_last_commit": 81,
         "first_commit_date": "2022-08-07T16:37:13+00:00"
       },
       "commit_metrics": {
@@ -10631,8 +10640,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1357,
-      "days_since_last_push": 74,
+      "age_days": 1364,
+      "days_since_last_push": 81,
       "ai_summary": null,
       "attention_score": 12.2,
       "attention_metrics": {
@@ -10667,7 +10676,7 @@
           },
           "staleness": {
             "score": 35.0,
-            "days_since_last_push": 74,
+            "days_since_last_push": 81,
             "recent_commits_90d": 9,
             "open_issues": 0
           },
@@ -10736,7 +10745,7 @@
           "deletions": 1
         }
       ],
-      "attention_rank": 14
+      "attention_rank": 17
     },
     {
       "name": "FastEndpointApi",
@@ -10745,7 +10754,7 @@
         "text": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![.NET Version](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/download/dotnet/10.0) [![Build and Deploy](https://github.com/markhazleton/FastEndpoin Built with HTML. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.457592",
+        "generated_at": "2026-05-03T00:56:07.270223",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -10782,7 +10791,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 103,
+        "days_since_last_commit": 110,
         "first_commit_date": "2024-04-06T14:56:03+00:00"
       },
       "commit_metrics": {
@@ -10841,8 +10850,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 749,
-      "days_since_last_push": 103,
+      "age_days": 756,
+      "days_since_last_push": 110,
       "ai_summary": null,
       "attention_score": 19.8,
       "attention_metrics": {
@@ -10877,7 +10886,7 @@
           },
           "staleness": {
             "score": 65.0,
-            "days_since_last_push": 103,
+            "days_since_last_push": 110,
             "recent_commits_90d": 0,
             "open_issues": 0
           },
@@ -10894,7 +10903,7 @@
         }
       },
       "rank": 24,
-      "composite_score": 24.44,
+      "composite_score": 24.46,
       "pull_request_summary": {
         "availability": "unavailable",
         "reason": "not_supported",
@@ -10940,7 +10949,7 @@
           "deletions": 105
         }
       ],
-      "attention_rank": 4
+      "attention_rank": 5
     },
     {
       "name": "DocSpecSpark",
@@ -10949,7 +10958,7 @@
         "text": "DocSpark is a document AI tool derived from DevSpark. Built with Python. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.496659",
+        "generated_at": "2026-05-03T00:56:07.290778",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -10987,7 +10996,7 @@
         "commit_frequency": 2.0,
         "consistency_score": 0,
         "activity_rate": 0.067,
-        "days_since_last_commit": 22,
+        "days_since_last_commit": 29,
         "first_commit_date": "2026-03-07T21:19:22+00:00"
       },
       "commit_metrics": {
@@ -11057,7 +11066,7 @@
           {
             "name": "typer",
             "current_version": "0.16.0",
-            "latest_version": "0.24.2",
+            "latest_version": "0.25.1",
             "ecosystem": "pypi",
             "versions_behind": 0,
             "is_outdated": true,
@@ -11093,12 +11102,12 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 49,
-      "days_since_last_push": 11,
+      "age_days": 56,
+      "days_since_last_push": 18,
       "ai_summary": null,
-      "attention_score": 12.3,
+      "attention_score": 15.3,
       "attention_metrics": {
-        "score": 12.3,
+        "score": 15.3,
         "tier": "healthy",
         "needs_attention": false,
         "reasons": [
@@ -11128,8 +11137,8 @@
             }
           },
           "staleness": {
-            "score": 0.0,
-            "days_since_last_push": 11,
+            "score": 12.0,
+            "days_since_last_push": 18,
             "recent_commits_90d": 6,
             "open_issues": 0
           },
@@ -11146,7 +11155,7 @@
         }
       },
       "rank": 25,
-      "composite_score": 23.78,
+      "composite_score": 23.8,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -11192,7 +11201,7 @@
           "deletions": 21875
         }
       ],
-      "attention_rank": 13
+      "attention_rank": 14
     },
     {
       "name": "MechanicsOfMotherhood",
@@ -11201,7 +11210,7 @@
         "text": "**A modern recipe management platform designed for busy working mothers** Built with TypeScript. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.497367",
+        "generated_at": "2026-05-03T00:56:07.291487",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -11237,7 +11246,7 @@
         "commit_frequency": 3.0,
         "consistency_score": 0,
         "activity_rate": 0.1,
-        "days_since_last_commit": 47,
+        "days_since_last_commit": 54,
         "first_commit_date": "2025-08-11T21:38:59+00:00"
       },
       "commit_metrics": {
@@ -11903,8 +11912,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 236,
-      "days_since_last_push": 47,
+      "age_days": 243,
+      "days_since_last_push": 54,
       "ai_summary": null,
       "attention_score": 17.1,
       "attention_metrics": {
@@ -11940,7 +11949,7 @@
           },
           "staleness": {
             "score": 35.0,
-            "days_since_last_push": 47,
+            "days_since_last_push": 54,
             "recent_commits_90d": 9,
             "open_issues": 0
           },
@@ -11957,7 +11966,7 @@
         }
       },
       "rank": 26,
-      "composite_score": 23.57,
+      "composite_score": 23.6,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -12003,7 +12012,7 @@
           "deletions": 32782
         }
       ],
-      "attention_rank": 9
+      "attention_rank": 10
     },
     {
       "name": "WebSpark.PrismSpark",
@@ -12012,7 +12021,7 @@
         "text": "A modern, high-performance C#/.NET port of [PrismJS](https://github.com/PrismJS/prism) for advanced syntax highlighting, theming, and extensibility. Built with C#. Key features: **Tokenization & Highlighting** for 24 languages (C#, JavaScript, Python, Markdown, Pug, and more), **Plugin System**: Line numbers, copy-to-clipboard, toolbar, and more, **Theme System**: Built-in and custom themes, CSS generation. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.497559",
+        "generated_at": "2026-05-03T00:56:07.291706",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -12049,7 +12058,7 @@
         "commit_frequency": 2.67,
         "consistency_score": 0,
         "activity_rate": 0.089,
-        "days_since_last_commit": 73,
+        "days_since_last_commit": 80,
         "first_commit_date": "2025-05-27T15:14:30+00:00"
       },
       "commit_metrics": {
@@ -12108,8 +12117,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 333,
-      "days_since_last_push": 73,
+      "age_days": 340,
+      "days_since_last_push": 80,
       "ai_summary": null,
       "attention_score": 12.2,
       "attention_metrics": {
@@ -12144,7 +12153,7 @@
           },
           "staleness": {
             "score": 35.0,
-            "days_since_last_push": 73,
+            "days_since_last_push": 80,
             "recent_commits_90d": 8,
             "open_issues": 0
           },
@@ -12161,7 +12170,7 @@
         }
       },
       "rank": 27,
-      "composite_score": 21.79,
+      "composite_score": 21.81,
       "pull_request_summary": {
         "availability": "available",
         "reason": "none",
@@ -12213,7 +12222,7 @@
           "deletions": 6
         }
       ],
-      "attention_rank": 15
+      "attention_rank": 18
     },
     {
       "name": "WebSpark.ArtSpark",
@@ -12222,7 +12231,7 @@
         "text": "**A comprehensive .NET solution for the Art Institute of Chicago's public API, featuring a complete client library, revolutionary AI chat system with multiple personas, and demo applications showcasing modern .NET development practices.** Built with C#. Key features: ✅ **Complete API Coverage**: All 33 endpoints across 6 categories, ✅ **Strongly Typed Models**: Comprehensive C# models for all resource types, ✅ **Async/Await Support**: Modern asynchronous programming patterns. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.497823",
+        "generated_at": "2026-05-03T00:56:07.292017",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -12259,7 +12268,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 103,
+        "days_since_last_commit": 110,
         "first_commit_date": "2023-01-30T15:23:27+00:00"
       },
       "commit_metrics": {
@@ -12318,8 +12327,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1181,
-      "days_since_last_push": 103,
+      "age_days": 1188,
+      "days_since_last_push": 110,
       "ai_summary": null,
       "attention_score": 19.8,
       "attention_metrics": {
@@ -12354,7 +12363,7 @@
           },
           "staleness": {
             "score": 65.0,
-            "days_since_last_push": 103,
+            "days_since_last_push": 110,
             "recent_commits_90d": 0,
             "open_issues": 0
           },
@@ -12417,7 +12426,7 @@
           "deletions": 1012
         }
       ],
-      "attention_rank": 5
+      "attention_rank": 6
     },
     {
       "name": "WebSpark.Bootswatch",
@@ -12426,7 +12435,7 @@
         "text": "A .NET Razor Class Library that provides seamless integration of [Bootswatch](https://bootswatch.com/) themes into ASP.NET Core applications. Built on Bootstrap 5, this library offers modern, responsive theming with dynamic theme switching, light/dark mode support, and comprehensive caching mechanis Built with HTML. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.497995",
+        "generated_at": "2026-05-03T00:56:07.292214",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -12463,7 +12472,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 103,
+        "days_since_last_commit": 110,
         "first_commit_date": "2022-08-24T18:49:46+00:00"
       },
       "commit_metrics": {
@@ -12522,8 +12531,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1340,
-      "days_since_last_push": 103,
+      "age_days": 1347,
+      "days_since_last_push": 110,
       "ai_summary": null,
       "attention_score": 19.8,
       "attention_metrics": {
@@ -12558,7 +12567,7 @@
           },
           "staleness": {
             "score": 65.0,
-            "days_since_last_push": 103,
+            "days_since_last_push": 110,
             "recent_commits_90d": 0,
             "open_issues": 0
           },
@@ -12621,7 +12630,7 @@
           "deletions": 4122
         }
       ],
-      "attention_rank": 6
+      "attention_rank": 7
     },
     {
       "name": "TriviaSpark",
@@ -12630,7 +12639,7 @@
         "text": "**This application was developed with the assistance of Chat GPT** Built with C#. Key features: User Registration, Question Database Review (Admin), Leaderboard. Maintained project with periodic updates.",
         "ai_generated": false,
         "generation_method": "enhanced-template",
-        "generated_at": "2026-04-26T01:26:16.498197",
+        "generated_at": "2026-05-03T00:56:07.292452",
         "model_used": null,
         "tokens_used": 0,
         "confidence_score": 60
@@ -12667,7 +12676,7 @@
         "commit_frequency": 0.0,
         "consistency_score": 0,
         "activity_rate": 0.0,
-        "days_since_last_commit": 144,
+        "days_since_last_commit": 151,
         "first_commit_date": "2023-02-22T17:10:04+00:00"
       },
       "commit_metrics": {
@@ -12726,8 +12735,8 @@
       "is_fork": false,
       "is_private": false,
       "is_archived": false,
-      "age_days": 1158,
-      "days_since_last_push": 144,
+      "age_days": 1165,
+      "days_since_last_push": 151,
       "ai_summary": null,
       "attention_score": 19.8,
       "attention_metrics": {
@@ -12762,7 +12771,7 @@
           },
           "staleness": {
             "score": 65.0,
-            "days_since_last_push": 144,
+            "days_since_last_push": 151,
             "recent_commits_90d": 0,
             "open_issues": 0
           },
@@ -12831,11 +12840,11 @@
           "deletions": 132
         }
       ],
-      "attention_rank": 7
+      "attention_rank": 8
     }
   ],
   "metadata": {
-    "generated_at": "2026-04-26T01:26:16.500481+00:00",
+    "generated_at": "2026-05-03T00:56:07.295204+00:00",
     "schema_version": "2.3.0",
     "generator": "unified_data_generator",
     "schema_features": [
