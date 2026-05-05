@@ -118,8 +118,130 @@ if ($Scope -notin $validScopes) {
     exit 1
 }
 
-function Get-FileCategories {
+function Get-ScanConfig {
     param([string]$RepoRoot)
+
+    $configPath = Join-Path $RepoRoot 'config/spark.yml'
+    $scanConfig = @{
+        exclude_paths = @(
+            'docs/assets/',
+            'docs/data/',
+            'docs/output/',
+            'htmlcov/',
+            'output/',
+            'MagicMock/',
+            'preview/'
+        )
+        exclude_patterns = @('*.min.js', '*.map')
+        source_paths = @('src/', 'frontend/src/', 'config/', '.github/')
+    }
+
+    if (-not (Test-Path $configPath)) {
+        return $scanConfig
+    }
+
+    try {
+        $lines = Get-Content $configPath -ErrorAction SilentlyContinue
+        $inScanBlock = $false
+        $currentList = $null
+
+        foreach ($line in $lines) {
+            if (-not $inScanBlock) {
+                if ($line -match '^scan:\s*$') {
+                    $inScanBlock = $true
+                }
+                continue
+            }
+
+            if ($line -match '^[A-Za-z_][A-Za-z0-9_]*:\s*$') {
+                break
+            }
+
+            if ($line -match '^\s{2}(exclude_paths|exclude_patterns|source_paths):\s*$') {
+                $currentList = $matches[1]
+                continue
+            }
+
+            if ($line -match '^\s{4}-\s*(.+)$' -and $currentList) {
+                $item = $matches[1].Trim()
+
+                # Strip trailing inline comments when present.
+                if ($item -match '^([^#]+)#') {
+                    $item = $matches[1].Trim()
+                }
+
+                $item = $item.Trim('"', "'")
+                if ($item) {
+                    $scanConfig[$currentList] += $item
+                }
+            }
+        }
+
+        $scanConfig.exclude_paths = @($scanConfig.exclude_paths | Where-Object { $_ } | Select-Object -Unique)
+        $scanConfig.exclude_patterns = @($scanConfig.exclude_patterns | Where-Object { $_ } | Select-Object -Unique)
+        $scanConfig.source_paths = @($scanConfig.source_paths | Where-Object { $_ } | Select-Object -Unique)
+    } catch {
+        # If config parsing fails, keep safe defaults above.
+    }
+
+    return $scanConfig
+}
+
+function Test-PathMatchesScope {
+    param(
+        [string]$RelativePath,
+        [array]$SourcePaths
+    )
+
+    if (-not $SourcePaths -or $SourcePaths.Count -eq 0) {
+        return $true
+    }
+
+    $normalized = $RelativePath.Replace('\\', '/').TrimStart('./')
+    foreach ($sourcePath in $SourcePaths) {
+        $prefix = $sourcePath.Replace('\\', '/').TrimStart('./').TrimEnd('/')
+        if (-not $prefix) { continue }
+
+        if ($normalized -eq $prefix -or $normalized.StartsWith("$prefix/")) {
+            return $true
+        }
+    }
+
+    return $false
+}
+
+function Test-IsExcludedPath {
+    param(
+        [string]$RelativePath,
+        [array]$ExcludeRegexTokens,
+        [array]$ExcludePatterns
+    )
+
+    $normalized = $RelativePath.Replace('\\', '/').TrimStart('./')
+    $name = [System.IO.Path]::GetFileName($normalized)
+
+    foreach ($token in $ExcludeRegexTokens) {
+        if (-not $token) { continue }
+        if ($normalized -match "(^|/)$token(/|$)") {
+            return $true
+        }
+    }
+
+    foreach ($pattern in $ExcludePatterns) {
+        if (-not $pattern) { continue }
+        if ($normalized -like $pattern -or $name -like $pattern) {
+            return $true
+        }
+    }
+
+    return $false
+}
+
+function Get-FileCategories {
+    param(
+        [string]$RepoRoot,
+        [hashtable]$ScanConfig
+    )
     
     $categories = @{
         source = @()
@@ -137,23 +259,36 @@ function Get-FileCategories {
     $scriptExtensions = @('.sh', '.ps1', '.bash', '.bat', '.cmd')
     
     # Exclusion patterns
-    $excludeDirs = @('node_modules', 'venv', '.venv', '__pycache__', '.git', '.vs', '.idea',
-                     'dist', 'build', 'bin', 'obj', '.next', 'coverage', '.pytest_cache',
-                     '.mypy_cache', '.tox', 'eggs', '.egg-info', '.genreleases', '.archive')
+    $defaultExcludeDirs = @('node_modules', 'venv', '.venv', '__pycache__', '.git', '.vs', '.idea',
+                            'dist', 'build', 'bin', 'obj', '.next', 'coverage', '.pytest_cache',
+                            '.mypy_cache', '.tox', 'eggs', '.egg-info', '.genreleases', '.archive')
+
+    $excludeRegexTokens = @()
+    $excludeRegexTokens += $defaultExcludeDirs
+    $excludeRegexTokens += @($ScanConfig.exclude_paths)
+    $excludeRegexTokens = @(
+        $excludeRegexTokens |
+        Where-Object { $_ } |
+        ForEach-Object { [regex]::Escape(($_.Replace('\\', '/').TrimStart('./').TrimEnd('/'))) } |
+        Select-Object -Unique
+    )
     
-    $excludePattern = '(^|[/\\])(' + (($excludeDirs | ForEach-Object { [regex]::Escape($_) }) -join '|') + ')([/\\]|$)'
-    
-    # Get all files, excluding common directories
+    # Get all files, excluding common directories and configured generated paths.
     $allFiles = Get-ChildItem -Path $RepoRoot -Recurse -File -Force -ErrorAction SilentlyContinue | 
-        Where-Object { $_.FullName -notmatch $excludePattern }
+        Where-Object {
+            $relative = $_.FullName.Substring($RepoRoot.Length + 1).Replace('\\', '/')
+            -not (Test-IsExcludedPath -RelativePath $relative -ExcludeRegexTokens $excludeRegexTokens -ExcludePatterns $ScanConfig.exclude_patterns)
+        }
     
     foreach ($file in $allFiles) {
         $relativePath = $file.FullName.Substring($RepoRoot.Length + 1).Replace('\', '/')
         $ext = $file.Extension.ToLower()
         $name = $file.Name.ToLower()
         
-        # Skip minified files
-        if ($name -match '\.min\.(js|css)$' -or $ext -eq '.map') { continue }
+        # Skip configured patterns such as minified bundles and source maps.
+        if (Test-IsExcludedPath -RelativePath $relativePath -ExcludeRegexTokens @() -ExcludePatterns $ScanConfig.exclude_patterns) {
+            continue
+        }
         
         # Categorize by tests first (check path patterns)
         if ($relativePath -match '(^|/)tests?/' -or 
@@ -163,8 +298,8 @@ function Get-FileCategories {
             continue
         }
         
-        # Check source by extension
-        if ($ext -in $sourceExtensions) {
+        # Check source by extension and configured source scan scope.
+        if ($ext -in $sourceExtensions -and (Test-PathMatchesScope -RelativePath $relativePath -SourcePaths $ScanConfig.source_paths)) {
             $categories.source += $relativePath
             continue
         }
@@ -568,6 +703,7 @@ function Get-SampledItems {
 $repoRoot = Get-RepoRoot
 $constitutionInfo = Get-ConstitutionInfo -RepoRoot $repoRoot
 $devsparkVersion = Get-DevSparkVersion -RepoRoot $repoRoot
+$scanConfig = Get-ScanConfig -RepoRoot $repoRoot
 
 # Build result object
 $result = @{
@@ -580,7 +716,7 @@ $result = @{
 }
 
 # Get file categories (always needed for context)
-$fileCategories = Get-FileCategories -RepoRoot $repoRoot
+$fileCategories = Get-FileCategories -RepoRoot $repoRoot -ScanConfig $scanConfig
 $result.files = @{
     source = Get-SampledItems -Items $fileCategories.source -Limit $SampleLimit
     config = Get-SampledItems -Items $fileCategories.config -Limit $SampleLimit
@@ -597,6 +733,8 @@ $result.files = @{
         build = $fileCategories.build.Count
     }
 }
+
+$result.scan_config = $scanConfig
 
 if ($IncludeFullInventory) {
     $result.files.full_inventory = @{
