@@ -13,6 +13,7 @@ This constitution defines **architectural principles and non-negotiable boundari
 Each module MUST have one well-defined purpose. Business logic MUST be testable independently of infrastructure (GitHub Actions, CLI, caching). When a module does "too much," split it.
 
 **Size Guidance:**
+
 - Python modules and React components SHOULD stay under 500 lines of code (LOC).
 - Modules exceeding 500 LOC MUST carry an inline comment at the top explaining why the size is justified (e.g., large enum table, generated code, proven-stable utility).
 - Modules exceeding 800 LOC are presumed to violate single responsibility and MUST be split before additional feature work is merged — unless a Constitution Check in the plan explicitly justifies the exception.

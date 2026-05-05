@@ -281,7 +281,7 @@ After saving the narrative, update the project's root `README.md` to surface the
 
    If a prior repo-story row already exists, replace it with the new dated link.
 
-1. **If no such table exists** — append a brief section before the final License/Contributing section:
+2. **If no such table exists** — append a brief section before the final License/Contributing section:
 
    ```markdown
    ## Repo Story

@@ -1,0 +1,27 @@
+{
+  "version": "2.1.1",
+  "releaseDate": "2026-05-05",
+  "release": {
+    "from": "2026-04-19",
+    "to": "2026-05-05"
+  },
+  "previousVersion": "v2.1.0",
+  "features": {
+    "completed": 0,
+    "deferred": 0
+  },
+  "quickfixes": 0,
+  "pullRequests": {
+    "merged": 0,
+    "numbers": [],
+    "filesChanged": 0,
+    "testsAdded": 0,
+    "breakingChanges": 0,
+    "resolvedHighFindings": 0
+  },
+  "adrs": 0,
+  "commits": 8,
+  "contributors": 2,
+  "specs": [],
+  "timestamp": "2026-05-05T22:59:00Z"
+}
