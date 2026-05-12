@@ -339,36 +339,55 @@ query RepoMetadata($owner: String!, $name: String!) {
             return results
 
     def _fetch_commit_activity_with_retry(self, repo, repo_name: str, max_retries: int = 4):
-        """Fetch commit activity stats with retry for GitHub's async computation.
+        """Fetch commit activity stats via direct REST to avoid PyGithub's infinite 202 retry.
 
-        GitHub returns 202 (and PyGithub returns None) while computing stats,
-        or 403 for secondary rate limits.  Retry with exponential backoff:
-        1s, 2s, 4s, 8s.
+        PyGithub internally retries 202 responses recursively with no limit,
+        which can block for minutes.  This method uses the REST endpoint
+        directly with controlled exponential backoff: 1s, 2s, 4s, 8s.
+
+        Returns a list of dicts with keys: week (int), total (int), days (list[int]).
         """
         import time
+
+        if self.fetcher is None:
+            self.logger.warning(f"No fetcher available for commit_activity {repo_name}")
+            return None
+
+        full_name = repo.full_name if hasattr(repo, 'full_name') else str(repo)
 
         for attempt in range(max_retries):
             backoff = 2 ** attempt  # 1, 2, 4, 8
             try:
                 self._increment_api_calls()
-                stats = repo.get_stats_commit_activity()
-                if stats is not None:
-                    return stats
-                self.logger.debug(
-                    f"Commit activity stats not ready for {repo_name}, "
-                    f"retry {attempt + 1}/{max_retries} in {backoff}s"
+                resp = self.fetcher._rest_get(
+                    f"/repos/{full_name}/stats/commit_activity",
+                    include_version=True,
                 )
-            except GithubException as exc:
-                if getattr(exc, 'status', None) == 403:
+                if resp.status_code == 200:
+                    data = resp.json()
+                    if isinstance(data, list) and data:
+                        return data
+                    return None
+                if resp.status_code == 202:
+                    self.logger.debug(
+                        f"Commit activity stats not ready for {repo_name}, "
+                        f"retry {attempt + 1}/{max_retries} in {backoff}s"
+                    )
+                elif resp.status_code == 403:
                     self.logger.warning(
                         f"Secondary rate limit (403) fetching commit_activity for {repo_name} "
                         f"(attempt {attempt + 1}/{max_retries}); retrying in {backoff}s"
                     )
                 else:
                     self.logger.warning(
-                        f"GithubException fetching commit_activity for {repo_name}: {exc}"
+                        f"Unexpected status {resp.status_code} fetching commit_activity for {repo_name}"
                     )
                     return None
+            except Exception as exc:
+                self.logger.warning(
+                    f"Error fetching commit_activity for {repo_name}: {exc}"
+                )
+                return None
             time.sleep(backoff)
         return None
 
@@ -395,8 +414,12 @@ query RepoMetadata($owner: String!, $name: String!) {
 
             if weekly_stats:
                 for week_stat in weekly_stats:
-                    week_start = datetime.fromtimestamp(week_stat.week, tz=timezone.utc)
-                    week_total = week_stat.total
+                    # REST returns dicts; PyGithub returns objects — support both
+                    w = week_stat if isinstance(week_stat, dict) else week_stat.__dict__
+                    week_ts = w.get("week", 0) if isinstance(w, dict) else getattr(week_stat, "week", 0)
+                    week_total = w.get("total", 0) if isinstance(w, dict) else getattr(week_stat, "total", 0)
+                    days_list = w.get("days", []) if isinstance(w, dict) else getattr(week_stat, "days", [])
+                    week_start = datetime.fromtimestamp(week_ts, tz=timezone.utc)
                     total_commits += week_total
 
                     age_days = (now - week_start).days
@@ -411,7 +434,7 @@ query RepoMetadata($owner: String!, $name: String!) {
                     if week_total > 0:
                         # days[] has Sun..Sat counts; find the last day with commits
                         for day_offset in range(6, -1, -1):
-                            if week_stat.days[day_offset] > 0:
+                            if len(days_list) > day_offset and days_list[day_offset] > 0:
                                 candidate = week_start + timedelta(days=day_offset)
                                 if last_commit_date is None or candidate > last_commit_date:
                                     last_commit_date = candidate

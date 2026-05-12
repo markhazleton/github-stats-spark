@@ -1010,16 +1010,8 @@ class GitHubFetcher:
         backoff_seconds = [1, 2, 4, 8]
         for attempt, wait in enumerate(backoff_seconds, start=1):
             try:
-                repo = self.github.get_repo(f"{username}/{repo_name}")
-                try:
-                    stats = repo.get_stats_contributors()
-                except RecursionError:
-                    timestamp = datetime.now(timezone.utc).isoformat()
-                    self.logger.warning(
-                        f"[{timestamp}] PyGithub recursion error for contributor_stats {repo_name}; "
-                        "falling back to REST endpoint"
-                    )
-                    stats = self._fetch_contributor_stats_via_rest(username, repo_name)
+                # Use REST directly to avoid PyGithub's infinite 202 retry loop
+                stats = self._fetch_contributor_stats_via_rest(username, repo_name)
 
                 if stats is None:
                     # GitHub returns None when stats are being computed (202 state)
@@ -1166,10 +1158,13 @@ class GitHubFetcher:
         backoff_seconds = [1, 2, 4, 8]
         for attempt, wait in enumerate(backoff_seconds, start=1):
             try:
-                repo = self.github.get_repo(f"{username}/{repo_name}")
-                stats = repo.get_stats_code_frequency()
+                # Use REST directly to avoid PyGithub's infinite 202 retry loop
+                response = self._rest_get(
+                    f"/repos/{username}/{repo_name}/stats/code_frequency",
+                    include_version=True,
+                )
 
-                if stats is None:
+                if response.status_code == 202:
                     timestamp = datetime.now(timezone.utc).isoformat()
                     self.logger.warning(
                         f"[{timestamp}] code_frequency for {repo_name} not ready (attempt {attempt}/{len(backoff_seconds)}); "
@@ -1178,36 +1173,34 @@ class GitHubFetcher:
                     time.sleep(wait)
                     continue
 
-                total_additions = sum(max(0, w.additions) for w in stats)
-                total_deletions = sum(abs(w.deletions) for w in stats)
+                if response.status_code >= 400:
+                    if response.status_code == 403:
+                        timestamp = datetime.now(timezone.utc).isoformat()
+                        self.logger.warning(
+                            f"[{timestamp}] Secondary rate limit (403) fetching code_frequency for {repo_name} "
+                            f"(attempt {attempt}); retrying in {wait}s"
+                        )
+                        time.sleep(wait)
+                        continue
+                    timestamp = datetime.now(timezone.utc).isoformat()
+                    self.logger.warning(
+                        f"[{timestamp}] Error {response.status_code} fetching code_frequency for {repo_name}"
+                    )
+                    break
+
+                stats = response.json()
+                if not isinstance(stats, list) or not stats:
+                    break
+
+                # Each entry is [timestamp, additions, deletions]
+                total_additions = sum(max(0, w[1]) for w in stats if len(w) >= 3)
+                total_deletions = sum(abs(w[2]) for w in stats if len(w) >= 3)
                 result = {"total_additions": total_additions, "total_deletions": total_deletions}
 
                 metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "code_frequency")
                 self.cache.set("code_frequency", username, result, repo=repo_name, week=push_key, metadata=metadata)
                 return result
 
-            except RateLimitExceededException:
-                timestamp = datetime.now(timezone.utc).isoformat()
-                self.logger.warning(
-                    f"[{timestamp}] Rate limit hit fetching code_frequency for {repo_name} (attempt {attempt}); "
-                    f"retrying in {wait}s"
-                )
-                time.sleep(wait)
-            except GithubException as exc:
-                # 403 = secondary rate limit (abuse detection); retry with backoff
-                if getattr(exc, 'status', None) == 403:
-                    timestamp = datetime.now(timezone.utc).isoformat()
-                    self.logger.warning(
-                        f"[{timestamp}] Secondary rate limit (403) fetching code_frequency for {repo_name} "
-                        f"(attempt {attempt}); retrying in {wait}s"
-                    )
-                    time.sleep(wait)
-                    continue
-                timestamp = datetime.now(timezone.utc).isoformat()
-                self.logger.warning(
-                    f"[{timestamp}] GithubException fetching code_frequency for {repo_name}: {exc}"
-                )
-                break
             except Exception as exc:
                 timestamp = datetime.now(timezone.utc).isoformat()
                 self.logger.warning(
