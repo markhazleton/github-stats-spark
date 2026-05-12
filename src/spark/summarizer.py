@@ -109,6 +109,30 @@ class RepositorySummarizer:
                 models.append(normalized)
         return models
 
+    @staticmethod
+    def _coerce_token_count(value: Any, field_name: str) -> int:
+        """Normalize API token counters to integers.
+
+        Some SDK versions may surface usage fields as strings. Coercing here
+        keeps token tracking stable across SDK response shape changes.
+        """
+        try:
+            return int(value)
+        except (TypeError, ValueError) as exc:
+            raise TypeError(f"Invalid {field_name} token count: {value!r}") from exc
+
+    def _safe_int(self, value: Any, field_name: str) -> Optional[int]:
+        """Best-effort integer coercion for external/cached numeric fields.
+
+        Returns None for invalid values instead of raising, so summarization can
+        continue with partial stats rather than dropping to full fallback.
+        """
+        try:
+            return int(value)
+        except (TypeError, ValueError):
+            self.logger.warning(f"Ignoring non-numeric {field_name}: {value!r}")
+            return None
+
     @retry(
         stop=stop_after_attempt(3),
         wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -254,7 +278,9 @@ class RepositorySummarizer:
             raise last_not_found_error
 
         summary_text = response.content[0].text
-        tokens_used = response.usage.input_tokens + response.usage.output_tokens
+        input_tokens = self._coerce_token_count(response.usage.input_tokens, "input")
+        output_tokens = self._coerce_token_count(response.usage.output_tokens, "output")
+        tokens_used = input_tokens + output_tokens
 
         # Track usage
         self.total_tokens_used += tokens_used
@@ -427,10 +453,19 @@ Size: {repo.size_kb} KB | Created: {repo.created_at.strftime('%Y-%m-%d') if repo
 
         # Add language breakdown
         if language_stats:
-            total_bytes = sum(language_stats.values())
-            top_langs = sorted(language_stats.items(), key=lambda x: x[1], reverse=True)[:5]
-            lang_breakdown = ", ".join([f"{lang} ({bytes/total_bytes*100:.1f}%)" for lang, bytes in top_langs])
-            prompt += f"Languages: {lang_breakdown}\n"
+            normalized_language_stats = []
+            for lang, raw_bytes in language_stats.items():
+                bytes_count = self._safe_int(raw_bytes, f"language_stats[{lang}]")
+                if bytes_count is not None and bytes_count > 0:
+                    normalized_language_stats.append((lang, bytes_count))
+
+            if normalized_language_stats:
+                total_bytes = sum(bytes_count for _, bytes_count in normalized_language_stats)
+                top_langs = sorted(normalized_language_stats, key=lambda x: x[1], reverse=True)[:5]
+                lang_breakdown = ", ".join(
+                    [f"{lang} ({bytes_count / total_bytes * 100:.1f}%)" for lang, bytes_count in top_langs]
+                )
+                prompt += f"Languages: {lang_breakdown}\n"
 
         # Add commit activity patterns
         if commit_history:
@@ -677,7 +712,17 @@ class UserProfileGenerator:
         for repo in repositories:
             if repo.language_stats:
                 for lang, bytes_count in repo.language_stats.items():
-                    language_totals[lang] = language_totals.get(lang, 0) + bytes_count
+                    try:
+                        normalized_bytes_count = int(bytes_count)
+                    except (TypeError, ValueError):
+                        self.logger.warning(
+                            f"Ignoring non-numeric profile.language_stats[{repo.name}:{lang}]: {bytes_count!r}"
+                        )
+                        continue
+
+                    if normalized_bytes_count <= 0:
+                        continue
+                    language_totals[lang] = language_totals.get(lang, 0) + normalized_bytes_count
 
         # Aggregate frameworks
         framework_counts = {}

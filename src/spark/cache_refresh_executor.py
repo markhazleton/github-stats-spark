@@ -39,6 +39,24 @@ class CacheRefreshExecutor:
         self.dependency_analyzer = RepositoryDependencyAnalyzer()
         self.fetcher = fetcher
 
+    @staticmethod
+    def _sanitize_language_stats(language_stats: Any) -> Dict[str, int]:
+        """Normalize language payload to numeric byte counts only."""
+        if not isinstance(language_stats, dict):
+            return {}
+
+        sanitized: Dict[str, int] = {}
+        for language, raw_value in language_stats.items():
+            try:
+                bytes_count = int(raw_value)
+            except (TypeError, ValueError):
+                continue
+
+            if bytes_count >= 0:
+                sanitized[language] = bytes_count
+
+        return sanitized
+
     def refresh_commit_counts(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
         cache_key = sanitize_timestamp_for_filename(pushed_at)
         category = "commit_counts"
@@ -146,7 +164,7 @@ class CacheRefreshExecutor:
         try:
             self.api_calls += 1
             repo = self.github.get_repo(f"{username}/{repo_name}")
-            languages = repo.get_languages()
+            languages = self._sanitize_language_stats(repo.get_languages())
             metadata = {
                 "repository": {"owner": username, "name": repo_name},
                 "category": category,
@@ -334,6 +352,7 @@ class CacheRefreshExecutor:
             if language_stats is None:
                 self.refresh_languages(username, repo_name, pushed_at)
                 language_stats = self.cache.get("languages", username, repo=repo_name, week=cache_key) or {}
+            language_stats = self._sanitize_language_stats(language_stats)
 
             readme_content = self.cache.get("readme", username, repo=repo_name, week=cache_key)
             if readme_content is None:

@@ -308,6 +308,32 @@ class TestSummarizeRepository:
         assert result.generation_method == "basic-template"
         assert "JavaScript" in result.summary
 
+    def test_ai_summary_coerces_string_token_usage(self, summarizer):
+        repo = _make_repo()
+        summarizer.anthropic = MagicMock()
+        summarizer.model = "claude-haiku-4-5"
+
+        fake_response = MagicMock()
+        fake_response.content = [MagicMock(text="Generated AI summary")]
+        fake_response.usage = MagicMock(input_tokens=120, output_tokens="30")
+
+        summarizer.anthropic.messages.create.return_value = fake_response
+        summarizer.cache.get = MagicMock(return_value=None)
+
+        result = summarizer._generate_ai_summary(
+            repo=repo,
+            readme_content=SAMPLE_README,
+            commit_history=_make_history(),
+            language_stats=repo.language_stats,
+            tech_stack=None,
+            repository_owner=None,
+            repo_pushed_at=repo.pushed_at,
+            write_cache=False,
+        )
+
+        assert result.generation_method == "claude-haiku-4-5"
+        assert result.tokens_used == 150
+
 
 # ---------------------------------------------------------------------------
 # Cache metadata
@@ -345,6 +371,19 @@ class TestBuildRepositoryPrompt:
         prompt = summarizer._build_repository_prompt(repo, "README", None, language_stats=stats)
         assert "Python" in prompt
         assert "80.0%" in prompt
+
+    def test_language_stats_with_string_numbers(self, summarizer):
+        repo = _make_repo()
+        stats = {"Python": "8000", "JavaScript": 2000}
+        prompt = summarizer._build_repository_prompt(repo, "README", None, language_stats=stats)
+        assert "Python" in prompt
+        assert "JavaScript" in prompt
+
+    def test_language_stats_skips_invalid_values(self, summarizer):
+        repo = _make_repo()
+        stats = {"Python": "oops", "JavaScript": "2000"}
+        prompt = summarizer._build_repository_prompt(repo, "README", None, language_stats=stats)
+        assert "Languages: JavaScript (100.0%)" in prompt
 
     def test_includes_commit_activity(self, summarizer):
         repo = _make_repo()

@@ -175,6 +175,29 @@ class GitHubFetcher:
             "has_pages": repo.has_pages,
         }
 
+    @staticmethod
+    def _sanitize_language_stats(language_stats: Any) -> Dict[str, int]:
+        """Keep only numeric language-byte entries from GitHub language payloads.
+
+        Some API/client versions may include metadata keys (for example ``url``)
+        in the same dictionary as language byte counts. This normalizes the
+        payload so downstream consumers only see ``{language_name: int_bytes}``.
+        """
+        if not isinstance(language_stats, dict):
+            return {}
+
+        sanitized: Dict[str, int] = {}
+        for language, raw_value in language_stats.items():
+            try:
+                bytes_count = int(raw_value)
+            except (TypeError, ValueError):
+                continue
+
+            if bytes_count >= 0:
+                sanitized[language] = bytes_count
+
+        return sanitized
+
     def get_user(self, username: Optional[str] = None) -> Dict[str, Any]:
         """Get GitHub user information (alias for fetch_user_profile for backwards compatibility).
 
@@ -483,11 +506,11 @@ class GitHubFetcher:
         push_key = sanitize_timestamp_for_filename(repo_pushed_at)
         cached = self.cache.get("languages", username, repo=repo_name, week=push_key)
         if cached:
-            return cached
+            return self._sanitize_language_stats(cached)
 
         try:
             repo = self.github.get_repo(f"{username}/{repo_name}")
-            languages = repo.get_languages()
+            languages = self._sanitize_language_stats(repo.get_languages())
 
             # Cache writes now handled by CacheManager
             return languages

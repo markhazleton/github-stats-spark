@@ -401,6 +401,21 @@ def test_fetch_languages_returns_mapping(fetcher, monkeypatch):
     assert languages == {"Python": 123}
 
 
+def test_fetch_languages_filters_non_numeric_entries(fetcher, monkeypatch):
+    repo = SimpleNamespace(
+        get_languages=lambda: {
+            "Python": 123,
+            "TypeScript": "456",
+            "url": "https://api.github.com/repos/example/repo/languages",
+        }
+    )
+    monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+    languages = fetcher.fetch_languages("markhazleton", "repo-one")
+
+    assert languages == {"Python": 123, "TypeScript": 456}
+
+
 def test_fetch_pull_request_summary_marks_partial_after_page_cap(fetcher, monkeypatch):
     payload = [
         {
@@ -655,6 +670,26 @@ class TestFetcherCacheHits:
 
         result = fetcher.fetch_languages("user", "my-repo", repo_pushed_at=pushed)
         assert result == {"Go": 999}
+
+    def test_fetch_languages_cache_hit_filters_non_numeric_entries(self, fetcher):
+        from spark.time_utils import sanitize_timestamp_for_filename
+
+        pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)
+        key = sanitize_timestamp_for_filename(pushed)
+        fetcher.cache.set(
+            "languages",
+            "user",
+            {
+                "Go": 999,
+                "url": "https://api.github.com/repos/user/my-repo/languages",
+                "Rust": "123",
+            },
+            repo="my-repo",
+            week=key,
+        )
+
+        result = fetcher.fetch_languages("user", "my-repo", repo_pushed_at=pushed)
+        assert result == {"Go": 999, "Rust": 123}
 
     def test_fetch_readme_cache_hit(self, fetcher):
         from spark.time_utils import sanitize_timestamp_for_filename
