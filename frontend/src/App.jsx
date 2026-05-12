@@ -2,12 +2,13 @@ import React, { useState, useMemo, Suspense, lazy, useEffect } from "react";
 import { ViewportProvider } from "@/contexts/ViewportContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import useRepositoryData from "@/hooks/useRepositoryData";
-import RepositoryTable from "@/components/RepositoryTable/RepositoryTable";
 import LoadingState from "@/components/Common/LoadingState";
 import FilterControls from "@/components/Common/FilterControls";
 import ThemeToggle from "@/components/Common/ThemeToggle";
 import ContributionHeatmap from "@/components/Visualizations/ContributionHeatmap";
 import ActivityTimeline from "@/components/Visualizations/ActivityTimeline";
+import ProfileHero from "@/components/ProfileHero/ProfileHero";
+import RepositoryGrid from "@/components/RepositoryGrid/RepositoryGrid";
 import { useTableSort } from "@/hooks/useTableSort";
 import {
   extractLanguages,
@@ -249,10 +250,17 @@ function App() {
                 className="flex items-center justify-between"
                 style={{ height: "var(--header-height)" }}
               >
-                <h1 style={{ marginBottom: 0 }}>
-                  <span className="header-title-line1">GitHub</span>
-                  <span className="header-title-line2">StatsSpark</span>
-                </h1>
+                <a href="/" className="header-brand" aria-label="GitHub Spark — home">
+                  <div className="header-logo" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 013.006-.404c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.479 5.92.43.372.824 1.102.824 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </div>
+                  <div className="header-title-group">
+                    <span className="header-title-main">GitHubSpark</span>
+                    <span className="header-title-sub">markhazleton</span>
+                  </div>
+                </a>
 
                 {/* Navigation Menu */}
                 <nav
@@ -264,9 +272,9 @@ function App() {
                     className={`nav-menu-item ${currentView === "table" ? "nav-menu-item--active" : ""}`}
                     onClick={() => handleViewChange("table")}
                     aria-current={currentView === "table" ? "page" : undefined}
-                    aria-label="Switch to dashboard view"
+                    aria-label="Switch to repository overview"
                   >
-                    Dashboard
+                    Overview
                   </button>
                   <button
                     className={`nav-menu-item ${currentView === "visualizations" ? "nav-menu-item--active" : ""}`}
@@ -276,7 +284,7 @@ function App() {
                     }
                     aria-label="Switch to visualizations view"
                   >
-                    Visualizations
+                    Insights
                   </button>
                   <button
                     className={`nav-menu-item ${currentView === "attention" ? "nav-menu-item--active" : ""}`}
@@ -286,7 +294,7 @@ function App() {
                     }
                     aria-label="Switch to repositories needing attention"
                   >
-                    Needs Attention
+                    Health
                   </button>
                   <ThemeToggle />
                 </nav>
@@ -341,29 +349,8 @@ function App() {
                   <>
                     {currentView === "table" && (
                       <section aria-labelledby="repository-overview-heading">
-                        <div className="mb-lg">
-                          <h2 id="repository-overview-heading">
-                            {data?.profile?.username || "User"} Repositories
-                          </h2>
-                          <p
-                            className="text-muted"
-                            role="status"
-                            aria-live="polite"
-                          >
-                            Showing {processedRepositories.length} of{" "}
-                            {data.repositories?.length || 0} repositories
-                          </p>
-                        </div>
-
-                        {/* Filter Controls */}
-                        {availableLanguages.length > 0 && (
-                          <FilterControls
-                            languages={availableLanguages}
-                            selectedLanguage={filterLanguage}
-                            onFilterChange={handleFilterChange}
-                            onClearFilter={clearFilter}
-                          />
-                        )}
+                        {/* Profile Hero */}
+                        <ProfileHero profile={data?.profile} />
 
                         {/* Contribution heatmap for trailing 365-day activity */}
                         {data?.profile?.activity_calendar && (
@@ -380,28 +367,11 @@ function App() {
                           </div>
                         )}
 
-                        {/* Repository Table */}
-                        {processedRepositories.length === 0 ? (
-                          <EmptyState
-                            icon="🔍"
-                            title="No repositories found"
-                            description={
-                              filterLanguage
-                                ? `No repositories match the selected language filter: ${filterLanguage}`
-                                : "No repositories available"
-                            }
-                            actionLabel={filterLanguage ? "Clear filters" : ""}
-                            onAction={filterLanguage ? clearFilter : null}
-                          />
-                        ) : (
-                          <RepositoryTable
-                            repositories={processedRepositories}
-                            onSort={handleSort}
-                            onRowClick={handleRepoClick}
-                            sortField={sortKey}
-                            sortDirection={sortOrder}
-                          />
-                        )}
+                        {/* Repository Grid */}
+                        <RepositoryGrid
+                          repositories={data.repositories || []}
+                          onRepoClick={handleRepoClick}
+                        />
                       </section>
                     )}
 
@@ -509,57 +479,50 @@ function App() {
           <TabBar activeTab={currentView} onTabChange={handleViewChange} />
 
           {/* Footer */}
-          <footer
-            className="footer"
-            style={{
-              borderTop: "1px solid var(--color-border)",
-              padding: "var(--spacing-lg) 0",
-            }}
-          >
+          <footer className="footer" role="contentinfo">
             <div className="container">
-              <div className="flex justify-between items-center">
-                <p className="text-sm text-muted">
-                  Generated with{" "}
-                  <a
-                    href="https://github.com/markhazleton/github-stats-spark"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub Stats Spark
-                  </a>
-                </p>
-                <div className="flex items-center gap-md">
+              <div className="footer-inner">
+                <div className="footer-left">
+                  <div className="footer-brand">
+                    <span className="footer-brand-name">GitHubSpark</span>
+                    <span className="footer-brand-sep">·</span>
+                    <a
+                      href="https://github-spark.makeboldspark.com"
+                      className="footer-brand-url"
+                    >
+                      github-spark.makeboldspark.com
+                    </a>
+                  </div>
+                  <p className="footer-copy">
+                    Built by{" "}
+                    <a href="https://markhazleton.com" rel="author" target="_blank" rel="noopener noreferrer">
+                      Mark Hazleton
+                    </a>
+                    {" · "}
+                    <a href="https://makeboldsolutions.com" target="_blank" rel="noopener noreferrer">
+                      Make Bold Solutions
+                    </a>
+                    {" · "}
+                    <a href="https://makeboldspark.com" target="_blank" rel="noopener noreferrer">
+                      MakeBoldSpark
+                    </a>
+                  </p>
+                </div>
+                <div className="footer-right">
                   {data?.metadata && (
-                    <p className="text-xs text-muted">
-                      repositories.json:{" "}
-                      {formatGeneratedAt(data.metadata.generated_at)} {" | "}
-                      Schema v{data.metadata.schema_version}
+                    <p className="footer-meta">
+                      Data: {formatGeneratedAt(data.metadata.generated_at)}
                     </p>
                   )}
                   <button
-                    className="btn btn-secondary"
+                    className="btn btn-secondary footer-refresh-btn"
                     onClick={handleForceRefresh}
                     disabled={loading}
                     aria-label="Force refresh repositories data"
                   >
-                    {loading ? "Refreshing..." : "Force Refresh"}
+                    {loading ? "Refreshing…" : "↻ Refresh"}
                   </button>
                 </div>
-              </div>
-              <div className="mt-md" style={{ textAlign: "center" }}>
-                <p className="text-xs text-muted">
-                  <a href="https://github-stats.makeboldspark.com">
-                    GitHubStatsSpark
-                  </a>
-                  {" — built by "}
-                  <a href="https://markhazleton.com" rel="author">
-                    Mark Hazleton
-                  </a>
-                  {" · "}
-                  <a href="https://makeboldsolutions.com">
-                    Make Bold Solutions
-                  </a>
-                </p>
               </div>
             </div>
           </footer>

@@ -18,7 +18,7 @@ const TabBar = ({ activeTab = "table", onTabChange }) => {
   const tabs = [
     {
       id: "table",
-      label: "Dashboard",
+      label: "Overview",
       icon: (
         <svg
           width="24"
@@ -37,7 +37,7 @@ const TabBar = ({ activeTab = "table", onTabChange }) => {
     },
     {
       id: "visualizations",
-      label: "Charts",
+      label: "Insights",
       icon: (
         <svg
           width="24"
