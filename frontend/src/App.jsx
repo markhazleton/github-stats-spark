@@ -19,6 +19,12 @@ import TabBar from "@/components/Mobile/TabBar/TabBar";
 import EmptyState from "@/components/Mobile/EmptyState/EmptyState";
 import { ToastContainer } from "@/components/Mobile/Toast/Toast";
 
+// SIZE JUSTIFICATION (Constitution I — ~530 LOC as of 2026-05-12):
+// App composes routing/state orchestration for all major dashboard views
+// (table, visualizations, attention, and drill-down) with shared URL sync,
+// filtering, and loading/error flows. This keeps cross-view navigation logic
+// centralized while feature components remain split into dedicated modules.
+
 const DashboardView = lazy(
   () => import("@/components/Visualizations/DashboardView"),
 );
@@ -359,7 +365,7 @@ function App() {
                           />
                         )}
 
-                        {/* Contribution Heatmap (T013) */}
+                        {/* Contribution heatmap for trailing 365-day activity */}
                         {data?.profile?.activity_calendar && (
                           <div className="mb-lg">
                             <h3
@@ -439,7 +445,7 @@ function App() {
                           />
                         </Suspense>
 
-                        {/* Activity Timeline (T017) */}
+                        {/* Weekly activity timeline visualization */}
                         {data?.profile?.weekly_activity?.length > 0 && (
                           <div className="card mt-lg">
                             <h3 style={{ marginBottom: "0.75rem" }}>
@@ -539,6 +545,15 @@ function App() {
                     {loading ? "Refreshing..." : "Force Refresh"}
                   </button>
                 </div>
+              </div>
+              <div className="mt-md" style={{ textAlign: "center" }}>
+                <p className="text-xs text-muted">
+                  <a href="https://github-stats.makeboldspark.com">GitHubStatsSpark</a>
+                  {" — built by "}
+                  <a href="https://markhazleton.com" rel="author">Mark Hazleton</a>
+                  {" · "}
+                  <a href="https://makeboldsolutions.com">Make Bold Solutions</a>
+                </p>
               </div>
             </div>
           </footer>

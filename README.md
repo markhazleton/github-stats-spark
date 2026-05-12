@@ -5,8 +5,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
+**Live Site**: [https://github-stats.makeboldspark.com](https://github-stats.makeboldspark.com)
+
 **📊 [View Sample Analysis Report](output/users/markhazleton/reports/markhazleton-analysis.md)** - See real-world output with AI-powered insights
-**🎨 [View Interactive Dashboard](https://markhazleton.github.io/github-stats-spark/)** - Explore repositories with live visualizations
+**🎨 [View Interactive Dashboard](https://github-stats.makeboldspark.com)** - Explore repositories with live visualizations
+
+---
+
+## About
+
+GitHubStatsSpark is a comprehensive GitHub analytics suite that transforms GitHub activity into actionable insights and stunning visualizations, combining automated SVG profile statistics with AI-powered repository analysis and an interactive mobile-first dashboard.
+
+**Live Site**: [https://github-stats.makeboldspark.com](https://github-stats.makeboldspark.com)
+
+> Built by [Mark Hazleton](https://markhazleton.com) — Mark Hazleton, Solutions Architect
+> GitHubStatsSpark is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.
 
 ---
 
