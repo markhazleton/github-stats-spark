@@ -478,13 +478,15 @@ class UnifiedDataGenerator:
                 contributor_stats = None
                 code_frequency = None
 
-                # Fetch (or read from cache) contributor stats and code frequency (T007)
-                contributor_stats = self.fetcher.fetch_contributor_stats(
-                    self.username, repo_name, repo_pushed_at=pushed_at
-                )
-                code_frequency = self.fetcher.fetch_code_frequency(
-                    self.username, repo_name, repo_pushed_at=pushed_at
-                )
+                # Cache-only reads for contributor/code frequency in Phase 3.
+                # Network refresh is handled in Phase 2 via CacheManager.
+                if cache_key:
+                    contributor_stats = self.cache.get(
+                        "contributor_stats", self.username, repo=repo_name, week=cache_key
+                    )
+                    code_frequency = self.cache.get(
+                        "code_frequency", self.username, repo=repo_name, week=cache_key
+                    )
 
                 if cache_key:
                     readme_content = self.cache.get(

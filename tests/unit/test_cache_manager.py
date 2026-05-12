@@ -68,6 +68,8 @@ def test_refresh_categories_include_enrichment_summaries():
     categories = get_refresh_categories(include_ai_summaries=False)
 
     assert "commits_stats" in categories
+    assert "contributor_stats" in categories
+    assert "code_frequency" in categories
     assert "pull_request_summary" in categories
     assert "security_summary" in categories
 
@@ -93,12 +95,22 @@ def test_refresh_repository_includes_commit_stats(monkeypatch):
         "refresh_languages",
         lambda username, repo_name, pushed_at: calls.append("languages") or RefreshResult(repo_name, "languages", False, True),
     )
+    monkeypatch.setattr(
+        manager,
+        "refresh_contributor_stats",
+        lambda username, repo_name, pushed_at: calls.append("contributor_stats") or RefreshResult(repo_name, "contributor_stats", False, True),
+    )
+    monkeypatch.setattr(
+        manager,
+        "refresh_code_frequency",
+        lambda username, repo_name, pushed_at: calls.append("code_frequency") or RefreshResult(repo_name, "code_frequency", False, True),
+    )
 
     manager.refresh_repository(
         username="markhazleton",
         repo_name="repo-one",
         pushed_at=pushed_at,
-        categories={"commit_counts", "commits_stats", "languages"},
+        categories={"commit_counts", "commits_stats", "languages", "contributor_stats", "code_frequency"},
     )
 
-    assert calls == ["commit_counts", "commits_stats", "languages"]
+    assert calls == ["commit_counts", "commits_stats", "languages", "contributor_stats", "code_frequency"]

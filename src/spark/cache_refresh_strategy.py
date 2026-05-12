@@ -9,6 +9,8 @@ BASE_REFRESH_CATEGORIES = frozenset({
     "commit_counts",
     "commits_stats",
     "languages",
+    "contributor_stats",
+    "code_frequency",
     "quality_indicators",
     "pull_request_summary",
     "security_summary",

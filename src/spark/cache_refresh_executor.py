@@ -177,6 +177,78 @@ class CacheRefreshExecutor:
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
+    def refresh_contributor_stats(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "contributor_stats"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for contributor stats refresh",
+            )
+
+        try:
+            result = self.fetcher.fetch_contributor_stats(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+            )
+            if result is None:
+                return RefreshResult(
+                    repo_name=repo_name,
+                    category=category,
+                    was_cached=False,
+                    refreshed=False,
+                    error="Contributor stats unavailable",
+                )
+
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    def refresh_code_frequency(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "code_frequency"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for code frequency refresh",
+            )
+
+        try:
+            result = self.fetcher.fetch_code_frequency(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+            )
+            if result is None:
+                return RefreshResult(
+                    repo_name=repo_name,
+                    category=category,
+                    was_cached=False,
+                    refreshed=False,
+                    error="Code frequency unavailable",
+                )
+
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
     def refresh_readme(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
         cache_key = sanitize_timestamp_for_filename(pushed_at)
         category = "readme"
