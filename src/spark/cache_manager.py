@@ -210,7 +210,7 @@ class CacheManager:
         if include_ai_summaries:
             categories = set(categories) | {"readme", "dependency_files"}
         
-        from time import time as _time
+        from time import time as _time, sleep as _sleep
         results = []
 
         def _timed_refresh(category, fn, *args, **kwargs):
@@ -220,30 +220,37 @@ class CacheManager:
             status = "cached" if result.was_cached else ("ok" if result.refreshed else "fail")
             self.logger.info(f"  {repo_name}/{category}: {status} ({elapsed:.1f}s)")
             results.append(result)
+            # Pace API calls to avoid GitHub secondary rate limits.
+            if not result.was_cached:
+                _sleep(0.5)
+
+        # --- Batch: languages, readme, quality_indicators, dependency_files ---
+        # A single GraphQL call replaces ~15 individual REST calls.
+        batch_cats = {"languages", "readme", "quality_indicators", "dependency_files"} & categories
+        if batch_cats:
+            t0 = _time()
+            batch_results = self.refresh_executor.batch_refresh_repo_metadata(
+                username, repo_name, pushed_at
+            )
+            elapsed = _time() - t0
+            for r in batch_results:
+                status = "cached" if r.was_cached else ("ok" if r.refreshed else "fail")
+                self.logger.info(f"  {repo_name}/{r.category}: {status} (batch {elapsed:.1f}s)")
+                results.append(r)
+            if any(not r.was_cached for r in batch_results):
+                _sleep(0.5)
         
         if "commit_counts" in categories:
             _timed_refresh("commit_counts", self.refresh_commit_counts, username, repo_name, pushed_at)
 
         if "commits_stats" in categories:
             _timed_refresh("commits_stats", self.refresh_commits_stats, username, repo_name, pushed_at)
-        
-        if "languages" in categories:
-            _timed_refresh("languages", self.refresh_languages, username, repo_name, pushed_at)
 
         if "contributor_stats" in categories:
             _timed_refresh("contributor_stats", self.refresh_contributor_stats, username, repo_name, pushed_at)
 
         if "code_frequency" in categories:
             _timed_refresh("code_frequency", self.refresh_code_frequency, username, repo_name, pushed_at)
-        
-        if "quality_indicators" in categories:
-            _timed_refresh("quality_indicators", self.refresh_quality_indicators, username, repo_name, pushed_at)
-
-        if "readme" in categories:
-            _timed_refresh("readme", self.refresh_readme, username, repo_name, pushed_at)
-
-        if "dependency_files" in categories:
-            _timed_refresh("dependency_files", self.refresh_dependency_files, username, repo_name, pushed_at)
 
         if "pull_request_summary" in categories:
             _timed_refresh("pull_request_summary", self.refresh_pull_request_summary, username, repo_name, pushed_at)
@@ -327,7 +334,7 @@ class CacheManager:
                 include_ai_summaries=include_ai_summaries,
             )
         
-        max_workers = min(5, len(work_items)) if work_items else 1
+        max_workers = min(2, len(work_items)) if work_items else 1
         with ThreadPoolExecutor(max_workers=max_workers) as pool:
             futures = {pool.submit(_refresh_one, item): item for item in work_items}
             for future in as_completed(futures):
@@ -410,7 +417,7 @@ class CacheManager:
             self.logger.info(f"[{idx}/{len(eligible_repos)}] Generating AI summary for {repo_data['name']}")
             return self.refresh_ai_summary(username, repo_data, pushed_at)
 
-        max_workers = min(5, len(work_items)) if work_items else 1
+        max_workers = min(2, len(work_items)) if work_items else 1
         with ThreadPoolExecutor(max_workers=max_workers) as pool:
             futures = {pool.submit(_summarize_one, item): item for item in work_items}
             for future in as_completed(futures):

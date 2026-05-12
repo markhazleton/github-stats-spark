@@ -3,7 +3,7 @@
 import threading
 from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 from github import GithubException
 
@@ -85,24 +85,290 @@ class CacheRefreshExecutor:
 
         return sanitized
 
+    # ------------------------------------------------------------------
+    # GraphQL batch query — fetches languages, README, quality indicators,
+    # and dependency file contents in a single API call, replacing ~15+
+    # individual REST calls.
+    # ------------------------------------------------------------------
+    _REPO_METADATA_QUERY = """
+query RepoMetadata($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    licenseInfo { spdxId }
+    languages(first: 30, orderBy: {field: SIZE, direction: DESC}) {
+      edges {
+        node { name }
+        size
+      }
+    }
+    readmeDefault: object(expression: "HEAD:README.md") {
+      ... on Blob { text }
+    }
+    readmeLower: object(expression: "HEAD:readme.md") {
+      ... on Blob { text }
+    }
+    rootEntries: object(expression: "HEAD:") {
+      ... on Tree {
+        entries { name type }
+      }
+    }
+    workflowEntries: object(expression: "HEAD:.github/workflows") {
+      ... on Tree {
+        entries { name }
+      }
+    }
+    packageJson: object(expression: "HEAD:package.json") {
+      ... on Blob { text }
+    }
+    requirementsTxt: object(expression: "HEAD:requirements.txt") {
+      ... on Blob { text }
+    }
+    pyprojectToml: object(expression: "HEAD:pyproject.toml") {
+      ... on Blob { text }
+    }
+    gemfile: object(expression: "HEAD:Gemfile") {
+      ... on Blob { text }
+    }
+    goMod: object(expression: "HEAD:go.mod") {
+      ... on Blob { text }
+    }
+    pomXml: object(expression: "HEAD:pom.xml") {
+      ... on Blob { text }
+    }
+    cargoToml: object(expression: "HEAD:Cargo.toml") {
+      ... on Blob { text }
+    }
+    composerJson: object(expression: "HEAD:composer.json") {
+      ... on Blob { text }
+    }
+  }
+}
+"""
+
+    # GraphQL alias → dependency filename mapping
+    _DEP_FILE_MAP = {
+        "packageJson": "package.json",
+        "requirementsTxt": "requirements.txt",
+        "pyprojectToml": "pyproject.toml",
+        "gemfile": "Gemfile",
+        "goMod": "go.mod",
+        "pomXml": "pom.xml",
+        "cargoToml": "Cargo.toml",
+        "composerJson": "composer.json",
+    }
+
+    def batch_refresh_repo_metadata(
+        self, username: str, repo_name: str, pushed_at: datetime
+    ) -> List[RefreshResult]:
+        """Fetch languages, readme, quality indicators, and dependency files in one GraphQL call.
+
+        Replaces ~15+ individual REST API calls with a single GraphQL query.
+        Populates four cache categories: languages, readme, quality_indicators,
+        dependency_files.
+        """
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        results: List[RefreshResult] = []
+
+        # Check which categories still need a refresh
+        batch_categories = ["languages", "readme", "quality_indicators", "dependency_files"]
+        needed = []
+        for cat in batch_categories:
+            cached = self.cache.get(cat, username, repo=repo_name, week=cache_key)
+            if cached is not None:
+                results.append(
+                    RefreshResult(repo_name=repo_name, category=cat, was_cached=True, refreshed=False)
+                )
+            else:
+                needed.append(cat)
+
+        if not needed:
+            return results
+
+        if self.fetcher is None:
+            for cat in needed:
+                results.append(
+                    RefreshResult(
+                        repo_name=repo_name, category=cat, was_cached=False,
+                        refreshed=False, error="Fetcher required for batch metadata",
+                    )
+                )
+            return results
+
+        try:
+            self._increment_api_calls()
+            data = self.fetcher.graphql_query(
+                self._REPO_METADATA_QUERY,
+                {"owner": username, "name": repo_name},
+            )
+            repo_data = data.get("repository")
+            if not repo_data:
+                for cat in needed:
+                    results.append(
+                        RefreshResult(
+                            repo_name=repo_name, category=cat, was_cached=False,
+                            refreshed=False, error="GraphQL returned no repository data",
+                        )
+                    )
+                return results
+
+            meta_base = {
+                "repository": {"owner": username, "name": repo_name},
+                "pushed_at": pushed_at.isoformat(),
+                "ttl_enforced": False,
+            }
+
+            # --- Languages ---
+            if "languages" in needed:
+                lang_edges = (repo_data.get("languages") or {}).get("edges") or []
+                languages: Dict[str, int] = {}
+                for edge in lang_edges:
+                    name = edge.get("node", {}).get("name")
+                    size = edge.get("size", 0)
+                    if name and isinstance(size, (int, float)) and size >= 0:
+                        languages[name] = int(size)
+                self.cache.set(
+                    "languages", username, languages,
+                    repo=repo_name, week=cache_key,
+                    metadata={**meta_base, "category": "languages"},
+                )
+                results.append(
+                    RefreshResult(repo_name=repo_name, category="languages", was_cached=False, refreshed=True)
+                )
+
+            # --- README ---
+            if "readme" in needed:
+                readme_content = ""
+                for key in ("readmeDefault", "readmeLower"):
+                    blob = repo_data.get(key)
+                    if blob and blob.get("text"):
+                        readme_content = blob["text"]
+                        break
+                self.cache.set(
+                    "readme", username, readme_content,
+                    repo=repo_name, week=cache_key,
+                    metadata={**meta_base, "category": "readme"},
+                )
+                results.append(
+                    RefreshResult(repo_name=repo_name, category="readme", was_cached=False, refreshed=True)
+                )
+
+            # --- Quality Indicators ---
+            if "quality_indicators" in needed:
+                has_license = repo_data.get("licenseInfo") is not None
+
+                workflow_tree = repo_data.get("workflowEntries")
+                has_ci_cd = bool(workflow_tree and workflow_tree.get("entries"))
+
+                root_tree = repo_data.get("rootEntries")
+                root_entries = (root_tree.get("entries") or []) if root_tree else []
+
+                test_dirs = {"test", "tests", "spec", "specs", "__tests__"}
+                doc_dirs = {"docs", "doc", "documentation"}
+                doc_files = {"contributing.md", "changelog.md"}
+
+                has_tests = False
+                has_docs = False
+                for entry in root_entries:
+                    name_lower = entry.get("name", "").lower()
+                    entry_type = entry.get("type", "")
+                    if entry_type == "tree":
+                        if name_lower in test_dirs:
+                            has_tests = True
+                        if name_lower in doc_dirs:
+                            has_docs = True
+                    elif entry_type == "blob" and name_lower in doc_files:
+                        has_docs = True
+
+                self.cache.set(
+                    "quality_indicators", username,
+                    {"has_license": has_license, "has_ci_cd": has_ci_cd,
+                     "has_tests": has_tests, "has_docs": has_docs},
+                    repo=repo_name, week=cache_key,
+                    metadata={**meta_base, "category": "quality_indicators"},
+                )
+                results.append(
+                    RefreshResult(repo_name=repo_name, category="quality_indicators",
+                                 was_cached=False, refreshed=True)
+                )
+
+            # --- Dependency Files ---
+            if "dependency_files" in needed:
+                dependency_files: Dict[str, str] = {}
+                for gql_key, filename in self._DEP_FILE_MAP.items():
+                    blob = repo_data.get(gql_key)
+                    if blob and blob.get("text"):
+                        dependency_files[filename] = blob["text"]
+
+                # Handle *.csproj: check root tree for .csproj files
+                root_tree = repo_data.get("rootEntries")
+                if root_tree:
+                    for entry in root_tree.get("entries") or []:
+                        if (
+                            entry.get("type") == "blob"
+                            and entry.get("name", "").endswith(".csproj")
+                        ):
+                            try:
+                                repo_obj = self._get_repo(username, repo_name)
+                                self._increment_api_calls()
+                                file_content = repo_obj.get_contents(entry["name"])
+                                dependency_files[entry["name"]] = (
+                                    file_content.decoded_content.decode("utf-8")
+                                )
+                            except Exception:
+                                pass
+
+                self.cache.set(
+                    "dependency_files", username, dependency_files,
+                    repo=repo_name, week=cache_key,
+                    metadata={**meta_base, "category": "dependency_files"},
+                )
+                results.append(
+                    RefreshResult(repo_name=repo_name, category="dependency_files",
+                                 was_cached=False, refreshed=True)
+                )
+
+            return results
+        except Exception as error:
+            self.logger.warning(f"Batch metadata refresh failed for {repo_name}: {error}")
+            for cat in needed:
+                results.append(
+                    RefreshResult(
+                        repo_name=repo_name, category=cat, was_cached=False,
+                        refreshed=False, error=str(error),
+                    )
+                )
+            return results
+
     def _fetch_commit_activity_with_retry(self, repo, repo_name: str, max_retries: int = 4):
         """Fetch commit activity stats with retry for GitHub's async computation.
 
-        GitHub returns 202 (and PyGithub returns None) while computing stats.
-        Retry with exponential backoff: 1s, 2s, 4s, 8s.
+        GitHub returns 202 (and PyGithub returns None) while computing stats,
+        or 403 for secondary rate limits.  Retry with exponential backoff:
+        1s, 2s, 4s, 8s.
         """
         import time
 
         for attempt in range(max_retries):
-            self._increment_api_calls()
-            stats = repo.get_stats_commit_activity()
-            if stats is not None:
-                return stats
             backoff = 2 ** attempt  # 1, 2, 4, 8
-            self.logger.debug(
-                f"Commit activity stats not ready for {repo_name}, "
-                f"retry {attempt + 1}/{max_retries} in {backoff}s"
-            )
+            try:
+                self._increment_api_calls()
+                stats = repo.get_stats_commit_activity()
+                if stats is not None:
+                    return stats
+                self.logger.debug(
+                    f"Commit activity stats not ready for {repo_name}, "
+                    f"retry {attempt + 1}/{max_retries} in {backoff}s"
+                )
+            except GithubException as exc:
+                if getattr(exc, 'status', None) == 403:
+                    self.logger.warning(
+                        f"Secondary rate limit (403) fetching commit_activity for {repo_name} "
+                        f"(attempt {attempt + 1}/{max_retries}); retrying in {backoff}s"
+                    )
+                else:
+                    self.logger.warning(
+                        f"GithubException fetching commit_activity for {repo_name}: {exc}"
+                    )
+                    return None
             time.sleep(backoff)
         return None
 

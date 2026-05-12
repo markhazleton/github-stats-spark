@@ -67,11 +67,12 @@ def test_refresh_user_data_uses_refresh_strategy(monkeypatch):
 def test_refresh_categories_include_enrichment_summaries():
     categories = get_refresh_categories(include_ai_summaries=False)
 
-    assert "commits_stats" in categories
     assert "contributor_stats" in categories
     assert "code_frequency" in categories
     assert "pull_request_summary" in categories
     assert "security_summary" in categories
+    # commits_stats removed from defaults — high-level signals only
+    assert "commits_stats" not in categories
 
 
 def test_refresh_repository_includes_commit_stats(monkeypatch):
@@ -92,11 +93,6 @@ def test_refresh_repository_includes_commit_stats(monkeypatch):
     )
     monkeypatch.setattr(
         manager,
-        "refresh_languages",
-        lambda username, repo_name, pushed_at: calls.append("languages") or RefreshResult(repo_name, "languages", False, True),
-    )
-    monkeypatch.setattr(
-        manager,
         "refresh_contributor_stats",
         lambda username, repo_name, pushed_at: calls.append("contributor_stats") or RefreshResult(repo_name, "contributor_stats", False, True),
     )
@@ -106,11 +102,12 @@ def test_refresh_repository_includes_commit_stats(monkeypatch):
         lambda username, repo_name, pushed_at: calls.append("code_frequency") or RefreshResult(repo_name, "code_frequency", False, True),
     )
 
+    # Only pass non-batch categories (languages/readme/quality/deps handled by batch)
     manager.refresh_repository(
         username="markhazleton",
         repo_name="repo-one",
         pushed_at=pushed_at,
-        categories={"commit_counts", "commits_stats", "languages", "contributor_stats", "code_frequency"},
+        categories={"commit_counts", "commits_stats", "contributor_stats", "code_frequency"},
     )
 
-    assert calls == ["commit_counts", "commits_stats", "languages", "contributor_stats", "code_frequency"]
+    assert calls == ["commit_counts", "commits_stats", "contributor_stats", "code_frequency"]

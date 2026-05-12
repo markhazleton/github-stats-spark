@@ -98,6 +98,38 @@ class GitHubFetcher:
 
         return response
 
+    def graphql_query(self, query: str, variables: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute a GitHub GraphQL API query.
+
+        Args:
+            query: GraphQL query string
+            variables: Query variables
+
+        Returns:
+            The ``data`` portion of the response, or an empty dict on error.
+        """
+        url = "https://api.github.com/graphql"
+        headers = {
+            "Authorization": f"Bearer {self.token}",
+            "Content-Type": "application/json",
+        }
+        response = requests.post(
+            url,
+            json={"query": query, "variables": variables},
+            headers=headers,
+            timeout=30,
+        )
+        if response.status_code >= 400:
+            self.logger.warning(
+                f"GraphQL request failed ({response.status_code}): "
+                f"{response.text[:200]}"
+            )
+            return {}
+        result = response.json()
+        if "errors" in result:
+            self.logger.warning(f"GraphQL errors: {result['errors'][:3]}")
+        return result.get("data", {})
+
     @staticmethod
     def _parse_iso_datetime(value: Optional[str]) -> Optional[datetime]:
         if not value:
@@ -1013,6 +1045,15 @@ class GitHubFetcher:
                 )
                 time.sleep(wait)
             except GithubException as exc:
+                # 403 = secondary rate limit (abuse detection); retry with backoff
+                if getattr(exc, 'status', None) == 403:
+                    timestamp = datetime.now(timezone.utc).isoformat()
+                    self.logger.warning(
+                        f"[{timestamp}] Secondary rate limit (403) fetching contributor_stats for {repo_name} "
+                        f"(attempt {attempt}); retrying in {wait}s"
+                    )
+                    time.sleep(wait)
+                    continue
                 timestamp = datetime.now(timezone.utc).isoformat()
                 self.logger.warning(
                     f"[{timestamp}] GithubException fetching contributor_stats for {repo_name}: {exc}"
@@ -1153,6 +1194,15 @@ class GitHubFetcher:
                 )
                 time.sleep(wait)
             except GithubException as exc:
+                # 403 = secondary rate limit (abuse detection); retry with backoff
+                if getattr(exc, 'status', None) == 403:
+                    timestamp = datetime.now(timezone.utc).isoformat()
+                    self.logger.warning(
+                        f"[{timestamp}] Secondary rate limit (403) fetching code_frequency for {repo_name} "
+                        f"(attempt {attempt}); retrying in {wait}s"
+                    )
+                    time.sleep(wait)
+                    continue
                 timestamp = datetime.now(timezone.utc).isoformat()
                 self.logger.warning(
                     f"[{timestamp}] GithubException fetching code_frequency for {repo_name}: {exc}"
