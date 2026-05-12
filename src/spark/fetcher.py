@@ -381,20 +381,20 @@ class GitHubFetcher:
         self,
         username: str,
         repo_name: str,
-        max_commits: int = 200,
+        max_commits: int = 50,
         repo_pushed_at: Optional[datetime] = None,
         force_refresh: bool = False,
     ) -> List[Dict[str, Any]]:
-        """Fetch commits with detailed statistics for dashboard metrics.
+        """Fetch a sample of commits with detailed statistics for dashboard metrics.
 
-        This method fetches commit data including files changed, lines added,
-        and lines deleted for each commit. This is more expensive than fetch_commits()
-        as it requires individual API calls for each commit's stats.
+        Fetches commit data including files changed, lines added, and lines
+        deleted.  Defaults to 50 commits (enough for commit-size distribution
+        sampling) to limit API calls.
 
         Args:
             username: Repository owner username
             repo_name: Repository name
-            max_commits: Maximum commits to fetch per repository
+            max_commits: Maximum commits to fetch per repository (default 50)
             repo_pushed_at: Last push date (for cache invalidation)
             force_refresh: Force refresh even if cache is valid
 

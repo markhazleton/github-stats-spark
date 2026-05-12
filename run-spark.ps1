@@ -85,6 +85,9 @@ param(
 
     [Parameter(Mandatory=$false)]
     [switch]$CheckOnly
+,
+    [Parameter(Mandatory=$false)]
+    [int]$HeartbeatSeconds = 60
 )
 
 # Color functions
@@ -320,10 +323,34 @@ function Invoke-SparkPipeline {
 
     $startTime = Get-Date
 
-    # Run the unified command
-    python -m spark.cli @cmdArgs
+    # Run the unified command with heartbeat breadcrumbs so long-running steps
+    # never appear stalled in the console.
+    $pythonArgs = @("-m", "spark.cli") + $cmdArgs
+    Write-Info "Command: python $($pythonArgs -join ' ')"
+    Write-Info "Starting pipeline process..."
 
-    $exitCode = $LASTEXITCODE
+    $heartbeatIntervalSeconds = [Math]::Max(15, $HeartbeatSeconds)
+    $lastHeartbeatSecond = 0
+    $stopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+    Write-Info "Heartbeat every ${heartbeatIntervalSeconds}s"
+
+    try {
+        $process = Start-Process -FilePath "python" -ArgumentList $pythonArgs -NoNewWindow -PassThru
+    } catch {
+        Write-Error "Failed to start python pipeline process: $($_.Exception.Message)"
+        return 1
+    }
+
+    while (-not $process.HasExited) {
+        Start-Sleep -Seconds 2
+        $elapsedSeconds = [int]$stopwatch.Elapsed.TotalSeconds
+        if ($elapsedSeconds -ge ($lastHeartbeatSecond + $heartbeatIntervalSeconds)) {
+            Write-Info "Heartbeat: running (${elapsedSeconds}s elapsed)"
+            $lastHeartbeatSecond = $elapsedSeconds
+        }
+    }
+
+    $exitCode = $process.ExitCode
     $endTime = Get-Date
     $duration = $endTime - $startTime
 

@@ -40,6 +40,20 @@ class CacheRefreshExecutor:
         self.ai_model = ai_model
         self.dependency_analyzer = RepositoryDependencyAnalyzer()
         self.fetcher = fetcher
+        self._repo_cache: Dict[str, Any] = {}
+        self._repo_cache_lock = threading.Lock()
+
+    def _get_repo(self, username: str, repo_name: str):
+        """Get a PyGithub repo object, reusing a cached instance when available."""
+        key = f"{username}/{repo_name}"
+        with self._repo_cache_lock:
+            if key in self._repo_cache:
+                return self._repo_cache[key]
+        self._increment_api_calls()
+        repo = self.github.get_repo(key)
+        with self._repo_cache_lock:
+            self._repo_cache[key] = repo
+        return repo
 
     @property
     def api_calls(self) -> int:
@@ -71,6 +85,27 @@ class CacheRefreshExecutor:
 
         return sanitized
 
+    def _fetch_commit_activity_with_retry(self, repo, repo_name: str, max_retries: int = 4):
+        """Fetch commit activity stats with retry for GitHub's async computation.
+
+        GitHub returns 202 (and PyGithub returns None) while computing stats.
+        Retry with exponential backoff: 1s, 2s, 4s, 8s.
+        """
+        import time
+
+        for attempt in range(max_retries):
+            self._increment_api_calls()
+            stats = repo.get_stats_commit_activity()
+            if stats is not None:
+                return stats
+            backoff = 2 ** attempt  # 1, 2, 4, 8
+            self.logger.debug(
+                f"Commit activity stats not ready for {repo_name}, "
+                f"retry {attempt + 1}/{max_retries} in {backoff}s"
+            )
+            time.sleep(backoff)
+        return None
+
     def refresh_commit_counts(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
         cache_key = sanitize_timestamp_for_filename(pushed_at)
         category = "commit_counts"
@@ -79,37 +114,46 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self._increment_api_calls()
-            repo = self.github.get_repo(f"{username}/{repo_name}")
-            now = datetime.now(timezone.utc)
-            day_90_ago = now - timedelta(days=90)
-            day_180_ago = now - timedelta(days=180)
-            day_365_ago = now - timedelta(days=365)
+            repo = self._get_repo(username, repo_name)
 
+            # Use GitHub Statistics API — returns 52 weekly buckets in 1 call
+            # instead of iterating individual commits (~34 paginated API calls).
+            weekly_stats = self._fetch_commit_activity_with_retry(repo, repo_name)
+
+            now = datetime.now(timezone.utc)
             total_commits = 0
             commits_90d = 0
             commits_180d = 0
             commits_365d = 0
             last_commit_date = None
 
-            for commit in repo.get_commits():
-                if total_commits >= 1000:
-                    break
-                total_commits += 1
-                try:
-                    commit_date = commit.commit.author.date if commit.commit and commit.commit.author else None
-                except (AttributeError, IndexError):
-                    continue
-                if not commit_date:
-                    continue
-                if not last_commit_date or commit_date > last_commit_date:
-                    last_commit_date = commit_date
-                if commit_date >= day_90_ago:
-                    commits_90d += 1
-                if commit_date >= day_180_ago:
-                    commits_180d += 1
-                if commit_date >= day_365_ago:
-                    commits_365d += 1
+            if weekly_stats:
+                for week_stat in weekly_stats:
+                    week_start = datetime.fromtimestamp(week_stat.week, tz=timezone.utc)
+                    week_total = week_stat.total
+                    total_commits += week_total
+
+                    age_days = (now - week_start).days
+                    if age_days <= 90:
+                        commits_90d += week_total
+                    if age_days <= 180:
+                        commits_180d += week_total
+                    if age_days <= 365:
+                        commits_365d += week_total
+
+                    # Find last commit date from the most recent week with commits
+                    if week_total > 0:
+                        # days[] has Sun..Sat counts; find the last day with commits
+                        for day_offset in range(6, -1, -1):
+                            if week_stat.days[day_offset] > 0:
+                                candidate = week_start + timedelta(days=day_offset)
+                                if last_commit_date is None or candidate > last_commit_date:
+                                    last_commit_date = candidate
+                                break
+            else:
+                self.logger.warning(
+                    f"Commit activity stats unavailable for {repo_name}; using zero counts"
+                )
 
             result = {
                 "total": total_commits,
@@ -176,8 +220,8 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
+            repo = self._get_repo(username, repo_name)
             self._increment_api_calls()
-            repo = self.github.get_repo(f"{username}/{repo_name}")
             languages = self._sanitize_language_stats(repo.get_languages())
             metadata = {
                 "repository": {"owner": username, "name": repo_name},
@@ -271,8 +315,8 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
+            repo = self._get_repo(username, repo_name)
             self._increment_api_calls()
-            repo = self.github.get_repo(f"{username}/{repo_name}")
             content = ""
             try:
                 readme = repo.get_readme()
@@ -301,8 +345,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self._increment_api_calls()
-            repo = self.github.get_repo(f"{username}/{repo_name}")
+            repo = self._get_repo(username, repo_name)
 
             has_license = False
             try:
@@ -378,8 +421,7 @@ class CacheRefreshExecutor:
         ]
 
         try:
-            self._increment_api_calls()
-            repo = self.github.get_repo(f"{username}/{repo_name}")
+            repo = self._get_repo(username, repo_name)
             for filename in target_files:
                 try:
                     if "*" in filename:
