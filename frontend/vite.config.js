@@ -123,13 +123,13 @@ export default defineConfig({
 
   // Development server configuration
   server: {
-    port: 5173,
-    open: true,
+    port: 5000,
+    host: '0.0.0.0',
+    open: false,
+    allowedHosts: true,
     hmr: {
-      protocol: 'ws',
-      host: 'localhost',
-      port: 5173,
-      clientPort: 5173
+      clientPort: 443,
+      protocol: 'wss'
     },
     fs: {
       // Allow serving files from parent directory (/data)
