@@ -28,12 +28,11 @@ export default function TableHeader({ onSort, sortField, sortDirection }) {
     { key: "name", label: "Repository", sortable: true },
     { key: "language", label: "Language", sortable: true },
     { key: "signal_status", label: "Signals", sortable: true },
-    { key: "first_commit_date", label: "First Commit", sortable: true },
-    { key: "last_commit_date", label: "Last Commit", sortable: true },
-    { key: "commit_count", label: "Total Commits", sortable: true },
+    { key: "pushed_at", label: "Last Push", sortable: true },
+    { key: "total_commits", label: "Commits", sortable: true },
     { key: "stars", label: "Stars", sortable: true },
-    { key: "composite_score", label: "Spark Score", sortable: true },
-    { key: "bus_factor", label: "Bus Factor", sortable: true },
+    { key: "readme_quality_score", label: "README", sortable: true },
+    { key: "release_count", label: "Releases", sortable: true },
   ];
 
   /**

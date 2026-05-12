@@ -26,11 +26,7 @@ const serveDataPlugin = () => ({
     server.middlewares.use((req, res, next) => {
       const url = new URL(req.url, 'http://localhost')
       // Strip base path for dev server routing
-      const basePath = '/github-stats-spark'
       let pathname = url.pathname
-      if (pathname.startsWith(basePath)) {
-        pathname = pathname.slice(basePath.length)
-      }
       // Serve data directory
       if (pathname.startsWith('/data/')) {
         const filePath = path.resolve(__dirname, '..', pathname.slice(1))
@@ -66,8 +62,8 @@ export default defineConfig({
     swVersionPlugin()
   ],
 
-  // Base URL for GitHub Pages deployment
-  base: '/github-stats-spark/',
+  // Base URL for custom domain (github-stats.makeboldspark.com)
+  base: '/',
 
   // Public directory for static assets (favicon, etc)
   publicDir: 'public',
@@ -77,8 +73,8 @@ export default defineConfig({
     outDir: '../docs',
     emptyOutDir: true, // Clean build - data will be copied after
     
-    // Copy public directory manually to handle symlinks gracefully
-    copyPublicDir: fs.existsSync(path.join(__dirname, 'public', 'data')),
+    // Always copy public directory (CNAME, manifest.json, sw.js, etc.)
+    copyPublicDir: true,
 
     // Single bundle output optimization
     rollupOptions: {
