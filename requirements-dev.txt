@@ -1,8 +1,8 @@
 # Stats Spark - Development Dependencies
 
 # Testing framework
-pytest>=7.4.0
-pytest-cov>=4.1.0
+pytest>=9.0.3
+pytest-cov>=7.1.0
 pytest-mock>=3.11.1
 
 # Code formatting
@@ -13,10 +13,10 @@ flake8>=6.1.0
 flake8-docstrings>=1.7.0
 
 # Type checking
-mypy>=1.5.0
+mypy>=2.1.0
 
 # Security scanning
-pip-audit>=2.7.0
+pip-audit>=2.9.0
 
 # Include production dependencies
 -r requirements.txt
