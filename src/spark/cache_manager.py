@@ -207,7 +207,7 @@ class CacheManager:
             categories = get_refresh_categories(include_ai_summaries=include_ai_summaries)
 
         if include_ai_summaries:
-            categories = set(categories) | {"readme", "dependency_files", "ai_summary"}
+            categories = set(categories) | {"readme", "dependency_files"}
         
         results = []
         
@@ -240,9 +240,6 @@ class CacheManager:
 
         if "security_summary" in categories:
             results.append(self.refresh_security_summary(username, repo_name, pushed_at))
-
-        if "ai_summary" in categories and repo_data:
-            results.append(self.refresh_ai_summary(username, repo_data, pushed_at))
         
         return results
     
@@ -336,6 +333,57 @@ class CacheManager:
             results=all_results,
             api_calls_made=self.api_calls
         )
+
+    def generate_ai_summaries(
+        self,
+        username: str,
+        repo_list: List[Dict],
+    ) -> List[RefreshResult]:
+        """Generate AI summaries for repositories that need them.
+
+        This runs as a dedicated phase AFTER all GitHub API data has been
+        cached, so the LLM call can read readme/dependency/commit data
+        from cache without triggering any network fetches.
+
+        Args:
+            username: GitHub username
+            repo_list: Repository dicts (must have 'name' and 'pushed_at')
+
+        Returns:
+            List of RefreshResult for the ai_summary category
+        """
+        eligible_repos = filter_refreshable_repositories(repo_list)
+        results: List[RefreshResult] = []
+        generated = 0
+        cached = 0
+
+        for i, repo_data in enumerate(eligible_repos, 1):
+            repo_name = repo_data["name"]
+            pushed_at_str = repo_data.get("pushed_at")
+            if not pushed_at_str:
+                continue
+
+            try:
+                pushed_at = datetime.fromisoformat(pushed_at_str.replace("Z", "+00:00"))
+                if pushed_at.tzinfo is None:
+                    pushed_at = pushed_at.replace(tzinfo=timezone.utc)
+            except Exception:
+                continue
+
+            # Skip if already cached
+            cache_key = sanitize_timestamp_for_filename(pushed_at)
+            if self.cache.get("ai_summary", username, repo=repo_name, week=cache_key) is not None:
+                cached += 1
+                continue
+
+            self.logger.info(f"[{i}/{len(eligible_repos)}] Generating AI summary for {repo_name}")
+            result = self.refresh_ai_summary(username, repo_data, pushed_at)
+            results.append(result)
+            if result.refreshed:
+                generated += 1
+
+        self.logger.info(f"AI summaries: {generated} generated, {cached} cached, {len(results) - generated} failed")
+        return results
 
     @staticmethod
     def _is_excluded_repo(repo_data: Dict[str, Any]) -> bool:

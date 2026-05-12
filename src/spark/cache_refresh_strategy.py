@@ -15,14 +15,23 @@ BASE_REFRESH_CATEGORIES = frozenset({
     "pull_request_summary",
     "security_summary",
 })
-AI_REFRESH_CATEGORIES = frozenset({"readme", "dependency_files", "ai_summary"})
+# Data-gathering categories needed before AI summaries can be generated.
+# These are GitHub API calls, not LLM calls, so they belong in Phase 2.
+AI_DATA_CATEGORIES = frozenset({"readme", "dependency_files"})
+# LLM summary generation runs in its own phase (Phase 2c) after all
+# GitHub API data is cached, so it is never included in refresh_repository.
+AI_SUMMARY_CATEGORY = "ai_summary"
 
 
 def get_refresh_categories(include_ai_summaries: bool = False) -> Set[str]:
-    """Return the cache categories that participate in a refresh run."""
+    """Return the cache categories that participate in a cache refresh run.
+
+    Note: ``ai_summary`` is intentionally excluded here.  LLM generation
+    runs in a dedicated phase after all GitHub data is cached.
+    """
     categories = set(BASE_REFRESH_CATEGORIES)
     if include_ai_summaries:
-        categories.update(AI_REFRESH_CATEGORIES)
+        categories.update(AI_DATA_CATEGORIES)
     return categories
 
 

@@ -11,7 +11,8 @@ Unified Data Generator - Clean 4-Phase Architecture
 # stabilized — tracked in CAP-2026-003.
 
 Phase 1: Fetch repository list from GitHub
-Phase 2: Validate & refresh caches (via CacheManager)
+Phase 2: Validate & refresh caches (GitHub API only)
+Phase 2c: AI summary generation (LLM calls, after all API data cached)
 Phase 3: Assemble data from cache (read-only)
 Phase 4: Write outputs (handled by caller)
 
@@ -311,7 +312,8 @@ class UnifiedDataGenerator:
         """Generate unified data using clean 4-phase architecture.
         
         Phase 1: Fetch repository list
-        Phase 2: Validate & refresh caches
+        Phase 2: Validate & refresh caches (GitHub API)
+        Phase 2c: AI summary generation (LLM, runs only when enabled)
         Phase 3: Assemble data from cache
         Phase 4: (handled by caller - output generation)
         
@@ -336,7 +338,7 @@ class UnifiedDataGenerator:
         phase1_time = time() - phase1_start
         logger.info(f"Found {len(raw_repos)} repositories ({phase1_time:.2f}s)")
         
-        # PHASE 2: Validate & refresh caches
+        # PHASE 2: Validate & refresh caches (GitHub API only, no LLM calls)
         logger.info("\n[Phase 2] Cache Validation & Refresh")
         phase2_start = time()
         refresh_summary = self.cache_manager.refresh_user_data(
@@ -362,6 +364,20 @@ class UnifiedDataGenerator:
         except Exception as e:
             logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
 
+        # PHASE 2c: AI summary generation (LLM calls, separate from GitHub API)
+        phase2c_time = 0.0
+        if self.include_ai_summaries:
+            logger.info("\n[Phase 2c] AI Summary Generation")
+            phase2c_start = time()
+            ai_results = self.cache_manager.generate_ai_summaries(
+                username=self.username,
+                repo_list=raw_repos,
+            )
+            phase2c_time = time() - phase2c_start
+            ai_generated = sum(1 for r in ai_results if r.refreshed)
+            ai_failed = sum(1 for r in ai_results if r.error)
+            logger.info(f"AI summaries: {ai_generated} generated, {ai_failed} failed ({phase2c_time:.2f}s)")
+
         # PHASE 3: Assemble data from cache
         logger.info("\n[Phase 3] Assembling Data from Cache")
         phase3_start = time()
@@ -374,6 +390,8 @@ class UnifiedDataGenerator:
         logger.info(f"Data Generation Complete: {total_time:.2f}s total")
         logger.info(f"  Phase 1 (Fetch): {phase1_time:.2f}s")
         logger.info(f"  Phase 2 (Refresh): {phase2_time:.2f}s")
+        if self.include_ai_summaries:
+            logger.info(f"  Phase 2c (AI Summaries): {phase2c_time:.2f}s")
         logger.info(f"  Phase 3 (Assemble): {phase3_time:.2f}s")
         logger.info("="*70)
         
