@@ -210,37 +210,46 @@ class CacheManager:
         if include_ai_summaries:
             categories = set(categories) | {"readme", "dependency_files"}
         
+        from time import time as _time
         results = []
+
+        def _timed_refresh(category, fn, *args, **kwargs):
+            t0 = _time()
+            result = fn(*args, **kwargs)
+            elapsed = _time() - t0
+            status = "cached" if result.was_cached else ("ok" if result.refreshed else "fail")
+            self.logger.info(f"  {repo_name}/{category}: {status} ({elapsed:.1f}s)")
+            results.append(result)
         
         if "commit_counts" in categories:
-            results.append(self.refresh_commit_counts(username, repo_name, pushed_at))
+            _timed_refresh("commit_counts", self.refresh_commit_counts, username, repo_name, pushed_at)
 
         if "commits_stats" in categories:
-            results.append(self.refresh_commits_stats(username, repo_name, pushed_at))
+            _timed_refresh("commits_stats", self.refresh_commits_stats, username, repo_name, pushed_at)
         
         if "languages" in categories:
-            results.append(self.refresh_languages(username, repo_name, pushed_at))
+            _timed_refresh("languages", self.refresh_languages, username, repo_name, pushed_at)
 
         if "contributor_stats" in categories:
-            results.append(self.refresh_contributor_stats(username, repo_name, pushed_at))
+            _timed_refresh("contributor_stats", self.refresh_contributor_stats, username, repo_name, pushed_at)
 
         if "code_frequency" in categories:
-            results.append(self.refresh_code_frequency(username, repo_name, pushed_at))
+            _timed_refresh("code_frequency", self.refresh_code_frequency, username, repo_name, pushed_at)
         
         if "quality_indicators" in categories:
-            results.append(self.refresh_quality_indicators(username, repo_name, pushed_at))
+            _timed_refresh("quality_indicators", self.refresh_quality_indicators, username, repo_name, pushed_at)
 
         if "readme" in categories:
-            results.append(self.refresh_readme(username, repo_name, pushed_at))
+            _timed_refresh("readme", self.refresh_readme, username, repo_name, pushed_at)
 
         if "dependency_files" in categories:
-            results.append(self.refresh_dependency_files(username, repo_name, pushed_at))
+            _timed_refresh("dependency_files", self.refresh_dependency_files, username, repo_name, pushed_at)
 
         if "pull_request_summary" in categories:
-            results.append(self.refresh_pull_request_summary(username, repo_name, pushed_at))
+            _timed_refresh("pull_request_summary", self.refresh_pull_request_summary, username, repo_name, pushed_at)
 
         if "security_summary" in categories:
-            results.append(self.refresh_security_summary(username, repo_name, pushed_at))
+            _timed_refresh("security_summary", self.refresh_security_summary, username, repo_name, pushed_at)
         
         return results
     
