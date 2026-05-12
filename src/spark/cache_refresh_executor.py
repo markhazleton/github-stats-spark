@@ -94,6 +94,21 @@ class CacheRefreshExecutor:
 query RepoMetadata($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     licenseInfo { spdxId }
+    homepageUrl
+    description
+    stargazerCount
+    forkCount
+    watchers { totalCount }
+    issues(states: OPEN) { totalCount }
+    closedIssues: issues(states: CLOSED) { totalCount }
+    discussions { totalCount }
+    releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
+      totalCount
+      nodes { tagName publishedAt }
+    }
+    repositoryTopics(first: 10) {
+      nodes { topic { name } }
+    }
     languages(first: 30, orderBy: {field: SIZE, direction: DESC}) {
       edges {
         node { name }
@@ -169,7 +184,7 @@ query RepoMetadata($owner: String!, $name: String!) {
         results: List[RefreshResult] = []
 
         # Check which categories still need a refresh
-        batch_categories = ["languages", "readme", "quality_indicators", "dependency_files"]
+        batch_categories = ["languages", "readme", "quality_indicators", "dependency_files", "community_health"]
         needed = []
         for cat in batch_categories:
             cached = self.cache.get(cat, username, repo=repo_name, week=cache_key)
@@ -323,6 +338,102 @@ query RepoMetadata($owner: String!, $name: String!) {
                 )
                 results.append(
                     RefreshResult(repo_name=repo_name, category="dependency_files",
+                                 was_cached=False, refreshed=True)
+                )
+
+            # --- Community Health ---
+            if "community_health" in needed:
+                # Releases
+                releases_data = repo_data.get("releases") or {}
+                release_count = releases_data.get("totalCount", 0)
+                release_nodes = releases_data.get("nodes") or []
+                latest_release = None
+                latest_release_tag = None
+                if release_nodes:
+                    latest_release = release_nodes[0].get("publishedAt")
+                    latest_release_tag = release_nodes[0].get("tagName")
+
+                # Issues
+                open_issues = (repo_data.get("issues") or {}).get("totalCount", 0)
+                closed_issues = (repo_data.get("closedIssues") or {}).get("totalCount", 0)
+                total_issues = open_issues + closed_issues
+                issue_close_ratio = round(closed_issues / total_issues, 2) if total_issues > 0 else None
+
+                # Social signals
+                stargazer_count = repo_data.get("stargazerCount", 0)
+                fork_count = repo_data.get("forkCount", 0)
+                watcher_count = (repo_data.get("watchers") or {}).get("totalCount", 0)
+
+                # Discussions
+                has_discussions = (repo_data.get("discussions") or {}).get("totalCount", 0) > 0
+
+                # Topics
+                topics_data = (repo_data.get("repositoryTopics") or {}).get("nodes") or []
+                topics = [n.get("topic", {}).get("name") for n in topics_data if n.get("topic", {}).get("name")]
+
+                # Description
+                description = repo_data.get("description") or ""
+
+                # Homepage
+                homepage_url = repo_data.get("homepageUrl") or ""
+
+                # Community files (from root tree already fetched)
+                root_tree = repo_data.get("rootEntries")
+                root_entries = (root_tree.get("entries") or []) if root_tree else []
+                community_files = {
+                    "code_of_conduct", "contributing", "contributing.md",
+                    "code_of_conduct.md", "security.md", "security",
+                }
+                has_code_of_conduct = False
+                has_contributing = False
+                has_security_policy = False
+                for entry in root_entries:
+                    name_lower = entry.get("name", "").lower()
+                    if name_lower in {"code_of_conduct.md", "code_of_conduct"}:
+                        has_code_of_conduct = True
+                    if name_lower in {"contributing.md", "contributing"}:
+                        has_contributing = True
+                    if name_lower in {"security.md", "security"}:
+                        has_security_policy = True
+
+                # README quality score (derived from already-fetched content)
+                readme_score = self._compute_readme_quality_score(repo_data)
+
+                # Homepage health check (lightweight HEAD request)
+                homepage_status = None
+                homepage_response_ms = None
+                if homepage_url and homepage_url.startswith("http"):
+                    homepage_status, homepage_response_ms = self._check_homepage(homepage_url)
+
+                community_health = {
+                    "stargazer_count": stargazer_count,
+                    "fork_count": fork_count,
+                    "watcher_count": watcher_count,
+                    "open_issues": open_issues,
+                    "closed_issues": closed_issues,
+                    "issue_close_ratio": issue_close_ratio,
+                    "has_discussions": has_discussions,
+                    "topics": topics,
+                    "description": description,
+                    "homepage_url": homepage_url,
+                    "homepage_status": homepage_status,
+                    "homepage_response_ms": homepage_response_ms,
+                    "release_count": release_count,
+                    "latest_release_tag": latest_release_tag,
+                    "latest_release_date": latest_release,
+                    "has_code_of_conduct": has_code_of_conduct,
+                    "has_contributing": has_contributing,
+                    "has_security_policy": has_security_policy,
+                    "readme_quality_score": readme_score,
+                }
+
+                self.cache.set(
+                    "community_health", username, community_health,
+                    repo=repo_name, week=cache_key,
+                    metadata={**meta_base, "category": "community_health"},
+                )
+                results.append(
+                    RefreshResult(repo_name=repo_name, category="community_health",
                                  was_cached=False, refreshed=True)
                 )
 
@@ -904,3 +1015,125 @@ query RepoMetadata($owner: String!, $name: String!) {
         except Exception as error:
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    # ------------------------------------------------------------------
+    # Web scraping — extracts signals from public GitHub pages without
+    # consuming API rate limits.
+    # ------------------------------------------------------------------
+
+    def refresh_web_signals(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        """Scrape the public GitHub page for signals not in the API."""
+        from spark.web_scraper import scrape_repo_signals
+
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "web_signals"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        try:
+            signals = scrape_repo_signals(username, repo_name)
+            metadata = {
+                "repository": {"owner": username, "name": repo_name},
+                "category": category,
+                "pushed_at": pushed_at.isoformat(),
+                "ttl_enforced": False,
+            }
+            self.cache.set(category, username, signals, repo=repo_name, week=cache_key, metadata=metadata)
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    def refresh_homepage_health(self, username: str, repo_name: str, pushed_at: datetime, homepage_url: str) -> RefreshResult:
+        """Check the health of a repository's homepage URL."""
+        from spark.web_scraper import check_homepage_health
+
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "homepage_health"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        try:
+            health = check_homepage_health(homepage_url)
+            metadata = {
+                "repository": {"owner": username, "name": repo_name},
+                "category": category,
+                "pushed_at": pushed_at.isoformat(),
+                "ttl_enforced": False,
+            }
+            self.cache.set(category, username, health, repo=repo_name, week=cache_key, metadata=metadata)
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
+    # ------------------------------------------------------------------
+    # Derived scores — computed from already-cached data, no API calls.
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _compute_readme_quality_score(repo_data: dict) -> dict:
+        """Compute a quality score from README content (already in GraphQL response).
+
+        Scoring (0-100):
+          - Length: up to 20 points (1pt per 200 chars, max 4000+)
+          - Headings: up to 20 points (4pt per heading, max 5+)
+          - Code blocks: up to 15 points (5pt per block, max 3+)
+          - Links: up to 15 points (3pt per link, max 5+)
+          - Images/badges: up to 15 points (5pt per image, max 3+)
+          - Has install/usage section: 15 points
+        """
+        import re as _re
+
+        readme_text = ""
+        for key in ("readmeDefault", "readmeLower"):
+            blob = repo_data.get(key)
+            if blob and blob.get("text"):
+                readme_text = blob["text"]
+                break
+
+        if not readme_text:
+            return {"score": 0, "length": 0, "has_headings": False, "has_code_blocks": False,
+                    "has_images": False, "has_install_section": False}
+
+        length = len(readme_text)
+        headings = len(_re.findall(r"^#{1,3}\s+", readme_text, _re.MULTILINE))
+        code_blocks = len(_re.findall(r"```", readme_text)) // 2
+        links = len(_re.findall(r"\[([^\]]+)\]\(([^)]+)\)", readme_text))
+        images = len(_re.findall(r"!\[", readme_text))
+
+        install_keywords = {"install", "getting started", "usage", "quick start", "setup"}
+        has_install = any(kw in readme_text.lower() for kw in install_keywords)
+
+        score = 0
+        score += min(20, length // 200)
+        score += min(20, headings * 4)
+        score += min(15, code_blocks * 5)
+        score += min(15, links * 3)
+        score += min(15, images * 5)
+        if has_install:
+            score += 15
+
+        return {
+            "score": min(100, score),
+            "length": length,
+            "has_headings": headings > 0,
+            "has_code_blocks": code_blocks > 0,
+            "has_images": images > 0,
+            "has_install_section": has_install,
+        }
+
+    @staticmethod
+    def _check_homepage(url: str) -> tuple:
+        """Quick HEAD check on a URL. Returns (status_code, response_ms)."""
+        import time as _time
+        import requests as _requests
+        try:
+            t0 = _time.time()
+            resp = _requests.head(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=8, allow_redirects=True)
+            elapsed_ms = int((_time.time() - t0) * 1000)
+            return resp.status_code, elapsed_ms
+        except Exception:
+            return None, None

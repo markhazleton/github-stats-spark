@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "TeachSpark",
+    "generated_at": "2026-05-12T23:13:48.900924+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "TeachSpark",
+    "full_name": "markhazleton/TeachSpark",
+    "description": "LLM-Powered Educational Website",
+    "primary_language": "C#",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 29950,
+    "created_at": "2025-06-19T21:15:05+00:00",
+    "updated_at": "2026-05-10T21:37:26+00:00",
+    "pushed_at": "2026-05-10T21:20:05+00:00",
+    "homepage": "https://teach.makeboldspark.com",
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 476275,
+    "HTML": 457627,
+    "CSS": 411311,
+    "PowerShell": 222415,
+    "JavaScript": 34517,
+    "SCSS": 1860
+  },
+  "readme": "# \ud83c\udf93 TeachSpark\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download)\n[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)\n[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()\n[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)\n\n**Live Site**: [teach.makeboldspark.com](https://teach.makeboldspark.com)\n\n> **LLM-Powered Educational Website** - A modern, interactive learning platform that harnesses the power of Large Language Models to create personalized educational experiences.\n\n## About\n\nTeachSpark is a live demonstration of an AI-powered educational platform built with .NET 10 MVC. It showcases how Large Language Models can be integrated into a modern web application to deliver personalized, adaptive learning experiences.\n\n**Live Site**: [teach.makeboldspark.com](https://teach.makeboldspark.com)\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Technical Solutions Architect\n> Part of the [MakeBoldSpark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n## \ud83c\udf1f Overview\n\nTeachSpark is a cutting-edge educational platform built with .NET 10 MVC and powered by advanced Large Language Models. It provides an intelligent, adaptive learning environment that personalizes content delivery based on individual learning patterns and preferences.\n\n### \u2728 Key Features\n\n- \ud83e\udd16 **AI-Powered Learning** - Intelligent content adaptation using LLM technology\n- \ud83d\udcda **Interactive Curriculum** - Dynamic course content with real-time feedback\n- \ud83c\udfaf **Personalized Pathways** - Customized learning journeys for each student\n- \ud83d\udcca **Progress Analytics** - Comprehensive learning analytics and insights\n- \ud83c\udf10 **Modern Web Experience** - Responsive design with world-class UX\n- \u26a1 **High Performance** - Optimized frontend build system with webpack\n\n## \ud83d\ude80 Quick Start\n\n### Prerequisites\n\n- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) or later (the repo pins SDK 10.0.101 via `global.json`)\n- [Node.js](https://nodejs.org/) 18.x or later\n- [Git](https://git-scm.com/) for version control\n\n### Installation\n\n1. **Clone the repository**\n\n   ```bash\n   git clone https://github.com/MarkHazleton/TeachSpark.git\n   cd TeachSpark\n   ```\n\n2. **Install dependencies**\n\n   ```bash\n   # Install root-level dependencies (Husky, lint-staged)\n   npm install\n   \n   # Install frontend dependencies\n   cd TeachSpark.Web\n   npm install\n   ```\n\n3. **Build the application**\n\n   ```bash\n   # From TeachSpark.Web directory\n   npm run build\n   \n   # Or build the .NET solution (automatically runs npm build)\n   dotnet build TeachSpark.sln\n   ```\n\n4. **Run the application**\n\n   ```bash\n   # Development mode with hot reloading\n   npm run dev\n   \n   # Or run the .NET application\n   dotnet run\n   ```\n\n5. **Open your browser**\n   Navigate to `ht\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": false,
+    "has_tests": false,
+    "has_docs": true
+  },
+  "dependency_files": {
+    "package.json": "{\n  \"devDependencies\": {\n    \"copy-webpack-plugin\": \"^14.0.0\",\n    \"husky\": \"^9.1.7\",\n    \"lint-staged\": \"^16.1.2\"\n  },\n  \"scripts\": {\n    \"prepare\": \"husky\"\n  }\n}\n"
+  },
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 0,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "LLM-Powered Educational Website",
+    "homepage_url": "https://teach.makeboldspark.com",
+    "homepage_status": 200,
+    "homepage_response_ms": 2175,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": true,
+    "has_security_policy": true,
+    "readme_quality_score": {
+      "score": 100,
+      "length": 8939,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "warning_present",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "disabled",
+      "secret_scanning_push_protection": "disabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 6,
+      "critical": 0,
+      "high": 5,
+      "medium": 1,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/TeachSpark",
+    "fetch_status": 200,
+    "fetch_time_ms": 1218,
+    "total_commits": 45,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "open_issues": 0,
+    "open_prs": 1,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": "LLM-Powered Educational Website. Contribute to markhazleton/TeachSpark development by creating an account on GitHub.",
+    "has_social_preview": false
+  }
+}

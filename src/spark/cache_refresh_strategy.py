@@ -6,13 +6,12 @@ from typing import Set
 
 
 BASE_REFRESH_CATEGORIES = frozenset({
-    "commit_counts",
     "languages",
-    "contributor_stats",
-    "code_frequency",
     "quality_indicators",
     "pull_request_summary",
     "security_summary",
+    "web_signals",
+    "community_health",
 })
 # Data-gathering categories needed before AI summaries can be generated.
 # These are GitHub API calls, not LLM calls, so they belong in Phase 2.

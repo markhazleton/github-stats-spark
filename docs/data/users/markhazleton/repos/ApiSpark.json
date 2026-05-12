@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "ApiSpark",
+    "generated_at": "2026-05-12T23:13:48.794638+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "ApiSpark",
+    "full_name": "markhazleton/ApiSpark",
+    "description": "ApiSpark",
+    "primary_language": "C#",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 648,
+    "created_at": "2026-05-07T02:16:07+00:00",
+    "updated_at": "2026-05-12T22:53:32+00:00",
+    "pushed_at": "2026-05-12T22:53:29+00:00",
+    "homepage": null,
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 546929,
+    "PowerShell": 202977,
+    "HTML": 29618
+  },
+  "readme": "# MakeBoldSpark\n\n**Live Site**: [makeboldspark.com](https://makeboldspark.com)\n\nMakeBoldSpark is a modular ASP.NET Core backend API platform that consolidates personal and portfolio APIs into a single Azure-hosted backend. It is the API home for Make Bold Solutions and Mark Hazleton projects, keeping public websites static-first while centralizing all API services.\n\n## About\n\nMakeBoldSpark demonstrates how to host multiple low-volume APIs in a single, cost-effective ASP.NET Core application backed by EF Core and SQLite. The platform serves as the API layer for static sites and SPAs in the [MakeBoldSpark](https://makeboldspark.com) portfolio.\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Technical Solutions Architect\n> Part of the [MakeBoldSpark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n## Goals\n\n- Host multiple small APIs in one ASP.NET Core application\n- Use EF Core + SQLite as the default low-cost relational backend\n- Use Cosmos DB selectively for document-oriented examples\n- Support Azure Static Web Apps clients\n- Provide browser-based CMS/admin capabilities\n- Generate static JSON for public content websites\n- Keep hosting simple, portable, and inexpensive\n\n## Target Runtime\n\n- .NET 10 LTS\n- Azure App Service Linux B1\n- SQLite under persistent App Service storage (`/home/data/apispark.db`)\n- Azure Static Web Apps for public clients\n\n## Route Areas\n\n- `/api/public/*` \u2014 anonymous read-only APIs\n- `/api/admin/*` \u2014 authenticated CMS/admin APIs (requires Admin role)\n- `/api/publish/*` \u2014 authenticated publishing/export APIs\n- `/api/integrations/*` \u2014 authenticated integration APIs\n- `/api/health` \u2014 shallow health check (anonymous)\n- `/api/admin/health/deep` \u2014 deep health check (Admin only)\n\n## Quick Start\n\n```bash\ngit clone https://github.com/MarkHazleton/ApiSpark.git\ncd ApiSpark\ndotnet run --project src/ApiSpark.Api\n```\n\nSee [quickstart.md](.documentation/specs/001-apispark-foundation/quickstart.md) for full local setup instructions.\n\n## Architecture\n\nSee [docs/decisions/](docs/decisions/) for Architecture Decision Records.\n\n## Constitution\n\nSee [.documentation/memory/constitution.md](.documentation/memory/constitution.md) for non-negotiable project principles.\n",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": true,
+    "has_docs": true
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 0,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "ApiSpark",
+    "homepage_url": "",
+    "homepage_status": null,
+    "homepage_response_ms": null,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 66,
+      "length": 2233,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": false,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "available",
+    "reason": "none",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "enabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/ApiSpark",
+    "fetch_status": 200,
+    "fetch_time_ms": 1127,
+    "total_commits": 22,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": "ApiSpark. Contribute to markhazleton/ApiSpark development by creating an account on GitHub.",
+    "has_social_preview": false
+  }
+}

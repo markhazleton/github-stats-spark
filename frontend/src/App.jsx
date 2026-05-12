@@ -548,11 +548,17 @@ function App() {
               </div>
               <div className="mt-md" style={{ textAlign: "center" }}>
                 <p className="text-xs text-muted">
-                  <a href="https://github-stats.makeboldspark.com">GitHubStatsSpark</a>
+                  <a href="https://github-stats.makeboldspark.com">
+                    GitHubStatsSpark
+                  </a>
                   {" — built by "}
-                  <a href="https://markhazleton.com" rel="author">Mark Hazleton</a>
+                  <a href="https://markhazleton.com" rel="author">
+                    Mark Hazleton
+                  </a>
                   {" · "}
-                  <a href="https://makeboldsolutions.com">Make Bold Solutions</a>
+                  <a href="https://makeboldsolutions.com">
+                    Make Bold Solutions
+                  </a>
                 </p>
               </div>
             </div>

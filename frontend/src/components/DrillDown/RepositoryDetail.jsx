@@ -58,7 +58,10 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
   const securitySummary = repository.security_summary || {};
   const openSecurityAlerts =
     securitySummary.active_alert_counts?.total_open || 0;
-  const topDependencies = useMemo(() => getTopDependencies(repository), [repository]);
+  const topDependencies = useMemo(
+    () => getTopDependencies(repository),
+    [repository],
+  );
 
   return (
     <div className={styles.backdrop} onClick={onClose}>
@@ -114,7 +117,10 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                   expanded={expandedSections.languages}
                   onToggle={toggleSection}
                   calculateLanguagePercentage={(bytes) =>
-                    calculateLanguagePercentage(repository.language_stats, bytes)
+                    calculateLanguagePercentage(
+                      repository.language_stats,
+                      bytes,
+                    )
                   }
                 />
               </div>

@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "WebSpark.ArtSpark",
+    "generated_at": "2026-05-12T23:13:48.924538+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "WebSpark.ArtSpark",
+    "full_name": "markhazleton/WebSpark.ArtSpark",
+    "description": "Art Institute Public API and WebSpark",
+    "primary_language": "C#",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 3887,
+    "created_at": "2023-01-30T15:23:30+00:00",
+    "updated_at": "2026-05-11T12:51:37+00:00",
+    "pushed_at": "2026-05-11T12:51:31+00:00",
+    "homepage": "https://art.makeboldspark.com",
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 846054,
+    "HTML": 429379,
+    "PowerShell": 290586,
+    "JavaScript": 16650,
+    "CSS": 10149
+  },
+  "readme": "# WebSpark.ArtSpark\n\n**A comprehensive .NET solution for the Art Institute of Chicago's public API, featuring a complete client library, revolutionary AI chat system with multiple personas, and demo applications showcasing modern .NET development practices.**\n\n[![.NET](https://img.shields.io/badge/.NET-10.0-purple.svg)](https://dotnet.microsoft.com/download)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\n**Live Site**: [Art.makeboldspark.com](https://Art.makeboldspark.com)\n\n## About\n\nWebSpark.ArtSpark demonstrates a complete .NET ecosystem for the Art Institute of Chicago's public API, featuring a full client library, AI chat with multiple personas (Artwork, Artist, Curator, Historian), and a live demo application showcasing modern .NET development practices including Semantic Kernel, OpenAI Vision, and ASP.NET Core Identity.\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Technical Solutions Architect\n> Part of the [MakeBoldSpark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n## Table of Contents\n\n- [Overview](#overview)\n- [Features](#features)\n- [\ud83c\udfad AI Chat with Personas](#-ai-chat-with-personas)\n- [Quick Start](#quick-start)\n- [API Coverage](#api-coverage)\n- [Usage Examples](#usage-examples)\n- [Project Structure](#project-structure)\n- [Models](#models)\n- [Client Configuration](#client-configuration)\n- [Development](#development)\n- [License](#license)\n\n## Overview\n\nThis solution provides a complete .NET ecosystem for interacting with the Art Institute of Chicago's public REST API. The solution includes **four main projects** covering all 33 API endpoints across 6 major categories, plus revolutionary AI chat capabilities that bring artworks to life through conversational AI.\n\n### \ud83c\udfd7\ufe0f Solution Architecture\n\n- **WebSpark.ArtSpark.Client** - Complete API client library with all 33 endpoints\n- **WebSpark.ArtSpark.Agent** - Revolutionary AI chat system with multiple personas  \n- **WebSpark.ArtSpark.Demo** - Interactive web application showcasing all features\n- **WebSpark.ArtSpark.Console** - Command-line application for developers\n\n## Features\n\n### \ud83c\udfa8 Core Library Features\n\n- \u2705 **Complete API Coverage**: All 33 endpoints across 6 categories\n- \u2705 **Strongly Typed Models**: Comprehensive C# models for all resource types\n- \u2705 **Async/Await Support**: Modern asynchronous programming patterns\n- \u2705 **JSON Deserialization**: Using `System.Text.Json` with proper naming policies\n- \u2705 **Search Capabilities**: Full-text search with Elasticsearch integration\n- \u2705 **IIIF Support**: Built-in IIIF URL construction for high-quality images\n- \u2705 **Flexible Querying**: Pagination, field selection, and resource inclusion\n- \u2705 **Error Handling**: Graceful error handling and HTTP status management\n- \u2705 **Modern .NET**: Uses .NET 10.0 with minimal external dependencies\n\n### \ud83c\udfad Revolutionary AI Features\n\n- \ud83c\udfad **AI Chat with Personas**: Revolutionary AI chat system featuring multiple personas (Artw\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": false,
+    "has_tests": true,
+    "has_docs": true
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "Art Institute Public API and WebSpark",
+    "homepage_url": "https://art.makeboldspark.com",
+    "homepage_status": 200,
+    "homepage_response_ms": 1269,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 95,
+      "length": 25846,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "disabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/WebSpark.ArtSpark",
+    "fetch_status": 200,
+    "fetch_time_ms": 1065,
+    "total_commits": 71,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": false,
+    "release_text": null,
+    "description": "Art Institute Public API and WebSpark. Contribute to markhazleton/WebSpark.ArtSpark development by creating an account on GitHub.",
+    "has_social_preview": false
+  }
+}

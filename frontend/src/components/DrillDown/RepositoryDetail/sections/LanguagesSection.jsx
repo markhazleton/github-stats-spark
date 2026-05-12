@@ -1,8 +1,16 @@
 import styles from "../../RepositoryDetail.module.css";
 import CollapsibleSection from "../CollapsibleSection";
 
-function LanguagesSection({ repository, expanded, onToggle, calculateLanguagePercentage }) {
-  if (!repository.language_stats || Object.keys(repository.language_stats).length === 0) {
+function LanguagesSection({
+  repository,
+  expanded,
+  onToggle,
+  calculateLanguagePercentage,
+}) {
+  if (
+    !repository.language_stats ||
+    Object.keys(repository.language_stats).length === 0
+  ) {
     return null;
   }
 
@@ -21,7 +29,9 @@ function LanguagesSection({ repository, expanded, onToggle, calculateLanguagePer
             <div key={lang} className={styles.languageItem}>
               <div className={styles.languageHeader}>
                 <span className={styles.languageName}>{lang}</span>
-                <span className={styles.languagePercent}>{calculateLanguagePercentage(bytes)}%</span>
+                <span className={styles.languagePercent}>
+                  {calculateLanguagePercentage(bytes)}%
+                </span>
               </div>
               <div className={styles.languageBar}>
                 <div

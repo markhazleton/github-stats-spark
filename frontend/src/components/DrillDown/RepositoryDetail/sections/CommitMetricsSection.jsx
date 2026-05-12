@@ -1,8 +1,15 @@
 import styles from "../../RepositoryDetail.module.css";
 
-function CommitMetricsSection({ repository, formatDate, formatNumber, formatSize }) {
-  const largestCommit = repository.commit_metrics?.largest_commit || repository.largest_commit;
-  const smallestCommit = repository.commit_metrics?.smallest_commit || repository.smallest_commit;
+function CommitMetricsSection({
+  repository,
+  formatDate,
+  formatNumber,
+  formatSize,
+}) {
+  const largestCommit =
+    repository.commit_metrics?.largest_commit || repository.largest_commit;
+  const smallestCommit =
+    repository.commit_metrics?.smallest_commit || repository.smallest_commit;
 
   return (
     <section className={styles.section}>
@@ -10,7 +17,11 @@ function CommitMetricsSection({ repository, formatDate, formatNumber, formatSize
       <dl className={styles.detailList}>
         <div className={styles.detailItem}>
           <dt>Average Commit Size</dt>
-          <dd>{formatSize(repository.commit_metrics?.avg_size || repository.avg_commit_size)}</dd>
+          <dd>
+            {formatSize(
+              repository.commit_metrics?.avg_size || repository.avg_commit_size,
+            )}
+          </dd>
         </div>
         {largestCommit && (
           <div className={styles.detailItem}>
@@ -18,11 +29,13 @@ function CommitMetricsSection({ repository, formatDate, formatNumber, formatSize
             <dd>
               {formatSize(largestCommit.size)}
               <div className={styles.textMuted}>
-                {largestCommit.sha?.substring(0, 7)} • {formatDate(largestCommit.date)}
+                {largestCommit.sha?.substring(0, 7)} •{" "}
+                {formatDate(largestCommit.date)}
               </div>
               <div className={styles.textMuted}>
                 {formatNumber(largestCommit.files_changed)} files • +
-                {formatNumber(largestCommit.lines_added)} / -{formatNumber(largestCommit.lines_deleted)}
+                {formatNumber(largestCommit.lines_added)} / -
+                {formatNumber(largestCommit.lines_deleted)}
               </div>
             </dd>
           </div>
@@ -33,7 +46,8 @@ function CommitMetricsSection({ repository, formatDate, formatNumber, formatSize
             <dd>
               {formatSize(smallestCommit.size)}
               <div className={styles.textMuted}>
-                {smallestCommit.sha?.substring(0, 7)} • {formatDate(smallestCommit.date)}
+                {smallestCommit.sha?.substring(0, 7)} •{" "}
+                {formatDate(smallestCommit.date)}
               </div>
             </dd>
           </div>

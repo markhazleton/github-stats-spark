@@ -24,7 +24,8 @@ function ActivityMetricsSection({ repository, formatDate, formatNumber }) {
           </div>
         )}
 
-        {repository.total_additions != null || repository.total_deletions != null ? (
+        {repository.total_additions != null ||
+        repository.total_deletions != null ? (
           <>
             <div className={styles.detailItem}>
               <dt>Lines Added</dt>

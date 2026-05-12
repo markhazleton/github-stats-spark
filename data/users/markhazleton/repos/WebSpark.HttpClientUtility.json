@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "WebSpark.HttpClientUtility",
+    "generated_at": "2026-05-12T23:13:48.933984+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "WebSpark.HttpClientUtility",
+    "full_name": "markhazleton/WebSpark.HttpClientUtility",
+    "description": "HttpClientUtility for management .Net HttpClient",
+    "primary_language": "C#",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 3127,
+    "created_at": "2025-05-03T18:36:10+00:00",
+    "updated_at": "2026-05-11T13:01:54+00:00",
+    "pushed_at": "2026-05-11T13:01:21+00:00",
+    "homepage": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+    "has_pages": true,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 696376,
+    "PowerShell": 480888,
+    "HTML": 135300,
+    "JavaScript": 17581,
+    "CSS": 13306,
+    "Nunjucks": 3865
+  },
+  "readme": "# WebSpark.HttpClientUtility\n\n**Drop-in HttpClient wrapper with Polly resilience, response caching, and OpenTelemetry for .NET 8-10 LTS APIs\u2014configured in one line**\n\n[![NuGet Version](https://img.shields.io/nuget/v/WebSpark.HttpClientUtility.svg)](https://www.nuget.org/packages/WebSpark.HttpClientUtility/)\n[![NuGet Downloads](https://img.shields.io/nuget/dt/WebSpark.HttpClientUtility.svg)](https://www.nuget.org/packages/WebSpark.HttpClientUtility/)\n[![Crawler Package](https://img.shields.io/nuget/v/WebSpark.HttpClientUtility.Crawler.svg?label=Crawler)](https://www.nuget.org/packages/WebSpark.HttpClientUtility.Crawler/)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![Build Status](https://github.com/MarkHazleton/HttpClientUtility/actions/workflows/publish-nuget.yml/badge.svg)](https://github.com/MarkHazleton/HttpClientUtility/actions/workflows/publish-nuget.yml)\n[![.NET 8-10 LTS](https://img.shields.io/badge/.NET-8--10%20LTS-512BD4.svg)](https://dotnet.microsoft.com/download/dotnet)\n[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://markhazleton.github.io/WebSpark.HttpClientUtility/)\n\n**Live Site**: [HttpClientUtility.makeboldspark.com](https://HttpClientUtility.makeboldspark.com)\n\n---\n\n## About\n\nHttpClientUtilitySpark demonstrates enterprise-grade HTTP client patterns for .NET \u2014 resilience with Polly, intelligent response caching, structured logging with correlation IDs, and OpenTelemetry tracing, all configured in a single `AddHttpClientUtility()` call.\n\n**Live demo**: [HttpClientUtility.makeboldspark.com](https://HttpClientUtility.makeboldspark.com)\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Technical Solutions Architect\n> Part of the [MakeBoldSpark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n---\n\nStop writing 50+ lines of HttpClient setup. Get enterprise-grade resilience (retries, circuit breakers), intelligent caching, structured logging with correlation IDs, and OpenTelemetry tracing in a single `AddHttpClientUtility()` call. Perfect for microservices, background workers, and web scrapers.\n\n---\n\n## \ud83d\ude80 Why Choose WebSpark.HttpClientUtility?\n\n**Your HTTP setup in 1 line vs. 50+**\n\n| Feature | WebSpark.HttpClientUtility | Raw HttpClient | RestSharp | Refit |\n|---------|---------------------------|----------------|-----------|-------|\n| Setup Complexity | \u2b50 One line | \u2b50\u2b50\u2b50 50+ lines manual | \u2b50\u2b50 Low | \u2b50\u2b50 Low |\n| Built-in Retry/Circuit Breaker | \u2705 Polly integrated | \u274c Manual Polly setup | \u274c Manual | \u274c Manual |\n| Response Caching | \u2705 Configurable, in-memory | \u274c Manual | \u274c Manual | \u274c Manual |\n| Correlation IDs | \u2705 Automatic | \u274c Manual middleware | \u274c Manual | \u274c Manual |\n| OpenTelemetry | \u2705 Built-in | \u274c Manual ActivitySource | \u274c Manual | \u274c Manual |\n| Structured Logging | \u2705 Rich context | \u274c Manual ILogger | \u2b50\u2b50 Basic | \u2b50\u2b50 Basic |\n| Web Crawling | \u2705 Separate package | \u274c No | \u274c No | \u274c No |\n| Production Trust | \u2705 Comprehensive a\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": true
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "HttpClientUtility for management .Net HttpClient",
+    "homepage_url": "https://markhazleton.github.io/WebSpark.HttpClientUtility/",
+    "homepage_status": 200,
+    "homepage_response_ms": 377,
+    "release_count": 11,
+    "latest_release_tag": "v2.5.0",
+    "latest_release_date": "2026-03-17T21:40:12Z",
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 100,
+      "length": 18656,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "warning_present",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "enabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 8,
+      "critical": 0,
+      "high": 5,
+      "medium": 3,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/WebSpark.HttpClientUtility",
+    "fetch_status": 200,
+    "fetch_time_ms": 1097,
+    "total_commits": 174,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 1,
+    "has_releases": true,
+    "release_text": "Releases11",
+    "description": "HttpClientUtility for management .Net HttpClient. Contribute to markhazleton/WebSpark.HttpClientUtility development by creating an account on GitHub.",
+    "has_social_preview": false
+  }
+}

@@ -183,6 +183,14 @@ class CacheManager:
         pushed_at: datetime,
     ) -> RefreshResult:
         return self.refresh_executor.refresh_security_summary(username, repo_name, pushed_at)
+
+    def refresh_web_signals(
+        self,
+        username: str,
+        repo_name: str,
+        pushed_at: datetime,
+    ) -> RefreshResult:
+        return self.refresh_executor.refresh_web_signals(username, repo_name, pushed_at)
     
     def refresh_repository(
         self,
@@ -257,7 +265,11 @@ class CacheManager:
 
         if "security_summary" in categories:
             _timed_refresh("security_summary", self.refresh_security_summary, username, repo_name, pushed_at)
-        
+
+        # --- Phase 2b: Web scraping (no API quota, separate rate limit) ---
+        if "web_signals" in categories:
+            _timed_refresh("web_signals", self.refresh_web_signals, username, repo_name, pushed_at)
+
         return results
     
     def refresh_user_data(

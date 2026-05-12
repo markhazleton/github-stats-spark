@@ -50,7 +50,10 @@ export function formatSize(size) {
 
 export function calculateLanguagePercentage(languageStats, bytes) {
   if (!languageStats) return 0;
-  const total = Object.values(languageStats).reduce((sum, value) => sum + value, 0);
+  const total = Object.values(languageStats).reduce(
+    (sum, value) => sum + value,
+    0,
+  );
   return total > 0 ? ((bytes / total) * 100).toFixed(1) : 0;
 }
 

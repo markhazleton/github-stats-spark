@@ -1,7 +1,13 @@
 import styles from "../../RepositoryDetail.module.css";
 import CollapsibleSection from "../CollapsibleSection";
 
-function WebsiteSection({ repository, expanded, onToggle, formatDate, getScreenshotUrl }) {
+function WebsiteSection({
+  repository,
+  expanded,
+  onToggle,
+  formatDate,
+  getScreenshotUrl,
+}) {
   if (!repository.screenshot) return null;
 
   return (
@@ -33,7 +39,9 @@ function WebsiteSection({ repository, expanded, onToggle, formatDate, getScreens
         <div className={styles.screenshotMeta}>
           <span className={styles.textMuted}>
             Captured {formatDate(repository.screenshot.captured_at)}
-            {repository.screenshot.file_size_kb && <> • {repository.screenshot.file_size_kb.toFixed(1)} KB</>}
+            {repository.screenshot.file_size_kb && (
+              <> • {repository.screenshot.file_size_kb.toFixed(1)} KB</>
+            )}
           </span>
         </div>
       </div>

@@ -1,24 +1,37 @@
 import styles from "../../RepositoryDetail.module.css";
 import CollapsibleSection from "../CollapsibleSection";
 
-function TechStackSection({ repository, expanded, onToggle, topDependencies, formatNumber, getDependencyBadgeClass }) {
+function TechStackSection({
+  repository,
+  expanded,
+  onToggle,
+  topDependencies,
+  formatNumber,
+  getDependencyBadgeClass,
+}) {
   if (!repository.tech_stack) return null;
 
   return (
-    <CollapsibleSection section="tech" title="Technology Stack" expanded={expanded} onToggle={onToggle}>
+    <CollapsibleSection
+      section="tech"
+      title="Technology Stack"
+      expanded={expanded}
+      onToggle={onToggle}
+    >
       <div className={styles.techStackGrid}>
-        {repository.tech_stack.frameworks && repository.tech_stack.frameworks.length > 0 && (
-          <div>
-            <h4 className={styles.subsectionTitle}>Frameworks</h4>
-            <div className={styles.badgeList}>
-              {repository.tech_stack.frameworks.map((framework) => (
-                <span key={framework} className={styles.badge}>
-                  {framework}
-                </span>
-              ))}
+        {repository.tech_stack.frameworks &&
+          repository.tech_stack.frameworks.length > 0 && (
+            <div>
+              <h4 className={styles.subsectionTitle}>Frameworks</h4>
+              <div className={styles.badgeList}>
+                {repository.tech_stack.frameworks.map((framework) => (
+                  <span key={framework} className={styles.badge}>
+                    {framework}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
         {repository.tech_stack.total_dependencies > 0 && (
           <div>
@@ -26,12 +39,21 @@ function TechStackSection({ repository, expanded, onToggle, topDependencies, for
             <dl className={styles.detailList}>
               <div className={styles.detailItem}>
                 <dt>Total</dt>
-                <dd>{formatNumber(repository.tech_stack.total_dependencies)}</dd>
+                <dd>
+                  {formatNumber(repository.tech_stack.total_dependencies)}
+                </dd>
               </div>
               <div className={styles.detailItem}>
                 <dt>Outdated</dt>
-                <dd className={repository.tech_stack.outdated_count > 0 ? styles.textWarning : ""}>
-                  {formatNumber(repository.tech_stack.outdated_count)} ({repository.tech_stack.outdated_percentage}%)
+                <dd
+                  className={
+                    repository.tech_stack.outdated_count > 0
+                      ? styles.textWarning
+                      : ""
+                  }
+                >
+                  {formatNumber(repository.tech_stack.outdated_count)} (
+                  {repository.tech_stack.outdated_percentage}%)
                 </dd>
               </div>
               <div className={styles.detailItem}>
@@ -46,7 +68,9 @@ function TechStackSection({ repository, expanded, onToggle, topDependencies, for
                             ? styles.scoreBarWarning
                             : styles.scoreBarError
                       }`}
-                      style={{ width: `${repository.tech_stack.currency_score}%` }}
+                      style={{
+                        width: `${repository.tech_stack.currency_score}%`,
+                      }}
                     />
                   </div>
                   <span>{repository.tech_stack.currency_score}/100</span>
@@ -63,8 +87,10 @@ function TechStackSection({ repository, expanded, onToggle, topDependencies, for
               <div className={styles.detailItem}>
                 <dt>Registry Coverage</dt>
                 <dd>
-                  {formatNumber(repository.tech_stack.resolved_latest_versions_count)}/
-                  {formatNumber(repository.tech_stack.total_dependencies)} (
+                  {formatNumber(
+                    repository.tech_stack.resolved_latest_versions_count,
+                  )}
+                  /{formatNumber(repository.tech_stack.total_dependencies)} (
                   {repository.tech_stack.latest_version_coverage_percentage}%)
                 </dd>
               </div>
@@ -72,24 +98,38 @@ function TechStackSection({ repository, expanded, onToggle, topDependencies, for
 
             {topDependencies.length > 0 && (
               <div className={styles.dependencySection}>
-                <h5 className={styles.dependencyHeading}>Dependency Snapshot</h5>
+                <h5 className={styles.dependencyHeading}>
+                  Dependency Snapshot
+                </h5>
                 <div className={styles.dependencyList}>
                   {topDependencies.map((dependency) => (
-                    <div key={`${dependency.name}-${dependency.ecosystem}`} className={styles.dependencyRow}>
+                    <div
+                      key={`${dependency.name}-${dependency.ecosystem}`}
+                      className={styles.dependencyRow}
+                    >
                       <div>
                         <div className={styles.dependencyNameRow}>
-                          <span className={styles.dependencyName}>{dependency.name}</span>
-                          <span className={getDependencyBadgeClass(dependency.status)}>
+                          <span className={styles.dependencyName}>
+                            {dependency.name}
+                          </span>
+                          <span
+                            className={getDependencyBadgeClass(
+                              dependency.status,
+                            )}
+                          >
                             {dependency.status.replace(/_/g, " ")}
                           </span>
                         </div>
                         <div className={styles.dependencyMeta}>
                           {dependency.current_version_known
                             ? `${dependency.current_version}${dependency.latest_version ? ` -> ${dependency.latest_version}` : ""}`
-                            : dependency.version_requirement || dependency.current_version}
+                            : dependency.version_requirement ||
+                              dependency.current_version}
                         </div>
                       </div>
-                      <div className={styles.dependencyAux}>{dependency.source_file || dependency.ecosystem}</div>
+                      <div className={styles.dependencyAux}>
+                        {dependency.source_file || dependency.ecosystem}
+                      </div>
                     </div>
                   ))}
                 </div>

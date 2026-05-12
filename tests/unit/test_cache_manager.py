@@ -67,11 +67,14 @@ def test_refresh_user_data_uses_refresh_strategy(monkeypatch):
 def test_refresh_categories_include_enrichment_summaries():
     categories = get_refresh_categories(include_ai_summaries=False)
 
-    assert "contributor_stats" in categories
-    assert "code_frequency" in categories
     assert "pull_request_summary" in categories
     assert "security_summary" in categories
-    # commits_stats removed from defaults — high-level signals only
+    assert "languages" in categories
+    assert "quality_indicators" in categories
+    # Stats API categories removed — too costly, use other signals
+    assert "commit_counts" not in categories
+    assert "contributor_stats" not in categories
+    assert "code_frequency" not in categories
     assert "commits_stats" not in categories
 
 

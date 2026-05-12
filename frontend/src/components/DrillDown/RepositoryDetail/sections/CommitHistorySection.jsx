@@ -1,15 +1,29 @@
 import styles from "../../RepositoryDetail.module.css";
 import CollapsibleSection from "../CollapsibleSection";
 
-function CommitHistorySection({ repository, expanded, onToggle, formatDate, formatNumber, formatSize }) {
+function CommitHistorySection({
+  repository,
+  expanded,
+  onToggle,
+  formatDate,
+  formatNumber,
+  formatSize,
+}) {
   if (!repository.commit_history) return null;
 
   return (
-    <CollapsibleSection section="commits" title="Commit Activity" expanded={expanded} onToggle={onToggle}>
+    <CollapsibleSection
+      section="commits"
+      title="Commit Activity"
+      expanded={expanded}
+      onToggle={onToggle}
+    >
       <dl className={styles.detailList}>
         <div className={styles.detailItem}>
           <dt>Total Commits</dt>
-          <dd className={styles.highlight}>{formatNumber(repository.commit_history.total_commits)}</dd>
+          <dd className={styles.highlight}>
+            {formatNumber(repository.commit_history.total_commits)}
+          </dd>
         </div>
         <div className={styles.detailItem}>
           <dt>Last 90 Days</dt>

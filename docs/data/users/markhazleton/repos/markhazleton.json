@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "markhazleton",
+    "generated_at": "2026-05-12T23:13:48.851872+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "markhazleton",
+    "full_name": "markhazleton/markhazleton",
+    "description": null,
+    "primary_language": null,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 6624,
+    "created_at": "2021-04-17T15:50:07+00:00",
+    "updated_at": "2026-05-12T00:54:37+00:00",
+    "pushed_at": "2026-05-12T00:54:33+00:00",
+    "homepage": null,
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {},
+  "readme": "# Hi, I'm Mark Hazleton \ud83d\udc4b\n\n.NET + Azure engineer building modern web apps and developer tooling.\n\n<!-- markdownlint-disable MD033 -->\n<p align=\"center\">\n <picture>\n  <source srcset=\"InksLakeSunset.webp\" type=\"image/webp\" />\n  <img src=\"InksLakeSunset.jpg\" alt=\"Inks Lake Sunset - Texas Hill Country\" width=\"900\" decoding=\"async\" />\n </picture>\n</p>\n<!-- markdownlint-enable MD033 -->\n\n## Lifelong Learning\n\n> My repositories serve as a dynamic archive of my learning journey, each one a milestone in my continuous pursuit of knowledge and mastery in technology. From structured explorations in new (to me) technologies to experimental projects that push the boundaries of my understanding, these collections reflect my commitment to lifelong learning and the diverse paths I've taken to grow both personally and professionally.\n\n## \ud83d\ude80 What I'm Working On / Featured Projects\n\n- \ud83c\udf10 [WebSpark](https://web.makeboldspark.com/): A comprehensive web application for hosting my demo applications.\n- \ud83c\udf10 [ReactSpark](https://bootstrap.makeboldspark.com/): React Spark built with Vite Site hosted on Azure Static Web Applications\n- \ud83c\udfa8 [TailwindSpark](https://markhazleton.com/articles/tailwindspark-ignite-your-web-development.html) \u2014 Opinionated UI foundations to ship consistent, clean interfaces quickly.\n- \ud83d\udda5\ufe0f [UISampleSpark](https://ui.makeboldspark.com): UI sample application \u2014 also available on [Docker Hub](https://hub.docker.com/r/markhazleton/uisamplespark).\n\n## \u270d\ufe0f Latest Articles\n\n<!-- BLOG-POST-LIST:START -->\n- [Stop Digging Through Logs. Start Designing for Learning.](https://markhazleton.com/blog/analytics-contract-designing-for-learning)\n- [Mountains of Misunderstanding: The AI Confidence Trap](https://markhazleton.com/blog/the-ai-confidence-trap)\n- [Cloudflare and IIS: Hosting My .NET Sites on One VM](https://markhazleton.com/blog/cloudflare-and-iis-for-secure-windows-vm-deployments)\n- [DevSpark Blogging Workflow: How I Built Better Articles](https://markhazleton.com/blog/devspark-blogging-workflow-better-articles)\n- [Closing the Loop: Automating Feedback with Suggest-Improvement](https://markhazleton.com/blog/devspark-suggest-improvement-feedback-loop)\n- [Designing the DevSpark CLI UX: Commands vs Prompts](https://markhazleton.com/blog/devspark-cli-ux-design)\n- [The Alias Layer: Masking Complexity in Agent Invocations](https://markhazleton.com/blog/devspark-alias-layer-entrypoints)\n- [Dave's Top Ten: Git Stats You Should Never Track](https://markhazleton.com/blog/engineering-metrics-top-ten-worst-git-stats)\n<!-- BLOG-POST-LIST:END -->\n\n## \ud83d\udcca GitHub Stats\n\n<!-- markdownlint-disable MD033 -->\n<p>\n <a href=\"https://github.com/markhazleton\" aria-label=\"GitHub profile\">\n  <img src=\"https://github-readme-stats.vercel.app/api?username=markhazleton&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true&cache_seconds=7200\" alt=\"GitHub Stats for @markhazleton\" loading=\"lazy\" />\n </a>\n</p>\n<p>\n <a href=\"https://github.com/markhazleton\" aria-label=\"Top lan\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": false,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "",
+    "homepage_url": "",
+    "homepage_status": null,
+    "homepage_response_ms": null,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 55,
+      "length": 4041,
+      "has_headings": true,
+      "has_code_blocks": false,
+      "has_images": false,
+      "has_install_section": false
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "disabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/markhazleton",
+    "fetch_status": 200,
+    "fetch_time_ms": 1528,
+    "total_commits": 168,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": null,
+    "has_social_preview": false
+  }
+}

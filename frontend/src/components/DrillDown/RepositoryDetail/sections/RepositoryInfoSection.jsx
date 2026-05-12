@@ -1,14 +1,28 @@
 import styles from "../../RepositoryDetail.module.css";
 import CollapsibleSection from "../CollapsibleSection";
 
-function RepositoryInfoSection({ repository, expanded, onToggle, formatDate, formatRelativeDate, formatNumber }) {
+function RepositoryInfoSection({
+  repository,
+  expanded,
+  onToggle,
+  formatDate,
+  formatRelativeDate,
+  formatNumber,
+}) {
   return (
-    <CollapsibleSection section="info" title="Repository Info" expanded={expanded} onToggle={onToggle}>
+    <CollapsibleSection
+      section="info"
+      title="Repository Info"
+      expanded={expanded}
+      onToggle={onToggle}
+    >
       <dl className={styles.detailList}>
         <div className={styles.detailItem}>
           <dt>Language</dt>
           <dd>
-            <span className={styles.badge}>{repository.language || "Unknown"}</span>
+            <span className={styles.badge}>
+              {repository.language || "Unknown"}
+            </span>
           </dd>
         </div>
         <div className={styles.detailItem}>
@@ -24,7 +38,10 @@ function RepositoryInfoSection({ repository, expanded, onToggle, formatDate, for
           <dd>
             {formatDate(repository.pushed_at)}
             {repository.days_since_last_push != null && (
-              <span className={styles.textMuted}> ({formatRelativeDate(repository.days_since_last_push)})</span>
+              <span className={styles.textMuted}>
+                {" "}
+                ({formatRelativeDate(repository.days_since_last_push)})
+              </span>
             )}
           </dd>
         </div>
@@ -34,12 +51,21 @@ function RepositoryInfoSection({ repository, expanded, onToggle, formatDate, for
         </div>
         <div className={styles.detailItem}>
           <dt>Size</dt>
-          <dd>{repository.size_kb ? `${formatNumber(repository.size_kb)} KB` : "N/A"}</dd>
+          <dd>
+            {repository.size_kb
+              ? `${formatNumber(repository.size_kb)} KB`
+              : "N/A"}
+          </dd>
         </div>
         <div className={styles.detailItem}>
           <dt>Repository URL</dt>
           <dd>
-            <a href={repository.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
+            <a
+              href={repository.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
               View on GitHub →
             </a>
           </dd>
@@ -48,22 +74,34 @@ function RepositoryInfoSection({ repository, expanded, onToggle, formatDate, for
           <div className={styles.detailItem}>
             <dt>Website</dt>
             <dd>
-              <a href={repository.website_url} target="_blank" rel="noopener noreferrer" className={styles.link}>
+              <a
+                href={repository.website_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
                 {repository.homepage ? "🌐 Homepage" : "📄 GitHub Pages"} →
               </a>
             </dd>
           </div>
         )}
-        {repository.has_pages && !repository.homepage && repository.pages_url && (
-          <div className={styles.detailItem}>
-            <dt>GitHub Pages</dt>
-            <dd>
-              <a href={repository.pages_url} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                📄 View Site →
-              </a>
-            </dd>
-          </div>
-        )}
+        {repository.has_pages &&
+          !repository.homepage &&
+          repository.pages_url && (
+            <div className={styles.detailItem}>
+              <dt>GitHub Pages</dt>
+              <dd>
+                <a
+                  href={repository.pages_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  📄 View Site →
+                </a>
+              </dd>
+            </div>
+          )}
       </dl>
     </CollapsibleSection>
   );

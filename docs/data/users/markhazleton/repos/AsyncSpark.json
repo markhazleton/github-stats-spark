@@ -1,0 +1,116 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "AsyncSpark",
+    "generated_at": "2026-05-12T23:13:48.799579+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "AsyncSpark",
+    "full_name": "markhazleton/AsyncSpark",
+    "description": "Demonstration of some Async Methods",
+    "primary_language": "C#",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 1950,
+    "created_at": "2022-08-07T16:37:21+00:00",
+    "updated_at": "2026-05-11T15:11:28+00:00",
+    "pushed_at": "2026-05-11T14:58:49+00:00",
+    "homepage": null,
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 202078,
+    "HTML": 160399,
+    "PowerShell": 88103,
+    "JavaScript": 15058,
+    "CSS": 2935,
+    "Dockerfile": 848
+  },
+  "readme": "# AsyncSpark\n\nProduction-ready reference implementation for async/await patterns in .NET 10 with constitution-driven development practices.\n\n[![Build and deploy ASP.Net Core app to Azure Web App - AsyncSpark](https://github.com/markhazleton/AsyncSpark/actions/workflows/main_AsyncSpark.yml/badge.svg)](https://github.com/markhazleton/AsyncSpark/actions/workflows/main_AsyncSpark.yml)\n\n## Overview\n\nAsyncSpark demonstrates enterprise-grade async programming patterns with enforced quality standards, automated compliance auditing, and interactive API documentation. Built on .NET 10 with 80% code coverage enforcement in CI/CD.\n\n**Live Site**: [https://web.makeboldspark.com/asyncspark](https://web.makeboldspark.com/asyncspark) | **API Docs**: [/scalar/v1](https://web.makeboldspark.com/asyncspark/scalar/v1)\n\n## About\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Mark Hazleton, Solutions Architect  \n> AsyncSpark is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n## Key Features\n\n- **Constitution-Driven Development**: Formalized coding standards enforced through automated audits\n- **80% Code Coverage Enforcement**: CI/CD fails if coverage drops below threshold\n- **Modern .NET 10**: Nullable reference types, implicit usings, file-scoped namespaces, primary constructors\n- **Async Best Practices**: ConfigureAwait(false) in all library code, proper CancellationToken usage, no blocking calls\n- **Resilience Patterns**: Polly integration via WebSpark.HttpClientUtility with retry, timeout, and circuit breaker policies\n- **Clean Architecture**: Dependency injection, decorator pattern, interface-based design\n- **Interactive API Documentation**: Scalar-powered API explorer with live testing\n- **SpecKit Development Workflow**: Constitution validation, automated audits, PR reviews, feature planning\n\n## Project Structure\n\n```\nAsyncSpark/                    # Core library - async utilities and services\nAsyncSpark.Web/               # ASP.NET Core web application with API endpoints\nAsyncSpark.Weather/           # Weather service integration demonstrating external API patterns\nAsyncSpark.Tests/             # MSTest + Moq unit tests\nAsyncSpark.Console/           # Console application demos\n.documentation/               # Constitution, guides, templates, audit reports\n.github/                      # CI/CD workflows, SpecKit agents, Copilot instructions\n.editorconfig                # C# code style enforcement\n```\n\n## Learning Objectives\n\nEach pattern links to specific code implementing the technique:\n\n### 1. ConfigureAwait(false) in Library Code\n**Implementation**: [HttpGetCallService.cs:24](AsyncSpark/HttpGetCall/HttpGetCallService.cs#L24), [OpenWeatherMapWeatherService.cs:31](AsyncSpark.Weather/Services/OpenWeatherMapWeatherService.cs#L31)  \n**Pattern**: All library async methods use `.ConfigureAwait(false)` to prevent deadlocks when consumed by UI threads.  \n**Test**: [HttpGetCallServiceTests.cs](AsyncSpark.Tests/Htt\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "Demonstration of some Async Methods",
+    "homepage_url": "",
+    "homepage_status": null,
+    "homepage_response_ms": null,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 90,
+      "length": 12546,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "warning_present",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "disabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 6,
+      "critical": 0,
+      "high": 3,
+      "medium": 1,
+      "low": 2
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/AsyncSpark",
+    "fetch_status": 200,
+    "fetch_time_ms": 1179,
+    "total_commits": 124,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 1,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": "Demonstration of some Async Methods. Contribute to markhazleton/AsyncSpark development by creating an account on GitHub.",
+    "has_social_preview": false
+  }
+}

@@ -1,6 +1,13 @@
 import styles from "../RepositoryDetail.module.css";
 
-function CollapsibleSection({ section, title, expanded, onToggle, badge, children }) {
+function CollapsibleSection({
+  section,
+  title,
+  expanded,
+  onToggle,
+  badge,
+  children,
+}) {
   return (
     <section className={styles.section}>
       <h3
