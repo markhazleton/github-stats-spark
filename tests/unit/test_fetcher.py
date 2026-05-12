@@ -936,6 +936,30 @@ class TestFetchContributorStats:
 
         assert result is None
 
+    def test_recursion_error_falls_back_to_rest(self, fetcher, monkeypatch):
+        repo = SimpleNamespace(
+            get_stats_contributors=lambda: (_ for _ in ()).throw(RecursionError("maximum recursion depth exceeded"))
+        )
+        monkeypatch.setattr(fetcher.github, "get_repo", lambda full_name: repo)
+
+        payload = [
+            {
+                "total": 7,
+                "author": {"login": "alice"},
+                "weeks": [{"a": 3, "d": 1, "c": 1}],
+            }
+        ]
+        monkeypatch.setattr(fetcher, "_rest_get", lambda *args, **kwargs: FakeResponse(200, payload))
+
+        unique_push = datetime(2025, 3, 15, tzinfo=timezone.utc)
+        result = fetcher.fetch_contributor_stats("user", "my-repo", repo_pushed_at=unique_push)
+
+        assert result is not None
+        assert result[0]["login"] == "alice"
+        assert result[0]["commits"] == 7
+        assert result[0]["additions"] == 3
+        assert result[0]["deletions"] == 1
+
     def test_cache_hit_skips_api(self, fetcher):
         from spark.time_utils import sanitize_timestamp_for_filename
         pushed = datetime(2026, 1, 1, tzinfo=timezone.utc)

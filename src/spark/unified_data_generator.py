@@ -413,10 +413,22 @@ class UnifiedDataGenerator:
             config=self.config.config.get("analyzer", {})
         )
         summarizer = RepositorySummarizer(cache=self.cache, enable_ai=False, model=self.config.get_ai_model())
+
+        total_repos = min(len(raw_repos), self.max_repositories)
+        assembled_ok = 0
+        assemble_started_at = datetime.now(timezone.utc)
+        logger.info(f"Phase 3 cache assembly progress: 0/{total_repos} repositories")
         
         for i, repo_data in enumerate(raw_repos[:self.max_repositories], 1):
             repo_name = repo_data["name"]
             logger.debug(f"[{i}/{min(len(raw_repos), self.max_repositories)}] Assembling {repo_name}")
+
+            if i == 1 or i % 10 == 0 or i == total_repos:
+                elapsed_seconds = int((datetime.now(timezone.utc) - assemble_started_at).total_seconds())
+                logger.info(
+                    f"Phase 3 cache assembly progress: {i}/{total_repos} "
+                    f"(assembled={assembled_ok}, elapsed={elapsed_seconds}s) - loading {repo_name}"
+                )
             
             try:
                 # Parse pushed_at
@@ -551,6 +563,7 @@ class UnifiedDataGenerator:
                 repo = Repository.from_dict(repo_data)
                 repo.has_readme = bool(readme_content)
                 repositories.append(repo)
+                assembled_ok += 1
                 repo_cache[repo_name] = {
                     "readme_content": readme_content,
                     "dependency_files": dependency_files,
@@ -563,6 +576,12 @@ class UnifiedDataGenerator:
             except Exception as e:
                 logger.warn(f"Failed to assemble {repo_name}: {e}")
                 continue
+
+        total_elapsed_seconds = int((datetime.now(timezone.utc) - assemble_started_at).total_seconds())
+        logger.info(
+            f"Phase 3 cache assembly complete: assembled {assembled_ok}/{total_repos} "
+            f"repositories in {total_elapsed_seconds}s"
+        )
         
         # Rank repositories
         logger.info(f"Ranking {len(repositories)} repositories...")

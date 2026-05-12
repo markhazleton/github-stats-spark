@@ -979,7 +979,15 @@ class GitHubFetcher:
         for attempt, wait in enumerate(backoff_seconds, start=1):
             try:
                 repo = self.github.get_repo(f"{username}/{repo_name}")
-                stats = repo.get_stats_contributors()
+                try:
+                    stats = repo.get_stats_contributors()
+                except RecursionError:
+                    timestamp = datetime.now(timezone.utc).isoformat()
+                    self.logger.warning(
+                        f"[{timestamp}] PyGithub recursion error for contributor_stats {repo_name}; "
+                        "falling back to REST endpoint"
+                    )
+                    stats = self._fetch_contributor_stats_via_rest(username, repo_name)
 
                 if stats is None:
                     # GitHub returns None when stats are being computed (202 state)
@@ -991,15 +999,7 @@ class GitHubFetcher:
                     time.sleep(wait)
                     continue
 
-                contributors = []
-                for c in sorted(stats, key=lambda s: s.total, reverse=True)[:10]:
-                    if c.author:
-                        contributors.append({
-                            "login": c.author.login,
-                            "commits": c.total,
-                            "additions": sum(w.a for w in c.weeks),
-                            "deletions": sum(w.d for w in c.weeks),
-                        })
+                contributors = self._normalize_contributor_stats(stats)
 
                 metadata = self._build_repo_metadata(username, repo_name, repo_pushed_at, "contributor_stats")
                 self.cache.set("contributor_stats", username, contributors, repo=repo_name, week=push_key, metadata=metadata)
@@ -1030,6 +1030,72 @@ class GitHubFetcher:
             f"[{timestamp}] contributor_stats for {repo_name} unavailable after retries; returning None"
         )
         return None
+
+    def _fetch_contributor_stats_via_rest(
+        self,
+        username: str,
+        repo_name: str,
+    ) -> Optional[List[Dict[str, Any]]]:
+        """Fallback fetch for contributor stats using direct REST call."""
+        response = self._rest_get(
+            f"/repos/{username}/{repo_name}/stats/contributors",
+            include_version=True,
+        )
+
+        # 202 = GitHub still calculating stats
+        if response.status_code == 202:
+            return None
+
+        if response.status_code >= 400:
+            raise GithubException(response.status_code, "contributor stats request failed", None)
+
+        payload = response.json() or []
+        return payload if isinstance(payload, list) else []
+
+    @staticmethod
+    def _normalize_contributor_stats(stats: List[Any]) -> List[Dict[str, Any]]:
+        """Normalize contributor stats from PyGithub objects or REST dictionaries."""
+        normalized: List[Dict[str, Any]] = []
+
+        def _to_int(value: Any) -> int:
+            try:
+                return int(value)
+            except (TypeError, ValueError):
+                return 0
+
+        for contributor in stats:
+            if isinstance(contributor, dict):
+                author = contributor.get("author") or {}
+                login = author.get("login")
+                if not login:
+                    continue
+
+                weeks = contributor.get("weeks") or []
+                additions = sum(_to_int(week.get("a")) for week in weeks if isinstance(week, dict))
+                deletions = sum(_to_int(week.get("d")) for week in weeks if isinstance(week, dict))
+                commits = _to_int(contributor.get("total"))
+            else:
+                author = getattr(contributor, "author", None)
+                login = getattr(author, "login", None) if author else None
+                if not login:
+                    continue
+
+                weeks = getattr(contributor, "weeks", []) or []
+                additions = sum(_to_int(getattr(week, "a", 0)) for week in weeks)
+                deletions = sum(_to_int(getattr(week, "d", 0)) for week in weeks)
+                commits = _to_int(getattr(contributor, "total", 0))
+
+            normalized.append(
+                {
+                    "login": login,
+                    "commits": commits,
+                    "additions": additions,
+                    "deletions": deletions,
+                }
+            )
+
+        normalized.sort(key=lambda item: item["commits"], reverse=True)
+        return normalized[:10]
 
     def fetch_code_frequency(
         self,
