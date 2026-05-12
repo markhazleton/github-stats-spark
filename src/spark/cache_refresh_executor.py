@@ -1,5 +1,6 @@
 """Category-specific cache refresh execution helpers."""
 
+import threading
 from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
 from typing import Any, Dict, Optional
@@ -33,11 +34,24 @@ class CacheRefreshExecutor:
         self.github = github_client
         self.cache = cache
         self.logger = get_logger()
-        self.api_calls = 0
+        self._api_calls = 0
+        self._api_calls_lock = threading.Lock()
         self.summarizer = summarizer
         self.ai_model = ai_model
         self.dependency_analyzer = RepositoryDependencyAnalyzer()
         self.fetcher = fetcher
+
+    @property
+    def api_calls(self) -> int:
+        return self._api_calls
+
+    @api_calls.setter
+    def api_calls(self, value: int) -> None:
+        self._api_calls = value
+
+    def _increment_api_calls(self, count: int = 1) -> None:
+        with self._api_calls_lock:
+            self._api_calls += count
 
     @staticmethod
     def _sanitize_language_stats(language_stats: Any) -> Dict[str, int]:
@@ -65,7 +79,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
+            self._increment_api_calls()
             repo = self.github.get_repo(f"{username}/{repo_name}")
             now = datetime.now(timezone.utc)
             day_90_ago = now - timedelta(days=90)
@@ -162,7 +176,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
+            self._increment_api_calls()
             repo = self.github.get_repo(f"{username}/{repo_name}")
             languages = self._sanitize_language_stats(repo.get_languages())
             metadata = {
@@ -257,7 +271,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
+            self._increment_api_calls()
             repo = self.github.get_repo(f"{username}/{repo_name}")
             content = ""
             try:
@@ -287,7 +301,7 @@ class CacheRefreshExecutor:
             return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
 
         try:
-            self.api_calls += 1
+            self._increment_api_calls()
             repo = self.github.get_repo(f"{username}/{repo_name}")
 
             has_license = False
@@ -364,7 +378,7 @@ class CacheRefreshExecutor:
         ]
 
         try:
-            self.api_calls += 1
+            self._increment_api_calls()
             repo = self.github.get_repo(f"{username}/{repo_name}")
             for filename in target_files:
                 try:
@@ -518,7 +532,7 @@ class CacheRefreshExecutor:
                 "ttl_enforced": False,
             }
             self.cache.set(category, username, summary, repo=repo_name, week=cache_key, metadata=metadata)
-            self.api_calls += 1
+            self._increment_api_calls()
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
@@ -554,7 +568,7 @@ class CacheRefreshExecutor:
                 "ttl_enforced": False,
             }
             self.cache.set(category, username, summary, repo=repo_name, week=cache_key, metadata=metadata)
-            self.api_calls += 1
+            self._increment_api_calls()
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")

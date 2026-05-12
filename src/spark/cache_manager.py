@@ -8,6 +8,7 @@ This module provides a clean separation between:
 NO cache writes happen during data reading/assembly.
 """
 
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from typing import Dict, List, Optional, Set, Any
 
@@ -266,10 +267,9 @@ class CacheManager:
         self.logger.info(f"Starting cache refresh for {len(eligible_repos)} repositories")
         self.api_calls = 0
         
-        all_results = []
-        repos_refreshed = 0
+        # Build work items: (index, repo_data, pushed_at) for repos that need refresh
+        work_items = []
         repos_unchanged = 0
-        repos_failed = 0
         
         for i, repo_data in enumerate(eligible_repos, 1):
             repo_name = repo_data["name"]
@@ -279,7 +279,6 @@ class CacheManager:
                 self.logger.debug(f"[{i}/{len(repo_list)}] Skipping {repo_name} - no pushed_at")
                 continue
             
-            # Parse pushed_at
             try:
                 pushed_at = datetime.fromisoformat(pushed_at_str.replace('Z', '+00:00'))
                 if pushed_at.tzinfo is None:
@@ -288,7 +287,6 @@ class CacheManager:
                 self.logger.warning(f"Failed to parse pushed_at for {repo_name}: {e}")
                 continue
             
-            # Check if refresh needed
             if not force_refresh:
                 needs_update = should_refresh_repository(
                     self.needs_refresh,
@@ -302,22 +300,39 @@ class CacheManager:
                     repos_unchanged += 1
                     continue
             
-            # Refresh this repository
-            self.logger.info(f"[{i}/{len(eligible_repos)}] Refreshing {repo_name}")
-            repo_results = self.refresh_repository(
+            work_items.append((i, repo_data, pushed_at))
+        
+        all_results: List[RefreshResult] = []
+        repos_refreshed = 0
+        repos_failed = 0
+        
+        def _refresh_one(item):
+            idx, repo_data, pushed_at = item
+            repo_name = repo_data["name"]
+            self.logger.info(f"[{idx}/{len(eligible_repos)}] Refreshing {repo_name}")
+            return self.refresh_repository(
                 username,
                 repo_name,
                 pushed_at,
                 repo_data=repo_data,
                 include_ai_summaries=include_ai_summaries,
             )
-            all_results.extend(repo_results)
-            
-            # Count success/failures
-            if any(r.error for r in repo_results):
-                repos_failed += 1
-            else:
-                repos_refreshed += 1
+        
+        max_workers = min(5, len(work_items)) if work_items else 1
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = {pool.submit(_refresh_one, item): item for item in work_items}
+            for future in as_completed(futures):
+                try:
+                    repo_results = future.result()
+                    all_results.extend(repo_results)
+                    if any(r.error for r in repo_results):
+                        repos_failed += 1
+                    else:
+                        repos_refreshed += 1
+                except Exception as exc:
+                    idx, repo_data, _ = futures[future]
+                    self.logger.warning(f"Refresh failed for {repo_data['name']}: {exc}")
+                    repos_failed += 1
         
         self.logger.info(f"Cache refresh complete:")
         self.logger.info(f"  Refreshed: {repos_refreshed}")
@@ -353,8 +368,9 @@ class CacheManager:
             List of RefreshResult for the ai_summary category
         """
         eligible_repos = filter_refreshable_repositories(repo_list)
-        results: List[RefreshResult] = []
-        generated = 0
+
+        # Build work items, skipping repos with cached summaries
+        work_items = []
         cached = 0
 
         for i, repo_data in enumerate(eligible_repos, 1):
@@ -370,17 +386,40 @@ class CacheManager:
             except Exception:
                 continue
 
-            # Skip if already cached
             cache_key = sanitize_timestamp_for_filename(pushed_at)
             if self.cache.get("ai_summary", username, repo=repo_name, week=cache_key) is not None:
                 cached += 1
                 continue
 
-            self.logger.info(f"[{i}/{len(eligible_repos)}] Generating AI summary for {repo_name}")
-            result = self.refresh_ai_summary(username, repo_data, pushed_at)
-            results.append(result)
-            if result.refreshed:
-                generated += 1
+            work_items.append((i, repo_data, pushed_at))
+
+        results: List[RefreshResult] = []
+        generated = 0
+
+        def _summarize_one(item):
+            idx, repo_data, pushed_at = item
+            self.logger.info(f"[{idx}/{len(eligible_repos)}] Generating AI summary for {repo_data['name']}")
+            return self.refresh_ai_summary(username, repo_data, pushed_at)
+
+        max_workers = min(5, len(work_items)) if work_items else 1
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = {pool.submit(_summarize_one, item): item for item in work_items}
+            for future in as_completed(futures):
+                try:
+                    result = future.result()
+                    results.append(result)
+                    if result.refreshed:
+                        generated += 1
+                except Exception as exc:
+                    _, repo_data, _ = futures[future]
+                    self.logger.warning(f"AI summary failed for {repo_data['name']}: {exc}")
+                    results.append(RefreshResult(
+                        repo_name=repo_data["name"],
+                        category="ai_summary",
+                        was_cached=False,
+                        refreshed=False,
+                        error=str(exc),
+                    ))
 
         self.logger.info(f"AI summaries: {generated} generated, {cached} cached, {len(results) - generated} failed")
         return results
