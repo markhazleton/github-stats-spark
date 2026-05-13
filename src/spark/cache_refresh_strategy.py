@@ -10,6 +10,7 @@ BASE_REFRESH_CATEGORIES = frozenset({
     "quality_indicators",
     "pull_request_summary",
     "security_summary",
+    "diagnostics_summary",
     "web_signals",
     "community_health",
 })

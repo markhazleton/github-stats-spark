@@ -2,7 +2,12 @@
 
 from datetime import datetime, timezone
 
-from spark.models.repository import Repository, RepositoryPullRequestSummary, RepositorySecuritySummary
+from spark.models.repository import (
+    Repository,
+    RepositoryDiagnosticsSummary,
+    RepositoryPullRequestSummary,
+    RepositorySecuritySummary,
+)
 
 
 def test_repository_pull_request_summary_defaults_round_trip():
@@ -23,6 +28,16 @@ def test_repository_security_summary_defaults_round_trip():
     assert restored.availability == "unavailable"
     assert restored.overall_state == "unavailable"
     assert restored.active_alert_counts["total_open"] == 0
+
+
+def test_repository_diagnostics_summary_defaults_round_trip():
+    summary = RepositoryDiagnosticsSummary()
+    payload = summary.to_dict()
+    restored = RepositoryDiagnosticsSummary.from_dict(payload)
+
+    assert restored.availability == "unavailable"
+    assert restored.reason == "not_requested"
+    assert restored.pull_requests == {}
 
 
 def test_repository_from_dict_preserves_enrichment_objects():
@@ -63,12 +78,42 @@ def test_repository_from_dict_preserves_enrichment_objects():
                 },
                 "sources": ["rest.dependabot.alerts"],
             },
+            "diagnostics_summary": {
+                "availability": "available",
+                "reason": "none",
+                "pull_requests": {
+                    "availability": "available",
+                    "reason": "none",
+                    "total_open": 3,
+                },
+                "issues": {
+                    "availability": "available",
+                    "reason": "none",
+                    "total_open": 5,
+                    "stale_over_90d": 1,
+                },
+                "security": {
+                    "availability": "partial",
+                    "reason": "not_supported",
+                    "dependabot": {"total_open": 2, "critical": 1, "high": 1, "medium": 0, "low": 0},
+                    "code_scanning": {"total_open": 0, "error": 0, "warning": 0, "note": 0},
+                },
+                "actions": {
+                    "availability": "available",
+                    "reason": "none",
+                    "recent_runs": 2,
+                    "failure_count": 1,
+                },
+                "sources": ["rest.pulls.list", "rest.issues.list"],
+            },
         }
     )
 
     assert repo.pull_request_summary.total_open == 1
     assert repo.security_summary.availability == "partial"
+    assert repo.diagnostics_summary.pull_requests["total_open"] == 3
     assert repo.to_dict()["security_summary"]["active_alert_counts"]["critical"] == 1
+    assert repo.to_dict()["diagnostics_summary"]["issues"]["total_open"] == 5
 
 
 def test_repository_website_url_prefers_homepage_then_pages():

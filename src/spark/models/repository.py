@@ -119,6 +119,43 @@ class RepositorySecuritySummary:
 
 
 @dataclass
+class RepositoryDiagnosticsSummary:
+    """Consolidated operational diagnostics for a repository."""
+
+    availability: str = "unavailable"
+    reason: str = "not_requested"
+    pull_requests: Dict[str, object] = field(default_factory=dict)
+    issues: Dict[str, object] = field(default_factory=dict)
+    security: Dict[str, object] = field(default_factory=dict)
+    actions: Dict[str, object] = field(default_factory=dict)
+    sources: List[str] = field(default_factory=list)
+
+    def to_dict(self) -> Dict:
+        return {
+            "availability": self.availability,
+            "reason": self.reason,
+            "pull_requests": self.pull_requests,
+            "issues": self.issues,
+            "security": self.security,
+            "actions": self.actions,
+            "sources": self.sources,
+        }
+
+    @classmethod
+    def from_dict(cls, data: Optional[Dict]) -> "RepositoryDiagnosticsSummary":
+        payload = data or {}
+        return cls(
+            availability=payload.get("availability", "unavailable"),
+            reason=payload.get("reason", "not_requested"),
+            pull_requests=payload.get("pull_requests") or {},
+            issues=payload.get("issues") or {},
+            security=payload.get("security") or {},
+            actions=payload.get("actions") or {},
+            sources=payload.get("sources", []),
+        )
+
+
+@dataclass
 class Repository:
     """Represents a GitHub repository with metadata and statistics.
 
@@ -192,6 +229,7 @@ class Repository:
     has_pages: bool = False  # GitHub Pages enabled
     pull_request_summary: RepositoryPullRequestSummary = field(default_factory=RepositoryPullRequestSummary)
     security_summary: RepositorySecuritySummary = field(default_factory=RepositorySecuritySummary)
+    diagnostics_summary: RepositoryDiagnosticsSummary = field(default_factory=RepositoryDiagnosticsSummary)
 
     def __post_init__(self):
         """Validate that private repositories are never processed."""
@@ -304,6 +342,7 @@ class Repository:
             "website_url": self.website_url,
             "pull_request_summary": self.pull_request_summary.to_dict(),
             "security_summary": self.security_summary.to_dict(),
+            "diagnostics_summary": self.diagnostics_summary.to_dict(),
         }
 
     @classmethod
@@ -358,6 +397,7 @@ class Repository:
             has_pages=data.get("has_pages", False),
             pull_request_summary=RepositoryPullRequestSummary.from_dict(data.get("pull_request_summary")),
             security_summary=RepositorySecuritySummary.from_dict(data.get("security_summary")),
+            diagnostics_summary=RepositoryDiagnosticsSummary.from_dict(data.get("diagnostics_summary")),
         )
 
     @classmethod
@@ -483,6 +523,7 @@ class Repository:
             has_pages=github_repo.has_pages,
             pull_request_summary=RepositoryPullRequestSummary(),
             security_summary=RepositorySecuritySummary(),
+            diagnostics_summary=RepositoryDiagnosticsSummary(),
         )
 
     def to_dashboard_dict(self) -> Dict:
@@ -528,4 +569,5 @@ class Repository:
             ),
             "pull_request_summary": self.pull_request_summary.to_dict(),
             "security_summary": self.security_summary.to_dict(),
+            "diagnostics_summary": self.diagnostics_summary.to_dict(),
         }

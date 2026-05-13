@@ -982,6 +982,260 @@ class GitHubFetcher:
                 "sources": sources,
             }
 
+    def fetch_diagnostics_summary(
+        self,
+        username: str,
+        repo_name: str,
+        repo_pushed_at: Optional[datetime] = None,
+        force_refresh: bool = False,
+    ) -> Dict[str, Any]:
+        """Fetch a consolidated diagnostics summary for a repository."""
+        push_key = sanitize_timestamp_for_filename(repo_pushed_at)
+        if not force_refresh:
+            cached = self.cache.get("diagnostics_summary", username, repo=repo_name, week=push_key)
+            if cached:
+                return cached
+
+        pr_summary: Dict[str, Any] = {
+            "availability": "unavailable",
+            "reason": "not_requested",
+            "total_open": 0,
+            "oldest_open_age_days": None,
+        }
+        issues_summary: Dict[str, Any] = {
+            "availability": "unavailable",
+            "reason": "not_requested",
+            "total_open": 0,
+            "oldest_open_age_days": None,
+            "stale_over_30d": 0,
+            "stale_over_90d": 0,
+        }
+        security_summary: Dict[str, Any] = {
+            "availability": "unavailable",
+            "reason": "not_requested",
+            "dependabot": {"total_open": 0, "critical": 0, "high": 0, "medium": 0, "low": 0},
+            "code_scanning": {"total_open": 0, "error": 0, "warning": 0, "note": 0},
+        }
+        actions_summary: Dict[str, Any] = {
+            "availability": "unavailable",
+            "reason": "not_requested",
+            "recent_runs": 0,
+            "success_count": 0,
+            "failure_count": 0,
+            "last_run_status": None,
+            "last_run_conclusion": None,
+            "last_run_age_days": None,
+        }
+        sources: List[str] = []
+        any_success = False
+        any_failure = False
+        first_reason = "none"
+
+        def mark_failure(status_code: int) -> None:
+            nonlocal any_failure, first_reason
+            any_failure = True
+            mapped = self._map_failure_reason(status_code)
+            if first_reason == "none":
+                first_reason = mapped
+
+        # Pull requests diagnostics.
+        try:
+            response = self._rest_get(
+                f"/repos/{username}/{repo_name}/pulls",
+                params={"state": "open", "per_page": 100},
+                include_version=True,
+            )
+            if response.status_code < 400:
+                any_success = True
+                sources.append("rest.pulls.list")
+                payload = response.json() or []
+                oldest_open = None
+                pr_summary["availability"] = "available"
+                pr_summary["reason"] = "none"
+                if isinstance(payload, list):
+                    pr_summary["total_open"] = len(payload)
+                    for pr in payload:
+                        created_at = self._parse_iso_datetime(pr.get("created_at"))
+                        if created_at and (oldest_open is None or created_at < oldest_open):
+                            oldest_open = created_at
+                if oldest_open is not None:
+                    pr_summary["oldest_open_age_days"] = max(0, (datetime.now(timezone.utc) - oldest_open).days)
+            else:
+                mark_failure(response.status_code)
+                pr_summary["reason"] = self._map_failure_reason(response.status_code)
+        except Exception:
+            any_failure = True
+            if first_reason == "none":
+                first_reason = "api_error"
+            pr_summary["reason"] = "api_error"
+
+        # Issues diagnostics.
+        try:
+            response = self._rest_get(
+                f"/repos/{username}/{repo_name}/issues",
+                params={"state": "open", "per_page": 100},
+                include_version=True,
+            )
+            if response.status_code < 400:
+                any_success = True
+                sources.append("rest.issues.list")
+                payload = response.json() or []
+                oldest_open = None
+                stale_30 = 0
+                stale_90 = 0
+                issues_summary["availability"] = "available"
+                issues_summary["reason"] = "none"
+                if isinstance(payload, list):
+                    for issue in payload:
+                        # GitHub issues endpoint includes PRs; exclude those for issue hygiene.
+                        if "pull_request" in issue:
+                            continue
+                        issues_summary["total_open"] += 1
+                        created_at = self._parse_iso_datetime(issue.get("created_at"))
+                        if created_at is None:
+                            continue
+                        age_days = max(0, (datetime.now(timezone.utc) - created_at).days)
+                        if oldest_open is None or created_at < oldest_open:
+                            oldest_open = created_at
+                        if age_days >= 30:
+                            stale_30 += 1
+                        if age_days >= 90:
+                            stale_90 += 1
+                issues_summary["stale_over_30d"] = stale_30
+                issues_summary["stale_over_90d"] = stale_90
+                if oldest_open is not None:
+                    issues_summary["oldest_open_age_days"] = max(0, (datetime.now(timezone.utc) - oldest_open).days)
+            else:
+                mark_failure(response.status_code)
+                issues_summary["reason"] = self._map_failure_reason(response.status_code)
+        except Exception:
+            any_failure = True
+            if first_reason == "none":
+                first_reason = "api_error"
+            issues_summary["reason"] = "api_error"
+
+        # Security diagnostics (Dependabot + code scanning).
+        try:
+            dep_response = self._rest_get(
+                f"/repos/{username}/{repo_name}/dependabot/alerts",
+                params={"state": "open", "per_page": 100},
+                include_version=True,
+            )
+            if dep_response.status_code < 400:
+                any_success = True
+                sources.append("rest.dependabot.alerts")
+                dep_payload = dep_response.json() or []
+                security_summary["availability"] = "available"
+                security_summary["reason"] = "none"
+                if isinstance(dep_payload, list):
+                    for alert in dep_payload:
+                        security_summary["dependabot"]["total_open"] += 1
+                        severity = (
+                            (alert.get("security_vulnerability") or {}).get("severity")
+                            or (alert.get("security_advisory") or {}).get("severity")
+                            or ""
+                        ).lower()
+                        if severity in {"critical", "high", "medium", "low"}:
+                            security_summary["dependabot"][severity] += 1
+            else:
+                mark_failure(dep_response.status_code)
+                security_summary["reason"] = self._map_failure_reason(dep_response.status_code)
+
+            code_response = self._rest_get(
+                f"/repos/{username}/{repo_name}/code-scanning/alerts",
+                params={"state": "open", "per_page": 100},
+                include_version=True,
+            )
+            if code_response.status_code < 400:
+                any_success = True
+                sources.append("rest.code-scanning.alerts")
+                code_payload = code_response.json() or []
+                if isinstance(code_payload, list):
+                    for alert in code_payload:
+                        security_summary["code_scanning"]["total_open"] += 1
+                        severity = (alert.get("rule") or {}).get("severity") or ""
+                        severity = severity.lower()
+                        if severity in {"error", "warning", "note"}:
+                            security_summary["code_scanning"][severity] += 1
+            elif code_response.status_code in {403, 404}:
+                # Code scanning endpoints are often unavailable due to feature/permission state.
+                if security_summary["availability"] == "available":
+                    security_summary["availability"] = "partial"
+                    security_summary["reason"] = self._map_failure_reason(code_response.status_code)
+                else:
+                    mark_failure(code_response.status_code)
+                    security_summary["reason"] = self._map_failure_reason(code_response.status_code)
+            else:
+                mark_failure(code_response.status_code)
+                security_summary["reason"] = self._map_failure_reason(code_response.status_code)
+        except Exception:
+            any_failure = True
+            if first_reason == "none":
+                first_reason = "api_error"
+            if security_summary["availability"] == "unavailable":
+                security_summary["reason"] = "api_error"
+
+        # Actions diagnostics.
+        try:
+            response = self._rest_get(
+                f"/repos/{username}/{repo_name}/actions/runs",
+                params={"per_page": 20},
+                include_version=True,
+            )
+            if response.status_code < 400:
+                any_success = True
+                sources.append("rest.actions.runs")
+                payload = response.json() or {}
+                runs = payload.get("workflow_runs") if isinstance(payload, dict) else []
+                if not isinstance(runs, list):
+                    runs = []
+
+                actions_summary["availability"] = "available"
+                actions_summary["reason"] = "none"
+                actions_summary["recent_runs"] = len(runs)
+                for run in runs:
+                    conclusion = (run.get("conclusion") or "").lower()
+                    if conclusion == "success":
+                        actions_summary["success_count"] += 1
+                    elif conclusion in {"failure", "timed_out", "cancelled", "action_required", "startup_failure"}:
+                        actions_summary["failure_count"] += 1
+
+                if runs:
+                    latest = runs[0]
+                    actions_summary["last_run_status"] = latest.get("status")
+                    actions_summary["last_run_conclusion"] = latest.get("conclusion")
+                    created_at = self._parse_iso_datetime(latest.get("created_at"))
+                    if created_at:
+                        actions_summary["last_run_age_days"] = max(0, (datetime.now(timezone.utc) - created_at).days)
+            else:
+                mark_failure(response.status_code)
+                actions_summary["reason"] = self._map_failure_reason(response.status_code)
+        except Exception:
+            any_failure = True
+            if first_reason == "none":
+                first_reason = "api_error"
+            actions_summary["reason"] = "api_error"
+
+        if any_success and any_failure:
+            availability = "partial"
+            reason = first_reason if first_reason != "none" else "unknown"
+        elif any_success:
+            availability = "available"
+            reason = "none"
+        else:
+            availability = "unavailable"
+            reason = first_reason if first_reason != "none" else "unknown"
+
+        return {
+            "availability": availability,
+            "reason": reason,
+            "pull_requests": pr_summary,
+            "issues": issues_summary,
+            "security": security_summary,
+            "actions": actions_summary,
+            "sources": sources,
+        }
+
     def fetch_contributor_stats(
         self,
         username: str,

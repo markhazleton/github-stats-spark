@@ -195,6 +195,53 @@ def test_generate_uses_cached_ai_summary_and_handles_invalid_commit_dates(genera
     assert unified["repositories"][0]["ai_summary"] == "cached-ai-summary"
 
 
+def test_generate_emits_diagnostics_summary(generator, monkeypatch):
+    repo = _build_repo_payload("repo-diagnostics")
+    pushed_at = datetime.fromisoformat(repo["pushed_at"].replace("Z", "+00:00"))
+    cache_key = sanitize_timestamp_for_filename(pushed_at)
+
+    generator.cache.set(
+        "commit_counts",
+        "markhazleton",
+        {"total": 1, "recent_90d": 1, "recent_180d": 1, "recent_365d": 1, "last_commit_date": repo["pushed_at"]},
+        repo=repo["name"],
+        week=cache_key,
+    )
+    generator.cache.set("languages", "markhazleton", {"Python": 100}, repo=repo["name"], week=cache_key)
+    generator.cache.set(
+        "diagnostics_summary",
+        "markhazleton",
+        {
+            "availability": "available",
+            "reason": "none",
+            "pull_requests": {"availability": "available", "reason": "none", "total_open": 2},
+            "issues": {"availability": "available", "reason": "none", "total_open": 3, "stale_over_90d": 1},
+            "security": {
+                "availability": "partial",
+                "reason": "not_supported",
+                "dependabot": {"total_open": 1, "critical": 0, "high": 1, "medium": 0, "low": 0},
+                "code_scanning": {"total_open": 0, "error": 0, "warning": 0, "note": 0},
+            },
+            "actions": {"availability": "available", "reason": "none", "recent_runs": 5, "failure_count": 1},
+            "sources": ["rest.pulls.list", "rest.issues.list"],
+        },
+        repo=repo["name"],
+        week=cache_key,
+    )
+
+    monkeypatch.setattr(generator, "_fetch_repository_list", lambda: [repo])
+    monkeypatch.setattr(
+        generator.cache_manager,
+        "refresh_user_data",
+        lambda **kwargs: RefreshSummary(total_repos=1, repos_refreshed=0, repos_unchanged=1, repos_failed=0, results=[], api_calls_made=0),
+    )
+
+    unified = generator.generate()
+
+    assert unified["repositories"][0]["diagnostics_summary"]["availability"] == "available"
+    assert unified["repositories"][0]["diagnostics_summary"]["issues"]["total_open"] == 3
+
+
 def test_save_writes_output_and_uses_generate_when_input_missing(generator, monkeypatch):
     now = datetime.now(timezone.utc).isoformat()
     payload = {

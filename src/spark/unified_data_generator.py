@@ -529,6 +529,9 @@ class UnifiedDataGenerator:
                     security_summary = self.cache.get(
                         "security_summary", self.username, repo=repo_name, week=cache_key
                     )
+                    diagnostics_summary = self.cache.get(
+                        "diagnostics_summary", self.username, repo=repo_name, week=cache_key
+                    )
                     if quality_indicators:
                         repo_data["has_license"] = quality_indicators.get("has_license", False)
                         repo_data["has_ci_cd"] = quality_indicators.get("has_ci_cd", False)
@@ -538,6 +541,8 @@ class UnifiedDataGenerator:
                         repo_data["pull_request_summary"] = pull_request_summary
                     if security_summary:
                         repo_data["security_summary"] = security_summary
+                    if diagnostics_summary:
+                        repo_data["diagnostics_summary"] = diagnostics_summary
 
                 if "pull_request_summary" not in repo_data:
                     logger.debug(f"No cached pull_request_summary for {repo_name}; using unavailable default")
@@ -570,6 +575,54 @@ class UnifiedDataGenerator:
                             "high": 0,
                             "medium": 0,
                             "low": 0,
+                        },
+                        "sources": [],
+                    }
+                if "diagnostics_summary" not in repo_data:
+                    logger.debug(f"No cached diagnostics_summary for {repo_name}; using unavailable default")
+                    repo_data["diagnostics_summary"] = {
+                        "availability": "unavailable",
+                        "reason": "not_cached",
+                        "pull_requests": {
+                            "availability": "unavailable",
+                            "reason": "not_cached",
+                            "total_open": 0,
+                            "oldest_open_age_days": None,
+                        },
+                        "issues": {
+                            "availability": "unavailable",
+                            "reason": "not_cached",
+                            "total_open": 0,
+                            "oldest_open_age_days": None,
+                            "stale_over_30d": 0,
+                            "stale_over_90d": 0,
+                        },
+                        "security": {
+                            "availability": "unavailable",
+                            "reason": "not_cached",
+                            "dependabot": {
+                                "total_open": 0,
+                                "critical": 0,
+                                "high": 0,
+                                "medium": 0,
+                                "low": 0,
+                            },
+                            "code_scanning": {
+                                "total_open": 0,
+                                "error": 0,
+                                "warning": 0,
+                                "note": 0,
+                            },
+                        },
+                        "actions": {
+                            "availability": "unavailable",
+                            "reason": "not_cached",
+                            "recent_runs": 0,
+                            "success_count": 0,
+                            "failure_count": 0,
+                            "last_run_status": None,
+                            "last_run_conclusion": None,
+                            "last_run_age_days": None,
                         },
                         "sources": [],
                     }
@@ -769,6 +822,7 @@ class UnifiedDataGenerator:
                 "composite_score": score,
                 "pull_request_summary": repo.pull_request_summary.to_dict(),
                 "security_summary": repo.security_summary.to_dict(),
+                "diagnostics_summary": repo.diagnostics_summary.to_dict(),
                 # v2.3.0 commit volume fields (T008)
                 "total_additions": code_frequency_data.get("total_additions") if code_frequency_data else None,
                 "total_deletions": code_frequency_data.get("total_deletions") if code_frequency_data else None,

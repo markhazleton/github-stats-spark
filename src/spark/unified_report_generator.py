@@ -269,6 +269,27 @@ class UnifiedReportGenerator:
             )
             lines.append("")
 
+        diagnostics = repo.diagnostics_summary
+        if diagnostics and diagnostics.availability in {"available", "partial"}:
+            pr_total = (diagnostics.pull_requests or {}).get("total_open", 0)
+            issue_total = (diagnostics.issues or {}).get("total_open", 0)
+            stale_90 = (diagnostics.issues or {}).get("stale_over_90d", 0)
+            dep_critical = ((diagnostics.security or {}).get("dependabot") or {}).get("critical", 0)
+            dep_high = ((diagnostics.security or {}).get("dependabot") or {}).get("high", 0)
+            code_alerts = ((diagnostics.security or {}).get("code_scanning") or {}).get("total_open", 0)
+            actions_failures = (diagnostics.actions or {}).get("failure_count", 0)
+
+            lines.append("**Diagnostics**")
+            lines.append(
+                "PRs open: "
+                f"{pr_total} | "
+                f"Issues open: {issue_total} (stale>90d: {stale_90}) | "
+                f"Dependabot critical/high: {dep_critical}/{dep_high} | "
+                f"Code scanning open: {code_alerts} | "
+                f"Recent workflow failures: {actions_failures}"
+            )
+            lines.append("")
+
         # Dates
         created_date = repo.created_at.strftime('%Y-%m-%d') if repo.created_at else "Unknown"
         updated_date = repo.updated_at.strftime('%Y-%m-%d') if repo.updated_at else "Unknown"

@@ -1016,6 +1016,42 @@ query RepoMetadata($owner: String!, $name: String!) {
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
 
+    def refresh_diagnostics_summary(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
+        cache_key = sanitize_timestamp_for_filename(pushed_at)
+        category = "diagnostics_summary"
+        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
+        if cached is not None:
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+
+        if self.fetcher is None:
+            return RefreshResult(
+                repo_name=repo_name,
+                category=category,
+                was_cached=False,
+                refreshed=False,
+                error="Fetcher is required for diagnostics enrichment refresh",
+            )
+
+        try:
+            summary = self.fetcher.fetch_diagnostics_summary(
+                username=username,
+                repo_name=repo_name,
+                repo_pushed_at=pushed_at,
+                force_refresh=True,
+            )
+            metadata = {
+                "repository": {"owner": username, "name": repo_name},
+                "category": category,
+                "pushed_at": pushed_at.isoformat(),
+                "ttl_enforced": False,
+            }
+            self.cache.set(category, username, summary, repo=repo_name, week=cache_key, metadata=metadata)
+            self._increment_api_calls()
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
+        except Exception as error:
+            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
+            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
+
     # ------------------------------------------------------------------
     # Web scraping — extracts signals from public GitHub pages without
     # consuming API rate limits.

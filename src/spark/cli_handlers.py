@@ -14,6 +14,7 @@ from pathlib import Path
 
 from spark.cli_output_layout import build_output_layout, to_posix_path
 from spark.config import SparkConfig
+from spark.screenshot_audit import audit_screenshot_outputs, build_screenshot_audit_markdown
 
 
 def handle_unified(args, logger):
@@ -135,6 +136,7 @@ def handle_unified(args, logger):
             logger.info("Unified data generation was successful, but SVG/reports had errors")
 
         screenshot_results = None
+        unified_data = None
         if getattr(args, "capture_screenshots", False):
             logger.info("")
             logger.info("=" * 70)
@@ -196,9 +198,7 @@ def handle_unified(args, logger):
                                 logger.debug(f"Matched existing screenshot for {repo_name}")
 
                     if updated_count > 0:
-                        with open(data_output_path, "w", encoding="utf-8") as file_handle:
-                            json.dump(unified_data, file_handle, indent=2, ensure_ascii=False)
-                        logger.info(f"Updated {data_output_path} with {updated_count} screenshot metadata entries")
+                        logger.info(f"Updated in-memory screenshot metadata for {updated_count} repositories")
                 else:
                     logger.info("No repositories with website URLs - skipping screenshots")
 
@@ -239,9 +239,40 @@ def handle_unified(args, logger):
                                 updated_count += 1
 
                     if updated_count > 0:
-                        with open(data_output_path, "w", encoding="utf-8") as file_handle:
-                            json.dump(unified_data, file_handle, indent=2, ensure_ascii=False)
                         logger.info(f"Matched {updated_count} existing screenshots to repositories")
+
+        if unified_data is None and data_output_path.exists():
+            import json
+
+            with open(data_output_path, "r", encoding="utf-8") as file_handle:
+                unified_data = json.load(file_handle)
+
+        if unified_data is not None:
+            audit_payload = audit_screenshot_outputs(
+                repositories=unified_data.get("repositories", []),
+                workspace_root=Path.cwd(),
+            )
+            metadata = unified_data.setdefault("metadata", {})
+            metadata["screenshot_audit"] = {
+                key: value
+                for key, value in audit_payload.items()
+                if key != "repositories"
+            }
+
+            for repo in unified_data.get("repositories", []):
+                repo_name = repo.get("name", "")
+                repo["screenshot_audit"] = audit_payload["repositories"].get(repo_name, {})
+
+            with open(data_output_path, "w", encoding="utf-8") as file_handle:
+                json.dump(unified_data, file_handle, indent=2, ensure_ascii=False)
+            logger.info(f"Updated {data_output_path} with screenshot audit metadata")
+
+            if report_path.exists():
+                audit_markdown = build_screenshot_audit_markdown(audit_payload)
+                if audit_markdown:
+                    with open(report_path, "a", encoding="utf-8") as file_handle:
+                        file_handle.write("\n\n" + audit_markdown + "\n")
+                    logger.info(f"Appended screenshot audit section to {report_path}")
 
         end_time = datetime.now()
         total_time = (end_time - start_time).total_seconds()

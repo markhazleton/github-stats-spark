@@ -119,6 +119,58 @@ def test_fetch_security_summary_unavailable(fetcher, monkeypatch):
     assert summary["overall_state"] == "unavailable"
 
 
+def test_fetch_diagnostics_summary_partial(fetcher, monkeypatch):
+    now = datetime.now(timezone.utc)
+    older = (now - timedelta(days=45)).isoformat()
+    recent = (now - timedelta(days=2)).isoformat()
+
+    responses = {
+        "/repos/markhazleton/github-stats-spark/pulls": FakeResponse(
+            200,
+            [
+                {"created_at": older, "draft": False, "requested_reviewers": [], "requested_teams": []},
+                {"created_at": recent, "draft": False, "requested_reviewers": [], "requested_teams": []},
+            ],
+        ),
+        "/repos/markhazleton/github-stats-spark/issues": FakeResponse(
+            200,
+            [
+                {"created_at": older},
+                {"created_at": recent, "pull_request": {"url": "https://api.github.com/..."}},
+            ],
+        ),
+        "/repos/markhazleton/github-stats-spark/dependabot/alerts": FakeResponse(
+            200,
+            [{"security_vulnerability": {"severity": "high"}}],
+        ),
+        "/repos/markhazleton/github-stats-spark/code-scanning/alerts": FakeResponse(404, {"message": "not found"}),
+        "/repos/markhazleton/github-stats-spark/actions/runs": FakeResponse(
+            200,
+            {
+                "workflow_runs": [
+                    {"status": "completed", "conclusion": "failure", "created_at": recent},
+                    {"status": "completed", "conclusion": "success", "created_at": older},
+                ]
+            },
+        ),
+    }
+
+    def fake_rest_get(path, params=None, include_version=True):
+        return responses[path]
+
+    monkeypatch.setattr(fetcher, "_rest_get", fake_rest_get)
+
+    summary = fetcher.fetch_diagnostics_summary("markhazleton", "github-stats-spark", force_refresh=True)
+
+    assert summary["availability"] == "available"
+    assert summary["security"]["availability"] == "partial"
+    assert summary["pull_requests"]["total_open"] == 2
+    assert summary["issues"]["total_open"] == 1
+    assert summary["issues"]["stale_over_30d"] == 1
+    assert summary["security"]["dependabot"]["high"] == 1
+    assert summary["actions"]["failure_count"] == 1
+
+
 def test_fetch_repositories_excludes_private(fetcher, monkeypatch):
     class Repo:
         def __init__(self, name, private):

@@ -342,13 +342,17 @@ class UnifiedReportWorkflow:
         pr_unavailable = 0
         sec_partial = 0
         sec_unavailable = 0
+        diag_partial = 0
+        diag_unavailable = 0
 
         for repo in repos_data:
             pr = repo.get("pull_request_summary") or {}
             sec = repo.get("security_summary") or {}
+            diag = repo.get("diagnostics_summary") or {}
 
             pr_availability = pr.get("availability")
             sec_availability = sec.get("availability")
+            diag_availability = diag.get("availability")
 
             if pr_availability == "partial":
                 pr_partial += 1
@@ -360,13 +364,20 @@ class UnifiedReportWorkflow:
             elif sec_availability == "unavailable":
                 sec_unavailable += 1
 
-        if any([pr_partial, pr_unavailable, sec_partial, sec_unavailable]):
+            if diag_availability == "partial":
+                diag_partial += 1
+            elif diag_availability == "unavailable":
+                diag_unavailable += 1
+
+        if any([pr_partial, pr_unavailable, sec_partial, sec_unavailable, diag_partial, diag_unavailable]):
             self.logger.warning(
                 "Repository enrichment availability summary: "
                 f"pr_partial={pr_partial} "
                 f"pr_unavailable={pr_unavailable} "
                 f"security_partial={sec_partial} "
-                f"security_unavailable={sec_unavailable}"
+                f"security_unavailable={sec_unavailable} "
+                f"diagnostics_partial={diag_partial} "
+                f"diagnostics_unavailable={diag_unavailable}"
             )
 
     def _generate_svgs(

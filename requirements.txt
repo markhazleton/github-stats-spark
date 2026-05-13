@@ -34,3 +34,6 @@ tomli>=2.0.0,<3.0.0; python_version < '3.11'
 # Screenshot capture for repository websites (optional)
 # Requires: playwright install chromium
 playwright>=1.59.0,<2.0.0
+
+# Image analysis for screenshot audit
+Pillow>=12.2.0,<13.0.0
