@@ -26,7 +26,7 @@ export default function HealthChart({
   }
 
   const sorted = [...repositories]
-    .sort((a, b) => (b.composite_score || 0) - (a.composite_score || 0))
+    .sort((a, b) => (b.total_commits || 0) - (a.total_commits || 0))
     .slice(0, maxRepos);
 
   const chartData = {

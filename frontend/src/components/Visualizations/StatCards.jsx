@@ -53,13 +53,13 @@ export default function StatCards({ repositories }) {
   const languages = [
     ...new Set(repositories.map((r) => r.language).filter(Boolean)),
   ];
-  const avgScore =
+  const avgReadmeQuality =
     totalRepos > 0
-      ? repositories.reduce((sum, r) => sum + (r.composite_score || 0), 0) /
+      ? repositories.reduce((sum, r) => sum + (r.readme_quality_score || 0), 0) /
         totalRepos
       : 0;
   const activeRepos = repositories.filter(
-    (r) => getRecent90dCommits(r) > 0,
+    (r) => (r.days_since_last_push ?? 999) <= 30,
   ).length;
 
   const totalOpenPullRequests = repositories.reduce(
@@ -109,9 +109,9 @@ export default function StatCards({ repositories }) {
       />
       <StatCard label="Languages" value={languages.length} />
       <StatCard
-        label="Avg Spark Score"
-        value={avgScore.toFixed(1)}
-        sublabel="out of 100"
+        label="Avg README Quality"
+        value={avgReadmeQuality.toFixed(0)}
+        sublabel={`${activeRepos} active in 30d`}
       />
       <StatCard
         label="Open Pull Requests"
