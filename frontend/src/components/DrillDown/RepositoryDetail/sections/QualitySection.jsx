@@ -1,6 +1,18 @@
 import styles from "../../RepositoryDetail.module.css";
 import CollapsibleSection from "../CollapsibleSection";
 
+function QualityBadge({ icon, label, active }) {
+  return (
+    <span
+      className={`${styles.qualityBadge} ${active ? styles.qualityBadgeActive : styles.qualityBadgeInactive}`}
+      title={label}
+    >
+      {icon}
+      <span className={styles.qualityBadgeLabel}>{label}</span>
+    </span>
+  );
+}
+
 function QualitySection({ repository, expanded, onToggle }) {
   return (
     <CollapsibleSection
@@ -9,48 +21,15 @@ function QualitySection({ repository, expanded, onToggle }) {
       expanded={expanded}
       onToggle={onToggle}
     >
-      <div className={styles.badgeGrid}>
-        <span
-          className={
-            repository.has_readme ? styles.badgeSuccess : styles.badgeError
-          }
-        >
-          {repository.has_readme ? "✓" : "✗"} README
-        </span>
-        <span
-          className={
-            repository.has_license ? styles.badgeSuccess : styles.badgeError
-          }
-        >
-          {repository.has_license ? "✓" : "✗"} License
-        </span>
-        <span
-          className={
-            repository.has_ci_cd ? styles.badgeSuccess : styles.badgeError
-          }
-        >
-          {repository.has_ci_cd ? "✓" : "✗"} CI/CD
-        </span>
-        <span
-          className={
-            repository.has_tests ? styles.badgeSuccess : styles.badgeError
-          }
-        >
-          {repository.has_tests ? "✓" : "✗"} Tests
-        </span>
-        <span
-          className={
-            repository.has_docs ? styles.badgeSuccess : styles.badgeError
-          }
-        >
-          {repository.has_docs ? "✓" : "✗"} Docs
-        </span>
-        {repository.is_archived && (
-          <span className={styles.badgeWarning}>📦 Archived</span>
-        )}
-        {repository.is_fork && (
-          <span className={styles.badgeInfo}>🔀 Fork</span>
-        )}
+      <div className={styles.qualityGrid}>
+        <QualityBadge icon="📄" label="README" active={repository.has_readme} />
+        <QualityBadge icon="⚖️" label="License" active={repository.has_license} />
+        <QualityBadge icon="🔄" label="CI/CD" active={repository.has_ci_cd} />
+        <QualityBadge icon="🧪" label="Tests" active={repository.has_tests} />
+        <QualityBadge icon="📚" label="Docs" active={repository.has_docs} />
+        <QualityBadge icon="💬" label="Discussions" active={repository.has_discussions} />
+        <QualityBadge icon="🤝" label="Contributing" active={repository.has_contributing} />
+        <QualityBadge icon="🛡️" label="Security Policy" active={repository.has_security_policy} />
       </div>
     </CollapsibleSection>
   );
