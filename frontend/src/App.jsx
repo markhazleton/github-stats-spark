@@ -487,10 +487,10 @@ function App() {
                     <span className="footer-brand-name">GitHubSpark</span>
                     <span className="footer-brand-sep">·</span>
                     <a
-                      href="https://github-spark.makeboldspark.com"
+                      href="https://github-stats.makeboldspark.com"
                       className="footer-brand-url"
                     >
-                      github-spark.makeboldspark.com
+                      github-stats.makeboldspark.com
                     </a>
                   </div>
                   <p className="footer-copy">
@@ -517,7 +517,7 @@ function App() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      MakeBoldSpark
+                      Make Bold Spark
                     </a>
                   </p>
                 </div>
