@@ -147,7 +147,7 @@ export async function fetchDashboardData({
       // Cache the fresh data
       if (useCache) {
         try {
-          await offlineStorage.set(cacheKey, data, "2.0.0");
+          await offlineStorage.set(cacheKey, data, "2.3.0");
           console.log("[DataService] Cached fresh dashboard data");
         } catch (error) {
           console.warn("[DataService] Failed to cache data:", error);
@@ -364,7 +364,8 @@ export function calculateStats(repositories) {
   }
 
   const totalCommits = repositories.reduce(
-    (sum, repo) => sum + (repo.commit_count || 0),
+    (sum, repo) =>
+      sum + (repo.commit_history?.total_commits || repo.total_commits || 0),
     0,
   );
   const totalStars = repositories.reduce(
@@ -377,7 +378,7 @@ export function calculateStats(repositories) {
   );
 
   const avgCommitSize =
-    repositories.reduce((sum, repo) => sum + (repo.avg_commit_size || 0), 0) /
+    repositories.reduce((sum, repo) => sum + (repo.commit_metrics?.avg_size || 0), 0) /
     repositories.length;
 
   const languages = extractLanguages(repositories);

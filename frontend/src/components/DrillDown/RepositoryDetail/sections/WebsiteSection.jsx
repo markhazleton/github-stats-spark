@@ -7,6 +7,7 @@ function WebsiteSection({
   onToggle,
   formatDate,
   getScreenshotUrl,
+  screenshotAudit,
 }) {
   if (!repository.screenshot) return null;
 
@@ -43,6 +44,14 @@ function WebsiteSection({
               <> • {repository.screenshot.file_size_kb.toFixed(1)} KB</>
             )}
           </span>
+          {screenshotAudit?.status && (
+            <span className={styles.textMuted}>
+              {" "}• Audit: {screenshotAudit.status}
+              {screenshotAudit.flags?.length > 0
+                ? ` (${screenshotAudit.flags.join(", ")})`
+                : ""}
+            </span>
+          )}
         </div>
       </div>
     </CollapsibleSection>

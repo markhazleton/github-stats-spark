@@ -49,7 +49,7 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
     securityLabel = securityAlerts > 0 ? `SEC ${securityAlerts}` : "SEC clear";
   }
 
-  const readmeScore = repository.readme_quality_score;
+  const hasReadme = repository.has_readme;
   const releaseCount = repository.release_count ?? 0;
 
   return (
@@ -117,8 +117,8 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
       </td>
 
       <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
-        <Tooltip content="README quality score (0–100)">
-          {readmeScore != null ? readmeScore : "N/A"}
+        <Tooltip content="README present">
+          {hasReadme == null ? "N/A" : hasReadme ? "Yes" : "No"}
         </Tooltip>
       </td>
 

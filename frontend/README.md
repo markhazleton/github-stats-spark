@@ -9,6 +9,7 @@ Interactive React dashboard for visualizing and comparing GitHub repository stat
 - **Repository Table**: Sortable, filterable table with comprehensive metrics
 - **Interactive Visualizations**: Bar charts, line graphs, and scatter plots using Chart.js + react-chartjs-2
 - **Needs Attention View**: Maintenance ranking using security alerts, PR backlog, dependency health, and staleness
+- **Diagnostics and Screenshot Audit**: Repository drill-down surfaces PR, issue, security, Actions, and website-capture health from the unified JSON
 - **Repository Comparison**: Side-by-side comparison of up to 5 repositories with color-coded differences
 - **Drill-Down Details**: Comprehensive repository analysis with commit history, dependency coverage, and markdown-rendered summaries
 - **Export Functionality**: Export data to CSV or JSON format
@@ -146,7 +147,7 @@ Comprehensive repository analysis:
 
 ## 📊 Data Format
 
-The dashboard expects `data/repositories.json` with schema version 2.2.0:
+The dashboard expects `data/repositories.json` with schema version 2.3.0:
 
 ```json
 {
@@ -161,6 +162,17 @@ The dashboard expects `data/repositories.json` with schema version 2.2.0:
         "tier": "elevated",
         "needs_attention": true
       },
+      "diagnostics_summary": {
+        "availability": "available",
+        "pull_requests": { "availability": "available", "total_open": 4 },
+        "issues": { "availability": "available", "total_open": 12 },
+        "security": { "availability": "partial" },
+        "actions": { "availability": "available" }
+      },
+      "screenshot_audit": {
+        "status": "ok",
+        "flags": []
+      },
       "commit_history": {
         "total_commits": 150,
         "first_commit_date": "2024-01-01T00:00:00Z",
@@ -174,7 +186,7 @@ The dashboard expects `data/repositories.json` with schema version 2.2.0:
     }
   ],
   "profile": { "username": "...", "total_commits": 1000 },
-  "metadata": { "generated_at": "...", "schema_version": "2.2.0" }
+  "metadata": { "generated_at": "...", "schema_version": "2.3.0" }
 }
 ```
 

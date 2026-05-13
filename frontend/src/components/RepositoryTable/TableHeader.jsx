@@ -31,7 +31,7 @@ export default function TableHeader({ onSort, sortField, sortDirection }) {
     { key: "pushed_at", label: "Last Push", sortable: true },
     { key: "total_commits", label: "Commits", sortable: true },
     { key: "stars", label: "Stars", sortable: true },
-    { key: "readme_quality_score", label: "README", sortable: true },
+    { key: "has_readme", label: "README", sortable: true },
     { key: "release_count", label: "Releases", sortable: true },
   ];
 

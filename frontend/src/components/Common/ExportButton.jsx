@@ -87,6 +87,24 @@ function ExportButton({
         key: "security_summary.active_alert_counts.high",
         label: "High Alerts",
       },
+      {
+        key: "diagnostics_summary.availability",
+        label: "Diagnostics Availability",
+      },
+      {
+        key: "diagnostics_summary.issues.total_open",
+        label: "Open Issues (Diagnostics)",
+      },
+      {
+        key: "diagnostics_summary.security.dependabot.open_alerts",
+        label: "Dependabot Open Alerts",
+      },
+      {
+        key: "diagnostics_summary.actions.failure_count",
+        label: "Workflow Failures",
+      },
+      { key: "screenshot_audit.status", label: "Screenshot Audit Status" },
+      { key: "screenshot_audit.flags", label: "Screenshot Audit Flags" },
       // v2.3.0 commit volume fields
       { key: "total_additions", label: "Total Additions" },
       { key: "total_deletions", label: "Total Deletions" },

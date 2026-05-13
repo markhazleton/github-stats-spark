@@ -44,15 +44,13 @@ export default function DashboardView({ repositories, profile, onRepoClick }) {
       }));
   }, [repositories]);
 
-  const readmeQualityData = useMemo(() => {
+  const readmeCoverageData = useMemo(() => {
     return [...repositories]
-      .filter((r) => r.readme_quality_score != null)
-      .sort(
-        (a, b) => (b.readme_quality_score || 0) - (a.readme_quality_score || 0),
-      )
+      .filter((r) => r.has_readme != null)
+      .sort((a, b) => Number(b.has_readme) - Number(a.has_readme))
       .map((r) => ({
         name: r.name,
-        value: r.readme_quality_score || 0,
+        value: r.has_readme ? 1 : 0,
         language: r.language || "Unknown",
         fullData: r,
       }));
@@ -110,8 +108,8 @@ export default function DashboardView({ repositories, profile, onRepoClick }) {
         <div className="dashboard-panel">
           <Suspense fallback={<LoadingState message="Loading chart..." />}>
             <BarChart
-              data={readmeQualityData}
-              metricLabel="README Quality Score"
+              data={readmeCoverageData}
+              metricLabel="README Present"
               onBarClick={handleChartClick}
               horizontal={true}
               maxBars={30}

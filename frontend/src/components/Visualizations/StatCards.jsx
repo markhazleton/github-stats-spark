@@ -32,6 +32,8 @@ export default function StatCards({ repositories }) {
   const getTotalCommits = (repo) =>
     repo.commit_history?.total_commits || repo.total_commits || 0;
 
+  const getReadmeCoverage = (repo) => (repo.has_readme ? 1 : 0);
+
   const getOpenPullRequests = (repo) =>
     repo.pull_request_summary?.availability === "available"
       ? repo.pull_request_summary.total_open || 0
@@ -52,10 +54,9 @@ export default function StatCards({ repositories }) {
   ];
   const avgReadmeQuality =
     totalRepos > 0
-      ? repositories.reduce(
-          (sum, r) => sum + (r.readme_quality_score || 0),
-          0,
-        ) / totalRepos
+      ? (repositories.reduce((sum, r) => sum + getReadmeCoverage(r), 0) /
+          totalRepos) *
+        100
       : 0;
   const activeRepos = repositories.filter(
     (r) => (r.days_since_last_push ?? 999) <= 30,
@@ -108,7 +109,7 @@ export default function StatCards({ repositories }) {
       />
       <StatCard label="Languages" value={languages.length} />
       <StatCard
-        label="Avg README Quality"
+        label="README Coverage"
         value={avgReadmeQuality.toFixed(0)}
         sublabel={`${activeRepos} active in 30d`}
       />

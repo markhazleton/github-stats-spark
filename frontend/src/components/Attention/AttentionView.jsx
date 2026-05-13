@@ -34,11 +34,6 @@ function computeAttentionScore(repo) {
   if (!repo.has_readme) {
     score += 20;
     reasons.push("no README");
-  } else if ((repo.readme_quality_score ?? 100) < 50) {
-    score += 12;
-    reasons.push("low README quality");
-  } else if ((repo.readme_quality_score ?? 100) < 75) {
-    score += 5;
   }
 
   if (!repo.has_license) {
@@ -170,7 +165,7 @@ function AttentionView({ repositories, onRepoClick }) {
                           ?.total_open ?? 0}
                       </td>
                       <td>{repo.days_since_last_push ?? "n/a"}</td>
-                      <td>{repo.readme_quality_score ?? "n/a"}</td>
+                      <td>{repo.has_readme ? "Yes" : "No"}</td>
                     </tr>
                   );
                 })}
@@ -183,9 +178,7 @@ function AttentionView({ repositories, onRepoClick }) {
           <h3>What drives the score</h3>
           <ul className={styles.explainerList}>
             <li>Staleness: up to 30 pts for repos inactive 6+ months.</li>
-            <li>
-              Missing README adds 20 pts; low quality README adds up to 12 pts.
-            </li>
+            <li>Missing README adds 20 pts.</li>
             <li>Missing license or CI/CD each add 10 pts.</li>
             <li>Open issues contribute up to 15 pts; open PRs up to 15 pts.</li>
             <li>Security alerts contribute up to 30 pts.</li>

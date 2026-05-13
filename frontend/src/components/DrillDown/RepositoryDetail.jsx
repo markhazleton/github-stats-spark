@@ -56,6 +56,8 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
 
   const pullRequestSummary = repository.pull_request_summary || {};
   const securitySummary = repository.security_summary || {};
+  const diagnosticsSummary = repository.diagnostics_summary || {};
+  const screenshotAudit = repository.screenshot_audit || {};
   const openSecurityAlerts =
     securitySummary.active_alert_counts?.total_open || 0;
   const topDependencies = useMemo(
@@ -91,6 +93,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
               onToggle={toggleSection}
               formatDate={formatDate}
               getScreenshotUrl={getScreenshotUrl}
+              screenshotAudit={screenshotAudit}
             />
 
             {/* Main Content Grid */}
@@ -130,6 +133,8 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                 <SignalsSection
                   pullRequestSummary={pullRequestSummary}
                   securitySummary={securitySummary}
+                  diagnosticsSummary={diagnosticsSummary}
+                  screenshotAudit={screenshotAudit}
                   openSecurityAlerts={openSecurityAlerts}
                   expanded={expandedSections.signals}
                   onToggle={toggleSection}
