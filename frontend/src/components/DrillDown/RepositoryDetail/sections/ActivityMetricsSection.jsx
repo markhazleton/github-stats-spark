@@ -56,9 +56,11 @@ function ActivityMetricsSection({ repository, formatDate, formatNumber }) {
         <div className={styles.detailItem}>
           <dt>Repository Size</dt>
           <dd>
-            {repository.size_kb != null
-              ? `${formatNumber(repository.size_kb)} KB`
-              : <span className={styles.textMuted}>N/A</span>}
+            {repository.size_kb != null ? (
+              `${formatNumber(repository.size_kb)} KB`
+            ) : (
+              <span className={styles.textMuted}>N/A</span>
+            )}
           </dd>
         </div>
 

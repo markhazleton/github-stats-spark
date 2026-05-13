@@ -89,21 +89,23 @@ function RepositoryInfoSection({
             </dd>
           </div>
         )}
-        {repository.has_pages && !repository.homepage && repository.pages_url && (
-          <div className={styles.detailItem}>
-            <dt>GitHub Pages</dt>
-            <dd>
-              <a
-                href={repository.pages_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-              >
-                📄 View Site →
-              </a>
-            </dd>
-          </div>
-        )}
+        {repository.has_pages &&
+          !repository.homepage &&
+          repository.pages_url && (
+            <div className={styles.detailItem}>
+              <dt>GitHub Pages</dt>
+              <dd>
+                <a
+                  href={repository.pages_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  📄 View Site →
+                </a>
+              </dd>
+            </div>
+          )}
         {repository.homepage_status != null && (
           <div className={styles.detailItem}>
             <dt>Homepage Status</dt>

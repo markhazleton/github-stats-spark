@@ -123,9 +123,7 @@ const TableRow = React.memo(function TableRow({ repository, onClick }) {
       </td>
 
       <td className={`${styles.tableCell} ${styles.tableCellNumeric}`}>
-        <Tooltip content="Number of published releases">
-          {releaseCount}
-        </Tooltip>
+        <Tooltip content="Number of published releases">{releaseCount}</Tooltip>
       </td>
     </tr>
   );

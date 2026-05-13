@@ -47,7 +47,9 @@ export default function DashboardView({ repositories, profile, onRepoClick }) {
   const readmeQualityData = useMemo(() => {
     return [...repositories]
       .filter((r) => r.readme_quality_score != null)
-      .sort((a, b) => (b.readme_quality_score || 0) - (a.readme_quality_score || 0))
+      .sort(
+        (a, b) => (b.readme_quality_score || 0) - (a.readme_quality_score || 0),
+      )
       .map((r) => ({
         name: r.name,
         value: r.readme_quality_score || 0,

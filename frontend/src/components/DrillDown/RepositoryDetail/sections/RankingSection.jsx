@@ -24,7 +24,13 @@ function RankingSection({ repository }) {
           <dt>Quality Score</dt>
           <dd className={styles.highlight}>
             {score}
-            <span style={{ fontSize: "0.75rem", color: "var(--color-text-muted)", marginLeft: "4px" }}>
+            <span
+              style={{
+                fontSize: "0.75rem",
+                color: "var(--color-text-muted)",
+                marginLeft: "4px",
+              }}
+            >
               / 100
             </span>
           </dd>

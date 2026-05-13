@@ -58,8 +58,7 @@ function computeAttentionScore(repo) {
   score += Math.min(prs * 3, 15);
   if (prs > 2) reasons.push(`${prs} open PRs`);
 
-  const alerts =
-    repo.security_summary?.active_alert_counts?.total_open ?? 0;
+  const alerts = repo.security_summary?.active_alert_counts?.total_open ?? 0;
   score += Math.min(alerts * 10, 30);
   if (alerts > 0) reasons.push(`${alerts} security alerts`);
 
@@ -87,8 +86,7 @@ function AttentionView({ repositories, onRepoClick }) {
       critical: needsAttention.filter((r) => r._attention.tier === "critical")
         .length,
       securityBacklog: rankedRepositories.filter(
-        (r) =>
-          (r.security_summary?.active_alert_counts?.total_open ?? 0) > 0,
+        (r) => (r.security_summary?.active_alert_counts?.total_open ?? 0) > 0,
       ).length,
       stale: rankedRepositories.filter(
         (r) => (r.days_since_last_push ?? 0) >= 90,
@@ -184,9 +182,7 @@ function AttentionView({ repositories, onRepoClick }) {
         <aside className={styles.explainerCard}>
           <h3>What drives the score</h3>
           <ul className={styles.explainerList}>
-            <li>
-              Staleness: up to 30 pts for repos inactive 6+ months.
-            </li>
+            <li>Staleness: up to 30 pts for repos inactive 6+ months.</li>
             <li>
               Missing README adds 20 pts; low quality README adds up to 12 pts.
             </li>

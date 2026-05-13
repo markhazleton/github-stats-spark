@@ -23,13 +23,29 @@ function QualitySection({ repository, expanded, onToggle }) {
     >
       <div className={styles.qualityGrid}>
         <QualityBadge icon="📄" label="README" active={repository.has_readme} />
-        <QualityBadge icon="⚖️" label="License" active={repository.has_license} />
+        <QualityBadge
+          icon="⚖️"
+          label="License"
+          active={repository.has_license}
+        />
         <QualityBadge icon="🔄" label="CI/CD" active={repository.has_ci_cd} />
         <QualityBadge icon="🧪" label="Tests" active={repository.has_tests} />
         <QualityBadge icon="📚" label="Docs" active={repository.has_docs} />
-        <QualityBadge icon="💬" label="Discussions" active={repository.has_discussions} />
-        <QualityBadge icon="🤝" label="Contributing" active={repository.has_contributing} />
-        <QualityBadge icon="🛡️" label="Security Policy" active={repository.has_security_policy} />
+        <QualityBadge
+          icon="💬"
+          label="Discussions"
+          active={repository.has_discussions}
+        />
+        <QualityBadge
+          icon="🤝"
+          label="Contributing"
+          active={repository.has_contributing}
+        />
+        <QualityBadge
+          icon="🛡️"
+          label="Security Policy"
+          active={repository.has_security_policy}
+        />
       </div>
     </CollapsibleSection>
   );

@@ -17,7 +17,6 @@ import {
 } from "@/services/dataService";
 import { deferExecution, getConnectionType } from "@/utils/performance";
 import TabBar from "@/components/Mobile/TabBar/TabBar";
-import EmptyState from "@/components/Mobile/EmptyState/EmptyState";
 import { ToastContainer } from "@/components/Mobile/Toast/Toast";
 
 // SIZE JUSTIFICATION (Constitution I — ~530 LOC as of 2026-05-12):
@@ -165,10 +164,7 @@ function App() {
   // Table sorting and filtering using useTableSort hook
   const {
     sortedData: processedRepositories,
-    sortKey,
-    sortOrder,
     filterLanguage,
-    handleSort,
     handleFilterChange,
     clearFilter,
   } = useTableSort(data?.repositories || [], "stars", "desc");
@@ -250,10 +246,14 @@ function App() {
                 className="flex items-center justify-between"
                 style={{ height: "var(--header-height)" }}
               >
-                <a href="/" className="header-brand" aria-label="GitHub Spark — home">
+                <a
+                  href="/"
+                  className="header-brand"
+                  aria-label="GitHub Spark — home"
+                >
                   <div className="header-logo" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 013.006-.404c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.479 5.92.43.372.824 1.102.824 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.49 11.49 0 013.006-.404c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.479 5.92.43.372.824 1.102.824 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.216.694.825.576C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
                     </svg>
                   </div>
                   <div className="header-title-group">
@@ -495,15 +495,28 @@ function App() {
                   </div>
                   <p className="footer-copy">
                     Built by{" "}
-                    <a href="https://markhazleton.com" rel="author" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://markhazleton.com"
+                      rel="author"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Mark Hazleton
                     </a>
                     {" · "}
-                    <a href="https://makeboldsolutions.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://makeboldsolutions.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Make Bold Solutions
                     </a>
                     {" · "}
-                    <a href="https://makeboldspark.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://makeboldspark.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       MakeBoldSpark
                     </a>
                   </p>
