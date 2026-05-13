@@ -105,7 +105,7 @@ export default function StatCards({ repositories }) {
       <StatCard
         label="Total Commits"
         value={totalCommits.toLocaleString()}
-        sublabel={`${activeRepos} active in 90d`}
+        sublabel={`${activeRepos} active in 30d`}
       />
       <StatCard label="Languages" value={languages.length} />
       <StatCard

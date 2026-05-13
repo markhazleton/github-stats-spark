@@ -104,12 +104,8 @@ export function RepositoryCard({
     .filter(Boolean)
     .join(" ");
 
-  const totalCommits =
-    repository.commit_history?.total_commits || repository.commits || 0;
-  const lastCommitDate =
-    repository.commit_history?.last_commit_date ||
-    repository.lastCommitDate ||
-    repository.updated_at;
+  const totalCommits = repository.total_commits || 0;
+  const lastCommitDate = repository.pushed_at || repository.updated_at;
   const openPullRequests =
     repository.pull_request_summary?.availability === "available"
       ? repository.pull_request_summary.total_open || 0
@@ -218,11 +214,9 @@ export function RepositoryCard({
                 </span>
               </div>
               <div className="repository-card-metric">
-                <span className="repository-card-metric-label">
-                  Contributors
-                </span>
+                <span className="repository-card-metric-label">Issues</span>
                 <span className="repository-card-metric-value">
-                  {repository.contributors || 0}
+                  {repository.open_issues ?? 0}
                 </span>
               </div>
               <div className="repository-card-metric">
@@ -248,25 +242,18 @@ export function RepositoryCard({
               </div>
             )}
 
-            {repository.commit_history &&
-              repository.commit_history.length > 0 && (
-                <div className="repository-card-commits">
-                  <span className="repository-card-section-title">
-                    Recent Commits:
-                  </span>
-                  <ul className="repository-card-commit-list">
-                    {repository.commit_history
-                      .slice(0, 3)
-                      .map((commit, index) => (
-                        <li key={index} className="repository-card-commit-item">
-                          <span className="repository-card-commit-date">
-                            {formatDate(commit.date)}
-                          </span>
-                        </li>
-                      ))}
-                  </ul>
+            {repository.topics && repository.topics.length > 0 && (
+              <div className="repository-card-technologies">
+                <span className="repository-card-section-title">Topics:</span>
+                <div className="repository-card-tech-list">
+                  {repository.topics.slice(0, 5).map((topic) => (
+                    <span key={topic} className="repository-card-tech-tag">
+                      {topic}
+                    </span>
+                  ))}
                 </div>
-              )}
+              </div>
+            )}
           </div>
         )}
 

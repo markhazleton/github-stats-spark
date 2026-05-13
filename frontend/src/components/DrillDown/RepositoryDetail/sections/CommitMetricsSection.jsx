@@ -1,57 +1,60 @@
 import styles from "../../RepositoryDetail.module.css";
 
-function CommitMetricsSection({
-  repository,
-  formatDate,
-  formatNumber,
-  formatSize,
-}) {
-  const largestCommit =
-    repository.commit_metrics?.largest_commit || repository.largest_commit;
-  const smallestCommit =
-    repository.commit_metrics?.smallest_commit || repository.smallest_commit;
-
+function CommitMetricsSection({ repository, formatDate, formatNumber }) {
   return (
     <section className={styles.section}>
-      <h3 className={styles.sectionTitle}>Commit Metrics</h3>
+      <h3 className={styles.sectionTitle}>Releases &amp; Issues</h3>
       <dl className={styles.detailList}>
         <div className={styles.detailItem}>
-          <dt>Average Commit Size</dt>
-          <dd>
-            {formatSize(
-              repository.commit_metrics?.avg_size || repository.avg_commit_size,
-            )}
+          <dt>Total Releases</dt>
+          <dd className={styles.highlight}>
+            {formatNumber(repository.release_count ?? 0)}
           </dd>
         </div>
-        {largestCommit && (
+
+        {repository.latest_release_tag && (
           <div className={styles.detailItem}>
-            <dt>Largest Commit</dt>
+            <dt>Latest Release</dt>
             <dd>
-              {formatSize(largestCommit.size)}
-              <div className={styles.textMuted}>
-                {largestCommit.sha?.substring(0, 7)} •{" "}
-                {formatDate(largestCommit.date)}
-              </div>
-              <div className={styles.textMuted}>
-                {formatNumber(largestCommit.files_changed)} files • +
-                {formatNumber(largestCommit.lines_added)} / -
-                {formatNumber(largestCommit.lines_deleted)}
-              </div>
+              {repository.latest_release_tag}
+              {repository.latest_release_date && (
+                <div className={styles.textMuted}>
+                  {formatDate(repository.latest_release_date)}
+                </div>
+              )}
             </dd>
           </div>
         )}
-        {smallestCommit && (
+
+        <div className={styles.detailItem}>
+          <dt>Open Issues</dt>
+          <dd>
+            {repository.open_issues != null
+              ? formatNumber(repository.open_issues)
+              : "N/A"}
+          </dd>
+        </div>
+
+        <div className={styles.detailItem}>
+          <dt>Open Pull Requests</dt>
+          <dd>
+            {repository.open_prs != null
+              ? formatNumber(repository.open_prs)
+              : "N/A"}
+          </dd>
+        </div>
+
+        {repository.issue_close_ratio != null && (
           <div className={styles.detailItem}>
-            <dt>Smallest Commit</dt>
-            <dd>
-              {formatSize(smallestCommit.size)}
-              <div className={styles.textMuted}>
-                {smallestCommit.sha?.substring(0, 7)} •{" "}
-                {formatDate(smallestCommit.date)}
-              </div>
-            </dd>
+            <dt>Issue Close Ratio</dt>
+            <dd>{(repository.issue_close_ratio * 100).toFixed(0)}%</dd>
           </div>
         )}
+
+        <div className={styles.detailItem}>
+          <dt>Watchers</dt>
+          <dd>{formatNumber(repository.watchers ?? 0)}</dd>
+        </div>
       </dl>
     </section>
   );

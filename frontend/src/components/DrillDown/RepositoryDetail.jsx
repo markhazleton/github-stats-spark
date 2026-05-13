@@ -80,7 +80,7 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
           {/* Body */}
           <div className={styles.modalBody}>
             <SummarySection
-              summary={repository.summary}
+              summary={repository.ai_summary}
               expanded={expandedSections.summary}
               onToggle={toggleSection}
             />

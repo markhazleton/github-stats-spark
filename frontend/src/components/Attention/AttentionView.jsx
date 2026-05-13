@@ -16,51 +16,85 @@ const tierClassNames = {
   healthy: styles.tierHealthy,
 };
 
-function formatScore(value) {
-  return typeof value === "number" ? value.toFixed(1) : "0.0";
+function computeAttentionScore(repo) {
+  let score = 0;
+  const reasons = [];
+
+  const staleDays = repo.days_since_last_push ?? 0;
+  if (staleDays > 180) {
+    score += 30;
+    reasons.push("inactive 6+ months");
+  } else if (staleDays > 90) {
+    score += 20;
+    reasons.push("inactive 90+ days");
+  } else if (staleDays > 30) {
+    score += 5;
+  }
+
+  if (!repo.has_readme) {
+    score += 20;
+    reasons.push("no README");
+  } else if ((repo.readme_quality_score ?? 100) < 50) {
+    score += 12;
+    reasons.push("low README quality");
+  } else if ((repo.readme_quality_score ?? 100) < 75) {
+    score += 5;
+  }
+
+  if (!repo.has_license) {
+    score += 10;
+    reasons.push("no license");
+  }
+  if (!repo.has_ci_cd) {
+    score += 10;
+    reasons.push("no CI/CD");
+  }
+
+  const issues = repo.open_issues ?? 0;
+  score += Math.min(issues * 2, 15);
+  if (issues > 3) reasons.push(`${issues} open issues`);
+
+  const prs = repo.open_prs ?? 0;
+  score += Math.min(prs * 3, 15);
+  if (prs > 2) reasons.push(`${prs} open PRs`);
+
+  const alerts =
+    repo.security_summary?.active_alert_counts?.total_open ?? 0;
+  score += Math.min(alerts * 10, 30);
+  if (alerts > 0) reasons.push(`${alerts} security alerts`);
+
+  let tier = "healthy";
+  if (score >= 50) tier = "critical";
+  else if (score >= 30) tier = "elevated";
+  else if (score >= 15) tier = "watch";
+
+  return { score, tier, reasons, needs_attention: score >= 15 };
 }
 
 function AttentionView({ repositories, onRepoClick }) {
   const rankedRepositories = useMemo(() => {
     return [...repositories]
-      .filter((repo) => repo.attention_metrics)
-      .sort((a, b) => (b.attention_score || 0) - (a.attention_score || 0));
+      .map((repo) => ({ ...repo, _attention: computeAttentionScore(repo) }))
+      .sort((a, b) => b._attention.score - a._attention.score);
   }, [repositories]);
 
   const summary = useMemo(() => {
     const needsAttention = rankedRepositories.filter(
-      (repo) => repo.attention_metrics?.needs_attention,
+      (r) => r._attention.needs_attention,
     );
-    const critical = needsAttention.filter(
-      (repo) => repo.attention_metrics?.tier === "critical",
-    );
-    const securityBacklog = rankedRepositories.filter(
-      (repo) =>
-        (repo.security_summary?.active_alert_counts?.total_open || 0) > 0,
-    );
-    const stale = rankedRepositories.filter(
-      (repo) => (repo.days_since_last_push || 0) >= 90,
-    );
-
     return {
       total: needsAttention.length,
-      critical: critical.length,
-      securityBacklog: securityBacklog.length,
-      stale: stale.length,
+      critical: needsAttention.filter((r) => r._attention.tier === "critical")
+        .length,
+      securityBacklog: rankedRepositories.filter(
+        (r) =>
+          (r.security_summary?.active_alert_counts?.total_open ?? 0) > 0,
+      ).length,
+      stale: rankedRepositories.filter(
+        (r) => (r.days_since_last_push ?? 0) >= 90,
+      ).length,
     };
   }, [rankedRepositories]);
-
-  if (rankedRepositories.length === 0) {
-    return (
-      <div className={styles.emptyState}>
-        <h3>No attention signals available</h3>
-        <p>
-          Generate repositories.json with schema 2.2.0 or later to populate the
-          maintenance ranking view.
-        </p>
-      </div>
-    );
-  }
 
   return (
     <div className={styles.layout}>
@@ -102,21 +136,20 @@ function AttentionView({ repositories, onRepoClick }) {
                   <th>Score</th>
                   <th>PRs</th>
                   <th>Alerts</th>
-                  <th>Stale</th>
-                  <th>Deps</th>
+                  <th>Stale (days)</th>
+                  <th>README</th>
                 </tr>
               </thead>
               <tbody>
-                {rankedRepositories.map((repo) => {
-                  const attention = repo.attention_metrics;
-                  const components = attention.components;
+                {rankedRepositories.map((repo, index) => {
+                  const att = repo._attention;
                   return (
                     <tr
                       key={repo.name}
                       className={styles.row}
                       onClick={() => onRepoClick && onRepoClick(repo)}
                     >
-                      <td>{repo.attention_rank || "-"}</td>
+                      <td>{index + 1}</td>
                       <td>
                         <div className={styles.repoCell}>
                           <strong>{repo.name}</strong>
@@ -125,22 +158,21 @@ function AttentionView({ repositories, onRepoClick }) {
                       </td>
                       <td>
                         <span
-                          className={`${styles.tierBadge} ${tierClassNames[attention.tier] || styles.tierHealthy}`}
+                          className={`${styles.tierBadge} ${
+                            tierClassNames[att.tier] || styles.tierHealthy
+                          }`}
                         >
-                          {tierLabels[attention.tier] || attention.tier}
+                          {tierLabels[att.tier] || att.tier}
                         </span>
                       </td>
-                      <td>{formatScore(repo.attention_score)}</td>
-                      <td>{components.pull_requests.total_open}</td>
+                      <td>{att.score.toFixed(0)}</td>
+                      <td>{repo.open_prs ?? "n/a"}</td>
                       <td>
-                        {components.security.active_alert_counts?.total_open ||
-                          0}
+                        {repo.security_summary?.active_alert_counts
+                          ?.total_open ?? 0}
                       </td>
                       <td>{repo.days_since_last_push ?? "n/a"}</td>
-                      <td>
-                        {components.dependencies.outdated_count}/
-                        {components.dependencies.total_dependencies}
-                      </td>
+                      <td>{repo.readme_quality_score ?? "n/a"}</td>
                     </tr>
                   );
                 })}
@@ -153,17 +185,14 @@ function AttentionView({ repositories, onRepoClick }) {
           <h3>What drives the score</h3>
           <ul className={styles.explainerList}>
             <li>
-              Security contributes 35% with weighted critical and high alerts.
+              Staleness: up to 30 pts for repos inactive 6+ months.
             </li>
             <li>
-              Pull requests contribute 25% based on backlog, age, and review
-              load.
+              Missing README adds 20 pts; low quality README adds up to 12 pts.
             </li>
-            <li>Staleness contributes 25% from days since the last push.</li>
-            <li>
-              Dependencies contribute 15% from outdated packages and version
-              coverage gaps.
-            </li>
+            <li>Missing license or CI/CD each add 10 pts.</li>
+            <li>Open issues contribute up to 15 pts; open PRs up to 15 pts.</li>
+            <li>Security alerts contribute up to 30 pts.</li>
           </ul>
 
           <h4>Quick triage</h4>
@@ -177,10 +206,11 @@ function AttentionView({ repositories, onRepoClick }) {
                 <span>
                   <strong>{repo.name}</strong>
                   <small>
-                    {repo.attention_metrics?.reasons?.join(", ") || "general"}
+                    {repo._attention.reasons.slice(0, 2).join(", ") ||
+                      "all good"}
                   </small>
                 </span>
-                <span>{formatScore(repo.attention_score)}</span>
+                <span>{repo._attention.score.toFixed(0)}</span>
               </button>
             ))}
           </div>

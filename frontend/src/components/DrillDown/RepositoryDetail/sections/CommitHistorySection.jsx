@@ -7,10 +7,7 @@ function CommitHistorySection({
   onToggle,
   formatDate,
   formatNumber,
-  formatSize,
 }) {
-  if (!repository.commit_history) return null;
-
   return (
     <CollapsibleSection
       section="commits"
@@ -22,33 +19,41 @@ function CommitHistorySection({
         <div className={styles.detailItem}>
           <dt>Total Commits</dt>
           <dd className={styles.highlight}>
-            {formatNumber(repository.commit_history.total_commits)}
+            {formatNumber(repository.total_commits || 0)}
           </dd>
         </div>
         <div className={styles.detailItem}>
-          <dt>Last 90 Days</dt>
-          <dd>{formatNumber(repository.commit_history.recent_90d)}</dd>
+          <dt>Repository Age</dt>
+          <dd>
+            {repository.age_days != null
+              ? `${repository.age_days} days`
+              : "N/A"}
+          </dd>
         </div>
         <div className={styles.detailItem}>
-          <dt>Last 180 Days</dt>
-          <dd>{formatNumber(repository.commit_history.recent_180d)}</dd>
+          <dt>Days Since Last Push</dt>
+          <dd>
+            {repository.days_since_last_push != null
+              ? `${repository.days_since_last_push} days ago`
+              : "N/A"}
+          </dd>
         </div>
         <div className={styles.detailItem}>
-          <dt>Last 365 Days</dt>
-          <dd>{formatNumber(repository.commit_history.recent_365d)}</dd>
+          <dt>Created</dt>
+          <dd>{formatDate(repository.created_at)}</dd>
         </div>
         <div className={styles.detailItem}>
-          <dt>First Commit</dt>
-          <dd>{formatDate(repository.commit_history.first_commit_date)}</dd>
+          <dt>Last Push</dt>
+          <dd>{formatDate(repository.pushed_at)}</dd>
         </div>
-        <div className={styles.detailItem}>
-          <dt>Last Commit</dt>
-          <dd>{formatDate(repository.commit_history.last_commit_date)}</dd>
-        </div>
-        {repository.commit_velocity != null && (
+        {repository.total_commits != null && repository.age_days > 0 && (
           <div className={styles.detailItem}>
-            <dt>Commit Velocity</dt>
-            <dd>{formatSize(repository.commit_velocity)} commits/month</dd>
+            <dt>Avg Commits / Month</dt>
+            <dd>
+              {((repository.total_commits / repository.age_days) * 30).toFixed(
+                1,
+              )}
+            </dd>
           </div>
         )}
       </dl>

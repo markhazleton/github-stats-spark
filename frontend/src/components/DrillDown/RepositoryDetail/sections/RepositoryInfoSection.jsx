@@ -58,6 +58,10 @@ function RepositoryInfoSection({
           </dd>
         </div>
         <div className={styles.detailItem}>
+          <dt>Watchers</dt>
+          <dd>{formatNumber(repository.watchers ?? 0)}</dd>
+        </div>
+        <div className={styles.detailItem}>
           <dt>Repository URL</dt>
           <dd>
             <a
@@ -70,38 +74,61 @@ function RepositoryInfoSection({
             </a>
           </dd>
         </div>
-        {repository.website_url && (
+        {repository.homepage && (
           <div className={styles.detailItem}>
-            <dt>Website</dt>
+            <dt>Homepage</dt>
             <dd>
               <a
-                href={repository.website_url}
+                href={repository.homepage}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.link}
               >
-                {repository.homepage ? "🌐 Homepage" : "📄 GitHub Pages"} →
+                🌐 Visit Site →
               </a>
             </dd>
           </div>
         )}
-        {repository.has_pages &&
-          !repository.homepage &&
-          repository.pages_url && (
-            <div className={styles.detailItem}>
-              <dt>GitHub Pages</dt>
-              <dd>
-                <a
-                  href={repository.pages_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.link}
-                >
-                  📄 View Site →
-                </a>
-              </dd>
-            </div>
-          )}
+        {repository.has_pages && !repository.homepage && repository.pages_url && (
+          <div className={styles.detailItem}>
+            <dt>GitHub Pages</dt>
+            <dd>
+              <a
+                href={repository.pages_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                📄 View Site →
+              </a>
+            </dd>
+          </div>
+        )}
+        {repository.homepage_status != null && (
+          <div className={styles.detailItem}>
+            <dt>Homepage Status</dt>
+            <dd>
+              <span
+                style={{
+                  color:
+                    repository.homepage_status >= 200 &&
+                    repository.homepage_status < 300
+                      ? "#16a34a"
+                      : "#dc2626",
+                  fontWeight: 600,
+                }}
+              >
+                HTTP {repository.homepage_status}
+              </span>
+              {repository.homepage_response_ms != null && (
+                <span className={styles.textMuted}>
+                  {" "}
+                  ({repository.homepage_response_ms}ms)
+                </span>
+              )}
+            </dd>
+          </div>
+        )}
       </dl>
     </CollapsibleSection>
   );
