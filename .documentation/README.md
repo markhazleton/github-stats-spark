@@ -25,7 +25,7 @@ Approved README exceptions are linked here so contributors have a single entry p
 
 - **[Analyze Command Guide](guides/analyze-command.md)** - AI-powered repository analysis
 - **[Embedding Guide](guides/embedding-guide.md)** - How to embed SVGs in your profile
-- **[Unified Pipeline Guide](guides/unified-pipeline.md)** - Schema 2.2.0 output contract and generation flow
+- **[Unified Pipeline Guide](guides/unified-pipeline.md)** - Schema 2.3.0 output contract and generation flow
 
 ### Reference
 

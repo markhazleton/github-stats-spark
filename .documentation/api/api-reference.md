@@ -6,12 +6,14 @@ This document provides detailed API documentation for the core modules of Stats 
 
 ---
 
-## Unified Repository Contract (Schema 2.2.0)
+## Unified Repository Contract (Schema 2.3.0)
 
 The unified dataset (`data/repositories.json`) now includes additive enrichment fields on each repository:
 
 - `pull_request_summary`
 - `security_summary`
+- `diagnostics_summary`
+- `screenshot_audit`
 - `attention_score`
 - `attention_rank`
 - `attention_metrics`
@@ -61,6 +63,72 @@ Availability values: `available`, `partial`, `unavailable`.
 Reason values: `none`, `permission_denied`, `api_error`, `not_supported`, `not_requested`, `unknown`.
 
 Consumer guidance: do not treat `availability = "unavailable"` as zero findings.
+
+### `diagnostics_summary`
+
+```json
+{
+  "availability": "available",
+  "reason": "none",
+  "pull_requests": {
+    "availability": "available",
+    "total_open": 4,
+    "oldest_open_age_days": 17
+  },
+  "issues": {
+    "availability": "available",
+    "total_open": 12,
+    "stale_over_30d": 3,
+    "stale_over_90d": 1
+  },
+  "security": {
+    "availability": "partial",
+    "dependabot": {
+      "open_alerts": 3,
+      "critical": 1,
+      "high": 1
+    },
+    "code_scanning": {
+      "open_alerts": 0,
+      "critical": 0,
+      "high": 0
+    }
+  },
+  "actions": {
+    "availability": "available",
+    "recent_runs": 20,
+    "success_count": 19,
+    "failure_count": 1,
+    "last_run_conclusion": "success"
+  },
+  "sources": ["rest.pulls.list", "rest.issues.list", "rest.dependabot.alerts", "rest.code_scanning.alerts", "rest.actions.runs"]
+}
+```
+
+### `screenshot_audit`
+
+```json
+{
+  "status": "ok",
+  "website_url": "https://example.com",
+  "screenshot_path": "output/users/markhazleton/screenshots/example.png",
+  "flags": [],
+  "http": {
+    "status_code": 200,
+    "final_url": "https://example.com/",
+    "page_title": "Example",
+    "flags": []
+  },
+  "image": {
+    "image_analysis_available": true,
+    "brightness": 238.33,
+    "variance": 50.39,
+    "flags": []
+  }
+}
+```
+
+Common screenshot audit statuses include `ok`, `missing`, `http_error`, `image_suspect`, and `error`.
 
 ### `attention_metrics`
 

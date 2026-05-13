@@ -139,7 +139,7 @@ Generate comprehensive markdown reports with intelligent insights:
 
 #### Attention Ranking and Dependency Insights
 
-- **Schema 2.2.0**: Unified repository records now include `attention_score`, `attention_rank`, and `attention_metrics`
+- **Schema 2.3.0**: Unified repository records now include `attention_score`, `attention_rank`, `attention_metrics`, `diagnostics_summary`, and `screenshot_audit`
 - **Dependency Coverage**: `tech_stack` now tracks known versions, registry resolution coverage, and unknown-version gaps
 - **Maintenance Signals**: Attention scoring blends PR pressure, security findings, staleness, and dependency health
 - **Markdown-Aware UI**: AI summaries are rendered as GitHub-flavored markdown in both desktop and mobile drill-down views
@@ -250,11 +250,12 @@ spark unified --user YOUR_GITHUB_USERNAME --include-ai-summaries
 - ✅ `/output/users/{username}/reports/*.md` - Comprehensive markdown analysis report
 - ✅ AI summaries for each repository (if API key provided)
 
-**Notable unified data additions in schema 2.2.0:**
+**Notable unified data additions in schema 2.3.0:**
 
 - ✅ Attention ranking fields for maintenance triage
 - ✅ Pull request and security summary payloads with explicit availability semantics
 - ✅ Enriched dependency version coverage and latest-version resolution metrics
+- ✅ Diagnostics summary and screenshot audit payloads for public-repo reputation checks
 
 **Benefits:**
 

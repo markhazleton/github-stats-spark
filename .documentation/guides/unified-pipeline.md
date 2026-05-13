@@ -157,17 +157,19 @@ Single source of truth consumed by dashboard and visualizations:
   ],
   "metadata": {
     "generated_at": "2026-01-18T22:43:37Z",
-    "schema_version": "2.2.0"
+    "schema_version": "2.3.0"
   }
 }
 ```
 
 ### Repository Enrichment Availability Semantics
 
-Each repository now always includes compact PR and security summaries:
+Each repository now always includes compact PR, security, diagnostics, and screenshot audit summaries:
 
 - `pull_request_summary`
 - `security_summary`
+- `diagnostics_summary`
+- `screenshot_audit`
 
 Both objects use:
 

@@ -506,7 +506,98 @@ Nested under `attention_metrics`:
 | `attention_metrics.reasons` | `string[]` | Contributing factors |
 | `attention_metrics.components.*` | `object` | Per-dimension breakdown with individual scores |
 
-### 5.13 Screenshot
+### 5.13 Diagnostics Summary
+
+Nested under `diagnostics_summary` (optional, availability-aware maintenance signals):
+
+```jsonc
+{
+  "diagnostics_summary": {
+    "availability": "available",
+    "reason": "none",
+    "pull_requests": {
+      "availability": "available",
+      "total_open": 4,
+      "oldest_open_age_days": 17
+    },
+    "issues": {
+      "availability": "available",
+      "total_open": 12,
+      "stale_over_30d": 3,
+      "stale_over_90d": 1
+    },
+    "security": {
+      "availability": "partial",
+      "dependabot": { "open_alerts": 3, "critical": 1, "high": 1 },
+      "code_scanning": { "open_alerts": 0, "critical": 0, "high": 0 }
+    },
+    "actions": {
+      "availability": "available",
+      "recent_runs": 20,
+      "success_count": 19,
+      "failure_count": 1,
+      "last_run_conclusion": "success"
+    },
+    "sources": ["rest.pulls.list", "rest.issues.list", "rest.dependabot.alerts", "rest.code_scanning.alerts", "rest.actions.runs"]
+  }
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `availability` | `string` | `available`, `partial`, or `unavailable` |
+| `reason` | `string` | Why a subsection is partial/unavailable |
+| `pull_requests.total_open` | `int` | Open PR count |
+| `issues.total_open` | `int` | Open issue count |
+| `issues.stale_over_30d` | `int` | Open issues older than 30 days |
+| `issues.stale_over_90d` | `int` | Open issues older than 90 days |
+| `security.dependabot.open_alerts` | `int` | Dependabot alert count |
+| `security.code_scanning.open_alerts` | `int` | Code scanning alert count |
+| `actions.recent_runs` | `int` | Recent GitHub Actions runs inspected |
+| `actions.failure_count` | `int` | Failed runs in the inspected window |
+
+### 5.14 Screenshot Audit
+
+Nested under `screenshot_audit` (optional — only present when screenshot generation runs):
+
+```jsonc
+{
+  "screenshot_audit": {
+    "status": "ok",
+    "website_url": "https://example.com",
+    "screenshot_path": "output/users/markhazleton/screenshots/example.png",
+    "flags": [],
+    "http": {
+      "status_code": 200,
+      "final_url": "https://example.com/",
+      "page_title": "Example",
+      "flags": []
+    },
+    "image": {
+      "image_analysis_available": true,
+      "brightness": 238.33,
+      "variance": 50.39,
+      "flags": []
+    }
+  }
+}
+```
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `status` | `string` | Overall audit status (`ok`, `warning`, `error`) |
+| `website_url` | `string\|null` | Website checked for capture health |
+| `screenshot_path` | `string\|null` | Relative screenshot path when available |
+| `flags` | `string[]` | High-level audit flags |
+| `http.status_code` | `int\|null` | HTTP response status code |
+| `http.page_title` | `string\|null` | Parsed page title |
+| `image.image_analysis_available` | `bool` | Whether Pillow analysis was available |
+| `image.brightness` | `float\|null` | Average brightness for the screenshot |
+| `image.variance` | `float\|null` | Brightness variance for the screenshot |
+
+**Common flags:** `likely_404`, `likely_black_or_blank`, `missing_screenshot`, `website_unreachable`
+
+### 5.15 Screenshot
 
 Nested under `screenshot` (optional — only present for repos with GitHub Pages):
 
@@ -559,7 +650,7 @@ export async function fetchDashboardData({
     const data = await response.json();
     // Validate shape
     // Cache fresh data
-    await offlineStorage.set(cacheKey, data, "2.0.0");
+    await offlineStorage.set(cacheKey, data, "2.3.0");
     return { ...data, _fromCache: false };
   }
 
@@ -803,7 +894,7 @@ Opened when a user clicks a repository name. Consumes virtually every field in t
 | Repository Info | `language`, `created_at`, `updated_at`, `pushed_at`, `days_since_last_push`, `age_days`, `size_kb`, `url`, `website_url`, `has_pages`, `pages_url` |
 | Quality Indicators | `has_readme`, `has_license`, `has_ci_cd`, `has_tests`, `has_docs`, `is_archived`, `is_fork` |
 | Languages | `language_stats`, `language_count` |
-| Repository Signals | `pull_request_summary.*`, `security_summary.*` |
+| Repository Signals | `pull_request_summary.*`, `security_summary.*`, `diagnostics_summary.*`, `screenshot_audit.*` |
 | Commit Activity | `commit_history.*` |
 | Commit Metrics | `commit_metrics.avg_size`, `commit_metrics.largest_commit`, `commit_metrics.smallest_commit` |
 | Activity Metrics | `contributors_count`, `release_count`, `latest_release_date` |
@@ -963,7 +1054,7 @@ if (rankedRepositories.length === 0) {
   return (
     <div className={styles.emptyState}>
       <h3>No attention signals available</h3>
-      <p>Generate repositories.json with schema 2.2.0 or later...</p>
+      <p>Generate repositories.json with schema 2.3.0 or later...</p>
     </div>
   );
 }
@@ -1098,6 +1189,8 @@ The Signals section renders:
 - **Security overall state** badge (`"clear"` = green, `"alerts_detected"` = red)
 - **Alert counts** broken down by severity: Critical | High | Medium | Low
 - **Feature status** per security feature (advanced_security, secret_scanning, etc.)
+- **Diagnostics summary** with issue backlog, workflow failures, and Dependabot/code-scanning counts
+- **Screenshot audit** with status, flags, HTTP status, and image-health indicators
 
 ---
 
@@ -1142,6 +1235,12 @@ const columns = [
   { key: "security_summary.active_alert_counts.total_open", label: "Open Security Alerts" },
   { key: "security_summary.active_alert_counts.critical", label: "Critical Alerts" },
   { key: "security_summary.active_alert_counts.high", label: "High Alerts" },
+  { key: "diagnostics_summary.availability", label: "Diagnostics Availability" },
+  { key: "diagnostics_summary.issues.total_open", label: "Open Issues (Diagnostics)" },
+  { key: "diagnostics_summary.security.dependabot.open_alerts", label: "Dependabot Open Alerts" },
+  { key: "diagnostics_summary.actions.failure_count", label: "Workflow Failures" },
+  { key: "screenshot_audit.status", label: "Screenshot Audit Status" },
+  { key: "screenshot_audit.flags", label: "Screenshot Audit Flags" },
 ];
 ```
 

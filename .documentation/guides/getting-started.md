@@ -59,7 +59,7 @@ The system will auto-detect your username from the repository, but you can custo
    - `fun.svg` - Fun facts and stats
    - `streaks.svg` - Coding streaks
 
-4. You should also see `data/repositories.json` with schema `2.2.0`, including maintenance-oriented enrichment fields used by the dashboard.
+4. You should also see `data/repositories.json` with schema `2.3.0`, including maintenance-oriented enrichment fields, diagnostics summaries, and screenshot audit metadata used by the dashboard.
 
 ### Step 6: Embed in Your Profile
 
