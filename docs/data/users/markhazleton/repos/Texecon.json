@@ -1,0 +1,117 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "Texecon",
+    "generated_at": "2026-05-12T23:13:48.905739+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "Texecon",
+    "full_name": "markhazleton/Texecon",
+    "description": null,
+    "primary_language": "HTML",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 4281,
+    "created_at": "2025-09-03T17:53:02+00:00",
+    "updated_at": "2026-05-11T13:57:00+00:00",
+    "pushed_at": "2026-05-11T13:56:01+00:00",
+    "homepage": "https://texecon.com",
+    "has_pages": true,
+    "is_archived": false
+  },
+  "languages": {
+    "HTML": 882200,
+    "TypeScript": 203655,
+    "PowerShell": 200015,
+    "JavaScript": 47370,
+    "CSS": 6582
+  },
+  "readme": "# TexEcon - Texas Economic Analysis\n\n**Live Site**: [https://texecon.com](https://texecon.com)\n\nA modern static React application providing expert analysis and commentary on the Texas economy. Built with React 19, TypeScript, and Tailwind CSS for optimal performance and SEO on GitHub Pages.\n\n## About\n\nTexecon.com delivers expert analysis and commentary on the Texas economy, featuring economic metrics, team profiles, and regional insights. The live application is hosted at [https://texecon.com](https://texecon.com).\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Mark Hazleton, Solutions Architect\n> Texecon.com is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n## Features\n\n- **Build-time Content Management**: Fresh content from WebSpark API with cached fallbacks\n- **Static Site Generation**: Pre-rendered pages for optimal SEO and performance\n- **Progressive Enhancement**: Client-side routing with static HTML fallbacks\n- **Advanced SEO**: Structured data, dynamic sitemaps, and enhanced meta tags\n- **Performance Optimized**: Cache busting, asset optimization, and Core Web Vitals focus\n\n## Development\n\n```bash\n# Install dependencies\nnpm install\n\n# Start development server\nnpm run dev\n\n# Type check\nnpm run type-check\n\n# Clean build artifacts\nnpm run clean\n\n# Fetch latest content from API\nnpm run fetch:content\n\n# Generate sitemap from API data\nnpm run generate:sitemap\n\n# Build for production (full pipeline)\nnpm run build\n\n# Generate static pages post-build\nnpm run generate:static-pages\n\n# Start production preview server\nnpm run start\n\n# Preview production build locally\nnpm run preview\n```\n\n## Build Pipeline\n\nThe complete build process includes:\n\n1. **Clean**: Remove previous build artifacts (`target/` directory)\n2. **Content Fetch**: Retrieve latest content from WebSpark API\n3. **Sitemap Generation**: Create SEO-optimized XML sitemap\n4. **Vite Build**: Compile and optimize the application\n5. **Static Page Generation**: Create indexed HTML files for dynamic routes\n\n## Deployment\n\nThis site is automatically deployed to GitHub Pages when changes are pushed to the main branch.\n\nThe deployment process:\n\n1. Runs the complete build pipeline\n2. Configures base path based on domain setup (custom domain or GitHub Pages)\n3. Uploads build artifacts to GitHub Pages\n4. Deploys with custom domain support (texecon.com)\n\n## Technology Stack\n\n- **React 19** - Latest React with concurrent features\n- **TypeScript** - Type safety and enhanced developer experience\n- **Vite 7.1** - Fast build tool with advanced static generation\n- **Tailwind CSS 4.1** - Modern CSS framework with CSS-first configuration\n- **Radix UI** - Accessible UI component primitives\n- **shadcn/ui** - Beautiful, customizable component library\n- **Lucide React** - Consistent icon library\n- **Wouter** - Lightweight client-side routing\n\n## Content Management\n\nContent is fetched from a headless CMS (WebSpark) during the build process. The system includ\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": false,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": true
+  },
+  "dependency_files": {
+    "package.json": "{\n  \"name\": \"texecon-static\",\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"license\": \"MIT\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"npm run clean && npm run fetch:content && npm run generate:sitemap && vite build && npm run generate:static-pages\",\n    \"preview\": \"vite preview\",\n    \"refresh:content\": \"node scripts/refresh-content.js\",\n    \"fetch:content\": \"node scripts/fetch-content.js\",\n    \"generate:sitemap\": \"node scripts/generate-sitemap.js\",\n    \"generate:static-pages\": \"node scripts/generate-static-pages.js\",\n    \"type-check\": \"tsc --noEmit\",\n    \"clean\": \"node scripts/clean.js\",\n    \"start\": \"npm run clean && npm run fetch:content && npm run generate:sitemap && vite build && npm run generate:static-pages && vite preview\",\n    \"lint\": \"eslint client/src --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint client/src --ext .ts,.tsx --fix\",\n    \"format\": \"prettier --write \\\"client/src/**/*.{ts,tsx,css}\\\"\",\n    \"format:check\": \"prettier --check \\\"client/src/**/*.{ts,tsx,css}\\\"\",\n    \"test\": \"vitest\",\n    \"test:ui\": \"vitest --ui\",\n    \"test:coverage\": \"vitest --coverage\",\n    \"test:run\": \"vitest run\"\n  },\n  \"dependencies\": {\n    \"@radix-ui/react-slot\": \"^1.2.4\",\n    \"@radix-ui/react-tabs\": \"^1.1.13\",\n    \"@radix-ui/react-toast\": \"^1.2.15\",\n    \"@radix-ui/react-tooltip\": \"^1.2.8\",\n    \"@tailwindcss/typography\": \"^0.5.19\",\n    \"@tanstack/react-query\": \"^5.100.9\",\n    \"class-variance-authority\": \"^0.7.1\",\n    \"clsx\": \"^2.1.1\",\n    \"lucide-react\": \"^1.14.0\",\n    \"react\": \"^19.2.6\",\n    \"react-dom\": \"^19.2.6\",\n    \"tailwind-merge\": \"^3.6.0\",\n    \"tailwindcss\": \"^4.3.0\",\n    \"tailwindcss-animate\": \"^1.0.7\",\n    \"wouter\": \"^3.9.0\"\n  },\n  \"devDependencies\": {\n    \"@axe-core/react\": \"^4.11.3\",\n    \"@eslint/js\": \"^10.0.1\",\n    \"@tailwindcss/vite\": \"^4.3.0\",\n    \"@testing-library/jest-dom\": \"^6.9.1\",\n    \"@testing-library/react\": \"^16.3.2\",\n    \"@types/node\": \"^25.6.2\",\n    \"@types/react\": \"^19.2.14\",\n    \"@types/react-dom\": \"^19.2.3\",\n    \"@typescript-eslint/eslint-plugin\": \"^8.59.2\",\n    \"@typescript-eslint/parser\": \"^8.59.2\",\n    \"@vitejs/plugin-react\": \"^6.0.1\",\n    \"@vitest/coverage-v8\": \"^4.1.5\",\n    \"@vitest/ui\": \"^4.1.5\",\n    \"eslint\": \"^10.3.0\",\n    \"eslint-config-prettier\": \"^10.1.8\",\n    \"eslint-plugin-prettier\": \"^5.5.5\",\n    \"jsdom\": \"^29.1.1\",\n    \"prettier\": \"^3.8.3\",\n    \"rollup-plugin-visualizer\": \"^7.0.1\",\n    \"typescript\": \"^6.0.3\",\n    \"vite\": \"^8.0.12\",\n    \"vitest\": \"^4.1.5\"\n  }\n}\n"
+  },
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 0,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "",
+    "homepage_url": "https://texecon.com",
+    "homepage_status": 200,
+    "homepage_response_ms": 415,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 80,
+      "length": 5114,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": false,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "enabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/Texecon",
+    "fetch_status": 200,
+    "fetch_time_ms": 1098,
+    "total_commits": 100,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "open_issues": null,
+    "open_prs": 0,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": null,
+    "has_social_preview": false
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "KeyPressCounter",
+    "generated_at": "2026-05-12T23:13:48.847004+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "KeyPressCounter",
+    "full_name": "markhazleton/KeyPressCounter",
+    "description": "A very simple key press counter and logger for windows",
+    "primary_language": "C#",
+    "stars": 2,
+    "forks": 1,
+    "watchers": 2,
+    "size_kb": 46631,
+    "created_at": "2024-03-07T13:46:50+00:00",
+    "updated_at": "2026-05-12T14:34:28+00:00",
+    "pushed_at": "2026-05-12T13:55:24+00:00",
+    "homepage": "http://keypresscounter.makeboldspark.com/",
+    "has_pages": true,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 95913,
+    "HTML": 10763
+  },
+  "readme": "# KeyPressCounter \u2328\ufe0f\ud83d\uddb1\ufe0f\ud83d\udcca\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)\n![.NET](https://img.shields.io/badge/.NET-10.0-512BD4)\n![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)\n![C#](https://img.shields.io/badge/C%23-13-239120)\n\n**Live Site**: [https://keypresscounter.makeboldspark.com/](https://keypresscounter.makeboldspark.com/)\n\nA lightweight Windows system tray utility that monitors keyboard and mouse input patterns alongside real-time system performance metrics. KeyPressCounter runs silently in the background, tracking your activity without recording what you type and without transmitting any data.\n\n## Features\n\n### Input Monitoring\n- **Keystroke & Mouse Click Tracking** \u2014 counts total inputs since last reset\n- **Peak Activity Metrics** \u2014 tracks maximum keystrokes and clicks per minute\n- **Inactivity Detection** \u2014 measures longest continuous idle period in minutes\n- **Idle Time Filtering** \u2014 optionally exclude idle periods from statistics (configurable threshold, default 5 minutes)\n\n### System Performance Monitoring\n- **Real-Time Metrics** \u2014 CPU usage, memory utilization, disk read/write speeds, network upload/download rates\n- **Historical Graphs** \u2014 60-second rolling line graphs for CPU and memory (dark-themed, anti-aliased)\n- **System Uptime** \u2014 current uptime displayed in the performance dashboard\n- **Hardware Information** \u2014 processor details, total RAM, GPU, disk configuration via WMI\n- **Process Monitor** \u2014 top 10 processes ranked by CPU and memory consumption\n\n### Statistics Dashboard\nThree-tab interface, opened by double-clicking the tray icon or via the context menu:\n\n1. **Input Statistics** \u2014 large-format keystroke and mouse click totals with peak rate and idle tracking\n2. **System Performance** \u2014 real-time CPU/memory gauges, disk/network metrics, and the 60-second historical graph\n3. **About** \u2014 application info, author credits, technology stack, and privacy statement\n\n### System Tray Integration\n- Runs unobtrusively with a rich right-click context menu\n- Double-click tray icon to open the statistics dashboard\n- Balloon tip notifications for key events\n- Single-instance enforcement \u2014 prevents duplicate processes\n\n### Logging\n- **Activity Log** \u2014 records counters at a configurable interval (default: 60 seconds)\n- **Daily Summary Log** \u2014 end-of-day statistics appended automatically; counters reset at midnight\n- **Log Folder Access** \u2014 open the log directory directly from the tray menu\n\n### Settings\n- **Start with Windows** \u2014 writes to `HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run`; synchronized with registry on each launch\n- **Detect Idle Periods** \u2014 toggle idle filtering on/off; threshold configurable in `config.json`\n- **Configuration persistence** \u2014 JSON file at `%APPDATA%\\MWH.KeyPressCounter\\config.json`\n\n### System Tools (Quick Launch)\nLaunch built-in Windows utilities directly from the tray menu:\n- Task Manager (`taskmgr.exe`)\n- Resource Monitor (`resmon.exe`)\n- Performan\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": true,
+    "has_docs": true
+  },
+  "dependency_files": {
+    "MWH.KeyPressCounter.csproj": "\ufeff<Project Sdk=\"Microsoft.NET.Sdk\">\n  <PropertyGroup>\n    <OutputType>WinExe</OutputType>\n    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework>\n    <Nullable>enable</Nullable>\n    <UseWindowsForms>true</UseWindowsForms>\n    <ImplicitUsings>enable</ImplicitUsings>\n    <ApplicationIcon>favicon.ico</ApplicationIcon>\n    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>\n    <ApplicationDefaultFont>Segoe UI, 9pt</ApplicationDefaultFont>\n    <ApplicationUseCompatibleTextRendering>false</ApplicationUseCompatibleTextRendering>\n    <MinVerTagPrefix>v</MinVerTagPrefix>\n  </PropertyGroup>\n  <ItemGroup>\n    <None Remove=\"favicon.ico\" />\n    <None Remove=\"Icon1.ico\" />\n  </ItemGroup>\n  <ItemGroup>\n    <Content Include=\"favicon.ico\">\n      <CopyToOutputDirectory>Always</CopyToOutputDirectory>\n    </Content>\n  </ItemGroup>\n  <ItemGroup>\n    <None Include=\".github\\upgrades\\COMPLETION-REPORT.md\" />\n    <None Include=\".github\\upgrades\\CONVERSION-SCRIPTS-README.md\" />\n    <None Include=\".github\\upgrades\\convert-presentation.bat\" />\n    <None Include=\".github\\upgrades\\convert-presentation.ps1\" />\n    <None Include=\".github\\upgrades\\QUICK-START-CONVERSION.md\" />\n    <None Include=\".github\\upgrades\\SUMMARY.md\" />\n  </ItemGroup>\n  <ItemGroup>\n    <Compile Remove=\"tests\\**\\*.cs\" />\n    <Compile Remove=\"server\\**\\*.cs\" />\n    <EmbeddedResource Remove=\"tests\\**\\*\" />\n    <EmbeddedResource Remove=\"server\\**\\*\" />\n    <None Remove=\"tests\\**\\*\" />\n    <None Remove=\"server\\**\\*\" />\n  </ItemGroup>\n  <ItemGroup>\n    <PackageReference Include=\"MinVer\" Version=\"7.0.0\" PrivateAssets=\"All\" />\n    <PackageReference Include=\"SharpHook\" Version=\"7.1.1\" />\n    <PackageReference Include=\"System.Management\" Version=\"10.0.5\" />\n  </ItemGroup>\n</Project>"
+  },
+  "community_health": {
+    "stargazer_count": 2,
+    "fork_count": 1,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 1,
+    "issue_close_ratio": 1.0,
+    "has_discussions": false,
+    "topics": [],
+    "description": "A very simple key press counter and logger for windows",
+    "homepage_url": "http://keypresscounter.makeboldspark.com/",
+    "homepage_status": 200,
+    "homepage_response_ms": 210,
+    "release_count": 2,
+    "latest_release_tag": "v1.0.1",
+    "latest_release_date": "2026-03-30T02:11:26Z",
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 90,
+      "length": 14618,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "available",
+    "reason": "none",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "disabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/KeyPressCounter",
+    "fetch_status": 200,
+    "fetch_time_ms": 864,
+    "total_commits": 31,
+    "stars": 2,
+    "forks": 1,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": true,
+    "release_text": "Releases2",
+    "description": "A very simple key press counter and logger for windows - markhazleton/KeyPressCounter",
+    "has_social_preview": false
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "PromptSpark.Chat",
+    "generated_at": "2026-05-12T23:13:48.876604+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "PromptSpark.Chat",
+    "full_name": "markhazleton/PromptSpark.Chat",
+    "description": "PromptSpark Chat Workflow: Real-time Conversational Flows with ASP.NET Core and Adaptive Cards",
+    "primary_language": "C#",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 19453,
+    "created_at": "2024-12-31T04:00:15+00:00",
+    "updated_at": "2026-05-11T23:55:56+00:00",
+    "pushed_at": "2026-05-11T23:55:51+00:00",
+    "homepage": "",
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 91683,
+    "SCSS": 87359,
+    "HTML": 83232,
+    "JavaScript": 26634,
+    "CSS": 3467
+  },
+  "readme": "# PromptSpark Chat Workflow\n\n**Live Site**: [https://chat.makeboldspark.com/](https://chat.makeboldspark.com/)\n\n**A real-time, conversational workflow application built with ASP.NET Core, SignalR, and Adaptive Cards. It demonstrates how to guide users through multi-step processes, present interactive UI elements, and optionally integrate AI-driven responses\u2014all while providing flexible workflow logic, simple concurrency management, and minimal overhead.**\n\n## About\n\nPromptSpark.Chat is a real-time, conversational workflow application hosted at [https://chat.makeboldspark.com/](https://chat.makeboldspark.com/). It demonstrates how to guide users through multi-step processes using Adaptive Cards and SignalR, with optional AI integration for handling open-ended questions beyond the structured workflow.\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Mark Hazleton, Solutions Architect\n> PromptSpark.Chat is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n## Table of Contents\n- [About](#about)\n- [Overview](#overview)\n- [Features](#features)\n- [Technologies](#technologies)\n- [Getting Started](#getting-started)\n- [Usage](#usage)\n- [Contributing](#contributing)\n- [License](#license)\n- [References](#references)\n\n## Overview\nPromptSpark Chat Workflow provides a dynamic chat interface where users:\n- Enter a name\n- Choose from a list of workflows\n- Interact with adaptive cards or text responses\n- Progress through branching logic driven by workflow nodes\n\nAll conversation data is stored server-side for continuity, so users can refresh the page without losing their place.\n\n## Features\n- **Adaptive Cards** for interactive input\n- **Real-time Communication** with SignalR\n- **Workflow Persistence** in memory using a thread-safe store\n- **AI Integration** to handle questions not covered by the workflow\n\n## Technologies\n- **ASP.NET Core** for the main web application framework\n- **SignalR** for real-time client-server communication\n- **Adaptive Cards** for rendering structured inputs\n- **Concurrent Dictionary** for storing conversation state\n- **Optional AI** functionality via chat completion services\n\n## Getting Started\n\nFollow these steps to set up, build, and run the **PromptSpark.Chat** application. If you have any issues or questions, please create a GitHub Issue or submit a Pull Request.\n\n### Prerequisites\n\n- **.NET SDK 7.0+** (or the latest LTS version)  \n  You can check your version by running `dotnet --version` in your terminal.\n\n### Clone the Repository\n\n**1.** Navigate to the folder where you want to store the project.  \n```bash\ncd path/to/directory\n```\n\n**2.** Clone the repository:  \n\n```bash\ngit clone\n```\n\n**3.** Change into the cloned directory:  \n\n```bash\ncd PromptSpark.Chat\n```\n\n### Project Structure Overview\n\n```\nPromptSpark.Chat/\n\u251c\u2500 PromptSpark.Chat.csproj\n\u251c\u2500 Controllers/\n\u251c\u2500 Models/\n\u251c\u2500 Services/\n\u251c\u2500 Views/\n\u2502  \u251c\u2500 Chat/\n\u2502  \u2502  \u2514\u2500 chat.cshtml\n\u2502  \u251c\u2500 Shared/\n\u2502  \u2514\u2500 Home/\n\u251c\u2500 wwwroot/\n\u251c\u2500 appsettings.js\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": false,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "PromptSpark Chat Workflow: Real-time Conversational Flows with ASP.NET Core and Adaptive Cards",
+    "homepage_url": "",
+    "homepage_status": null,
+    "homepage_response_ms": null,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 85,
+      "length": 6799,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": false,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "warning_present",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "enabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 3,
+      "critical": 0,
+      "high": 1,
+      "medium": 2,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/PromptSpark.Chat",
+    "fetch_status": 200,
+    "fetch_time_ms": 1092,
+    "total_commits": 49,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 1,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": "PromptSpark Chat Workflow: Real-time Conversational Flows with ASP.NET Core and Adaptive Cards - markhazleton/PromptSpark.Chat",
+    "has_social_preview": false
+  }
+}

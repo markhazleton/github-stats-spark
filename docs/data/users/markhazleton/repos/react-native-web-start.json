@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "react-native-web-start",
+    "generated_at": "2026-05-12T23:13:48.881522+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "react-native-web-start",
+    "full_name": "markhazleton/react-native-web-start",
+    "description": "A simple starter for a React Native Web application",
+    "primary_language": "PowerShell",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 2147,
+    "created_at": "2025-07-26T17:21:18+00:00",
+    "updated_at": "2026-05-11T13:31:29+00:00",
+    "pushed_at": "2026-05-11T13:29:37+00:00",
+    "homepage": "https://markhazleton.github.io/react-native-web-start/",
+    "has_pages": true,
+    "is_archived": false
+  },
+  "languages": {
+    "PowerShell": 429088,
+    "TypeScript": 71699,
+    "JavaScript": 41028,
+    "HTML": 23412,
+    "CSS": 5394,
+    "SCSS": 4666
+  },
+  "readme": "# \ud83d\ude80 React Native Web Vite Starter\n\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n[![TypeScript](https://img.shields.io/badge/TypeScript-6.0.2-blue.svg)](https://www.typescriptlang.org/)\n[![React Native](https://img.shields.io/badge/React%20Native-0.85.0-blue.svg)](https://reactnative.dev/)\n[![Vite](https://img.shields.io/badge/Vite-8.0.8-646CFF.svg)](https://vitejs.dev/)\n[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-brightgreen.svg)](https://markhazleton.github.io/react-native-web-start)\n\n> **A production-ready, enterprise-grade starter template for building cross-platform applications using React Native Web, Vite, and TypeScript. Write once, deploy everywhere: Web, iOS, and Android.**\n\n\ud83c\udf1f **[Live Demo](https://markhazleton.github.io/react-native-web-start)** | \ud83d\udcda **[Documentation](./documentation/)** | \ud83d\udc1b **[Issues](https://github.com/markhazleton/react-native-web-start/issues)** | \ud83d\udcac **[Discussions](https://github.com/markhazleton/react-native-web-start/discussions)**\n\n---\n\n## \ud83d\udccb Table of Contents\n\n<details>\n<summary>Click to expand</summary>\n\n- [\u2728 Features](#-features)\n- [\ud83c\udfd7\ufe0f Architecture](#\ufe0f-architecture)\n- [\ud83d\ude80 Quick Start](#-quick-start)\n- [\ud83d\udcf1 Platform Support](#-platform-support)\n- [\ud83d\udcd6 Documentation](#-documentation)\n- [\ud83d\udd27 Development](#-development)\n- [\ud83d\ude80 Deployment](#-deployment)\n- [\u2696\ufe0f Pros and Cons](#\ufe0f-pros-and-cons)\n- [\ud83c\udfc6 Best Practices](#-best-practices)\n- [\ud83e\udd1d Contributing](#-contributing)\n- [\ud83d\udcca Project Status](#-project-status)\n- [About](#about)\n- [\ud83d\ude4f Acknowledgments](#-acknowledgments)\n\n</details>\n\n---\n\n## About\n\nReact Native Web Start is a production-ready starter template demonstrating cross-platform development with React Native Web, Vite, and TypeScript. Write once, deploy everywhere: Web, iOS, and Android.\n\n**Live Site**: [https://markhazleton.github.io/react-native-web-start/](https://markhazleton.github.io/react-native-web-start/)\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Solutions Architect\n> React Native Web Start is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n---\n\n## \u2728 Features\n\n### \ud83c\udfaf **Core Capabilities**\n\n- \ud83c\udf10 **True Cross-Platform**: Web, iOS, and Android from a single codebase\n- \u26a1 **Lightning Fast Development**: Vite with HMR for instant feedback\n- \ud83d\udd12 **Type Safety**: Full TypeScript support with strict configuration\n- \ud83d\udcf1 **Responsive Design**: Adaptive UI for all screen sizes and platforms\n- \ud83d\udd04 **API Integration**: Production-ready HTTP client with error handling\n- \ud83c\udfa8 **Modern UI**: Tailwind CSS with Sass preprocessing for enhanced styling\n- \ud83d\udcda **In-App Documentation**: Built-in markdown documentation browser\n\n### \ud83d\udee0\ufe0f **Developer Experience**\n\n- \ud83c\udfa8 **Modern Tooling**: Latest React Native, Vite, and TypeScript versions\n- \ud83d\udce6 **Optimized Bundle**: Tree-shaking and code splitting out of the box\n- \ud83e\uddea **Testing Ready**: Jest configuration for unit and integration tests\n- \ud83d\udd0d **Code Quality**: ESLint, \n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": true
+  },
+  "dependency_files": {
+    "package.json": "{\n  \"name\": \"react-native-web-vite-start\",\n  \"private\": true,\n  \"version\": \"1.0.0\",\n  \"type\": \"module\",\n  \"description\": \"A React Native Web starter application using Vite for web and React Native CLI for mobile\",\n  \"homepage\": \"https://markhazleton.github.io/react-native-web-start\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/markhazleton/react-native-web-start.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/markhazleton/react-native-web-start/issues\"\n  },\n  \"keywords\": [\n    \"react-native\",\n    \"react-native-web\",\n    \"vite\",\n    \"typescript\",\n    \"cross-platform\",\n    \"ios\",\n    \"android\",\n    \"starter\"\n  ],\n  \"author\": \"Mark Hazleton\",\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \">=20.19.4\",\n    \"npm\": \">=9.0.0\"\n  },\n  \"scripts\": {\n    \"copy-assets\": \"node scripts/copy-assets.js\",\n    \"predev\": \"npm run copy-assets && node scripts/generate-build-info.js\",\n    \"dev\": \"vite\",\n    \"preweb\": \"npm run copy-assets && node scripts/generate-build-info.js\",\n    \"web\": \"vite\",\n    \"generate-build-info\": \"node scripts/generate-build-info.js\",\n    \"css:build\": \"tailwindcss -i ./src/styles/main.scss -o ./dist/assets/main.css --watch\",\n    \"css:build-prod\": \"tailwindcss -i ./src/styles/main.scss -o ./dist/assets/main.css --minify\",\n    \"sass:build\": \"sass src/styles:dist/assets/styles --watch\",\n    \"sass:build-prod\": \"sass src/styles:dist/assets/styles --style=compressed --no-source-map\",\n    \"clean\": \"node scripts/clean.js\",\n    \"prebuild\": \"npm run clean\",\n    \"build\": \"node scripts/build.js\",\n    \"postbuild\": \"echo Build completed! Output in ./dist/\",\n    \"preview\": \"vite preview\",\n    \"serve\": \"vite preview --port 3000\",\n    \"type-check\": \"tsc --noEmit\",\n    \"android\": \"react-native run-android\",\n    \"ios\": \"react-native run-ios\",\n    \"start\": \"npm run dev\",\n    \"start:mobile\": \"react-native start\",\n    \"start:web\": \"npm run dev\",\n    \"test\": \"jest\",\n    \"test:watch\": \"jest --watch\",\n    \"test:coverage\": \"jest --coverage\",\n    \"test:ci\": \"jest --ci --coverage --watchAll=false --passWithNoTests\",\n    \"lint\": \"eslint . --ext .js,.jsx,.ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .js,.jsx,.ts,.tsx --fix\",\n    \"format\": \"prettier --write . --config ./config/.prettierrc --ignore-path ./config/.prettierignore\",\n    \"format:check\": \"prettier --check . --config ./config/.prettierrc --ignore-path ./config/.prettierignore\",\n    \"security:audit\": \"npm audit\",\n    \"security:fix\": \"npm audit fix\",\n    \"security:check\": \"npm audit --audit-level=moderate\",\n    \"security:full-check\": \"node scripts/security-check.js\",\n    \"copy-docs\": \"node scripts/copy-docs.js\",\n    \"copy-docs:win\": \"if not exist \\\"public\\\\documentation\\\" mkdir \\\"public\\\\documentation\\\" && Copy-Item -Path \\\"documentation\\\\*\\\" -Destination \\\"public\\\\documentation\\\\\\\" -Recurse -Force\",\n    \"copy-docs:unix\": \"mkdir -p public/documentation && cp -r documentation/* public/documentation/\",\n    \"update-docs\": \"npm run copy-docs\",\n    \"verify-docs\": \"node scripts/verify-docs.js\",\n    \"predeploy\": \"npm run build\",\n    \"deploy\": \"gh-pages -d dist\",\n    \"deploy:gh-pages\": \"npm run predeploy && npm run deploy\",\n    \"deploy:manual\": \"npm run predeploy && npm run deploy\",\n    \"rebuild\": \"npm run clean && npm run build\"\n  },\n  \"dependencies\": {\n    \"marked\": \"^18.0.3\",\n    \"react\": \"^19.2.6\",\n    \"react-dom\": \"^19.2.6\",\n    \"react-native\": \"^0.85.3\",\n    \"react-native-render-html\": \"^6.3.4\",\n    \"react-native-web\": \"^0.21.2\"\n  },\n  \"overrides\": {\n    \"markdown-it\": \">=12.3.2\",\n    \"picomatch\": \"^4.0.4\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.29.0\",\n    \"@babel/preset-env\": \"^7.29.5\",\n    \"@babel/runtime\": \"^7.29.2\",\n    \"@eslint/js\": \"^10.0.1\",\n    \"@react-native-community/cli\": \"^20.1.3\",\n    \"@react-native/babel-preset\": \"^0.85.3\",\n    \"@react-native/eslint-config\": \"^0.85.3\",\n    \"@react-native/jest-preset\": \"^0.85.3\",\n    \"@react-native/metro-config\": \"^0.85.3\",\n    \"@react-native/typescript-config\": \"^0.85.3\",\n    \"@tailwindcss/postcss\": \"^4.3.0\",\n    \"@testing-library/dom\": \"^10.4.1\",\n    \"@testing-library/jest-dom\": \"^6.9.1\",\n    \"@testing-library/jest-native\": \"^5.4.3\",\n    \"@testing-library/react\": \"^16.3.2\",\n    \"@testing-library/react-native\": \"^13.3.3\",\n    \"@testing-library/user-event\": \"^14.6.1\",\n    \"@types/jest\": \"^30.0.0\",\n    \"@types/marked\": \"^6.0.0\",\n    \"@types/react\": \"^19.2.14\",\n    \"@types/react-dom\": \"^19.2.3\",\n    \"@types/react-native\": \"^0.73.0\",\n    \"@types/react-test-renderer\": \"^19.1.0\",\n    \"@typescript-eslint/eslint-plugin\": \"^8.59.2\",\n    \"@typescript-eslint/parser\": \"^8.59.2\",\n    \"@vitejs/plugin-react\": \"^6.0.1\",\n    \"autoprefixer\": \"^10.5.0\",\n    \"babel-jest\": \"^30.4.1\",\n    \"eslint\": \"^10.3.0\",\n    \"eslint-plugin-react\": \"^7.37.5\",\n    \"eslint-plugin-react-hooks\": \"^7.1.1\",\n    \"eslint-plugin-react-refresh\": \"^0.5.2\",\n    \"gh-pages\": \"^6.3.0\",\n    \"identity-obj-proxy\": \"^3.0.0\",\n    \"jest\": \"^30.4.2\",\n    \"jest-environment-jsdom\": \"^30.4.1\",\n    \"metro-react-native-babel-preset\": \"^0.77.0\",\n    \"postcss\": \"^8.5.14\",\n    \"prettier\": \"^3.8.3\",\n    \"react-test-renderer\": \"^19.2.6\",\n    \"sass\": \"^1.99.0\",\n    \"tailwindcss\": \"^4.3.0\",\n    \"typescript\": \"^6.0.3\",\n    \"vite\": \"^8.0.12\"\n  }\n}\n"
+  },
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 0,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "A simple starter for a React Native Web application",
+    "homepage_url": "https://markhazleton.github.io/react-native-web-start/",
+    "homepage_status": 200,
+    "homepage_response_ms": 377,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 100,
+      "length": 23569,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "enabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/react-native-web-start",
+    "fetch_status": 200,
+    "fetch_time_ms": 1158,
+    "total_commits": 82,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": "A simple starter for a React Native Web application - markhazleton/react-native-web-start",
+    "has_social_preview": false
+  }
+}

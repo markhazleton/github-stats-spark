@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "WebSpark.Bootswatch",
+    "generated_at": "2026-05-12T23:13:48.929256+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "WebSpark.Bootswatch",
+    "full_name": "markhazleton/WebSpark.Bootswatch",
+    "description": "A Library to allow theming of MVC Websites from Bootswatch",
+    "primary_language": "HTML",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 7144,
+    "created_at": "2022-08-24T18:49:45+00:00",
+    "updated_at": "2026-05-11T23:23:17+00:00",
+    "pushed_at": "2026-05-11T23:23:13+00:00",
+    "homepage": "https://bootswatch.makeboldspark.com/",
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "HTML": 160517,
+    "C#": 71847,
+    "PowerShell": 11192,
+    "JavaScript": 6635,
+    "CSS": 1239
+  },
+  "readme": "# WebSpark.Bootswatch\n\nA .NET Razor Class Library that provides seamless integration of [Bootswatch](https://bootswatch.com/) themes into ASP.NET Core applications. Built on Bootstrap 5, this library offers modern, responsive theming with dynamic theme switching, light/dark mode support, and comprehensive caching mechanisms.\n\n**Framework Support**: Requires .NET 10.0 for access to the latest NuGet packages and framework features.\n\n[![NuGet Version](https://img.shields.io/nuget/v/WebSpark.Bootswatch.svg)](https://www.nuget.org/packages/WebSpark.Bootswatch/)\n[![NuGet Downloads](https://img.shields.io/nuget/dt/WebSpark.Bootswatch.svg)](https://www.nuget.org/packages/WebSpark.Bootswatch/)\n[![GitHub License](https://img.shields.io/github/license/MarkHazleton/WebSpark.Bootswatch)](https://github.com/MarkHazleton/WebSpark.Bootswatch/blob/main/LICENSE)\n[![.NET](https://github.com/MarkHazleton/WebSpark.Bootswatch/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MarkHazleton/WebSpark.Bootswatch/actions/workflows/dotnet.yml)\n[![GitHub Stars](https://img.shields.io/github/stars/MarkHazleton/WebSpark.Bootswatch)](https://github.com/MarkHazleton/WebSpark.Bootswatch/stargazers)\n\n**Live Site**: [https://bootswatch.makeboldspark.com/](https://bootswatch.makeboldspark.com/)\n\n## About\n\nWebSpark.Bootswatch is a .NET Razor Class Library that provides seamless integration of [Bootswatch](https://bootswatch.com/) themes into ASP.NET Core applications. See it live at [https://bootswatch.makeboldspark.com/](https://bootswatch.makeboldspark.com/).\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Mark Hazleton, Solutions Architect\n> Bootswatch is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n> **Latest Release**: v2.0.0 - .NET 10 Exclusive Release (Breaking Changes)\n\n## \ud83d\udea8 Version 2.0 Breaking Changes\n\n**WebSpark.Bootswatch 2.0+ now targets .NET 10 exclusively.** This major version change reflects our commitment to supporting the latest NuGet packages and framework features over broad framework compatibility.\n\n### Why .NET 10 Only?\n\nWe prioritized **latest packages over legacy support** for these reasons:\n\n- \u2705 **Security & Performance**: Access to latest security patches and .NET 10 performance improvements\n- \u2705 **Modern Dependencies**: Use current versions of Microsoft.Extensions.* packages (10.0.1+)\n- \u2705 **Simplified Maintenance**: Single target framework reduces complexity and testing burden\n- \u2705 **Future-Ready**: .NET 10 is the current release with latest features\n- \u23f0 **.NET 8 Approaching EOL**: Standard support ends November 2025\n- \u23f0 **.NET 9 Short Lifecycle**: STS (Standard Term Support) has shorter timeline\n\n### Migration from 1.x to 2.0\n\n```xml\n<!-- Update your .csproj -->\n<PropertyGroup>\n  <TargetFramework>net10.0</TargetFramework>\n</PropertyGroup>\n\n<!-- Update package versions -->\n<PackageReference Include=\"WebSpark.Bootswatch\" Version=\"2.0.0\" />\n<PackageReference Include=\"WebSpark.HttpClientUtility\n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": true
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "A Library to allow theming of MVC Websites from Bootswatch",
+    "homepage_url": "https://bootswatch.makeboldspark.com/",
+    "homepage_status": 200,
+    "homepage_response_ms": 574,
+    "release_count": 13,
+    "latest_release_tag": "v1.34.0",
+    "latest_release_date": "2025-12-04T03:16:53Z",
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 100,
+      "length": 5450,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "available",
+    "reason": "none",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "disabled",
+      "secret_scanning_push_protection": "disabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/WebSpark.Bootswatch",
+    "fetch_status": 200,
+    "fetch_time_ms": 1056,
+    "total_commits": 60,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": true,
+    "release_text": "Releases13",
+    "description": "A Library to allow theming of MVC Websites from Bootswatch - markhazleton/WebSpark.Bootswatch",
+    "has_social_preview": false
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "PHPDocSpark",
+    "generated_at": "2026-05-12T23:13:48.871989+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "PHPDocSpark",
+    "full_name": "markhazleton/PHPDocSpark",
+    "description": "An open-source PHP documentation & data exploration platform by Mark Hazleton (WebSpark suite) showcasing hybrid server-side + modern asset pipeline techniques.",
+    "primary_language": "PHP",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 3049,
+    "created_at": "2023-09-08T16:08:13+00:00",
+    "updated_at": "2026-05-12T11:29:55+00:00",
+    "pushed_at": "2026-05-12T11:33:11+00:00",
+    "homepage": "https://phpdocspark.azurewebsites.net",
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "PHP": 361201,
+    "JavaScript": 50481,
+    "SCSS": 27080,
+    "CSS": 13916,
+    "Hack": 8030,
+    "HTML": 3550,
+    "Shell": 2678
+  },
+  "readme": "",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": true,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "dependency_files": {
+    "package.json": "{\n  \"name\": \"documents\",\n  \"version\": \"1.2.0\",\n  \"description\": \"PHPDocSpark documentation platform by Mark Hazleton\",\n  \"main\": \"index.js\",\n  \"engines\": {\n    \"node\": \">=20.19.0\",\n    \"npm\": \">=10.0.0\"\n  },\n  \"scripts\": {\n    \"update-version\": \"node scripts/update-version.js\",\n    \"dev\": \"vite build --watch\",\n    \"dev:serve\": \"concurrently \\\"npm run dev\\\" \\\"npm run serve\\\"\",\n    \"build\": \"node scripts/build.js\",\n    \"build:prod\": \"NODE_ENV=production npm run build\",\n    \"start\": \"npm run clean && npm run build && npm run serve\",\n    \"serve\": \"php -S localhost:8001 -t website\",\n    \"clean\": \"rimraf website/assets/css website/assets/js website/assets/images\",\n    \"lint:js\": \"eslint src/**/*.js\",\n    \"lint:css\": \"stylelint src/**/*.scss\",\n    \"format\": \"prettier --write \\\"src/**/*.{js,scss,css}\\\"\",\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n    \"prepare\": \"husky install || echo 'Husky not installed'\"\n  },\n  \"author\": \"Mark Hazleton\",\n  \"license\": \"MIT\",\n  \"dependencies\": {\n    \"bootstrap\": \"^5.3.8\",\n    \"bootstrap-icons\": \"^1.13.1\",\n    \"chart.js\": \"^4.5.1\",\n    \"datatables.net\": \"^2.3.8\",\n    \"datatables.net-bs5\": \"^2.3.8\",\n    \"datatables.net-buttons\": \"^3.2.6\",\n    \"datatables.net-buttons-bs5\": \"^3.2.6\",\n    \"datatables.net-responsive\": \"^3.0.8\",\n    \"datatables.net-responsive-bs5\": \"^3.0.8\",\n    \"jquery\": \"^4.0.0\",\n    \"jszip\": \"^3.10.1\",\n    \"prismjs\": \"^1.30.0\"\n  },\n  \"devDependencies\": {\n    \"@eslint/js\": \"^10.0.1\",\n    \"@types/node\": \"^25.7.0\",\n    \"concurrently\": \"^9.2.1\",\n    \"eslint\": \"^10.3.0\",\n    \"eslint-config-prettier\": \"^10.1.8\",\n    \"husky\": \"^9.1.7\",\n    \"lint-staged\": \"^17.0.4\",\n    \"postcss\": \"^8.5.14\",\n    \"prettier\": \"^3.8.3\",\n    \"rimraf\": \"^6.1.3\",\n    \"sass\": \"^1.99.0\",\n    \"stylelint\": \"^17.11.0\",\n    \"stylelint-config-standard-scss\": \"^17.0.0\",\n    \"terser\": \"^5.47.1\",\n    \"vite\": \"^8.0.12\"\n  }\n}\n",
+    "composer.json": "{\n  \"name\": \"control-origin/documents\",\n  \"description\": \"PHPDocSpark documentation platform by Mark Hazleton\",\n  \"type\": \"project\",\n  \"license\": \"MIT\",\n  \"authors\": [\n    {\n      \"name\": \"Mark Hazleton\",\n      \"email\": \"mark.hazleton@controlorigins.com\"\n    }\n  ],\n  \"require\": {\n    \"php\": \"^8.0\",\n    \"erusev/parsedown\": \"dev-master\"\n  },\n  \"autoload\": {\n    \"psr-4\": {\n      \"App\\\\\": \"website/\"\n    }\n  }\n}\n"
+  },
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 1,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [
+      "documentation",
+      "gpt",
+      "php"
+    ],
+    "description": "An open-source PHP documentation & data exploration platform by Mark Hazleton (WebSpark suite) showcasing hybrid server-side + modern asset pipeline techniques.",
+    "homepage_url": "https://phpdocspark.azurewebsites.net",
+    "homepage_status": null,
+    "homepage_response_ms": null,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 0,
+      "length": 0,
+      "has_headings": false,
+      "has_code_blocks": false,
+      "has_images": false,
+      "has_install_section": false
+    }
+  },
+  "pull_request_summary": {
+    "availability": "available",
+    "reason": "none",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "disabled",
+      "secret_scanning_push_protection": "disabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/PHPDocSpark",
+    "fetch_status": 200,
+    "fetch_time_ms": 1240,
+    "total_commits": 128,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 1,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": "An open-source PHP documentation & data exploration platform by Mark Hazleton (WebSpark suite) showcasing hybrid server-side + modern asset pipeline techniques. - markhazleton/PHPDocSpark",
+    "has_social_preview": false
+  }
+}

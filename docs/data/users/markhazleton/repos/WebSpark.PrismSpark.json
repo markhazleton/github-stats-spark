@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "owner": "markhazleton",
+    "repo": "WebSpark.PrismSpark",
+    "generated_at": "2026-05-12T23:13:48.938749+00:00",
+    "schema_version": "1.0.0"
+  },
+  "base": {
+    "name": "WebSpark.PrismSpark",
+    "full_name": "markhazleton/WebSpark.PrismSpark",
+    "description": "Port of prismjs for .net web applications",
+    "primary_language": "C#",
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "size_kb": 2280,
+    "created_at": "2025-05-27T15:14:29+00:00",
+    "updated_at": "2026-05-12T00:19:11+00:00",
+    "pushed_at": "2026-05-12T00:16:39+00:00",
+    "homepage": "https://prism.makeboldspark.com",
+    "has_pages": false,
+    "is_archived": false
+  },
+  "languages": {
+    "C#": 598529,
+    "HTML": 98246,
+    "PowerShell": 81504,
+    "JavaScript": 32243,
+    "CSS": 10778
+  },
+  "readme": "# PrismSpark\n\n**Live Site**: [https://prism.makeboldspark.com/](https://prism.makeboldspark.com/)\n\nA modern, high-performance C#/.NET port of [PrismJS](https://github.com/PrismJS/prism) for advanced syntax highlighting, theming, and extensibility.\n\n[![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download)\n[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)\n\n---\n\n## About\n\nPrismSpark is a modern, high-performance C#/.NET port of [PrismJS](https://prismjs.com) that delivers advanced syntax highlighting, theming, and extensibility for .NET web applications. It supports 24 programming languages, a full plugin system, built-in and custom themes, hooks, and async/caching APIs \u2014 all consumable from ASP.NET Core MVC or any .NET 10 project.\n\nThe live demo is available at [https://prism.makeboldspark.com/](https://prism.makeboldspark.com/).\n\n> Built by [Mark Hazleton](https://markhazleton.com) \u2014 Mark Hazleton, Solutions Architect\n> PrismSpark is part of the [Make Bold Spark](https://makeboldspark.com) portfolio of technical demonstrations.\n\n---\n\n## Features\n\n- **Tokenization & Highlighting** for 24 languages (C#, JavaScript, Python, Markdown, Pug, and more)\n- **Plugin System**: Line numbers, copy-to-clipboard, toolbar, and more\n- **Theme System**: Built-in and custom themes, CSS generation\n- **Hooks & Extensibility**: Event-driven customization\n- **Advanced Options**: Line highlighting, custom CSS classes, context/metadata\n- **Performance**: Async processing, caching, and efficient rendering\n- **.NET 10.0 LTS Support**: Fully compatible with the latest .NET Long Term Support release\n- **Comprehensive Test Suite**: 52 MSTest tests covering grammars, highlighting, tokenization, and integration\n\n---\n\n## Requirements\n\n- **.NET 10.0** or later (Long Term Support)\n- Compatible with .NET 9.0 and earlier versions\n\n---\n\n## Getting Started\n\n### Installation\n\n```pwsh\n# Install core library\nInstall-Package WebSpark.PrismSpark\n# Install HTML highlighting support\nInstall-Package PrismSpark.Highlighting.HTML\n```\n\n### Basic Usage\n\n```csharp\nusing WebSpark.PrismSpark;\nusing WebSpark.PrismSpark.Highlighting;\n\nvar code = @\"<p>Hello world!</p>\";\nvar grammar = LanguageGrammars.Html;\nvar highlighter = new HtmlHighlighter();\nvar html = highlighter.Highlight(code, grammar, \"html\");\n```\n\n---\n\n## .NET Web MVC Integration\n\n### Service Registration\n\n```csharp\n// Program.cs\nbuilder.Services.AddSingleton<IHighlighter, HtmlHighlighter>();\nbuilder.Services.AddSingleton<EnhancedHtmlHighlighter>();\nbuilder.Services.AddSingleton<ThemedHtmlHighlighter>();\n```\n\n### Controller Example\n\n```csharp\npublic class CodeController : Controller\n{\n    private readonly IHighlighter _highlighter;\n    public CodeController(IHighlighter highlighter) => _highlighter = highlighter;\n    public IActionResult Index()\n    {\n        var code = \"public class Hello { }\";\n        var html = _highlighter.Highlight(code, LanguageGrammars.CSharp, \"csharp\");\n \n\n[... truncated for LLM context ...]",
+  "quality_indicators": {
+    "has_license": true,
+    "has_ci_cd": false,
+    "has_tests": false,
+    "has_docs": false
+  },
+  "dependency_files": {},
+  "community_health": {
+    "stargazer_count": 0,
+    "fork_count": 0,
+    "watcher_count": 0,
+    "open_issues": 0,
+    "closed_issues": 0,
+    "issue_close_ratio": null,
+    "has_discussions": false,
+    "topics": [],
+    "description": "Port of prismjs for .net web applications",
+    "homepage_url": "https://prism.makeboldspark.com",
+    "homepage_status": 200,
+    "homepage_response_ms": 5127,
+    "release_count": 0,
+    "latest_release_tag": null,
+    "latest_release_date": null,
+    "has_code_of_conduct": false,
+    "has_contributing": false,
+    "has_security_policy": false,
+    "readme_quality_score": {
+      "score": 95,
+      "length": 7417,
+      "has_headings": true,
+      "has_code_blocks": true,
+      "has_images": true,
+      "has_install_section": true
+    }
+  },
+  "pull_request_summary": {
+    "availability": "unavailable",
+    "reason": "permission_denied",
+    "has_open_pull_requests": false,
+    "total_open": 0,
+    "draft_count": 0,
+    "review_requested_count": 0,
+    "oldest_open_age_days": null,
+    "source": "rest.pulls.list"
+  },
+  "security_summary": {
+    "availability": "partial",
+    "reason": "permission_denied",
+    "overall_state": "clear",
+    "feature_status": {
+      "advanced_security": "unknown",
+      "secret_scanning": "enabled",
+      "secret_scanning_push_protection": "enabled",
+      "dependency_alerts": "unavailable",
+      "automated_security_fixes": "unavailable"
+    },
+    "active_alert_counts": {
+      "total_open": 0,
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "sources": [
+      "rest.repos.get",
+      "rest.dependabot.alerts"
+    ]
+  },
+  "web_signals": {
+    "url": "https://github.com/markhazleton/WebSpark.PrismSpark",
+    "fetch_status": 200,
+    "fetch_time_ms": 1221,
+    "total_commits": 23,
+    "stars": 0,
+    "forks": 0,
+    "watchers": 0,
+    "open_issues": 0,
+    "open_prs": 0,
+    "has_releases": false,
+    "release_text": "No releases published",
+    "description": "Port of prismjs for .net web applications. Contribute to markhazleton/WebSpark.PrismSpark development by creating an account on GitHub.",
+    "has_social_preview": false
+  }
+}

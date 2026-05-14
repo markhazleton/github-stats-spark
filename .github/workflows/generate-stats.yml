@@ -190,6 +190,16 @@ jobs:
           fi
           echo "Build verification complete"
 
+      - name: Guard against empty docs/
+        run: |
+          # Refuse to commit a docs/ that is missing the built site, otherwise
+          # GitHub Pages serves 404s on the custom domain (see incident in 96a4d1c).
+          if [ ! -f docs/index.html ] || [ ! -d docs/assets ]; then
+            echo "::error::docs/index.html or docs/assets missing — refusing to commit empty site"
+            ls -la docs/ || true
+            exit 1
+          fi
+
       - name: Commit generated files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
