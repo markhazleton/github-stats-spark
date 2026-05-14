@@ -32,7 +32,8 @@ npm install
 # Start development server
 npm run dev
 
-# Access at http://localhost:5173/github-stats-spark/
+# Access at http://localhost:5173/
+# Production: https://github-stats.makeboldspark.com/
 ```
 
 ## 🏗️ Build for Production
@@ -133,7 +134,7 @@ Comprehensive repository analysis:
 
 ### Vite Config (`vite.config.js`)
 
-- Base path: `/github-stats-spark/` (for GitHub Pages)
+- Base path: `/` (custom domain: `github-stats.makeboldspark.com`, configured via `frontend/public/CNAME`)
 - Output directory: `../docs`
 - Path aliases: `@/` → `src/`
 - Custom middleware for `/data` serving in development
