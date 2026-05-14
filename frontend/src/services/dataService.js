@@ -378,8 +378,10 @@ export function calculateStats(repositories) {
   );
 
   const avgCommitSize =
-    repositories.reduce((sum, repo) => sum + (repo.commit_metrics?.avg_size || 0), 0) /
-    repositories.length;
+    repositories.reduce(
+      (sum, repo) => sum + (repo.commit_metrics?.avg_size || 0),
+      0,
+    ) / repositories.length;
 
   const languages = extractLanguages(repositories);
 

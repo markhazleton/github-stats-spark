@@ -278,7 +278,8 @@ export function transformForLineGraph(repositories, metricId) {
       const value = getMetricValue(repo, metricId);
       const date = metricId.includes("Date")
         ? value
-        : repo.commit_history?.last_commit_date || repo.commit_history?.first_commit_date;
+        : repo.commit_history?.last_commit_date ||
+          repo.commit_history?.first_commit_date;
 
       return {
         name: repo.name || "Unknown",
@@ -340,18 +341,12 @@ export function transformForScatterPlot(
  */
 function getMetricValue(repo, metricId) {
   const metricMap = {
-    totalCommits:
-      repo.commit_history?.total_commits || repo.total_commits || 0,
-    avgCommitSize:
-      repo.commit_metrics?.avg_size || 0,
-    largestCommit:
-      repo.commit_metrics?.largest_commit?.size || 0,
-    smallestCommit:
-      repo.commit_metrics?.smallest_commit?.size || 0,
-    firstCommitDate:
-      repo.commit_history?.first_commit_date,
-    lastCommitDate:
-      repo.commit_history?.last_commit_date,
+    totalCommits: repo.commit_history?.total_commits || repo.total_commits || 0,
+    avgCommitSize: repo.commit_metrics?.avg_size || 0,
+    largestCommit: repo.commit_metrics?.largest_commit?.size || 0,
+    smallestCommit: repo.commit_metrics?.smallest_commit?.size || 0,
+    firstCommitDate: repo.commit_history?.first_commit_date,
+    lastCommitDate: repo.commit_history?.last_commit_date,
   };
 
   const value = metricMap[metricId];

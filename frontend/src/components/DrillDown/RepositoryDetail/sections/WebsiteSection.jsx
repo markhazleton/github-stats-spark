@@ -46,7 +46,8 @@ function WebsiteSection({
           </span>
           {screenshotAudit?.status && (
             <span className={styles.textMuted}>
-              {" "}• Audit: {screenshotAudit.status}
+              {" "}
+              • Audit: {screenshotAudit.status}
               {screenshotAudit.flags?.length > 0
                 ? ` (${screenshotAudit.flags.join(", ")})`
                 : ""}

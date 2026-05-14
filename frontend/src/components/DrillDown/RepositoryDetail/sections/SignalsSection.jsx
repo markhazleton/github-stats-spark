@@ -162,8 +162,9 @@ function SignalsSection({
               {formatNumber(diagnosticsSummary.issues?.total_open || 0)} open
               {diagnosticsSummary.issues?.stale_over_30d != null && (
                 <div className={styles.textMuted}>
-                  Stale: {formatNumber(diagnosticsSummary.issues.stale_over_30d)}
-                  / {formatNumber(diagnosticsSummary.issues.stale_over_90d || 0)}
+                  Stale:{" "}
+                  {formatNumber(diagnosticsSummary.issues.stale_over_30d)}/{" "}
+                  {formatNumber(diagnosticsSummary.issues.stale_over_90d || 0)}
                 </div>
               )}
             </dd>
@@ -172,7 +173,8 @@ function SignalsSection({
             <dt>Workflow Health</dt>
             <dd>
               {formatNumber(diagnosticsSummary.actions?.failure_count || 0)}
-              failed in {formatNumber(diagnosticsSummary.actions?.recent_runs || 0)} runs
+              failed in{" "}
+              {formatNumber(diagnosticsSummary.actions?.recent_runs || 0)} runs
               {diagnosticsSummary.actions?.last_run_conclusion && (
                 <div className={styles.textMuted}>
                   Last run: {diagnosticsSummary.actions.last_run_conclusion}
@@ -183,8 +185,15 @@ function SignalsSection({
           <div className={styles.detailItem}>
             <dt>Security Detail</dt>
             <dd>
-              Dependabot {formatNumber(diagnosticsSummary.security?.dependabot?.open_alerts || 0)}
-              open, code scanning {formatNumber(diagnosticsSummary.security?.code_scanning?.open_alerts || 0)} open
+              Dependabot{" "}
+              {formatNumber(
+                diagnosticsSummary.security?.dependabot?.open_alerts || 0,
+              )}
+              open, code scanning{" "}
+              {formatNumber(
+                diagnosticsSummary.security?.code_scanning?.open_alerts || 0,
+              )}{" "}
+              open
             </dd>
           </div>
         </dl>
