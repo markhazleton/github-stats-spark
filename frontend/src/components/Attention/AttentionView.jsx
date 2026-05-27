@@ -49,7 +49,10 @@ function computeAttentionScore(repo) {
   score += Math.min(issues * 2, 15);
   if (issues > 3) reasons.push(`${issues} open issues`);
 
-  const prs = repo.open_prs ?? 0;
+  const prs =
+    repo.pull_request_summary?.availability === "available"
+      ? (repo.pull_request_summary.total_open ?? 0)
+      : 0;
   score += Math.min(prs * 3, 15);
   if (prs > 2) reasons.push(`${prs} open PRs`);
 
@@ -159,7 +162,11 @@ function AttentionView({ repositories, onRepoClick }) {
                         </span>
                       </td>
                       <td>{att.score.toFixed(0)}</td>
-                      <td>{repo.open_prs ?? "n/a"}</td>
+                      <td>
+                        {repo.pull_request_summary?.availability === "available"
+                          ? repo.pull_request_summary.total_open
+                          : "n/a"}
+                      </td>
                       <td>
                         {repo.security_summary?.active_alert_counts
                           ?.total_open ?? 0}
