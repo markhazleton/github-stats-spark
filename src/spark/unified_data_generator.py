@@ -436,6 +436,7 @@ class UnifiedDataGenerator:
         """
         repositories = []
         commit_histories = {}
+        repo_daily_commits: Dict[str, Dict[str, int]] = {}  # repo_name -> {"YYYY-MM-DD": count}
         repo_cache = {}
         dependency_analyzer = RepositoryDependencyAnalyzer(
             config=self.config.config.get("analyzer", {})
@@ -490,6 +491,8 @@ class UnifiedDataGenerator:
                             else None
                         ),
                     )
+                    if isinstance(commit_data.get("daily_commits"), dict):
+                        repo_daily_commits[repo_name] = commit_data["daily_commits"]
                 
                 # Read language stats from cache
                 language_stats = self.fetcher.fetch_languages(
@@ -828,8 +831,14 @@ class UnifiedDataGenerator:
         for attention_rank, repo_dict in enumerate(attention_sorted, 1):
             repo_dict["attention_rank"] = attention_rank
         
-        # Build activity_calendar (T002): aggregate commits_by_day across all repos
+        # Build activity_calendar (T002): aggregate daily_commits across all repos
+        # Primary source: daily_commits captured from commit_counts cache during the assembly loop above
+        # Fallback source: per-commit dates from commits_stats cache (sparse, only fetched when present)
         activity_calendar: Dict[str, int] = {}
+        for repo_name, daily in repo_daily_commits.items():
+            for day_key, count in daily.items():
+                activity_calendar[day_key] = activity_calendar.get(day_key, 0) + count
+        # Also pick up any commits_stats data present in repo_cache (legacy/sparse)
         for repo_name, extras in repo_cache.items():
             for commit in (extras.get("commit_stats") or []):
                 date_str = commit.get("commit", {}).get("author", {}).get("date")

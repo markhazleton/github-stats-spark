@@ -525,6 +525,7 @@ query RepoMetadata($owner: String!, $name: String!) {
             commits_180d = 0
             commits_365d = 0
             last_commit_date = None
+            daily_commits: dict = {}
 
             self._increment_api_calls()
             commits = repo.get_commits()
@@ -552,6 +553,8 @@ query RepoMetadata($owner: String!, $name: String!) {
                     commits_180d += 1
                 if commit_date >= day_365_ago:
                     commits_365d += 1
+                day_key = commit_date.strftime("%Y-%m-%d")
+                daily_commits[day_key] = daily_commits.get(day_key, 0) + 1
 
             return {
                 "total": total_commits,
@@ -559,6 +562,7 @@ query RepoMetadata($owner: String!, $name: String!) {
                 "recent_180d": commits_180d,
                 "recent_365d": commits_365d,
                 "last_commit_date": last_commit_date,
+                "daily_commits": daily_commits,
             }
         except Exception as exc:
             self.logger.warning(
@@ -571,7 +575,11 @@ query RepoMetadata($owner: String!, $name: String!) {
         category = "commit_counts"
         cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
         if cached:
-            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+            # If the cached entry already has daily_commits (new format), use it
+            if isinstance(cached.get("daily_commits"), dict):
+                return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
+            # Older cache entries lack daily_commits — re-fetch to upgrade format
+            self.logger.info(f"Upgrading {repo_name}/commit_counts cache to include daily_commits")
 
         try:
             repo = self._get_repo(username, repo_name)
@@ -586,6 +594,7 @@ query RepoMetadata($owner: String!, $name: String!) {
             commits_180d = 0
             commits_365d = 0
             last_commit_date = None
+            daily_commits: dict = {}  # "YYYY-MM-DD" -> commit count
 
             if weekly_stats:
                 for week_stat in weekly_stats:
@@ -605,15 +614,15 @@ query RepoMetadata($owner: String!, $name: String!) {
                     if age_days <= 365:
                         commits_365d += week_total
 
-                    # Find last commit date from the most recent week with commits
-                    if week_total > 0:
-                        # days[] has Sun..Sat counts; find the last day with commits
-                        for day_offset in range(6, -1, -1):
-                            if len(days_list) > day_offset and days_list[day_offset] > 0:
-                                candidate = week_start + timedelta(days=day_offset)
-                                if last_commit_date is None or candidate > last_commit_date:
-                                    last_commit_date = candidate
-                                break
+                    # Build daily_commits map and find last commit date
+                    # days[] has Sun=0..Sat=6 counts
+                    for day_offset, day_count in enumerate(days_list[:7]):
+                        if day_count > 0:
+                            day = week_start + timedelta(days=day_offset)
+                            day_key = day.strftime("%Y-%m-%d")
+                            daily_commits[day_key] = daily_commits.get(day_key, 0) + day_count
+                            if last_commit_date is None or day > last_commit_date:
+                                last_commit_date = day
             else:
                 # GitHub's /stats/commit_activity returned empty/202 — fall back to
                 # paginated commit walk so we never persist zero counts for a repo
@@ -629,6 +638,7 @@ query RepoMetadata($owner: String!, $name: String!) {
                     commits_180d = fallback["recent_180d"]
                     commits_365d = fallback["recent_365d"]
                     last_commit_date = fallback["last_commit_date"]
+                    daily_commits = fallback.get("daily_commits", {})
                 else:
                     self.logger.warning(
                         f"Pagination fallback also failed for {repo_name}; using zero counts"
@@ -642,6 +652,7 @@ query RepoMetadata($owner: String!, $name: String!) {
                 "last_commit_date": last_commit_date.isoformat()
                 if isinstance(last_commit_date, datetime)
                 else last_commit_date,
+                "daily_commits": daily_commits,
             }
             metadata = {
                 "repository": {"owner": username, "name": repo_name},

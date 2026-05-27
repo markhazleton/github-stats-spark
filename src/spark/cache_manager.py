@@ -93,8 +93,15 @@ class CacheManager:
         
         # Check if cache exists for this exact pushed_at
         cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        
-        return cached is None
+
+        if cached is None:
+            return True
+
+        # Upgrade: commit_counts entries missing daily_commits must be re-fetched
+        if category == "commit_counts" and not isinstance(cached.get("daily_commits"), dict):
+            return True
+
+        return False
     
     def refresh_commit_counts(
         self,
