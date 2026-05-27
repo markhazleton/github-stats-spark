@@ -44,13 +44,13 @@ export default function DashboardView({ repositories, profile, onRepoClick }) {
       }));
   }, [repositories]);
 
-  const readmeCoverageData = useMemo(() => {
+  const recentActivityData = useMemo(() => {
     return [...repositories]
-      .filter((r) => r.has_readme != null)
-      .sort((a, b) => Number(b.has_readme) - Number(a.has_readme))
+      .filter((r) => (r.recent_commits_90d ?? 0) > 0)
+      .sort((a, b) => (b.recent_commits_90d || 0) - (a.recent_commits_90d || 0))
       .map((r) => ({
         name: r.name,
-        value: r.has_readme ? 1 : 0,
+        value: r.recent_commits_90d || 0,
         language: r.language || "Unknown",
         fullData: r,
       }));
@@ -108,11 +108,11 @@ export default function DashboardView({ repositories, profile, onRepoClick }) {
         <div className="dashboard-panel">
           <Suspense fallback={<LoadingState message="Loading chart..." />}>
             <BarChart
-              data={readmeCoverageData}
-              metricLabel="README Present"
+              data={recentActivityData}
+              metricLabel="Commits (Last 90 Days)"
               onBarClick={handleChartClick}
               horizontal={true}
-              maxBars={30}
+              maxBars={20}
             />
           </Suspense>
         </div>

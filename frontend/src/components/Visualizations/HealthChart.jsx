@@ -2,13 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import ChartWrapper from "./ChartWrapper";
 
-const HEALTH_FEATURES = [
-  { key: "has_readme", label: "README", color: "#28a745" },
-  { key: "has_license", label: "License", color: "#0366d6" },
-  { key: "has_ci_cd", label: "CI/CD", color: "#6f42c1" },
-  { key: "has_tests", label: "Tests", color: "#fd8c73" },
-  { key: "has_docs", label: "Docs", color: "#ffd33d" },
-];
+function scoreColor(score) {
+  if (score >= 70) return "#28a745"; // green
+  if (score >= 45) return "#ffc107"; // amber
+  return "#fd7e14"; // orange
+}
 
 export default function HealthChart({
   repositories,
@@ -26,28 +24,29 @@ export default function HealthChart({
   }
 
   const sorted = [...repositories]
-    .sort((a, b) => (b.total_commits || 0) - (a.total_commits || 0))
+    .filter((r) => r.composite_score != null)
+    .sort((a, b) => (b.composite_score || 0) - (a.composite_score || 0))
     .slice(0, maxRepos);
 
   const chartData = {
     labels: sorted.map((r) => r.name),
-    datasets: HEALTH_FEATURES.map((feature) => ({
-      label: feature.label,
-      data: sorted.map((r) => (r[feature.key] ? 1 : 0)),
-      backgroundColor: feature.color,
-      borderWidth: 0,
-      barThickness: 20,
-    })),
+    datasets: [
+      {
+        label: "Composite Score",
+        data: sorted.map((r) => +(r.composite_score ?? 0).toFixed(1)),
+        backgroundColor: sorted.map((r) => scoreColor(r.composite_score ?? 0)),
+        borderWidth: 0,
+        borderRadius: 4,
+        barThickness: 22,
+        maxBarThickness: 30,
+      },
+    ],
   };
 
   const options = {
     indexAxis: "y",
     responsive: true,
     maintainAspectRatio: false,
-    interaction: {
-      mode: "nearest",
-      intersect: false,
-    },
     onClick: (event, elements) => {
       if (elements.length > 0 && onRepoClick) {
         const index = elements[0].index;
@@ -55,49 +54,43 @@ export default function HealthChart({
       }
     },
     plugins: {
-      legend: {
-        display: true,
-        position: "top",
-        labels: {
-          padding: 12,
-          font: { size: 11 },
-          usePointStyle: true,
-          boxWidth: 10,
-        },
-      },
+      legend: { display: false },
       tooltip: {
         callbacks: {
           label: (context) => {
-            const repoIndex = context.dataIndex;
-            const repo = sorted[repoIndex];
-            const feature = HEALTH_FEATURES[context.datasetIndex];
-            return `${feature.label}: ${repo[feature.key] ? "Yes" : "No"}`;
+            const repo = sorted[context.dataIndex];
+            const flags = [
+              repo.has_readme && "README",
+              repo.has_license && "License",
+              repo.has_ci_cd && "CI/CD",
+              repo.has_tests && "Tests",
+              repo.has_docs && "Docs",
+            ].filter(Boolean);
+            return [
+              `Score: ${context.parsed.x.toFixed(1)} / 100`,
+              `Features: ${flags.length ? flags.join(", ") : "none"}`,
+              `Total commits: ${repo.total_commits?.toLocaleString() ?? "n/a"}`,
+              `Stars: ${repo.stars ?? 0}  Forks: ${repo.forks ?? 0}`,
+            ];
           },
         },
       },
     },
     scales: {
       x: {
-        stacked: true,
-        max: 5,
-        grid: { display: false },
-        ticks: {
-          stepSize: 1,
-          callback: (value) => value,
-        },
+        min: 0,
+        max: 100,
+        grid: { display: true, color: "rgba(128,128,128,0.1)" },
+        ticks: { font: { size: 11 } },
         title: {
           display: true,
-          text: "Features Present",
+          text: "Composite Score (0–100)",
           font: { size: 11 },
         },
       },
       y: {
-        stacked: true,
         grid: { display: false },
-        ticks: {
-          font: { size: 11 },
-          autoSkip: false,
-        },
+        ticks: { font: { size: 11 }, autoSkip: false },
       },
     },
   };
@@ -107,7 +100,7 @@ export default function HealthChart({
       type="bar"
       data={chartData}
       options={options}
-      title="Repository Health (Top 15 by Spark Score)"
+      title="Composite Score — Top 15 Repositories"
       enableHorizontalScroll={false}
       maxDataPoints={maxRepos}
     />
