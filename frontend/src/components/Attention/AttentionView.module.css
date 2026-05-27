@@ -39,10 +39,8 @@
   color: var(--color-text);
 }
 
-.contentGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 2.3fr) minmax(280px, 1fr);
-  gap: var(--spacing-lg);
+.tableCard {
+  width: 100%;
 }
 
 .tableCard,
@@ -147,36 +145,12 @@
   margin: 0.75rem 0 0;
   padding-left: 1.2rem;
   color: var(--color-text-muted);
+  columns: 2;
+  column-gap: 3rem;
 }
 
-.topList {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.topListItem {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  width: 100%;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  background: var(--color-background);
-  color: var(--color-text);
-  padding: 0.85rem 1rem;
-  cursor: pointer;
-}
-
-.topListItem small {
-  display: block;
-  margin-top: 0.25rem;
-  color: var(--color-text-muted);
-}
-
-@media (max-width: 980px) {
-  .contentGrid {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .explainerList {
+    columns: 1;
   }
 }
