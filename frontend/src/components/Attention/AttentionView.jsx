@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./AttentionView.module.css";
 
@@ -68,6 +68,31 @@ function computeAttentionScore(repo) {
   return { score, tier, reasons, needs_attention: score >= 15 };
 }
 
+function getSortValue(repo, key) {
+  switch (key) {
+    case "score":
+      return repo._attention.score;
+    case "name":
+      return repo.name.toLowerCase();
+    case "tier": {
+      const order = { critical: 4, elevated: 3, watch: 2, healthy: 1 };
+      return order[repo._attention.tier] ?? 0;
+    }
+    case "prs":
+      return repo.pull_request_summary?.availability === "available"
+        ? (repo.pull_request_summary.total_open ?? 0)
+        : -1;
+    case "alerts":
+      return repo.security_summary?.active_alert_counts?.total_open ?? 0;
+    case "stale":
+      return repo.days_since_last_push ?? -1;
+    case "readme":
+      return repo.has_readme ? 1 : 0;
+    default:
+      return 0;
+  }
+}
+
 function AttentionView({ repositories, onRepoClick }) {
   const rankedRepositories = useMemo(() => {
     return [...repositories]
@@ -91,6 +116,26 @@ function AttentionView({ repositories, onRepoClick }) {
       ).length,
     };
   }, [rankedRepositories]);
+
+  const [sort, setSort] = useState({ key: "score", dir: "desc" });
+
+  function handleSort(key) {
+    setSort((prev) =>
+      prev.key === key
+        ? { key, dir: prev.dir === "desc" ? "asc" : "desc" }
+        : { key, dir: "desc" },
+    );
+  }
+
+  const displayRows = useMemo(() => {
+    return [...rankedRepositories].sort((a, b) => {
+      const av = getSortValue(a, sort.key);
+      const bv = getSortValue(b, sort.key);
+      if (av < bv) return sort.dir === "asc" ? -1 : 1;
+      if (av > bv) return sort.dir === "asc" ? 1 : -1;
+      return 0;
+    });
+  }, [rankedRepositories, sort]);
 
   return (
     <div className={styles.layout}>
@@ -125,18 +170,102 @@ function AttentionView({ repositories, onRepoClick }) {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>Rank</th>
-                <th>Repository</th>
-                <th>Tier</th>
-                <th>Score</th>
-                <th>PRs</th>
-                <th>Alerts</th>
-                <th>Stale (days)</th>
-                <th>README</th>
+                <th>#</th>
+                <th
+                  className={styles.sortable}
+                  onClick={() => handleSort("name")}
+                >
+                  Repository
+                  <span className={styles.sortIcon}>
+                    {sort.key === "name"
+                      ? sort.dir === "asc"
+                        ? "↑"
+                        : "↓"
+                      : "↕"}
+                  </span>
+                </th>
+                <th
+                  className={styles.sortable}
+                  onClick={() => handleSort("tier")}
+                >
+                  Tier
+                  <span className={styles.sortIcon}>
+                    {sort.key === "tier"
+                      ? sort.dir === "asc"
+                        ? "↑"
+                        : "↓"
+                      : "↕"}
+                  </span>
+                </th>
+                <th
+                  className={styles.sortable}
+                  onClick={() => handleSort("score")}
+                >
+                  Score
+                  <span className={styles.sortIcon}>
+                    {sort.key === "score"
+                      ? sort.dir === "asc"
+                        ? "↑"
+                        : "↓"
+                      : "↕"}
+                  </span>
+                </th>
+                <th
+                  className={styles.sortable}
+                  onClick={() => handleSort("prs")}
+                >
+                  PRs
+                  <span className={styles.sortIcon}>
+                    {sort.key === "prs"
+                      ? sort.dir === "asc"
+                        ? "↑"
+                        : "↓"
+                      : "↕"}
+                  </span>
+                </th>
+                <th
+                  className={styles.sortable}
+                  onClick={() => handleSort("alerts")}
+                >
+                  Alerts
+                  <span className={styles.sortIcon}>
+                    {sort.key === "alerts"
+                      ? sort.dir === "asc"
+                        ? "↑"
+                        : "↓"
+                      : "↕"}
+                  </span>
+                </th>
+                <th
+                  className={styles.sortable}
+                  onClick={() => handleSort("stale")}
+                >
+                  Stale (days)
+                  <span className={styles.sortIcon}>
+                    {sort.key === "stale"
+                      ? sort.dir === "asc"
+                        ? "↑"
+                        : "↓"
+                      : "↕"}
+                  </span>
+                </th>
+                <th
+                  className={styles.sortable}
+                  onClick={() => handleSort("readme")}
+                >
+                  README
+                  <span className={styles.sortIcon}>
+                    {sort.key === "readme"
+                      ? sort.dir === "asc"
+                        ? "↑"
+                        : "↓"
+                      : "↕"}
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody>
-              {rankedRepositories.map((repo, index) => {
+              {displayRows.map((repo, index) => {
                 const att = repo._attention;
                 return (
                   <tr

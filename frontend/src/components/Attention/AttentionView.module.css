@@ -86,6 +86,23 @@
   letter-spacing: 0.06em;
 }
 
+.sortable {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.sortable:hover {
+  color: var(--color-text);
+}
+
+.sortIcon {
+  display: inline-block;
+  margin-left: 0.3rem;
+  font-size: 0.7rem;
+  opacity: 0.55;
+}
+
 .row {
   cursor: pointer;
   transition: background-color 0.18s ease;
