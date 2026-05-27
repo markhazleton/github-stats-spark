@@ -707,72 +707,54 @@ class StatsCalculator:
         source: str,
         is_estimated: bool,
     ) -> Dict[str, Any]:
-        """Build weekly and monthly cadence series from normalized activity records."""
-        if not activity_records:
-            return self._empty_release_cadence(weeks, months, source, is_estimated)
+        """Helper to build weekly/monthly series from activity records."""
+        today = datetime.now().date()
 
-        unique_repos = {repo_name for _, repo_name in activity_records}
-        latest_date = max(record[0] for record in activity_records)
+        # Initialize series with zero counts for all weeks/months
+        weekly_series = [
+            {"week": (today - timedelta(days=i * 7)).strftime("%Y-%U"), "commits": 0, "active_repos": 0}
+            for i in range(weeks - 1, -1, -1)
+        ]
+        monthly_series = [
+            {"month": (today - timedelta(days=i * 30)).strftime("%Y-%m"), "commits": 0, "active_repos": 0}
+            for i in range(months - 1, -1, -1)
+        ]
 
-        week_sets: Dict[date, set] = defaultdict(set)
-        month_sets: Dict[date, set] = defaultdict(set)
+        # Create lookups for quick access
+        weekly_lookup = {item["week"]: item for item in weekly_series}
+        monthly_lookup = {item["month"]: item for item in monthly_series}
 
-        for commit_date, repo_name in activity_records:
-            week_start = commit_date - timedelta(days=commit_date.weekday())
-            week_sets[week_start].add(repo_name)
+        # Group activity by week and month
+        weekly_activity: Dict[str, Dict[str, int]] = defaultdict(lambda: {"commits": 0, "repos": set()})
+        monthly_activity: Dict[str, Dict[str, int]] = defaultdict(lambda: {"commits": 0, "repos": set()})
 
-            month_start = commit_date.replace(day=1)
-            month_sets[month_start].add(repo_name)
+        for record_date, repo_name in activity_records:
+            # Weekly aggregation
+            week_key = record_date.strftime("%Y-%U")
+            if week_key in weekly_lookup:
+                weekly_activity[week_key]["commits"] += 1
+                weekly_activity[week_key]["repos"].add(repo_name)
 
-        week_anchor = latest_date - timedelta(days=latest_date.weekday())
-        weekly_series: List[Dict[str, Any]] = []
+            # Monthly aggregation
+            month_key = record_date.strftime("%Y-%m")
+            if month_key in monthly_lookup:
+                monthly_activity[month_key]["commits"] += 1
+                monthly_activity[month_key]["repos"].add(repo_name)
 
-        for offset in range(weeks - 1, -1, -1):
-            week_start = week_anchor - timedelta(weeks=offset)
-            repo_count = len(week_sets.get(week_start, set()))
-            week_end = week_start + timedelta(days=6)
-            week_label = f"W{week_start.isocalendar()[1]:02d}"
-            weekly_series.append({
-                "label": week_label,
-                "repos": repo_count,
-                "start": week_start.isoformat(),
-                "range_label": f"{week_start.strftime('%b %d')} - {week_end.strftime('%b %d')}",
-            })
+        # Populate the series with aggregated data
+        for week_key, data in weekly_activity.items():
+            if week_key in weekly_lookup:
+                weekly_lookup[week_key]["commits"] = data["commits"]
+                weekly_lookup[week_key]["active_repos"] = len(data["repos"])
 
-        def previous_month_start(date_val: date) -> date:
-            year = date_val.year
-            month = date_val.month - 1
-            if month == 0:
-                month = 12
-                year -= 1
-            return date_val.replace(year=year, month=month, day=1)
-
-        month_anchor = latest_date.replace(day=1)
-        month_starts = []
-        current = month_anchor
-        for _ in range(months):
-            month_starts.append(current)
-            current = previous_month_start(current)
-        month_starts.reverse()
-
-        monthly_series: List[Dict[str, Any]] = []
-        for month_start in month_starts:
-            repo_count = len(month_sets.get(month_start, set()))
-            month_label = month_start.strftime("%b")
-            long_label = month_start.strftime("%b %Y")
-            monthly_series.append({
-                "label": month_label,
-                "repos": repo_count,
-                "start": month_start.isoformat(),
-                "range_label": long_label,
-            })
+        for month_key, data in monthly_activity.items():
+            if month_key in monthly_lookup:
+                monthly_lookup[month_key]["commits"] = data["commits"]
+                monthly_lookup[month_key]["active_repos"] = len(data["repos"])
 
         return {
-            "weekly": weekly_series,
-            "monthly": monthly_series,
-            "max_weekly": max((point["repos"] for point in weekly_series), default=0),
-            "max_monthly": max((point["repos"] for point in monthly_series), default=0),
-            "unique_repos": len(unique_repos),
+            "weekly_series": weekly_series,
+            "monthly_series": monthly_series,
             "source": source,
             "is_estimated": is_estimated,
         }
@@ -907,42 +889,3 @@ class StatsCalculator:
             "total_commits": len(commits),
             "commit_size_distribution": distribution,
         }
-
-    @staticmethod
-    def calculate_bus_factor(contributor_commit_counts: Optional[List[int]]) -> Dict[str, Any]:
-        """Calculate bus factor from contributor commit counts.
-
-        The bus factor is the minimum number of contributors whose combined commits
-        account for ≥50% of all commits.  A lower value indicates higher risk.
-
-        Args:
-            contributor_commit_counts: List of commit counts per contributor,
-                sorted descending.  None or empty → returns None result.
-
-        Returns:
-            Dict with:
-            - bus_factor: int (minimum contributors for 50% of commits), or None
-            - bus_factor_health: "critical" (1) | "warning" (2) | "healthy" (3+) | None
-        """
-        if not contributor_commit_counts:
-            return {"bus_factor": None, "bus_factor_health": None}
-
-        total = sum(contributor_commit_counts)
-        if total == 0:
-            return {"bus_factor": None, "bus_factor_health": None}
-
-        sorted_counts = sorted(contributor_commit_counts, reverse=True)
-        cumulative = 0
-        for i, count in enumerate(sorted_counts, start=1):
-            cumulative += count
-            if cumulative >= total * 0.5:
-                bus_factor = i
-                if bus_factor == 1:
-                    health = "critical"
-                elif bus_factor == 2:
-                    health = "warning"
-                else:
-                    health = "healthy"
-                return {"bus_factor": bus_factor, "bus_factor_health": health}
-
-        return {"bus_factor": len(sorted_counts), "bus_factor_health": "healthy"}

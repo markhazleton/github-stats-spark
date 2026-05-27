@@ -308,7 +308,7 @@ class UnifiedDataGenerator:
             "components": components,
         }
 
-    def generate(self) -> Dict[str, Any]:
+    def generate(self, single_repository: Optional[str] = None) -> Dict[str, Any]:
         """Generate unified data using clean 4-phase architecture.
         
         Phase 1: Fetch repository list
@@ -316,6 +316,9 @@ class UnifiedDataGenerator:
         Phase 2c: AI summary generation (LLM, runs only when enabled)
         Phase 3: Assemble data from cache
         Phase 4: (handled by caller - output generation)
+        
+        Args:
+            single_repository: Optional name of a single repository to process.
         
         Returns:
             Dict with profile, repositories, and metadata
@@ -328,6 +331,8 @@ class UnifiedDataGenerator:
         logger.info(f"Force refresh mode: {self.force_refresh}")
         logger.info(f"AI summaries: {self.include_ai_summaries}")
         logger.info(f"Max repositories: {self.max_repositories}")
+        if single_repository:
+            logger.info(f"Single repository mode: {single_repository}")
         
         total_start = time()
         
@@ -335,6 +340,9 @@ class UnifiedDataGenerator:
         logger.info("\n[Phase 1] Fetching Repository List")
         phase1_start = time()
         raw_repos = self._fetch_repository_list()
+        if single_repository:
+            raw_repos = [r for r in raw_repos if r.get("name") == single_repository]
+            logger.info(f"Filtered to single repository: {single_repository}")
         phase1_time = time() - phase1_start
         logger.info(f"Found {len(raw_repos)} repositories ({phase1_time:.2f}s)")
         
@@ -353,16 +361,18 @@ class UnifiedDataGenerator:
                    f"API calls: {refresh_summary.api_calls_made} ({phase2_time:.2f}s)")
         
         # PHASE 2b: Cache garbage collection — remove orphaned entries
-        try:
-            active_names = [r.get("name") for r in raw_repos if r.get("name")]
-            gc_result = self.cache.collect_garbage(self.username, active_names)
-            if gc_result["removed_repos"]:
-                logger.info(
-                    f"Cache GC: removed {len(gc_result['removed_repos'])} orphaned repos: "
-                    f"{', '.join(gc_result['removed_repos'])}"
-                )
-        except Exception as e:
-            logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
+        # Skip GC in single-repository mode to avoid removing other repos' caches.
+        if not single_repository:
+            try:
+                active_names = [r.get("name") for r in raw_repos if r.get("name")]
+                gc_result = self.cache.collect_garbage(self.username, active_names)
+                if gc_result["removed_repos"]:
+                    logger.info(
+                        f"Cache GC: removed {len(gc_result['removed_repos'])} orphaned repos: "
+                        f"{', '.join(gc_result['removed_repos'])}"
+                    )
+            except Exception as e:
+                logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
 
         # PHASE 2c: AI summary generation (LLM calls, separate from GitHub API)
         phase2c_time = 0.0
@@ -493,18 +503,6 @@ class UnifiedDataGenerator:
                 dependency_files = {}
                 commit_stats = None
                 cached_summary = None
-                contributor_stats = None
-                code_frequency = None
-
-                # Cache-only reads for contributor/code frequency in Phase 3.
-                # Network refresh is handled in Phase 2 via CacheManager.
-                if cache_key:
-                    contributor_stats = self.cache.get(
-                        "contributor_stats", self.username, repo=repo_name, week=cache_key
-                    )
-                    code_frequency = self.cache.get(
-                        "code_frequency", self.username, repo=repo_name, week=cache_key
-                    )
 
                 if cache_key:
                     readme_content = self.cache.get(
@@ -642,8 +640,6 @@ class UnifiedDataGenerator:
                     "dependency_files": dependency_files,
                     "commit_stats": commit_stats,
                     "cached_summary": cached_summary,
-                    "contributor_stats": contributor_stats,
-                    "code_frequency": code_frequency,
                 }
 
             except Exception as e:
@@ -669,8 +665,6 @@ class UnifiedDataGenerator:
             dependency_files = repo_extras.get("dependency_files", {})
             commit_stats = repo_extras.get("commit_stats")
             cached_summary = repo_extras.get("cached_summary")
-            contributor_stats_data = repo_extras.get("contributor_stats")
-            code_frequency_data = repo_extras.get("code_frequency")
             commit_history_dict = commit_history.to_dict() if commit_history else None
             commit_metrics = None
             avg_commit_size = None
@@ -823,18 +817,6 @@ class UnifiedDataGenerator:
                 "pull_request_summary": repo.pull_request_summary.to_dict(),
                 "security_summary": repo.security_summary.to_dict(),
                 "diagnostics_summary": repo.diagnostics_summary.to_dict(),
-                # v2.3.0 commit volume fields (T008)
-                "total_additions": code_frequency_data.get("total_additions") if code_frequency_data else None,
-                "total_deletions": code_frequency_data.get("total_deletions") if code_frequency_data else None,
-                "code_churn": (
-                    code_frequency_data["total_additions"] + abs(code_frequency_data["total_deletions"])
-                    if code_frequency_data else None
-                ),
-                # v2.3.0 bus factor fields (T008)
-                **StatsCalculator.calculate_bus_factor(
-                    [c["commits"] for c in contributor_stats_data] if contributor_stats_data else None
-                ),
-                "contributor_stats": contributor_stats_data,
             }
             unified_repos.append(repo_dict)
 
@@ -881,8 +863,6 @@ class UnifiedDataGenerator:
                 "attention_metrics",
                 "dependency_version_coverage",
                 "activity_calendar",
-                "commit_volume_stats",
-                "bus_factor",
             ],
             "attention_formula_version": "1.0"
         }

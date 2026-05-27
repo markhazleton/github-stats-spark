@@ -105,12 +105,6 @@ function ExportButton({
       },
       { key: "screenshot_audit.status", label: "Screenshot Audit Status" },
       { key: "screenshot_audit.flags", label: "Screenshot Audit Flags" },
-      // v2.3.0 commit volume fields
-      { key: "total_additions", label: "Total Additions" },
-      { key: "total_deletions", label: "Total Deletions" },
-      { key: "code_churn", label: "Code Churn" },
-      { key: "bus_factor", label: "Bus Factor" },
-      { key: "bus_factor_health", label: "Bus Factor Health" },
     ];
 
     // Helper to get nested value

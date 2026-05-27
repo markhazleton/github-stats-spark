@@ -71,8 +71,8 @@ def test_refresh_categories_include_enrichment_summaries():
     assert "security_summary" in categories
     assert "languages" in categories
     assert "quality_indicators" in categories
-    # Stats API categories removed — too costly, use other signals
-    assert "commit_counts" not in categories
+    assert "commit_counts" in categories
+    # Removed — too costly, use other signals
     assert "contributor_stats" not in categories
     assert "code_frequency" not in categories
     assert "commits_stats" not in categories
@@ -94,23 +94,13 @@ def test_refresh_repository_includes_commit_stats(monkeypatch):
         "refresh_commits_stats",
         lambda username, repo_name, pushed_at: calls.append("commits_stats") or RefreshResult(repo_name, "commits_stats", False, True),
     )
-    monkeypatch.setattr(
-        manager,
-        "refresh_contributor_stats",
-        lambda username, repo_name, pushed_at: calls.append("contributor_stats") or RefreshResult(repo_name, "contributor_stats", False, True),
-    )
-    monkeypatch.setattr(
-        manager,
-        "refresh_code_frequency",
-        lambda username, repo_name, pushed_at: calls.append("code_frequency") or RefreshResult(repo_name, "code_frequency", False, True),
-    )
 
     # Only pass non-batch categories (languages/readme/quality/deps handled by batch)
     manager.refresh_repository(
         username="markhazleton",
         repo_name="repo-one",
         pushed_at=pushed_at,
-        categories={"commit_counts", "commits_stats", "contributor_stats", "code_frequency"},
+        categories={"commit_counts", "commits_stats"},
     )
 
-    assert calls == ["commit_counts", "commits_stats", "contributor_stats", "code_frequency"]
+    assert calls == ["commit_counts", "commits_stats"]

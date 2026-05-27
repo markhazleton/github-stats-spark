@@ -112,22 +112,6 @@ class CacheManager:
     ) -> RefreshResult:
         return self.refresh_executor.refresh_languages(username, repo_name, pushed_at)
 
-    def refresh_contributor_stats(
-        self,
-        username: str,
-        repo_name: str,
-        pushed_at: datetime,
-    ) -> RefreshResult:
-        return self.refresh_executor.refresh_contributor_stats(username, repo_name, pushed_at)
-
-    def refresh_code_frequency(
-        self,
-        username: str,
-        repo_name: str,
-        pushed_at: datetime,
-    ) -> RefreshResult:
-        return self.refresh_executor.refresh_code_frequency(username, repo_name, pushed_at)
-
     def refresh_commits_stats(
         self,
         username: str,
@@ -261,12 +245,6 @@ class CacheManager:
 
         if "commits_stats" in categories:
             _timed_refresh("commits_stats", self.refresh_commits_stats, username, repo_name, pushed_at)
-
-        if "contributor_stats" in categories:
-            _timed_refresh("contributor_stats", self.refresh_contributor_stats, username, repo_name, pushed_at)
-
-        if "code_frequency" in categories:
-            _timed_refresh("code_frequency", self.refresh_code_frequency, username, repo_name, pushed_at)
 
         if "pull_request_summary" in categories:
             _timed_refresh("pull_request_summary", self.refresh_pull_request_summary, username, repo_name, pushed_at)

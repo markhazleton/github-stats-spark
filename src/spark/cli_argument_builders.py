@@ -84,6 +84,12 @@ def _add_unified_parser(subparsers: argparse._SubParsersAction) -> None:
         action="store_true",
         help="Capture screenshots of repository websites (requires playwright)",
     )
+    parser.add_argument(
+        "--repository",
+        type=str,
+        default=None,
+        help="Run for a single repository (for testing)",
+    )
 
 
 def _add_analyze_parser(subparsers: argparse._SubParsersAction) -> None:

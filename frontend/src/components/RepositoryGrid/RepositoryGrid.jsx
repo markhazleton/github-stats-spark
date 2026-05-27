@@ -221,7 +221,7 @@ function RepoCard({ repo, onClick }) {
                 <line x1="1.05" y1="12" x2="7" y2="12" />
                 <line x1="17.01" y1="12" x2="22.96" y2="12" />
               </svg>
-              {repo.total_commits.toLocaleString()}
+              {(repo.total_commits || 0).toLocaleString()}
             </span>
             <span
               className={`${styles.stat} ${isRecent ? styles.statRecent : ""}`}

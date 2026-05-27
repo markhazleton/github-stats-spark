@@ -502,6 +502,70 @@ query RepoMetadata($owner: String!, $name: String!) {
             time.sleep(backoff)
         return None
 
+    def _count_commits_via_pagination(self, repo, repo_name: str):
+        """Count commits by paginating /repos/{owner}/{repo}/commits.
+
+        Used as a fallback when GitHub's /stats/commit_activity endpoint
+        returns 202 (still computing) or an empty payload — common for
+        brand-new repositories. Caps at 1000 commits to limit API usage.
+
+        Returns dict with total / recent_90d / recent_180d / recent_365d /
+        last_commit_date, or None on failure.
+        """
+        from datetime import timedelta
+
+        try:
+            now = datetime.now(timezone.utc)
+            day_90_ago = now - timedelta(days=90)
+            day_180_ago = now - timedelta(days=180)
+            day_365_ago = now - timedelta(days=365)
+
+            total_commits = 0
+            commits_90d = 0
+            commits_180d = 0
+            commits_365d = 0
+            last_commit_date = None
+
+            self._increment_api_calls()
+            commits = repo.get_commits()
+            for commit in commits:
+                if total_commits >= 1000:
+                    break
+                total_commits += 1
+                try:
+                    commit_date = (
+                        commit.commit.author.date
+                        if commit.commit and commit.commit.author
+                        else None
+                    )
+                except (AttributeError, IndexError):
+                    continue
+                if not commit_date:
+                    continue
+                if commit_date.tzinfo is None:
+                    commit_date = commit_date.replace(tzinfo=timezone.utc)
+                if last_commit_date is None or commit_date > last_commit_date:
+                    last_commit_date = commit_date
+                if commit_date >= day_90_ago:
+                    commits_90d += 1
+                if commit_date >= day_180_ago:
+                    commits_180d += 1
+                if commit_date >= day_365_ago:
+                    commits_365d += 1
+
+            return {
+                "total": total_commits,
+                "recent_90d": commits_90d,
+                "recent_180d": commits_180d,
+                "recent_365d": commits_365d,
+                "last_commit_date": last_commit_date,
+            }
+        except Exception as exc:
+            self.logger.warning(
+                f"Pagination fallback for commit_counts failed for {repo_name}: {exc}"
+            )
+            return None
+
     def refresh_commit_counts(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
         cache_key = sanitize_timestamp_for_filename(pushed_at)
         category = "commit_counts"
@@ -551,16 +615,33 @@ query RepoMetadata($owner: String!, $name: String!) {
                                     last_commit_date = candidate
                                 break
             else:
+                # GitHub's /stats/commit_activity returned empty/202 — fall back to
+                # paginated commit walk so we never persist zero counts for a repo
+                # that actually has commits (GitHub computes stats lazily).
                 self.logger.warning(
-                    f"Commit activity stats unavailable for {repo_name}; using zero counts"
+                    f"Commit activity stats unavailable for {repo_name}; "
+                    f"falling back to paginated commit walk"
                 )
+                fallback = self._count_commits_via_pagination(repo, repo_name)
+                if fallback is not None:
+                    total_commits = fallback["total"]
+                    commits_90d = fallback["recent_90d"]
+                    commits_180d = fallback["recent_180d"]
+                    commits_365d = fallback["recent_365d"]
+                    last_commit_date = fallback["last_commit_date"]
+                else:
+                    self.logger.warning(
+                        f"Pagination fallback also failed for {repo_name}; using zero counts"
+                    )
 
             result = {
                 "total": total_commits,
                 "recent_90d": commits_90d,
                 "recent_180d": commits_180d,
                 "recent_365d": commits_365d,
-                "last_commit_date": last_commit_date.isoformat() if last_commit_date else None,
+                "last_commit_date": last_commit_date.isoformat()
+                if isinstance(last_commit_date, datetime)
+                else last_commit_date,
             }
             metadata = {
                 "repository": {"owner": username, "name": repo_name},
@@ -630,78 +711,6 @@ query RepoMetadata($owner: String!, $name: String!) {
                 "ttl_enforced": False,
             }
             self.cache.set(category, username, languages, repo=repo_name, week=cache_key, metadata=metadata)
-            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
-        except Exception as error:
-            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
-            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
-
-    def refresh_contributor_stats(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "contributor_stats"
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached is not None:
-            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
-
-        if self.fetcher is None:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error="Fetcher is required for contributor stats refresh",
-            )
-
-        try:
-            result = self.fetcher.fetch_contributor_stats(
-                username=username,
-                repo_name=repo_name,
-                repo_pushed_at=pushed_at,
-            )
-            if result is None:
-                return RefreshResult(
-                    repo_name=repo_name,
-                    category=category,
-                    was_cached=False,
-                    refreshed=False,
-                    error="Contributor stats unavailable",
-                )
-
-            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
-        except Exception as error:
-            self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")
-            return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=False, error=str(error))
-
-    def refresh_code_frequency(self, username: str, repo_name: str, pushed_at: datetime) -> RefreshResult:
-        cache_key = sanitize_timestamp_for_filename(pushed_at)
-        category = "code_frequency"
-        cached = self.cache.get(category, username, repo=repo_name, week=cache_key)
-        if cached is not None:
-            return RefreshResult(repo_name=repo_name, category=category, was_cached=True, refreshed=False)
-
-        if self.fetcher is None:
-            return RefreshResult(
-                repo_name=repo_name,
-                category=category,
-                was_cached=False,
-                refreshed=False,
-                error="Fetcher is required for code frequency refresh",
-            )
-
-        try:
-            result = self.fetcher.fetch_code_frequency(
-                username=username,
-                repo_name=repo_name,
-                repo_pushed_at=pushed_at,
-            )
-            if result is None:
-                return RefreshResult(
-                    repo_name=repo_name,
-                    category=category,
-                    was_cached=False,
-                    refreshed=False,
-                    error="Code frequency unavailable",
-                )
-
             return RefreshResult(repo_name=repo_name, category=category, was_cached=False, refreshed=True)
         except Exception as error:
             self.logger.warning(f"Failed to refresh {category} for {repo_name}: {error}")

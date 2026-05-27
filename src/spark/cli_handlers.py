@@ -15,22 +15,16 @@ from pathlib import Path
 from spark.cli_output_layout import build_output_layout, to_posix_path
 from spark.config import SparkConfig
 from spark.screenshot_audit import audit_screenshot_outputs, build_screenshot_audit_markdown
+from spark.unified_data_generator import UnifiedDataGenerator
+from spark.exceptions import WorkflowError
 
 
 def handle_unified(args, logger):
     """Handle unified command - ALL-IN-ONE: Generate unified data, SVGs, and reports."""
-    from datetime import datetime
-    from spark.unified_data_generator import UnifiedDataGenerator
-    from spark.cache import APICache
-    from spark.unified_report_workflow import UnifiedReportWorkflow
-    from spark.unified_report_generator import UnifiedReportGenerator
-    from spark.exceptions import WorkflowError
-
     logger.info("=" * 70)
     logger.info("Stats Spark - ALL-IN-ONE Unified Generation")
     logger.info("=" * 70)
     output_layout = build_output_layout(args.user, args.output_dir)
-    report_path = output_layout["report_dir"] / f"{args.user}-analysis.md"
     logger.info(f"User: {args.user}")
     logger.info(f"Data output: {output_layout['data_dir']}")
     logger.info(f"Artifacts output: {output_layout['artifact_root']}")
@@ -48,258 +42,96 @@ def handle_unified(args, logger):
         logger.warning("ANTHROPIC_API_KEY not set - AI summaries will be skipped")
         logger.info("To enable AI summaries, set: export ANTHROPIC_API_KEY=your_key")
 
+    if getattr(args, "repository", None):
+        logger.info(f"Single Repository Mode: {args.repository}")
+
     try:
-        start_time = datetime.now()
-        logger.info("")
-        logger.info("=" * 70)
-        logger.info("STEP 1/3: Generating Unified Data (repositories.json)")
-        logger.info("=" * 70)
-
         config = SparkConfig(args.config)
-        config.load()
-
-        if args.include_ai_summaries:
-            dashboard_config = config.config.get("dashboard", {})
-            if "data_generation" not in dashboard_config:
-                dashboard_config["data_generation"] = {}
-            dashboard_config["data_generation"]["include_ai_summaries"] = True
-
-        shared_cache = APICache(
-            cache_dir=config.get_cache_dir(),
-            config=config,
-        )
-
+        config.load()  # Load configuration from file
         generator = UnifiedDataGenerator(
-            config=config,
             username=args.user,
-            output_dir=str(output_layout["data_dir"]),
+            config=config,
+            output_dir=Path(args.output_dir),
             force_refresh=args.force_refresh,
-            cache=shared_cache,
+            include_ai_summaries=args.include_ai_summaries,
         )
 
-        data_output_path, generation_skipped = generator.save()
-        logger.info(f"Unified data saved to: {data_output_path}")
+        # Execute data generation
+        repository_arg = getattr(args, "repository", None)
+        unified_data = generator.generate(single_repository=repository_arg)
 
-        if generation_skipped:
-            logger.info("")
-            logger.info("=" * 70)
-            logger.info(">> Skipping SVG and Report Generation")
-            logger.info("=" * 70)
-            logger.info("Data is fresh (< 1 week old) - no repositories updated")
-            logger.info("SVG visualizations and reports are already up-to-date")
-            logger.info("Use --force-refresh to regenerate everything")
-
-            end_time = datetime.now()
-            total_time = (end_time - start_time).total_seconds()
-
-            logger.info("")
-            logger.info("=" * 70)
-            logger.info("Unified Workflow Complete (No Updates Needed)")
-            logger.info("=" * 70)
-            logger.info(f"Unified Data: {data_output_path}")
-            logger.info(f"SVG Files: {output_layout['artifact_root']}/*.svg (unchanged)")
-            logger.info(f"Report: {report_path} (unchanged)")
-            logger.info(f"Total Time: {total_time:.1f}s")
-            logger.info("")
-            logger.info("All data is current - no regeneration needed!")
-            return 0
-
-        logger.info("")
-        logger.info("=" * 70)
-        logger.info("STEP 2/3: Generating SVG Visualizations")
-        logger.info("=" * 70)
-
-        workflow = UnifiedReportWorkflow(
-            config,
-            shared_cache,
-            output_dir=str(output_layout["artifact_root"]),
-            cache_only=False,
-        )
-
-        try:
-            unified_report = workflow.execute(args.user)
-            logger.info(f"Generated {len(unified_report.available_svgs)} SVG files")
-
-            logger.info("")
-            logger.info("=" * 70)
-            logger.info("STEP 3/3: Generating Markdown Reports")
-            logger.info("=" * 70)
-
-            output_layout["report_dir"].mkdir(parents=True, exist_ok=True)
-
-            generator_report = UnifiedReportGenerator(config)
-            generator_report.generate_report(unified_report, str(report_path))
-            logger.info(f"Report saved to: {report_path}")
-
-        except WorkflowError as error:
-            logger.warning(f"SVG/Report generation had issues: {error}")
-            logger.info("Unified data generation was successful, but SVG/reports had errors")
-
-        screenshot_results = None
-        unified_data = None
-        if getattr(args, "capture_screenshots", False):
-            logger.info("")
-            logger.info("=" * 70)
-            logger.info("STEP 4/4: Capturing Website Screenshots")
-            logger.info("=" * 70)
-
-            try:
-                import json
-                from spark.screenshot import ScreenshotCapture
-
-                with open(data_output_path, "r", encoding="utf-8") as file_handle:
-                    unified_data = json.load(file_handle)
-
-                repositories = unified_data.get("repositories", [])
-                repos_with_websites = [repo for repo in repositories if repo.get("website_url")]
-
-                logger.info(f"Found {len(repos_with_websites)} repositories with websites")
-
-                if repos_with_websites:
-                    screenshot_dir = output_layout["screenshot_dir"]
-                    capturer = ScreenshotCapture(cache=shared_cache, output_dir=screenshot_dir)
-
-                    screenshot_results = capturer.capture_batch(
-                        repositories=repos_with_websites,
-                        username=args.user,
-                        force_refresh=args.force_refresh,
-                    )
-
-                    captured_count = sum(1 for value in screenshot_results.values() if value is not None)
-                    logger.info(f"Captured {captured_count} screenshots to {screenshot_dir}")
-
-                    updated_count = 0
-                    for repo in unified_data.get("repositories", []):
-                        repo_name = repo.get("name")
-                        if repo_name and repo_name in screenshot_results:
-                            screenshot_meta = screenshot_results[repo_name]
-                            if screenshot_meta:
-                                repo["screenshot"] = screenshot_meta
-                                updated_count += 1
-
-                    existing_screenshots = {path.stem: path for path in screenshot_dir.glob("*.png")}
-                    for repo in unified_data.get("repositories", []):
-                        if "screenshot" not in repo:
-                            repo_name = repo.get("name", "")
-                            screenshot_path = existing_screenshots.get(repo_name.lower())
-                            if screenshot_path:
-                                from datetime import timezone
-
-                                stats = screenshot_path.stat()
-                                repo["screenshot"] = {
-                                    "path": to_posix_path(screenshot_path),
-                                    "url": repo.get("website_url", ""),
-                                    "captured_at": datetime.fromtimestamp(stats.st_mtime, tz=timezone.utc).isoformat(),
-                                    "width": 1280,
-                                    "height": 720,
-                                    "file_size_kb": round(stats.st_size / 1024, 2),
-                                }
-                                updated_count += 1
-                                logger.debug(f"Matched existing screenshot for {repo_name}")
-
-                    if updated_count > 0:
-                        logger.info(f"Updated in-memory screenshot metadata for {updated_count} repositories")
-                else:
-                    logger.info("No repositories with website URLs - skipping screenshots")
-
-            except ImportError:
-                logger.warning("Playwright not installed - skipping screenshots")
-                logger.info("Install with: pip install playwright && playwright install chromium")
-            except Exception as error:
-                logger.warning(f"Screenshot capture failed: {error}")
-                logger.info("Unified data and reports were generated successfully")
-
-        else:
-            screenshot_dir = output_layout["screenshot_dir"]
-            if screenshot_dir.exists():
-                existing_screenshots = {path.stem: path for path in screenshot_dir.glob("*.png")}
-                if existing_screenshots:
-                    import json
-
-                    with open(data_output_path, "r", encoding="utf-8") as file_handle:
-                        unified_data = json.load(file_handle)
-
-                    updated_count = 0
-                    for repo in unified_data.get("repositories", []):
-                        if "screenshot" not in repo:
-                            repo_name = repo.get("name", "")
-                            screenshot_path = existing_screenshots.get(repo_name.lower())
-                            if screenshot_path:
-                                from datetime import timezone
-
-                                stats = screenshot_path.stat()
-                                repo["screenshot"] = {
-                                    "path": to_posix_path(screenshot_path),
-                                    "url": repo.get("website_url", ""),
-                                    "captured_at": datetime.fromtimestamp(stats.st_mtime, tz=timezone.utc).isoformat(),
-                                    "width": 1280,
-                                    "height": 720,
-                                    "file_size_kb": round(stats.st_size / 1024, 2),
-                                }
-                                updated_count += 1
-
-                    if updated_count > 0:
-                        logger.info(f"Matched {updated_count} existing screenshots to repositories")
-
-        if unified_data is None and data_output_path.exists():
+        # Write the unified data to file
+        data_file = output_layout["data_dir"] / "repositories.json"
+        data_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(data_file, "w", encoding="utf-8") as f:
             import json
 
-            with open(data_output_path, "r", encoding="utf-8") as file_handle:
-                unified_data = json.load(file_handle)
+            json.dump(unified_data, f, indent=2)
+        logger.info(f"Successfully generated unified data at {to_posix_path(data_file)}")
 
-        if unified_data is not None:
-            audit_payload = audit_screenshot_outputs(
-                repositories=unified_data.get("repositories", []),
-                workspace_root=Path.cwd(),
+        # --- SVG and Report Generation (optional, non-fatal) ---
+        # These steps are best-effort: failures here must not invalidate the
+        # already-written repositories.json. The markdown report generator
+        # has been removed; SVG generation is wrapped so import or runtime
+        # failures simply log a warning.
+        try:
+            from spark.calculator import StatsCalculator
+            from spark.visualizer import StatisticsVisualizer, get_theme
+
+            stats_calculator = StatsCalculator(
+                profile=unified_data["profile"],
+                repositories=unified_data["repositories"],
+                thresholds=config.get_thresholds(),
             )
-            metadata = unified_data.setdefault("metadata", {})
-            metadata["screenshot_audit"] = {
-                key: value
-                for key, value in audit_payload.items()
-                if key != "repositories"
-            }
+            all_repo_commits = []
+            for repo in unified_data["repositories"]:
+                if repo.get("commit_history"):
+                    all_repo_commits.extend(repo["commit_history"])
+            stats_calculator.add_commits(all_repo_commits)
 
-            for repo in unified_data.get("repositories", []):
-                repo_name = repo.get("name", "")
-                repo["screenshot_audit"] = audit_payload["repositories"].get(repo_name, {})
+            stats = stats_calculator.calculate_statistics()
 
-            with open(data_output_path, "w", encoding="utf-8") as file_handle:
-                json.dump(unified_data, file_handle, indent=2, ensure_ascii=False)
-            logger.info(f"Updated {data_output_path} with screenshot audit metadata")
+            theme = get_theme(config.get_theme(), config.themes_config)
+            visualizer = StatisticsVisualizer(theme)
+            svg_output_dir = output_layout["artifact_root"]
+            svg_files = visualizer.generate_all_visualizations(stats, svg_output_dir)
+            logger.info(
+                f"Generated {len(svg_files)} SVG files in {to_posix_path(svg_output_dir)}"
+            )
+        except Exception as svg_err:
+            logger.warning(f"SVG generation skipped: {svg_err}")
 
-            if report_path.exists():
-                audit_markdown = build_screenshot_audit_markdown(audit_payload)
-                if audit_markdown:
-                    with open(report_path, "a", encoding="utf-8") as file_handle:
-                        file_handle.write("\n\n" + audit_markdown + "\n")
-                    logger.info(f"Appended screenshot audit section to {report_path}")
+        # --- Optional: Screenshots ---
+        if getattr(args, 'capture_screenshots', False):
+            from spark.screenshot import ScreenshotCapture
+            logger.info("Capturing repository screenshots...")
+            screenshot_dir = output_layout["screenshot_dir"]
+            username = unified_data["profile"]["username"]
+            with ScreenshotCapture(output_dir=screenshot_dir) as capturer:
+                screenshots = capturer.capture_batch(unified_data["repositories"], username=username)
+            logger.info(f"Captured {len(screenshots)} screenshots in {to_posix_path(screenshot_dir)}")
 
-        end_time = datetime.now()
-        total_time = (end_time - start_time).total_seconds()
+            # Audit screenshots
+            audit_results = audit_screenshot_outputs(unified_data["repositories"], screenshot_dir)
+            audit_report = build_screenshot_audit_markdown(audit_results)
+            audit_report_path = output_layout["report_dir"] / "screenshot-audit.md"
+            with open(audit_report_path, "w", encoding="utf-8") as f:
+                f.write(audit_report)
+            logger.info(f"Generated screenshot audit report at {to_posix_path(audit_report_path)}")
 
-        logger.info("")
-        logger.info("=" * 70)
-        logger.info("ALL-IN-ONE Generation Complete!")
-        logger.info("=" * 70)
-        logger.info(f"Unified Data: {data_output_path}")
-        logger.info(f"SVG Files: {output_layout['artifact_root']}/*.svg")
-        logger.info(f"Report: {report_path}")
-        if screenshot_results:
-            captured_count = sum(1 for value in screenshot_results.values() if value is not None)
-            logger.info(f"Screenshots: {output_layout['screenshot_dir']}/ ({captured_count} captured)")
-        logger.info(f"Total Time: {total_time:.1f}s")
-        logger.info("")
-        logger.info("All data gathered, LLM summaries generated (if enabled),")
-        logger.info("and visualizations/reports created in a single optimized run!")
-
-        return 0
-
-    except Exception as error:
-        logger.error(f"Unified generation failed: {error}")
-        import traceback
-
-        traceback.print_exc()
+    except WorkflowError as e:
+        logger.error(f"Workflow failed at stage '{e.stage}': {e.message}")
+        if e.cause:
+            logger.error(f"  Cause: {e.cause}")
         return 1
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}", exc_info=True)
+        return 1
+
+    logger.info("=" * 70)
+    logger.info("Unified Generation Complete")
+    logger.info("=" * 70)
+    return 0
 
 
 def handle_analyze(args, logger):

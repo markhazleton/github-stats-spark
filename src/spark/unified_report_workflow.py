@@ -119,11 +119,12 @@ class UnifiedReportWorkflow:
         dependency_analyzer = RepositoryDependencyAnalyzer()
         return ranker, summarizer, dependency_analyzer
 
-    def execute(self, username: str) -> UnifiedReport:
+    def execute(self, username: str, repository: Optional[str] = None) -> UnifiedReport:
         """Execute unified report workflow with partial failure handling.
 
         Args:
             username: GitHub username to analyze
+            repository: Optional single repository to run for
 
         Returns:
             UnifiedReport with generated content and error metadata
@@ -133,10 +134,12 @@ class UnifiedReportWorkflow:
         """
         self.start_time = time.time()
         self.logger.info(f"Starting unified report workflow for {username}")
+        if repository:
+            self.logger.info(f"Running in single-repository mode for: {repository}")
 
         # Stage 1: Fetch GitHub data (REQUIRED)
         try:
-            github_data = self._fetch_github_data(username)
+            github_data = self._fetch_github_data(username, repository)
         except Exception as e:
             self.logger.error(f"Failed to fetch GitHub data: {e}")
             raise WorkflowError(
@@ -146,25 +149,26 @@ class UnifiedReportWorkflow:
             ) from e
 
         # Stage 1b: Cache garbage collection — remove orphaned entries
-        try:
-            active_names = [r.name for r in github_data.repositories]
-            gc_result = self.cache.collect_garbage(username, active_names)
-            if gc_result["removed_repos"]:
-                self.logger.info(
-                    f"Cache GC removed {len(gc_result['removed_repos'])} orphaned repos: "
-                    f"{', '.join(gc_result['removed_repos'])}"
-                )
-            # Clean orphaned screenshot files
-            screenshots_dir = self.output_dir / "screenshots"
-            if screenshots_dir.exists():
-                active_set = set(active_names)
-                for png in screenshots_dir.glob("*.png"):
-                    repo_name = png.stem
-                    if repo_name not in active_set:
-                        png.unlink()
-                        self.logger.info(f"Cache GC: removed orphaned screenshot '{png.name}'")
-        except Exception as e:
-            self.logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
+        if not repository:  # Skip GC in single-repo mode
+            try:
+                active_names = [r.name for r in github_data.repositories]
+                gc_result = self.cache.collect_garbage(username, active_names)
+                if gc_result["removed_repos"]:
+                    self.logger.info(
+                        f"Cache GC removed {len(gc_result['removed_repos'])} orphaned repos: "
+                        f"{', '.join(gc_result['removed_repos'])}"
+                    )
+                # Clean orphaned screenshot files
+                screenshots_dir = self.output_dir / "screenshots"
+                if screenshots_dir.exists():
+                    active_set = set(active_names)
+                    for png in screenshots_dir.glob("*.png"):
+                        repo_name = png.stem
+                        if repo_name not in active_set:
+                            png.unlink()
+                            self.logger.info(f"Cache GC: removed orphaned screenshot '{png.name}'")
+            except Exception as e:
+                self.logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
 
         # Stage 2: Generate SVGs (OPTIONAL - FR-011)
         available_svgs = []
@@ -192,6 +196,7 @@ class UnifiedReportWorkflow:
             github_data=github_data,
             available_svgs=available_svgs,
             repository_analyses=repository_analyses,
+            single_repository_mode=bool(repository),
         )
 
         generation_time = time.time() - self.start_time
@@ -216,122 +221,53 @@ class UnifiedReportWorkflow:
 
     @retry(
         stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=60, min=60, max=900),  # 1min, 5min, 15min
+        wait=wait_exponential(multiplier=1, min=2, max=10),
         retry=retry_if_exception_type(RateLimitExceededException),
     )
-    def _fetch_github_data(self, username: str) -> GitHubData:
-        """Fetch all required GitHub data with retry logic.
+    def _fetch_github_data(self, username: str, repository: Optional[str] = None) -> GitHubData:
+        """Fetch all required data from GitHub API with retries.
 
         Args:
             username: GitHub username
+            repository: Optional single repository to fetch
 
         Returns:
-            GitHubData container with profile, repositories, and commit histories
-
-        Raises:
-            WorkflowError: If data fetching fails after retries
+            GitHubData object with profile, repositories, and commits
         """
-        self.logger.info(f"[fetch_github_data] Fetching data for {username}")
-        fetch_start = time.time()
+        self.logger.info("Fetching GitHub data...")
 
-        try:
-            cache_hit_count = 0
-            # Fetch user profile (cache-only when enabled)
-            profile_data = self.cache.get("user_profile", username)
-            if not profile_data:
-                if self.cache_only:
-                    raise WorkflowError(
-                        "User profile cache missing. Run unified step 1 to populate caches.",
-                        stage="fetch_github_data",
-                    )
-                profile_data = self.fetcher.fetch_user_profile(username)
-            else:
-                cache_hit_count += 1
-            user_profile = UserProfile.from_dict(profile_data)
+        profile_data = self.fetcher.get_user_profile(username)
+        self.api_calls += self.fetcher.api_calls
 
-            # Fetch repositories (public only, cache-only when enabled)
-            exclude_private = True
-            exclude_forks = self.config.get("repositories.exclude_forks", True)
-            exclude_archived = self.config.get("repositories.exclude_archived", True)
-            variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
-            repos_data = self.cache.get("repositories", username, repo=variant)
-            if not repos_data:
-                if self.cache_only:
-                    raise WorkflowError(
-                        "Repositories cache missing. Run unified step 1 to populate caches.",
-                        stage="fetch_github_data",
-                    )
-                repos_data = self.fetcher.fetch_repositories(
-                    username,
-                    exclude_private=exclude_private,
-                    exclude_forks=exclude_forks,
-                    exclude_archived=exclude_archived,
-                )
-            else:
-                cache_hit_count += 1
-            self._log_enrichment_availability(repos_data)
-            repositories = [Repository.from_dict(r) for r in repos_data]
-            
-            # Apply max_repos limit from config
-            if len(repositories) > self.max_repos:
-                self.logger.info(f"Limiting to first {self.max_repos} of {len(repositories)} repositories")
-                repositories = repositories[:self.max_repos]
+        if repository:
+            repos_data = [self.fetcher.get_repository(username, repository)]
+        else:
+            repos_data = self.fetcher.get_repositories(username, self.max_repos)
+        self.api_calls += self.fetcher.api_calls
 
-            # Fetch commit histories for all repositories
-            commit_histories: Dict[str, CommitHistory] = {}
-            for repo in repositories:
-                try:
-                    cache_key = sanitize_timestamp_for_filename(repo.pushed_at)
-                    commits_data = self.cache.get(
-                        "commit_counts",
-                        username,
-                        repo=repo.name,
-                        week=cache_key,
-                    )
-                    if not commits_data:
-                        if self.cache_only:
-                            commits_data = {
-                                "total": 0,
-                                "recent_90d": 0,
-                                "recent_180d": 0,
-                                "recent_365d": 0,
-                                "last_commit_date": None,
-                            }
-                        else:
-                            commits_data = self.fetcher.fetch_commit_counts(
-                                username,
-                                repo.name,
-                                repo_pushed_at=repo.pushed_at,
-                            )
-                    else:
-                        cache_hit_count += 1
-                    commits_data["repository_name"] = repo.name
-                    commit_histories[repo.name] = CommitHistory.from_dict(commits_data)
-                except Exception as e:
-                    self.logger.warning(f"Failed to fetch commits for {repo.name}: {e}")
-                    self.errors.append(f"Commit fetch failed: {repo.name}")
+        # Filter out private repositories (Constitutional Requirement)
+        public_repos_data = [r for r in repos_data if not r.get("is_private")]
+        if len(repos_data) != len(public_repos_data):
+            private_count = len(repos_data) - len(public_repos_data)
+            self.logger.info(f"Filtered out {private_count} private repositories")
 
-            fetch_time = time.time() - fetch_start
-            self.logger.info(
-                f"[fetch_github_data] Fetched {len(repositories)} repos in {fetch_time:.1f}s"
-            )
+        # Fetch commit history for each public repository
+        commit_histories = {}
+        for repo in public_repos_data:
+            repo_name = repo["name"]
+            try:
+                commits = self.fetcher.get_commit_history(username, repo_name)
+                commit_histories[repo_name] = commits
+                self.api_calls += self.fetcher.api_calls
+            except Exception as e:
+                self.logger.warning(f"Could not fetch commit history for {repo_name}: {e}")
+                commit_histories[repo_name] = []
 
-            return GitHubData(
-                username=username,
-                profile=user_profile,
-                repositories=repositories,
-                commit_histories=commit_histories,
-                fetch_timestamp=datetime.utcnow(),
-                api_call_count=self.api_calls,
-                cache_hit_count=cache_hit_count,
-            )
-
-        except Exception as e:
-            raise WorkflowError(
-                f"Failed to fetch GitHub data for {username}",
-                stage="fetch_github_data",
-                cause=e
-            ) from e
+        return GitHubData(
+            profile=UserProfile(**profile_data),
+            repositories=[Repository(**r) for r in public_repos_data],
+            commit_histories=commit_histories,
+        )
 
     def _log_enrichment_availability(self, repos_data: List[Dict[str, Any]]) -> None:
         """Log compact availability counters for enrichment status visibility."""
@@ -676,21 +612,25 @@ class UnifiedReportWorkflow:
         github_data: GitHubData,
         available_svgs: List[str],
         repository_analyses: List[RepositoryAnalysis],
+        single_repository_mode: bool = False,
     ) -> UnifiedReport:
-        """Generate UnifiedReport entity from workflow results.
+        """Generate the final unified report object."""
+        self.logger.info("Generating unified report...")
 
-        Args:
-            username: GitHub username
-            github_data: Fetched GitHub data
-            available_svgs: List of successfully generated SVG types
-            repository_analyses: List of repository analyses
+        # In single-repo mode, we don't generate a full report, just the data
+        if single_repository_mode:
+            return UnifiedReport(
+                username=username,
+                generation_date=datetime.now().isoformat(),
+                svg_files=available_svgs,
+                repository_analyses=repository_analyses,
+                errors=self.errors,
+                warnings=self.warnings,
+                api_calls=self.api_calls,
+                generation_time=time.time() - self.start_time,
+            )
 
-        Returns:
-            UnifiedReport instance ready for markdown generation
-        """
-        self.logger.info("[generate_unified_report] Creating UnifiedReport entity")
-
-        report = UnifiedReport(
+        return UnifiedReport(
             username=username,
             timestamp=datetime.utcnow(),
             repositories=repository_analyses,

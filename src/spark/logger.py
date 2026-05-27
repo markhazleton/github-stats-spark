@@ -51,17 +51,19 @@ class Logger:
         """Deprecated: use warning() instead."""
         self.warning(message)
 
-    def error(self, message: str, exception: Optional[Exception] = None) -> None:
+    def error(self, message: str, exc_info: bool = False) -> None:
         """Log an error message to stderr.
 
         Args:
             message: Error message
-            exception: Optional exception to include details
+            exc_info: If true, include exception info from sys.exc_info()
         """
         error_msg = self._format_message("ERROR", message)
-        if exception:
-            error_msg += f"\n  Details: {type(exception).__name__}: {str(exception)}"
         print(error_msg, file=sys.stderr)
+
+        if exc_info:
+            import traceback
+            traceback.print_exc(file=sys.stderr)
 
     def debug(self, message: str) -> None:
         """Log a debug message to stdout (only if verbose enabled).
