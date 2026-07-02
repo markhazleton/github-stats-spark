@@ -223,7 +223,7 @@ jobs:
         with:
           name: generated-statistics
           path: output/*.svg
-          retention-days: 30
+          retention-days: 1
 
 # Setup Instructions:
 # 1. Fork this repository
