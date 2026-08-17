@@ -5,7 +5,7 @@
 # The first entry is the default user for the dashboard and single-user runs.
 # Add more entries to process multiple users in one pipeline run.
 users:
-  - markhazleton
+  - MakeBoldSolutions
 
 # Statistics Configuration
 stats:
