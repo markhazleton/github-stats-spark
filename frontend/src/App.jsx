@@ -258,7 +258,9 @@ function App() {
                   </div>
                   <div className="header-title-group">
                     <span className="header-title-main">GitHubSpark</span>
-                    <span className="header-title-sub">markhazleton</span>
+                    <span className="header-title-sub">
+                      {data?.profile?.username || "MakeBoldSolutions"}
+                    </span>
                   </div>
                 </a>
 

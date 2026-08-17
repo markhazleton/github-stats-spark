@@ -18,7 +18,7 @@ const CACHE_KEY_REPOSITORIES = "repositories-data";
 
 // Default user when no ?user= query param is provided.
 // Must match the 'user' key in config/spark.yml.
-const DEFAULT_USER = "markhazleton";
+const DEFAULT_USER = "makeboldsolutions";
 
 const getSelectedUser = (explicitUser) => {
   if (explicitUser) {
