@@ -142,10 +142,10 @@ All documentation in this project:
 ## 🔗 External Resources
 
 - **[Main README](../README.md)** - Project overview and quick start
-- **[GitHub Repository](https://github.com/markhazleton/github-stats-spark)** - Source code
-- **[Sample Dashboard](https://markhazleton.github.io/github-stats-spark/)** - Live demo
-- **[Issues](https://github.com/markhazleton/github-stats-spark/issues)** - Bug reports and feature requests
+- **[GitHub Repository](https://github.com/MakeBoldSolutions/github-stats-spark)** - Source code
+- **[Sample Dashboard](https://makeboldsolutions.github.io/github-stats-spark/)** - Live demo
+- **[Issues](https://github.com/MakeBoldSolutions/github-stats-spark/issues)** - Bug reports and feature requests
 
 ---
 
-**Need help?** Check the relevant guide above or [open an issue](https://github.com/markhazleton/github-stats-spark/issues).
+**Need help?** Check the relevant guide above or [open an issue](https://github.com/MakeBoldSolutions/github-stats-spark/issues).

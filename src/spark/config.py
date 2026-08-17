@@ -127,6 +127,17 @@ class SparkConfig:
         """
         return self.require("stats.enabled")
 
+    def get_thresholds(self) -> Dict[str, Any]:
+        """Get statistics thresholds.
+
+        Returns:
+            Thresholds dict from stats.thresholds
+
+        Raises:
+            ConfigurationError: If stats.thresholds is not set in config
+        """
+        return self.require("stats.thresholds")
+
     def get_cache_dir(self) -> str:
         """Get the configured cache directory.
 

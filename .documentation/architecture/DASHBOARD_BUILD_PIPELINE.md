@@ -623,7 +623,7 @@ class DashboardBuilder:
         │    GitHub Pages Auto-Deployment           │
         ├──────────────────────────────────────────┤
         │  Settings → Pages → Deploy from /docs/  │
-        │  URL: https://markhazleton.github.io/   │
+        │  URL: https://makeboldsolutions.github.io/  │
         │       github-stats-spark/               │
         └──────────────────────────────────────────┘
 ```
@@ -814,7 +814,7 @@ Access:
 ### URL Structure
 
 ```text
-Base URL: https://markhazleton.github.io/github-stats-spark/
+Base URL: https://makeboldsolutions.github.io/github-stats-spark/
 
 Routes:
   /                          → index.html (dashboard)

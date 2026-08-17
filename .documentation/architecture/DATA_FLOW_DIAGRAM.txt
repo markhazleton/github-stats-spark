@@ -229,7 +229,7 @@ PHASE 2: GITHUB PAGES DEPLOYMENT
 │  3. Builds static site (no Jekyll processing needed)                      │
 │  4. Publishes to GitHub Pages URL                                        │
 │                                                                            │
-│  URL: https://markhazleton.github.io/github-stats-spark/                 │
+│  URL: https://makeboldsolutions.github.io/github-stats-spark/            │
 │                                                                            │
 │  Routes:                                                                   │
 │  ├─ / (root)                  → /docs/index.html (dashboard)             │

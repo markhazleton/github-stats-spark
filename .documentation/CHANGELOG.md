@@ -374,6 +374,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **2.0.0** (2025-12-29): AI-Powered Repository Analysis feature
 - **1.0.0** (2024-12-28): Initial release with SVG visualizations
 
-[Unreleased]: https://github.com/markhazleton/github-stats-spark/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/markhazleton/github-stats-spark/compare/v1.0.0...v2.0.0
-[1.0.0]: https://github.com/markhazleton/github-stats-spark/releases/tag/v1.0.0
+[Unreleased]: https://github.com/MakeBoldSolutions/github-stats-spark/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/MakeBoldSolutions/github-stats-spark/compare/v1.0.0...v2.0.0
+[1.0.0]: https://github.com/MakeBoldSolutions/github-stats-spark/releases/tag/v1.0.0

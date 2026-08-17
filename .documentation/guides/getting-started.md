@@ -14,7 +14,7 @@ Before you begin, ensure you have:
 
 ### Step 1: Fork the Repository
 
-1. Visit the Stats Spark repository: `https://github.com/markhazleton/github-stats-spark`
+1. Visit the Stats Spark repository: `https://github.com/MakeBoldSolutions/github-stats-spark`
 2. Click the "Fork" button in the top right
 3. Select your account as the destination
 
@@ -190,7 +190,7 @@ For detailed usage, see [Repository Analysis Documentation](analyze-command.md).
 
 ## Support
 
-- **Issues**: Report bugs at [GitHub Issues](https://github.com/markhazleton/github-stats-spark/issues)
+- **Issues**: Report bugs at [GitHub Issues](https://github.com/MakeBoldSolutions/github-stats-spark/issues)
 - **Documentation**: Full docs at [Documentation Index](../README.md)
 - **Examples**: See [assets/examples/markhazleton/](../../assets/examples/markhazleton/)
 

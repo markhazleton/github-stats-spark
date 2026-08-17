@@ -16,7 +16,7 @@ setup(
     description="GitHub profile statistics generator with automated SVG visualizations and AI-powered repository analysis",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/markhazleton/github-stats-spark",
+    url="https://github.com/MakeBoldSolutions/github-stats-spark",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     classifiers=[

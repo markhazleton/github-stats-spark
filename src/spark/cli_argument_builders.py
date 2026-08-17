@@ -27,7 +27,7 @@ Examples:
   Clear cache:
     spark cache --clear
 
-For more information, visit: https://github.com/markhazleton/github-stats-spark
+For more information, visit: https://github.com/MakeBoldSolutions/github-stats-spark
 """
 
 

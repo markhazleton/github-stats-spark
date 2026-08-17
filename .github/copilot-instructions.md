@@ -234,7 +234,7 @@ spark cache --clear  # Or delete .cache/ directory
 6. **Performance**: <5 min for <500 repos, pushed_at-based cache invalidation, exponential backoff (1s, 2s, 4s, 8s)
 7. **Accuracy**: <1% discrepancy vs GitHub, deterministic Spark Score
 8. **Themes**: WCAG AA contrast compliance (4.5:1 for text)
-9. **Demo Account**: Use `markhazleton` for all examples
+9. **Demo Account**: Use `MakeBoldSolutions` for all examples
 10. **Versioning**: Semantic versioning (breaking config = MAJOR, new features = MINOR, fixes = PATCH)
 11. **Documentation Location**: Primary user-facing Markdown documentation MUST live in `/.documentation`; approved exceptions are the root README plus metadata READMEs under `frontend/`, `frontend/public/`, `docs/`, and `output/`
 

@@ -549,8 +549,8 @@ Comprehensive guides and references for all features:
 
 ### Support
 
-- **[Issues](https://github.com/markhazleton/github-stats-spark/issues)** - Report bugs or request features
-- **[Discussions](https://github.com/markhazleton/github-stats-spark/discussions)** - Ask questions and share ideas
+- **[Issues](https://github.com/MakeBoldSolutions/github-stats-spark/issues)** - Report bugs or request features
+- **[Discussions](https://github.com/MakeBoldSolutions/github-stats-spark/discussions)** - Ask questions and share ideas
 
 ## 🔧 Troubleshooting
 
@@ -624,9 +624,9 @@ Example correct URL:
 Still stuck? We're here to help:
 
 - 📖 Check [Getting Started Guide](.documentation/guides/getting-started.md) for detailed setup
-- 🔍 Search [existing issues](https://github.com/markhazleton/github-stats-spark/issues)
-- 💬 Start a [discussion](https://github.com/markhazleton/github-stats-spark/discussions)
-- 🐛 [Open a new issue](https://github.com/markhazleton/github-stats-spark/issues/new) with details
+- 🔍 Search [existing issues](https://github.com/MakeBoldSolutions/github-stats-spark/issues)
+- 💬 Start a [discussion](https://github.com/MakeBoldSolutions/github-stats-spark/discussions)
+- 🐛 [Open a new issue](https://github.com/MakeBoldSolutions/github-stats-spark/issues/new) with details
 
 ## 🤝 Contributing
 
@@ -636,7 +636,7 @@ We welcome contributions of all kinds! Stats Spark is an open-source project tha
 
 #### 🐛 Report Bugs
 
-Found an issue? [Open a bug report](https://github.com/markhazleton/github-stats-spark/issues/new?labels=bug) with:
+Found an issue? [Open a bug report](https://github.com/MakeBoldSolutions/github-stats-spark/issues/new?labels=bug) with:
 
 - Clear description of the problem
 - Steps to reproduce
@@ -645,7 +645,7 @@ Found an issue? [Open a bug report](https://github.com/markhazleton/github-stats
 
 #### 💡 Suggest Features
 
-Have an idea? [Start a discussion](https://github.com/markhazleton/github-stats-spark/discussions) or [open a feature request](https://github.com/markhazleton/github-stats-spark/issues/new?labels=enhancement) describing:
+Have an idea? [Start a discussion](https://github.com/MakeBoldSolutions/github-stats-spark/discussions) or [open a feature request](https://github.com/MakeBoldSolutions/github-stats-spark/issues/new?labels=enhancement) describing:
 
 - The problem you're trying to solve
 - Proposed solution or feature
@@ -662,7 +662,7 @@ Ready to code? We'd love your contributions:
 4. **Update documentation** as needed
 5. **Submit a PR** with a clear description
 
-**Good First Issues**: Look for issues labeled [`good first issue`](https://github.com/markhazleton/github-stats-spark/labels/good%20first%20issue) for beginner-friendly tasks.
+**Good First Issues**: Look for issues labeled [`good first issue`](https://github.com/MakeBoldSolutions/github-stats-spark/labels/good%20first%20issue) for beginner-friendly tasks.
 
 #### 📖 Improve Documentation
 
@@ -829,7 +829,7 @@ Stats Spark is built on the shoulders of giants:
 
 Thank you to all contributors who have helped make Stats Spark better!
 
-[View all contributors →](https://github.com/markhazleton/github-stats-spark/graphs/contributors)
+[View all contributors →](https://github.com/MakeBoldSolutions/github-stats-spark/graphs/contributors)
 
 ## 🌟 Star History
 
@@ -837,7 +837,7 @@ If you find Stats Spark useful, please consider giving it a star! ⭐
 
 It helps others discover the project and motivates continued development.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=markhazleton/github-stats-spark&type=Date)](https://star-history.com/#markhazleton/github-stats-spark&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=MakeBoldSolutions/github-stats-spark&type=Date)](https://star-history.com/#MakeBoldSolutions/github-stats-spark&Date)
 
 ## 📊 Usage Examples
 
@@ -868,7 +868,7 @@ Check out my [detailed GitHub analysis](output/users/YOUR_USERNAME/reports/YOUR_
 
 ![GitHub Stats](https://raw.githubusercontent.com/YOUR_USERNAME/github-stats-spark/main/output/overview.svg)
 
-*Updated weekly via [Stats Spark](https://github.com/markhazleton/github-stats-spark)*
+*Updated weekly via [Stats Spark](https://github.com/MakeBoldSolutions/github-stats-spark)*
 ```
 
 ### Custom Sections
@@ -902,7 +902,7 @@ Create themed sections in your profile:
 [![View Sample](https://img.shields.io/badge/View%20Sample-Analysis%20Report-green?style=for-the-badge)](output/reports/markhazleton-analysis.md)
 [![Documentation](https://img.shields.io/badge/Read-Documentation-orange?style=for-the-badge)](.documentation/README.md)
 
-[Quick Start](#-quick-start) • [Features](#-features) • [Documentation](.documentation/README.md) • [Report Issue](https://github.com/markhazleton/github-stats-spark/issues) • [Contribute](#-contributing)
+[Quick Start](#-quick-start) • [Features](#-features) • [Documentation](.documentation/README.md) • [Report Issue](https://github.com/MakeBoldSolutions/github-stats-spark/issues) • [Contribute](#-contributing)
 
 Made with ❤️ by developers, for developers
 

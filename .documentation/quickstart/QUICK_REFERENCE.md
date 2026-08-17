@@ -139,5 +139,5 @@ dashboard:
 
 ## Support
 
-- **Issues**: https://github.com/markhazleton/github-stats-spark/issues
-- **Discussions**: https://github.com/markhazleton/github-stats-spark/discussions
+- **Issues**: https://github.com/MakeBoldSolutions/github-stats-spark/issues
+- **Discussions**: https://github.com/MakeBoldSolutions/github-stats-spark/discussions

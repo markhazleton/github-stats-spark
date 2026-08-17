@@ -83,18 +83,63 @@ def handle_unified(args, logger):
                 repositories=unified_data["repositories"],
                 thresholds=config.get_thresholds(),
             )
-            all_repo_commits = []
-            for repo in unified_data["repositories"]:
-                if repo.get("commit_history"):
-                    all_repo_commits.extend(repo["commit_history"])
+            # commit_history per repo is an aggregated summary (not raw commit
+            # records), so synthesize date-only commit entries from the
+            # profile-level activity_calendar (date -> count) instead.
+            all_repo_commits = [
+                {"date": f"{day}T12:00:00Z"}
+                for day, count in (unified_data["profile"].get("activity_calendar") or {}).items()
+                for _ in range(count)
+            ]
             stats_calculator.add_commits(all_repo_commits)
+            for repo in unified_data["repositories"]:
+                language_bytes = repo.get("language_stats") or repo.get("languages")
+                if language_bytes:
+                    stats_calculator.add_languages(language_bytes)
 
             stats = stats_calculator.calculate_statistics()
 
             theme = get_theme(config.get_theme(), config.themes_config)
             visualizer = StatisticsVisualizer(theme)
             svg_output_dir = output_layout["artifact_root"]
-            svg_files = visualizer.generate_all_visualizations(stats, svg_output_dir)
+            svg_output_dir.mkdir(parents=True, exist_ok=True)
+            username = unified_data["profile"]["username"]
+
+            svg_generators = {
+                "overview.svg": lambda: visualizer.generate_overview(
+                    username=username,
+                    spark_score=stats["spark_score"],
+                    total_commits=stats["total_commits"],
+                    languages=stats["languages"],
+                    time_pattern=stats["time_pattern"],
+                ),
+                "heatmap.svg": lambda: visualizer.generate_heatmap(
+                    commits_by_date=stats["commits_by_day"],
+                    username=username,
+                ),
+                "languages.svg": lambda: visualizer.generate_languages(
+                    languages=stats["languages"],
+                    username=username,
+                ),
+                "streaks.svg": lambda: visualizer.generate_streaks(
+                    streaks=stats["streaks"],
+                    username=username,
+                ),
+                "fun.svg": lambda: visualizer.generate_fun_stats(
+                    stats=stats["fun_stats"],
+                    username=username,
+                ),
+                "release.svg": lambda: visualizer.generate_release_cadence(
+                    cadence=stats["release_cadence"],
+                    username=username,
+                ),
+            }
+            svg_files = []
+            for filename, generate in svg_generators.items():
+                svg_path = svg_output_dir / filename
+                with open(svg_path, "w", encoding="utf-8") as f:
+                    f.write(generate())
+                svg_files.append(svg_path)
             logger.info(
                 f"Generated {len(svg_files)} SVG files in {to_posix_path(svg_output_dir)}"
             )

@@ -257,4 +257,4 @@ The workflow runs daily at midnight UTC:
 
 ---
 
-**Questions?** Open an [issue](https://github.com/markhazleton/github-stats-spark/issues) or check the [docs](.).
+**Questions?** Open an [issue](https://github.com/MakeBoldSolutions/github-stats-spark/issues) or check the [docs](.).

@@ -108,7 +108,8 @@ Repository build outputs and coverage artifacts are **not source code** and MUST
 - Approved metadata/framework exceptions are limited to the root `README.md`, `frontend/README.md`, `frontend/public/README.md`, `docs/README.md`, and `output/README.md`
 - `/docs` is the GitHub Pages publishing source tree (built site artifacts), not the project documentation corpus; governance and harvest workflows MUST treat it as deployment/source output, not as archival documentation content
 - Generated outputs go to `output/` and `data/`
-- Examples use canonical demo account: `markhazleton`
+- Examples use canonical demo account: `MakeBoldSolutions`
+- Canonical repository reference is `https://github.com/MakeBoldSolutions/github-stats-spark` — no `github.com/markhazleton/*` references
 
 ### Versioning
 
@@ -133,17 +134,16 @@ Before merging code, ask:
 ---
 
 <!-- SYNC IMPACT REPORT
-Version change: 1.0.0 → 1.1.0
-Modified principles: I. Single Responsibility (added size thresholds: SHOULD <500 LOC, MUST justify 500-799, MUST split ≥800)
-Added sections: VI. Generated Artifact Boundary
+Version change: 1.1.0 → 1.1.1
+Modified principles: none
+Modified sections: Governance → Documentation Standards (canonical demo account changed from `markhazleton` to `MakeBoldSolutions`; added canonical repository reference `github.com/MakeBoldSolutions/github-stats-spark`)
+Added sections: none
 Removed sections: none
 Templates requiring updates:
-  - plan-template.md: Constitution Check updated with Principle I size gate and Principle VI output gate ✅
+  - plan-template.md: No changes required ✅
   - tasks-template.md: No changes required ✅
 Follow-up TODOs:
-  - Add justification comments to src/spark/fetcher.py and src/spark/cli_handlers.py ✅
-  - Add scan.exclude_paths to config/spark.yml ✅
-  - Update site-audit.ps1 to enforce LOC threshold and respect exclude_paths ✅
+  - Verify README.md, setup.py, source, and .documentation examples reference MakeBoldSolutions, not markhazleton ✅
 -->
 
-*Last Amended: 2026-04-02 (v1.1.0 — CAP-2026-001, CAP-2026-002)*
+*Last Amended: 2026-08-16 (v1.1.1 — demo account and GitHub reference migration to MakeBoldSolutions)*

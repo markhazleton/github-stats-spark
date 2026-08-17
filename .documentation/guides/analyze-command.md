@@ -427,4 +427,4 @@ See [API Reference](../api/api-reference.md) for complete module documentation.
 
 ---
 
-**Questions or Issues?** [Report them on GitHub](https://github.com/markhazleton/github-stats-spark/issues)
+**Questions or Issues?** [Report them on GitHub](https://github.com/MakeBoldSolutions/github-stats-spark/issues)
