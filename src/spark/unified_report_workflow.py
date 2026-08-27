@@ -14,7 +14,12 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
-from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_exponential,
+    retry_if_exception_type,
+)
 from github import RateLimitExceededException
 
 from spark.config import SparkConfig
@@ -82,7 +87,9 @@ class UnifiedReportWorkflow:
         )
         self.theme = self._resolve_theme()
         self.visualizer = self._create_visualizer()
-        self.ranker, self.summarizer, self.dependency_analyzer = self._create_analysis_components()
+        self.ranker, self.summarizer, self.dependency_analyzer = (
+            self._create_analysis_components()
+        )
 
         # Track errors and warnings
         self.errors: List[str] = []
@@ -91,7 +98,9 @@ class UnifiedReportWorkflow:
         self.api_calls: int = 0
 
         # Read max_repositories from config (single source of truth — no fallback)
-        self.max_repos = self.config.require("dashboard.data_generation.max_repositories")
+        self.max_repos = self.config.require(
+            "dashboard.data_generation.max_repositories"
+        )
 
         self.logger.info(
             "GitHub REST API version staging: "
@@ -139,13 +148,14 @@ class UnifiedReportWorkflow:
 
         # Stage 1: Fetch GitHub data (REQUIRED)
         try:
-            github_data = self._fetch_github_data(username, repository)
+            if repository:
+                github_data = self._fetch_github_data(username, repository)
+            else:
+                github_data = self._fetch_github_data(username)
         except Exception as e:
             self.logger.error(f"Failed to fetch GitHub data: {e}")
             raise WorkflowError(
-                "Cannot proceed without GitHub data",
-                stage="fetch_github_data",
-                cause=e
+                "Cannot proceed without GitHub data", stage="fetch_github_data", cause=e
             ) from e
 
         # Stage 1b: Cache garbage collection — remove orphaned entries
@@ -166,7 +176,9 @@ class UnifiedReportWorkflow:
                         repo_name = png.stem
                         if repo_name not in active_set:
                             png.unlink()
-                            self.logger.info(f"Cache GC: removed orphaned screenshot '{png.name}'")
+                            self.logger.info(
+                                f"Cache GC: removed orphaned screenshot '{png.name}'"
+                            )
             except Exception as e:
                 self.logger.warning(f"Cache garbage collection failed (non-fatal): {e}")
 
@@ -224,7 +236,9 @@ class UnifiedReportWorkflow:
         wait=wait_exponential(multiplier=1, min=2, max=10),
         retry=retry_if_exception_type(RateLimitExceededException),
     )
-    def _fetch_github_data(self, username: str, repository: Optional[str] = None) -> GitHubData:
+    def _fetch_github_data(
+        self, username: str, repository: Optional[str] = None
+    ) -> GitHubData:
         """Fetch all required data from GitHub API with retries.
 
         Args:
@@ -236,14 +250,70 @@ class UnifiedReportWorkflow:
         """
         self.logger.info("Fetching GitHub data...")
 
-        profile_data = self.fetcher.get_user_profile(username)
-        self.api_calls += self.fetcher.api_calls
+        cache_hits = 0
 
-        if repository:
-            repos_data = [self.fetcher.get_repository(username, repository)]
+        profile_data = self.cache.get("user_profile", username)
+        if profile_data:
+            cache_hits += 1
         else:
-            repos_data = self.fetcher.get_repositories(username, self.max_repos)
-        self.api_calls += self.fetcher.api_calls
+            profile_fetch = getattr(
+                self.fetcher,
+                "get_user_profile",
+                getattr(self.fetcher, "fetch_user_profile", None),
+            )
+            if profile_fetch is None:
+                raise AttributeError("Fetcher does not support user profile retrieval")
+            profile_data = profile_fetch(username)
+            self.api_calls += getattr(self.fetcher, "api_calls", 0)
+
+        exclude_private = self.config.get("repositories.exclude_private", True)
+        exclude_forks = self.config.get("repositories.exclude_forks", True)
+        exclude_archived = self.config.get("repositories.exclude_archived", True)
+        repo_variant = f"list_{exclude_private}_{exclude_forks}_{exclude_archived}"
+        if repository:
+            repos_data = self.cache.get("repositories", username, repo=repo_variant)
+            if repos_data:
+                cache_hits += 1
+            else:
+                repositories_fetch = getattr(
+                    self.fetcher,
+                    "get_repositories",
+                    getattr(self.fetcher, "fetch_repositories", None),
+                )
+                if repositories_fetch is None:
+                    raise AttributeError(
+                        "Fetcher does not support repository retrieval"
+                    )
+                repos_data = repositories_fetch(
+                    username,
+                    exclude_private=exclude_private,
+                    exclude_forks=exclude_forks,
+                    exclude_archived=exclude_archived,
+                )
+                self.api_calls += getattr(self.fetcher, "api_calls", 0)
+            repos_data = [repo for repo in repos_data if repo.get("name") == repository]
+        else:
+            repos_data = self.cache.get("repositories", username, repo=repo_variant)
+            if repos_data:
+                cache_hits += 1
+            else:
+                repositories_fetch = getattr(
+                    self.fetcher,
+                    "get_repositories",
+                    getattr(self.fetcher, "fetch_repositories", None),
+                )
+                if repositories_fetch is None:
+                    raise AttributeError(
+                        "Fetcher does not support repository retrieval"
+                    )
+                repos_data = repositories_fetch(
+                    username,
+                    exclude_private=exclude_private,
+                    exclude_forks=exclude_forks,
+                    exclude_archived=exclude_archived,
+                )
+                self.api_calls += getattr(self.fetcher, "api_calls", 0)
+            repos_data = repos_data[: self.max_repos]
 
         # Filter out private repositories (Constitutional Requirement)
         public_repos_data = [r for r in repos_data if not r.get("is_private")]
@@ -256,17 +326,47 @@ class UnifiedReportWorkflow:
         for repo in public_repos_data:
             repo_name = repo["name"]
             try:
-                commits = self.fetcher.get_commit_history(username, repo_name)
-                commit_histories[repo_name] = commits
-                self.api_calls += self.fetcher.api_calls
+                cache_key = sanitize_timestamp_for_filename(repo.get("pushed_at"))
+                commit_counts = self.cache.get(
+                    "commit_counts",
+                    username,
+                    repo=repo_name,
+                    week=cache_key,
+                )
+                if commit_counts:
+                    cache_hits += 1
+                else:
+                    commit_fetch = getattr(
+                        self.fetcher,
+                        "get_commit_history",
+                        getattr(self.fetcher, "fetch_commit_counts", None),
+                    )
+                    if commit_fetch is None:
+                        raise AttributeError(
+                            "Fetcher does not support commit history retrieval"
+                        )
+                    commit_counts = commit_fetch(
+                        username,
+                        repo_name,
+                        repo_pushed_at=repo.get("pushed_at"),
+                    )
+                    self.api_calls += getattr(self.fetcher, "api_calls", 0)
+                commit_counts = {**commit_counts, "repository_name": repo_name}
+                commit_histories[repo_name] = CommitHistory.from_dict(commit_counts)
             except Exception as e:
-                self.logger.warning(f"Could not fetch commit history for {repo_name}: {e}")
-                commit_histories[repo_name] = []
+                self.logger.warning(
+                    f"Could not fetch commit history for {repo_name}: {e}"
+                )
+                commit_histories[repo_name] = CommitHistory(repository_name=repo_name)
 
         return GitHubData(
-            profile=UserProfile(**profile_data),
-            repositories=[Repository(**r) for r in public_repos_data],
+            username=username,
+            profile=UserProfile.from_dict(profile_data),
+            repositories=[Repository.from_dict(r) for r in public_repos_data],
             commit_histories=commit_histories,
+            fetch_timestamp=datetime.utcnow(),
+            api_call_count=self.api_calls,
+            cache_hit_count=cache_hits,
         )
 
     def _log_enrichment_availability(self, repos_data: List[Dict[str, Any]]) -> None:
@@ -305,7 +405,16 @@ class UnifiedReportWorkflow:
             elif diag_availability == "unavailable":
                 diag_unavailable += 1
 
-        if any([pr_partial, pr_unavailable, sec_partial, sec_unavailable, diag_partial, diag_unavailable]):
+        if any(
+            [
+                pr_partial,
+                pr_unavailable,
+                sec_partial,
+                sec_unavailable,
+                diag_partial,
+                diag_unavailable,
+            ]
+        ):
             self.logger.warning(
                 "Repository enrichment availability summary: "
                 f"pr_partial={pr_partial} "
@@ -316,9 +425,7 @@ class UnifiedReportWorkflow:
                 f"diagnostics_unavailable={diag_unavailable}"
             )
 
-    def _generate_svgs(
-        self, username: str, github_data: GitHubData
-    ) -> List[str]:
+    def _generate_svgs(self, username: str, github_data: GitHubData) -> List[str]:
         """Generate SVG visualizations (FR-011: continue if fails).
 
         Args:
@@ -344,7 +451,9 @@ class UnifiedReportWorkflow:
             if commit_history:
                 repo_dict["commit_history"] = commit_history.to_dict()
                 if commit_history.last_commit_date:
-                    repo_dict["last_commit_date"] = commit_history.last_commit_date.isoformat()
+                    repo_dict["last_commit_date"] = (
+                        commit_history.last_commit_date.isoformat()
+                    )
             repos_dict.append(repo_dict)
         calculator = StatsCalculator(
             profile_dict,
@@ -353,8 +462,10 @@ class UnifiedReportWorkflow:
         )
 
         # Pre-fetch data for all repositories once
-        self.logger.info(f"[generate_svgs] Pre-fetching detailed stats for {len(github_data.repositories)} repositories")
-        
+        self.logger.info(
+            f"[generate_svgs] Pre-fetching detailed stats for {len(github_data.repositories)} repositories"
+        )
+
         for repo in github_data.repositories:
             try:
                 cache_key = sanitize_timestamp_for_filename(repo.pushed_at)
@@ -377,7 +488,7 @@ class UnifiedReportWorkflow:
                     )
                     if commit_stats:
                         calculator.add_commits(commit_stats)
-                
+
                 # Read language statistics from cache only
                 languages = self.cache.get(
                     "languages",
@@ -387,9 +498,11 @@ class UnifiedReportWorkflow:
                 )
                 if languages:
                     calculator.add_languages(languages)
-                    
+
             except Exception as e:
-                self.logger.debug(f"Could not fetch detailed stats for {repo.name}: {e}")
+                self.logger.debug(
+                    f"Could not fetch detailed stats for {repo.name}: {e}"
+                )
 
         # Calculate statistics once
         stats = calculator.calculate_statistics()
@@ -400,9 +513,7 @@ class UnifiedReportWorkflow:
                 continue
 
             try:
-                svg_content = self._generate_single_svg(
-                    svg_type, username, stats
-                )
+                svg_content = self._generate_single_svg(svg_type, username, stats)
                 svg_path = self.output_dir / f"{svg_type}.svg"
                 svg_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -513,7 +624,7 @@ class UnifiedReportWorkflow:
                     repo=repo.name,
                     week=cache_key,
                 )
-                
+
                 # Read language statistics from cache only
                 language_stats = self.cache.get(
                     "languages",
@@ -521,12 +632,12 @@ class UnifiedReportWorkflow:
                     repo=repo.name,
                     week=cache_key,
                 )
-                
+
                 # Update repository with language stats
                 if language_stats:
                     repo.language_stats = language_stats
                     repo.language_count = len(language_stats)
-                
+
                 # Analyze dependencies and tech stack (before summary)
                 tech_stack = None
                 try:
@@ -537,11 +648,13 @@ class UnifiedReportWorkflow:
                         repo=repo.name,
                         week=cache_key,
                     )
-                    
+
                     if dependency_files:
                         # Analyze dependencies if files were found
-                        dep_report = self.dependency_analyzer.analyze_repository(dependency_files)
-                        
+                        dep_report = self.dependency_analyzer.analyze_repository(
+                            dependency_files
+                        )
+
                         # Convert to TechnologyStack model (if needed)
                         tech_stack = self.dependency_analyzer.build_technology_stack(
                             repository_name=repo.name,
@@ -551,7 +664,7 @@ class UnifiedReportWorkflow:
                     self.logger.debug(
                         f"Dependency analysis skipped for {repo.name}: {e}"
                     )
-                
+
                 # Use cached AI summary if available; otherwise fallback without AI
                 cached_summary = self.cache.get(
                     "ai_summary",
@@ -563,9 +676,13 @@ class UnifiedReportWorkflow:
                     summary = RepositorySummary(
                         repo_id=repo.name,
                         ai_summary=cached_summary.get("ai_summary"),
-                        generation_method=cached_summary.get("generation_method", "cached"),
+                        generation_method=cached_summary.get(
+                            "generation_method", "cached"
+                        ),
                         generation_timestamp=(
-                            datetime.fromisoformat(cached_summary["generation_timestamp"])
+                            datetime.fromisoformat(
+                                cached_summary["generation_timestamp"]
+                            )
                             if cached_summary.get("generation_timestamp")
                             else None
                         ),
@@ -637,8 +754,7 @@ class UnifiedReportWorkflow:
             available_svgs=available_svgs,
             total_api_calls=github_data.api_call_count,
             total_ai_tokens=sum(
-                a.summary.tokens_used if a.summary else 0
-                for a in repository_analyses
+                a.summary.tokens_used if a.summary else 0 for a in repository_analyses
             ),
             ai_model=RepositorySummarizer.DEFAULT_MODEL,
         )

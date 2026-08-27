@@ -33,6 +33,7 @@ Approved README exceptions are linked here so contributors have a single entry p
 - **[Architecture Overview](architecture/README.md)** - System design and data flow
 - **[Changelog](CHANGELOG.md)** - Version history and release notes
 - **[Testing](guides/TESTING.md)** - Test coverage and quality metrics
+- **[Fix Score Remediation Prompt](copilot/prompts/fix-score-remediation.md)** - Copilot prompt for resolving score blockers
 - **[Constitution](memory/constitution.md)** - Non-negotiable project principles
 - **[Feature Specs](specs/)** - Feature specifications and task plans
 

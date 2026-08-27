@@ -1,10 +1,10 @@
 """Shared time utilities for cache key generation."""
 
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Union
 
 
-def sanitize_timestamp_for_filename(timestamp: Optional[datetime]) -> str:
+def sanitize_timestamp_for_filename(timestamp: Optional[Union[datetime, str]]) -> str:
     """Convert datetime to Windows-safe filename string.
 
     ISO format timestamps contain colons which are invalid in Windows filenames.
@@ -19,6 +19,12 @@ def sanitize_timestamp_for_filename(timestamp: Optional[datetime]) -> str:
     """
     if not timestamp:
         return "unknown"
+
+    if isinstance(timestamp, str):
+        try:
+            timestamp = datetime.fromisoformat(timestamp.replace("Z", "+00:00"))
+        except ValueError:
+            return timestamp.replace(":", "-")
 
     timestamp_no_micro = timestamp.replace(microsecond=0)
     iso_str = timestamp_no_micro.isoformat()

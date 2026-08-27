@@ -19,7 +19,12 @@ import math
 class StatsCalculator:
     """Calculates comprehensive statistics from GitHub activity data."""
 
-    def __init__(self, profile: Dict[str, Any], repositories: List[Dict[str, Any]], thresholds: Optional[Dict[str, Any]] = None):
+    def __init__(
+        self,
+        profile: Dict[str, Any],
+        repositories: List[Dict[str, Any]],
+        thresholds: Optional[Dict[str, Any]] = None,
+    ):
         """Initialize calculator with user data.
 
         Args:
@@ -30,6 +35,7 @@ class StatsCalculator:
         """
         if thresholds is None:
             from spark.exceptions import ConfigurationError
+
             raise ConfigurationError(
                 "StatsCalculator requires 'thresholds' from config (stats.thresholds in spark.yml)",
                 field="stats.thresholds",
@@ -37,6 +43,7 @@ class StatsCalculator:
         for key in ("night_owl_hours", "early_bird_hours"):
             if thresholds.get(key) is None:
                 from spark.exceptions import ConfigurationError
+
                 raise ConfigurationError(
                     f"Missing required threshold 'stats.thresholds.{key}' in spark.yml",
                     field=f"stats.thresholds.{key}",
@@ -115,9 +122,7 @@ class StatsCalculator:
 
         # Weighted combination
         total_score = (
-            consistency_score * 0.40 +
-            volume_score * 0.35 +
-            collaboration_score * 0.25
+            consistency_score * 0.40 + volume_score * 0.35 + collaboration_score * 0.25
         )
 
         # Calculate lightning rating (1-5 bolts)
@@ -158,20 +163,22 @@ class StatsCalculator:
         weekly_counts = list(week_commits.values())
         total_weeks_with_commits = len(weekly_counts)
         mean = sum(weekly_counts) / len(weekly_counts)
-        
+
         # Calculate coefficient of variation (normalized std dev)
         if mean == 0:
             return 0.0
-            
+
         variance = sum((x - mean) ** 2 for x in weekly_counts) / len(weekly_counts)
         std_dev = math.sqrt(variance)
         cv = std_dev / mean  # Coefficient of variation
-        
+
         # Calculate activity rate (weeks with commits / total weeks in period)
         if self.commits:
             dates = [
                 commit_dt
-                for commit_dt in (self._extract_commit_datetime(commit) for commit in self.commits)
+                for commit_dt in (
+                    self._extract_commit_datetime(commit) for commit in self.commits
+                )
                 if commit_dt
             ]
             if dates:
@@ -183,15 +190,15 @@ class StatsCalculator:
                 activity_rate = 0.0
         else:
             activity_rate = 0.0
-        
+
         # Score based on both regularity (lower CV = better) and activity rate
         # CV of 0 = perfect consistency, CV > 2 = very inconsistent
         regularity_score = max(0, min(100, 100 * (1 - min(cv / 2, 1))))
         activity_score = activity_rate * 100
-        
+
         # Combine: 60% regularity, 40% activity rate
         consistency = (regularity_score * 0.6) + (activity_score * 0.4)
-        
+
         return min(100, consistency)
 
     def _calculate_volume_score(self) -> float:
@@ -289,14 +296,24 @@ class StatsCalculator:
             category = "balanced"
 
         # Find most active hour
-        most_active_hour = max(hour_counts.items(), key=lambda x: x[1])[0] if hour_counts else None
+        most_active_hour = (
+            max(hour_counts.items(), key=lambda x: x[1])[0] if hour_counts else None
+        )
 
         return {
             "category": category,
             "hour_distribution": dict(hour_counts),
             "most_active_hour": most_active_hour,
-            "night_commits_percent": round(night_commits / total_commits * 100, 1) if total_commits > 0 else 0,
-            "early_commits_percent": round(early_commits / total_commits * 100, 1) if total_commits > 0 else 0,
+            "night_commits_percent": (
+                round(night_commits / total_commits * 100, 1)
+                if total_commits > 0
+                else 0
+            ),
+            "early_commits_percent": (
+                round(early_commits / total_commits * 100, 1)
+                if total_commits > 0
+                else 0
+            ),
         }
 
     def aggregate_languages(self) -> List[Dict[str, Any]]:
@@ -315,11 +332,13 @@ class StatsCalculator:
         language_stats = []
         for lang, bytes_count in self.languages.items():
             percentage = (bytes_count / total_bytes) * 100
-            language_stats.append({
-                "name": lang,
-                "bytes": bytes_count,
-                "percentage": round(percentage, 1),
-            })
+            language_stats.append(
+                {
+                    "name": lang,
+                    "bytes": bytes_count,
+                    "percentage": round(percentage, 1),
+                }
+            )
 
         # Sort by percentage (highest first)
         language_stats.sort(key=lambda x: x["percentage"], reverse=True)
@@ -330,11 +349,13 @@ class StatsCalculator:
             other_percentage = sum(lang["percentage"] for lang in language_stats[9:])
             other_bytes = sum(lang["bytes"] for lang in language_stats[9:])
 
-            top_9.append({
-                "name": "Other",
-                "bytes": other_bytes,
-                "percentage": round(other_percentage, 1),
-            })
+            top_9.append(
+                {
+                    "name": "Other",
+                    "bytes": other_bytes,
+                    "percentage": round(other_percentage, 1),
+                }
+            )
             return top_9
 
         return language_stats
@@ -369,7 +390,7 @@ class StatsCalculator:
         streak = 1
 
         for i in range(1, len(unique_dates)):
-            if (unique_dates[i] - unique_dates[i-1]).days == 1:
+            if (unique_dates[i] - unique_dates[i - 1]).days == 1:
                 streak += 1
             else:
                 longest_streak = max(longest_streak, streak)
@@ -387,7 +408,7 @@ class StatsCalculator:
                 # Count backwards from today
                 current_streak = 1
                 for i in range(len(unique_dates) - 2, -1, -1):
-                    if (unique_dates[i+1] - unique_dates[i]).days == 1:
+                    if (unique_dates[i + 1] - unique_dates[i]).days == 1:
                         current_streak += 1
                     else:
                         break
@@ -395,13 +416,15 @@ class StatsCalculator:
                 # Yesterday counts
                 current_streak = 1
                 for i in range(len(unique_dates) - 2, -1, -1):
-                    if (unique_dates[i+1] - unique_dates[i]).days == 1:
+                    if (unique_dates[i + 1] - unique_dates[i]).days == 1:
                         current_streak += 1
                     else:
                         break
 
         # Learning streaks track consecutive days where new languages appear.
-        current_learning_streak, longest_learning_streak = self._calculate_learning_streaks()
+        current_learning_streak, longest_learning_streak = (
+            self._calculate_learning_streaks()
+        )
 
         return {
             "current_streak": current_streak,
@@ -473,7 +496,11 @@ class StatsCalculator:
             if not language:
                 continue
 
-            names = [repo.get("name"), repo.get("repository_name"), repo.get("full_name")]
+            names = [
+                repo.get("name"),
+                repo.get("repository_name"),
+                repo.get("full_name"),
+            ]
             for name in names:
                 if name:
                     language_map[name] = language
@@ -481,15 +508,23 @@ class StatsCalculator:
 
         return language_map
 
-    def _extract_commit_language(self, commit: Dict[str, Any], repo_language_map: Dict[str, str]) -> Optional[str]:
+    def _extract_commit_language(
+        self, commit: Dict[str, Any], repo_language_map: Dict[str, str]
+    ) -> Optional[str]:
         """Resolve language from commit payload with repository fallback."""
-        direct_language = commit.get("language") or commit.get("primary_language") or commit.get("repo_language")
+        direct_language = (
+            commit.get("language")
+            or commit.get("primary_language")
+            or commit.get("repo_language")
+        )
         if direct_language:
             return direct_language
 
         repository = commit.get("repository")
         if isinstance(repository, dict):
-            repo_language = repository.get("language") or repository.get("primary_language")
+            repo_language = repository.get("language") or repository.get(
+                "primary_language"
+            )
             if repo_language:
                 return repo_language
 
@@ -498,7 +533,9 @@ class StatsCalculator:
             repo_name = repository.get("name") or repository.get("full_name")
 
         if repo_name:
-            return repo_language_map.get(repo_name) or repo_language_map.get(str(repo_name).lower())
+            return repo_language_map.get(repo_name) or repo_language_map.get(
+                str(repo_name).lower()
+            )
 
         return None
 
@@ -513,7 +550,9 @@ class StatsCalculator:
 
         commit_datetimes = [
             commit_dt
-            for commit_dt in (self._extract_commit_datetime(commit) for commit in self.commits)
+            for commit_dt in (
+                self._extract_commit_datetime(commit) for commit in self.commits
+            )
             if commit_dt
         ]
 
@@ -522,7 +561,9 @@ class StatsCalculator:
         if commit_datetimes:
             oldest_commit = min(commit_datetimes)
             newest_commit = max(commit_datetimes)
-            commit_span_days = max(1, (newest_commit.date() - oldest_commit.date()).days + 1)
+            commit_span_days = max(
+                1, (newest_commit.date() - oldest_commit.date()).days + 1
+            )
             avg_commits_per_day = round(len(commit_datetimes) / commit_span_days, 1)
         else:
             avg_commits_per_day = 0.0
@@ -541,7 +582,9 @@ class StatsCalculator:
             "avg_commits_per_day": avg_commits_per_day,
         }
 
-    def calculate_release_cadence(self, weeks: int = 12, months: int = 12) -> Dict[str, Any]:
+    def calculate_release_cadence(
+        self, weeks: int = 12, months: int = 12
+    ) -> Dict[str, Any]:
         """Calculate unique repository cadence for weekly and monthly periods.
 
         Args:
@@ -621,7 +664,9 @@ class StatsCalculator:
                     age_sources.append(repository_dt)
 
             commit_history = repository.get("commit_history") or {}
-            first_commit_dt = self._parse_iso_datetime(commit_history.get("first_commit_date"))
+            first_commit_dt = self._parse_iso_datetime(
+                commit_history.get("first_commit_date")
+            )
             if first_commit_dt:
                 age_sources.append(first_commit_dt)
 
@@ -635,10 +680,14 @@ class StatsCalculator:
 
     def _extract_commit_datetime(self, commit: Dict[str, Any]) -> Optional[datetime]:
         """Extract a commit timestamp from supported commit payload shapes."""
-        date_str = commit.get("date") or commit.get("commit", {}).get("author", {}).get("date")
+        date_str = commit.get("date") or commit.get("commit", {}).get("author", {}).get(
+            "date"
+        )
         return self._parse_iso_datetime(date_str)
 
-    def _extract_commit_cadence_record(self, commit: Dict[str, Any]) -> Optional[Tuple[date, str]]:
+    def _extract_commit_cadence_record(
+        self, commit: Dict[str, Any]
+    ) -> Optional[Tuple[date, str]]:
         """Normalize commit payloads into cadence records."""
         repo_name = commit.get("repo") or commit.get("repository_name")
         repository = commit.get("repository")
@@ -685,7 +734,12 @@ class StatsCalculator:
         """Return an empty cadence payload with consistent metadata."""
         return {
             "weekly": [
-                {"label": f"W{str(i + 1).zfill(2)}", "repos": 0, "start": None, "range_label": ""}
+                {
+                    "label": f"W{str(i + 1).zfill(2)}",
+                    "repos": 0,
+                    "start": None,
+                    "range_label": "",
+                }
                 for i in range(weeks)
             ],
             "monthly": [
@@ -708,15 +762,30 @@ class StatsCalculator:
         is_estimated: bool,
     ) -> Dict[str, Any]:
         """Helper to build weekly/monthly series from activity records."""
-        today = datetime.now().date()
+        today = max(
+            (record_date for record_date, _ in activity_records),
+            default=datetime.now().date(),
+        )
 
         # Initialize series with zero counts for all weeks/months
         weekly_series = [
-            {"week": (today - timedelta(days=i * 7)).strftime("%Y-%U"), "commits": 0, "active_repos": 0}
+            {
+                "week": (today - timedelta(days=i * 7)).strftime("%Y-%U"),
+                "label": f"W{(today - timedelta(days=i * 7)).strftime('%U')}",
+                "commits": 0,
+                "active_repos": 0,
+                "repos": 0,
+            }
             for i in range(weeks - 1, -1, -1)
         ]
         monthly_series = [
-            {"month": (today - timedelta(days=i * 30)).strftime("%Y-%m"), "commits": 0, "active_repos": 0}
+            {
+                "month": (today - timedelta(days=i * 30)).strftime("%Y-%m"),
+                "label": (today - timedelta(days=i * 30)).strftime("%b"),
+                "commits": 0,
+                "active_repos": 0,
+                "repos": 0,
+            }
             for i in range(months - 1, -1, -1)
         ]
 
@@ -725,8 +794,12 @@ class StatsCalculator:
         monthly_lookup = {item["month"]: item for item in monthly_series}
 
         # Group activity by week and month
-        weekly_activity: Dict[str, Dict[str, int]] = defaultdict(lambda: {"commits": 0, "repos": set()})
-        monthly_activity: Dict[str, Dict[str, int]] = defaultdict(lambda: {"commits": 0, "repos": set()})
+        weekly_activity: Dict[str, Dict[str, int]] = defaultdict(
+            lambda: {"commits": 0, "repos": set()}
+        )
+        monthly_activity: Dict[str, Dict[str, int]] = defaultdict(
+            lambda: {"commits": 0, "repos": set()}
+        )
 
         for record_date, repo_name in activity_records:
             # Weekly aggregation
@@ -745,16 +818,25 @@ class StatsCalculator:
         for week_key, data in weekly_activity.items():
             if week_key in weekly_lookup:
                 weekly_lookup[week_key]["commits"] = data["commits"]
-                weekly_lookup[week_key]["active_repos"] = len(data["repos"])
+                repo_count = len(data["repos"])
+                weekly_lookup[week_key]["active_repos"] = repo_count
+                weekly_lookup[week_key]["repos"] = repo_count
 
         for month_key, data in monthly_activity.items():
             if month_key in monthly_lookup:
                 monthly_lookup[month_key]["commits"] = data["commits"]
-                monthly_lookup[month_key]["active_repos"] = len(data["repos"])
+                repo_count = len(data["repos"])
+                monthly_lookup[month_key]["active_repos"] = repo_count
+                monthly_lookup[month_key]["repos"] = repo_count
 
         return {
+            "weekly": weekly_series,
+            "monthly": monthly_series,
             "weekly_series": weekly_series,
             "monthly_series": monthly_series,
+            "max_weekly": max((point["repos"] for point in weekly_series), default=0),
+            "max_monthly": max((point["repos"] for point in monthly_series), default=0),
+            "unique_repos": len({repo_name for _, repo_name in activity_records}),
             "source": source,
             "is_estimated": is_estimated,
         }
@@ -791,7 +873,9 @@ class StatsCalculator:
         return files_changed + lines_added + lines_deleted
 
     @staticmethod
-    def calculate_repository_commit_metrics(commits: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def calculate_repository_commit_metrics(
+        commits: List[Dict[str, Any]],
+    ) -> Dict[str, Any]:
         """Calculate aggregate commit metrics for a repository.
 
         Args:

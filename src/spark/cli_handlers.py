@@ -14,7 +14,10 @@ from pathlib import Path
 
 from spark.cli_output_layout import build_output_layout, to_posix_path
 from spark.config import SparkConfig
-from spark.screenshot_audit import audit_screenshot_outputs, build_screenshot_audit_markdown
+from spark.screenshot_audit import (
+    audit_screenshot_outputs,
+    build_screenshot_audit_markdown,
+)
 from spark.unified_data_generator import UnifiedDataGenerator
 from spark.exceptions import WorkflowError
 
@@ -30,7 +33,9 @@ def handle_unified(args, logger):
     logger.info(f"Artifacts output: {output_layout['artifact_root']}")
     logger.info(f"AI Summaries: {'Yes' if args.include_ai_summaries else 'No'}")
     logger.info(f"Force Refresh: {'Yes' if args.force_refresh else 'No'}")
-    logger.info(f"Screenshots: {'Yes' if getattr(args, 'capture_screenshots', False) else 'No'}")
+    logger.info(
+        f"Screenshots: {'Yes' if getattr(args, 'capture_screenshots', False) else 'No'}"
+    )
 
     if not os.getenv("GITHUB_TOKEN"):
         logger.error("GITHUB_TOKEN environment variable not set")
@@ -67,7 +72,9 @@ def handle_unified(args, logger):
             import json
 
             json.dump(unified_data, f, indent=2)
-        logger.info(f"Successfully generated unified data at {to_posix_path(data_file)}")
+        logger.info(
+            f"Successfully generated unified data at {to_posix_path(data_file)}"
+        )
 
         # --- SVG and Report Generation (optional, non-fatal) ---
         # These steps are best-effort: failures here must not invalidate the
@@ -88,7 +95,9 @@ def handle_unified(args, logger):
             # profile-level activity_calendar (date -> count) instead.
             all_repo_commits = [
                 {"date": f"{day}T12:00:00Z"}
-                for day, count in (unified_data["profile"].get("activity_calendar") or {}).items()
+                for day, count in (
+                    unified_data["profile"].get("activity_calendar") or {}
+                ).items()
                 for _ in range(count)
             ]
             stats_calculator.add_commits(all_repo_commits)
@@ -147,22 +156,45 @@ def handle_unified(args, logger):
             logger.warning(f"SVG generation skipped: {svg_err}")
 
         # --- Optional: Screenshots ---
-        if getattr(args, 'capture_screenshots', False):
+        if getattr(args, "capture_screenshots", False):
             from spark.screenshot import ScreenshotCapture
+
             logger.info("Capturing repository screenshots...")
             screenshot_dir = output_layout["screenshot_dir"]
             username = unified_data["profile"]["username"]
             with ScreenshotCapture(output_dir=screenshot_dir) as capturer:
-                screenshots = capturer.capture_batch(unified_data["repositories"], username=username)
-            logger.info(f"Captured {len(screenshots)} screenshots in {to_posix_path(screenshot_dir)}")
+                screenshots = capturer.capture_batch(
+                    unified_data["repositories"], username=username
+                )
+            logger.info(
+                f"Captured {len(screenshots)} screenshots in {to_posix_path(screenshot_dir)}"
+            )
+
+            for repo in unified_data["repositories"]:
+                screenshot = screenshots.get(repo.get("name"))
+                if screenshot:
+                    repo["screenshot"] = screenshot
 
             # Audit screenshots
-            audit_results = audit_screenshot_outputs(unified_data["repositories"], screenshot_dir)
+            audit_results = audit_screenshot_outputs(
+                unified_data["repositories"], Path.cwd()
+            )
+            for repo in unified_data["repositories"]:
+                repo_audit = audit_results.get("repositories", {}).get(repo.get("name"))
+                if repo_audit:
+                    repo["screenshot_audit"] = repo_audit
+            unified_data.setdefault("metadata", {})["screenshot_audit"] = audit_results
+            with open(data_file, "w", encoding="utf-8") as f:
+                json.dump(unified_data, f, indent=2)
+
             audit_report = build_screenshot_audit_markdown(audit_results)
             audit_report_path = output_layout["report_dir"] / "screenshot-audit.md"
+            audit_report_path.parent.mkdir(parents=True, exist_ok=True)
             with open(audit_report_path, "w", encoding="utf-8") as f:
                 f.write(audit_report)
-            logger.info(f"Generated screenshot audit report at {to_posix_path(audit_report_path)}")
+            logger.info(
+                f"Generated screenshot audit report at {to_posix_path(audit_report_path)}"
+            )
 
     except WorkflowError as e:
         logger.error(f"Workflow failed at stage '{e.stage}': {e.message}")
@@ -292,7 +324,9 @@ def handle_dated_analyze(args, logger):
         summarizer = RepositorySummarizer(cache=cache, model=config.get_ai_model())
         profile_generator = UserProfileGenerator(summarizer)
         report_generator = ReportGenerator()
-        dependency_analyzer = RepositoryDependencyAnalyzer(config=config.config.get("analyzer", {}))
+        dependency_analyzer = RepositoryDependencyAnalyzer(
+            config=config.config.get("analyzer", {})
+        )
 
         start_time = datetime.now()
         logger.info(f"Fetching repositories for {args.user}...")
@@ -312,27 +346,39 @@ def handle_dated_analyze(args, logger):
         for index, raw_repo in enumerate(raw_repos, 1):
             progress_pct = (index / len(raw_repos)) * 100
             repo_name = raw_repo["name"]
-            logger.info(f"  [{index}/{len(raw_repos)}] ({progress_pct:.0f}%) {repo_name}")
+            logger.info(
+                f"  [{index}/{len(raw_repos)}] ({progress_pct:.0f}%) {repo_name}"
+            )
 
             try:
                 github_repo = fetcher.github.get_repo(raw_repo["full_name"])
                 repo = Repository.from_github_repo(github_repo)
-                repo.language_stats = fetcher.fetch_languages(args.user, repo.name, repo_pushed_at=github_repo.pushed_at)
+                repo.language_stats = fetcher.fetch_languages(
+                    args.user, repo.name, repo_pushed_at=github_repo.pushed_at
+                )
                 repo.language_count = len(repo.language_stats)
 
-                commit_data = fetcher.fetch_commit_counts(args.user, repo.name, repo_pushed_at=github_repo.pushed_at)
+                commit_data = fetcher.fetch_commit_counts(
+                    args.user, repo.name, repo_pushed_at=github_repo.pushed_at
+                )
                 commit_history = CommitHistory(
                     repository_name=repo.name,
                     total_commits=commit_data["total"],
                     recent_90d=commit_data["recent_90d"],
                     recent_180d=commit_data["recent_180d"],
                     recent_365d=commit_data["recent_365d"],
-                    last_commit_date=datetime.fromisoformat(commit_data["last_commit_date"]) if commit_data["last_commit_date"] else None,
+                    last_commit_date=(
+                        datetime.fromisoformat(commit_data["last_commit_date"])
+                        if commit_data["last_commit_date"]
+                        else None
+                    ),
                 )
 
                 if repo.age_days > 0:
                     months = repo.age_days / 30.0
-                    repo.commit_velocity = commit_data["total"] / months if months > 0 else 0
+                    repo.commit_velocity = (
+                        commit_data["total"] / months if months > 0 else 0
+                    )
 
                 repositories.append(repo)
                 commit_histories[repo.name] = commit_history
@@ -342,36 +388,52 @@ def handle_dated_analyze(args, logger):
                 if "rate limit" in error_msg.lower() or "403" in error_msg:
                     logger.error("WARNING: GitHub API rate limit reached!")
                     logger.info("Actionable steps:")
-                    logger.info("   1. Wait for rate limit to reset (check: https://api.github.com/rate_limit)")
-                    logger.info("   2. Use a GitHub Personal Access Token for higher limits (5000/hour)")
+                    logger.info(
+                        "   1. Wait for rate limit to reset (check: https://api.github.com/rate_limit)"
+                    )
+                    logger.info(
+                        "   2. Use a GitHub Personal Access Token for higher limits (5000/hour)"
+                    )
                     logger.info("   3. Cached data will be used where available")
-                    errors.append(f"Rate limit reached at repo {index}/{len(raw_repos)}: {repo_name}")
+                    errors.append(
+                        f"Rate limit reached at repo {index}/{len(raw_repos)}: {repo_name}"
+                    )
                     break
 
                 logger.warning(f"FAILED to fetch {repo_name}: {error_msg}")
                 errors.append(f"Failed to fetch {repo_name}: {error_msg}")
 
         logger.info(f"Ranking repositories (top {args.top_n})...")
-        ranked_repos = ranker.rank_repositories(repositories, commit_histories, top_n=args.top_n)
+        ranked_repos = ranker.rank_repositories(
+            repositories, commit_histories, top_n=args.top_n
+        )
 
         if args.list_only:
             logger.info(f"\nTop {len(ranked_repos)} Repositories:")
             for index, (repo, score) in enumerate(ranked_repos, 1):
-                logger.info(f"  #{index}. {repo.name} (score: {score:.1f}) - {repo.stars} stars")
-            logger.info("\nDry-run complete. Use without --list-only to generate full report.")
+                logger.info(
+                    f"  #{index}. {repo.name} (score: {score:.1f}) - {repo.stars} stars"
+                )
+            logger.info(
+                "\nDry-run complete. Use without --list-only to generate full report."
+            )
             return
 
         logger.info("Generating repository summaries...")
         repository_analyses = []
         for rank, (repo, score) in enumerate(ranked_repos, 1):
             progress_pct = (rank / len(ranked_repos)) * 100
-            logger.info(f"  [{rank}/{len(ranked_repos)}] ({progress_pct:.0f}%) Summarizing {repo.name}...")
+            logger.info(
+                f"  [{rank}/{len(ranked_repos)}] ({progress_pct:.0f}%) Summarizing {repo.name}..."
+            )
 
             try:
                 readme_content = None
                 if repo.has_readme:
                     try:
-                        github_repo = fetcher.github.get_repo(f"{args.user}/{repo.name}")
+                        github_repo = fetcher.github.get_repo(
+                            f"{args.user}/{repo.name}"
+                        )
                         readme = github_repo.get_readme()
                         readme_content = readme.decoded_content.decode("utf-8")
                     except Exception as error:
@@ -389,13 +451,17 @@ def handle_dated_analyze(args, logger):
                 tech_stack = None
                 try:
                     github_repo = fetcher.github.get_repo(f"{args.user}/{repo.name}")
-                    tech_stack = dependency_analyzer.analyze_github_repository(github_repo)
+                    tech_stack = dependency_analyzer.analyze_github_repository(
+                        github_repo
+                    )
                     if tech_stack and tech_stack.total_dependencies > 0:
                         logger.debug(
                             f"    Found {tech_stack.total_dependencies} dependencies, {tech_stack.outdated_count} outdated"
                         )
                 except Exception as error:
-                    logger.debug(f"    Dependency analysis skipped for {repo.name}: {error}")
+                    logger.debug(
+                        f"    Dependency analysis skipped for {repo.name}: {error}"
+                    )
 
                 analysis = RepositoryAnalysis(
                     repository=repo,
@@ -410,7 +476,9 @@ def handle_dated_analyze(args, logger):
             except Exception as error:
                 error_msg = str(error)
                 if "rate limit" in error_msg.lower():
-                    logger.error(f"WARNING: Rate limit during summary generation for {repo.name}")
+                    logger.error(
+                        f"WARNING: Rate limit during summary generation for {repo.name}"
+                    )
                     errors.append(f"Rate limit during summary for {repo.name}")
                     analysis = RepositoryAnalysis(
                         repository=repo,
@@ -426,7 +494,9 @@ def handle_dated_analyze(args, logger):
                     errors.append(f"Failed to summarize {repo.name}: {error_msg}")
 
         logger.info("Generating user profile...")
-        user_profile = profile_generator.generate_profile(args.user, repositories, commit_histories, {})
+        user_profile = profile_generator.generate_profile(
+            args.user, repositories, commit_histories, {}
+        )
 
         end_time = datetime.now()
         report = Report(
@@ -441,7 +511,9 @@ def handle_dated_analyze(args, logger):
 
         output_dir = Path(args.output)
         output_dir.mkdir(parents=True, exist_ok=True)
-        output_file = output_dir / f"{args.user}-analysis-{datetime.now().strftime('%Y%m%d')}.md"
+        output_file = (
+            output_dir / f"{args.user}-analysis-{datetime.now().strftime('%Y%m%d')}.md"
+        )
 
         logger.info(f"Writing report to {output_file}...")
         report_generator.generate_report(report, str(output_file))
@@ -464,14 +536,18 @@ def handle_dated_analyze(args, logger):
                 f"   Cache Hit Rate: {stats['cache_hit_rate']} ({stats['cache_hits']} hits / {stats['cache_misses']} misses)"
             )
             if stats["cache_hits"] > 0:
-                logger.info(f"   Tokens Saved: ~{stats['tokens_saved_estimate']:,} (from cache)")
+                logger.info(
+                    f"   Tokens Saved: ~{stats['tokens_saved_estimate']:,} (from cache)"
+                )
 
         if len(errors) > 0:
             logger.info("\nErrors Summary:")
             for error in errors[:5]:
                 logger.info(f"  - {error}")
             if len(errors) > 5:
-                logger.info(f"   ... and {len(errors) - 5} more (see report for details)")
+                logger.info(
+                    f"   ... and {len(errors) - 5} more (see report for details)"
+                )
 
         logger.info("=" * 60)
 
@@ -549,8 +625,12 @@ def handle_dashboard_generation(args, logger, config):
         logger.info("=" * 70)
         logger.info(f"Output: {output_path}")
         logger.info(f"Repositories: {len(dashboard_data.repositories)}")
-        logger.info(f"Username: {dashboard_data.profile.username if dashboard_data.profile else 'N/A'}")
-        logger.info(f"Schema Version: {dashboard_data.metadata.schema_version if dashboard_data.metadata else 'N/A'}")
+        logger.info(
+            f"Username: {dashboard_data.profile.username if dashboard_data.profile else 'N/A'}"
+        )
+        logger.info(
+            f"Schema Version: {dashboard_data.metadata.schema_version if dashboard_data.metadata else 'N/A'}"
+        )
         logger.info(f"Generation Time: {generation_time:.1f}s")
         logger.info("=" * 70)
         return 0
@@ -670,7 +750,9 @@ def handle_cache(args, logger):
                 cache_files = list(cache_path.glob("*.json"))
                 logger.info(f"Cache directory: {args.dir}")
                 logger.info(f"Cached files: {len(cache_files)}")
-                total_size = sum(cache_file.stat().st_size for cache_file in cache_files)
+                total_size = sum(
+                    cache_file.stat().st_size for cache_file in cache_files
+                )
                 logger.info(f"Total size: {total_size / 1024:.2f} KB")
             else:
                 logger.info(f"Cache directory does not exist: {args.dir}")
@@ -695,7 +777,9 @@ def handle_cache(args, logger):
 
             fetch_fresh = getattr(args, "fetch_fresh", False)
             if fetch_fresh:
-                logger.info(f"Fetching fresh repository data from GitHub for user: {args.user}")
+                logger.info(
+                    f"Fetching fresh repository data from GitHub for user: {args.user}"
+                )
             else:
                 logger.info(f"Updating cache status for user: {args.user}")
 
@@ -703,11 +787,19 @@ def handle_cache(args, logger):
                 username=args.user,
                 fetch_fresh=fetch_fresh,
             )
-            logger.info(f"Updated cache status for {len(cache_data.get('value', []))} repositories")
-            logger.info(f"Cache status updated at: {cache_data.get('cache_status_updated')}")
+            logger.info(
+                f"Updated cache status for {len(cache_data.get('value', []))} repositories"
+            )
+            logger.info(
+                f"Cache status updated at: {cache_data.get('cache_status_updated')}"
+            )
 
             repos = cache_data.get("value", [])
-            needs_refresh = sum(1 for repo in repos if repo.get("cache_status", {}).get("refresh_needed", False))
+            needs_refresh = sum(
+                1
+                for repo in repos
+                if repo.get("cache_status", {}).get("refresh_needed", False)
+            )
 
             from datetime import datetime, timezone, timedelta
 
@@ -720,7 +812,9 @@ def handle_cache(args, logger):
                 pushed_at = repo.get("pushed_at")
                 if pushed_at:
                     try:
-                        pushed_date = datetime.fromisoformat(pushed_at.replace("+00:00", ""))
+                        pushed_date = datetime.fromisoformat(
+                            pushed_at.replace("+00:00", "")
+                        )
                         if pushed_date.tzinfo is None:
                             pushed_date = pushed_date.replace(tzinfo=timezone.utc)
                         if pushed_date >= seven_days_ago:
@@ -729,7 +823,9 @@ def handle_cache(args, logger):
                             cache_date = cache_status.get("cache_date", "No cache")
                             is_outdated = False
                             if cache_status.get("refresh_needed", False):
-                                refresh_reasons = cache_status.get("refresh_reasons", [])
+                                refresh_reasons = cache_status.get(
+                                    "refresh_reasons", []
+                                )
                                 if "repo_has_new_commits" in refresh_reasons:
                                     recently_updated_with_outdated_cache += 1
                                     is_outdated = True
@@ -757,7 +853,9 @@ def handle_cache(args, logger):
                     status_marker = "OUTDATED" if repo_info["is_outdated"] else "cached"
                     logger.info(f"  - {repo_info['name']}")
                     logger.info(f"      Last update: {repo_info['pushed_at']}")
-                    logger.info(f"      Cache date:  {repo_info['cache_date']} {status_marker}")
+                    logger.info(
+                        f"      Cache date:  {repo_info['cache_date']} {status_marker}"
+                    )
 
             if needs_refresh > 0:
                 logger.info(f"\n{needs_refresh} repositories need cache refresh")
@@ -766,7 +864,9 @@ def handle_cache(args, logger):
 
         if args.list_refresh_needed:
             if not args.user:
-                logger.error("--user is required for listing refresh-needed repositories")
+                logger.error(
+                    "--user is required for listing refresh-needed repositories"
+                )
                 sys.exit(1)
             logger.info(f"Repositories needing refresh for user: {args.user}")
             repos = cache_tracker.get_repositories_needing_refresh(username=args.user)
@@ -826,7 +926,9 @@ def handle_refresh(args, logger):
         logger.info(f"  Removed: {result['removed']} repositories")
 
         if result["refreshed"] > 0:
-            logger.info("\nTip: Run 'cd frontend && npm run build' to update the dashboard")
+            logger.info(
+                "\nTip: Run 'cd frontend && npm run build' to update the dashboard"
+            )
 
     except Exception as error:
         logger.error("Refresh command failed", error)

@@ -28,6 +28,7 @@ import CommitMetricsSection from "./RepositoryDetail/sections/CommitMetricsSecti
 import ActivityMetricsSection from "./RepositoryDetail/sections/ActivityMetricsSection";
 import RankingSection from "./RepositoryDetail/sections/RankingSection";
 import TechStackSection from "./RepositoryDetail/sections/TechStackSection";
+import FixScorePromptSection from "./RepositoryDetail/sections/FixScorePromptSection";
 
 /**
  * RepositoryDetail Component
@@ -146,6 +147,12 @@ function RepositoryDetail({ repository, onClose, onNext, onPrevious }) {
                   getSecurityStateBadgeClass={(overallState) =>
                     getSecurityStateBadgeClass(styles, overallState)
                   }
+                />
+
+                <FixScorePromptSection
+                  repository={repository}
+                  expanded={expandedSections.remediation}
+                  onToggle={toggleSection}
                 />
 
                 <CommitHistorySection

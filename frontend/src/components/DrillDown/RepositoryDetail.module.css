@@ -725,6 +725,69 @@
   font-weight: 500 !important;
 }
 
+/* Fix Score Prompt */
+.promptActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.promptCommand {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm, 4px);
+  background: var(--color-surface, #f6f8fa);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.blockerList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.blockerItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.blockerTitle {
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.promptText {
+  display: block;
+  width: 100%;
+  min-height: 250px;
+  resize: vertical;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family:
+    ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
+    monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
 /* Footer */
 .modalFooter {
   padding: var(--spacing-lg);
@@ -955,6 +1018,23 @@
   .summaryText {
     font-size: 0.875rem;
     line-height: 1.5;
+  }
+
+  .promptActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .promptActions .btnSecondary {
+    width: 100%;
+  }
+
+  .blockerItem {
+    grid-template-columns: 1fr;
+  }
+
+  .promptText {
+    min-height: 220px;
   }
 
   .languageItem {
